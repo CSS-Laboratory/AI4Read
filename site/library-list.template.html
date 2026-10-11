@@ -1,0 +1,177 @@
+<title>AI4Read Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a card-catalog drawer — one narrow column of index cards, sticky filter rail on top. */
+:root{
+  --paper:#F4F5F2; --card:#FFFFFF; --ink:#1F2733; --muted:#5D6672; --rule:#DADDD6;
+  --stamp:#A3342B; --stamp-soft:#F6E4E1; --ok:#2E6B4F; --ok-soft:#E1EFE7; --chip:#E9EBE6;
+  --f-display:"Newsreader",Georgia,"Times New Roman",serif;
+  --f-ui:"IBM Plex Sans",-apple-system,"Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#15181D; --card:#1D2128; --ink:#E6E8EA; --muted:#9AA3AE; --rule:#2E343D;
+  --stamp:#E0796E; --stamp-soft:#3A2321; --ok:#7BC4A0; --ok-soft:#1E3329; --chip:#272C34; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#15181D; --card:#1D2128; --ink:#E6E8EA; --muted:#9AA3AE; --rule:#2E343D;
+  --stamp:#E0796E; --stamp-soft:#3A2321; --ok:#7BC4A0; --ok-soft:#1E3329; --chip:#272C34; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:15px/1.5 var(--f-ui);padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:720px;margin:0 auto}
+header{padding-block:28px 12px}
+.eyebrow{font:500 11px/1 var(--f-ui);letter-spacing:.12em;text-transform:uppercase;color:var(--stamp)}
+h1{font:600 34px/1.1 var(--f-display);margin:8px 0 10px;text-wrap:balance}
+.lede{color:var(--muted);margin:0 0 16px;max-width:60ch}
+.tally{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:0 0 16px}
+.tally div{border-top:2px solid var(--rule);padding-top:6px}
+.tally b{display:block;font:600 24px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.tally span{font-size:12px;color:var(--muted)}
+.tally .hot{border-color:var(--stamp)}
+.how{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;font-size:14px;display:grid;gap:6px}
+.how code{font:13px var(--f-mono);background:var(--chip);padding:1px 5px;border-radius:3px;word-break:break-all}
+.rail{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);padding-block:10px;border-bottom:1px solid var(--rule);display:grid;gap:8px}
+.seg{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.seg button,.chips button{flex:0 0 auto;font:500 13px var(--f-ui);border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chips{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.chips button{font-size:12px;padding:4px 10px;background:var(--chip);border-color:transparent}
+.chips button[aria-pressed="true"]{background:var(--stamp-soft);color:var(--stamp);border-color:var(--stamp)}
+.search{width:100%;font:15px var(--f-ui);padding:8px 12px;border:1px solid var(--rule);border-radius:6px;background:var(--card);color:var(--ink)}
+button:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--stamp);outline-offset:2px}
+.count{font-size:12px;color:var(--muted)}
+.group{font:600 13px/1 var(--f-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:24px 0 8px;display:flex;justify-content:space-between}
+.list{display:grid;gap:10px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;display:grid;gap:8px;min-width:0}
+.card.got{opacity:.55}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.tier{font-weight:600;padding:2px 6px;border-radius:3px;background:var(--chip)}
+.tier.core{background:var(--stamp-soft);color:var(--stamp)}
+.st{padding:2px 6px;border-radius:3px}
+.st.have{background:var(--ok-soft);color:var(--ok)}
+.st.free{background:var(--ok-soft);color:var(--ok)}
+.cit{font:17px/1.4 var(--f-display);margin:0;overflow-wrap:anywhere}
+.rail>*,.list>*{min-width:0}
+details p,.tr{overflow-wrap:anywhere}
+.cit i{font-style:italic}
+details{font-size:14px;color:var(--ink)}
+summary{cursor:pointer;color:var(--muted);font-size:13px}
+details p{margin:6px 0 0}
+.tr{font-size:13px;color:var(--muted)}
+.tr b{color:var(--ink);font-weight:500}
+.acts{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.acts a,.acts button{font:500 12px var(--f-ui);color:var(--ink);text-decoration:none;border:1px solid var(--rule);background:transparent;border-radius:4px;padding:5px 8px;cursor:pointer}
+.acts .fn{font:12px var(--f-mono);color:var(--muted);word-break:break-all;flex:1 1 100%}
+.acts label{margin-left:auto;display:flex;gap:6px;align-items:center;font-size:13px;cursor:pointer}
+.acts input{width:18px;height:18px;accent-color:var(--stamp)}
+.empty{color:var(--muted);padding:24px 0;text-align:center}
+.toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:8px 14px;border-radius:6px;font-size:13px}
+@media (prefers-reduced-motion:no-preference){.card{transition:opacity .2s}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">AI4Read · Step 1 · Canon</div>
+  <h1>What to bring to the library</h1>
+  <p class="lede">The canon review found 307 works across 11 fields. I already saved every legal free copy I could reach into your Drive folder. This list shows what is left. Start with the core works; the rest can wait until a weekly topic needs them.</p>
+  <div class="tally" id="tally"></div>
+  <div class="how">
+    <div><b>Where to save:</b> <code>My Drive/Book/AI4Read/library/&lt;field&gt;/</code></div>
+    <div><b>File name:</b> start it with the item id, e.g. <code>pierce-1980-introduction.pdf</code>. Tap “Copy file name” on any card.</div>
+    <div><b>Paper book only?</b> Just tick “Got it”. When a topic needs a chapter, a phone scan of that chapter is enough.</div>
+    <div><b>Japanese edition?</b> Fine for intuition reading, but the English original is better for the posts’ English vocabulary.</div>
+  </div>
+</header>
+
+<div class="rail">
+  <div class="seg" role="group" aria-label="Which list">
+    <button data-view="now" aria-pressed="true">Get now</button>
+    <button data-view="later" aria-pressed="false">Later</button>
+    <button data-view="free" aria-pressed="false">Free, one tap</button>
+    <button data-view="have" aria-pressed="false">Already in library</button>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="Field"></div>
+  <input id="q" class="search" type="search" placeholder="Search author, title, idea…" aria-label="Search">
+  <div class="count" id="count"></div>
+</div>
+
+<main id="main"></main>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const DATA = __DATA__;
+const FIELDS = [
+ ["information-theory","Information theory"],["bayesian","Bayesian & causal"],["analytic-philosophy","Analytic philosophy"],
+ ["communication-theory","Communication theory"],["linear-algebra","Linear algebra"],["theory-of-mind","Theory of mind"],
+ ["decision-game-theory","Decision & game theory"],["complex-systems","Complex systems"],["llm","LLMs"],
+ ["economics-finance","Economics & finance"],["political-science","Political science"]];
+const VIEW_NOTE = {
+ now:"Core works you need to supply. Getting these unlocks the first months of topics.",
+ later:"Deep and reference works. No need to hunt for them now; I will ask when a topic needs one.",
+ free:"Free and legal, but the site blocked my download. Open the link and save the PDF if you have a minute.",
+ have:"Already saved to your library folder, or readable online."};
+let store = {}; try{ store = JSON.parse(localStorage.getItem("ai4read-got")||"{}") }catch(e){}
+const save = ()=>{ try{ localStorage.setItem("ai4read-got", JSON.stringify(store)) }catch(e){} };
+let view="now", field=null, q="";
+const inView = d => view==="now" ? (d.status.startsWith("need") && d.tier==="core")
+  : view==="later" ? (d.status.startsWith("need") && d.tier!=="core")
+  : view==="free" ? d.status==="free-manual" : d.status==="have";
+const plain = s => s.replace(/<[^>]+>/g,"");
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function tally(){
+  const n = s => DATA.filter(s).length;
+  document.getElementById("tally").innerHTML =
+   `<div><b>${DATA.length}</b><span>works catalogued</span></div>
+    <div><b>${n(d=>d.status==="have")}</b><span>already in your library</span></div>
+    <div class="hot"><b>${n(d=>d.status.startsWith("need")&&d.tier==="core")}</b><span>core works to get now</span></div>
+    <div><b>${n(d=>d.status.startsWith("need")&&d.tier!=="core")}</b><span>can wait</span></div>`;
+}
+function chips(){
+  const el=document.getElementById("chips");
+  el.innerHTML = `<button data-f="" aria-pressed="${!field}">All fields</button>` +
+    FIELDS.map(([s,l])=>{const c=DATA.filter(d=>d.slug===s&&inView(d)).length;
+      return `<button data-f="${s}" aria-pressed="${field===s}">${l} · ${c}</button>`}).join("");
+}
+function card(d){
+  const fn = `${d.id}.pdf`; const got = !!store[d.id];
+  const title = plain(d.cit).replace(/^.*?\(\d{4}[a-z]?\)\.\s*/,"").split(".")[0];
+  const sch = "https://scholar.google.com/scholar?q="+encodeURIComponent(plain(d.cit).slice(0,180));
+  const cinii = "https://ci.nii.ac.jp/books/search?q="+encodeURIComponent(title.slice(0,80));
+  const st = d.status==="have" ? `<span class="st have">in library</span>` : d.status==="free-manual" ? `<span class="st free">free</span>` : d.status==="need-partial" ? `<span class="st free">part free</span>` : "";
+  const link = d.url ? `<a href="${esc(d.url)}" target="_blank" rel="noopener">${d.status==="need-partial"?"Free part":"Open"}</a>` : "";
+  const need = d.status!=="have";
+  return `<article class="card${got?" got":""}" data-id="${d.id}">
+   <div class="meta"><span class="tier ${d.tier}">${d.tier}</span><span>${d.type}</span><span>${d.level}</span><span>${esc(FIELDS.find(f=>f[0]===d.slug)[1])}</span>${st}</div>
+   <p class="cit">${d.cit}</p>
+   <details><summary>Why it matters · what to read</summary><p>${d.why}</p>${d.focus?`<p><b>Focus:</b> ${d.focus}</p>`:""}</details>
+   ${d.tr?`<div class="tr"><b>Translation:</b> ${d.tr}</div>`:""}
+   <div class="acts">${need?`<span class="fn">${d.slug}/${fn}</span><button data-copy="${fn}">Copy file name</button>`:""}
+     ${link}${need?`<a href="${sch}" target="_blank" rel="noopener">Scholar</a><a href="${cinii}" target="_blank" rel="noopener">CiNii</a>`:""}
+     ${need?`<label><input type="checkbox" id="got-${d.id}" data-got="${d.id}" ${got?"checked":""}> Got it</label>`:""}</div>
+  </article>`;
+}
+function render(){
+  document.querySelectorAll(".seg button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.view===view));
+  chips();
+  const ql=q.toLowerCase();
+  const rows = DATA.filter(d=>inView(d) && (!field||d.slug===field) && (!ql || (plain(d.cit)+" "+plain(d.why)+" "+d.id).toLowerCase().includes(ql)));
+  const left = rows.filter(d=>!store[d.id]).length;
+  document.getElementById("count").textContent = `${VIEW_NOTE[view]}  ${rows.length} shown${view==="now"||view==="later"?` · ${left} still to get`:""}.`;
+  const main=document.getElementById("main");
+  if(!rows.length){ main.innerHTML=`<p class="empty">Nothing here for this filter.</p>`; return; }
+  main.innerHTML = FIELDS.filter(([s])=>rows.some(d=>d.slug===s)).map(([s,l])=>{
+    const rs=rows.filter(d=>d.slug===s).sort((a,b)=>(a.tier>b.tier)-(a.tier<b.tier));
+    return `<div class="group"><span>${l}</span><span>${rs.length}</span></div><div class="list">${rs.map(card).join("")}</div>`}).join("");
+}
+function toast(t){const el=document.getElementById("toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>el.hidden=true,1600)}
+document.addEventListener("click",e=>{
+  const v=e.target.closest("[data-view]"); if(v){view=v.dataset.view;field=null;render();return}
+  const f=e.target.closest("[data-f]"); if(f){field=f.dataset.f||null;render();return}
+  const c=e.target.closest("[data-copy]"); if(c){const t=c.dataset.copy;
+    navigator.clipboard.writeText(t).then(()=>toast("Copied "+t)).catch(()=>{const r=document.createRange();const s=c.previousElementSibling;r.selectNodeContents(s);const sel=getSelection();sel.removeAllRanges();sel.addRange(r);toast("Selected — copy it manually")});}
+});
+document.addEventListener("change",e=>{const g=e.target.dataset.got; if(g){ if(e.target.checked) store[g]=1; else delete store[g]; save(); e.target.closest(".card").classList.toggle("got",e.target.checked); render(); }});
+document.getElementById("q").addEventListener("input",e=>{q=e.target.value;render()});
+tally(); render();
+</script>
