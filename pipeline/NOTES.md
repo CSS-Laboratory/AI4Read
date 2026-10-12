@@ -53,3 +53,4 @@ No long-context (>200K) premium. Cloud Billing SKU ids: not found (Catalog API n
 ## Batch fix attempts (2026-10-12, approved by Kunhao)
 - 19:47 JST: granted `service-628671067824@gcp-sa-aiplatform` **roles/storage.objectAdmin on gs://ai4read-batch-628671 only**; retried 1-row text job via GCS (`3087369277167108096`).
 - 19:48 JST: created BigQuery dataset `ai4read_batch` (US); 1-row text job with BigQuery in/out (`7164815789797670912`; table `smoke_in` → `smoke_out`).
+- Result: **both FAILED `INTERNAL`** after ~50 min (GCS with bucket IAM; BigQuery in/out). Total 5/5 Claude Sonnet 5.5 batch jobs in `us` failed the same way. Not the image, not GCS vs BigQuery, not bucket permission. Likely a Google-side problem (model/location/project). Online calls (global) work.
