@@ -1,0 +1,289 @@
+{
+ "work_id": "kahneman-2011-thinking",
+ "file": "decision-game-theory/kahneman-2011-thinking.pdf.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "ebook conversion without printed page numbers; printed contents on pdf 4-6; every part divider (two pages: 'Part N' then part title) and every chapter heading (first line of page) verified in text cache. No chapter exceeds 35 pdf pages, so no sections listed. Back matter: appendices A/B (reprinted Tversky & Kahneman 1974 and 1984 articles), notes 455-500, index 501-524 (ebook index without page refs), copyright 525, footnote pages 526-533.",
+ "last_pdf_page": 533,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Dedication",
+   "pdf": 3
+  },
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 4
+  },
+  {
+   "level": 0,
+   "title": "Introduction",
+   "pdf": 7
+  },
+  {
+   "level": 0,
+   "title": "Part I Two Systems",
+   "pdf": 19
+  },
+  {
+   "level": 1,
+   "title": "1 The Characters of the Story",
+   "pdf": 21
+  },
+  {
+   "level": 1,
+   "title": "2 Attention and Effort",
+   "pdf": 33
+  },
+  {
+   "level": 1,
+   "title": "3 The Lazy Controller",
+   "pdf": 41
+  },
+  {
+   "level": 1,
+   "title": "4 The Associative Machine",
+   "pdf": 52
+  },
+  {
+   "level": 1,
+   "title": "5 Cognitive Ease",
+   "pdf": 61
+  },
+  {
+   "level": 1,
+   "title": "6 Norms, Surprises, and Causes",
+   "pdf": 72
+  },
+  {
+   "level": 1,
+   "title": "7 A Machine for Jumping to Conclusions",
+   "pdf": 79
+  },
+  {
+   "level": 1,
+   "title": "8 How Judgments Happen",
+   "pdf": 89
+  },
+  {
+   "level": 1,
+   "title": "9 Answering an Easier Question",
+   "pdf": 97
+  },
+  {
+   "level": 0,
+   "title": "Part II Heuristics and Biases",
+   "pdf": 106
+  },
+  {
+   "level": 1,
+   "title": "10 The Law of Small Numbers",
+   "pdf": 108
+  },
+  {
+   "level": 1,
+   "title": "11 Anchors",
+   "pdf": 118
+  },
+  {
+   "level": 1,
+   "title": "12 The Science of Availability",
+   "pdf": 128
+  },
+  {
+   "level": 1,
+   "title": "13 Availability, Emotion, and Risk",
+   "pdf": 136
+  },
+  {
+   "level": 1,
+   "title": "14 Tom W’s Specialty",
+   "pdf": 144
+  },
+  {
+   "level": 1,
+   "title": "15 Linda: Less is More",
+   "pdf": 153
+  },
+  {
+   "level": 1,
+   "title": "16 Causes Trump Statistics",
+   "pdf": 163
+  },
+  {
+   "level": 1,
+   "title": "17 Regression to the Mean",
+   "pdf": 172
+  },
+  {
+   "level": 1,
+   "title": "18 Taming Intuitive Predictions",
+   "pdf": 182
+  },
+  {
+   "level": 0,
+   "title": "Part III Overconfidence",
+   "pdf": 193
+  },
+  {
+   "level": 1,
+   "title": "19 The Illusion of Understanding",
+   "pdf": 195
+  },
+  {
+   "level": 1,
+   "title": "20 The Illusion of Validity",
+   "pdf": 204
+  },
+  {
+   "level": 1,
+   "title": "21 Intuitions Vs. Formulas",
+   "pdf": 216
+  },
+  {
+   "level": 1,
+   "title": "22 Expert Intuition: When Can We Trust It?",
+   "pdf": 227
+  },
+  {
+   "level": 1,
+   "title": "23 The Outside View",
+   "pdf": 238
+  },
+  {
+   "level": 1,
+   "title": "24 The Engine of Capitalism",
+   "pdf": 248
+  },
+  {
+   "level": 0,
+   "title": "Part IV Choices",
+   "pdf": 259
+  },
+  {
+   "level": 1,
+   "title": "25 Bernoulli’s Errors",
+   "pdf": 261
+  },
+  {
+   "level": 1,
+   "title": "26 Prospect Theory",
+   "pdf": 270
+  },
+  {
+   "level": 1,
+   "title": "27 The Endowment Effect",
+   "pdf": 281
+  },
+  {
+   "level": 1,
+   "title": "28 Bad Events",
+   "pdf": 292
+  },
+  {
+   "level": 1,
+   "title": "29 The Fourfold Pattern",
+   "pdf": 302
+  },
+  {
+   "level": 1,
+   "title": "30 Rare Events",
+   "pdf": 314
+  },
+  {
+   "level": 1,
+   "title": "31 Risk Policies",
+   "pdf": 326
+  },
+  {
+   "level": 1,
+   "title": "32 Keeping Score",
+   "pdf": 334
+  },
+  {
+   "level": 1,
+   "title": "33 Reversals",
+   "pdf": 345
+  },
+  {
+   "level": 1,
+   "title": "34 Frames and Reality",
+   "pdf": 354
+  },
+  {
+   "level": 0,
+   "title": "Part V Two Selves",
+   "pdf": 366
+  },
+  {
+   "level": 1,
+   "title": "35 Two Selves",
+   "pdf": 368
+  },
+  {
+   "level": 1,
+   "title": "36 Life as a Story",
+   "pdf": 377
+  },
+  {
+   "level": 1,
+   "title": "37 Experienced Well-Being",
+   "pdf": 382
+  },
+  {
+   "level": 1,
+   "title": "38 Thinking About Life",
+   "pdf": 389
+  },
+  {
+   "level": 0,
+   "title": "Conclusions",
+   "pdf": 399
+  },
+  {
+   "level": 0,
+   "title": "Appendix A: Judgment Under Uncertainty: Heuristics and Biases",
+   "pdf": 410
+  },
+  {
+   "level": 1,
+   "title": "Notes (Appendix A)",
+   "pdf": 429
+  },
+  {
+   "level": 0,
+   "title": "Appendix B: Choices, Values, and Frames",
+   "pdf": 431
+  },
+  {
+   "level": 0,
+   "title": "Also by Daniel Kahneman",
+   "pdf": 453
+  },
+  {
+   "level": 0,
+   "title": "Acknowledgments",
+   "pdf": 454
+  },
+  {
+   "level": 0,
+   "title": "Notes",
+   "pdf": 455
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 501
+  },
+  {
+   "level": 0,
+   "title": "Copyright",
+   "pdf": 525
+  },
+  {
+   "level": 0,
+   "title": "Footnotes (ebook endnote pages)",
+   "pdf": 526
+  }
+ ]
+}

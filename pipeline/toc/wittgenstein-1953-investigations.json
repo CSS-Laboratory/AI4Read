@@ -1,0 +1,118 @@
+{
+ "work_id": "wittgenstein-1953-investigations",
+ "file": "analytic-philosophy/wittgenstein-1953-investigations.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "warning": "Edition: 4th edition (Hacker & Schulte revised translation, Wiley-Blackwell 2009), not the 1953 Anscombe text; Part II is renamed 'Philosophy of Psychology – A Fragment' (PPF) with its own remark numbers 1–372. eBook keeps only the English (odd, 'Ne') pages; the German facing pages and the German 'Register' (pp. 267–287) are absent.",
+ "method": "printed contents p. vii (pdf 11) gives only Part I / Part II. Numbered remarks, no chapters: divisions proposed by remark ranges (~15–33 pdf pages each) at commonly used thematic seams (e.g. §§243–315 private language, PPF xi aspect-seeing); each division's pdf = page where its first remark begins (remark numbers located in text; all 693 + 372 remarks found). Thematic subtitles are mine, so toc_check warnings on these titles are expected. Part I (§§1–693) pdf 34–210, printed 5e–181e; PPF pdf 212–273, 182e–243e. Division sizes: 30, 27, 33, 16, 24, 20, 27, 20, 22, 19 pdf pages. Part I title warning: no heading on pdf 34 (the remarks simply begin; the title page is pdf 29).",
+ "last_pdf_page": 330,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 11,
+   "printed": "vii"
+  },
+  {
+   "level": 0,
+   "title": "Editorial Preface to the Fourth Edition and Modified Translation",
+   "pdf": 12,
+   "printed": "viii"
+  },
+  {
+   "level": 0,
+   "title": "The Text of the Philosophische Untersuchungen",
+   "pdf": 22,
+   "printed": "xviii"
+  },
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 32,
+   "printed": "3e"
+  },
+  {
+   "level": 0,
+   "title": "Part I Philosophical Investigations",
+   "pdf": 34,
+   "printed": "5e"
+  },
+  {
+   "level": 1,
+   "title": "1 §§1–64 Augustine's picture, language-games, naming and simples",
+   "pdf": 34,
+   "printed": "5e"
+  },
+  {
+   "level": 1,
+   "title": "2 §§65–142 Family resemblance, exactness, philosophy, the general form of the proposition",
+   "pdf": 64,
+   "printed": "35e"
+  },
+  {
+   "level": 1,
+   "title": "3 §§143–242 Understanding, reading, following a rule",
+   "pdf": 91,
+   "printed": "62e"
+  },
+  {
+   "level": 1,
+   "title": "4 §§243–315 Private language and sensation",
+   "pdf": 124,
+   "printed": "95e"
+  },
+  {
+   "level": 1,
+   "title": "5 §§316–427 Thinking, imagination, the self and consciousness",
+   "pdf": 140,
+   "printed": "111e"
+  },
+  {
+   "level": 1,
+   "title": "6 §§428–546 Intentionality, expectation, justification, meaning and language",
+   "pdf": 164,
+   "printed": "135e"
+  },
+  {
+   "level": 1,
+   "title": "7 §§547–693 Negation, meaning, expecting, willing, intending, meaning something",
+   "pdf": 184,
+   "printed": "155e"
+  },
+  {
+   "level": 0,
+   "title": "Part II Philosophy of Psychology – A Fragment",
+   "pdf": 212,
+   "printed": "182e"
+  },
+  {
+   "level": 1,
+   "title": "8 PPF §§1–110 sections i–x: emotion, meaning-experience, belief, Moore's paradox",
+   "pdf": 213,
+   "printed": "183e"
+  },
+  {
+   "level": 1,
+   "title": "9 PPF §§111–260 section xi (first half): seeing aspects",
+   "pdf": 233,
+   "printed": "203e"
+  },
+  {
+   "level": 1,
+   "title": "10 PPF §§261–372 section xi (end) to xiv: inner and outer, certainty, imponderable evidence, concepts and nature",
+   "pdf": 255,
+   "printed": "225e"
+  },
+  {
+   "level": 0,
+   "title": "Endnotes",
+   "pdf": 274,
+   "printed": "244"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 297,
+   "printed": "288"
+  }
+ ]
+}

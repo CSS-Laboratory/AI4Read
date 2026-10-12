@@ -1,0 +1,224 @@
+{
+ "work_id": "katz-1955-personalinfluence",
+ "file": "communication-theory/katz-1955-personalinfluence.pdf.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "printed contents pp. vii-xii (pdf 11-16); Internet Archive scan (Free Press 1955 first edition, Allegheny College library copy) with OCR text. Offset printed+26 = pdf throughout; every chapter and appendix opening ('CHAPTER ...' page) confirmed in the text cache. The book numbers chapters I-VII in Part One and restarts at I-XV in Part Two; the arabic prefixes follow the book's per-part numbering, so '1'..'7' occur in both Parts. The book's intermediate 'Section One/Two/Three/Four' groupings are not given as entries: each Section title sits on the same page as its first chapter (Part One: Sec. 1 pdf 41, Sec. 2 pdf 69; Part Two: Sec. 1 pdf 163, Sec. 2 pdf 188, Sec. 3 pdf 245, Sec. 4 'Technical Appendices and Commentaries on the Research' pdf 361 = Appendix A). No chapter exceeds 35 pages (longest: Part One VI, pdf 108-141, 34 pp.), so unnumbered sub-headings are omitted. pdf 1-10 cover/library/title pages, pdf 25-26 half-title, pdf 427-435 endpapers/library slip, pdf 436 back-cover blurb.",
+ "last_pdf_page": 436,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Personal Influence (title page)",
+   "pdf": 7
+  },
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 11,
+   "printed": "vii"
+  },
+  {
+   "level": 0,
+   "title": "Acknowledgments",
+   "pdf": 17,
+   "printed": "xiii"
+  },
+  {
+   "level": 0,
+   "title": "Foreword, by Elmo Roper",
+   "pdf": 19,
+   "printed": "xv"
+  },
+  {
+   "level": 0,
+   "title": "Introduction",
+   "pdf": 27,
+   "printed": "1"
+  },
+  {
+   "level": 0,
+   "title": "Part One The Part Played by People: A New Focus for the Study of Mass Media Effects",
+   "pdf": 39,
+   "printed": "13"
+  },
+  {
+   "level": 1,
+   "title": "1 I. Between Media and Mass",
+   "pdf": 41,
+   "printed": "15"
+  },
+  {
+   "level": 1,
+   "title": "2 II. The Part Played by People",
+   "pdf": 57,
+   "printed": "31"
+  },
+  {
+   "level": 1,
+   "title": "3 III. An Essay in Convergence",
+   "pdf": 69,
+   "printed": "43"
+  },
+  {
+   "level": 1,
+   "title": "4 IV. Norms and Small Groups: The Shared Character of Opinions and Attitudes",
+   "pdf": 74,
+   "printed": "48"
+  },
+  {
+   "level": 1,
+   "title": "5 V. The Role of the Group in Influencing Change: Implications for Mass Media Research",
+   "pdf": 92,
+   "printed": "66"
+  },
+  {
+   "level": 1,
+   "title": "6 VI. Interpersonal Networks: Communicating within the Group",
+   "pdf": 108,
+   "printed": "82"
+  },
+  {
+   "level": 1,
+   "title": "7 VII. The Group and the World Outside: Implications for Mass Media Research",
+   "pdf": 142,
+   "printed": "116"
+  },
+  {
+   "level": 0,
+   "title": "Part Two The Flow of Everyday Influence in a Midwestern Community",
+   "pdf": 161,
+   "printed": "135"
+  },
+  {
+   "level": 1,
+   "title": "1 I. Criteria of Influence",
+   "pdf": 163,
+   "printed": "137"
+  },
+  {
+   "level": 1,
+   "title": "2 II. A Technique of Confirmation",
+   "pdf": 175,
+   "printed": "149"
+  },
+  {
+   "level": 1,
+   "title": "3 III. The Place of Impact Analysis in the Study of Influence",
+   "pdf": 188,
+   "printed": "162"
+  },
+  {
+   "level": 1,
+   "title": "4 IV. Searching for and Assessing the Impact of Various Influences",
+   "pdf": 193,
+   "printed": "167"
+  },
+  {
+   "level": 1,
+   "title": "5 V. Evaluating the Impact of Various Influences",
+   "pdf": 201,
+   "printed": "175"
+  },
+  {
+   "level": 1,
+   "title": "6 VI. The Role and Sequence of Various Influences",
+   "pdf": 213,
+   "printed": "187"
+  },
+  {
+   "level": 1,
+   "title": "7 VII. Some Further Technical Problems",
+   "pdf": 224,
+   "printed": "198"
+  },
+  {
+   "level": 1,
+   "title": "8 VIII. Variations in Impact",
+   "pdf": 234,
+   "printed": "208"
+  },
+  {
+   "level": 1,
+   "title": "9 IX. On Describing the Flow of Influence",
+   "pdf": 245,
+   "printed": "219"
+  },
+  {
+   "level": 1,
+   "title": "10 X. Marketing Leaders",
+   "pdf": 260,
+   "printed": "234"
+  },
+  {
+   "level": 1,
+   "title": "11 XI. Fashion Leaders",
+   "pdf": 273,
+   "printed": "247"
+  },
+  {
+   "level": 1,
+   "title": "12 XII. Public Affairs Leaders",
+   "pdf": 297,
+   "printed": "271"
+  },
+  {
+   "level": 1,
+   "title": "13 XIII. Movie Leaders",
+   "pdf": 322,
+   "printed": "296"
+  },
+  {
+   "level": 1,
+   "title": "14 XIV. The Two-Step Flow of Communication",
+   "pdf": 335,
+   "printed": "309"
+  },
+  {
+   "level": 1,
+   "title": "15 XV. A Summary of Influences and Influentials",
+   "pdf": 347,
+   "printed": "321"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Choice of the City",
+   "pdf": 361,
+   "printed": "335"
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. A Guide to the Questionnaire",
+   "pdf": 366,
+   "printed": "340"
+  },
+  {
+   "level": 1,
+   "title": "Appendix C. On Follow-up Interviewing and Analysis",
+   "pdf": 379,
+   "printed": "353"
+  },
+  {
+   "level": 1,
+   "title": "Appendix D. On the Construction of Indices (Including a Substantive Addendum on an Index of Popular-Fiction Consumption)",
+   "pdf": 395,
+   "printed": "369"
+  },
+  {
+   "level": 0,
+   "title": "Bibliography",
+   "pdf": 407,
+   "printed": "381"
+  },
+  {
+   "level": 0,
+   "title": "Index of Names",
+   "pdf": 420,
+   "printed": "394"
+  },
+  {
+   "level": 0,
+   "title": "Index of Subjects",
+   "pdf": 423,
+   "printed": "397"
+  }
+ ]
+}

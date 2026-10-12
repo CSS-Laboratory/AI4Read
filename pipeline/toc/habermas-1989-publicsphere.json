@@ -1,0 +1,241 @@
+{
+ "work_id": "habermas-1989-publicsphere",
+ "file": "communication-theory/habermas-1989-publicsphere.pdf.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "printed contents pp. vii-ix (pdf 6-8); MIT Press 1989 English translation (Burger/Lawrence), complete. Offset printed+21 = pdf, constant across the book; the 7 roman-numeral chapters (I-VII) and the 25 numbered sections (given here as '§N ...' so the planner treats them as sections, not chapters) were each located in the text cache at the expected page. Sections run on mid-page, so toc_check 'not found near top' warnings for level-1 entries are expected. Chapter 1 heading is on pdf 22 (pdf 20 = part half-title). Endnotes pdf 272-319, index pdf 320-322. The PDF's own outline (flat ~320 entries) was ignored. The Notes section (pdf 272) has no 'Notes' heading on the page (it opens with notes to the Preface), hence a harmless warning.",
+ "last_pdf_page": 322,
+ "entries": [
+  {
+   "level": 0,
+   "title": "The Structural Transformation of the Public Sphere (title page)",
+   "pdf": 2
+  },
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 6
+  },
+  {
+   "level": 0,
+   "title": "Introduction by Thomas McCarthy",
+   "pdf": 10,
+   "printed": "xi"
+  },
+  {
+   "level": 0,
+   "title": "Translator's Note",
+   "pdf": 14,
+   "printed": "xv"
+  },
+  {
+   "level": 0,
+   "title": "Author's Preface",
+   "pdf": 16,
+   "printed": "xvii"
+  },
+  {
+   "level": 0,
+   "title": "1 I. Introduction: Preliminary Demarcation of a Type of Bourgeois Public Sphere",
+   "pdf": 22,
+   "printed": "1"
+  },
+  {
+   "level": 1,
+   "title": "§1 The Initial Question",
+   "pdf": 22,
+   "printed": "1"
+  },
+  {
+   "level": 1,
+   "title": "§2 Remarks on the Type of Representative Publicness",
+   "pdf": 26,
+   "printed": "5"
+  },
+  {
+   "level": 1,
+   "title": "§3 On the Genesis of the Bourgeois Public Sphere",
+   "pdf": 35,
+   "printed": "14"
+  },
+  {
+   "level": 0,
+   "title": "2 II. Social Structures of the Public Sphere",
+   "pdf": 48,
+   "printed": "27"
+  },
+  {
+   "level": 1,
+   "title": "§4 The Basic Blueprint",
+   "pdf": 48,
+   "printed": "27"
+  },
+  {
+   "level": 1,
+   "title": "§5 Institutions of the Public Sphere",
+   "pdf": 52,
+   "printed": "31"
+  },
+  {
+   "level": 1,
+   "title": "§6 The Bourgeois Family and the Institutionalization of a Privateness Oriented to an Audience",
+   "pdf": 64,
+   "printed": "43"
+  },
+  {
+   "level": 1,
+   "title": "§7 The Public Sphere in the World of Letters in Relation to the Public Sphere in the Political Realm",
+   "pdf": 72,
+   "printed": "51"
+  },
+  {
+   "level": 0,
+   "title": "3 III. Political Functions of the Public Sphere",
+   "pdf": 78,
+   "printed": "57"
+  },
+  {
+   "level": 1,
+   "title": "§8 The Model Case of British Development",
+   "pdf": 78,
+   "printed": "57"
+  },
+  {
+   "level": 1,
+   "title": "§9 The Continental Variants",
+   "pdf": 88,
+   "printed": "67"
+  },
+  {
+   "level": 1,
+   "title": "§10 Civil Society as the Sphere of Private Autonomy: Private Law and a Liberalized Market",
+   "pdf": 94,
+   "printed": "73"
+  },
+  {
+   "level": 1,
+   "title": "§11 The Contradictory Institutionalization of the Public Sphere in the Bourgeois Constitutional State",
+   "pdf": 100,
+   "printed": "79"
+  },
+  {
+   "level": 0,
+   "title": "4 IV. The Bourgeois Public Sphere: Idea and Ideology",
+   "pdf": 110,
+   "printed": "89"
+  },
+  {
+   "level": 1,
+   "title": "§12 Public Opinion - Opinion Publique - Offentliche Meinung: On the Prehistory of the Phrase",
+   "pdf": 110,
+   "printed": "89"
+  },
+  {
+   "level": 1,
+   "title": "§13 Publicity as the Bridging Principle between Politics and Morality (Kant)",
+   "pdf": 123,
+   "printed": "102"
+  },
+  {
+   "level": 1,
+   "title": "§14 On the Dialectic of the Public Sphere (Hegel and Marx)",
+   "pdf": 138,
+   "printed": "117"
+  },
+  {
+   "level": 1,
+   "title": "§15 The Ambivalent View of the Public Sphere in the Theory of Liberalism (John Stuart Mill and Alexis de Tocqueville)",
+   "pdf": 150,
+   "printed": "129"
+  },
+  {
+   "level": 0,
+   "title": "5 V. The Social-Structural Transformation of the Public Sphere",
+   "pdf": 162,
+   "printed": "141"
+  },
+  {
+   "level": 1,
+   "title": "§16 The Tendency toward a Mutual Infiltration of Public and Private Spheres",
+   "pdf": 162,
+   "printed": "141"
+  },
+  {
+   "level": 1,
+   "title": "§17 The Polarization of the Social Sphere and the Intimate Sphere",
+   "pdf": 172,
+   "printed": "151"
+  },
+  {
+   "level": 1,
+   "title": "§18 From a Culture-Debating (kulturrasonierend) Public to a Culture-Consuming Public",
+   "pdf": 180,
+   "printed": "159"
+  },
+  {
+   "level": 1,
+   "title": "§19 The Blurred Blueprint: Developmental Pathways in the Disintegration of the Bourgeois Public Sphere",
+   "pdf": 196,
+   "printed": "175"
+  },
+  {
+   "level": 0,
+   "title": "6 VI. The Transformation of the Public Sphere's Political Function",
+   "pdf": 202,
+   "printed": "181"
+  },
+  {
+   "level": 1,
+   "title": "§20 From the Journalism of Private Men of Letters to the Public Consumer Services of the Mass Media: The Public Sphere as a Platform for Advertising",
+   "pdf": 202,
+   "printed": "181"
+  },
+  {
+   "level": 1,
+   "title": "§21 The Transmuted Function of the Principle of Publicity",
+   "pdf": 217,
+   "printed": "196"
+  },
+  {
+   "level": 1,
+   "title": "§22 Manufactured Publicity and Nonpublic Opinion: The Voting Behavior of the Population",
+   "pdf": 232,
+   "printed": "211"
+  },
+  {
+   "level": 1,
+   "title": "§23 The Political Public Sphere and the Transformation of the Liberal Constitutional State into a Social-Welfare State",
+   "pdf": 243,
+   "printed": "222"
+  },
+  {
+   "level": 0,
+   "title": "7 VII. On the Concept of Public Opinion",
+   "pdf": 257,
+   "printed": "236"
+  },
+  {
+   "level": 1,
+   "title": "§24 Public Opinion as a Fiction of Constitutional Law - and the Social-Psychological Liquidation of the Concept",
+   "pdf": 257,
+   "printed": "236"
+  },
+  {
+   "level": 1,
+   "title": "§25 A Sociological Attempt at Clarification",
+   "pdf": 265,
+   "printed": "244"
+  },
+  {
+   "level": 0,
+   "title": "Notes",
+   "pdf": 272,
+   "printed": "251"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 320,
+   "printed": "299"
+  }
+ ]
+}

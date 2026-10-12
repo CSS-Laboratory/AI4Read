@@ -41,11 +41,13 @@ SKIP_TITLE = re.compile(
     r"index$|^(subject|name|author|citation|topic|symbol) index|^bibliography|^references|^notes$|"
     r"^endnotes|^about the author|^also by|^photo credits|^colophon|^further reading|^glossary|"
     r"^frequently used notation|^notation$|^blank page|^praise for|^epigraph|^a bibliography of|"
-    r"^issue table of contents|^article contents",
+    r"^issue table of contents|^article contents|^back matter \(detected\)|\(title page\)|^supplement|^solutions|^corrections",
     re.I)
-PART_TITLE = re.compile(r"^(part\b|appendi(ces|xes)$)", re.I)
+PART_TITLE = re.compile(r"^(part\b|appendi(ces|xes)$|[IVX]{1,4}\s(?!\d))", re.I)
 CHAPTER_TITLE = re.compile(r"^(chapter\b|\d{1,2}\.?\s+(?!\d)[A-Za-z])", re.I)
-SECTION_TITLE = re.compile(r"^\d+\.\d+")
+SECTION_TITLE = re.compile(r"^(\d+\.\d+|\d+[A-Z]\b|§)")
+SIDE_TITLE = re.compile(r"^(afterword|coda|conclusions?\b|epilogue|interlude|addenda|postscript|prologue|"
+                        r"answers|overview|summary)", re.I)
 TAIL_TITLE = re.compile(r"^(exercises|problems|summary|further reading|bibliographic notes|"
                         r"historical notes|notes and references|review questions)", re.I)
 FRONT_TITLE = re.compile(r"^(preface|foreword|translators?.? note|series editor|a note for|note to)", re.I)
@@ -184,6 +186,7 @@ def spans(nodes, end):
 def chapters_from_tree(root, n_pages):
     """Return flat list of leaf 'chapter' nodes (with children = sections) in order."""
     out = []
+    part_no = [0]
 
     def visit(nodes, end, depth):
         spans(nodes, end)
@@ -205,9 +208,13 @@ def chapters_from_tree(root, n_pages):
             sectiony = kids and (sum(bool(SECTION_TITLE.match(k["title"])) for k in kids) > len(kids) / 2
                                  or sum(k["end"] - k["pdf"] + 1 for k in kids) / len(kids) < 6)
             chaptery = kids and sum(bool(CHAPTER_TITLE.match(k["title"])) for k in kids) > len(kids) / 2
-            is_part = len(kids) >= 2 and (PART_TITLE.match(n["title"]) or (chaptery and not sectiony))
-            is_container = is_part or (n_len > DESCEND_PAGES and len(kids) >= 2 and not sectiony)
+            is_part = (len(kids) >= 1 and PART_TITLE.match(n["title"]) and not sectiony) or \
+                (len(kids) >= 2 and chaptery and not sectiony)
+            is_container = is_part or (n_len > DESCEND_PAGES and len(kids) >= 2 and not sectiony and chaptery)
             if is_container:
+                part_no[0] += 1
+                for k in kids:
+                    k["_part"] = part_no[0]
                 # pages between container start and first child (part title page / intro)
                 if kids[0]["pdf"] - n["pdf"] >= 3:
                     out.append({"title": n["title"] + " (opening)", "pdf": n["pdf"],
@@ -264,7 +271,10 @@ def split_ranges(a, b, cut_candidates):
             c, how = ideal, "even"
         bounds.append(c)
     bounds.append(b + 1)
-    return [(bounds[i], bounds[i + 1] - 1, how) for i in range(len(bounds) - 1)]
+    out = [(bounds[i], bounds[i + 1] - 1, how) for i in range(len(bounds) - 1)]
+    if any(y - x + 1 > SPLIT_PAGES for x, y, _ in out):
+        return split_ranges(a, b, [])
+    return out
 
 
 HEAD = re.compile(r"^\s{0,6}(\d{1,2}\.\d{1,2})\s+[A-Z]")
@@ -293,7 +303,7 @@ def unit_rows(work, cat, pdf, pages, pr, kinds, structure, note=""):
             "est_tokens": est_input_tokens(chars, img, b - a + 1),
             "tier": cat.get("tier", ""), "field": cat.get("slug", ""),
             "type": cat.get("type", ""), "kind": kind, "structure": structure,
-            "action": action, "note": why or note,
+            "action": action, "note": "; ".join(x for x in (why, note) if x),
         })
 
     return rows, add
@@ -334,6 +344,8 @@ def plan_pdf(p, work, cat, dup_note=""):
         chs = None
         structure = f"needs-toc ({why or 'no outline'})"
 
+    if toc and tocd.get("warning"):
+        dup_note = ("WARNING: " + tocd["warning"])[:300]
     rows, add = unit_rows(work, cat, p, pages, pr, kinds, structure + (" scan" if is_scan else ""), dup_note)
     if chs is None:
         add("whole", "(needs table of contents)", 1, n, "book", action="needs-toc",
@@ -359,6 +371,19 @@ def plan_pdf(p, work, cat, dup_note=""):
         merged.append(ch)
     chs = merged
 
+    BACK = re.compile(r"^\s*(notes|bibliography|references|index|works cited|glossary)\s*$", re.I)
+    body_idx = [i for i, ch in enumerate(chs) if not ch.get("_whole") and classify_title(ch["title"]) == "body"]
+    if body_idx and not ch_is_paper(chs):
+        last = chs[body_idx[-1]]
+        for pg in range(last["pdf"] + 2, last["end"] + 1):
+            head = [l for l in pages[pg - 1].splitlines() if l.strip()][:3]
+            if any(BACK.match(l) for l in head):
+                tail = {"title": "Back matter (detected)", "pdf": pg, "end": last["end"], "children": []}
+                last["end"] = pg - 1
+                chs.insert(body_idx[-1] + 1, tail)
+                break
+    numbered = any(chapter_number(ch["title"]) is not None for ch in chs if not ch.get("_whole"))
+
     used_ids = Counter()
     seq = 0
     for ch in chs:
@@ -374,17 +399,24 @@ def plan_pdf(p, work, cat, dup_note=""):
             base, kind = f"x-{slug(t, 2)}", "back"
         else:
             num = chapter_number(t)
-            if re.match(r"^appendi", t, re.I):
+            m2 = re.match(r"^appendix to chapter (\d+)", t, re.I)
+            if m2:
+                base, kind = f"app-ch{int(m2.group(1)):02d}", "appendix"
+            elif re.match(r"^appendi", t, re.I):
                 m = re.match(r"^appendi\w*\s*\*?([A-Z0-9ivx]+)?", t, re.I)
                 base = f"app{(m.group(1) or '').lower()}-{slug(t)}".replace("app-", "app-")
                 kind = "appendix"
             elif cls == "front":
                 base, kind = f"front-{slug(t)}", "front"
-            elif re.match(r"^introduction", t, re.I) and num is None:
+            elif re.match(r"^introduction", t, re.I) and num is None and numbered:
                 base, kind = "ch00-introduction", "chapter"
+            elif num is None and SIDE_TITLE.match(t):
+                base, kind = slug(t, 2), "chapter"       # Afterword, Coda, Conclusion, Interlude ...
             else:
                 seq += 1
                 base, kind = f"ch{(num if num is not None else seq):02d}-{slug(t)}", "chapter"
+        if used_ids[base] and ch.get("_part"):      # chapter numbers restart in a new Part
+            base = f"pt{ch['_part']}-{base}"
         used_ids[base] += 1
         if used_ids[base] > 1:
             base = f"{base}-{used_ids[base]}"
@@ -409,6 +441,10 @@ def plan_pdf(p, work, cat, dup_note=""):
 
 
 H2 = "\u00a7H2\u00a7"
+
+
+def ch_is_paper(chs):
+    return len(chs) == 1 and chs[0].get("_whole")
 
 
 def html_clean(p):
@@ -529,8 +565,26 @@ def plan():
     for p in files:
         w = match_id(file_stem(p), cat)
         by_work.setdefault(w, []).append(p)
+    # identical text content under two different work ids: digest it once
+    import hashlib
+    seen_hash, same_as = {}, {}
+    for work, ps in sorted(by_work.items(), key=lambda kv: str(kv[0])):
+        for p in ps:
+            tc = PIPE / "_work" / "text" / (p.name + ".txt")
+            if p.suffix == ".pdf" and tc.exists() and tc.stat().st_size > 1000:
+                h = hashlib.sha1(tc.read_bytes()).hexdigest()
+                if h in seen_hash and seen_hash[h] != work:
+                    same_as[work] = seen_hash[h]
+                seen_hash.setdefault(h, work)
     rows = []
     for work, ps in sorted(by_work.items(), key=lambda kv: str(kv[0])):
+        if work in same_as:
+            c = cat.get(work, {})
+            rows.append({"work_id": work, "unit_id": "-", "title": "(same text as another work)", "action": "skip",
+                         "tier": c.get("tier", ""), "field": c.get("slug", ""), "type": c.get("type", ""),
+                         "file": str(ps[0].relative_to(LIB)),
+                         "note": f"PDF text identical to {same_as[work]}; digested once there — need the real edition"})
+            continue
         c = cat.get(work, {})
         if work is None:
             for p in ps:

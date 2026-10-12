@@ -1,0 +1,25 @@
+{
+ "work_id": "shannon-1949-mathematical-theory",
+ "file": "communication-theory/shannon-1949-mathematical.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "No chapters or printed contents: a single paper with numbered sections §§1–29 grouped by the author into Parts I–V plus Appendices 1–7. Proposed three divisions on the author's Part boundaries (headings located in the text cache): Introduction + Part I (pdf 1–18, §§1–10), Part II with Appendices 1–4 that close the first BSTJ installment (pdf 19–31, §§11–17), and Parts III–V with Acknowledgments and Appendices 5–7, i.e. the second (October) installment (pdf 32–55, §§18–29). Parts III, IV, V alone would be only 9, 6 and 8 pages, so they are kept together. toc_check warning on entry #0 is harmless: the OCR spaces small caps ('I NTRODUCTION') and the Part I heading itself is on pdf 3.",
+ "warning": "EDITION/DUPLICATE: this PDF is the 55-page Bell Labs reprint of the 1948 BSTJ article ('Reprinted with corrections from The Bell System Technical Journal, Vol. 27, 1948'), not the 1949 University of Illinois Press book with Weaver's introductory essay; its text cache is byte-identical to shannon-1948-mathematical.pdf, so this work duplicates the 1948 paper in the library.",
+ "last_pdf_page": 55,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Introduction and Part I: Discrete Noiseless Systems (§§1–10)",
+   "pdf": 1
+  },
+  {
+   "level": 0,
+   "title": "Part II: The Discrete Channel with Noise (§§11–17; Appendices 1–4)",
+   "pdf": 19
+  },
+  {
+   "level": 0,
+   "title": "Parts III–V: Mathematical Preliminaries, The Continuous Channel, The Rate for a Continuous Source (§§18–29; Acknowledgments; Appendices 5–7)",
+   "pdf": 32
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+  "work_id": "converse-1964-beliefsystems",
+  "file": "political-science/converse-1964-beliefsystems.pdf.pdf",
+  "made_by": "toc agent 2026-10-12",
+  "method": "No printed contents (single long essay). Edition: 2006 reprint in Critical Review 18(1-3), printed pp. 1-74, downloaded from Taylor & Francis (pdf 1-2 = publisher download/terms page). Body = introduction + the author's own roman-numeral sections I-X, all found in text (most start mid-page, hence toc_check 'not found near top' warnings for those level-1 entries). Per rule 6 the sections are grouped into three level-0 divisions of 17, 20 and 28 pages, each listing its sections at level 1. Section IX (Summary) runs pdf 55-66 and contains the historical illustrations (French clerical question, abolition and the Republican party, the Nazi mass base). Endnotes start mid-page on pdf 68 just below the last lines of X. Conclusion, so the final half page of the conclusion falls on the Notes page.",
+  "last_pdf_page": 76,
+  "entries": [
+    {"level": 0, "title": "Cover page (Taylor & Francis download notice)", "pdf": 1},
+    {"level": 0, "title": "1 Introduction and sections I-III: terms, sources of constraint, active use of ideological dimensions", "pdf": 3, "printed": "1"},
+    {"level": 1, "title": "Introduction (The Nature of Belief Systems in Mass Publics)", "pdf": 3, "printed": "1"},
+    {"level": 1, "title": "I. Some Clarification of Terms", "pdf": 5, "printed": "3"},
+    {"level": 1, "title": "II. Sources of Constraint on Idea-Elements", "pdf": 7, "printed": "5"},
+    {"level": 1, "title": "III. Active Use of Ideological Dimensions of Judgment", "pdf": 13, "printed": "11"},
+    {"level": 0, "title": "2 Sections IV-V: recognition of ideological dimensions; constraints among idea-elements", "pdf": 20, "printed": "18"},
+    {"level": 1, "title": "IV. Recognition of Ideological Dimensions of Judgment", "pdf": 20, "printed": "18"},
+    {"level": 1, "title": "V. Constraints among Idea-Elements", "pdf": 31, "printed": "29"},
+    {"level": 0, "title": "3 Sections VI-X: social groupings, stability over time, issue publics, summary, conclusion", "pdf": 40, "printed": "38"},
+    {"level": 1, "title": "VI. Social Groupings as Central Objects in Belief Systems", "pdf": 40, "printed": "38"},
+    {"level": 1, "title": "VII. The Stability of Belief Elements over Time", "pdf": 46, "printed": "44"},
+    {"level": 1, "title": "VIII. Issue Publics", "pdf": 54, "printed": "52"},
+    {"level": 1, "title": "IX. Summary", "pdf": 55, "printed": "53"},
+    {"level": 1, "title": "X. Conclusion", "pdf": 67, "printed": "65"},
+    {"level": 0, "title": "Notes", "pdf": 68, "printed": "66"}
+  ]
+}

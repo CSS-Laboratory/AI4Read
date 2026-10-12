@@ -1,0 +1,123 @@
+{
+ "work_id": "pierce-1980-introduction",
+ "file": "information-theory/pierce-1980-introduction.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "printed contents p. vii (pdf 11); offset printed+16 throughout; every 'CHAPTER <roman>' heading located in the text cache (OCR garbles several roman numerals). No chapter exceeds 35 pdf pages (longest: 5 Entropy, 29 pp.), so sections are omitted. pdf 1-10 are library scan/cover/title pages; pdf 322-328 are blank/library end pages.",
+ "warning": "EDITION: this PDF is the 1961 Harper & Brothers first edition 'Symbols, Signals and Noise: The Nature and Process of Communication' (library scan), not the 1980 Dover 2nd revised edition 'An Introduction to Information Theory: Symbols, Signals and Noise' that the work_id implies; the Dover edition's added preface and revisions are absent.",
+ "last_pdf_page": 328,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 11
+  },
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 13,
+   "printed": "ix"
+  },
+  {
+   "level": 0,
+   "title": "1 The World and Theories",
+   "pdf": 17,
+   "printed": "1"
+  },
+  {
+   "level": 0,
+   "title": "2 The Origins of Information Theory",
+   "pdf": 35,
+   "printed": "19"
+  },
+  {
+   "level": 0,
+   "title": "3 A Mathematical Model",
+   "pdf": 61,
+   "printed": "45"
+  },
+  {
+   "level": 0,
+   "title": "4 Encoding and Binary Digits",
+   "pdf": 80,
+   "printed": "64"
+  },
+  {
+   "level": 0,
+   "title": "5 Entropy",
+   "pdf": 94,
+   "printed": "78"
+  },
+  {
+   "level": 0,
+   "title": "6 Language and Meaning",
+   "pdf": 123,
+   "printed": "107"
+  },
+  {
+   "level": 0,
+   "title": "7 Efficient Encoding",
+   "pdf": 141,
+   "printed": "125"
+  },
+  {
+   "level": 0,
+   "title": "8 The Noisy Channel",
+   "pdf": 161,
+   "printed": "145"
+  },
+  {
+   "level": 0,
+   "title": "9 Many Dimensions",
+   "pdf": 182,
+   "printed": "166"
+  },
+  {
+   "level": 0,
+   "title": "10 Information Theory and Physics",
+   "pdf": 200,
+   "printed": "184"
+  },
+  {
+   "level": 0,
+   "title": "11 Cybernetics",
+   "pdf": 224,
+   "printed": "208"
+  },
+  {
+   "level": 0,
+   "title": "12 Information Theory and Psychology",
+   "pdf": 245,
+   "printed": "229"
+  },
+  {
+   "level": 0,
+   "title": "13 Information Theory and Art",
+   "pdf": 266,
+   "printed": "250"
+  },
+  {
+   "level": 0,
+   "title": "14 Back to Communication Theory",
+   "pdf": 284,
+   "printed": "268"
+  },
+  {
+   "level": 0,
+   "title": "Appendix: On Mathematical Notation",
+   "pdf": 294,
+   "printed": "278"
+  },
+  {
+   "level": 0,
+   "title": "Glossary",
+   "pdf": 303,
+   "printed": "287"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 311,
+   "printed": "295"
+  }
+ ]
+}

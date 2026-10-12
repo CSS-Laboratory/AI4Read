@@ -1,0 +1,50 @@
+{
+ "work_id": "kripke-1980-naming",
+ "file": "analytic-philosophy/kripke-1980-naming.pdf.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "printed contents p. [vii] (pdf 7); every heading found in text (offset printed+8). Harvard UP 1980 book edition (12th printing 2001). Lectures I (49 pp) and III (50 pp) have no internal section headings, so the planner will split them evenly. The 1980 Preface (pdf 9-29, 21 pp) is substantive (rigid designation restated) - worth re-enabling though it is classed front matter. toc_check warning on Index is OCR spacing (\"IND EX\") - harmless.",
+ "last_pdf_page": 180,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 7
+  },
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 9,
+   "printed": "1"
+  },
+  {
+   "level": 0,
+   "title": "1 Lecture I: January 20, 1970",
+   "pdf": 30,
+   "printed": "22"
+  },
+  {
+   "level": 0,
+   "title": "2 Lecture II: January 22, 1970",
+   "pdf": 79,
+   "printed": "71"
+  },
+  {
+   "level": 0,
+   "title": "3 Lecture III: January 29, 1970",
+   "pdf": 114,
+   "printed": "106"
+  },
+  {
+   "level": 0,
+   "title": "Addenda",
+   "pdf": 164,
+   "printed": "156"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 173,
+   "printed": "165"
+  }
+ ]
+}

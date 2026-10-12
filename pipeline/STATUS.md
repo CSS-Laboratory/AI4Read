@@ -1,10 +1,10 @@
 # Digest pipeline — status
 
-- **Stage:** Gate 0 → Gate 1 (unit plan in progress)
+- **Stage:** Gate 1 — unit plan ready, **waiting for review** (`pipeline/reviews/gate1.md`)
 - **Mode:** pause
 - **Spent:** < $0.01 of $280 cap
-- **Gate 0:** online call OK · bucket OK · budget ¥48,000 OK · batch smoke job in `us` still RUNNING (submitted 16:45; Vertex batch can take hours)
-- **Gate 1 so far:** 169 source files → 167 works; draft `units.csv` covers 142 works; 25 books need a table of contents (being built now)
-- **Found:** 2 duplicate files (Shiller, Osborne); 6 HTML stubs (abstract pages only); 6 scanned PDFs; Cover PDF = 1991 1st edition
-- **Next:** finish TOCs → full `units.csv` + cost forecast → stop for gate1 review
-- **Blockers:** none
+- **Plan:** 1271 units · 22,093 pages · 160 works · est. ≈ $160 total (uncalibrated)
+- **Gate 0:** all OK except batch smoke job — still RUNNING in `us` since 16:45 (no errors)
+- **Needs Kunhao:** wrong Lycan PDF · Osborne is a draft · 6 HTML stubs · Shiller duplicate → see `pipeline/GATE1.md`
+- **Next:** after review + batch result → build passes → Gate 2 pilot
+- **Blockers:** gate1 review

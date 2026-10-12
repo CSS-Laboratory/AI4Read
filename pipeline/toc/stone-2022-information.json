@@ -1,0 +1,151 @@
+{
+ "work_id": "stone-2022-information",
+ "file": "information-theory/stone-2022-information.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "printed contents (pdf 9-12); offset printed+16 throughout; every 'Chapter N' and 'Appendix X' heading located in the text cache. Preface (pdf 13-15) contains both 'Preface to the First Edition' and 'Preface to the Second Edition'. No chapter exceeds 35 pdf pages (longest: 3 and 4, 34 pp.), so sections are omitted. Second edition (Sebtel Press 2022), complete.",
+ "last_pdf_page": 292,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 9
+  },
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 13
+  },
+  {
+   "level": 0,
+   "title": "1 What Is Information?",
+   "pdf": 17,
+   "printed": "1"
+  },
+  {
+   "level": 0,
+   "title": "2 Entropy of Discrete Variables",
+   "pdf": 37,
+   "printed": "21"
+  },
+  {
+   "level": 0,
+   "title": "3 The Source Coding Theorem",
+   "pdf": 61,
+   "printed": "45"
+  },
+  {
+   "level": 0,
+   "title": "4 The Noisy Channel Coding Theorem",
+   "pdf": 95,
+   "printed": "79"
+  },
+  {
+   "level": 0,
+   "title": "5 Entropy of Continuous Variables",
+   "pdf": 129,
+   "printed": "113"
+  },
+  {
+   "level": 0,
+   "title": "6 Mutual Information: Continuous",
+   "pdf": 151,
+   "printed": "135"
+  },
+  {
+   "level": 0,
+   "title": "7 Channel Capacity: Continuous",
+   "pdf": 169,
+   "printed": "153"
+  },
+  {
+   "level": 0,
+   "title": "8 Rate Distortion Theory",
+   "pdf": 189,
+   "printed": "173"
+  },
+  {
+   "level": 0,
+   "title": "9 Transfer Entropy",
+   "pdf": 211,
+   "printed": "195"
+  },
+  {
+   "level": 0,
+   "title": "10 Thermodynamic Entropy and Information",
+   "pdf": 219,
+   "printed": "203"
+  },
+  {
+   "level": 0,
+   "title": "11 Information As Nature’s Currency",
+   "pdf": 233,
+   "printed": "217"
+  },
+  {
+   "level": 0,
+   "title": "Further Reading",
+   "pdf": 255,
+   "printed": "239"
+  },
+  {
+   "level": 0,
+   "title": "Appendix A Glossary",
+   "pdf": 257,
+   "printed": "241"
+  },
+  {
+   "level": 0,
+   "title": "Appendix B Mathematical Symbols",
+   "pdf": 263,
+   "printed": "247"
+  },
+  {
+   "level": 0,
+   "title": "Appendix C Logarithms",
+   "pdf": 267,
+   "printed": "251"
+  },
+  {
+   "level": 0,
+   "title": "Appendix D Probability Density Functions",
+   "pdf": 269,
+   "printed": "253"
+  },
+  {
+   "level": 0,
+   "title": "Appendix E Averages From Distributions",
+   "pdf": 273,
+   "printed": "257"
+  },
+  {
+   "level": 0,
+   "title": "Appendix F The Rules of Probability",
+   "pdf": 275,
+   "printed": "259"
+  },
+  {
+   "level": 0,
+   "title": "Appendix G The Gaussian Distribution",
+   "pdf": 279,
+   "printed": "263"
+  },
+  {
+   "level": 0,
+   "title": "Appendix H Key Equations",
+   "pdf": 281,
+   "printed": "265"
+  },
+  {
+   "level": 0,
+   "title": "Bibliography",
+   "pdf": 283,
+   "printed": "267"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 289,
+   "printed": "273"
+  }
+ ]
+}

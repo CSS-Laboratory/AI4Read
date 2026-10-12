@@ -1,0 +1,200 @@
+{
+ "work_id": "lupia-1998-dilemma",
+ "file": "political-science/lupia-1998-dilemma.pdf.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "printed contents pp. vii-viii (pdf 9-10); Cambridge UP 1998 (Lupia & McCubbins), complete scan with OCR. Offset printed+16 = pdf throughout; every chapter, part title, appendix and back-matter heading found at the top of its page in the text cache. Sections given for ch. 7 (48 pp.) and ch. 8 (35 pp.). The contents' page for the ch. 7 Conclusion is OCR-garbled ('147'); the heading is actually on printed 144 = pdf 160. Part III contains only ch. 10. pdf 1-8 cover/blurb/series/title/copyright/dedication; pdf 300 back-cover praise. The one toc_check warning (ch. 7 'Experiments on Persuasion and Reasoned Choice', pdf 128) is harmless: heading is mid-page.",
+ "last_pdf_page": 300,
+ "entries": [
+  {
+   "level": 0,
+   "title": "The Democratic Dilemma (title page)",
+   "pdf": 5
+  },
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 9,
+   "printed": "vii"
+  },
+  {
+   "level": 0,
+   "title": "List of Tables and Figures",
+   "pdf": 11,
+   "printed": "ix"
+  },
+  {
+   "level": 0,
+   "title": "Series Editors' Preface",
+   "pdf": 13,
+   "printed": "xi"
+  },
+  {
+   "level": 0,
+   "title": "Acknowledgments",
+   "pdf": 15,
+   "printed": "xiii"
+  },
+  {
+   "level": 0,
+   "title": "1 Knowledge and the Foundation of Democracy",
+   "pdf": 17,
+   "printed": "1"
+  },
+  {
+   "level": 0,
+   "title": "Part I Theory",
+   "pdf": 31,
+   "printed": "15"
+  },
+  {
+   "level": 1,
+   "title": "2 How People Learn",
+   "pdf": 33,
+   "printed": "17"
+  },
+  {
+   "level": 1,
+   "title": "3 How People Learn from Others",
+   "pdf": 55,
+   "printed": "39"
+  },
+  {
+   "level": 1,
+   "title": "4 What People Learn from Others",
+   "pdf": 84,
+   "printed": "68"
+  },
+  {
+   "level": 1,
+   "title": "5 Delegation and Democracy",
+   "pdf": 95,
+   "printed": "79"
+  },
+  {
+   "level": 0,
+   "title": "Part II Experiments",
+   "pdf": 111,
+   "printed": "95"
+  },
+  {
+   "level": 1,
+   "title": "6 Theory, Predictions, and the Scientific Method",
+   "pdf": 113,
+   "printed": "97"
+  },
+  {
+   "level": 1,
+   "title": "7 Laboratory Experiments on Information, Persuasion, and Choice",
+   "pdf": 117,
+   "printed": "101"
+  },
+  {
+   "level": 2,
+   "title": "Experimental Design",
+   "pdf": 120,
+   "printed": "104"
+  },
+  {
+   "level": 2,
+   "title": "Experiments on Persuasion and Reasoned Choice",
+   "pdf": 128,
+   "printed": "112"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 160,
+   "printed": "144"
+  },
+  {
+   "level": 1,
+   "title": "8 Laboratory Experiments on Delegation",
+   "pdf": 165,
+   "printed": "149"
+  },
+  {
+   "level": 2,
+   "title": "Experimental Design",
+   "pdf": 166,
+   "printed": "150"
+  },
+  {
+   "level": 2,
+   "title": "Experiments on Delegation",
+   "pdf": 174,
+   "printed": "158"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 198,
+   "printed": "182"
+  },
+  {
+   "level": 1,
+   "title": "9 A Survey Experiment on the Conditions for Persuasion",
+   "pdf": 200,
+   "printed": "184"
+  },
+  {
+   "level": 0,
+   "title": "Part III Implications for Institutional Design",
+   "pdf": 219,
+   "printed": "203"
+  },
+  {
+   "level": 1,
+   "title": "10 The Institutions of Knowledge",
+   "pdf": 221,
+   "printed": "205"
+  },
+  {
+   "level": 0,
+   "title": "Afterword",
+   "pdf": 245,
+   "printed": "229"
+  },
+  {
+   "level": 0,
+   "title": "Appendices",
+   "pdf": 247,
+   "printed": "231"
+  },
+  {
+   "level": 1,
+   "title": "Appendix to Chapter 2",
+   "pdf": 249,
+   "printed": "233"
+  },
+  {
+   "level": 1,
+   "title": "Appendix to Chapter 3",
+   "pdf": 256,
+   "printed": "240"
+  },
+  {
+   "level": 1,
+   "title": "Appendix to Chapter 5",
+   "pdf": 273,
+   "printed": "257"
+  },
+  {
+   "level": 0,
+   "title": "References",
+   "pdf": 277,
+   "printed": "261"
+  },
+  {
+   "level": 0,
+   "title": "Author Index",
+   "pdf": 293,
+   "printed": "277"
+  },
+  {
+   "level": 0,
+   "title": "Subject Index",
+   "pdf": 297,
+   "printed": "281"
+  }
+ ]
+}

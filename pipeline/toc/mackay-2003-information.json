@@ -1,0 +1,413 @@
+{
+ "work_id": "mackay-2003-information",
+ "file": "bayesian/mackay-2003-information.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "printed contents pp. iii-iv (pdf 3-4); offset printed+12 throughout; every Part page and chapter-number heading located in the text cache. Chapters 1-3 precede Part I and are given at level 0. Where a chapter is preceded by a 1-2 page 'About Chapter N' prologue (prerequisites/orientation for that chapter: chs 1,3,4,5,6,9,10,11,12,13,14,29,31,45,50), the chapter entry starts at the About page so the prologue travels with its chapter (actual heading page in 'note'); toc_check warnings on those entries are expected. 'About Part IV' (pdf 294-295) is left inside the Part IV opening pages. No chapter exceeds 35 pdf pages, so sections are omitted. Appendices A-C sit in Part VII. Complete 2003 CUP on-screen edition (version 7.2, 640 pp.).",
+ "last_pdf_page": 640,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 3
+  },
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 5,
+   "printed": "v"
+  },
+  {
+   "level": 0,
+   "title": "Acknowledgments",
+   "pdf": 12,
+   "printed": "xii"
+  },
+  {
+   "level": 0,
+   "title": "1 Introduction to Information Theory",
+   "pdf": 13,
+   "printed": "1",
+   "note": "starts at 'About Chapter 1' page; chapter heading on pdf 15"
+  },
+  {
+   "level": 0,
+   "title": "2 Probability, Entropy, and Inference",
+   "pdf": 34,
+   "printed": "22"
+  },
+  {
+   "level": 0,
+   "title": "3 More about Inference",
+   "pdf": 59,
+   "printed": "47",
+   "note": "starts at 'About Chapter 3' page; chapter heading on pdf 60"
+  },
+  {
+   "level": 0,
+   "title": "Part I Data Compression",
+   "pdf": 77,
+   "printed": "65"
+  },
+  {
+   "level": 1,
+   "title": "4 The Source Coding Theorem",
+   "pdf": 78,
+   "printed": "66",
+   "note": "starts at 'About Chapter 4' page; chapter heading on pdf 79"
+  },
+  {
+   "level": 1,
+   "title": "5 Symbol Codes",
+   "pdf": 102,
+   "printed": "90",
+   "note": "starts at 'About Chapter 5' page; chapter heading on pdf 103"
+  },
+  {
+   "level": 1,
+   "title": "6 Stream Codes",
+   "pdf": 121,
+   "printed": "109",
+   "note": "starts at 'About Chapter 6' page; chapter heading on pdf 122"
+  },
+  {
+   "level": 1,
+   "title": "7 Codes for Integers",
+   "pdf": 144,
+   "printed": "132"
+  },
+  {
+   "level": 0,
+   "title": "Part II Noisy-Channel Coding",
+   "pdf": 149,
+   "printed": "137"
+  },
+  {
+   "level": 1,
+   "title": "8 Dependent Random Variables",
+   "pdf": 150,
+   "printed": "138"
+  },
+  {
+   "level": 1,
+   "title": "9 Communication over a Noisy Channel",
+   "pdf": 157,
+   "printed": "145",
+   "note": "starts at 'About Chapter 9' page; chapter heading on pdf 158"
+  },
+  {
+   "level": 1,
+   "title": "10 The Noisy-Channel Coding Theorem",
+   "pdf": 173,
+   "printed": "161",
+   "note": "starts at 'About Chapter 10' page; chapter heading on pdf 174"
+  },
+  {
+   "level": 1,
+   "title": "11 Error-Correcting Codes and Real Channels",
+   "pdf": 188,
+   "printed": "176",
+   "note": "starts at 'About Chapter 11' page; chapter heading on pdf 189"
+  },
+  {
+   "level": 0,
+   "title": "Part III Further Topics in Information Theory",
+   "pdf": 203,
+   "printed": "191"
+  },
+  {
+   "level": 1,
+   "title": "12 Hash Codes: Codes for Efficient Information Retrieval",
+   "pdf": 204,
+   "printed": "192",
+   "note": "starts at 'About Chapter 12' page; chapter heading on pdf 205"
+  },
+  {
+   "level": 1,
+   "title": "13 Binary Codes",
+   "pdf": 217,
+   "printed": "205",
+   "note": "starts at 'About Chapter 13' page; chapter heading on pdf 218"
+  },
+  {
+   "level": 1,
+   "title": "14 Very Good Linear Codes Exist",
+   "pdf": 240,
+   "printed": "228",
+   "note": "starts at 'About Chapter 14' page; chapter heading on pdf 241"
+  },
+  {
+   "level": 1,
+   "title": "15 Further Exercises on Information Theory",
+   "pdf": 245,
+   "printed": "233"
+  },
+  {
+   "level": 1,
+   "title": "16 Message Passing",
+   "pdf": 253,
+   "printed": "241"
+  },
+  {
+   "level": 1,
+   "title": "17 Communication over Constrained Noiseless Channels",
+   "pdf": 260,
+   "printed": "248"
+  },
+  {
+   "level": 1,
+   "title": "18 Crosswords and Codebreaking",
+   "pdf": 272,
+   "printed": "260"
+  },
+  {
+   "level": 1,
+   "title": "19 Why have Sex? Information Acquisition and Evolution",
+   "pdf": 281,
+   "printed": "269"
+  },
+  {
+   "level": 0,
+   "title": "Part IV Probabilities and Inference",
+   "pdf": 293,
+   "printed": "281"
+  },
+  {
+   "level": 1,
+   "title": "20 An Example Inference Task: Clustering",
+   "pdf": 296,
+   "printed": "284"
+  },
+  {
+   "level": 1,
+   "title": "21 Exact Inference by Complete Enumeration",
+   "pdf": 305,
+   "printed": "293"
+  },
+  {
+   "level": 1,
+   "title": "22 Maximum Likelihood and Clustering",
+   "pdf": 312,
+   "printed": "300"
+  },
+  {
+   "level": 1,
+   "title": "23 Useful Probability Distributions",
+   "pdf": 323,
+   "printed": "311"
+  },
+  {
+   "level": 1,
+   "title": "24 Exact Marginalization",
+   "pdf": 331,
+   "printed": "319"
+  },
+  {
+   "level": 1,
+   "title": "25 Exact Marginalization in Trellises",
+   "pdf": 336,
+   "printed": "324"
+  },
+  {
+   "level": 1,
+   "title": "26 Exact Marginalization in Graphs",
+   "pdf": 346,
+   "printed": "334"
+  },
+  {
+   "level": 1,
+   "title": "27 Laplace’s Method",
+   "pdf": 353,
+   "printed": "341"
+  },
+  {
+   "level": 1,
+   "title": "28 Model Comparison and Occam’s Razor",
+   "pdf": 355,
+   "printed": "343"
+  },
+  {
+   "level": 1,
+   "title": "29 Monte Carlo Methods",
+   "pdf": 368,
+   "printed": "356",
+   "note": "starts at 'About Chapter 29' page; chapter heading on pdf 369"
+  },
+  {
+   "level": 1,
+   "title": "30 Efficient Monte Carlo Methods",
+   "pdf": 399,
+   "printed": "387"
+  },
+  {
+   "level": 1,
+   "title": "31 Ising Models",
+   "pdf": 411,
+   "printed": "399",
+   "note": "starts at 'About Chapter 31' page; chapter heading on pdf 412"
+  },
+  {
+   "level": 1,
+   "title": "32 Exact Monte Carlo Sampling",
+   "pdf": 425,
+   "printed": "413"
+  },
+  {
+   "level": 1,
+   "title": "33 Variational Methods",
+   "pdf": 434,
+   "printed": "422"
+  },
+  {
+   "level": 1,
+   "title": "34 Independent Component Analysis and Latent Variable Modelling",
+   "pdf": 449,
+   "printed": "437"
+  },
+  {
+   "level": 1,
+   "title": "35 Random Inference Topics",
+   "pdf": 457,
+   "printed": "445"
+  },
+  {
+   "level": 1,
+   "title": "36 Decision Theory",
+   "pdf": 463,
+   "printed": "451"
+  },
+  {
+   "level": 1,
+   "title": "37 Bayesian Inference and Sampling Theory",
+   "pdf": 469,
+   "printed": "457"
+  },
+  {
+   "level": 0,
+   "title": "Part V Neural Networks",
+   "pdf": 479,
+   "printed": "467"
+  },
+  {
+   "level": 1,
+   "title": "38 Introduction to Neural Networks",
+   "pdf": 480,
+   "printed": "468"
+  },
+  {
+   "level": 1,
+   "title": "39 The Single Neuron as a Classifier",
+   "pdf": 483,
+   "printed": "471"
+  },
+  {
+   "level": 1,
+   "title": "40 Capacity of a Single Neuron",
+   "pdf": 495,
+   "printed": "483"
+  },
+  {
+   "level": 1,
+   "title": "41 Learning as Inference",
+   "pdf": 504,
+   "printed": "492"
+  },
+  {
+   "level": 1,
+   "title": "42 Hopfield Networks",
+   "pdf": 517,
+   "printed": "505"
+  },
+  {
+   "level": 1,
+   "title": "43 Boltzmann Machines",
+   "pdf": 534,
+   "printed": "522"
+  },
+  {
+   "level": 1,
+   "title": "44 Supervised Learning in Multilayer Networks",
+   "pdf": 539,
+   "printed": "527"
+  },
+  {
+   "level": 1,
+   "title": "45 Gaussian Processes",
+   "pdf": 546,
+   "printed": "534",
+   "note": "starts at 'About Chapter 45' page; chapter heading on pdf 547"
+  },
+  {
+   "level": 1,
+   "title": "46 Deconvolution",
+   "pdf": 561,
+   "printed": "549"
+  },
+  {
+   "level": 0,
+   "title": "Part VI Sparse Graph Codes",
+   "pdf": 567,
+   "printed": "555"
+  },
+  {
+   "level": 1,
+   "title": "47 Low-Density Parity-Check Codes",
+   "pdf": 569,
+   "printed": "557"
+  },
+  {
+   "level": 1,
+   "title": "48 Convolutional Codes and Turbo Codes",
+   "pdf": 586,
+   "printed": "574"
+  },
+  {
+   "level": 1,
+   "title": "49 Repeat–Accumulate Codes",
+   "pdf": 594,
+   "printed": "582"
+  },
+  {
+   "level": 1,
+   "title": "50 Digital Fountain Codes",
+   "pdf": 600,
+   "printed": "588",
+   "note": "starts at 'About Chapter 50' page; chapter heading on pdf 601"
+  },
+  {
+   "level": 0,
+   "title": "Part VII Appendices",
+   "pdf": 609,
+   "printed": "597"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A Notation",
+   "pdf": 610,
+   "printed": "598"
+  },
+  {
+   "level": 1,
+   "title": "Appendix B Some Physics",
+   "pdf": 613,
+   "printed": "601"
+  },
+  {
+   "level": 1,
+   "title": "Appendix C Some Mathematics",
+   "pdf": 617,
+   "printed": "605"
+  },
+  {
+   "level": 0,
+   "title": "Bibliography",
+   "pdf": 625,
+   "printed": "613"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 632,
+   "printed": "620"
+  }
+ ]
+}

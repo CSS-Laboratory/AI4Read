@@ -1,0 +1,810 @@
+{
+ "work_id": "clark-2017-principles",
+ "file": "political-science/clark-2017-principles.pdf.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "warning": "This PDF is the 2nd edition (Clark, Golder & Golder, Principles of Comparative Politics, CQ Press, copyright 2013), not a 2017 (3rd) edition as the work id suggests.",
+ "method": "printed contents pp. xi-xvi (pdf 12-17) and brief contents (pdf 10); constant offset pdf = printed + 37 confirmed from running heads on pp. 1-826 (pdf 38-863); every chapter opening page and every main section heading (incl. Conclusion/Key Concepts/Preparation for the Problems/Problems) checked in the text cache (ch. 9 Key Concepts/Problems actually on p. 346, contents says 347). Part divider pages do not exist in this PDF, so each Part entry sits on its first chapter's opening page. Subsections omitted (no main section exceeds 35 pages). Front matter pdf 1-5 is cover/endpaper world maps.",
+ "last_pdf_page": 929,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Cover / maps",
+   "pdf": 1
+  },
+  {
+   "level": 0,
+   "title": "Title page",
+   "pdf": 6
+  },
+  {
+   "level": 0,
+   "title": "Copyright",
+   "pdf": 7
+  },
+  {
+   "level": 0,
+   "title": "Dedication",
+   "pdf": 8
+  },
+  {
+   "level": 0,
+   "title": "About the Authors",
+   "pdf": 9
+  },
+  {
+   "level": 0,
+   "title": "Brief Contents",
+   "pdf": 10
+  },
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 12,
+   "printed": "xi"
+  },
+  {
+   "level": 0,
+   "title": "Boxes, Figures, Tables, and Maps",
+   "pdf": 18,
+   "printed": "xvii"
+  },
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 30,
+   "printed": "xxix"
+  },
+  {
+   "level": 0,
+   "title": "Part I What Is Comparative Politics?",
+   "pdf": 38
+  },
+  {
+   "level": 1,
+   "title": "1 Introduction",
+   "pdf": 38,
+   "printed": "1"
+  },
+  {
+   "level": 2,
+   "title": "Overview of the Book",
+   "pdf": 45,
+   "printed": "8"
+  },
+  {
+   "level": 2,
+   "title": "The Approach Taken in This Book",
+   "pdf": 53,
+   "printed": "16"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 55,
+   "printed": "18"
+  },
+  {
+   "level": 1,
+   "title": "2 What Is Science?",
+   "pdf": 56,
+   "printed": "19"
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "pdf": 57,
+   "printed": "20"
+  },
+  {
+   "level": 2,
+   "title": "What Is Science?",
+   "pdf": 58,
+   "printed": "21"
+  },
+  {
+   "level": 2,
+   "title": "The Scientific Method",
+   "pdf": 60,
+   "printed": "23"
+  },
+  {
+   "level": 2,
+   "title": "An Introduction to Logic",
+   "pdf": 67,
+   "printed": "30"
+  },
+  {
+   "level": 2,
+   "title": "Myths about Science",
+   "pdf": 80,
+   "printed": "43"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 81,
+   "printed": "44"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 81,
+   "printed": "44"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 81,
+   "printed": "44"
+  },
+  {
+   "level": 1,
+   "title": "3 What Is Politics?",
+   "pdf": 86,
+   "printed": "49"
+  },
+  {
+   "level": 2,
+   "title": "The Exit, Voice, and Loyalty Game",
+   "pdf": 87,
+   "printed": "50"
+  },
+  {
+   "level": 2,
+   "title": "Solving the Exit, Voice, and Loyalty Game",
+   "pdf": 94,
+   "printed": "57"
+  },
+  {
+   "level": 2,
+   "title": "Evaluating the Exit, Voice, and Loyalty Game",
+   "pdf": 103,
+   "printed": "66"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 111,
+   "printed": "74"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 112,
+   "printed": "75"
+  },
+  {
+   "level": 2,
+   "title": "Preparation for the Problems",
+   "pdf": 112,
+   "printed": "75"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 116,
+   "printed": "79"
+  },
+  {
+   "level": 0,
+   "title": "Part II The Modern State: Democracy Or Dictatorship?",
+   "pdf": 124
+  },
+  {
+   "level": 1,
+   "title": "4 The Origins of the Modern State",
+   "pdf": 124,
+   "printed": "87"
+  },
+  {
+   "level": 2,
+   "title": "What Is a State?",
+   "pdf": 125,
+   "printed": "88"
+  },
+  {
+   "level": 2,
+   "title": "A Brief History of a Failed State: Somalia",
+   "pdf": 128,
+   "printed": "91"
+  },
+  {
+   "level": 2,
+   "title": "The Contractarian View of the State",
+   "pdf": 137,
+   "printed": "100"
+  },
+  {
+   "level": 2,
+   "title": "The Predatory View of the State",
+   "pdf": 151,
+   "printed": "114"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 155,
+   "printed": "118"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 156,
+   "printed": "119"
+  },
+  {
+   "level": 2,
+   "title": "Preparation for the Problems",
+   "pdf": 157,
+   "printed": "120"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 162,
+   "printed": "125"
+  },
+  {
+   "level": 1,
+   "title": "5 Democracy and Dictatorship: Conceptualization and Measurement",
+   "pdf": 180,
+   "printed": "143"
+  },
+  {
+   "level": 2,
+   "title": "Democracy and Dictatorship in Historical Perspective",
+   "pdf": 182,
+   "printed": "145"
+  },
+  {
+   "level": 2,
+   "title": "Classifying Democracies and Dictatorships",
+   "pdf": 186,
+   "printed": "149"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 204,
+   "printed": "167"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 205,
+   "printed": "168"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 205,
+   "printed": "168"
+  },
+  {
+   "level": 1,
+   "title": "6 The Economic Determinants of Democracy and Dictatorship",
+   "pdf": 208,
+   "printed": "171"
+  },
+  {
+   "level": 2,
+   "title": "Classic Modernization Theory",
+   "pdf": 209,
+   "printed": "172"
+  },
+  {
+   "level": 2,
+   "title": "A Variant of Modernization Theory",
+   "pdf": 221,
+   "printed": "184"
+  },
+  {
+   "level": 2,
+   "title": "Some More Empirical Evidence",
+   "pdf": 240,
+   "printed": "203"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 244,
+   "printed": "207"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 246,
+   "printed": "209"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 246,
+   "printed": "209"
+  },
+  {
+   "level": 1,
+   "title": "7 Cultural Determinants of Democracy and Dictatorship",
+   "pdf": 250,
+   "printed": "213"
+  },
+  {
+   "level": 2,
+   "title": "Classical Cultural Arguments: Mill and Montesquieu",
+   "pdf": 252,
+   "printed": "215"
+  },
+  {
+   "level": 2,
+   "title": "Does Democracy Require a Civic Culture?",
+   "pdf": 254,
+   "printed": "217"
+  },
+  {
+   "level": 2,
+   "title": "Religion and Democracy",
+   "pdf": 266,
+   "printed": "229"
+  },
+  {
+   "level": 2,
+   "title": "Experiments and Culture",
+   "pdf": 285,
+   "printed": "248"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 295,
+   "printed": "258"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 296,
+   "printed": "259"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 297,
+   "printed": "260"
+  },
+  {
+   "level": 1,
+   "title": "8 Democratic Transitions",
+   "pdf": 302,
+   "printed": "265"
+  },
+  {
+   "level": 2,
+   "title": "Bottom-Up Transitions to Democracy",
+   "pdf": 305,
+   "printed": "268"
+  },
+  {
+   "level": 2,
+   "title": "Top-Down Transitions to Democracy",
+   "pdf": 327,
+   "printed": "290"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 342,
+   "printed": "305"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 344,
+   "printed": "307"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 345,
+   "printed": "308"
+  },
+  {
+   "level": 1,
+   "title": "9 Democracy or Dictatorship: Does it make a Difference?",
+   "pdf": 362,
+   "printed": "325"
+  },
+  {
+   "level": 2,
+   "title": "The Effect of Regime Type on Economic Growth",
+   "pdf": 363,
+   "printed": "326"
+  },
+  {
+   "level": 2,
+   "title": "Empirical Evidence of the Effect of Regime Type on Government Performance",
+   "pdf": 379,
+   "printed": "342"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 383,
+   "printed": "346"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 383,
+   "printed": "346"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 383,
+   "printed": "346"
+  },
+  {
+   "level": 0,
+   "title": "Part III Varieties Of Democracy And Dictatorship",
+   "pdf": 386
+  },
+  {
+   "level": 1,
+   "title": "10 Varieties of Dictatorship",
+   "pdf": 386,
+   "printed": "349"
+  },
+  {
+   "level": 2,
+   "title": "Toward a Typology of Authoritarian Regimes",
+   "pdf": 388,
+   "printed": "351"
+  },
+  {
+   "level": 2,
+   "title": "Does the Type of Dictatorial Regime Influence Regime Survival?",
+   "pdf": 411,
+   "printed": "374"
+  },
+  {
+   "level": 2,
+   "title": "Selectorate Theory",
+   "pdf": 421,
+   "printed": "384"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 439,
+   "printed": "402"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 440,
+   "printed": "403"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 440,
+   "printed": "403"
+  },
+  {
+   "level": 1,
+   "title": "11 Problems with Group Decision Making",
+   "pdf": 450,
+   "printed": "413"
+  },
+  {
+   "level": 2,
+   "title": "Problems with Group Decision Making",
+   "pdf": 452,
+   "printed": "415"
+  },
+  {
+   "level": 2,
+   "title": "Arrow’s Theorem",
+   "pdf": 476,
+   "printed": "439"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 481,
+   "printed": "444"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 483,
+   "printed": "446"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 483,
+   "printed": "446"
+  },
+  {
+   "level": 1,
+   "title": "12 Parliamentary, Presidential, and Semi-Presidential Democracies: Making and Breaking Governments",
+   "pdf": 494,
+   "printed": "457"
+  },
+  {
+   "level": 2,
+   "title": "Classifying Democracies",
+   "pdf": 495,
+   "printed": "458"
+  },
+  {
+   "level": 2,
+   "title": "Making and Breaking Governments: Parliamentary Democracies",
+   "pdf": 502,
+   "printed": "465"
+  },
+  {
+   "level": 2,
+   "title": "Making and Breaking Governments: Presidential Democracies",
+   "pdf": 536,
+   "printed": "499"
+  },
+  {
+   "level": 2,
+   "title": "Making and Breaking Governments: Semi-Presidential Democracies",
+   "pdf": 543,
+   "printed": "506"
+  },
+  {
+   "level": 2,
+   "title": "A Unifying Framework: Principal-Agent and Delegation Problems",
+   "pdf": 549,
+   "printed": "512"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 559,
+   "printed": "522"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 561,
+   "printed": "524"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 562,
+   "printed": "525"
+  },
+  {
+   "level": 1,
+   "title": "13 Elections and Electoral Systems",
+   "pdf": 572,
+   "printed": "535"
+  },
+  {
+   "level": 2,
+   "title": "Elections: An Overview",
+   "pdf": 573,
+   "printed": "536"
+  },
+  {
+   "level": 2,
+   "title": "Majoritarian Electoral Systems",
+   "pdf": 579,
+   "printed": "542"
+  },
+  {
+   "level": 2,
+   "title": "Proportional Electoral Systems",
+   "pdf": 601,
+   "printed": "564"
+  },
+  {
+   "level": 2,
+   "title": "Mixed Electoral Systems",
+   "pdf": 620,
+   "printed": "583"
+  },
+  {
+   "level": 2,
+   "title": "Electoral Systems around the World",
+   "pdf": 624,
+   "printed": "587"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 633,
+   "printed": "596"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 634,
+   "printed": "597"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 635,
+   "printed": "598"
+  },
+  {
+   "level": 1,
+   "title": "14 Social Cleavages and Party Systems",
+   "pdf": 640,
+   "printed": "603"
+  },
+  {
+   "level": 2,
+   "title": "Political Parties: What Are They, and What Do They Do?",
+   "pdf": 641,
+   "printed": "604"
+  },
+  {
+   "level": 2,
+   "title": "Party Systems",
+   "pdf": 648,
+   "printed": "611"
+  },
+  {
+   "level": 2,
+   "title": "Where Do Parties Come From?",
+   "pdf": 656,
+   "printed": "619"
+  },
+  {
+   "level": 2,
+   "title": "Types of Parties: Social Cleavages and Political Identity Formation",
+   "pdf": 657,
+   "printed": "620"
+  },
+  {
+   "level": 2,
+   "title": "Number of Parties: Duverger’s Theory",
+   "pdf": 678,
+   "printed": "641"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 704,
+   "printed": "667"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 705,
+   "printed": "668"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 705,
+   "printed": "668"
+  },
+  {
+   "level": 1,
+   "title": "15 Institutional Veto Players",
+   "pdf": 710,
+   "printed": "673"
+  },
+  {
+   "level": 2,
+   "title": "Federalism",
+   "pdf": 711,
+   "printed": "674"
+  },
+  {
+   "level": 2,
+   "title": "Bicameralism",
+   "pdf": 728,
+   "printed": "691"
+  },
+  {
+   "level": 2,
+   "title": "Constitutionalism",
+   "pdf": 742,
+   "printed": "705"
+  },
+  {
+   "level": 2,
+   "title": "Veto Players",
+   "pdf": 755,
+   "printed": "718"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 764,
+   "printed": "727"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 766,
+   "printed": "729"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 766,
+   "printed": "729"
+  },
+  {
+   "level": 0,
+   "title": "Part IV Varieties Of Democracy And Political Outcomes",
+   "pdf": 778
+  },
+  {
+   "level": 1,
+   "title": "16 Consequences of Democratic Institutions",
+   "pdf": 778,
+   "printed": "741"
+  },
+  {
+   "level": 2,
+   "title": "Combining Institutions: Majoritarian or Consensus Democracy?",
+   "pdf": 780,
+   "printed": "743"
+  },
+  {
+   "level": 2,
+   "title": "The Effect of Political Institutions on Fiscal Policy",
+   "pdf": 803,
+   "printed": "766"
+  },
+  {
+   "level": 2,
+   "title": "Electoral Laws, Federalism, and Ethnic Conflict",
+   "pdf": 825,
+   "printed": "788"
+  },
+  {
+   "level": 2,
+   "title": "Presidentialism and Democratic Survival",
+   "pdf": 842,
+   "printed": "805"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 862,
+   "printed": "825"
+  },
+  {
+   "level": 2,
+   "title": "Key Concepts",
+   "pdf": 863,
+   "printed": "826"
+  },
+  {
+   "level": 2,
+   "title": "Problems",
+   "pdf": 863,
+   "printed": "826"
+  },
+  {
+   "level": 0,
+   "title": "References",
+   "pdf": 864,
+   "printed": "R-1"
+  },
+  {
+   "level": 0,
+   "title": "Photo Credits",
+   "pdf": 904,
+   "printed": "P-1"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 906,
+   "printed": "I-1"
+  }
+ ]
+}

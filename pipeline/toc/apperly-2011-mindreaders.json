@@ -1,0 +1,179 @@
+{
+ "work_id": "apperly-2011-mindreaders",
+ "file": "theory-of-mind/apperly-2011-mindreaders.pdf.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "printed contents pp. v-vi (pdf 9-10); offset printed+16 = pdf, every chapter heading and every listed section of ch. 6 and 7 found in text. Internet Archive scan (Harvard library copy) with OCR; pdf 1-8 are cover/blurb/title pages, pdf 236-240 back cover/blank. Body pdf 17-202. toc_check warnings for two level-1 sections (pdf 124, 179) are harmless: those headings start mid-page.",
+ "last_pdf_page": 240,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Mindreaders (title page)",
+   "pdf": 7
+  },
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 9
+  },
+  {
+   "level": 0,
+   "title": "List of figures",
+   "pdf": 12
+  },
+  {
+   "level": 0,
+   "title": "Preface and acknowledgements",
+   "pdf": 14
+  },
+  {
+   "level": 0,
+   "title": "1 Introduction",
+   "pdf": 17,
+   "printed": "1"
+  },
+  {
+   "level": 0,
+   "title": "2 Evidence from children",
+   "pdf": 27,
+   "printed": "11"
+  },
+  {
+   "level": 0,
+   "title": "3 Evidence from infants and non-human animals",
+   "pdf": 51,
+   "printed": "35"
+  },
+  {
+   "level": 0,
+   "title": "4 Evidence from neuroimaging and neuropsychology",
+   "pdf": 74,
+   "printed": "58"
+  },
+  {
+   "level": 0,
+   "title": "5 Evidence from adults",
+   "pdf": 102,
+   "printed": "86"
+  },
+  {
+   "level": 0,
+   "title": "6 The cognitive basis of mindreading: A \"two-systems\" account",
+   "pdf": 124,
+   "printed": "108"
+  },
+  {
+   "level": 1,
+   "title": "Overview",
+   "pdf": 124,
+   "printed": "108"
+  },
+  {
+   "level": 1,
+   "title": "Checking off the cognitive psychologist's wish-list",
+   "pdf": 124,
+   "printed": "108"
+  },
+  {
+   "level": 1,
+   "title": "Is mindreading actually necessary for social cognition?",
+   "pdf": 130,
+   "printed": "114"
+  },
+  {
+   "level": 1,
+   "title": "Why mindreading should be impossible",
+   "pdf": 134,
+   "printed": "118"
+  },
+  {
+   "level": 1,
+   "title": "How can mindreading be turned into a tractable problem?",
+   "pdf": 135,
+   "printed": "119"
+  },
+  {
+   "level": 1,
+   "title": "\"Two systems\" for mindreading",
+   "pdf": 148,
+   "printed": "132"
+  },
+  {
+   "level": 0,
+   "title": "7 Elaborating and applying the two-systems theory",
+   "pdf": 159,
+   "printed": "143"
+  },
+  {
+   "level": 1,
+   "title": "Low-level processes for mindreading",
+   "pdf": 160,
+   "printed": "144"
+  },
+  {
+   "level": 1,
+   "title": "Level-1 perspectives as a case study",
+   "pdf": 160,
+   "printed": "144"
+  },
+  {
+   "level": 1,
+   "title": "Why don't 3-year-olds pass false belief tasks? Egocentrism and explicit mindreading judgements",
+   "pdf": 169,
+   "printed": "153"
+  },
+  {
+   "level": 1,
+   "title": "High-level mindreading",
+   "pdf": 171,
+   "printed": "155"
+  },
+  {
+   "level": 1,
+   "title": "Development",
+   "pdf": 172,
+   "printed": "156"
+  },
+  {
+   "level": 1,
+   "title": "Individual differences in mindreading: typical and atypical variability",
+   "pdf": 179,
+   "printed": "163"
+  },
+  {
+   "level": 1,
+   "title": "Implications for the cognitive neuroscience of mindreading",
+   "pdf": 184,
+   "printed": "168"
+  },
+  {
+   "level": 1,
+   "title": "Other theories",
+   "pdf": 188,
+   "printed": "172"
+  },
+  {
+   "level": 0,
+   "title": "Coda",
+   "pdf": 198,
+   "printed": "182"
+  },
+  {
+   "level": 0,
+   "title": "References",
+   "pdf": 203,
+   "printed": "187"
+  },
+  {
+   "level": 0,
+   "title": "Author index",
+   "pdf": 225,
+   "printed": "209"
+  },
+  {
+   "level": 0,
+   "title": "Subject index",
+   "pdf": 233,
+   "printed": "217"
+  }
+ ]
+}

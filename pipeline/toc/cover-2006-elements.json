@@ -1,0 +1,1170 @@
+{
+ "work_id": "cover-2006-elements",
+ "file": "information-theory/cover-2006-elements.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "printed contents pp. xiii-xviii (pdf 12-17); chapter openers found via Wiley 'Chapter N' header pages (constant offset printed+22); every section/Summary/Problems/Historical-notes heading located in text (OCR garbles some headings, e.g. 7.8 Omega and 'SUMMARY' read as 'S-Y'). Contents misprints ch. 15 as p. 469 (actually p. 459). In this PDF the back matter is reordered: List of Symbols (pdf 532) precedes Bibliography (pdf 534) and Index (pdf 550). EDITION: this PDF is the 1991 first edition (16 chapters), not the 2006 second edition the work_id implies. toc_check warnings (35) are all section/Summary/Problems/Historical-notes headings that start below line 25 of their page (spot-checked: heading present mid-page on the given pdf page) or OCR-garbled headings; none are wrong pages.",
+ "warning": "PDF is the 1991 first edition (Wiley), not the 2006 2nd edition; chapter numbering/content differ from 2nd ed. (e.g. no universal source coding / portfolio theory chapters).",
+ "last_pdf_page": 563,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 6
+  },
+  {
+   "level": 0,
+   "title": "Acknowledgments",
+   "pdf": 10
+  },
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 12
+  },
+  {
+   "level": 0,
+   "title": "List of Figures",
+   "pdf": 18
+  },
+  {
+   "level": 0,
+   "title": "1 Introduction and Preview",
+   "pdf": 23,
+   "printed": "1"
+  },
+  {
+   "level": 1,
+   "title": "1.1 Preview of the book",
+   "pdf": 27,
+   "printed": "5"
+  },
+  {
+   "level": 0,
+   "title": "2 Entropy, Relative Entropy and Mutual Information",
+   "pdf": 34,
+   "printed": "12"
+  },
+  {
+   "level": 1,
+   "title": "2.1 Entropy",
+   "pdf": 34,
+   "printed": "12"
+  },
+  {
+   "level": 1,
+   "title": "2.2 Joint entropy and conditional entropy",
+   "pdf": 37,
+   "printed": "15"
+  },
+  {
+   "level": 1,
+   "title": "2.3 Relative entropy and mutual information",
+   "pdf": 40,
+   "printed": "18"
+  },
+  {
+   "level": 1,
+   "title": "2.4 Relationship between entropy and mutual information",
+   "pdf": 41,
+   "printed": "19"
+  },
+  {
+   "level": 1,
+   "title": "2.5 Chain rules for entropy, relative entropy and mutual information",
+   "pdf": 43,
+   "printed": "21"
+  },
+  {
+   "level": 1,
+   "title": "2.6 Jensen’s inequality and its consequences",
+   "pdf": 45,
+   "printed": "23"
+  },
+  {
+   "level": 1,
+   "title": "2.7 The log sum inequality and its applications",
+   "pdf": 51,
+   "printed": "29"
+  },
+  {
+   "level": 1,
+   "title": "2.8 Data processing inequality",
+   "pdf": 54,
+   "printed": "32"
+  },
+  {
+   "level": 1,
+   "title": "2.9 The second law of thermodynamics",
+   "pdf": 55,
+   "printed": "33"
+  },
+  {
+   "level": 1,
+   "title": "2.10 Sufficient statistics",
+   "pdf": 58,
+   "printed": "36"
+  },
+  {
+   "level": 1,
+   "title": "2.11 Fano’s inequality",
+   "pdf": 60,
+   "printed": "38"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 2",
+   "pdf": 62,
+   "printed": "40"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 2",
+   "pdf": 64,
+   "printed": "42"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 71,
+   "printed": "49"
+  },
+  {
+   "level": 0,
+   "title": "3 The Asymptotic Equipartition Property",
+   "pdf": 72,
+   "printed": "50"
+  },
+  {
+   "level": 1,
+   "title": "3.1 The AEP",
+   "pdf": 73,
+   "printed": "51"
+  },
+  {
+   "level": 1,
+   "title": "3.2 Consequences of the AEP: data compression",
+   "pdf": 75,
+   "printed": "53"
+  },
+  {
+   "level": 1,
+   "title": "3.3 High probability sets and the typical set",
+   "pdf": 77,
+   "printed": "55"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 3",
+   "pdf": 78,
+   "printed": "56"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 3",
+   "pdf": 79,
+   "printed": "57"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 81,
+   "printed": "59"
+  },
+  {
+   "level": 0,
+   "title": "4 Entropy Rates of a Stochastic Process",
+   "pdf": 82,
+   "printed": "60"
+  },
+  {
+   "level": 1,
+   "title": "4.1 Markov chains",
+   "pdf": 82,
+   "printed": "60"
+  },
+  {
+   "level": 1,
+   "title": "4.2 Entropy rate",
+   "pdf": 85,
+   "printed": "63"
+  },
+  {
+   "level": 1,
+   "title": "4.3 Example: Entropy rate of a random walk on a weighted graph",
+   "pdf": 88,
+   "printed": "66"
+  },
+  {
+   "level": 1,
+   "title": "4.4 Hidden Markov models",
+   "pdf": 91,
+   "printed": "69"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 4",
+   "pdf": 93,
+   "printed": "71"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 4",
+   "pdf": 94,
+   "printed": "72"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 99,
+   "printed": "77"
+  },
+  {
+   "level": 0,
+   "title": "5 Data Compression",
+   "pdf": 100,
+   "printed": "78"
+  },
+  {
+   "level": 1,
+   "title": "5.1 Examples of codes",
+   "pdf": 101,
+   "printed": "79"
+  },
+  {
+   "level": 1,
+   "title": "5.2 Kraft inequality",
+   "pdf": 104,
+   "printed": "82"
+  },
+  {
+   "level": 1,
+   "title": "5.3 Optimal codes",
+   "pdf": 106,
+   "printed": "84"
+  },
+  {
+   "level": 1,
+   "title": "5.4 Bounds on the optimal codelength",
+   "pdf": 109,
+   "printed": "87"
+  },
+  {
+   "level": 1,
+   "title": "5.5 Kraft inequality for uniquely decodable codes",
+   "pdf": 112,
+   "printed": "90"
+  },
+  {
+   "level": 1,
+   "title": "5.6 Huffman codes",
+   "pdf": 114,
+   "printed": "92"
+  },
+  {
+   "level": 1,
+   "title": "5.7 Some comments on Huffman codes",
+   "pdf": 116,
+   "printed": "94"
+  },
+  {
+   "level": 1,
+   "title": "5.8 Optimality of Huffman codes",
+   "pdf": 119,
+   "printed": "97"
+  },
+  {
+   "level": 1,
+   "title": "5.9 Shannon-Fano-Elias coding",
+   "pdf": 123,
+   "printed": "101"
+  },
+  {
+   "level": 1,
+   "title": "5.10 Arithmetic coding",
+   "pdf": 126,
+   "printed": "104"
+  },
+  {
+   "level": 1,
+   "title": "5.11 Competitive optimality of the Shannon code",
+   "pdf": 129,
+   "printed": "107"
+  },
+  {
+   "level": 1,
+   "title": "5.12 Generation of discrete distributions from fair coins",
+   "pdf": 132,
+   "printed": "110"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 5",
+   "pdf": 139,
+   "printed": "117"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 5",
+   "pdf": 140,
+   "printed": "118"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 146,
+   "printed": "124"
+  },
+  {
+   "level": 0,
+   "title": "6 Gambling and Data Compression",
+   "pdf": 147,
+   "printed": "125"
+  },
+  {
+   "level": 1,
+   "title": "6.1 The horse race",
+   "pdf": 147,
+   "printed": "125"
+  },
+  {
+   "level": 1,
+   "title": "6.2 Gambling and side information",
+   "pdf": 152,
+   "printed": "130"
+  },
+  {
+   "level": 1,
+   "title": "6.3 Dependent horse races and entropy rate",
+   "pdf": 153,
+   "printed": "131"
+  },
+  {
+   "level": 1,
+   "title": "6.4 The entropy of English",
+   "pdf": 155,
+   "printed": "133"
+  },
+  {
+   "level": 1,
+   "title": "6.5 Data compression and gambling",
+   "pdf": 158,
+   "printed": "136"
+  },
+  {
+   "level": 1,
+   "title": "6.6 Gambling estimate of the entropy of English",
+   "pdf": 160,
+   "printed": "138"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 6",
+   "pdf": 162,
+   "printed": "140"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 6",
+   "pdf": 163,
+   "printed": "141"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 165,
+   "printed": "143"
+  },
+  {
+   "level": 0,
+   "title": "7 Kolmogorov Complexity",
+   "pdf": 166,
+   "printed": "144"
+  },
+  {
+   "level": 1,
+   "title": "7.1 Models of computation",
+   "pdf": 168,
+   "printed": "146"
+  },
+  {
+   "level": 1,
+   "title": "7.2 Kolmogorov complexity: definitions and examples",
+   "pdf": 169,
+   "printed": "147"
+  },
+  {
+   "level": 1,
+   "title": "7.3 Kolmogorov complexity and entropy",
+   "pdf": 175,
+   "printed": "153"
+  },
+  {
+   "level": 1,
+   "title": "7.4 Kolmogorov complexity of integers",
+   "pdf": 177,
+   "printed": "155"
+  },
+  {
+   "level": 1,
+   "title": "7.5 Algorithmically random and incompressible sequences",
+   "pdf": 178,
+   "printed": "156"
+  },
+  {
+   "level": 1,
+   "title": "7.6 Universal probability",
+   "pdf": 182,
+   "printed": "160"
+  },
+  {
+   "level": 1,
+   "title": "7.7 The halting problem and the non-computability of Kolmogorov complexity",
+   "pdf": 184,
+   "printed": "162"
+  },
+  {
+   "level": 1,
+   "title": "7.8 Ω (Chaitin's number)",
+   "pdf": 186,
+   "printed": "164"
+  },
+  {
+   "level": 1,
+   "title": "7.9 Universal gambling",
+   "pdf": 188,
+   "printed": "166"
+  },
+  {
+   "level": 1,
+   "title": "7.10 Occam’s razor",
+   "pdf": 190,
+   "printed": "168"
+  },
+  {
+   "level": 1,
+   "title": "7.11 Kolmogorov complexity and universal probability",
+   "pdf": 191,
+   "printed": "169"
+  },
+  {
+   "level": 1,
+   "title": "7.12 The Kolmogorov sufficient statistic",
+   "pdf": 197,
+   "printed": "175"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 7",
+   "pdf": 200,
+   "printed": "178"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 7",
+   "pdf": 202,
+   "printed": "180"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 204,
+   "printed": "182"
+  },
+  {
+   "level": 0,
+   "title": "8 Channel Capacity",
+   "pdf": 205,
+   "printed": "183"
+  },
+  {
+   "level": 1,
+   "title": "8.1 Examples of channel capacity",
+   "pdf": 206,
+   "printed": "184"
+  },
+  {
+   "level": 1,
+   "title": "8.2 Symmetric channels",
+   "pdf": 211,
+   "printed": "189"
+  },
+  {
+   "level": 1,
+   "title": "8.3 Properties of channel capacity",
+   "pdf": 212,
+   "printed": "190"
+  },
+  {
+   "level": 1,
+   "title": "8.4 Preview of the channel coding theorem",
+   "pdf": 213,
+   "printed": "191"
+  },
+  {
+   "level": 1,
+   "title": "8.5 Definitions",
+   "pdf": 214,
+   "printed": "192"
+  },
+  {
+   "level": 1,
+   "title": "8.6 Jointly typical sequences",
+   "pdf": 216,
+   "printed": "194"
+  },
+  {
+   "level": 1,
+   "title": "8.7 The channel coding theorem",
+   "pdf": 220,
+   "printed": "198"
+  },
+  {
+   "level": 1,
+   "title": "8.8 Zero-error codes",
+   "pdf": 225,
+   "printed": "203"
+  },
+  {
+   "level": 1,
+   "title": "8.9 Fano’s inequality and the converse to the coding theorem",
+   "pdf": 226,
+   "printed": "204"
+  },
+  {
+   "level": 1,
+   "title": "8.10 Equality in the converse to the channel coding theorem",
+   "pdf": 229,
+   "printed": "207"
+  },
+  {
+   "level": 1,
+   "title": "8.11 Hamming codes",
+   "pdf": 231,
+   "printed": "209"
+  },
+  {
+   "level": 1,
+   "title": "8.12 Feedback capacity",
+   "pdf": 234,
+   "printed": "212"
+  },
+  {
+   "level": 1,
+   "title": "8.13 The joint source channel coding theorem",
+   "pdf": 237,
+   "printed": "215"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 8",
+   "pdf": 240,
+   "printed": "218"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 8",
+   "pdf": 242,
+   "printed": "220"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 244,
+   "printed": "222"
+  },
+  {
+   "level": 0,
+   "title": "9 Differential Entropy",
+   "pdf": 246,
+   "printed": "224"
+  },
+  {
+   "level": 1,
+   "title": "9.1 Definitions",
+   "pdf": 246,
+   "printed": "224"
+  },
+  {
+   "level": 1,
+   "title": "9.2 The AEP for continuous random variables",
+   "pdf": 247,
+   "printed": "225"
+  },
+  {
+   "level": 1,
+   "title": "9.3 Relation of differential entropy to discrete entropy",
+   "pdf": 250,
+   "printed": "228"
+  },
+  {
+   "level": 1,
+   "title": "9.4 Joint and conditional differential entropy",
+   "pdf": 251,
+   "printed": "229"
+  },
+  {
+   "level": 1,
+   "title": "9.5 Relative entropy and mutual information",
+   "pdf": 253,
+   "printed": "231"
+  },
+  {
+   "level": 1,
+   "title": "9.6 Properties of differential entropy, relative entropy and mutual information",
+   "pdf": 254,
+   "printed": "232"
+  },
+  {
+   "level": 1,
+   "title": "9.7 Differential entropy bound on discrete entropy",
+   "pdf": 256,
+   "printed": "234"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 9",
+   "pdf": 258,
+   "printed": "236"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 9",
+   "pdf": 259,
+   "printed": "237"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 260,
+   "printed": "238"
+  },
+  {
+   "level": 0,
+   "title": "10 The Gaussian Channel",
+   "pdf": 261,
+   "printed": "239"
+  },
+  {
+   "level": 1,
+   "title": "10.1 The Gaussian channel: definitions",
+   "pdf": 263,
+   "printed": "241"
+  },
+  {
+   "level": 1,
+   "title": "10.2 Converse to the coding theorem for Gaussian channels",
+   "pdf": 267,
+   "printed": "245"
+  },
+  {
+   "level": 1,
+   "title": "10.3 Band-limited channels",
+   "pdf": 269,
+   "printed": "247"
+  },
+  {
+   "level": 1,
+   "title": "10.4 Parallel Gaussian channels",
+   "pdf": 272,
+   "printed": "250"
+  },
+  {
+   "level": 1,
+   "title": "10.5 Channels with colored Gaussian noise",
+   "pdf": 275,
+   "printed": "253"
+  },
+  {
+   "level": 1,
+   "title": "10.6 Gaussian channels with feedback",
+   "pdf": 278,
+   "printed": "256"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 10",
+   "pdf": 284,
+   "printed": "262"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 10",
+   "pdf": 285,
+   "printed": "263"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 286,
+   "printed": "264"
+  },
+  {
+   "level": 0,
+   "title": "11 Maximum Entropy and Spectral Estimation",
+   "pdf": 288,
+   "printed": "266"
+  },
+  {
+   "level": 1,
+   "title": "11.1 Maximum entropy distributions",
+   "pdf": 288,
+   "printed": "266"
+  },
+  {
+   "level": 1,
+   "title": "11.2 Examples",
+   "pdf": 290,
+   "printed": "268"
+  },
+  {
+   "level": 1,
+   "title": "11.3 An anomalous maximum entropy problem",
+   "pdf": 292,
+   "printed": "270"
+  },
+  {
+   "level": 1,
+   "title": "11.4 Spectrum estimation",
+   "pdf": 294,
+   "printed": "272"
+  },
+  {
+   "level": 1,
+   "title": "11.5 Entropy rates of a Gaussian process",
+   "pdf": 295,
+   "printed": "273"
+  },
+  {
+   "level": 1,
+   "title": "11.6 Burg’s maximum entropy theorem",
+   "pdf": 296,
+   "printed": "274"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 11",
+   "pdf": 299,
+   "printed": "277"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 11",
+   "pdf": 299,
+   "printed": "277"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 300,
+   "printed": "278"
+  },
+  {
+   "level": 0,
+   "title": "12 Information Theory and Statistics",
+   "pdf": 301,
+   "printed": "279"
+  },
+  {
+   "level": 1,
+   "title": "12.1 The method of types",
+   "pdf": 301,
+   "printed": "279"
+  },
+  {
+   "level": 1,
+   "title": "12.2 The law of large numbers",
+   "pdf": 308,
+   "printed": "286"
+  },
+  {
+   "level": 1,
+   "title": "12.3 Universal source coding",
+   "pdf": 310,
+   "printed": "288"
+  },
+  {
+   "level": 1,
+   "title": "12.4 Large deviation theory",
+   "pdf": 313,
+   "printed": "291"
+  },
+  {
+   "level": 1,
+   "title": "12.5 Examples of Sanov’s theorem",
+   "pdf": 316,
+   "printed": "294"
+  },
+  {
+   "level": 1,
+   "title": "12.6 The conditional limit theorem",
+   "pdf": 319,
+   "printed": "297"
+  },
+  {
+   "level": 1,
+   "title": "12.7 Hypothesis testing",
+   "pdf": 326,
+   "printed": "304"
+  },
+  {
+   "level": 1,
+   "title": "12.8 Stein’s lemma",
+   "pdf": 331,
+   "printed": "309"
+  },
+  {
+   "level": 1,
+   "title": "12.9 Chernoff bound",
+   "pdf": 334,
+   "printed": "312"
+  },
+  {
+   "level": 1,
+   "title": "12.10 Lempel-Ziv coding",
+   "pdf": 341,
+   "printed": "319"
+  },
+  {
+   "level": 1,
+   "title": "12.11 Fisher information and the Cramer-Rao inequality",
+   "pdf": 348,
+   "printed": "326"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 12",
+   "pdf": 353,
+   "printed": "331"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 12",
+   "pdf": 355,
+   "printed": "333"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 357,
+   "printed": "335"
+  },
+  {
+   "level": 0,
+   "title": "13 Rate Distortion Theory",
+   "pdf": 358,
+   "printed": "336"
+  },
+  {
+   "level": 1,
+   "title": "13.1 Quantization",
+   "pdf": 359,
+   "printed": "337"
+  },
+  {
+   "level": 1,
+   "title": "13.2 Definitions",
+   "pdf": 360,
+   "printed": "338"
+  },
+  {
+   "level": 1,
+   "title": "13.3 Calculation of the rate distortion function",
+   "pdf": 364,
+   "printed": "342"
+  },
+  {
+   "level": 1,
+   "title": "13.4 Converse to the rate distortion theorem",
+   "pdf": 371,
+   "printed": "349"
+  },
+  {
+   "level": 1,
+   "title": "13.5 Achievability of the rate distortion function",
+   "pdf": 373,
+   "printed": "351"
+  },
+  {
+   "level": 1,
+   "title": "13.6 Strongly typical sequences and rate distortion",
+   "pdf": 380,
+   "printed": "358"
+  },
+  {
+   "level": 1,
+   "title": "13.7 Characterization of the rate distortion function",
+   "pdf": 384,
+   "printed": "362"
+  },
+  {
+   "level": 1,
+   "title": "13.8 Computation of channel capacity and the rate distortion function",
+   "pdf": 386,
+   "printed": "364"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 13",
+   "pdf": 389,
+   "printed": "367"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 13",
+   "pdf": 390,
+   "printed": "368"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 394,
+   "printed": "372"
+  },
+  {
+   "level": 0,
+   "title": "14 Network Information Theory",
+   "pdf": 396,
+   "printed": "374"
+  },
+  {
+   "level": 1,
+   "title": "14.1 Gaussian multiple user channels",
+   "pdf": 399,
+   "printed": "377"
+  },
+  {
+   "level": 1,
+   "title": "14.2 Jointly typical sequences",
+   "pdf": 406,
+   "printed": "384"
+  },
+  {
+   "level": 1,
+   "title": "14.3 The multiple access channel",
+   "pdf": 410,
+   "printed": "388"
+  },
+  {
+   "level": 1,
+   "title": "14.4 Encoding of correlated sources",
+   "pdf": 429,
+   "printed": "407"
+  },
+  {
+   "level": 1,
+   "title": "14.5 Duality between Slepian-Wolf encoding and multiple access channels",
+   "pdf": 438,
+   "printed": "416"
+  },
+  {
+   "level": 1,
+   "title": "14.6 The broadcast channel",
+   "pdf": 440,
+   "printed": "418"
+  },
+  {
+   "level": 1,
+   "title": "14.7 The relay channel",
+   "pdf": 450,
+   "printed": "428"
+  },
+  {
+   "level": 1,
+   "title": "14.8 Source coding with side information",
+   "pdf": 454,
+   "printed": "432"
+  },
+  {
+   "level": 1,
+   "title": "14.9 Rate distortion with side information",
+   "pdf": 460,
+   "printed": "438"
+  },
+  {
+   "level": 1,
+   "title": "14.10 General multiterminal networks",
+   "pdf": 466,
+   "printed": "444"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 14",
+   "pdf": 472,
+   "printed": "450"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 14",
+   "pdf": 474,
+   "printed": "452"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 479,
+   "printed": "457"
+  },
+  {
+   "level": 0,
+   "title": "15 Information Theory and the Stock Market",
+   "pdf": 481,
+   "printed": "459"
+  },
+  {
+   "level": 1,
+   "title": "15.1 The stock market: some definitions",
+   "pdf": 481,
+   "printed": "459"
+  },
+  {
+   "level": 1,
+   "title": "15.2 Kuhn-Tucker characterization of the log-optimal portfolio",
+   "pdf": 484,
+   "printed": "462"
+  },
+  {
+   "level": 1,
+   "title": "15.3 Asymptotic optimality of the log-optimal portfolio",
+   "pdf": 487,
+   "printed": "465"
+  },
+  {
+   "level": 1,
+   "title": "15.4 Side information and the doubling rate",
+   "pdf": 489,
+   "printed": "467"
+  },
+  {
+   "level": 1,
+   "title": "15.5 Investment in stationary markets",
+   "pdf": 491,
+   "printed": "469"
+  },
+  {
+   "level": 1,
+   "title": "15.6 Competitive optimality of the log-optimal portfolio",
+   "pdf": 493,
+   "printed": "471"
+  },
+  {
+   "level": 1,
+   "title": "15.7 The Shannon-McMillan-Breiman theorem",
+   "pdf": 496,
+   "printed": "474"
+  },
+  {
+   "level": 1,
+   "title": "Summary of Chapter 15",
+   "pdf": 501,
+   "printed": "479"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 15",
+   "pdf": 502,
+   "printed": "480"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 503,
+   "printed": "481"
+  },
+  {
+   "level": 0,
+   "title": "16 Inequalities in Information Theory",
+   "pdf": 504,
+   "printed": "482"
+  },
+  {
+   "level": 1,
+   "title": "16.1 Basic inequalities of information theory",
+   "pdf": 504,
+   "printed": "482"
+  },
+  {
+   "level": 1,
+   "title": "16.2 Differential entropy",
+   "pdf": 507,
+   "printed": "485"
+  },
+  {
+   "level": 1,
+   "title": "16.3 Bounds on entropy and relative entropy",
+   "pdf": 510,
+   "printed": "488"
+  },
+  {
+   "level": 1,
+   "title": "16.4 Inequalities for types",
+   "pdf": 512,
+   "printed": "490"
+  },
+  {
+   "level": 1,
+   "title": "16.5 Entropy rates of subsets",
+   "pdf": 512,
+   "printed": "490"
+  },
+  {
+   "level": 1,
+   "title": "16.6 Entropy and Fisher information",
+   "pdf": 516,
+   "printed": "494"
+  },
+  {
+   "level": 1,
+   "title": "16.7 The entropy power inequality and the Brunn-Minkowski inequality",
+   "pdf": 519,
+   "printed": "497"
+  },
+  {
+   "level": 1,
+   "title": "16.8 Inequalities for determinants",
+   "pdf": 523,
+   "printed": "501"
+  },
+  {
+   "level": 1,
+   "title": "16.9 Inequalities for ratios of determinants",
+   "pdf": 527,
+   "printed": "505"
+  },
+  {
+   "level": 1,
+   "title": "Overall Summary",
+   "pdf": 530,
+   "printed": "508"
+  },
+  {
+   "level": 1,
+   "title": "Problems for Chapter 16",
+   "pdf": 531,
+   "printed": "509"
+  },
+  {
+   "level": 1,
+   "title": "Historical notes",
+   "pdf": 531,
+   "printed": "509"
+  },
+  {
+   "level": 0,
+   "title": "List of Symbols",
+   "pdf": 532,
+   "printed": "526"
+  },
+  {
+   "level": 0,
+   "title": "Bibliography",
+   "pdf": 534,
+   "printed": "510"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 550,
+   "printed": "529"
+  }
+ ]
+}

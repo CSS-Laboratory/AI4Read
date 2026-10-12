@@ -1,0 +1,153 @@
+{
+ "work_id": "dennett-1987-intentional-stance",
+ "file": "theory-of-mind/dennett-1987-intentional-stance.pdf.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "SCANNED two-page spreads (no text layer): each pdf page = two printed pages, pdf = floor(printed/2)+6 (printed p. 1 = right half of pdf 6). Printed contents p. v (pdf 3) read from images; chapter/section starts verified visually at pdf 6, 12, 24, 27, 64, 66, 71, 81, 93, 149, 181, 192, 200. Each chapter's 'Reflections' essay is level 1 under its chapter; ch. 5 (pdf 64-111 with its Reflections, 48 pdf pages) also split at its four section headings. A chapter's first pdf page also carries the last printed page of the previous chapter on its left half. Complete MIT Press paperback (7th printing 1998), pp. v-388.",
+ "last_pdf_page": 200,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 3,
+   "printed": "v"
+  },
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 4,
+   "printed": "ix"
+  },
+  {
+   "level": 0,
+   "title": "1 Setting Off on the Right Foot",
+   "pdf": 6,
+   "printed": "1"
+  },
+  {
+   "level": 0,
+   "title": "2 True Believers: The Intentional Strategy and Why It Works",
+   "pdf": 12,
+   "printed": "13"
+  },
+  {
+   "level": 1,
+   "title": "Reflections: Real Patterns, Deeper Facts, and Empty Questions",
+   "pdf": 24,
+   "printed": "37"
+  },
+  {
+   "level": 0,
+   "title": "3 Three Kinds of Intentional Psychology",
+   "pdf": 27,
+   "printed": "43"
+  },
+  {
+   "level": 1,
+   "title": "Reflections: Instrumentalism Reconsidered",
+   "pdf": 40,
+   "printed": "69"
+  },
+  {
+   "level": 0,
+   "title": "4 Making Sense of Ourselves",
+   "pdf": 47,
+   "printed": "83"
+  },
+  {
+   "level": 1,
+   "title": "Reflections: When Frogs (and Others) Make Mistakes",
+   "pdf": 57,
+   "printed": "103"
+  },
+  {
+   "level": 0,
+   "title": "5 Beyond Belief",
+   "pdf": 64,
+   "printed": "117"
+  },
+  {
+   "level": 1,
+   "title": "Propositional Attitudes",
+   "pdf": 66,
+   "printed": "121"
+  },
+  {
+   "level": 1,
+   "title": "Sentential Attitudes",
+   "pdf": 71,
+   "printed": "130"
+  },
+  {
+   "level": 1,
+   "title": "Notional Attitudes",
+   "pdf": 81,
+   "printed": "151"
+  },
+  {
+   "level": 1,
+   "title": "De re and de dicto Dismantled",
+   "pdf": 93,
+   "printed": "174"
+  },
+  {
+   "level": 1,
+   "title": "Reflections: About Aboutness",
+   "pdf": 107,
+   "printed": "203"
+  },
+  {
+   "level": 0,
+   "title": "6 Styles of Mental Representation",
+   "pdf": 112,
+   "printed": "213"
+  },
+  {
+   "level": 1,
+   "title": "Reflections: The Language of Thought Reconsidered",
+   "pdf": 119,
+   "printed": "227"
+  },
+  {
+   "level": 0,
+   "title": "7 Intentional Systems in Cognitive Ethology: The “Panglossian Paradigm” Defended",
+   "pdf": 124,
+   "printed": "237"
+  },
+  {
+   "level": 1,
+   "title": "Reflections: Interpreting Monkeys, Theorists, and Genes",
+   "pdf": 140,
+   "printed": "269"
+  },
+  {
+   "level": 0,
+   "title": "8 Evolution, Error, and Intentionality",
+   "pdf": 149,
+   "printed": "287"
+  },
+  {
+   "level": 0,
+   "title": "9 Fast Thinking",
+   "pdf": 167,
+   "printed": "323"
+  },
+  {
+   "level": 0,
+   "title": "10 Mid-Term Examination: Compare and Contrast",
+   "pdf": 175,
+   "printed": "339"
+  },
+  {
+   "level": 0,
+   "title": "Bibliography",
+   "pdf": 181,
+   "printed": "351"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 192,
+   "printed": "373"
+  }
+ ]
+}

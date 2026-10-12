@@ -1,0 +1,75 @@
+{
+ "work_id": "arrow-1951-socialchoice",
+ "file": "political-science/arrow-1951-socialchoice.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "SCANNED (no text layer). Printed table of contents p. xi (pdf 11) read from page image; every chapter start verified visually (pdf = printed+11 through References; a blank leaf at pdf 108 shifts Index to pdf 109 = p. 97). This is the COMPLETE first edition (Wiley / Cowles Commission Monograph No. 12, 1951), pp. ix-99, chapters I-VII; it is not an excerpt. It lacks the 1963 second edition's added Chapter VIII ('Notes on the Theory of Social Choice, 1963'). All chapters are under 20 pdf pages, so no sections listed.",
+ "last_pdf_page": 111,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Acknowledgments",
+   "pdf": 9,
+   "printed": "ix"
+  },
+  {
+   "level": 0,
+   "title": "Table of Contents",
+   "pdf": 11,
+   "printed": "xi"
+  },
+  {
+   "level": 0,
+   "title": "1 Chapter I. Introduction",
+   "pdf": 12,
+   "printed": "1"
+  },
+  {
+   "level": 0,
+   "title": "2 Chapter II. The Nature of Preference and Choice",
+   "pdf": 20,
+   "printed": "9"
+  },
+  {
+   "level": 0,
+   "title": "3 Chapter III. The Social Welfare Function",
+   "pdf": 33,
+   "printed": "22"
+  },
+  {
+   "level": 0,
+   "title": "4 Chapter IV. The Compensation Principle",
+   "pdf": 45,
+   "printed": "34"
+  },
+  {
+   "level": 0,
+   "title": "5 Chapter V. The General Possibility Theorem for Social Welfare Functions",
+   "pdf": 57,
+   "printed": "46"
+  },
+  {
+   "level": 0,
+   "title": "6 Chapter VI. The Individualistic Assumptions",
+   "pdf": 72,
+   "printed": "61"
+  },
+  {
+   "level": 0,
+   "title": "7 Chapter VII. Similarity as the Basis of Social Welfare Judgments",
+   "pdf": 85,
+   "printed": "74"
+  },
+  {
+   "level": 0,
+   "title": "References",
+   "pdf": 104,
+   "printed": "93"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 109,
+   "printed": "97"
+  }
+ ]
+}

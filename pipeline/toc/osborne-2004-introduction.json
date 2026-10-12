@@ -1,0 +1,993 @@
+{
+ "work_id": "osborne-2004-introduction",
+ "file": "decision-game-theory/osborne-2004-introduction.pdf.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "warning": "Not the published 2004 OUP book: pdf 1-425 is 'Selected chapters from draft of An Introduction to Game Theory' (author's draft, copyright 1995-2000, chapter versions 00/11/6). Chapters 10 (Extensive games with imperfect information) and 16 (Bargaining) are absent (marked 'To be written' in the draft contents); Part divider pages and some printed pages (e.g. pp. 9-10) are missing. pdf 426-584 = draft solutions to exercises (2000); 585-587 = corrections for the first printing (2004); 588-685 = publicly-available solutions manual for the 2004 edition. Chapter 13 has older printed numbering (pp. 279-303 vs contents 363-388).",
+ "method": "draft contents pp. v-x (pdf 3-8); each chapter starts on a 'Draft chapter from...' page (verified); every numbered section and 'Notes' heading located by searching the chapter's pages for the heading line (not running heads). Chapters inside Parts I-III are level 1 with sections at level 2 (Part entries placed on the first chapter page because divider pages are not in the pdf); Chapter 1 and Chapter 17 (Appendix: Mathematics) sit outside the Parts. 'printed' for chapters = draft contents page; for sections = printed page on that pdf page. Supplements after References are listed as level-0 blocks with per-chapter level-1 entries so the planner can skip them.",
+ "last_pdf_page": 685,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Title page",
+   "pdf": 1
+  },
+  {
+   "level": 0,
+   "title": "Copyright",
+   "pdf": 2
+  },
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 3
+  },
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 9,
+   "printed": "xiii"
+  },
+  {
+   "level": 0,
+   "title": "1 Introduction",
+   "pdf": 15,
+   "printed": "1"
+  },
+  {
+   "level": 1,
+   "title": "1.1 What is game theory?",
+   "pdf": 15,
+   "printed": "1"
+  },
+  {
+   "level": 1,
+   "title": "1.2 The theory of rational choice",
+   "pdf": 18,
+   "printed": "4"
+  },
+  {
+   "level": 1,
+   "title": "1.3 Coming attractions",
+   "pdf": 21,
+   "printed": "7"
+  },
+  {
+   "level": 1,
+   "title": "Notes (Chapter 1)",
+   "pdf": 22,
+   "printed": "8"
+  },
+  {
+   "level": 0,
+   "title": "Part I Games with Perfect Information",
+   "pdf": 23
+  },
+  {
+   "level": 1,
+   "title": "2 Nash Equilibrium: Theory",
+   "pdf": 23,
+   "printed": "11"
+  },
+  {
+   "level": 2,
+   "title": "2.1 Strategic games",
+   "pdf": 23,
+   "printed": "11"
+  },
+  {
+   "level": 2,
+   "title": "2.2 Example: the Prisoner’s Dilemma",
+   "pdf": 24,
+   "printed": "12"
+  },
+  {
+   "level": 2,
+   "title": "2.3 Example: Bach or Stravinsky?",
+   "pdf": 28,
+   "printed": "16"
+  },
+  {
+   "level": 2,
+   "title": "2.4 Example: Matching Pennies",
+   "pdf": 29,
+   "printed": "17"
+  },
+  {
+   "level": 2,
+   "title": "2.5 Example: the Stag Hunt",
+   "pdf": 30,
+   "printed": "18"
+  },
+  {
+   "level": 2,
+   "title": "2.6 Nash equilibrium",
+   "pdf": 31,
+   "printed": "19"
+  },
+  {
+   "level": 2,
+   "title": "2.7 Examples of Nash equilibrium",
+   "pdf": 36,
+   "printed": "24"
+  },
+  {
+   "level": 2,
+   "title": "2.8 Best response functions",
+   "pdf": 45,
+   "printed": "33"
+  },
+  {
+   "level": 2,
+   "title": "2.9 Dominated actions",
+   "pdf": 55,
+   "printed": "43"
+  },
+  {
+   "level": 2,
+   "title": "2.10 Equilibrium in a single population: symmetric games and symmetric equilibria",
+   "pdf": 61,
+   "printed": "49"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 2)",
+   "pdf": 63,
+   "printed": "51"
+  },
+  {
+   "level": 1,
+   "title": "3 Nash Equilibrium: Illustrations",
+   "pdf": 65,
+   "printed": "53"
+  },
+  {
+   "level": 2,
+   "title": "3.1 Cournot’s model of oligopoly",
+   "pdf": 65,
+   "printed": "53"
+  },
+  {
+   "level": 2,
+   "title": "3.2 Bertrand’s model of oligopoly",
+   "pdf": 73,
+   "printed": "61"
+  },
+  {
+   "level": 2,
+   "title": "3.3 Electoral competition",
+   "pdf": 80,
+   "printed": "68"
+  },
+  {
+   "level": 2,
+   "title": "3.4 The War of Attrition",
+   "pdf": 87,
+   "printed": "75"
+  },
+  {
+   "level": 2,
+   "title": "3.5 Auctions",
+   "pdf": 91,
+   "printed": "79"
+  },
+  {
+   "level": 2,
+   "title": "3.6 Accident law",
+   "pdf": 101,
+   "printed": "89"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 3)",
+   "pdf": 106,
+   "printed": "94"
+  },
+  {
+   "level": 1,
+   "title": "4 Mixed Strategy Equilibrium",
+   "pdf": 108,
+   "printed": "97"
+  },
+  {
+   "level": 2,
+   "title": "4.1 Introduction",
+   "pdf": 108,
+   "printed": "97"
+  },
+  {
+   "level": 2,
+   "title": "4.2 Strategic games in which players may randomize",
+   "pdf": 114,
+   "printed": "103"
+  },
+  {
+   "level": 2,
+   "title": "4.3 Mixed strategy Nash equilibrium",
+   "pdf": 116,
+   "printed": "105"
+  },
+  {
+   "level": 2,
+   "title": "4.4 Dominated actions",
+   "pdf": 128,
+   "printed": "117"
+  },
+  {
+   "level": 2,
+   "title": "4.5 Pure equilibria when randomization is allowed",
+   "pdf": 130,
+   "printed": "119"
+  },
+  {
+   "level": 2,
+   "title": "4.6 Illustration: expert diagnosis",
+   "pdf": 131,
+   "printed": "120"
+  },
+  {
+   "level": 2,
+   "title": "4.7 Equilibrium in a single population",
+   "pdf": 136,
+   "printed": "125"
+  },
+  {
+   "level": 2,
+   "title": "4.8 Illustration: reporting a crime",
+   "pdf": 139,
+   "printed": "128"
+  },
+  {
+   "level": 2,
+   "title": "4.9 The formation of players’ beliefs",
+   "pdf": 142,
+   "printed": "131"
+  },
+  {
+   "level": 2,
+   "title": "4.10 Extension: Finding all mixed strategy Nash equilibria",
+   "pdf": 146,
+   "printed": "135"
+  },
+  {
+   "level": 2,
+   "title": "4.11 Extension: Mixed strategy Nash equilibria of games in which each player has a continuum of actions",
+   "pdf": 150,
+   "printed": "139"
+  },
+  {
+   "level": 2,
+   "title": "4.12 Appendix: Representing preferences over lotteries by the expected value of a payoff function",
+   "pdf": 154,
+   "printed": "143"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 4)",
+   "pdf": 159,
+   "printed": "148"
+  },
+  {
+   "level": 1,
+   "title": "5 Extensive Games with Perfect Information: Theory",
+   "pdf": 161,
+   "printed": "151"
+  },
+  {
+   "level": 2,
+   "title": "5.1 Introduction",
+   "pdf": 161,
+   "printed": "151"
+  },
+  {
+   "level": 2,
+   "title": "5.2 Extensive games with perfect information",
+   "pdf": 161,
+   "printed": "151"
+  },
+  {
+   "level": 2,
+   "title": "5.3 Strategies and outcomes",
+   "pdf": 167,
+   "printed": "157"
+  },
+  {
+   "level": 2,
+   "title": "5.4 Nash equilibrium",
+   "pdf": 169,
+   "printed": "159"
+  },
+  {
+   "level": 2,
+   "title": "5.5 Subgame perfect equilibrium",
+   "pdf": 172,
+   "printed": "162"
+  },
+  {
+   "level": 2,
+   "title": "5.6 Finding subgame perfect equilibria of finite horizon games: backward induction",
+   "pdf": 177,
+   "printed": "167"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 5)",
+   "pdf": 187,
+   "printed": "177"
+  },
+  {
+   "level": 1,
+   "title": "6 Extensive Games with Perfect Information: Illustrations",
+   "pdf": 188,
+   "printed": "179"
+  },
+  {
+   "level": 2,
+   "title": "6.1 Introduction",
+   "pdf": 188,
+   "printed": "179"
+  },
+  {
+   "level": 2,
+   "title": "6.2 The ultimatum game and the holdup game",
+   "pdf": 188,
+   "printed": "179"
+  },
+  {
+   "level": 2,
+   "title": "6.3 Stackelberg’s model of duopoly",
+   "pdf": 193,
+   "printed": "184"
+  },
+  {
+   "level": 2,
+   "title": "6.4 Buying votes",
+   "pdf": 198,
+   "printed": "189"
+  },
+  {
+   "level": 2,
+   "title": "6.5 A race",
+   "pdf": 203,
+   "printed": "194"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 6)",
+   "pdf": 209,
+   "printed": "200"
+  },
+  {
+   "level": 1,
+   "title": "7 Extensive Games with Perfect Information: Extensions and Discussion",
+   "pdf": 210,
+   "printed": "201"
+  },
+  {
+   "level": 2,
+   "title": "7.1 Allowing for simultaneous moves",
+   "pdf": 210,
+   "printed": "201"
+  },
+  {
+   "level": 2,
+   "title": "7.2 Illustration: entry into a monopolized industry",
+   "pdf": 218,
+   "printed": "209"
+  },
+  {
+   "level": 2,
+   "title": "7.3 Illustration: electoral competition with strategic voters",
+   "pdf": 220,
+   "printed": "211"
+  },
+  {
+   "level": 2,
+   "title": "7.4 Illustration: committee decision-making",
+   "pdf": 222,
+   "printed": "213"
+  },
+  {
+   "level": 2,
+   "title": "7.5 Illustration: exit from a declining industry",
+   "pdf": 226,
+   "printed": "217"
+  },
+  {
+   "level": 2,
+   "title": "7.6 Allowing for exogenous uncertainty",
+   "pdf": 231,
+   "printed": "222"
+  },
+  {
+   "level": 2,
+   "title": "7.7 Discussion: subgame perfect equilibrium and backward induction",
+   "pdf": 235,
+   "printed": "226"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 7)",
+   "pdf": 241,
+   "printed": "232"
+  },
+  {
+   "level": 1,
+   "title": "8 Coalitional Games and the Core",
+   "pdf": 243,
+   "printed": "235"
+  },
+  {
+   "level": 2,
+   "title": "8.1 Coalitional games",
+   "pdf": 243,
+   "printed": "235"
+  },
+  {
+   "level": 2,
+   "title": "8.2 The core",
+   "pdf": 247,
+   "printed": "239"
+  },
+  {
+   "level": 2,
+   "title": "8.3 Illustration: ownership and the distribution of wealth",
+   "pdf": 251,
+   "printed": "243"
+  },
+  {
+   "level": 2,
+   "title": "8.4 Illustration: exchanging homogeneous horses",
+   "pdf": 255,
+   "printed": "247"
+  },
+  {
+   "level": 2,
+   "title": "8.5 Illustration: exchanging heterogeneous houses",
+   "pdf": 260,
+   "printed": "252"
+  },
+  {
+   "level": 2,
+   "title": "8.6 Illustration: voting",
+   "pdf": 264,
+   "printed": "256"
+  },
+  {
+   "level": 2,
+   "title": "8.7 Illustration: matching",
+   "pdf": 267,
+   "printed": "259"
+  },
+  {
+   "level": 2,
+   "title": "8.8 Discussion: other solution concepts",
+   "pdf": 273,
+   "printed": "265"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 8)",
+   "pdf": 274,
+   "printed": "266"
+  },
+  {
+   "level": 0,
+   "title": "Part II Games with Imperfect Information",
+   "pdf": 276
+  },
+  {
+   "level": 1,
+   "title": "9 Bayesian Games",
+   "pdf": 276,
+   "printed": "271"
+  },
+  {
+   "level": 2,
+   "title": "9.1 Introduction",
+   "pdf": 276,
+   "printed": "271"
+  },
+  {
+   "level": 2,
+   "title": "9.2 Motivational examples",
+   "pdf": 276,
+   "printed": "271"
+  },
+  {
+   "level": 2,
+   "title": "9.3 General definitions",
+   "pdf": 281,
+   "printed": "276"
+  },
+  {
+   "level": 2,
+   "title": "9.4 Two examples concerning information",
+   "pdf": 286,
+   "printed": "281"
+  },
+  {
+   "level": 2,
+   "title": "9.5 Illustration: Cournot’s duopoly game with imperfect information",
+   "pdf": 288,
+   "printed": "283"
+  },
+  {
+   "level": 2,
+   "title": "9.6 Illustration: providing a public good",
+   "pdf": 292,
+   "printed": "287"
+  },
+  {
+   "level": 2,
+   "title": "9.7 Illustration: auctions",
+   "pdf": 295,
+   "printed": "290"
+  },
+  {
+   "level": 2,
+   "title": "9.8 Illustration: juries",
+   "pdf": 304,
+   "printed": "299"
+  },
+  {
+   "level": 2,
+   "title": "9.9 Appendix: Analysis of auctions for an arbitrary distribution of valuations",
+   "pdf": 311,
+   "printed": "306"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 9)",
+   "pdf": 314,
+   "printed": "309"
+  },
+  {
+   "level": 0,
+   "title": "Part III Variants and Extensions",
+   "pdf": 315
+  },
+  {
+   "level": 1,
+   "title": "11 Strictly Competitive Games and Maxminimization",
+   "pdf": 315,
+   "printed": "335"
+  },
+  {
+   "level": 2,
+   "title": "11.1 Introduction",
+   "pdf": 315,
+   "printed": "335"
+  },
+  {
+   "level": 2,
+   "title": "11.2 Definitions and examples",
+   "pdf": 315,
+   "printed": "335"
+  },
+  {
+   "level": 2,
+   "title": "11.3 Strictly competitive games",
+   "pdf": 318,
+   "printed": "338"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 11)",
+   "pdf": 328,
+   "printed": "348"
+  },
+  {
+   "level": 1,
+   "title": "12 Rationalizability",
+   "pdf": 329,
+   "printed": "349"
+  },
+  {
+   "level": 2,
+   "title": "12.1 Introduction",
+   "pdf": 329,
+   "printed": "349"
+  },
+  {
+   "level": 2,
+   "title": "12.2 Iterated elimination of strictly dominated actions",
+   "pdf": 335,
+   "printed": "355"
+  },
+  {
+   "level": 2,
+   "title": "12.3 Iterated elimination of weakly dominated actions",
+   "pdf": 339,
+   "printed": "359"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 12)",
+   "pdf": 341,
+   "printed": "361"
+  },
+  {
+   "level": 1,
+   "title": "13 Evolutionary Equilibrium",
+   "pdf": 342,
+   "printed": "363"
+  },
+  {
+   "level": 2,
+   "title": "13.1 Introduction",
+   "pdf": 342,
+   "printed": "363"
+  },
+  {
+   "level": 2,
+   "title": "13.2 Monomorphic pure strategy equilibrium",
+   "pdf": 343,
+   "printed": "280"
+  },
+  {
+   "level": 2,
+   "title": "13.3 Mixed strategies and polymorphic equilibrium",
+   "pdf": 349,
+   "printed": "286"
+  },
+  {
+   "level": 2,
+   "title": "13.4 Asymmetric equilibria",
+   "pdf": 356,
+   "printed": "293"
+  },
+  {
+   "level": 2,
+   "title": "13.5 Variation on a theme: sibling behavior",
+   "pdf": 359,
+   "printed": "296"
+  },
+  {
+   "level": 2,
+   "title": "13.6 Variation on a theme: nesting behavior of wasps",
+   "pdf": 364,
+   "printed": "301"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 13)",
+   "pdf": 366,
+   "printed": "303"
+  },
+  {
+   "level": 1,
+   "title": "14 Repeated games: The Prisoner’s Dilemma",
+   "pdf": 368,
+   "printed": "389"
+  },
+  {
+   "level": 2,
+   "title": "14.1 The main idea",
+   "pdf": 368,
+   "printed": "389"
+  },
+  {
+   "level": 2,
+   "title": "14.2 Preferences",
+   "pdf": 370,
+   "printed": "391"
+  },
+  {
+   "level": 2,
+   "title": "14.3 Infinitely repeated games",
+   "pdf": 372,
+   "printed": "393"
+  },
+  {
+   "level": 2,
+   "title": "14.4 Strategies",
+   "pdf": 373,
+   "printed": "394"
+  },
+  {
+   "level": 2,
+   "title": "14.5 Some Nash equilibria of the infinitely repeated Prisoner’s Dilemma",
+   "pdf": 375,
+   "printed": "396"
+  },
+  {
+   "level": 2,
+   "title": "14.6 Nash equilibrium payoffs of the infinitely repeated Prisoner’s Dilemma when the players are patient",
+   "pdf": 377,
+   "printed": "398"
+  },
+  {
+   "level": 2,
+   "title": "14.7 Subgame perfect equilibria and the one-deviation property",
+   "pdf": 381,
+   "printed": "402"
+  },
+  {
+   "level": 2,
+   "title": "14.8 Some subgame perfect equilibria of the infinitely repeated Prisoner’s Dilemma",
+   "pdf": 383,
+   "printed": "404"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 14)",
+   "pdf": 388,
+   "printed": "409"
+  },
+  {
+   "level": 1,
+   "title": "15 Repeated games: General Results",
+   "pdf": 389,
+   "printed": "411"
+  },
+  {
+   "level": 2,
+   "title": "15.1 Nash equilibria of general infinitely repeated games",
+   "pdf": 389,
+   "printed": "411"
+  },
+  {
+   "level": 2,
+   "title": "15.2 Subgame perfect equilibria of general infinitely repeated games",
+   "pdf": 392,
+   "printed": "414"
+  },
+  {
+   "level": 2,
+   "title": "15.3 Finitely repeated games",
+   "pdf": 398,
+   "printed": "420"
+  },
+  {
+   "level": 2,
+   "title": "Notes (Chapter 15)",
+   "pdf": 398,
+   "printed": "420"
+  },
+  {
+   "level": 0,
+   "title": "17 Appendix: Mathematics",
+   "pdf": 399,
+   "printed": "443"
+  },
+  {
+   "level": 1,
+   "title": "17.1 Introduction",
+   "pdf": 399,
+   "printed": "443"
+  },
+  {
+   "level": 1,
+   "title": "17.2 Numbers",
+   "pdf": 399,
+   "printed": "443"
+  },
+  {
+   "level": 1,
+   "title": "17.3 Sets",
+   "pdf": 400,
+   "printed": "444"
+  },
+  {
+   "level": 1,
+   "title": "17.4 Functions",
+   "pdf": 401,
+   "printed": "445"
+  },
+  {
+   "level": 1,
+   "title": "17.5 Profiles",
+   "pdf": 404,
+   "printed": "448"
+  },
+  {
+   "level": 1,
+   "title": "17.6 Sequences",
+   "pdf": 405,
+   "printed": "449"
+  },
+  {
+   "level": 1,
+   "title": "17.7 Probability",
+   "pdf": 405,
+   "printed": "449"
+  },
+  {
+   "level": 1,
+   "title": "17.8 Proofs",
+   "pdf": 410,
+   "printed": "454"
+  },
+  {
+   "level": 0,
+   "title": "References",
+   "pdf": 412,
+   "printed": "457"
+  },
+  {
+   "level": 0,
+   "title": "Supplement: Draft of solutions to exercises (2000 draft)",
+   "pdf": 426
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 1: Introduction",
+   "pdf": 426
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 2: Nash Equilibrium",
+   "pdf": 427
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 3: Nash Equilibrium: Illustrations",
+   "pdf": 445
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 4: Mixed Strategy Equilibrium",
+   "pdf": 471
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 5: Extensive Games with Perfect Information: Theory",
+   "pdf": 496
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 6: Extensive Games with Perfect Information: Illustrations",
+   "pdf": 508
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 7: Extensive Games with Perfect Information: Extensions and Discussion",
+   "pdf": 524
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 8: Coalitional Games and the Core",
+   "pdf": 545
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 9: Bayesian Games",
+   "pdf": 553
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 11: Strictly Competitive Games and Maxminimization",
+   "pdf": 567
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 12: Rationalizability",
+   "pdf": 570
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 13: Evolutionary Equilibrium",
+   "pdf": 574
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 14: Repeated Games: The Prisoner's Dilemma",
+   "pdf": 580
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 17: Appendix: Mathematics",
+   "pdf": 584
+  },
+  {
+   "level": 0,
+   "title": "Supplement: Corrections and updates for first printing (2004/5/4)",
+   "pdf": 585
+  },
+  {
+   "level": 0,
+   "title": "Supplement: Publicly-available solutions for An Introduction to Game Theory (2004)",
+   "pdf": 588
+  },
+  {
+   "level": 1,
+   "title": "Contents (solutions manual)",
+   "pdf": 592
+  },
+  {
+   "level": 1,
+   "title": "Preface (solutions manual)",
+   "pdf": 598
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 1: Introduction",
+   "pdf": 599
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 2: Nash Equilibrium",
+   "pdf": 601
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 3: Nash Equilibrium: Illustrations",
+   "pdf": 609
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 4: Mixed Strategy Equilibrium",
+   "pdf": 621
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 5: Extensive Games with Perfect Information: Theory",
+   "pdf": 631
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 6: Extensive Games with Perfect Information: Illustrations",
+   "pdf": 635
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 7: Extensive Games with Perfect Information: Extensions and Discussion",
+   "pdf": 641
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 8: Coalitional Games and the Core",
+   "pdf": 645
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 9: Bayesian Games",
+   "pdf": 649
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 10: Extensive Games with Imperfect Information",
+   "pdf": 657
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 11: Strictly Competitive Games and Maxminimization",
+   "pdf": 661
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 12: Rationalizability",
+   "pdf": 665
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 13: Evolutionary Equilibrium",
+   "pdf": 669
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 14: Repeated Games: The Prisoner's Dilemma",
+   "pdf": 673
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 15: Repeated Games: General Results",
+   "pdf": 679
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 16: Bargaining",
+   "pdf": 681
+  },
+  {
+   "level": 1,
+   "title": "Solutions, chapter 17: Appendix: Mathematics",
+   "pdf": 683
+  },
+  {
+   "level": 1,
+   "title": "References (solutions manual)",
+   "pdf": 685
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "work_id": "kuhn-1962-structure",
+ "file": "analytic-philosophy/kuhn-1962-structure.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "method": "printed contents p. iii (pdf 3); every chapter heading found in text (offset printed+12). Second edition, enlarged (1970) with Postscript—1969; Postscript (37 pdf pages) split by its 7 numbered sections, found mid-page in text (toc_check may warn they are not near page top). No index in this PDF; text ends at printed p. 210 (pdf 222).",
+ "last_pdf_page": 222,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 3
+  },
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 5,
+   "printed": "v"
+  },
+  {
+   "level": 0,
+   "title": "1 I. Introduction: A Role for History",
+   "pdf": 13,
+   "printed": "1"
+  },
+  {
+   "level": 0,
+   "title": "2 II. The Route to Normal Science",
+   "pdf": 22,
+   "printed": "10"
+  },
+  {
+   "level": 0,
+   "title": "3 III. The Nature of Normal Science",
+   "pdf": 35,
+   "printed": "23"
+  },
+  {
+   "level": 0,
+   "title": "4 IV. Normal Science as Puzzle-solving",
+   "pdf": 47,
+   "printed": "35"
+  },
+  {
+   "level": 0,
+   "title": "5 V. The Priority of Paradigms",
+   "pdf": 55,
+   "printed": "43"
+  },
+  {
+   "level": 0,
+   "title": "6 VI. Anomaly and the Emergence of Scientific Discoveries",
+   "pdf": 64,
+   "printed": "52"
+  },
+  {
+   "level": 0,
+   "title": "7 VII. Crisis and the Emergence of Scientific Theories",
+   "pdf": 78,
+   "printed": "66"
+  },
+  {
+   "level": 0,
+   "title": "8 VIII. The Response to Crisis",
+   "pdf": 89,
+   "printed": "77"
+  },
+  {
+   "level": 0,
+   "title": "9 IX. The Nature and Necessity of Scientific Revolutions",
+   "pdf": 104,
+   "printed": "92"
+  },
+  {
+   "level": 0,
+   "title": "10 X. Revolutions as Changes of World View",
+   "pdf": 123,
+   "printed": "111"
+  },
+  {
+   "level": 0,
+   "title": "11 XI. The Invisibility of Revolutions",
+   "pdf": 148,
+   "printed": "136"
+  },
+  {
+   "level": 0,
+   "title": "12 XII. The Resolution of Revolutions",
+   "pdf": 156,
+   "printed": "144"
+  },
+  {
+   "level": 0,
+   "title": "13 XIII. Progress through Revolutions",
+   "pdf": 172,
+   "printed": "160"
+  },
+  {
+   "level": 0,
+   "title": "Postscript—1969",
+   "pdf": 186,
+   "printed": "174"
+  },
+  {
+   "level": 1,
+   "title": "1. Paradigms and Community Structure",
+   "pdf": 188,
+   "printed": "176"
+  },
+  {
+   "level": 1,
+   "title": "2. Paradigms as the Constellation of Group Commitments",
+   "pdf": 193,
+   "printed": "181"
+  },
+  {
+   "level": 1,
+   "title": "3. Paradigms as Shared Examples",
+   "pdf": 199,
+   "printed": "187"
+  },
+  {
+   "level": 1,
+   "title": "4. Tacit Knowledge and Intuition",
+   "pdf": 203,
+   "printed": "191"
+  },
+  {
+   "level": 1,
+   "title": "5. Exemplars, Incommensurability, and Revolutions",
+   "pdf": 210,
+   "printed": "198"
+  },
+  {
+   "level": 1,
+   "title": "6. Revolutions and Relativism",
+   "pdf": 217,
+   "printed": "205"
+  },
+  {
+   "level": 1,
+   "title": "7. The Nature of Science",
+   "pdf": 219,
+   "printed": "207"
+  }
+ ]
+}

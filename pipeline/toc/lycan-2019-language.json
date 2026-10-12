@@ -1,0 +1,664 @@
+{
+ "work_id": "lycan-2019-language",
+ "file": "analytic-philosophy/lycan-2019-language.pdf.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "warning": "WRONG BOOK: this PDF is not Lycan, Philosophy of Language: A Contemporary Introduction (3rd ed., Routledge 2019). It is a Bloomsbury introduction titled Philosophy of Language (running heads), with chapters Frege on Names ... Lewis on Intensional Theories of Meaning; preface thanks Bloomsbury editor Sarah Campbell and the book is dedicated to Clare Daly - probably Chris Daly, Philosophy of Language: An Introduction (Bloomsbury, 2013). Lycan is only cited in it.",
+ "method": "No printed contents page in the PDF (starts at Preface p. ix; title/contents pages missing). Chapters and sections taken from each chapter's own Chapter Outline box on its opening page; every chapter and section heading located in text (offset printed+2). Sections included for all chapters (ch. 5 is 36 pp). pdf 342-344 blank. toc_check warnings (7) are section headings lower on the page; all verified present on the given page.",
+ "last_pdf_page": 344,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 1,
+   "printed": "ix"
+  },
+  {
+   "level": 0,
+   "title": "Introduction",
+   "pdf": 3,
+   "printed": "1"
+  },
+  {
+   "level": 0,
+   "title": "1 Frege on Names",
+   "pdf": 15,
+   "printed": "13"
+  },
+  {
+   "level": 1,
+   "title": "1. Introduction",
+   "pdf": 15,
+   "printed": "13"
+  },
+  {
+   "level": 1,
+   "title": "2. Names and descriptions",
+   "pdf": 16,
+   "printed": "14"
+  },
+  {
+   "level": 1,
+   "title": "3. The puzzle of informative identity sentences",
+   "pdf": 17,
+   "printed": "15"
+  },
+  {
+   "level": 1,
+   "title": "4. Frege on names",
+   "pdf": 19,
+   "printed": "17"
+  },
+  {
+   "level": 1,
+   "title": "5. Frege’s distinction between sense and reference",
+   "pdf": 21,
+   "printed": "19"
+  },
+  {
+   "level": 1,
+   "title": "6. What is the sense of a name?",
+   "pdf": 24,
+   "printed": "22"
+  },
+  {
+   "level": 1,
+   "title": "7. The puzzle of empty names",
+   "pdf": 30,
+   "printed": "28"
+  },
+  {
+   "level": 1,
+   "title": "8. Do names have senses?",
+   "pdf": 32,
+   "printed": "30"
+  },
+  {
+   "level": 1,
+   "title": "9. Conclusion",
+   "pdf": 35,
+   "printed": "33"
+  },
+  {
+   "level": 1,
+   "title": "Questions for discussion",
+   "pdf": 36,
+   "printed": "34"
+  },
+  {
+   "level": 1,
+   "title": "Further reading",
+   "pdf": 37,
+   "printed": "35"
+  },
+  {
+   "level": 0,
+   "title": "2 Frege on Predication",
+   "pdf": 39,
+   "printed": "37"
+  },
+  {
+   "level": 1,
+   "title": "1. Introduction",
+   "pdf": 39,
+   "printed": "37"
+  },
+  {
+   "level": 1,
+   "title": "2. The sense and reference of predicates",
+   "pdf": 40,
+   "printed": "38"
+  },
+  {
+   "level": 1,
+   "title": "3. Functions",
+   "pdf": 44,
+   "printed": "42"
+  },
+  {
+   "level": 1,
+   "title": "4. The paradox of the concept horse",
+   "pdf": 49,
+   "printed": "47"
+  },
+  {
+   "level": 1,
+   "title": "5. Vagueness and the sorites paradox",
+   "pdf": 56,
+   "printed": "54"
+  },
+  {
+   "level": 1,
+   "title": "6. Conclusion",
+   "pdf": 59,
+   "printed": "57"
+  },
+  {
+   "level": 1,
+   "title": "Questions for discussion",
+   "pdf": 61,
+   "printed": "59"
+  },
+  {
+   "level": 1,
+   "title": "Further reading",
+   "pdf": 63,
+   "printed": "61"
+  },
+  {
+   "level": 0,
+   "title": "3 Frege on Sentences",
+   "pdf": 65,
+   "printed": "63"
+  },
+  {
+   "level": 1,
+   "title": "1. Introduction",
+   "pdf": 65,
+   "printed": "63"
+  },
+  {
+   "level": 1,
+   "title": "2. The senses of sentences",
+   "pdf": 66,
+   "printed": "64"
+  },
+  {
+   "level": 1,
+   "title": "3. The references of sentences",
+   "pdf": 68,
+   "printed": "66"
+  },
+  {
+   "level": 1,
+   "title": "4. Frege’s theory of indirect sense and indirect reference",
+   "pdf": 75,
+   "printed": "73"
+  },
+  {
+   "level": 1,
+   "title": "5. Problems with Frege’s theory",
+   "pdf": 79,
+   "printed": "77"
+  },
+  {
+   "level": 1,
+   "title": "6. Conclusion",
+   "pdf": 86,
+   "printed": "84"
+  },
+  {
+   "level": 1,
+   "title": "Questions for discussion",
+   "pdf": 87,
+   "printed": "85"
+  },
+  {
+   "level": 1,
+   "title": "Further reading",
+   "pdf": 88,
+   "printed": "86"
+  },
+  {
+   "level": 0,
+   "title": "4 Frege on Force and Tone",
+   "pdf": 89,
+   "printed": "87"
+  },
+  {
+   "level": 1,
+   "title": "1. Introduction",
+   "pdf": 89,
+   "printed": "87"
+  },
+  {
+   "level": 1,
+   "title": "2. The distinction between sense and tone",
+   "pdf": 90,
+   "printed": "88"
+  },
+  {
+   "level": 1,
+   "title": "3. The distinction between sense and force",
+   "pdf": 91,
+   "printed": "89"
+  },
+  {
+   "level": 1,
+   "title": "4. Austin on speech acts",
+   "pdf": 96,
+   "printed": "94"
+  },
+  {
+   "level": 1,
+   "title": "5. Challenges to the distinction between sense and force",
+   "pdf": 100,
+   "printed": "98"
+  },
+  {
+   "level": 1,
+   "title": "6. Illocutionary theories of meaning",
+   "pdf": 105,
+   "printed": "103"
+  },
+  {
+   "level": 1,
+   "title": "7. Geach’s use of the Frege point",
+   "pdf": 107,
+   "printed": "105"
+  },
+  {
+   "level": 1,
+   "title": "8. Conclusion",
+   "pdf": 111,
+   "printed": "109"
+  },
+  {
+   "level": 1,
+   "title": "Questions for discussion",
+   "pdf": 112,
+   "printed": "110"
+  },
+  {
+   "level": 1,
+   "title": "Further reading",
+   "pdf": 114,
+   "printed": "112"
+  },
+  {
+   "level": 0,
+   "title": "5 Russell on Definite Descriptions",
+   "pdf": 115,
+   "printed": "113"
+  },
+  {
+   "level": 1,
+   "title": "1. Introduction",
+   "pdf": 115,
+   "printed": "113"
+  },
+  {
+   "level": 1,
+   "title": "2. Frege and Russell on definite descriptions",
+   "pdf": 116,
+   "printed": "114"
+  },
+  {
+   "level": 1,
+   "title": "3. Five puzzles for a theory of descriptions",
+   "pdf": 119,
+   "printed": "117"
+  },
+  {
+   "level": 1,
+   "title": "4. Russell’s theory of descriptions",
+   "pdf": 121,
+   "printed": "119"
+  },
+  {
+   "level": 1,
+   "title": "5. Russell’s solutions to the puzzles",
+   "pdf": 122,
+   "printed": "120"
+  },
+  {
+   "level": 1,
+   "title": "6. Strawson’s criticisms of Russell",
+   "pdf": 134,
+   "printed": "132"
+  },
+  {
+   "level": 1,
+   "title": "7. Donnellan’s criticisms of Russell and Strawson",
+   "pdf": 142,
+   "printed": "140"
+  },
+  {
+   "level": 1,
+   "title": "8. Conclusion",
+   "pdf": 147,
+   "printed": "145"
+  },
+  {
+   "level": 1,
+   "title": "Questions for discussion",
+   "pdf": 148,
+   "printed": "146"
+  },
+  {
+   "level": 1,
+   "title": "Further reading",
+   "pdf": 149,
+   "printed": "147"
+  },
+  {
+   "level": 0,
+   "title": "6 Grice on Meaning",
+   "pdf": 151,
+   "printed": "149"
+  },
+  {
+   "level": 1,
+   "title": "1. Introduction",
+   "pdf": 151,
+   "printed": "149"
+  },
+  {
+   "level": 1,
+   "title": "2. Grice’s project",
+   "pdf": 152,
+   "printed": "150"
+  },
+  {
+   "level": 1,
+   "title": "3. Grice’s reductions",
+   "pdf": 155,
+   "printed": "153"
+  },
+  {
+   "level": 1,
+   "title": "4. Objections: Sentence meaning",
+   "pdf": 160,
+   "printed": "158"
+  },
+  {
+   "level": 1,
+   "title": "5. Objections: Speaker meaning",
+   "pdf": 163,
+   "printed": "161"
+  },
+  {
+   "level": 1,
+   "title": "6. Conclusion",
+   "pdf": 182,
+   "printed": "180"
+  },
+  {
+   "level": 1,
+   "title": "Questions for discussion",
+   "pdf": 183,
+   "printed": "181"
+  },
+  {
+   "level": 1,
+   "title": "Further reading",
+   "pdf": 184,
+   "printed": "182"
+  },
+  {
+   "level": 0,
+   "title": "7 Grice on Conversation",
+   "pdf": 185,
+   "printed": "183"
+  },
+  {
+   "level": 1,
+   "title": "1. Introduction",
+   "pdf": 185,
+   "printed": "183"
+  },
+  {
+   "level": 1,
+   "title": "2. The varieties of implicature",
+   "pdf": 186,
+   "printed": "184"
+  },
+  {
+   "level": 1,
+   "title": "3. Conversation and rationality",
+   "pdf": 188,
+   "printed": "186"
+  },
+  {
+   "level": 1,
+   "title": "4. The cooperative principle",
+   "pdf": 188,
+   "printed": "186"
+  },
+  {
+   "level": 1,
+   "title": "5. The conversational maxims",
+   "pdf": 189,
+   "printed": "187"
+  },
+  {
+   "level": 1,
+   "title": "6. Conversational implicature",
+   "pdf": 190,
+   "printed": "188"
+  },
+  {
+   "level": 1,
+   "title": "7. Features of conversational implicatures",
+   "pdf": 194,
+   "printed": "192"
+  },
+  {
+   "level": 1,
+   "title": "8. Conventional implicature",
+   "pdf": 198,
+   "printed": "196"
+  },
+  {
+   "level": 1,
+   "title": "9. Objections to Grice",
+   "pdf": 200,
+   "printed": "198"
+  },
+  {
+   "level": 1,
+   "title": "10. Conclusion",
+   "pdf": 205,
+   "printed": "203"
+  },
+  {
+   "level": 1,
+   "title": "Questions for discussion",
+   "pdf": 208,
+   "printed": "206"
+  },
+  {
+   "level": 1,
+   "title": "Further reading",
+   "pdf": 210,
+   "printed": "208"
+  },
+  {
+   "level": 0,
+   "title": "8 Quine on Meaning",
+   "pdf": 211,
+   "printed": "209"
+  },
+  {
+   "level": 1,
+   "title": "1. Introduction",
+   "pdf": 211,
+   "printed": "209"
+  },
+  {
+   "level": 1,
+   "title": "2. Quine on defining ‘synonymy’",
+   "pdf": 212,
+   "printed": "210"
+  },
+  {
+   "level": 1,
+   "title": "3. Verificationism and the Quine-Duhem thesis",
+   "pdf": 214,
+   "printed": "212"
+  },
+  {
+   "level": 1,
+   "title": "4. The thesis of the indeterminacy of translation",
+   "pdf": 215,
+   "printed": "213"
+  },
+  {
+   "level": 1,
+   "title": "5. The argument from below",
+   "pdf": 216,
+   "printed": "214"
+  },
+  {
+   "level": 1,
+   "title": "6. The argument from above",
+   "pdf": 218,
+   "printed": "216"
+  },
+  {
+   "level": 1,
+   "title": "7. Conclusion",
+   "pdf": 224,
+   "printed": "222"
+  },
+  {
+   "level": 1,
+   "title": "Questions for discussion",
+   "pdf": 226,
+   "printed": "224"
+  },
+  {
+   "level": 1,
+   "title": "Further reading",
+   "pdf": 227,
+   "printed": "225"
+  },
+  {
+   "level": 0,
+   "title": "9 Davidson on Extensional Theories of Meaning",
+   "pdf": 229,
+   "printed": "227"
+  },
+  {
+   "level": 1,
+   "title": "1. Introduction",
+   "pdf": 229,
+   "printed": "227"
+  },
+  {
+   "level": 1,
+   "title": "2. Extensional contexts",
+   "pdf": 231,
+   "printed": "229"
+  },
+  {
+   "level": 1,
+   "title": "3. Davidson’s programme",
+   "pdf": 233,
+   "printed": "231"
+  },
+  {
+   "level": 1,
+   "title": "4. Problems facing Davidson’s programme",
+   "pdf": 241,
+   "printed": "239"
+  },
+  {
+   "level": 1,
+   "title": "5. Radical interpretation",
+   "pdf": 252,
+   "printed": "250"
+  },
+  {
+   "level": 1,
+   "title": "6. Conclusion",
+   "pdf": 258,
+   "printed": "256"
+  },
+  {
+   "level": 1,
+   "title": "Questions for discussion",
+   "pdf": 259,
+   "printed": "257"
+  },
+  {
+   "level": 1,
+   "title": "Further reading",
+   "pdf": 260,
+   "printed": "258"
+  },
+  {
+   "level": 0,
+   "title": "10 Lewis on Intensional Theories of Meaning",
+   "pdf": 261,
+   "printed": "259"
+  },
+  {
+   "level": 1,
+   "title": "1. Introduction",
+   "pdf": 261,
+   "printed": "259"
+  },
+  {
+   "level": 1,
+   "title": "2. Intensional logic",
+   "pdf": 262,
+   "printed": "260"
+  },
+  {
+   "level": 1,
+   "title": "3. Possible worlds semantics",
+   "pdf": 264,
+   "printed": "262"
+  },
+  {
+   "level": 1,
+   "title": "4. Advantages of possible worlds semantics",
+   "pdf": 269,
+   "printed": "267"
+  },
+  {
+   "level": 1,
+   "title": "5. Problems for possible worlds semantics",
+   "pdf": 273,
+   "printed": "271"
+  },
+  {
+   "level": 1,
+   "title": "6. Hyperintensional semantics",
+   "pdf": 282,
+   "printed": "280"
+  },
+  {
+   "level": 1,
+   "title": "7. Conclusion",
+   "pdf": 287,
+   "printed": "285"
+  },
+  {
+   "level": 1,
+   "title": "Questions for discussion",
+   "pdf": 288,
+   "printed": "286"
+  },
+  {
+   "level": 1,
+   "title": "Further reading",
+   "pdf": 289,
+   "printed": "287"
+  },
+  {
+   "level": 0,
+   "title": "Conclusion",
+   "pdf": 291,
+   "printed": "289"
+  },
+  {
+   "level": 0,
+   "title": "Glossary",
+   "pdf": 301,
+   "printed": "299"
+  },
+  {
+   "level": 0,
+   "title": "References",
+   "pdf": 311,
+   "printed": "309"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 335,
+   "printed": "333"
+  }
+ ]
+}

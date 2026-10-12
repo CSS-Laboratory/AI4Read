@@ -1,0 +1,680 @@
+{
+ "work_id": "shepsle-2010-analyzing",
+ "file": "political-science/shepsle-2010-analyzing.pdf.pdf",
+ "made_by": "toc agent 2026-10-12",
+ "warning": "Scan (OCR text) of the 2nd edition (W. W. Norton, 2010) is missing printed pages 251-252 (inside Chapter 8, between pdf 263 and 264); from there on pdf = printed + 11 instead of + 13.",
+ "method": "printed contents pp. vii-viii (pdf 8-9); every Part divider page and chapter opening page verified in the OCR text cache; main section headings (small-caps headings, incl. Conclusion / Experimental Corner / Problems and Discussion Questions) located by scanning for all-caps heading lines, boxes/displays/figure labels excluded. Offset pdf = printed + 13 up to printed p. 250, pdf = printed + 11 from p. 253. The PDF's own outline (file parts 'Shepsle Parte N') was ignored. Some toc_check warnings are expected because section headings sit mid-page or are OCR'd with split letters (e.g. 'P ROBLEMS AND D ISCUSSION Q UESTIONS').",
+ "last_pdf_page": 560,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Praise / series page",
+   "pdf": 2
+  },
+  {
+   "level": 0,
+   "title": "Title page",
+   "pdf": 6
+  },
+  {
+   "level": 0,
+   "title": "Dedication and copyright",
+   "pdf": 7
+  },
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 8,
+   "printed": "vii"
+  },
+  {
+   "level": 0,
+   "title": "Acknowledgments for the Second Edition",
+   "pdf": 10,
+   "printed": "ix"
+  },
+  {
+   "level": 0,
+   "title": "Half title",
+   "pdf": 12
+  },
+  {
+   "level": 0,
+   "title": "Part I Introduction",
+   "pdf": 14
+  },
+  {
+   "level": 1,
+   "title": "1 It Isn't Rocket Science, but ...",
+   "pdf": 16,
+   "printed": "3"
+  },
+  {
+   "level": 2,
+   "title": "A Science of Politics?",
+   "pdf": 16,
+   "printed": "3"
+  },
+  {
+   "level": 2,
+   "title": "Models and Theories",
+   "pdf": 20,
+   "printed": "7"
+  },
+  {
+   "level": 2,
+   "title": "Politics",
+   "pdf": 23,
+   "printed": "10"
+  },
+  {
+   "level": 1,
+   "title": "2 Rationality: The Model of Choice",
+   "pdf": 26,
+   "printed": "13"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries",
+   "pdf": 27,
+   "printed": "14"
+  },
+  {
+   "level": 2,
+   "title": "Motivation",
+   "pdf": 31,
+   "printed": "18"
+  },
+  {
+   "level": 2,
+   "title": "The Simple Logic of Preference and Choice",
+   "pdf": 33,
+   "printed": "20"
+  },
+  {
+   "level": 2,
+   "title": "The Maximization Paradigm",
+   "pdf": 42,
+   "printed": "29"
+  },
+  {
+   "level": 2,
+   "title": "Environmental Uncertainty and Beliefs",
+   "pdf": 43,
+   "printed": "30"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 47,
+   "printed": "34"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 48,
+   "printed": "35"
+  },
+  {
+   "level": 0,
+   "title": "Part II Group Choice",
+   "pdf": 52
+  },
+  {
+   "level": 1,
+   "title": "3 Getting Started with Group Choice Analysis",
+   "pdf": 54,
+   "printed": "41"
+  },
+  {
+   "level": 2,
+   "title": "A Warm-up Exercise",
+   "pdf": 54,
+   "printed": "41"
+  },
+  {
+   "level": 2,
+   "title": "A Revised Example",
+   "pdf": 59,
+   "printed": "46"
+  },
+  {
+   "level": 2,
+   "title": "Summary",
+   "pdf": 62,
+   "printed": "49"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 63,
+   "printed": "50"
+  },
+  {
+   "level": 1,
+   "title": "4 Group Choice and Majority Rule",
+   "pdf": 66,
+   "printed": "53"
+  },
+  {
+   "level": 2,
+   "title": "Cyclical Majorities",
+   "pdf": 66,
+   "printed": "53"
+  },
+  {
+   "level": 2,
+   "title": "Arrow's Theorem and Majority Rule",
+   "pdf": 89,
+   "printed": "76"
+  },
+  {
+   "level": 2,
+   "title": "Restrictions on the Arrow Conditions",
+   "pdf": 94,
+   "printed": "81"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion: The Illusiveness of Collective Clarity",
+   "pdf": 98,
+   "printed": "85"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 99,
+   "printed": "86"
+  },
+  {
+   "level": 1,
+   "title": "5 Spatial Models of Majority Rule",
+   "pdf": 103,
+   "printed": "90"
+  },
+  {
+   "level": 2,
+   "title": "Spatial Formulation",
+   "pdf": 104,
+   "printed": "91"
+  },
+  {
+   "level": 2,
+   "title": "Applications",
+   "pdf": 123,
+   "printed": "110"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 155,
+   "printed": "142"
+  },
+  {
+   "level": 2,
+   "title": "Experimental Corner",
+   "pdf": 158,
+   "printed": "145"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 161,
+   "printed": "148"
+  },
+  {
+   "level": 1,
+   "title": "6 Strategic Behavior: Sophistication, Misrepresentation, and Manipulation",
+   "pdf": 169,
+   "printed": "156"
+  },
+  {
+   "level": 2,
+   "title": "Rational Foresight",
+   "pdf": 172,
+   "printed": "159"
+  },
+  {
+   "level": 2,
+   "title": "Manipulation",
+   "pdf": 183,
+   "printed": "170"
+  },
+  {
+   "level": 2,
+   "title": "Sophisticated Voting",
+   "pdf": 187,
+   "printed": "174"
+  },
+  {
+   "level": 2,
+   "title": "Strategic Voting",
+   "pdf": 189,
+   "printed": "176"
+  },
+  {
+   "level": 2,
+   "title": "Heresthetic",
+   "pdf": 193,
+   "printed": "180"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 196,
+   "printed": "183"
+  },
+  {
+   "level": 2,
+   "title": "Experimental Corner",
+   "pdf": 198,
+   "printed": "185"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 202,
+   "printed": "189"
+  },
+  {
+   "level": 1,
+   "title": "7 Voting Methods and Electoral Systems",
+   "pdf": 204,
+   "printed": "191"
+  },
+  {
+   "level": 2,
+   "title": "Voting Methods",
+   "pdf": 205,
+   "printed": "192"
+  },
+  {
+   "level": 2,
+   "title": "Electoral Systems",
+   "pdf": 215,
+   "printed": "202"
+  },
+  {
+   "level": 2,
+   "title": "Experimental Corner",
+   "pdf": 230,
+   "printed": "217"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 235,
+   "printed": "222"
+  },
+  {
+   "level": 0,
+   "title": "Part III Cooperation, Collective Action, and Public Goods",
+   "pdf": 242
+  },
+  {
+   "level": 1,
+   "title": "8 Cooperation",
+   "pdf": 244,
+   "printed": "231"
+  },
+  {
+   "level": 2,
+   "title": "A World with No Cooperation: What Would It Be Like?",
+   "pdf": 245,
+   "printed": "232"
+  },
+  {
+   "level": 2,
+   "title": "The Simplest Case: Two-Person Cooperation",
+   "pdf": 248,
+   "printed": "235"
+  },
+  {
+   "level": 2,
+   "title": "Complicating the Simple Case: Two-Person Cooperation with Repeat Play",
+   "pdf": 254,
+   "printed": "241"
+  },
+  {
+   "level": 2,
+   "title": "Alternative Mechanisms Inducing Cooperation",
+   "pdf": 258,
+   "printed": "245"
+  },
+  {
+   "level": 2,
+   "title": "Preliminary Conclusion",
+   "pdf": 264,
+   "printed": "253"
+  },
+  {
+   "level": 2,
+   "title": "Experimental Corner",
+   "pdf": 264,
+   "printed": "253"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 270,
+   "printed": "259"
+  },
+  {
+   "level": 1,
+   "title": "9 Collective Action",
+   "pdf": 273,
+   "printed": "262"
+  },
+  {
+   "level": 2,
+   "title": "The Group Basis of Politics",
+   "pdf": 275,
+   "printed": "264"
+  },
+  {
+   "level": 2,
+   "title": "Cooperation Accounts",
+   "pdf": 279,
+   "printed": "268"
+  },
+  {
+   "level": 2,
+   "title": "Olson's Logic of Collective Action",
+   "pdf": 291,
+   "printed": "280"
+  },
+  {
+   "level": 2,
+   "title": "Theories of Voting and Collective Action",
+   "pdf": 304,
+   "printed": "293"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 312,
+   "printed": "301"
+  },
+  {
+   "level": 1,
+   "title": "10 Public Goods, Externalities, and the Commons",
+   "pdf": 317,
+   "printed": "306"
+  },
+  {
+   "level": 2,
+   "title": "Defining Terms",
+   "pdf": 317,
+   "printed": "306"
+  },
+  {
+   "level": 2,
+   "title": "Public Supply",
+   "pdf": 325,
+   "printed": "314"
+  },
+  {
+   "level": 2,
+   "title": "Externalities",
+   "pdf": 336,
+   "printed": "325"
+  },
+  {
+   "level": 2,
+   "title": "The Problem of the Commons",
+   "pdf": 346,
+   "printed": "335"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 353,
+   "printed": "342"
+  },
+  {
+   "level": 2,
+   "title": "Experimental Corner",
+   "pdf": 355,
+   "printed": "344"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 359,
+   "printed": "348"
+  },
+  {
+   "level": 0,
+   "title": "Part IV Institutions",
+   "pdf": 364
+  },
+  {
+   "level": 1,
+   "title": "11 Institutions: General Remarks",
+   "pdf": 366,
+   "printed": "355"
+  },
+  {
+   "level": 2,
+   "title": "A Framework for Studying Institutions",
+   "pdf": 368,
+   "printed": "357"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 379,
+   "printed": "368"
+  },
+  {
+   "level": 1,
+   "title": "12 Legislatures",
+   "pdf": 380,
+   "printed": "369"
+  },
+  {
+   "level": 2,
+   "title": "Cooperation among Legislators",
+   "pdf": 380,
+   "printed": "369"
+  },
+  {
+   "level": 2,
+   "title": "Underlying Problems",
+   "pdf": 384,
+   "printed": "373"
+  },
+  {
+   "level": 2,
+   "title": "Legislative Structure and Procedure",
+   "pdf": 390,
+   "printed": "379"
+  },
+  {
+   "level": 2,
+   "title": "Leadership and Coordination",
+   "pdf": 408,
+   "printed": "397"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 412,
+   "printed": "401"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 413,
+   "printed": "402"
+  },
+  {
+   "level": 1,
+   "title": "13 Bureaucracy and Intergovernmental Relations",
+   "pdf": 418,
+   "printed": "407"
+  },
+  {
+   "level": 2,
+   "title": "Intergovernmental Relations, I: Budget-Maximizing Bureaucrats and a Passive Legislative Sponsor",
+   "pdf": 419,
+   "printed": "408"
+  },
+  {
+   "level": 2,
+   "title": "Intergovernmental Relations, II: Bilateral Bargaining",
+   "pdf": 428,
+   "printed": "417"
+  },
+  {
+   "level": 2,
+   "title": "Intergovernmental Relations, III: Principals and Agents",
+   "pdf": 431,
+   "printed": "420"
+  },
+  {
+   "level": 2,
+   "title": "Agency Slippage",
+   "pdf": 444,
+   "printed": "433"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 451,
+   "printed": "440"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 453,
+   "printed": "442"
+  },
+  {
+   "level": 1,
+   "title": "14 Leadership",
+   "pdf": 456,
+   "printed": "445"
+  },
+  {
+   "level": 2,
+   "title": "The Leader as Agent",
+   "pdf": 457,
+   "printed": "446"
+  },
+  {
+   "level": 2,
+   "title": "The Leader as Agenda Setter",
+   "pdf": 462,
+   "printed": "451"
+  },
+  {
+   "level": 2,
+   "title": "The Leader as Entrepreneur",
+   "pdf": 468,
+   "printed": "457"
+  },
+  {
+   "level": 2,
+   "title": "Reputation and Leadership",
+   "pdf": 471,
+   "printed": "460"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 479,
+   "printed": "468"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 480,
+   "printed": "469"
+  },
+  {
+   "level": 1,
+   "title": "15 Courts and Judges",
+   "pdf": 484,
+   "printed": "473"
+  },
+  {
+   "level": 2,
+   "title": "Courts: A Brief Overview",
+   "pdf": 486,
+   "printed": "475"
+  },
+  {
+   "level": 2,
+   "title": "Who Are the Judges, and What Do They Want?",
+   "pdf": 492,
+   "printed": "481"
+  },
+  {
+   "level": 2,
+   "title": "Courts and Intergovernmental Relations",
+   "pdf": 501,
+   "printed": "490"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 507,
+   "printed": "496"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 510,
+   "printed": "499"
+  },
+  {
+   "level": 1,
+   "title": "16 Cabinet Government and Parliamentary Democracy",
+   "pdf": 514,
+   "printed": "503"
+  },
+  {
+   "level": 2,
+   "title": "The Parliamentary Setting",
+   "pdf": 515,
+   "printed": "504"
+  },
+  {
+   "level": 2,
+   "title": "A Menagerie of Governments",
+   "pdf": 520,
+   "printed": "509"
+  },
+  {
+   "level": 2,
+   "title": "Analyzing Government Formation",
+   "pdf": 524,
+   "printed": "513"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "pdf": 538,
+   "printed": "527"
+  },
+  {
+   "level": 2,
+   "title": "Problems and Discussion Questions",
+   "pdf": 539,
+   "printed": "528"
+  },
+  {
+   "level": 1,
+   "title": "17 Final Lessons",
+   "pdf": 541,
+   "printed": "530"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 546,
+   "printed": "535"
+  }
+ ]
+}
