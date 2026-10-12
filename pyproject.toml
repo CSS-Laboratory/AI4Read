@@ -1,0 +1,19 @@
+[project]
+name = "ai4read-pipeline"
+version = "0.1.0"
+description = "AI4Read digest pipeline (Claude on Vertex AI, batch)"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic[vertex]>=0.60",
+    "google-cloud-storage>=2.18",
+    "google-auth>=2.30",
+    "requests>=2.32",
+    "pyyaml>=6.0",
+    "pypdf>=5.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv]
+package = false

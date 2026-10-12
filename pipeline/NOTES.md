@@ -1,0 +1,43 @@
+# Gate 0 research notes (2026-10-12)
+
+Vertex AI docs now live under "Gemini Enterprise Agent Platform" (old `cloud.google.com/vertex-ai/...` URLs redirect).
+
+## Model
+- Id: **`claude-sonnet-5-5`** (no `@date` suffix; GA 2026-09-28). Resource: `publishers/anthropic/models/claude-sonnet-5-5`.
+- Locations: **`global`**, **`us`** (multi-region), **`eu`** (multi-region). No single regions.
+- Limits: 1M input / 128K output tokens. Online: images ≤ 5 MB, ≤ 100 per request.
+- Thinking cannot be `disabled` on Sonnet 5.5; lowest setting is `between_tools`.
+- Enable once in Model Garden (accepts Anthropic terms) if not done yet.
+- Source: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/sonnet-5-5
+- Endpoints: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/use-partner-models
+  - global: `https://aiplatform.googleapis.com/v1/projects/P/locations/global/publishers/anthropic/models/M:rawPredict`
+  - us: `https://aiplatform.us.rep.googleapis.com/v1/projects/P/locations/us/...`
+
+## Batch prediction — ⚠ differs from DESIGN.md
+- Source: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/batch
+- Quote (verified): "The global endpoint for partner models isn't supported." → **batch must run in `us`** (multi-region, +10% price).
+- Input: BigQuery table or GCS JSONL. Row = `{"custom_id": ..., "request": {"messages": [...], "anthropic_version": "vertex-2023-10-16", "max_tokens": N, ...}}`. BQ: job and table in same region; don't name columns `response` or `status`.
+- Output: BQ `response` column or JSONL under a GCS prefix. Results after all rows finish or 24 h.
+- Create: `POST https://LOCATION-aiplatform.googleapis.com/v1/projects/P/locations/LOCATION/batchPredictionJobs` with `model`, `inputConfig{instancesFormat: jsonl, gcsSource.uris}`, `outputConfig{predictionsFormat: jsonl, gcsDestination.outputUriPrefix}`. Exact host for the `us` multi-region: to confirm in smoke test.
+- Default quota: 4 concurrent batch jobs per project.
+- **Unconfirmed in docs → test at Gate 0:** batch in `us` works; image blocks in batch; max request size; max rows per job.
+- Plan: GCS JSONL in/out (simpler than BQ for large base64 images).
+
+## Price (per 1M tokens) — verified on pricing page
+https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing
+
+| Sonnet 5.5 | global | us / eu |
+|---|---|---|
+| Input / output | $2.00 / $10.00 | $2.20 / $11.00 |
+| **Batch input / output** | $1.00 / $5.00 | **$1.10 / $5.50** ← what we pay |
+| Batch cache hit | $0.05 | $0.055 |
+| 5m batch cache write | $1.25 | $1.375 |
+
+No long-context (>200K) premium. Cloud Billing SKU ids: not found (Catalog API needs an API key; skipped).
+
+**Budget impact:** +10% vs DESIGN's global assumption. DESIGN rough plan ≈ $220–250 → ≈ $240–275. Tight against the $280 cap; re-forecast after the pilot. Batch prompt caching of the shared system prompt is a possible saving (see prompt-proposals if relevant).
+
+## Project state (read-only checks)
+- `gcloud` account and ADC OK; quota project `playground-491901`.
+- Enabled already: aiplatform, bigquery, storage, billingbudgets.
+- `gcloud billing projects describe` fails (Cloud Billing API call routed through another consumer project) → budget likely needs the console.

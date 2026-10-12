@@ -1,0 +1,18 @@
+# Digest pipeline config. Prices verified 2026-10-12 (see NOTES.md).
+project: playground-491901
+model: claude-sonnet-5-5
+anthropic_version: vertex-2023-10-16
+online_location: global        # small tests and single re-runs
+batch_location: us             # global not supported for partner-model batch
+bucket: null                   # set after approval, e.g. gs://ai4read-batch-<suffix>
+gcs_prefix: ai4read
+prices_usd_per_mtok:
+  online_global: {input: 2.00, output: 10.00}
+  batch_us: {input: 1.10, output: 5.50, cache_hit: 0.055, cache_write_5m: 1.375}
+max_spend_usd: 280
+paths:
+  library: "~/Library/CloudStorage/GoogleDrive-yangkunhao93@gmail.com/My Drive/Book/AI4Read/library"
+  wiki_works: wiki/works
+image:
+  long_side_px: 1500
+  jpeg_quality: 80
