@@ -15,18 +15,25 @@ G. **Format & language.** All spec sections present and in order; L1 ≤ 120 wor
 Severity: `critical` = a wrong statement, equation, number, or a claim not in the source. `major` = missing important content or a wrong page reference. `minor` = style, format, small wording.
 
 Verdict:
-- `pass` — no critical or major issues.
+- `pass` — no critical or major issues (minor issues may still be fixed with edits).
 - `repair` — issues exist and you can fix all of them from the source.
 - `fail` — the digest is too wrong or too incomplete to repair (for example, many critical issues, or whole sections missing).
+
+How to give fixes (for `pass` with minor fixes, or `repair`):
+- Prefer **edits**: each edit replaces one exact passage of the digest. `find` must be copied **character for character** from the digest and must occur **exactly once** (include enough surrounding words to make it unique). `replace` is the new text. To add missing content, `find` the line just before where it belongs and `replace` it with that same line followed by the new content.
+- Use a full rewrite (`<corrected>`) **only** if the fixes cannot be expressed as edits (for example, a whole section must be restructured). Then leave `<edits>` empty.
 
 Output exactly this structure and nothing else:
 
 <verdict>pass|repair|fail</verdict>
 <issues>
-[ {"severity": "critical|major|minor", "check": "A|B|C|D|E|F|G", "where": "section / bullet / equation", "problem": "…", "evidence": "p. M (what the source says)", "fix": "…"} ]
+[ {"severity": "critical|major|minor", "check": "A|B|C|D|E|F|G", "where": "section / bullet / equation", "problem": "…", "evidence": "p. M (what the source says)"} ]
 </issues>
+<edits>
+[ {"find": "exact text from the digest", "replace": "corrected text"} ]
+</edits>
 <corrected>
-(Only when verdict = repair: the COMPLETE corrected digest, from the `---` frontmatter line to the end, with all issues fixed and nothing else changed. Add `verified: repaired` to the frontmatter. Leave this block empty for pass or fail.)
+(Only if edits cannot express the fixes: the COMPLETE corrected digest from the `---` frontmatter line to the end. Otherwise leave empty.)
 </corrected>
 
 === DIGEST SPEC ===
