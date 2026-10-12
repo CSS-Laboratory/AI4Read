@@ -3,7 +3,7 @@ name: digest-spec
 description: How to digest one unit (a paper, or one book chapter) into a progressive-disclosure wiki item. Every digest agent follows this exactly.
 ---
 
-# Digest spec (v1)
+# Digest spec (v1.1)
 
 One **unit** = one paper, or one book chapter. Output = one markdown file:
 `wiki/works/<work-id>/<unit-id>.md` (for a paper, `<unit-id>` = `main`).
@@ -63,6 +63,11 @@ Only propose; the Knowledge Manager confirms them later.
 
 ## Questions this raises
 2–4 questions a curious reader would ask next.
+
+## Exercises worth doing
+(Only when the unit contains exercises or problems; otherwise omit this section.)
+3–6 items: `- Ex. <number> (p. N) — what it teaches — difficulty: easy | medium | hard`.
+Pick the exercises that best build intuition or that state results used later. Do not solve them here.
 
 ## Reading notes
 Anything a reader should know: OCR problems, edition differences, parts skipped, errors spotted in the source.
