@@ -12,10 +12,18 @@ def cmd_status(_):
         print(f"  {s:14s} {n}")
 
 
+def cmd_plan(_):
+    import json
+    from . import planner
+    rows = planner.plan()
+    print(json.dumps(planner.summary(rows), indent=1))
+
+
 def main():
     ap = argparse.ArgumentParser(prog="pipeline")
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("status").set_defaults(fn=cmd_status)
+    sub.add_parser("plan").set_defaults(fn=cmd_plan)
     a = ap.parse_args()
     a.fn(a)
 
