@@ -289,6 +289,47 @@ def submit(wave, kind, uids, ctl):
     return job
 
 
+def handle_result(uid, kind, resp, price_kind, job=None):
+    u = usage_parts(resp.get("usage", {}))
+    usd = cost(resp.get("usage", {}), price_kind)
+    state.add_spend(usd, kind, unit_id=uid, job=job, usage=u)
+    rec = state.latest().get(uid, {})
+    est = float(units()[uid]["est_cost_usd"] or 0) * {"p1": 0.55, "p2": 0.45, "p3": 0.55}[kind]
+    if price_kind == "online_global":
+        est *= 2          # compare like with like: online costs twice batch
+    state.record(uid, rec["state"], actual_usd=round(rec.get("actual_usd", 0) + usd, 5),
+                 est_usd=round(rec.get("est_usd", 0) + est, 5),
+                 **{f"{kind}_usage": u, f"{kind}_stop": resp.get("stop_reason")})
+    (handle_p2 if kind == "p2" else handle_p1)(uid, resp, state.latest()[uid])
+
+
+def run_online(kind, uids, ctl):
+    """Synchronous fallback (global endpoint, 2x batch price)."""
+    for uid in uids:
+        st = state.latest().get(uid, {})
+        if kind == "p1":
+            req, stats = p1_request(uid)
+        elif kind == "p3":
+            req, stats = p1_request(uid, issues=st.get("issues"))
+        else:
+            req, stats = p2_request(uid, latest_digest(uid, st.get("loop", 0)))
+        fc = forecast_usd([uid], kind) * 2
+        if state.spent() + fc > ctl.get("max_spend_usd", CFG["max_spend_usd"]):
+            log("BUDGET STOP (online)")
+            return
+        state.record(uid, "p2_submitted" if kind == "p2" else "p1_submitted", kind=kind, loop=st.get("loop", 0),
+                     batch_job_id="online", content_hash=content_hash(req), spec_version=SPEC_VERSION, **stats)
+        t = time.time()
+        try:
+            resp = online(req)
+        except Exception as e:
+            log(f"  {uid} {kind} online error: {str(e)[:300]}")
+            state.record(uid, {"p1": "planned", "p3": "p3_queued", "p2": "p1_done"}[kind], note=str(e)[:300])
+            continue
+        log(f"  {uid} {kind} online {time.time() - t:.0f}s usage={usage_parts(resp.get('usage', {}))}")
+        handle_result(uid, kind, resp, "online_global", "online")
+
+
 def collect():
     for jn, j in jobs().items():
         if j.get("status") != "submitted":
@@ -318,15 +359,7 @@ def collect():
                     log(f"  {uid}: no response ({str(r.get('status'))[:200]})")
                     continue
                 got.add(uid)
-                u = usage_parts(resp.get("usage", {}))
-                usd = cost(resp.get("usage", {}), "batch_us")
-                state.add_spend(usd, f"{j['kind']}", unit_id=uid, job=jn, usage=u)
-                rec = state.latest().get(uid, {})
-                est = float(units()[uid]["est_cost_usd"] or 0) * {"p1": 0.55, "p2": 0.45, "p3": 0.55}[j["kind"]]
-                state.record(uid, rec["state"], actual_usd=round(rec.get("actual_usd", 0) + usd, 5),
-                             est_usd=round(rec.get("est_usd", 0) + est, 5),
-                             **{f"{j['kind']}_usage": u, f"{j['kind']}_stop": resp.get("stop_reason")})
-                (handle_p2 if j["kind"] == "p2" else handle_p1)(uid, resp, state.latest()[uid])
+                handle_result(uid, j["kind"], resp, "batch_us", jn)
         for uid in j["units"]:
             if uid not in got:      # failed rows go back to their previous state
                 prev = {"p1": "planned", "p3": "p3_queued", "p2": "p1_done"}[j["kind"]]
@@ -365,7 +398,7 @@ def commit(msg):
 
 # ------------------------------------------------------------------ main loop
 
-def run(wave, once=False, sleep_s=120):
+def run(wave, once=False, sleep_s=120, use_online=False):
     ids = wave_units(wave)
     last_commit = 0
     while True:
@@ -380,7 +413,10 @@ def run(wave, once=False, sleep_s=120):
             for kind in ("p1", "p2", "p3"):
                 if sum(1 for j in jobs().values() if j.get("status") == "submitted") >= MAX_JOBS:
                     break
-                todo = [u for u in ids if u not in busy and next_pass(u, L.get(u)) == kind]
+                todo = [u for u in ids if u not in busy and next_pass(u, state.latest().get(u)) == kind]
+                if todo and use_online:
+                    run_online(kind, todo, ctl)
+                    continue
                 if todo:
                     if submit(wave, kind, todo, ctl) is None:
                         break
@@ -404,8 +440,9 @@ def main(argv=None):
     ap.add_argument("wave")
     ap.add_argument("--once", action="store_true")
     ap.add_argument("--sleep", type=int, default=120)
+    ap.add_argument("--online", action="store_true", help="synchronous global endpoint (2x price)")
     a = ap.parse_args(argv)
-    run(a.wave, once=a.once, sleep_s=a.sleep)
+    run(a.wave, once=a.once, sleep_s=a.sleep, use_online=a.online)
 
 
 if __name__ == "__main__":
