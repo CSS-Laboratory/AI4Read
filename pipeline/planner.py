@@ -511,7 +511,7 @@ def est_cost(r):
     out1 = min(16000, 1500 + 200 * n)
     in1 = int(r["est_tokens"])
     in2 = in1 + out1 + 600
-    out2 = 800 + 0.5 * out1          # assume half the units get a full repaired digest
+    out2 = 1200 + 0.15 * out1        # edit-based repairs (verify.md 2026-10-12); ~5% full rewrites
     return ((in1 + in2) * p["input"] + (out1 + out2) * p["output"]) / 1e6
 
 

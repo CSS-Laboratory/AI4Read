@@ -1,10 +1,10 @@
 # Digest pipeline — status
 
-- **Stage:** Gate 0 (setup) — almost done
+- **Stage:** Gate 0 → Gate 1 (unit plan in progress)
 - **Mode:** pause
 - **Spent:** < $0.01 of $280 cap
-- **Done:** login OK · online call OK · bucket `gs://ai4read-batch-628671` (US) · budget ¥48,000 with alerts at ¥24k / ¥40k / ¥48k
-- **Finding:** batch can't use `global` → runs in `us` (+10%: $1.10 / $5.50 per M tok)
-- **Running:** batch smoke job (2 rows, 1 image) in `us`
-- **Next:** batch result → Gate 0 done → start Gate 1 (unit plan)
+- **Gate 0:** online call OK · bucket OK · budget ¥48,000 OK · batch smoke job in `us` still RUNNING (submitted 16:45; Vertex batch can take hours)
+- **Gate 1 so far:** 169 source files → 167 works; draft `units.csv` covers 142 works; 25 books need a table of contents (being built now)
+- **Found:** 2 duplicate files (Shiller, Osborne); 6 HTML stubs (abstract pages only); 6 scanned PDFs; Cover PDF = 1991 1st edition
+- **Next:** finish TOCs → full `units.csv` + cost forecast → stop for gate1 review
 - **Blockers:** none
