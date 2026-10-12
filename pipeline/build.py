@@ -1,0 +1,228 @@
+"""Build model requests for one unit (P1 digest, P2 verify, P3 re-digest, P4 work map).
+
+Request body = Anthropic Messages API on Vertex (rawPredict / batch `request` field).
+"""
+import base64
+import csv
+import hashlib
+import io
+import json
+import re
+import subprocess
+import tempfile
+import time
+from functools import lru_cache
+from pathlib import Path
+
+from PIL import Image
+
+from . import PIPE, REPO
+from .pages import page_kind, page_texts
+from .planner import CFG, LIB, UNITS_CSV, catalog, html_clean, H2
+
+SPEC_VERSION = "1.1"
+MAX_TOKENS = {"p1": 32000, "p2": 40000, "p3": 32000, "p4": 16000}
+IMG_CACHE = PIPE / "_work" / "img"
+LONG_SIDE = CFG["image"]["long_side_px"]
+QUALITY = CFG["image"]["jpeg_quality"]
+
+
+# ------------------------------------------------------------------ inputs
+
+@lru_cache(maxsize=None)
+def units():
+    return {f"{r['work_id']}/{r['unit_id']}": r for r in csv.DictReader(open(UNITS_CSV))}
+
+
+@lru_cache(maxsize=None)
+def spec_text():
+    t = (REPO / "DIGEST_SPEC.md").read_text()
+    m = re.search(r"\(v(\d+\.\d+)\)", t)
+    assert m and m.group(1) == SPEC_VERSION, f"DIGEST_SPEC version {m and m.group(1)} != {SPEC_VERSION}"
+    return re.sub(r"^---.*?---\s*", "", t, count=1, flags=re.S)
+
+
+@lru_cache(maxsize=None)
+def concept_spine(field):
+    f = REPO / "canon" / f"{field}.md"
+    if not f.exists():
+        return "(none)"
+    t = f.read_text()
+    m = re.search(r"^## Concept spine\s*\n(.*?)(?=^## |\Z)", t, flags=re.M | re.S)
+    return m.group(1).strip() if m else "(none)"
+
+
+@lru_cache(maxsize=None)
+def system_prompt(kind, field):
+    name = {"p1": "digest", "p3": "digest", "p2": "verify", "p4": "work_index"}[kind]
+    t = (PIPE / "prompts" / f"{name}.md").read_text()
+    t = t.replace("{{DIGEST_SPEC}}", spec_text()).replace("{{CONCEPT_SPINE}}", concept_spine(field))
+    assert "{{" not in t, f"unfilled placeholder in {name}.md"
+    return t
+
+
+# ------------------------------------------------------------------ images
+
+def _is_spread(pdf, n):
+    out = subprocess.run(["pdfinfo", "-f", str(n), "-l", str(n), str(pdf)], capture_output=True, text=True).stdout
+    m = re.search(r"Page\s+\d+ size:\s+([\d.]+) x ([\d.]+)", out)
+    if not m:
+        return False
+    w, h = float(m.group(1)), float(m.group(2))
+    return w > 1.25 * h
+
+
+def page_images(pdf, n, scanned):
+    """JPEG bytes for pdf page n: one image, or [left, right] halves for a scanned two-page spread."""
+    key = hashlib.sha1(f"{pdf}:{n}:{LONG_SIDE}:{QUALITY}".encode()).hexdigest()[:16]
+    IMG_CACHE.mkdir(parents=True, exist_ok=True)
+    cached = sorted(IMG_CACHE.glob(f"{key}-*.jpg"))
+    if cached:
+        return [c.read_bytes() for c in cached]
+    spread = scanned and _is_spread(pdf, n)
+    with tempfile.TemporaryDirectory() as td:
+        scale = str(LONG_SIDE * 2) if spread else str(LONG_SIDE)
+        subprocess.run(["pdftoppm", "-f", str(n), "-l", str(n), "-png", "-scale-to", scale,
+                        str(pdf), f"{td}/p"], check=True, capture_output=True)
+        png = next(Path(td).glob("p*.png"))
+        im = Image.open(png).convert("RGB")
+    parts = [im] if not spread else [im.crop((0, 0, im.width // 2, im.height)),
+                                     im.crop((im.width // 2, 0, im.width, im.height))]
+    out = []
+    for i, p in enumerate(parts):
+        if max(p.size) > LONG_SIDE:
+            p.thumbnail((LONG_SIDE, LONG_SIDE))
+        buf = io.BytesIO()
+        p.save(buf, "JPEG", quality=QUALITY, optimize=True)
+        (IMG_CACHE / f"{key}-{i}.jpg").write_bytes(buf.getvalue())
+        out.append(buf.getvalue())
+    return out
+
+
+# ------------------------------------------------------------------ source blocks
+
+def _printed(row, pdf_pages):
+    """Map pdf page -> printed label using the unit's printed range when it is a plain arabic offset."""
+    a, b = map(int, pdf_pages.split("-"))
+    pr = row.get("printed_pages") or ""
+    m = re.fullmatch(r"(\d+)-(\d+)", pr)
+    if m and int(m.group(2)) - int(m.group(1)) == b - a:
+        off = int(m.group(1)) - a
+        return {p: str(p + off) for p in range(a, b + 1)}
+    return {}
+
+
+@lru_cache(maxsize=64)
+def _labels(pdf):
+    from pypdf import PdfReader
+    try:
+        return tuple(PdfReader(str(pdf)).page_labels)
+    except Exception:
+        return None
+
+
+def printed_map(pdf, pages):
+    from .pages import clean_label, printed_numbers
+    pr = [clean_label(x) for x in printed_numbers(pages, list(_labels(pdf) or []) or None)]
+    return {i + 1: p for i, p in enumerate(pr) if p}
+
+
+def source_blocks(row):
+    """Content blocks for the unit's source, plus stats {text_chars, images}."""
+    f = LIB / row["file"]
+    rng = row["pdf_pages"]
+    blocks, stats = [], {"text_chars": 0, "images": 0, "pages": 0}
+    if rng.startswith("c"):
+        s, e = map(int, rng[1:].split("-"))
+        txt = html_clean(f)[s:e].replace(H2, "").strip()
+        blocks.append({"type": "text", "text": f"<source format=\"html\">\n{txt}\n</source>"})
+        stats["text_chars"] = len(txt)
+        return blocks, stats
+    pages = page_texts(f)
+    a, b = map(int, rng.split("-"))
+    words = sum(len(t.split()) for t in pages) / max(len(pages), 1)
+    scanned = words < 30
+    printed = printed_map(f, pages)
+    for n in range(a, b + 1):
+        text = pages[n - 1].rstrip() if n <= len(pages) else ""
+        kind = page_kind(text, words)
+        pm = printed.get(n, "?")
+        blocks.append({"type": "text", "text": f'<page pdf="{n}" printed="{pm}">\n{text}\n</page>'})
+        stats["text_chars"] += len(text)
+        stats["pages"] += 1
+        if kind not in ("prose", "blank"):
+            imgs = page_images(f, n, scanned)
+            for i, jpg in enumerate(imgs):
+                side = "" if len(imgs) == 1 else (" left half" if i == 0 else " right half")
+                blocks.append({"type": "text", "text": f"[page image: pdf {n}{side} / printed {pm}]"})
+                blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/jpeg",
+                                                           "data": base64.b64encode(jpg).decode()}})
+                stats["images"] += 1
+    return blocks, stats
+
+
+def unit_header(row, task):
+    cat = catalog().get(row["work_id"], {})
+    rng = row["pdf_pages"]
+    pr = row.get("printed_pages") or "unknown — use (pdf N) page references"
+    lines = [
+        "UNIT METADATA",
+        f"work_id: {row['work_id']}",
+        f"unit_id: {row['unit_id']}",
+        f"unit title: {row['title']}",
+        f"work citation: {cat.get('citation', '')}",
+        f"fields: [{row['field']}]",
+        f"level: {cat.get('level', '')}",
+        f"source: {'HTML text' if rng.startswith('c') else 'PDF pages ' + rng}; printed pages: {pr}",
+        f"spec_version: {SPEC_VERSION}",
+        f"digested_by: {CFG['model']}",
+        f"digested_on: {time.strftime('%Y-%m-%d')}",
+    ]
+    if re.search(r"-p\d+$", row["unit_id"]):
+        lines.append("note: this unit is ONE PART of a longer chapter. Cover only the pages given; "
+                     "say in Reading notes where the part starts and ends.")
+    if row.get("note"):
+        lines.append(f"source notes (mention in Reading notes where relevant): {row['note']}")
+    lines.append("")
+    lines.append(task)
+    return {"type": "text", "text": "\n".join(lines)}
+
+
+# ------------------------------------------------------------------ requests
+
+def _req(kind, field, content):
+    return {
+        "anthropic_version": CFG["anthropic_version"],
+        "max_tokens": MAX_TOKENS[kind],
+        "system": [{"type": "text", "text": system_prompt(kind, field),
+                    "cache_control": {"type": "ephemeral"}}],
+        "messages": [{"role": "user", "content": content}],
+    }
+
+
+def p1_request(uid, issues=None):
+    row = units()[uid]
+    src, stats = source_blocks(row)
+    task = "TASK: write the digest of this unit, following the DIGEST SPEC exactly."
+    content = [unit_header(row, task)] + src
+    kind = "p1"
+    if issues:
+        kind = "p3"
+        content.append({"type": "text", "text":
+                        "An independent checker rejected the previous digest of this unit. Its issue list:\n"
+                        + json.dumps(issues, ensure_ascii=False, indent=1)
+                        + "\nWrite a new digest that avoids all of these problems."})
+    return _req(kind, row["field"], content), stats
+
+
+def p2_request(uid, digest_md):
+    row = units()[uid]
+    src, stats = source_blocks(row)
+    task = "TASK: check the digest at the end against the source pages, following your instructions."
+    content = [unit_header(row, task)] + src + [
+        {"type": "text", "text": "=== DIGEST TO CHECK ===\n" + digest_md}]
+    return _req("p2", row["field"], content), stats
+
+
+def content_hash(req):
+    return hashlib.sha256(json.dumps(req, sort_keys=True).encode()).hexdigest()[:16]
