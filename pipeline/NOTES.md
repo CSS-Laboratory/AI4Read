@@ -49,3 +49,7 @@ No long-context (>200K) premium. Cloud Billing SKU ids: not found (Catalog API n
 - Batch, `us` (`aiplatform.us.rep.googleapis.com`, `locations/us`): job accepted (`batchPredictionJobs/8438349321925033984`), PENDING 3.5 min → RUNNING 50 min → **FAILED `{code: 13, message: INTERNAL}`** (08:39 UTC). No output files, no partial results, no Cloud Logging entries. Cause unknown: image row, text row, or `us` batch itself. Retest 18:40 JST: two 1-row jobs (text-only `207317315463675904`, image-only `4819003333891063808`) → **both FAILED `INTERNAL`** after ~50 min each (start→end 09:40→10:31 UTC). So it is not the image. All three jobs die at ~50 min with no output and no logs.
 - Vertex service agent `service-628671067824@gcp-sa-aiplatform` has only `roles/aiplatform.serviceAgent`; the bucket has no explicit binding for it. Hypothesis: it cannot read/write the bucket. Untested.
 - Online calls (global) work fine.
+
+## Batch fix attempts (2026-10-12, approved by Kunhao)
+- 19:47 JST: granted `service-628671067824@gcp-sa-aiplatform` **roles/storage.objectAdmin on gs://ai4read-batch-628671 only**; retried 1-row text job via GCS (`3087369277167108096`).
+- 19:48 JST: created BigQuery dataset `ai4read_batch` (US); 1-row text job with BigQuery in/out (`7164815789797670912`; table `smoke_in` → `smoke_out`).
