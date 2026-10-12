@@ -4,7 +4,7 @@ model: claude-sonnet-5-5
 anthropic_version: vertex-2023-10-16
 online_location: global        # small tests and single re-runs
 batch_location: us             # global not supported for partner-model batch
-bucket: null                   # set after approval, e.g. gs://ai4read-batch-<suffix>
+bucket: gs://ai4read-batch-628671   # US multi-region, created 2026-10-12
 gcs_prefix: ai4read
 prices_usd_per_mtok:
   online_global: {input: 2.00, output: 10.00}

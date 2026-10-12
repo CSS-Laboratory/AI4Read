@@ -40,4 +40,10 @@ No long-context (>200K) premium. Cloud Billing SKU ids: not found (Catalog API n
 ## Project state (read-only checks)
 - `gcloud` account and ADC OK; quota project `playground-491901`.
 - Enabled already: aiplatform, bigquery, storage, billingbudgets.
-- `gcloud billing projects describe` fails (Cloud Billing API call routed through another consumer project) → budget likely needs the console.
+- Cloud Billing API enabled on playground-491901 (2026-10-12, approved) so budgets can be made by CLI.
+- Billing account `0183F1-3E1FCA-68DC56` ("Research") is billed in **JPY**. Our USD cost log uses list prices; Google's invoice is in yen.
+- Budget `752397f5-33c1-4f4c-a64f-7cdf2c6b1d69`: **¥48,000** (≈ $300 at 160 JPY/USD), project filter playground-491901, alerts at 50% / 83.33% / 100% (¥24,000 / ¥40,000 / ¥48,000), emails to billing admins.
+
+## Smoke test results
+- Online, global: OK. 18 in / 4 out tokens, $0.000076. Model id answered as `claude-sonnet-5-5`.
+- Batch, `us` (`aiplatform.us.rep.googleapis.com`, `locations/us`): job accepted (`batchPredictionJobs/8438349321925033984`). Result: pending.
