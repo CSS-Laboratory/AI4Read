@@ -46,4 +46,4 @@ No long-context (>200K) premium. Cloud Billing SKU ids: not found (Catalog API n
 
 ## Smoke test results
 - Online, global: OK. 18 in / 4 out tokens, $0.000076. Model id answered as `claude-sonnet-5-5`.
-- Batch, `us` (`aiplatform.us.rep.googleapis.com`, `locations/us`): job accepted (`batchPredictionJobs/8438349321925033984`). Result: pending.
+- Batch, `us` (`aiplatform.us.rep.googleapis.com`, `locations/us`): job accepted (`batchPredictionJobs/8438349321925033984`), PENDING 3.5 min → RUNNING 50 min → **FAILED `{code: 13, message: INTERNAL}`** (08:39 UTC). No output files, no partial results, no Cloud Logging entries. Cause unknown: image row, text row, or `us` batch itself. Next: isolate with separate 1-row jobs (text-only / image-only).
