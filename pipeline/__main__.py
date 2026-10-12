@@ -24,6 +24,11 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("status").set_defaults(fn=cmd_status)
     sub.add_parser("plan").set_defaults(fn=cmd_plan)
+    r = sub.add_parser("run")
+    r.add_argument("wave")
+    r.add_argument("--once", action="store_true")
+    r.add_argument("--sleep", type=int, default=120)
+    r.set_defaults(fn=lambda a: __import__("pipeline.run", fromlist=["run"]).run(a.wave, a.once, a.sleep))
     a = ap.parse_args()
     a.fn(a)
 

@@ -1,0 +1,12 @@
+# Gate 2 pilot (reviews/gate1.md)
+akerlof-1970-lemons/main                      # reference digest exists -> main.pipeline.md
+cover-2006-elements/ch02-entropy              # reference digest exists -> ch02-entropy.pipeline.md
+dennett-1987-intentional-stance/ch02-true     # scanned two-page spreads
+kahneman-2011-thinking/ch03-lazy              # prose, no printed page numbers -> (pdf N)
+wittgenstein-1953-investigations/ch04-private # PI remarks 243-315
+jaynes-2003-probability/ch02-quantitative     # math + prose
+mackay-2003-information/ch02-probability      # exercises
+ostrom-1990-commons/ch02-institutional        # social science chapter
+lippmann-1922-publicopinion/ch06-stereotypes  # HTML source
+shepsle-2010-analyzing/ch03-getting           # scan with OCR text
+vaswani-2017-transformer/main                   # LLM paper

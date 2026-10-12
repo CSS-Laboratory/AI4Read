@@ -43,7 +43,7 @@ SKIP_TITLE = re.compile(
     r"^endnotes|^about the author|^also by|^photo credits|^colophon|^further reading|^glossary|"
     r"^frequently used notation|^notation$|^blank page|^praise for|^epigraph|^a bibliography of|"
     r"^issue table of contents|^article contents|translator|^list of symbols|^(list of )?notation|"
-    r"^about the authors?|^title and front|^german original|licen[cs]e$|^editor.?s (preface|introduction|note|foreword)|^back matter \(detected\)|\(title page\)|^supplement|^solutions|^corrections",
+    r"^about the authors?|^praise\b|^editorial preface|^the text of|^dedication|^title and front|^german original|licen[cs]e$|^editor.?s (preface|introduction|note|foreword)|^back matter \(detected\)|\(title page\)|^supplement|^solutions|^corrections",
     re.I)
 PART_TITLE = re.compile(r"^(part\b|appendi(ces|xes)$|[IVX]{1,4}\s(?!\d))", re.I)
 CHAPTER_TITLE = re.compile(r"^(chapter\b|\d{1,2}\.?\s+(?!\d)[A-Za-z])", re.I)
@@ -103,7 +103,7 @@ def slug(title, n=1):
             "how", "why", "from", "its", "into", "some", "part", "chapter", "appendix"}
     t = re.sub(r"^(chapter|part|appendix)\s+[\w*]+[.:]?\s*", "", title.strip(), flags=re.I)
     for _ in range(3):
-        t = re.sub(r"^([\dIVXLC]+|§\d+)[.:)]?\s+", "", t)
+        t = re.sub(r"^([\dIVXLC]+|§+[\d–-]+)[.:)]?\s+", "", t)
     words = [w for w in re.findall(r"[a-z0-9]+", t.lower()) if w not in stop]
     return "-".join(words[:n]) or "untitled"
 

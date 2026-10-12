@@ -1,0 +1,412 @@
+"""Resumable wave runner (DESIGN.md "State machine", "Pause / resume", "Budget control").
+
+python -m pipeline run <wave> [--once] [--online]
+  <wave> = pipeline/waves/<wave>.txt (one unit id per line)
+
+Loop: git pull + read control.json -> collect finished jobs -> (mode == run) submit next pass
+-> write STATUS.md / commit (<= every 15 min) -> sleep. Safe to kill at any time.
+"""
+import argparse
+import json
+import re
+import subprocess
+import sys
+import time
+from collections import Counter
+from pathlib import Path
+
+from google.cloud import storage
+
+from . import PIPE, REPO, control, state
+from .build import SPEC_VERSION, content_hash, p1_request, p2_request, units
+from .checks import check, errors
+from .vertex import CFG, batch_create, batch_get, cost, online
+
+WAVES = PIPE / "waves"
+OUT = PIPE / "_work" / "out"
+JOBS = PIPE / "state" / "jobs.jsonl"
+MAX_JOBS = 4                    # Vertex default concurrent batch jobs per project
+MAX_LOOPS = 2                   # P3 re-digests before needs_human
+PIPELINE_VERSION = "0.1"
+REFERENCE_UNITS = {"akerlof-1970-lemons/main", "cover-2006-elements/ch02-entropy"}
+TERMINAL = {"accepted", "needs_human", "skipped"}
+
+
+# ------------------------------------------------------------------ helpers
+
+def log(*a):
+    print(time.strftime("%H:%M:%S"), *a, flush=True)
+
+
+def wave_units(wave):
+    ids = [l.split("#")[0].strip() for l in (WAVES / f"{wave}.txt").read_text().splitlines()]
+    ids = [i for i in ids if i]
+    U = units()
+    missing = [i for i in ids if i not in U]
+    if missing:
+        sys.exit(f"unknown unit ids in wave {wave}: {missing}")
+    return ids
+
+
+def jobs():
+    out = {}
+    if JOBS.exists():
+        for l in JOBS.read_text().splitlines():
+            if l.strip():
+                r = json.loads(l)
+                out[r["job"]] = {**out.get(r["job"], {}), **r}
+    return out
+
+
+def job_record(**r):
+    JOBS.parent.mkdir(parents=True, exist_ok=True)
+    with open(JOBS, "a") as f:
+        f.write(json.dumps({"ts": time.strftime("%Y-%m-%dT%H:%M:%S"), **r}) + "\n")
+
+
+def bucket():
+    return storage.Client(project=CFG["project"]).bucket(CFG["bucket"].removeprefix("gs://"))
+
+
+def usage_parts(u):
+    det = u.get("output_tokens_details") or {}
+    return {
+        "input": u.get("input_tokens", 0),
+        "cache_read": u.get("cache_read_input_tokens", 0),
+        "cache_write": u.get("cache_creation_input_tokens", 0),
+        "output": u.get("output_tokens", 0),
+        "thinking": det.get("thinking_tokens", 0),
+    }
+
+
+def text_of(resp):
+    return "".join(c.get("text", "") for c in resp.get("content", []) if c.get("type") == "text").strip()
+
+
+def strip_fence(md):
+    m = re.match(r"^```(?:markdown|md)?\s*\n(.*)\n```\s*$", md.strip(), re.S)
+    return m.group(1) if m else md.strip()
+
+
+# ------------------------------------------------------------------ P2 parsing
+
+def parse_verdict(txt):
+    def tag(name):
+        m = re.search(rf"<{name}>(.*?)</{name}>", txt, re.S)
+        return m.group(1).strip() if m else None
+
+    def js(s):
+        if not s:
+            return []
+        s = re.sub(r"^```(?:json)?\s*|\s*```$", "", s.strip())
+        try:
+            v = json.loads(s)
+            return v if isinstance(v, list) else []
+        except json.JSONDecodeError:
+            return None
+    verdict = (tag("verdict") or "").lower()
+    return {"verdict": verdict if verdict in ("pass", "repair", "fail") else None,
+            "issues": js(tag("issues")), "edits": js(tag("edits")),
+            "corrected": strip_fence(tag("corrected") or "")}
+
+
+def apply_edits(md, edits):
+    """Each find must occur exactly once. Returns (new_md, failures)."""
+    fails = []
+    for e in edits or []:
+        f, r = e.get("find", ""), e.get("replace", "")
+        n = md.count(f) if f else 0
+        if n != 1:
+            fails.append({"find": f[:80], "count": n})
+            continue
+        md = md.replace(f, r, 1)
+    return md, fails
+
+
+def add_frontmatter(md, extra):
+    m = re.match(r"^---\s*\n(.*?)\n---\s*\n", md, re.S)
+    if not m:
+        return md
+    fm = m.group(1)
+    for k, v in extra.items():
+        fm = re.sub(rf"^{k}:.*\n?", "", fm, flags=re.M).rstrip("\n")
+        fm += f"\n{k}: {v}"
+    return f"---\n{fm}\n---\n" + md[m.end():]
+
+
+# ------------------------------------------------------------------ outputs
+
+def wiki_path(uid):
+    work, unit = uid.split("/", 1)
+    name = f"{unit}.pipeline.md" if uid in REFERENCE_UNITS else f"{unit}.md"
+    return REPO / "wiki" / "works" / work / name
+
+
+def accept(uid, md, verified, n_issues):
+    md = add_frontmatter(md, {"spec_version": SPEC_VERSION, "verified": verified,
+                              "verifier_issues": n_issues, "pipeline_version": PIPELINE_VERSION})
+    p = wiki_path(uid)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(md.rstrip() + "\n")
+    state.record(uid, "accepted", verified=verified, verifier_issues=n_issues, path=str(p.relative_to(REPO)))
+
+
+def handle_p1(uid, resp, rec):
+    md = strip_fence(text_of(resp))
+    OUT.mkdir(parents=True, exist_ok=True)
+    loop = rec.get("loop", 0)
+    (OUT / f"{uid.replace('/', '__')}.p{1 if loop == 0 else 3}-{loop}.md").write_text(md)
+    iss = check(md, units()[uid], uid)
+    state.record(uid, "p1_done", loop=loop, det_errors=len(errors(iss)), det_issues=iss[:20],
+                 stop_reason=resp.get("stop_reason"))
+    if resp.get("stop_reason") == "max_tokens":
+        state.record(uid, "needs_human", reason="P1 hit max_tokens: split the unit")
+
+
+def handle_p2(uid, resp, rec):
+    txt = text_of(resp)
+    loop = rec.get("loop", 0)
+    (OUT / f"{uid.replace('/', '__')}.p2-{loop}.txt").write_text(txt)
+    v = parse_verdict(txt)
+    digest = latest_digest(uid, loop)
+    issues = v["issues"] if isinstance(v["issues"], list) else []
+    if resp.get("stop_reason") == "max_tokens" or v["verdict"] is None or v["edits"] is None:
+        return requeue(uid, loop, issues or [{"severity": "major", "problem": "verifier output unparseable"}],
+                       "verifier output unparseable or truncated")
+    n_crit = sum(1 for i in issues if i.get("severity") in ("critical", "major"))
+    if v["verdict"] == "fail":
+        return requeue(uid, loop, issues, "verifier verdict fail")
+    if v["corrected"]:
+        new, fails = v["corrected"], []
+    else:
+        new, fails = apply_edits(digest, v["edits"])
+    if fails:
+        state.record(uid, "p2_done", loop=loop, verdict=v["verdict"], edit_failures=fails,
+                     n_issues=len(issues))
+        return fix_online(uid, loop, digest, issues, fails)
+    det = errors(check(new, units()[uid], uid))
+    state.record(uid, "p2_done", loop=loop, verdict=v["verdict"], n_issues=len(issues), n_major=n_crit,
+                 n_edits=len(v["edits"] or []), rewrite=bool(v["corrected"]), det_errors_after=len(det))
+    if det:
+        return requeue(uid, loop, issues + [{"severity": "major", "check": "G", "problem": d["msg"]} for d in det],
+                       "deterministic checks fail after P2")
+    verified = "pass" if v["verdict"] == "pass" and not (v["edits"] or v["corrected"]) else "repaired"
+    accept(uid, new, verified, len(issues))
+
+
+def latest_digest(uid, loop):
+    p = OUT / f"{uid.replace('/', '__')}.p{1 if loop == 0 else 3}-{loop}.md"
+    return p.read_text()
+
+
+def requeue(uid, loop, issues, why):
+    if loop >= MAX_LOOPS:
+        state.record(uid, "needs_human", reason=why, loop=loop)
+    else:
+        state.record(uid, "p3_queued", reason=why, loop=loop + 1, issues=issues[:40])
+
+
+def fix_online(uid, loop, digest, issues, fails):
+    """Edits did not apply: ask the verifier online for the full corrected digest (reviews/gate0.md)."""
+    req, _ = p2_request(uid, digest)
+    req["messages"][0]["content"].append({"type": "text", "text":
+        "Your edits could not be applied exactly. Return the same verdict and issues, leave <edits> empty, "
+        "and give the COMPLETE corrected digest in <corrected>."})
+    resp = online(req)
+    u = resp.get("usage", {})
+    usd = cost(u, "online_global")
+    state.add_spend(usd, "p2-online-fix", unit_id=uid, usage=usage_parts(u))
+    v = parse_verdict(text_of(resp))
+    if not v["corrected"]:
+        return requeue(uid, loop, issues, "online fix returned no corrected digest")
+    det = errors(check(v["corrected"], units()[uid], uid))
+    if det:
+        return requeue(uid, loop, issues, "deterministic checks fail after online fix")
+    accept(uid, v["corrected"], "repaired", len(issues))
+
+
+# ------------------------------------------------------------------ submit / collect
+
+def next_pass(uid, st):
+    s = (st or {}).get("state", "planned")
+    if s in ("planned",):
+        return "p1"
+    if s == "p1_done":
+        return "p2"
+    if s == "p3_queued":
+        return "p3"
+    return None
+
+
+def forecast_usd(uids, kind):
+    """Planner estimate x calibration (measured / estimated on finished units; 1.5 until measured)."""
+    U = units()
+    est = sum(float(U[u]["est_cost_usd"] or 0) for u in uids)
+    share = {"p1": 0.55, "p2": 0.45, "p3": 0.55}[kind]
+    done = [r for r in state.latest().values() if r.get("est_usd") and r.get("actual_usd")]
+    f = (sum(r["actual_usd"] for r in done) / sum(r["est_usd"] for r in done)) if done else 1.5
+    return est * share * f
+
+
+def submit(wave, kind, uids, ctl):
+    reqs = []
+    for uid in uids:
+        st = state.latest().get(uid, {})
+        if kind == "p1":
+            req, stats = p1_request(uid)
+        elif kind == "p3":
+            req, stats = p1_request(uid, issues=st.get("issues"))
+        else:
+            loop = st.get("loop", 0)
+            digest = latest_digest(uid, loop)
+            req, stats = p2_request(uid, digest)
+            det = st.get("det_issues") or []
+            if det:
+                req["messages"][0]["content"].append({"type": "text", "text":
+                    "Note: an automatic format checker also reported: "
+                    + "; ".join(d["msg"] for d in det[:15])})
+        reqs.append((uid, req, stats))
+    spent = state.spent()
+    fc = forecast_usd([u for u, _, _ in reqs], kind)
+    inflight = sum(j.get("forecast_usd", 0) for j in jobs().values() if j.get("status") == "submitted")
+    if spent + inflight + fc > ctl.get("max_spend_usd", CFG["max_spend_usd"]):
+        log(f"BUDGET STOP: spent ${spent:.2f} + in flight ${inflight:.2f} + forecast ${fc:.2f} > cap")
+        return None
+    stamp = time.strftime("%Y%m%d-%H%M%S")
+    name = f"ai4read-{wave}-{kind}-{stamp}"
+    blob = f"{CFG['gcs_prefix']}/{wave}/{kind}-{stamp}/input.jsonl"
+    lines = [json.dumps({"custom_id": uid.replace("/", "__"), "request": req}) for uid, req, _ in reqs]
+    bucket().blob(blob).upload_from_string("\n".join(lines) + "\n")
+    out = f"gs://{bucket().name}/{CFG['gcs_prefix']}/{wave}/{kind}-{stamp}/output"
+    job = batch_create(name, f"gs://{bucket().name}/{blob}", out)
+    job_record(job=job["name"], status="submitted", kind=kind, wave=wave, units=[u for u, _, _ in reqs],
+               output=out, forecast_usd=round(fc, 4))
+    loop_of = {u: state.latest().get(u, {}).get("loop", 0) for u, _, _ in reqs}
+    for uid, req, stats in reqs:
+        state.record(uid, "p2_submitted" if kind == "p2" else "p1_submitted", kind=kind, loop=loop_of[uid],
+                     batch_job_id=job["name"], content_hash=content_hash(req), spec_version=SPEC_VERSION, **stats)
+    log(f"submitted {kind} for {len(reqs)} units: {job['name'].split('/')[-1]} (forecast ${fc:.2f})")
+    return job
+
+
+def collect():
+    for jn, j in jobs().items():
+        if j.get("status") != "submitted":
+            continue
+        info = batch_get(jn)
+        st = info["state"]
+        if st in ("JOB_STATE_PENDING", "JOB_STATE_RUNNING", "JOB_STATE_QUEUED"):
+            continue
+        log(f"job {jn.split('/')[-1]} ({j['kind']}) -> {st}")
+        got = set()
+        prefix = j["output"].removeprefix(f"gs://{bucket().name}/")
+        for bl in bucket().list_blobs(prefix=prefix):
+            if not bl.name.endswith(".jsonl"):
+                continue
+            for line in bl.download_as_text().splitlines():
+                if not line.strip():
+                    continue
+                r = json.loads(line)
+                uid = r.get("custom_id", "").replace("__", "/")
+                resp = r.get("response") or r.get("prediction") or {}
+                if isinstance(resp, str):
+                    try:
+                        resp = json.loads(resp)
+                    except json.JSONDecodeError:
+                        resp = {}
+                if not resp.get("content"):
+                    log(f"  {uid}: no response ({str(r.get('status'))[:200]})")
+                    continue
+                got.add(uid)
+                u = usage_parts(resp.get("usage", {}))
+                usd = cost(resp.get("usage", {}), "batch_us")
+                state.add_spend(usd, f"{j['kind']}", unit_id=uid, job=jn, usage=u)
+                rec = state.latest().get(uid, {})
+                est = float(units()[uid]["est_cost_usd"] or 0) * {"p1": 0.55, "p2": 0.45, "p3": 0.55}[j["kind"]]
+                state.record(uid, rec["state"], actual_usd=round(rec.get("actual_usd", 0) + usd, 5),
+                             est_usd=round(rec.get("est_usd", 0) + est, 5),
+                             **{f"{j['kind']}_usage": u, f"{j['kind']}_stop": resp.get("stop_reason")})
+                (handle_p2 if j["kind"] == "p2" else handle_p1)(uid, resp, state.latest()[uid])
+        for uid in j["units"]:
+            if uid not in got:      # failed rows go back to their previous state
+                prev = {"p1": "planned", "p3": "p3_queued", "p2": "p1_done"}[j["kind"]]
+                state.record(uid, prev, note=f"no result from {jn.split('/')[-1]} ({st})")
+        job_record(job=jn, status="done", state=st, error=info.get("error"), n_results=len(got))
+
+
+# ------------------------------------------------------------------ status
+
+def write_status(wave, ids, ctl):
+    L = state.latest()
+    c = Counter(L.get(u, {}).get("state", "planned") for u in ids)
+    allc = state.counts()
+    running = [j for j in jobs().values() if j.get("status") == "submitted"]
+    lines = [
+        "# Digest pipeline — status", "",
+        f"- **Wave:** `{wave}` — {len(ids)} units · " + " · ".join(f"{k} {v}" for k, v in sorted(c.items())),
+        f"- **Mode:** {ctl['mode']}",
+        f"- **Spent:** ${state.spent():.2f} of ${ctl['max_spend_usd']} cap",
+        f"- **Jobs running:** {len(running)}" + (" (" + ", ".join(j['kind'] for j in running) + ")" if running else ""),
+        f"- **All units:** " + " · ".join(f"{k} {v}" for k, v in sorted(allc.items())),
+        f"- **Updated:** {time.strftime('%Y-%m-%d %H:%M')}",
+    ]
+    (PIPE / "STATUS.md").write_text("\n".join(lines) + "\n")
+
+
+def commit(msg):
+    subprocess.run(["git", "-C", str(REPO), "add", "pipeline/STATUS.md", "pipeline/state", "wiki/works"], check=False)
+    r = subprocess.run(["git", "-C", str(REPO), "commit", "-qm",
+                        msg + "\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"],
+                       capture_output=True)
+    if r.returncode == 0:
+        subprocess.run(["git", "-C", str(REPO), "pull", "--rebase", "-q"], check=False)
+        subprocess.run(["git", "-C", str(REPO), "push", "-q"], check=False)
+
+
+# ------------------------------------------------------------------ main loop
+
+def run(wave, once=False, sleep_s=120):
+    ids = wave_units(wave)
+    last_commit = 0
+    while True:
+        ctl = control.read(do_pull=True)
+        if ctl["mode"] == "stop":
+            log("control: stop")
+            break
+        collect()
+        L = state.latest()
+        if ctl["mode"] == "run":
+            busy = {u for j in jobs().values() if j.get("status") == "submitted" for u in j["units"]}
+            for kind in ("p1", "p2", "p3"):
+                if sum(1 for j in jobs().values() if j.get("status") == "submitted") >= MAX_JOBS:
+                    break
+                todo = [u for u in ids if u not in busy and next_pass(u, L.get(u)) == kind]
+                if todo:
+                    if submit(wave, kind, todo, ctl) is None:
+                        break
+                    busy |= set(todo)
+        write_status(wave, ids, ctl)
+        L = state.latest()
+        done = all(L.get(u, {}).get("state") in TERMINAL for u in ids)
+        if time.time() - last_commit > 900 or done or once:
+            commit(f"digest: {wave} status ({sum(1 for u in ids if L.get(u, {}).get('state') == 'accepted')} accepted)")
+            last_commit = time.time()
+        if done:
+            log("wave complete")
+            break
+        if once:
+            break
+        time.sleep(sleep_s)
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(prog="pipeline run")
+    ap.add_argument("wave")
+    ap.add_argument("--once", action="store_true")
+    ap.add_argument("--sleep", type=int, default=120)
+    a = ap.parse_args(argv)
+    run(a.wave, once=a.once, sleep_s=a.sleep)
+
+
+if __name__ == "__main__":
+    main()
