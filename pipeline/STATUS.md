@@ -1,10 +1,9 @@
 # Digest pipeline — status
 
-- **Stage:** Gate 1 ✅ approved with changes (applied) → building Gate 2 passes
+- **Stage:** Gate 2 — code built, pilot NOT started
 - **Mode:** pause
 - **Spent:** < $0.01 of $280 cap
-- **Plan:** 1200 units · 21,953 pages · est. ≈ $160 total (uncalibrated)
-- **Gate 0:** ⚠ first batch smoke job FAILED (`INTERNAL`); 2 diagnostic 1-row jobs (text / image) running since 18:40
-- **Held:** Lycan (wrong PDF) — Kunhao decides
-- **Next:** batch result → build P1/P2/checks → ask Kunhao before pilot spend
-- **Blockers:** batch in `us` not yet proven
+- **Blocker:** ⚠ Claude batch in `us` fails for us: 3 of 3 jobs `INTERNAL` after ~50 min (text-only too). Online works.
+- **Pilot:** 11 units ready (`waves/pilot.txt`), est. ≈ $2 batch / ≈ $4 online
+- **Budget risk:** whole run online ≈ 1.8× batch → ≈ $255–290, over the cap
+- **Next:** Kunhao decides: fix batch (bucket permission test / support case) and/or run pilot online
