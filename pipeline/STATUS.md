@@ -1,10 +1,10 @@
 # Digest pipeline — status
 
-- **Stage:** Gate 1 — unit plan ready, **waiting for review** (`pipeline/reviews/gate1.md`)
+- **Stage:** Gate 1 ✅ approved with changes (applied) → building Gate 2 passes
 - **Mode:** pause
 - **Spent:** < $0.01 of $280 cap
-- **Plan:** 1271 units · 22,093 pages · 160 works · est. ≈ $160 total (uncalibrated)
-- **Gate 0:** ⚠ batch smoke job **FAILED** after 50 min (`INTERNAL`, no details). Online calls work. Diagnosing.
-- **Needs Kunhao:** wrong Lycan PDF · Osborne is a draft · 6 HTML stubs · Shiller duplicate → see `pipeline/GATE1.md`
-- **Next:** after review + batch result → build passes → Gate 2 pilot
-- **Blockers:** batch in `us` not yet proven · gate1 review
+- **Plan:** 1200 units · 21,953 pages · est. ≈ $160 total (uncalibrated)
+- **Gate 0:** ⚠ first batch smoke job FAILED (`INTERNAL`); 2 diagnostic 1-row jobs (text / image) running since 18:40
+- **Held:** Lycan (wrong PDF) — Kunhao decides
+- **Next:** batch result → build P1/P2/checks → ask Kunhao before pilot spend
+- **Blockers:** batch in `us` not yet proven

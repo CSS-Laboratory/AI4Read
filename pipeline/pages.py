@@ -11,6 +11,10 @@ NUM = re.compile(r"^\s*(\d{1,4})\b|\b(\d{1,4})\s*$")
 
 def page_texts(pdf: Path):
     t = TEXT_CACHE / (pdf.name + ".txt")
+    if not t.exists():
+        import subprocess
+        t.parent.mkdir(parents=True, exist_ok=True)
+        subprocess.run(["pdftotext", "-layout", str(pdf), str(t)], check=True, capture_output=True)
     pages = t.read_text(errors="replace").split("\f")
     if pages and not pages[-1].strip():
         pages = pages[:-1]

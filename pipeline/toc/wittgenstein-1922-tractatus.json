@@ -1,0 +1,19 @@
+{
+  "work_id": "wittgenstein-1922-tractatus",
+  "file": "analytic-philosophy/wittgenstein-1922-tractatus.pdf",
+  "made_by": "engineer 2026-10-12",
+  "method": "Project Gutenberg PDF of the 1922 Ogden bilingual edition. English text pdf 27-94, German original pdf 95-165 (skipped), Gutenberg licence pdf 167+. Units by top-level propositions (reviews/gate1.md): 1-2, 3, 4, 5, 6-7; start pages found by the proposition number at line start.",
+  "last_pdf_page": 174,
+  "entries": [
+    {"level": 0, "title": "Title and front pages", "pdf": 1},
+    {"level": 0, "title": "Introduction by Bertrand Russell", "pdf": 9},
+    {"level": 0, "title": "Preface", "pdf": 25},
+    {"level": 0, "title": "1 Propositions 1-2: the world, facts, states of affairs, objects", "pdf": 27},
+    {"level": 0, "title": "3 Proposition 3: the thought as logical picture; the proposition", "pdf": 32},
+    {"level": 0, "title": "4 Proposition 4: the thought as significant proposition", "pdf": 40},
+    {"level": 0, "title": "5 Proposition 5: truth-functions of elementary propositions", "pdf": 57},
+    {"level": 0, "title": "6 Propositions 6-7: the general form of the truth-function; what cannot be said", "pdf": 77},
+    {"level": 0, "title": "German original (Logisch-philosophische Abhandlung)", "pdf": 95},
+    {"level": 0, "title": "Project Gutenberg licence", "pdf": 167}
+  ]
+}

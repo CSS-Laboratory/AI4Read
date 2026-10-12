@@ -20,7 +20,7 @@ def run_online():
     print("model:", r.get("model"), "| text:", r["content"][-1].get("text"), "| usage:", u, f"| ${usd:.6f}")
 
 
-def run_batch(jpeg):
+def run_batch(jpeg, only=None):
     img = base64.b64encode(open(jpeg, "rb").read()).decode()
     rows = [
         {"custom_id": "smoke-text", "request": {
@@ -32,8 +32,10 @@ def run_batch(jpeg):
                 {"type": "image", "source": {"type": "base64", "media_type": "image/jpeg", "data": img}},
                 {"type": "text", "text": "What is the printed page number on this page? Reply with the number only."}]}]}},
     ]
+    if only:
+        rows = [r for r in rows if r["custom_id"] == f"smoke-{only}"]
     bucket = CFG["bucket"].removeprefix("gs://")
-    stamp = time.strftime("%Y%m%d-%H%M%S")
+    stamp = time.strftime("%Y%m%d-%H%M%S") + (f"-{only}" if only else "")
     blob = f"{CFG['gcs_prefix']}/smoke/{stamp}/input.jsonl"
     b = storage.Client(project=CFG["project"]).bucket(bucket)
     b.blob(blob).upload_from_string("\n".join(json.dumps(r) for r in rows) + "\n")
@@ -56,4 +58,5 @@ def run_batch(jpeg):
 
 
 if __name__ == "__main__":
-    {"online": lambda: run_online(), "batch": lambda: run_batch(sys.argv[2])}[sys.argv[1]]()
+    {"online": lambda: run_online(),
+     "batch": lambda: run_batch(sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else None)}[sys.argv[1]]()

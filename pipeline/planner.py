@@ -30,7 +30,8 @@ LIB = Path(os.path.expanduser(CFG["paths"]["library"]))
 TOC_DIR = PIPE / "toc"
 UNITS_CSV = PIPE / "units.csv"
 
-SPLIT_PAGES = 35          # split units longer than this
+SPLIT_PAGES = 40          # split units longer than this (gate1 review)
+MERGE_PAGES = 3           # book units this short merge into the next unit (gate1 review)
 TARGET_PART = 28          # aim for parts about this long
 DESCEND_PAGES = 60        # outline entries longer than this are containers (Parts)
 STUB_WORDS = 2000         # HTML pages with fewer words are landing/abstract pages
@@ -41,7 +42,8 @@ SKIP_TITLE = re.compile(
     r"index$|^(subject|name|author|citation|topic|symbol) index|^bibliography|^references|^notes$|"
     r"^endnotes|^about the author|^also by|^photo credits|^colophon|^further reading|^glossary|"
     r"^frequently used notation|^notation$|^blank page|^praise for|^epigraph|^a bibliography of|"
-    r"^issue table of contents|^article contents|^back matter \(detected\)|\(title page\)|^supplement|^solutions|^corrections",
+    r"^issue table of contents|^article contents|translator|^list of symbols|^(list of )?notation|"
+    r"^about the authors?|^title and front|^german original|licen[cs]e$|^editor.?s (preface|introduction|note|foreword)|^back matter \(detected\)|\(title page\)|^supplement|^solutions|^corrections",
     re.I)
 PART_TITLE = re.compile(r"^(part\b|appendi(ces|xes)$|[IVX]{1,4}\s(?!\d))", re.I)
 CHAPTER_TITLE = re.compile(r"^(chapter\b|\d{1,2}\.?\s+(?!\d)[A-Za-z])", re.I)
@@ -50,7 +52,14 @@ SIDE_TITLE = re.compile(r"^(afterword|coda|conclusions?\b|epilogue|interlude|add
                         r"answers|overview|summary)", re.I)
 TAIL_TITLE = re.compile(r"^(exercises|problems|summary|further reading|bibliographic notes|"
                         r"historical notes|notes and references|review questions)", re.I)
-FRONT_TITLE = re.compile(r"^(preface|foreword|translators?.? note|series editor|a note for|note to)", re.I)
+# prefaces the quality lead re-enabled (reviews/gate1.md); everything else FRONT is skipped
+KEEP_FRONT = {("kripke-1980-naming", "front-preface"), ("jaynes-2003-probability", "front-preface"),
+              ("kuhn-1962-structure", "front-preface"), ("popper-1959-logic", "front-preface"),
+              ("popper-1959-logic", "front-preface-2"), ("shiller-2019-narrative", "front-preface"),
+              ("mcelreath-2020-rethinking", "front-preface"), ("wittgenstein-1953-investigations", "front-preface")}
+HOLD = {"lycan-2019-language": "HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides"}
+SKIP_WORKS = {"johnson-2022-bayesrules": "online on-ramp, not needed (reviews/gate1.md)"}
+FRONT_TITLE = re.compile(r"^(author.?s (preface|foreword|note)|preface|foreword|translators?.? note|series editor|a note for|note to)", re.I)
 
 # token model (calibrate after the pilot)
 CHARS_PER_TOKEN = 3.6
@@ -93,7 +102,8 @@ def slug(title, n=1):
     stop = {"the", "a", "an", "of", "and", "on", "in", "to", "for", "with", "as", "is", "what",
             "how", "why", "from", "its", "into", "some", "part", "chapter", "appendix"}
     t = re.sub(r"^(chapter|part|appendix)\s+[\w*]+[.:]?\s*", "", title.strip(), flags=re.I)
-    t = re.sub(r"^[\dIVXLC]+[.:)]?\s+", "", t)
+    for _ in range(3):
+        t = re.sub(r"^([\dIVXLC]+|§\d+)[.:)]?\s+", "", t)
     words = [w for w in re.findall(r"[a-z0-9]+", t.lower()) if w not in stop]
     return "-".join(words[:n]) or "untitled"
 
@@ -423,8 +433,8 @@ def plan_pdf(p, work, cat, dup_note=""):
         if cls == "skip":
             add(base, t, a, b, "back", action="skip", why="front/back matter")
             continue
-        if cls == "front":
-            add(base, t, a, b, "front", action="skip", why="preface/foreword (quality lead may re-enable)")
+        if cls == "front" and (work, base) not in KEEP_FRONT:
+            add(base, t, a, b, "front", action="skip", why="preface/foreword")
             continue
         if b - a + 1 > SPLIT_PAGES:
             cuts = [k["pdf"] for k in ch.get("children", []) if k.get("pdf")]
@@ -551,6 +561,47 @@ def est_cost(r):
     return ((in1 + in2) * p["input"] + (out1 + out2) * p["output"]) / 1e6
 
 
+def _range(r):
+    m = re.fullmatch(r"c?(\d+)-(\d+)", r.get("pdf_pages") or "")
+    return (int(m.group(1)), int(m.group(2))) if m else None
+
+
+def merge_tiny(rs):
+    """Merge digest units of <= MERGE_PAGES pages into the next digest unit (or the previous if last)."""
+    dig = [i for i, r in enumerate(rs) if r.get("action") == "digest" and _range(r)]
+    html = any((r.get("pdf_pages") or "").startswith("c") for r in rs)
+    drop = set()
+    for k, i in enumerate(dig):
+        r = rs[i]
+        if int(r["n_pages"]) > MERGE_PAGES or len(dig) < 2:
+            continue
+        a, b = _range(r)
+        nxt = next((j for j in dig[k + 1:] if j not in drop), None)
+        prv = next((j for j in reversed(dig[:k]) if j not in drop), None)
+        tgt = None
+        if nxt is not None and _range(rs[nxt])[0] - b <= (1 if html else 4):
+            tgt = nxt
+        elif nxt is None and prv is not None and a - _range(rs[prv])[1] <= (1 if html else 4):
+            tgt = prv
+        if tgt is None:
+            r["action"], r["note"] = "skip", "tiny entry that cannot merge (title page?)"
+            continue
+        T = rs[tgt]
+        ta, tb = _range(T)
+        lo, hi = min(a, ta), max(b, tb)
+        pre = "c" if html else ""
+        T["pdf_pages"] = f"{pre}{lo}-{hi}"
+        T["n_pages"] = (hi - lo + 1) if not html else int(T["n_pages"]) + int(r["n_pages"])
+        T["image_pages"] = int(T["image_pages"]) + int(r["image_pages"])
+        T["est_tokens"] = int(T["est_tokens"]) + int(r["est_tokens"]) - PROMPT_OVERHEAD - SPINE_TOKENS
+        if not html and r.get("printed_pages") and T.get("printed_pages"):
+            p1, p2 = (r["printed_pages"].split("-") + [""])[:2], (T["printed_pages"].split("-") + [""])[:2]
+            T["printed_pages"] = f"{p1[0]}-{p2[1]}" if tgt > i else f"{p2[0]}-{p1[1]}"
+        T["note"] = "; ".join(x for x in (T.get("note"), f"includes {r['unit_id']} ({r['title'][:40]})") if x)
+        drop.add(i)
+    return [r for i, r in enumerate(rs) if i not in drop]
+
+
 # ---------------------------------------------------------------- main
 
 FIELDS = ["work_id", "unit_id", "title", "pdf_pages", "printed_pages", "n_pages", "image_pages",
@@ -591,20 +642,24 @@ def plan():
                 rows.append({"work_id": file_stem(p), "unit_id": "-", "action": "skip",
                              "file": str(p.relative_to(LIB)), "note": "no catalog id"})
             continue
-        # duplicates: keep the largest file, report the rest
-        ps = sorted(ps, key=lambda p: p.stat().st_size, reverse=True)
+        # duplicates: prefer PDF over HTML, then the largest file; report the rest
+        ps = sorted(ps, key=lambda p: (p.suffix == ".pdf", p.stat().st_size), reverse=True)
         for extra in ps[1:]:
             rows.append({"work_id": work, "unit_id": "-", "title": "(duplicate file)", "action": "skip",
                          "tier": c.get("tier", ""), "field": c.get("slug", ""), "type": c.get("type", ""),
                          "file": str(extra.relative_to(LIB)),
-                         "note": f"same catalog id as {ps[0].name}; kept the larger file — please confirm"})
+                         "note": f"same catalog id as {ps[0].name}; skipped (reviews/gate1.md)"})
         p = ps[0]
         try:
             rs = plan_pdf(p, work, c) if p.suffix == ".pdf" else plan_html(p, work, c)
         except Exception as e:
             rs = [{"work_id": work, "unit_id": "-", "action": "error", "note": f"{type(e).__name__}: {e}"[:200]}]
+        if c.get("type") != "paper":
+            rs = merge_tiny(rs)
         for r in rs:
             r["file"] = str(p.relative_to(LIB))
+            if r.get("action") == "digest" and (work in HOLD or work in SKIP_WORKS):
+                r["action"], r["note"] = "skip", HOLD.get(work) or SKIP_WORKS[work]
         rows += rs
     for r in rows:
         r["est_cost_usd"] = f"{est_cost(r):.3f}" if r.get("action") == "digest" else ""
