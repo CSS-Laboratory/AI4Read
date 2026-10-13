@@ -114,7 +114,7 @@ def check(md, row, uid=None):
     sec = dict(secs)
 
     if "L1" in sec:
-        n = len(re.findall(r"\b[\w'’-]+\b", re.sub(r"\$[^$]*\$", "x", sec["L1"])))
+        n = len([w for w in re.sub(r"\$[^$]*\$", "x", sec["L1"]).split() if re.search(r"\w", w)])
         if n > 120:
             err("L1", f"L1 has {n} words (> 120)")
     if "L2" in sec:
@@ -123,6 +123,7 @@ def check(md, row, uid=None):
             err("L2", f"L2 has {b} bullets (want 5–10)")
 
     # page references inside the unit's range (±2 for chapter openers)
+    is_html = (row.get("pdf_pages") or "").startswith("c")
     pr, pdf = _range(row.get("printed_pages")), _range(row.get("pdf_pages"))
     bad = set()
     for name in ("L2", "L3", "Concepts", "Canonical instances", "Exercises worth doing"):
@@ -133,7 +134,7 @@ def check(md, row, uid=None):
     if bad:
         err("pages", f"page refs outside unit range {row.get('printed_pages') or row.get('pdf_pages')}: "
                      f"{sorted(bad)[:12]}")
-    if "L2" in sec and not list(page_refs(sec["L2"])):
+    if "L2" in sec and not is_html and not list(page_refs(sec["L2"])):
         err("pages", "L2 has no page references")
 
     for e in katex_errors(md)[:20]:
