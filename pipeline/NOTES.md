@@ -61,3 +61,4 @@ No long-context (>200K) premium. Cloud Billing SKU ids: not found (Catalog API n
 - Quotas (aiplatform): online Sonnet-family quotas exist for `global` (25M in TPM) and `us`/`eu` multi-region (12.5M in TPM).
 - **Batch quota "Concurrent batch prediction jobs running on Anthropic MaaS model per region" = 4, listed only for single regions** (us-east5, us-central1, europe-west1, asia-…); **no `us` / `eu` multi-region entry**. Our 5 jobs all ran in `us`.
 - **Leading hypothesis:** Claude batch is provisioned per single region; the `us` multi-region accepts the job but has no batch backend → `INTERNAL` after ~50 min. Next test (when resumed, < $0.001): submit the 1-row text job to `us-east5` (and/or `us-central1`). If creation is rejected at once or succeeds, we learn quickly.
+- 2026-10-13: approved test — same 1-row text input submitted in **`us-east5`**: job **accepted** (`us-east5/batchPredictionJobs/2851720845590528000`). Result: pending.
