@@ -459,11 +459,14 @@ def write_status(wave, ids, ctl):
         f"- **All units:** " + " · ".join(f"{k} {v}" for k, v in sorted(allc.items())),
         f"- **Updated:** {time.strftime('%Y-%m-%d %H:%M')}",
     ]
+    notes = PIPE / "STATUS_NOTES.md"            # hand-written notes survive the runner's rewrites
+    if notes.exists():
+        lines += [""] + notes.read_text().strip().splitlines()
     (PIPE / "STATUS.md").write_text("\n".join(lines) + "\n")
 
 
 def commit(msg):
-    subprocess.run(["git", "-C", str(REPO), "add", "pipeline/STATUS.md", "pipeline/state", "wiki/works",
+    subprocess.run(["git", "-C", str(REPO), "add", "pipeline/STATUS.md", "pipeline/STATUS_NOTES.md", "pipeline/state", "wiki/works",
                     str(OUT_ROOT[0])], check=False)
     r = subprocess.run(["git", "-C", str(REPO), "commit", "-qm",
                         msg + "\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"],
