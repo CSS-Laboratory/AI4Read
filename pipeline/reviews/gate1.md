@@ -28,3 +28,7 @@ Include: `akerlof-1970-lemons/main`, `cover-2006-elements/ch02-entropy` (save pi
 
 ## Update 2026-10-13
 - **Lycan replaced.** `library/analytic-philosophy/lycan-2019-language.pdf` is now the correct book (Lycan, *Philosophy of Language: A Contemporary Introduction*, 3rd ed., Routledge 2019; 253 pdf pages). The wrong PDF was moved to `library/_replaced/`. Re-plan Lycan with the normal rules (core tier); preface stays skipped.
+
+## Update 2026-10-13 (b) — new foundation field: control theory
+- New catalog `canon/control-theory.md` (26 items; `canon/catalog.json` regenerated). 12 legal free PDFs are already in `library/control-theory/`.
+- **Do not add these to the current run.** Plan them as a separate small wave **after** the main run (re-run `plan`; the planner should pick up the new folder). Kunhao will add the remaining core works (Meadows 2008, Kalman 1960, Bellman 1957, Wlezien 1995) to the same folder.

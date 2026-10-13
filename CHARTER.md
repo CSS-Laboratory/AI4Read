@@ -18,7 +18,7 @@ Build **intuition and sense** — not just knowledge — for Kunhao Yang's work 
 - **Assume only high-school knowledge** of every topic. Climb step by step to graduate level. Never skip a step, including math.
 - Reads and discusses **on a phone**. Also listens to posts as **loopable audio**.
 
-## 3. Structure: two layers, eleven fields
+## 3. Structure: two layers, twelve fields
 
 ### Foundation layer (the lenses)
 | Field | Strands in scope |
@@ -30,6 +30,7 @@ Build **intuition and sense** — not just knowledge — for Kunhao Yang's work 
 | Linear algebra | Vectors, spaces, linear maps, eigen/SVD, projections; geometric intuition; applications (PCA, PageRank, spectral graphs, embeddings) |
 | Theory of mind | (a) philosophy of mind (intentional stance, theory-theory vs simulation), (b) developmental psychology (false-belief tasks), (c) computational ToM (Bayesian inverse planning, RSA), (d) the LLM-ToM debate |
 | Decision & game theory | Expected utility, subjective probability, prospect theory, Nash equilibrium, common knowledge, focal points, conventions, level-k reasoning, cooperation, mechanism design |
+| Control theory & cybernetics | Feedback and stability, cybernetics and requisite variety, state-space models, Kalman filtering, controllability/observability, optimal control and dynamic programming, reinforcement learning as control, control in biology, cognition and society (homeostasis, thermostatic public, policy rules). Boundary: nonlinear dynamics itself lives in complex systems |
 
 ### Application layer (the phenomena)
 Complex systems · Large language models · Economics & finance · Political science.
