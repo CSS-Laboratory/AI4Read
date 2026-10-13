@@ -1,11 +1,11 @@
 # Digest pipeline — status
 
-- **Wave:** `wave1` — 107 units · accepted 100 · p2_submitted 7
+- **Wave:** `wave1` — 107 units · accepted 107
 - **Mode:** run
-- **Spent:** $41.16 of $300 cap
-- **Jobs running:** 1 (p2)
-- **All units:** accepted 111 · p2_submitted 7
-- **Updated:** 2026-10-14 02:12
+- **Spent:** $41.92 of $300 cap
+- **Jobs running:** 0
+- **All units:** accepted 118
+- **Updated:** 2026-10-14 02:27
 
 - **Smoke v2.1 (Wittgenstein ch04):** digest 3,998 words vs target 2,822 (1.42×; v2 was 7,357). **§272 (W4): not tagged** in the digest (neutral "Statement:" label) **and not flagged** by the verifier: 80 mandatory items (12 strength, 16 reading-notes, 52+ voice) hit the cap, and the §272 sentence was not among the checked items. Verifier needed 53k output tokens (38k thinking) → P2 limit raised 40k → 64k. Smoke cost $0.67.
 - **Engineering change (quality lead to confirm):** L1 at 121–138 words is now a warning, not a re-digest trigger (7 wave-1 units were sent to P3 only for L1 = 121–143 words).
