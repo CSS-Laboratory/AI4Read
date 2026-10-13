@@ -3,7 +3,7 @@ project: playground-491901
 model: claude-sonnet-5-5
 anthropic_version: vertex-2023-10-16
 online_location: global        # small tests and single re-runs
-batch_location: us             # global not supported for partner-model batch
+batch_location: us-east5        # 2026-10-13: Claude batch works here; `us` multi-region fails (INTERNAL)
 bucket: gs://ai4read-batch-628671   # US multi-region, created 2026-10-12
 gcs_prefix: ai4read
 prices_usd_per_mtok:

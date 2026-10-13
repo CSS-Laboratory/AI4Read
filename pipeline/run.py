@@ -342,13 +342,16 @@ def collect():
         got = set()
         prefix = j["output"].removeprefix(f"gs://{bucket().name}/")
         for bl in bucket().list_blobs(prefix=prefix):
-            if not bl.name.endswith(".jsonl"):
+            # final results only; incremental_predictions/ repeats the same rows
+            if not bl.name.endswith(".jsonl") or "incremental_predictions" in bl.name:
                 continue
             for line in bl.download_as_text().splitlines():
                 if not line.strip():
                     continue
                 r = json.loads(line)
                 uid = r.get("custom_id", "").replace("__", "/")
+                if uid in got:
+                    continue
                 resp = r.get("response") or r.get("prediction") or {}
                 if isinstance(resp, str):
                     try:

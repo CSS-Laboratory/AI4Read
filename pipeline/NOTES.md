@@ -61,4 +61,10 @@ No long-context (>200K) premium. Cloud Billing SKU ids: not found (Catalog API n
 - Quotas (aiplatform): online Sonnet-family quotas exist for `global` (25M in TPM) and `us`/`eu` multi-region (12.5M in TPM).
 - **Batch quota "Concurrent batch prediction jobs running on Anthropic MaaS model per region" = 4, listed only for single regions** (us-east5, us-central1, europe-west1, asia-…); **no `us` / `eu` multi-region entry**. Our 5 jobs all ran in `us`.
 - **Leading hypothesis:** Claude batch is provisioned per single region; the `us` multi-region accepts the job but has no batch backend → `INTERNAL` after ~50 min. Next test (when resumed, < $0.001): submit the 1-row text job to `us-east5` (and/or `us-central1`). If creation is rejected at once or succeeds, we learn quickly.
-- 2026-10-13: approved test — same 1-row text input submitted in **`us-east5`**: job **accepted** (`us-east5/batchPredictionJobs/2851720845590528000`). Result: pending.
+- 2026-10-13: approved test — same 1-row text input submitted in **`us-east5`**: job **accepted** (`us-east5/batchPredictionJobs/2851720845590528000`) → **row succeeded within minutes**: text "OK", stop `end_turn`, usage 18 in / 4 out / 0 thinking. ✅ **Claude Sonnet 5.5 batch works in `us-east5`.** Root cause of the 5 failures: the `us` multi-region accepts Claude batch jobs but cannot run them.
+
+## Batch facts confirmed (2026-10-13)
+- Location: **`us-east5`** (`https://us-east5-aiplatform.googleapis.com`). Price = regional batch ($1.10 / $5.50 per M) — same as we budgeted.
+- GCS input from the US multi-region bucket works.
+- Output: `<prefix>/prediction-model-<ts>/predictions.jsonl`, rows `{custom_id, processed_time, response, status}`; `status` is "" on success. Also `incremental_predictions/*.jsonl` (duplicates — the runner ignores them).
+- Still to confirm in the pilot: image rows, large requests (~10 MB), cache hits.
