@@ -1,0 +1,30 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"critical","check":"A","where":"L3 §265, objection bullet","problem":"The digest says the timetable check 'works'. Wittgenstein answers 'No' to the objection and says it is not the same sort of case. The procedure must actually call forth the correct memory, and an image that cannot itself be tested cannot confirm the first memory.","evidence":"pdf 129 (§265: 'No; for this procedure must now actually call forth the correct memory. If the mental image of the timetable could not itself be tested for correctness, how could it confirm…')"},
+{"severity":"major","check":"C","where":"L3 §§296–298","problem":"Three bullets (§296, §297, §298) cite pdf 137. These remarks are on pdf 136. Page 137 starts at §299.","evidence":"pdf 136 contains §§294–298; pdf 137 begins with §299"},
+{"severity":"minor","check":"A","where":"L3 §§249–250","problem":"'A dog cannot simulate pain' states as fact what the source asks as a question ('Why can't a dog simulate pain? Is it too honest?').","evidence":"pdf 125 (§250)"},
+{"severity":"minor","check":"A","where":"L3 §270","problem":"The source hedges ('Perhaps the kind of way this sign is employed'). The digest states it flatly.","evidence":"pdf 130 (§270)"},
+{"severity":"minor","check":"A","where":"L3 §310","problem":"'Does not prove' reverses the order of the source. Wittgenstein asks whether it proves belief in something behind the utterance, then answers that the attitude is proof of the attitude.","evidence":"pdf 139 (§310)"},
+{"severity":"minor","check":"A","where":"Concepts: private language argument","problem":"The source does not state here that such a language is 'not possible'. It tests the idea through the diary case.","evidence":"pdf 124–128 (§§243, 258)"},
+{"severity":"minor","check":"G","where":"Concepts: logical form vs. grammatical form","problem":"The concept is mislabelled for this text (it speaks of grammar versus surface form, not logical form) and duplicates the new entry 'grammatical-proposition'.","evidence":"pdf 125–126, 136 (§§251, 295)"},
+{"severity":"minor","check":"G","where":"L1","problem":"L1 is over the 120-word limit (122 words by the automatic checker).","evidence":"Spec: L1 ≤ 120 words"}
+]
+</issues>
+<edits>
+[
+{"find":"The test fails because the speaker has no criterion of correctness:","replace":"The test fails: the speaker has no criterion of correctness;"},
+{"find":"Wittgenstein also denies that he denies inner processes. He rejects a misleading picture of how the words work.","replace":"He does not deny inner processes; he rejects a misleading picture of how the words work."},
+{"find":"A dog cannot simulate pain. A dog might be taught to howl as if in pain, but the surroundings that make it real simulation would be missing (pdf 125).","replace":"Why can't a dog simulate pain? A dog might be taught to howl as if in pain, but the surroundings that make it real simulation would still be missing (pdf 125)."},
+{"find":"Objection: I can check a train departure time by recalling a timetable page. That works because the second memory must actually produce the right memory. If the mental image of the timetable could not itself be tested, it could not confirm the first memory.","replace":"Objection: I can check a train departure time by recalling a timetable page. Wittgenstein answers that this is not the same sort of case: the procedure must actually call forth the correct memory. If the mental image of the timetable could not itself be tested for correctness, it could not confirm the first memory."},
+{"find":"\"S\" is still called a sensation-name because of how the sign is used in this language-game.","replace":"Why call \"S\" the name of a sensation? Perhaps because of the way the sign is employed in this language-game."},
+{"find":"Wittgenstein asks: to whom are we saying this, and on what occasion? (pdf 137)","replace":"Wittgenstein asks: to whom are we saying this, and on what occasion? (pdf 136)"},
+{"find":"Would we insist that something must also boil in the picture? (pdf 137)","replace":"Would we insist that something must also boil in the picture? (pdf 136)"},
+{"find":"shows how inclined we are to say something uninformative (pdf 137).","replace":"shows how inclined we are to say something uninformative (pdf 136)."},
+{"find":"If he answers \"It's not so bad\", that does not prove he believes in something behind my utterance. His attitude is itself the proof of his attitude.","replace":"If he answers \"It's not so bad\", does that prove he believes in something behind my utterance? Wittgenstein answers: his attitude is proof of his attitude."},
+{"find":"- [[private language argument]] — a language whose words refer to what only the speaker can know is not possible; tested in the \"S\" diary (pdf 124, 128).","replace":"- [[private language argument]] — the examination of a language whose words refer to what only the speaker can know; tested in the \"S\" diary (pdf 124, 128)."},
+{"find":"- [[logical form vs. grammatical form]] — \"I can't imagine the opposite\" and \"I know it only from my own case\" look empirical but are grammatical (pdf 125–126, 136).\n","replace":""}
+]
+</edits>
+<corrected>
+</corrected>

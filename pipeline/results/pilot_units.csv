@@ -1,0 +1,12 @@
+unit,pages,img,state,verified,issues,loops,p1_in,p1_out,p1_think,p2_in,p2_out,p2_think,usd,usd_p1,usd_p2,usd_fix
+akerlof-1970-lemons/main,14,3,accepted,repaired,4,0,22126,13998,3917,30383,6702,5709,0.17,0.102,0.068,0.0
+cover-2006-elements/ch02-entropy,38,35,accepted,repaired,4,0,109809,27718,4222,131561,7040,6264,0.45,0.269,0.181,0.0
+dennett-1987-intentional-stance/ch02-true,15,30,accepted,repaired,6,0,63546,20151,3999,77928,26543,9318,0.411,0.182,0.229,0.0
+kahneman-2011-thinking/ch03-lazy,11,0,accepted,repaired,3,0,12797,9620,1089,19591,3855,3196,0.111,0.068,0.043,0.0
+wittgenstein-1953-investigations/ch04-private,16,0,accepted,repaired,8,2,56445,46977,12749,82464,25922,19242,0.556,0.324,0.232,0.0
+jaynes-2003-probability/ch02-quantitative,27,21,accepted,repaired,4,1,144468,41457,8136,173246,15758,13171,0.657,0.384,0.273,0.0
+mackay-2003-information/ch02-probability,25,24,accepted,repaired,7,0,86833,23196,2811,211002,38506,15380,0.882,0.224,0.177,0.481
+ostrom-1990-commons/ch02-institutional,29,3,accepted,repaired,3,0,36991,15436,1952,48287,4628,4024,0.203,0.127,0.076,0.0
+lippmann-1922-publicopinion/ch06-stereotypes,11,0,accepted,repaired,6,0,12836,11823,1944,20713,5525,4170,0.131,0.08,0.051,0.0
+shepsle-2010-analyzing/ch03-getting,12,0,accepted,repaired,2,0,12105,7706,1336,16287,3901,3316,0.088,0.051,0.037,0.0
+vaswani-2017-transformer/main,15,11,accepted,repaired,3,0,46180,16901,3137,58074,5561,4862,0.237,0.145,0.092,0.0

@@ -1,0 +1,27 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"critical","check":"A","where":"L2 bullet on Markov chains / second law","problem":"The digest says entropy increases 'only if' the stationary distribution is uniform. The source only says entropy increases when the stationary distribution is uniform, and that relative-entropy decrease alone does not imply it.","evidence":"p. 35 (item 3: 'Entropy increases if the stationary distribution is uniform'; non-uniform case is only a counterexample to the general implication)"},
+{"severity":"critical","check":"A","where":"L3 §2.9 intuition note","problem":"The note repeats the 'only when' overclaim about entropy rising with a uniform equilibrium.","evidence":"p. 35 (the text gives a sufficient condition, not a necessary one)"},
+{"severity":"critical","check":"A","where":"L3 §2.7 intuition note after Thm 2.7.4","problem":"The note says the concavity/convexity asymmetry 'later makes capacity well-behaved'. The chapter never mentions capacity or this role; the claim is from outside the source.","evidence":"p. 31 (Theorem 2.7.4 and its proof contain no such statement)"},
+{"severity":"minor","check":"A","where":"L3 §2.9 opening","problem":"'four (plus one)' is an invented gloss. The source says it finds four interpretations, then lists five items.","evidence":"pp. 33–36"},
+{"severity":"minor","check":"E","where":"Toy example step 2","problem":"The displayed expression for H(X,Y) contains a garbled intermediate formula with terms that cancel confusingly; the final number 1.81128 is correct.","evidence":"Recomputed: (3/4)·1.41504 + 0.75 = 1.81128"},
+{"severity":"minor","check":"F","where":"Bridges, Markov-chain / MCMC bullet","problem":"Labelled same-math, but the link to MCMC and 'social-science Markov models' is vague and not the same theorem or formula, so it is an analogy.","evidence":"p. 34 (the result concerns D to a stationary law for a Markov chain, not convergence diagnostics)"},
+{"severity":"minor","check":"G","where":"Exercises worth doing","problem":"There are 7 items; the spec allows 3–6.","evidence":"Spec: 3–6 items"},
+{"severity":"minor","check":"A","where":"L3 §2.7 proof of Thm 2.7.1","problem":"The final step, multiplying (2.102) by Σb_j, is not shown in the source and should be marked as an added step.","evidence":"p. 29 (the proof stops at 'which is the log sum inequality')"}
+]
+</issues>
+<edits>
+[
+{"find":"Entropy itself increases only if the stationary distribution is uniform (doubly stochastic matrix).","replace":"Entropy itself is shown to increase when the stationary distribution is uniform (doubly stochastic matrix); in general it need not."},
+{"find":"Entropy rises only when the equilibrium is the uniform distribution.","replace":"Entropy is guaranteed to rise when the equilibrium is the uniform distribution."},
+{"find":"The channel-input/channel-law asymmetry in 2.7.4 (concave in input, convex in channel) is what later makes capacity well-behaved. The chapter itself only states this as \"basic properties\".","replace":"Mutual information is concave in the input distribution $p(x)$ and convex in the conditional $p(y|x)$; the proof reduces these to concavity of $H$ and convexity of $D$."},
+{"find":"The author finds four (plus one) readings of the second law.","replace":"The author announces four interpretations of the second law but lists five."},
+{"find":"$H(X,Y)=-2\\cdot\\frac38\\log\\frac38-2\\cdot\\frac18\\log\\frac18=\\frac34(3-1.58496)+\\frac34\\cdot3-\\frac34\\cdot 3+\\frac34$. Simplify directly: first part","replace":"$H(X,Y)=-2\\cdot\\frac38\\log\\frac38-2\\cdot\\frac18\\log\\frac18$: first part"},
+{"find":"- [same-math] Monotone decrease of $D(\\mu_n\\|\\mu)$ to a stationary distribution ↔ Markov chain Monte Carlo / social-science Markov models: convergence diagnostics for chains.","replace":"- [structural-analogy] Monotone decrease of $D(\\mu_n\\|\\mu)$ to a stationary distribution ↔ Markov chain Monte Carlo: chains converge toward their stationary law, and relative entropy is one way to measure how far they still are."},
+{"find":"- Ex. 22 (p. 47) — bottleneck: $I(X_1;X_3)\\le\\log k$ — difficulty: medium\n- Ex. 33","replace":"- Ex. 33"},
+{"find":"Multiplying by $\\sum_jb_j$ gives the log sum inequality.","replace":"Multiplying by $\\sum_jb_j$ gives the log sum inequality. (added step)"}
+]
+</edits>
+<corrected>
+</corrected>

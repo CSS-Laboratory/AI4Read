@@ -1,0 +1,567 @@
+{
+ "work_id": "bellman-1957-dp",
+ "file": "control-theory/bellman-1957-dp.pdf.pdf",
+ "made_by": "toc agent 2026-10-13",
+ "method": "Printed contents pp. xix-xxv (pdf 18-24); Princeton UP 1957 (6th printing 1972), scanned with an OCR text layer (OCR is noisy but usable). Every chapter heading ('CHAPTER N' + title) and every listed section heading ('§ k.') verified in the text cache; offset printed+23 throughout (preface pdf 6-17 = pp. vii-xviii). Book has 11 chapters, no Parts. Sections (with Exercises and Bibliography blocks) given for the chapters over 35 pdf pages or at the threshold: I (pdf 26-83; exercises alone pdf 63-81), III (pdf 104-138; exercises pdf 113-137), IV (pdf 139-174), IX (pdf 268-305). Other chapters are 15-34 pdf pages. Body pdf 26-360 (printed 3-337); indexes pdf 361-365; pdf 366 blank. The 12 toc_check warnings are section headings that sit below line 25 of their page (each was found by grep on that exact page) - harmless.",
+ "last_pdf_page": 365,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 6,
+   "printed": "vii"
+  },
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 18,
+   "printed": "xix"
+  },
+  {
+   "level": 0,
+   "title": "1 Chapter I. A Multi-Stage Allocation Process",
+   "pdf": 26,
+   "printed": "3"
+  },
+  {
+   "level": 1,
+   "title": "1.1 Introduction",
+   "pdf": 26,
+   "printed": "3"
+  },
+  {
+   "level": 1,
+   "title": "1.2 A multi-stage allocation process",
+   "pdf": 27,
+   "printed": "4"
+  },
+  {
+   "level": 1,
+   "title": "1.3 Discussion",
+   "pdf": 28,
+   "printed": "5"
+  },
+  {
+   "level": 1,
+   "title": "1.4 Functional equation approach",
+   "pdf": 30,
+   "printed": "7"
+  },
+  {
+   "level": 1,
+   "title": "1.5 Discussion",
+   "pdf": 32,
+   "printed": "9"
+  },
+  {
+   "level": 1,
+   "title": "1.6 A multi-dimensional maximization problem",
+   "pdf": 33,
+   "printed": "10"
+  },
+  {
+   "level": 1,
+   "title": "1.7 A “smoothing” problem",
+   "pdf": 33,
+   "printed": "10"
+  },
+  {
+   "level": 1,
+   "title": "1.8 Infinite stage approximation",
+   "pdf": 34,
+   "printed": "11"
+  },
+  {
+   "level": 1,
+   "title": "1.9 Existence and uniqueness theorems",
+   "pdf": 35,
+   "printed": "12"
+  },
+  {
+   "level": 1,
+   "title": "1.10 Successive approximations",
+   "pdf": 39,
+   "printed": "16"
+  },
+  {
+   "level": 1,
+   "title": "1.11 Approximation in policy space",
+   "pdf": 39,
+   "printed": "16"
+  },
+  {
+   "level": 1,
+   "title": "1.12 Properties of the solution—I: Convexity",
+   "pdf": 42,
+   "printed": "19"
+  },
+  {
+   "level": 1,
+   "title": "1.13 Properties of the solution—II: Concavity",
+   "pdf": 43,
+   "printed": "20"
+  },
+  {
+   "level": 1,
+   "title": "1.14 Properties of the solution—III: Concavity",
+   "pdf": 45,
+   "printed": "22"
+  },
+  {
+   "level": 1,
+   "title": "1.15 An “ornery” example",
+   "pdf": 48,
+   "printed": "25"
+  },
+  {
+   "level": 1,
+   "title": "1.16 A particular example—I",
+   "pdf": 49,
+   "printed": "26"
+  },
+  {
+   "level": 1,
+   "title": "1.17 A particular example—II",
+   "pdf": 51,
+   "printed": "28"
+  },
+  {
+   "level": 1,
+   "title": "1.18 Approximation and stability",
+   "pdf": 52,
+   "printed": "29"
+  },
+  {
+   "level": 1,
+   "title": "1.19 Time-dependent processes",
+   "pdf": 53,
+   "printed": "30"
+  },
+  {
+   "level": 1,
+   "title": "1.20 Multi-activity processes",
+   "pdf": 54,
+   "printed": "31"
+  },
+  {
+   "level": 1,
+   "title": "1.21 Multi-dimensional structure theorems",
+   "pdf": 56,
+   "printed": "33"
+  },
+  {
+   "level": 1,
+   "title": "1.22 Locating the unique maximum of a concave function",
+   "pdf": 57,
+   "printed": "34"
+  },
+  {
+   "level": 1,
+   "title": "1.23 Continuity and memory",
+   "pdf": 60,
+   "printed": "37"
+  },
+  {
+   "level": 1,
+   "title": "1.24 Stochastic allocation processes",
+   "pdf": 61,
+   "printed": "38"
+  },
+  {
+   "level": 1,
+   "title": "1.25 Functional equations",
+   "pdf": 62,
+   "printed": "39"
+  },
+  {
+   "level": 1,
+   "title": "1.26 Stieltjes integrals",
+   "pdf": 63,
+   "printed": "40"
+  },
+  {
+   "level": 1,
+   "title": "Exercises and Research Problems for Chapter I",
+   "pdf": 63,
+   "printed": "40"
+  },
+  {
+   "level": 1,
+   "title": "Bibliography and Comments for Chapter I",
+   "pdf": 82,
+   "printed": "59"
+  },
+  {
+   "level": 0,
+   "title": "2 Chapter II. A Stochastic Multi-Stage Decision Process",
+   "pdf": 84,
+   "printed": "61"
+  },
+  {
+   "level": 0,
+   "title": "3 Chapter III. The Structure of Dynamic Programming Processes",
+   "pdf": 104,
+   "printed": "81"
+  },
+  {
+   "level": 1,
+   "title": "3.1 Introduction",
+   "pdf": 104,
+   "printed": "81"
+  },
+  {
+   "level": 1,
+   "title": "3.2 Discussion of the two preceding processes",
+   "pdf": 104,
+   "printed": "81"
+  },
+  {
+   "level": 1,
+   "title": "3.3 The principle of optimality",
+   "pdf": 106,
+   "printed": "83"
+  },
+  {
+   "level": 1,
+   "title": "3.4 Mathematical formulation—I. A discrete deterministic process",
+   "pdf": 106,
+   "printed": "83"
+  },
+  {
+   "level": 1,
+   "title": "3.5 Mathematical formulation—II. A discrete stochastic process",
+   "pdf": 108,
+   "printed": "85"
+  },
+  {
+   "level": 1,
+   "title": "3.6 Mathematical formulation—III. A continuous deterministic process",
+   "pdf": 109,
+   "printed": "86"
+  },
+  {
+   "level": 1,
+   "title": "3.7 Continuous stochastic processes",
+   "pdf": 110,
+   "printed": "87"
+  },
+  {
+   "level": 1,
+   "title": "3.8 Generalizations",
+   "pdf": 110,
+   "printed": "87"
+  },
+  {
+   "level": 1,
+   "title": "3.9 Causality and optimality",
+   "pdf": 110,
+   "printed": "87"
+  },
+  {
+   "level": 1,
+   "title": "3.10 Approximation in policy space",
+   "pdf": 111,
+   "printed": "88"
+  },
+  {
+   "level": 1,
+   "title": "Exercises and Research Problems for Chapter III",
+   "pdf": 113,
+   "printed": "90"
+  },
+  {
+   "level": 1,
+   "title": "Bibliography and Comments for Chapter III",
+   "pdf": 138,
+   "printed": "115"
+  },
+  {
+   "level": 0,
+   "title": "4 Chapter IV. Existence and Uniqueness Theorems",
+   "pdf": 139,
+   "printed": "116"
+  },
+  {
+   "level": 1,
+   "title": "4.1 Introduction",
+   "pdf": 139,
+   "printed": "116"
+  },
+  {
+   "level": 1,
+   "title": "4.2 A fundamental inequality",
+   "pdf": 140,
+   "printed": "117"
+  },
+  {
+   "level": 1,
+   "title": "4.3 Equations of type one",
+   "pdf": 142,
+   "printed": "119"
+  },
+  {
+   "level": 1,
+   "title": "4.4 Equations of type two",
+   "pdf": 144,
+   "printed": "121"
+  },
+  {
+   "level": 1,
+   "title": "4.5 Monotone convergence",
+   "pdf": 145,
+   "printed": "122"
+  },
+  {
+   "level": 1,
+   "title": "4.6 Stability theorems",
+   "pdf": 146,
+   "printed": "123"
+  },
+  {
+   "level": 1,
+   "title": "4.7 Some directions of generalization",
+   "pdf": 147,
+   "printed": "124"
+  },
+  {
+   "level": 1,
+   "title": "4.8 An equation of the third type",
+   "pdf": 148,
+   "printed": "125"
+  },
+  {
+   "level": 1,
+   "title": "4.9 An “optimal inventory” equation",
+   "pdf": 152,
+   "printed": "129"
+  },
+  {
+   "level": 1,
+   "title": "Exercises and Research Problems for Chapter IV",
+   "pdf": 155,
+   "printed": "132"
+  },
+  {
+   "level": 1,
+   "title": "Bibliography and Comments for Chapter IV",
+   "pdf": 174,
+   "printed": "151"
+  },
+  {
+   "level": 0,
+   "title": "5 Chapter V. The Optimal Inventory Equation",
+   "pdf": 175,
+   "printed": "152"
+  },
+  {
+   "level": 0,
+   "title": "6 Chapter VI. Bottleneck Problems in Multi-Stage Production Processes",
+   "pdf": 206,
+   "printed": "183"
+  },
+  {
+   "level": 0,
+   "title": "7 Chapter VII. Bottleneck Problems: Examples",
+   "pdf": 230,
+   "printed": "207"
+  },
+  {
+   "level": 0,
+   "title": "8 Chapter VIII. A Continuous Stochastic Decision Process",
+   "pdf": 245,
+   "printed": "222"
+  },
+  {
+   "level": 0,
+   "title": "9 Chapter IX. A New Formalism in the Calculus of Variations",
+   "pdf": 268,
+   "printed": "245"
+  },
+  {
+   "level": 1,
+   "title": "9.1 Introduction",
+   "pdf": 268,
+   "printed": "245"
+  },
+  {
+   "level": 1,
+   "title": "9.2 A new approach",
+   "pdf": 269,
+   "printed": "246"
+  },
+  {
+   "level": 1,
+   "title": "9.3 Max ∫₀ᵀ F(x, y) dt",
+   "pdf": 271,
+   "printed": "248"
+  },
+  {
+   "level": 1,
+   "title": "9.4 Discussion",
+   "pdf": 274,
+   "printed": "251"
+  },
+  {
+   "level": 1,
+   "title": "9.5 The two-dimensional case",
+   "pdf": 274,
+   "printed": "251"
+  },
+  {
+   "level": 1,
+   "title": "9.6 Max ∫₀ᵀ F(x, y) dt (two-dimensional)",
+   "pdf": 275,
+   "printed": "252"
+  },
+  {
+   "level": 1,
+   "title": "9.7 Max ∫₀ᵀ F(x, y) dt under the constraint 0 ≤ y ≤ x",
+   "pdf": 276,
+   "printed": "253"
+  },
+  {
+   "level": 1,
+   "title": "9.8 Computational solution",
+   "pdf": 277,
+   "printed": "254"
+  },
+  {
+   "level": 1,
+   "title": "9.9 Discussion",
+   "pdf": 278,
+   "printed": "255"
+  },
+  {
+   "level": 1,
+   "title": "9.10 An example",
+   "pdf": 279,
+   "printed": "256"
+  },
+  {
+   "level": 1,
+   "title": "9.11 A discrete version",
+   "pdf": 281,
+   "printed": "258"
+  },
+  {
+   "level": 1,
+   "title": "9.12 A convergence proof",
+   "pdf": 283,
+   "printed": "260"
+  },
+  {
+   "level": 1,
+   "title": "9.13 Max ∫₀ᵀ F(x, y, t) dt",
+   "pdf": 286,
+   "printed": "263"
+  },
+  {
+   "level": 1,
+   "title": "9.14 Generalization and discussion",
+   "pdf": 287,
+   "printed": "264"
+  },
+  {
+   "level": 1,
+   "title": "9.15 Integral constraints",
+   "pdf": 288,
+   "printed": "265"
+  },
+  {
+   "level": 1,
+   "title": "9.16 Further remarks concerning numerical solution",
+   "pdf": 289,
+   "printed": "266"
+  },
+  {
+   "level": 1,
+   "title": "9.17 Eigenvalue problems",
+   "pdf": 290,
+   "printed": "267"
+  },
+  {
+   "level": 1,
+   "title": "9.18 The first formulation",
+   "pdf": 291,
+   "printed": "268"
+  },
+  {
+   "level": 1,
+   "title": "9.19 An approximate solution",
+   "pdf": 292,
+   "printed": "269"
+  },
+  {
+   "level": 1,
+   "title": "9.20 Second formulation",
+   "pdf": 293,
+   "printed": "270"
+  },
+  {
+   "level": 1,
+   "title": "9.21 Discrete approximations",
+   "pdf": 293,
+   "printed": "270"
+  },
+  {
+   "level": 1,
+   "title": "9.22 Successive approximation",
+   "pdf": 294,
+   "printed": "271"
+  },
+  {
+   "level": 1,
+   "title": "9.23 Monotone approximation",
+   "pdf": 295,
+   "printed": "272"
+  },
+  {
+   "level": 1,
+   "title": "9.24 Uniqueness of solution",
+   "pdf": 296,
+   "printed": "273"
+  },
+  {
+   "level": 1,
+   "title": "9.25 Minimum maximum deviation",
+   "pdf": 296,
+   "printed": "273"
+  },
+  {
+   "level": 1,
+   "title": "Exercises and Research Problems for Chapter IX",
+   "pdf": 297,
+   "printed": "274"
+  },
+  {
+   "level": 1,
+   "title": "Bibliography and Comments for Chapter IX",
+   "pdf": 305,
+   "printed": "282"
+  },
+  {
+   "level": 0,
+   "title": "10 Chapter X. Multi-Stage Games",
+   "pdf": 306,
+   "printed": "283"
+  },
+  {
+   "level": 0,
+   "title": "11 Chapter XI. Markovian Decision Processes",
+   "pdf": 340,
+   "printed": "317"
+  },
+  {
+   "level": 0,
+   "title": "Index of Applications",
+   "pdf": 361,
+   "printed": "338"
+  },
+  {
+   "level": 0,
+   "title": "Name and Subject Index",
+   "pdf": 362,
+   "printed": "339"
+  }
+ ]
+}

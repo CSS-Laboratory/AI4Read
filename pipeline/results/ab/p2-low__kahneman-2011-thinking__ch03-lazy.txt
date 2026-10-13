@@ -1,0 +1,20 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"major","check":"C","where":"L2 Law of least effort / L3 opening","problem":"The e-mail and refrigerator habit and the 'law of least effort' passage are on pdf 42, which the digest cites correctly. The L3 'Self-control and deliberate thought draw on the same budget' claim sits on pdf 42, so this is fine. The real problem is the self-control/budget conclusion in the L2 first bullet, which says 'Beyond that speed thinking and walking compete' and cites pdf 41–42. This is acceptable.","evidence":"pdf 41-42"},
+{"severity":"minor","check":"A","where":"L3 Experiment (pdf 44–45) / Mischel heading","problem":"The heading 'marshmallow-type experiment' is not in the source. The source describes one Oreo and two cookies. The digest also says 'one cookie available at any time', but the source says one Oreo (the desk held a single cookie).","evidence":"pdf 48: 'small reward (one Oreo)... larger reward (two cookies)'"},
+{"severity":"minor","check":"A","where":"L3 bat-and-ball bullet: 'People who got the right answer probably also felt the pull of 10¢'","problem":"The source says it is 'safe to assume' they felt the pull. 'Probably' is a mild softening, which is fine. However, the first bat-and-ball bullet cites pdf 45 for the puzzle statement, which is correct.","evidence":"pdf 46"},
+{"severity":"minor","check":"A","where":"Concepts: bounded-rationality, satisficing, heuristic","problem":"These concepts are not named in the source and lack the (new) marker. The 'satisficing' and 'bounded-rationality' ids are the digest's own framing.","evidence":"The chapter never uses these terms."},
+{"severity":"minor","check":"E","where":"Toy example C","problem":"400/3400 = 0.11765, so about 11.8%. This is correct. No error.","evidence":"arithmetic"}
+]
+</issues>
+<edits>
+[
+{"find":"**Mischel's marshmallow-type experiment (here with an Oreo and cookies).** (pdf 48–49)","replace":"**Mischel's delayed-gratification experiment (with an Oreo and cookies).** (pdf 48–49)"},
+{"find":"Four-year-olds chose between one cookie available at any time (by ringing a bell)","replace":"Four-year-olds chose between one Oreo available at any time (by ringing a bell)"},
+{"find":"- [[bounded-rationality]] — decision-making","replace":"- [[bounded-rationality]] (new) — decision-making"},
+{"find":"- [[satisficing]] — stopping","replace":"- [[satisficing]] (new) — stopping"},
+{"find":"- [[heuristic]] — the quick","replace":"- [[heuristic]] (new) — the quick"}
+]
+</edits>
+<corrected></corrected>

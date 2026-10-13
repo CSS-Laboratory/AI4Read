@@ -1,0 +1,15 @@
+<verdict>pass</verdict>
+<issues>
+[
+ {"severity": "minor", "check": "F", "where": "Bridges, third bullet", "problem": "The bridge is labelled `metaphor`, but it links strategic voting to strategic voting in the same field. It is not a metaphor and names no other field. It is better framed as a structural analogy with game theory (best reply to expected outcomes).", "evidence": "p. 43–44 (strategic or sophisticated preference revelation: voting contrary to preference to get a better outcome)"},
+ {"severity": "minor", "check": "G", "where": "Reading notes, Problem 2 bullet", "problem": "The note says page images were not available, but images are the ground truth and the checker had them. The statement is unhelpful, and the unverified reading of the garbled ordering should be flagged for checking instead.", "evidence": "p. 51 (Problem 2 gives k's changed ordering as 'tPksPkrPkq'; the original orderings are missing from the text layer)"}
+]
+</issues>
+<edits>
+[
+ {"find": "- [metaphor] Chuck's possible strategic vote ↔ strategic (sophisticated) voting: misreporting a preference only pays if the changed outcome is better, which depends on the rules for the no-winner case.", "replace": "- [structural-analogy] Chuck's possible strategic vote ↔ game theory: choosing an action as a best reply to the expected outcome. Misreporting a preference only pays if the changed outcome is better, which depends on the rules for the no-winner case."},
+ {"find": "I could not verify it. Page images were not available to me for checking.", "replace": "it should be checked against the page image."}
+]
+</edits>
+<corrected>
+</corrected>

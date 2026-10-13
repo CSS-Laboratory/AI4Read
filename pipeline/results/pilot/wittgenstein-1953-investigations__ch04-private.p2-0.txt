@@ -1,0 +1,71 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"major","check":"C","where":"L3 §§285–312, Concepts, Canonical instances","problem":"From §285 on, page references drift one page too high. Several point to pdf 140, which does not exist (the unit ends at pdf 139). For example §288 is on pdf 134, §293 on 135–136, §304 on 137–138, §305–307 on 138, and §309–312 on 139.","evidence":"pdf 134 = §285–288; pdf 135 = §289–293 start; pdf 136 = §293 end–298; pdf 137 = §299–304 start; pdf 138 = §304 end–308 start; pdf 139 = §308 end–312"},
+{"severity":"minor","check":"C","where":"L3 §§281–284","problem":"References are off by one: §281–282 begin on pdf 132, and §283–284 are on pdf 133.","evidence":"pdf 132 (103e) contains §281 and the start of §282; pdf 133 (104e) contains the end of §282, §283 and §284"},
+{"severity":"critical","check":"A","where":"L3 §312 final note and Reading notes","problem":"The digest says §312 continues beyond the supplied pages. The source does not say this; the last supplied page ends at 'infer important properties of the objects from them'.","evidence":"pdf 139 (last lines of §312)"},
+{"severity":"critical","check":"A","where":"L3 §266","problem":"The claim that 'Looking at a clock in one's imagination' has no fixed use is not in the source. The source gives only the bare parenthesis.","evidence":"pdf 129, §266: '(Looking at a clock in one's imagination.)'"},
+{"severity":"minor","check":"A","where":"L3 §259","problem":"The source asks a question ('Are the rules ... impressions of rules?'), but the digest turns it into a flat assertion.","evidence":"pdf 128, §259"},
+{"severity":"minor","check":"A","where":"L3 §243, §249, §297, §293 intuition note","problem":"Small distortions of the source. In §243 the 'since he hears resolutions' clause belongs to the prediction remark. In §249 the source asks whether we are over-hasty. In §297 the source asks a question rather than calling the insistence 'absurd'. In the §293 note, 'appears the same way in every public use' is not what the text says; the text says it cancels 'whatever it is'.","evidence":"pdf 124 (§243), pdf 125 (§249), pdf 136 (§297), pdf 135–136 (§293)"},
+{"severity":"minor","check":"D","where":"L3 §312","problem":"The sentence 'I can exhibit the visual impression to myself as little or as well as the sensation of pain' is omitted.","evidence":"pdf 139, §312"},
+{"severity":"minor","check":"E","where":"Toy example","problem":"The sentence 'Fraction of assignments the record singles out: 1/64 only if we pretend...' is muddled and gives a misleading fraction. The count 4×4×4=64 is correct.","evidence":"Arithmetic check: 4³ = 64; the record is identical for all assignments"},
+{"severity":"minor","check":"G","where":"L1","problem":"L1 has 124 words, over the 120-word limit.","evidence":"Automatic format check"}
+]
+</issues>
+<edits>
+[
+{"find":"The usual picture of an \"inner object\" or \"inner process\" misleads us about how these words are used. It is not a denial that people feel pain. (pdf 124–139)","replace":"The picture of an \"inner object\" misleads us about their use. He does not deny that people feel pain. (pdf 124–139)"},
+{"find":"The \"beetle in the box\" makes the same point. (pdf 130, 136)","replace":"The \"beetle in the box\" makes the same point. (pdf 130, 135–136)"},
+{"find":"An explorer could translate their language, since he hears their resolutions and decisions (pdf 124).","replace":"An explorer might succeed in translating their language. This would let him predict their actions, since he also hears them make resolutions and decisions (pdf 124)."},
+{"find":"Is the baby's smile not pretence? On what experience is that based?","replace":"Are we over-hasty in assuming a baby's smile is not pretence? On what experience is that assumption based?"},
+{"find":"Rules of a private language cannot be mere impressions of rules (pdf 128).","replace":"He asks whether the rules of a private language are mere impressions of rules (pdf 128)."},
+{"find":"\"Looking at a clock in one's imagination\" has no fixed use (pdf 129).","replace":"The remark ends with only the bare parenthesis \"(Looking at a clock in one's imagination.)\", with no further comment (pdf 129)."},
+{"find":"is conscious or unconscious (pdf 133)","replace":"is conscious or unconscious (pdf 132)"},
+{"find":"the game would not make the same sense to them (pdf 133–134)","replace":"the game would not make the same sense to them (pdf 132–133)"},
+{"find":"How can a body have a mind? (pdf 134)","replace":"How can a body have a mind? (pdf 133)"},
+{"find":"\"from quantity to quality\" (pdf 134)","replace":"\"from quantity to quality\" (pdf 133)"},
+{"find":"imitating a face without seeing one's own (pdf 135)","replace":"imitating a face without seeing one's own (pdf 134)"},
+{"find":"\"one looks into his eyes\" (pdf 135)","replace":"\"one looks into his eyes\" (pdf 134)"},
+{"find":"being convinced that someone else is in pain (pdf 135)","replace":"being convinced that someone else is in pain (pdf 134)"},
+{"find":"we can make nothing of it (pdf 135–136)","replace":"we can make nothing of it (pdf 134)"},
+{"find":"That is where the temptation to doubt comes from (pdf 136)","replace":"That is where the temptation to doubt comes from (pdf 134)"},
+{"find":"is not using it wrongfully (pdf 136)","replace":"is not using it wrongfully (pdf 135)"},
+{"find":"(describing my state of mind vs. my room) (pdf 136)","replace":"(describing my state of mind vs. my room) (pdf 135)"},
+{"find":"are \"idle\" (pdf 136)","replace":"are \"idle\" (pdf 135)"},
+{"find":"in the particular case without guidance (pdf 136)","replace":"in the particular case without guidance (pdf 135)"},
+{"find":"the object drops out as irrelevant (pdf 136–137)","replace":"the object drops out as irrelevant (pdf 135–136)"},
+{"find":"A private item that appears the same way in every public use cancels from the account of meaning.","replace":"A private item whose nature makes no difference to any public use cancels from the account of meaning."},
+{"find":"or an empty till\" (pdf 137)","replace":"or an empty till\" (pdf 136)"},
+{"find":"illustrated turns of speech\" (pdf 137)","replace":"illustrated turns of speech\" (pdf 136)"},
+{"find":"on what occasion? (pdf 137)","replace":"on what occasion? (pdf 136)"},
+{"find":"Insisting there must also be something boiling in the picture is absurd (pdf 137).","replace":"He asks what we would make of insisting that there must also be something boiling in the picture of the pot (pdf 136)."},
+{"find":"something not informative (pdf 137)","replace":"something not informative (pdf 136)"},
+{"find":"a state of affairs (pdf 138)","replace":"a state of affairs (pdf 137)"},
+{"find":"\"not as a picture\" (pdf 138)","replace":"\"not as a picture\" (pdf 137)"},
+{"find":"a picture can correspond to it (pdf 138)","replace":"a picture can correspond to it (pdf 137)"},
+{"find":"the sufferer is the person who manifests pain (pdf 138)","replace":"the sufferer is the person who manifests pain (pdf 137)"},
+{"find":"to doubt someone's fear or pain (pdf 138)","replace":"to doubt someone's fear or pain (pdf 137)"},
+{"find":"always conveying thoughts (pdf 138–139)","replace":"always conveying thoughts (pdf 137–138)"},
+{"find":"\"stands in the way\" of seeing the use as it is (pdf 139)","replace":"\"stands in the way\" of seeing the use as it is (pdf 138)"},
+{"find":"deny that anyone remembers anything (pdf 139)","replace":"deny that anyone remembers anything (pdf 138)"},
+{"find":"it is a grammatical fiction (pdf 139)","replace":"it is a grammatical fiction (pdf 138)"},
+{"find":"it looks as if we denied mental processes (pdf 139–140)","replace":"it looks as if we denied mental processes (pdf 138–139)"},
+{"find":"out of the fly-bottle.\" (pdf 140)","replace":"out of the fly-bottle.\" (pdf 139)"},
+{"find":"replaced by instinctive noises and gestures (pdf 140)","replace":"replaced by instinctive noises and gestures (pdf 139)"},
+{"find":"\"This private exhibition is an illusion\" (pdf 140)","replace":"\"This private exhibition is an illusion\" (pdf 139)"},
+{"find":"with a visual impression corresponding to the pain sensation?","replace":"with a visual impression corresponding to the pain sensation? He adds that he can exhibit the visual impression to himself as little or as well as the sensation of pain."},
+{"find":"(The text ends here; the remark continues beyond the supplied pages.) (pdf 140)","replace":"(The supplied pages end here; I cannot tell from them whether §312 continues.) (pdf 139)"},
+{"find":"Fraction of assignments the record singles out: 1/64 only if we pretend one assignment is correct. But it gives no evidence for any of them. All 64 predict the same record.","replace":"The record singles out none of the 64: every assignment predicts exactly the same record, so the record gives no evidence for any of them."},
+{"find":"and one must still apply the rule without guidance (pdf 128, 136)","replace":"and one must still apply the rule without guidance (pdf 128, 135)"},
+{"find":"judged by their role in it (pdf 128, 130, 136)","replace":"judged by their role in it (pdf 128, 130, 134–135)"},
+{"find":"\"cancels out\" of the meaning (pdf 136–137)","replace":"\"cancels out\" of the meaning (pdf 135–136)"},
+{"find":"(pdf 125–126, 137)","replace":"(pdf 125–126, 136)"},
+{"find":"Wittgenstein says it misleads about use (pdf 139)","replace":"Wittgenstein says it misleads about use (pdf 138)"},
+{"find":"private objects drop out of meaning (pdf 136–137)","replace":"private objects drop out of meaning (pdf 135–136)"},
+{"find":"a thought experiment making pain a property of surfaces (pdf 140)","replace":"a thought experiment making pain a property of surfaces (pdf 139)"},
+{"find":"the aim of philosophy (pdf 140)","replace":"the aim of philosophy (pdf 139)"},
+{"find":"The unit title says §§243–315, but the supplied pages end in the middle of §312 (pdf 139). §§313–315 and the rest of §312 are not covered here.","replace":"The unit title says §§243–315, but the supplied pages end with §312 (pdf 139), at \"...infer important properties of the objects from them.\" §§313–315 are not covered here."}
+]
+</edits>
+<corrected>
+</corrected>

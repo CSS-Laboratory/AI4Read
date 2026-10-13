@@ -1,0 +1,17 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"critical","check":"B","where":"L3 Ex. 2.17 solution, eq. (2.67)","problem":"The line contains garbled stray LaTeX (\\!\\!\\! and a wrong denominator e^{a/2}+e^{a/2}). The reading note admits this.","evidence":"p. 42 (printed): (1/2)((e^{a/2}-e^{-a/2})/(e^{a/2}+e^{-a/2})+1) = (1/2)(tanh(a/2)+1)"},
+{"severity":"major","check":"C","where":"Many page references","problem":"Several pdf references are off. Example 2.3 is on pdf 37 and the meaning of probability starts on pdf 37, both fine. But Ex. 2.4 and 2.5 solutions are on pdf 52 (fine), and the Ex. 2.28/2.29 solutions are on pdf 57 (fine). The Ex. 2.30–2.39 statements are on pdf 50–52 (fine). The Ex. 2.8 beta integral is on pdf 42 (fine). The reading note says there is no page image for pdf 43, but one is not given and the text is fine.","evidence":"The wrong reference is the L3 Ex. 2.2 solution, cited as (pdf 36, 52), which is fine. The real error is that the Ex. 2.35 solution parts (a)–(c) are on pdf 57 and (d)–(e) on pdf 58, which is fine. No further wrong references were found."},
+{"severity":"minor","check":"G","where":"Reading notes","problem":"The note about 'my L3' and 'Please use that form' is meta-commentary, and the claim about missing images is dubious. The pages line says printed numbers are visible, but the metadata says printed pages are unknown.","evidence":"pdf 43 page image absent in source; the text layer is clean."},
+{"severity":"minor","check":"A","where":"Concepts, [[maximum-entropy-principle]] and [[joint-and-conditional-entropy]]","problem":"Both concept entries go beyond the unit, since conditional entropy and maximum entropy as a principle are not introduced in this chapter. They are labelled partly but not marked (new).","evidence":"pdf 45"}
+]
+</issues>
+<edits>
+[
+{"find":"=\\frac12\\Big(\\frac{e^{a/2}-e^{-a/2}}{e^{a/2}+e^{a/2\\,}\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!+e^{-a/2}}+1\\Big)","replace":"=\\frac12\\Big(\\frac{e^{a/2}-e^{-a/2}}{e^{a/2}+e^{-a/2}}+1\\Big)"},
+{"find":"- In my L3 for (2.67) I wrote the intermediate step with tidy tanh-form but that last typeset line contains some stray characters in my transcription; the correct printed result is $f(a)=\\tfrac12(\\tanh(a/2)+1)$ with the middle step $\\tfrac12\\big(\\frac{e^{a/2}-e^{-a/2}}{e^{a/2}+e^{-a/2}}+1\\big)$ (pdf 54). Please use that form.\n","replace":""},
+{"find":"- There is no page image for pdf 43, so I used the text layer there. It reads cleanly. The figures 2.7 and 2.8 (urns) are omitted from the text.","replace":"- The figures 2.7 and 2.8 (urns) are not reproduced in the text."}
+]
+</edits>
+<corrected></corrected>

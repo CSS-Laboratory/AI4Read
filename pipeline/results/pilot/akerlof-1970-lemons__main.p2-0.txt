@@ -1,0 +1,20 @@
+<verdict>pass</verdict>
+<issues>
+[
+{"severity":"minor","check":"G","where":"L1","problem":"L1 is over the 120-word limit (the automatic checker counted 124).","evidence":"Spec: L1 ≤ 120 words."},
+{"severity":"minor","check":"G","where":"L2","problem":"L2 has 12 bullets because the Applications bullet has 4 sub-bullets. The spec allows 5–10.","evidence":"Spec: L2 has 5–10 bullets."},
+{"severity":"minor","check":"A","where":"L2 'Worked model'","problem":"The wording 'at most' is wrong. Type-two buyers value the average car at exactly 3μ/2.","evidence":"p. 491: D2 = Y2/p if 3μ/2 > p, and D2 = 0 if 3μ/2 < p."},
+{"severity":"minor","check":"A","where":"L3 III.B last bullet","problem":"'Anti-poverty programmes' is the digest's paraphrase. The source names the Office of Economic Opportunity.","evidence":"p. 495: 'the Office of Economic Opportunity is going to use cost-benefit analysis to evaluate its programs.'"}
+]
+</issues>
+<edits>
+[
+{"find":"He applies the idea to health insurance for the old, to minority employment, to the costs of dishonesty, and to credit markets in poor countries (pp. 492–499).","replace":"He applies the idea to old-age health insurance, minority employment, the costs of dishonesty and credit markets in poor countries (pp. 492–499)."},
+{"find":"Guarantees, brands, chains and licences are institutions that offset the problem (pp. 499–500).","replace":"Guarantees, brands, chains and licences offset the problem (pp. 499–500)."},
+{"find":"- **Applications.**\n  - Health insurance for those over 65 (p. 492).\n  - Statistical hiring decisions about minorities (p. 494).\n  - Costs of dishonesty (p. 495).\n  - Credit markets in India and elsewhere, where moneylenders charge far more than central banks (p. 498).","replace":"- **Applications.** Health insurance for those over 65 (p. 492); statistical hiring decisions about minorities (p. 494); costs of dishonesty (p. 495); credit markets in India and elsewhere, where moneylenders charge far more than central banks (p. 498)."},
+{"find":"Buyers value quality at most $3\\mu/2=3p/4<p$","replace":"Buyers value the average car at $3\\mu/2=3p/4<p$"},
+{"find":"He warns that cost-benefit analysis of anti-poverty programmes may miss external benefits.","replace":"He warns that cost-benefit analysis by the Office of Economic Opportunity may miss external benefits."}
+]
+</edits>
+<corrected>
+</corrected>

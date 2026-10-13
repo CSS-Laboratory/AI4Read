@@ -1,0 +1,15 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"major","check":"C","where":"L2 / L3 page references","problem":"The digest cites (pdf N) pages that do not match the PDF pages the source actually gives. In many places the pdf number is off by one or more (for example the Davidson quote on pdf 26 is cited as pdf 36). Parfit and Nagel on pdf 26 are cited as pdf 36, and the Reflections on pdf 24-26 are cited as pdf 32-35.","evidence":"pdf 24-26 hold the Reflections, Life, Quine and Parfit. Chapter body runs pdf 12-23."},
+{"severity":"major","check":"C","where":"Frontmatter pages","problem":"The pages line says 13-41, which does not match the unit's source pages (pdf 12-26).","evidence":"Unit metadata: PDF pages 12-26."},
+{"severity":"minor","check":"G","where":"Toy example","problem":"The blinker computation is correct, but the digest also cites an unrelated pdf number for it.","evidence":"Life rule on pdf 25 (printed 38)."},
+{"severity":"minor","check":"F","where":"Bridges","problem":"The bridges are labelled structural-analogy or metaphor, which is fine, but none is verified as same-math.","evidence":"No equations in the unit."}
+]
+</issues>
+<edits>
+[
+{"find":"pages: \"13–41 (printed numbers inferred from the page images; see Reading notes)\"","replace":"pages: \"pdf 12–26 (printed 13–41 inferred; see Reading notes)\""}
+]
+</edits>
+<corrected></corrected>

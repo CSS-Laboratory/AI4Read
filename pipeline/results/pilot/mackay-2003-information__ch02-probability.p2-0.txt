@@ -1,0 +1,26 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"critical","check":"B","where":"L3 §2.10, Ex. 2.17 solution, eq. (2.67)","problem":"The last typeset line of (2.67) is corrupted. The denominator contains stray `e^{a/2\\,}` and a long run of `\\!` spacing commands. The printed equation is clean.","evidence":"pdf 54: f(a) = 1/(1+exp(−a)) = ½((1−e^{−a})/(1+e^{−a}) + 1) = ½((e^{a/2}−e^{−a/2})/(e^{a/2}+e^{−a/2}) + 1) = ½(tanh(a/2)+1)."},
+{"severity":"minor","check":"G","where":"Reading notes, bullet about (2.67)","problem":"The bullet refers to the author's own transcription slip instead of being a note for the reader. It becomes pointless once (2.67) is fixed.","evidence":"pdf 54 shows the clean equation."},
+{"severity":"major","check":"A","where":"L3 §2.3, Example 2.6 statement","problem":"The digest asks for \"$P(u)$ from Bill's viewpoint\". The source asks for the probability that the urn is urn u given the draws, i.e. the posterior $P(u\\mid n_B,N)$. $P(u)$ is the prior, 1/11.","evidence":"pdf 39: \"what is the probability that the urn Fred is using is urn u, from Bill's point of view?\""},
+{"severity":"minor","check":"A","where":"L3 Ex. 2.35 solution (e)","problem":"The digest says the source explains the difference as a size-biasing effect. The source explicitly declines to explain and only gives a hint (the bus story, with the 1/3 and 2/3 figures in the Fig. 2.13 caption).","evidence":"pdf 58: \"Rather than explaining the difference between (a) and (d), let me give another hint.\""},
+{"severity":"minor","check":"F","where":"Bridges: decomposability ↔ coding","problem":"The label same-math is too strong. The digest itself says the correspondence is only structural, and the source says nothing about coding in this unit.","evidence":"pdf 45–46: decomposability is used only to compute entropies."},
+{"severity":"minor","check":"G","where":"Exercises worth doing","problem":"There are 7 items; the spec allows 3–6.","evidence":"Spec: 3–6 items."},
+{"severity":"minor","check":"G","where":"Reading notes","problem":"The remark \"Ex. 2.1's number is skipped\" is meaningless. The source has Example 2.1 followed by Exercise 2.2.","evidence":"pdf 35–36."}
+]
+</issues>
+<edits>
+[
+{"find":"What is $P(u)$ from Bill's viewpoint, if Bill does not know $u$?","replace":"What is $P(u\\mid n_B,N)$, the probability of urn $u$ from Bill's viewpoint (Bill does not know $u$)?"},
+{"find":"\\Big(\\frac{e^{a/2}-e^{-a/2}}{e^{a/2}+e^{a/2\\,}","replace":"\\Big(\\frac{e^{a/2}-e^{-a/2}}{e^{a/2}+e^{-a/2}}+1\\Big)=\\frac12(\\tanh(a/2)+1). \\tag{2.67}$$ <!-- "},
+{"find":"+e^{-a/2}}+1\\Big)=\\frac12(\\tanh(a/2)+1). \\tag{2.67}$$","replace":"-->"},
+{"find":"- In my L3 for (2.67) I wrote the intermediate step with tidy tanh-form but that last typeset line contains some stray characters in my transcription; the correct printed result is $f(a)=\\tfrac12(\\tanh(a/2)+1)$ with the middle step $\\tfrac12\\big(\\frac{e^{a/2}-e^{-a/2}}{e^{a/2}+e^{-a/2}}+1\\big)$ (pdf 54). Please use that form.","replace":"- Equation (2.67) is printed in full in the Ex. 2.17 solution (pdf 54): $f(a)=\\tfrac12(\\tanh(a/2)+1)$."},
+{"find":"The difference between (a) and (d) is the size-biasing effect: a random time is more likely to fall into a long gap. In the Poissonville bus story,","replace":"The source does not explain the difference but gives a hint (it asks the reader to explain): a randomly placed time is more likely to fall into a long gap, which the Poissonville bus story illustrates. In that story,"},
+{"find":"- [same-math] Decomposability of entropy (2.43) ↔ coding:","replace":"- [structural-analogy] Decomposability of entropy (2.43) ↔ coding:"},
+{"find":"- Ex. 2.38 (pdf 51) — R3 error probability by the binomial and sum-rule methods; connects Bayes to coding — difficulty: medium","replace":""},
+{"find":"Ex. 2.1's number is skipped. ","replace":""}
+]
+</edits>
+<corrected>
+</corrected>

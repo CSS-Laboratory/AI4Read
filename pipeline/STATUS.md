@@ -1,8 +1,9 @@
 # Digest pipeline — status
 
-- **Stage:** Gate 2 ✅ pilot + A/B done — **waiting for review** (`pipeline/reviews/gate2.md`) + Kunhao's go for wave 1
+- **Stage:** Gate 2 ✅ pilot + A/B done — **decision pending** → read `pipeline/WAVE1-DECISION.md`
 - **Mode:** pause
-- **Spent:** $5.88 of $280 cap (pilot $3.90 · A/B $1.98)
-- **Decisions (A/B):** verify stays effort `high` (lower effort missed real errors) · digest images 1200 px (no quality loss)
-- **Forecast:** ≈ $272–284 total; core → deep → reference, so a hard stop would trim reference last
-- **Next:** gate2 review → wave 1 (core)
+- **Spent:** $5.88 of $280 cap
+- **Plan now:** 1,339 units · 24,977 pages (control theory added; Lycan's real PDF in)
+- **⚠ Forecast:** ≈ $313–328 for everything → over the $280 cap; defer reference tier ≈ $262–274
+- **Wave 1 (proposed):** 107 core units, 12 works, ≈ $27
+- **Waiting for:** gate2 review + Kunhao/PM go for wave 1 + budget/scope choice

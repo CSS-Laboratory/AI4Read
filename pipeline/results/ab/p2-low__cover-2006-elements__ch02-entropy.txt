@@ -1,0 +1,19 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"major","check":"A","where":"L3 2.9 / Reading notes: claim of a 'misprint' in (2.120)–(2.121)","problem":"The digest rewrites (2.121) as I(X;Y)+I(X;Z|Y) and calls the source a misprint. The source page shows (2.121) with the same right-hand side as (2.120). The digest's note is a reasonable correction, but the digest says the author 'intended' it and presents it as the source's form in places. It is mostly flagged, so this is minor.","evidence":"p. 32 (2.120), (2.121) both read I(X;Z)+I(X;Y|Z)"},
+{"severity":"minor","check":"A","where":"Reading notes, 'Notation' bullet","problem":"The note claims the OCR reads 'Z=X_0' in the alternative proof of Theorem 2.7.3. The source shows 'with probability λ / 1−λ' with a choice variable that is not clearly visible. The statement that the image shows θ is unsupported.","evidence":"p. 30 (2.109): 'Let Z = X_θ' is garbled to 'Z = X0'"},
+{"severity":"minor","check":"A","where":"Reading notes, 'OCR' bullet","problem":"The digest says the cases of (2.4) were missing in the text layer, which is true. It says the headers read '36','38' for printed 16,18, which is true. The two statements are accurate, so no issue here.","evidence":"pp. 14, 16, 18"},
+{"severity":"minor","check":"C","where":"L2 Fano bullet and L1","problem":"L1 cites (p. 12) for the claim that the tools are used throughout the book, which is weak but acceptable. L2's 'Second law' bullet cites pp. 33–35, but the five interpretations run to p. 36.","evidence":"p. 36 (items 4–5 of the second law)"},
+{"severity":"minor","check":"G","where":"Toy example, I(X;Z)","problem":"The computation uses H(3/8)=0.95443. Check: 0.53064+0.42379=0.95443, so I=0.0456. This is correct. Arithmetic is fine.","evidence":"n/a"},
+{"severity":"minor","check":"F","where":"Bridges: Fano ↔ decision theory; sufficient statistic ↔ Fisher/Neyman","problem":"These are labelled same-math, but the bridges are loose. Fano is an information-theoretic bound, not the same mathematics as decision theory. The sufficiency bridge is acceptable. Downgrade Fano to structural-analogy.","evidence":"p. 38"}
+]
+</issues>
+<edits>
+[
+{"find":"- [same-math] Fano's inequality ↔ statistical decision theory","replace":"- [structural-analogy] Fano's inequality ↔ statistical decision theory"},
+{"find":"- **Second law for Markov chains:** relative entropy between two state distributions always decreases, but plain entropy increases only if the stationary law is uniform (pp. 33–35).","replace":"- **Second law for Markov chains:** relative entropy between two state distributions always decreases, but plain entropy increases only if the stationary law is uniform (pp. 33–36)."},
+{"find":"The OCR reads \"$Z=X_0$\"; the image shows the choice variable (written $\\theta$ here). I used $\\theta$ for clarity.","replace":"The OCR reads \"$Z=X_0$\" and the choice variable is not clearly legible; I wrote it as $\\theta$ for clarity."}
+]
+</edits>
+<corrected></corrected>

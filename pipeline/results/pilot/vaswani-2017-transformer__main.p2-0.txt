@@ -1,0 +1,16 @@
+<verdict>pass</verdict>
+<issues>
+[
+{"severity":"minor","check":"A","where":"L1","problem":"The final sentence says the design 'became the base architecture for later language models'. The source does not say this. It is outside knowledge, and the spec forbids adding facts from memory.","evidence":"p. 10 (the conclusion only states plans for other tasks and modalities; it makes no claim about later language models)"},
+{"severity":"minor","check":"A","where":"L3 3.2.2 intuition note","problem":"The examples of what heads might look for (previous word, related noun, bracket) are not in the source. They are not marked as the digester's own illustration.","evidence":"p. 5 (only says heads attend to 'different representation subspaces at different positions'); the figures on pp. 13–15 show coreference and long-distance dependency, not these examples"},
+{"severity":"minor","check":"A","where":"L3 6.2 intuition note","problem":"'The base setting sits near the sweet spot' is not supported. Table 3 shows that bigger models (rows C, big) score higher.","evidence":"p. 9 ('bigger models are better'; row big 26.4 BLEU vs base 25.8)"}
+]
+</issues>
+<edits>
+[
+{"find":"This design became the base architecture for later language models.","replace":"It matters because the model is both better and cheaper to train than the earlier systems (p. 8)."},
+{"find":"Several small heads can each look for a different relation, such as the previous word, a related noun, or a bracket. One big head would have to average all of these into one pattern.","replace":"Several small heads can each attend to a different pattern (our illustration; the paper's examples are in Figures 3–5). One big head would have to average all of these into one pattern (p. 5)."},
+{"find":"Heads, key size, depth and width all matter, and the base setting sits near the sweet spot.","replace":"Heads, key size, depth and width all matter. Bigger models score higher, so the base setting is a compromise between size and quality (our reading)."}
+]
+</edits>
+<corrected></corrected>

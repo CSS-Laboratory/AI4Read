@@ -1,0 +1,17 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"major","check":"A","where":"L2 bullet 'Failures of effort, not of ability'","problem":"The digest says the cause is 'mainly insufficient motivation'. The source hedges: the failure is 'at least to some extent' a matter of insufficient motivation. 'Mainly' overstates the claim.","evidence":"pdf 48: 'Failing these minitests appears to be, at least to some extent, a matter of insufficient motivation, not trying hard enough.'"},
+{"severity":"minor","check":"A","where":"L1","problem":"The digest says 'Self-control and attention at age four predict later intelligence'. The source says self-control at age four predicts later intelligence and executive control (including attention reallocation). Attention at age four is not claimed as the predictor.","evidence":"pdf 48–49: 'the children who had shown more self-control as four-year-olds had substantially higher scores on tests of intelligence.'"},
+{"severity":"minor","check":"A","where":"L3, Mischel heading","problem":"'Marshmallow-type' is not in the source and comes from outside memory. The source describes an Oreo and cookies.","evidence":"pdf 48: 'one Oreo' versus 'two cookies'; no mention of marshmallows."}
+]
+</issues>
+<edits>
+[
+{"find":"The cause is mainly insufficient motivation. (pdf 48)","replace":"The cause is, at least to some extent, insufficient motivation. (pdf 48)"},
+{"find":"Self-control and attention at age four predict later intelligence","replace":"Self-control at age four predicts later intelligence"},
+{"find":"**Mischel's marshmallow-type experiment (here with an Oreo and cookies).**","replace":"**Mischel's delayed-gratification experiment (with an Oreo and cookies).**"}
+]
+</edits>
+<corrected>
+</corrected>

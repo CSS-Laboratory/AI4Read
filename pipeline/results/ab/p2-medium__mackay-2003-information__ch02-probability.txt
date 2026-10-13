@@ -1,0 +1,20 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"critical","check":"B","where":"L3 Ex. 2.17 solution, eq. 2.67","problem":"The equation contains garbled stray LaTeX (a corrupted denominator with repeated e^{a/2}). The Reading notes admit this.","evidence":"p. 42 (printed) / pdf 54: the middle step is (1/2)((e^{a/2}-e^{-a/2})/(e^{a/2}+e^{-a/2})+1)"},
+{"severity":"major","check":"C","where":"Frontmatter pages / Reading notes","problem":"The digest says printed pages 22–46 are visible, but the metadata says printed pages are unknown. The claim that the Ex. 2.34 solution definition of f-hat depends on h=1 is fine. The Reading notes also say there is no page image for pdf 43, but there is none for pdf 43 in the supplied source, which matches; this is ok.","evidence":"pdf 34–58 are the pages given; the page images show printed numbers 22–46"},
+{"severity":"minor","check":"B","where":"L2 bullet 4 / Example 2.6 statement","problem":"The text says 'What is P(u) from Bill's viewpoint', but the question asks for the posterior probability that the urn is u.","evidence":"pdf 39: 'what is the probability that the urn Fred is using is urn u, from Bill's point of view?'"},
+{"severity":"minor","check":"C","where":"L3 2.2 closing (Bayesian view)","problem":"The last sentence is spread across pdf 38–39 and is fine. In L3 Ex. 2.4 the page cite is pdf 52, which is correct. The Ex. 2.2 'figure 2.2' citation 'pdf 36, 52' is fine.","evidence":"n/a"},
+{"severity":"minor","check":"G","where":"Concepts: joint-and-conditional-entropy","problem":"The id suggests conditional entropy, which the unit does not define. The Reading notes mention a missing 'Ex. 2.1', which is odd (Example 2.1 exists).","evidence":"pdf 45; pdf 35 has Example 2.1"}
+]
+</issues>
+<edits>
+[
+{"find":"=\\frac12\\Big(\\frac{e^{a/2}-e^{-a/2}}{e^{a/2}+e^{a/2\\,}\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!\\!+e^{-a/2}}+1\\Big)=\\frac12(\\tanh(a/2)+1). \\tag{2.67}","replace":"=\\frac12\\Big(\\frac{e^{a/2}-e^{-a/2}}{e^{a/2}+e^{-a/2}}+1\\Big)=\\frac12(\\tanh(a/2)+1). \\tag{2.67}"},
+{"find":"- In my L3 for (2.67) I wrote the intermediate step with tidy tanh-form but that last typeset line contains some stray characters in my transcription; the correct printed result is $f(a)=\\tfrac12(\\tanh(a/2)+1)$ with the middle step $\\tfrac12\\big(\\frac{e^{a/2}-e^{-a/2}}{e^{a/2}+e^{-a/2}}+1\\big)$ (pdf 54). Please use that form.\n","replace":""},
+{"find":"What is $P(u)$ from Bill's viewpoint, if Bill does not know $u$?","replace":"What is the probability that the urn is $u$ from Bill's viewpoint, if Bill does not know $u$?"},
+{"find":" Ex. 2.1's number is skipped.","replace":""},
+{"find":"- There is no page image for pdf 43, so I used the text layer there. It reads cleanly. The figures 2.7 and 2.8 (urns) are omitted from the text.","replace":"- The page image for pdf 43 was not supplied, so the text layer was used there. The figures 2.7 and 2.8 (urns) are omitted from the text."}
+]
+</edits>
+<corrected></corrected>

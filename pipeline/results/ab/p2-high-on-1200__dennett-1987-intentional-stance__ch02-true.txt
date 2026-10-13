@@ -1,0 +1,19 @@
+<verdict>pass</verdict>
+<issues>
+[
+{"severity":"minor","check":"G","where":"Page-references note at top","problem":"The note says the metadata gives no printed pages, but the metadata lists printed pages 12–41. It also says the citation order is (p. printed, pdf N), while the digest actually writes (pdf N, p. printed).","evidence":"Unit metadata: 'printed pages: 12-41'; page images show printed numbers 14–41."},
+{"severity":"minor","check":"A","where":"L3, 'The lectern objection'","problem":"A paraphrase is placed in quotation marks as if it were a direct quote. The source wording is different.","evidence":"p. 23: 'fully rational, believing that it is currently located at the center of the civilized world ..., and desiring above all else to remain at that center'"},
+{"severity":"minor","check":"A","where":"L3, Reflections, Game of Life configurations","problem":"'Blinkers' is not a term in the source. The source says 'things that blink back and forth between two configurations'.","evidence":"p. 38"},
+{"severity":"minor","check":"F","where":"Bridges, false-belief tasks","problem":"The link to first-order false-belief tasks is only a loose parallel, not a structural analogy.","evidence":"p. 18 discusses a genealogy of false beliefs from true ones, not an experimental task"}
+]
+</issues>
+<edits>
+[
+{"find":"The metadata says printed pages are unknown, but the page images show them. So I cite both, as (p. printed, pdf N).","replace":"The metadata gives printed pages 12–41, and the page images show them. So I cite both, as (pdf N, p. printed)."},
+{"find":"The lectern could be \"a rational agent believing it is at the centre of the civilized world and wanting to stay there\".","replace":"The lectern could be construed as a fully rational agent that believes it is at the centre of the civilized world and wants above all to stay there."},
+{"find":"Some configurations are interesting: blinkers, gliders and glider guns, puffer trains, eaters, and so on.","replace":"Some configurations are interesting: things that blink back and forth between two configurations, gliders and glider guns, puffer trains, eaters, and so on."},
+{"find":"[structural-analogy] true believers mainly believe truths, with false beliefs having a genealogy in true ones ↔ theory-of-mind: first-order false-belief tasks — false beliefs are tracked against a background of true ones.","replace":"[metaphor] true believers mainly believe truths, with false beliefs having a genealogy in true ones ↔ theory-of-mind: first-order false-belief tasks — both treat a false belief as intelligible only against a background of true ones (loose parallel)."}
+]
+</edits>
+<corrected>
+</corrected>

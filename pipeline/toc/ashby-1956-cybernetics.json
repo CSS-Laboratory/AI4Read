@@ -1,0 +1,141 @@
+{
+ "work_id": "ashby-1956-cybernetics",
+ "file": "control-theory/ashby-1956-cybernetics.pdf",
+ "made_by": "toc agent 2026-10-13",
+ "method": "Printed contents p. ix (pdf 4). Principia Cybernetica 1999 web reprint of Chapman & Hall 1956 (2nd impression 1957), complete. The PDF is laid out as TWO-PAGE SPREADS: most pdf pages carry two printed pages (pdf N ~ printed 2(N-5)..2(N-5)+1), while chapter openings that fall on a right-hand page sit alone on a single-page pdf page; so a pdf page holds roughly twice the usual text. Every Part and chapter start verified in the text cache (section numbering N/1. and running heads). Chapters are 4-16 pdf pages (up to ~32 printed pages), so sections are omitted. Body pdf 5-145 (printed 1-273); Answers to Exercises pdf 146-152 are image-only (no text layer, readable visually); Index pdf 153-156. Part title pages printed 7/119/193 are inferred (unnumbered). toc_check warnings on Preface, ch. 12, ch. 14 are letter-spaced OCR headings (e.g. 'PR E FAC E', 'AMPL IFYING R E GUL AT ION') and on Answers the image-only pages - all harmless.",
+ "last_pdf_page": 156,
+ "entries": [
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 2,
+   "printed": "v"
+  },
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 4,
+   "printed": "ix"
+  },
+  {
+   "level": 0,
+   "title": "1 What Is New",
+   "pdf": 5,
+   "printed": "1"
+  },
+  {
+   "level": 0,
+   "title": "Part One: Mechanism",
+   "pdf": 8,
+   "printed": "7"
+  },
+  {
+   "level": 1,
+   "title": "2 Change",
+   "pdf": 9,
+   "printed": "9"
+  },
+  {
+   "level": 1,
+   "title": "3 The Determinate Machine",
+   "pdf": 17,
+   "printed": "24"
+  },
+  {
+   "level": 1,
+   "title": "4 The Machine with Input",
+   "pdf": 26,
+   "printed": "42"
+  },
+  {
+   "level": 1,
+   "title": "5 Stability",
+   "pdf": 42,
+   "printed": "73"
+  },
+  {
+   "level": 1,
+   "title": "6 The Black Box",
+   "pdf": 49,
+   "printed": "86"
+  },
+  {
+   "level": 0,
+   "title": "Part Two: Variety",
+   "pdf": 65,
+   "printed": "119"
+  },
+  {
+   "level": 1,
+   "title": "7 Quantity of Variety",
+   "pdf": 66,
+   "printed": "121"
+  },
+  {
+   "level": 1,
+   "title": "8 Transmission of Variety",
+   "pdf": 76,
+   "printed": "140"
+  },
+  {
+   "level": 1,
+   "title": "9 Incessant Transmission",
+   "pdf": 87,
+   "printed": "161"
+  },
+  {
+   "level": 0,
+   "title": "Part Three: Regulation and Control",
+   "pdf": 103,
+   "printed": "193"
+  },
+  {
+   "level": 1,
+   "title": "10 Regulation in Biological Systems",
+   "pdf": 104,
+   "printed": "195"
+  },
+  {
+   "level": 1,
+   "title": "11 Requisite Variety",
+   "pdf": 108,
+   "printed": "202"
+  },
+  {
+   "level": 1,
+   "title": "12 The Error-Controlled Regulator",
+   "pdf": 117,
+   "printed": "219"
+  },
+  {
+   "level": 1,
+   "title": "13 Regulating the Very Large System",
+   "pdf": 130,
+   "printed": "244"
+  },
+  {
+   "level": 1,
+   "title": "14 Amplifying Regulation",
+   "pdf": 141,
+   "printed": "265"
+  },
+  {
+   "level": 0,
+   "title": "References",
+   "pdf": 145,
+   "printed": "273"
+  },
+  {
+   "level": 0,
+   "title": "Answers to Exercises",
+   "pdf": 146,
+   "printed": "274"
+  },
+  {
+   "level": 0,
+   "title": "Index",
+   "pdf": 153,
+   "printed": "289"
+  }
+ ]
+}

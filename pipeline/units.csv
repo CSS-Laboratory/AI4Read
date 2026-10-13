@@ -53,7 +53,24 @@ arrow-1951-socialchoice,ch07-vii,7 Chapter VII. Similarity as the Basis of Socia
 arrow-1951-socialchoice,x-references,References,104-108,,5,5,10825,deep,political-science,book,back,toc-json scan,skip,,political-science/arrow-1951-socialchoice.pdf,front/back matter
 arrow-1951-socialchoice,x-index,Index,109-111,,3,3,7695,deep,political-science,book,back,toc-json scan,skip,,political-science/arrow-1951-socialchoice.pdf,front/back matter
 arthur-1994-elfarol,main,paper,1-7,,7,7,13955,core,economics-finance,paper,paper,whole scan,digest,0.059,economics-finance/arthur-1994-elfarol.pdf,
-ashby-1956-cybernetics,whole,(needs table of contents),1-156,,156,86,368898,core,control-theory,book,book,needs-toc (outline has < 3 entries),needs-toc,,control-theory/ashby-1956-cybernetics.pdf,no usable outline: outline has < 3 entries
+ashby-1956-cybernetics,front-preface,Preface,2-3,,2,0,5588,core,control-theory,book,front,toc-json,skip,,control-theory/ashby-1956-cybernetics.pdf,preface/foreword
+ashby-1956-cybernetics,x-contents,Contents,4-4,,1,0,4727,core,control-theory,book,back,toc-json,skip,,control-theory/ashby-1956-cybernetics.pdf,front/back matter
+ashby-1956-cybernetics,ch02-change,2 Change,5-16,,12,7,30530,core,control-theory,book,chapter,toc-json,digest,0.103,control-theory/ashby-1956-cybernetics.pdf,includes ch01-new (1 What Is New)
+ashby-1956-cybernetics,ch03-determinate,3 The Determinate Machine,17-25,,9,5,26409,core,control-theory,book,chapter,toc-json,digest,0.090,control-theory/ashby-1956-cybernetics.pdf,
+ashby-1956-cybernetics,ch04-machine,4 The Machine with Input,26-41,,16,11,45656,core,control-theory,book,chapter,toc-json,digest,0.143,control-theory/ashby-1956-cybernetics.pdf,
+ashby-1956-cybernetics,ch05-stability,5 Stability,42-48,,7,5,21688,core,control-theory,book,chapter,toc-json,digest,0.077,control-theory/ashby-1956-cybernetics.pdf,
+ashby-1956-cybernetics,ch06-black,6 The Black Box,49-64,,16,12,47392,core,control-theory,book,chapter,toc-json,digest,0.146,control-theory/ashby-1956-cybernetics.pdf,
+ashby-1956-cybernetics,ch07-quantity,7 Quantity of Variety,66-75,,10,2,22945,core,control-theory,book,chapter,toc-json,digest,0.084,control-theory/ashby-1956-cybernetics.pdf,
+ashby-1956-cybernetics,ch08-transmission,8 Transmission of Variety,76-86,,11,7,32071,core,control-theory,book,chapter,toc-json,digest,0.105,control-theory/ashby-1956-cybernetics.pdf,
+ashby-1956-cybernetics,ch09-incessant,9 Incessant Transmission,87-102,,16,9,43538,core,control-theory,book,chapter,toc-json,digest,0.138,control-theory/ashby-1956-cybernetics.pdf,
+ashby-1956-cybernetics,ch10-regulation,10 Regulation in Biological Systems,104-107,,4,2,11709,core,control-theory,book,chapter,toc-json,digest,0.050,control-theory/ashby-1956-cybernetics.pdf,
+ashby-1956-cybernetics,ch11-requisite,11 Requisite Variety,108-116,,9,6,26091,core,control-theory,book,chapter,toc-json,digest,0.089,control-theory/ashby-1956-cybernetics.pdf,
+ashby-1956-cybernetics,ch12-error,12 The Error-Controlled Regulator,117-129,,13,8,35485,core,control-theory,book,chapter,toc-json,digest,0.116,control-theory/ashby-1956-cybernetics.pdf,
+ashby-1956-cybernetics,ch13-regulating,13 Regulating the Very Large System,130-140,,11,6,29308,core,control-theory,book,chapter,toc-json,digest,0.099,control-theory/ashby-1956-cybernetics.pdf,
+ashby-1956-cybernetics,ch14-amplifying,14 Amplifying Regulation,141-144,,4,1,10179,core,control-theory,book,chapter,toc-json,digest,0.047,control-theory/ashby-1956-cybernetics.pdf,
+ashby-1956-cybernetics,x-references,References,145-145,,1,0,4739,core,control-theory,book,back,toc-json,skip,,control-theory/ashby-1956-cybernetics.pdf,front/back matter
+ashby-1956-cybernetics,x-answers-exercises,Answers to Exercises,146-152,,7,0,3105,core,control-theory,book,back,toc-json,skip,,control-theory/ashby-1956-cybernetics.pdf,front/back matter
+ashby-1956-cybernetics,x-index,Index,153-156,,4,4,16021,core,control-theory,book,back,toc-json,skip,,control-theory/ashby-1956-cybernetics.pdf,front/back matter
 astrom-2021-feedbacksystems,x-contents,Contents,3-6,iii-vi,4,4,12463,core,control-theory,book,back,outline,skip,,control-theory/astrom-2021-feedbacksystems.pdf,front/back matter
 astrom-2021-feedbacksystems,front-preface,Preface to the Second Edition,7-8,vii-viii,2,0,4670,core,control-theory,book,front,outline,skip,,control-theory/astrom-2021-feedbacksystems.pdf,preface/foreword
 astrom-2021-feedbacksystems,front-preface-2,Preface to the First Edition,9-12,ix-xii,4,0,6519,core,control-theory,book,front,outline,skip,,control-theory/astrom-2021-feedbacksystems.pdf,preface/foreword
@@ -126,10 +143,48 @@ bak-1987-soc,main,paper,1-4,,4,1,17893,core,complex-systems,paper,paper,whole,di
 barabasi-1999-scaling,main,paper,1-11,1-11,11,8,22258,reference,complex-systems,paper,paper,whole,digest,0.084,complex-systems/barabasi-1999-scaling.pdf,
 baron-cohen-1985-autism,main,paper,1-10,,10,4,16925,core,theory-of-mind,paper,paper,whole,digest,0.070,theory-of-mind/baron-cohen-1985-autism.pdf.pdf,
 bayes-1763-essay,main,paper,1-16,,16,9,29988,reference,bayesian,paper,paper,whole,digest,0.108,bayesian/bayes-1763-essay.pdf,
-bellman-1957-dp,whole,(needs table of contents),1-365,1-342,365,306,688131,core,control-theory,book,book,needs-toc (outline has < 3 entries),needs-toc,,control-theory/bellman-1957-dp.pdf.pdf,no usable outline: outline has < 3 entries
+bellman-1957-dp,front-preface,Preface,6-17,,12,2,14945,core,control-theory,book,front,toc-json,skip,,control-theory/bellman-1957-dp.pdf.pdf,preface/foreword
+bellman-1957-dp,x-contents,Contents,18-25,1-2,8,4,13460,core,control-theory,book,back,toc-json,skip,,control-theory/bellman-1957-dp.pdf.pdf,front/back matter
+bellman-1957-dp,ch01-i-p1,1 Chapter I. A Multi-Stage Allocation Process (part 1/3),26-44,3-21,19,16,39318,core,control-theory,book,chapter,toc-json,digest,0.133,control-theory/bellman-1957-dp.pdf.pdf,split at sections boundary
+bellman-1957-dp,ch01-i-p2,1 Chapter I. A Multi-Stage Allocation Process (part 2/3),45-62,22-39,18,17,39747,core,control-theory,book,chapter,toc-json,digest,0.133,control-theory/bellman-1957-dp.pdf.pdf,split at sections boundary
+bellman-1957-dp,ch01-i-p3,1 Chapter I. A Multi-Stage Allocation Process (part 3/3),63-83,40-60,21,18,42422,core,control-theory,book,chapter,toc-json,digest,0.143,control-theory/bellman-1957-dp.pdf.pdf,split at sections boundary
+bellman-1957-dp,ch02-ii,2 Chapter II. A Stochastic Multi-Stage Decision Process,84-103,61-80,20,17,39853,core,control-theory,book,chapter,toc-json,digest,0.136,control-theory/bellman-1957-dp.pdf.pdf,
+bellman-1957-dp,ch03-iii,3 Chapter III. The Structure of Dynamic Programming Processes,104-138,81-115,35,28,68493,core,control-theory,book,chapter,toc-json,digest,0.221,control-theory/bellman-1957-dp.pdf.pdf,
+bellman-1957-dp,ch04-iv,4 Chapter IV. Existence and Uniqueness Theorems,139-174,116-151,36,33,73864,core,control-theory,book,chapter,toc-json,digest,0.234,control-theory/bellman-1957-dp.pdf.pdf,
+bellman-1957-dp,ch05-v,5 Chapter V. The Optimal Inventory Equation,175-205,152-182,31,26,60365,core,control-theory,book,chapter,toc-json,digest,0.197,control-theory/bellman-1957-dp.pdf.pdf,
+bellman-1957-dp,ch06-vi,6 Chapter VI. Bottleneck Problems in Multi-Stage Production Processes,206-229,183-206,24,22,51530,core,control-theory,book,chapter,toc-json,digest,0.167,control-theory/bellman-1957-dp.pdf.pdf,
+bellman-1957-dp,ch07-vii,7 Chapter VII. Bottleneck Problems: Examples,230-244,207-221,15,15,35810,core,control-theory,book,chapter,toc-json,digest,0.119,control-theory/bellman-1957-dp.pdf.pdf,
+bellman-1957-dp,ch08-viii,8 Chapter VIII. A Continuous Stochastic Decision Process,245-267,222-244,23,20,47673,core,control-theory,book,chapter,toc-json,digest,0.157,control-theory/bellman-1957-dp.pdf.pdf,
+bellman-1957-dp,ch09-ix,9 Chapter IX. A New Formalism in the Calculus of Variations,268-305,245-282,38,36,80306,core,control-theory,book,chapter,toc-json,digest,0.252,control-theory/bellman-1957-dp.pdf.pdf,
+bellman-1957-dp,ch10-x,10 Chapter X. Multi-Stage Games,306-339,283-316,34,30,70729,core,control-theory,book,chapter,toc-json,digest,0.224,control-theory/bellman-1957-dp.pdf.pdf,
+bellman-1957-dp,ch11-xi,11 Chapter XI. Markovian Decision Processes,340-360,317-337,21,19,43433,core,control-theory,book,chapter,toc-json,digest,0.145,control-theory/bellman-1957-dp.pdf.pdf,
+bellman-1957-dp,x-index-applications,Index of Applications,361-361,338-338,1,1,5456,core,control-theory,book,back,toc-json,skip,,control-theory/bellman-1957-dp.pdf.pdf,front/back matter
+bellman-1957-dp,x-name-subject,Name and Subject Index,362-365,339-342,4,2,8536,core,control-theory,book,back,toc-json,skip,,control-theory/bellman-1957-dp.pdf.pdf,front/back matter
 bender-2020-octopus,main,paper,1-14,,14,2,29915,core,llm,paper,paper,whole,digest,0.105,llm/bender-2020-octopus.pdf,
 bengio-2003-nplm,main,paper,1-19,,19,12,40293,deep,llm,paper,paper,whole,digest,0.135,llm/bengio-2003-nplm.pdf,
-bertsekas-2026-rlcourse,whole,(needs table of contents),1-523,1-503,523,370,1035949,reference,control-theory,book,book,needs-toc (outline has < 3 entries),needs-toc,,control-theory/bertsekas-2026-rlcourse.pdf,no usable outline: outline has < 3 entries
+bertsekas-2026-rlcourse,x-about-author,About the Author,4-5,,2,1,5929,reference,control-theory,book,back,toc-json,skip,,control-theory/bertsekas-2026-rlcourse.pdf,front/back matter
+bertsekas-2026-rlcourse,x-contents,Contents,6-9,1-4,4,4,12198,reference,control-theory,book,back,toc-json,skip,,control-theory/bertsekas-2026-rlcourse.pdf,front/back matter
+bertsekas-2026-rlcourse,front-preface,Preface,10-20,5-6,11,0,9818,reference,control-theory,book,front,toc-json,skip,,control-theory/bertsekas-2026-rlcourse.pdf,preface/foreword
+bertsekas-2026-rlcourse,ch01-exact-p1,1 Exact and Approximate Dynamic Programming (part 1/6),21-47,1-27,27,23,70688,reference,control-theory,book,chapter,toc-json,digest,0.214,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch01-exact-p2,1 Exact and Approximate Dynamic Programming (part 2/6),48-75,28-55,28,21,61095,reference,control-theory,book,chapter,toc-json,digest,0.194,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch01-exact-p3,1 Exact and Approximate Dynamic Programming (part 3/6),76-98,56-78,23,21,52376,reference,control-theory,book,chapter,toc-json,digest,0.168,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch01-exact-p4,1 Exact and Approximate Dynamic Programming (part 4/6),99-128,79-108,30,20,63004,reference,control-theory,book,chapter,toc-json,digest,0.202,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch01-exact-p5,1 Exact and Approximate Dynamic Programming (part 5/6),129-159,109-139,31,18,55958,reference,control-theory,book,chapter,toc-json,digest,0.188,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch01-exact-p6,1 Exact and Approximate Dynamic Programming (part 6/6),160-182,140-162,23,11,41515,reference,control-theory,book,chapter,toc-json,digest,0.144,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch02-approximation-p1,2 Approximation in Value Space - Rollout Algorithms (part 1/7),183-209,163-189,27,23,62882,reference,control-theory,book,chapter,toc-json,digest,0.197,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch02-approximation-p2,2 Approximation in Value Space - Rollout Algorithms (part 2/7),210-235,190-215,26,19,54532,reference,control-theory,book,chapter,toc-json,digest,0.177,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch02-approximation-p3,2 Approximation in Value Space - Rollout Algorithms (part 3/7),236-262,216-242,27,24,69783,reference,control-theory,book,chapter,toc-json,digest,0.212,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch02-approximation-p4,2 Approximation in Value Space - Rollout Algorithms (part 4/7),263-288,243-268,26,24,63833,reference,control-theory,book,chapter,toc-json,digest,0.197,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch02-approximation-p5,2 Approximation in Value Space - Rollout Algorithms (part 5/7),289-315,269-295,27,21,60423,reference,control-theory,book,chapter,toc-json,digest,0.191,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch02-approximation-p6,2 Approximation in Value Space - Rollout Algorithms (part 6/7),316-341,296-321,26,23,61338,reference,control-theory,book,chapter,toc-json,digest,0.192,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch02-approximation-p7,2 Approximation in Value Space - Rollout Algorithms (part 7/7),342-368,322-348,27,18,52515,reference,control-theory,book,chapter,toc-json,digest,0.174,control-theory/bertsekas-2026-rlcourse.pdf,split at even boundary
+bertsekas-2026-rlcourse,ch03-learning-p1,3 Learning Values and Policies (part 1/5),369-391,349-371,23,21,54499,reference,control-theory,book,chapter,toc-json,digest,0.172,control-theory/bertsekas-2026-rlcourse.pdf,split at sections boundary
+bertsekas-2026-rlcourse,ch03-learning-p2,3 Learning Values and Policies (part 2/5),392-418,372-398,27,23,61963,reference,control-theory,book,chapter,toc-json,digest,0.195,control-theory/bertsekas-2026-rlcourse.pdf,split at sections boundary
+bertsekas-2026-rlcourse,ch03-learning-p3,3 Learning Values and Policies (part 3/5),419-427,399-407,9,8,23159,reference,control-theory,book,chapter,toc-json,digest,0.083,control-theory/bertsekas-2026-rlcourse.pdf,split at sections boundary
+bertsekas-2026-rlcourse,ch03-learning-p4,3 Learning Values and Policies (part 4/5),428-448,408-428,21,20,51307,reference,control-theory,book,chapter,toc-json,digest,0.162,control-theory/bertsekas-2026-rlcourse.pdf,split at sections boundary
+bertsekas-2026-rlcourse,ch03-learning-p5,3 Learning Values and Policies (part 5/5),449-482,429-462,34,25,68859,reference,control-theory,book,chapter,toc-json,digest,0.220,control-theory/bertsekas-2026-rlcourse.pdf,split at sections boundary
+bertsekas-2026-rlcourse,x-references,References,483-520,463-500,38,2,38995,reference,control-theory,book,back,toc-json,skip,,control-theory/bertsekas-2026-rlcourse.pdf,front/back matter
+bertsekas-2026-rlcourse,x-also-by,Also by the author (Athena Scientific book advertisements),521-523,501-503,3,0,4925,reference,control-theory,book,back,toc-json,skip,,control-theory/bertsekas-2026-rlcourse.pdf,front/back matter
 betancourt-2017-hmc,main-p1,paper (part 1/3),1-21,1-21,21,4,23660,deep,bayesian,paper,paper,whole,digest,0.102,bayesian/betancourt-2017-hmc.pdf,split at sections boundary
 betancourt-2017-hmc,main-p2,paper (part 2/3),22-40,22-40,19,13,36673,deep,bayesian,paper,paper,whole,digest,0.127,bayesian/betancourt-2017-hmc.pdf,split at sections boundary
 betancourt-2017-hmc,main-p3,paper (part 3/3),41-60,41-60,20,11,36504,deep,bayesian,paper,paper,whole,digest,0.128,bayesian/betancourt-2017-hmc.pdf,split at sections boundary
@@ -723,7 +778,27 @@ lupia-1998-dilemma,app-ch05,Appendix to Chapter 5,273-276,257-260,4,2,8755,core,
 lupia-1998-dilemma,x-references,References,277-292,261-276,16,14,36888,core,political-science,book,back,toc-json,skip,,political-science/lupia-1998-dilemma.pdf.pdf,front/back matter
 lupia-1998-dilemma,x-author-index,Author Index,293-296,277-280,4,4,12897,core,political-science,book,back,toc-json,skip,,political-science/lupia-1998-dilemma.pdf.pdf,front/back matter
 lupia-1998-dilemma,x-subject-index,Subject Index,297-300,281-283,4,3,10629,core,political-science,book,back,toc-json,skip,,political-science/lupia-1998-dilemma.pdf.pdf,front/back matter
-lycan-2019-language,-,,,,,,,,,,,,error,,analytic-philosophy/lycan-2019-language.pdf,IndexError: list index out of range
+lycan-2019-language,x-contents,Contents,8-12,vii-xi,5,0,5268,core,analytic-philosophy,book,back,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf,front/back matter
+lycan-2019-language,front-preface,Preface,13-14,xii-xiii,2,0,4094,core,analytic-philosophy,book,front,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf,preface/foreword
+lycan-2019-language,x-acknowledgments-third,Acknowledgments for the Third Edition,15-15,xiv-xiv,1,0,3131,core,analytic-philosophy,book,back,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf,front/back matter
+lycan-2019-language,ch01-introduction,1 Introduction: Meaning and Reference,16-21,1-6,6,0,7108,core,analytic-philosophy,book,chapter,toc-json,digest,0.043,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch02-definite,2 Definite Descriptions,24-45,9-30,22,0,20885,core,analytic-philosophy,book,chapter,toc-json,digest,0.097,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch03-proper,3 Proper Names: The Description Theory,46-59,31-44,14,1,15319,core,analytic-philosophy,book,chapter,toc-json,digest,0.073,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch04-proper,4 Proper Names: Direct Reference and the Causal–Historical Theory,60-81,45-66,22,0,22199,core,analytic-philosophy,book,chapter,toc-json,digest,0.100,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch05-traditional,5 Traditional Theories of Meaning,84-93,69-78,10,0,11342,core,analytic-philosophy,book,chapter,toc-json,digest,0.058,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch06-use,6 “Use” Theories,94-104,79-89,11,0,11978,core,analytic-philosophy,book,chapter,toc-json,digest,0.061,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch07-psychological,7 Psychological Theories: Grice’s Program,105-117,90-102,13,0,13338,core,analytic-philosophy,book,chapter,toc-json,digest,0.067,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch08-verificationism,8 Verificationism,118-128,103-113,11,0,12510,core,analytic-philosophy,book,chapter,toc-json,digest,0.062,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch09-truth,9 Truth-Condition Theories: Davidson’s Program,129-143,114-128,15,2,18447,core,analytic-philosophy,book,chapter,toc-json,digest,0.081,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch10-truth,10 Truth-Condition Theories: Possible Worlds and Intensional Semantics,144-153,129-138,10,0,11018,core,analytic-philosophy,book,chapter,toc-json,digest,0.057,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch11-semantic,11 Semantic Pragmatics,156-164,141-149,9,2,13427,core,analytic-philosophy,book,chapter,toc-json,digest,0.061,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch12-speech,12 Speech Acts and Illocutionary Force,165-176,150-161,12,0,12658,core,analytic-philosophy,book,chapter,toc-json,digest,0.064,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch13-implicative,13 Implicative Relations,177-195,162-180,19,0,19168,core,analytic-philosophy,book,chapter,toc-json,digest,0.089,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch14-expressive,14 Expressive Language,198-210,183-195,13,0,13215,core,analytic-philosophy,book,chapter,toc-json,digest,0.067,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,ch15-metaphor,15 Metaphor,211-229,196-214,19,0,19559,core,analytic-philosophy,book,chapter,toc-json,digest,0.090,analytic-philosophy/lycan-2019-language.pdf,
+lycan-2019-language,x-glossary,Glossary,230-232,215-217,3,0,5035,core,analytic-philosophy,book,back,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf,front/back matter
+lycan-2019-language,x-bibliography,Bibliography,233-247,218-232,15,3,20792,core,analytic-philosophy,book,back,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf,front/back matter
+lycan-2019-language,x-index,Index,248-253,233-238,6,6,18035,core,analytic-philosophy,book,back,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf,front/back matter
 mackay-2003-information,x-contents,Contents,3-4,,2,0,4976,core,information-theory,book,back,toc-json,skip,,bayesian/mackay-2003-information.pdf,front/back matter
 mackay-2003-information,front-preface,Preface,5-11,,7,0,10923,core,information-theory,book,front,toc-json,skip,,bayesian/mackay-2003-information.pdf,preface/foreword
 mackay-2003-information,x-acknowledgments,Acknowledgments,12-12,,1,0,3878,core,information-theory,book,back,toc-json,skip,,bayesian/mackay-2003-information.pdf,front/back matter
@@ -1481,7 +1556,7 @@ strogatz-2024-nonlinear,ch10-one-p1,10 One-Dimensional Maps (part 1/2),374-394,3
 strogatz-2024-nonlinear,ch10-one-p2,10 One-Dimensional Maps (part 2/2),395-423,376-404,29,23,56455,core,complex-systems,book,chapter,outline,digest,0.186,complex-systems/strogatz-2024-nonlinear.pdf.pdf,split at sections boundary
 strogatz-2024-nonlinear,ch11-fractals,11 Fractals,424-447,405-428,24,16,42288,core,complex-systems,book,chapter,outline,digest,0.147,complex-systems/strogatz-2024-nonlinear.pdf.pdf,
 strogatz-2024-nonlinear,ch12-strange,12 Strange Attractors,448-478,429-459,31,24,59757,core,complex-systems,book,chapter,outline,digest,0.196,complex-systems/strogatz-2024-nonlinear.pdf.pdf,
-strogatz-2024-nonlinear,answers-selected,Answers to Selected Exercises,479-488,460-469,10,10,24730,core,complex-systems,book,chapter,outline,digest,0.088,complex-systems/strogatz-2024-nonlinear.pdf.pdf,
+strogatz-2024-nonlinear,x-answers-selected,Answers to Selected Exercises,479-488,460-469,10,10,24730,core,complex-systems,book,back,outline,skip,,complex-systems/strogatz-2024-nonlinear.pdf.pdf,front/back matter
 strogatz-2024-nonlinear,x-references,References,489-501,470-482,13,0,12253,core,complex-systems,book,back,outline,skip,,complex-systems/strogatz-2024-nonlinear.pdf.pdf,front/back matter
 strogatz-2024-nonlinear,x-author-index,Author Index,502-505,483-486,4,4,11691,core,complex-systems,book,back,outline,skip,,complex-systems/strogatz-2024-nonlinear.pdf.pdf,front/back matter
 strogatz-2024-nonlinear,x-subject-index,Subject Index,506-532,487-513,27,27,65981,core,complex-systems,book,back,outline,skip,,complex-systems/strogatz-2024-nonlinear.pdf.pdf,front/back matter

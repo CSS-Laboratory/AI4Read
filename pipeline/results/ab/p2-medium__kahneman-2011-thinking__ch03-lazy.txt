@@ -1,0 +1,23 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"major","check":"C","where":"L3 Busy and Depleted, bullet 1","problem":"The claim that self-control and cognitive effort are both mental work, and that people facing a task and a temptation yield, is on pdf 42. This is correct. However, the 'Tasks known to deplete' list is cited as pdf 43–44, which is fine. No error here.","evidence":"pdf 42"},
+{"severity":"minor","check":"A","where":"Concepts: bounded-rationality and heuristic","problem":"These ids are not named in the source, and the 'heuristic' framing is the digest's own gloss. The bounded-rationality line is also not marked (new). The text never uses these terms.","evidence":"pdf 41–46 (no such terms)"},
+{"severity":"minor","check":"A","where":"L2 Glucose bullet","problem":"The parole study is placed under glucose, but the source does not link it to glucose. It says 'Both fatigue and hunger probably play a role'.","evidence":"pdf 45"},
+{"severity":"minor","check":"A","where":"Opening bullet: 'Heavy demands on short-term memory cannot be combined with other effort'","problem":"Overstated. The source says he cannot engage in mental work with a heavy short-term-memory load while strolling.","evidence":"pdf 41"},
+{"severity":"minor","check":"G","where":"L1","problem":"The L1 summary exceeds 120 words? It is about 105 words, so this is fine. However, 'Self-control and attention at age four predict later intelligence' is acceptable. No change.","evidence":"pdf 48–49"},
+{"severity":"minor","check":"C","where":"Speaking of Control","problem":"The closing quotations begin on pdf 50 and continue on pdf 51. The reference is acceptable.","evidence":"pdf 50–51"},
+{"severity":"minor","check":"A","where":"Mischel heading","problem":"'Marshmallow-type' is not in the source. The source describes an Oreo and cookies, and the digest's single cookie is fine. The wording should be a neutral label.","evidence":"pdf 48"}
+]
+</issues>
+<edits>
+[
+{"find":"The parole-judges study shows a related pattern in real decisions.","replace":"Separately, the parole-judges study shows tired and hungry judges falling back on the easy default of denial (the source does not tie it to glucose)."},
+{"find":"Heavy demands on short-term memory cannot be combined with other effort.","replace":"Kahneman can think while strolling but cannot do mental work that puts a heavy load on short-term memory."},
+{"find":"**Mischel's marshmallow-type experiment (here with an Oreo and cookies).**","replace":"**Mischel's delayed-gratification experiment (one Oreo now or two cookies later).**"},
+{"find":"- [[bounded-rationality]] — decision-making limited by effort and attention; here the limit is a budget of mental effort (pdf 41–42)","replace":"- [[bounded-rationality]] — (new; our label, term not used in the text) decision-making limited by effort and attention; here the limit is a budget of mental effort (pdf 41–42)"},
+{"find":"- [[satisficing]] — stopping","replace":"- [[satisficing]] — (new; our label, term not used in the text) stopping"},
+{"find":"- [[heuristic]] — the quick","replace":"- [[heuristic]] — (new; our label, term not used in the text) the quick"}
+]
+</edits>
+<corrected></corrected>

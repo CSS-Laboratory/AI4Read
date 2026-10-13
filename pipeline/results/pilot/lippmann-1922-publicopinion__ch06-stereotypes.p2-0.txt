@@ -1,0 +1,22 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"critical","check":"A","where":"Concepts, [[pseudo-environment]]","problem":"The digest puts \"pictures in our heads\" in quotation marks as something Lippmann says in this chapter, and says we 'act on' such pictures. That phrase and that claim do not appear in the chapter. The chapter speaks of opinions pieced together from reports and imagination, and of stereotypes 'we carry about in our heads'.","evidence":"pdf/section 1: opinions 'pieced together out of what others have reported and what we can imagine'; section 3: 'stereotypes we carry about in our heads'"},
+{"severity":"major","check":"F","where":"Bridges, pseudo-environment bullet","problem":"'Pictures that people act on' is not stated in the chapter. The wording should be tied to what the chapter does say.","evidence":"section 1 and section 3 (see above)"},
+{"severity":"minor","check":"A","where":"L2, media bullet","problem":"'Censors rightly sense' overstates the source. Lippmann says they 'feel vaguely' that fiction's types are imposed on reality, and that they generally misunderstand the influence.","evidence":"section 4: 'They generally misunderstand it… they feel vaguely that the types acquired through fiction tend to be imposed on reality'"},
+{"severity":"minor","check":"A","where":"Reading notes, Göttingen figures","problem":"The claim that Lippmann's 'more than a majority' matches 25 of 40 is the digest's own inference. The source does not say which count he means, and the 34-of-40 figure or other counts could also fit.","evidence":"section 1: 'more than a majority saw a scene that had not taken place'; no count is given"},
+{"severity":"minor","check":"E","where":"Toy example","problem":"The phrase '0 rejected-but-counted' is confusing. The arithmetic itself (6/10 = 60%, 6/6 = 100%, gap 40 points) is correct.","evidence":"Toy example is the digest's own; recomputed numbers are correct"},
+{"severity":"minor","check":"G","where":"Page references / L2","problem":"The automatic checker says L2 has no page references. L2 does use section markers (§n), because the source has no page numbers. The metadata asked for (pdf N), but none exist, so the section markers are an acceptable substitute and are explained in Reading notes.","evidence":"source has no page markers"}
+]
+</issues>
+<edits>
+[
+{"find":"Censors rightly sense that fiction's types are imposed on reality.","replace":"Censors vaguely feel that types acquired through fiction tend to be imposed on reality, although they generally misunderstand this influence."},
+{"find":"related idea only: Lippmann says we act on \"pictures in our heads\" built from reports and imagination. The chapter does not use the term. (§1, §3)","replace":"related idea only: opinions are pieced together from reports and imagination, and the stereotypes we \"carry about in our heads\" fill in what we see. The chapter does not use the term. (§1, §3)"},
+{"find":"Pictures that people act on, built from reports plus imagination","replace":"Opinions pieced together from reports plus imagination, with stereotypes carried \"in our heads\""},
+{"find":"He counts 6 accepted and 0 rejected-but-counted, so he sees 6 blusterers out of 6 accepted reports: 6/6 = 100%.","replace":"He accepts the 6 fitting reports and discards the 4 others, so he sees 6 blusterers out of 6 accepted reports: 6/6 = 100%."},
+{"find":"Lippmann's \"more than a majority\" matches 25 of 40.","replace":"Lippmann's phrase \"more than a majority\" is not tied to a specific count in the source; 25 of 40 reports had at least 40% error, but that is our own reading."}
+]
+</edits>
+<corrected>
+</corrected>

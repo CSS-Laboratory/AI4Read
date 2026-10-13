@@ -1,0 +1,221 @@
+{
+ "work_id": "bertsekas-2026-rlcourse",
+ "file": "control-theory/bertsekas-2026-rlcourse.pdf",
+ "made_by": "toc agent 2026-10-13",
+ "method": "Printed contents pp. [vi-ix] (pdf 6-9) plus per-chapter contents on each chapter opener. Athena Scientific, A Course in Reinforcement Learning, 2nd ed. (c) 2026, 'latest editorial changes 4/27/2026'. Three long chapters (161, 186 and 114 pdf pages); every chapter opener and every numbered section heading (x.y, incl. the closing 'Notes, Sources, and Exercises' sections) verified in the text cache; offset printed+20 throughout. Subsections (x.y.z) omitted; several sections are themselves long (1.6 = 52 pp, 2.3 = 44 pp, 1.8 = 23 pp of notes/exercises), so the planner may need even splits inside them. Body pdf 21-482 (printed 1-462); References pdf 483-520; no index; pdf 521-523 are publisher ads for other Bertsekas books. The 4 toc_check warnings (1.4, 1.5, 2.6, 2.8) are headings low on their page (lines 37-43), verified by grep - harmless.",
+ "last_pdf_page": 523,
+ "entries": [
+  {
+   "level": 0,
+   "title": "About the Author",
+   "pdf": 4
+  },
+  {
+   "level": 0,
+   "title": "Contents",
+   "pdf": 6
+  },
+  {
+   "level": 0,
+   "title": "Preface",
+   "pdf": 10
+  },
+  {
+   "level": 0,
+   "title": "1 Exact and Approximate Dynamic Programming",
+   "pdf": 21,
+   "printed": "1"
+  },
+  {
+   "level": 1,
+   "title": "1.1 AlphaZero, Off-Line Training, and On-Line Play",
+   "pdf": 24,
+   "printed": "4"
+  },
+  {
+   "level": 1,
+   "title": "1.2 Deterministic Dynamic Programming",
+   "pdf": 30,
+   "printed": "10"
+  },
+  {
+   "level": 1,
+   "title": "1.3 Stochastic Exact and Approximate Dynamic Programming",
+   "pdf": 48,
+   "printed": "28"
+  },
+  {
+   "level": 1,
+   "title": "1.4 Infinite Horizon Problems - An Overview",
+   "pdf": 62,
+   "printed": "42"
+  },
+  {
+   "level": 1,
+   "title": "1.5 Newton’s Method - Linear Quadratic Problems",
+   "pdf": 76,
+   "printed": "56"
+  },
+  {
+   "level": 1,
+   "title": "1.6 Examples, Reformulations, and Simplifications",
+   "pdf": 99,
+   "printed": "79"
+  },
+  {
+   "level": 1,
+   "title": "1.7 Reinforcement Learning and Decision/Control",
+   "pdf": 151,
+   "printed": "131"
+  },
+  {
+   "level": 1,
+   "title": "1.8 Notes, Sources, and Exercises",
+   "pdf": 160,
+   "printed": "140"
+  },
+  {
+   "level": 0,
+   "title": "2 Approximation in Value Space - Rollout Algorithms",
+   "pdf": 183,
+   "printed": "163"
+  },
+  {
+   "level": 1,
+   "title": "2.1 Deterministic Finite Horizon Problems",
+   "pdf": 186,
+   "printed": "166"
+  },
+  {
+   "level": 1,
+   "title": "2.2 Approximation in Value Space - Deterministic Problems",
+   "pdf": 193,
+   "printed": "173"
+  },
+  {
+   "level": 1,
+   "title": "2.3 Rollout Algorithms for Discrete Optimization",
+   "pdf": 197,
+   "printed": "177"
+  },
+  {
+   "level": 1,
+   "title": "2.4 Approximation in Value Space with Multistep Lookahead",
+   "pdf": 241,
+   "printed": "221"
+  },
+  {
+   "level": 1,
+   "title": "2.5 Constrained Forms of Rollout Algorithms",
+   "pdf": 252,
+   "printed": "232"
+  },
+  {
+   "level": 1,
+   "title": "2.6 Small Stage Costs and Long Horizon - Continuous-Time Rollout",
+   "pdf": 269,
+   "printed": "249"
+  },
+  {
+   "level": 1,
+   "title": "2.7 Approximation in Value Space - Stochastic Problems",
+   "pdf": 277,
+   "printed": "257"
+  },
+  {
+   "level": 1,
+   "title": "2.8 Rollout for Infinite-Spaces Problems - Optimization Heuristics",
+   "pdf": 294,
+   "printed": "274"
+  },
+  {
+   "level": 1,
+   "title": "2.9 Multiagent Rollout",
+   "pdf": 303,
+   "printed": "283"
+  },
+  {
+   "level": 1,
+   "title": "2.10 Rollout for Bayesian Optimization and Sequential Estimation",
+   "pdf": 317,
+   "printed": "297"
+  },
+  {
+   "level": 1,
+   "title": "2.11 Adaptive Control by Rollout with a POMDP Formulation",
+   "pdf": 329,
+   "printed": "309"
+  },
+  {
+   "level": 1,
+   "title": "2.12 Minimax Control and Reinforcement Learning",
+   "pdf": 337,
+   "printed": "317"
+  },
+  {
+   "level": 1,
+   "title": "2.13 Notes, Sources, and Exercises",
+   "pdf": 354,
+   "printed": "334"
+  },
+  {
+   "level": 0,
+   "title": "3 Learning Values and Policies",
+   "pdf": 369,
+   "printed": "349"
+  },
+  {
+   "level": 1,
+   "title": "3.1 Parametric Approximation Architectures",
+   "pdf": 371,
+   "printed": "351"
+  },
+  {
+   "level": 1,
+   "title": "3.2 Neural Networks",
+   "pdf": 392,
+   "printed": "372"
+  },
+  {
+   "level": 1,
+   "title": "3.3 Learning Cost Functions in Approximate DP",
+   "pdf": 400,
+   "printed": "380"
+  },
+  {
+   "level": 1,
+   "title": "3.4 Learning a Policy in Approximate DP",
+   "pdf": 419,
+   "printed": "399"
+  },
+  {
+   "level": 1,
+   "title": "3.5 Policy Gradient and Related Methods",
+   "pdf": 428,
+   "printed": "408"
+  },
+  {
+   "level": 1,
+   "title": "3.6 Aggregation",
+   "pdf": 449,
+   "printed": "429"
+  },
+  {
+   "level": 1,
+   "title": "3.7 Notes, Sources, and Exercises",
+   "pdf": 471,
+   "printed": "451"
+  },
+  {
+   "level": 0,
+   "title": "References",
+   "pdf": 483,
+   "printed": "463"
+  },
+  {
+   "level": 0,
+   "title": "Also by the author (Athena Scientific book advertisements)",
+   "pdf": 521
+  }
+ ]
+}

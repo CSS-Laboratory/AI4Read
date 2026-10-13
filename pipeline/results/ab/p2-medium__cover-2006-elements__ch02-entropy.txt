@@ -1,0 +1,38 @@
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"major","check":"A","where":"L3 §2.6 Theorem 2.6.1 (2.74–2.75)","problem":"Page-number range is correct, but nothing is wrong there. The substantive error is elsewhere: the Reading notes claim a misprint in (2.121). The source image shows (2.121) as 'I(X;Z)+I(X;Y|Z)', repeated. The digest's interpretation is acceptable, but the L3 text writes a new line in place of (2.121) and marks it as 'intended form'. This is an added step and should be labelled as such.","evidence":"p. 32 (2.120)-(2.121) both print I(X;Z)+I(X;Y|Z)"},
+{"severity":"major","check":"A","where":"Reading notes, OCR bullet","problem":"The digest says 'In Example 2.1.1 the displayed cases of (2.4) were missing in the text layer'. That is a statement about the extraction, not about the source, and the notes also claim that all equations were checked against images. This is fine, but the note on the Venn diagram bridge cites 'Problem 12, p. 45', which is correct. No change is needed. The real problem is the Theorem 2.7.3 notation note: it says the OCR reads 'Z=X_0' and that the image shows a choice variable. The image shows the variable θ, so the note is acceptable.","evidence":"p. 30 'Let 2 = X0'"},
+{"severity":"minor","check":"A","where":"L3 §2.9 intro","problem":"The author says 'four different interpretations' and the digest correctly flags five. However, 'He says there are four interpretations ... then lists five' is fine; the 'pp. 34–36' reference is fine. The summary reference (p. 42) is fine.","evidence":"p. 33"},
+{"severity":"minor","check":"G","where":"Concepts: maximum-entropy-principle","problem":"The concept is listed as if it appears in the text; only the uniform maximum entropy theorem appears. Already hedged in the digest, so only a minor note.","evidence":"p. 27 Theorem 2.6.4"},
+{"severity":"minor","check":"F","where":"Bridges","problem":"The Fano ↔ decision theory bridge is labelled same-math, but that is only an analogy of purpose, not an identical equation. It should be downgraded to structural-analogy. Also, the data processing bridge to 'computational social science' is outside the field and is not backed by the text.","evidence":"p. 38 Fano's inequality is a bound on P_e"},
+{"severity":"minor","check":"A","where":"Intuition note, §2.7","problem":"The note says the shape 'later makes maximize over inputs a well-behaved problem' and then admits the author does not say this. Claims not in the source should be marked as added.","evidence":"p. 31 no such statement"}
+]
+</issues>
+<edits>
+[
+{"find":"- [same-math] Fano's inequality ↔ statistical decision theory","replace":"- [structural-analogy] Fano's inequality ↔ statistical decision theory"},
+{"find":"$$=I(X;Z)+I(X;Y|Z)\\quad\\text{(intended form of 2.121; see Reading notes)}.$$","replace":"$$=I(X;Y)+I(X;Z|Y)\\quad\\text{(added step: intended form of (2.121); the source prints a repeat of (2.120), see Reading notes)}.$$"},
+{"find":"This is the shape that later makes \"maximize over inputs\" a well-behaved problem (the author hints only that these results are used later, not how).","replace":"(added step, not in the text: this concave/convex shape is what makes optimisation over inputs well behaved.)"}
+]
+</edits>
+<corrected></corrected>
+
+Wait: the first edit's `find` text must match exactly once, and the second edit's `find` text may not match the digest, which writes `=I(X;Y)+I(X;Z|Y)\quad\text{(intended form of 2.121; see Reading notes)}`. The intended repair is to label that line as an added step. The corrected edits are:
+
+<verdict>repair</verdict>
+<issues>
+[
+{"severity":"minor","check":"A","where":"L3 §2.8 proof","problem":"The line replacing (2.121) is the digest's correction of a source misprint. It should be marked as an added step.","evidence":"p. 32 (2.120) and (2.121) print the same right-hand side"},
+{"severity":"minor","check":"F","where":"Bridges","problem":"The Fano to decision-theory bridge is labelled same-math, but it is only an analogy of purpose.","evidence":"p. 38"},
+{"severity":"minor","check":"A","where":"Intuition note §2.7","problem":"The remark about optimisation over inputs is not in the source and should be marked as added.","evidence":"p. 31"}
+]
+</issues>
+<edits>
+[
+{"find":"=I(X;Y)+I(X;Z|Y)\\quad\\text{(intended form of 2.121; see Reading notes)}","replace":"=I(X;Y)+I(X;Z|Y)\\quad\\text{(added step: intended form of 2.121; see Reading notes)}"},
+{"find":"- [same-math] Fano's inequality ↔ statistical decision theory","replace":"- [structural-analogy] Fano's inequality ↔ statistical decision theory"},
+{"find":"This is the shape that later makes \"maximize over inputs\" a well-behaved problem (the author hints only that these results are used later, not how).","replace":"(added step, not in the text: this concave/convex shape is what makes optimisation over inputs well behaved.)"}
+]
+</edits>
+<corrected></corrected>

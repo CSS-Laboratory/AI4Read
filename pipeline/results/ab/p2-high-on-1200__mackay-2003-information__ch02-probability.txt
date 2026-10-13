@@ -1,0 +1,16 @@
+<verdict>pass</verdict>
+<issues>
+[
+{"severity":"minor","check":"A","where":"L1, last sentence","problem":"The digest calls the entropy decomposition 'the chain rule of entropy'. In the source, 'chain rule' is only another name for the probability product rule (2.6). The entropy result is called 'decomposability'.","evidence":"pdf 36: 'This rule is also known as the chain rule.' (product rule); pdf 45: section 2.5 'Decomposability of the entropy'."},
+{"severity":"minor","check":"G","where":"Exercises worth doing","problem":"The spec asks for 3–6 items, but the digest lists 7.","evidence":"Spec: '3–6 items'."},
+{"severity":"minor","check":"G","where":"Reading notes","problem":"The list of exercises without solutions is incomplete. Ex. 2.8, 2.36 and 2.37 also have no solution in this unit.","evidence":"pdf 52–58: the solutions section covers 2.2, 2.4, 2.5, 2.14, 2.16–2.25, 2.26, 2.28, 2.29, 2.34, 2.35, 2.38 and 2.39 only."}
+]
+</issues>
+<edits>
+[
+{"find":"the chain rule of entropy, and a repetition-code error calculation.","replace":"the decomposition of entropy, and a repetition-code error calculation."},
+{"find":"- Ex. 2.4 (pdf 39) — forward probability with the binomial; builds mean and variance fluency — difficulty: easy\n- Ex. 2.8 (pdf 42)","replace":"- Ex. 2.8 (pdf 42)"},
+{"find":"Ex. 2.27 and Ex. 2.30–2.33 have no solutions in this unit.","replace":"Ex. 2.8, 2.27, 2.30–2.33, 2.36 and 2.37 have no solutions in this unit."}
+]
+</edits>
+<corrected></corrected>

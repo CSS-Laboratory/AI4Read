@@ -1,0 +1,19 @@
+<verdict>pass</verdict>
+<issues>
+[
+{"severity":"minor","check":"C","where":"L3 / Problems for Chapter 2 heading","problem":"The problems run to printed p. 49 (Problems 34–35), but the heading says pp. 42–48.","evidence":"p. 49 (Problems 34 and 35 appear before the Historical Notes)"},
+{"severity":"minor","check":"A","where":"L3 2.7 intuition note","problem":"The sentence about 'maximize over inputs' being well-behaved is not in the source. The parenthetical admits the author does not say it.","evidence":"p. 31 (Theorem 2.7.4 is stated and proved with no remark on later use)"},
+{"severity":"minor","check":"F","where":"Bridges: Fano's inequality ↔ statistical decision theory","problem":"Labelled same-math, but no identical mathematics is shown. It is a thematic parallel about bounding estimation error, so it should be structural-analogy.","evidence":"p. 38 (Fano bounds the error of guessing X from Y; the source says nothing about decision theory)"},
+{"severity":"minor","check":"G","where":"Canonical instances: xor-sum-conditional-mi-example","problem":"The id says 'xor' but the source example uses Z = X + Y, an ordinary sum.","evidence":"p. 33 (let Z = X + Y)"}
+]
+</issues>
+<edits>
+[
+{"find":"### Problems for Chapter 2 (pp. 42–48)","replace":"### Problems for Chapter 2 (pp. 42–49)"},
+{"find":"Information through a channel is concave in the input law and convex in the channel. This is the shape that later makes \"maximize over inputs\" a well-behaved problem (the author hints only that these results are used later, not how).","replace":"Information through a channel is concave in the input law and convex in the channel."},
+{"find":"- [same-math] Fano's inequality ↔ statistical decision theory","replace":"- [structural-analogy] Fano's inequality ↔ statistical decision theory"},
+{"find":"[[xor-sum-conditional-mi-example]]","replace":"[[sum-conditional-mi-example]]"}
+]
+</edits>
+<corrected>
+</corrected>

@@ -1,0 +1,19 @@
+<verdict>pass</verdict>
+<issues>
+[
+{"severity":"minor","check":"G","where":"L3 §2.1, 'Rejected alternative'","problem":"A stray `\\tag{2.2}` sits outside math mode and would render as raw LaTeX.","evidence":"p. 25 (equation number (2.2) printed beside the formula)"},
+{"severity":"minor","check":"A","where":"L3 §2.6.2, bullet on the crashing program","problem":"The 'because' clause is attached to the wrong claim. Jaynes says valid output shows the E_i are consistent. He says the appeal to principles not derivable from the tested propositions is why this does not conflict with Gödel.","evidence":"p. 46 ('we have accomplished what one might have thought to be impossible in view of Gödel's theorem. But of course our use of probability theory appeals to principles not derivable from the propositions being tested, so there is no difficulty')"},
+{"severity":"minor","check":"G","where":"Reading notes, Aczél bullet","problem":"The note says Aczél's page references are omitted and that the text only says the proof is long. L3 itself reports 11 pages, and the source gives pp. 256–267.","evidence":"p. 27 ('the proof fills 11 pages (pp. 256–267) of his book')"},
+{"severity":"minor","check":"B","where":"Bridges, first bullet","problem":"The product rule is written as $w(AB)=w(A)w(B)$. That form holds only for independent propositions. The chapter's rule is conditional: $w(AB|C)=w(A|BC)w(B|C)$.","evidence":"p. 29, eq. (2.28)"}
+]
+</issues>
+<edits>
+[
+{"find":"$ \\tag{2.2} cannot satisfy","replace":"$ (2.2) cannot satisfy"},
+{"find":"If it prints valid numbers, the $E_i$ are mutually consistent, because the theory appeals to principles not derivable from the propositions tested (p. 46).","replace":"If it prints valid numbers, the $E_i$ are mutually consistent. This does not contradict Gödel, because the theory appeals to principles not derivable from the propositions tested (p. 46)."},
+{"find":"- References to Aczél's book pages are omitted. The text only says the proof is long (p. 27).","replace":"- Aczél's proof is said to fill 11 pages (pp. 256–267 of his book). Only Cox's shorter proof, which assumes differentiability, is reproduced here (p. 27)."},
+{"find":"[structural-analogy] Product rule $w(AB)=w(A)w(B)$ turning multiplication into addition under a logarithm","replace":"[structural-analogy] Product rule $p(AB|C)=p(A|C)p(B|AC)$ (for independent propositions simply $p(A)p(B)$), which turns multiplication into addition under a logarithm"}
+]
+</edits>
+<corrected>
+</corrected>

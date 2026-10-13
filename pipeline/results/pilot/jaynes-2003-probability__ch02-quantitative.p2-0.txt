@@ -1,0 +1,25 @@
+<verdict>pass</verdict>
+<issues>
+[
+{"severity":"minor","check":"B","where":"L3 §2.2, eq. (2.39) and the sentence after it","problem":"The digest adds a spurious \"(sic)\" to (2.39) and then says the printed middle term is not the one used. The source equation is correct as printed: $S[w(\bar B|AC)]$ follows from (2.36), and the fraction follows from (2.38). The digest's wording suggests a source error that does not exist.","evidence":"p. 30, (2.39): w(AB|C)=w(A|C)S[w(B̄|AC)]=w(A|C)S[w(AB̄|C)/w(A|C)]"},
+{"severity":"minor","check":"B","where":"L3 §2.2, 'Sufficiency' paragraph","problem":"The text contains a garbled fragment, \"w^m(A|C)-w^m(AB|C)... as printed:\", before the correct (2.59). The meaning is unclear.","evidence":"p. 33, (2.59): w^m(A|C) − w^m(AB̄|C) = w^m(B|C) − w^m(BĀ|C)"},
+{"severity":"minor","check":"A","where":"L2 bullet 2 ('Sum rule from consistency of negation')","problem":"The sum-rule argument uses commutativity of the product rule applied to $A\\bar B$ and $B\\bar A$, not to $AB$ and $BA$.","evidence":"p. 30–31, (2.37)–(2.40): consistency is demanded for w(AB̄|C) and w(BĀ|C)"},
+{"severity":"minor","check":"A","where":"L3 §2.3 intuition note","problem":"The name \"Bayes' rule\" does not appear in the source. It is the digest's own remark and is not marked as such.","evidence":"p. 36 (2.73): only called the product rule in the form (2.73)"},
+{"severity":"minor","check":"G","where":"Concepts, [[self-information]]","problem":"The entry has no basis in the chapter, and Concepts should list only ideas used in the text. Its own description admits the concept is not in the chapter.","evidence":"pp. 24–50: self-information is not discussed"},
+{"severity":"minor","check":"E","where":"Toy example, weak syllogism bullet","problem":"The final clause (\"the largest the evidence could give only if P(B') were smaller\") is garbled. The arithmetic ($P(A'|B')=1/3$, a factor of 2) is correct.","evidence":"p. 36–37, (2.73): the jump factor is 1/p(B|C) when p(B|AC)=1"}
+]
+</issues>
+<edits>
+[
+{"find":"for $AB$ and $B A$, with $\\overline{A}$ expressed through a function $S$","replace":"for $A\\bar B$ and $B\\bar A$ (the two orders of the product rule), with negation expressed through a function $S$"},
+{"find":"\\ \\text{(sic)}","replace":""},
+{"find":"As printed, the middle term of (2.39) is $S[w(\\bar B|AC)]$; the identity actually used is that (2.37)–(2.38) give $w(AB|C)=w(A|C)\\,S[w(A\\bar B|C)/w(A|C)]$ (p. 30; see Reading notes).","replace":"The middle step is (2.36) applied to $\\bar B$, and the last step uses (2.38), which gives $w(\\bar B|AC)=w(A\\bar B|C)/w(A|C)$ (p. 30)."},
+{"find":"$$w^m(A|C)-w^m(AB|C)... $$","replace":""},
+{"find":"as printed:","replace":"that is"},
+{"find":"*Intuition note.* The product rule is Bayes' rule in disguise (2.73):","replace":"*Intuition note.* (Our remark; the text does not use the name \"Bayes' rule\".) Form (2.73) is what is usually called Bayes' rule:"},
+{"find":"- [[self-information]] — see Bridges; not in the chapter, only possibly related via the scale freedom (p. 41)","replace":""},
+{"find":"The jump is a factor 2 $=1/P(B')$, the largest the evidence could give only if $P(B')$ were smaller.","replace":"The jump is a factor $2=1/P(B')$ (here $p(B'|A'C)=1$), so a smaller $P(B')$ would give a bigger jump, as the text says on p. 37."}
+]
+</edits>
+<corrected>
+</corrected>

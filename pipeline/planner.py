@@ -43,7 +43,7 @@ SKIP_TITLE = re.compile(
     r"^endnotes|^about the author|^also by|^photo credits|^colophon|^further reading|^glossary|"
     r"^frequently used notation|^notation$|^blank page|^praise for|^epigraph|^a bibliography of|"
     r"^issue table of contents|^article contents|translator|^list of symbols|^(list of )?notation|"
-    r"^about the authors?|^praise\b|^editorial preface|^the text of|^dedication|^title and front|^german original|licen[cs]e$|^editor.?s (preface|introduction|note|foreword)|^back matter \(detected\)|\(title page\)|^supplement|^solutions|^corrections",
+    r"^about the authors?|^answers to|^praise\b|^editorial preface|^the text of|^dedication|^title and front|^german original|licen[cs]e$|^editor.?s (preface|introduction|note|foreword)|^back matter \(detected\)|\(title page\)|^supplement|^solutions|^corrections",
     re.I)
 PART_TITLE = re.compile(r"^(part\b|appendi(ces|xes)$|[IVX]{1,4}\s(?!\d))", re.I)
 CHAPTER_TITLE = re.compile(r"^(chapter\b|\d{1,2}\.?\s+(?!\d)[A-Za-z])", re.I)
@@ -57,7 +57,7 @@ KEEP_FRONT = {("kripke-1980-naming", "front-preface"), ("jaynes-2003-probability
               ("kuhn-1962-structure", "front-preface"), ("popper-1959-logic", "front-preface"),
               ("popper-1959-logic", "front-preface-2"), ("shiller-2019-narrative", "front-preface"),
               ("mcelreath-2020-rethinking", "front-preface"), ("wittgenstein-1953-investigations", "front-preface")}
-HOLD = {"lycan-2019-language": "HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides"}
+HOLD = {}   # lycan-2019-language: wrong PDF replaced by Kunhao with the real 3rd ed. (2026-10-13)
 SKIP_WORKS = {"johnson-2022-bayesrules": "online on-ramp, not needed (reviews/gate1.md)"}
 FRONT_TITLE = re.compile(r"^(author.?s (preface|foreword|note)|preface|foreword|translators?.? note|series editor|a note for|note to)", re.I)
 

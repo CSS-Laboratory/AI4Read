@@ -1,0 +1,17 @@
+<verdict>pass</verdict>
+<issues>
+[
+{"severity":"minor","check":"G","where":"L3 / Interdependence — theory of the firm","problem":"A quotation is shortened inside quotation marks. The source reads 'at least by some individuals', but the digest quotes 'at least by some'.","evidence":"p. 40: 'the organization is considered private, voluntary, and, at least by some individuals, nonexploitative'"},
+{"severity":"minor","check":"C","where":"L3 / CPRs and resource units, Taylor bullet","problem":"The page reference is written '(pp. 32)'. The quotation is on p. 32 only.","evidence":"p. 32 (M. Taylor 1987, p. 3 quote)"},
+{"severity":"minor","check":"G","where":"L3 / Problem of credible commitment, display equation","problem":"The '\\tag{in text, p. 44}' inside the display equation is non-standard LaTeX. It may not render and clutters the equation. The next line already says the equation is unnumbered.","evidence":"p. 44: 'unless B_t is detected and a sanction, S, is imposed that makes C_t > B_t - S' (no equation number)"}
+]
+</issues>
+<edits>
+[
+{"find":"\"need not be public goods\" (pp. 32).","replace":"\"need not be public goods\" (p. 32)."},
+{"find":"\"private, voluntary, and, at least by some, nonexploitative\"","replace":"\"private, voluntary, and, at least by some individuals, nonexploitative\""},
+{"find":"$$C_t > B_t - S. \\tag{in text, p. 44}$$","replace":"$$C_t > B_t - S.$$"}
+]
+</edits>
+<corrected>
+</corrected>
