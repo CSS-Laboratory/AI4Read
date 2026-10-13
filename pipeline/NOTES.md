@@ -54,3 +54,10 @@ No long-context (>200K) premium. Cloud Billing SKU ids: not found (Catalog API n
 - 19:47 JST: granted `service-628671067824@gcp-sa-aiplatform` **roles/storage.objectAdmin on gs://ai4read-batch-628671 only**; retried 1-row text job via GCS (`3087369277167108096`).
 - 19:48 JST: created BigQuery dataset `ai4read_batch` (US); 1-row text job with BigQuery in/out (`7164815789797670912`; table `smoke_in` → `smoke_out`).
 - Result: **both FAILED `INTERNAL`** after ~50 min (GCS with bucket IAM; BigQuery in/out). Total 5/5 Claude Sonnet 5.5 batch jobs in `us` failed the same way. Not the image, not GCS vs BigQuery, not bucket permission. Likely a Google-side problem (model/location/project). Online calls (global) work.
+
+## Console check (2026-10-13, read-only, via Chrome)
+- Batch job page: error is only "INTERNAL"; job shown as "canceled due to one or more errors" after ~50 min. No extra detail.
+- Model Garden card (Claude Sonnet 5.5): "ready to use for your project"; feature list includes **Batch prediction** and Global endpoint. Pricing columns are "Global" and "Regional".
+- Quotas (aiplatform): online Sonnet-family quotas exist for `global` (25M in TPM) and `us`/`eu` multi-region (12.5M in TPM).
+- **Batch quota "Concurrent batch prediction jobs running on Anthropic MaaS model per region" = 4, listed only for single regions** (us-east5, us-central1, europe-west1, asia-…); **no `us` / `eu` multi-region entry**. Our 5 jobs all ran in `us`.
+- **Leading hypothesis:** Claude batch is provisioned per single region; the `us` multi-region accepts the job but has no batch backend → `INTERNAL` after ~50 min. Next test (when resumed, < $0.001): submit the 1-row text job to `us-east5` (and/or `us-central1`). If creation is rejected at once or succeeds, we learn quickly.
