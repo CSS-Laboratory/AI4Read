@@ -48,6 +48,16 @@ def strip_code(md):
     return re.sub(r"`[^`\n]*`", " ", md)
 
 
+def fix_math(md):
+    """KaTeX allows one \\tag per `aligned` block but one per row in `align`: switch multi-tag aligned -> align."""
+    def one(m):
+        block = m.group(0)
+        if block.count("\\tag") > 1 and "\\begin{aligned}" in block:
+            block = block.replace("\\begin{aligned}", "\\begin{align}").replace("\\end{aligned}", "\\end{align}")
+        return block
+    return DISPLAY.sub(one, md)
+
+
 def katex_errors(md):
     body = strip_code(md)
     items = [{"tex": m.group(1), "display": True} for m in DISPLAY.finditer(body)]
@@ -141,7 +151,8 @@ def check(md, row, uid=None):
         err("prereq", "Prerequisites line missing")
     # printed labels exist -> no (pdf N) citations (gate2 review, request 5)
     if not is_html and row.get("printed_pages"):
-        n_pdf = sum(1 for k, _ in page_refs(md) if k == "pdf")
+        rn = md.find("## Reading notes")             # Reading notes may state the offset, e.g. "(pdf 82 = p. 60)"
+        n_pdf = sum(1 for k, _ in page_refs(md[:rn] if rn >= 0 else md) if k == "pdf")
         if n_pdf:
             err("pages", f"{n_pdf} (pdf N) citation(s) although printed pages {row['printed_pages']} are known")
     if re.search(r"\b(is correct as printed|the digest (says|states|has)|this digest|the verifier)\b", body, re.I):
