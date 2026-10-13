@@ -1,8 +1,6 @@
 # Digest pipeline — status
 
-- **Stage:** Gate 2b done — **A ❌ (verifier v2: 2/4 crit, 7/11 major) · B ✅ (v2 digests clean of audit criticals) · C: +18% cost**
-- **Mode:** pause — waiting for the quality lead
+- **Stage:** Wave 1 running (107 core units, 12 works) — prompts v2.1, spec 1.2
+- **Mode:** run (stops after wave 1 for `reviews/wave-1.md`)
 - **Spent:** ≈ $10.1 of $300 cap
-- **⚠ Forecast v2:** ≈ $370–390 for everything → over $300
-- **Not done (per brief):** pilot re-run with P2 v2, wave 1
-- **Details:** `pipeline/GATE2b.md`
+- **Smoke v2.1 (Wittgenstein ch04):** running — words vs target and §272 (W4) result will appear here
