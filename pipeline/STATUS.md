@@ -1,7 +1,8 @@
 # Digest pipeline — status
 
-- **Stage:** Gate 2b — ❌ part A failed (verifier v2: 2/4 criticals, 7/11 majors) · part B finishing for diagnostics (Kunhao)
-- **Mode:** run — gate2b wave only (5 units); **no wave 1**
-- **Spent:** ≈ $6.8 of $300 cap
-- **Misses:** voice errors in L3 (Wittgenstein), Reading-notes outside knowledge (Cover), a misread footnote (Dennett)
-- **Next:** part B results → `pipeline/GATE2b.md` → pause → wait for quality lead
+- **Wave:** `gate2b` — 5 units · needs_human 1 · p2_submitted 4
+- **Mode:** run
+- **Spent:** $7.87 of $300 cap
+- **Jobs running:** 1 (p2)
+- **All units:** accepted 6 · needs_human 1 · p2_submitted 4
+- **Updated:** 2026-10-14 00:09

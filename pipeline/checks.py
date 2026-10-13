@@ -152,7 +152,8 @@ def check(md, row, uid=None):
         err("katex", f"{e['error']} in `{e['tex']}`")
 
     for leak in LEAKS:
-        if leak.lower() in md.lower():
+        hit = (leak in md) if leak.isupper() else (leak.lower() in md.lower())   # 'UNIT METADATA' marker: exact case
+        if hit:
             err("leak", f"contains '{leak}'")
     return issues
 

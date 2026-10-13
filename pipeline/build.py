@@ -21,7 +21,7 @@ from .pages import page_kind, page_texts
 from .planner import CFG, LIB, UNITS_CSV, catalog, html_clean, H2
 
 SPEC_VERSION = "1.2"
-MAX_TOKENS = {"p1": 32000, "p2": 40000, "p3": 32000, "p4": 16000}
+MAX_TOKENS = {"p1": 64000, "p2": 40000, "p3": 64000, "p4": 16000}   # v2 digests reach 30k+ output
 IMG_CACHE = PIPE / "_work" / "img"
 LONG_SIDE = CFG["image"]["long_side_px"]
 QUALITY = CFG["image"]["jpeg_quality"]
