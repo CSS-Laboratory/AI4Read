@@ -3,14 +3,16 @@ name: digest-spec
 description: How to digest one unit (a paper, or one book chapter) into a progressive-disclosure wiki item. Every digest agent follows this exactly.
 ---
 
-# Digest spec (v1.1)
+# Digest spec (v1.2)
 
 One **unit** = one paper, or one book chapter. Output = one markdown file:
 `wiki/works/<work-id>/<unit-id>.md` (for a paper, `<unit-id>` = `main`).
 
 ## Ground rules
 - Work **only from the source text you are given** (extracted text + the PDF pages for checking). Do not add facts from memory. If the text is garbled (OCR errors, broken equations), check the PDF page image before writing the equation. If you still cannot read it, write `[unreadable p. N]`.
-- Every claim in L2–L3 carries a page reference `(p. N)` using the **printed** page number.
+- Every claim in L2–L3 carries a page reference `(p. N)` using the **printed** page number (`(pdf N)` only when no printed number is visible; `(§N, p. M)` for section-numbered texts; `(§ "Heading")` for HTML sources).
+- Keep the author's logical strength (if ≠ only if; may ≠ does) and make clear whose voice each reported view is (author, interlocutor, opponent).
+- L0–L2 only summarise what L3 says; never stronger, never new.
 - Your own words. Short quotes (≤ 25 words) only for famous lines, in quotation marks with page number.
 - English at B2 level, some C1. Define each technical term the first time.
 - Math in LaTeX (`$...$`, `$$...$$`). Never skip a step the author made. You may add a missing step if you mark it `(added step)`.
@@ -37,6 +39,8 @@ One sentence: the single most important idea.
 
 ## L1 — The gist (≤ 120 words)
 What question the unit asks, the answer, and why it matters.
+
+**Prerequisites:** the math or ideas L3 assumes, in one line (e.g. "conditional probability; partial derivatives; matrix shapes").
 
 ## L2 — Key ideas (5–10 bullets)
 Each bullet = one idea + why it matters + (p. N).
