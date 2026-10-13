@@ -22,7 +22,7 @@ from .planner import CFG, LIB, UNITS_CSV, catalog, html_clean, H2
 
 SPEC_VERSION = "1.2"
 PROMPT_VERSION = "v2.1"
-MAX_TOKENS = {"p1": 64000, "p2": 40000, "p3": 64000, "p4": 16000}   # v2 digests reach 30k+ output
+MAX_TOKENS = {"p1": 64000, "p2": 64000, "p3": 64000, "p4": 16000}   # v2.1: P2 with 80 mandatory items reached 40k
 IMG_CACHE = PIPE / "_work" / "img"
 LONG_SIDE = CFG["image"]["long_side_px"]
 QUALITY = CFG["image"]["jpeg_quality"]
