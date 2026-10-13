@@ -1,0 +1,243 @@
+<verdict>repair</verdict>
+<h_checks>
+[
+{"item": "L0: A word for a sensation gets its meaning from a public language-game with natural pain-behaviour, not from a private inner object ... so the \"private object\" drops out", "source": "pp. 95, 107 (§244 gives 'one possibility': words connected with natural expressions of sensation; §293: 'if we construe the grammar ... on the model of object and name, the object drops out')", "ok": false},
+{"item": "L1: Wittgenstein asks whether there could be a language whose words name only a speaker's own immediate sensations", "source": "p. 95 (§243: words 'refer to what only the speaker can know — his immediate private sensations'; asked as a question 'is it also conceivable')", "ok": true},
+{"item": "L1: The beetle remark says that if every sensation-word is defined by a private object, that object cancels out", "source": "pp. 106–107 (§293: 'if we construe the grammar of the expression of sensation on the model of object and name, the object drops out'; nothing about being 'defined' by it)", "ok": false},
+{"item": "L2: Defining the target. A private language would have words that refer to what only the speaker can know ... so no one else could understand it", "source": "p. 95 (§243)", "ok": true},
+{"item": "L2: Others often know that I am in pain", "source": "p. 95 (§246: only 'if we are using the word \"know\" as it is normally used'; condition dropped; the 'only I can know' claim is the interlocutor's)", "ok": false},
+{"item": "L2: Only of a living human being, or of what behaves like one, do we say it has sensations", "source": "p. 103 (§281: 'only of a living human being and what resembles ... can one say: it has sensations')", "ok": true},
+{"item": "L2: Remarks such as \"I know it only from my own case\" are not facts but pictorial turns of speech", "source": "p. 107 (§295: asks whether it is empirical or grammatical; says the picture we 'often get to see' is 'Not facts; but, as it were, illustrated turns of speech'; the imagined scenario is hypothetical)", "ok": false},
+{"item": "L2: We must also give up the idea that language always works in one way, conveying thoughts", "source": "p. 109 (§304: 'The paradox disappears only if we make a radical break with the idea ...'; the conditional is dropped)", "ok": false},
+{"item": "Intuition note: The first question is how a sensation-word gets any meaning at all", "source": "p. 95 (§244: 'How do words refer to sensations? ... same as: how does a human being learn the meaning of names of sensations?')", "ok": true},
+{"item": "Intuition note: \"Only I can know\" sounds like a deep fact about minds ... Those who feel it is empirical have not noticed that it is a rule", "source": "pp. 95–96 (§246 calls it 'false in one way, nonsense in another'); p. 96 (§251: such words fend off something 'whose form produces the illusion of being an empirical proposition, but which is really a grammatical one'); the last sentence is not in the source", "ok": false},
+{"item": "Intuition note (main result): the diarist has nobody and nothing outside his own impression to check against, so he cannot be wrong, and for that reason his word has no standard", "source": "pp. 98–99 (§258: 'no criterion of correctness'; 'whatever is going to seem correct to me is correct. And that only means that here we can't talk about \"correct\"'; the order of the reasoning is reversed in the digest)", "ok": false},
+{"item": "Intuition note: Doubt about one's own pain looks possible only after one has taken away the behaviour", "source": "p. 106 (§288: 'if expressions of sensation — human behaviour — are excluded, it looks as if I might then legitimately begin to doubt'; 'only after' is stronger)", "ok": false},
+{"item": "Intuition note: It does not work by naming a hidden object that only the owner can inspect", "source": "pp. 106–109 (§293 gives a conditional: if the grammar is construed on the object-and-name model, the object drops out; §304 rejects 'the grammar which tends to force itself on us'; the categorical form is stronger)", "ok": false}
+]
+</h_checks>
+<issues>
+[
+{"severity": "major", "check": "C", "where": "Whole digest, all references and frontmatter", "problem": "Every reference is given as '(pdf N)', and the frontmatter and Reading notes claim that printed page numbers are 'unknown'. The printed numbers (95e–110e) are visible in the page headers and the metadata.", "evidence": "Page headers 95e–110e; pdf 124 = p. 95, ... pdf 139 = p. 110"},
+{"severity": "critical", "check": "H", "where": "Second intuition note on the beetle (§§289–295)", "problem": "'Meaning is use' is a slogan that appears nowhere in these pages. The note also turns the conditional of §293 into an unconditional claim.", "evidence": "pp. 106–107 (§293: 'if we construe the grammar ... on the model of object and name, the object drops out of consideration as irrelevant')"},
+{"severity": "critical", "check": "H", "where": "L0, L1 and the beetle bullet in L2", "problem": "The L0/L1 sentences state as settled that meaning comes from public language-games, or that every sensation-word is 'defined by' a private object. The source gives these as 'one possibility' (§244) or under an 'if we construe' condition (§293).", "evidence": "pp. 95, 107"},
+{"severity": "critical", "check": "H", "where": "L2 and L3 on §246", "problem": "The 'know' remarks drop the condition ('as it is normally used'). The rhetorical question 'What is it supposed to mean — except perhaps that I am in pain?' is turned into a flat assertion. The sentence about others not learning of my sensations is garbled: the source says it cannot be said that others learn of them only from my behaviour, because I cannot be said to learn of them.", "evidence": "pp. 95–96 (§246)"},
+{"severity": "critical", "check": "H", "where": "L2 Method bullet", "problem": "'We must also give up the idea...' drops the conditional 'The paradox disappears only if we make a radical break with the idea ...'.", "evidence": "p. 109 (§304)"},
+{"severity": "critical", "check": "H", "where": "Intuition note after §288", "problem": "'Looks possible only after' strengthens the source, which says that if behaviour is excluded it looks as if one might legitimately doubt.", "evidence": "p. 106 (§288)"},
+{"severity": "critical", "check": "H", "where": "Intuition note after §255", "problem": "The note attributes to Wittgenstein the reading 'a rule of grammar' for 'Only I can know' and adds the claim that those who feel it is empirical 'have not noticed that it is a rule'. §246 says 'false in one way, nonsense in another'; §251 says such sentences are really grammatical; the final sentence is not in the source.", "evidence": "pp. 95–96, 96"},
+{"severity": "critical", "check": "H", "where": "Intuition note (main result), §258", "problem": "The explanation is reversed and stronger than the source. The source says there is no criterion of correctness, so whatever seems right is right, so we cannot speak of 'correct'. It also does not say 'cannot be wrong'.", "evidence": "pp. 98–99 (§258)"},
+{"severity": "critical", "check": "A", "where": "Intuition notes on §§272–280 and §§296–304; L2 'Pictures' bullet", "problem": "The note on colour words claims that the private feeling comes from a special kind of attention or a gesture and that this 'does not show that a private something is the meaning'. That is not stated in the source. The note on §304 states categorically how the word works. The §295 bullet drops that the 'only from my own case' scenario is imagined and that the picture is what we 'often see' when philosophising.", "evidence": "pp. 102–103 (§§275–279), pp. 107–109 (§§295, 304)"},
+{"severity": "critical", "check": "A", "where": "Concepts: [[rule-following problem]], [[meaning as use]], [[grammatical-proposition]]", "problem": "The definitions import doctrines not in these pages (no distinction between following a rule and seeming to; 'marks a rule of use'; meaning as use).", "evidence": "pp. 99, 106–107, 96, 107"},
+{"severity": "major", "check": "G", "where": "L1", "problem": "The Prerequisites line is missing. L1 uses undefined terms (criterion of correctness, pain-behaviour, language-game, and the diary-sign 'S').", "evidence": "Spec: L1 must be followed by a Prerequisites line; terms must be defined at first use"},
+{"severity": "major", "check": "E", "where": "Toy example, manometer paragraph", "problem": "The text says the manometer rises 'after' the writing of S. In the source the manometer rises whenever the sensation occurs. 'Fixed by the public correlation' is also stronger than the source's 'perhaps the kind of way this sign is employed'.", "evidence": "p. 101 (§270)"},
+{"severity": "minor", "check": "H", "where": "§243 and §270", "problem": "'An explorer could translate' drops the hedge 'might succeed'. 'Only means we write S every time' strengthens 'we're supposing, aren't we, that we write S every time'. §290 'is not describing a room' strengthens 'one needs to call to mind the differences between the language-games'. 'Private justification is no justification' (heading) is the writer's slogan.", "evidence": "pp. 95, 101, 106, 100"},
+{"severity": "minor", "check": "G", "where": "Frontmatter and Reading notes", "problem": "spec_version says 1.1, but the metadata says 1.2. The Reading notes claim that |89| marks German pagination and that the page numbers are unknown. The first claim is not in the source.", "evidence": "Metadata: spec_version 1.2; headers 95e–110e"}
+]
+</issues>
+<edits>
+</edits>
+<corrected>
+---
+id: wittgenstein-1953-investigations/ch04-private
+work: wittgenstein-1953-investigations
+unit: "4 §§243–315 Private language and sensation (the text supplied ends inside §312)"
+pages: 95–110
+fields: [analytic-philosophy]
+level: UG
+grounding: primary-text
+digested_by: claude-sonnet-5-5
+digested_on: 2026-10-13
+spec_version: 1.2
+verified: repaired
+verifier_issues: 8
+pipeline_version: 0.1
+---
+# Private language and sensation (PI §§243–312)
+
+## L0 — One line
+Wittgenstein suggests that a sensation-word can get its meaning from a shared language-game built on natural pain-behaviour, not from a private inner object; if the grammar of sensation-words is construed on the model of "object and name", the private object drops out as irrelevant.
+
+## L1 — The gist (≤ 120 words)
+Wittgenstein asks whether there could be a language whose words refer to what only the speaker can know, his immediate private sensations, so that nobody else could understand it. He tests it with a diary sign "S" for a recurring sensation. There is no criterion of correctness: whatever seems right would be right, so we cannot talk about "correct" here. One possibility is that sensation-words connect with natural pain-behaviour (crying, groaning). The "beetle in the box" remark says that if we construe the grammar of sensation-words on the model of object and name, the object drops out as irrelevant. He does not deny inner processes, only a misleading picture of them. (pp. 95, 99, 107, 109)
+
+**Prerequisites:** no formal logic needed. Useful ideas: a *criterion of correctness* is a way of telling right use of a word from wrong use; a *language-game* is an activity of talk and action in which words have their use; *pain-behaviour* is crying, groaning and similar natural expressions of pain.
+
+## L2 — Key ideas
+- **Defining the target.** A "private language" would have words that refer to what only the speaker can know, his immediate private sensations, so no one else could understand it. A language of monologue is a different thing, and the author says that is not what he means (p. 95).
+- **How "pain" might be learned.** One possibility is that words connect with natural expressions of sensation and are used in their place. The verbal expression replaces crying and does not describe it (p. 95).
+- **"Only I know" and "others only surmise" are called false in one way and nonsense in another.** If "know" is used as it normally is, other people very often know that I am in pain. Of myself, the author asks what "I know I'm in pain" is supposed to mean, "except perhaps that I am in pain". Doubt makes sense for others, not for me (pp. 95–96).
+- **The diary of "S".** Defining "S" by inwardly attending to a sensation gives no criterion of correctness. One would like to say that whatever seems correct is correct, and that only means that here we cannot talk about "correct" (pp. 98–99).
+- **An imagined check is not an independent one.** Looking up a table only in the imagination is like buying several copies of the same newspaper to confirm what it says. Justification, he says, consists in appealing to an independent authority (p. 100).
+- **Idle wheels.** A wheel that turns while nothing else moves is not part of the mechanism (§271). The same holds for a supposed mistake that makes no difference to use (§270) (p. 101). The beetle remark is a related case: the thing in the box cancels out (pp. 106–107).
+- **Sensations and living beings.** Only of a living human being, and of what resembles or behaves like one, can one say it has sensations. One comforts the sufferer, not the hand (pp. 103–105).
+- **"I know it only from my own case."** This is not an empirical proposition. What we often see when we look into ourselves while philosophising is a picture, "a pictorial representation of our grammar", "not facts" but "illustrated turns of speech" (p. 107).
+- **Not a denial of inner processes.** Pain is "not a Something, but not a Nothing either". To deny the mental process of remembering would be to deny that anyone remembers anything. What is denied is that the picture of an inner process gives the correct idea of how the word is used (pp. 108–109).
+- **Method.** The paradox about pain disappears only if we make a radical break with the idea that language always functions in one way, to convey thoughts. The aim of philosophy is to show the fly the way out of the fly-bottle (pp. 109–110).
+
+## L3 — Walkthrough
+This unit has no equations. Wittgenstein works through short numbered remarks. I keep his numbering and group the remarks.
+
+### §§243–245: What a private language would be
+- People can talk to themselves: encourage, order, blame, question and answer. One can imagine people who speak only in monologue. An explorer might succeed in translating their language, because he also hears them making resolutions and decisions (p. 95).
+- Then the question: is it also conceivable that there be a language in which a person could write down or voice his inner experiences (feelings, moods) for his own use? He asks whether we cannot do that in ordinary language, and answers that this is not what he means. The words of the imagined language are to refer to what only the speaker can know, his immediate private sensations, so another person cannot understand it (p. 95).
+- §244: How do words refer to sensations? This question is the same as: how does a person learn the meaning of sensation-names, for example "pain"? One possibility: words are connected with primitive, natural expressions of sensation and used in their place. A child hurts himself and cries. Adults teach him exclamations, then sentences, i.e. new pain-behaviour (p. 95).
+- Objection: "So 'pain' really means crying?" Reply: on the contrary, the verbal expression of pain replaces crying and does not describe it (p. 95).
+- §245: How can I even attempt to interpose language between the expression of pain and the pain? (p. 95)
+
+> **Intuition note.** The first question is how a sensation-word gets any meaning at all (§244). One possible answer ties it to natural behaviour that others can see. If my words for sensations are tied to my natural expressions, my language is not private (§256, p. 98).
+
+### §§246–255: Is knowledge of sensations private?
+- §246: In what sense are sensations private? The interlocutor says: only I can know whether I am really in pain; another person can only surmise it. Wittgenstein: in one way this is false, in another nonsense. If "know" is used as it is normally used, other people very often know if I am in pain. The interlocutor replies, "but not with the certainty with which I know it myself". Wittgenstein: it cannot be said of me at all (except perhaps as a joke) that I know I'm in pain. What is it supposed to mean, "except perhaps that I am in pain?" (pp. 95–96)
+- It cannot be said that other people learn of my sensations only from my behaviour, for I cannot be said to learn of them. I have them. It makes sense to say that other people doubt whether I am in pain, but not to say it about myself (p. 96).
+- §247: "Only you can know if you had that intention" can be said when explaining the word "intention". It then means: that is how we use it. Here "know" means that the expression of uncertainty is senseless (p. 96).
+- §248: "Sensations are private" is comparable to "One plays patience by oneself" (p. 96).
+- §§249–250: Are we perhaps over-hasty in assuming that a baby's smile is not pretence? Lying is a language-game that needs to be learned. Why can't a dog simulate pain? A dog might perhaps be taught to howl as if in pain, but the right surroundings for real simulation would still be missing (p. 96).
+- §251: "I can't imagine the opposite" does not mean that our powers of imagination are unequal to the task. We use these words to fend off something whose form gives the illusion of an empirical proposition but which is really a grammatical one. His examples of what is said include "only I myself can know whether I am feeling pain" (p. 96).
+  - Example: "Every rod has a length" means something like: we call something "the length of a rod" and nothing "the length of a sphere". To imagine every rod having a length, I just imagine a rod, and that is all. This picture plays a different role here than with "This table has the same length as the one over there", where I understand what it means to picture the opposite (p. 97).
+- §252: "This body has extension." We could respond "Nonsense!" but are inclined to reply "Of course!" Why? (p. 97)
+- §253: "Another person can't have my pains." What counts as a criterion of identity here? For physical objects we can speak of "two exactly the same", for example two chairs (p. 97).
+  - In so far as it makes sense to say that my pain is the same as his, it is also possible for us both to have the same pain. It would be conceivable that two people feel pain in the same place; that might be the case with Siamese twins (p. 97).
+  - A man strikes his breast and says "surely another person can't have this pain!" The answer: one does not define a criterion of identity by emphatically enunciating "this". The emphasis merely creates the illusion of a case in which we are conversant with such a criterion but have to be reminded of it (p. 97).
+- §254: Substituting "identical" for "the same" is another typical expedient in philosophy, as if only a nuance were in question. What we are "tempted to say" is not philosophy but its raw material. A mathematician's remarks about the objectivity and reality of mathematical facts are an example (pp. 97–98).
+- §255: The philosopher treats a question like an illness (p. 98).
+
+> **Intuition note.** In §251 Wittgenstein says that sentences such as "only I can know whether I am feeling pain" have the form of an empirical proposition but are really grammatical. In §246 he calls the claim "false in one way, nonsense in another", and in §247 he says "Only you can know if you had that intention" can state how the word "intention" is used.
+
+### §§256–271: The diary of "S" and the failure of private definition
+- §256: If my words for sensations are tied to my natural expressions of sensation, my language is not private. Suppose I had no natural expression, only sensations, and simply associated names with them and used the names in descriptions (p. 98).
+- §257: The interlocutor says it would then be impossible to teach a child "toothache". Suppose the child is a genius and invents a name for the sensation. He could not make himself understood. What does it mean that he has "named his pain", and what was its purpose? Much must be prepared in the language for naming to make sense. The grammar of "pain" is what has been prepared; it indicates the post where the new word is stationed (p. 98).
+- §258: The diary case.
+  - I want to record the recurrence of a sensation. I associate it with the sign "S" and write it in a calendar on each day I have the sensation. A definition of the sign cannot be formulated, but I can give myself a kind of ostensive definition (a definition by pointing) by speaking or writing the sign while concentrating my attention on the sensation, "pointing inwardly" (p. 98).
+  - But what is this ceremony for? A definition lays down the meaning of a sign. The reply is that concentrating attention commits the connection to memory. But "I commit it to memory" can only mean that this brings it about that I remember the connection correctly in the future. In the present case I have no criterion of correctness. One would like to say: whatever is going to seem correct to me is correct. That only means that here we cannot talk about "correct" (pp. 98–99).
+- §259: Are the rules of the private language impressions of rules? The balance on which impressions are weighed is not the impression of a balance (p. 99).
+- §260: "I believe that this is S again." Perhaps you believe that you believe it! Did the man who made the entry then note nothing whatever? A note has a function, and this "S" so far has none. Is everyone who speaks when no one else is present talking to himself? (p. 99)
+- §261: "Sensation" is a word of our common language, so its use needs a justification that everybody understands. Saying that he has "Something" does not help, because "has" and "something" also belong to the common language. An inarticulate sound is an expression only in a particular language-game, which has to be described (p. 99).
+- §§262–263: Someone who has given himself a private explanation of a word must inwardly resolve to use it in a certain way. Did he invent the technique of applying the word, or find it ready-made? The interlocutor: "Surely I can resolve to call this 'pain' in the future." Reply: is it certain that you have resolved this? Is it enough to concentrate your attention on your feeling? (pp. 99–100)
+- §264: "Once you know what the word signifies, you understand it, you know its whole application" (p. 100).
+- §265: An imagined dictionary-table.
+  - A dictionary can justify the translation of a word X by a word Y. Is it also a justification if the table is looked up only in the imagination? The interlocutor calls it a "subjective justification". But justification consists in appealing to an independent authority (p. 100).
+  - Objection: I can check a train departure time by recalling a page of the timetable. Wittgenstein: no, this procedure must actually call forth the correct memory. If the mental image of the timetable could not itself be tested for correctness, how could it confirm the first memory? It is as if someone bought several copies of today's paper to assure himself that what it said was true (p. 100).
+  - Looking up a table in the imagination is no more looking up a table than the image of the result of an imagined experiment is the result of an experiment (p. 100).
+- §§266–267: A clock can serve to determine the time in more than one way (look to see the time, look to guess it, move the hands until the position strikes me as right). Justifying an imagined bridge's dimensions by imagining load tests is imagining what is called justifying; but would we also call it justifying an imagined choice of dimensions? (p. 100)
+- §268: My right hand cannot give my left hand money. It can put it into the left hand, write a deed of gift, and the left hand a receipt. But the further practical consequences would not be those of a gift: one will ask "Well, and now what?" The same could be asked if a person gave himself a private explanation of a word by saying it and directing his attention to a sensation (p. 101).
+- §269: There are criteria in behaviour for not understanding a word, for "thinking he understands" (attaching some meaning, but not the right one), and for understanding it correctly. In the second case one might speak of a subjective understanding. Sounds that no one else understands but that I "appear to understand" might be called a "private language" (p. 101).
+- §270: A use for "S".
+  - I find from experience that whenever I have a particular sensation, a manometer shows that my blood pressure is rising. Now I can report this without the apparatus. It then seems indifferent whether I have recognised the sensation correctly. Even if I regularly misidentify it, this makes no difference. This alone shows that the supposition of a mistake was sham (p. 101).
+  - Image: a knob that looks as if it adjusts the machine but is a mere ornament, not connected with the mechanism. Why call "S" the name of a sensation? Perhaps the kind of way the sign is employed in this language-game. And why a "particular" sensation, the same one every time? We are supposing that we write "S" every time (p. 101).
+- §271: "Imagine a person who could not remember what 'pain' meant, so that he constantly called different things by that name, but nevertheless used it in accordance with the usual symptoms and presuppositions of pain", i.e. he uses it as we all do. Here Wittgenstein says: a wheel that can be turned though nothing else moves with it is not part of the mechanism (p. 101).
+
+> **Intuition note (main result).** In the diary case there is no criterion of correctness. One would like to say that whatever seems correct to the diarist is correct, and Wittgenstein says this only means we cannot talk about "correct" here (pp. 98–99). In §265 he adds that checking something against the imagination is not an independent check (p. 100). In §§270–271 an inner item that makes no difference to the use is compared to an idle wheel (p. 101).
+
+### §§272–280: "Red", colour impressions, and the "inner pointing" feeling
+- §272: The essential thing about private experience is not that each person has his own specimen, but that nobody knows whether other people also have this or something else. It would be possible, though unverifiable, that one section of mankind had one visual impression of red and another section another (p. 102). (Asterisk in the source; see Reading notes.)
+- §273: Does "red" signify something "confronting us all", with each person needing another word for his own impression? Or does "red" signify something known to all, and in addition, for each person, something known only to him? Or perhaps it refers to something known only to him (p. 102).
+- §274: Saying that "red" "refers to" rather than "signifies" something private does not help us grasp its function, but it is the more psychologically apt expression for a particular experience in doing philosophy: as if I cast a sidelong glance at my colour impression, to say to myself "I know all right what I mean" (p. 102).
+- §275: Look at the sky and say "How blue the sky is!" Spontaneously, you do not think that the impression belongs only to you, and if you point, you point at the sky. You do not have the pointing-into-yourself feeling that often accompanies "naming sensations" when thinking about the "private language", nor do you think you ought to point at the colour with your attention (p. 102).
+- §§276–277: The idea that we detach the colour impression from the object "like a membrane" should arouse our suspicions. How can there be a temptation to think we use a word at one time for the colour known to everyone and at another for the "visual impression" I now get? Wittgenstein: I don't turn the same kind of attention on the colour in the two cases. When I mean the colour impression that I would like to say belongs to me alone, I immerse myself in the colour, rather like when I "can't get my fill" of it. This is easier with a bright colour or a colour scheme that sticks in the memory (pp. 102–103).
+- §278: "I know how the colour green looks to me" surely makes sense. Wittgenstein: certainly; what use of the sentence are you thinking of? (p. 103)
+- §279: Imagine someone saying "But I know how tall I am!" and laying his hand on top of his head (p. 103).
+- §280: Someone paints a picture to show how he imagines a stage set. The interlocutor says the picture has a double function: it informs others, and for the painter it is also the picture of his image, in a sense in which it cannot be for anyone else. Wittgenstein asks: what right have I to speak of a representation or piece of information in this second case, if these words were correctly used in the first? (pp. 103–104)
+
+> **Intuition note.** In §277 Wittgenstein traces the temptation to speak of a "private" colour to a different kind of attention, an immersion in the colour. In §275 he notes that when one speaks spontaneously, one does not have the "pointing-into-yourself" feeling.
+
+### §§281–288: Who or what has sensations? Pity and doubt
+- §281: The interlocutor asks whether this amounts to saying that there is no pain without pain-behaviour. Wittgenstein: it amounts to this, that only of a living human being and what resembles (behaves like) a living human being can one say: it has sensations; it sees; is blind; hears; is deaf; is conscious or unconscious (p. 103).
+- §282: In a fairy tale a pot can see and hear, but it can also talk. Is it untrue or nonsensical to say that a pot talks? Do we have a clear idea of the circumstances in which we would say so? We do say of an inanimate thing that it is in pain, when playing with dolls, but this use of the concept of pain is a secondary one. Imagine people who said it only of inanimate things and pitied only dolls. Children playing trains might play the game without knowing it imitates anything; one could say the game did not make the same kind of sense to them as to us (pp. 103–104).
+- §283: What gives us the idea that beings or things can feel? Do I transfer an idea from myself to objects? I do not transfer it to stones or plants. If I turned to stone while in pain, in what sense would the stone have pains? Why should the pain here have a bearer at all? Only of what behaves like a human being can one say it has pains. For one has to say it of a body, or, if you like, of a mind which some body has (p. 104).
+- §284: Look at a stone and imagine it having sensations; this seems as odd as ascribing sensation to a number. Look at a wriggling fly, and the difficulties vanish. A corpse seems inaccessible to pain. Our attitude and reactions to what is alive and what is dead are different. To someone who says this cannot come simply from the way living beings move, Wittgenstein suggests that this is a case of the transition "from quantity to quality" (p. 104).
+- §285: Recognising and describing facial expressions does not consist in giving the measurements of the face. One can imitate a man's face without seeing one's own in a mirror (p. 105).
+- §286: Is it absurd to say of a body that it has pain? If someone has a pain in his hand, the hand does not say so (unless it writes it), and one does not comfort the hand but the sufferer: one looks into his eyes (p. 105).
+- §287: Pity, one may say, is one form of being convinced that someone else is in pain (p. 105).
+- §288: Doubt about whether I am in pain.
+  - The interlocutor says it means nothing to doubt whether I am in pain. If someone said "I don't know if what I have is a pain or something else", we would think he does not know the word and would explain it, by gestures or by pricking him with a pin ("See, that's pain!"). He might understand the explanation rightly, wrongly or not at all, and he will show which by his use of the word (pp. 105–106).
+  - If he said "I know what 'pain' means; what I don't know is whether this is pain", we would shake our heads and regard his words as a strange reaction we cannot make anything of (p. 106).
+  - That expression of doubt has no place in the language-game. But if expressions of sensation (human behaviour) are excluded, it looks as if I might then legitimately begin to doubt. The temptation to say one might take a sensation for something else arises from this: if I assume the normal language-game with the expression of a sensation is abrogated, I need a criterion of identity for the sensation, and then the possibility of error also exists (p. 106).
+
+> **Intuition note.** Wittgenstein answers "Is it the body that feels pain?" by pointing to what we do: we comfort the sufferer and look into his eyes (§286). In §288 doubt about one's own pain has no place in the language-game, but it looks legitimate once expressions of sensation are excluded.
+
+### §§289–295: Justification, description, and the beetle
+- §289: "When I say 'I am in pain', I am at any rate justified before myself." Does that mean: "If someone else could know what I am calling 'pain', he would admit that I was using the word correctly"? To use a word without a justification does not mean to use it wrongfully (p. 106).
+- §290: I do not identify my sensation by criteria; I use the same expression. The language-game does not end with this; it begins with it. The word "describe" may trick us: "I describe my state of mind" and "I describe my room" call for attention to the differences between the language-games (p. 106).
+- §291: Descriptions are instruments for particular uses, like an engineer's machine drawing. Thinking of a description as a word-picture of the facts is misleading, because one tends to think only of such pictures as hang on our walls (p. 106).
+- §292: Don't always think that you read off what you say from the facts and depict them in words according to rules. You would still have to apply the rule in the particular case without guidance (p. 106).
+- §293: The beetle in the box.
+  - If I say that I know what "pain" means only from my own case, must I not say that of other people too? Suppose everyone had a box with a "beetle" in it. No one can look into anyone else's box, and everyone says he knows what a beetle is only by looking at his own. Everyone might have something different in the box, or something constantly changing, or nothing (pp. 106–107).
+  - If the word "beetle" has a use nonetheless, it would not be as the name of a thing. The thing in the box does not belong to the language-game at all, not even as a Something. One can "divide through" by the thing in the box; it cancels out, whatever it is (p. 106).
+  - Conclusion: if we construe the grammar of the expression of sensation on the model of "object and name", the object drops out of consideration as irrelevant (p. 107).
+- §294: If you say that he sees a private picture, you have made an assumption about what he has before him, and so you can describe it more closely. If you admit you have no idea what kind of thing it is, what seduces you into saying that he has something before him? It is like saying "He has something. But I don't know whether it is money, or debts, or an empty till" (p. 107).
+- §295: "I know … only from my own case": what kind of proposition is it meant to be? Not an empirical one. A grammatical one? Wittgenstein imagines that everyone says of himself that he knows what pain is only from his own pain, not that people really say it. If everybody said it, it might be a kind of exclamation. Even if it gives no information, it is a picture, like an allegorical painting. When we look into ourselves as we do philosophy, we often get to see such a picture: virtually a pictorial representation of our grammar, "not facts; but, as it were, illustrated turns of speech" (p. 107).
+
+> **Intuition note (second main result).** In §293 the thing in the box could be different for each person, constantly changing, or absent. If the word still has a use, that use is not as the name of a thing. The conclusion is conditional: if the grammar of sensation-expressions is construed on the model of "object and name", the object drops out as irrelevant (pp. 106–107).
+
+### §§296–304: The "Something", imagined pain, and "Nothing"
+- §296: The interlocutor says: "There is a Something there all the same, which accompanies my cry of pain, and this Something is what is important and frightful." Wittgenstein asks: only to whom are we telling this, and on what occasion? (p. 107)
+- §297: If water boils in a pot, steam comes out of the pot, and a picture of steam comes out of a picture of the pot. What if one insisted that there must also be something boiling in the picture of the pot? (p. 107)
+- §298: The fact that we would so much like to say "This is the important thing", while pointing for ourselves to the sensation, is enough to show how inclined we are to say something not informative (p. 107).
+- §299: Being unable, when we indulge in philosophical thought, to help saying something, being irresistibly inclined to say it, does not mean being forced into an assumption, or having an immediate insight into a state of affairs (p. 108).
+- §§300–301: One would like to say that not merely the picture of the behaviour but also the picture of the pain belongs to the language-game with "he is in pain". Wittgenstein: it is a misunderstanding to say that the picture of pain enters into the language-game. Pain in the imagination is not a picture and is not replaceable in the language-game by anything we would call a picture. Imagined pain enters the language-game in a sense, only not as a picture. What is in the imagination is not a picture, but a picture can correspond to it (p. 108).
+- §302: Imagining someone else's pain on the model of my own is not easy: I must imagine pain I do not feel on the model of pain I do feel, not merely move the pain in the imagination from one place to another, as from hand to arm. Pain-behaviour can indicate a painful place, but the person who is suffering is the person who manifests pain (p. 108).
+- §303: "I can only believe that someone else is in pain, but I know it if I am." One can resolve to say "I believe he is in pain" instead of "He is in pain", but that is all. What looks like an explanation or a statement about a mental process just exchanges one way of talking for another which, while we are doing philosophy, seems more apt. "Just try — in a real case — to doubt someone else's fear or pain!" (p. 108)
+- §304: The interlocutor: surely there is a difference between pain-behaviour with and without pain. Wittgenstein: "What greater difference could there be?" To "so the sensation itself is a Nothing" he replies: "Not at all. It's not a Something, but not a Nothing either!" The conclusion was only that a Nothing would render the same service as a Something about which nothing could be said. "We've only rejected the grammar which tends to force itself on us here." The paradox disappears only if we make a radical break with the idea that language always functions in one way, always serves the same purpose: to convey thoughts (pp. 108–109).
+
+> **Intuition note.** Wittgenstein agrees that there is a difference between pain-behaviour with pain and without it (§304). What he rejects is a grammar that tends to force itself on us. The "Nothing" remark says that a Nothing would do the same service as a Something about which nothing could be said.
+
+### §§305–309: Inner processes, behaviourism, the fly-bottle
+- §305: The interlocutor: "Surely in remembering, an inner process takes place." Wittgenstein: what gives the impression that we want to deny anything? The impression arises from our setting our face against the picture of an "inner process". What we deny is that this picture gives the correct idea of the use of the word "remember". This picture, with its ramifications, stands in the way of our seeing the use of the word as it is (p. 109).
+- §306: "There has just taken place in me the mental process of remembering …" means nothing more than "I have just remembered …". To deny the mental process would mean to deny the remembering, to deny that anyone ever remembers anything (p. 109).
+- §307: "Aren't you a behaviourist in disguise, saying that everything except human behaviour is a fiction?" Reply: if I speak of a fiction, it is a grammatical fiction (p. 109).
+- §308: How does the philosophical problem about mental processes and behaviourism arise? The first step altogether escapes notice. We talk of processes and states and leave their nature undecided, as if sometime we will know more about them. That commits us to a certain conception of what it is to learn to know a process better. "The decisive movement in the conjuring trick has been made." Then the analogy falls to pieces, and we have to deny the "yet uncomprehended process in the yet unexplored medium". Now it looks as if we had denied mental processes, and naturally we do not want to deny them (pp. 109–110).
+- §309: "What is your aim in philosophy? — To show the fly the way out of the fly-bottle." (p. 110)
+
+### §§310–312: Attitude, "private exhibition", and pain-patches
+- §310: When I tell someone I am in pain, his attitude to me will be that of belief, disbelief, suspicion, and so on. If he says "It's not so bad", does that prove that he believes in something behind my utterance? Wittgenstein: his attitude is proof of his attitude. Imagine the words "I'm in pain" and the reply "It's not so bad" replaced by instinctive noises and gestures (p. 110).
+- §311: "What greater difference could there be?" The interlocutor believes he can privately give himself an exhibition of the difference in the case of pain; the difference between a broken and an unbroken tooth can be exhibited to anyone. For the private exhibition one need not give oneself actual pain, only imagine it, for instance by screwing up one's face a bit. Wittgenstein asks: do you know that what you exhibit to yourself is pain and not, for example, a facial expression? How do you know what to exhibit before you do it? "This private exhibition is an illusion." (p. 110)
+- §312: The interlocutor asks whether the tooth and the pain are not similar: the visual impression in one corresponds to the sensation of pain in the other. Wittgenstein then imagines that surfaces of things around us have patches that cause pain in our skin when touched (perhaps through chemical composition, which we need not know). We would speak of pain-patches on a leaf as we now speak of red patches. It is useful to notice these patches and their shapes, and we can infer important properties of the objects from them. The text supplied ends here (p. 110).
+
+## Toy example
+*(Ours, not from the text.)* The beetle in the box, with numbers.
+
+Three people each have a box and a word "beetle". Ann has an insect, Ben a pebble, Cy nothing. Each makes the same 5 public uses of "beetle" in a day ("my beetle is small today", "I looked at my beetle", and so on). That is 3 × 5 = 15 utterances.
+
+Now swap the contents of Ann's and Ben's boxes. The utterances are unchanged: 15 − 15 = 0 differences. Whatever is in the box makes no difference to the pattern of use. In the source's words, the thing in the box does not belong to the language-game (§293, pp. 106–107).
+
+Compare the manometer case (§270, p. 101). Whenever the sensation occurs, the manometer shows a rise in blood pressure, and writing "S" lets me report that rise. It then makes no difference whether I identify the sensation correctly. The sign is employed in the language-game in this way.
+
+## Concepts
+- [[private language argument]] — the examination of a language whose words refer to what only the speaker can know; tested in the "S" diary (pp. 95, 98–99).
+- [[meaning as use]] (candidate) — in §293, if the word "beetle" has a use it is not as the name of a thing, and the thing in the box drops out (pp. 106–107).
+- [[language-game]] — the activity in which sensation-words have their place, e.g. expressing pain, doubting (pp. 95, 106).
+- [[rule-following problem]] — §258: without a criterion of correctness, whatever seems right is right; §292: a rule must still be applied in the particular case without guidance (pp. 99, 106).
+- criterion-of-identity (new) — a rule for when something counts as the same; asked of "my pain" in §253 (p. 97).
+- grammatical-proposition (new) — a sentence whose form suggests an empirical proposition but which is "really a grammatical one" (§251); §295 asks whether "I know it only from my own case" is one (pp. 96, 107).
+- natural-expression-of-sensation (new) — primitive pain-behaviour with which sensation-words may be connected and which they may replace (p. 95).
+
+## Canonical instances
+- [[beetle-in-a-box]] — the thing in the box cancels out; the object drops out of consideration (pp. 106–107).
+- [[private-diary-sign-S]] — a sign for a sensation, with no criterion of correctness (pp. 98–99).
+- [[manometer-and-S]] — "S" given a use through blood pressure, so correct recognition makes no difference (p. 101).
+- [[imagined-timetable-and-newspapers]] — checking one memory against an imagined table is like buying several copies of the same paper (p. 100).
+- [[right-hand-gives-left-hand-money]] — a "gift" from oneself to oneself lacks the usual consequences, like a private explanation (p. 101).
+- [[red-impression-spectrum-possibility]] — it is possible but unverifiable that people have different impressions of red (p. 102).
+- [[fly-in-the-fly-bottle]] — the aim of philosophy (p. 110).
+- [[pain-patches]] — a thought experiment in which pain-causing patches on surfaces are noticed like red patches (p. 110).
+
+## Bridges (candidates)
+- [structural-analogy] Idle wheel / no criterion of correctness (§§258, 270–271) ↔ philosophy of science: a hypothesis that makes no difference to any test is not part of the theory.
+- [structural-analogy] Beetle in the box (§293) ↔ analytic-philosophy: the possibility in §272 that behaviour is the same but the private content differs.
+- [metaphor] "Showing the fly out of the fly-bottle" (§309) ↔ therapy: philosophy as dissolving a trap in thinking, not as discovering new facts (compare §255, "treats a question like an illness").
+
+## Questions this raises
+- If "S" gets a use via the manometer (§270), does it become part of a public language? What exactly does it need in order to count as a sensation word?
+- Does the beetle remark show that private experiences do not exist, or only that they play no role in the grammar of the word? Where does the text separate these (§§304–307)?
+- How does the "criterion of correctness" point in §258 relate to the point in §292 that applying any rule needs no further guidance?
+- Which of the interlocutor's claims in §246 (about "knowing" pain) survive if "know" is used as normally?
+
+## Reading notes
+- **Edition.** This is the 4th edition (Hacker & Schulte, 2009), not the 1953 Anscombe text. The supplied pages contain only the English pages, with no German facing text. The source notes also say Part II is renamed "Philosophy of Psychology – A Fragment". This unit covers §§243–312 of the numbered remarks.
+- **Page numbers.** Printed page numbers (95e–110e) are shown in the running heads, and this digest uses them. The text also contains bracketed numbers such as |89|; I did not use them as references.
+- **Range.** The unit title says §§243–315, but the supplied pages end in the middle of §312 (p. 110). §§313–315 are not in the supplied text, so they are not digested.
+- **Asterisks.** Remarks §§272–274 and §312 are marked with an asterisk in the text. The supplied pages do not say what the asterisk means, and I do not interpret it.
+- **Start.** The first page begins with the end of §242, which I do not summarise.
+- **Text layer.** The English is clean. Em dashes appear as "a" in places in the extracted text; I read them as dashes. No unreadable passages. There are no equations.
+- **Voice.** Wittgenstein alternates an interlocutor's voice (in quotation marks) with his own replies. Where it is unclear who speaks, I followed the context. For example in §246, "Yes, but all the same …" belongs to the interlocutor (pp. 95–96).
+</corrected>

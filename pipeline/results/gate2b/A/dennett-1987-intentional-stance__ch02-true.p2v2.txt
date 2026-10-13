@@ -1,0 +1,313 @@
+<verdict>repair</verdict>
+<h_checks>
+[
+{"item": "Belief is objective, but we see it only by adopting the **intentional strategy**: assume the system is rational, work out what beliefs and desires it *ought* to have, and predict its action.", "source": "p. 15 (belief 'can be discerned only from the point of view of one who adopts a certain predictive strategy'); p. 17 (the recipe)", "ok": true},
+{"item": "There is no sharp line between thermostats and people, only degrees (pdf 22).", "source": "p. 32-33: 'no magic moment' in the transition to a system that has internal representation; 'The differences are of degree, but nevertheless of such great degree that understanding the internal organization of a simple intentional system gives one very little basis for understanding ... a human being.' The digest drops the qualifier about the very great degree and the restriction to representation and interpretation.", "ok": false},
+{"item": "**The patterns are objective.** The Martian thought experiment shows that Laplacean physics alone would miss real patterns.", "source": "p. 25-26: the claim is conditional ('if they did not also see us as intentional systems, they would be missing something perfectly objective'). It is Dennett's reply to Nozick's objection, and the digest turns it into 'shows'.", "ok": false},
+{"item": "**Reflections: Game of Life.** Conway's Life world shows how a pattern can be real and visible only from a higher-level stance.", "source": "p. 37-39: Life is offered as a 'clear instance'. The pattern is real 'so long as it lasts'. 'In one sense it would be visible to anyone who watched'; there is 'no backstage'. Seeing it as a Turing machine takes 'a big leap of insight', and ascending to that point of view is 'optional'. So 'visible only from' is too strong.", "ok": false},
+{"item": "Where it cannot be drawn uniquely is itself a fact about the coast.", "source": "p. 29: 'when and why there is no fact of the matter is itself a matter of objective fact'. The point is supported, but the map and coastline analogy is not in the source and is not marked as the writer's own.", "ok": false},
+{"item": "A person's states fit only one world.", "source": "p. 32: 'almost no substitution is possible—though it is clearly imaginable'. Twin Earth and Earth 'must be virtual replicas'. A virtual replica is another world that would do, so 'only one world' is too strong.", "ok": false}
+]
+</h_checks>
+<issues>
+[
+{"severity":"major","check":"C","where":"Whole digest","problem":"All citations use (pdf N), although printed page numbers are visible in the page images and given in the metadata. The Reading notes wrongly say that no printed numbers were given.","evidence":"Page blocks carry printed=12-41; the images show numbers 14–41; the metadata says 'printed pages: 12-41'."},
+{"item":"x","severity":"critical","check":"H","where":"Intuition note (thermostat/Twin Earth)","problem":"'A person's states fit only one world' is stronger than the source. Almost no substitution is possible, but a virtual replica of Earth would do.","evidence":"p. 32"},
+{"severity":"critical","check":"H","where":"L2 bullet 'Definition of believer'","problem":"'No sharp line, only degrees' drops Dennett's qualifier that the difference is of such great degree that a simple system's internals tell us very little about a human's. It also drops the restriction to representation and interpretation.","evidence":"p. 32-33"},
+{"severity":"critical","check":"H","where":"L2 'The patterns are objective'","problem":"The Martian argument is conditional and is Dennett's reply to Nozick's objection. 'Shows that ... would miss' strengthens it.","evidence":"p. 25-26"},
+{"severity":"critical","check":"H","where":"L2 'Reflections: Game of Life'","problem":"Says the pattern is 'visible only from a higher-level stance'. Dennett says it is visible in one sense to anyone watching, and that seeing it as a Turing machine takes a leap of insight and is optional.","evidence":"p. 39"},
+{"severity":"critical","check":"H","where":"L2 'Mild realism'","problem":"'There may be no fact of the matter' weakens the claim. Dennett's milder realism says there is no fact of the matter of exactly which beliefs and desires a person has in the degenerate cases.","evidence":"p. 28-29"},
+{"severity":"critical","check":"H","where":"L2 'Why it works'","problem":"'May be right' weakens 'I think some version of it will prove correct', which Dennett says provided one allows great latitude for attenuating the bold claim.","evidence":"p. 34"},
+{"severity":"critical","check":"H","where":"L3 Two views / thesis","problem":"Dennett says the thesis 'apparently makes me a realist' and 'apparently makes me an interpretationist'. The digest drops 'apparently' and states both labels outright.","evidence":"p. 15"},
+{"severity":"critical","check":"A","where":"L3 intuition notes (stance comparison; 'cheap and good'; map analogy; 'empty question')","problem":"These contain material not in the source or stronger than it: 'Physics ignores nothing'; 'cheap'; a causal 'which is why it covers everything'; an unmarked map and coastline analogy; and 'Dennett suggests ... can sometimes be [an empty question]'. Dennett only draws a parallel to Parfit and cites Quine's doubt about the question's significance.","evidence":"p. 16-17, 22, 29, 40-41"},
+{"severity":"major","check":"G","where":"L1","problem":"The Prerequisites line is missing.","evidence":"Spec requires it after L1"},
+{"severity":"major","check":"G","where":"L2","problem":"Technical terms are undefined at first use: Laplacean physics, language-of-thought, indeterminacy, empty questions.","evidence":"Terms are explained only later, in L3 (p. 16, 34, 40-41)"},
+{"severity":"major","check":"D","where":"L3 Martians section","problem":"Omitted the key conclusion on p. 28: we cannot suppose the Martians lack the concepts, and if they observe, predict and communicate they view themselves as intentional systems, so the patterns must be there to be described.","evidence":"p. 28"},
+{"severity":"minor","check":"H","where":"L3 'Aim' of Reflections","problem":"Drops the hedge 'Perhaps' in 'Perhaps the major source of disquiet'. 'Added commentary attached to the reprinted lecture' is the writer's inference.","evidence":"p. 37"},
+{"severity":"minor","check":"A","where":"L3 Nozick reply; Hampshire passage","problem":"The reply drops the conditional 'if they did not also see us as intentional systems'. The Hampshire point drops 'for instance'.","evidence":"p. 25, 27"},
+{"severity":"minor","check":"B","where":"L3 Davidson","problem":"Garbled: 'The quotation continues on printed p. 41'. The whole quotation is printed on p. 41.","evidence":"p. 40-41"},
+{"severity":"minor","check":"G","where":"Frontmatter","problem":"spec_version is 1.1 although the task uses 1.2. The pages field contains a stale remark.","evidence":"Metadata: spec_version 1.2, printed pages 12-41"}
+]
+</issues>
+<edits>
+</edits>
+<corrected>
+---
+id: dennett-1987-intentional-stance/ch02-true
+work: dennett-1987-intentional-stance
+unit: "2 True Believers: The Intentional Strategy and Why It Works (with the 'Reflections: Real Patterns, Deeper Facts, and Empty Questions' section)"
+pages: "13–41"
+fields: [theory-of-mind]
+level: UG
+grounding: primary-text
+digested_by: claude-sonnet-5-5
+digested_on: 2026-10-13
+spec_version: 1.2
+verified: repaired
+verifier_issues: 6
+pipeline_version: 0.1
+---
+# True Believers: The Intentional Strategy and Why It Works
+
+## L0 — One line
+To be a believer is to be a system whose behaviour is reliably predictable by treating it as a rational agent with beliefs and desires; the patterns this stance finds are objectively real, but they are imperfect and can leave belief attribution indeterminate in some cases.
+
+## L1 — The gist (≤ 120 words)
+Dennett asks what it means to say someone believes something. Two views compete: *realism* (belief is an inner fact, like a virus) and *interpretationism* (attribution depends on the interpreter's interests). He rejects the choice. Belief is objective, but we see it only by adopting the **intentional strategy**: assume the system is rational, work out what beliefs and desires it *ought* to have, and predict its action. This works for people, animals, some machines and, a little, even thermostats. The patterns it finds are real, and an imagined super-intelligent Martian who used only physics would miss them. They are also imperfect, so rival interpretations can tie. A closing "Reflections" section uses Conway's Game of Life to explain "real patterns".
+
+**Prerequisites:** the everyday idea of beliefs and desires explaining action; the idea of prediction from physical law; no formal maths (the Game of Life rule is just counting neighbours).
+
+## L2 — Key ideas
+- **Two stances beside the intentional one.** The physical stance predicts from physical constitution and the laws of physics. The design stance predicts from what the thing is designed to do. Sometimes even the design stance is practically inaccessible, and then the intentional stance is the third option (p. 16–17).
+- **The intentional strategy is a recipe.** Treat the object as a rational agent. Work out the beliefs it ought to have, then the desires it ought to have. Predict that it acts to further its goals in the light of its beliefs (p. 17).
+- **Attribution rests on "ought".** Belief attribution is governed by what the system *ought* to believe given its exposure and interests. Desire attribution is governed by what it *ought* to want. The consequence is that true believers mainly believe truths, and false beliefs and bizarre desires need special stories (p. 18–20).
+- **Definition of believer.** "What it is to be a true believer is to be an intentional system", one whose behaviour is reliably and voluminously predictable by the strategy (p. 15). There is "no magic moment" between a simple thermostat and a system with internal representation of the world. The differences are of degree, but of such great degree that a thermostat's internals tell us little about a human's (p. 32–33).
+- **The patterns are objective.** Dennett replies to Nozick's Martian objection. A Martian who is a Laplacean super-physicist (one who could in principle predict everything from physical law) but does not also see us as intentional systems would, he argues, miss something perfectly objective. Examples are the many physically different ways of ordering 500 shares of General Motors that have the same market effect (p. 25–26).
+- **Mild realism.** Because no one is perfectly rational, the patterns have gaps. On the milder realism Dennett advocates, there is in those degenerate cases no fact of the matter about exactly which beliefs and desires a person has. When and why this happens is itself a matter of objective fact (p. 28–29).
+- **Richer connection to the world narrows meaning.** Richer sensing and behaviour shrink the class of satisfactory interpretations of a system's internal states. Eventually a unique interpretation is practically (but never in principle) dictated (p. 30–31).
+- **Why it works: two questions.** The easy answer is that evolution designed us to be rational. The hard answer concerns the machinery inside. Dennett thinks some version of the language-of-thought hypothesis (the brain has sentence-like internal states) will prove correct, provided one allows great latitude for attenuating its bold claim. He denies that it is obvious or inevitable (p. 33–35).
+- **Reflections: Game of Life.** Conway's Life world is offered as a clear instance of a pattern that is real but easy to miss unless one takes a higher-level point of view. Dennett ties his view to Quine's and Davidson's *indeterminacy* (rival interpretations can tie) and to Parfit's *empty questions* (questions with no answer where nothing is left unknown) (p. 37–41).
+
+## L3 — Walkthrough
+
+### Opening: Maugham's "Death Speaks" and the problem of belief (p. 13–14)
+- The chapter opens with the story of the merchant's servant in Baghdad. He flees Death to Samarra. Death explains that his gesture was only a start of surprise at seeing the servant in Baghdad, because they had an appointment in Samarra that night (p. 13). Dennett uses the fatalism of this story later (p. 27).
+- Social scientists talk about belief constantly, and they also talk about *talk about belief* (p. 13). Attribution appears dark and risky for exotic beliefs. It is also disputed for nonhuman animals, infants, computers and robots, and for apparently healthy adults whose beliefs seem contradictory or wildly false (p. 13–14).
+- **Anecdote.** A man in a bar phoned a biologist to ask "Are rabbits birds?" He said "Damn!" on hearing "No". Could he really have believed that rabbits were birds? "Perhaps, but it would take a bit of a story" to accept it (p. 14).
+- Sometimes attribution appears to need hermeneutics, empathy and *Verstehen*. At other times it looks as easy as "counting beans in a dish". In the second case it is plausible to suppose that in principle the beliefs could be confirmed by *finding something inside the believer's head*. On this view physiological psychology could trump any "black box" method that divines beliefs from external criteria (p. 14).
+
+### Two opposing views and Dennett's thesis (p. 14–15)
+- **Realism.** Having a belief is like being infected with a virus: an objective internal matter of fact about which an observer can often make educated guesses of great reliability (p. 14–15).
+- **Interpretationism.** Having a belief is like being immoral, having style, or making a good wife. The answer depends on what you are interested in (p. 15).
+- These bald statements do not fairly represent any serious theorist, but they are typically seen as mutually exclusive and exhaustive. Dennett thinks this is a mistake. His **thesis**: belief is a perfectly objective phenomenon (that apparently makes him a realist). But it can be discerned only from the point of view of one who adopts a certain *predictive strategy*, and its existence can be confirmed only by assessing that strategy's success (that apparently makes him an interpretationist) (p. 15).
+- To a first approximation, the **intentional strategy** treats the object as "a rational agent with beliefs and desires and other mental stages exhibiting what Brentano and others call *intentionality*" (p. 15).
+- Dennett says he will argue that any system whose behaviour is well predicted by this strategy "is in the fullest sense of the word a believer". An **intentional system** is "a system whose behavior is reliably and voluminously predictable via the intentional strategy" (p. 15). He admits his earlier arguments (1971, 1976b, 1978a) won few converts and many presumed counterexamples (p. 15).
+
+> **Intuition note.** Dennett wants "belief" to be neither a hidden inner object nor a matter of taste. It is a real feature of behaviour, namely the predictability you get when you treat the system as rational.
+
+### The Intentional Strategy and How It Works
+
+**Astrology as a contrast case (p. 15–16).**
+- An astrological strategy takes a birth date and feeds it into an algorithm. It is popular, but we have good reasons to think it does not work. Its successes are luck or vagueness (p. 15–16).
+- Suppose some people were "astrological systems" whose behaviour *was* predictable that way. We would then want to know **how** the strategy works (its rules) and **why** it works. Astrologers might have no useful opinion about the second question. "Having a good strategy is one thing; knowing why it works is another" (p. 16).
+- So far as we know, the class of astrological systems is empty (p. 16).
+
+**Physical stance (p. 16).**
+- Determine the physical constitution and the physical impingements, then use the laws of physics. This is Laplace's grand and impractical strategy, but it has local versions (the cook predicting an overheated pot). That it always works *in principle* is a dogma of the physical sciences (p. 16).
+
+**Design stance (p. 16–17).**
+- Ignore the actual, possibly messy, physical details and assume the object has a design. Then predict that it will behave *as it is designed to behave* (p. 16–17).
+- Examples: most computer users have no idea of the physical principles behind the machine's reliability, yet they predict it well. Almost anyone can predict when an alarm clock will sound without knowing whether it is spring-wound or has silicon chips. More accurate prediction needs a less abstract level of design description (p. 17).
+- Only the *designed* behaviour is predictable this way. For a clock filled with liquid helium, "revert to the physical stance". Many biological objects (plants, animals, kidneys, hearts, stamens, pistils) can be predicted from the design stance (p. 17).
+
+**Intentional stance (p. 17).**
+1. Decide to treat the object as a rational agent.
+2. Work out what beliefs it ought to have, given its place in the world and its purpose.
+3. Work out what desires it ought to have, on the same considerations.
+4. Predict that the agent will act to further its goals in the light of its beliefs.
+
+A little practical reasoning from those beliefs and desires will in many, but not all, instances yield a decision about what the agent ought to do. That is what you predict it *will* do (p. 17).
+
+> **Intuition note.** Each stance gives up some detail. The design stance ignores the messy physical constitution and relies on the designed function. The intentional stance is what is left when even the design stance is practically inaccessible, and it relies on the assumption that the agent is rational.
+
+**Attributing beliefs (p. 17–19).**
+- Truisms: sheltered people tend to be ignorant, and people exposed to something come to know all about it. Exposure to $x$ (sensory confrontation over a suitable period) is the *normally sufficient* condition for knowing about $x$ (p. 17–18).
+- The threshold for accepting abnormal ignorance is high. "I didn't know the gun was loaded", said by someone present, sighted and awake during the loading, meets utter skepticism (p. 18).
+- We learn only the *relevant* truths. For instance, I do not typically learn the ratio of spectacle-wearers to trousered people in a room. So the first **rule**: attribute as beliefs all the truths relevant to the system's interests (or desires) that its experience to date has made available (p. 18).
+- The rule over-attributes, because we forget. It also fails to capture false beliefs. But any false belief "requires a special genealogy, which will be seen to consist in the main in true beliefs" (p. 18).
+- Two paradigm cases: (1) $S$ falsely believes $p$ because $S$ truly believes that Jones told him $p$, that Jones is pretty clever, that Jones did not intend to deceive him, and so on. (2) $S$ falsely believes there is a snake on the barstool because $S$ truly believes he seems to see one, is sitting in a bar a yard from the stool, and so forth. "The falsehood has to start somewhere" (hallucination, illusion, misperception, memory deterioration, fraud), but the false beliefs grow "in a culture medium of true beliefs" (p. 18).
+- Arcane and sophisticated beliefs come from tracing a lineage of mainly good reasoning from beliefs already attributed. So "true believers mainly believe truths". If anyone could devise an agreed method of counting beliefs (Dennett doubts it very much), all but the smallest portion (say, less than ten percent) would be attributable under the first rule (p. 19).
+- **Footnote 1 (p. 19).** Dennett distinguishes *belief* from *opinion*. Opinions are linguistically infected, relatively sophisticated states, roughly states of betting on the truth of a formulated sentence. Given this distinction, "most beliefs are true" is nearly trivial. Democritus's systematic physics, even if entirely false, would be a vanishing fraction of his beliefs. The others include humdrum standing beliefs and the millions of occasional perceptual ones. The objection that all observation is theory-laden is answered by asking why we should burden his observations with his explicit theory rather than with the same innocuous theory his least theoretical compatriots had.
+
+**The fundamental rule and desires (p. 19–20).**
+- The first rule is a *derived* rule. The fundamental rule is: attribute those beliefs the system *ought to have* (p. 19–20).
+- Desires follow the same pattern: we attribute the desires the system *ought to have*. On a first pass these are the familiar highest desires: survival, absence of pain, food, comfort, procreation, entertainment. Citing one of these typically terminates the "Why?" game (p. 20).
+- Derived rules: attribute desires for things the system believes are good for it, and for things it believes are best means to other ends it desires. Bizarre or detrimental desires, like false beliefs, require special stories (p. 20).
+
+**Language, desire and belief (p. 20–21).**
+- Language lets us formulate very specific desires (the example is a two-egg mushroom omelette, French bread and butter, and a half bottle of lightly chilled white Burgundy). It also *forces* us to commit ourselves to desires more stringent than we would otherwise have reason to satisfy (p. 20).
+- To get what you want you often must say what you want. Saying it often means being more specific than you antecedently meant. Then, being a man of your word, you acquire an interest in satisfying exactly the desire you declared (p. 20).
+- Illustration: "I'd like some baked beans, please." "Yes sir. How many?" We are all socialized to accede to such requirements without noticing it (p. 20–21).
+- The same happens with belief: our linguistic environment forces precise verbal expression on convictions that lack hard edges. By concentrating on the results and ignoring the distorting effect, one may be misled into thinking it obvious that beliefs and desires are like sentences stored in the head. These are special cases and "may not be reliable models for the whole domain" (p. 21).
+
+**Rationality (p. 21).**
+- Start with the ideal of perfect rationality and revise downward as circumstances dictate. Assume people believe all the implications of their beliefs and no contradictory pairs. This creates no practical clutter, because one needs only that the system be rational enough to reach the implications relevant to the prediction at hand (p. 21).
+- Irrationality and finitely powerful inference raise knotty problems, set aside here (see chapter 4 and Cherniak 1986) (p. 21).
+
+**Do people use it? Does it work? (p. 21–22).**
+- People use it "all the time". It is the only such strategy "we all know now". It works with people almost all the time (p. 21).
+- Dennett's illustration: why would it not be a good idea to let each Oxford college grant degrees as it saw fit? The answer is easy to generate: we have no difficulty thinking of the reasons people would then have for acting in ways that give others reasons for acting. Our use of the strategy is so habitual and effortless that its role in shaping our expectations is easily overlooked (p. 21–22).
+- It also works on most mammals (for example, designing better traps), birds, fish, reptiles, insects, spiders and even clams. Once a clam believes there is danger, it will not relax its grip until it is convinced the danger has passed (p. 22).
+- It works on some artifacts. The chess computer will not take your knight because it knows a line of play would lose its rook, and it does not want that. The thermostat will turn off the boiler as soon as it comes to believe the room has reached the desired temperature (p. 22).
+- It works on plants. In a locale with late spring storms, plant apple varieties that are *cautious* about concluding that it is spring. It even works on lightning: an electrician explained that lightning always wants the best way to ground but sometimes gets tricked into second-best paths, so make a better path more obvious (p. 22).
+
+> **Intuition note.** The strategy is habitual and effortless, and it works to some degree even on creatures, artifacts and plants whose insides differ enormously. Dennett uses this to show that belief talk spreads far, and he then asks which cases are "serious".
+
+### True Believers as Intentional Systems (p. 22–33)
+
+**Which systems "really" have beliefs? (p. 22–24)**
+- The list above mixes serious attributions, dubious ones, pedagogically useful metaphors, *façons de parler* and outright frauds. Sorting the "real" believers from the "as if" ones would be a "Sisyphean labor, or else would be terminated by fiat". Even in the worst cases the strategy does work "at least a little bit" (p. 22–23). This is an interesting fact that distinguishes intentional systems from objects for which the strategy never works (p. 23).
+- **The lectern.** A lectern can be construed as a fully rational system that believes it is at the centre of the civilized world and wants to stay there. Prediction: it stays put. Is it an intentional system? "If it is, anything at all is." Dennett says the strategy "does not recommend itself" here, since we get no predictive power we did not antecedently have. We tailored the beliefs and desires to fit in an unprincipled way (p. 23).
+- **Objection (anticipated: "it will be urged"):** the difference is not one in nature, only a reflection of our limited capacities. A Laplacean physicist needs neither the design nor the intentional strategy. Engineers can understand a thermostat without anthropomorphizing it. Even the cleverest engineers may find it practically impossible to think clearly about systems such as time-sharing computers or space probes without lapsing into the intentional stance, but this is "just a more advanced case of human epistemic frailty" (p. 23).
+- Dennett's response begins with a rhetorical question: would we want to classify these artifacts with the true believers on such variable and parochial grounds? Would it not be intolerable to hold that something is a believer from one observer's point of view but not from a cleverer observer's? That would be a radical interpretationism. Dennett says his presentation has sometimes invited that reading and he now wants to discourage it. "The decision to adopt the intentional stance is free, but the facts about the success or failure of the stance, were one to adopt it, are perfectly objective" (p. 23–24).
+
+**The power of the strategy (p. 24–25).**
+- Our concentration on cases where it yields dubious results hides its power (p. 24).
+- *Chess.* Many moves are legal, but only a few, perhaps half a dozen, have anything to be said for them. The strategy "can dramatically reduce the number of live options" even when it cannot pick one move (p. 24).
+- *Real world.* It cannot predict a stock trader's exact orders or a politician's exact words. But it can predict, with very high confidence, that the trader will not buy utilities today or that the politician will side with the unions against his party (p. 24).
+- This coarseness is also a strength. Neutrality about details of implementation lets us **chain predictions**. If the US Secretary of State announced he was a paid KGB agent, we could predict dozens of "not terribly interesting but perfectly salient" consequences: the President confers with the Cabinet, the Secretary is relieved, a news conference follows, then stories, editorials and letters to editors. This describes "an arc of causation in space-time that could not be predicted under *any* description by any imaginable practical extension of physics or biology" (p. 24–25).
+
+**Nozick's Martians (p. 25–26).**
+- Nozick's objection: suppose beings of vastly superior intelligence are to us as simple thermostats are to clever engineers. They are Laplacean super-physicists. They see Wall Street as congeries of subatomic particles, yet predict the ink marks on the "Closing Dow Jones Industrial Average" tape days in advance, treating nothing as an intentional system (p. 25).
+- Would we be right then to say that from their point of view we are not believers at all? If so, our status as believers is nothing objective but "something in the eye of the beholder—provided the beholder shares our intellectual limitations" (p. 25).
+- Dennett's reply: if the Martians did not also see us as intentional systems, they would be missing something perfectly objective, namely the **patterns** in human behaviour that are describable from the intentional stance, and only from that stance, and that support generalizations and predictions (p. 25).
+- **Stockbroker.** The Martians predict the exact finger motions and vocal-cord vibrations as a broker orders 500 shares of General Motors. But indefinitely many different patterns of motions, even by different individuals, could have been substituted without perturbing the operation of the market (p. 26).
+- Analogy: there are indefinitely many ways of *being a spark plug*. One has not understood an engine unless one sees that varied devices can be screwed into the sockets. Likewise there are indefinitely many ways of ordering 500 shares of GM, and "societal sockets" where any of them has about the same effect. There are also "societal pivot points" where which way people go depends on whether they *believe that p* or *desire A*, and not on any of the other infinitely many ways they may be alike or different (p. 26).
+
+**The prediction contest (p. 26–27).**
+- A Martian and an Earthling compete. The Earthling hears Mrs. Gardner on the phone: "You're coming home early? Within the hour? And bringing the boss to dinner? Pick up a bottle of wine on the way home, then, and drive carefully." He predicts that a large metallic vehicle will stop in the drive within an hour, disgorging two human beings, one holding a paper bag with a bottle in it (p. 26).
+- The Martian reaches the same prediction, but only by using much more information about an extraordinary number of interactions, for instance the deceleration of the vehicle at an intersection five miles away to avoid a collision. The Earthling's performance would "look like magic" to him (p. 26–27).
+- **Fatalism.** To anyone without the intentional strategy it would seem as marvellous and inexplicable as the appointment in Samarra. Fatalists (for example astrologers) believe in a pattern that will impose itself "come what may". They are wrong, but "almost right". There *are* patterns in human affairs that impose themselves "not quite inexorably but with great vigor", absorbing physical perturbations that might as well be considered random. These are the patterns we characterize in terms of the beliefs, desires and intentions of rational agents (p. 27).
+- **A flaw Dennett notes in his own thought experiment.** The Martian is presumed to treat the Earthling as an intelligent being, one he can wager against, that is, as having beliefs and desires. So if he sees the pattern in one Earthling, how can he fail to see it in the others? The moral is "the unavoidability of the intentional stance with regard to oneself and one's fellow intelligent beings". This unavoidability is itself interest-relative. It is possible to adopt a physical stance towards an intelligent being, oneself included, but not to the exclusion of keeping an intentional stance towards oneself at a minimum, and towards one's fellows *if* one intends, for instance, to learn what they know (a point made by Hampshire) (p. 27).
+- Dennett adds: we can perhaps suppose the Martians fail to recognize *us* as intentional systems, "but we cannot suppose them to lack the requisite concepts". If they observe, theorize, predict and communicate, they view themselves as intentional systems. "Where there are intelligent beings, the patterns must be there to be described, whether or not we care to see them" (p. 28).
+- **Footnote 2 (p. 28).** An Oxford audience member said a Martian who included the Earthling in his physical-stance purview would not be surprised, since he would have predicted the X-ray modulations. Dennett replies that the Martian's written output would read, word by Martian word, like a Ouija board. What would baffle him is how this chunk of mechanism could yield a *true* Martian sentence when it was informationally isolated from the events he needed in order to predict the car's arrival.
+- **Footnote 3 (p. 28).** Dennett says he cannot see what would lead us to call "intelligent" beings that had no use for communicating, predicting or observing.
+
+**Objective but imperfect patterns (p. 28–29).**
+- It is important to recognize the objective reality of the patterns, and also their incompleteness. The objective fact is that the intentional strategy "works as well as it does, which is not perfectly". No one is perfectly rational, unforgetful, all-observant, or invulnerable to fatigue, malfunction or design imperfection. This leads to circumstances beyond the strategy's power to describe, as a melted amplifier cannot be drawn as a normal wiring diagram (p. 28).
+- In cases of even the mildest, most familiar cognitive pathology (apparently contradictory beliefs, self-deception), the canons of interpretation fail to yield "clear, stable verdicts" (p. 28).
+- A **strong realist** position would claim the person really has some particular beliefs and desires that the strategy cannot divine. On the **milder realism** Dennett advocates, "there is no fact of the matter of exactly which beliefs and desires a person has in these degenerate cases". But this is not a surrender to relativism, for "*when* and *why* there is no fact of the matter is itself a matter of objective fact" (p. 28–29).
+- One can even acknowledge **interest relativity**. Different cultures may attribute different beliefs and desires to the same person. There would still be facts about how well each rival scheme predicts. Two rival schemes may be about equally good, and that is itself something about which there can be a fact. The presence of one pattern does not rule out another (p. 29).
+- The "bogey" of radically different, equally warranted interpretations is theoretically (metaphysically) important but practically negligible once one restricts attention to human beings, the largest and most complex intentional systems we know (p. 29). **Footnote 4:** McCarthy's analogy to cryptography. The larger the cipher text, the less chance there is of dual, systematically unrelated decipherings. McCarthy 1979 is cited for the principles of the stance applied to machines, thermostats included (p. 29).
+
+> **Intuition note.** On Dennett's "mild realism", where interpretation gives out there is no further hidden fact to find. But exactly when and why interpretation gives out is not a matter of taste. It can be settled by looking at how well each interpretation predicts.
+
+**The thermostat and the growth of meaning (p. 29–33).**
+- Dennett has stressed our kinship with clams and thermostats. The "perverse claim" remains: *all there is* to being a true believer is being a system whose behaviour is reliably predictable via the intentional strategy. So *all there is* to really and truly believing that $p$ (for any proposition $p$) is being an intentional system for which $p$ occurs as a belief in the best (most predictive) interpretation (p. 29).
+- Once we turn to the truly interesting and versatile systems, this apparently shallow and instrumentalistic criterion puts a *severe constraint* on the internal constitution of a genuine believer. It thus "yields a robust version of belief after all" (p. 29).
+- **Thermostat.** Going along with the gag, grant it about half a dozen beliefs (the room is too cold or too hot, the boiler is on or off) and fewer desires. It has no concept of heat or of a boiler, so **de-interpret**: it can believe the $A$ is too $F$ or $G$, and if it wants the $A$ to be more $F$ it should do $K$. Attached to other devices, the same control mechanism could regulate the water in a tank or the speed of a train (p. 30).
+- **Enrich the attachments (p. 30).** Give it more than one way to learn the temperature (an "eye" that can distinguish huddled, shivering occupants, an ear). Give it geographic facts, so it can conclude it is probably cold if it is in Winnipeg in December. Give it behavioural versatility (choosing fuel, buying from the cheapest dealer, checking weather stripping). This adds internal complexity and gives each belief-like state "more to do". It provides more occasions for derivation from other states and for serving as premises for further reasoning.
+- Formally, "the class of indistinguishably satisfactory models of the formal system embodied in its internal states gets smaller and smaller" as we add such complexities. Eventually a unique semantic interpretation is practically (but never in principle) dictated. We then say the device has beliefs *about heat* and *this very room*, not only because of its actual location and operations but because we cannot imagine another niche where it would work (p. 30–31).
+- The original thermostat's state is about *that* boiler because it is *fastened* to it. This is the ancestor of *de re* belief (footnote 5: see chapter 5). But it was too easy to substitute a different minimal link and completely change the meaning (p. 31).
+- In richer systems it gets harder to substitute the system's links to the world without changing the system's organization. There is a **two-way constraint**. Fix the device in one state and it demands a very specific environment. Do not fix it, and in a changed environment its sensory attachments drive it into a new state in which it works there. We allude to this tight relation by saying that the organism continuously *mirrors* the environment, or that there is a **representation** of the environment in or implicit in its organization (p. 31).
+- Italic principle (p. 32): it is not that we attribute (or should attribute) beliefs and desires only to things in which we find internal representations. Rather, when we discover an object for which the intentional strategy works, we endeavour to interpret some of its internal states as representations. What makes an internal feature a representation "could only be its role in regulating the behavior of an intentional system".
+
+**Twin Earth (p. 32–33).**
+- There is "no magic moment" in the transition from a simple thermostat to a system that "really" has an internal representation. Fancier thermostats and house robots have more demanding representations. We are so multifariously connected to the world that almost no substitution is possible, though it is clearly imaginable (p. 32).
+- Putnam's Twin Earth is just like Earth except for a property entirely beneath your discrimination thresholds (twin "water" has a different chemical analysis). Swapped there, you would never be the wiser, like the simple control system that cannot tell whether it regulates temperature, speed or water volume (p. 32).
+- Your internal organization puts a far more stringent demand on substitution, so Earth and Twin Earth must be virtual replicas or you will change state dramatically on arrival (p. 32).
+- Which boiler are *your* beliefs about? The boiler in your cellar. Fixing the referents requires facts about your actual embedding in the world, as with the thermostat. The principles and problems of interpretation are the *same* for thermostat and person. The differences are of degree, "but nevertheless of such great degree" that understanding a simple system's internals gives very little basis for understanding a human's (p. 32–33).
+
+> **Intuition note.** The more tightly a system is tied to its surroundings, the fewer environments it could be moved to without changing state. A thermostat's states could be reattached to many jobs. A person's states fit almost no other environment, except a virtual replica of this one.
+
+### Why Does the Intentional Strategy Work? (p. 33–35)
+- The question is ambiguous and admits two very different sorts of answers (p. 33).
+- **Thermostat.** One answer: it is well designed to be comprehended and manipulated from this stance. This is true but not very informative. The other answer, about how the machinery works, is readily available (p. 33).
+- **Person.** First answer: evolution has designed human beings to be rational, to believe what they ought and want what they ought. The fact that we are products of a long and demanding evolutionary process "guarantees that using the intentional strategy on us is a safe bet". The answer has the virtues of truth and brevity, and is one Herbert Spencer would applaud (the chapter was a Spencer Lecture, p. 13), but it is "strikingly uninformative". The harder version asks how the machinery Nature has provided works, "and we cannot yet give a good answer to that question" (p. 33).
+- **Skinnerian behaviourist answer.** Belief and desire talk is shorthand for as-yet-unimaginably complex descriptions of prior histories of response and reinforcement. "Wants some ice cream" says that ice-cream ingestion was reinforced in the past, creating a propensity. We make shrewd inductive guesses at these histories, and the guesses are embodied in our intentional claims. Even if true, this would tell us very little about how internal machinery regulates the propensities (p. 33–34).
+- **Language-of-thought answer.** The account of how the strategy works and the account of how the mechanism works will (roughly) *coincide*. For each predictively attributable belief there will be a functionally salient internal state, decomposable into parts like the sentence that expresses the belief. The logical form of the propositions believed is copied in the structural form of the states. Brains would be symbol-manipulating systems, at least in rough analogy with computers (p. 34).
+- Dennett thinks some version of this, provided one allows great latitude for attenuation of the basic, bold claim, "will prove correct". But it is **not obvious**. Those who think so confuse two empirical claims: (1) intentional-stance description yields an objective, real pattern in the world (confirmed "beyond skepticism"), and (2) this pattern is *produced by* another real pattern roughly isomorphic to it within the brains of intelligent creatures. Doubting (2) is not doubting (1). There are reasons to believe in (2), but they are not overwhelming (p. 34).
+- **Reason for (2): combinatorial explosion.** As systems become more complex, design runs into combinatorial explosion. Increasing some parameter by, say, ten percent tends to increase internal complexity "by orders of magnitude". Yet the brain, "finite, compact, reliable, and swift", has solved the problem. Some elegant, generative, indefinitely extendable principles of representation must be responsible. We have only one model of such a system, a human language. So the argument for a language of thought comes down to: "what else could it be?" (p. 34–35).
+- That is a good enough reason to pursue the hypothesis as a matter of scientific tactics. But we do so better if we remember that its "inevitable rightness is far from assured". "One does not well understand even a true empirical hypothesis so long as one is under the misapprehension that it is necessarily true" (p. 35). **Footnote 6:** all language-of-thought models so far proposed fall victim to combinatorial explosion in one way or another, which should temper enthusiasm for "the only game in town" (Fodor's phrase) (p. 35).
+
+### Reflections: Real Patterns, Deeper Facts, and Empty Questions (p. 37–41)
+This section follows the reprinted lecture and is written in Dennett's own voice.
+
+**Aim (p. 37).** Perhaps the major source of disquiet about Dennett's position has been its delicate balancing act on the observer-relativity of attributions. Is belief attribution in the eye of the beholder? Are there objective truths about belief, or only useful fictions? His discussion of Nozick's objection puts his view "on the knife-edge" between simple realism and simple relativism. His critics have persistently tried to show that it tumbles into one abyss or the other. He insists on a *sort* of realism: the patterns the Martians miss are really, objectively there to be noticed or overlooked (p. 37).
+
+**The Game of Life (Conway; Gardner 1970) (p. 37–39).**
+- The world is a huge grid. Its intersections are *cells*, each ON or OFF. Each cell has eight neighbours (four adjacent plus four diagonal). Time advances in discrete ticks (p. 37–38).
+- **The law** (p. 38): each cell counts how many of its eight neighbours are ON. If exactly two, it stays in its present state. If exactly three, it is ON next instant whatever its current state. Under all other conditions it is OFF.
+- Dennett calls this the "entire, deterministic physics" of the Life world. It helps to think in biological terms (ON as births, OFF as deaths, instants as generations) (p. 38).
+- One can predict the next instant of any configuration with perfect accuracy. It is "a fine Laplacean playpen", where finite creatures can adopt the physical stance and predict "with supreme confidence" (p. 38).
+- Some configurations are more interesting: things that blink back and forth between two configurations, things that grow and then disintegrate, "glider guns" emitting "gliders" (configurations that reproduce themselves translated a few cells over), puffer trains, eaters and so on. Once their behaviour is known, one can adopt the **design stance** and design larger assemblages (p. 38).
+- One triumph is a **universal Turing machine** in Life, a configuration whose behaviour can be interpreted as the state-switching, symbol-reading and symbol-writing of a simple computer that can be "programmed" to compute any computable function (p. 38).
+- **The "Turing machine stance" (p. 39).** Ignoring both the Life physics and the design details, calculate the function the machine computes and translate the output back into ONs and OFFs. This works provided no stray gliders or debris destroy the machine or cause it to malfunction.
+- Is the pattern "real"? "So long as it lasts it is", and with "armor" it may survive quite some time. The pattern may owe its existence to a designer's intentions, but its reality in any interesting sense is strictly independent of historical facts about its origin. "Nothing is hidden" in Life ("no backstage"), and in one sense the pattern is visible to anyone who watches. But it takes a "big leap of insight" to see the unfolding *as* a Turing machine's computation. Ascending to that point of view is optional and might be difficult for many (p. 39).
+
+**Application to the intentional stance (p. 39–40).**
+- Dennett claims that the intentional stance provides a vantage point for discerning similarly useful patterns. They are objective ("there to be detected"), but from our point of view not "out there" entirely independent of us, since they are composed partly of our own "subjective" reactions: "patterns made to order for our narcissistic concerns" (Akins 1986). It is easy for us, constituted as we are, to perceive the patterns visible from the intentional stance, "and only from that stance" (p. 39).
+- **Footnote 1 (p. 39).** Anscombe spoke darkly of "an order which is there whenever actions are done with intentions". Dennett now sees why she was coy about where it is. It is as hard to say where the intentional order is as to say where the intentional patterns are in Life. If you look at the world in the right way the patterns are obvious, and in any other way they are, in general, invisible.
+- The Martians might find it extremely difficult, but they can aspire to know our regularities as we can aspire to know the world of the spider or the fish (p. 40).
+
+**Sort of realist (p. 40).**
+- Dennett declines Rorty's (1979, 1982) radical perspectivalism. But when the objective patterns fall short of perfection, as they always must, there will be uninterpretable gaps. It is always possible in principle for rival intentional-stance interpretations to "tie for first place", so that no further fact could settle what the system "really believed" (p. 40).
+- This is a direct extension of **Quine's thesis of the indeterminacy of radical translation** (1960). It applies to patterns in internal dispositions as well as to external "stimulus meanings". "Radical translation begins at home" (Quine 1969). Dennett quotes Quine (1970): the black-box metaphor can mislead, the problem is not one of hidden facts, and to expect a distinctive mechanism for every purported mentalistic distinction is a different thing from expecting one for every genuinely distinct mental state (p. 40).
+- Dennett's 1975 "Brain Writing and Mind Reading" applied the same point to a "language of thought": exactly the same considerations apply to its translation (p. 40). **Footnote 2:** Wheeler (1986) shows Derrida can be read as supplementing the Davidson–Quine line. The covert belief that inner speech is directly expressive of thought is found in non-Quinean circles, and it is exposed to attack in chapter 8 (p. 40).
+- **Davidson (1974a), quoted by Dennett (p. 41):** indeterminacy "marks the fact that certain apparent distinctions are not significant" (p. 41).
+
+**Parfit and "empty questions" (p. 41).**
+- Parfit (1984) argued that the principles we (should) rely on for personal identity will inevitably leave open the possibility in principle of puzzling indeterminate cases. This is hard for many people to accept. Parfit describes the inclination to think that "Am I about to die?" must have a Yes or No answer. Dennett says we are just as strongly attracted to the view that *the contents of our thoughts or beliefs must be determinate*, and resist the suggestion that "Do I believe there is milk in the fridge?" could lack a determinate answer (p. 41).
+- **Parfit's club example.** A club meets for years, then stops. Years later, some members form a club with the same name and rules. Is it the *very same* club? If there is no rule or legal fact deciding it, and the people would not give an answer, then "This is the same club" is "neither true nor false". Though there is no answer, there may be nothing we do not know. Parfit calls such a question **empty** (p. 41).
+- Dennett says that in the club case we recognize that there is no "deeper fact" that would settle the matter. For personal identity the supposition that there is (indeed *must* be) one "dies hard", and it is one of the brute convictions Nagel (1986) cannot abandon (p. 41). The unit ends here, at the start of the Nagel quotation.
+
+> **Intuition note.** An "empty question" (Parfit's term) is one that seems to hide a fact but does not, so that nothing is left unknown when it goes unanswered. Dennett draws the parallel to belief: where rival interpretations tie, he says no further fact could settle what the system "really believed", and Quine puts the significance of such a question in doubt.
+
+## Toy example (ours, not from the text)
+We use Dennett's own Life rule to show a pattern that is real, objective, and visible only at a higher level.
+
+**The rule as a formula (added step).** Let $n_t(c)$ be the number of ON neighbours of cell $c$ at tick $t$ and $s_t(c)\in\{0,1\}$ its state (1 = ON). The author's rule (p. 38) is
+$$s_{t+1}(c)=\begin{cases}1 & n_t(c)=3\\ s_t(c) & n_t(c)=2\\ 0 & \text{otherwise.}\end{cases}$$
+
+**Start (tick 0):** three ON cells in a row, $(0,0),(1,0),(2,0)$ (coordinates $(x,y)$). All other cells are OFF.
+
+**Physical-stance computation of tick 1.**
+- Cell $(1,0)$ (ON): its ON neighbours are $(0,0)$ and $(2,0)$, so $n=2$. It stays ON.
+- Cell $(0,0)$ (ON): its only ON neighbour is $(1,0)$, so $n=1$. It goes OFF. By symmetry $(2,0)$ also goes OFF ($n=1$).
+- Cell $(1,1)$ (OFF): its neighbours are $(0,0),(1,0),(2,0),(0,1),(2,1),(0,2),(1,2),(2,2)$. Three of these are ON, so $n=3$. It turns ON. By symmetry $(1,-1)$ turns ON ($n=3$).
+- Cell $(0,1)$ (OFF): its ON neighbours are $(0,0)$ and $(1,0)$, so $n=2$. It stays OFF. The same holds for $(2,1)$, $(0,-1)$ and $(2,-1)$.
+- Cell $(-1,0)$ (OFF): its only ON neighbour is $(0,0)$, so $n=1$. It stays OFF. The same holds for $(3,0)$.
+- Cells $(-1,\pm1)$ and $(3,\pm1)$ have at most 1 ON neighbour. They stay OFF.
+
+Result: ON cells are $(1,-1),(1,0),(1,1)$, a vertical bar.
+
+**Tick 2.** By the same calculation turned by 90°, the vertical bar becomes the horizontal bar again. So the pattern has period 2.
+
+**Higher-level prediction.** Instead of 100 rounds of neighbour counting, say "this is a thing that blinks between two configurations, with period 2". At tick $t$ the bar is horizontal if $t$ is even and vertical if $t$ is odd. At $t=100$, $100 \bmod 2 = 0$, so it is horizontal. The shortcut describes a *real pattern*, but it is useful only if one adopts that description. It also holds only as long as no stray glider or debris hits the pattern, which parallels Dennett's point that such patterns are real "so long as" they last (p. 39).
+
+## Concepts
+- [[intentional-stance]] — predicting a system by treating it as a rational agent with the beliefs and desires it ought to have (p. 15, 17)
+- [[physical-design-stance]] — the physical stance (laws and constitution) and the design stance (predict from designed function) as alternatives (p. 16–17)
+- [[rational-agent-assumption]] — start from perfect rationality and revise downward; the agent acts to further its goals given its beliefs (p. 17, 21)
+- [[propositional-attitude]] — beliefs and desires with propositional contents ("believes that $p$"), attributed by the strategy (p. 29)
+- [[intentionality]] — the "aboutness" of mental states (Brentano), the feature the strategy ascribes to its objects; also *de re* aboutness fixed by causal embedding (p. 15, 31)
+- [[folk-psychology]] — the everyday belief–desire practice that Dennett describes as "the only [strategy] we all know now" (p. 21)
+- [[theory-of-mind]] — attributing beliefs and desires to others in order to predict their behaviour; the unit is a philosophical analysis of this practice (p. 15, 17)
+- [[real-patterns]] (new) — patterns that are objectively there to be detected from some stance, even if invisible from others (p. 25, 39)
+- [[interpretationism-vs-realism]] (new) — the opposed views of belief as interest-relative interpretation or as an inner fact; Dennett's "sort of realism" lies between (p. 14–15, 40)
+- [[indeterminacy-of-interpretation]] (new) — rival interpretations can tie, so that no fact settles what a system "really" believes (p. 28–29, 40)
+- [[language-of-thought]] (new) — the hypothesis that brains have internal symbol structures mirroring the logical form of beliefs (p. 34–35)
+- [[combinatorial-explosion]] (new) — design problems whose internal complexity grows by orders of magnitude with small increases in inputs; Dennett's argument for generative representations (p. 35)
+
+## Canonical instances
+- [[death-speaks-samarra]] — Maugham's story, used as an image of fatalism and of patterns that "impose themselves" (p. 13, 27)
+- [[rabbits-birds-bar-call]] — a man asks a biologist "Are rabbits birds?"; shows the difficulty of attributing wildly false beliefs (p. 14)
+- [[thermostat-as-intentional-system]] — thermostat as the minimal believer; enriching its links narrows its interpretation (p. 22, 29–33)
+- [[chess-computer-intentional-stance]] — the chess machine "knows" and "does not want" to lose a rook (p. 22)
+- [[martian-prediction-contest]] — the Nozick-inspired Martian physicist and Mrs. Gardner's phone call, showing patterns that physics alone misses (p. 25–27)
+- [[stockbroker-spark-plug]] — many physical ways of ordering 500 shares of General Motors, as many ways of being a spark plug (p. 26)
+- [[twin-earth]] — Putnam's replica planet, used to show how embedding in the world fixes meaning (p. 32)
+- [[game-of-life-turing-machine]] — Conway's Life world, whose gliders and universal Turing machine illustrate the physical, design and "Turing machine" stances and a real pattern (p. 37–39)
+- [[parfit-club-empty-question]] — a revived club as a case where a question has no answer yet nothing is unknown (p. 41)
+- [[democritus-false-physics]] — footnote argument that most of a person's beliefs are true even with a false theory (p. 19)
+
+## Bridges (candidates)
+- [structural-analogy] intentional stance as inversion of a rational-planning model ↔ computational cognitive science: inverse planning and Bayesian theory of mind (infer beliefs and desires from observed actions assuming rational action) — both start from the rational-agent assumption.
+- [structural-analogy] the "real pattern" that survives many physical realizations ↔ complexity and emergence: macro-variables that are predictive independently of micro-details — both identify higher-level descriptions by their predictive efficiency.
+- [structural-analogy] "class of indistinguishably satisfactory models gets smaller as links are added" ↔ statistics: identifiability, where more data narrow the set of models consistent with the data — the same logical shape, without the formal apparatus.
+- [metaphor] McCarthy's cryptography point (a longer cipher text makes dual decipherings less likely) ↔ information theory: unicity distance — the intuition is the same, but this unit gives no formula.
+- [metaphor] attributing "ought-to-have" beliefs ↔ economics: revealed-preference and rational-expectations modelling, which also attribute the beliefs a rational agent would have — loose, since Dennett gives no formal model.
+
+## Questions this raises
+- If the best interpretation of a system decides what it believes, how should we compare two "rival" interpretations in practice, and what counts as a tie?
+- Does the stance work as well for AI systems whose behaviour is not designed to follow human norms? Is its success there evidence of belief or only of a good prediction tool?
+- Dennett argues that most beliefs must be true. How does this interact with experiments that find systematic, predictable errors in human belief?
+- Is the claim that the intentional pattern is "produced by" an isomorphic brain pattern (the language-of-thought hypothesis) testable, and how would evidence for it differ from evidence for the strategy itself?
+
+## Reading notes
+- **Page references.** Citations use the printed page numbers of the book (13–41). The images are two-page spreads: pdf 12 right = printed 13 (chapter opening); pdf 13 = 14–15; pdf 14 = 16–17; pdf 15 = 18–19; pdf 16 = 20–21; pdf 17 = 22–23; pdf 18 = 24–25; pdf 19 = 26–27; pdf 20 = 28–29; pdf 21 = 30–31; pdf 22 = 32–33; pdf 23 = 34–35; pdf 24 = blank left half (printed 36) and the opening of the Reflections on the right (printed 37); pdf 25 = 38–39; pdf 26 = 40–41.
+- **No text layer.** The text layer was empty on all pages, so the whole digest was read from the page images. The images were clear. No passage was unreadable.
+- **Unit ends mid-argument.** The excerpt stops at printed p. 41, at the start of a Nagel quotation. The rest of the Reflections section is not covered here.
+- **Math.** The unit has no equations. The Life rule is given in words by Dennett (p. 38); the formula in the Toy example is our added restatement.
+- **Misprints.** The source reads "other mental stages" (p. 15, probably "states"); the quotation keeps it as printed. Footnotes 2–4 and 6 of the main chapter and 1–2 of the Reflections are summarised in the walkthrough at the point where they apply; the numbering restarts in the Reflections.
+</corrected>

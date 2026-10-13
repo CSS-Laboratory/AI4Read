@@ -1,0 +1,56 @@
+<verdict>repair</verdict>
+<h_checks>
+[
+{"item": "All are tied together by chain rules.", "source": "pp. 12, 16, 21–23 (author says the quantities are 'closely related'; chain rules are given for H, I and D)", "ok": true},
+{"item": "The author then proves the data processing inequality, shows that relative entropy shrinks along Markov chains (the \"second law\"), links sufficient statistics to mutual information, and proves Fano's inequality.", "source": "pp. 32–40 (Sections 2.8–2.11)", "ok": true},
+{"item": "It depends only on the probabilities, not on the values of $X$.", "source": "p. 13: 'does not depend on the actual values taken by X, but only on the probabilities'", "ok": true},
+{"item": "**Relative entropy** $D(p\\|q)$ is $\\ge 0$, and $=0$ iff $p=q$.", "source": "p. 26, Thm 2.6.3", "ok": true},
+{"item": "It is symmetric, $\\ge 0$, and $0$ iff $X,Y$ are independent.", "source": "pp. 20, 27 (2.46, 2.91)", "ok": true},
+{"item": "Sufficient statistics are exactly the case of equality (pp. 32, 36–37).", "source": "p. 37: sufficiency is the equality condition in data processing for all distributions on θ; the 'for all distributions' condition was dropped", "ok": false},
+{"item": "**Second law for Markov chains:** relative entropy between two state distributions always decreases, but plain entropy increases only if the stationary law is uniform (pp. 33–35).", "source": "pp. 34–35: entropy increases IF the stationary law is uniform; a chain with a non-uniform stationary law started from uniform has decreasing entropy. 'Only if' is not stated.", "ok": false},
+{"item": "The Venn picture is only an analogy (the author later notes three-way \"overlap\" can be negative, Problem 12).", "source": "p. 45, Problem 12: 'Venn diagram analogy'; I(X;Y;Z) not necessarily nonnegative", "ok": true},
+{"item": "**Intuition note.** All three chain rules say the same thing.", "source": "pp. 16, 21–23: the author states three chain rules but never says they 'say the same thing'", "ok": false},
+{"item": "**Intuition note.** On average, a wrong model $q$ cannot assign higher log-probability to data from $p$ than $p$ itself does.", "source": "p. 26: $D(p\\|q)=E_p\\log(p/q)\\ge0$", "ok": true},
+{"item": "This is the root of almost every inequality in the chapter.", "source": "not in the source; the author calls Thm 2.6.3 'of fundamental importance' (p. 26) only", "ok": false},
+{"item": "**Intuition note.** Mixing distributions never lowers entropy (concavity).", "source": "p. 30 (2.111): the mixture's entropy is ≥ the average of the entropies, not ≥ each component's entropy", "ok": false},
+{"item": "**Intuition note.** Every extra processing step is a (possibly lossy) channel.", "source": "p. 32: processing of Y, deterministic or random, in a Markov chain", "ok": true},
+{"item": "Information can only leak away along a chain, never be created.", "source": "p. 32–33: holds for information about X along a Markov chain; the non-Markov example on p. 33 shows I(X;Y|Z) can increase", "ok": false},
+{"item": "Entropy rises only toward the uniform law, the maximum.", "source": "p. 35: entropy increases if the stationary law is uniform; no 'only' claim", "ok": false},
+{"item": "**Intuition note.** If, after seeing $Y$, you are still left with $H(X|Y)$ bits of doubt, you must make mistakes at least at the rate that pays for those bits...", "source": "p. 39, Fano (2.144) with H(E|Y) ≤ H(P_e) ≤ 1 and the log(|X|-1) term", "ok": true}
+]
+</h_checks>
+<issues>
+[
+{"severity": "critical", "check": "H", "where": "L2 second-law bullet", "problem": "States that entropy increases 'only if' the stationary law is uniform. The source says entropy increases IF the stationary law is uniform, and gives a counterexample for non-uniform laws. 'Only if' is not claimed, and it is stronger than the L3 passage.", "evidence": "p. 35, item 3: 'Entropy increases if the stationary distribution is uniform.'"},
+{"severity": "critical", "check": "H", "where": "Intuition notes (second law; mixing; processing; Jensen/D≥0; chain rules)", "problem": "Several notes are stronger than, or absent from, the source: 'root of almost every inequality', 'mixing never lowers entropy' (concavity only gives ≥ the average), 'information can only leak away… never created' (only for X along a Markov chain), 'entropy rises only toward the uniform law', 'chain rules say the same thing', 'two beliefs become indistinguishable'.", "evidence": "pp. 26, 30, 32–35 as cited above"},
+{"severity": "critical", "check": "A", "where": "L0, L2 Jensen bullet", "problem": "L0 says one inequality 'yields most of their key properties'. L2 calls Jensen 'the engine of the chapter'. Neither claim is in the source; the author says only that Jensen 'underlies many of the basic results' (p. 25).", "evidence": "p. 25"},
+{"severity": "major", "check": "G", "where": "L1", "problem": "The required Prerequisites line is missing. L1–L2 use Markov chain, stationary law, convex and sufficient statistic without defining them.", "evidence": "Spec: L1 must include a Prerequisites line"},
+{"severity": "major", "check": "A", "where": "L1", "problem": "'Jensen's inequality gives non-negativity and the other inequalities' is overstated. 'These tools are used throughout the book' is not what p. 12 says: later chapters show the quantities answer questions in communication, statistics, complexity and gambling.", "evidence": "p. 12"},
+{"severity": "major", "check": "H", "where": "Intuition note after Example 2.1.2", "problem": "Says entropy 'is the average number of yes/no questions'. The source says the minimum expected number lies between H(X) and H(X)+1 (Chapter 5). Equality holds only in the example.", "evidence": "p. 15"},
+{"severity": "minor", "check": "A", "where": "Concepts [[self-information]]", "problem": "Defines self-information as log 1/p(x). The source only says entropy is called self-information because I(X;X)=H(X).", "evidence": "p. 20"},
+{"severity": "minor", "check": "A", "where": "Exercises Ex. 15", "problem": "'Use the triangle inequality and data processing' is a hint the problem does not give. The problem asks to show the metric properties and verify the alternative forms (2.170)–(2.172).", "evidence": "pp. 45–46, Problem 15"},
+{"severity": "minor", "check": "G", "where": "Front matter", "problem": "spec_version is 1.1; the unit metadata says 1.2.", "evidence": "Unit metadata"}
+]
+</issues>
+<edits>
+[
+{"find": "yields most of their key properties:", "replace": "together with the chain rules gives several key results:"},
+{"find": "Jensen's inequality gives non-negativity and the other inequalities.", "replace": "Jensen's inequality gives $D\\ge0$ and related inequalities."},
+{"find": "These tools are used throughout the book (p. 12).", "replace": "Later chapters show they answer questions in communication, statistics, complexity and gambling (p. 12).\n\n**Prerequisites:** logarithms; expectation of a function of a random variable; joint, marginal and conditional probability; convex functions (functions lying below their chords); Markov chains (the next state depends only on the present one) and stationary laws (distributions unchanged by one step)."},
+{"find": "is the engine of the chapter.", "replace": "underlies many of the basic results of information theory (p. 25)."},
+{"find": "Sufficient statistics are exactly the case of equality (pp. 32, 36–37).", "replace": "A statistic $T(X)$ of a sample $X$ is sufficient for a parameter $\\theta$ exactly when equality holds, $I(\\theta;X)=I(\\theta;T(X))$, for all distributions on $\\theta$ (pp. 32, 36–37)."},
+{"find": "but plain entropy increases only if the stationary law is uniform (pp. 33–35).", "replace": "plain entropy increases if the stationary law is uniform, but it can decrease when the stationary law is non-uniform (e.g. a chain started from the uniform law) (pp. 33–35)."},
+{"find": "Entropy is the average number of yes/no questions needed to pin down the outcome.", "replace": "Entropy is, up to at most one question (Chapter 5), the minimum average number of yes/no questions needed to pin down the outcome."},
+{"find": "All three chain rules say the same thing.", "replace": "All three chain rules have the same shape."},
+{"find": "This is the root of almost every inequality in the chapter.", "replace": "It is used in the proofs of several later results (e.g. $I\\ge0$, $H\\le\\log|\\mathcal X|$)."},
+{"find": "Mixing distributions never lowers entropy (concavity).", "replace": "The entropy of a mixture of distributions is at least the average of their entropies (concavity)."},
+{"find": "Information can only leak away along a chain, never be created.", "replace": "Along a Markov chain, information about $X$ can only be lost, never created."},
+{"find": "so two different starting beliefs become indistinguishable ($D$ falls).", "replace": "so two different starting distributions move closer ($D$ falls)."},
+{"find": "Entropy rises only toward the uniform law, the maximum.", "replace": "If the stationary law is uniform, entropy rises toward that maximum."},
+{"find": "$\\log\\frac1{p(x)}$; entropy is its expectation, and $I(X;X)=H(X)$ is why entropy is called self-information", "replace": "entropy is $E\\log\\frac1{p(X)}$, and since $I(X;X)=H(X)$ entropy is sometimes called self-information"},
+{"find": "is a metric; use the triangle inequality and data processing — medium", "replace": "satisfies the metric properties; also verify the forms (2.170)–(2.172) (pp. 45–46) — medium"},
+{"find": "spec_version: 1.1", "replace": "spec_version: 1.2"}
+]
+</edits>
+<corrected>
+</corrected>
