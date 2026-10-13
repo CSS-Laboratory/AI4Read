@@ -68,3 +68,8 @@ No long-context (>200K) premium. Cloud Billing SKU ids: not found (Catalog API n
 - GCS input from the US multi-region bucket works.
 - Output: `<prefix>/prediction-model-<ts>/predictions.jsonl`, rows `{custom_id, processed_time, response, status}`; `status` is "" on success. Also `incremental_predictions/*.jsonl` (duplicates — the runner ignores them).
 - Still to confirm in the pilot: image rows, large requests (~10 MB), cache hits.
+
+## Cleanup (2026-10-13, requested by Kunhao)
+- Removed the test binding `service-628671067824@gcp-sa-aiplatform` → `roles/storage.objectAdmin` on `gs://ai4read-batch-628671` (bucket is back to its default project-role bindings).
+- Deleted the BigQuery test dataset `playground-491901:ai4read_batch` (held only the 1-row `smoke_in` table).
+- Note: the successful `us-east5` batch test ran while that binding existed. If a future batch job fails reading/writing the bucket, re-test with a 1-row job before restoring the binding.
