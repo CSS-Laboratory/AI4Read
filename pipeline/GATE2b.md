@@ -1,6 +1,6 @@
 # Gate 2b — regression test (prompts v2, spec 1.2)
 
-Status: **Part A FAILED** → mode `pause` for waves; part B finished for diagnostics at Kunhao's request (2026-10-14).
+Status (2026-10-14): **Part A FAILED · Part B PASSED · Part C: v2 is +18% per first pass → full run over $300.** Mode `pause`. Waiting for the quality lead. Wave 1 not started; pilot digests not re-run.
 Brief: `pipeline/reviews/gate2.md`. Raw outputs: `pipeline/results/gate2b/A/` (verifier v2 on v1 digests), `pipeline/results/gate2b/B/` (full v2 run).
 
 ## Engineering requests (all done, commit `f2179d3`)
@@ -42,5 +42,44 @@ Possible directions for the quality lead (engineer's view, not decided): add L3 
 
 Cost per unit (P2 v2): output 17–36k tokens, thinking 13–16k (v1: 3–9k thinking) — P2 v2 ≈ $0.19–0.28 per unit vs $0.05–0.23 in v1.
 
-## Part B — full v2 run (5 units)
-_in progress — results below when finished_
+## Part B — full v2 run (5 units: Cover ch02, Wittgenstein ch04, Jaynes ch02, Dennett ch02, MacKay ch02) — PASS
+Pass criterion: audit criticals absent from the accepted outputs; printed-page citations; Prerequisites present. Outputs: `pipeline/results/gate2b/B/` (wiki files untouched).
+
+| Check | Result |
+|---|---|
+| Accepted | 5/5 (all `repaired`, 11–17 verifier issues each) |
+| Prerequisites line | 5/5 |
+| Citations | 126–235 per unit, **0 `(pdf N)`** (printed pages incl. `95e`-style and spread halves) |
+| C1 / C3 Cover "only if" / "rises only" | gone |
+| C2 Cover edition from memory | specific claims gone; one generic line remains: "Chapter content and numbering may differ from the second edition" — quality lead to judge |
+| J1 Jaynes AB̄/BĀ | gone (L2 now states the product-rule consistency correctly) |
+| J2 Gödel hedge · J3 sign step | hedge kept ("left as an open question") · false step gone |
+| W1 §249 rhetorical question | kept as a question |
+| W2 §263 · W3 §264 | voice tags: "**Interlocutor:**", "A second voice (voice unclear)", "A quoted view"; "An odd question" restored |
+| W5 L0 hedge · W6 "meaning is use" | "one possibility" kept · slogan gone (concept line hedged "perhaps", tied to §270) |
+| **W4 §272** | **still reported as a plain finding** ("It would be possible, though unverifiable…") + instance `[[inverted-red]]` — private-linguist voice not tagged |
+| **D2 Dennett Ouija footnote** | improved but still partly muddled ("A mechanism dressed as a Martian yields…") — auditor to check |
+
+New v2 behaviours seen: digests are much longer (Cover hit the 32k output cap → raised to 64k; all L1s were 128–141 words *including* the Prerequisites line — checker now excludes that line); verifier edits fail to match more often (2/5 → batch fix pass).
+
+Engineering slips during the run (fixed, no effect on model text): L1 count included the Prerequisites line (caused one unnecessary Dennett re-digest, $0.23); leak check matched "Per unit metadata" in prose (now exact-case `UNIT METADATA`).
+
+## Part C — v2 cost and re-forecast
+| | v1 (pilot) | v2 | change |
+|---|---|---|---|
+| First pass (one P1 + one P2), 5 units, 121 pages | $1.81 | $2.13 | **+18%** |
+| P1 output tokens (incl. thinking) | 107k | 174k | +63% |
+| P1 thinking | 18k | 57k | ×3.2 |
+| P2 thinking | 58k | 93k | +61% |
+| All-in incl. fixes/re-runs (part B only) | $2.96 | $3.33 | +13% (v2 run includes $0.55 of waste: truncated Cover P1 + bug-caused Dennett P3) |
+
+Per-unit first pass v1 → v2: Cover 0.45 → 0.50 · Wittgenstein 0.21 → 0.36 · Jaynes 0.33 → 0.42 · Dennett 0.41 → 0.39 · MacKay 0.40 → 0.46.
+
+**Re-forecast (full plan, 1,339 units, 24,977 pages):** first pass ≈ $285 × 1.18 ≈ **$336**; with 10–15% fixes/re-runs ≈ **$370–390** → **over the $300 hard stop by ≈ $70–90.**
+Levers (for the quality lead / Kunhao): shorter digests (P1 output is now the largest cost driver), defer the reference tier (≈ −$55 at v2 rates), P1 effort `medium` (untested), or a higher cap.
+
+## Spend
+Gate 2b total ≈ $4.24 (part A $0.91, part B $3.33). Cumulative ≈ **$10.1** of $300.
+
+## Next (per brief)
+Part A failed → **stop**: no pilot re-run, no wave 1. Mode `pause`. Waiting for `pipeline/reviews/` from the quality lead.
