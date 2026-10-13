@@ -39,11 +39,13 @@ Write the digest in exactly the format of the DIGEST SPEC below. The rules, in o
 
 11. **Bridges.** Propose only; label each `same-math`, `structural-analogy` or `metaphor`. Use `same-math` only when the mathematics is literally the same.
 
-12. **Hard limits.** L1: at most 120 words — count them. L2: 5–10 bullets, never more. Quotations: your own words, except at most a few short quotes (≤ 25 words each) with page numbers.
+12. **Length.** A digest is a guide to the source, not a second copy of it. Target total length: about **{{TARGET_WORDS}} words** (the source unit has about {{SOURCE_WORDS}} words). Keep all math, definitions, theorems and the author's examples; compress prose arguments to their steps and conclusions; do not repeat in L3 what the source says twice; keep intuition notes to 2–3 sentences. Going somewhat over the target is fine for dense math; going far over it is not.
 
-13. **Reading notes** may report only what is visible in these pages: edition facts as printed (title page, copyright line, running headers), OCR problems, misprints you found (say what the image shows), things you could not read, and the page-number offset.
+13. **Hard limits.** L1: at most 120 words — count them. L2: 5–10 bullets, never more. Quotations: your own words, except at most a few short quotes (≤ 25 words each) with page numbers.
 
-14. **Language.** Clear B2 English, short sentences. No filler, no meta-commentary about yourself.
+14. **Reading notes** may report only what is visible in these pages: edition facts as printed (title page, copyright line, running headers), OCR problems, misprints you found (say what the image shows), things you could not read, and the page-number offset.
+
+15. **Language.** Clear B2 English, short sentences. No filler, no meta-commentary about yourself.
 
 Output ONLY the markdown file, starting with the `---` frontmatter line. Nothing before or after it.
 
