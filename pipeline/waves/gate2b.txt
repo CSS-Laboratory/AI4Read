@@ -1,0 +1,6 @@
+# Gate 2b part B (reviews/gate2.md): full v2 run; outputs -> pipeline/results/gate2b/B
+cover-2006-elements/ch02-entropy
+wittgenstein-1953-investigations/ch04-private
+jaynes-2003-probability/ch02-quantitative
+dennett-1987-intentional-stance/ch02-true
+mackay-2003-information/ch02-probability
