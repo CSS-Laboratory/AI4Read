@@ -112,6 +112,14 @@ def _printed(row, pdf_pages):
     return {}
 
 
+@lru_cache(maxsize=None)
+def _spread_offset(work_id):
+    f = PIPE / "toc" / f"{work_id}.json"
+    if f.exists():
+        return json.loads(f.read_text()).get("spread_offset")
+    return None
+
+
 @lru_cache(maxsize=64)
 def _labels(pdf):
     from pypdf import PdfReader
@@ -143,10 +151,13 @@ def source_blocks(row):
     words = sum(len(t.split()) for t in pages) / max(len(pages), 1)
     scanned = words < 30
     printed = printed_map(f, pages)
+    spread_k = _spread_offset(row["work_id"])
     for n in range(a, b + 1):
         text = pages[n - 1].rstrip() if n <= len(pages) else ""
         kind = page_kind(text, words)
         pm = printed.get(n, "?")
+        if spread_k is not None and n >= spread_k:
+            pm = f"{max(1, 2 * (n - spread_k))}-{2 * (n - spread_k) + 1}"
         blocks.append({"type": "text", "text": f'<page pdf="{n}" printed="{pm}">\n{text}\n</page>'})
         stats["text_chars"] += len(text)
         stats["pages"] += 1
@@ -154,7 +165,10 @@ def source_blocks(row):
             imgs = page_images(f, n, scanned)
             for i, jpg in enumerate(imgs):
                 side = "" if len(imgs) == 1 else (" left half" if i == 0 else " right half")
-                blocks.append({"type": "text", "text": f"[page image: pdf {n}{side} / printed {pm}]"})
+                hp = pm
+                if len(imgs) == 2 and spread_k is not None:
+                    hp = str(2 * (n - spread_k) + i) if 2 * (n - spread_k) + i >= 1 else "?"
+                blocks.append({"type": "text", "text": f"[page image: pdf {n}{side} / printed {hp}]"})
                 blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/jpeg",
                                                            "data": base64.b64encode(jpg).decode()}})
                 stats["images"] += 1

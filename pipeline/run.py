@@ -30,6 +30,9 @@ MAX_LOOPS = 2                   # P3 re-digests before needs_human
 PIPELINE_VERSION = "0.1"
 REFERENCE_UNITS = {"akerlof-1970-lemons/main", "cover-2006-elements/ch02-entropy"}
 TERMINAL = {"accepted", "needs_human", "skipped"}
+ONLINE_MODE = [False]
+FIX_NOTE = ("Your edits could not be applied exactly. Return the same verdict and issues, leave <edits> empty, "
+            "and give the COMPLETE corrected digest in <corrected>.")
 
 
 # ------------------------------------------------------------------ helpers
@@ -111,15 +114,24 @@ def parse_verdict(txt):
 
 
 def apply_edits(md, edits):
-    """Each find must occur exactly once. Returns (new_md, failures)."""
+    """Each find must occur exactly once. If the exact text is not found, retry with whitespace
+    differences ignored (LaTeX spacing); still exactly one match required. Returns (new_md, failures)."""
     fails = []
     for e in edits or []:
         f, r = e.get("find", ""), e.get("replace", "")
         n = md.count(f) if f else 0
-        if n != 1:
-            fails.append({"find": f[:80], "count": n})
+        if n == 1:
+            md = md.replace(f, r, 1)
             continue
-        md = md.replace(f, r, 1)
+        if n == 0 and f.strip():
+            pat = r"\s*".join(re.escape(ch) for ch in re.sub(r"\s+", "", f))
+            hits = list(re.finditer(pat, md))
+            if len(hits) == 1:
+                h = hits[0]
+                md = md[:h.start()] + r + md[h.end():]
+                continue
+            n = len(hits)
+        fails.append({"find": f[:80], "count": n})
     return md, fails
 
 
@@ -183,7 +195,9 @@ def handle_p2(uid, resp, rec):
     if fails:
         state.record(uid, "p2_done", loop=loop, verdict=v["verdict"], edit_failures=fails,
                      n_issues=len(issues))
-        return fix_online(uid, loop, digest, issues, fails)
+        if ONLINE_MODE[0]:
+            return fix_online(uid, loop, digest, issues, fails)
+        return state.record(uid, "p2_fix_queued", loop=loop, issues=issues[:40])
     det = errors(check(new, units()[uid], uid))
     state.record(uid, "p2_done", loop=loop, verdict=v["verdict"], n_issues=len(issues), n_major=n_crit,
                  n_edits=len(v["edits"] or []), rewrite=bool(v["corrected"]), det_errors_after=len(det))
@@ -192,6 +206,19 @@ def handle_p2(uid, resp, rec):
                        "deterministic checks fail after P2")
     verified = "pass" if v["verdict"] == "pass" and not (v["edits"] or v["corrected"]) else "repaired"
     accept(uid, new, verified, len(issues))
+
+
+def handle_p2fix(uid, resp, rec):
+    loop = rec.get("loop", 0)
+    txt = text_of(resp)
+    (OUT / f"{uid.replace('/', '__')}.p2fix-{loop}.txt").write_text(txt)
+    v = parse_verdict(txt)
+    issues = v["issues"] if isinstance(v["issues"], list) else []
+    if not v["corrected"]:
+        return requeue(uid, loop, issues, "fix pass returned no corrected digest")
+    if errors(check(v["corrected"], units()[uid], uid)):
+        return requeue(uid, loop, issues, "deterministic checks fail after fix pass")
+    accept(uid, v["corrected"], "repaired", len(issues))
 
 
 def latest_digest(uid, loop):
@@ -210,8 +237,7 @@ def fix_online(uid, loop, digest, issues, fails):
     """Edits did not apply: ask the verifier online for the full corrected digest (reviews/gate0.md)."""
     req, _ = p2_request(uid, digest)
     req["messages"][0]["content"].append({"type": "text", "text":
-        "Your edits could not be applied exactly. Return the same verdict and issues, leave <edits> empty, "
-        "and give the COMPLETE corrected digest in <corrected>."})
+        FIX_NOTE})
     resp = online(req)
     u = resp.get("usage", {})
     usd = cost(u, "online_global")
@@ -235,6 +261,8 @@ def next_pass(uid, st):
         return "p2"
     if s == "p3_queued":
         return "p3"
+    if s == "p2_fix_queued":
+        return "p2fix"
     return None
 
 
@@ -242,7 +270,7 @@ def forecast_usd(uids, kind):
     """Planner estimate x calibration (measured / estimated on finished units; 1.5 until measured)."""
     U = units()
     est = sum(float(U[u]["est_cost_usd"] or 0) for u in uids)
-    share = {"p1": 0.55, "p2": 0.45, "p3": 0.55}[kind]
+    share = {"p1": 0.55, "p2": 0.45, "p3": 0.55, "p2fix": 0.6}[kind]
     done = [r for r in state.latest().values() if r.get("est_usd") and r.get("actual_usd")]
     f = (sum(r["actual_usd"] for r in done) / sum(r["est_usd"] for r in done)) if done else 1.5
     return est * share * f
@@ -260,6 +288,8 @@ def submit(wave, kind, uids, ctl):
             loop = st.get("loop", 0)
             digest = latest_digest(uid, loop)
             req, stats = p2_request(uid, digest)
+            if kind == "p2fix":
+                req["messages"][0]["content"].append({"type": "text", "text": FIX_NOTE})
             det = st.get("det_issues") or []
             if det:
                 req["messages"][0]["content"].append({"type": "text", "text":
@@ -283,7 +313,7 @@ def submit(wave, kind, uids, ctl):
                output=out, forecast_usd=round(fc, 4))
     loop_of = {u: state.latest().get(u, {}).get("loop", 0) for u, _, _ in reqs}
     for uid, req, stats in reqs:
-        state.record(uid, "p2_submitted" if kind == "p2" else "p1_submitted", kind=kind, loop=loop_of[uid],
+        state.record(uid, "p2_submitted" if kind in ("p2", "p2fix") else "p1_submitted", kind=kind, loop=loop_of[uid],
                      batch_job_id=job["name"], content_hash=content_hash(req), spec_version=SPEC_VERSION, **stats)
     log(f"submitted {kind} for {len(reqs)} units: {job['name'].split('/')[-1]} (forecast ${fc:.2f})")
     return job
@@ -294,13 +324,13 @@ def handle_result(uid, kind, resp, price_kind, job=None):
     usd = cost(resp.get("usage", {}), price_kind)
     state.add_spend(usd, kind, unit_id=uid, job=job, usage=u)
     rec = state.latest().get(uid, {})
-    est = float(units()[uid]["est_cost_usd"] or 0) * {"p1": 0.55, "p2": 0.45, "p3": 0.55}[kind]
+    est = float(units()[uid]["est_cost_usd"] or 0) * {"p1": 0.55, "p2": 0.45, "p3": 0.55, "p2fix": 0.6}[kind]
     if price_kind == "online_global":
         est *= 2          # compare like with like: online costs twice batch
     state.record(uid, rec["state"], actual_usd=round(rec.get("actual_usd", 0) + usd, 5),
                  est_usd=round(rec.get("est_usd", 0) + est, 5),
                  **{f"{kind}_usage": u, f"{kind}_stop": resp.get("stop_reason")})
-    (handle_p2 if kind == "p2" else handle_p1)(uid, resp, state.latest()[uid])
+    {"p2": handle_p2, "p2fix": handle_p2fix}.get(kind, handle_p1)(uid, resp, state.latest()[uid])
 
 
 def run_online(kind, uids, ctl):
@@ -365,7 +395,7 @@ def collect():
                 handle_result(uid, j["kind"], resp, "batch_us", jn)
         for uid in j["units"]:
             if uid not in got:      # failed rows go back to their previous state
-                prev = {"p1": "planned", "p3": "p3_queued", "p2": "p1_done"}[j["kind"]]
+                prev = {"p1": "planned", "p3": "p3_queued", "p2": "p1_done", "p2fix": "p2_fix_queued"}[j["kind"]]
                 state.record(uid, prev, note=f"no result from {jn.split('/')[-1]} ({st})")
         job_record(job=jn, status="done", state=st, error=info.get("error"), n_results=len(got))
 
@@ -402,6 +432,7 @@ def commit(msg):
 # ------------------------------------------------------------------ main loop
 
 def run(wave, once=False, sleep_s=120, use_online=False):
+    ONLINE_MODE[0] = use_online
     ids = wave_units(wave)
     last_commit = 0
     while True:
@@ -413,7 +444,7 @@ def run(wave, once=False, sleep_s=120, use_online=False):
         L = state.latest()
         if ctl["mode"] == "run":
             busy = {u for j in jobs().values() if j.get("status") == "submitted" for u in j["units"]}
-            for kind in ("p1", "p2", "p3"):
+            for kind in ("p1", "p2", "p2fix", "p3"):
                 if sum(1 for j in jobs().values() if j.get("status") == "submitted") >= MAX_JOBS:
                     break
                 todo = [u for u in ids if u not in busy and next_pass(u, state.latest().get(u)) == kind]

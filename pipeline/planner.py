@@ -305,6 +305,8 @@ def unit_rows(work, cat, pdf, pages, pr, kinds, structure, note=""):
         img = sum(1 for i in range(a - 1, b) if kinds[i] not in ("prose", "blank"))
         chars = sum(len(pages[i]) for i in range(a - 1, b))
         p_lo = next((pr[i] for i in range(a - 1, b) if pr[i]), None)
+        if p_lo and "spread" in structure:
+            p_lo = str(max(1, int(p_lo) - 1))
         p_hi = next((pr[i] for i in range(b - 1, a - 2, -1) if pr[i]), None)
         rows.append({
             "work_id": work, "unit_id": unit_id, "title": title,
@@ -354,8 +356,16 @@ def plan_pdf(p, work, cat, dup_note=""):
         chs = None
         structure = f"needs-toc ({why or 'no outline'})"
 
+    if toc and tocd.get("spread_offset") is not None:      # scanned two-page spreads
+        k = int(tocd["spread_offset"])
+        pr = [None] * n
+        for i in range(n):
+            if i + 1 >= k:
+                pr[i] = str(2 * (i + 1 - k) + 1)            # right half; left half = this - 1
     if toc and tocd.get("warning"):
         dup_note = ("WARNING: " + tocd["warning"])[:300]
+    if toc and tocd.get("spread_offset") is not None:
+        structure += " spread"
     rows, add = unit_rows(work, cat, p, pages, pr, kinds, structure + (" scan" if is_scan else ""), dup_note)
     if chs is None:
         add("whole", "(needs table of contents)", 1, n, "book", action="needs-toc",

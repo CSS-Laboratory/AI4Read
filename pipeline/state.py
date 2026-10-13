@@ -8,7 +8,7 @@ from . import PIPE
 LOG = PIPE / "state" / "units.jsonl"
 SPEND = PIPE / "state" / "spend.jsonl"
 
-STATES = ["planned", "p1_submitted", "p1_done", "p2_submitted", "p2_done",
+STATES = ["planned", "p1_submitted", "p1_done", "p2_submitted", "p2_done", "p2_fix_queued",
           "p3_queued", "accepted", "needs_human", "skipped"]
 
 

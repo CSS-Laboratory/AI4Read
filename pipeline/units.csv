@@ -1,4 +1,5 @@
 work_id,unit_id,title,pdf_pages,printed_pages,n_pages,image_pages,est_tokens,tier,field,type,kind,structure,action,est_cost_usd,file,note
+WRONG-BOOK-was-lycan-2019-language,-,,,,,,,,,,,,skip,,_replaced/WRONG-BOOK-was-lycan-2019-language.pdf,no catalog id
 achen-2016-realists,x-cover,Cover,1-5,i-iv,5,0,3325,core,political-science,book,back,outline,skip,,political-science/achen-2016-realists.pdf.pdf,front/back matter
 achen-2016-realists,x-dedication,Dedication,6-7,v-vi,2,0,3062,core,political-science,book,back,outline,skip,,political-science/achen-2016-realists.pdf.pdf,front/back matter
 achen-2016-realists,x-contents,Contents,8-9,vii-viii,2,0,3529,core,political-science,book,back,outline,skip,,political-science/achen-2016-realists.pdf.pdf,front/back matter
@@ -52,6 +53,30 @@ arrow-1951-socialchoice,ch07-vii,7 Chapter VII. Similarity as the Basis of Socia
 arrow-1951-socialchoice,x-references,References,104-108,,5,5,10825,deep,political-science,book,back,toc-json scan,skip,,political-science/arrow-1951-socialchoice.pdf,front/back matter
 arrow-1951-socialchoice,x-index,Index,109-111,,3,3,7695,deep,political-science,book,back,toc-json scan,skip,,political-science/arrow-1951-socialchoice.pdf,front/back matter
 arthur-1994-elfarol,main,paper,1-7,,7,7,13955,core,economics-finance,paper,paper,whole scan,digest,0.059,economics-finance/arthur-1994-elfarol.pdf,
+ashby-1956-cybernetics,whole,(needs table of contents),1-156,,156,86,368898,core,control-theory,book,book,needs-toc (outline has < 3 entries),needs-toc,,control-theory/ashby-1956-cybernetics.pdf,no usable outline: outline has < 3 entries
+astrom-2021-feedbacksystems,x-contents,Contents,3-6,iii-vi,4,4,12463,core,control-theory,book,back,outline,skip,,control-theory/astrom-2021-feedbacksystems.pdf,front/back matter
+astrom-2021-feedbacksystems,front-preface,Preface to the Second Edition,7-8,vii-viii,2,0,4670,core,control-theory,book,front,outline,skip,,control-theory/astrom-2021-feedbacksystems.pdf,preface/foreword
+astrom-2021-feedbacksystems,front-preface-2,Preface to the First Edition,9-12,ix-xii,4,0,6519,core,control-theory,book,front,outline,skip,,control-theory/astrom-2021-feedbacksystems.pdf,preface/foreword
+astrom-2021-feedbacksystems,ch01-introduction,1 Introduction,13-42,,30,24,63649,core,control-theory,book,chapter,outline,digest,0.203,control-theory/astrom-2021-feedbacksystems.pdf,
+astrom-2021-feedbacksystems,ch02-feedback,2 Feedback Principles,43-72,,30,29,74653,core,control-theory,book,chapter,outline,digest,0.227,control-theory/astrom-2021-feedbacksystems.pdf,
+astrom-2021-feedbacksystems,ch03-system-p1,3 System Modeling (part 1/2),73-93,,21,18,52610,core,control-theory,book,chapter,outline,digest,0.165,control-theory/astrom-2021-feedbacksystems.pdf,split at sections boundary
+astrom-2021-feedbacksystems,ch03-system-p2,3 System Modeling (part 2/2),94-120,,27,25,66518,core,control-theory,book,chapter,outline,digest,0.205,control-theory/astrom-2021-feedbacksystems.pdf,split at sections boundary
+astrom-2021-feedbacksystems,ch04-examples,4 Examples,121-152,,32,28,75714,core,control-theory,book,chapter,outline,digest,0.232,control-theory/astrom-2021-feedbacksystems.pdf,
+astrom-2021-feedbacksystems,ch05-dynamic,5 Dynamic Behavior,153-190,,38,38,96035,core,control-theory,book,chapter,outline,digest,0.286,control-theory/astrom-2021-feedbacksystems.pdf,
+astrom-2021-feedbacksystems,ch06-linear,6 Linear Systems,191-228,,38,37,99535,core,control-theory,book,chapter,outline,digest,0.294,control-theory/astrom-2021-feedbacksystems.pdf,
+astrom-2021-feedbacksystems,ch07-state,7 State Feedback,229-264,,36,36,96433,core,control-theory,book,chapter,outline,digest,0.284,control-theory/astrom-2021-feedbacksystems.pdf,
+astrom-2021-feedbacksystems,ch08-output,8 Output Feedback,265-298,,34,34,89749,core,control-theory,book,chapter,outline,digest,0.266,control-theory/astrom-2021-feedbacksystems.pdf,
+astrom-2021-feedbacksystems,ch09-transfer-p1,9 Transfer Functions (part 1/2),299-320,,22,22,57199,core,control-theory,book,chapter,outline,digest,0.177,control-theory/astrom-2021-feedbacksystems.pdf,split at sections boundary
+astrom-2021-feedbacksystems,ch09-transfer-p2,9 Transfer Functions (part 2/2),321-342,,22,22,58404,core,control-theory,book,chapter,outline,digest,0.180,control-theory/astrom-2021-feedbacksystems.pdf,split at sections boundary
+astrom-2021-feedbacksystems,ch10-frequency,10 Frequency Domain Analysis,343-374,,32,30,76988,core,control-theory,book,chapter,outline,digest,0.235,control-theory/astrom-2021-feedbacksystems.pdf,
+astrom-2021-feedbacksystems,ch11-pid,11 PID Control,375-400,,26,24,64827,core,control-theory,book,chapter,outline,digest,0.200,control-theory/astrom-2021-feedbacksystems.pdf,
+astrom-2021-feedbacksystems,ch12-frequency,12 Frequency Domain Design,401-434,,34,34,88942,core,control-theory,book,chapter,outline,digest,0.265,control-theory/astrom-2021-feedbacksystems.pdf,
+astrom-2021-feedbacksystems,ch13-robust,13 Robust Performance,435-464,,30,28,74465,core,control-theory,book,chapter,outline,digest,0.227,control-theory/astrom-2021-feedbacksystems.pdf,
+astrom-2021-feedbacksystems,ch14-fundamental,14 Fundamental Limits,465-498,,34,30,79924,core,control-theory,book,chapter,outline,digest,0.245,control-theory/astrom-2021-feedbacksystems.pdf,
+astrom-2021-feedbacksystems,ch15-architecture-p1,15 Architecture and System Design (part 1/2),499-521,,23,22,55650,core,control-theory,book,chapter,outline,digest,0.175,control-theory/astrom-2021-feedbacksystems.pdf,split at sections boundary
+astrom-2021-feedbacksystems,ch15-architecture-p2,15 Architecture and System Design (part 2/2),522-540,,19,14,42273,core,control-theory,book,chapter,outline,digest,0.140,control-theory/astrom-2021-feedbacksystems.pdf,split at sections boundary
+astrom-2021-feedbacksystems,x-bibliography,Bibliography,541-557,,17,0,18218,core,control-theory,book,back,outline,skip,,control-theory/astrom-2021-feedbacksystems.pdf,front/back matter
+astrom-2021-feedbacksystems,x-index,Index,558-573,,16,15,43943,core,control-theory,book,back,outline,skip,,control-theory/astrom-2021-feedbacksystems.pdf,front/back matter
 aumann-1976-agreeing,main,(html stub),,,0,0,0,deep,decision-game-theory,paper,html,html,skip,,decision-game-theory/aumann-1976-agreeing.html,landing/abstract page only (747 words); need full text
 axelrod-1984-cooperation,x-contents,CONTENTS,5-6,,2,0,3474,core,decision-game-theory,book,back,outline,skip,,decision-game-theory/axelrod-1984-cooperation.pdf.pdf,front/back matter
 axelrod-1984-cooperation,front-preface,PREFACE,7-10,1-1,4,0,4960,core,decision-game-theory,book,front,outline,skip,,decision-game-theory/axelrod-1984-cooperation.pdf.pdf,preface/foreword
@@ -101,8 +126,10 @@ bak-1987-soc,main,paper,1-4,,4,1,17893,core,complex-systems,paper,paper,whole,di
 barabasi-1999-scaling,main,paper,1-11,1-11,11,8,22258,reference,complex-systems,paper,paper,whole,digest,0.084,complex-systems/barabasi-1999-scaling.pdf,
 baron-cohen-1985-autism,main,paper,1-10,,10,4,16925,core,theory-of-mind,paper,paper,whole,digest,0.070,theory-of-mind/baron-cohen-1985-autism.pdf.pdf,
 bayes-1763-essay,main,paper,1-16,,16,9,29988,reference,bayesian,paper,paper,whole,digest,0.108,bayesian/bayes-1763-essay.pdf,
+bellman-1957-dp,whole,(needs table of contents),1-365,1-342,365,306,688131,core,control-theory,book,book,needs-toc (outline has < 3 entries),needs-toc,,control-theory/bellman-1957-dp.pdf.pdf,no usable outline: outline has < 3 entries
 bender-2020-octopus,main,paper,1-14,,14,2,29915,core,llm,paper,paper,whole,digest,0.105,llm/bender-2020-octopus.pdf,
 bengio-2003-nplm,main,paper,1-19,,19,12,40293,deep,llm,paper,paper,whole,digest,0.135,llm/bengio-2003-nplm.pdf,
+bertsekas-2026-rlcourse,whole,(needs table of contents),1-523,1-503,523,370,1035949,reference,control-theory,book,book,needs-toc (outline has < 3 entries),needs-toc,,control-theory/bertsekas-2026-rlcourse.pdf,no usable outline: outline has < 3 entries
 betancourt-2017-hmc,main-p1,paper (part 1/3),1-21,1-21,21,4,23660,deep,bayesian,paper,paper,whole,digest,0.102,bayesian/betancourt-2017-hmc.pdf,split at sections boundary
 betancourt-2017-hmc,main-p2,paper (part 2/3),22-40,22-40,19,13,36673,deep,bayesian,paper,paper,whole,digest,0.127,bayesian/betancourt-2017-hmc.pdf,split at sections boundary
 betancourt-2017-hmc,main-p3,paper (part 3/3),41-60,41-60,20,11,36504,deep,bayesian,paper,paper,whole,digest,0.128,bayesian/betancourt-2017-hmc.pdf,split at sections boundary
@@ -264,21 +291,21 @@ deisenroth-2020-mml,ch11-density,11 Density Estimation with Gaussian Mixture Mod
 deisenroth-2020-mml,ch12-classification,12 Classification with Support Vector Machines,376-400,370-394,25,21,61413,core,linear-algebra,book,chapter,outline,digest,0.191,linear-algebra/deisenroth-2020-mml.pdf,
 deisenroth-2020-mml,x-references,References,401-412,395-406,12,2,16962,core,linear-algebra,book,back,outline,skip,,linear-algebra/deisenroth-2020-mml.pdf,front/back matter
 deisenroth-2020-mml,x-index,Index,413-417,407-411,5,1,9298,core,linear-algebra,book,back,outline,skip,,linear-algebra/deisenroth-2020-mml.pdf,front/back matter
-dennett-1987-intentional-stance,x-contents,Contents,3-3,,1,1,4565,core,theory-of-mind,book,back,toc-json scan,skip,,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,front/back matter
-dennett-1987-intentional-stance,front-preface,Preface,4-5,,2,2,6130,core,theory-of-mind,book,front,toc-json scan,skip,,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,preface/foreword
-dennett-1987-intentional-stance,ch01-setting,1 Setting Off on the Right Foot,6-11,,6,6,12390,core,theory-of-mind,book,chapter,toc-json scan,digest,0.055,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
-dennett-1987-intentional-stance,ch02-true,2 True Believers: The Intentional Strategy and Why It Works,12-26,,15,15,26475,core,theory-of-mind,book,chapter,toc-json scan,digest,0.099,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
-dennett-1987-intentional-stance,ch03-three,3 Three Kinds of Intentional Psychology,27-46,,20,20,34300,core,theory-of-mind,book,chapter,toc-json scan,digest,0.124,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
-dennett-1987-intentional-stance,ch04-making,4 Making Sense of Ourselves,47-63,,17,17,29605,core,theory-of-mind,book,chapter,toc-json scan,digest,0.109,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
-dennett-1987-intentional-stance,ch05-beyond-p1,5 Beyond Belief (part 1/2),64-92,,29,29,48385,core,theory-of-mind,book,chapter,toc-json scan,digest,0.168,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,split at sections boundary
-dennett-1987-intentional-stance,ch05-beyond-p2,5 Beyond Belief (part 2/2),93-111,,19,19,32735,core,theory-of-mind,book,chapter,toc-json scan,digest,0.119,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,split at sections boundary
-dennett-1987-intentional-stance,ch06-styles,6 Styles of Mental Representation,112-123,,12,12,21780,core,theory-of-mind,book,chapter,toc-json scan,digest,0.084,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
-dennett-1987-intentional-stance,ch07-intentional,7 Intentional Systems in Cognitive Ethology: The “Panglossian Paradigm” Defended,124-148,,25,25,42125,core,theory-of-mind,book,chapter,toc-json scan,digest,0.148,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
-dennett-1987-intentional-stance,ch08-evolution,"8 Evolution, Error, and Intentionality",149-166,,18,18,31170,core,theory-of-mind,book,chapter,toc-json scan,digest,0.114,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
-dennett-1987-intentional-stance,ch09-fast,9 Fast Thinking,167-174,,8,8,15520,core,theory-of-mind,book,chapter,toc-json scan,digest,0.064,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
-dennett-1987-intentional-stance,ch10-mid,10 Mid-Term Examination: Compare and Contrast,175-180,,6,6,12390,core,theory-of-mind,book,chapter,toc-json scan,digest,0.055,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
-dennett-1987-intentional-stance,x-bibliography,Bibliography,181-191,,11,11,20215,core,theory-of-mind,book,back,toc-json scan,skip,,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,front/back matter
-dennett-1987-intentional-stance,x-index,Index,192-200,,9,9,17085,core,theory-of-mind,book,back,toc-json scan,skip,,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,front/back matter
+dennett-1987-intentional-stance,x-contents,Contents,3-3,,1,1,4565,core,theory-of-mind,book,back,toc-json spread scan,skip,,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,front/back matter
+dennett-1987-intentional-stance,front-preface,Preface,4-5,,2,2,6130,core,theory-of-mind,book,front,toc-json spread scan,skip,,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,preface/foreword
+dennett-1987-intentional-stance,ch01-setting,1 Setting Off on the Right Foot,6-11,1-11,6,6,12390,core,theory-of-mind,book,chapter,toc-json spread scan,digest,0.055,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
+dennett-1987-intentional-stance,ch02-true,2 True Believers: The Intentional Strategy and Why It Works,12-26,12-41,15,15,26475,core,theory-of-mind,book,chapter,toc-json spread scan,digest,0.099,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
+dennett-1987-intentional-stance,ch03-three,3 Three Kinds of Intentional Psychology,27-46,42-81,20,20,34300,core,theory-of-mind,book,chapter,toc-json spread scan,digest,0.124,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
+dennett-1987-intentional-stance,ch04-making,4 Making Sense of Ourselves,47-63,82-115,17,17,29605,core,theory-of-mind,book,chapter,toc-json spread scan,digest,0.109,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
+dennett-1987-intentional-stance,ch05-beyond-p1,5 Beyond Belief (part 1/2),64-92,116-173,29,29,48385,core,theory-of-mind,book,chapter,toc-json spread scan,digest,0.168,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,split at sections boundary
+dennett-1987-intentional-stance,ch05-beyond-p2,5 Beyond Belief (part 2/2),93-111,174-211,19,19,32735,core,theory-of-mind,book,chapter,toc-json spread scan,digest,0.119,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,split at sections boundary
+dennett-1987-intentional-stance,ch06-styles,6 Styles of Mental Representation,112-123,212-235,12,12,21780,core,theory-of-mind,book,chapter,toc-json spread scan,digest,0.084,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
+dennett-1987-intentional-stance,ch07-intentional,7 Intentional Systems in Cognitive Ethology: The “Panglossian Paradigm” Defended,124-148,236-285,25,25,42125,core,theory-of-mind,book,chapter,toc-json spread scan,digest,0.148,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
+dennett-1987-intentional-stance,ch08-evolution,"8 Evolution, Error, and Intentionality",149-166,286-321,18,18,31170,core,theory-of-mind,book,chapter,toc-json spread scan,digest,0.114,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
+dennett-1987-intentional-stance,ch09-fast,9 Fast Thinking,167-174,322-337,8,8,15520,core,theory-of-mind,book,chapter,toc-json spread scan,digest,0.064,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
+dennett-1987-intentional-stance,ch10-mid,10 Mid-Term Examination: Compare and Contrast,175-180,338-349,6,6,12390,core,theory-of-mind,book,chapter,toc-json spread scan,digest,0.055,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,
+dennett-1987-intentional-stance,x-bibliography,Bibliography,181-191,350-371,11,11,20215,core,theory-of-mind,book,back,toc-json spread scan,skip,,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,front/back matter
+dennett-1987-intentional-stance,x-index,Index,192-200,372-389,9,9,17085,core,theory-of-mind,book,back,toc-json spread scan,skip,,theory-of-mind/dennett-1987-intentional-stance.pdf.pdf,front/back matter
 devlin-2019-bert,main,paper,1-16,1-5,16,9,43095,core,llm,paper,paper,whole,digest,0.137,llm/devlin-2019-bert.pdf,
 dixit-2008-art-strategy,x-also-by,Also by AVINASH K. DIXITBARRY J. NALEBUFF,3-3,3-3,1,0,3171,core,decision-game-theory,book,back,outline,skip,,decision-game-theory/dixit-2008-art-strategy.pdf.pdf,front/back matter
 dixit-2008-art-strategy,x-title-page,Title Page,4-5,4-5,2,0,3089,core,decision-game-theory,book,back,outline,skip,,decision-game-theory/dixit-2008-art-strategy.pdf.pdf,front/back matter
@@ -550,6 +577,7 @@ kahneman-2011-thinking,x-notes,Notes,455-500,,46,4,40435,core,decision-game-theo
 kahneman-2011-thinking,x-index,Index,501-524,,24,0,10881,core,decision-game-theory,book,back,toc-json,skip,,decision-game-theory/kahneman-2011-thinking.pdf.pdf,front/back matter
 kahneman-2011-thinking,x-copyright,Copyright,525-525,,1,0,3490,core,decision-game-theory,book,back,toc-json,skip,,decision-game-theory/kahneman-2011-thinking.pdf.pdf,front/back matter
 kahneman-2011-thinking,ch39-footnotes,Footnotes (ebook endnote pages),526-533,,8,0,3384,core,decision-game-theory,book,chapter,toc-json,digest,0.038,decision-game-theory/kahneman-2011-thinking.pdf.pdf,
+kalman-1960-filtering,main,paper,1-11,,11,10,53226,core,control-theory,paper,paper,whole,digest,0.152,control-theory/kalman-1960-filtering.pdf.pdf,
 kaplan-2020-scaling,main,paper,1-30,1-30,30,26,82075,core,llm,paper,paper,whole,digest,0.244,llm/kaplan-2020-scaling.pdf,
 katz-1955-personalinfluence,x-personal-influence,Personal Influence (title page),7-10,,4,0,3616,core,communication-theory,book,back,toc-json,skip,,communication-theory/katz-1955-personalinfluence.pdf.pdf,front/back matter
 katz-1955-personalinfluence,x-contents,Contents,11-16,,6,0,5867,core,communication-theory,book,back,toc-json,skip,,communication-theory/katz-1955-personalinfluence.pdf.pdf,front/back matter
@@ -637,6 +665,16 @@ kuhn-1962-structure,postscript-1969,Postscript—1969,186-222,174-210,37,1,28334
 kullback-1951-information,main,(html stub),,,0,0,0,core,information-theory,paper,html,html,skip,,information-theory/kullback-1951-information.html,landing/abstract page only (627 words); need full text
 lazer-2018-fakenews,main,paper,1-8,1-8,8,0,9995,reference,communication-theory,paper,paper,whole,digest,0.052,communication-theory/lazer-2018-fakenews.pdf,
 lewandowsky-2012-misinformation,main,paper,1-26,106-131,26,8,65337,core,communication-theory,paper,paper,whole,digest,0.201,communication-theory/lewandowsky-2012-misinformation.pdf.pdf,
+liberzon-2012-calculus,front-preface,Preface,9-10,ix-x,2,0,5005,deep,control-theory,book,front,outline,skip,,control-theory/liberzon-2012-calculus.pdf,preface/foreword
+liberzon-2012-calculus,ch01-introduction,Introduction,11-30,1-20,20,18,49851,deep,control-theory,book,chapter,outline,digest,0.158,control-theory/liberzon-2012-calculus.pdf,
+liberzon-2012-calculus,ch02-calculus,Calculus of Variations,31-66,21-56,36,33,88967,deep,control-theory,book,chapter,outline,digest,0.268,control-theory/liberzon-2012-calculus.pdf,
+liberzon-2012-calculus,ch03-calculus,From Calculus of Variations to Optimal Control,67-90,57-80,24,24,64742,deep,control-theory,book,chapter,outline,digest,0.196,control-theory/liberzon-2012-calculus.pdf,
+liberzon-2012-calculus,ch04-maximum-p1,The Maximum Principle (part 1/2),91-111,81-101,21,20,53948,deep,control-theory,book,chapter,outline,digest,0.168,control-theory/liberzon-2012-calculus.pdf,split at sections boundary
+liberzon-2012-calculus,ch04-maximum-p2,The Maximum Principle (part 2/2),112-134,102-124,23,21,58409,deep,control-theory,book,chapter,outline,digest,0.181,control-theory/liberzon-2012-calculus.pdf,split at sections boundary
+liberzon-2012-calculus,ch05-hamilton,The Hamilton-Jacobi-Bellman equation,135-154,125-144,20,18,49095,deep,control-theory,book,chapter,outline,digest,0.156,control-theory/liberzon-2012-calculus.pdf,
+liberzon-2012-calculus,ch06-linear,The Linear Quadratic Regulator,155-170,145-160,16,15,42025,deep,control-theory,book,chapter,outline,digest,0.135,control-theory/liberzon-2012-calculus.pdf,
+liberzon-2012-calculus,ch07-advanced,Advanced Topics,171-190,161-180,20,18,50712,deep,control-theory,book,chapter,outline,digest,0.160,control-theory/liberzon-2012-calculus.pdf,
+liberzon-2012-calculus,x-back-matter,Back matter (detected),191-200,181-190,10,7,21228,deep,control-theory,book,back,outline,skip,,control-theory/liberzon-2012-calculus.pdf,front/back matter
 lippmann-1922-publicopinion,ch01-introduction,Chapter 1. INTRODUCTION,c3091-50617,,20,0,16501,core,communication-theory,book,html-chapter,html,digest,0.084,communication-theory/lippmann-1922-publicopinion.html,7974 words (~20 pages at 400 w/p)
 lippmann-1922-publicopinion,ch02-censorship,Chapter 2. CENSORSHIP AND PRIVACY,c50617-68163,,7,0,7978,core,communication-theory,book,html-chapter,html,digest,0.046,communication-theory/lippmann-1922-publicopinion.html,2974 words (~7 pages at 400 w/p)
 lippmann-1922-publicopinion,ch03-contact,Chapter 3. CONTACT AND OPPORTUNITY,c68163-85880,,7,0,8026,core,communication-theory,book,html-chapter,html,digest,0.046,communication-theory/lippmann-1922-publicopinion.html,2905 words (~7 pages at 400 w/p)
@@ -685,22 +723,7 @@ lupia-1998-dilemma,app-ch05,Appendix to Chapter 5,273-276,257-260,4,2,8755,core,
 lupia-1998-dilemma,x-references,References,277-292,261-276,16,14,36888,core,political-science,book,back,toc-json,skip,,political-science/lupia-1998-dilemma.pdf.pdf,front/back matter
 lupia-1998-dilemma,x-author-index,Author Index,293-296,277-280,4,4,12897,core,political-science,book,back,toc-json,skip,,political-science/lupia-1998-dilemma.pdf.pdf,front/back matter
 lupia-1998-dilemma,x-subject-index,Subject Index,297-300,281-283,4,3,10629,core,political-science,book,back,toc-json,skip,,political-science/lupia-1998-dilemma.pdf.pdf,front/back matter
-lycan-2019-language,front-preface,Preface,1-2,,2,0,3206,core,analytic-philosophy,book,front,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,"preface/foreword; WARNING: WRONG BOOK: this PDF is not Lycan, Philosophy of Language: A Contemporary Introduction (3rd ed., Routledge 2019). It is a Bloomsbury introduction titled Philosophy of Language (running heads), with chapters Frege on Names ... Lewis on Intensional Theories of Meaning; preface thanks Bloomsbu"
-lycan-2019-language,ch00-introduction,Introduction,3-14,1-12,12,0,11426,core,analytic-philosophy,book,chapter,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides
-lycan-2019-language,ch01-frege,1 Frege on Names,15-38,13-36,24,2,22726,core,analytic-philosophy,book,chapter,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides
-lycan-2019-language,ch02-frege,2 Frege on Predication,39-64,37-62,26,0,20738,core,analytic-philosophy,book,chapter,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides
-lycan-2019-language,ch03-frege,3 Frege on Sentences,65-88,63-86,24,0,19972,core,analytic-philosophy,book,chapter,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides
-lycan-2019-language,ch04-frege,4 Frege on Force and Tone,89-114,87-112,26,0,22213,core,analytic-philosophy,book,chapter,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides
-lycan-2019-language,ch05-russell,5 Russell on Definite Descriptions,115-150,113-148,36,0,28793,core,analytic-philosophy,book,chapter,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides
-lycan-2019-language,ch06-grice,6 Grice on Meaning,151-184,149-182,34,0,28931,core,analytic-philosophy,book,chapter,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides
-lycan-2019-language,ch07-grice,7 Grice on Conversation,185-210,183-208,26,0,20630,core,analytic-philosophy,book,chapter,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides
-lycan-2019-language,ch08-quine,8 Quine on Meaning,211-228,209-226,18,0,15964,core,analytic-philosophy,book,chapter,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides
-lycan-2019-language,ch09-davidson,9 Davidson on Extensional Theories of Meaning,229-260,227-258,32,0,26776,core,analytic-philosophy,book,chapter,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides
-lycan-2019-language,ch10-lewis,10 Lewis on Intensional Theories of Meaning,261-290,259-288,30,2,27089,core,analytic-philosophy,book,chapter,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides
-lycan-2019-language,conclusion,Conclusion,291-300,289-298,10,0,10092,core,analytic-philosophy,book,chapter,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,HOLD: PDF is the wrong book (reviews/gate1.md) — Kunhao decides
-lycan-2019-language,x-glossary,Glossary,301-310,299-308,10,0,7696,core,analytic-philosophy,book,back,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,"front/back matter; WARNING: WRONG BOOK: this PDF is not Lycan, Philosophy of Language: A Contemporary Introduction (3rd ed., Routledge 2019). It is a Bloomsbury introduction titled Philosophy of Language (running heads), with chapters Frege on Names ... Lewis on Intensional Theories of Meaning; preface thanks Bloomsbu"
-lycan-2019-language,x-references,References,311-334,309-332,24,11,37584,core,analytic-philosophy,book,back,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,"front/back matter; WARNING: WRONG BOOK: this PDF is not Lycan, Philosophy of Language: A Contemporary Introduction (3rd ed., Routledge 2019). It is a Bloomsbury introduction titled Philosophy of Language (running heads), with chapters Frege on Names ... Lewis on Intensional Theories of Meaning; preface thanks Bloomsbu"
-lycan-2019-language,x-index,Index,335-344,333-342,10,7,19459,core,analytic-philosophy,book,back,toc-json,skip,,analytic-philosophy/lycan-2019-language.pdf.pdf,"front/back matter; WARNING: WRONG BOOK: this PDF is not Lycan, Philosophy of Language: A Contemporary Introduction (3rd ed., Routledge 2019). It is a Bloomsbury introduction titled Philosophy of Language (running heads), with chapters Frege on Names ... Lewis on Intensional Theories of Meaning; preface thanks Bloomsbu"
+lycan-2019-language,-,,,,,,,,,,,,error,,analytic-philosophy/lycan-2019-language.pdf,IndexError: list index out of range
 mackay-2003-information,x-contents,Contents,3-4,,2,0,4976,core,information-theory,book,back,toc-json,skip,,bayesian/mackay-2003-information.pdf,front/back matter
 mackay-2003-information,front-preface,Preface,5-11,,7,0,10923,core,information-theory,book,front,toc-json,skip,,bayesian/mackay-2003-information.pdf,preface/foreword
 mackay-2003-information,x-acknowledgments,Acknowledgments,12-12,,1,0,3878,core,information-theory,book,back,toc-json,skip,,bayesian/mackay-2003-information.pdf,front/back matter
@@ -803,6 +826,7 @@ magnus-2025-forallx,ch100-quick,C Quick reference,421-430,411-420,10,8,18318,cor
 magnus-2025-forallx,x-glossary,Glossary,431-437,421-427,7,1,7552,core,analytic-philosophy,book,back,outline,skip,,analytic-philosophy/magnus-2025-forallx.pdf,front/back matter
 mahowald-2024-dissociating,main,paper,1-30,1-30,30,8,56594,deep,llm,paper,paper,whole,digest,0.187,llm/mahowald-2024-dissociating.pdf,
 markowitz-1952-portfolio,main,paper,1-15,1-9,15,5,19421,core,economics-finance,paper,paper,whole,digest,0.083,economics-finance/markowitz-1952-portfolio.pdf.pdf,
+maxwell-1868-governors,main,paper,1-14,,14,14,24990,deep,control-theory,paper,paper,whole scan,digest,0.094,control-theory/maxwell-1868-governors.pdf,
 mccombs-1972-agendasetting,main,paper,1-12,,12,5,21197,core,communication-theory,paper,paper,whole,digest,0.083,communication-theory/mccombs-1972-agendasetting.pdf.pdf,
 mcelreath-2020-rethinking,front-preface,Preface,7-14,xi-xviii,8,0,8923,core,bayesian,book,front,outline,digest,0.050,bayesian/mcelreath-2020-rethinking.pdf,
 mcelreath-2020-rethinking,ch01-golem,Chapter 1. The Golem of Prague,15-32,1-18,18,3,24221,core,bayesian,book,chapter,outline,digest,0.098,bayesian/mcelreath-2020-rethinking.pdf,
@@ -851,6 +875,22 @@ mcgrayne-2011-theory,x-notes,Notes,274-285,259-270,12,9,21924,core,bayesian,book
 mcgrayne-2011-theory,x-glossary,Glossary,286-289,271-274,4,0,4450,core,bayesian,book,back,outline,skip,,bayesian/mcgrayne-2011-theory.pdf,front/back matter
 mcgrayne-2011-theory,x-bibliography,Bibliography,290-321,275-306,32,19,60168,core,bayesian,book,back,outline,skip,,bayesian/mcgrayne-2011-theory.pdf,front/back matter
 mcgrayne-2011-theory,x-index,Index,322-335,307-320,14,14,38592,core,bayesian,book,back,outline,skip,,bayesian/mcgrayne-2011-theory.pdf,front/back matter
+meadows-2008-thinking,x-contents,Contents,8-9,vii-viii,2,1,5011,core,control-theory,book,back,outline,skip,,control-theory/meadows-2008-thinking.pdf.pdf,front/back matter
+meadows-2008-thinking,ch02-note,A note from the editor,10-17,ix-xvi,8,0,6543,core,control-theory,book,chapter,outline,digest,0.045,control-theory/meadows-2008-thinking.pdf.pdf,includes ch01-note (A note from the author)
+meadows-2008-thinking,ch00-introduction,Introduction: The System Lens,18-25,1-8,8,0,8848,core,control-theory,book,chapter,outline,digest,0.050,control-theory/meadows-2008-thinking.pdf.pdf,
+meadows-2008-thinking,ch01-basics,Chapter One The Basics,28-51,11-34,24,10,37998,core,control-theory,book,chapter,outline,digest,0.138,control-theory/meadows-2008-thinking.pdf.pdf,
+meadows-2008-thinking,ch02-brief,Chapter Two A Brief Visit to the Systems Zoo,52-89,35-72,38,28,76536,core,control-theory,book,chapter,outline,digest,0.243,control-theory/meadows-2008-thinking.pdf.pdf,
+meadows-2008-thinking,ch03-systems,Chapter Three Why Systems Work So Well,92-102,75-85,11,1,13970,core,control-theory,book,chapter,outline,digest,0.065,control-theory/meadows-2008-thinking.pdf.pdf,
+meadows-2008-thinking,ch04-systems,Chapter Four Why Systems Surprise Us,103-127,86-110,25,4,30485,core,control-theory,book,chapter,outline,digest,0.123,control-theory/meadows-2008-thinking.pdf.pdf,
+meadows-2008-thinking,ch05-system,Chapter Five System Traps… and Opportunities,128-159,111-142,32,0,29693,core,control-theory,book,chapter,outline,digest,0.131,control-theory/meadows-2008-thinking.pdf.pdf,
+meadows-2008-thinking,ch06-leverage,Chapter Six Leverage Points&#8212;Places to Intervene in a System,162-182,145-165,21,0,21312,core,control-theory,book,chapter,outline,digest,0.096,control-theory/meadows-2008-thinking.pdf.pdf,
+meadows-2008-thinking,ch07-living,Chapter Seven Living in a World of Systems,183-203,166-186,21,0,19808,core,control-theory,book,chapter,outline,digest,0.093,control-theory/meadows-2008-thinking.pdf.pdf,
+meadows-2008-thinking,app-untitled,Appendix,204-220,187-203,17,9,28365,core,control-theory,book,appendix,outline,digest,0.106,control-theory/meadows-2008-thinking.pdf.pdf,
+meadows-2008-thinking,x-notes,Notes,221-224,204-207,4,1,8491,core,control-theory,book,back,outline,skip,,control-theory/meadows-2008-thinking.pdf.pdf,front/back matter
+meadows-2008-thinking,x-bibliography-systems,Bibliography of Systems Resources,225-227,208-210,3,0,4578,core,control-theory,book,back,outline,skip,,control-theory/meadows-2008-thinking.pdf.pdf,front/back matter
+meadows-2008-thinking,ch10-editor,Editor’s Acknowledgments,228-229,211-212,2,0,3600,core,control-theory,book,chapter,outline,skip,,control-theory/meadows-2008-thinking.pdf.pdf,tiny entry that cannot merge (title page?)
+meadows-2008-thinking,x-about-author,About the Author,230-231,213-214,2,0,3543,core,control-theory,book,back,outline,skip,,control-theory/meadows-2008-thinking.pdf.pdf,front/back matter
+meadows-2008-thinking,x-index,Index,232-235,215-218,4,4,12974,core,control-theory,book,back,outline,skip,,control-theory/meadows-2008-thinking.pdf.pdf,front/back matter
 mikolov-2013-compositionality,main,paper,1-9,1-9,9,8,26429,deep,llm,paper,paper,whole,digest,0.090,llm/mikolov-2013-compositionality.pdf,
 mikolov-2013-efficient,main,paper,1-12,1-12,12,8,28492,deep,llm,paper,paper,whole,digest,0.099,llm/mikolov-2013-efficient.pdf,
 mikolov-2013-regularities,main,paper,1-6,,6,4,16564,deep,linear-algebra,paper,paper,whole,digest,0.064,linear-algebra/mikolov-2013-regularities.pdf,
@@ -938,6 +978,7 @@ murphy-2023-pml2,x-index,Index,1266-1268,1232-1234,3,1,6454,reference,bayesian,b
 murphy-2023-pml2,x-bibliography,Bibliography,1269-1370,1235-1336,102,27,259647,reference,bayesian,book,back,outline,skip,,bayesian/murphy-2023-pml2.pdf,front/back matter
 myerson-2008-mechanism,main,paper,1-22,,22,17,47433,deep,decision-game-theory,paper,paper,whole,digest,0.155,decision-game-theory/myerson-2008-mechanism.pdf,
 nash-1950-equilibrium,main,(html stub),,,0,0,0,core,decision-game-theory,paper,html,html,skip,,decision-game-theory/nash-1950-equilibrium.html,landing/abstract page only (263 words); need full text
+ng-2000-irl,main,paper,1-8,,8,8,68672,deep,control-theory,paper,paper,whole,digest,0.181,control-theory/ng-2000-irl.pdf,
 nielsen-2020-elementary,main-p1,paper (part 1/2),1-27,1-27,27,26,74253,deep,information-theory,paper,paper,whole,digest,0.222,information-theory/nielsen-2020-elementary.pdf,split at sections boundary
 nielsen-2020-elementary,main-p2,paper (part 2/2),28-56,28-56,29,28,75755,deep,information-theory,paper,paper,whole,digest,0.228,information-theory/nielsen-2020-elementary.pdf,split at sections boundary
 nowak-2006-five-rules,main,"Nowak, M. A. (2006). Five Rules for the Evolution of Cooperation. *Science*, 314",c0-32563,,12,0,12225,core,decision-game-theory,paper,html,html,digest,0.063,decision-game-theory/nowak-2006-five-rules.html,4709 words (~12 pages at 400 w/p)
@@ -1171,6 +1212,7 @@ quine-1951-dogmas,main,paper,1-25,20-43,25,0,22056,core,analytic-philosophy,pape
 rabinowitz-2018-machine-tom,main,paper,1-10,,10,9,33801,deep,theory-of-mind,paper,paper,whole,digest,0.108,theory-of-mind/rabinowitz-2018-machine-tom.pdf,
 radford-2019-gpt2,main,paper,1-24,,24,18,65150,deep,llm,paper,paper,whole,digest,0.197,llm/radford-2019-gpt2.pdf,
 rafailov-2023-dpo,main,paper,1-27,1-27,27,21,68967,deep,llm,paper,paper,whole,digest,0.210,llm/rafailov-2023-dpo.pdf,
+recht-2019-tour,main,paper,1-28,1-28,28,12,50158,core,control-theory,paper,paper,whole,digest,0.170,control-theory/recht-2019-tour.pdf,
 robert-2011-mcmc,main,paper,1-14,1-14,14,9,41276,deep,bayesian,paper,paper,whole,digest,0.130,bayesian/robert-2011-mcmc.pdf,
 rogers-2003-diffusion,front-preface,Preface,29-36,,8,0,7881,core,communication-theory,book,front,outline,skip,,communication-theory/rogers-2003-diffusion.pdf.pdf,preface/foreword
 rogers-2003-diffusion,ch01-elements-p1,Chapter 1: Elements of Diffusion (part 1/2),37-58,,22,2,19386,core,communication-theory,book,chapter,outline,digest,0.094,communication-theory/rogers-2003-diffusion.pdf.pdf,split at even boundary
@@ -1202,6 +1244,30 @@ rosvall-2008-maps,main-p1,paper (part 1/3),1-21,1-5,21,7,52682,deep,information-
 rosvall-2008-maps,main-p2,paper (part 2/3),22-41,6-13,20,15,57093,deep,information-theory,paper,paper,whole,digest,0.174,information-theory/rosvall-2008-maps.pdf,split at even boundary
 rosvall-2008-maps,main-p3,paper (part 3/3),42-62,,21,21,72768,deep,information-theory,paper,paper,whole,digest,0.210,information-theory/rosvall-2008-maps.pdf,split at even boundary
 russell-1905-denoting,main,"Russell, B. (1905). On Denoting. *Mind*, 14(4) [whole no. 56], 479–493. doi:10.1",c0-41189,,18,0,14711,core,analytic-philosophy,paper,html,html,digest,0.077,analytic-philosophy/russell-1905-denoting.html,7272 words (~18 pages at 400 w/p)
+sarkka-2023-bayesianfiltering,front-preface,Preface,11-14,xi-xiv,4,0,6593,deep,control-theory,book,front,outline,skip,,control-theory/sarkka-2023-bayesianfiltering.pdf,preface/foreword
+sarkka-2023-bayesianfiltering,ch01-symbols,Symbols and Abbreviations,15-30,xv-xxx,16,10,32529,deep,control-theory,book,chapter,outline,digest,0.114,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch01-are,1 What Are Bayesian Filtering and Smoothing?,31-46,1-16,16,10,32345,deep,control-theory,book,chapter,outline,digest,0.113,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch02-bayesian,2 Bayesian Inference,47-56,17-26,10,3,16588,deep,control-theory,book,chapter,outline,digest,0.070,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch03-batch,3 Batch and Recursive Bayesian Estimation,57-73,27-43,17,13,38277,deep,control-theory,book,chapter,outline,digest,0.128,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch04-discretization,4 Discretization of Continuous-Time Dynamic Models,74-102,44-72,29,23,67371,deep,control-theory,book,chapter,outline,digest,0.210,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch05-modeling,5 Modeling with State Space Models,103-120,73-90,18,12,38531,deep,control-theory,book,chapter,outline,digest,0.130,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch06-bayesian,6 Bayesian Filtering Equations and Exact Solutions,121-137,91-107,17,14,40388,deep,control-theory,book,chapter,outline,digest,0.132,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch07-extended,7 Extended Kalman Filtering,138-160,108-130,23,20,56655,deep,control-theory,book,chapter,outline,digest,0.177,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch08-general,8 General Gaussian Filtering,161-197,131-167,37,30,85105,deep,control-theory,book,chapter,outline,digest,0.261,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch09-gaussian,9 Gaussian Filtering by Enabling Approximations,198-233,168-203,36,29,81443,deep,control-theory,book,chapter,outline,digest,0.251,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch10-posterior,10 Posterior Linearization Filtering,234-258,204-228,25,22,61557,deep,control-theory,book,chapter,outline,digest,0.191,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch11-particle,11 Particle Filtering,259-282,229-252,24,18,53798,deep,control-theory,book,chapter,outline,digest,0.172,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch12-bayesian,12 Bayesian Smoothing Equations and Exact Solutions,283-296,253-266,14,11,33806,deep,control-theory,book,chapter,outline,digest,0.114,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch13-extended,13 Extended Rauch–Tung–Striebel Smoothing,297-307,267-277,11,9,27440,deep,control-theory,book,chapter,outline,digest,0.095,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch14-general,14 General Gaussian Smoothing,308-337,278-307,30,27,75470,deep,control-theory,book,chapter,outline,digest,0.229,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch15-particle,15 Particle Smoothing,338-348,308-318,11,8,26238,deep,control-theory,book,chapter,outline,digest,0.092,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch16-parameter,16 Parameter Estimation,349-378,319-348,30,15,54803,deep,control-theory,book,chapter,outline,digest,0.184,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch17-epilogue,17 Epilogue,379-384,349-354,6,0,8346,deep,control-theory,book,chapter,outline,digest,0.046,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch19-56ptappendixadditional,to 56ptAppendixAdditional Material,385-408,355-378,24,23,62445,deep,control-theory,book,chapter,outline,digest,0.191,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,x-references,References,409-422,379-392,14,10,34846,deep,control-theory,book,back,outline,skip,,control-theory/sarkka-2023-bayesianfiltering.pdf,front/back matter
+sarkka-2023-bayesianfiltering,ch20-list,List of Examples,423-426,393-396,4,0,5699,deep,control-theory,book,chapter,outline,digest,0.037,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,ch21-list,"List of Theorems, Corollaries, and Algorithms",427-430,397-400,4,0,7630,deep,control-theory,book,chapter,outline,digest,0.041,control-theory/sarkka-2023-bayesianfiltering.pdf,
+sarkka-2023-bayesianfiltering,x-index,Index,431-436,401-406,6,0,10636,deep,control-theory,book,back,outline,skip,,control-theory/sarkka-2023-bayesianfiltering.pdf,front/back matter
 saxe-2003-tpj,main,paper,1-8,,8,4,24315,core,theory-of-mind,paper,paper,whole,digest,0.084,theory-of-mind/saxe-2003-tpj.pdf,
 schaeffer-2023-mirage,main,paper,1-17,1-17,17,12,45769,deep,llm,paper,paper,whole,digest,0.144,llm/schaeffer-2023-mirage.pdf,
 scheffer-2009-earlywarning,main,paper,1-7,,7,3,28284,core,complex-systems,paper,paper,whole,digest,0.091,complex-systems/scheffer-2009-earlywarning.pdf.pdf,
@@ -1419,6 +1485,30 @@ strogatz-2024-nonlinear,answers-selected,Answers to Selected Exercises,479-488,4
 strogatz-2024-nonlinear,x-references,References,489-501,470-482,13,0,12253,core,complex-systems,book,back,outline,skip,,complex-systems/strogatz-2024-nonlinear.pdf.pdf,front/back matter
 strogatz-2024-nonlinear,x-author-index,Author Index,502-505,483-486,4,4,11691,core,complex-systems,book,back,outline,skip,,complex-systems/strogatz-2024-nonlinear.pdf.pdf,front/back matter
 strogatz-2024-nonlinear,x-subject-index,Subject Index,506-532,487-513,27,27,65981,core,complex-systems,book,back,outline,skip,,complex-systems/strogatz-2024-nonlinear.pdf.pdf,front/back matter
+sutton-2018-rl,front-preface,Preface to the Second Edition,13-16,,4,0,7172,core,control-theory,book,front,outline,skip,,control-theory/sutton-2018-rl.pdf,preface/foreword
+sutton-2018-rl,front-preface-2,Preface to the First Edition,17-22,,6,4,13510,core,control-theory,book,front,outline,skip,,control-theory/sutton-2018-rl.pdf,preface/foreword
+sutton-2018-rl,ch01-introduction,Introduction,23-44,1-22,22,1,26243,core,control-theory,book,chapter,outline,digest,0.109,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch02-multi,Multi-armed Bandits,47-68,25-46,22,15,44896,core,control-theory,book,chapter,outline,digest,0.150,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch03-finite,Finite Markov Decision Processes,69-94,47-72,26,13,48701,core,control-theory,book,chapter,outline,digest,0.164,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch04-dynamic,Dynamic Programming,95-112,73-90,18,10,35883,core,control-theory,book,chapter,outline,digest,0.124,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch05-monte,Monte Carlo Methods,113-140,91-118,28,12,47045,core,control-theory,book,chapter,outline,digest,0.163,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch06-temporal,Temporal-Difference Learning,141-162,119-140,22,9,39186,core,control-theory,book,chapter,outline,digest,0.137,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch07-n,n-step Bootstrapping,163-180,141-158,18,15,39983,core,control-theory,book,chapter,outline,digest,0.133,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch08-planning,Planning and Learning with Tabular Methods,181-216,159-194,36,11,52695,core,control-theory,book,chapter,outline,digest,0.188,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch09-policy-p1,On-policy Prediction with Approximation (part 1/2),219-243,197-221,25,20,56910,core,control-theory,book,chapter,outline,digest,0.181,control-theory/sutton-2018-rl.pdf,split at sections boundary
+sutton-2018-rl,ch09-policy-p2,On-policy Prediction with Approximation (part 2/2),244-264,222-242,21,9,36134,core,control-theory,book,chapter,outline,digest,0.129,control-theory/sutton-2018-rl.pdf,split at sections boundary
+sutton-2018-rl,ch10-policy,On-policy Control with Approximation,265-278,243-256,14,11,32403,core,control-theory,book,chapter,outline,digest,0.110,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch11-off,*Off-policy Methods with Approximation,279-308,257-286,30,20,92599,core,control-theory,book,chapter,outline,digest,0.267,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch12-eligibility,Eligibility Traces,309-342,287-320,34,28,78863,core,control-theory,book,chapter,outline,digest,0.242,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch13-policy,Policy Gradient Methods,343-360,321-338,18,11,36068,core,control-theory,book,chapter,outline,digest,0.124,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch14-psychology,Psychology,363-398,341-376,36,6,47116,core,control-theory,book,chapter,outline,digest,0.176,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch15-neuroscience-p1,Neuroscience (part 1/2),399-419,377-397,21,6,32895,core,control-theory,book,chapter,outline,digest,0.122,control-theory/sutton-2018-rl.pdf,split at sections boundary
+sutton-2018-rl,ch15-neuroscience-p2,Neuroscience (part 2/2),420-442,398-420,23,2,28513,core,control-theory,book,chapter,outline,digest,0.115,control-theory/sutton-2018-rl.pdf,split at sections boundary
+sutton-2018-rl,ch16-applications,Applications and Case Studies,443-480,421-458,38,15,73346,core,control-theory,book,chapter,outline,digest,0.236,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,ch17-frontiers,Frontiers,481-502,459-480,22,5,32586,core,control-theory,book,chapter,outline,digest,0.123,control-theory/sutton-2018-rl.pdf,
+sutton-2018-rl,x-references,References,503-540,481-518,38,16,65893,core,control-theory,book,back,outline,skip,,control-theory/sutton-2018-rl.pdf,front/back matter
+sutton-2018-rl,x-index,Index,541-548,519-526,8,6,19329,core,control-theory,book,back,outline,skip,,control-theory/sutton-2018-rl.pdf,front/back matter
+taylor-1993-discretion,main,paper,1-20,,20,20,34300,deep,control-theory,paper,paper,whole scan,digest,0.124,control-theory/taylor-1993-discretion.pdf,
 tenenbaum-2011-grow,main,paper,1-8,,8,4,33620,core,bayesian,paper,paper,whole,digest,0.104,bayesian/tenenbaum-2011-grow.pdf,
 thaler-2015-misbehaving,x-cover,Cover,2-3,,2,0,3030,core,economics-finance,book,back,outline,skip,,economics-finance/thaler-2015-misbehaving.pdf.pdf,front/back matter
 thaler-2015-misbehaving,x-title,Title,4-6,,3,0,3118,core,economics-finance,book,back,outline,skip,,economics-finance/thaler-2015-misbehaving.pdf.pdf,front/back matter
@@ -1466,6 +1556,7 @@ thaler-2015-misbehaving,x-index,Index,381-405,,25,18,41122,core,economics-financ
 thaler-2015-misbehaving,x-also-by,Also by Richard H. Thaler,406-406,,1,0,3086,core,economics-finance,book,back,outline,skip,,economics-finance/thaler-2015-misbehaving.pdf.pdf,front/back matter
 thaler-2015-misbehaving,x-copyright,Copyright,407-408,,2,0,3599,core,economics-finance,book,back,outline,skip,,economics-finance/thaler-2015-misbehaving.pdf.pdf,front/back matter
 tishby-2000-bottleneck,main,paper,1-16,1-16,16,12,31191,deep,information-theory,paper,paper,whole,digest,0.111,information-theory/tishby-2000-bottleneck.pdf,
+todorov-2002-ofc,main,paper,1-10,,10,9,59644,deep,control-theory,paper,paper,whole,digest,0.164,control-theory/todorov-2002-ofc.pdf,
 tversky-1974-heuristics,main,paper,1-9,,9,2,26841,core,decision-game-theory,paper,paper,whole,digest,0.091,decision-game-theory/tversky-1974-heuristics.pdf.pdf,
 ullman-2023-trivial-alterations,main,paper,1-11,1-11,11,7,25471,deep,theory-of-mind,paper,paper,whole,digest,0.091,theory-of-mind/ullman-2023-trivial-alterations.pdf,
 vaswani-2017-transformer,main,paper,1-15,1-15,15,11,36783,core,llm,paper,paper,whole,digest,0.122,llm/vaswani-2017-transformer.pdf,
@@ -1474,6 +1565,7 @@ vosoughi-2018-spread,main,paper,1-7,1146-1152,7,6,26332,core,communication-theor
 wei-2022-cot,main-p1,paper (part 1/2),1-23,1-23,23,13,50613,core,llm,paper,paper,whole,digest,0.164,llm/wei-2022-cot.pdf,split at sections boundary
 wei-2022-cot,main-p2,paper (part 2/2),24-43,24-43,20,18,47786,core,llm,paper,paper,whole,digest,0.153,llm/wei-2022-cot.pdf,split at sections boundary
 wei-2022-emergent,main,paper,1-30,1-30,30,15,64146,deep,llm,paper,paper,whole,digest,0.204,llm/wei-2022-emergent.pdf,
+welch-2004-kalmanintro,main,paper,1-16,1-16,16,14,37227,core,control-theory,paper,paper,whole,digest,0.124,control-theory/welch-2004-kalmanintro.pdf,
 wimmer-1983-beliefs-about-beliefs,main,paper,1-26,,26,14,45072,core,theory-of-mind,paper,paper,whole,digest,0.156,theory-of-mind/wimmer-1983-beliefs-about-beliefs.pdf.pdf,
 wittgenstein-1922-tractatus,-,(duplicate file),,,,,,deep,analytic-philosophy,book,,,skip,,analytic-philosophy/wittgenstein-1922-tractatus.html,same catalog id as wittgenstein-1922-tractatus.pdf; skipped (reviews/gate1.md)
 wittgenstein-1922-tractatus,x-title-front,Title and front pages,1-8,i-6,8,0,4071,deep,analytic-philosophy,book,back,toc-json,skip,,analytic-philosophy/wittgenstein-1922-tractatus.pdf,front/back matter
@@ -1501,6 +1593,7 @@ wittgenstein-1953-investigations,ch09-ppf,9 PPF §§111–260 section xi (first 
 wittgenstein-1953-investigations,ch10-ppf,"10 PPF §§261–372 section xi (end) to xiv: inner and outer, certainty, imponderable evidence, concepts and nature",255-273,234-243,19,0,16128,core,analytic-philosophy,book,chapter,toc-json,digest,0.082,analytic-philosophy/wittgenstein-1953-investigations.pdf,"WARNING: Edition: 4th edition (Hacker & Schulte revised translation, Wiley-Blackwell 2009), not the 1953 Anscombe text; Part II is renamed 'Philosophy of Psychology – A Fragment' (PPF) with its own remark numbers 1–372. eBook keeps only the English (odd, 'Ne') pages; the German facing pages and the "
 wittgenstein-1953-investigations,x-endnotes,Endnotes,274-296,244-266,23,1,21425,core,analytic-philosophy,book,back,toc-json,skip,,analytic-philosophy/wittgenstein-1953-investigations.pdf,"front/back matter; WARNING: Edition: 4th edition (Hacker & Schulte revised translation, Wiley-Blackwell 2009), not the 1953 Anscombe text; Part II is renamed 'Philosophy of Psychology – A Fragment' (PPF) with its own remark numbers 1–372. eBook keeps only the English (odd, 'Ne') pages; the German facing pages and the "
 wittgenstein-1953-investigations,x-index,Index,297-330,288-321,34,34,92253,core,analytic-philosophy,book,back,toc-json,skip,,analytic-philosophy/wittgenstein-1953-investigations.pdf,"front/back matter; WARNING: Edition: 4th edition (Hacker & Schulte revised translation, Wiley-Blackwell 2009), not the 1953 Anscombe text; Part II is renamed 'Philosophy of Psychology – A Fragment' (PPF) with its own remark numbers 1–372. eBook keeps only the English (odd, 'Ne') pages; the German facing pages and the "
+wlezien-1995-thermostat,main,paper,1-21,982-1000,21,6,33015,core,control-theory,paper,paper,whole,digest,0.122,control-theory/wlezien-1995-thermostat.pdf.pdf,
 xie-2022-icl,main,paper,1-31,1-31,31,24,77254,core,llm,paper,paper,whole,digest,0.234,llm/xie-2022-icl.pdf,
 zaller-1992-massopinion,x-cover,Cover,1-2,C-C,2,0,3030,core,political-science,book,back,outline,skip,,political-science/zaller-1992-massopinion.pdf.pdf,front/back matter
 zaller-1992-massopinion,x-half-title,Half-title,3-4,i-ii,2,0,3040,core,political-science,book,back,outline,skip,,political-science/zaller-1992-massopinion.pdf.pdf,front/back matter
