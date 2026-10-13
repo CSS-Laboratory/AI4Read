@@ -19,7 +19,7 @@ from google.cloud import storage
 
 from . import PIPE, REPO, control, state
 from .build import PROMPT_VERSION, SPEC_VERSION, content_hash, p1_request, p2_request, target_words, units
-from .checks import check, errors
+from .checks import check, errors, fix_math
 from .vertex import CFG, batch_create, batch_get, cost, online
 
 WAVES = PIPE / "waves"
@@ -185,7 +185,7 @@ def wiki_path(uid):
 
 
 def accept(uid, md, verified, n_issues):
-    md = strip_residue(md)
+    md = fix_math(strip_residue(md))
     md = add_frontmatter(md, {"spec_version": SPEC_VERSION, "prompt_version": PROMPT_VERSION, "verified": verified,
                               "verifier_issues": n_issues, "pipeline_version": PIPELINE_VERSION})
     p = wiki_path(uid)
@@ -237,6 +237,7 @@ def handle_p2(uid, resp, rec):
         if ONLINE_MODE[0]:
             return fix_online(uid, loop, digest, issues, fails)
         return state.record(uid, "p2_fix_queued", loop=loop, issues=issues[:40])
+    new = fix_math(new)
     det = errors(check(new, units()[uid], uid))
     hc = v["h_checks"] or []
     state.record(uid, "p2_done", loop=loop, verdict=v["verdict"], n_issues=len(issues), n_major=n_crit,
@@ -257,6 +258,7 @@ def handle_p2fix(uid, resp, rec):
     issues = v["issues"] if isinstance(v["issues"], list) else []
     if not v["corrected"]:
         return requeue(uid, loop, issues, "fix pass returned no corrected digest")
+    v["corrected"] = fix_math(v["corrected"])
     if errors(check(v["corrected"], units()[uid], uid)):
         return requeue(uid, loop, issues, "deterministic checks fail after fix pass")
     accept(uid, v["corrected"], "repaired", len(issues))
