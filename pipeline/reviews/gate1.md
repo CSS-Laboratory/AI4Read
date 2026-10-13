@@ -25,3 +25,6 @@
 
 ## Pilot wave (Gate 2) composition
 Include: `akerlof-1970-lemons/main`, `cover-2006-elements/ch02-entropy` (save pipeline versions as `*.pipeline.md`), one Dennett unit (scanned spreads), one Kahneman unit (prose, `(pdf N)` refs), one Wittgenstein PI unit, one Jaynes chapter (math + prose), one MacKay chapter with exercises, one Ostrom chapter, one HTML-source unit (Lippmann or Keynes), one Shepsle unit (scan with OCR), one LLM paper (e.g. Vaswani 2017). Report per-unit tokens (text, image, output, thinking), verdicts, and edits applied.
+
+## Update 2026-10-13
+- **Lycan replaced.** `library/analytic-philosophy/lycan-2019-language.pdf` is now the correct book (Lycan, *Philosophy of Language: A Contemporary Introduction*, 3rd ed., Routledge 2019; 253 pdf pages). The wrong PDF was moved to `library/_replaced/`. Re-plan Lycan with the normal rules (core tier); preface stays skipped.
