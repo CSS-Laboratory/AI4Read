@@ -20,7 +20,7 @@ from . import PIPE, REPO
 from .pages import page_kind, page_texts
 from .planner import CFG, LIB, UNITS_CSV, catalog, html_clean, H2
 
-SPEC_VERSION = "1.1"
+SPEC_VERSION = "1.2"
 MAX_TOKENS = {"p1": 32000, "p2": 40000, "p3": 32000, "p4": 16000}
 IMG_CACHE = PIPE / "_work" / "img"
 LONG_SIDE = CFG["image"]["long_side_px"]
@@ -53,11 +53,30 @@ def concept_spine(field):
 
 
 @lru_cache(maxsize=None)
-def system_prompt(kind, field):
+def fields_of(work_id, primary=""):
+    """All catalog fields of a work (gate2 review: multi-field works), primary field first."""
+    fs = []
+    for e in json.loads((REPO / "canon" / "catalog.json").read_text()):
+        if e["id"] == work_id and e.get("slug") and e["slug"] not in fs:
+            fs.append(e["slug"])
+    if primary and primary in fs:
+        fs.remove(primary)
+    return tuple(([primary] if primary else []) + fs)
+
+
+def spines(fields):
+    if len(fields) == 1:
+        return concept_spine(fields[0])
+    return "\n\n".join(f"### {f}\n{concept_spine(f)}" for f in fields)
+
+
+@lru_cache(maxsize=None)
+def system_prompt(kind, fields):
     name = {"p1": "digest", "p3": "digest", "p2": "verify", "p4": "work_index"}[kind]
     t = (PIPE / "prompts" / f"{name}.md").read_text()
-    t = t.replace("{{DIGEST_SPEC}}", spec_text()).replace("{{CONCEPT_SPINE}}", concept_spine(field))
-    assert "{{" not in t, f"unfilled placeholder in {name}.md"
+    t = t.replace("{{DIGEST_SPEC}}", spec_text()).replace("{{CONCEPT_SPINE}}", spines(fields))
+    left = set(re.findall(r"\{\{(\w+)\}\}", t)) - {"MANDATORY_ITEMS"}
+    assert not left, f"unfilled placeholder in {name}.md: {left}"
     return t
 
 
@@ -186,7 +205,7 @@ def unit_header(row, task):
         f"unit_id: {row['unit_id']}",
         f"unit title: {row['title']}",
         f"work citation: {cat.get('citation', '')}",
-        f"fields: [{row['field']}]",
+        f"fields: [{', '.join(fields_of(row['work_id'], row['field']))}]",
         f"level: {cat.get('level', '')}",
         f"source: {'HTML text' if rng.startswith('c') else 'PDF pages ' + rng}; printed pages: {pr}",
         f"spec_version: {SPEC_VERSION}",
@@ -205,12 +224,50 @@ def unit_header(row, task):
 
 # ------------------------------------------------------------------ requests
 
-def _req(kind, field, content):
+MANDATORY_MARK = "=== MANDATORY ITEMS"
+STRONG = re.compile(r"\b(only|always|never|iff|exactly|all|every|must|cannot|proves|shows)\b", re.I)
+
+
+def mandatory_items(md):
+    """Sentences in L0, L1, L2 and every intuition note that contain a strong word (gate2 review, request 1)."""
+    from .checks import sections, split_frontmatter
+    _, body = split_frontmatter(md)
+    secs = dict(sections(body))
+    chunks = [(s, secs.get(s, "")) for s in ("L0", "L1", "L2")]
+    lines = secs.get("L3", "").splitlines()
+    for i, line in enumerate(lines):
+        if re.match(r"^\s*>?\s*(?:[-*]\s*)?\**\s*Intuition note\b", line, re.I):
+            note = [line]
+            for nxt in lines[i + 1:]:          # blockquote continuation, or plain lines up to a blank line
+                if not nxt.strip() or (line.lstrip().startswith(">") and not nxt.lstrip().startswith(">")):
+                    break
+                note.append(nxt)
+            chunks.append(("intuition note", re.sub(r"^\s*>\s?", "", "\n".join(note), flags=re.M)))
+    out, seen = [], set()
+    for where, text in chunks:
+        text = re.sub(r"^\*\*Prerequisites:\*\*.*$", "", text, flags=re.M)
+        for s in re.split(r"(?<=[.!?])\s+(?=[A-Z$*\[(\"“])|\n\s*[-*]\s+", text):
+            s = " ".join(s.split()).strip()
+            if s and STRONG.search(s) and s not in seen:
+                seen.add(s)
+                out.append({"where": where, "text": s})
+    return out
+
+
+def _req(kind, fields, content, items=None):
+    sys_text = system_prompt(kind, fields)
+    if MANDATORY_MARK in sys_text:
+        head, tail = sys_text.split(MANDATORY_MARK, 1)
+        tail = MANDATORY_MARK + tail.replace("{{MANDATORY_ITEMS}}",
+                                             json.dumps(items or [], ensure_ascii=False, indent=1))
+        system = [{"type": "text", "text": head, "cache_control": {"type": "ephemeral"}},
+                  {"type": "text", "text": tail}]          # unit-specific part stays outside the cache
+    else:
+        system = [{"type": "text", "text": sys_text, "cache_control": {"type": "ephemeral"}}]
     return {
         "anthropic_version": CFG["anthropic_version"],
         "max_tokens": MAX_TOKENS[kind],
-        "system": [{"type": "text", "text": system_prompt(kind, field),
-                    "cache_control": {"type": "ephemeral"}}],
+        "system": system,
         "messages": [{"role": "user", "content": content}],
     }
 
@@ -230,7 +287,7 @@ def p1_request(uid, issues=None):
                         "An independent checker rejected the previous digest of this unit. Its issue list:\n"
                         + json.dumps(issues, ensure_ascii=False, indent=1)
                         + "\nWrite a new digest that avoids all of these problems."})
-    return _req(kind, row["field"], content), stats
+    return _req(kind, fields_of(row["work_id"], row["field"]), content), stats
 
 
 def p2_request(uid, digest_md):
@@ -239,7 +296,7 @@ def p2_request(uid, digest_md):
     task = "TASK: check the digest at the end against the source pages, following your instructions."
     content = [unit_header(row, task)] + src + [
         {"type": "text", "text": "=== DIGEST TO CHECK ===\n" + digest_md}]
-    return _req("p2", row["field"], content), stats
+    return _req("p2", fields_of(row["work_id"], row["field"]), content, mandatory_items(digest_md)), stats
 
 
 def content_hash(req):

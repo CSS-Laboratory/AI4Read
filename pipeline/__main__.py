@@ -29,7 +29,8 @@ def main():
     r.add_argument("--once", action="store_true")
     r.add_argument("--sleep", type=int, default=120)
     r.add_argument("--online", action="store_true")
-    r.set_defaults(fn=lambda a: __import__("pipeline.run", fromlist=["run"]).run(a.wave, a.once, a.sleep, a.online))
+    r.add_argument("--out")
+    r.set_defaults(fn=lambda a: __import__("pipeline.run", fromlist=["run"]).run(a.wave, a.once, a.sleep, a.online, a.out))
     a = ap.parse_args()
     a.fn(a)
 

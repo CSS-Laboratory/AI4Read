@@ -356,6 +356,14 @@ def plan_pdf(p, work, cat, dup_note=""):
         chs = None
         structure = f"needs-toc ({why or 'no outline'})"
 
+    if toc and not any(pr):        # scans without a text layer: constant offset from the reviewed TOC
+        offs = Counter(int(e["pdf"]) - int(e["printed"]) for e in tocd["entries"]
+                       if str(e.get("printed", "")).isdigit() and e.get("pdf"))
+        if offs:
+            off, cnt = offs.most_common(1)[0]
+            if cnt >= 3 and cnt >= 0.8 * sum(offs.values()):
+                first = min(int(e["pdf"]) for e in tocd["entries"] if str(e.get("printed", "")).isdigit())
+                pr = [str(i + 1 - off) if i + 1 >= first and i + 1 - off > 0 else None for i in range(n)]
     if toc and tocd.get("spread_offset") is not None:      # scanned two-page spreads
         k = int(tocd["spread_offset"])
         pr = [None] * n

@@ -108,7 +108,9 @@ def parse_verdict(txt):
         except json.JSONDecodeError:
             return None
     verdict = (tag("verdict") or "").lower()
+    h = tag("h_checks")
     return {"verdict": verdict if verdict in ("pass", "repair", "fail") else None,
+            "h_checks": js(h) if h is not None else None,      # None = block missing -> rerun P2
             "issues": js(tag("issues")), "edits": js(tag("edits")),
             "corrected": strip_fence(tag("corrected") or "")}
 
@@ -135,6 +137,31 @@ def apply_edits(md, edits):
     return md, fails
 
 
+RESIDUE_TAGS = r"</?(verdict|h_checks|issues|edits|corrected)>"
+
+
+def strip_residue(md):
+    """Remove verifier residue from a digest: text before the frontmatter, stray tags, JSON fragments, fences."""
+    md = strip_fence(md)
+    i = md.find("---")
+    if i > 0:
+        md = md[i:]
+    md = re.sub(RESIDUE_TAGS, "", md)
+    lines, out = md.splitlines(), []
+    for l in lines:
+        s = l.strip()
+        if re.match(r'^(\[\s*\{|\{\s*"(find|replace|severity|item)"|"(find|replace)"\s*:|\]\s*$|```json\s*$)', s):
+            continue
+        out.append(l)
+    md = "\n".join(out)
+    # verifier chatter left inside the prose by an edit (audit J7): drop just that sentence
+    chatter = (r"[^.!?\n]*\b(?:is correct as printed|as printed is correct|the digest (?:says|states|has|is)"
+               r"|this digest|the verifier|verifier note)\b[^.!?\n]*[.!?]")
+    md = re.sub(r"(?<=[.!?:)])[ \t]+" + chatter, "", md, flags=re.I)        # mid-paragraph sentence
+    md = re.sub(r"(?m)^(\s*(?:[-*>]\s*)?)" + chatter + r"[ \t]*", r"\1", md, flags=re.I)  # sentence at line start
+    return re.sub(r"\n{3,}", "\n\n", md).strip() + "\n"
+
+
 def add_frontmatter(md, extra):
     m = re.match(r"^---\s*\n(.*?)\n---\s*\n", md, re.S)
     if not m:
@@ -148,13 +175,17 @@ def add_frontmatter(md, extra):
 
 # ------------------------------------------------------------------ outputs
 
+OUT_ROOT = [REPO / "wiki" / "works"]      # run(..., out_dir=...) redirects accepted digests (regression tests)
+
+
 def wiki_path(uid):
     work, unit = uid.split("/", 1)
     name = f"{unit}.pipeline.md" if uid in REFERENCE_UNITS else f"{unit}.md"
-    return REPO / "wiki" / "works" / work / name
+    return OUT_ROOT[0] / work / name
 
 
 def accept(uid, md, verified, n_issues):
+    md = strip_residue(md)
     md = add_frontmatter(md, {"spec_version": SPEC_VERSION, "verified": verified,
                               "verifier_issues": n_issues, "pipeline_version": PIPELINE_VERSION})
     p = wiki_path(uid)
@@ -182,6 +213,11 @@ def handle_p2(uid, resp, rec):
     v = parse_verdict(txt)
     digest = latest_digest(uid, loop)
     issues = v["issues"] if isinstance(v["issues"], list) else []
+    if v["verdict"] is not None and v["h_checks"] is None:       # gate2 review: missing <h_checks> = rerun P2
+        n = rec.get("p2_reruns", 0) + 1
+        if n > 2:
+            return state.record(uid, "needs_human", reason="verifier omitted <h_checks> 3 times", loop=loop)
+        return state.record(uid, "p1_done", loop=loop, p2_reruns=n, note="rerun P2: <h_checks> missing")
     if resp.get("stop_reason") == "max_tokens" or v["verdict"] is None or v["edits"] is None:
         return requeue(uid, loop, issues or [{"severity": "major", "problem": "verifier output unparseable"}],
                        "verifier output unparseable or truncated")
@@ -199,7 +235,9 @@ def handle_p2(uid, resp, rec):
             return fix_online(uid, loop, digest, issues, fails)
         return state.record(uid, "p2_fix_queued", loop=loop, issues=issues[:40])
     det = errors(check(new, units()[uid], uid))
+    hc = v["h_checks"] or []
     state.record(uid, "p2_done", loop=loop, verdict=v["verdict"], n_issues=len(issues), n_major=n_crit,
+                 n_h=len(hc), n_h_fail=sum(1 for h in hc if isinstance(h, dict) and h.get("ok") is False),
                  n_edits=len(v["edits"] or []), rewrite=bool(v["corrected"]), det_errors_after=len(det))
     if det:
         return requeue(uid, loop, issues + [{"severity": "major", "check": "G", "problem": d["msg"]} for d in det],
@@ -420,7 +458,8 @@ def write_status(wave, ids, ctl):
 
 
 def commit(msg):
-    subprocess.run(["git", "-C", str(REPO), "add", "pipeline/STATUS.md", "pipeline/state", "wiki/works"], check=False)
+    subprocess.run(["git", "-C", str(REPO), "add", "pipeline/STATUS.md", "pipeline/state", "wiki/works",
+                    str(OUT_ROOT[0])], check=False)
     r = subprocess.run(["git", "-C", str(REPO), "commit", "-qm",
                         msg + "\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"],
                        capture_output=True)
@@ -431,8 +470,10 @@ def commit(msg):
 
 # ------------------------------------------------------------------ main loop
 
-def run(wave, once=False, sleep_s=120, use_online=False):
+def run(wave, once=False, sleep_s=120, use_online=False, out_dir=None):
     ONLINE_MODE[0] = use_online
+    if out_dir:
+        OUT_ROOT[0] = Path(out_dir).resolve()
     ids = wave_units(wave)
     last_commit = 0
     while True:
@@ -475,8 +516,9 @@ def main(argv=None):
     ap.add_argument("--once", action="store_true")
     ap.add_argument("--sleep", type=int, default=120)
     ap.add_argument("--online", action="store_true", help="synchronous global endpoint (2x price)")
+    ap.add_argument("--out", help="write accepted digests here instead of wiki/works (regression tests)")
     a = ap.parse_args(argv)
-    run(a.wave, once=a.once, sleep_s=a.sleep, use_online=a.online)
+    run(a.wave, once=a.once, sleep_s=a.sleep, use_online=a.online, out_dir=a.out)
 
 
 if __name__ == "__main__":

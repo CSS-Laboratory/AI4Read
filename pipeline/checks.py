@@ -63,13 +63,13 @@ def katex_errors(md):
 
 
 def _range(s):
-    m = re.fullmatch(r"(\d+)-(\d+)", s or "")
+    m = re.fullmatch(r"c?(\d+)[a-z]?-(\d+)[a-z]?", s or "")      # also '95e-110e'
     return (int(m.group(1)), int(m.group(2))) if m else None
 
 
 def page_refs(text):
-    """Yield ('p'|'pdf', n) for (p. N), (pp. N–M), (pdf N)."""
-    for m in re.finditer(r"\((p{1,2})\.\s*(\d+)(?:\s*[–-]\s*(\d+))?", text):
+    """Yield ('p'|'pdf', n) for (p. N), (pp. N–M), (§N, p. Me), (pdf N)."""
+    for m in re.finditer(r"\([^()]*?\b(p{1,2})\.\s*(\d+)[a-z]?(?:\s*[–-]\s*(\d+)[a-z]?)?", text):
         yield "p", int(m.group(2))
         if m.group(3):
             yield "p", int(m.group(3))
@@ -135,6 +135,16 @@ def check(md, row, uid=None):
     if bad:   # warn only: refs to other works' pages are legitimate; the verifier checks page refs (C)
         err("pages", f"page refs outside unit range {row.get('printed_pages') or row.get('pdf_pages')}: "
                      f"{sorted(bad)[:12]}", "warn")
+    # spec 1.2: Prerequisites line (between L1 and L2)
+    if not re.search(r"^\s*\*\*Prerequisites:?\*\*:?\s*\S", body, re.M):
+        err("prereq", "Prerequisites line missing")
+    # printed labels exist -> no (pdf N) citations (gate2 review, request 5)
+    if not is_html and row.get("printed_pages"):
+        n_pdf = sum(1 for k, _ in page_refs(md) if k == "pdf")
+        if n_pdf:
+            err("pages", f"{n_pdf} (pdf N) citation(s) although printed pages {row['printed_pages']} are known")
+    if re.search(r"\b(is correct as printed|the digest (says|states|has)|this digest|the verifier)\b", body, re.I):
+        err("residue", "verifier chatter in the digest", "warn")
     if "L2" in sec and not is_html and not list(page_refs(sec["L2"])):
         err("pages", "L2 has no page references")
 

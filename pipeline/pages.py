@@ -6,7 +6,8 @@ from pathlib import Path
 from . import PIPE
 
 TEXT_CACHE = PIPE / "_work" / "text"
-NUM = re.compile(r"^\s*(\d{1,4})\b|\b(\d{1,4})\s*$")
+NUM = re.compile(r"^\s*(\d{1,4})([a-z]?)\b|\b(\d{1,4})([a-z]?)\s*$")
+EDGE_TOP, EDGE_BOTTOM = 5, 3      # lines scanned at the top / bottom of each page (banners push numbers down)
 
 
 def page_texts(pdf: Path):
@@ -22,38 +23,48 @@ def page_texts(pdf: Path):
 
 
 def _edge_numbers(text):
+    """{(number, suffix)} found at the start or end of the first/last lines (running heads/feet)."""
     lines = [l for l in text.splitlines() if l.strip()]
-    edge = lines[:2] + lines[-2:]
+    edge = lines[:EDGE_TOP] + lines[-EDGE_BOTTOM:]
     out = set()
     for l in edge:
         for m in NUM.finditer(l.strip()):
-            n = m.group(1) or m.group(2)
-            out.add(int(n))
+            n, suf = (m.group(1), m.group(2)) if m.group(1) else (m.group(3), m.group(4))
+            out.add((int(n), suf or ""))
     return out
 
 
 def printed_numbers(pages, labels=None, window=12):
-    """Return list of printed page labels (str) per pdf page, or None if unknown.
+    """Printed page label (str) per pdf page, or None if unknown.
 
-    Uses PDF page labels when they look real; else infers a local offset
-    (pdf_index - printed) from numbers in running headers/footers.
+    1. PDF page labels, when they are not just 1..n.
+    2. Else the offset (pdf_index - printed) voted by running heads/feet in a +-window.
+    3. Else, inside the span where heads were found, the work's dominant offset.
+    A letter suffix seen on most heads (e.g. Wittgenstein's '95e') is kept.
     """
     n = len(pages)
     if labels and any(l != str(i + 1) for i, l in enumerate(labels[:n])):
         return list(labels[:n])
-    cand = [{i + 1 - k for k in _edge_numbers(p) if 0 < k <= i + 1} for i, p in enumerate(pages)]
+    cand = [{(i + 1 - k, s) for k, s in _edge_numbers(p) if 0 < k <= i + 1} for i, p in enumerate(pages)]
+    glob = Counter(c for cs in cand for c in cs)
+    g_best = glob.most_common(1)[0] if glob else None
+    supported = [i for i, cs in enumerate(cand) if g_best and g_best[0] in cs]
+    need = 2 if n <= 40 else 3                 # short papers have only a few numbered pages
     out = []
     for i in range(n):
         c = Counter()
         for j in range(max(0, i - window), min(n, i + window + 1)):
             c.update(cand[j])
-        if not c:
+        best = c.most_common(1)[0] if c else None
+        if best and best[1] >= need and i + 1 - best[0][0] > 0:
+            off, suf = best[0]
+        elif (g_best and g_best[1] >= max(need if n <= 40 else 5, len(supported) * 0.5) and supported
+              and supported[0] <= i <= supported[-1] and i + 1 - g_best[0][0] > 0):
+            off, suf = g_best[0]
+        else:
             out.append(None)
             continue
-        off, votes = c.most_common(1)[0]
-        own = off in cand[i]
-        # need support from several pages in the window
-        out.append(str(i + 1 - off) if votes >= 3 and i + 1 - off > 0 else None)
+        out.append(f"{i + 1 - off}{suf}")
     return out
 
 
@@ -61,7 +72,7 @@ def clean_label(l):
     if l is None:
         return None
     l = re.sub(r"^(p\.|page)\s*", "", str(l).strip(), flags=re.I)
-    return l if re.fullmatch(r"[0-9]{1,4}|[ivxlcdmIVXLCDM]{1,8}", l) else None
+    return l if re.fullmatch(r"[0-9]{1,4}[a-z]?|[ivxlcdmIVXLCDM]{1,8}", l) else None
 
 
 MATH_CHARS = set("∑∏∫∂∇≤≥≠≈∈∉⊂⊆∪∩→←↔⇒⇔∀∃∞±×÷√∝∼≡⊥∧∨¬αβγδεζηθικλμνξπρστυφχψωΓΔΘΛΞΠΣΦΨΩ")
