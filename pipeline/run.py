@@ -474,7 +474,7 @@ def commit(msg):
                         msg + "\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"],
                        capture_output=True)
     if r.returncode == 0:
-        subprocess.run(["git", "-C", str(REPO), "pull", "--rebase", "-q"], check=False)
+        subprocess.run(["git", "-C", str(REPO), "pull", "--rebase", "--autostash", "-q"], check=False)
         subprocess.run(["git", "-C", str(REPO), "push", "-q"], check=False)
 
 

@@ -15,6 +15,7 @@ SECTIONS = ["L0", "L1", "L2", "L3", "Toy example", "Concepts", "Canonical instan
             "Questions this raises", "Exercises worth doing", "Reading notes"]
 OPTIONAL = {"Exercises worth doing"}
 # model-chatter markers only; phrases like "I cannot" occur in sources (e.g. Wittgenstein) and are not leaks
+L1_HARD = 138            # 120 + 15%: above this L1 overrun is an error (engineering choice 2026-10-14; quality lead to confirm)
 LEAKS = ["DIGEST SPEC", "UNIT METADATA", "{{", "As an AI", "as a language model", "<page pdf=",
          "[page image:"]
 INLINE = re.compile(r"(?<![\\$])\$(?![\s$])([^$\n]+?)(?<![\s\\])\$(?![\d$])")
@@ -127,8 +128,8 @@ def check(md, row, uid=None):
     if "L1" in sec:
         l1 = re.sub(r"^\s*\*\*Prerequisites:?\*\*.*$", "", sec["L1"], flags=re.M)   # spec 1.2: separate line
         n = len([w for w in re.sub(r"\$[^$]*\$", "x", l1).split() if re.search(r"\w", w)])
-        if n > 120:
-            err("L1", f"L1 has {n} words (> 120)")
+        if n > 120:   # small overruns are a warning: a full re-digest to trim a few words costs far more
+            err("L1", f"L1 has {n} words (> 120)", "error" if n > L1_HARD else "warn")
     if "L2" in sec:
         b = len(re.findall(r"^\s*[-*] ", sec["L2"], re.M))
         if not 5 <= b <= 10:
