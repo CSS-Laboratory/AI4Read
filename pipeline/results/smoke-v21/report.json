@@ -1,0 +1,43 @@
+{
+ "unit": "wittgenstein-1953-investigations/ch04-private",
+ "source_words": 7054,
+ "target_words": 2822,
+ "digest_words": 3998,
+ "ratio": 1.42,
+ "p1_usage": {
+  "input": 17761,
+  "cache_read": 0,
+  "cache_write": 1947,
+  "output": 10820,
+  "thinking": 2775
+ },
+ "p2_usage": {
+  "input": 27250,
+  "cache_read": 0,
+  "cache_write": 3270,
+  "output": 40000,
+  "thinking": 23814
+ },
+ "usd": 0.3362,
+ "mandatory_items": 80,
+ "verdict": "repair",
+ "w4_digest_lines": [
+  "### §§272–280: \"Red\" and the private colour impression",
+  "- **Statement:** the essential point of private experience is not that each has their own specimen but that nobody knows whether others have the same thing or something else. It is then possible, though unverifiable, that part of mankind sees one red and part another (§272, p. 102).",
+  "- Dashes appear as \"a\" in the text layer (OCR); readings were checked against context. In §312 the asterisks (*) before §§272–274 and §312 appear in the text."
+ ],
+ "w4_issues": [],
+ "w4_h_checks": [
+  {
+   "item": "Reading note: In §312 the asterisks (*) before §§272–274 and §312 appear in the text.",
+   "source": "pp. 102, 110: asterisks before 272, 273, 274 and 312 (wording confusing)",
+   "ok": true
+  },
+  {
+   "item": "L3 heading: §§272–280: \"Red\" and the private colour impression",
+   "source": "pp. 102–103",
+   "ok": true
+  }
+ ],
+ "det": []
+}
