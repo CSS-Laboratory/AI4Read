@@ -18,7 +18,7 @@ from pathlib import Path
 from google.cloud import storage
 
 from . import PIPE, REPO, control, state
-from .build import SPEC_VERSION, content_hash, p1_request, p2_request, units
+from .build import PROMPT_VERSION, SPEC_VERSION, content_hash, p1_request, p2_request, target_words, units
 from .checks import check, errors
 from .vertex import CFG, batch_create, batch_get, cost, online
 
@@ -186,12 +186,15 @@ def wiki_path(uid):
 
 def accept(uid, md, verified, n_issues):
     md = strip_residue(md)
-    md = add_frontmatter(md, {"spec_version": SPEC_VERSION, "verified": verified,
+    md = add_frontmatter(md, {"spec_version": SPEC_VERSION, "prompt_version": PROMPT_VERSION, "verified": verified,
                               "verifier_issues": n_issues, "pipeline_version": PIPELINE_VERSION})
     p = wiki_path(uid)
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(md.rstrip() + "\n")
-    state.record(uid, "accepted", verified=verified, verifier_issues=n_issues, path=str(p.relative_to(REPO)))
+    body_words = len(re.sub(r"^---.*?---\s*", "", md, count=1, flags=re.S).split())
+    state.record(uid, "accepted", verified=verified, verifier_issues=n_issues, path=str(p.relative_to(REPO)),
+                 words=body_words, target_words=target_words(units()[uid]),
+                 spec_version=SPEC_VERSION, prompt_version=PROMPT_VERSION)
 
 
 def handle_p1(uid, resp, rec):
@@ -352,7 +355,8 @@ def submit(wave, kind, uids, ctl):
     loop_of = {u: state.latest().get(u, {}).get("loop", 0) for u, _, _ in reqs}
     for uid, req, stats in reqs:
         state.record(uid, "p2_submitted" if kind in ("p2", "p2fix") else "p1_submitted", kind=kind, loop=loop_of[uid],
-                     batch_job_id=job["name"], content_hash=content_hash(req), spec_version=SPEC_VERSION, **stats)
+                     batch_job_id=job["name"], content_hash=content_hash(req), spec_version=SPEC_VERSION,
+                     prompt_version=PROMPT_VERSION, **stats)
     log(f"submitted {kind} for {len(reqs)} units: {job['name'].split('/')[-1]} (forecast ${fc:.2f})")
     return job
 
@@ -386,7 +390,8 @@ def run_online(kind, uids, ctl):
             log("BUDGET STOP (online)")
             return
         state.record(uid, "p2_submitted" if kind == "p2" else "p1_submitted", kind=kind, loop=st.get("loop", 0),
-                     batch_job_id="online", content_hash=content_hash(req), spec_version=SPEC_VERSION, **stats)
+                     batch_job_id="online", content_hash=content_hash(req), spec_version=SPEC_VERSION,
+                     prompt_version=PROMPT_VERSION, **stats)
         t = time.time()
         try:
             resp = online(req)

@@ -149,6 +149,16 @@ def check(md, row, uid=None):
     if "L2" in sec and not is_html and not list(page_refs(sec["L2"])):
         err("pages", "L2 has no page references")
 
+    # gate2b review: length target (warn only)
+    try:
+        from .build import target_words
+        tw = target_words(row)
+        words = len(body.split())
+        if words > 1.5 * tw:
+            err("length", f"digest has {words} words, > 1.5 x target {tw}", "warn")
+    except Exception:
+        pass
+
     for e in katex_errors(md)[:20]:
         err("katex", f"{e['error']} in `{e['tex']}`")
 
