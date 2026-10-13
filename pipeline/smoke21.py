@@ -60,5 +60,26 @@ def main(uid):
     print(json.dumps(rep, ensure_ascii=False, indent=1)[:3000])
 
 
-if __name__ == "__main__":
+if __name__ == "__main__" and not (len(sys.argv) > 1 and sys.argv[1] == "p2"):
     main(sys.argv[1] if len(sys.argv) > 1 else "wittgenstein-1953-investigations/ch04-private")
+
+
+def p2_only(uid="wittgenstein-1953-investigations/ch04-private"):
+    """Re-run only P2 on the saved smoke digest (after raising P2 max_tokens)."""
+    md = (OUT / "p1.md").read_text()
+    req, st = p2_request(uid, md)
+    resp, usd = one("p2b", uid, req)
+    txt = text_of(resp)
+    (OUT / "p2-64k.txt").write_text(txt)
+    v = parse_verdict(txt)
+    pick = lambda xs: [x for x in (xs or []) if isinstance(x, dict) and
+                       any(k in json.dumps(x, ensure_ascii=False) for k in ("272", "specimen", "unverifiable"))]
+    rep = {"stop": resp.get("stop_reason"), "usage": usage_parts(resp.get("usage", {})), "usd": round(usd, 4),
+           "verdict": v["verdict"], "n_h": len(v["h_checks"] or []), "mandatory_items": st.get("mandatory_items"),
+           "w4_issues": pick(v["issues"]), "w4_h_checks": pick(v["h_checks"])}
+    (OUT / "report-p2-64k.json").write_text(json.dumps(rep, ensure_ascii=False, indent=1))
+    print(json.dumps(rep, ensure_ascii=False, indent=1)[:3000])
+
+
+if __name__ == "__main__" and len(sys.argv) > 1 and sys.argv[1] == "p2":
+    p2_only()

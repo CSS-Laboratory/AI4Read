@@ -1,0 +1,35 @@
+{
+ "stop": "end_turn",
+ "usage": {
+  "input": 27250,
+  "cache_read": 0,
+  "cache_write": 3270,
+  "output": 53545,
+  "thinking": 38154
+ },
+ "usd": 0.329,
+ "verdict": "repair",
+ "n_h": 80,
+ "mandatory_items": 80,
+ "w4_issues": [
+  {
+   "severity": "minor",
+   "check": "G",
+   "where": "Reading notes",
+   "problem": "The asterisk sentence is garbled: it says 'in §312 the asterisks before §§272–274'.",
+   "evidence": "pp. 102, 110"
+  }
+ ],
+ "w4_h_checks": [
+  {
+   "item": "Reading notes: In §312 the asterisks (*) before §§272–274 and §312",
+   "source": "Asterisks appear before §§272, 273, 274 and 312, not 'in §312'; the sentence is garbled",
+   "ok": false
+  },
+  {
+   "item": "L3 heading: §§272–280: \"Red\" and the private colour impression",
+   "source": "pp. 102–103",
+   "ok": true
+  }
+ ]
+}
