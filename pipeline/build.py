@@ -72,8 +72,9 @@ def _is_spread(pdf, n):
     return w > 1.25 * h
 
 
-def page_images(pdf, n, scanned):
+def page_images(pdf, n, scanned, long_side=None):
     """JPEG bytes for pdf page n: one image, or [left, right] halves for a scanned two-page spread."""
+    LONG_SIDE = long_side or globals()["LONG_SIDE"]
     key = hashlib.sha1(f"{pdf}:{n}:{LONG_SIDE}:{QUALITY}".encode()).hexdigest()[:16]
     IMG_CACHE.mkdir(parents=True, exist_ok=True)
     cached = sorted(IMG_CACHE.glob(f"{key}-*.jpg"))
@@ -135,7 +136,7 @@ def printed_map(pdf, pages):
     return {i + 1: p for i, p in enumerate(pr) if p}
 
 
-def source_blocks(row):
+def source_blocks(row, long_side=None):
     """Content blocks for the unit's source, plus stats {text_chars, images}."""
     f = LIB / row["file"]
     rng = row["pdf_pages"]
@@ -162,7 +163,7 @@ def source_blocks(row):
         stats["text_chars"] += len(text)
         stats["pages"] += 1
         if kind not in ("prose", "blank"):
-            imgs = page_images(f, n, scanned)
+            imgs = page_images(f, n, scanned, long_side)
             for i, jpg in enumerate(imgs):
                 side = "" if len(imgs) == 1 else (" left half" if i == 0 else " right half")
                 hp = pm
@@ -214,9 +215,12 @@ def _req(kind, field, content):
     }
 
 
+LONG_SIDE_P1 = CFG["image"].get("long_side_px_p1", LONG_SIDE)
+
+
 def p1_request(uid, issues=None):
     row = units()[uid]
-    src, stats = source_blocks(row)
+    src, stats = source_blocks(row, LONG_SIDE_P1)
     task = "TASK: write the digest of this unit, following the DIGEST SPEC exactly."
     content = [unit_header(row, task)] + src
     kind = "p1"

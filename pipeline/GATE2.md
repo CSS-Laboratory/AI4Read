@@ -57,3 +57,23 @@ Suggested next step (≈ $1–2): A/B on 4 pilot units — {P2 effort medium} ×
 - **L1 > 120 words** in 3/11 P1 digests (121–124) and **L2 = 12 bullets** once; the verifier fixed them. Prompt could stress the hard limits.
 - **HTML units** have no page numbers; checker now exempts them from page-ref rules. The spec might say what to cite instead (e.g. section/paragraph).
 - All 11 verifier verdicts were `pass` or `repair` (no `fail`); every unit got at least 2 edits.
+
+## A/B test (2026-10-13, approved by Kunhao: quality first, cheaper only if quality holds) — cost $1.98
+
+**E1 — P2 effort** (same P1 digests re-verified; Cover, MacKay, Dennett, Kahneman)
+- `medium`/`low` mostly do **no thinking at all** (0 thinking tokens in 7 of 8 runs) → P2 cost −30–80%.
+- But they **missed real faithfulness errors** that `high` caught: Dennett — a reversed claim about the Quinean view (critical); Kahneman — "mainly" vs the source's "at least to some extent" (major); MacKay — Example 2.6 asks for the posterior P(u | n_B, N), not P(u) (major).
+- The only extra finding at lower effort (Cover (2.121)) was a misprint the digest had already disclosed in Reading notes — not a miss by `high`.
+- **Decision: keep P2 at effort `high`.**
+
+**E2 — P1 images 1200 px** (Cover, MacKay, Dennett; judged by P2 at 1500 px / high)
+- P1 input −20–33%; P1 cost per unit −5–25% (output dominates).
+- **No math-reading (check B) issues** in the 1200-px digests; equation coverage equal or higher; no `[unreadable]`.
+- Critical issues found in both arms are **content overclaims (check A)** that vary run to run (1500: MacKay, Dennett; 1200: Cover) — not resolution effects.
+- **Decision: P1 at 1200 px; P2 stays at 1500 px** (verifier sees the sharpest images; 1200 px for P2 untested).
+
+**Revised forecast:** first pass ≈ $247 (−$9); with 10–15% retries/fixes ≈ **$272–284**. Kunhao: budget still acceptable. Waves run core → deep → reference, so if the $280 hard stop is reached it cuts the tail of the reference tier first.
+
+**Also fixed since the pilot:** printed page labels for scanned spreads (Dennett); whitespace-tolerant verifier edits; failed edits now go to a batch fix pass (not online).
+
+**For the quality lead:** the main remaining error type is **P1 adding claims not in the source** (overclaiming "only if", outside knowledge like "capacity"). The verifier at `high` catches them, but a P1 prompt line ("do not strengthen the author's hedges; no forward references to material outside the unit") could reduce repairs and cost.

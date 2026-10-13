@@ -1,8 +1,8 @@
 # Digest pipeline — status
 
-- **Stage:** Gate 2 pilot ✅ done — **waiting for review** (`pipeline/reviews/gate2.md`) + Kunhao's go
+- **Stage:** Gate 2 ✅ pilot + A/B done — **waiting for review** (`pipeline/reviews/gate2.md`) + Kunhao's go for wave 1
 - **Mode:** pause
-- **Spent:** $3.90 of $280 cap
-- **Pilot:** 11 / 11 accepted · batch in `us-east5` works (P1 22 min, P2 12 min)
-- **⚠ Forecast:** full run ≈ $280–295 → over the $270 line. Levers + A/B test proposal in `pipeline/GATE2.md`
-- **Next:** quality lead picks levers → small A/B (≈ $1–2) → re-forecast → waves
+- **Spent:** $5.88 of $280 cap (pilot $3.90 · A/B $1.98)
+- **Decisions (A/B):** verify stays effort `high` (lower effort missed real errors) · digest images 1200 px (no quality loss)
+- **Forecast:** ≈ $272–284 total; core → deep → reference, so a hard stop would trim reference last
+- **Next:** gate2 review → wave 1 (core)

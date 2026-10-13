@@ -14,5 +14,8 @@ paths:
   library: "~/Library/CloudStorage/GoogleDrive-yangkunhao93@gmail.com/My Drive/Book/AI4Read/library"
   wiki_works: wiki/works
 image:
-  long_side_px: 1500
+  long_side_px: 1500        # default (P2 verify keeps 1500: sharpest ground truth)
+  long_side_px_p1: 1200     # A/B 2026-10-13: no loss of math accuracy at 1200 for the digest pass
   jpeg_quality: 80
+effort:
+  p2: high                  # A/B 2026-10-13: medium/low missed real faithfulness errors -> keep high
