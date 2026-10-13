@@ -115,7 +115,8 @@ def check(md, row, uid=None):
     sec = dict(secs)
 
     if "L1" in sec:
-        n = len([w for w in re.sub(r"\$[^$]*\$", "x", sec["L1"]).split() if re.search(r"\w", w)])
+        l1 = re.sub(r"^\s*\*\*Prerequisites:?\*\*.*$", "", sec["L1"], flags=re.M)   # spec 1.2: separate line
+        n = len([w for w in re.sub(r"\$[^$]*\$", "x", l1).split() if re.search(r"\w", w)])
         if n > 120:
             err("L1", f"L1 has {n} words (> 120)")
     if "L2" in sec:
