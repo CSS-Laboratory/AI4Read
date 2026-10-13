@@ -40,3 +40,6 @@ If A and B pass: **start wave 1** (your proposed list is fine) and re-plan/repai
 
 ## Scope and budget
 - Keep the order core → deep → reference and the $280 hard stop. Do **not** decide the reference tier now; decide after waves 1–2 with measured v2 costs. Reference-tier works can also be digested later, just in time, when a post needs them.
+
+## Budget update (2026-10-13, Kunhao)
+Hard stop raised from $280 to **$300** (`control.json` → `max_spend_usd: 300`; please also set `config.yaml`). The GCP budget is ¥48,000 ≈ $300 at 160 JPY/USD — keep the runner's USD cap as the binding limit and watch the yen alerts.

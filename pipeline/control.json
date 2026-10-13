@@ -1,7 +1,7 @@
 {
   "mode": "pause",
-  "max_spend_usd": 280,
+  "max_spend_usd": 300,
   "review_each_wave": true,
-  "next_wave": "gate2-review",
+  "next_wave": "gate2b",
   "note": "Set mode to 'run' to allow submissions; 'pause' = no new submissions; 'stop' = exit cleanly."
 }
