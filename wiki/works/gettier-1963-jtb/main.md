@@ -13,6 +13,8 @@ prompt_version: v2.1
 verified: repaired
 verifier_issues: 7
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 2
 ---
 # Is Justified True Belief Knowledge? (Gettier, 1963)
 
@@ -20,7 +22,7 @@ pipeline_version: 0.1
 Gettier argues, with two cases, that being justified in truly believing P does not suffice for knowing P, because in his cases S has a justified true belief that clearly is not knowledge.
 
 ## L1 — The gist (≤ 120 words)
-Some philosophers (Gettier cites Chisholm and Ayer) give necessary and sufficient conditions for knowledge. Roughly: S knows P iff P is true, S believes P, and S is justified in believing P. Gettier asks whether these conditions are really enough. He builds two cases. In each, S validly infers a proposition from a well-supported but false one. The conclusion turns out true, but not because of S's evidence. S then has a justified true belief, yet clearly lacks knowledge. So the analysis fails as a sufficient condition. This matters because, if Gettier is right, these conditions do not add up to knowledge.
+Some philosophers (Gettier cites Chisholm and Ayer) give necessary and sufficient conditions for knowledge. Roughly: S knows P iff P is true, S believes P, and S is justified in believing P. Gettier asks whether these conditions are really enough. He builds two cases. In each, S validly infers a proposition from a well-supported but false one. The conclusion turns out true, but not because of S's evidence. S then has a justified true belief, yet clearly lacks knowledge. So the analysis fails as a sufficient condition. This matters because the analyses were offered as necessary and sufficient conditions, so they fail as complete definitions of knowledge.
 
 **Prerequisites:** necessary vs. sufficient conditions; "iff"; logical entailment; "A or B" is true if at least one part is true; conjunction ("and").
 
@@ -125,7 +127,7 @@ All three conditions hold, yet Ann does not know D. Her evidence concerns the bi
 - Are Cases I and II alike in what goes wrong, or do they show two different failures?
 
 ## Reading notes
-- The page labels give no printed numbers. The text layer shows running headers "122" and "123", and the page 1 image shows "121". So printed = pdf + 120, and I cite printed pages. The unit metadata suggested (pdf N) references.
+- The page labels give no printed numbers. The text layer shows running headers "122" and "123", and the page 1 image shows "121". So printed = pdf + 120, and I cite printed pages.
 - Pages 121–123 contain Gettier's whole paper. The last part of pdf page 3 starts a different article (Achinstein, "Circularity and Induction"). I left it out.
 - OCR problems in the text layer: footnote 1 reads "Mem 98"; the image shows *Meno* 98. The list markers "(/) … («) … (///)" stand for (i), (ii), (iii). "Brest-Iitovsk" stands for Brest-Litovsk.
 - "Wayne State University" under the end of the paper appears after the end of Gettier's paper (presumably his affiliation; the pages do not say so).

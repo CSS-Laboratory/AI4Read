@@ -13,6 +13,8 @@ prompt_version: v2.1
 verified: repaired
 verifier_issues: 10
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 4
 ---
 # Eigenvalues, Invariant Subspaces and the Minimal Polynomial (Axler, Ch. 5, Sections 5A–5B)
 
@@ -144,14 +146,14 @@ Proof of (a). (i) Let $\lambda\in\mathbf F$ with $p(\lambda)=0$. Then $p(z)=(z-\
 
 Consequences (p. 147). A nonzero polynomial has at most as many distinct zeros as its degree (4.8). With 5.27(a) and $\deg p\le\dim V$, this gives another proof of 5.12. By Exercise 16, every monic polynomial is the minimal polynomial of some operator. So finding exact eigenvalues is equivalent to finding exact zeros of polynomials, which is not possible in general (p. 147).
 
-**Example 5.28 (p. 147).** The operator $T(z_1,\dots,z_5)=(-3z_5,\,z_1+6z_5,\,z_2,\,z_3,\,z_4)$ on $\mathbf C^5$ has the matrix of 5.26 and minimal polynomial $3-6z+z^5$. The text says no zero of it can be expressed with rational numbers, roots and the usual arithmetic (the proof lies beyond linear algebra). By 5.27(a), the eigenvalues have no exact familiar expression. Numerically they are about $-1.67,\ 0.51,\ 1.40,\ -0.12\pm1.59i$. The two nonreal ones are conjugates, as expected for real coefficients (4.14) (p. 147).
+**Example 5.28 (p. 147).** The operator $T(z_1,\dots,z_5)=(-3z_5,\,z_1+6z_5,\,z_2,\,z_3,\,z_4)$ on $\mathbf C^5$ has the matrix of 5.26 and minimal polynomial $3-6z+z^5$. The text says no zero of it can be expressed with rational numbers, roots of rational numbers and the usual rules of arithmetic (the proof lies beyond linear algebra). By 5.27(a), the eigenvalues have no exact familiar expression. Numerically they are about $-1.67,\ 0.51,\ 1.40,\ -0.12\pm1.59i$. The two nonreal ones are conjugates, as expected for real coefficients (4.14) (p. 147).
 
 **Theorem 5.29 (p. 148).** For finite-dimensional $V$, $T\in\mathcal L(V)$, $q\in\mathcal P(\mathbf F)$: $q(T)=0$ iff $q$ is a polynomial multiple of the minimal polynomial $p$.
 Proof. (⇒) By the division algorithm (4.9), $q=ps+r$ with $\deg r<\deg p$. Then $0=q(T)=p(T)s(T)+r(T)=r(T)$. If $r\ne0$, dividing by its leading coefficient would give a monic polynomial of smaller degree than $p$ killing $T$, a contradiction. So $r=0$ and $q=ps$. (⇐) If $q=ps$, then $q(T)=p(T)s(T)=0\cdot s(T)=0$ (p. 148).
 
-**Theorem 5.31 (p. 148).** If $U$ is invariant under $T$, the minimal polynomial of $T$ is a polynomial multiple of the minimal polynomial of $T|_U$. Proof: with $p$ the minimal polynomial of $T$, $p(T)u=0$ for all $u\in U$, so $p(T|_U)=0$; apply 5.29 to $T|_U$ (p. 148). Exercise 25 gives an analogue for quotient operators (p. 148).
+**Theorem 5.31 (p. 148).** Suppose $V$ is finite-dimensional. If $U$ is invariant under $T$, the minimal polynomial of $T$ is a polynomial multiple of the minimal polynomial of $T|_U$. Proof: with $p$ the minimal polynomial of $T$, $p(T)u=0$ for all $u\in U$, so $p(T|_U)=0$; apply 5.29 to $T|_U$ (p. 148). Exercise 25 gives an analogue for quotient operators (p. 148).
 
-**Theorem 5.32 (p. 149).** $T$ is not invertible iff the constant term of its minimal polynomial $p$ is 0. Proof: not invertible ⇔ 0 is an eigenvalue (5.7) ⇔ 0 is a zero of $p$ (5.27(a)) ⇔ $p(0)=0$, i.e. the constant term is 0 (p. 149).
+**Theorem 5.32 (p. 149).** Suppose $V$ is finite-dimensional. Then $T$ is not invertible iff the constant term of its minimal polynomial $p$ is 0. Proof: not invertible ⇔ 0 is an eigenvalue (5.7) ⇔ 0 is a zero of $p$ (5.27(a)) ⇔ $p(0)=0$, i.e. the constant term is 0 (p. 149).
 
 *Intuition note.* The minimal polynomial is the shortest "recipe" in powers of $T$ that gives the zero map. Its roots are exactly the eigenvalues, so it packages all eigenvalue information, and its constant term tests invertibility.
 
@@ -212,17 +214,17 @@ Operator $T$ on $\mathbf R^2$ with $Te_1=e_2$ and $Te_2=-2e_1+3e_2$. Matrix with
 - [metaphor] "exact eigenvalues are as hard as polynomial roots" ↔ numerical linear algebra: eigenvalues are found by iterative approximation, not formulas.
 
 ## Questions this raises
-- When does an operator have a basis of eigenvectors? The chapter intro promises a basis for which the matrix has at least almost half its entries equal to 0 (p. 132).
+- How can a well-chosen basis make an operator's matrix simple? The chapter intro promises, for each operator on a finite-dimensional complex space, a basis in which at least almost half the matrix entries are 0 (p. 132).
 - How does the minimal polynomial relate to the repeated eigenvalues and to the exponent of each factor $(z-\lambda_j)$?
-- Why does an invariant subspace of dimension 2 always exist over $\mathbf R$ (Ex. 5B.29), and what does it say about real operators without eigenvalues?
+- Why does every operator on a finite-dimensional space of dimension at least two have an invariant subspace of dimension two (Ex. 5B.29), and what does it say about real operators without eigenvalues?
 - How do numerical methods actually approximate eigenvalues, given there is no general formula?
 
 ## Exercises worth doing
 - Ex. 5A.8 (p. 139) — an operator with $P^2=P$ can only have eigenvalues 0 or 1; practice with polynomial identities and eigenvectors — difficulty: easy
-- Ex. 5A.13 (p. 140) — similar operators $S^{-1}TS$ and $T$ have the same eigenvalues, with transformed eigenvectors; change of basis idea — difficulty: medium
+- Ex. 5A.13 (p. 140) — similar operators $S^{-1}TS$ and $T$ have the same eigenvalues, and how their eigenvectors relate; change of basis idea — difficulty: medium
 - Ex. 5A.23 (p. 141) — $ST$ and $TS$ have the same eigenvalues — difficulty: medium
 - Ex. 5B.4 (p. 151) — eigenvalues of $p(T)$ over $\mathbf C$ are $p(\lambda)$; combines 5.27 and polynomial factoring — difficulty: medium
-- Ex. 5B.8 (p. 151) — the minimal polynomial of a 1° rotation has degree $\le2$, not $x^{180}+1$; tests understanding of 5.22 — difficulty: medium
+- Ex. 5B.8 (p. 151) — find the minimal polynomial of the 1° rotation of $\mathbf R^2$ (the book prints a hint); tests understanding of 5.22 — difficulty: medium
 - Ex. 5B.16 (p. 152) — companion matrix: every monic polynomial is a minimal polynomial; ties to 5.26–5.28 — difficulty: hard
 
 ## Reading notes

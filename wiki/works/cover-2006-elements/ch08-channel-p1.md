@@ -13,6 +13,8 @@ prompt_version: v2.1
 verified: repaired
 verifier_issues: 9
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 5
 ---
 # Channel Capacity (part 1/2): examples, joint AEP, and the achievability half of Shannon's second theorem
 
@@ -27,11 +29,11 @@ How many bits per channel use can be sent reliably through a noisy channel? The 
 ## L2 — Key ideas
 - Information capacity is $C=\max_{p(x)}I(X;Y)$ (8.1). The author says Shannon's second theorem makes it equal to the operational capacity, the best rate with vanishing error (p. 184).
 - Closed forms for simple channels: BSC $1-H(p)$, binary erasure channel $1-\alpha$, noisy typewriter $\log 13$ (pp. 185–188). Weakly symmetric channels (every row is a permutation of every other row, and all column sums are equal) have $C=\log|\mathcal Y|-H(\text{row})$ (Thm 8.2.1, p. 190).
-- $I(X;Y)$ is concave in $p(x)$, so capacity is a finite maximum and a local maximum is global (p. 191).
+- $I(X;Y)$ is concave in $p(x)$, so a local maximum is global; the bounds $C\le\log|\mathcal X|$ and $C\le\log|\mathcal Y|$ make the maximum finite (p. 191).
 - Heuristic: of about $2^{nH(Y)}$ typical outputs, each input sequence takes up about $2^{nH(Y|X)}$, so about $2^{nI(X;Y)}$ inputs are distinguishable (p. 191).
 - The joint AEP: the jointly typical set (pairs $(x^n,y^n)$ whose empirical entropies are all within $\epsilon$ of the true entropies) has about $2^{nH(X,Y)}$ elements, and an independent pair falls in it with probability about $2^{-nI(X;Y)}$ (Thm 8.6.1, p. 195).
 - Achievability (Thm 8.7.1): draw a random codebook, decode by joint typicality, and bound the average error by $2\epsilon$ when $R<I(X;Y)-3\epsilon$ (pp. 198–202).
-- Throwing away the worst half of the codewords (the codebook is the set of codewords) of a codebook with small average error gives a code with small maximal error, at a negligible rate loss (p. 202).
+- Throwing away the worst half of the codewords of a codebook (the set of all codewords) with small average error gives a code with small maximal error, at a negligible rate loss (p. 202).
 
 ## L3 — Walkthrough
 
@@ -167,7 +169,7 @@ $$=2^{-n(I(X;Y)-3\epsilon)}.\tag{8.57}$$
 $$\Pr=\sum_{A_\epsilon^{(n)}}p(x^n)p(y^n)\tag{8.58}$$
 $$\ge(1-\epsilon)2^{n(H(X,Y)-\epsilon)}2^{-n(H(X)+\epsilon)}2^{-n(H(Y)+\epsilon)}\tag{8.59}$$
 $$=(1-\epsilon)2^{-n(I(X;Y)+3\epsilon)}.\tag{8.60}$$
-(p. 197) The step uses $I(X;Y)=H(X)+H(Y)-H(X,Y)$.
+(p. 197) (Added step: (8.57) and (8.60) use $I(X;Y)=H(X)+H(Y)-H(X,Y)$.)
 
 *Intuition note.* There are about $2^{nH(X)}$ typical $x^n$ and $2^{nH(Y)}$ typical $y^n$, but only $2^{nH(X,Y)}$ jointly typical pairs. A random pair is jointly typical with probability about $2^{-nI(X;Y)}$ (p. 197). So for fixed $y^n$ one can try about $2^{nI(X;Y)}$ candidates $x^n$ before one is likely to be jointly typical, "suggesting" about $2^{nI(X;Y)}$ distinguishable signals (p. 197, Fig. 8.9).
 
@@ -192,7 +194,11 @@ $$\Pr(\mathscr C)=\prod_{w=1}^{2^{nR}}\prod_{i=1}^n p(x_i(w)).\tag{8.63}$$
 
 **Analysis, outline (p. 200).** Average over random codes. By symmetry the average error does not depend on which index was sent. Two error sources exist: $Y^n$ is not jointly typical with the sent codeword, or some other codeword is jointly typical with $Y^n$. The first has probability $\to0$ by the joint AEP. Each rival is jointly typical with probability about $2^{-nI}$, so about $2^{nI}$ codewords can be used.
 
-**Detailed calculation (pp. 200–202).** Average over codewords and codebooks: $\Pr(\mathscr E)=\sum_{\mathscr C}P(\mathscr C)P_e^{(n)}(\mathscr C)$ (8.66–8.68, equation text only partly legible in the image). By symmetry, $\sum_{\mathscr C}P(\mathscr C)\lambda_w(\mathscr C)$ does not depend on $w$, so assume $W=1$:
+**Detailed calculation (pp. 200–202).** Average the error over all codewords in the codebook and over all codebooks (p. 200):
+$$\Pr(\mathscr E)=\sum_{\mathscr C}P(\mathscr C)P_e^{(n)}(\mathscr C)\tag{8.66}$$
+$$=\sum_{\mathscr C}P(\mathscr C)\frac{1}{2^{nR}}\sum_{w=1}^{2^{nR}}\lambda_w(\mathscr C)\tag{8.67}$$
+$$=\frac{1}{2^{nR}}\sum_{w=1}^{2^{nR}}\sum_{\mathscr C}P(\mathscr C)\lambda_w(\mathscr C),\tag{8.68}$$
+where $P_e^{(n)}(\mathscr C)$ is defined for typical set decoding (p. 200). So (8.67) writes out the average error of one codebook, and (8.68) swaps the two sums. By the symmetry of the code construction (p. 201), $\sum_{\mathscr C}P(\mathscr C)\lambda_w(\mathscr C)$ does not depend on $w$, so assume $W=1$:
 $$\Pr(\mathscr E)=\frac1{2^{nR}}\sum_{w=1}^{2^{nR}}\sum_{\mathscr C}P(\mathscr C)\lambda_w(\mathscr C)\tag{8.69}$$
 $$=\sum_{\mathscr C}P(\mathscr C)\lambda_1(\mathscr C)\tag{8.70}$$
 $$=\Pr(\mathscr E|W=1).\tag{8.71}$$
@@ -234,7 +240,7 @@ BSC with $p=0.1$, block length $n=100$.
 - [[noisy-channel-coding-theorem]] — Thm 8.7.1: rates below $C$ achievable; converse proved later (p. 198)
 - [[redundancy]] — added in a controlled way during transmission to fight errors (p. 184)
 - [[joint-typicality]] (new) — pair $(x^n,y^n)$ whose three empirical entropies are within $\epsilon$ of $H(X),H(Y),H(X,Y)$ (p. 195)
-- [[symmetric-channel]] (new) — rows are permutations of each other and columns too; weakly symmetric: equal column sums; capacity $\log|\mathcal Y|-H(\text{row})$ (p. 190)
+- [[symmetric-channel]] (new) — rows are permutations of each other and columns too; weakly symmetric: every row a permutation of every other row, and equal column sums; capacity $\log|\mathcal Y|-H(\text{row})$ (p. 190)
 - [[random-coding]] (new) — proof technique: draw the codebook i.i.d. and average the error, to show a good code exists (pp. 198, 202)
 - [[code-rate]] (new) — $R=\frac{\log M}{n}$ bits per transmission for an $(M,n)$ code (p. 194)
 - [[maximal-vs-average-error]] (new) — $\lambda^{(n)}=\max_i\lambda_i$ versus $P_e^{(n)}=\frac1M\sum\lambda_i$; $P_e^{(n)}\le\lambda^{(n)}$ (p. 194)
@@ -261,7 +267,7 @@ BSC with $p=0.1$, block length $n=100$.
 - This part starts at the chapter opening (printed p. 183) and ends mid-sentence on printed p. 202, in the closing remark on random coding. Later material is not in this part. The text points ahead to the converse in §8.9 (p. 199), to a later proof about feedback (p. 189), and to the last section of the chapter on treating compression and transmission separately (p. 184).
 - Offset: printed = pdf − 22. Page labels already give printed numbers.
 - The PDF is the 1991 first edition, as printed on p. 183 (copyright 1991, ISBN 0-471-06259-6), not the 2006 second edition. The metadata cites the 2006 edition.
-- The OCR text layer is garbled in many equations. I used the images. Eq. (8.66)–(8.68) are only partly legible.
+- The OCR text layer is garbled in many equations. I used the images; all equations, including (8.66)–(8.68), are legible there.
 - Fig. 8.3 labels (probabilities $\tfrac12,\tfrac12,\tfrac13,\tfrac23$) are read from the image.
 - p. 194 states that "in the next section" a small average error implies a small maximal error. In the pages given, this is done in step 3 on p. 202 (§8.7).
 - The converse's statement uses $\lambda^{(n)}$ for the maximal error, but the text layer reads it as $\mathrm{A}^{(n)}$; I treated this as an OCR artefact.

@@ -1,7 +1,7 @@
 {
   "mode": "pause",
-  "max_spend_usd": 300,
+  "max_spend_usd": 305,
   "review_each_wave": true,
-  "next_wave": "wave1-review",
+  "next_wave": "wave2",
   "note": "Set mode to 'run' to allow submissions; 'pause' = no new submissions; 'stop' = exit cleanly."
 }

@@ -13,6 +13,8 @@ prompt_version: v2.1
 verified: repaired
 verifier_issues: 15
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 5
 ---
 # Requisite Variety
 
@@ -31,7 +33,7 @@ Ashby asks what all regulators have in common and how much regulation can be ach
 - An essentially identical result holds for entropies (measures of uncertainty) when variety is spread out in time: $H(E) \ge H(D) + H_D(R) - H(R)$, with minimum $H(D)-H(R)$ when R is a function of D (pp. 207–208).
 - The law is a statement about possible arrangements in a table. It owes nothing to experiment or to the properties of machines (p. 209).
 - Regulation can be interpreted in terms of communication. R's capacity as a regulator cannot exceed its capacity as a channel of communication (a route that carries information), which Ashby relates to Shannon's Theorem 10 on correction channels removing noise (pp. 210–211).
-- In biology, natural selection has shown the advantage of taking variety into the system as information, which can then be used to block disturbance from the gene-pattern (Ashby's term from S.10/6, not in this unit). By the law, disturbance reaching the gene-pattern can be diminished only by the amount of information so transmitted (p. 213).
+- In biology, natural selection has shown the advantage of taking variety into the system as information, which can then be used to block disturbance from the gene-pattern (Ashby's term from S.10/6, not in this unit). By the law, disturbance reaching the gene-pattern can be diminished only by the amount of information so transmitted (p. 212).
 - Perfect regulation gives a controller C complete control of the outcome, so control may depend on regulation (pp. 213–214).
 - Ashby argues that vector-valued D and E, noise in T, initial states and interacting regulations can all be fitted into the basic table by redefining D, E or the boundaries. "Constant" targets include tracking targets (pp. 215–218).
 
@@ -127,7 +129,7 @@ The law says certain events are impossible. Its source is not the properties of 
 ### 11/11 Regulation again
 Set-up. Disturbances D threaten to drive the essential variables E out of their proper range. E's values are the "outcomes". Only a few, the set η, are compatible with life or acceptable (p. 209). The table T is the hard external world, or internal matters the regulator must take for granted (p. 209). The process runs: D takes a value, R takes a value determined by D's, T gives an outcome, and it is in η or not. This usually repeats, as with a water-bath over a day (p. 209). A well-made regulator is a transformation of D such that all outcomes lie in η. Then R and T together act as the barrier F of S.10/5 (p. 209).
 
-Diagram of immediate effects: arrows $D\to T$, $D\to R$, $R\to T$, $T\to E$. D's variety determines R's, and T's is determined by both (p. 210). Time steps of any machine behind T are independent of the discrete steps of D, R and T used here (p. 210).
+Diagram of immediate effects: arrows $D\to T$, $D\to R$, $R\to T$, $T\to E$. D's variety determines R's, and T's is determined by both (p. 210). Time steps of any machine behind T are essentially independent of the discrete steps of D, R and T used here (p. 210).
 
 Interpretation: if R does nothing, D's variety threatens to pass through T to E. T may block some of it (S.11/9), occasionally enough for survival. Usually a further suppression is needed, and it can be achieved only by more variety in R (S.11/6) (p. 210). Focusing on $D\to R\to T$, with R as transmitter: the law says R's capacity as a regulator cannot exceed R's capacity as a channel of communication (p. 211).
 
@@ -139,11 +141,11 @@ Link to Shannon: his Theorem 10 says the noise removable by a correction channel
 Ashby states, with "if I am not misinterpreting him", this equivalence with Sommerhoff's "directive correlation" (pp. 211–212): coenetic variable ↔ disturbance (D); response ↔ response (R); environmental circumstances ↔ table (T); subsequent occurrence ↔ outcome (E) (p. 212).
 
 ### 11/13 Biology and the law
-A species continues to exist primarily because its members can block the flow of variety (as disturbance) to the gene-pattern. Natural selection favours taking much variety, as information, partly into the system, and using it so that the flow via R blocks the flow through T (p. 212). This resolves an apparent paradox: higher organisms have sensitive skins and nervous systems, and curiosity that brings in more variety than needed. Would avoiding variety not help survival? (p. 212). Ashby's answer: variety arrives in two forms (p. 213).
-- One form threatens the gene-pattern by direct transmission via T from D to E. It must be blocked at all costs (p. 213).
-- The other can be re-coded through R and used to block the remainder. This information is useful and, if a regulator can be provided, should be as large as possible. By the law, disturbance reaching the gene-pattern can be lessened only by the amount of information transmitted (p. 213).
+A species continues to exist primarily because its members can block the flow of variety (as disturbance) to the gene-pattern. Natural selection favours taking much variety, as information, partly into the system, and using it so that the flow via R blocks the flow through T (p. 212). This resolves an apparent paradox: higher organisms have sensitive skins and nervous systems, and curiosity that brings in more variety than needed. Would avoiding variety not help survival? (p. 212). Ashby's answer: variety arrives in two forms (p. 212).
+- One form threatens the gene-pattern by direct transmission via T from D to E. It must be blocked at all costs (p. 212).
+- The other can be re-coded through R and used to block the remainder. This information is useful and, if a regulator can be provided, should be as large as possible. By the law, disturbance reaching the gene-pattern can be lessened only by the amount of information transmitted (p. 212).
 
-Value of the law: in simple cases it is obvious. A photographer with twenty distinct subjects needs at least twenty camera settings (p. 213). Its quantitative form matters in large systems. Ashby asks how much a dictator can control a country. It is commonly said that Hitler's control was total (voice: common opinion). Ashby says that, as power of regulation (S.10/6), the law makes it "just 1 man-power". He adds that this must be tested by the future, and its virtue is that it is exact (p. 213).
+Value of the law: in simple cases it is obvious. If a press photographer's twenty subjects are distinct (for exposure and distance), his camera needs at least twenty distinct settings if all the negatives are to be brought to a uniform density and sharpness (pp. 212–213). Its quantitative form matters in large systems. Ashby asks how much a dictator can control a country. It is commonly said that Hitler's control was total (voice: common opinion). Ashby says that, as power of regulation (S.10/6), the law makes it "just 1 man-power". He adds that this must be tested by the future, and its virtue is that it is exact (p. 213).
 
 ### 11/14 Control
 Regulation and control are intimately related. In Table 11/3/1, R can force a, b or c at will (p. 213). Let a controller C decide the target and R obey. The diagram is $D\to T\to E$, $C\to R$, $D\to R$, $R\to T$, so the system has two independent inputs, C and D (p. 213). If R is a perfect regulator, E takes whatever value C sets, whatever D does. This holds for single targets and for sequences such as a, b, a, c, c, a (assuming components move in step) (pp. 213–214). So perfect regulation by R makes complete control by C possible (p. 214). Viewed another way, if an attempt $C\to E$ is disturbed by an independent D, a suitable R taking information from both C and D, and placed between C and T, may form with T a compound channel that transmits fully from C and nothing from D (p. 214). Control may thus depend necessarily on regulation (p. 214). Exercises 1–4 (p. 214) concern the transformations R needs and channel capacities.
@@ -156,7 +158,7 @@ The author's claim (11/16) is that the table of S.11/4 covers apparently harder 
 - **11/17 Compound disturbance.** D may be a vector with any number of components, so several simultaneous disturbances (traffic and gusts for a cyclist) are included (p. 216).
 - **11/18 Noise in T.** D, T and E are defined functionally ("D" is "that which disturbs"). If T is noisy, redraw the boundaries so that T's noise input becomes a component of D. T then has no third input, and the formulation agrees with S.11/4 (p. 216). This is not a magic allowance for noise. D now has more components, so the new transformation will have to be more complex (p. 217).
 - **11/19 Initial states.** If T's initial state can be standardised, there is no difficulty. If not, D, as a vector, can be redefined to include T's initial state (p. 217).
-- **11/20 Compound target.** The thermostat must (i) usually stay in 36–37°C and (ii) return within a minute if displaced by +10°. E can be a vector, with η specified per component. This covers complex, conditional or qualified targets (p. 217).
+- **11/20 Compound target.** The thermostat must (i) usually stay in 36–37°C and (ii) return to the allowed range within one minute if displaced by ±10°. E can be a vector, with η specified per component. This covers complex, conditional or qualified targets (p. 217).
 - **11/21 Internal complexity.** A signalman handling several trains is still covered, since D, R, T or E may be made of interrelated parts (p. 218). D is the pattern of arriving trains. E is the pattern of train movements. η includes "no collision". R is the pattern of signal and point movements. T is geography, mechanics and signalling techniques, which lead determinately to the outcome (p. 218). The basic formulation can therefore include cases of any internal complexity, in principle (p. 218).
 
 ## Toy example (ours, not from the text)
@@ -190,7 +192,7 @@ Each column has no repeated outcome (column 0: 1,2,3,0; column 1: 2,3,0,1). The 
 - [[table-11-3-1-game]] — R has complete control of the outcome (p. 203)
 - [[table-11-4-1]] — R can force a but not always b or c (p. 203)
 - [[table-11-5-1]] — no repeats in columns; variety at least 9/3 (p. 205)
-- [[press-photographer]] — twenty subjects need at least twenty settings (p. 213)
+- [[press-photographer]] — twenty distinct subjects need at least twenty settings if all negatives are to reach uniform density and sharpness (pp. 212–213)
 - [[hitler-control-example]] — "1 man-power" by the law (p. 213)
 - [[searchlight-and-aircraft]] — "constant" or "varying" depends on the variable (p. 215)
 - [[thermostat-compound-target]] — vector E with two conditions (p. 217)
@@ -219,5 +221,5 @@ Each column has no repeated outcome (column 0: 1,2,3,0; column 1: 2,3,0,1). The 
 - Printed page numbers are not in the page labels (they show "?"), but the page images show printed numbers, two per image (a spread). Offset: pdf 108 = pp. 202–203, pdf 109 = pp. 204–205, and so on; pdf 116 = p. 218. All citations use these printed numbers.
 - Ashby's printed text has misprints: Ex. 11/14/1 refers to "Table 31/3/1", which should be 11/3/1. In §11/8 the final line prints $H_D(E)$ where the derivation needs $H_D(R)$. The line "so $H(D)+H_D(R)\le H(R)+H_R(E)$" needs $H(E)$ on the right to follow from the previous step.
 - In §11/9, the printed formula $V_O \ge V_D - \log k - \log V_R$ is copied as printed. The text says varieties are measured logarithmically, so "log $V_R$" reads oddly.
-- OCR errors in the text layer: "I et us", "η" read as "17", "beat' only" (probably "bears only"), and the symbols ≤/≥ often appear as < / >. The images were used to check.
+- OCR errors in the text layer: "I et us", "acceptable set 17" for η on p. 209 (the page image itself prints "17", so this is a misprint in the typesetting, not only an OCR error), "beat' only" (probably "bears only"), and the symbols ≤/≥ often appear as < / >. The images were used to check.
 - The reference "S.x/y" means Ashby's cross-references to other sections (S.10/5, S.10/6, S.10/14, S.9/19, S.7/25, S.4/1). These sections are not in this unit.

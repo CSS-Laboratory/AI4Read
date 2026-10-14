@@ -13,6 +13,8 @@ prompt_version: v2.1
 verified: repaired
 verifier_issues: 13
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 9
 ---
 # Kuhn and Normal Science
 
@@ -20,12 +22,12 @@ pipeline_version: 0.1
 In Godfrey-Smith's reading, Kuhn held that science works well because normal science closes off debate about fundamentals and keeps scientists committed to one paradigm, until a critical mass of anomalies produces a crisis.
 
 ## L1 — The gist (≤ 120 words)
-The chapter asks how science really works and what that means for rationality and progress. Godfrey-Smith presents Kuhn's answer: a field starts pre-paradigm, then a striking achievement (a paradigm) organises its work. Scientists then do "normal science": puzzle-solving that treats fundamentals as settled. Anomalies pile up until a crisis arrives. This challenges Popper's picture of permanent openness and simple empiricism's quick abandonment of failed ideas. Godfrey-Smith raises problems with Kuhn's one-paradigm rule (which many critics reject) and thinks Kuhn overstates the degree of commitment. He also says Kuhn's argument mixes description and recommendation, and that it uses history to address philosophical questions.
+The chapter asks how science really works and what that means for rationality and progress. Godfrey-Smith presents Kuhn's answer: a field starts pre-paradigm, then a striking achievement (a paradigm) organises its work. Scientists then do "normal science": puzzle-solving that treats fundamentals as settled. Anomalies pile up until a crisis arrives. This challenges Popper's picture of permanent openness and simple empiricism's quick abandonment of failed ideas. Godfrey-Smith raises problems with Kuhn's one-paradigm rule (which many critics reject) and thinks Kuhn overstates the degree of commitment. He agrees with Kuhn that history helps with philosophical questions, and notes that one must ask which of Kuhn's claims are descriptive and which normative.
 
-**Prerequisites:** Popper's conjecture and refutation (falsifiability); the idea that a theory can be refuted by observation; descriptive vs. normative claims.
+**Prerequisites:** Popper's conjecture and refutation; the idea that a theory can be refuted by observation; descriptive vs. normative claims; logical empiricism (treated in the book's ch. 2; this chapter only says it kept history of science apart from questions of evidence).
 
 ## L2 — Key ideas (5–10 bullets)
-- "Paradigm" has a broad sense (a whole way of doing science) and a narrow sense (a model achievement, an exemplar). Kuhn himself used the word in many senses (p. 77).
+- "Paradigm" has a broad sense (a whole way of doing science) and a narrow sense (a model achievement, an exemplar); these labels are Godfrey-Smith's. Kuhn himself used the word in many senses (p. 77).
 - Normal science is work within a paradigm: agreement on problems, methods, standards and, broadly, on what the world is like (p. 77).
 - Kuhn denies that science is permanently open to testing of fundamentals, and he says it would be worse if it were. Popper holds the opposite (pp. 78, 81).
 - Kuhn distinguishes normal science from revolutionary science, with crisis science bridging them. Justification and progress must be described differently in each (p. 78).
@@ -38,7 +40,7 @@ The chapter asks how science really works and what that means for rationality an
 
 ### 5.1 "The Paradigm Has Shifted" (pp. 75–76)
 - *Structure* appeared in 1962 and was hugely influential, including outside academia (p. 75).
-- A common view says Kuhn shattered empiricist myths. Godfrey-Smith says this has some truth but is often greatly exaggerated. Kuhn spent much of his time after *Structure* trying to distance himself from some of the radical views that came after him. The book was published in the logical empiricists' own series, though it was widely seen as damaging them, a "Trojan horse" (p. 75).
+- A common view says Kuhn shattered empiricist myths. Godfrey-Smith says this has some truth but is often greatly exaggerated. Kuhn spent much of his time after *Structure* trying to distance himself from some of the radical views that came after him. The book was published in the logical empiricists' own series, yet logical empiricism was widely seen as seriously damaged by it: a "Trojan horse", an enemy carried inside their own walls (p. 75).
 - A paradigm, in Kuhn's theory, is a whole way of doing science in a field: claims about the world, methods for data, and habits of thought and action (p. 76).
 - Revolutions occur when one paradigm replaces another. Data and logic alone cannot force the move, because paradigms may carry different rules for treating data and assessing theories. Kuhn did not think change is completely irrational (p. 76).
 - The Wolfe novel passage shows the loose popular use: a way of seeing and interacting with the world. Kuhn did not invent the word, which meant roughly an illustrative example others copy. He only occasionally said "paradigm shift" (p. 76).
@@ -48,10 +50,10 @@ The chapter asks how science really works and what that means for rationality an
 - Godfrey-Smith's two senses (his terms, not Kuhn's):
   - **Broad:** a package of ideas and methods, a view of the world and a way of working. In Godfrey-Smith's own book, unqualified "paradigm" means this.
   - **Narrow:** a specific achievement, or exemplar. Examples are Mendel's pea experiments, Newton's laws and Maxwell's equations. It inspires and models further work (p. 77).
-- Kuhn first defined the term in the narrow sense, but later writing mostly means the broad sense (p. 77).
+- Kuhn first defined the term in the narrow sense, but much of his writing, and most later work by others using the term, means the broad sense (p. 77).
 - Normal science is work within a paradigm's framework. Scientists agree on important problems, approaches, how to assess solutions, and broadly on what the world is like. A revolution is when one paradigm breaks down and is replaced (p. 77).
 - **Point 1 (contrast with Popper):** Popper (and many empiricists) see science as permanently open to criticism, even of fundamentals. Kuhn argued this is false of science, and that science would be worse off with such openness (p. 78).
-- **Point 2:** For Popper there is one process, conjecture and refutation, and revolutions differ only in degree. For Kuhn there are two kinds of change, normal and revolutionary, bridged by "crisis science". Normal science has agreed standards of justification and clear progress. Revolutionary science has neither, and even the question of progress is hard to interpret. Because revolutions are essential, describing rationality and progress in science as a whole is complicated (p. 78).
+- **Point 2:** For Popper there is one process, conjecture and refutation, and revolutions differ only in degree. For Kuhn there are two kinds of change, normal and revolutionary, bridged by "crisis science". The two differ in epistemological features (features of justification and knowledge). Normal science has agreed standards of justification and clear progress. Revolutionary science has neither, and even the question of progress is hard to interpret. Because revolutions are essential, describing rationality and progress in science as a whole is complicated (p. 78).
 - Kuhn argues from claims about how science operates to philosophical conclusions. This mixes history with questions about evidence, which the logical empiricists kept apart. Godfrey-Smith agrees history has a useful role (pp. 78–79).
 - A question to ask of Kuhn is which parts are descriptive and which normative. Kuhn accepted he made some normative claims. Godfrey-Smith's reading stresses the normative element (p. 79).
 - What Godfrey-Smith finds most fascinating is the relationship between (1) Kuhn's constant emphasis on arbitrary, personal influences on decisions, rigid indoctrination of students and "conceptual boxes", and (2) Kuhn's suggestion that these features are the key to science's success (p. 79).
@@ -66,7 +68,7 @@ The chapter asks how science really works and what that means for rationality an
 - Principle: one paradigm per field per time. Kuhn sometimes wrote as if this were true by definition of "field", and allowed several related paradigms only rarely (p. 80).
 - A paradigm coordinates individual work into an efficient collective enterprise. A key feature of normal science is the absence of debate about fundamentals (p. 80).
 - Examples: biologists who agree genes are DNA can study how specific genes affect traits. Chemists who agree on the nature of bonding can study particular reactions. Kuhn argues detailed, deep understanding requires cooperation and consensus, which require closing off debate on fundamentals (p. 81).
-- Godfrey-Smith's reading: Kuhn clearly also holds that normal science *should* close off debate, though this is controversial. Popper treats any such closing off as bad. He criticised Kuhn, saying normal science occurs but it is bad that it does (p. 81).
+- Godfrey-Smith's reading: Kuhn clearly also holds that normal science *should* close off debate, though this is controversial. Popper can allow that not everything can be criticised at once, but he treats any such closing off as bad. He criticised Kuhn, saying normal science occurs but it is bad that it does (p. 81).
 - Kuhn describes much of normal-science work as "puzzle-solving". The task is to fit a new case smoothly into the paradigm's framework. A puzzle is something unsolved that we think has a solution, while a problem might have none. The paradigm guides the choice of good puzzles (p. 81).
 - Puzzles look minor from outside ("minuscule", Kuhn 1996, 24). Yet the close attention only organised normal science allows can reveal deep facts. Though normal scientists do not seek paradigm change, such discoveries often contain seeds of the paradigm's destruction (pp. 81–82).
 
@@ -76,11 +78,11 @@ The chapter asks how science really works and what that means for rationality an
 - Fundamental ideas are insulated from refutation within normal science. A good normal scientist who fails to get the expected results looks for her or his own mistake; the author applies the proverb "only a poor workman blames his tools" (p. 82).
 - Kuhn accepts that hypotheses within normal science are refuted and confirmed all the time, using the paradigm's principles. Rejecting a whole paradigm happens only when (1) a critical mass of anomalies has arisen and (2) a rival paradigm has appeared (p. 82).
 - An anomaly is a puzzle that has resisted solution. All paradigms face some at any time. They tend to accumulate, and sometimes one becomes prominent. Eventually scientists lose faith, giving a crisis (p. 82).
-- In crisis science the paradigm no longer inspires or guides, and no new one has emerged. Godfrey-Smith says the transition to crisis is "almost like a phase transition". Fundamental issues return to debate, and scientists tend to become interested in philosophy (p. 82).
+- In crisis science the paradigm no longer inspires or guides, and no new one has emerged. Godfrey-Smith says the transition to crisis is "almost like a phase transition". Fundamental issues return to debate. "Amusingly", Godfrey-Smith notes, Kuhn even suggests that in crises scientists suddenly become interested in philosophy, a field Kuhn sees as quite useless for normal science (p. 82).
 - Godfrey-Smith uses the "critical mass" metaphor to suggest that Kuhn sees breakdown as part of science's "proper functioning", though it does not feel so to the scientists involved. The right stimulus is deep problems revealing a real inadequacy. A paradigm is like a well-shielded bomb that explodes only in specific circumstances (p. 83).
 - For Popperians and simpler empiricists, constant anomalies would count as refutations. Kuhn says science does not treat them so, and should not: dropping paradigms at every problem would mean getting nothing done (p. 83).
 - For Kuhn, science balances resisting change too much and too little. Too-quick abandonment brings chaos, and ideas need protection to develop. Complete unresponsiveness halts advance. The balance cannot be given as explicit rules. For Kuhn, it lies in social structures, traditions and "quirks of the scientific mind" (p. 83).
-- This challenges simple empiricism, for which too much willingness to revise is unexpected. Kuhn backed it with historical evidence (p. 83).
+- This challenges empiricism in its simpler forms (which would drop ideas as soon as unexpected observations appear): from an empiricist view, the idea that willingness to revise can go too far is unexpected. Kuhn backed it with historical evidence (p. 83).
 
 *Intuition note:* Kuhn sees tolerance of anomalies as protection that lets ideas develop, not as a failure to follow evidence.
 
@@ -89,11 +91,15 @@ The chapter asks how science really works and what that means for rationality an
 - **Problem 1 (raised by the author, citing critics):** Many critics think Kuhn is wrong about one paradigm per field per time, in physics and chemistry and even more in biology and psychology. This returns in chapter 7 (p. 84).
 - **Criticism 2 (author):** Kuhn exaggerates the commitment normal scientists have and should have, with talk of "indoctrination" and "faith". Sometimes commitment is faithlike, sometimes not. Many scientists work within a paradigm for practical reasons while aware of possible error. Ironically, Kuhn's book may have weakened some scientists' faith (p. 84).
 - Kuhn thinks strong commitment is good, since closing off debate gives precision and efficiency, and constant questioning risks chaos like pre-paradigm science. Godfrey-Smith says Kuhn probably goes too far: scientists could coordinate without constant debate while staying cautious about their paradigm, and "surely this is possible" (pp. 84–85).
-- **Example: Artificial Life** (author's experience at conferences). The field modelled basic features of life on computers. Two or three pieces of work were strikingly successful: Ray's Tierra (perhaps the most impressive), Langton's and Wolfram's cellular-automata analysis ("might be another case"), and Kauffman's work on "origins of order". Consolidation never happened. At each conference the author attended, people seemed to want to start from scratch, and there was too little work building on Ray and others. The field never made a transition into anything resembling normal science, and at the time of writing it "seems to have ground to a halt", though the author says maybe it will revitalise (p. 85).
+- **Example: Artificial Life** (author's experience at conferences). The field modelled basic features of life on computers. Two or three pieces of work were strikingly successful: Ray's Tierra (perhaps the most impressive), Langton's and Wolfram's analysis of cellular automata (simple systems where local interactions give rise to global, self-sustaining patterns; "might be another case"), and Kauffman's work on "origins of order". Consolidation never happened. At each conference the author attended, people seemed to want to start from scratch, and there was too little work building on Ray and others. The field never made a transition into anything resembling normal science, and at the time of writing it "seems to have ground to a halt", though the author says maybe it will revitalise (p. 85).
 - A second Kuhnian reason: "premature commercialization". At some events the climax of each talk seemed to be a dramatic video. For Kuhn, science needs a normal scientist's interest in puzzle-solving for its own sake, and looking too often to applications and rewards harms normal science (pp. 85–86).
 
 ## Toy example
-*(Ours.)* Suppose that each year a lab meets 10 failed experiments. Rule A ("drop the framework at the first failure") would abandon the framework in year 1 after 1 failure. Rule B ("keep the framework until failures reach a critical mass of 30 and a rival exists") keeps it in year 1 (10 < 30) and year 2 (20 < 30). By year 3, cumulative failures are 30, and if a rival exists, switching is allowed. Under A the lab spends year 1 re-debating basics; under B it spends years 1–2 working out why each experiment failed. Kuhn's claim, as Godfrey-Smith reports it, is that something like B balances protection and responsiveness (pp. 82–83). The numbers only illustrate the structure; Kuhn gives no threshold.
+*(Ours.)* Two labs work within the same paradigm, and each gets an unexpected result.
+- **Lab 1:** a normal scientist first looks for her own mistake ("poor workman"). She finds a miscalibrated instrument, fixes it, and the result fits the paradigm. A failed hypothesis inside normal science is routine, not a threat (p. 82).
+- **Lab 2:** the result survives every check. The best workers in the field try to explain it and fail, so it becomes an anomaly: a puzzle that has resisted solution (p. 82). This is the kind of deep, not superficial, problem that can help bring on a crisis (p. 83).
+- **The contrast:** a "drop the framework at the first failure" policy would abandon the paradigm in both labs, Lab 1 for nothing. On Kuhn's picture, as Godfrey-Smith reports it, Lab 1 keeps working, and even Lab 2's anomaly leads to rejection only if (1) anomalies like it reach a critical mass and (2) a rival paradigm appears (p. 82).
+- No count of failures decides when this happens: for Kuhn the balance cannot be written as explicit rules (p. 83).
 
 ## Concepts
 - [[paradigm / normal science]] — a whole way of doing science, including exemplars, which guides the choice of puzzles; normal science is the work done within it. Broad sense vs. narrow sense (exemplar) (pp. 76–77)
@@ -102,7 +108,7 @@ The chapter asks how science really works and what that means for rationality an
 - [[pre-paradigm science]] (new) — early, poorly organised science before a first paradigm (pp. 79–80)
 - [[one paradigm per field per time]] (new) — Kuhn's principle that a field normally has a single paradigm (p. 80)
 - [[descriptive vs. normative]] (new) — separating claims about how things are from claims about how they should be (p. 79)
-- [[falsifiability]] — contrast case: Popper's permanent openness to refutation (p. 78)
+- [[falsifiability]] — contrast case: Popper's permanent openness to criticism, even of fundamentals (p. 78) (differs from canon: the chapter discusses Popper's critical attitude, not falsifiability as a criterion of what counts as science)
 
 ## Canonical instances
 - [[skinnerian-behaviorism]] — example of a paradigm in psychology (p. 80)
@@ -124,4 +130,4 @@ The chapter asks how science really works and what that means for rationality an
 ## Reading notes
 - Printed = pdf − 15.
 - Text matched the one page image supplied (printed p. 86). The Alife passage spells "Kaufmann" in the text but "Kauffman" in the citation (p. 85); this is as printed.
-- The toy example, including its numbers, is ours and not part of the source.
+- The toy example (two labs) is ours and not part of the source.

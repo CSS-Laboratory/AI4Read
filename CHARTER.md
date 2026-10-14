@@ -106,7 +106,8 @@ Wikilinks `[[id]]` throughout (Obsidian-compatible).
 - Every digest carries `grounding: primary-text | secondary | unverified`. Only `primary-text` digests may support claims in posts without a caveat.
 - Every citation in a post is verified against a real source (URL/DOI). No unverifiable citations.
 - Free access only from legal sources (author, publisher OA, arXiv, university repositories, OCW, SEP; archive.org only for public-domain works). **Never** shadow libraries.
-- Digests are in our own words with page references; no long quotations. Public posts follow normal academic quoting norms and disclose AI assistance.
+- Digests are in our own words with page references; no long quotations.
+- Digests are **verified maps, not guaranteed truth**: after model verification, audits find ≈ 0.5 subtle error per unit (mostly hedges and voice; math is near-perfect). Every claim used in a post is re-checked against the source page when the post is written. Public posts follow normal academic quoting norms and disclose AI assistance.
 
 ## 10. Quality gate (before a post reaches Kunhao)
 

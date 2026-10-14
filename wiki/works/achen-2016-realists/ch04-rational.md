@@ -13,6 +13,8 @@ prompt_version: v2.1
 verified: repaired
 verifier_issues: 11
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 15
 ---
 # A Rational God of Vengeance and of Reward? The Logic of Retrospective Accountability
 
@@ -20,14 +22,14 @@ pipeline_version: 0.1
 Retrospective voting (rewarding or punishing incumbents, the current office-holders, for results) can in theory select good leaders and discipline them, but its effectiveness depends on how precisely voters can discern leaders' contribution to their well-being, and even relatively small amounts of randomness can significantly degrade it.
 
 ## L1 — The gist (≤ 120 words)
-If voters cannot judge policies, can they still control leaders by judging results? Achen and Bartels review the evidence that voters do this, then two rational-choice accounts: *selection* of competent leaders and *sanctioning* of leaders who might shirk (put in less effort for voters than they could). Both models work only insofar as voters can set aside irrelevant influences on their well-being. Even relatively small amounts of randomness can significantly reduce the chance of reelecting good incumbents and incumbents' effort. Voters' perceptions of the economy, crime and pollution are often noisy or biased guides to real conditions. Key himself doubted that retrospective voting is rational. The authors argue that, rational or not, "blind" retrospection undermines accountability.
+If voters cannot judge policies, can they still control leaders by judging results? Achen and Bartels review the evidence that voters do this, then two rational-choice accounts: *selection* of competent leaders and *sanctioning* of leaders who might shirk (pursue goals other than serving voters). Both models work only insofar as voters can set aside irrelevant influences on their well-being. Even relatively small amounts of randomness can significantly reduce the chance of reelecting good incumbents and incumbents' effort. Voters' perceptions of the economy, crime and pollution are often noisy or biased guides to real conditions. Key himself doubted that retrospective voting is rational. The authors argue that, rational or not, "blind" retrospection poses a significant challenge to accountability.
 
 **Prerequisites:** the spatial model of voting (ch. 2); basic probability and averages; the idea of a principal who cannot observe an agent's effort.
 
 ## L2 — Key ideas (5–10 bullets)
-- The retrospective theory says voters can control leaders by judging performance without knowing policy details. It rescued the "voters are not fools" claim after survey research undercut issue voting (pp. 91–92).
+- The retrospective theory says voters can control leaders by judging performance without knowing policy details. Its appeal, for its proponents, is that it seems to save voters from the charge of being too uninformed to matter; the authors think its implications are less positive than the literature suggests (pp. 91–92).
 - Evidence from surveys, aggregate economic data (Gosnell, Kramer) and panel data (Lenz; the same people interviewed repeatedly) points to the view that retrospective evaluations, especially of the economy, matter (a "virtual consensus" holds that the electoral impact of economic conditions is real, p. 98). Cross-sectional survey links may instead reflect rationalization (pp. 93–98).
-- Selection model: voters infer an incumbent's competence from well-being, which mixes competence and luck. A rational voter keeps a "running tally" (pp. 98–100).
+- Selection model: voters infer an incumbent's competence from well-being, which mixes competence and luck. If competence is constant or purely random, a rational voter keeps a "running tally" (pp. 98–100).
 - Sanctioning model: voters cannot see effort, so they set a reelection standard to induce effort. In equilibrium (the stable outcome when each side does its best given the other), voters set the standard so that the incumbent's probability of reelection, judged before the election, is .5 (pp. 100–102).
 - Both models rest on how much luck contaminates well-being. More randomness lowers the reelection chance of good incumbents and lowers effort (pp. 102–104, figs. 4.1–4.2).
 - Real perceptions of pollution, crime and the economy are noisy and biased, and the key assumption that past performance predicts future performance has, as far as the authors know, never been systematically examined (pp. 105–108).
@@ -39,14 +41,15 @@ If voters cannot judge policies, can they still control leaders by judging resul
 ### Introduction (pp. 90–93)
 - **Setting.** Chapter 2 showed that survey research, political psychology and social choice theory undercut the folk theory of democracy. If voters' preferences are not meaningful or coherent, it is unclear what "responsive" government should do (p. 90).
 - **The alternative theory.** A less demanding theory gained attention in the 1960s. Voters can control leaders without knowing policy details, by judging incumbents' performance, "rewarding success and punishing failure" (p. 91).
-  - **Key's view (1966):** the electorate is mainly "an appraiser of past events"; it commands prospectively only by approving or disapproving what happened before (p. 91).
+  - **Key's view (1966):** the electorate's great, and perhaps principal, role is as an appraiser of past events; it commands prospectively only by approving or disapproving what happened before (p. 91).
   - **Key (1958):** even an acute ear hears only vague guidance, so leaders must supply initiative. Retrospective theory leaves initiative with officials (p. 91).
   - **Fiorina's view (1981):** voters "need only calculate the changes in their own welfare" (jobs lost, sons killed in war, unsafe neighborhoods, polluted air and water) (pp. 91–92).
+- **Normative appeal.** The theory seems to save voters from the charge of being too uninformed or disengaged to play a meaningful role. It made the bleak survey portrait of the 1950s–60s, if not quite irrelevant, at least not fatal (p. 91).
 - **Rationality claims.** Key, Fiorina and Kramer treated retrospective voting as evidence of voters' rationality. Fiorina saw "rough justice" in several elections, and Key wrote "voters are not fools" (p. 92).
 - **Rational-choice accounts** came later (Ferejohn, Rogoff, Banks–Sundaram, Fearon). The chapter summarizes two (p. 92).
-- **Authors' caveat.** They value the theory's realism and empirical power. They argue it neglects two difficulties (pp. 92–93):
+- **Authors' caveat.** They value the theory's realism and empirical power, but think its implications for democracy are less unambiguously positive than the literature suggests. They argue it neglects two difficulties (pp. 92–93):
   - Is a bad outcome the incumbent's fault? If not, voting on conditions "may be no more sensible than kicking the dog after a hard day at work."
-  - Can voters even assess "changes in their own welfare" accurately? If their assessments are erroneous, retrospection selects and disciplines leaders less well.
+  - Can voters even assess "changes in their own welfare" accurately? If their assessments are erroneous, retrospection selects and disciplines leaders much less well. The authors think these difficulties are more serious than previous scholars have generally thought (p. 93).
 
 ### Evidence of Retrospective Voting (pp. 93–98)
 - **Anecdotes.** Buchanan blamed the 1858 midterm losses on the Panic of 1857. In 1879 Disraeli saw bad harvests as the government's main danger, and the Tory government fell the next spring (p. 93).
@@ -59,13 +62,13 @@ If voters cannot judge policies, can they still control leaders by judging resul
 - **Fiorina (1981)** extended this (p. 95):
   - A wider range of retrospective assessments, across twelve presidential and congressional elections.
   - Panel interviews on shifts in party identification.
-  - *Mediated* evaluations (of incumbent performance) versus *simple* evaluations (of conditions, with no mention of government).
+  - How far *mediated* evaluations (of incumbent performance) were grounded in *simple* evaluations (of conditions, with no mention of government).
 - **Later work** mostly studies national or personal economic judgments. Similar patterns appear in many countries (p. 95).
 - **Methodological criticism.** As in ch. 2, a cross-sectional link between evaluations and votes may reflect the impact of the evaluations, or evaluations built to rationalize votes with other causes. In one survey real economic conditions are constant, so Kramer (1983) noted that all variation in perceived conditions reflects partisan bias, overgeneralization from local experience, and other perceptual noise (pp. 95–96). The authors say the rationalization point is the key one, against Key's dismissal (n. 5, p. 95).
 - **Panel data (Lenz).** Allowing for votes shaping opinions, Lenz found "surprisingly little evidence" that policy preferences mattered. His parallel analyses of performance evaluations supported the importance of performance domains such as the economy (p. 96).
 - **Aggregate data.** Objective economic statistics have "an independent reality"; insofar as that reality shows up in voting, the link cannot simply be rationalization. The authors add that donors could also channel growth into campaign money (n. 6, p. 96), but they judge most of the aggregate link to be retrospective voting (p. 96).
 - **Gosnell and coauthors** used Chicago, Iowa, Pennsylvania and Wisconsin data from the New Deal era. They found that voters' recent economic circumstances appeared to influence outcomes (pp. 96–97).
-- **Kramer (1971):** 34 biennial national congressional elections. Election-year changes in real per capita income account for "something like half the variance of the congressional vote" (p. 97). He saw House races as the cleanest test because candidates are relatively anonymous team members. Later post-WWII work found larger economic effects in presidential than in congressional elections (n. 7, p. 97).
+- **Kramer (1971):** 34 biennial national congressional elections. Economic fluctuations, most notably election-year changes in real per capita income, account for "something like half the variance of the congressional vote" (p. 97). He saw House races as the cleanest test because candidates are relatively anonymous team members. Later post-WWII work found larger economic effects in presidential than in congressional elections (n. 7, p. 97).
 - **Conclusion of the section:** a "virtual consensus" holds that the electoral impact of economic conditions is real and substantial. Magnitude, timing and psychology remain unsettled (pp. 97–98).
 
 *Intuition note:* Good evidence says that economic results move votes. The open question is whether voters respond to the right things and in a sensible way.
@@ -73,7 +76,7 @@ If voters cannot judge policies, can they still control leaders by judging resul
 ### Retrospective Voting as a Mechanism for Selecting Competent Leaders (pp. 98–100)
 - **Idea.** Parties differ in motivation, competence or ideology, so they imply different future well-being. Voters forecast and choose. Retrospection enters through the auxiliary assumption that past performance gives rational expectations. Downs: the incumbent's performance "gives the best possible idea of what it will do in the future, assuming its policies have some continuity" (p. 98).
 - **Model (set out in the appendix).** A representative voter's electorally relevant well-being combines the incumbent's intrinsic competence and luck, which the incumbent does not control. The voter's task is to infer competence (p. 99). Individual-level versions are possible but more complex. Hibbs warns that heterogeneous judgments let incumbents "divide and rule" (n. 10, p. 99). It does not matter whether well-being is individual or collective (n. 9, p. 98).
-- **Constant (or purely random) competence:** the best estimate is the average well-being under the incumbent in the current and previous periods. So a rational voter weighs every period, not only the latest. This is Fiorina's "running tally," and it grounds durable party identification (p. 99).
+- **Constant (or purely random) competence:** the best estimate is the average well-being under the incumbent in the current and previous periods. So a rational voter weighs every period, not only the latest. This is Fiorina's "running tally," and it grounds more or less durable partisan preferences (p. 99).
 - **Changing competence:** the forecast depends on how competence evolves. In general, change makes older experience less relevant, so recent experience gets more weight (p. 99).
 - **Limits.** If leadership continuity is minimal, past performance says little. If well-being is driven by extraneous events (droughts, oil shocks), rewards and punishments may be misdirected. Past experience should be weighed to the extent it sheds light on future leadership (pp. 99–100).
 
@@ -104,12 +107,12 @@ If voters cannot judge policies, can they still control leaders by judging resul
 - **Fiorina's claim is not literally true.** A voter who breaks a leg on the way to the polls has seen his welfare fall but should not blame the president. The claim works only if voters know which changes are plausibly attributable to incumbents, that is, if indices contain "a lot of honest signal and not too much noise." That may hold for some voters, domains and contexts, not others (p. 106).
 - **Examples of noisy perception** (pp. 106–108):
   - *Environment:* EPA staff found little correlation between public and expert rankings of environmental threats, and the EPA's Science Advisory Board recommended that the agency work to improve public understanding (pp. 106–107).
-  - *Crime:* perceptions track local media coverage more than official rates. Gallup majorities say crime is increasing even though rates have generally leveled off at low numbers (p. 107).
+  - *Crime:* perceptions seem to be more strongly related to local media coverage than to official rates. Gallup majorities say crime is increasing even though rates have generally leveled off at low numbers (p. 107).
   - *Economy:* perceptions are shaped by partisan bias, rationalization and randomness (p. 107).
     - **Stimson's view:** net perception is "right on the mark."
     - **Authors' reply:** this exaggerates. Footnote 16: Erikson–MacKuen–Stimson report a correlation of .54 between business retrospections and income growth, which explains just under 30% of variance. Their stronger regressions are driven mainly by lagged perceptions, which is not evidence of accuracy (n. 16, p. 107).
-    - 1992: misleadingly negative media coverage of an improving economy contributed to pessimism and Bush's defeat (pp. 107–108).
-  - Voters may focus "inordinately" on recent conditions (shown in ch. 6, promised) (p. 108).
+    - Such discrepancies can be politically consequential, as they probably were in 1992, when misleadingly negative media coverage of an improving economy contributed to pessimism and Bush's defeat (pp. 107–108).
+  - Even when aggregate perceptions do track real changes, they may mislead. The authors say they will show in ch. 6 that American voters focus "inordinately" on recent economic conditions (p. 108).
 - **Untested assumption.** The idea that past performance predicts future performance has, as far as the authors know, never been systematically examined. Chapter 6 tests it (p. 108).
 - **Competing teams needed.** In Jim Crow southern politics, Key (1949) saw weak party competition, term limits and shifting factions leave voters with no one to reward or punish (n. 17, p. 108).
 
@@ -136,7 +139,7 @@ If voters cannot judge policies, can they still control leaders by judging resul
 - **Post-Keynesian era.** Governments are thought to have real influence over the economy, so economic voting can be read as rational. But voters punished economic downturns before Keynes, which is an "embarrassment" to the rational interpretation. Even today the basis is "murky at best," especially in small countries open to global tides (p. 113).
 - **Does it matter?** Debating "rationality" is largely a matter of definition, but not entirely. If voters conscientiously pursue their well-being, we should expect them to overcome the challenges above as best they can. If it is displacement of resentment, there is no reason to expect careful thinking about cause and effect (p. 113).
 - **Studies of events beyond incumbents' control** (p. 114):
-  - Wolfers (2002): US governors in oil states were rewarded or punished for oil-price-driven fluctuations. He concluded that voters are "quasi-rational" and make systematic attribution errors.
+  - Wolfers (2002): US governors in oil states were rewarded or punished for oil-price-driven fluctuations. He concluded that the "simplest explanation" was that voters are "quasi-rational" and make systematic attribution errors.
   - Campello and Zucco (2013): Latin American leaders' fortunes follow international commodity prices and US interest rates.
   - Bartels (2014): after the Great Recession, incumbents in affluent democracies were punished for national declines regardless of relative performance among OECD economies.
   - These studies do not reveal the psychology. Voters might be disentangling imperfectly, or punishing out of frustration.
@@ -168,16 +171,16 @@ A voter reelects an incumbent if the observed well-being $W = c + L$ is above 0.
 - [[spatial-model-of-voting]] — the model in which voters choose by policy distance; retrospective theory contrasts with it (pp. 93–94, 109)
 - [[folk-theory-of-democracy]] — the idealized view undercut in ch. 2; retrospective theory is a less demanding replacement (p. 90)
 - [[partisan-perceptual-bias]] — partisans see conditions differently, so perceived economic conditions need not match objective ones (pp. 95–96, 107)
-- [[retrospective-voting-as-kicking-the-dog]] (new) — Key's idea of retrospective voting as displaced resentment, not rational attribution (pp. 93, 112–114)
+- [[retrospective-voting-as-kicking-the-dog]] (new) — the authors' metaphor for retrospective voting as displaced resentment (Key: "displacement of economic resentment"), not rational attribution (pp. 93, 112–114)
 
 ## Canonical instances
 - [[disraeli-bad-harvests-1879]] — a Tory government fell after bad harvests (p. 93)
 - [[buchanan-panic-of-1857]] — a president blamed midterm losses on economic distress (p. 93)
 - [[kramer-1971-congressional-vote]] — economic fluctuations account for about half the variance in the congressional vote (p. 97)
-- [[lenz-panel-analysis]] — panel analysis supports performance effects, not policy effects (p. 96)
+- [[lenz-panel-analysis]] — panel analysis finds surprisingly little evidence that policy preferences carried much weight, and supports performance effects (p. 96)
 - [[epa-risk-perception-gap]] — public and expert rankings of environmental threats correlate little (pp. 106–107)
-- [[crime-perception-gap]] — perceptions of crime follow media coverage, not official rates (p. 107)
-- [[bush-1992-economic-pessimism]] — negative media coverage of an improving economy hurt the incumbent (pp. 107–108)
+- [[crime-perception-gap]] — perceptions of crime seem to be more strongly related to local media coverage than to official rates (p. 107)
+- [[bush-1992-economic-pessimism]] — negative media coverage of an improving economy probably hurt the incumbent (pp. 107–108)
 - [[fluoridation-mayoral-terms]] — longer mayoral terms mean more support for fluoridation (p. 111)
 - [[wolfers-oil-governors]] — governors in oil states were rewarded or punished for world oil prices (p. 114)
 - [[key-1949-southern-politics]] — no competing teams meant no one to reward or punish (n. 17, p. 108)

@@ -13,6 +13,8 @@ prompt_version: v2.1
 verified: repaired
 verifier_issues: 11
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 9
 ---
 # The Success of TIT FOR TAT in Computer Tournaments
 
@@ -28,7 +30,7 @@ What is a good way to play the repeated Prisoner's Dilemma, given that no strate
 - **No best strategy, so test strategies against each other.** Proposition 1 says what is best depends on the other player. Existing literatures say little about how to play well, so Axelrod uses computer tournaments of informed entrants (pp. 27–30).
 - **The simplest entry won both rounds.** TIT FOR TAT (cooperate first, then copy the other's last move) won round one among 14 entries and round two among 62. No entrant who knew this beat it (pp. 31–32, 42).
 - **Niceness (never defecting first) went with success.** In round one all eight top entries were nice (relaxed definition) and no other entry was. In round two the correlation of niceness with score was .58, with exceptions (pp. 33, 43–44).
-- **Echoes and too little forgiveness are costly.** In round one JOSS's occasional defections set off endless mutual retaliation with TIT FOR TAT. In the round-one environment, TIT FOR TWO TATS (which defects only after two defections in a row) would have won (pp. 36–39).
+- **Echoes and too little forgiveness are costly.** In round one JOSS's occasional defections set off mutual retaliation with TIT FOR TAT that, in the illustrative game, lasted to the end. In the round-one environment, TIT FOR TWO TATS (which defects only after two defections in a row) would have won (pp. 36–39).
 - **Round-one entrants made systematic errors.** They were too competitive, not forgiving enough, and too pessimistic about the other side's responsiveness (p. 40).
 - **Exploiting easygoing rules did not pay in round two.** TESTER and TRANQUILIZER exploited easygoing rules but ranked 46th and 27th. It also paid to be retaliatory, not only nice (pp. 44–47).
 - **TIT FOR TAT was robust.** It won five of six hypothetical tournaments, and in a simulation of future generations it never lost first place. Success based on exploiting others eroded as the exploited rules died out; HARRINGTON is the example (pp. 48–53).
@@ -63,6 +65,7 @@ What is a good way to play the repeated Prisoner's Dilemma, given that no strate
   - If the two probabilities are similar, the other seems unresponsive, so DOWNING defects. If the other cooperates after cooperation but not after defection, it seems responsive, so DOWNING cooperates. Under some circumstances DOWNING alternates cooperation and defection (pp. 34–35).
   - It starts by assuming both probabilities are .5 but gives that estimate no weight once data come in. By initially assuming that the other player is unresponsive, it is doomed to defect on the first two moves (p. 35).
   - Many rules punished those defections. TIT FOR TAT and TIDEMAN AND CHIERUZZI reacted so that DOWNING learned that defection does not pay and cooperation does. All other nice rules "went downhill" with DOWNING (p. 35).
+- **Axelrod's explanation of niceness paying:** the nice rules did well largely because they did so well with each other, and because there were enough of them to raise each other's average score substantially (p. 35).
 
 > *Intuition note.* Nice rules scored about 600 with one another, so differences among them came from how they handled the few non-nice rules. The result is for round one and uses the relaxed definition of "nice".
 
@@ -98,23 +101,23 @@ What is a good way to play the repeated Prisoner's Dilemma, given that no strate
 - Entrants received the detailed round-one analysis, including the supplementary rules that would have done well. Each knew the others knew it, so the round presumably began at a higher level of sophistication (p. 41).
 - There were 62 entries from six countries, recruited largely through small-computer journals plus the earlier game theorists. Contestants ranged from a ten-year-old hobbyist to professors in many fields (p. 41).
 - TIT FOR TAT was again the simplest entry and won again. Only one person (Rapoport) submitted it, although anyone could submit any program (p. 42).
-- Games ended probabilistically, with chance 0.00346 of ending after each move, equivalent to $w = .99654$ *(added step: $1 - 0.00346 = 0.99654$)*. Since nobody knew when the last move would come, end-game effects were avoided (pp. 42–43).
-- No personal attribute correlated significantly with performance: not professor status, nationality, or FORTRAN vs BASIC. Short programs did not do significantly better than long ones, nor long than short (p. 43).
+- Games ended probabilistically, with chance 0.00346 of ending after each move, equivalent to $w = .99654$, the weight of the next move relative to the current one (a parameter from ch. 1; not defined in this unit) *(added step: $1 - 0.00346 = 0.99654$)*. Since nobody knew when the last move would come, end-game effects were avoided (pp. 42–43).
+- No personal attribute correlated significantly with performance: not professor status, being American, or FORTRAN vs BASIC. Short programs did not do significantly better than long ones, nor long than short (p. 43).
 - There were 3969 pairings of the 63 rules (including RANDOM) and over a million moves (p. 43).
 - Niceness again paid. More than half the entries were nice. Of the top fifteen, all but one were nice (that one ranked eighth). Of the bottom fifteen, all but one were not nice. The overall correlation of niceness with score was .58 (pp. 43–44).
 - A rule is **retaliatory** if it immediately defects after an "uncalled for" defection. The author says exactly what is "uncalled for" is not precisely determined. Without such a response, the other may take more and more advantage (p. 44).
 - Among nice rules, rankings depended largely on how they coped with challengers that used controlled numbers of defections (p. 44).
   - **TESTER** (46th) defects on move 1 to test the other. If the other ever defects, it apologises by cooperating and plays tit-for-tat for the rest of the game. Otherwise it cooperates on moves 2 and 3 and defects every other move afterwards (p. 44).
     - It never defects twice in a row, so TIT FOR TWO TATS always cooperates with it and is badly exploited (p. 45).
-    - Three REVISED DOWNING variants were also exploited, because they judged that a program cooperating just over half the time after their cooperation should be answered with cooperation. They would have done better to defect on move 2, as TIT FOR TAT and other high-ranking rules did, which would have drawn TESTER's apology (p. 45).
+    - Three variants of Downing's outcome-maximization principle (two REVISED DOWNING submissions and one slightly modified version) were also exploited, because they judged that a program cooperating just over half the time after their cooperation should be answered with cooperation. They would have done better to defect on move 2, as TIT FOR TAT and other high-ranking rules did, which would have drawn TESTER's apology (p. 45).
   - **TRANQUILIZER** (27th) first builds mutual cooperation, then cautiously tries unprovoked defections. It cooperates for the first dozen or two dozen moves. While its average payoff is at least 2.25 points per move, it does not defect twice in succession or more than one-quarter of the time (pp. 45–46).
 - Conclusion: it pays to be nice and also retaliatory. TIT FOR TAT is never first to defect, forgives an isolated defection after one response, and is always incited by a defection however good the interaction has been (p. 46).
 - Two lessons were drawn from round one (p. 47):
   - Lesson One: "Be nice and forgiving."
   - Lesson Two: "If others are going to be nice and forgiving, it pays to try to take advantage of them."
 - Of 62 entries, 39 were nice, nearly all at least somewhat forgiving. TIT FOR TWO TATS (John Maynard Smith) came 24th. REVISED DOWNING, submitted twice, was in the bottom half (p. 47).
-- Those who drew Lesson One suffered from those who drew Lesson Two. But the Lesson Two users did not do well either: they were punished enough to make the game less rewarding than mutual cooperation. TRANQUILIZER and TESTER each beat TIT FOR TAT's score with fewer than one-third of the rules (p. 47).
-- No entrant benefited more than it was hurt by trying to exploit easygoing rules. The most successful entries were small variations on TIT FOR TAT designed to give up on seemingly random or very uncooperative players. They did not beat pure TIT FOR TAT, which "got along with almost everyone" (pp. 47–48).
+- Those who drew Lesson One suffered from those who drew Lesson Two. But the Lesson Two users did not do well either: they often eventually got punished enough to make the game less rewarding than mutual cooperation. TRANQUILIZER and TESTER each beat TIT FOR TAT's score with fewer than one-third of the rules (p. 47).
+- No entrant benefited more than it was hurt by trying to exploit easygoing rules. The most successful entries tended to be relatively small variations on TIT FOR TAT designed to give up on seemingly random or very uncooperative players. They did not beat pure TIT FOR TAT, which "got along with almost everyone" (pp. 47–48).
 
 > *Intuition note.* Being too easygoing invites exploiters, and exploiting provokes punishment that costs both sides. In round two nobody gained more than they lost from exploiting.
 
@@ -141,7 +144,7 @@ What is a good way to play the repeated Prisoner's Dilemma, given that no strate
 - Proposition 1 still holds: no rule is best independent of the environment. What can be said for TIT FOR TAT's empirical successes is that it is very robust, doing well over a wide range of environments (p. 53).
 - Part of its success might be that other rules anticipate it. Doing well with it requires cooperating with it, which helps it. Even TESTER quickly apologises. Any rule that tries to exploit it simply hurts itself (p. 53).
 - It benefits from its nonexploitability because three conditions hold. The possibility of meeting it is salient; once met, it is easy to recognise; once recognised, its nonexploitability is easy to appreciate. So it "benefits from its own clarity" (pp. 53–54).
-- It gives up the possibility of exploiting others. Over a wide range of environments, trying to exploit has three problems (p. 54):
+- It gives up the possibility of exploiting others. Such exploitation is occasionally fruitful, but over a wide range of environments it has three problems (p. 54):
   1. defecting to test risks retaliation from provocable rules;
   2. once mutual recriminations set in, it is hard to escape;
   3. attempts to give up on unresponsive rules (RANDOM or very uncooperative ones) often wrongly gave up on rules that a more patient rule could have salvaged.
@@ -171,7 +174,7 @@ Now let both players use TIT FOR TWO TATS, with the same accident by A on move 3
 ## Concepts
 - [[iterated-prisoner-dilemma]] (new) — the Prisoner's Dilemma played over many moves, with each move's choice able to depend on history (pp. 28, 30)
 - [[non-zero-sum-setting]] (new) — interests of participants partly coincide and partly conflict (p. 30)
-- [[round-robin-tournament]] (new) — every entry is paired with every other entry, its own twin, and RANDOM (p. 30)
+- [[round-robin-tournament]] (new) — each entry is paired with each other entry; this tournament also paired each with its own twin and with RANDOM (p. 30)
 - [[tit-for-tat]] (new) — cooperate on move 1, then copy the other player's previous move (p. 31)
 - [[niceness]] (new) — never being the first to defect (relaxed in round one to not before about move 199) (p. 33)
 - [[forgiveness]] (new) — propensity to cooperate in moves after the other player has defected (p. 36)

@@ -13,6 +13,8 @@ prompt_version: v2.1
 verified: repaired
 verifier_issues: 9
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 4
 ---
 # Variational Inference: A Review for Statisticians (part 1: Sections 1–4.3)
 
@@ -22,7 +24,7 @@ Variational inference turns posterior approximation into optimization: choose a 
 ## L1 — The gist (≤ 120 words)
 Bayesian inference needs the posterior p(z|x), but its normalizer (the evidence) is often intractable. The authors review variational inference (VI). It posits a family of simple densities and picks the member closest in KL divergence to the posterior. Because the KL cannot be computed, one maximizes the ELBO (evidence lower bound), which equals the negative KL up to a constant. For the mean-field family (independent factors), coordinate ascent (CAVI) gives updates, worked out fully for a Gaussian mixture. For exponential-family models the updates become expected natural parameters, and stochastic natural-gradient steps scale VI to massive data. VI is usually faster than MCMC but has no exactness guarantee and tends to underestimate posterior variance.
 
-**Prerequisites:** conditional and joint densities, expectation, KL divergence, Gaussian densities, exponential families (natural parameter, sufficient statistic, log normalizer), gradient ascent.
+**Prerequisites:** conditional and joint densities, expectation, KL divergence, Gaussian densities, exponential families (natural parameter, sufficient statistic, log normalizer), gradient ascent; Markov chains (only for the §1 context on MCMC).
 
 ## L2 — Key ideas (5–10 bullets)
 - **VI replaces sampling by optimization.** Pick a family Q and solve q* = argmin KL(q‖p(z|x)), Eq. (1). MCMC is exact asymptotically; VI is typically faster but only finds a nearby density (pp. 2–3).
@@ -38,14 +40,15 @@ Bayesian inference needs the posterior p(z|x), but its normalizer (the evidence)
 
 ### Abstract and 1 Introduction (pp. 1–4)
 - **Problem.** A joint density of latent variables $\mathbf z=z_{1:m}$ and observations $\mathbf x=x_{1:n}$ is $p(\mathbf z,\mathbf x)=p(\mathbf z)p(\mathbf x\mid\mathbf z)$: prior times likelihood. Bayesian inference means computing the posterior $p(\mathbf z\mid\mathbf x)$, which in complex models often needs approximation (p. 2).
-- **MCMC (the baseline).** Build an ergodic Markov chain whose stationary distribution is the posterior, collect samples, and form an empirical estimate (p. 2). The authors say it has been "the dominant paradigm" for decades (p. 2). It is hard to use when an approximate conditional is needed faster than simple MCMC can produce, e.g. with large data sets or very complex models (p. 2).
+- **MCMC (the baseline).** Build an ergodic Markov chain (a random walk whose long-run behaviour does not depend on where it starts) on $\mathbf z$ whose stationary distribution (the long-run frequency of each state) is the posterior, collect samples, and form an empirical estimate (p. 2). The authors say it has been "the dominant paradigm" for decades (p. 2). It is hard to use when an approximate conditional is needed faster than simple MCMC can produce, e.g. with large data sets or very complex models (p. 2).
 - **VI idea.** Posit a family $\mathcal Q$ of densities over the latent variables and find
 $$q^*(\mathbf z)=\arg\min_{q(\mathbf z)\in\mathcal Q}\mathrm{KL}\big(q(\mathbf z)\,\|\,p(\mathbf z\mid\mathbf x)\big)\tag{1}$$
 Then use $q^*$ as the approximation. The reach of $\mathcal Q$ manages the complexity of the optimization: $\mathcal Q$ should be flexible enough to be close to the posterior but simple enough for efficient optimization (p. 3). Footnote 1: the review focuses on KL(q‖p) ("Kullback–Leibler VI"). Wainwright and Jordan note that any optimization-based density approximation can be called "variational" (p. 3).
 - **VI versus MCMC (authors' guidance).**
   - MCMC is more computationally intensive but guarantees (asymptotically) exact samples. VI has no such guarantee, can only find a density close to the target, but tends to be faster. It easily uses stochastic and distributed optimization (some MCMC methods can too) (p. 3).
   - Suggested uses: VI for large data sets and for quickly exploring many models (example: one billion text documents). MCMC for smaller data sets where one happily pays for more precise samples (example: a small, expensive 20-year data set with a trusted model) (p. 3).
-  - Posterior geometry also matters. A mixture posterior has multiple modes from label permutations. Gibbs sampling, if the model permits, quickly focuses on one mode. Where Gibbs is not an option, VI may beat a general MCMC method such as HMC, even on small data (p. 3).
+  - Posterior geometry also matters. A mixture posterior has multiple modes from label permutations. Gibbs sampling, if the model permits, quickly focuses on one mode. Where Gibbs is not an option, VI may beat a general MCMC method such as HMC (Hamiltonian Monte Carlo, an MCMC method that uses the gradient of the log density to propose distant moves), even on small data (p. 3).
+  - The authors' general caveat: VI has been studied less rigorously than MCMC, and its statistical properties are less well understood (p. 2; the abstract says VI "is not yet well understood", p. 1).
   - Accuracy: the relative accuracy of VI and MCMC "is still unknown". VI generally underestimates the posterior variance, a consequence of its objective. This may be acceptable depending on the task. Several empirical studies found no necessary loss in, e.g., posterior predictive densities. Other work targets the shortfall in posterior variance (pp. 3–4).
   - VI and MCMC apply beyond Bayesian models: they are tools for approximating or simulating intractable densities (p. 4).
 - **History (as the authors tell it).** Two parallel tracks. Peterson and Anderson (1987) is "arguably" the first variational procedure for a particular model (a neural network). Hinton and Van Camp (1993) proposed a variational algorithm for a similar network. Neal and Hinton connected VI to EM (p. 4).
@@ -100,7 +103,7 @@ Since $\mathrm{KL}\ge0$, $\log p(\mathbf x)\ge\mathrm{ELBO}(q)$ for any $q$ (the
 #### 2.3 The mean-field variational family (pp. 7–9)
 - **Mean-field family:** latent variables are mutually independent, each with its own factor:
 $$q(\mathbf z)=\prod_{j=1}^m q_j(z_j)\tag{15}$$
-The family is not a model of the data (no $\mathbf x$ in it); the ELBO links the fitted density to data and model. Parametric forms of factors are not fixed in advance; for some models the model's properties determine their optimal forms (p. 8).
+(p. 7). The family is not a model of the data (no $\mathbf x$ in it); the ELBO links the fitted density to data and model. Parametric forms of factors are not fixed in advance; for some models the model's properties determine their optimal forms (p. 8).
 - Richer families exist: **structured VI** adds dependencies between variables; **mixtures** of variational densities add latent variables in the family. Both may improve fidelity but give harder optimization (p. 8).
 - **Mixture of Gaussians (continued).**
 $$q(\boldsymbol\mu,\mathbf c)=\prod_{k=1}^K q(\mu_k;m_k,s_k^2)\prod_{i=1}^n q(c_i;\varphi_i)\tag{16}$$
@@ -117,7 +120,7 @@ with the expectation taken under $\prod_{\ell\ne j}q_\ell(z_\ell)$. Equivalently
 $$q_j^*(z_j)\propto\exp\{\mathbb E_{-j}[\log p(z_j,\mathbf z_{-j},\mathbf x)]\}\tag{18}$$
 By independence the right-hand expectations do not involve $q_j$, so this is a valid coordinate update (p. 9).
 - **Algorithm 1 (CAVI).** Input: model $p(\mathbf x,\mathbf z)$, data $\mathbf x$. Initialize factors $q_j(z_j)$. While the ELBO has not converged: for $j=1..m$ set $q_j(z_j)\propto\exp\{\mathbb E_{-j}[\log p(z_j\mid\mathbf z_{-j},\mathbf x)]\}$; then compute $\mathrm{ELBO}(q)$. Return $q(\mathbf z)$ (p. 10).
-- **Related ideas.** CAVI can be viewed as message passing: each variable's variational parameters are updated from those of its Markov blanket. This enabled automated software and links VI to graphical-model theory (p. 10). CAVI is "closely related" to Gibbs sampling: Gibbs samples from each complete conditional; Eq. (18) uses the same complete conditional, takes the expected log, and sets the variational factor with it (p. 10). Footnote 4: collapsed Gibbs has a variational analogue, collapsed VI; out of scope (p. 10).
+- **Related ideas.** CAVI can be viewed as message passing: each variable's variational parameters are updated from those of its Markov blanket (the neighbouring variables that, once known, make it independent of all others). This enabled automated software and links VI to graphical-model theory (p. 10). CAVI is "closely related" to Gibbs sampling: Gibbs samples from each complete conditional; Eq. (18) uses the same complete conditional, takes the expected log, and sets the variational factor with it (p. 10). Footnote 4: collapsed Gibbs has a variational analogue, collapsed VI; out of scope (p. 10).
 - **Derivation of (18)** (uses no gradients, unlike Bishop's argument) (p. 10). Write the ELBO as a function of $q_j$, absorbing terms not depending on it into a constant:
 $$\mathrm{ELBO}(q_j)=\mathbb E_j\big[\mathbb E_{-j}[\log p(z_j,\mathbf z_{-j},\mathbf x)]\big]-\mathbb E_j[\log q_j(z_j)]+\text{const.}\tag{19}$$
 The first term uses iterated expectation. The second keeps only the part of $\mathbb E[\log q]$ that depends on $q_j$, using independence. Up to a constant, (19) is the negative KL between $q_j(z_j)$ and $q_j^*(z_j)$ of (18). So the ELBO is maximized in $q_j$ when $q_j=q_j^*$ (p. 10).
@@ -126,7 +129,7 @@ The first term uses iterated expectation. The second keeps only the part of $\ma
 
 #### 2.5 Practicalities (p. 11)
 - **Initialization.** The ELBO is generally non-convex; CAVI only guarantees a local optimum, which can depend on initialization. Figure 2 (10 random initializations on the Gaussian mixture, fitted to images, §3.4) shows different final ELBO values, indicating many local optima. In terms of KL(q‖p), better optima give densities closer to the exact posterior. This is not always a disadvantage: mixture and mixed-membership models have many symmetric posterior modes from label switching, and representing one mode suffices for exploring clusters or predicting new observations (p. 11).
-- **Convergence.** Stop when the ELBO change falls below a small threshold. Computing the full-data ELBO may be undesirable; the authors suggest the average log predictive of a small held-out set as a proxy (not guaranteed to increase monotonically, unlike the full ELBO) (p. 11).
+- **Convergence.** Stop when the ELBO change falls below a small threshold. Computing the full-data ELBO may be undesirable; the authors suggest the average log predictive of a small held-out set (the mean log probability the fitted model gives to data kept out of fitting) as a proxy (not guaranteed to increase monotonically, unlike the full ELBO) (p. 11).
 - **Numerical stability.** Work with log probabilities. The log-sum-exp identity, usually with $\alpha=\max_i x_i$:
 $$\log\Big[\sum_i\exp(x_i)\Big]=\alpha+\log\Big[\sum_i\exp(x_i-\alpha)\Big]\tag{20}$$
 
@@ -172,7 +175,7 @@ $$p(x_{\text{new}}\mid x_{1:n})\approx\frac1K\sum_{k=1}^K p(x_{\text{new}}\mid m
 with $p(x_{\text{new}}\mid m_k)$ Gaussian with mean $m_k$ and unit variance.
 
 #### 3.4 Empirical study (pp. 14–17)
-- **Simulation.** 2-D data from $K=5$ Gaussians with random means, covariances and assignments. The initial variational components are nearly centered and wide. The ELBO shows "elbows" (plateaus, then jumps) at about iterations 20, 28, 35 and 50 in Figure 3, which the authors attribute to non-convexity: CAVI iteratively reaches better plateaus. The average held-out log predictive is smoother than the ELBO (p. 14, Figure 3 on p. 15).
+- **Simulation.** 2-D data from $K=5$ Gaussians with random means, covariances and assignments. The initial variational components are nearly centered and wide. The authors highlight "elbows" in the ELBO, phases where the variational approximation changes its shape (plateaus, then jumps); Figure 3 shows snapshots at iterations 20, 28, 35 and 50, and the ELBO curve is flat by about iteration 45. The authors attribute the elbows to non-convexity: CAVI iteratively reaches better plateaus. The average held-out log predictive is smoother than the ELBO (p. 14, Figure 3 on p. 15).
 - **Images.** Each image is represented by red, green and blue histograms of length 192, concatenated into a 576-dimensional vector (Figure 4). A 30-cluster Gaussian mixture was fitted by CAVI to 10,000 randomly selected imageCLEF training images, with a different 10,000 for testing. Figure 5 shows similarly colored images per cluster. Figure 6 compares held-out average log predictive over time with a Stan implementation using a Hamiltonian-MC-based sampler (details in Appendix B, not in this unit). Result: "CAVI is orders of magnitude faster than this sampling algorithm", fitting in under a minute (pp. 16–17). Footnote 5: this is not a definitive VI–MCMC comparison; another sampler, such as collapsed Gibbs, might do better (p. 16).
 
 ### 4 Variational inference with exponential families (pp. 16–21)
@@ -219,7 +222,7 @@ Algorithm 2 is an instance of this scheme. Appendix C (not in this unit) treats 
 
 #### 4.3 Stochastic variational inference (pp. 19–21; part ends before Algorithm 3)
 - **Why CAVI does not scale.** Each iteration passes through the entire data set. An alternative is gradient-based optimization. *Stochastic variational inference* (SVI, Hoffman et al., 2013) combines natural gradients with stochastic optimization (pp. 19–20). SVI optimizes the global parameters $\lambda$ of a conditionally conjugate model. It repeatedly (a) subsamples a data point; (b) computes the optimal local parameters for it given current global ones; (c) adjusts the global parameters (p. 20).
-- **Natural gradient.** It accounts for the geometry of probability parameters: moving the same distance in different directions gives equal change in symmetrized KL, which the Euclidean gradient does not. In exponential families it is the usual gradient premultiplied by $a''(\lambda)^{-1}$, the inverse Fisher information (inverse covariance of the sufficient statistic) (p. 20). Hoffman et al. derive the Euclidean gradient for the global parameter:
+- **Natural gradient.** It accounts for the geometry of probability parameters: moving the same distance in different directions gives equal change in symmetrized KL (KL taken in both directions, so neither density is privileged), which the Euclidean gradient does not. In exponential families it is the usual gradient premultiplied by $a''(\lambda)^{-1}$, the inverse Fisher information (inverse covariance of the sufficient statistic) (p. 20). Hoffman et al. derive the Euclidean gradient for the global parameter:
 $$\nabla_\lambda\mathrm{ELBO}=a''(\lambda)\big(\mathbb E_\varphi[\hat\alpha]-\lambda\big)\tag{51}$$
 where $\mathbb E_\varphi[\hat\alpha]$ is the right side of (48). Premultiplying by the inverse Fisher information:
 $$g(\lambda)=\mathbb E_\varphi[\hat\alpha]-\lambda\tag{52}$$
@@ -272,7 +275,7 @@ for example $\epsilon_t=t^{-\kappa}$ with $\kappa\in(0.5,1]$. The authors emphas
 - [[em-algorithm]] (new) — maximum-likelihood method for latent-variable models; assumes the posterior expectation is computable, unlike VI (p. 7)
 - [[label-switching]] (new) — symmetric posterior modes from permuting cluster labels; one mode suffices for clusters or prediction (p. 11)
 - [[log-sum-exp-trick]] (new) — Eq. (20), for numerically stable sums of exponentials (p. 11)
-- [[hamiltonian-monte-carlo]] — the sampler (in Stan) used as the comparison baseline in Figure 6 (p. 16)
+- [[hamiltonian-monte-carlo]] — an MCMC method that uses gradients of the log density; the Stan sampler (legend: NUTS, the No-U-Turn Sampler, a self-tuning HMC variant) used as the comparison baseline in Figure 6 (p. 16)
 
 ## Canonical instances
 - [[bayesian-gaussian-mixture]] — unit-variance mixture with Gaussian prior on means; full CAVI derivation and ELBO (pp. 5, 12–14)
@@ -298,4 +301,4 @@ for example $\epsilon_t=t^{-\kappa}$ with $\kappa\in(0.5,1]$. The authors emphas
 - **Edition and pages.** The pages show the arXiv version (arXiv:1601.00670v9, dated May 11, 2018); the unit metadata cites the JASA version, whose layout is not shown here. Printed page = pdf page.
 - **OCR.** The text layer of p. 9 is garbled (two overlapping versions); the image was used for Eq. (17)–(18). The p. 15 text layer has a stray "Figure 1: Main caption" artifact and mangled axis numbers. Figure 3 values (ELBO between about −4,100 and −3,200) were read from the image.
 - **Possible inconsistency.** Figure 6's legend reads "NUTS (Hoffman et al. 2013)", while the text (p. 16) cites Hoffman and Gelman (2014) for the HMC-based sampler. I report both without resolving this.
-- **Wording.** The "elbows" in the Figure 3 text are the authors' loose description of plateaus in the ELBO curve. The iteration numbers I give (about 20, 28, 35, 50) come from the panel labels, not the prose.
+- **Wording.** The "elbows" in the Figure 3 text are the authors' loose description of plateaus in the ELBO curve. The iteration numbers (20, 28, 35, 50) are the Figure 3 snapshot panels, not elbow locations read from the curve.
