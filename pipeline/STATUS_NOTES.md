@@ -17,3 +17,7 @@
 ### Next
 - **Deep (145) + reference (162) → Claude Code route** (`python -m pipeline cc-run`, built, not run). At Vertex rates they would cost ≈ $85 — not affordable under the cap.
 - **Gate CC parity test waits for the quality lead's wave-4 review** (`pipeline/reviews/wave-4.md`).
+
+### Gate CC (Claude Code route parity test) — done, waiting for quality lead
+- 5/5 accepted (3 parity units as `*.cc.md`; 2 needs-review units re-checked and written in place). 17 sessions, ≈ 117 min model time.
+- Usage meter 43% → 45%. Bottleneck is wall time (≈ 12–15 min per clean unit). Details: `pipeline/GATE-CC.md`.

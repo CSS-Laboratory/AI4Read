@@ -1,9 +1,9 @@
 # Digest pipeline — status
 
-- **Stage:** ✅ Wave 4 done — **core tier complete (1,031 units)** · waiting for `reviews/wave-4.md`
+- **Stage:** Gate CC done — **waiting for the quality lead** (`pipeline/GATE-CC.md`)
 - **Mode:** pause
-- **Spent:** **$322.95** of $340 cap (wave 4 $96.09)
-- **Next:** quality-lead review → Gate CC parity test → deep + reference on the Claude Code route
+- **Vertex spend:** $322.95 of $340 cap (core tier complete)
+- **Claude Code route:** parity 5/5 accepted; usage 43% → 45%; launchd job not installed
 
 ### wave4 measured (prompts v2.2)
 - Units: 336 (336 accepted) · text pages 4274 · image pages 2410
@@ -24,3 +24,7 @@
 ### Next
 - **Deep (145) + reference (162) → Claude Code route** (`python -m pipeline cc-run`, built, not run). At Vertex rates they would cost ≈ $85 — not affordable under the cap.
 - **Gate CC parity test waits for the quality lead's wave-4 review** (`pipeline/reviews/wave-4.md`).
+
+### Gate CC (Claude Code route parity test) — done, waiting for quality lead
+- 5/5 accepted (3 parity units as `*.cc.md`; 2 needs-review units re-checked and written in place). 17 sessions, ≈ 117 min model time.
+- Usage meter 43% → 45%. Bottleneck is wall time (≈ 12–15 min per clean unit). Details: `pipeline/GATE-CC.md`.
