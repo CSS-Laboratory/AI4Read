@@ -108,3 +108,68 @@ def page_kind(text, file_words_per_page=None):
     if re.search(r"^\s*(Figure|Fig\.|FIGURE|Table|TABLE)\s*\d", s, re.M):
         return "table"
     return "prose"
+
+
+def paper_numbers(pages):
+    """Printed numbers for short papers (journal layouts): find one offset k so that page i carries the number
+    i+1-k on a line of its own (anywhere on the page). Needs >= 2 supporting pages and >= 30% of text pages."""
+    n = len(pages)
+    lone = []
+    for p in pages:
+        nums = set()
+        for l in p.splitlines():
+            s = l.strip()
+            if re.fullmatch(r"\d{1,4}", s):
+                nums.add(int(s))
+            m = re.match(r"^(\d{1,4})\s{3,}\S|\S\s{3,}(\d{1,4})$", s)     # number separated from a running head
+            if m:
+                nums.add(int(m.group(1) or m.group(2)))
+        lone.append(nums)
+    votes = Counter()
+    for i, nums in enumerate(lone):
+        for k in nums:
+            if 0 < k and k != i + 1 or (k == i + 1 and n > 1):
+                votes[i + 1 - k] += 1
+    text_pages = sum(1 for p in pages if len(p.split()) >= 30)
+    if not votes or not text_pages:
+        return [None] * n
+    off, cnt = votes.most_common(1)[0]
+    if cnt < 2 or cnt < 0.3 * text_pages:
+        return [None] * n
+    return [str(i + 1 - off) if i + 1 - off > 0 else None for i in range(n)]
+
+
+def spread_labels(pages):
+    """Two-page spreads with a text layer (e.g. Ashby, Putnam): a running foot/head line shows 'a ... a+1'.
+    Returns per-page labels 'a-(a+1)' (or a single number on chapter-opening pages), or None if not a spread work."""
+    n = len(pages)
+    pair = [None] * n
+    single = [None] * n
+    for i, p in enumerate(pages):
+        lines = [l for l in p.splitlines() if l.strip()]
+        for l in lines[:EDGE_TOP] + lines[-EDGE_BOTTOM:]:
+            m = re.match(r"^\s*(\d{1,4})\s{4,}.*?(\d{1,4})\s*$", l) or re.match(r"^\s*(\d{1,4})\s{4,}(\d{1,4})\s*$", l)
+            if m and int(m.group(2)) == int(m.group(1)) + 1:
+                pair[i] = int(m.group(1))
+                break
+        if pair[i] is None:
+            nums = {k for k, s in _edge_numbers(p) if not s}
+            if len(nums) == 1:
+                single[i] = nums.pop()
+    text_pages = sum(1 for p in pages if len(p.split()) >= 30)
+    if not text_pages or sum(1 for x in pair if x) < 0.4 * text_pages:
+        return None
+    # fill gaps between two known pairs when the step is exactly 2 printed pages per pdf page
+    known = [i for i in range(n) if pair[i] is not None]
+    for a, b in zip(known, known[1:]):
+        if b - a > 1 and pair[b] - pair[a] == 2 * (b - a):
+            for j in range(a + 1, b):
+                if single[j] is None:
+                    pair[j] = pair[a] + 2 * (j - a)
+    out = [None] * n
+    for i in range(n):
+        if pair[i] is not None:
+            out[i] = f"{pair[i]}-{pair[i] + 1}"
+        elif single[i] is not None:
+            out[i] = str(single[i])
+    return out

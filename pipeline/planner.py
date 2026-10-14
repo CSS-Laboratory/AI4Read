@@ -21,7 +21,7 @@ import yaml
 from pypdf import PdfReader
 
 from . import PIPE, REPO
-from .pages import clean_label, page_kind, page_texts, printed_numbers
+from .pages import clean_label, page_kind, page_texts, paper_numbers, printed_numbers, spread_labels
 
 logging.getLogger("pypdf").setLevel(logging.CRITICAL)
 
@@ -305,9 +305,13 @@ def unit_rows(work, cat, pdf, pages, pr, kinds, structure, note=""):
         img = sum(1 for i in range(a - 1, b) if kinds[i] not in ("prose", "blank"))
         chars = sum(len(pages[i]) for i in range(a - 1, b))
         p_lo = next((pr[i] for i in range(a - 1, b) if pr[i]), None)
-        if p_lo and "spread" in structure:
-            p_lo = str(max(1, int(p_lo) - 1))
         p_hi = next((pr[i] for i in range(b - 1, a - 2, -1) if pr[i]), None)
+        if p_lo and "-" in p_lo:
+            p_lo = p_lo.split("-")[0]
+        elif p_lo and "spread" in structure and p_lo.isdigit():
+            p_lo = str(max(1, int(p_lo) - 1))
+        if p_hi and "-" in p_hi:
+            p_hi = p_hi.split("-")[-1]
         rows.append({
             "work_id": work, "unit_id": unit_id, "title": title,
             "pdf_pages": f"{a}-{b}", "printed_pages": f"{p_lo}-{p_hi}" if p_lo and p_hi else "",
@@ -325,6 +329,35 @@ def est_input_tokens(chars, img, n):
     return int(PROMPT_OVERHEAD + SPINE_TOKENS + chars / CHARS_PER_TOKEN + img * IMAGE_TOKENS + n * PAGE_WRAP_TOKENS)
 
 
+def printed_labels(work, cat, pages, labels):
+    """Printed page label per pdf page — one function for the planner AND the request builder.
+    Order: text-layer spreads -> PDF labels / running heads -> journal layout (papers) ->
+    constant offset from the reviewed TOC (scans) -> scanned-spread offset (TOC 'spread_offset')."""
+    n = len(pages)
+    pr = [clean_label(x) for x in printed_numbers(pages, labels)]
+    spread_text = spread_labels(pages)
+    if spread_text:
+        pr = spread_text
+    if not spread_text and cat.get("type") == "paper" and sum(1 for x in pr if x) < 0.5 * n:
+        alt = paper_numbers(pages)
+        if sum(1 for x in alt if x) > sum(1 for x in pr if x):
+            pr = alt
+    f = TOC_DIR / f"{work}.json"
+    tocd = json.loads(f.read_text()) if f.exists() else None
+    if tocd and not any(pr):
+        offs = Counter(int(e["pdf"]) - int(e["printed"]) for e in tocd["entries"]
+                       if str(e.get("printed", "")).isdigit() and e.get("pdf"))
+        if offs:
+            off, cnt = offs.most_common(1)[0]
+            if cnt >= 3 and cnt >= 0.8 * sum(offs.values()):
+                first = min(int(e["pdf"]) for e in tocd["entries"] if str(e.get("printed", "")).isdigit())
+                pr = [str(i + 1 - off) if i + 1 >= first and i + 1 - off > 0 else None for i in range(n)]
+    if tocd and tocd.get("spread_offset") is not None:
+        k = int(tocd["spread_offset"])
+        pr = [str(2 * (i + 1 - k) + 1) if i + 1 >= k else None for i in range(n)]
+    return pr, spread_text
+
+
 def plan_pdf(p, work, cat, dup_note=""):
     reader = PdfReader(str(p))
     pages = page_texts(p)
@@ -333,7 +366,7 @@ def plan_pdf(p, work, cat, dup_note=""):
         labels = reader.page_labels[:n]
     except Exception:
         labels = None
-    pr = [clean_label(x) for x in printed_numbers(pages, labels)]
+    pr, spread_text = printed_labels(work, cat, pages, labels)
     words = sum(len(t.split()) for t in pages) / max(n, 1)
     kinds = [page_kind(t, words) for t in pages]
     is_scan = words < 30
@@ -356,23 +389,9 @@ def plan_pdf(p, work, cat, dup_note=""):
         chs = None
         structure = f"needs-toc ({why or 'no outline'})"
 
-    if toc and not any(pr):        # scans without a text layer: constant offset from the reviewed TOC
-        offs = Counter(int(e["pdf"]) - int(e["printed"]) for e in tocd["entries"]
-                       if str(e.get("printed", "")).isdigit() and e.get("pdf"))
-        if offs:
-            off, cnt = offs.most_common(1)[0]
-            if cnt >= 3 and cnt >= 0.8 * sum(offs.values()):
-                first = min(int(e["pdf"]) for e in tocd["entries"] if str(e.get("printed", "")).isdigit())
-                pr = [str(i + 1 - off) if i + 1 >= first and i + 1 - off > 0 else None for i in range(n)]
-    if toc and tocd.get("spread_offset") is not None:      # scanned two-page spreads
-        k = int(tocd["spread_offset"])
-        pr = [None] * n
-        for i in range(n):
-            if i + 1 >= k:
-                pr[i] = str(2 * (i + 1 - k) + 1)            # right half; left half = this - 1
     if toc and tocd.get("warning"):
         dup_note = ("WARNING: " + tocd["warning"])[:300]
-    if toc and tocd.get("spread_offset") is not None:
+    if (toc and tocd.get("spread_offset") is not None) or spread_text:
         structure += " spread"
     rows, add = unit_rows(work, cat, p, pages, pr, kinds, structure + (" scan" if is_scan else ""), dup_note)
     if chs is None:

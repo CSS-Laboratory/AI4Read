@@ -190,6 +190,8 @@ def accept(uid, md, verified, n_issues):
                               "verifier_issues": n_issues, "pipeline_version": PIPELINE_VERSION})
     p = wiki_path(uid)
     p.parent.mkdir(parents=True, exist_ok=True)
+    if p.exists() and re.search(r"^audited:", p.read_text(), re.M):     # hand-audited files are never overwritten
+        p = p.with_name(p.stem + ".pipeline-new.md")
     p.write_text(md.rstrip() + "\n")
     body_words = len(re.sub(r"^---.*?---\s*", "", md, count=1, flags=re.S).split())
     state.record(uid, "accepted", verified=verified, verifier_issues=n_issues, path=str(p.relative_to(REPO)),

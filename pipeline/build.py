@@ -21,7 +21,7 @@ from .pages import page_kind, page_texts
 from .planner import CFG, LIB, UNITS_CSV, catalog, html_clean, H2
 
 SPEC_VERSION = "1.2"
-PROMPT_VERSION = "v2.1"
+PROMPT_VERSION = "v2.2"
 MAX_TOKENS = {"p1": 64000, "p2": 64000, "p3": 64000, "p4": 16000}   # v2.1: P2 with 80 mandatory items reached 40k
 IMG_CACHE = PIPE / "_work" / "img"
 LONG_SIDE = CFG["image"]["long_side_px"]
@@ -95,18 +95,20 @@ def _is_spread(pdf, n):
 def page_images(pdf, n, scanned, long_side=None):
     """JPEG bytes for pdf page n: one image, or [left, right] halves for a scanned two-page spread."""
     LONG_SIDE = long_side or globals()["LONG_SIDE"]
-    key = hashlib.sha1(f"{pdf}:{n}:{LONG_SIDE}:{QUALITY}".encode()).hexdigest()[:16]
+    key = hashlib.sha1(f"{pdf}:{n}:{LONG_SIDE}:{QUALITY}:v2".encode()).hexdigest()[:16]
     IMG_CACHE.mkdir(parents=True, exist_ok=True)
     cached = sorted(IMG_CACHE.glob(f"{key}-*.jpg"))
     if cached:
         return [c.read_bytes() for c in cached]
-    spread = scanned and _is_spread(pdf, n)
-    with tempfile.TemporaryDirectory() as td:
-        scale = str(LONG_SIDE * 2) if spread else str(LONG_SIDE)
-        subprocess.run(["pdftoppm", "-f", str(n), "-l", str(n), "-png", "-scale-to", scale,
-                        str(pdf), f"{td}/p"], check=True, capture_output=True)
-        png = next(Path(td).glob("p*.png"))
-        im = Image.open(png).convert("RGB")
+    def render(scale):
+        with tempfile.TemporaryDirectory() as td:
+            subprocess.run(["pdftoppm", "-f", str(n), "-l", str(n), "-png", "-scale-to", str(scale),
+                            str(pdf), f"{td}/p"], check=True, capture_output=True)
+            return Image.open(next(Path(td).glob("p*.png"))).convert("RGB")
+    im = render(LONG_SIDE)
+    spread = im.width > 1.25 * im.height              # landscape after rotation = two-page spread (any work)
+    if spread:
+        im = render(LONG_SIDE * 2)
     parts = [im] if not spread else [im.crop((0, 0, im.width // 2, im.height)),
                                      im.crop((im.width // 2, 0, im.width, im.height))]
     out = []
@@ -150,9 +152,9 @@ def _labels(pdf):
         return None
 
 
-def printed_map(pdf, pages):
-    from .pages import clean_label, printed_numbers
-    pr = [clean_label(x) for x in printed_numbers(pages, list(_labels(pdf) or []) or None)]
+def printed_map(pdf, pages, work_id=None):
+    from .planner import printed_labels
+    pr, _ = printed_labels(work_id or "", catalog().get(work_id, {}), pages, list(_labels(pdf) or []) or None)
     return {i + 1: p for i, p in enumerate(pr) if p}
 
 
@@ -171,7 +173,7 @@ def source_blocks(row, long_side=None):
     a, b = map(int, rng.split("-"))
     words = sum(len(t.split()) for t in pages) / max(len(pages), 1)
     scanned = words < 30
-    printed = printed_map(f, pages)
+    printed = printed_map(f, pages, row["work_id"])
     spread_k = _spread_offset(row["work_id"])
     for n in range(a, b + 1):
         text = pages[n - 1].rstrip() if n <= len(pages) else ""
@@ -189,6 +191,8 @@ def source_blocks(row, long_side=None):
                 hp = pm
                 if len(imgs) == 2 and spread_k is not None:
                     hp = str(2 * (n - spread_k) + i) if 2 * (n - spread_k) + i >= 1 else "?"
+                elif len(imgs) == 2 and re.fullmatch(r"\d+-\d+", pm or ""):
+                    hp = pm.split("-")[i]
                 blocks.append({"type": "text", "text": f"[page image: pdf {n}{side} / printed {hp}]"})
                 blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/jpeg",
                                                            "data": base64.b64encode(jpg).decode()}})
@@ -232,7 +236,11 @@ ARGUMENTATIVE_FIELDS = {"analytic-philosophy"}
 ARGUMENTATIVE_WORKS = {"dennett-1987-intentional-stance", "habermas-1989-publicsphere", "carey-1989-cultural",
                        "popper-1959-logic", "kuhn-1962-structure", "lippmann-1922-publicopinion"}
 VOICE = re.compile(r"[\"“”‘’]|\*\*[^*\n]{1,40}:\*\*|\b(objection|reply|replies|interlocutor|asks)\b|\?\s*(\(|$)", re.I)
-MAX_ITEMS = 80
+MAX_ITEMS = 120
+LOGICAL = re.compile(r"\b(only|always|never|iff|exactly|all|every|must|cannot|proves|shows|necessary|sufficient"
+                     r"|alone|merely|unless|conditions?)\b", re.I)
+QUOTE_SPAN = re.compile(r"[\"“]([^\"”\n]{3,}?)[\"”]")
+QUOTE_BUDGET = 10
 WORDS_PER_SCAN_PAGE = 450
 
 
@@ -259,11 +267,16 @@ def source_words(row):
 
 
 def target_words(row, sw=None):
-    """gate2b review: 0.40 x source words (0.55 if >= 40% image pages), clamped to [1200, 6000]."""
+    """wave-1 review: min(max(1200, f*sw), 0.80*sw), f = 0.40 (0.55 if >= 40% image pages); 6000 upper bound kept."""
     sw = source_words(row) if sw is None else sw
     n = max(int(row["n_pages"] or 1), 1)
     f = 0.55 if int(row["image_pages"] or 0) / n >= 0.4 else 0.40
-    return max(1200, min(6000, round(f * sw)))
+    return max(1, min(6000, round(min(max(1200, f * sw), 0.80 * sw))))
+
+
+def quoted_spans(md):
+    """Quoted spans of >= 4 words (quote budget, wave-1 review)."""
+    return [m.group(1) for m in QUOTE_SPAN.finditer(md) if len(m.group(1).split()) >= 4]
 STRONG = re.compile(r"\b(only|always|never|iff|exactly|all|every|must|cannot|proves|shows)\b", re.I)
 
 
@@ -276,44 +289,59 @@ def _sentences(text):
 
 
 def mandatory_items(md, row=None):
-    """Items the verifier must check one by one (verify.md v2.1, item 3):
-    strength — L0, L1, L2 and intuition-note sentences with a strong word;
-    voice — argumentative units: L3 sentences with quotes, voice tags, objection/reply/asks, or questions;
-    reading-notes — every Reading-notes sentence. L0–L2 items first; capped at 80."""
+    """Mandatory items for the verifier (verify.md v2.2, item 3), in the wave-1 review's priority order:
+    summary (every L0–L2 sentence) → index (Concepts / Canonical-instances lines) → intuition-note →
+    strength (L3 sentences with strong/logical words; worked-example "if" conditions) → reading-notes →
+    voice (argumentative units). Capped at 120; a quote-budget item is added first when > 10 quoted spans."""
     from .checks import sections, split_frontmatter
     _, body = split_frontmatter(md)
     secs = dict(sections(body))
-    chunks = [(s, secs.get(s, "")) for s in ("L0", "L1", "L2")]
-    lines = secs.get("L3", "").splitlines()
-    for i, line in enumerate(lines):
-        if re.match(r"^\s*>?\s*(?:[-*]\s*)?\**\s*Intuition note\b", line, re.I):
-            note = [line]
-            for nxt in lines[i + 1:]:          # blockquote continuation, or plain lines up to a blank line
-                if not nxt.strip() or (line.lstrip().startswith(">") and not nxt.lstrip().startswith(">")):
-                    break
-                note.append(nxt)
-            chunks.append(("intuition note", re.sub(r"^\s*>\s?", "", "\n".join(note), flags=re.M)))
     out, seen = [], set()
 
     def add(kind, where, s):
-        if s not in seen:
+        s = " ".join(s.split()).strip()
+        if s and s not in seen:
             seen.add(s)
             out.append({"kind": kind, "where": where, "text": s})
-    for where, text in chunks:                                     # 1. strength (L0–L2 first)
-        for s in _sentences(text):
-            if STRONG.search(s):
-                add("strength", where, s)
-    rn = list(_sentences(secs.get("Reading notes", "")))          # 3. reading notes (all units)
-    voice = []
-    if row is not None and is_argumentative(row):                  # 2. voice (argumentative units)
-        voice = [s for s in _sentences(secs.get("L3", "")) if VOICE.search(s) and not s.lower().startswith("intuition note")]
-    for s in rn:
+
+    q = quoted_spans(body)
+    if len(q) > QUOTE_BUDGET:
+        add("quotes", "whole digest", f"The digest has {len(q)} quoted spans of 4+ words. "
+            f"Reduce quotations to <= {QUOTE_BUDGET}; paraphrase the rest.")
+    for s_name in ("L0", "L1", "L2"):                                  # 1. summary
+        for s in _sentences(secs.get(s_name, "")):
+            add("summary", s_name, s)
+    for s_name in ("Concepts", "Canonical instances"):                 # 2. index lines
+        for line in secs.get(s_name, "").splitlines():
+            if re.match(r"^\s*[-*]\s+\S", line):
+                add("index", s_name, line.strip(" -*"))
+    l3 = secs.get("L3", "")
+    lines = l3.splitlines()
+    notes = []
+    for i, line in enumerate(lines):                                   # 3. intuition notes
+        if re.match(r"^\s*>?\s*(?:[-*]\s*)?\**\s*Intuition note\b", line, re.I):
+            note = [line]
+            for nxt in lines[i + 1:]:
+                if not nxt.strip() or (line.lstrip().startswith(">") and not nxt.lstrip().startswith(">")):
+                    break
+                note.append(nxt)
+            notes.append(re.sub(r"^\s*>\s?", "", "\n".join(note), flags=re.M))
+    for n_ in notes:
+        add("intuition-note", "L3", n_)
+    l3_plain = l3
+    for n_ in notes:
+        l3_plain = l3_plain.replace(n_, " ")
+    l3_sents = list(_sentences(l3_plain))
+    for s in l3_sents:                                                 # 4. strength / conditions
+        if LOGICAL.search(s) or (re.search(r"\b(example|ex\.)", s, re.I) and re.search(r"\bif\b", s, re.I)):
+            add("strength", "L3", s)
+    for s in _sentences(secs.get("Reading notes", "")):                # 5. reading notes
         add("reading-notes", "Reading notes", s)
-    for s in voice:
-        add("voice", "L3", s)
-    if len(out) > MAX_ITEMS:                                       # keep strength (L0–L2 first), then notes, then voice
-        out = out[:MAX_ITEMS]
-    return out
+    if row is not None and is_argumentative(row):                      # 6. voice
+        for s in l3_sents:
+            if VOICE.search(s):
+                add("voice", "L3", s)
+    return out[:MAX_ITEMS]
 
 
 def _req(kind, fields, content, subs=None):
