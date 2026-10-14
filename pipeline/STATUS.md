@@ -5,7 +5,7 @@
 - **Spent:** $339.94 of $445 cap
 - **Jobs running:** 2 (p2, p2)
 - **All units:** accepted 1032 · p2_submitted 145
-- **Updated:** 2026-10-15 00:04
+- **Updated:** 2026-10-15 00:19
 
 - **Option C (Kunhao):** deep + reference finish on Vertex; Claude Code route parked. Cap $445; GCP budget alert ¥72,000.
 - **Wave 5:** all 145 deep units, 53 works, 2,314 pages · est ≈ $33 (wave-4 rates).
