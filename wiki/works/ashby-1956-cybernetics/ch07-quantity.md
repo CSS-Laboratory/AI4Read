@@ -2,194 +2,176 @@
 id: ashby-1956-cybernetics/ch07-quantity
 work: ashby-1956-cybernetics
 unit: "7 Quantity of Variety"
-pages: 121-139
+pages: 120-139
 fields: [control-theory]
 level: HS
 grounding: primary-text
 digested_by: claude-sonnet-5-5
 digested_on: 2026-10-14
 spec_version: 1.2
-prompt_version: v2.1
+prompt_version: v2.2
 verified: repaired
-verifier_issues: 10
+verifier_issues: 18
 pipeline_version: 0.1
 ---
 # Quantity of Variety
 
 ## L0 — One line
-Cybernetics studies the set of what could happen: the size of that set ("variety"), the restrictions on it ("constraint"), and the fact that a machine acting on a set of states can only keep or lower its variety.
+Cybernetics studies the set of what could happen, measures its size as "variety" (counted in bits), and links laws of nature, objects, predictability and learning to constraint, meaning that a set is smaller than it might be.
 
 ## L1 — The gist (≤ 120 words)
-Ashby asks how to treat "what might happen" exactly. His answer: work with a set of possibilities and measure its variety, either as a count of distinct elements or as log₂ of that count (in bits). Constraint exists when the variety under one condition is smaller than under another. Constraint is present in laws of nature, prediction, objects, machines and learning. A machine's single-valued transformation can never increase the variety of a set of states, and usually reduces it. A uniform change of input tends to reduce it further (the "law of Experience"). This matters because communication and regulation need a set of possibilities, and learning needs constraint.
+Ashby asks how to treat "what might happen" exactly. His answer: consider sets of possibilities. Their size is *variety*, the number of distinguishable elements, or its base-2 logarithm in bits. A *constraint* exists when the variety under one condition is smaller than under another. Laws of nature, objects, predictability and learning all involve constraints. For machines, a single-valued transformation can never increase the variety of a set of states, and usually lowers it. A uniform change of input tends to lower it further, replacing information about initial states with information about the input history (the "law of Experience"). This matters because, Ashby argues, communication and regulation need a set of possibilities, and prediction needs a constraint.
 
-**Prerequisites:** counting combinations; powers and logarithms (base 2 and 10); the idea of a "transformation" mapping each state to one next state (from Part I); vectors as lists of components.
+**Prerequisites:** counting combinations; powers and logarithms; the idea of a state and a single-valued transformation from Part I.
 
 ## L2 — Key ideas (5–10 bullets)
-- Science and cybernetics deal with sets of possibilities, not single events. Statements about a set may be false or meaningless for its members (pp. 121–123).
-- Communication needs a set of possible messages. The information in a message depends on its set (pp. 123–124).
-- Variety is the number of distinguishable elements, or its log₂ in bits. It depends on the observer's powers of discrimination. In bits, independent varieties add (pp. 124, 126).
-- Constraint is a relation between two sets: the variety under one condition is less than under another. It can be slight or severe (pp. 127–128).
-- For vectors, the variety of the set cannot exceed the sum of the component varieties (in logs). Components are independent when it equals the sum. Degrees of freedom express it as an equivalent number of independent components (pp. 128–129).
-- Constraint is very common: laws of nature, objects, predictability, machines, learning. Cybernetics asks why actual behaviour is only part of the possible (pp. 130–134).
-- A single-valued transformation can never increase variety, and usually lowers it. So variety in a set of states decays with time (pp. 134–136).
-- Changing a parameter uniformly across replicate machines tends to lower variety. Input information replaces information about the initial state (the law of Experience) (pp. 137–139).
+- Science and communication refer to sets, not single cases; a statement true of a set may be false or meaningless for its members (pp. 121–124).
+- Variety is the number of distinguishable elements, or its logarithm to base 2 (bits). It is not intrinsic to the set: the observer's powers of discrimination may have to be specified (pp. 124, 126).
+- In bits, independent varieties add (p. 126). The variety of a set of vectors cannot exceed the sum of the components' varieties (p. 128).
+- Constraint is a relation between two sets: the variety under one condition is less than under another (p. 127). Degrees of freedom (the number of independent components that would give the same variety) measure what is left free, in favourable cases (p. 129).
+- Laws, invariants, objects, predictability, machine-likeness and learning all imply or require constraint (pp. 130–134).
+- A single-valued transformation cannot increase a set's variety and usually lowers it, because, in the graph of the transformation, arrows can merge but never split (p. 134).
+- Hence variety decays in an isolated machine, and an observer's uncertainty about the state of an absolute system (a closed single-valued transformation) whose states he cannot observe can only shrink (p. 136).
+- Law of Experience: uniform change of a machine's input parameter tends to push the set's variety down and make states depend less on initial states and more on the input history (pp. 138–139).
 
 ## L3 — Walkthrough
 
-### Opening: why sets (7/1–7/5)
-**7/1–7/2.** Part I considered the actual machine, here and now. Questions of regulation and control need the broader set of what the machine *might* do, with "might" made exact. Part II therefore always considers a set (p. 121). Science also wants generalisations true over many experiments, such as Galileo's pendulum law (p. 121).
+### Sets of possibilities (7/1–7/5)
+- **7/1.** Part II always considers a set of possibilities, with "might" given an exact specification. Regulation and control need this, and it leads to information and communication (p. 121).
+- **7/2–7/3.** Science wants generalisations true across many experiments. Galileo's pendulum law matters because it holds over a great range of space, time and materials (p. 121). Phrases like "the chloride ion" or "the petrol engine" in fact refer to sets (p. 121).
+- **7/3.** Some statements apply only to the set, some only to the individual. Examples (p. 122):
+  - 37% ionised hydrogen iodide: each molecule is either wholly ionised or not.
+  - A majority of M.P.s: meaningless for one member.
+  - A tyre moving west at 50 m.p.h., though the part touching the road is motionless.
+  - "One and a half children" per woman: a dangerous distortion of language; the "half-child" really stands for a set of ten million children.
+- Basic rule: a statement about a set may be true, false or meaningless when applied to its elements (p. 122).
+- **7/4. Probability.** Of 100 village men, 82 are married. The fraction 0.82 is a property of the village, not of any man (pp. 122–123). Saying that any one man has "probability" 0.82 of being married is harmless provided one remembers it is really a statement about the village (p. 123).
+- **7/5. Communication** implies a set of possibilities, more than one (p. 123).
+  - The prisoner's wife is not to be allowed to send any message, but asks to send a cup of coffee. The warder reasons through the possible codes (sweetened or not, spoon or not, tea or coffee) and at each tries to stop it by enforcing a reduction of the possibilities to one: sugar always added, no spoon, only coffee supplied. As soon as the possibilities shrink to one, communication is blocked (pp. 123–124).
+  - So transmission and storage of information are essentially related to a set of possibilities (p. 124).
+  - The information in a message depends on the set it comes from. "I am well" from country A (choice of three messages) differs in information from the same words from country B (the only message allowed) (p. 124).
+  - We must think about "people receiving messages", not about "this message" (p. 124).
 
-**7/3.** Speech often hides this: "the chloride ion…" really refers to all such ions (p. 121). Some statements fit both set and member ("the elephant eats with its trunk"). Others fit only the set:
-- hot hydrogen iodide is 37% ionised, but each molecule is either ionised or not;
-- a majority in Parliament means nothing for one M.P.;
-- a tyre moves west at 50 m.p.h. as a whole, though no single particle moves that way;
-- "one and a half children" per woman is a distortion; it stands for a set of ten million children (p. 122).
-
-Basic point: a statement about a set may be true, false or meaningless when applied to its elements (p. 122). The Cat exercise (six statements) practises this.
-
-**7/4. Probability.** If 82 of 100 village men are married, 0.82 is a property of the village, not of any man. Saying one man has "probability 0.82" of being married is harmless only if remembered as a statement about the village (p. 123). Ashby will use probability with machines in Chapter 9 (p. 123).
-
-**7/5. Communication.** Communication implies a set of possibilities. Example: a prisoner's wife may not send a message, but she may send coffee. The warder removes each possible code channel (sweetened or not, spoon or not, tea or coffee) by forcing one outcome (p. 123). Once the possibilities shrink to one, communication is blocked (p. 124). So transmission and storage of information are essentially tied to a set of possibilities (p. 124).
-
-The information in a message depends on its set. Two wives each get "I am well". Country A lets its prisoner choose among "I am well / slightly ill / seriously ill". Country B allows only "I am well", meaning "I am alive". The two messages carry different information (p. 124). So we must think about "people receiving messages", not "this message" (p. 124).
-
-*Intuition note:* A message tells you something only because other messages were possible. Remove the alternatives and the channel carries nothing.
+*Intuition note.* The information in a message depends on the set of alternatives it comes from. If the possibilities shrink to one, the message loses its power to transmit information.
 
 ### Variety (7/6–7/7)
-**7/6.** Variety of a set = the number of distinguishable elements, ignoring order. The 12-element set c,b,c,a,c,c,a,b,c,b,b,a has variety 3 (p. 124). Counting needs care. A two-armed semaphore has 8×8 = 64 arm positions. A distant observer cannot tell which arm is which, so he distinguishes only 36 (the author's number; unordered pairs, consistent with 8·9/2 (added step)). Variety is thus not an intrinsic property of the set; the observer's discrimination must be specified (p. 124). Nine counting exercises follow (p. 125).
-
-**7/7.** Change of log base: $\log_b N = \dfrac{\log_a N}{\log_a b}$; in particular $\log_2 N = 3.322\,\log_{10} N$ (p. 126).
-
-"Variety" means either (i) the number of distinct elements or (ii) the base-2 log of that number; context says which. In log form the unit is the **bit** (binary digit). Examples: the sexes have 1 bit. The 52 cards have $\log_2 52 = 3.322 \times 1.7160 = 5.7$ bits (p. 126).
-
-Advantage of bits: multiplicative combinations become sums. The farmer (8 breeds) has 3 bits, his wife (sex) 1 bit, together 3 + 1 = 4 bits (p. 126). A set with one element has variety $\log 1 = 0$ (p. 126).
-
-*Intuition note:* One yes/no choice is 1 bit. Counting in bits turns "how many combinations" into "how many yes/no choices", and those simply add.
+- **7/6.** Variety is the number of distinct elements in a set, ignoring order. The set c,b,c,a,c,c,a,b,c,b,b,a has variety 3 (p. 124).
+- It needs care. Two semaphore arms with 8 positions each give 64 combinations. A distant observer cannot tell which arm is which, so he distinguishes only 36 (p. 124). Variety is therefore not intrinsic to the set: the observer's powers of discrimination may have to be specified (p. 124).
+- **7/7.** Change of log base: $\log_b N = \dfrac{\log_a N}{\log_a b}$, so $\log_2 N = 3.322\,\log_{10} N$ (p. 126).
+- "Variety" means either (i) the number of distinct elements or (ii) its base-2 logarithm, in bits (binary digits), as context shows (p. 126).
+  - Sexes: 1 bit.
+  - 52 cards: $\log_2 52 = 3.322\times 1.7160 = 5.7$ bits (p. 126).
+- Advantage of bits: multiplicative combination becomes addition. The farmer (8 breeds) has 3 bits, his wife (sexing) 1 bit, together 3 + 1 = 4 bits. A set with one element has variety $\log 1 = 0$ (p. 126).
 
 ### Constraint (7/8–7/13)
-**7/8.** Constraint is a relation between two sets. It occurs when the variety under one condition is less than under another. Examples: sexes in the human race 1 bit, in an all-boys school 0 bits (p. 127). British traffic lights: three lamps could give 8 combinations if independent, but only 4 are used (red only; red and yellow; green only; yellow only, as tabulated), so constraint is present (p. 127).
+- **7/8.** Constraint is a relation between two sets. It occurs when the variety under one condition is less than under another (p. 127).
+  - Sexes: 1 bit overall, 0 in a boys-only school.
+  - British traffic lights: three lamps, each lit or unlit, would allow 8 combinations. Only 4 occur: (R,Y,G) = (+,0,0), (+,+,0), (0,0,+), (0,+,0). So constraint is present (p. 127).
+- **7/9.** Constraints can be slight or severe. For soldiers in a rank, "no man next to one with the same birthday" is slight. "No man at the left of a taller man" is severe, since it allows (in effect) one order. The intensity shows in the reduction of the number of possible arrangements (pp. 127–128).
+- **7/10.** Ashby says it seems that constraints cannot be classified in any simple way, for they include all cases in which a set, for any reason, is smaller than it might be (p. 128).
+- **7/11.** For vectors (elements with components), constraint occurs when fewer vectors occur than the full independent combination (p. 128).
+  - A set of vectors has several varieties (each component's, and the whole set's), which must be kept apart (p. 128).
+  - The variety of the set cannot exceed the sum of the component varieties (in logarithms). Example: 10 ages, 8 horse-powers, 12 colours give at most $3.3 + 3.0 + 3.6 = 9.9$ bits (p. 128).
+- **7/12.** Components are independent when the set's variety equals the sum of the component varieties (all 960 car types in the example). This statement concerns what is observed in the set and need contain no reference to a cause (pp. 128–129).
+- **7/13. Degrees of freedom** are the number of independent components that would give the same variety (p. 129).
+  - The lights have variety 4. Two independent two-state components give 4. So the three lights have two degrees of freedom (p. 129).
+  - For two-state components, when the variety is a power of 2, the degrees of freedom equal $\log_2$ of the variety (added step; e.g. variety $4 = 2^2$ gives 2).
+  - If all combinations occur, the number of degrees of freedom equals the number of components. If only one occurs, it is zero (p. 129).
+  - The measure works only in favourable cases (3 or 5 combinations give no whole number). It matters chiefly for continuously varying components (p. 129).
 
-**7/9.** Constraints can be slight or severe. For a rank of soldiers, "no man next to a man with the same birthday" is slight. "No man to the left of a taller man" is severe: it allows essentially one order. The intensity shows in the reduction of possible arrangements (pp. 127–128).
-
-**7/10.** Constraints cannot be classified simply; they include every case where a set is for any reason smaller than it might be (p. 128).
-
-**7/11. Vectors.** Often the elements are vectors with components. A common constraint arises when fewer vectors occur than the full product of the component ranges. A set of vectors has several varieties: one per component, and one for the whole set. These must be kept distinct (p. 128).
-
-Invariable relation: the variety of the set of vectors cannot exceed the sum of the component varieties (in logs). Example: a car with 10 ages, 8 horse-powers and 12 colours has at most 3.3 + 3.0 + 3.6 = 9.9 bits (p. 128). (10·8·12 = 960 types, so $\log_2 960 \approx 9.9$ (added step).)
-
-**7/12.** Components are *independent* when the variety of the whole set equals the sum of the (log) component varieties. If all 960 car types occurred in some set, the components would "vary independently" within it. This statement is about what is observed in the set and need not mention any cause (p. 129).
-
-**7/13. Degrees of freedom.** This is the number of independent components that would give the same variety as the set. The traffic lights show variety 4. Two independent two-state components also give 4. So the three lights have two degrees of freedom (p. 129). If all combinations occur, degrees of freedom = number of components; if only one, zero (p. 129). The measure works only in favourable cases; with 3 or 5 combinations no whole number fits. It is mainly useful for continuous components (p. 129).
-
-*Intuition note:* A constraint means the parts do not move freely relative to each other. Degrees of freedom count how many of them still move on their own.
+*Intuition note.* Constraint means "fewer things happen than could". Degrees of freedom express the leftover freedom as a count of free dials.
 
 ### Importance of constraint (7/14–7/21)
-**7/14.** When a constraint exists, advantage can usually be taken of it. Shannon's work (Chapter 9) estimates the variety under full independence, shows that constraints ("redundancy") exist, and shows that they allow more efficient use of a channel (p. 130).
+- **7/14.** When a constraint exists, advantage can usually be taken of it. Most of Shannon's work (discussed chiefly in Chapter 9) is directed to estimating the variety that would exist under full independence, showing that constraints (there called "redundancy") exist, and showing how their existence makes possible a more efficient use of the channel (p. 130).
+- **7/15. Laws of nature.** An invariant over a set of phenomena implies a constraint. Every law of nature implies an invariant, so every law of nature is a constraint (p. 130). Newton's law excludes many possible positions and velocities of planets (pp. 130–131). Science looks for constraints. Cybernetics looks at the whole set of possibilities and asks why actual behaviour is restricted to part of it (p. 131).
+- **7/16. Object as constraint.** A free body has six degrees of freedom. Four separate chair legs have 24. Joined, they have the six of one object. If three legs' positions are known, the fourth's follows. The chair's being a unity corresponds to the constraint (p. 131).
+- **7/17.** The world is rich in constraints, so familiar that we take them for granted. A world without constraints would be totally chaotic. Ashby says it will later (S.13/5) be suggested that the organism can adapt just so far as the real world is constrained (pp. 131–132).
+- **7/18. Prediction.** That something is predictable implies a constraint. An aircraft is constrained by continuity, by its design and by its pilot, and a predictor is useful only to that extent (p. 132).
+- **7/19. Machine as constraint.** A protocol (record of behaviour) with no constraint would be chaotic, like a roulette wheel. When it shows the machine-like constraint, the observer can take advantage of it by recoding the protocol compactly as (i) the transformation and (ii) the input actually given (p. 132).
+- **7/20.** Further constraints can be applied to determinate machines (one basin, irreducible, etc.). Continuity is a common and powerful constraint: the continuous function can change at each step only to a neighbouring value (p. 133).
+- **7/21. Learning.** Pavlov gave only 4 of the 8 possible combinations of thermal stimulus, tactile stimulus and reinforcement (+++, +−−, −++, −−−). The restriction was essential, otherwise there would be nothing to learn (p. 133). In association learning (A→2, B→5, C→3), without constraint A would be followed equally by 2, 3 or 5. Learning is possible only to the extent the sequence shows constraint. A maze must keep the same pattern from day to day during the period of learning. Learning is worth while only when the environment shows constraint (p. 134).
 
-**7/15. Laws of nature.** An invariant over a set of phenomena implies a constraint, since the full range does not occur. Every law of nature implies an invariant, so every law of nature is a constraint (p. 130). Example: the Newtonian law admits only a smaller set of planetary positions and velocities than could be written on paper; it excludes many (p. 130). Science looks for laws and so for constraints. Cybernetics looks at the totality of possibilities and asks why actuality is restricted to part of it (p. 131).
-
-**7/16. Object as constraint.** A free body in 3-D space has six degrees of freedom. Four separate chair legs have 24; joined into a chair, they have only 6. If three legs' positions are known, the fourth follows. The chair's being a "thing", a unity, corresponds to the presence of this constraint (p. 131).
-
-**7/17.** The world is rich in constraints, mostly taken for granted. Without them it would be totally chaotic. Ashby says it will be suggested later (S.13/5) that the organism can adapt just so far as the real world is constrained, and no further (pp. 131–132).
-
-**7/18. Prediction.** Predictability implies a constraint. An aircraft that could jump from any point in the sky to any other could not be predicted. Prediction is useful only because of constraints: continuity, the individuality of design, the pilot's individuality (p. 132).
-
-**7/19. Machine.** The concept of a machine, from inspecting a protocol (S.6/5), comes from recognising that the protocol shows a particular form of constraint. Without it the protocol would look chaotic, like a roulette wheel (p. 132). The observer exploits it by recoding the protocol into (i) the transformation and (ii) the actual input (p. 132).
-
-**7/20.** Further constraints may be imposed on determinate machines (a certain set of states as operands, only one basin, not reducible). Continuity is a powerful one: a continuous function can change at each step only to a neighbouring value (p. 133).
-
-**7/21. Learning.** Pavlov presented only four of eight possible combinations of thermal stimulus, tactile stimulus and reinforcement (the table on p. 133). The restriction was essential, since otherwise there would be nothing particular to learn (p. 133). Likewise, if the pairs A2, B5, C3 were unconstrained, A would be followed equally by 2, 3 or 5, and no association could form. Learning is possible only to the extent that the sequence shows constraint. A maze must keep the same pattern from day to day. Learning is worth while only when the environment shows constraint (p. 134).
+*Intuition note.* Prediction and learning are possible only because some possibilities are ruled out. If everything were possible every time, nothing could be learned.
 
 ### Variety in machines (7/22–7/25)
-**7/22.** Take $Z:\ A\to B,\ B\to C,\ C\to C$. Applied to the set B B A C C C A A B A, it gives C C B C C C B B C B: variety falls from 3 to 2. A further application gives all C's, with variety 1 (p. 134). A set under a single-valued transformation can never increase in variety and usually falls. In the transformation's graph, a confluence of arrows (two states going to one) can occur, but a divergence cannot. Whenever two states go to one, variety is lost, and nothing restores it (p. 134).
+- **7/22.** Transformation $Z: A\to B,\ B\to C,\ C\to C$ applied to B B A C C C A A B A gives C C B C C C B B C B. Variety falls from 3 to 2; applying Z again gives all C, variety 1 (p. 134).
+  - A set operated on by a single-valued transformation can never increase in variety, and usually falls (p. 134).
+  - Reason: in the graph, a confluence of arrows can occur but a divergence cannot. Variety lost when two states become one is never restored (p. 134).
+  - The transformation need not be closed. $Y: A\to p,\ B\to q,\ C\to p$ gives q q p p p p p p q p, variety falling. Variety is unchanged only when the transformation is one-one over the letters that actually occur (p. 135).
+- **7/23. Set and machine.** A real machine is in one state at a time. A set of states is considered because (p. 136):
+  - the "machine" may be a set of replicates;
+  - one machine at several times;
+  - a theoretician who does not know the state traces out all possibilities, "the set of what may exist". Ashby calls this typically cybernetic.
+- **7/24. Decay of variety.** With a set of states and one single-valued transformation, variety cannot increase and will usually diminish (p. 136). Three points of view:
+  - It makes precise the remark that a system left to itself runs to equilibrium (p. 136).
+  - An observer who knows an absolute system's transformation but cannot observe its states can only become less uncertain about its state. In the extreme case of one basin and one equilibrium he ultimately knows the state with certainty (p. 136).
+  - If the variety in the possible states is associated with information, the information stored in a system's state can only diminish. Coffee that is hot, tepid or cold carries one of three messages; after a long time it is only "cold" (p. 137).
+- **7/25. Law of Experience.** This considers a machine with input: one parameter P that changes only at long intervals, observed over many replicates (p. 137).
+  - Hold P at $P_1$: variety falls to a minimum. In the example, all start states end at equilibrium D or E, so variety is 2 (p. 138).
+  - Change P uniformly to $P_2$. In the example D goes to E, E goes to B, and then all come to B: variety 0. A uniform change cannot increase the variety, whether or not D and E are equilibria (p. 138).
+  - The condition that the change $P_1\to P_2$ may lead to a further fall is that two or more of $P_1$'s equilibria lie in the same $P_2$ basin. Looser statement: a uniform change at the inputs of a set of transducers tends to drive the set's variety down (p. 138).
+  - Consequently the state at a given moment tends to depend less on a transducer's individual initial state and more on the sequence of input values (p. 138).
+  - The same holds for one transducer on a series of occasions, provided the various initial times are brought into proper correspondence. The longer a standardised input routine, the more certain it is that the machine will be brought to a standard state, though the experimenter may be unable to name it (p. 139).
+  - Mere equality of the set's parameter at each step is not sufficient. The parameters must undergo actual, non-zero change (p. 139).
+  - The theorem does not depend on system size. Ashby suggests it may be applicable to the brain and to social and economic systems. Boys from the same school possibly show it, but this is left for further research (p. 139).
+  - Name: law of Experience. Information put in by change at a parameter tends to destroy and replace information about the system's initial state (p. 139).
 
-The transformation need not be closed. With $Y:\ A\to p,\ B\to q,\ C\to p$, variety also falls. Variety is unchanged only when the transformation is one-one over the letters that actually occur, which is a very special case (p. 135). Exercise 6 asks the reader to show that a random transformation on a large number of states lowers variety to about 1 − 1/e of its value at the first step, i.e. about two-thirds (p. 135).
+*Intuition note.* A transformation can merge states but never split one, so a population of states can never become more varied, and usually becomes less so. Feeding the same changing input to all of them tends to make them forget where they started.
 
-**7/23. Set and machine.** A real machine is in only one state at a time. A set of states can still arise in three ways: from replicates ("the white rat"); from one machine at several times; or by a theoretician who does not know the state and traces all possibilities. The last treats the actual within the wider set of the possible, which is typically cybernetic (pp. 135–136).
-
-**7/24. Decay of variety.** From 7/22, as time passes the variety in a set of states under one single-valued transformation cannot increase and will usually diminish (p. 136). Ashby gives three readings.
-1. It makes precise the vague remark that a system "left to itself runs to some equilibrium". Ashby says the second law of thermodynamics is often irrelevant here (p. 136).
-2. An observer who knows the transformation of an absolute system but cannot observe its state grows only less uncertain about the state as time goes on. In the extreme case of one basin and one equilibrium he can end up certain without observing it (p. 136).
-3. If variety of states stores information, stored information can only diminish. A coffee that is hot, tepid or cold can carry one of three messages satisfactorily if the time between despatch and receipt is short, but not if it is long; after a long time the state is "cold" whichever message was sent (pp. 136–137).
-
-*Intuition note:* If two different states can lead to the same next state, you can no longer tell them apart afterwards. A single-valued transformation cannot split one state into two, so the distinctions it merges are lost, and nothing in it restores them.
-
-**7/25. Law of Experience.** Now a machine with an input parameter $P$ that changes only at long intervals. Take many replicates, identical in their transformations but in different states, all with the same $P$ (p. 137). Their variety falls to a minimum under the current value $P_1$. Then $P$ is changed to $P_2$, uniformly and simultaneously over the whole set. The graph of the machine changes (the graph is not reproduced here; the example is described in the text). Under $P_1$, states A, B, D go to D and states C, E, F go to E, so variety falls to 2 states. Under $P_2$, those at D go to E, and those at E go to B. Continuing under $P_2$, both groups reach B and variety falls to zero (p. 138).
-
-Results:
-- A uniform parameter change cannot increase the set's variety, whether or not D and E are equilibria (p. 138).
-- It makes possible a fall to a new, lower minimum. The condition is that two or more of $P_1$'s equilibria lie in the same $P_2$ basin (p. 138).
-- In looser words: a uniform change at the inputs of a set of transducers tends to drive the set's variety down (p. 138).
-- The system's state then depends less on its individual initial state and more on the sequence of input values (p. 138).
-- The same holds for one transducer on a series of occasions, if the initial times are brought into proper correspondence. A longer standard input routine makes it more certain that the machine reaches a reproducible state, though the experimenter may not be able to name it (pp. 138–139).
-- Equal parameter values at each step are not enough; the parameters must undergo actual, non-zero change (p. 139).
-- The theorem does not depend on system size. Ashby suggests it may be usefully applicable to the brain and to social and economic systems. He suggests schools making boys alike as a possible example, leaving the extent to further research (p. 139).
-
-He names this the **law of Experience**: information put in by change at a parameter tends to destroy and replace information about the system's initial state (p. 139).
-
-*Intuition note:* A shared input tends to push many different states toward common destinations, and so tends to wipe out differences. What is left is the record of the inputs, not of the starting point.
-
-## Toy example (our own)
-Four states $\{a,b,c,d\}$, so variety = 4 = $\log_2 4 = 2$ bits.
-
-Transformation $T_1$: $a\to a,\ b\to a,\ c\to c,\ d\to c$ (two equilibria, $a$ and $c$).
-- Apply $T_1$ to the set: $a\to a$, $b\to a$, $c\to c$, $d\to c$ gives $\{a,c\}$. Variety 2 = 1 bit. Further $T_1$ changes nothing, so this is the minimum under $T_1$.
-
-Now change the parameter to $T_2$: $a\to b,\ b\to c,\ c\to c,\ d\to c$. Both equilibria $a$ and $c$ of $T_1$ lie in the same $T_2$ basin (that of equilibrium $c$).
-- Step 1: $a\to b$, $c\to c$ gives $\{b,c\}$. Variety 2, no increase.
-- Step 2: $b\to c$, $c\to c$ gives $\{c\}$. Variety 1 = 0 bits.
-
-Result: variety went 2 bits → 1 bit → 0 bits. No step increased it. The change of transformation allowed a lower minimum, because two $T_1$-equilibria shared a $T_2$ basin. The final state $c$ now depends on the input sequence ($T_1$ then $T_2$), not on the starting state.
+## Toy example (ours, not from the text)
+Three switches, each on (1) or off (0). Allowed settings (an invented rule): 000, 011, 101, 110.
+- Independent switches would give $2^3 = 8$ settings $= 3$ bits. Only 4 occur $= 2$ bits. Since $2 < 3$ bits, there is a constraint. Two independent switches give the same variety 4, so degrees of freedom $= 2$ (as with the traffic lights).
+- Now six states 1–6 with transformation $T: 1\to2,\ 2\to3,\ 3\to3,\ 4\to3,\ 5\to6,\ 6\to6$.
+  - Start with the set {1,2,3,4,5,6}: variety 6, about $\log_2 6 = 2.585$ bits.
+  - After one step: {2,3,3,3,6,6} = {2,3,6}, variety 3 (1.585 bits).
+  - After two steps: {3,3,3,3,6,6} = {3,6}, variety 2 (1 bit).
+  - After three steps: still {3,6}.
+  - The variety never rose, because T never sends one state to two places. It fell because 2, 3, 4 merge into 3 and 5, 6 merge into 6.
 
 ## Concepts
-- [[set-of-possibilities]] (new) — the collection of what might occur, to which cybernetic statements refer (p. 121)
-- [[variety]] — number of distinguishable elements in a set, or its log₂; relative to the observer's discrimination (pp. 124, 126)
-- [[bit]] (new) — unit of log₂ variety; independent varieties add (p. 126)
-- [[constraint]] (new) — relation between two sets: the variety under one condition is smaller than under another (p. 127)
-- [[independence-of-components]] (new) — variety of vector set equals the sum of component (log) varieties (p. 129)
-- [[degrees-of-freedom]] (new) — number of independent components giving the same variety as the set (p. 129)
-- [[invariant]] (new) — what stays unchanged over a set; implies a constraint (p. 130)
-- [[machine-as-constraint]] (new) — a machine-like protocol is one showing a characteristic constraint (p. 132)
-- [[decay-of-variety]] (new) — under a single-valued transformation, variety of a set of states cannot increase and usually falls (p. 136)
-- [[law-of-experience]] (new) — uniform parameter change tends to replace information about initial state by information about input (p. 139)
-- [[information]] — depends on the set a message comes from, not on the message alone (p. 124)
-- [[equilibrium]] — state a transformation leaves fixed; variety decay turns "runs to equilibrium" into a precise claim (p. 136)
+- [[variety]] — number of distinguishable elements of a set, or its log base 2 in bits; relative to the observer (pp. 124, 126)
+- [[bit]] (new) — unit of logarithmic variety; 1 bit = variety of two elements (p. 126)
+- [[set-of-possibilities]] (new) — the set that science and communication really refer to, rather than a single case (pp. 121, 123)
+- [[constraint]] (new) — relation between two sets: variety under one condition is less than under another (p. 127)
+- [[independence-of-components]] (new) — set variety equals the sum of component varieties (log form) (p. 128)
+- [[degrees-of-freedom]] (new) — number of independent components giving the same variety, in favourable cases (p. 129)
+- [[redundancy]] (new) — the name used in Shannon's work for constraints (p. 130)
+- [[decay-of-variety]] (new) — single-valued transformation never raises variety, usually lowers it (pp. 134, 136)
+- [[law-of-experience]] (new) — uniform input change tends to lower the set's variety and replace initial-state information (p. 139)
+- [[state]] — used for the machine's condition; a set of states is the operand set for a transformation (p. 136)
 
 ## Canonical instances
-- [[prisoner-coffee-message]] — communication blocked when the possible variants are cut to one (pp. 123–124)
-- [[two-wives-i-am-well]] — same words, different information, due to different sets (p. 124)
-- [[two-armed-semaphore]] — variety 64 vs 36 depending on the observer (p. 124)
-- [[british-traffic-lights]] — 4 of 8 combinations used; two degrees of freedom (pp. 127, 129)
-- [[chair-as-constraint]] — 24 → 6 degrees of freedom makes a "thing" (p. 131)
-- [[aircraft-prediction]] — prediction is useful only because movement is constrained (p. 132)
-- [[pavlov-learning-constraint]] — 4 of 8 stimulus combinations; learning needs constraint (p. 133)
-- [[transformation-Z-variety-fall]] — variety falls 3 → 2 → 1 under repeated $Z$ (p. 134)
-- [[parameter-change-ABCDEF]] — worked case behind the law of Experience (p. 138)
+- [[prisoner-coffee-message]] — communication needs a set of possibilities; the warder tries to reduce it to one (pp. 123–124)
+- [[british-traffic-lights]] — 4 of 8 combinations: constraint, 2 degrees of freedom (pp. 127, 129)
+- [[two-arm-semaphore]] — variety is 36, not 64, for a distant observer (p. 124)
+- [[chair-legs-degrees-of-freedom]] — 24 degrees of freedom reduced to 6 by joining (p. 131)
+- [[pavlov-four-of-eight]] — learning needs the stimulus set to be constrained (p. 133)
+- [[coffee-cooling-information-loss]] — stored information decays as the state runs to "cold" (p. 137)
 
 ## Bridges (candidates)
-- [structural-analogy] variety loss under many-to-one maps ↔ information theory: data-processing loss when a function merges source symbols — merging states loses distinctions.
-- [structural-analogy] constraint as reduction below full-independence variety ↔ information theory: redundancy — Ashby links it to Shannon's term (p. 130).
-- [structural-analogy] decay of variety to equilibrium ↔ dynamical systems: trajectories contract onto attractors (basins, equilibria).
-- [metaphor] law of Experience ↔ learning/adaptation: inputs overwrite initial conditions, as with school influence on pupils.
-- [structural-analogy] constraint needed for learning ↔ prediction/regulation: only a constrained environment can be predicted or adapted to.
+- [structural-analogy] constraint as reduction of variety ↔ information theory: redundancy (Ashby links them himself, p. 130)
+- [structural-analogy] decay of variety under a single-valued map ↔ dynamical systems: trajectories merging into attractors or basins
+- [structural-analogy] law of Experience ↔ state estimation: a system forgets its initial state and the state tracks the input history
+- [metaphor] chair as "one thing" because of constraint ↔ degrees of freedom in mechanics: joining parts reduces freedom
 
 ## Questions this raises
-- How is the information in a message measured in numbers once variety is a log of a count (Ashby promises Chapter 9)?
-- If variety can only fall inside an isolated machine, how can a system keep variety, or gain it, when it has inputs?
-- How are "constraint in the environment" and "what the organism can adapt to" related (S.13/5)?
-- Does variety stay well defined for continuous quantities, where degrees of freedom replace counting?
+- If variety depends on the observer's discrimination, how should we choose the observer when studying a real system?
+- If variety can only fall in an isolated machine, how can a regulator keep variety low in the face of outside disturbances?
+- How does the law of Experience work when the input changes are not uniform across the replicates?
+- What does it mean for a regulator or learner to "take advantage" of a constraint?
 
 ## Exercises worth doing
-- Ex. 7/6/2 (p. 125) — farmer and wife, breeds × sexes; variety of combined discriminators — easy
-- Ex. 7/7/5–6 (p. 126) — variety of yes/no questions; objects distinguished by twenty — easy
-- Ex. 7/12/2 (p. 129) — does a set of four vectors show constraint? — easy
-- Ex. 7/13/1 (p. 129) — degrees of freedom of a stock showing all combinations — easy
-- Ex. 7/24/3 (p. 137) — one-one parlour trick retains variety — medium
-- Ex. 7/22/6 (p. 135) — random map lowers variety to about 1 − 1/e of the original — hard
+- Ex. 7/6/3 (p. 125) — variety when only the pattern of lights, not position, can be seen — difficulty: easy
+- Ex. 7/7/6 (p. 126) — twenty Yes/No questions and the number of objects distinguishable — difficulty: easy
+- Ex. 7/7/7 (p. 126) — variety of all single-valued transformations on six states — difficulty: medium
+- Ex. 7/13/1 (p. 129) — degrees of freedom of a second-hand car dealer's stock — difficulty: easy
+- Ex. 7/22/5 (p. 135) — variety in a thermostatically controlled bath compared with the room — difficulty: easy
+- Ex. 7/22/6 (p. 135) — random transformation: variety falls to about two-thirds (the hunters and deer hint) — difficulty: hard
 
 ## Reading notes
-- Printed page numbers are not in the labels, but visible at the foot of each page in the text layer and images. Printed page = 121 for pdf 66. Each later pdf page is a two-page spread: pdf 67 = pp. 122–123, pdf 68 = 124–125, pdf 69 = 126–127, pdf 70 = 128–129, pdf 71 = 130–131, pdf 72 = 132–133, pdf 73 = 134–135, pdf 74 = 136–137, pdf 75 = 138–139. Unit metadata suggested (pdf N); printed numbers are used here. Left/right placement was inferred from the column order of the text layer.
-- OCR errors: "subjects c information" (7/1, "of"); "E. cold" (7/6 Ex. 4, "E. coli"); "Constrain in vectors" (7/11 heading, "Constraint"); "Ex. 7/6/s" (7/7 Ex. 2, "7/6/5"). On p. 127 the sentence introducing the traffic-light table says '"1" unlit', but the table itself uses 0 for unlit; the legend presumably should read "0".
-- The graph of the A–F machine on p. 138 is garbled in the text layer, so only Ashby's verbal description of the transitions is reported.
-- The traffic-light table and the cars' 960 types are kept as printed; the detailed four combinations are given in Ashby's table on p. 127.
-- Solutions are not printed; none are given here.
+- The pages come as spreads. The printed page numbers (120–139) are visible in the labels and in the images of pp. 126, 127, 134, 135.
+- No page image was supplied for pdf 66 (pp. 120–121) or for the pages 128–133 and 136–139, so those were read from the text layer only. The text layer of pdf 66 shows the chapter heading and 7/1–7/3 followed by the number "121", so I cite 7/1–7/3 as p. 121 (7/3 continues on p. 122).
+- In the traffic-light table (p. 127) the text says "1" means unlit, but the table itself uses 0. This is probably a misprint.
+- The two-state graph of the 7/25 example (states A–F under $P_1$ and $P_2$) is garbled in the text layer and had no image; I report only what the prose states about it.
+- The text layer of exercise 7/6/4 (p. 125) reads "E. cold"; this looks like a scanning error or misprint, but no page image was supplied to check, so I did not use it.
+- Chapter 9, S.13/5 and S.13/7 are mentioned but not covered here.

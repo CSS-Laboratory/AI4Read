@@ -1,240 +1,281 @@
 ---
 id: ashby-1956-cybernetics/ch08-transmission
 work: ashby-1956-cybernetics
-unit: "8 Transmission of Variety"
-pages: 140–160
+unit: 8 Transmission of Variety
+pages: 140-160
 fields: [control-theory]
 level: HS
 grounding: primary-text
 digested_by: claude-sonnet-5-5
 digested_on: 2026-10-14
 spec_version: 1.2
-prompt_version: v2.1
+prompt_version: v2.2
 verified: repaired
-verifier_issues: 11
+verifier_issues: 18
 pipeline_version: 0.1
 ---
-# Transmission of Variety (Ashby, ch. 8)
+# Transmission of Variety
 
 ## L0 — One line
-In a determinate machine (one whose next state is fixed by its present state and inputs), variety (the number of distinguishable states in a set) is passed on in an orderly, quantifiable way. A system can gain at most the variety of its driver (the system that acts as its parameter) per step, so a channel's capacity limits how fast variety passes through it.
+In a determinate machine, a set of possibilities passes orderly from system to system through coding; it is lost only when the coding merges distinct messages, and it moves through a channel at a rate bounded by the channel's number of states.
 
 ## L1 — The gist (≤ 120 words)
-Ashby asks how variety (a set of distinguishable possibilities) passes through machines. A determinate machine that loses no distinctions acts as a one-one code, and a decoding machine can always be built for it, whatever it is made of. Variety belongs to sets, not to one message, or one machine at one moment. A driven system can gain at most its driver's variety per step. So a channel with r states passes at most log₂r bits per step, and more steps can make up for smaller capacity. Delay appears when some parts lack immediate effect. In a determinate system, feedback gives no regenerative increase of variety. Messages can share a channel without destroying each other.
+Ashby asks how a set of possibilities (variety) is carried through a machine that codes it. A coding can be undone exactly only if it is one-one, and then variety is unchanged. For a coder that loses no distinctions an inverting machine can always be built; if made of similar parts, it seems to be of the same order of size. Between systems, the receiver gains at most the sender's variety in one step, and a channel of r states carries at most log₂r bits per step; a longer sequence compensates a smaller channel. Feedback in a determinate system does not regeneratively increase variety. Two messages can share one channel without destroying each other if no variety is lost.
 
-**Prerequisites:** variety as the logarithm (base 2) of the number of distinguishable states (ch. 7, not reproduced here); a transformation as a rule mapping each state to a next state; "one-one" mapping; vectors as lists of components; basic algebra for solving an equation for a parameter.
+**Prerequisites:** sets and one-one (injective) mappings; the idea of a transformation of states; logarithms base 2; the notion of "variety" from Ch. 7 (a set of possibilities, measured logarithmically); "determinate" means each state, under a given input, has exactly one next state.
 
 ## L2 — Key ideas (5–10 bullets)
-- A code is a transformation whose operand is the whole message. A message set can be recovered exactly only if the coding is one-one, and one-one coding leaves variety unchanged (pp. 141–142).
-- A machine with input (a "transducer") codes messages, so it acts as a coder. It is a perfect coder exactly when, in each column of its transition table, all next-states differ (pp. 143–146).
-- If a determinate transducer loses no distinctions, an automatic inverter (a machine that turns the coder's output back into the original message) can always be built from the coder plus a delayer (a machine that repeats its input one step later). This does not depend on the physical material (pp. 147–149).
-- It seems that, if the inverter is made of components similar to the transducer's, it is of the same order of size. So coding added by one transducer is often or usually within the decoding powers of another of similar size, and effects passing through a complex system need not be hopelessly tangled (p. 151).
-- Variety exists only in a set, never in one message or envelope, nor in one machine at one moment (p. 152).
-- Fundamental law: a driven system U gains at one step no more variety than the driving system T has, and further gain stops once that is reached. Pairings of T-states with U-states matter (pp. 152–154).
-- A channel with r states passes at most log₂r bits per step. Over enough steps any channel can transmit any amount, because a sequence is a vector, and a vector's variety can exceed that of a component (pp. 154–156).
-- Delay is expected when parts of the sender lack immediate effect on the receiver (pp. 156–157).
-- In a determinate system, feedback does not regeneratively increase variety (p. 157). Two messages can share one channel without destruction if no variety is lost and the mechanism is determinate (pp. 158–159).
+- Coding is ubiquitous: one message passes through many physical forms (a gale warning goes through at least sixteen) and something is preserved through all of them (p. 140–141). Repeated codings may be much simpler than they look (p. 141).
+- A coding is a transformation of whole messages. It can be decoded with certainty only if it is one-one, and a one-one coding leaves variety unchanged (p. 141–142).
+- A transducer (a machine whose next state depends on its present state and its input) is a perfect coder exactly when, in each column of its table, all states differ; it fails when two different messages can give the same output. This is different from merely lacking the decoder (p. 146).
+- If a determinate transducer loses no distinctions, an automatic inverter (a machine that decodes the coder's output) can always be built from the coder's table or equations plus a delayer (a device that repeats its input one step later), whatever its material (p. 147–151).
+- It seems that an inverter made of similar components is of the same order of size as the coder, so the complications of a coding are often or usually within the decoding powers of a similar-sized transducer (p. 151).
+- Variety exists only in a set, never in one transducer at one moment. Fundamental law: a receiver U gains at one step at most the variety of its dominating system T (a system that acts as input to U and has no input itself) (p. 152–153).
+- A channel of r states transmits at most log₂r bits per step. Transmitted variety grows with capacity × steps, so "given long enough, any transducer can transmit any amount of variety" (p. 154–155).
+- Delay arises when part of the sender has no immediate effect on the receiver (p. 156). In a determinate system, feedback does not regeneratively increase variety (p. 157).
+- Two messages may share one channel without destroying each other, provided no variety is lost and the mechanism is determinate (p. 158–159).
 
 ## L3 — Walkthrough
 
-### 8/1 Aim (p. 140)
-The chapter studies how a *set of possibilities* at a machine's input is related to the set at its output, usually in coded form. If the machine is determinate (its next state is fixed by its present state and inputs), the transmission is "perfectly orderly and capable of rigorous treatment". The aim is to understand coding well enough to later consider the very complex codings used by the brain (p. 140).
+### 8/1–8/2. Aim and ubiquity of coding (p. 140–141)
+Ch. 7 introduced variety, a concept "inseparable from" information, and the importance of seeing that one deals with a set of possibilities (p. 140). Ch. 8 studies how such a set at a machine's input relates to the set, usually coded, at its output. If the machine is determinate, the transmission is "perfectly orderly" and open to rigorous treatment. The aim is an understanding good enough to serve as a basis for considering the extremely complex codings used by the brain (p. 140).
 
-### 8/2 Ubiquity of coding (pp. 140–141)
-Ashby follows a broadcast "Gale warning". It is a pattern in the meteorologist's nerve cells, then muscle movements, ink marks, light on the announcer's retina, nerve impulses, speech movements, air waves, electrical potentials, radio waves, a pattern in the receiver, air waves again, the listener's ear and auditory nerve. Even this brief account lists at least sixteen major transformations through which something is preserved while appearances change greatly (pp. 140–141).
+Ashby follows a broadcast "Gale warning". It passes through nerve patterns, muscle movements, ink marks, light on a retina, air waves, electrical potentials, ether waves and the listener's ear and auditory nerve. This brief account mentions at least sixteen major transformations, and something is preserved through all of them (p. 140–141).
 
-### 8/3 Complexity of coding (p. 141)
-Repeated coding may be much less complex than it looks. If a simple one-one coding of the alphabet is applied to a message, then to its coded form, and so on many times, the final form differs from the original only as much as one single one-one coding would. So one operation turns it back (p. 141). The author also suggests cutting a pack of cards many times and then asking how much order has been lost (p. 141).
+### 8/3. Complexity of coding (p. 141)
+Repeated coding may add much less complexity than it seems to. If a simple one-one coding of the alphabet is applied repeatedly, the final form differs from the original only as much as one single one-one coding would make it. One operation therefore restores the message (p. 141). The card-cutting exercise on the same page asks how much order cutting a pack many times actually destroys.
 
-### 8/4 De-coding (pp. 141–142)
-- "Code" must not be read narrowly. Codes may work on letters in pairs (Playfair), rearrange letters, or be wholly arbitrary (e.g. "two divisions will arrive" → "Arthur"). So the operand of the coding transformation is the whole message: $U: M_1, M_2, M_3,\dots \mapsto C_1, C_2, C_3,\dots$ (p. 141).
-- A key-word or similar factor acts as a *parameter* (a quantity that selects which transformation applies). It gives as many codings $U_1, U_2, \dots$ as it has values (p. 142).
-- **Decoding** applies a transformation $V: C_i \mapsto M_i$. $V$ is the inverse of $U$, written $U^{-1}$. In general, only one-one transformations have single-valued inverses (p. 142).
-- If $M_i$ is to be recoverable for every $i$, both $U$ and $U^{-1}$ must be one-one. If $M_i$ and $M_j$ both gave $C_k$, the receiver could not tell which was sent (p. 142).
-- A set of messages of variety $v$ sent through a one-one $U$ gives coded forms of variety $v$: variety is not altered by one-one coding. So messages of variety $v$ passing through several codes in succession, and uniquely restorable, require a process that preserves variety at every stage (p. 142).
+### 8/4. De-coding (p. 141–142)
+"Code" must not be read too narrowly. Playfair codes act on pairs of letters, some codes rearrange letters, and some are arbitrary (for example, a whole phrase about divisions arriving becomes the single word "Arthur"). So the operand of the coding transformation is the whole message (p. 141):
+$$U:\ \begin{matrix} M_1 & M_2 & M_3 & \dots\\ \downarrow & \downarrow & \downarrow & \\ C_1 & C_2 & C_3 & \dots\end{matrix}$$
+A coding is specified by a transformation. A key-word acts as a parameter, giving one transformation $U_1,U_2,\dots$ per value of the key (p. 142).
 
-*Intuition note:* A code you can undo must keep different messages different. If two messages collapse into one signal, no decoder can separate them again.
+Decoding applies a transformation $V$ that restores $M_i$ from $C_i$. $V$ is the inverse of $U$, written $U^{-1}$. In general, only one-one transformations have single-valued inverses (p. 142).
 
-### 8/5 Coding by machine (pp. 143–144)
-- Such questions matter for the brain and for "instrumentation" (getting information from an inaccessible place such as a furnace interior or a working heart). Shannon and Wiener showed that general laws hold over all such instruments (p. 143).
-- A machine with input is the same as Shannon's "transducer": a system whose next state is determined by its present state and the present values of its parameters. Shannon's finite internal memory is ignored for now (p. 143).
-- A "message" is a succession of states that is both the output of one system and the input of another (p. 143). Meaning is ignored.
-- **Example:** four states A, B, C, D and parameter values Q, R, S. Columns give the present state, rows the parameter value, entries the next state (p. 144):
+If every $M_i$ is to be recoverable from $C_i$, both $U$ and $U^{-1}$ must be one-one. Otherwise, if $M_i$ and $M_j$ both go to $C_k$, the receiver of $C_k$ cannot tell which was sent (p. 142). A set of messages with variety $v$ coded by a one-one $U$ gives coded forms of variety $v$ too. So a chain of codes that is uniquely restorable must preserve variety at every stage (p. 142).
 
-| | A | B | C | D |
+*Intuition note:* A code is safe to reverse only if no two messages ever end up looking the same. Then the number of distinct possibilities stays the same, even if they look very different.
+
+### 8/5. Coding by machine (p. 143–145)
+Ashby links this to "instrumentation", which means getting information out of inaccessible places such as a furnace or a working heart. He says that, after the pioneer work of Shannon and Wiener, it is known that certain general laws hold over all such instruments (p. 143).
+
+A machine with input is a system with a closed single-valued transformation for each value of a set of parameters. This is identical with Shannon's "transducer", whose next state depends on its present state and the present parameter values. Shannon's finite internal memory is ignored here and taken up later (p. 143). A "message" is a succession of states, the output of one system and the input of another. Meaning is ignored (p. 143–144).
+
+**Example (p. 144).** The transducer has states A, B, C, D and parameter values Q, R, S:
+
+| ↓ | A | B | C | D |
 |---|---|---|---|---|
 | Q | C | C | A | B |
 | R | A | C | B | B |
 | S | B | D | C | D |
 
-- Start at B with input R: B → C. Then input Q: C → A (p. 144).
-- With initial state B and input sequence R Q R S S Q R R Q S R, the output sequence is B C A A B D B C B C C B (p. 144).
-- Given the transducer, initial state and input sequence, the trajectory is easy to find. The arbitrary-jump example is representative: more states and a passage to the limit of continuity make it natural (p. 144).
+Starting at B with input R gives C. Then input Q gives A, so the trajectory begins B, C, A. For initial state B and input sequence R Q R S S Q R R Q S R, the output is B C A A B D B C B C C B (p. 144). Given the transducer, its initial state and the input sequence, the trajectory can be deduced without difficulty. The arbitrary-looking jumps are, Ashby says, quite representative: only more states, and perhaps a passage to the limit of continuity, are needed for a natural case. In the table form, quantitative properties are easy to compute, whereas the continuous form needs measure theory (p. 144).
 
-### 8/6 Inverting a coded message (pp. 145–146)
-- Two transformations must be kept apart: the coding $U$, whose operands are whole messages, and the transducer's own transformation (p. 145).
-- Messages are two-letter strings from Q, R, S, giving nine messages QQ, QR, QS, RQ, RR, RS, SQ, SR, SS. With the transducer started at A (ignoring the initial A), the outputs are printed as CA, CB, CC, AC, AA, AB, BC, BC, BB (pp. 145–146; see Reading notes on the last entry).
-- BC appears twice, so only eight outputs are distinguishable. There is variety loss, and if BC arrives one cannot tell whether SQ or SR was sent (p. 146).
-- Inability to decode can have two very different causes. (i) The decoder exists but is not at hand (code-book missing, record without gramophone). (ii) Two distinct messages give the same output, so the needed decoder does not exist (p. 146).
-- **Result:** if, in each column of the table, every state is different, every transition indicates a unique parameter value, so any state sequence can be decoded. The converse also holds: if any sequence can be decoded, the states in each column are all different. This characterises a perfect coder (p. 146).
+### Inverting a coded message
 
-*Intuition note:* A transducer is a perfect coder when no two different inputs ever lead from the same state to the same next state.
+### 8/6. Can the transducer be inverted? (p. 145–146)
+Two transformations must be kept apart. $U$ has whole messages as operands. The transducer has states as operands (p. 145). Take as messages all nine two-letter strings over Q, R, S (QQ, QR, …, SS), with the transducer started at A. The outputs (ignoring the initial A) are CA, CB, CC, AC, AA, AB, BC, BC, BB (p. 146). BC occurs twice, so only eight outputs are distinguishable. If BC arrives, the original may have been SQ or SR, and exact decoding is impossible (p. 146).
 
-### 8/7 Designing an inverter (pp. 147–149)
-- Goal: show that given a machine that loses no distinctions, one can *build* another machine that takes the first's output and emits the original message. Here the concern is a mechanism, not just a restored message (p. 147).
-- Method: each transition $X_i \to X_j$ tells the parameter value that caused it. A transition is a vector $(i,j)$. So the inverter has two inputs, one for the earlier state and one for the later state (p. 147).
-- Difficulty: the two states do not exist at the same time. Remedy: a **delayer**, a transducer that repeats its input one step later. Its table has rows Q: q q q; R: r r r; S: s s s. Started at r with input Q S S R Q S R R Q, it outputs r q s s r q s r r q. Two in series delay two steps (pp. 147–148).
-- **Example coder** (columns A B C D; rows Q: D A D B; R: B B B C; S: A C A D). The inverter must, e.g., given input (A,A) emit S, (A,B) emit R, (A,D) emit Q, (B,A) emit Q. Input (A,C) never occurs, since A → C is not emitted by the coder (p. 148).
-- The three machines are coupled as: Coder → Delayer; Coder and Delayer → Inverter. The inverter's input vector is (state of delayer, state of coder). The delayer has states a, b, c, d, copying the coder's previous state (p. 148).
-- Check: if Q was put in and caused A → D in the coder, the inverter receives D from the coder and a from the delayer. Input (a,D) takes it to Q, the state supposed. The same holds for the other inputs (p. 149).
-- **Result:** given a determinate transducer that does not lose distinctions, an automatic inverter can always be built. The demonstration makes no reference to the material (mechanical, electronic, neuronic, hydraulic). What is needed is the determinateness of the coder's actions and its maintenance of all distinctions (p. 149).
+Inability to decode has two very different reasons (p. 146):
+- the decoder exists but is not at hand (a signaller without the code-book; a gramophone record with no gramophone);
+- two distinct messages give the same output, so the decoder that would distinguish them does not exist.
 
-*Intuition note:* To undo a step you need to know where the coder was and where it went. Remembering the "where it was" is handled by a simple one-step delay. Then the pair (before, after) names the input.
+If in each column of the table every state is different, every transition indicates a unique parameter value, and any emitted sequence can be decoded. The converse also holds: if every sequence can be decoded, each transition fixes a unique parameter value, so the states in a column are all different. This is the mark of a "perfect coder" (p. 146).
 
-### 8/8 Inverters from equations (pp. 149–151; "may be omitted at first reading")
-- **Case n' = n + a** (input a, variable n). Delayer: $p' = n$. Started n = 3, p = 1 with input a = 4, −2, −1, 0, 2, −1, −1, 3, the values are (p. 149):
+*Intuition note:* A transducer is a perfect coder when, from any state, different inputs always lead to different next states. Then each observed step reveals which input was used.
 
-| | | | | | | | | |
-|---|---|---|---|---|---|---|---|---|
+### 8/7. Designing an inverter (p. 147–149)
+Section 8/6 asked whether decoding is possible. Now Ashby asks how to build a mechanism that decodes automatically. Given a machine that loses no distinctions, another machine can always be built that takes the first machine's output as input and emits the original message (p. 147).
+
+Method (p. 147): turn the argument of 8/6 into a machine. A transition $X_i\to X_j$ is equivalent to the vector $(i,j)$. The inverter therefore has two inputs, one for the earlier state and one for the later. The two states do not exist at the same moment, so one input must carry a delayed copy of the coder's output.
+
+A delayer is a transducer that simply copies its input one step late. Its input $Q\,S\,S\,R\,Q\,S\,R\,R\,Q$, started at $r$, gives output $r\,q\,s\,s\,r\,q\,s\,r\,r\,q$. Two delayers in series delay two steps, and so on (p. 147–148).
+
+**Construction (p. 148).** The coder (states A–D, inputs Q, R, S):
+
+| ↓ | A | B | C | D |
+|---|---|---|---|---|
+| Q | D | A | D | B |
+| R | B | B | B | C |
+| S | A | C | A | D |
+
+Each column has distinct entries, so the coder loses no distinctions. The required inverter outputs, for example, S when given (A, A), R when given (A, B), Q for (A, D) and Q for (B, A). The input (A, C) never occurs, because the coder cannot make that transition (p. 148). The three machines are coupled as Coder → Delayer, with both Coder and Delayer feeding the Inverter (p. 148).
+
+The delayer has states a, b, c, d. Its next state is the lower-case copy of the coder state fed to it: row A gives a, row B gives b, and so on (p. 148). The inverter's input is the vector (state of delayer, state of coder). Its table has columns Q, R, S that are all identical in each row: row (a,A) gives S; (a,B) gives R; (a,C) does not occur; (a,D) gives Q; (b,A) gives Q; and so on (p. 148).
+
+The check (p. 149): suppose Q was put in and caused the coder transition A → D. The inverter then receives D from the coder and a from the delayer, because the coder was at A one step earlier. The input (a, D) makes the inverter go to Q, as supposed. The inverter therefore emits the same sequence as was put into the coder.
+
+Conclusion (p. 149): given a transducer that does not lose distinctions, an automatic inverter can always be built. The demonstration makes no reference to the transducer's material (mechanical, electronic, neuronic or hydraulic). What is necessary is that the coder is determinate and that it keeps all distinctions.
+
+*Intuition note:* To undo a step, the inverter needs to know the state before and the state after. A one-step memory (the delayer) supplies the "before". The table lookup then recovers the input.
+
+### 8/8. Inverters for transducers given by equations (p. 149–151; may be omitted at first reading)
+Take the transducer with input $a$, variable $n$ and transformation $n'=n+a$ (p. 149). A delayer is the transducer with parameter $n$, variable $p$ and $p'=n$. For input $a$ = 4, −2, −1, 0, 2, −1, −1, 3, with $n$ started at 3 and $p$ at 1, the sequences are:
+
 | a | 4 | −2 | −1 | 0 | 2 | −1 | −1 | 3 |
+|---|---|---|---|---|---|---|---|---|
 | n | 3 | 7 | 5 | 4 | 4 | 6 | 5 | 4 |
 | p | 1 | 3 | 7 | 5 | 4 | 4 | 6 | 5 |
 
-- An inverter with variable m takes $(n,p)$ and must give a. Its transformation must include $(7,3)\mapsto 4$, $(5,7)\mapsto -2$, $(4,5)\mapsto -1$, $(4,4)\mapsto 0$. Examination shows in all cases $m' = n - p$, and the whole system emits the values the input had two steps earlier (pp. 149–150).
-- Warning: "a = n' − n" already decodes, but does not specify a machine. The machine needs the delayer, ending with $m' = n - p$ (p. 150).
-- **General rule:** solve the transducer's equation for the parameter ($a = n' - n$). The delayer is $p' = n$. Form the inverter by (p. 150):
-  1. replace $a$ by the new transducer's symbol $m'$;
-  2. replace $n'$ by a parameter $c$;
-  3. replace $n$ by a parameter $d$.
+The inverter, with variable $m$, receives the vector $(n,p)$ and must return $a$. Its transformation $M$ includes $(7,3)\to4$, $(5,7)\to-2$, $(4,5)\to-1$, $(4,4)\to0$ (p. 149). Examining these shows that in all cases
+$$m'=n-p.$$
+The whole system then emits the values the input had two steps earlier (p. 150).
 
-  Then join the inverter to the original transducer by $d = n$ and to the delayer by $c = p$ (as printed; see Reading notes).
-- **Several variables:** parameters $a_1,a_2$, variables $x_1,x_2$ (pp. 150–151):
-$$x_1' = 2x_1 + a_1x_2,\qquad x_2' = 2x_2 + a_1a_2$$
-  Solving for the parameters:
-$$a_1 = \frac{x_1' - 2x_1}{x_2},\qquad a_2 = \frac{x_2(x_2' - 2x_2)}{x_1' - 2x_1}$$
-  Delayers: $p_1' = x_1$, $p_2' = x_2$. Apply the rules ($a_i \to m_i'$, $x_i' \to c_i$, $x_i \to d_i$):
-$$m_1' = \frac{c_1 - 2d_1}{d_2},\qquad m_2' = \frac{d_2(c_2 - 2d_2)}{c_1 - 2d_1}$$
-  Join $d_1 = x_1$, $d_2 = x_2$, $c_1 = p_1$, $c_2 = p_2$. Then $m_1, m_2$ give the values $a_1, a_2$ had two steps earlier (p. 151).
+**Objection (a reader who might be tempted to say this, answered by Ashby):** since $n'=n+a$, $a=n'-n$ and the code is solved. Ashby replies that this is true but does not meet the purpose. It lets one decode the message, but it is not the specification of a machine. The specification needed is $m'=n-p$ (p. 150).
 
-### 8/9 Size of the inverter (p. 151)
-A transducer that loses no distinctions must have at least as many output values as the input has distinct values. The inverter must have at least as many, but need not have more. Delayers need little. It seems, therefore, that if the inverter is made of components similar to the transducer's, it will have complexity and size of the same order, whatever the original's size (p. 151).
-**Significance:** one may feel that any effect sent through the cerebral cortex or an ecological system becomes at once hopelessly tangled. Ashby says evidently not: the complications of coding added by one transducer are "often or usually" within the decoding powers of another of similar size (p. 151).
+**General rule (p. 150).** Solve the transducer's equation for the parameter, here $a=n'-n$. The delayer has $p'=n$. Form the inverter by:
+1. replace $a$ by the new transducer's symbol $m'$;
+2. replace $n'$ by a parameter $c$;
+3. replace $n$ by a parameter $d$.
 
-### 8/10 "Transmitting" variety (p. 152)
-Speaking of variety passing through or from a transducer is "dangerously misleading". An envelope can contain a message but not variety, since a single message is unique. Only a *set* of envelopes can show variety. A transducer at a given moment is in one state, so it cannot contain variety. What can happen is that many transducers (possibly identical) at one moment show variety in the states they occupy, or one transducer on many occasions does. "Variety" and "information" always refer to a set, not an individual. Treating them as a thing inside another thing is likely to create needless problems (p. 152).
+Then join the inverter to the original by $d=n$ and to the delayer by $c=p$.
 
-### 8/11 Transmission at one step (pp. 152–153)
-- Set-up: $T$ is an absolute system (no input). $T \to U$: $T$ acts as parameter to $U$, a transducer. Many replicates exist, identical in construction but independently in various states (p. 152).
-- Let the T's occupy $n_T$ distinct states and the U's $n_U$ (p. 152).
-- Each T-state corresponds to a graph of $U$, so there are $n_T$ graphs. From each U-state a representative point may go to at most $n_T$ U-states (p. 152).
-- A set of U's all at one state therefore scatters over at most $n_T$ states in one step. There are $n_U$ such sets, so the total scattering is over at most $n_T n_U$ states (pp. 152–153).
-- Measured logarithmically, the variety in U after one step cannot exceed the sum of those initially in U and T. $U$ cannot gain at one step more variety than is present in the T's (p. 153). In shorthand (ours): $V_U^{\text{after}} \le V_U + V_T$.
-- Ashby calls this the fundamental law of transmission of variety from system to system, to be used often (p. 153).
+**Two-variable example (p. 150–151).** Let the original transducer have parameters $a_1,a_2$, variables $x_1,x_2$ and
+$$x_1'=2x_1+a_1x_2,\qquad x_2'=2x_2+a_1a_2 .$$
+Solving for the parameters gives
+$$a_1=\frac{x_1'-2x_1}{x_2},\qquad a_2=\frac{x_2(x_2'-2x_2)}{x_1'-2x_1}.$$
+The delayers are $p_1'=x_1$ and $p_2'=x_2$. Apply the rules to each $a_i$ and $x_i$ as above, writing $a_i=m_i'$, $x_i'=c_i$ and $x_i=d_i$. The inverter is
+$$m_1'=\frac{c_1-2d_1}{d_2},\qquad m_2'=\frac{d_2(c_2-2d_2)}{c_1-2d_1}.$$
+Join it with $d_1=x_1,\ d_2=x_2$ and $c_1=p_1,\ c_2=p_2$. Then $m_1,m_2$ give the values $a_1,a_2$ had two steps earlier (p. 151).
 
-*Intuition note:* The driver T can only choose which of $n_T$ rules U follows. So each U-state can fan out into at most $n_T$ next states, and variety in U can grow by at most $\log n_T$.
+### 8/9. Size of the inverter (p. 151)
+A transducer that loses no distinctions must have at least as many output values as the input has distinct values. The inverter must likewise have at least as many, but need not have more. Delayers need little. It seems, therefore, that if the inverter is made of components similar to the original's, it will have a complexity and size of the same order as the original's, whatever the complexity of the original (p. 151).
 
-### 8/12 Transmission at second step (pp. 153–154)
-- Example: each replicate is at one of six states $(T_i,U_k), (T_i,U_l), (T_i,U_m), (T_j,U_k), (T_j,U_l), (T_j,U_m)$ (p. 153).
-- The whole system is absolute, so all replicates at one of these states change identically and visit the same states together. The set's variety cannot exceed six, however many replicates or steps (p. 153).
-- Hence once U has gained T's amount of variety, further increase stops. If U gets it all in one step, it gets nothing more at step two, even though T still has some variety (pp. 153–154).
-- The pairings of T-states with U-states are essential. Knowing only the quantities of variety in T and U is not enough to predict how they change (p. 154).
+Ashby says one sometimes feels that in the cerebral cortex or an ecological system any transmitted effect must at once become hopelessly tangled. He says this is evidently not so. The coding complications added by one transducer are often or usually within the decoding powers of another transducer of similar size (p. 151).
 
-### 8/13 Transmission through a channel (p. 154)
-- Set-up: large Q dominates small R, and R dominates large S: $Q \to R \to S$. Many replicates; R has $r$ states; $\rho = \log_2 r$. At first Q has variety $N$ much larger than $r$ states; R and S have none (had they some, the new variety would add logarithmically) (p. 154).
-- After step 1, by 8/11: varieties at most $N$, $\rho$, $0$. At step 2 R cannot gain more (8/12), but S can gain from R: at most $N, \rho, \rho$. After step 3: $N, \rho, 2\rho$, and so on. S's variety can rise at most like $0, \rho, 2\rho, 3\rho, \dots$ (p. 154).
-- **Rule:** a transducer that cannot take more than $r$ states cannot transmit variety at more than $\log_2 r$ bits per step. This is what different "capacities" means (p. 154).
-- **Corollary:** the variety transmitted is proportional to capacity (in bits) times number of steps. So given long enough, any transducer can transmit any amount of variety (pp. 154–155).
-- The theorem is extremely general. The intermediate transducer can be a two-state tapping-key, an electric potential, a neural ganglion or a newspaper. It gives quantitative accuracy to the feeling that passing information through a small transducer restricts the rate. Examples: retina to visual cortex through the lateral geniculate body, or a predator's movements passed to a herd through a solitary scout (p. 155).
+*Intuition note:* A scrambling machine does not need a vastly bigger machine to unscramble it. If the scrambling loses nothing, it seems an unscrambler of about the same size can be built from similar parts.
 
-*Intuition note:* A bottleneck with two states passes at most one bit per step, no matter what feeds it. Waiting longer lets more bits through.
+### Transmission from system to system
 
-### 8/14 The vector explanation (pp. 155–156)
-S gains step by step from R although R gains nothing after step 1, because R's outputs over time form a *vector* (a list of components) and a vector's variety can exceed a component's. Ten coin-spins have up to 1024 values although each component has two. A shrinkage in channel capacity can be offset by a longer sequence (pp. 155–156). A chain $T \to A_1 \to A_2 \to \dots$ appears only as Ex. 1 at the end of the section (p. 156).
+### 8/10. "Transmitting" variety (p. 151–152)
+Talk of variety passing "through" or "from" a transducer is dangerously misleading (p. 152). A single message is unique, so it shows no variety. An envelope can hold a message but only a set of envelopes can hold variety. Likewise, a transducer at one moment is in exactly one state, so it cannot "contain" variety. What can happen is that many transducers (possibly identical in construction) show variety in the states they occupy at one moment, or one transducer shows variety across several occasions (p. 152). "Variety" and "information" always imply reference to a set. Any attempt to treat them as things inside other things is likely to lead to difficult "problems" that should never have arisen (p. 152).
 
-### 8/15 Delay (pp. 156–157)
-- The system $Q \to R \to S$ may be viewed as $T \to S$ where $T$ = (Q,R) is absolute. Then variety moves across in small quantities, step by step, unlike the one-step transfer of 8/11 (p. 156).
-- The reason: in 8/11 the whole dominating system had an immediate effect on U. In 8/13, T contained a part Q with no immediate effect on S, which had to act through R and was delayed (p. 156).
-- Such delay is common in real systems built of parts not all of which act immediately on the receiver. Example: the environment acts on the cortex through sense organs, sensory nerves, sensory nuclei, and so on. Even within one part, transfer takes place from point to point (pp. 156–157).
-- Conversely, if a system T is found to transmit its variety to another only over a number of steps, one may predict that T, examined in detail, consists of sub-systems coupled so that not all T's variables have an immediate effect on S (p. 157).
+### 8/11. Transmission at one step (p. 152–153)
+Let T be an absolute system (no input) and U a transducer, with T acting as parameter to U (T dominates U). Take many replicates, identical in construction and in various states independently. Suppose the T's occupy $n_T$ distinct states and the U's $n_U$.
 
-### 8/16 Feedback (pp. 157–158)
-- Question: for $T \rightleftarrows U$, will U pass back to T the variety it received, increasing T's variety further? (p. 157)
-- Take replicates with variety only among the T's, the U's all alike. Divide them into sub-sets by T's state. Within a sub-set there is no variety in state, and none can develop, because the whole (T,U)-system is absolute. So T's initial variety does not increase at the first step or later. **In a determinate system, feedback does not lead to a regenerative increase in variety** (p. 157).
-- Key point: what U feeds back to T is highly correlated with what is in T, since each U feeds into the particular T that acted on it a step earlier. This demands an accurate treatment of the correspondences between T's and U's (p. 158).
-- Verbal treatment of complex cases is likely to become intolerable. An algebra is wanted, and Ashby says it "seems likely" that the theory of sets (Bourbaki, Riguet) will supply it, but further research is needed (p. 158).
+Each T-state corresponds to one graph of U, so there are $n_T$ graphs. From each U-state, a representative point may therefore pass to any of not more than $n_T$ U-states (p. 152). A set of U's all at one state can thus scatter over at most $n_T$ states. There are $n_U$ such sets, so the total scattering after one step is over at most $n_T n_U$ states (p. 153). Measured logarithmically, the variety in U after one step cannot exceed the sum of the varieties initially in U and in T. U cannot gain at one step more than the variety present in T (p. 153).
 
-### 8/17 Interference (pp. 158–159)
-- Question: if two messages share a channel, must they destroy each other? (p. 158)
-- **Example 1.** A sender signals one of 26 events by printing one letter in the personal column. The letter's case (lower or capital) carries a second message of variety 2. Ten successive letters "N K e S z t y Z w m" carry both "n k e s z t y z w m" and "1 1 0 1 0 0 0 1 0 0" completely. So two messages can pass through the same physical thing without mutual destruction (p. 158).
-- **Example 2.** Ashby takes the transformation of Ex. 2/14/11 (from an earlier chapter, not given here). The positions A‴, B‴ are coded forms of positions A, B (treasure at A, weapons at B). A change in B changes A‴, so B's value plays an essential part in coding A, and the messages interact. Yet A and B can always be reconstructed from A‴ and B‴, so the interaction is not destructive (pp. 158–159).
-- **Condition.** Two messages of different types can be laid side by side as components of one vector message $(x,y)$ (e.g. "which of 26" and "which of two"). The printed symbol is then a coding of $(x,y)$ (p. 159). If $x$ and $y$ are both reconstructible from the received form, then distinct primary messages must have distinct coded forms. So if the interaction is non-destructive, the variety in the received forms must be not less than in the original. In the printed letter, both are $26 \times 2$ (p. 159).
-- **Neurophysiology.** In the cerebral cortex, richness of connexion makes mixing of messages inevitable (e.g. auditory and visual streams). How destructive interaction is avoided has been an outstanding problem. Ashby says the problem is badly stated: chaos need not occur when two messages meet. Provided no variety is lost and the mechanism is determinate in its details, the messages continue to exist, passing from one coding to another. Recovery needs a suitable inverter, whose construction is always possible (8/7) (p. 159).
+This is "the fundamental law of the transmission of variety from system to system" (p. 153).
+
+*Intuition note:* T chooses which rule U follows. If T has only $n_T$ possible settings, each U can spread over at most $n_T$ new places per step.
+
+### 8/12. Transmission at second step (p. 153–154)
+Does U gain more variety at the second step from T's remaining variety? Ashby's example: suppose all replicates are at one of six states, $(T_i,U_k),(T_i,U_l),(T_i,U_m),(T_j,U_k),(T_j,U_l),(T_j,U_m)$. The whole is absolute, so all replicates at one state change identically and together. The set's variety in state therefore cannot exceed six, however many replicates there are, however many states T and U have, and however long the changes continue. So U can never show more than six U-states (p. 153).
+
+Hence, in this example, once U has gained the variety that T has, further increase ceases. If U received it all in one step, it gets no further increase at the second step even though T still has some variety (p. 153–154). The pairings of T-states with U-states matter. Knowing only the quantities of variety in T and in U is not sufficient to predict how they change (p. 154).
+
+### 8/13. Transmission through a channel (p. 154–155)
+The heading prints "charmer", which is clearly a misprint for "channel" (see Reading notes). Let two large transducers Q and S be joined by a small transducer R, with Q dominating R and R dominating S: $Q\to R\to S$. R has $r$ states, $\rho=\log_2 r$. Assume Q's variety is much larger than $r$ states, and R and S have none at first (p. 154). If they had some, the new variety gained from Q would merely add logarithmically to it (p. 154).
+
+By 8/11 applied to R and S, S gains nothing at step 1. The varieties may be as large as $N,\rho,0$ after step 1. By 8/12, R cannot gain more at step 2, but S can gain from R (as Ex. 2 verifies). The varieties are then at most $N,\rho,\rho$, then $N,\rho,2\rho$, and so on (p. 154). The text prints the three starting varieties as N, O and 0 (see Reading notes); R and S start with none. S's variety increases at most as fast as the series $0,\rho,2\rho,3\rho,\dots$, but not faster (p. 154).
+
+Rule: a transducer that cannot take more than $r$ states cannot transmit variety at more than $\log_2 r$ bits per step. This is what different "capacities" of transducers mean (p. 154). The variety a transducer can transmit is proportional to capacity (bits) × number of steps. Corollary, used repeatedly later: given long enough, any transducer can transmit any amount of variety (p. 154–155).
+
+The theorem is extremely general. It applies to a two-state tapping-key, an electric potential, a neural ganglion or a newspaper, because the nature of the channel is irrelevant. It makes quantitative the feeling that passing information through a small intermediate transducer restricts the rate. Ashby's examples are retina to visual cortex via the lateral geniculate body, and a predator's movements passed to a herd through one scout (p. 155).
+
+### 8/14. How S gains step by step (p. 155–156)
+S can keep gaining from R although R gains no more after step 1. R's output over successive steps forms a vector. The variety in a vector can exceed that in a component, and can grow without limit if the number of components is increased without limit while each component stays bounded. Ten coin-spins form a sequence with variety up to 1024 values, though each component has only two (p. 155). A shrinkage in channel capacity can thus be compensated, to keep the total variety transmitted constant, by lengthening the sequence (p. 156).
+
+*Intuition note:* A one-bit channel can still carry a long message if you wait long enough: ten bits take ten steps. Capacity per step times number of steps gives the total.
+
+### 8/15. Delay (p. 156–157)
+$Q\to R\to S$ can be viewed as $T\to S$, with Q and R forming one absolute system T. An observer then sees variety cross in small quantities, step by step, unlike the one-step complete transfer of 8/11 (p. 156). The reason is that in 8/11 the whole dominating system had an immediate effect on the receiver, while here part of T (Q) had none and acted only through R, so its effect was delayed (p. 156).
+
+Such slow transfer is common in real systems because many of them are built of parts not all of which act directly on the receiver. For example, the environment reaches the cortex through sense organs, sensory nerves and sensory nuclei, and transfer within each part also takes time (p. 156–157). Conversely, if T is found by testing to transmit its variety to another system only over several steps, Ashby says it may be predicted that T, examined in detail, will be found to consist of sub-systems coupled so that not all of T's variables have an immediate effect on S (p. 157).
+
+### 8/16. Feedback between two systems (p. 157–158)
+Take $T\leftrightarrows U$, with T and U acting on each other. T passes variety to U (8/11). Does U pass it back and further increase T's variety? Consider replicates in which initially only the T's vary and the U's are all at one state. Divide the set into sub-sets by T-state $T_i$. Inside such a subset there is no variety in state, and none can develop, because the whole (T,U)-system is absolute. So the initial variety of the T's will not increase at the first step or later. Conclusion: "In a determinate system, feedback does not lead to a regenerative increase in variety" (p. 157).
+
+What matters is that what U feeds back to T is highly correlated with what is in T. Each U feeds back into the particular T that acted on it a step earlier, and into no other. The argument thus needs an accurate treatment of the correspondences between the various T's and U's (p. 158). Verbal treatment of complex cases becomes intolerable, so a symbolic machinery, an algebra, is wanted. Ashby says it "seems likely" that set theory, especially as developed by Bourbaki and Riguet, will provide it, but says further research is needed into these questions (p. 158).
+
+### 8/17. Interference (p. 158–159)
+Can two messages in one channel destroy each other, as acid and alkali do in one pipe? Simple examples show that the same physical channel may carry more than one message without interference (p. 158).
+
+**Example (p. 158).** A sender signals daily which of 26 events is meant by printing one letter in a newspaper's personal column. The same letter can also carry a second message of variety two, by being lower case or capital. Ten successive printed letters N K e S z t y Z w m carry both the letters n k e s z t y z w m and the binary sequence 1 1 0 1 0 0 0 1 0 0, completely (p. 158).
+
+**Second example (p. 158).** Treasure is buried at A and weapons at B. Recording marks are left at A‴ and B‴, where the position of each mark depends on both A and B (Ex. 2/14/11, not in this unit). B's value is therefore essential to coding A, and the messages interact, yet A and B can always be reconstructed from A‴ and B‴. The interaction is not destructive (p. 158–159).
+
+**Condition (p. 159).** Two messages of different types can be laid side by side as components of one vector message. In the letter example, $x$ = "which of the 26" and $y$ = "which of the two", and the printed symbol codes the single message $(x,y)$. If $x$ and $y$ do not interfere destructively, both are reconstructible from the received form. So distinct primary messages must have distinct coded forms. Therefore, if the interaction is non-destructive, the variety in the received forms must be not less than that in the original. In the letter example both are $26\times2$ (p. 159).
+
+**Neurophysiology (p. 159).** In the cortex, the richness of connexion means much mixing of messages must occur, for instance impulses from auditory and visual cortex meeting. How destructive interaction and chaos are avoided has been "an outstanding problem". Ashby says the problem is badly stated. Chaos does not necessarily occur when two messages meet. Provided no variety is lost and the mechanism is determinate in its details, both messages continue to exist, passing from one coding to another. All that is needed for their recovery is a suitable inverter, and by 8/7 its construction is always possible (p. 159).
 
 ## Toy example (ours, not from the text)
-**Idea:** a one-bit channel R passes at most 1 bit per step ($\rho = \log_2 2 = 1$), yet over several steps a receiver S can collect more, as a vector.
+**Aim:** show that a 1-bit channel carries 3 bits in 3 extra steps, as in 8/13–8/14.
 
-Set-up: Q holds three bits $(q_1,q_2,q_3)$ and shifts: $q_1' = q_2,\ q_2' = q_3,\ q_3' = 0$. R has two states: $r' = q_1$. S holds two bits $(s_1,s_2)$ with parameter $r$: $s_1' = r,\ s_2' = s_1$. This is the chain $Q \to R \to S$. Start eight replicates with Q = $(a,b,c)$ taking all 8 combinations, R = 0, S = (0,0).
+**System (chain Q → R → S, absolute as a whole).**
+- Q is a 3-bit register $(q_1,q_2,q_3)$, updated by rotation: $q'=(q_2,q_3,q_1)$.
+- R has two states, $r'=q_1$ (capacity $\rho=\log_2 2=1$ bit).
+- S holds the last three values of R: $s=(s_1,s_2,s_3)$, $s'=(r,s_1,s_2)$.
 
-| Step | Q | R | S | Variety (bits) Q, R, S |
-|---|---|---|---|---|
-| 0 | (a,b,c) | 0 | (0,0) | 3, 0, 0 |
-| 1 | (b,c,0) | a | (0,0) | 2, 1, 0 |
-| 2 | (c,0,0) | b | (a,0) | 1, 1, 1 |
-| 3 | (0,0,0) | c | (b,a) | 0, 1, 2 |
-| 4 | (0,0,0) | 0 | (c,b) | 0, 0, 2 |
+Start: 8 replicates, Q initial $=(b_1,b_2,b_3)$ taking all 8 triples, R = 0, S = (0,0,0). Only Q has variety (3 bits).
 
-Arithmetic for step 1: R takes old $q_1 = a$; S takes $s_1' = $ old $r = 0$, $s_2' = $ old $s_1 = 0$. Step 2: R takes old $q_1 = b$; $s_1' = $ old $r = a$, $s_2' = $ old $s_1 = 0$. Step 3: R takes $c$; $s_1' = b$, $s_2' = a$.
+**Trajectory for any replicate:**
+- t=0: Q=$(b_1,b_2,b_3)$, R=0, S=(0,0,0).
+- t=1: Q=$(b_2,b_3,b_1)$, R=$b_1$, S=(0,0,0).
+- t=2: Q=$(b_3,b_1,b_2)$, R=$b_2$ (the $q_1$ of t=1), S=($b_1$,0,0).
+- t=3: Q=$(b_1,b_2,b_3)$, R=$b_3$, S=($b_2$,$b_1$,0).
+- t=4: R=$b_1$, S=($b_3$,$b_2$,$b_1$).
 
-S's variety rises 0, 0, 1, 2 bits, never faster than $\rho = 1$ bit per step once it starts, as 8/13 predicts. R carries one bit per step ($a$, then $b$, then $c$), always only 2 states. S ends with 2 bits because S itself has only 4 states, so all three bits cannot be held at once (at step 4 the earliest bit, $a$, has been lost). R's own variety never exceeds 1 bit.
+**Variety of S across the 8 replicates:**
+
+| t | distinct S values | bits |
+|---|---|---|
+| 1 | 1 | 0 |
+| 2 | 2 | 1 |
+| 3 | 4 | 2 |
+| 4 | 8 | 3 |
+
+This is $0,\rho,2\rho,3\rho$ with $\rho=1$. At every moment R has at most 2 states (≤ 1 bit), yet S reaches 8 states, the full 3 bits of Q. Check with $(b_1,b_2,b_3)=(1,0,1)$: S at t=2,3,4 is (1,0,0), (0,1,0), (1,0,1). Reading S's three components recovers the original triple (in reversed order), so nothing was lost. Further steps cannot exceed 3 bits, because Q started with only 3 bits.
 
 ## Concepts
-- [[coding]] (new) — a transformation whose operand is the whole message, taking messages $M_i$ to coded forms $C_i$ (p. 141)
-- [[one-one-transformation-and-inverse]] (new) — one-one codings have single-valued inverses and keep variety unchanged. Exact decoding needs both $U$ and $U^{-1}$ one-one (p. 142)
-- [[transducer]] (new) — Ashby's machine with input: next state fixed by present state and present parameter values (p. 143)
-- [[variety]] — number of distinguishable states in a *set*, measured logarithmically. It cannot exist in a single message, nor in one machine at one moment (p. 152)
-- [[state]] — one of the possible conditions of a machine. Here states form finite sets and messages are sequences of states (p. 143)
-- [[inverter-decoder]] (new) — an automatic machine built from the coder plus delayers, taking (earlier state, later state) as input and giving back the parameter (pp. 147–150)
-- [[perfect-coder-condition]] (new) — a transducer loses no distinctions iff every column of its table has all-different entries (p. 146)
-- [[channel-capacity]] (new) — a transducer of $r$ states transmits at most $\log_2 r$ bits per step (p. 154)
-- [[domination]] (new) — system T dominates U when T acts as parameter to U. This is Ashby's usage in 8/11 and 8/13 (pp. 152, 154)
-- [[delay]] — in this chapter, step-by-step transfer of variety because parts of a sender lack immediate effect on the receiver. Also a deliberate delayer machine (pp. 148, 156)
-- [[feedback]] — here the two-way coupling $T \rightleftarrows U$. In a determinate system it gives no regenerative increase of variety (p. 157)
-- [[non-destructive-interference]] (new) — two messages share a channel and both stay recoverable if no variety is lost (pp. 158–159)
+- [[variety]] — the diversity of a set of possibilities (from Ch. 7), here measured logarithmically; it needs reference to a set and cannot exist in one transducer at one moment (p. 142, 152)
+- [[coding]] (new) — a transformation whose operands are whole messages, giving coded forms; specified by the transformation $U$ (p. 141–142)
+- [[one-one-transformation]] (new) — mapping that never sends two inputs to one output; needed (with its inverse) for certain decoding; leaves variety unchanged (p. 142)
+- [[transducer]] (new) — Ashby's "machine with input": next state fixed by present state and parameter values (p. 143)
+- [[inverter]] (new) — a machine that, given a coder's transitions (via a delayed copy), emits the original input (p. 147–148)
+- [[delay]] — here a device repeating its input one step later (p. 147–148). Also the slow transfer of variety when part of the sender acts only through intermediate parts (p. 156); compare the canon's "delay (dead time)"
+- [[channel-capacity]] (new) — a transducer with $r$ states transmits at most $\log_2 r$ bits per step (p. 154)
+- [[dominance]] (new) — as used here: T acts as parameter to U and T is absolute (no input) (p. 152, 154)
+- [[replicates]] (new) — many identical systems in independent states, used to make variety observable (p. 152)
+- [[feedback]] — in a determinate system, feedback between T and U gives no regenerative increase in variety (p. 157)
+- [[interference]] (new) — whether two messages sharing a channel destroy each other. They need not, if no variety is lost and the mechanism is determinate (p. 158–159)
+- [[black box]] — not named in this unit
 
 ## Canonical instances
-- [[gale-warning-chain]] — about sixteen successive physical recodings of one message (pp. 140–141)
-- [[four-state-transducer-table]] — the A–D / Q–R–S example with one lost distinction (BC duplicated) (pp. 144–146)
-- [[coder-delayer-inverter]] — three coupled machines that restore the input (pp. 148–149)
-- [[n-plus-a-inverter]] — $n' = n + a$ with delayer $p' = n$ and inverter $m' = n - p$ (pp. 149–150)
-- [[ten-coin-spins]] — a sequence of ten two-valued components has up to 1024 values (p. 155)
-- [[printed-letter-two-messages]] — one letter carries "which of 26" and "capital or lower case" (p. 158)
-- [[retina-geniculate-bottleneck]] and [[scout-and-herd]] — small channels in nature (p. 155)
+- [[gale-warning-coding-chain]] — one message passes through many physical forms, keeping its pattern (p. 140)
+- [[lossy-four-state-coder-table]] — the 4-state, 3-parameter transducer whose output loses a distinction (BC duplicated), so it cannot be a perfect coder (p. 144–146)
+- [[automatic-inverter-with-delayer]] — coder + delayer + inverter, with tables (p. 148)
+- [[inverter-by-equation-rules]] — solve $a=n'-n$ and rename to get $m'=n-p$ (p. 149–151)
+- [[coin-spin-sequence-1024]] — ten two-valued components give variety 1024 (p. 155)
+- [[26-letter-case-channel]] — one printed letter carries 26 events and a binary message together (p. 158)
+- [[cortex-mixing-of-messages]] — neurophysiological problem of "destructive interaction", said to be badly stated (p. 159)
 
 ## Bridges (candidates)
-- [same-math] One-one coding preserves variety ↔ canon: variety as log of number of states — an invertible map between finite sets preserves the count, so the log is unchanged.
-- [structural-analogy] Inverter built from "(previous state, current state) → input" ↔ control-theory: observer/state estimator — both reconstruct hidden quantities from measured signals plus a model.
-- [structural-analogy] Capacity bound $\log_2 r$ bits per step ↔ control-theory: variety in a regulator limiting what it can absorb (law of requisite variety) — both tie a count of states to a limit on what passes or is absorbed. Ashby's use in later chapters is not shown in this unit.
-- [structural-analogy] Delay because not all parts act directly on the receiver ↔ control-theory: delay (dead time) as a cause of lag between action and effect.
-- [structural-analogy] "Feedback in a determinate system creates no new variety" ↔ control-theory: feedback and state — in a deterministic loop, the initial state fixes the whole trajectory.
+- [structural-analogy] one-one coding preserves variety ↔ information theory: lossless encoding preserves the number of distinguishable messages — both rest on decodability
+- [structural-analogy] $\log_2 r$ bits per step through an $r$-state channel ↔ information theory: channel capacity — Ashby derives only an upper bound from state count, in a determinate setting
+- [structural-analogy] delayed transfer when part of T acts only through intermediates ↔ control theory: transport delay or lag from chains of components
+- [structural-analogy] inverter built from the coder's equations plus a delayer ↔ control theory: system inversion, observers reconstructing past inputs
+- [metaphor] variety cannot exist in one transducer, only across a set of them ↔ statistics: a distribution describes a population, not an individual draw
 
 ## Questions this raises
-- What changes when the machine is not determinate (noise)? Does the inverter of 8/7 still exist, and is the capacity bound still $\log_2 r$?
-- The bounds in 8/11 and 8/13 are upper limits ("cannot exceed"). When are they actually reached, and how does the pairing of T- and U-states decide this (8/12)?
-- If feedback cannot raise variety regeneratively, how does Ashby later treat growth or amplification in loops? The text points to a needed algebra (set theory) but gives none (p. 158).
-- How can one tell whether the brain's mixing of messages is non-destructive, given the condition that received variety is not less than the original (p. 159)?
+- How should the condition "no distinctions lost" be handled when states are continuous rather than finite, where Ashby says measure theory is needed (p. 144)?
+- Does the capacity bound still hold when the intermediate transducer is not determinate or has noise (the unit assumes determinate machines)?
+- What would the algebra of sets that Ashby wants (p. 158) look like for tracking T–U correspondences with feedback?
+- If inverters are of the same order of size as coders (p. 151), how do real nervous systems actually "decode" overlapping messages (p. 159)?
 
 ## Exercises worth doing
-- Ex. 8/4 Ex. 1–5 (p. 142) — one-one transformations, their inverses, and the "do and undo" identity — difficulty: easy
-- Ex. 8/6 Ex. 1 (p. 146) — tests whether a transducer with more parameter combinations than states can always be decoded — difficulty: medium
-- Ex. 8/8 Ex. 4 (p. 151) — why no inverter exists for $n' = n + a + b$ — difficulty: medium
-- Ex. 8/11 Ex. 1–2 (p. 153) — checks the one-step law $V_U^{\text{after}} \le V_U + V_T$ on explicit systems — difficulty: medium
-- Ex. 8/13 Ex. 1–2 (p. 155) — computes a channel's capacity and shows variety arriving at S step by step — difficulty: medium
-- Ex. 8/14 Ex. 2 (p. 156) — the 27-coin balance problem, a lower bound from channel capacity — difficulty: medium
+- Ex. (p. 141) cutting a pack of cards many times — shows that heavy repeated coding may leave only a single one-one change; easy
+- Ex. 1–2 (p. 142) — one-one status of $\log_{10}x$ and $\sin x$ on the positive numbers; easy
+- Ex. 7 (p. 145) — trajectory of a two-variable transducer with parameter vector $(a,b)$; medium
+- Ex. 1 (p. 146) — decodability of a 100-state transducer with $10^8$ parameter combinations (the text shows "108"); medium
+- Ex. 1–2 (p. 153) — varieties of $t$ and $u$ at successive steps in a dominance system, checking the 8/11 limit; medium
+- Ex. 2 (p. 156) — 27 coins, counterfeit light; lower bound on the number of weighings by treating the balance as a channel; medium
 
 ## Reading notes
-- **Page numbers.** The labels give no printed numbers, but the page images show printed numbers 142–160, and the text layer of pdf 76 shows 140–141. Each pdf page is a two-page spread: printed = 2×pdf − 12 (left half) and 2×pdf − 11 (right half). The chapter opens on p. 140.
-- **Misprint (p. 146).** The nine outputs are printed as "CA, CB, CC, AC, AA, AB, BC, BC, BB". By the table printed on p. 144 (S row: B D C D), SS from A gives A → B → D, i.e. BD, not BB. The conclusion (BC occurs twice, eight distinct outputs) is unaffected.
-- **Join in 8/8 (p. 150).** The rules give $m' = c - d$, yet the text says "join $d = n$, $c = p$" and states the result $m' = n - p$. As printed these do not agree, and the printed joining would give $p - n$. The result $m' = n - p$ is confirmed by the table on p. 149 and by Ex. 6 on p. 151. The same ordering ($d = x$, $c = p$) is printed for the two-variable example on p. 151. The author's wording is kept in L3; the source is not corrected there.
-- **Misprints in the images.** The heading of 8/13 reads "charmer" for "channel". The 8/12 text reads "T' or T" where "$T_i$ or $T_j$" is meant. In Ex. 8/11 Ex. 1 "t' = 2'" appears (probably $2t$). Some exercise formulas were hard to read and are not reproduced.
-- **Skipped.** Ex. 8/17 Ex. 3–4 (the rod linkage, Fig. 8/17/1) are not covered here.
-- Cross-references to S.3/4, S.4/1, S.7/5, S.9/9, S.9/18 and Ex. 2/14/11 point to other chapters not given here.
+- Page offset: each PDF page holds two printed pages, so PDF 76 = printed 140–141, up to PDF 86 = printed 160 (right half blank). Citations use printed page numbers.
+- The heading of 8/13 prints "charmer" in the image; this is clearly a misprint for "channel". Also p. 154: "N, O and 0" in the image; the second symbol is probably a misprint for 0.
+- Misreadings in the text layer: "nu"/"nut" for $n_U$; "T' or T" for $T_i$ or $T_j$ (p. 153); Ex. 1 on p. 153 reads "t' = 2'" in the text layer, possibly for "t' = 2t". No page image was supplied for printed pp. 146–147, 152–153 and 158–159, so those pages were read from the text layer only. The image of p. 150 prints "pare. 2" (probably for "para. 2").
+- Ex. 1 p. 146 reads "108 combinations" in the text layer, probably $10^8$ with a lost superscript (no image supplied).
+- In 8/6 the text layer of p. 146 lists the output for SS as BB; from the table of p. 144, started at A, SS gives B and then D, i.e. BD. The conclusion (BC occurs twice, eight distinguishable outputs) is unaffected.
+- Cross-references to S.3/4, S.4/1, S.9/9, S.9/18 ("S.918") and Ex. 2/14/11 point to parts of the book not included here. Section 8/8 is marked by the author as omissible at first reading. Starred exercises are printed with an asterisk (not explained in these pages).
+- Only exercises relevant to the main text are listed; solutions are not printed in these pages.

@@ -1,245 +1,223 @@
 ---
 id: ashby-1956-cybernetics/ch02-change
 work: ashby-1956-cybernetics
-unit: "1 What Is New (printed pp. 1–6) and 2 Change (printed pp. 9–23)"
-pages: 1–23
+unit: "Chapters 1 (What Is New) and 2 (Change)"
+pages: 1-23
 fields: [control-theory]
 level: HS
 grounding: primary-text
 digested_by: claude-sonnet-5-5
 digested_on: 2026-10-14
 spec_version: 1.2
-prompt_version: v2.1
+prompt_version: v2.2
 verified: repaired
-verifier_issues: 16
+verifier_issues: 21
 pipeline_version: 0.1
 ---
-# What Is New; Change: transformations, closure, powers and kinematic graphs
+# What Is New, and Change: cybernetics as the study of possible behaviours, and "transformation" as its basic tool
 
 ## L0 — One line
-Cybernetics studies what a system does (its possible behaviours), not what it is made of, and Ashby's first tool for this is the "transformation", a table saying what each state changes to, which can be closed, repeated, composed and drawn as a graph.
+Cybernetics studies the possible behaviours of any machine, whatever it is made of, and its first tool is "change" made exact as a transformation: a table saying what each state becomes.
 
 ## L1 — The gist (≤ 120 words)
-Chapter 1 says cybernetics studies ways of behaving, not material things. It asks for all the behaviours a machine could produce, not one single act. It promises one vocabulary for machines, brains and societies, and methods for complex systems. Chapter 2 starts the toolkit with "change". Ashby restricts himself to finite, discrete steps. A transformation says what each operand becomes. It can be closed or not, single-valued or not, one-one or many-one. Repeating it gives powers, found by algebraic elimination. Applying two different transformations in turn gives a product. A kinematic graph shows where each state ends up, in stopping points or cycles, and splits into basins.
+Chapter 1 asks what is new in cybernetics. Ashby answers that it studies ways of behaving, not things. It treats each machine as one of "all possible machines", and it offers one vocabulary and a method for complex systems. Chapter 2 makes "change" precise. A transformation lists operands (the things acted on) and what each becomes. Ashby defines closure, single-valued, one-one and many-one transformations, the identity, matrix form, repeated application (powers by algebraic elimination), products, and the kinematic graph, which shows where a state ends up. Ashby says the graph's separate regions have some relation to stability, which he takes up in Chapter 5.
 
-**Prerequisites:** high-school algebra (substituting one equation into another); reading small tables; the idea of a function as a rule "input → output".
+**Prerequisites:** school algebra (substituting one equation into another); the idea of a function or table mapping inputs to outputs; reading simple arrow diagrams.
 
-## L2 — Key ideas
-- Cybernetics is "functional and behaviouristic": it asks "what does it do?", not "what is this thing?". It deals with regular, determinate, reproducible behaviour whatever the material (p. 1).
-- Its subject is "all possible machines", much as geometry now treats forms far beyond those found on earth. It asks for the whole set of behaviours a machine could produce, not the single act here and now (pp. 2–3).
-- Ashby names two virtues: one common vocabulary across very different systems, and a method for the scientific treatment of complex systems, some of which cannot be studied by varying one factor at a time (pp. 4–5).
-- "Difference/change" is the most fundamental concept. Ashby assumes finite steps and finite differences, which loses nothing and lets questions be settled by counting (pp. 9–10).
-- A transformation is a set of transitions (operand → transform: the thing acted on and what it becomes) on a set of operands. It is defined by what happens, not why (pp. 10–11).
-- A transformation is closed on its operands if no transform falls outside the operand set. The test uses only the table, never the physical cause (p. 11). An unclosed transformation such as W cannot be applied twice (p. 18), and the repeated-application method is stated only for closed ones (p. 21).
-- A transformation is single-valued if each operand has only one transform; a single-valued one is one-one if all its transforms differ, and many-one otherwise. The identity is a real transformation. Any transformation can be written as a "+"/0 matrix (pp. 14–16).
-- Repeated change gives powers $T^2, T^3,\dots$. They are computed by eliminating intermediate primes (pp. 17–19). Applying two different transformations in order gives a product, and order matters (pp. 20–21).
-- A kinematic graph draws an arrow from each state to the state it changes to; it makes it easy to follow a closed transformation from a single start state (pp. 21–22). In Ashby's p. 23 example, the moving ("representative") point always ends at a stopping state or in a cycle. The graph divides into basins, the separate regions where points end up, which Ashby says have some relation to "stability" (Chapter 5) (pp. 22–23).
+## L2 — Key ideas (5–10 bullets)
+- Cybernetics asks what a thing does, not what it is. It deals with behaviour so far as it is regular, determinate or reproducible, and in no essential way depends on the laws of physics or the properties of matter (p. 1).
+- Its subject is the domain of all possible machines, just as modern geometry contains the terrestrial forms as special cases. Typically, a machine is asked for its set of possible behaviours, not one act here and now (pp. 2–3).
+- Its two claimed virtues are a single vocabulary for very different systems, and a method for complex systems. The older rule of varying one factor at a time is often impossible for complex systems, and the new methods show their power chiefly there (pp. 4–5).
+- Ashby assumes change happens in finite steps. The parts have names: the operand (the thing acted on), the operator (the acting factor), the transform (the result) and the transition (operand → transform). A transformation is a set of transitions, defined by what happens, not why (pp. 9–11).
+- A set of operands is closed under a transformation if the transforms contain no element outside it. Closure can be tested from the details of the transformation, without knowing its cause (p. 11).
+- Transformations can be classed: single-valued (one transform per operand), one-one (also all transforms different), many-one (single-valued but not one-one), and the identity (nothing changes). They can be written as lists, as rules like $n \to n+3$, or as matrices of + and 0 (pp. 13–16).
+- Repeated change gives powers; a power is found by eliminating intermediate symbols. The order of a product may change the result, and an unclosed transformation cannot be applied twice: it takes one step and then jams (pp. 16–21).
+- The kinematic graph draws an arrow from each state to its one-step transform. In Ashby's example, following the arrows from any state leads to a stopping point or a cycle. The separate regions are called basins, and Ashby says these matters have some relation to stability (pp. 22–23).
 
 ## L3 — Walkthrough
 
 ### Chapter 1. What Is New
 
-**1/1. Aim.** Ashby takes Wiener's definition: cybernetics is "the science of control and communication, in the animal and the machine". Ashby also calls it the art of steermanship. His themes will be co-ordination, regulation and control. Because the angle is new, a study of mechanism needs an introduction. Otherwise Chapter 2 may seem faulty, and mixing the old and new views causes confusion (p. 1).
+**1/1 Definition and aim (p. 1).** Ashby quotes Wiener: cybernetics is "the science of control and communication, in the animal and the machine". He restates this as the art of steermanship. The book's themes are co-ordination, regulation and control. He says a study of mechanism is required, but from a new, unusual angle, so some introduction is advisable. Unconscious vacillation between the old and new viewpoints is apt to lead to confusion.
 
-**1/2. Peculiarities.** Cybernetics is a "theory of machines" but treats ways of behaving, not things. It does not ask "what is this thing?" but "what does it do?" It cares about "this variable is undergoing a simple harmonic oscillation", not whether the variable is a point on a wheel or an electric potential. It is "functional and behaviouristic". It began close to physics but "depends in no essential way" on the laws of physics or the properties of matter. It covers all behaviour in so far as it is regular, determinate or reproducible. Its truths are not conditional on another science, and it has its own foundations (p. 1).
+**1/2 Peculiarities (p. 1).** Many books called "Theory of Machines" describe levers and cogs. Cybernetics treats ways of behaving, not things. It asks what a thing does, not what it is. It cares that a variable undergoes simple harmonic oscillation, and cares little whether the variable is a point on a wheel or a potential in a circuit. He calls it essentially functional and behaviouristic. It began closely associated with physics but depends in no essential way on the laws of physics or the properties of matter. It deals with all forms of behaviour so far as they are regular, determinate or reproducible. Materiality is irrelevant, and its truths are not conditional on another science. It has its own foundations.
 
-**1/3–1/4. The domain of all possible machines.** Ashby's analogy:
-- Cybernetics is to real machines (electronic, mechanical, neural, economic) as geometry is to real objects in terrestrial space (p. 2).
-- Geometry once meant only what could be shown in ordinary space. Now it contains the terrestrial forms as special cases and gives a framework that increases power of control (p. 2).
-- Cybernetics likewise takes "all possible machines" as its subject. It is only secondarily interested that some are not yet made (p. 2).
-- It is therefore indifferent to the criticism that some machines it considers do not exist. Mathematical physics studies non-existent systems such as massless springs and perfect gases; the theory of the massless spring is invaluable to the physicist, even for understanding a watch (p. 2).
-- A biologist studies Amphioxus in a similar way (p. 3).
-- Cybernetics studies the possible relations between machine and machine first, and only afterwards the forms actually found in a particular science (p. 3).
+**1/3 The geometry analogy (p. 2).** Once "geometry" meant what could be shown in ordinary space, and forms not demonstrable there were suspect. Now geometry exists in its own right and contains terrestrial forms as special cases. For geometry, the gain is a framework in which all forms find a place with their relations visible, and, with better understanding, a correspondingly increased power of control. Cybernetics stands to real machines (electronic, mechanical, neural, economic) as geometry stands to real objects. Its subject is "all possible machines". It is only secondarily interested if informed that some have not yet been made, by Man or by Nature. It offers the framework on which individual machines may be ordered, related and understood.
 
-**1/5. Sets of possibilities.** Cybernetics asks of any machine not "what individual act will it produce here and now?" but "what are all the possible behaviours that it can produce?" This is why information theory is essential: it always deals with a set of possibilities, and its primary data and final statements are almost always about the set as such (p. 3). Ashby's example is the ovum (p. 3):
-- The older view asks why the ovum changes at all. It answered with energetics (fat oxidation, a Krebs' cycle) (p. 3).
-- Cybernetics takes the free energy for granted. It asks why the changes lead to the rabbit-form and not a dog-form, fish-form or teratoma-form (p. 3).
-- It considers a set of possibilities wider than the actual, then asks why the real case obeys its usual restriction. What matters is how far the system is subject to determining and controlling factors, and no signal or determining factor passes from part to part without being recorded as a significant event (pp. 3–4).
-- Ashby therefore says cybernetics "might, in fact, be defined" as the study of systems open to energy but closed to information and control, "information-tight" (p. 4).
+**1/4 Indifference to non-existent machines (pp. 2–3).** Mathematical physics studies non-existent systems (massless springs, perfect gases), and the massless-spring theory is invaluable even for understanding a watch (p. 2). The biologist's detailed study of *Amphioxus* or an extinct form, out of proportion to its present importance, uses the same principle (p. 3). Cybernetics picks out types of mechanism important to general theory, regardless of whether terrestrial machines make them common. Only after surveying the possible relations between machine and machine adequately does it turn to the forms found in a particular science (p. 3).
 
-**1/6. First virtue: one vocabulary.** Cybernetics offers one set of concepts for the most diverse systems. Relating servo-mechanisms to the cerebellum was made harder because each was described in its own vocabulary (automatic pilot, radio set; dissecting room, bedside). Cybernetics gives exact correspondences with each branch. Ashby notes that linking two branches has repeatedly sped up both (calculus and astronomy, virus and protein molecule, chromosomes and heredity). Neither branch can prove laws for the other, but each can give suggestions. He expects cybernetics to reveal many parallelisms between machine, brain and society (p. 4).
+**1/5 Sets of possibilities (p. 3).** Cybernetics typically treats a given machine by asking "what are all the possible behaviours that it can produce?" rather than what individual act it will produce here and now. So information theory plays an essential part, because it always deals with a set of possibilities. The older view asked why an ovum grows into a rabbit and not just stays an ovum, and answered through energetics (oxidising fat, a Krebs cycle). Cybernetics takes for granted that the ovum has abundant free energy and is so delicately poised metabolically that it is, in a sense, explosive. It asks why the changes go to rabbit-form and not dog-form, fish-form or teratoma-form. It envisages a set of possibilities much wider than the actual, and asks why the actual case obeys its usual restriction. Energy plays almost no part, and whether the system is closed or open to energy is often irrelevant. What matters is how far the system is subject to determining and controlling factors. No signal or determining factor passes between parts without being recorded as a significant event. Ashby says cybernetics might, in fact, be defined as the study of systems open to energy but closed to information and control, that is, "information-tight" (pp. 3–4).
 
-**1/7. Second virtue: the complex system.** Cybernetics offers a method for the scientific treatment of complex systems (pp. 4–5).
-- In simple systems its methods sometimes show no obvious advantage. They show their power when systems become complex (p. 5).
-- Science has for two centuries explored systems that are simple or reducible to simple parts. The rule "vary the factors one at a time" was accepted for a century. Ashby says this shows that scientists studied systems that allowed that method (p. 5).
-- Fisher's work in the 1920s on agricultural soils made it clear that some systems do not allow one-factor-at-a-time variation, because changing one factor changes others (p. 5).
-- Some complex systems could not be evaded: the cerebral cortex, the ant-hill, the human economic system. Science can do little more than appreciate their complexity, but is taking first steps towards studying "complexity" in its own right (p. 5).
-- Cybernetics is "prominent among" the methods for complexity. It drops vague intuitions drawn from simple machines (alarm clock, bicycle) and builds a rigorous discipline. The first chapters may seem to deal with truisms because the foundations are built broad and strong (p. 5).
-- It hopes to mark out what is achievable, since, he says, probably many past investigations attempted the impossible. It then hopes to give general strategies. Part III offers only "a foundation" and "a start", not perfected methods (pp. 5–6).
+*Intuition note.* Cybernetics does not ask how a thing is built or powered. It lists everything a system could do and asks what limits it to what it does do. This fits Ashby's claim that very different systems, such as a servo-mechanism and a cerebellum, can be described in one vocabulary (p. 4).
 
-*Intuition note.* Ashby wants a science of behaviour that does not depend on the material (p. 1). Because its subject is all possible machines, it is not troubled if some do not exist, just as mathematical physics still uses the massless spring (p. 2).
+**1/6 First virtue: one vocabulary (p. 4).** Ashby confines the review of applications to those promising most in the biological sciences, and says it can only be brief and very general. The first virtue is a single vocabulary and set of concepts for very different systems. Servo-mechanisms and the cerebellum were described in words that made relating them unnecessarily difficult (automatic pilot, radio set versus dissecting room, bedside). Concepts with exact correspondences to each branch of science can bring branches into exact relation. When two branches are found to be related, each often helps the other develop, often with markedly accelerated growth. Ashby gives the infinitesimal calculus and astronomy, the virus and the protein molecule, and the chromosomes and heredity. Neither branch can give proofs about the other's laws, but each can give suggestions. Cybernetics is "likely to reveal" many parallelisms between machine, brain and society.
+
+**1/7 Second virtue: the complex system (pp. 4–6).** The second virtue is a method for the scientific treatment of systems where complexity is outstanding and too important to ignore, as it is in biology. In simple systems the methods sometimes show no obvious advantage. They reveal their power chiefly when systems become complex (p. 5).
+
+- Science has for two centuries explored systems that are simple or reducible to simple parts. The dogma of varying the factors one at a time, accepted for a century, suited such systems; Ashby says the method is often fundamentally impossible in complex ones. Fisher's 1920s work on agricultural soils (printed "Sir Donald Fisher") made clear that some systems do not allow one factor to be varied alone. They are so dynamic and interconnected that changing one factor evokes changes in others (p. 5).
+- Some complexity could not be evaded: the cerebral cortex, the ant-hill as a society, the human economic system. The scientist can do little more than appreciate the complexity. Science is now taking first steps towards studying "complexity" as a subject (p. 5).
+- Cybernetics is prominent among such methods. It rejects vague intuitions from simple machines such as the alarm clock and bicycle and builds a rigorous discipline. The first chapters may seem to treat truisms, but only because the foundations are built broad and strong (p. 5).
+- It offers *hope* of effective methods for studying and controlling very complex systems. It would do this first by marking out what is achievable, since probably many past investigations attempted the impossible. It would then give generalised strategies of demonstrable value. Part III does not pretend to offer such methods perfected; it attempts to offer a foundation and a start (p. 6).
+
+**Part One, "Mechanism".** The epigraph (Herrick) reads: "The properties commonly ascribed to any object are, in last analysis, names for its behavior." (p. 6)
 
 ### Chapter 2. Change
 
-**2/1. Difference and finite steps.** The most fundamental concept is "difference": two things are recognisably different, or one thing has changed with time. Any growth, ageing or movement implies a change from one state to another (p. 9).
-- Ashby *chooses* to assume all changes occur by finite steps and all differences are finite, like a bank balance changing by at least a penny (p. 9).
-- Reason: continuous change brings mathematical difficulties with infinitesimals, whereas for finite differences "all the important questions" can be decided by simple counting (p. 9).
-- A discrete change can be carried over to the continuous by plotting separate points and imagining them becoming infinitely close (pp. 9–10).
-- Nothing is lost. Settle the case for a given size of difference, then for smaller ones, until the trend is clear and the limit as the difference tends to zero can be stated. Ashby says this is the mathematician's own method for continuous change (p. 10).
-- The topic is taken up again in S.3/3 (p. 10).
+**2/1 Why finite steps (pp. 9–10).** The most fundamental concept in cybernetics is "difference": two things recognisably different, or one thing changed with time. Changes may be continuous, such as the earth moving or skin darkening. Ashby avoids infinitesimals and assumes changes occur in finite steps with finite differences, like a bank balance changing by at least a penny (p. 9).
 
-**2/2. Words.** Take pale skin turning dark in sunshine:
-- The pale skin is the **operand** (what is acted on).
-- The sunshine is the **operator** (the factor).
-- The dark skin is the **transform** (what the operand changes to).
-- The change $\text{pale skin} \to \text{dark skin}$ is the **transition**. It is specified by the two states and which changed to which (p. 10).
+- With finite differences, the important questions can be decided "by simple counting" (p. 9).
+- Continuous cases need comparing infinitesimals or summing infinitely many, which is hard (p. 9).
+- A discrete case can often be carried to the continuous by graphing the separate points (pp. 9–10).
+- Ashby holds that nothing is lost. Establish the result for one size of difference, then a smaller one, and so on until the trend shows, then take the limit as the difference tends to zero. Ashby says this is the mathematician's own method for being sure about continuous change. He concludes that the finite case can always be converted to the continuous form if that is desired (p. 10).
 
-**2/3. Transformation.** A single transition is too simple. The operator may act on several operands and induce a transition in each. Ashby's examples for "exposure to sunshine" are cold soil → warm soil, unexposed photographic plate → exposed plate, and coloured pigment → bleached pigment. A set of transitions on a set of operands is a **transformation** (p. 10).
+**2/2 Words (p. 10).** In "pale skin → dark skin under sunshine", the thing acted on (pale skin) is the **operand**, the acting factor (sunshine) is the **operator**, and the result (dark skin) is the **transform**. The change is the **transition**, specified by the two states and which changed to which.
 
-His second example is a letter code, Alpha: each letter goes to the next in the alphabet, Z to A, so CAT becomes DBU. The table is $A\to B,\ B\to C,\ \dots,\ Y\to Z,\ Z\to A$ (p. 11). Points made:
-- The transformation is defined not by what the operator "really" is, nor by any physical cause, but by the set of operands and what each is changed to. It concerns "what happens", not "why it happens" (p. 11).
-- Knowing the operator as a thing in itself is often not essential. One must know the transformation it effects (p. 11).
-- The standard printed form puts operands in an upper row and transforms below, with a downward arrow at the left: $A\ B \dots Y\ Z$ over $B\ C \dots Z\ A$ (p. 11).
+**2/3 Transformation (pp. 10–11).** A single transition is too simple. The operator may act on several operands, each with a characteristic transition. "Exposure to sunshine" gives cold soil → warm soil, unexposed plate → exposed plate, coloured pigment → bleached pigment (p. 10). A set of transitions on a set of operands is a **transformation**. Another example is the coding that replaces each letter by the next one, Z becoming A, so CAT becomes DBU. It is defined by the table A→B, B→C, …, Y→Z, Z→A (p. 11).
 
-**2/4. Closure.** An operator acting on a set of operands may produce no element outside that set. Then the set of operands is **closed** under the transformation. In Alpha, every element of the lower line also occurs in the upper (p. 11).
-- Closure is a relation between a transformation and a particular operand set. If either changes, closure may change (p. 11).
-- The test uses only the details of the transformation, not its cause. So it can be applied even when the cause is unknown (p. 11).
-- Exercises on p. 12 ask whether given tables are closed; for instance, Mr. D plays Mr. C, whose chess system defines a closed transformation from position to position (p. 12).
+- A transformation is defined by giving the operands and what each is changed to, not by what it "really" is or by a physical cause. It concerns what happens, not why. Knowledge of the operator as a thing in itself is often not essential; one must know how it acts on the operands (p. 11).
+- Standard printed form: operands in an upper line, transforms in a lower line, with an arrow ↓ at the left:
 
-**2/5. Infinite operand sets.** A transformation may have infinitely many discrete operands, e.g. $1,2,3,4,\dots \to 4,5,6,7,\dots$. Ashby considers only the simple and clear cases here. It is closed or not according to whether one cannot, or can, find a nameable transform that is not among the operands. For this example, a transform such as 142857 is obviously among the operands, so it is closed (p. 12).
+  ↓ A B … Y Z
+  &nbsp;&nbsp;&nbsp;B C … Z A
 
-**2/6. Notation.** These are shorthand only; the transformation is still specified as in 2/3 (p. 13).
-- "Operand → operand plus three" becomes $\text{Op.}\to\text{Op.}+3$, with the statement that the operands are 1, 2, 3, 4. Shorter still: $n \to n+3\ (n=1,2,3,4)$ (p. 13).
-- $n$ can mean one particular operand (e.g. $2 \to 5$) or the whole transformation. Ashby says context shows which, and this causes no confusion in practice (p. 13).
-- A prime marks the transform: $n \to n'$. So the transformation of Ex. 1 is $n' = n+10\ (n=1,2,3)$ (p. 14).
+**2/4 Closure (p. 11).** If the transforms contain no element absent from the operands, the set of operands is **closed** under the transformation. Closure relates a transformation to a particular set of operands, and altering either may alter closure. The test uses the details of the transformation, not its cause, so it works even when the cause is unknown. The letter-shift above is closed, because every element of the lower line is in the upper. Exercises 1–5 follow (p. 12), including Mr. C's chess system and its closed position-to-position transformation.
 
-**2/7. Single-valued.** A transformation is single-valued if each operand goes to only one transform. $A,B,C,D \to B,A,A,D$ is single-valued. A table in which some operands have two possible transforms (for example $A \to B \text{ or } D$) is not. Other types are said to be important later (S.9/2, 12/8) (p. 14).
+**2/5 Infinite operands (p. 12).** For a transformation with infinitely many discrete operands, such as 1 2 3 4 … → 4 5 6 7 …, the set is closed if one cannot find some particular, namable transform that is not among the operands, and not closed if one can. For 142857 and every other transform, the operand list contains it, so this transformation is closed. Ashby says infinite sets can cause difficulties, so he considers only simple and clear cases here.
 
-**2/8. One-one and many-one.** A single-valued transformation is **one-one** if all its transforms are different, so each transform indicates a unique operand. Example: $A\dots H \to F\,H\,K\,L\,G\,J\,E\,M$. It is one-one but not closed (K, L, J, M are not operands) (p. 14). A single-valued transformation that is not one-one is **many-one**. For example $1,2,3 \to 1,1,1$ is not one-one, because "1" does not indicate a unique operand (pp. 14–15).
+**2/6 Notation (pp. 13–14).** Abbreviations are only shorthand and imply nothing more than the last few sections already stated. The rule "Operand → operand plus three" becomes Op. → Op. + 3, then $n \to n+3\ (n=1,2,3,4)$. The letter n can mean one particular operand (n = 2 changes to 5) or, with no value given, the whole transformation. Ashby says context will always show which is meant (p. 13). A prime marks the transform: $n \to n'$, so a transformation can be written $n' = n + 10\ (n=1,2,3)$ (p. 14).
 
-**2/9. Identity.** The identical transformation, in which each transform equals its operand, is not a nullity. If the operands are all different, it is necessarily one-one. In condensed notation, $n' = n$ (p. 15).
+**2/7 Single-valued (p. 14).** A transformation is **single-valued** if it converts each operand to only one transform. ↓ A B C D / B A A D is single-valued. One where A goes to "B or D" is not. Other types are said to matter later (S.9/2, 12/8).
 
-**2/10. Matrix.** All these transformations can be shown in one schema (p. 15):
-- Write operands in a horizontal row and possible transforms in a column at the left.
-- Put "+" where the column's operand goes to the row's element, and 0 otherwise.
-- The arrow at the top left shows the direction of transition.
+**2/8 One-one and many-one (pp. 14–15).** A single-valued transformation is **one-one** if all its transforms are different, so each transform points back to a unique operand. Example: A B C D E F G H → F H K L G J E M, which is one-one but not closed. A single-valued transformation that is not one-one is **many-one** (p. 15).
 
-Example: $A,B,C \to A,C,C$ gives rows A: $+\ 0\ 0$; B: $0\ 0\ 0$; C: $0\ +\ +$ (p. 15). Large matrices use dots. For $n' = n+2$ on the positive integers, the "+"s run along a diagonal that starts at row 3, column 1 (p. 16).
+**2/9 Identity (p. 15).** The **identical transformation** has no change: each transform equals its operand, $n' = n$. It is apt to be dismissed as a nullity but is important. If its operands are all different it is necessarily one-one.
 
-**2/11. Power.** A closed single-valued transformation can be applied repeatedly. This gives a series of changes analogous to those of an active dynamic system (pp. 16–17). Take Alpha twice: $A \to B \to C$, ..., $Y \to A$, $Z \to B$. This equals one application of $\begin{smallmatrix} A & B & \dots & Y & Z\\ C & D & \dots & A & B\end{smallmatrix}$ (p. 17).
-- From each closed transformation $T$ we get another closed transformation, whose single effect equals $T$ applied twice. It is the "square" $T^2$, one of the "powers" of $T$ (p. 17).
-- For now $T^2$ is just a convenient label (p. 17).
+**2/10 Matrix (pp. 15–16).** Operands are written along a horizontal row. Possible transforms are written in a column at the left. Put "+" where the column's operand is transformed to the row's element, and 0 otherwise. The arrow at top left shows the direction. For ↓ A B C / A C C, the matrix is:
 
-**2/12. Closure matters.** The unclosed transformation $W: f,g,h \to g,h,k$ cannot be applied twice. It changes $h$ to $k$, but its effect on $k$ is undefined. It is "like a machine that takes one step and then jams" (p. 18).
+| ↓ | A | B | C |
+|---|---|---|---|
+| A | + | 0 | 0 |
+| B | 0 | 0 | 0 |
+| C | 0 | + | + |
 
-**2/13. Elimination.** For $T: n' = n+1$ on the positive integers (p. 18):
-1. The second application gives $n'' = n' + 1$, and the first gives $n' = n+1$ (p. 18).
-2. Eliminate $n'$ by substitution: $n'' = (n+1)+1$, i.e. $n'' = n+2$ (p. 18).
-3. Rename the operand for uniformity: $m' = m+2$ is $T^2$ (p. 18).
+Every transformation can be shown this way, and dots may be used for large cases. For $n' = n+2$ on the positive integers, the first + in column 1 is at row 3, then column 2 at row 4, and so on (p. 16). Exercises 1–7 follow (p. 16).
 
-The rule is general. For $n' = 2n - 3$, the second application gives $n'' = 2n' - 3$, so
-$$n'' = 2(2n-3) - 3 = 4n - 9,$$
-i.e. $m' = 4m - 9$ (pp. 18–19).
+**2/11 Power (pp. 16–17).** A closed single-valued transformation can be applied repeatedly, like a dynamic system going through successive changes. Take the letter-shift (call it Alpha) applied twice. A→B→C, so A→C; B→D; Y→A; Z→B. Two applications of Alpha equal one application of ↓ A B … Y Z / C D … A B. This is a closed transformation, called the **square** of the first, one of its **powers**. If the first is T, the square is labelled $T^2$ (p. 17).
 
-**2/14. Higher powers.** Add symbols $n''', \dots$ and eliminate intermediate ones. For three applications of $n' = 2n-3$ (p. 19):
-$$n' = 2n-3,\quad n'' = 2n'-3,\quad n''' = 2n''-3.$$
-Substituting for $n''$:
+**2/12 Why closure matters (p. 18).** An unclosed transformation, such as W: ↓ f g h / g h k, cannot be applied twice. It changes h to k, but k's transform is undefined. Ashby compares it to a machine that takes one step and then jams.
+
+**2/13 Elimination (p. 18).** To find $T^2$ for $T: n' = n+1$ without rewriting every operand, write the second step as $n'' = n'+1$ and eliminate $n'$:
+
+$$n'' = (n+1)+1 = n+2.$$
+
+Renamed for uniformity, this is $m' = m+2$. One application of it equals two applications of T. The rule is general. For $n' = 2n-3$ the second step is $n'' = 2n'-3$:
+
+$$n'' = 2(2n-3)-3 = 4n-9,$$
+
+so $T^2$ is $m' = 4m-9$.
+
+**2/14 Higher powers (p. 19).** For three applications of $n' = 2n-3$, write the step equations $n'=2n-3$, $n''=2n'-3$, $n'''=2n''-3$. Substituting for $n''$ gives
+
 $$n''' = 2(2n'-3)-3 = 4n'-9.$$
-Substituting for $n'$:
+
+Substituting for $n'$ gives
+
 $$n''' = 4(2n-3)-9 = 8n-21.$$
-So $T^3$ is $m' = 8m - 21$ (p. 19).
 
-**2/15. Function notation.** The prime is convenient with one transformation. When several could act, $T(n)$ shows which one acted. $T(T(n))$ is written $T^2(n)$. The change is "only one of notation" (p. 20).
+So $T^3$ is $m' = 8m-21$. Exercises 1–12 follow, including the Fibonacci-linked $n' = 1/(1+n)$ (pp. 19–20).
 
-**2/16. Product.** After $T$, the transform $T(n)$ may be an operand for another transformation $U$, giving $U(T(n))$ (pp. 20–21). With
-$$T: a,b,c,d \to b,d,a,b \qquad U: a,b,c,d \to d,c,d,b,$$
-we get $T(b)=d$ and $U(T(b)) = U(d) = b$. Applying $T$ then $U$ to every operand gives
-$$V: a,b,c,d \to c,b,d,c \quad (V = UT).$$
-$V$ is the **product** or composition of $T$ and $U$ (p. 21).
-- If $U$ is applied first, $U(b) = c$ and $T(c) = a$, so $T(U(b)) = a \ne U(T(b))$. The other order gives $W: a,b,c,d \to b,a,b,d$, written $W = TU$ (p. 21).
-- "A change of the order in the product may change the transformation." The product may not exist if some of $T$'s transforms are not operands for $U$ (p. 21).
-- Ex. 3 (starred) asks the reader to compare the matrix product with the matrix of $V$ (p. 21).
+*Intuition note.* Applying a rule twice is itself a rule, and algebra finds it by substituting the first step into the second. Closure guarantees the output can be fed back in.
 
-*Intuition note.* A power is a transformation applied to its own results, so it needs closure: every output must be a legal input. A product is the same idea with two different rules in a row, and order can matter (p. 21).
+**2/15 Notation $T(n)$ (p. 20).** When several transformations might act, a prime does not say which. So $T(n)$ denotes the transform of n under T. $T(T(n))$ is written $T^2(n)$, and $n''$ corresponds to $T^2(n)$. This is only a change of notation.
 
-**2/17. Kinematic graph.** So far each transformation has been studied through a single action on all operands. A second method, applicable only if the transformation is closed, follows one operand through many repeated applications. This corresponds to setting a dynamic system at an initial state and letting it run, without interference, through the changes its inner nature determines (pp. 21–22).
+**2/16 Product (p. 21).** Let T: a b c d → b d a b and U: a b c d → d c d b. The transform T(b) = d (the text prints "T(b,)"), and U(T(b)) = U(d) = b. Applying T then U defines a new transformation, the **product** or **composition**, written UT:
 
-Example $U: A,B,C,D,E \to D,A,E,D,D$ (p. 22):
-- From C: C, E, D, D, D, … (D continues forever).
-- From A: A, D, D, D, … (p. 22).
-- **Kinematic graph:** write the operands anywhere and draw an arrow from A to B if and only if A goes to B in one step. For $U$ it is $C \to E \to D \leftarrow A \leftarrow B$. A re-entrant arrow on D is optional (p. 22).
-- Different drawings with identical connexions count as the same graph ("buttons tied with string") (p. 22).
-- A point moving along arrows is the **representative point**. Its path corresponds to $U(C), U^2(C),\dots$, and following arrows is often easier than computing (p. 22).
+V = UT: a b c d → c b d c.
 
-More complex example (p. 23):
-$$T: A,B,C,D,E,F,G,H,I,J,K,L,M,N,P,Q \to D,H,D,I,Q,G,Q,H,A,E,E,N,B,A,N,E.$$
-- By following arrows, the representative point always moves either to some state where it stops, or to a cycle around which it circulates indefinitely (p. 23).
-- The graph is like a drainage map. The separate regions where a point ends up are the graph's **basins** (p. 23).
-- Ashby says these matters "obviously have some relation to" stability, treated in Chapter 5 (p. 23).
-- (added step: worked out from the table of $T$ above) The graph has three basins: one containing the cycle A→D→I→A, one ending at the stopping state H, and one containing the cycle E⇄Q.
+Applying U first gives W = TU: a b c d → b a b d. Since T(U(b)) = a but U(T(b)) = b, changing the order of a product may change the transformation. V may not exist if some of T's transforms are not operands of U.
 
-*Intuition note.* The graph turns a table into a picture of the long-run behaviour of a system. Where you start decides which basin you are in, and the basin decides whether you stop or cycle.
+**2/17 Kinematic graph (pp. 21–23).** Another way to study a closed transformation is to apply it repeatedly to one operand. This corresponds to setting a dynamic system at an initial state and letting it run on, without interference (p. 21). Examples are numbers dialled in a telephone system, or an ants' colony given a piece of meat (p. 22).
+
+Take U: ↓ A B C D E / D A E D D. Starting at C gives the series C, E, D, D, D, … Starting at A gives A, D, D, D, … The **kinematic graph** has the operands as points, with an arrow from A to B if and only if A is transformed to B in one step. For U it is C → E → D ← A ← B. A self-loop at D is optional (p. 22).
+
+- The graph can be redrawn in other shapes (as buttons tied with string) and is the same graph if the internal connexions are identical (p. 22).
+- A point that moves along arrows (the **representative point**) follows the series $U(C), U^2(C), \dots$. This is often easier than computing, especially for complicated transformations (p. 22).
+- For a 16-element T (A B C D E F G H I J K L M N P Q → D H D I Q G Q H A E E N B A N E), the graph shows several separate groups of states (p. 23).
+- Starting anywhere and following the arrows, the representative point always moves either to a state where it stops, or to a cycle it circulates in indefinitely (p. 23).
+- Ashby compares the graph to a map of a country's water drainage. The separate regions are the **basins**. He says these matters obviously have some relation to what is meant by stability, which he takes up in Chapter 5 (p. 23).
+
+Exercises 1–9 follow (p. 23).
+
+*Intuition note.* The graph shows at a glance where each state ends up. This long-run fate, a stopping state or a cycle, is the kind of question regulation and stability will ask later.
 
 ## Toy example (ours, not from the text)
-Operands $\{1,2,3,4,5\}$, transformation $R$: $1\to2,\ 2\to3,\ 3\to1,\ 4\to5,\ 5\to5$.
-- **Closed?** Transforms are 2, 3, 1, 5, 5; all are in $\{1,\dots,5\}$, so yes.
-- **Single-valued?** Yes. **One-one?** No: 5 is the transform of both 4 and 5, so it is many-one.
-- **Square $R^2$** (apply $R$ twice): $1\to R(2)=3$; $2\to R(3)=1$; $3\to R(1)=2$; $4\to R(5)=5$; $5\to R(5)=5$. So $R^2: 1,2,3,4,5 \to 3,1,2,5,5$.
-- **Kinematic graph:** $1\to2\to3\to1$ (a cycle), and $4\to5$ with 5 pointing at itself (a stopping state).
-- **Basins:** $\{1,2,3\}$ and $\{4,5\}$. The representative point from 1 gives 1,2,3,1,2,3,…; from 4 it gives 4,5,5,5,…
-- **Matrix** (rows = transforms, columns = operands; one "+" per column):
+Operands {1, 2, 3, 4}; transformation S: ↓ 1 2 3 4 / 2 4 4 1.
 
-| | 1 | 2 | 3 | 4 | 5 |
-|---|---|---|---|---|---|
-| 1 | 0 | 0 | + | 0 | 0 |
-| 2 | + | 0 | 0 | 0 | 0 |
-| 3 | 0 | + | 0 | 0 | 0 |
-| 4 | 0 | 0 | 0 | 0 | 0 |
-| 5 | 0 | 0 | 0 | + | + |
+- **Closed?** Transforms are 2, 4, 4, 1, all in {1, 2, 3, 4}. Yes.
+- **Type:** single-valued. Not one-one, since 2 → 4 and 3 → 4 give the transform 4 twice, so it is many-one.
+- **Matrix** (columns = operands 1–4, rows = transforms). Each column has one + because S is single-valued (added step).
 
-Nothing here mentions what the operands are, only what happens, which is Ashby's point.
+| ↓ | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|
+| 1 | 0 | 0 | 0 | + |
+| 2 | + | 0 | 0 | 0 |
+| 3 | 0 | 0 | 0 | 0 |
+| 4 | 0 | + | + | 0 |
+
+- **Square:** 1 → S(2) = 4; 2 → S(4) = 1; 3 → S(4) = 1; 4 → S(1) = 2. So $S^2$: ↓ 1 2 3 4 / 4 1 1 2.
+- **Kinematic graph:** 1 → 2 → 4 → 1, plus 3 → 4. Start at 3: 3, 4, 1, 2, 4, 1, 2, … After one step the point enters the cycle 1 → 2 → 4 → 1 and never leaves. There is one basin.
+- **Elimination check:** for $n' = 3n+1$, $n'' = 3n'+1 = 3(3n+1)+1 = 9n+4$. At n = 1: n' = 4, n'' = 13, and 9·1 + 4 = 13. ✓
 
 ## Concepts
-- [[cybernetics]] (new) — study of ways of behaving, regular and reproducible, whatever the material; "functional and behaviouristic" (p. 1)
-- [[information-tight]] (new) — open to energy but closed to information and control (p. 4)
-- [[state]] — here, a recognisable condition of the thing; change is a move from one state to another (p. 9)
-- [[transformation]] (new) — set of transitions on a set of operands; defined by what each goes to, not why (p. 10)
-- [[operand-operator-transform]] (new) — thing acted on, factor acting, result of the change (p. 10)
-- [[transition]] (new) — a single change, e.g. pale skin → dark skin (p. 10)
-- [[closure]] (new) — a transformation creates no element outside its operand set; tested from the table alone (p. 11)
-- [[single-valued-transformation]] (new) — each operand has only one transform (p. 14)
-- [[one-one-and-many-one]] (new) — one-one: all transforms differ; many-one: single-valued but not one-one (pp. 14–15)
-- [[identity-transformation]] (new) — $n'=n$; no change (p. 15)
-- [[matrix-of-transformation]] (new) — array with "+" where column operand goes to row transform, else 0 (p. 15)
-- [[power-of-transformation]] (new) — $T^k$, one application with the effect of $k$ applications of $T$ (p. 17)
-- [[elimination]] (new) — substituting between $n'', n', n$ to get a one-step rule for a power (p. 18)
-- [[product-of-transformations]] (new) — $UT$: apply $T$, then $U$; order may matter (p. 21)
-- [[kinematic-graph]] (new) — arrows $A\to B$ iff $A$ goes to $B$ in one step (p. 22)
-- [[basin]] (new) — region of a kinematic graph where a point ends in the same stop or cycle (p. 23)
-- [[stability]] — Ashby only says basins relate to it; Chapter 5 will treat it (p. 23)
+- [[transformation]] (new) — a set of transitions on a set of operands, defined by what each becomes, not why (p. 10)
+- [[operand-operator-transform]] (new) — the thing acted on, the acting factor, and the result (p. 10)
+- [[closure]] (new) — set of operands is closed if no transform lies outside it; tested from the transformation alone (p. 11)
+- [[single-valued-one-one-many-one]] (new) — each operand has one transform; additionally all transforms distinct; or not (pp. 14–15)
+- [[identity-transformation]] (new) — each transform equals its operand, n' = n (p. 15)
+- [[transformation-matrix]] (new) — grid of + and 0 showing which operand goes to which transform (p. 15)
+- [[power-and-product-of-transformations]] (new) — repeated application $T^k$, found by elimination; product UT is T then U, and order may matter (pp. 17–21)
+- [[kinematic-graph]] (new) — arrows from each state to its one-step transform; shows long-run fates (p. 22)
+- [[basin]] (new) — a separate region of the graph; the graph is compared to a drainage map showing where a point starting at any place ends up (p. 23)
+- [[state]] — used informally here as one of the two ends of a transition; no formal state concept yet (p. 10)
+- [[stability]] — only pointed to; the graph is said to "have some relation" to it, with a full treatment promised for Chapter 5 (p. 23)
+- [[black box]] — the idea that one can know a transformation without knowing the cause of change; this id is the nearest canon link, and the text does not use the term (p. 11)
 
 ## Canonical instances
-- [[alpha-letter-shift-code]] — CAT → DBU; closed; its square shifts by two (pp. 11, 17)
-- [[ovum-to-rabbit]] — cybernetics asks why rabbit-form and not dog- or fish-form, taking energy for granted (p. 3)
-- [[massless-spring]] — non-existent systems still useful in mathematical physics (p. 2)
-- [[vary-one-factor-at-a-time]] — method that fails for interconnected systems (Fisher, soils) (p. 5)
-- [[kinematic-graph-sixteen-states]] — T on A…Q, with stops and cycles (p. 23)
+- [[alphabet-shift-code]] — the letter-to-next-letter transformation: closed, with its square (pp. 11, 17)
+- [[sunshine-transformations]] — pale skin, cold soil and photographic plate under one operator (p. 10)
+- [[ovum-to-rabbit]] — cybernetic versus energetic questions about growth (p. 3)
+- [[massless-spring-and-geometry]] — non-existent or merely possible systems still give the framework (pp. 2–3)
+- [[fisher-soil-experiments]] — a complex system that does not allow one factor to be varied alone (p. 5)
+- [[kinematic-graph-U-and-T]] — worked graphs with a stopping state, cycles and several basins (pp. 22–23)
 
 ## Bridges (candidates)
-- [same-math] repeated application $T^k$ of a closed transformation ↔ dynamical systems: a discrete-time state map iterated from an initial state — both are the same iterated function.
-- [same-math] kinematic graph, stopping states and cycles ↔ functional graphs of maps on finite sets: same objects (fixed points, cycles, basins).
-- [structural-analogy] "+"/0 matrix of a transformation ↔ state-space/Markov transition matrix: one entry per operand column is a deterministic special case.
-- [structural-analogy] basins of a kinematic graph ↔ control-theory stability: Ashby only says they are "related" (Chapter 5).
-- [structural-analogy] "the set of all possible behaviours" ↔ variety/information theory: Ashby links the set viewpoint with information theory (p. 3).
+- [structural-analogy] Repeated transformation and trajectory on the kinematic graph ↔ control-theory: state evolution of a discrete-time system, with the initial state set and then left to run without input (the text calls the correspondence "analogous").
+- [same-math] Kinematic graph of a single-valued transformation ↔ graph theory: the directed graph of a function on a finite set, where each point has one outgoing arrow.
+- [structural-analogy] Matrix of + and 0 with composition by row-into-column multiplication (Ex. 2/16/3) ↔ Markov-chain transition matrices: the same layout, but 0/+ entries rather than probabilities.
+- [structural-analogy] Basin and cycle ↔ stability: a region that drains to one equilibrium or oscillation is an early picture of what stability analysis will test.
 
 ## Questions this raises
-- If a system is not closed on its operands, what do we do with the extra states, so that the system can still be studied (p. 18)?
-- How does a kinematic graph relate to stability and equilibrium (promised for Chapter 5, p. 23)?
-- What are the non-single-valued transformations of S.9/2 and 12/8 used for (p. 14)?
-- How does the "set of possibilities" view connect with information theory and with the "information-tight" definition (pp. 3–4)?
+- Ashby says using finite differences loses nothing. For which questions does finite counting truly give the same answers as the continuous limit?
+- If the graph of a single-valued transformation always ends in a stop or cycle (p. 23), what extra condition does this need? (Closure is needed to apply the transformation repeatedly.)
+- How would "not single-valued" transformations (S.9/2, 12/8) change closure and the graph?
+- What does "information-tight" (p. 4) mean once regulation is formalised with these tools?
 
 ## Exercises worth doing
-- Ex. 2/4/5 (p. 12) — Mr. C's closed chess system: does closure make D's offer wise? Tests what closure does and does not promise — difficulty: medium
-- Ex. 2/14/7 (p. 19) — find double applications by elimination — difficulty: medium
-- Ex. 2/14 Ex. 9 (p. 19) — repeated $n'=1/(1+n)$, linked to the Fibonacci series — difficulty: hard
-- Ex. 2/16 Ex. 3 (p. 21, starred) — matrix product of $T$ and $U$ versus the matrix of $V$ — difficulty: hard
-- Ex. 2/17 Ex. 9 (p. 23) — can one basin of a single-valued transformation contain two cycles? — difficulty: medium
-- Ex. 2/17 Ex. 6–7 (p. 23) — arrows into one point, one-one versus many-one — difficulty: easy
+- Ex. 2/4/5 (p. 12) — chess system as a closed transformation; tests what closure does and does not tell you — difficulty: medium
+- Ex. 2/10/6–7 (p. 16) — counting possible matrices for two operands, and how many are single-valued — difficulty: easy
+- Ex. 2/14/7 (p. 19) — elimination for double applications of three different rules — difficulty: medium
+- Ex. 2/16/3 (p. 21) — tests whether matrix multiplication matches composition — difficulty: hard
+- Ex. 2/17/6–7 (p. 23) — can two arrows meet in one point for one-one and many-one transformations — difficulty: easy
+- Ex. 2/17/9 (p. 23) — can a basin contain two cycles — difficulty: medium
 
 ## Reading notes
-- The PDF has two printed pages per image (scanned spreads). Text-layer labels say `printed="?"`, but page numbers are visible in the images. Mapping: pdf 5 = p. 1; pdf 6 = pp. 2–3; pdf 7 = pp. 4–5; pdf 8 = p. 6 (plus the Part One title page); pdf 9 = p. 9; pdf 10 = pp. 10–11; pdf 11 = pp. 12–13; pdf 12 = pp. 14–15; pdf 13 = pp. 16–17; pdf 14 = pp. 18–19; pdf 15 = pp. 20–21; pdf 16 = pp. 22–23. The offset is not constant. The Part One title page shares an image with p. 6, and no page number 7 or 8 is printed in the images. No image of p. 9 was provided (the text is from the layer).
-- This unit covers Chapter 1 ("What Is New") and Chapter 2 ("Change"), plus the Part One title (motto from Herrick: properties are "names for its behavior").
-- The two-column text layer interleaves columns, so I assigned text to printed pages by the images. The p. 17 Ex. 1 table prints "c c a'" with a prime that the page does not explain. A p. 21 passage prints "T(b,)", evidently a misprint for $T(b)$. Another passage on p. 12 prints "slack" for "black".
-- The "three basins" statement for the p. 23 graph is my own reading, worked out from the table of $T$ and marked as an added step.
-- The text names "Sir Donald Fisher" (p. 5); I give it as printed.
-- Exercises are listed, not solved.
+- **Scope:** This unit combines Chapter 1 ("What Is New", pp. 1–6) and Chapter 2 ("Change", pp. 9–23). Page 6 holds the end of Ch. 1 and the Part One title page with the Herrick epigraph. The spread labelled 8-9 shows only the Chapter 2 opening text, ending with the number 9; no printed page 7 appears.
+- **Page labels:** Pages are given as two-page spreads (e.g. "2-3"). Citations use the printed number of the half where the text appears. Printed numbers are continuous from pdf 5 = p. 1, but spreads share one pdf number, so there is no fixed offset.
+- **Text-layer problems:** The text layer joins spread columns and corrupts words ("arm", "he", "In full", "t e" for "the"). I used the images.
+- **Misprints seen in the images:**
+  - p. 18: the text says n" must be "I more than n""; the "I" is a misprint for 1, and the second n" should be n'.
+  - p. 21: "T(b,)" should be T(b).
+  - p. 12: "slack" for Black in the chess exercise.
+  - p. 5: "Sir Donald Fisher" is as printed.
+- **Kinematic graph (p. 23), unresolved:** By the table, T sends D → I and I → A, and A → D. In the printed drawing, the two short arrows under A and D both point down toward I, but the table gives I → A, so the drawing appears not to match the table at that point. The L3 claims about the graph rely only on the author's statement and the group structure.
+- **Exercises:** Exercise solutions are not printed in this unit. None are given here.
