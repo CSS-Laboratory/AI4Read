@@ -1,0 +1,3 @@
+# Re-check first in the Claude Code route (accepted as verified: needs-review; wave-3 review)
+meadows-2008-thinking/ch02-note
+popper-1959-logic/front-preface-2

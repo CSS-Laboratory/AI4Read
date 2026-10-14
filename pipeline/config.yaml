@@ -9,7 +9,7 @@ gcs_prefix: ai4read
 prices_usd_per_mtok:
   online_global: {input: 2.00, output: 10.00}
   batch_us: {input: 1.10, output: 5.50, cache_hit: 0.055, cache_write_5m: 1.375}
-max_spend_usd: 300            # raised by Kunhao 2026-10-13
+max_spend_usd: 340            # raised by Kunhao 2026-10-14 (finish core on Vertex)
 paths:
   library: "~/Library/CloudStorage/GoogleDrive-yangkunhao93@gmail.com/My Drive/Book/AI4Read/library"
   wiki_works: wiki/works

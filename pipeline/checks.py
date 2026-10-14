@@ -88,6 +88,8 @@ def page_refs(text):
             if int(b) < a and len(b) < len(m.group(2)):          # abbreviated range: 1170–71 -> 1171
                 b = m.group(2)[:len(m.group(2)) - len(b)] + b
             yield "p", int(b)
+    for m in re.finditer(r"\([^()]*?\bpp?\.\s*([ivxlcdm]{1,8})\b", text):   # roman front matter: counted, not range-checked
+        yield "roman", m.group(1)
     for m in re.finditer(r"\(pdf\.?\s*(\d+)(?:\s*[–-]\s*(\d+))?", text):
         yield "pdf", int(m.group(1))
         if m.group(2):
@@ -145,6 +147,8 @@ def check(md, row, uid=None):
     bad = set()
     for name in ("L2", "L3", "Concepts", "Canonical instances", "Exercises worth doing"):
         for kind, n in page_refs(sec.get(name, "")):
+            if kind == "roman":
+                continue
             r = pr if kind == "p" else pdf
             if r and not (r[0] - 2 <= n <= r[1] + 2):
                 bad.add(f"{kind} {n}")

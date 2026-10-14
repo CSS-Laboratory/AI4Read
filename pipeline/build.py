@@ -267,11 +267,12 @@ def source_words(row):
 
 
 def target_words(row, sw=None):
-    """wave-1 review: min(max(1200, f*sw), 0.80*sw), f = 0.40 (0.55 if >= 40% image pages); 6000 upper bound kept."""
+    """wave-3 review: min(max(1000, f*sw), 0.70*sw), f = 0.30 (0.42 if >= 40% image pages); 6000 upper bound kept.
+    (wave-1 rule was f = 0.40 / 0.55 with floor 1200 and ceiling 0.80*sw; the model treated it as a floor.)"""
     sw = source_words(row) if sw is None else sw
     n = max(int(row["n_pages"] or 1), 1)
-    f = 0.55 if int(row["image_pages"] or 0) / n >= 0.4 else 0.40
-    return max(1, min(6000, round(min(max(1200, f * sw), 0.80 * sw))))
+    f = 0.42 if int(row["image_pages"] or 0) / n >= 0.4 else 0.30
+    return max(1, min(6000, round(min(max(1000, f * sw), 0.70 * sw))))
 
 
 def quoted_spans(md):

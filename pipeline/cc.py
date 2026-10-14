@@ -166,7 +166,10 @@ def pick_units(explicit=None):
             if r["tier"] == tier and L.get(u, {}).get("state") not in ("accepted", "needs_human", "skipped"):
                 todo.append(u)
     first = [u for u in todo if u in prio or u.split("/")[0] in prio]
-    return first + [u for u in todo if u not in first]
+    rc = PIPE / "waves" / "cc_recheck.txt"           # accepted as 'needs-review' on Vertex: re-check first
+    recheck = [l.split("#")[0].strip() for l in rc.read_text().splitlines() if l.split("#")[0].strip()] if rc.exists() else []
+    recheck = [u for u in recheck if L.get(u, {}).get("verified") == "needs-review"]
+    return recheck + first + [u for u in todo if u not in first and u not in recheck]
 
 
 def reset_interrupted(ids):
@@ -212,6 +215,9 @@ def cc_run(until=None, explicit=None, max_units=None, dry_run=False, suffix=None
         deadline = time.mktime((now.tm_year, now.tm_mon, now.tm_mday, hh, mm, 0, 0, 0, -1))
     ids = pick_units(explicit)
     reset_interrupted(ids)
+    for u in ids:                                       # needs-review re-checks restart from P1 on this route
+        if state.latest().get(u, {}).get("verified") == "needs-review":
+            state.record(u, "planned", note="cc: re-check of a needs-review unit", route=ROUTE, loop=0, p2_reruns=0)
     done, stop = [], "queue empty"
     for uid in ids:
         if deadline and time.time() > deadline - 20 * 60:       # do not start a unit in the last 20 minutes
