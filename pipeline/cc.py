@@ -81,7 +81,8 @@ def call_claude(workdir, system, task, dry_run=False):
     if dry_run:
         return "", {"dry_run": True, "cmd": cmd[:4] + ["…"] + cmd[5:6] + ["<system>"] + cmd[7:], "cwd": str(workdir)}
     t0 = time.time()
-    p = subprocess.run(cmd, cwd=workdir, capture_output=True, text=True, timeout=PASS_TIMEOUT_S)
+    env = {**os.environ, "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "64000"}   # verifier: up to 120 h_checks + edits
+    p = subprocess.run(cmd, cwd=workdir, capture_output=True, text=True, timeout=PASS_TIMEOUT_S, env=env)
     meta = {"exit": p.returncode, "seconds": round(time.time() - t0)}
     try:
         out = json.loads(p.stdout)
@@ -182,7 +183,7 @@ def reset_interrupted(ids):
 
 
 def commit_unit(uid, msg):
-    paths = ["pipeline/state", "pipeline/STATUS.md", "wiki/works"]
+    paths = ["pipeline/state", "pipeline/STATUS.md", "wiki/works", "pipeline/results"]
     subprocess.run(["git", "-C", str(REPO), "add", *paths], check=False)
     r = subprocess.run(["git", "-C", str(REPO), "commit", "-qm",
                         msg + "\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"], capture_output=True)
@@ -203,8 +204,22 @@ def status_block(done, started, stop_reason):
     return block
 
 
-def cc_run(until=None, explicit=None, max_units=None, dry_run=False, suffix=None):
+def isolate(tag):
+    """Gate CC parity: separate state log, spend log and raw outputs so batch records stay untouched."""
+    from . import run as runmod
+    state.LOG = PIPE / "state" / f"{tag}_units.jsonl"
+    state.SPEND = PIPE / "state" / f"{tag}_spend.jsonl"
+    runmod.OUT = PIPE / "_work" / f"out_{tag}"
+    runmod.OUT.mkdir(parents=True, exist_ok=True)
+
+
+TIMING = PIPE / "results" / "cc_timing.jsonl"
+
+
+def cc_run(until=None, explicit=None, max_units=None, dry_run=False, suffix=None, isolate_tag=None):
     started = time.strftime("%Y-%m-%d %H:%M")
+    if isolate_tag:
+        isolate(isolate_tag)
     if suffix:
         SUFFIX[0] = suffix
         _patch_wiki_suffix(suffix)
@@ -231,6 +246,7 @@ def cc_run(until=None, explicit=None, max_units=None, dry_run=False, suffix=None
             stop = f"max_units={max_units}"
             break
         log(f"cc unit {uid}")
+        t_unit = time.time()
         try:
             final = process_unit(uid, dry_run=dry_run)
         except UsageLimit as e:
@@ -241,6 +257,12 @@ def cc_run(until=None, explicit=None, max_units=None, dry_run=False, suffix=None
             log(f"  {uid} error: {str(e)[:300]}")
             state.record(uid, "planned", note=f"cc error: {str(e)[:200]}", route=ROUTE, loop=0)
             continue
+        rec = state.latest().get(uid, {})
+        with open(TIMING, "a") as fh:
+            fh.write(json.dumps({"ts": time.strftime("%Y-%m-%dT%H:%M:%S"), "unit_id": uid, "final": final,
+                                 "seconds": round(time.time() - t_unit), "isolate": isolate_tag,
+                                 "loop": rec.get("loop", 0), "verified": rec.get("verified"),
+                                 "path": rec.get("path")}) + "\n")
         if final == "accepted":
             done.append(uid)
             if not dry_run:
@@ -270,8 +292,9 @@ def main(argv=None):
     ap.add_argument("--max-units", type=int)
     ap.add_argument("--suffix", help="write accepted digests as <unit><suffix>, e.g. .cc.md")
     ap.add_argument("--dry-run", action="store_true", help="build + materialize the first pass, no model call")
+    ap.add_argument("--isolate", help="separate state/output namespace (Gate CC parity), e.g. gatecc")
     a = ap.parse_args(argv)
-    cc_run(a.until, a.units, a.max_units, a.dry_run, a.suffix)
+    cc_run(a.until, a.units, a.max_units, a.dry_run, a.suffix, a.isolate)
 
 
 if __name__ == "__main__":
