@@ -50,13 +50,15 @@ def strip_code(md):
 
 
 def fix_math(md):
-    """KaTeX allows one \\tag per `aligned` block but one per row in `align`: switch multi-tag aligned -> align."""
+    """KaTeX fixes: multi-tag `aligned` -> `align` (one \\tag per row allowed there); `\\,^` -> `\\,{}^`."""
     def one(m):
         block = m.group(0)
         if block.count("\\tag") > 1 and "\\begin{aligned}" in block:
             block = block.replace("\\begin{aligned}", "\\begin{align}").replace("\\end{aligned}", "\\end{align}")
         return block
-    return DISPLAY.sub(one, md)
+    md = DISPLAY.sub(one, md)
+    # a script on a spacing command ('\,^{LC}\nabla') crashes KaTeX; attach it to an empty group instead
+    return re.sub(r"\\([,;:!]|quad|qquad)(\s*)(?=[\^_])", r"\\\1\2{}", md)
 
 
 def katex_errors(md):
