@@ -26,6 +26,7 @@ WAVES = PIPE / "waves"
 OUT = PIPE / "_work" / "out"
 JOBS = PIPE / "state" / "jobs.jsonl"
 MAX_JOBS = 4                    # Vertex default concurrent batch jobs per project
+JOB_UNITS = 120                 # units per batch job (memory / upload size for image-heavy waves)
 MAX_LOOPS = 2                   # P3 re-digests before needs_human
 PIPELINE_VERSION = "0.1"
 REFERENCE_UNITS = {"akerlof-1970-lemons/main", "cover-2006-elements/ch02-entropy"}
@@ -504,10 +505,17 @@ def run(wave, once=False, sleep_s=120, use_online=False, out_dir=None):
                 if todo and use_online:
                     run_online(kind, todo, ctl)
                     continue
-                if todo:
-                    if submit(wave, kind, todo, ctl) is None:
+                stop = False
+                for k in range(0, len(todo), JOB_UNITS):          # big waves: several jobs of <= JOB_UNITS
+                    if sum(1 for j in jobs().values() if j.get("status") == "submitted") >= MAX_JOBS:
                         break
-                    busy |= set(todo)
+                    chunk = todo[k:k + JOB_UNITS]
+                    if submit(wave, kind, chunk, ctl) is None:
+                        stop = True
+                        break
+                    busy |= set(chunk)
+                if stop:
+                    break
         write_status(wave, ids, ctl)
         L = state.latest()
         done = all(L.get(u, {}).get("state") in TERMINAL for u in ids)
