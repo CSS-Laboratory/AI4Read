@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 12
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 6
 ---
 # Predicting pragmatic reasoning in language games
 
@@ -27,11 +29,11 @@ How can we make precise, quantitative predictions about pragmatic inference, tha
 ## L2 — Key ideas (5–10 bullets)
 - The listener infers the intended referent by Bayes' rule: prior salience × speaker likelihood, normalised over the objects in context (p. 2).
 - The prior is "contextual salience", measured empirically because no a priori method exists to compute it (p. 2).
-- Speakers are modelled as rational: utility is informativeness (negative surprisal) minus a cost. With cost held constant, this gives the "size principle": among the words that apply to the referent, speakers should choose words in proportion to 1/(number of objects each word fits) (pp. 2–3, 10).
+- Speakers are modelled as rational: utility is informativeness (negative surprisal) minus a cost. With constant cost and α = 1, and informativeness measured against a literal listener, this gives the "size principle": among the words that apply to the referent, speakers should choose words in proportion to 1/(number of objects each word fits) (pp. 2–3, 10).
 - Three participant groups (speaker, salience, listener) test the likelihood and the posterior and measure the prior, separately (p. 3).
 - Speaker bets match the model (r = .98). Salience and listener bets are not correlated with each other (r = .19, p = .40). Combined via the model, they predict listener bets (r = .99; .87 without 0 and 100 predictions) (p. 3).
-- The fit is parameter-free: the noise parameter is set to α = 1 and word cost is held constant, so no parameter is fitted; the prior comes from the salience data (pp. 9–10).
-- The authors claim the model synthesises earlier work on disambiguation, signalling games and referring-expression generation (pp. 3–4).
+- The authors call the fit parameter-free (p. 1). In the derivation the noise parameter is set to α = 1 and word cost is held constant, and the prior comes from the salience data (pp. 9–10).
+- The authors claim the model synthesises earlier work on disambiguation, signalling games (game-theory models of a sender choosing signals for a receiver) and referring-expression generation (systems that produce phrases picking out objects) (pp. 3–4).
 
 ## L3 — Walkthrough
 
@@ -72,20 +74,20 @@ Here $|w|$ is the number of objects to which $w$ could apply. $W$ is the set of 
 *Intuition note:* Salience data alone do not track listener bets (r = .19, not significant), but the model's product of salience and informativeness does (r = .99). The paper does not report a test of informativeness alone against listener bets (p. 3).
 
 ### Materials and methods (p. 9)
-- 745 US participants on Mechanical Turk: 206 speaker, 276 salience, 263 listener. Only a participant's first trial was kept. Trials needed a passed manipulation check and bets summing to 100. The check asked, e.g., "How many objects are blue?" (p. 9).
+- 745 US participants on Mechanical Turk: 206 speaker, 276 salience, 263 listener. Only a participant's first trial was kept. Trials needed a passed manipulation check (a question confirming the participant noticed the relevant features) and bets summing to 100. The check asked, e.g., "How many objects are blue?" (p. 9).
 - Each page showed three objects with colour, shape and texture features. Two dimensions varied and the third was held constant (p. 9).
 - The manipulation was how many objects shared the target's value on each of the two dimensions. The notation is "# sharing feature 1 / # sharing feature 2". There are seven context types: 1/1, 1/2, 1/3, 2/2 (both features overlapping on two objects), 2/2 (both features overlapping on one object, shown in Fig. 1C), 2/3 and 3/3. The two 2/2 types were separated because the model predicts different results for them (p. 9).
 - Fifty random trials were generated for each of the 6 numerical conditions in each group (p. 9).
 - In the speaker condition the target was marked with a dotted line (p. 9).
 
 ### Supplementary model derivation (pp. 9–10)
-Setting: a shared context $C=\{o_1,\dots,o_n\}$ and a shared vocabulary $V=\{w_1,\dots,w_m\}$. Each word's meaning is a Boolean function on objects (p. 9).
+Setting: a shared context $C=\{o_1,\dots,o_n\}$ and a shared vocabulary $V=\{w_1,\dots,w_m\}$. Each word's meaning is a Boolean function on objects (a rule giving true or false for each object) (p. 9).
 
-The speaker chooses words in proportion to exponentiated expected utility (Bayesian decision theory):
+The speaker chooses words in proportion to exponentiated expected utility (Bayesian decision theory: choosing actions by their expected utility under uncertainty):
 
 $$P(w\mid r_S,C)\propto e^{\alpha U(w;r_S,C)}\tag{S1}$$
 
-The noise parameter $\alpha$ measures the speaker's deviation from optimal choice. Setting $\alpha=1$ gives a standard Luce choice rule (p. 9).
+The noise parameter $\alpha$ measures the speaker's deviation from optimal choice. Setting $\alpha=1$ gives a standard Luce choice rule (each option chosen with probability proportional to its weight) (p. 9).
 
 Utility is informativeness minus cost (p. 10):
 
@@ -115,7 +117,7 @@ Listener hears "blue". Compute the likelihood $P(\text{blue}\mid o)$ with Eq. 2:
 - Object 2: words true are blue (1/2) and circle (1/2). $P=\frac{1/2}{1}=\frac12$.
 - Object 3: "blue" is false, so $P=0$.
 
-With a uniform prior, the normaliser is $\frac13+\frac12=\frac56$. Posterior: object 1 = $\frac{1/3}{5/6}=0.4$, object 2 = $\frac{1/2}{5/6}=0.6$, object 3 = 0.
+With a uniform prior of $\frac13$, the normaliser is $\frac13(\frac13+\frac12)=\frac5{18}$; the prior cancels. Posterior: object 1 = $\frac{1/3}{5/6}=0.4$, object 2 = $\frac{1/2}{5/6}=0.6$, object 3 = 0.
 
 Interpretation: a speaker meaning the blue square could have said the more specific "square", so "blue" is slightly better evidence for the blue circle.
 
@@ -123,8 +125,8 @@ With a salience prior (0.6, 0.2, 0.2): unnormalised values are 0.6·(1/3) = 0.2,
 
 ## Concepts
 - [[Rational Speech Act (RSA)]] — the paper's model has this structure (a speaker chosen by informativeness, a listener who inverts it with Bayes), though the paper does not use the name (canon link; not stated in this unit) (pp. 2, 10)
-- [[literal listener / pragmatic speaker / pragmatic listener]] — here the literal listener is $\tilde w_C$ (S3), the speaker is Eq. 2, and the listener is Eq. 1 (pp. 2, 10)
-- [[Boltzmann (softmax) rationality]] — speaker choice ∝ $e^{\alpha U}$ (S1). $\alpha$ is the decision-noise parameter and is set to 1, a Luce choice rule (p. 9)
+- [[literal listener / pragmatic speaker / pragmatic listener]] — (canon link; the paper says "literal interpretation", not these names) here the literal listener is $\tilde w_C$ (S3), the speaker is Eq. 2, and the listener is Eq. 1 (pp. 2, 10)
+- [[Boltzmann (softmax) rationality]] — (canon link; the paper says "Luce choice rule", not this name) speaker choice ∝ $e^{\alpha U}$ (S1). $\alpha$ is the decision-noise parameter and is set to 1, a Luce choice rule (p. 9)
 - [[rational-agent assumption / principle of efficiency]] — the speaker is a rational actor maximising utility (informativeness minus cost) (pp. 2, 10)
 - [[referential-communication-game]] (new) — participants bet which object a word refers to, as in Wittgenstein's games (p. 2)
 - [[contextual-salience]] (new) — prior probability that an object is referred to; it covers perceptual, social and conversational salience and is measured empirically (p. 2)
@@ -147,7 +149,7 @@ With a salience prior (0.6, 0.2, 0.2): unnormalised values are 0.6·(1/3) = 0.2,
 - Why are salience and listener bets uncorrelated (r = .19), yet salience still matters once combined with informativeness?
 
 ## Reading notes
-- Printed page = pdf page for all pages. The supplement pages carry labels 8–10, but the page images of pdf 9 and 10 show their own numbers "2" and "3" (the pdf 8 text layer shows "1"; its image was not provided). I cite the labelled numbers.
+- Printed page = pdf page for pp. 1–6; the figure page (pdf 7) has no number. The supplement pages (pdf 8–10) print their own numbers "1", "2" and "3"; this digest cites them by pdf number (pp. 8–10).
 - The page 7 image (Fig. 1) was not provided; I used only its text layer and the legend on p. 6. I did not check the plotted values.
 - Counts are given in different places: the legend (p. 6) says N = 206 (speaker) and N = 263 (listener) for Fig. 1B. Fig. 1C uses N = 20 (salience) and N = 24 (listener) for one context type. Methods list 276 in the salience condition (p. 9).
 - Minor typos in the source: "probability of a choosing a term" (p. 6); "measures of how much" (p. 10); S1 uses lowercase $r_s$ while the other equations use $r_S$.

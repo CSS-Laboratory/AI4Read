@@ -13,14 +13,16 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 8
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 3
 ---
 # Soundness and completeness
 
 ## L0 — One line
-For TFL, the truth-table notion of validity and the derivation notion of validity coincide (⊢ implies ⊨, and ⊨ implies ⊢), so we may use whichever method suits the task.
+For TFL (truth-functional logic, the book's logic of sentence letters and connectives), the truth-table notion of validity and the derivation notion of validity coincide (⊢ implies ⊨, and ⊨ implies ⊢), so we may use whichever method suits the task.
 
 ## L1 — The gist (≤ 120 words)
-Chapter 20 used ⊢ for derivations and ⊨ for truth tables. This chapter asks whether the two always agree. The author first defines each logical concept twice: semantically (truth tables) and proof-theoretically (derivations). Then he states two properties. Soundness means anything derivable is semantically valid. Completeness means every semantically valid argument is derivable. Full proofs are beyond the book; only the idea of the soundness proof is sketched. TFL's proof system has both properties, though not every system does. So the choice of method is practical. Derivations can show, for example, that a sentence is a theorem or that two sentences are equivalent. But they cannot practically show that no proof exists, so truth tables are needed for non-equivalence or contingency.
+Chapter 20 started using ⊢ (derivations) like ⊨ (truth tables). This chapter asks whether the two always agree. The author first defines each logical concept twice: semantically (truth tables) and proof-theoretically (derivations). Then he states two properties. Soundness means anything derivable is semantically valid. Completeness means every semantically valid argument is derivable. Full proofs are beyond the book; only the idea of the soundness proof is sketched. TFL's proof system has both properties, though not every system does. So the choice of method is practical. Derivations can show, for example, that a sentence is a theorem or that two sentences are equivalent. But they cannot practically show that no proof exists, so truth tables are needed for non-equivalence or contingency.
 
 **Prerequisites:** truth tables and valuations; natural-deduction derivations in TFL; the symbols ⊨, ⊢, ⊥; tautology, contradiction, contingency, equivalence, consistency, validity.
 
@@ -28,7 +30,7 @@ Chapter 20 used ⊢ for derivations and ⊨ for truth tables. This chapter asks 
 - The question: do ⊨ and ⊢ always work the same way? The answer given is yes, for TFL (pp. 182–183).
 - Every logical concept gets a semantic and a proof-theoretic definition (Table 22.1). Concepts with no direct derivation test are defined in terms of ones that have one; contingency and consistency are defined negatively (pp. 183–184).
 - Contingency and consistency are defined negatively on the proof side: "neither a theorem nor an inconsistent sentence" (contingency) and "not inconsistent" (consistency). There is no practical finite derivation test for them (p. 183).
-- Soundness (⊢ implies ⊨) means the derivation rules never prove an invalid argument. The sketch is that each rule preserves entailment by the premises plus open assumptions (p. 185).
+- Soundness (⊢ implies ⊨) means the derivation rules never prove an invalid argument. The sketch is that each rule preserves entailment (truth of the premises guaranteeing truth of the conclusion) by the premises plus open assumptions (p. 185).
 - Completeness (⊨ implies ⊢) means the rules are enough for every semantically valid argument. It is generally harder to prove than soundness (p. 185).
 - TFL's proof system is sound and complete. This is not true of all proof systems or formal languages (pp. 185–186).
 - Truth tables grow impossibly large after a few sentence letters. Derivations cannot practically prove negative claims (pp. 186–187).
@@ -45,7 +47,7 @@ Chapter 20 used ⊢ for derivations and ⊨ for truth tables. This chapter asks 
 - A collection is *inconsistent in TFL* iff ⊥ can be derived from it. It is *consistent* iff it is not inconsistent (p. 183).
 - An argument is *provably valid in TFL* iff there is a derivation of its conclusion from its premises (p. 183).
 
-Table 22.1 (p. 184) pairs the definitions:
+Table 22.1 (p. 184) pairs the definitions (the main connective is the one that governs the whole sentence):
 
 | Concept | Truth table | Derivation |
 |---|---|---|
@@ -82,7 +84,7 @@ Table 22.2 (p. 187): to prove a property present / absent.
 - Consistency: find a line where all are true / derive ⊥ from the sentences.
 - Validity: derive the conclusion from the premises / find a line with true premises and false conclusion.
 
-*Intuition note:* A single success settles a positive claim. A derivation is one such success. A truth-table line can also be one. But "no derivation exists" cannot be checked by searching, so the table does that job.
+*Intuition note:* A derivation settles a claim by one success. Truth tables settle the claims that would need "no derivation exists": one line for a non-tautology or non-equivalence, two lines (one true, one false) for contingency. A search for derivations cannot check that nothing was missed.
 
 **Practice exercises (pp. 186–188).** Two sets of 12 problems each. Each asks you to show, by derivation or truth table, that something is or is not a theorem, contradiction, contingent, equivalent, consistent or valid.
 

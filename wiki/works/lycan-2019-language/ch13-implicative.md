@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 20
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 11
 ---
 # Implicative Relations
 
@@ -22,14 +24,14 @@ Utterances can imply things that their sentences do not entail, and Lycan distin
 ## L1 — The gist (≤ 120 words)
 Besides entailment, utterances carry other implications. Lycan surveys four. (1) Conveyed meanings and invited inferences, which Grice explains as conversational implicature (a message conveyed without being said), worked out from norms of cooperative talk. (2) Presupposition, where failure supposedly leaves a sentence without truth-value. (3) Conventional implicature, carried by particular words such as "but". (4) Indirect force, where a sentence performs a speech act other than the one its mood suggests. He reports objections to Grice (especially Davis's) and the rival Relevance Theory. He finds clear cases of semantic presupposition hard to come by. He thinks Searle's Gricean account of indirect force leaves data unexplained.
 
-**Prerequisites:** entailment, truth-value, Russell's and Strawson's debate about "the present King of France", speech acts and felicity conditions, deictic (context-dependent) terms.
+**Prerequisites:** entailment, truth-value, Russell's and Strawson's debate about "the present King of France", speech acts and felicity conditions (conditions an act must meet to come off properly), deictic (context-dependent) terms.
 
 ## L2 — Key ideas (5–10 bullets)
 - A speaker can say that P and convey Q, without effort for either party; a competent speaker must grasp this (pp. 163–4).
 - Grice: a hearer reasons from the Cooperative Principle (a rule to contribute what the talk requires) and its maxims to what the speaker implicates. Such implicatures can be worked out and are cancelable: the speaker can deny them without contradiction (pp. 165, 167).
 - Lycan argues that Strawson's inference from the fact that no one would reply 'That's false' does not follow, because that reply would be misleading by Strength (p. 167).
 - Three objections to Grice's theory: speed of reasoning, Davis's "positive stage" gap, and the need for pragmatics before a full proposition exists (p. 168).
-- Relevance theorists reject specific maxims in favour of a general cognitive drive for efficiency. They stress processes behind what is explicitly conveyed ("explicature"): saturation (filling a slot in logical form, e.g. "Henry is ready" — for what?), free enrichment (adding unmandated explicit content; a disputed category), and ad hoc concept construction (broadening or narrowing a word's sense in context) (pp. 169–172).
+- Relevance theorists reject specific maxims in favour of a general cognitive drive for efficiency. They stress processes behind what is explicitly conveyed ("explicature"): saturation (filling a slot in logical form, the sentence's underlying semantic structure, e.g. "I am too old" — for what?), free enrichment (adding unmandated content that is, in a way, explicit; a disputed category), and ad hoc concept construction (broadening or narrowing a word's sense in context) (pp. 169–172).
 - Semantic presupposition (the implied sentence is necessary for both the sentence and its negation, and this cannot be cancelled) has, Lycan says, no uncontroversial examples; he treats some candidates as conversational implicature and one, (25), as conventional implicature, and leaves (23) and (24) harder (pp. 172–174).
 - Conventional implicature is carried by word choice, is not worked out and is not cancelable. Lycan suggests a good way to investigate the kinds of implication is to ask what penalty follows when the implied sentence is false (pp. 174–175).
 - Indirect force is not fully handled by Searle's Gricean strategy; surface-grammatical marks of indirect force balk it, since there is nothing to work out (pp. 176–177).
@@ -37,7 +39,7 @@ Besides entailment, utterances carry other implications. Lycan surveys four. (1)
 ## L3 — Walkthrough
 
 ### Overview and the idea of implication (pp. 162–163)
-Sentences entail other sentences, but they also linguistically imply things they do not strictly entail. Hearers pick up such implications either by assuming that speakers are cooperative or by noticing that they are deliberately uncooperative, and drawing inferences from either (p. 162). Davidson spoke of capturing the "felt implications" of sentences, meaning entailments. Grice (1975) taught us that implication comes in kinds (p. 163). Lycan surveys four.
+Sentences entail other sentences, but they also linguistically imply things they do not strictly entail. According to Grice's theory, hearers pick up such implications either by assuming that speakers are cooperative or by noticing that they are deliberately uncooperative, and drawing inferences from either (p. 162). Davidson spoke of capturing the "felt implications" of sentences, meaning entailments. Grice (1975) taught us that implication comes in kinds (p. 163). Lycan surveys four.
 
 ### Conveyed Meanings and Invited Inferences (pp. 163–164)
 **Conveyed meaning.** A speaker utters a sentence meaning P but obviously intends mainly to convey Q (p. 163). Example: "There's the door" said to an obstreperous visitor. It does not mean "You are to leave now", and the speaker has not come out and said so (p. 163).
@@ -53,7 +55,7 @@ Sentences entail other sentences, but they also linguistically imply things they
 *Intuition note:* Hearers routinely get more out of a sentence than its literal content. Those extra messages are what the rest of the chapter tries to classify and explain.
 
 ### Conversational Implicature (pp. 164–169)
-**Cooperative Principle (CP)** (Grice 1975, original p. 26, as quoted by Lycan on p. 165): make your conversational contribution as required, at the stage it occurs, by the accepted purpose or direction of the exchange (p. 165). Its corollaries are the maxims. Lycan's numbering, with short descriptions (p. 165):
+**Cooperative Principle (CP)** (Grice 1975, original p. 26, as quoted by Lycan on p. 165): make your conversational contribution as required, at the stage it occurs, by the accepted purpose or direction of the exchange (p. 165). Its corollaries are the maxims; Lycan gives a few. Lycan's numbering, with short descriptions (p. 165):
 - M1 Strength: be as informative as required.
 - M2: not more informative than required.
 - M3 Truthfulness: do not say what you believe false.
@@ -100,7 +102,7 @@ Notes 2–3 add Grice's third feature, "detachability" (which Lycan says faces o
 
 **Three objections to Grice's theory.** The basic idea of implicature is almost universally accepted; Grice's theory of it is less so (p. 168).
 1. Suspicion of the complex, instantaneous, unconscious reasoning. **Lycan's reply:** we do much quick subconscious reasoning in many areas of life (p. 168).
-2. **Davis (1998)** (also Harnish, and Sperber and Wilson), which Lycan calls the more serious one. Gricean reasoning has a negative stage and a positive stage.
+2. **Davis (1998)** (also Harnish, and Sperber and Wilson), which Lycan calls the more serious one. Most cases of Gricean reasoning have a negative stage and a positive stage.
    - Negative stage: the hearer detects that speaker meaning diverges from sentence meaning.
    - Positive stage: the hearer works out what the speaker does mean.
    - Davis objects that Grice gives little help with the positive stage. Lycan illustrates: why is causal relevance the obvious candidate for (3)? What signals the resemblance reading of the cream-in-coffee metaphor? Nothing in Grice's theory predicts or hints at the answer (p. 168).
@@ -115,18 +117,18 @@ Notes 2–3 add Grice's third feature, "detachability" (which Lycan says faces o
 *Intuition note:* Grice explains how hearers get from what is said to what is meant by assuming the speaker is being cooperative. The objections ask whether such reasoning can start from a ready-made proposition, and how it finds the positive answer.
 
 ### Relevance Theory (pp. 169–172)
-Sperber and Wilson (1986) and Carston (2002) began by developing Grice but became rivals (p. 169).
+Relevance theorists (originally Sperber and Wilson 1986; see especially also Carston 2002) began by developing Grice but became rivals (p. 169).
 - **Core claim (of the relevance theorists):** they reject the idea that there are particular Gricean maxims. They hold that implicatures come from all-purpose cognition aimed at efficiency of information transfer; Wilson and Sperber (2004: 608) say expectations of relevance arise because the search for relevance is basic to human cognition (p. 169).
 - **Relevance** is a favorable balance of positive cognitive effects over processing time and effort. A positive cognitive effect is, roughly, an improvement in the hearer's representation of the world, such as a true and useful belief (p. 169).
 - On this view every utterance carries a presumption of its own optimal relevance: it is relevant enough to be worth the hearer's effort, and the most relevant one compatible with the communicator's abilities and preferences (p. 170). This is the rival to CP.
 
 **Arguments** that the theories differ (p. 170):
 - We constantly say loose or exaggerated things, known by both sides not to be strictly true ("record" for tapes and CDs). These do not normally initiate Gricean reasoning about flouting Truthfulness. Wilson and Sperber suggest that expectations of truthfulness are only a rough byproduct of expectations of relevance.
-- Relevance theorists argue that, psychologically at least, Grice's picture (full literal content first, then reasoning) cannot be right: a sentence never encodes a complete proposition. It must be disambiguated and its deictic elements assigned referents, including computing Harman's function α. These steps are also guided by the drive for relevance. Levinson's intrusive constructions show that implicatures can embed and affect literal content. So disambiguation, reference assignment and implicature-finding go on at once, with trade-offs (p. 170).
+- Relevance theorists argue that, psychologically at least, Grice's picture (full literal content first, then reasoning) cannot be right: a sentence never encodes a complete proposition. It must be disambiguated and its deictic elements assigned referents, including computing Harman's function α (the assignment function that gives context-dependent terms their values). These steps are also guided by the drive for relevance. Levinson's intrusive constructions show that implicatures can embed and affect literal content. So disambiguation, reference assignment and implicature-finding go on at once, with trade-offs (p. 170).
 
 **Further processes behind "explicature",** now understood, more vaguely, as what is explicitly conveyed rather than merely implicated or implied however strongly (p. 170):
 - **Saturation** (Recanati): filling a slot in logical form. Examples: "This way is shorter" (than what?), "I am too old" (for what?), "Henry is ready", "Sandy has had enough". It is linguistically mandated (Carston, 2004). **Lycan:** it is not a new idea; if context-sensitivity is everywhere (contra Cappelen and Lepore), saturation is just the work of α. Relevance theorists rightly emphasize, he says, that computing α now draws widely on contextual assumptions and considerations of cognitive improvement (p. 170).
-- **Free enrichment** (p. 171). Like saturation, it adds explicitly conveyed material not merely implied. It differs in three ways:
+- **Free enrichment** (p. 171). Like saturation, it adds material that is not merely implied but explicitly conveyed; there seems to be an "unarticulated" constituent. Lycan stresses that it is explicit only "in a way": as Bach notes, the examples are hardly ever explicit (n. 6, p. 179). It differs in three ways:
   1. it is not linguistically mandated, since there is no slot in logical form;
   2. it outruns what was already a complete proposition;
   3. it is cancelable.
@@ -145,7 +147,7 @@ Sperber and Wilson (1986) and Carston (2002) began by developing Grice but becam
   - (16) "She was upset, but she wasn't upset."
   - (17) "a rectangular bit of lawn" [trapezoidal would count]
   - (18) "I haven't been to the bank" [a place to withdraw cash on demand]
-  - (19) "Nurse Ratched is not a human being" [not a sane, compassionate person]
+  - (19) "Nurse Ratched is not a human being" [a sane, mature, reasonably compassionate person, including an android]
   - (20) "Her hair is red" [not fire-engine red]
 
 *Intuition note:* Relevance Theory says hearers do not first decode a full literal sentence and then consult maxims. Working out what is meant, including the referents and the exact sense of each word, is guided throughout by one drive: get useful information cheaply.
@@ -160,11 +162,11 @@ Sperber and Wilson (1986) and Carston (2002) began by developing Grice but becam
 **Candidate pairs** (pp. 172–3): (21a) "It was Grannie who robbed the diaper service" / (21b) "Someone robbed it"; (22) "Have you stopped beating your spouse?" / "You have beaten your spouse"; (23) "Rocky realized that his fly was open" / "was open"; (24) "Fred, who was fat, could not run" / "Fred was fat"; (25) "She was poor but she was honest" / "Being poor inhibits [or contrasts with] being honest". The claim is that each a-sentence and its negation necessitate the b-sentence.
 
 **Lycan's assessment** (p. 173):
-- (21): the negation (21′) "It was not Grannie… ; no one robbed it" is peculiar but not self-contradictory; if so, it does not necessitate (21b) in the strong sense needed. The negation does conversationally implicate (21b) via Strength, but that is cancelable, as necessitation is not.
+- (21): the negation (21′) "It was not Grannie… ; no one robbed it" is perhaps peculiar but not self-contradictory; if so, it does not necessitate (21b) in the strong sense needed. The negation does conversationally implicate (21b) via Strength, but that is cancelable, as necessitation is not.
 - (22): if you are married and have never beaten your spouse, "No" is correct. One can stop only what one was doing. But "No" misleads by Strength; the non-misleading answer cancels: "No, because I never have."
 - (23): (23′) "Rocky did not realize… because his fly wasn't open" does not seem contradictory, but there is not so obvious a Gricean explanation of the negation's implicating (23b).
 - (24): perhaps the best alleged example. (24′) "It's false that Fred, who was fat, could not run, because Fred wasn't fat" sounds contradictory or anomalous. Yet **Lycan** hears (24) as false if Fred was not fat, since the speaker called him fat. That does not explain what is wrong with (24′).
-- If the Direct Reference Theory of names is correct, perhaps Strawson is right that sentences with nonreferring names lack truth-value. Then sentences with proper names semantically presuppose referents. This is where the problems of Apparent Reference to Nonexistents and Negative Existentials arose (pp. 173–4).
+- If the Direct Reference Theory of names (a name contributes only its referent to what is said) is correct, perhaps Strawson is right that sentences with nonreferring names lack truth-value. Then sentences with proper names semantically presuppose referents. This is where the problems of Apparent Reference to Nonexistents and Negative Existentials (how we seem to talk about nonexistent things, and how "X does not exist" can be true) arose (pp. 173–4).
 - "Pragmatic presupposition" has not been defined, and no one type of pragmatic implication has been meant by it to the exclusion of other types (p. 174).
 
 **Conventional implicature** (Grice 1975) is Grice's third classification for (25) (p. 174).
@@ -182,9 +184,9 @@ Sperber and Wilson (1986) and Carston (2002) began by developing Grice but becam
 | S1 semantically presupposes S2 | S1 lacks truth-value |
 | S1 conversationally implicates S2 | S1 may be true, but the utterance is misleading |
 | S1 conventionally implicates S2 | S1 is misworded, even if not false |
-| speech act has S2 as felicity condition | the act is infelicitous in an illocutionary way |
+| speech act has S2 as felicity condition | the act is infelicitous in an illocutionary (concerning the act performed, e.g. promising) way |
 
-The last row is "illocutionary implication". Example: promising to return your champagne glasses noncancelably implies I intend to return them (p. 175).
+Lycan offers the last row tentatively: it "might be called" illocutionary implication, which "we might add" to the catalogue. Example: promising to return your champagne glasses noncancelably implies I intend to return them (p. 175).
 
 *Intuition note:* The kinds of implication differ in what goes wrong when the implied thing is false. Lycan suggests that this is a good way to investigate them.
 
@@ -198,7 +200,7 @@ Declaratives normally make statements, interrogatives seek information, and impe
 The deeper problem is that each also has a literal reading matching its mood. Those readings are uncommon and hard to hear. The puzzle is why the nonliteral uses are the normal uses (p. 175).
 
 **Searle's conservative approach** (Searle 1975): indirect force is predicted using known speech-act principles plus Gricean mechanisms, with no new apparatus (p. 175).
-- It starts from generalizations such as: S can make an indirect directive by asking whether or stating that a preparatory condition about H's ability holds; or by stating, but not by asking, that the sincerity condition holds (p. 176).
+- It starts from generalizations such as: S can make an indirect directive by asking whether or stating that a preparatory condition (a background requirement for the act) about H's ability holds; or by stating, but not by asking, that the sincerity condition (the speaker has the matching attitude, e.g. wants it done) holds (p. 176).
 - For (27), the hearer infers in Gricean fashion that the speaker means something other than the literal question. The hearer then notes two things: an allusion to a preparatory condition for a request, and that the request is one the speaker probably wants fulfilled (p. 176).
 
 **Problems** (pp. 176–7):
@@ -238,7 +240,7 @@ Result: in these cases, cancelability separates (1) from (2), and "worked out or
 - [[relevance-theory]] (new) — implicatures arise from a general cognitive drive for relevance, not specific maxims (p. 169)
 - [[explicature]] (new) — in later Relevance Theory, what is explicitly conveyed rather than merely implicated; in later use understood more vaguely than at first (pp. 169–170)
 - [[saturation]] (new) — filling a linguistically mandated slot in logical form (p. 170)
-- [[free-enrichment]] (new) — cancelable, non-mandated explicit enrichment of a complete proposition (p. 171)
+- [[free-enrichment]] (new) — cancelable, non-mandated enrichment of a complete proposition, explicit only "in a way" (p. 171; n. 6, p. 179)
 - [[ad-hoc-concept-construction]] (new) — contextual broadening or narrowing of a concept (pp. 171–2)
 - [[semantic-presupposition]] (new) — if the presupposed S2 is false, S1 and its negation lack truth-value; noncancelable (p. 172)
 - [[conventional-implicature]] (new) — noncancelable, immediately grasped implication carried by word choice (p. 174; Lycan's lexical usage, note 12)
@@ -278,6 +280,6 @@ Result: in these cases, cancelability separates (1) from (2), and "worked out or
 
 ## Reading notes
 - Printed page = pdf − 15 (pdf 177 = printed 162).
-- Text and images are consistent; no equations. Some items in the extracted text carry odd prime marks, e.g. "21΄"; I read them as primes for the negated variants.
+- Text and images are consistent; no equations. Some items in the extracted text carry odd prime marks, e.g. "21΄"; these are primes marking the negated variants.
 - On p. 171 Lycan says some examples, "such as (8)", are just saturations (citing Stanley; Stanley and Szabó; Taylor), although (8) was introduced as an alleged explicature (p. 169) and listed as a free-enrichment example (p. 171). The digest reports this as printed.
 - Quotations from Grice, Wilson and Sperber, and Carston are as Lycan gives them.

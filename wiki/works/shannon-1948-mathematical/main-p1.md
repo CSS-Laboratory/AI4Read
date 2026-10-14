@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 13
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 9
 ---
 # A Mathematical Theory of Communication — Part 1 (pp. 1–28)
 
@@ -26,7 +28,7 @@ Shannon asks how to measure the information a source produces and how fast it ca
 
 ## L2 — Key ideas (5–10 bullets)
 - **Meaning is out of scope.** Only the fact that one message is chosen from a set of possible messages matters, and the system must work for every possible choice (p. 1).
-- **Logarithmic measure.** Engineering quantities grow linearly with the log of the number of possibilities; base 2 gives bits (pp. 1–2).
+- **Logarithmic measure.** Engineering quantities tend to vary linearly with the log of the number of possibilities; base 2 gives bits (pp. 1–2).
 - **Channel capacity (noiseless).** $C=\lim_{T\to\infty}\log N(T)/T$; for finite-state constraints it is $\log W$, with $W$ the largest root of a determinant equation (Theorem 1) (pp. 3–4).
 - **Sources as Markoff processes; entropy.** A discrete source can be represented by a stochastic process; its entropy $H=\sum_i P_iH_i$ is the information per symbol. Three requirements that Shannon calls reasonable single out the form $-K\sum p_i\log p_i$ (Theorem 2); he says they are not necessary to the theory (pp. 10–13).
 - **Typical sequences.** For large $N$, almost all sequences have $\log(1/p)/N$ close to $H$, so for most purposes the long sequences can be treated as about $2^{HN}$ of them (Theorems 3–4); $F_N$ and $G_N$ approach $H$ from above (Theorems 5–6) (pp. 13–14).
@@ -41,7 +43,7 @@ Shannon asks how to measure the information a source produces and how fast it ca
 - **Goal.** Shannon extends the work of Nyquist and Hartley to include noise and the savings due to the statistical structure of the source and the nature of the destination (p. 1).
 - **Problem.** Communication means reproducing at one point, exactly or approximately, a message selected at another point (p. 1). Messages often have meaning, but "These semantic aspects of communication are irrelevant to the engineering problem" (p. 1). What matters is that the message is one selected from a set of possible messages. The system must work for each possible selection, since the actual one is unknown at design time (p. 1).
 - **Measure.** If the set is finite and all choices are equally likely, the number of messages, or any monotonic function of it, can measure the information. Hartley's choice, the logarithm, is the most natural (p. 1). Shannon says three reasons make it convenient (p. 1):
-  1. Time, bandwidth, number of relays and similar parameters vary linearly with the log of the number of possibilities. Adding one relay doubles the states, so it adds 1 to the base-2 log.
+  1. Time, bandwidth, number of relays and similar parameters tend to vary linearly with the log of the number of possibilities. Adding one relay doubles the states, so it adds 1 to the base-2 log.
   2. It matches intuition: two punched cards should hold twice as much as one.
   3. Limiting operations are simpler in logarithms.
 - **Units.** Base 2 gives *binary digits* or *bits* (Tukey's word). $N$ two-state devices store $N$ bits, since $\log_2 2^N=N$ (p. 1). Base 10 gives decimal digits, with $\log_2 M=\log_{10}M/\log_{10}2=3.32\log_{10}M$, so one decimal digit is about $3\tfrac13$ bits. Base $e$ gives natural units. Changing from base $a$ to base $b$ multiplies by $\log_b a$ (pp. 1–2).
@@ -54,7 +56,7 @@ Shannon asks how to measure the information a source produces and how fast it ca
 - **Definition (capacity).**
 $$C=\lim_{T\to\infty}\frac{\log N(T)}{T}$$
 where $N(T)$ is the number of allowed signals of duration $T$. It can be shown that the limit exists as a finite number in most cases of interest (p. 3).
-- If all sequences are allowed, $N(t)=N(t-t_1)+\dots+N(t-t_n)$, because sequences are counted by their last symbol. By a result on finite differences, $N(t)$ is asymptotic to $X_0^t$, with $X_0$ the largest real solution of
+- If all sequences are allowed, $N(t)=N(t-t_1)+\dots+N(t-t_n)$, because sequences are counted by their last symbol. By a well-known result on finite differences (the maths of equations linking a quantity to its earlier values), $N(t)$ is asymptotic to $X_0^t$, with $X_0$ the largest real solution of
 $$X^{-t_1}+X^{-t_2}+\dots+X^{-t_n}=1,$$
 and so $C=\log X_0$ (pp. 3–4).
 - Telegraph with the stated restriction: $N(t)=N(t-2)+N(t-4)+N(t-5)+N(t-7)+N(t-8)+N(t-10)$. So $C=-\log\mu_0$, where $\mu_0$ is the positive root of $1=\mu^2+\mu^4+\mu^5+\mu^7+\mu^8+\mu^{10}$. Solving gives $C=0.539$ (p. 4).
@@ -91,8 +93,8 @@ $$p(i)=\sum_j p(i,j)=\sum_j p(j,i)=\sum_j p(j)p_j(i),\qquad p(i,j)=p(i)p_i(j),\q
 - An *ergodic* process is one in which every sequence has the same statistical properties. Letter and digram frequencies measured on a sequence approach limits independent of the sequence. The exceptions have probability zero. Roughly, ergodic means statistical homogeneity (pp. 8–9).
 - A graph gives an ergodic process if (p. 9): (1) it does not split into two parts with no path from one to the other in either direction; (2) the greatest common divisor of the lengths of all circuits (closed, consistently directed loops) is 1.
 - If (1) holds but the gcd is $d>1$, sequences fall into $d$ classes that differ only by a shift of origin. Example with $d=2$: $a$ is followed by $b$ or $c$ with probability $\tfrac13,\tfrac23$, and $b$ or $c$ is always followed by $a$. Shannon says this case is of little importance for his work (p. 9).
-- If (1) fails, the source is *mixed*: $L=p_1L_1+p_2L_2+\dots$. It is made of ergodic components, one is chosen at the start with probability $p_i$, and the sequence stays in it forever. Example: $L=.2L_1+.8L_2$ (pp. 9–10).
-- Sources are assumed ergodic unless stated. This lets one identify averages along a sequence with ensemble averages, with probability one (p. 10). For stationarity the state probabilities must satisfy
+- If (1) fails but (2) holds for each subgraph (Shannon assumes this), the source is *mixed*: $L=p_1L_1+p_2L_2+\dots$. It is made of ergodic components, one is chosen at the start with probability $p_i$, and the sequence stays in it forever. Example: $L=.2L_1+.8L_2$ (pp. 9–10).
+- Sources are assumed ergodic unless stated. This lets one identify averages along a sequence with ensemble averages (averages over all sequences the source could produce), with probability one (p. 10). For stationarity (statistics that do not change over time) the state probabilities must satisfy these equilibrium conditions (balance: probability flowing into each state equals its own probability)
 $$P_j=\sum_i P_ip_i(j).$$
 In the ergodic case, from any start the probabilities $P_j(N)$ approach these values as $N\to\infty$ (p. 10).
 
@@ -104,7 +106,7 @@ In the ergodic case, from any start the probabilities $P_j(N)$ approach these va
 - **Theorem 2.** The only $H$ satisfying the three assumptions has the form
 $$H=-K\sum_{i=1}^n p_i\log p_i,\qquad K>0,$$
 proved in Appendix 2 (p. 11). Shannon says the theorem and its assumptions are "in no way necessary" to the theory. It lends plausibility, and "the real justification" of the definitions lies in their implications (p. 11).
-- $K$ only fixes the unit. The form is that of entropy in statistical mechanics (Boltzmann's $H$ theorem). Shannon calls $H=-\sum p_i\log p_i$ the **entropy**. $H(x)$ labels the entropy of chance variable $x$. For two outcomes $p,q=1-p$, $H=-(p\log p+q\log q)$ is plotted in Fig. 7 (p. 11).
+- $K$ only fixes the unit. The form is that of entropy in statistical mechanics (Boltzmann's $H$ theorem, a result in the statistical physics of gases). Shannon calls $H=-\sum p_i\log p_i$ the **entropy**. $H(x)$ labels the entropy of chance variable (random variable) $x$. For two outcomes $p,q=1-p$, $H=-(p\log p+q\log q)$ is plotted in Fig. 7 (p. 11).
 - **Properties** (pp. 11–12):
   1. $H=0$ iff all $p_i$ but one are zero (that one equals 1). Otherwise $H>0$.
   2. For given $n$, $H\le\log n$, with maximum $\log n$ when all $p_i=1/n$.
@@ -127,7 +129,7 @@ $$\Big|\frac{\log p^{-1}}{N}-H\Big|<\delta.$$
 So $\log p^{-1}/N$ is almost certainly very close to $H$ for large $N$ (p. 13). This holds "for any source" (stated for general sources, proof in Appendix 3) (p. 13).
 - **Theorem 4.** Order the length-$N$ sequences by decreasing probability and let $n(q)$ be the number needed to accumulate total probability $q$. Then
 $$\lim_{N\to\infty}\frac{\log n(q)}{N}=H\quad\text{when }q\neq0,1.$$
-The growth rate of the number of reasonably probable sequences is $H$, regardless of the meaning of "reasonably". For most purposes there are about $2^{HN}$ sequences, each of probability about $2^{-HN}$ (p. 14).
+The growth rate of the number of reasonably probable sequences is $H$, regardless of the meaning of "reasonably". For most purposes the long sequences can be treated as though there were just $2^{HN}$ of them, each of probability $2^{-HN}$ (p. 14).
 
 > **Intuition note.** Out of all possible long messages, almost all the probability sits on a set that, for most purposes, can be treated as about $2^{HN}$ "typical" messages, each of probability about $2^{-HN}$. So about $H$ bits per symbol suffice to specify them.
 
@@ -162,7 +164,7 @@ then $H$ is maximized and equals $C$ (p. 16). Proof is in Appendix 4, not in thi
 $$\Big[(1-\delta)\tfrac TN+\delta\tfrac{T_1}N\Big]^{-1}=\Big[(1-\delta)\big(\tfrac HC+\lambda\big)+\delta\big(\tfrac RC+\varphi\big)\Big]^{-1}.$$
   As $N$ grows, $\delta,\lambda,\varphi\to0$ and the rate approaches $C/H$ (pp. 16–17).
 - **Second proof (binary code).**
-  - Order the length-$N$ messages by decreasing probability $p_1\ge p_2\ge\dots\ge p_n$. Let $P_s=\sum_{i=1}^{s-1}p_i$ (cumulative probability not including $p_s$). The code of message $s$ is the binary expansion of $P_s$ carried to $m_s$ places, where $m_s$ is the integer with
+  - Order the length-$N$ messages by decreasing probability $p_1\ge p_2\ge\dots\ge p_n$. Let $P_s=\sum_{i=1}^{s-1}p_i$ (cumulative probability not including $p_s$). The code of message $s$ is the binary expansion (the number written in base 2, e.g. $\tfrac34=0.11$) of $P_s$ carried to $m_s$ places, where $m_s$ is the integer with
 $$\log_2\frac1{p_s}\le m_s<1+\log_2\frac1{p_s}.$$
   - Hence $\frac1{2^{m_s}}\le p_s<\frac1{2^{m_s-1}}$. All later $P_i$ exceed $P_s$ by at least $2^{-m_s}$, so their expansions differ within the first $m_s$ places. So all codes are different and decodable (p. 17). If channel symbols are not binary, binary numbers are assigned to them arbitrarily.
   - Average binary digits per original symbol: $H'=\frac1N\sum m_sp_s$. From the inequalities on $m_s$,
@@ -174,7 +176,7 @@ $$G_N\le H'<G_N+\frac1N.$$
 
 ### 10. Discussion and examples (pp. 17–19)
 - Analogy (author's): as a transformer matches generator and load for maximum power transfer, the encoder should match source to channel statistically. The source seen through the transducer should look like the entropy-maximizing source for the channel. Theorem 9 says this match can be approximated as closely as desired. Coding *efficiency* is the actual rate over $C$, equal to the ratio of the actual to the maximum entropy of channel symbols (pp. 17–18).
-- Good codes need long delay. The quantity $\big|\frac{\log p^{-1}}{T}-C\big|$ must be small for all but a small fraction of long messages (p. 18).
+- In general, ideal or nearly ideal encoding needs a long delay. The quantity $\big|\frac{\log p^{-1}}{T}-C\big|$ must be small for all but a small fraction of long messages (p. 18).
 - A source that can produce only one message has zero entropy and needs no channel (e.g. the digits of $\pi$, which a machine at the receiver could compute). If that is impractical, one may ignore some statistical knowledge and use the maximum-entropy source subject to the conditions retained. Its entropy fixes the capacity that is "necessary and sufficient". For $\pi$, retaining only that digits come from $\{0,\dots,9\}$; for English, retaining only letter frequencies gives the first-order approximation (p. 18).
 - **Example 1.** Letters A, B, C, D with probabilities $\tfrac12,\tfrac14,\tfrac18,\tfrac18$, independent:
 $$H=-\big(\tfrac12\log\tfrac12+\tfrac14\log\tfrac14+\tfrac28\log\tfrac18\big)=\tfrac74\text{ bits per symbol}.$$
@@ -234,8 +236,8 @@ $$P=\big[1-2^{-TH_y(x)-T\eta}\big]^{2^{TH_y(x)}}\ \to\ 1-2^{-T\eta}\quad(T\to\in
 > **Intuition note.** Each received signal could have come from about $2^{TH_y(x)}$ inputs. If the messages are scattered at random thinly enough (rate below $C$), it is very unlikely that two of them land in the same fan. A random code is therefore good on average, so a good code must exist.
 
 ### 14. Discussion (pp. 24–25)
-- The proof is not a pure existence proof but has some of the deficiencies of such proofs: following it gives no practical code. Apart from rather trivial cases and certain limiting situations, no explicit series of approximations to the ideal is known. Shannon thinks this is probably related to the difficulty of constructing a good approximation to a random sequence (p. 24).
-- A near-ideal code adds redundancy suited to the noise structure, so that noise does not bring a signal closer to another reasonable signal. Source redundancy left in the channel helps combat noise. E.g. a telegraph channel could save about 50% of the time by proper coding of English, but English redundancy is kept, so many letters can be wrong and still recovered from context (p. 24).
+- The proof is not a pure existence proof but has some of the deficiencies of such proofs: following it is generally impractical. Apart from rather trivial cases and certain limiting situations, no explicit series of approximations to the ideal is known. Shannon thinks this is probably related to the difficulty of constructing a good approximation to a random sequence (p. 24).
+- A near-ideal code adds redundancy suited to the noise structure, so that noise does not bring a signal closer to another reasonable signal. Any redundancy in the source will usually help combat noise if it is utilized at the receiving point. E.g. a noiseless telegraph channel could save about 50% of the time by proper coding of English, but English redundancy is kept, so many letters can be wrong and still recovered from context (p. 24).
 - Delay now also lets a large sample of noise affect the signal before a decision is made (p. 25).
 - **Theorem 12.** Let $N(T,q)$ be the maximum number of length-$T$ signals, each used with equal probability, that can be chosen so that a most-probable-cause receiver errs with probability $\le q$. Then
 $$\lim_{T\to\infty}\frac{\log N(T,q)}{T}=C\qquad(q\ne0,1).$$
@@ -276,12 +278,12 @@ Within a group the probabilities are as if the group were used alone (p. 27).
 $$C=\max[H(y)-H_x(y)]=\tfrac17\big[7+\tfrac88\log\tfrac18\big]=\tfrac47\text{ bits/symbol}.$$
 - Code (Hamming's method): in a block $X_1,\dots,X_7$, $X_3,X_5,X_6,X_7$ are message symbols chosen freely. $X_4,X_2,X_1$ are redundant, set to make the following sums even (p. 28):
 $$\alpha=X_4+X_5+X_6+X_7,\qquad \beta=X_2+X_3+X_6+X_7,\qquad \gamma=X_1+X_3+X_5+X_7.$$
-- At the receiver, compute $\alpha,\beta,\gamma$ (even = 0, odd = 1). The binary number $\alpha\beta\gamma$ is the subscript of the wrong $X_i$ (0 = no error). This corrects all errors and transmits at rate $C$ (p. 28).
+- At the receiver, compute $\alpha,\beta,\gamma$ (even = 0, odd = 1). The binary number $\alpha\beta\gamma$ is the subscript of the wrong $X_i$ (0 = no error) (p. 28). Shannon says this code, in an example he calls "somewhat unrealistic", allows complete correction of errors and transmits at rate $C$ (p. 27).
 
 ### Appendix 1 — Growth of the number of blocks with a finite state condition (p. 28)
 - Let $N_i(L)$ be the number of blocks of length $L$ ending in state $i$, with
 $$N_j(L)=\sum_{i,s}N_i\big(L-b_{ij}^{(s)}\big).$$
-These are linear difference equations; the asymptotic behavior is $N_j=A_jW^L$.
+These are linear difference equations (each value is a fixed linear combination of earlier values); the asymptotic behavior is $N_j=A_jW^L$.
 - Substituting: $A_jW^L=\sum_{i,s}A_iW^{L-b_{ij}^{(s)}}$, i.e. $A_j=\sum_{i,s}A_iW^{-b_{ij}^{(s)}}$, i.e.
 $$\sum_i\Big(\sum_sW^{-b_{ij}^{(s)}}-\delta_{ij}\Big)A_i=0.$$
 - For a nonzero solution the determinant $D(W)=\big|\sum_sW^{-b_{ij}^{(s)}}-\delta_{ij}\big|$ must vanish. This fixes $W$ as the largest real root of $D=0$. Then
@@ -318,14 +320,14 @@ $R=H(x)-H_y(x)=1-0.469=0.531$ bits/symbol. Every input has the same outgoing pro
 - [[mutual-information]] — not named here; the rate $R=H(x)-H_y(x)=H(y)-H_x(y)=H(x)+H(y)-H(x,y)$ is, in a sense, the bits per second common to input and output (p. 22)
 - [[redundancy]] — $1-$relative entropy; for English about 50% (considering structure up to about eight letters) (p. 14)
 - [[entropy-rate]] — $H$ per symbol and $H'=mH$ per second; $F_N,G_N\to H$ (pp. 13–14)
-- [[typical-set-aep]] — Theorems 3–4: about $2^{HN}$ sequences of probability about $2^{-HN}$ (pp. 13–14)
+- [[typical-set-aep]] — Theorems 3–4: about $2^{HN}$ sequences of probability about $2^{-HN}$ (pp. 13–14) (canon link; not stated in this unit)
 - [[source-coding-theorem]] — Theorem 9 gives rate $C/H-\epsilon$, never above $C/H$ (p. 16)
-- [[huffman-arithmetic-coding]] — here the cumulative-probability binary code and Fano's method, substantially the same apart from minor differences (p. 17); the 0/10/110/111 code (p. 18)
+- [[huffman-arithmetic-coding]] — (canon link; not stated in this unit: Huffman coding is not named; this is a Shannon–Fano-type code) here the cumulative-probability binary code and Fano's method, substantially the same apart from minor differences (p. 17); the 0/10/110/111 code (p. 18)
 - [[noisy-channel]] — $E=f(S,N)$ with probabilities $p_{\alpha,i}(\beta,j)$ (p. 19)
 - [[channel-capacity]] — noiseless: $\lim\log N(T)/T$ (p. 3); noisy: $\max[H(x)-H_y(x)]$ (p. 22)
 - [[noisy-channel-coding-theorem]] — Theorem 11 (and Theorem 12) (pp. 22, 25)
 - [[error-correcting-code]] — the 7-symbol Hamming example (p. 28)
-- [[maximum-entropy-principle]] — in §10, use the maximum-entropy source subject to the statistical conditions one chooses to retain (p. 18)
+- [[maximum-entropy-principle]] — (canon link; the principle is not stated in this unit) in §10, use the maximum-entropy source subject to the statistical conditions one chooses to retain (p. 18)
 - [[equivocation]] (new) — $H_y(x)$: average ambiguity of the received signal about what was sent (p. 20)
 - [[relative-entropy-shannon]] (new) — author's meaning: $H/H_{\max}$ for the same symbols. **Not** the KL divergence of the canon list (p. 14)
 - [[markoff-source]] (new) — finite-state source with transition probabilities $p_i(j)$, one symbol per transition (p. 8)

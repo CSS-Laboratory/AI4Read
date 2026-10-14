@@ -13,11 +13,13 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 12
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 7
 ---
 # The Source Coding Theorem (MacKay, ch. 4)
 
 ## L0 — One line
-For N independent, identically distributed symbols from a source with entropy H, the number of bits needed to describe them with any fixed error probability δ (0 < δ < 1) is close to NH, because almost all probability lies in a "typical set" of about 2^{NH} strings.
+For a long string of N independent, identically distributed symbols (N large) from a source with entropy H, the number of bits needed to describe them with any fixed error probability δ (0 < δ < 1) is close to NH, because almost all probability lies in a "typical set" of about 2^{NH} strings.
 
 ## L1 — The gist (≤ 120 words)
 The chapter asks how to measure the information in a random outcome, and how few bits per symbol a source needs. It first argues, through a weighing puzzle, a yes/no guessing game, the game of submarine and an invented language, that h = log₂(1/p) and entropy H are sensible measures. It then defines the essential bit content H_δ: the log-size of the smallest set of outcomes with probability at least 1−δ. Theorem 4.1 says (1/N)H_δ(X^N) is within ε of H for large N, for any δ strictly between 0 and 1. The proof uses the typical set and the law of large numbers. So entropy is the compressed size per symbol, which links information measures to coding.
@@ -26,8 +28,8 @@ The chapter asks how to measure the information in a random outcome, and how few
 
 ## L2 — Key ideas
 - Shannon information content h(x)=log₂(1/p) is additive for independent outcomes, and entropy H(X) is its average (pp. 67–68).
-- Informative experiments have outcomes as close to equiprobable as possible. In the 12-ball weighing problem, 3² < 24 ≤ 3³ shows that two weighings cannot be enough, while three might suffice (pp. 68–70).
-- In sixty-three and in submarine, the total information gained is log₂ of the number of hypotheses, however the outcomes unfold (pp. 70–72).
+- At each step of an optimal weighing procedure, the outcomes are as close to equiprobable as possible. In the 12-ball weighing problem, 3² < 24 ≤ 3³ shows that two weighings cannot be enough, while three might suffice (pp. 68–70).
+- In sixty-three (if all values of x are equally likely) and in submarine, the total information gained is log₂ of the number of hypotheses, however the outcomes unfold (pp. 70–72).
 - Raw bit content H₀=log₂|A| ignores probabilities. Allowing failure probability δ gives the essential bit content H_δ=log₂|S_δ|, where S_δ is the smallest set of probability ≥ 1−δ (pp. 74–75).
 - Source coding theorem (Thm 4.1): for N i.i.d. (independent, identically distributed) symbols and any 0<δ<1, (1/N)H_δ(X^N) is within ε of H for N large. The same rate H applies whether the allowed error is tiny or close to 1 (pp. 78, 83).
 - Typical set T_{Nβ}: strings whose (1/N)log₂(1/P) is within β of H. It holds almost all probability and has about 2^{NH} members (pp. 80, 82, 84).
@@ -85,16 +87,16 @@ so
 
 $$h(x,y)=h(x)+h(y)\ \text{ if $x$, $y$ independent.}\tag{4.6}$$
 
-Exercise 4.2 asks for the entropy version, H(X,Y)=H(X)+H(Y) (4.7). The author's solution is on p. 86 (see 4.8 below). The author says the question "why log 1/p and not some other function" will be explored later, and that sections 4.4 and Chapters 5–6 relate h and H to the number of bits needed to describe an outcome (p. 68).
+Exercise 4.2 asks for the entropy version, H(X,Y)=H(X)+H(Y) (4.7). The author's solution is on p. 86 (see 4.8 below). The author says the question "why log 1/p and not some other function" will be explored "shortly", and that sections 4.4 and Chapters 5–6 relate h and H to the number of bits needed to describe an outcome (p. 68).
 
-> *Intuition note.* Surprises from unrelated events should just add up, and a logarithm turns the product of probabilities into a sum. The author points this out as a nice property of this particular h; why log 1/p rather than some other function is left to be explored later (p. 68).
+> *Intuition note.* Surprises from unrelated events should just add up, and a logarithm turns the product of probabilities into a sum. The author points this out as a nice property of this particular h; the author promises to explore "shortly" why log 1/p rather than some other function (p. 68), and answers informally through the examples that follow (pp. 72–73).
 
 **The weighing problem** (pp. 68–70).
 - Three weighings have 3³=27 conceivable outcomes. There are 24 states of the world (12 balls × heavy/light). So three weighings might suffice, but two cannot, since 3²<24 (p. 68).
 - At each step of an optimal procedure, the three outcomes are as close as possible to equiprobable (p. 68). Figure 4.2 shows an optimal solution. The first weighing is balls 1234 v 5678, and the next weighings depend on the outcome (p. 69).
 - A suboptimal first weighing, 1–6 v 7–12, can never balance. A binary outcome rules out only half the hypotheses, so such a strategy must sometimes take longer (pp. 68–70).
 - The first weighing must split the 24 hypotheses into three groups of eight. The second must give a 3:3:2 split (p. 70).
-- The author's conclusion: the outcome of a random experiment is guaranteed to be most informative if its distribution is uniform. This agrees with the entropy property of exercise 2.25 (entropy is largest when p_i=1/|A_X|) (p. 70).
+- The author says "we might conclude" that the outcome of a random experiment is guaranteed to be most informative if its distribution is uniform. This agrees with the entropy property of exercise 2.25 (entropy is largest when p_i=1/|A_X|) (p. 70).
 
 > *Intuition note.* A question whose answers are equally likely cuts the remaining possibilities as much as any three-way question can. A question with lopsided outcomes rules out fewer hypotheses, so a strategy built on it must sometimes take longer.
 
@@ -129,7 +131,7 @@ The author concludes that submarine makes a convincing case that h is a sensible
 ### 4.2 Data compression (pp. 73–74)
 The author says the examples justify h as a natural measure: improbable outcomes convey more information. He now asks how many bits are needed to describe a source's outcome. If data from a source can be compressed to a file of L bits per symbol and recovered reliably, the source's average information content is *at most* L bits per symbol (p. 73).
 
-**Text files** (p. 73). A byte has 8 bits. ASCII uses only 7 of them. Exercise 4.4 asks how much an ASCII file can shrink. Intuitively an ASCII file holds 7/8 as much information as an arbitrary file of the same size. This is a simple case of redundancy; English text has more (unequal character frequencies, likely letter pairs, predictable words) (p. 73).
+**Text files** (p. 73). A byte has 8 bits. ASCII (a standard set of 128 characters, codes 0–127) uses only 7 of them. Exercise 4.4 asks how much an ASCII file can shrink. Intuitively an ASCII file holds 7/8 as much information as an arbitrary file of the same size. This is a simple case of redundancy; English text has more (unequal character frequencies, likely letter pairs, predictable words) (p. 73).
 
 **Raw bit content** (p. 74).
 
@@ -292,7 +294,7 @@ $$P(x\ge a)\le e^{-sa}g(s),\ s>0\tag{4.41}$$
 
 $$P(x\le a)\le e^{-sa}g(s),\ s<0\tag{4.42}$$
 
-with moment-generating function
+with moment-generating function (a function of s that packs all the moments of x)
 
 $$g(s)=\sum_xP(x)e^{sx}\tag{4.43}$$
 
@@ -310,7 +312,7 @@ $$=\sum_xP(x)\log\frac1{P(x)}+\sum_yP(y)\log\frac1{P(y)}\tag{4.47}$$
 $$=H(X)+H(Y)\tag{4.48}$$
 
 - **Ex. 4.4**: a file can be reduced by a factor 7/8, by a block code mapping 8-byte blocks to 7-byte blocks, copying the 56 information-carrying bits and ignoring the last bit of each character (p. 86).
-- **Ex. 4.5**: pigeon-hole principle. There are only 2^l names of length l, and l<log₂|A_X| implies 2^l<|A_X|, so two inputs share an output (p. 86).
+- **Ex. 4.5**: pigeon-hole principle (you cannot put 16 pigeons into 15 holes without using one twice). There are only 2^l names of length l, and l<log₂|A_X| implies 2^l<|A_X|, so two inputs share an output (p. 86).
 - **Ex. 4.8**: between cusps H_δ varies logarithmically with (−δ) (p. 86).
 - **Ex. 4.13** (found by Dyson and Lyness in 1946, presented by Conway in 1999): the 12-ball problem can be solved by three fixed weighings, and in W weighings an odd ball can be identified among
 
@@ -318,8 +320,8 @@ $$N=(3^W-3)/2\tag{4.49}$$
 
 balls (pp. 86–87).
 - **Ex. 4.15**: figure 4.14 shows staircase curves for N=1 and N=2 and a nearly flat curve for N=1000; H₂(0.2)=0.72 bits (p. 87).
-- **Ex. 4.17**: Gibbs entropy k_B Σp_i ln(1/p_i) equals the Shannon entropy apart from k_B. Boltzmann entropy S_B=k_B ln Ω equals H₀ of a microcanonical ensemble (uniform over accessible states) apart from k_B. The author argues that fixing total energy to precision ε is equivalent to fixing ln(1/P(x)) to within εk_BT, so the microcanonical ensemble is equivalent to a uniform distribution over the typical set of the canonical ensemble P(x)=(1/Z)exp(−E(x)/k_BT) (4.50). The AEP proof then shows that, for a system with separable energy, the Boltzmann entropy of the microcanonical ensemble is close, for large N, to the Gibbs entropy of the canonical ensemble if the energy is fixed at the mean (pp. 87–88).
-- **Ex. 4.18** (Cauchy): Z=π (4.51). Mean and variance are undefined. The sum z=x₁+x₂ is Cauchy with width parameter 2 (4.52–4.53). The mean of N samples has the same distribution as a single sample, so it does not narrow as 1/√N. The central-limit theorem does not apply because the variance is not finite. The author also gives an alternative route: the Fourier transform of the Cauchy distribution is a biexponential e^{−|ω|}, convolution becomes multiplication, so the transform of z is e^{−|2ω|} (p. 88).
+- **Ex. 4.17**: Gibbs entropy (the physicists' entropy of a probability distribution) k_B Σp_i ln(1/p_i), where k_B is Boltzmann's constant (a fixed physical unit factor), equals the Shannon entropy apart from k_B. Boltzmann entropy S_B=k_B ln Ω equals H₀ of a microcanonical ensemble (uniform over accessible states) apart from k_B. The author argues that fixing total energy to precision ε is equivalent to fixing ln(1/P(x)) to within εk_BT, so the microcanonical ensemble is equivalent to a uniform distribution over the typical set of the canonical ensemble (a thermal distribution, set by temperature T) P(x)=(1/Z)exp(−E(x)/k_BT) (4.50). The AEP proof then shows that, for a system with separable energy, the Boltzmann entropy of the microcanonical ensemble is close, for large N, to the Gibbs entropy of the canonical ensemble if the energy is fixed at the mean (pp. 87–88).
+- **Ex. 4.18** (Cauchy): Z=π (4.51). Mean and variance are undefined. The sum z=x₁+x₂ is Cauchy with width parameter 2 (4.52–4.53), via a convolution (the integral giving the distribution of a sum of independent variables). The mean of N samples has the same distribution as a single sample, so it does not narrow as 1/√N. The central-limit theorem (sums of many finite-variance variables become approximately Gaussian) does not apply because the variance is not finite. The author also gives an alternative route: the Fourier transform (a rewriting of a function as a sum of waves of frequency ω) of the Cauchy distribution is a biexponential e^{−|ω|} (an exponential decay on both sides of zero), convolution becomes multiplication, so the transform of z is e^{−|2ω|} (p. 88).
 - **Ex. 4.20**: f has inverse g(y)=y^{1/y} (4.54), log g(y)=(1/y)log y (4.55). The graph suggests f is single-valued on (0,1), two-valued on (1,e^{1/e}) and infinite for x>e^{1/e}≈1.44. The author adds a caveat about the iteration's limit (pp. 88–89).
 
 ## Toy example (ours, not from the text)
@@ -337,7 +339,7 @@ balls (pp. 86–87).
 
 So at N=2, (1/N)H_δ jumps between 1, 0.79, 0.5 and 0, which is far from the flat value H=0.469. The theorem promises flatness only for large N (as in figure 4.9).
 
-**Typicality at N=100.** A string with r=10 ones has log₂P = 90·log₂0.9 + 10·log₂0.1 = 90×(−0.1520) + 10×(−3.3219) = −13.68 − 33.22 = −46.9. This equals −N·H₂(0.1) = −100×0.469 = −46.9, so log₂(1/P)/N=0.469=H: this string is typical. The all-zeros string has log₂P=100×(−0.152)=−15.2 (probability about 2.7×10⁻⁵). It is far more probable than a typical string, but it is one string, and r≈10±3 holds almost all the probability.
+**Typicality at N=100.** A string with r=10 ones has log₂P = 90·log₂0.9 + 10·log₂0.1 = 90×(−0.1520) + 10×(−3.3219) = −13.68 − 33.22 = −46.9. This equals −N·H₂(0.1) = −100×0.469 = −46.9, so log₂(1/P)/N=0.469=H: this string is typical. The all-zeros string has log₂P=100×(−0.152)=−15.2 (probability about 2.7×10⁻⁵). It is far more probable than a typical string, but it is one string. Most of the probability lies near r≈10: P(7≤r≤13)≈0.76, and P(4≤r≤16)≈0.97.
 
 ## Concepts
 - [[ensemble]] — triple (x, A_X, P_X): outcome, alphabet, probabilities (new) (p. 67)
@@ -349,8 +351,8 @@ So at N=2, (1/N)H_δ jumps between 1, 0.79, 0.5 and 0, which is far from the fla
 - [[smallest-delta-sufficient-subset]] — smallest S_δ with P(x∈S_δ)≥1−δ (new) (p. 75)
 - [[essential-bit-content]] — H_δ(X)=log₂|S_δ|; bits needed with failure probability δ (new) (p. 75)
 - [[lossy-vs-lossless-compression]] — lossy: confusable files, failure probability δ; lossless: all encodings distinct, some files lengthen (new) (p. 74)
-- [[typical set / AEP]] — T_{Nβ}: strings with (1/N)log₂(1/P) within β of H; holds almost all probability; about 2^{NH} members (p. 80)
-- [[source coding theorem]] — (1/N)H_δ(X^N) is within ε of H for N large and 0<δ<1 (Thm 4.1) (p. 78)
+- [[typical set / AEP]] — T_{Nβ}: strings with (1/N)log₂(1/P) within β of H; holds almost all probability; about 2^{NH} members (p. 80). Unlike the canon's "roughly equiprobable", MacKay says equipartition holds "only in a weak sense" (p. 84)
+- [[source coding theorem]] — (1/N)H_δ(X^N) is within ε of H for N large and 0<δ<1 (Thm 4.1) (p. 78). Here it is stated for lossy compression with failure probability δ, not the canon's lossless version (p. 74)
 - [[chebyshev-inequality]] — P(t≥α)≤t̄/α for non-negative t; the variance form follows (new) (p. 81)
 - [[weak-law-of-large-numbers]] — P((x−h̄)²≥α)≤σ_h²/(αN) for the average of N independent variables (new) (p. 82)
 
@@ -369,7 +371,7 @@ So at N=2, (1/N)H_δ jumps between 1, 0.79, 0.5 and 0, which is far from the fla
 - [structural-analogy] Submarine: product of conditional probabilities telescopes to log 1/P(location) (4.14) ↔ Bayesian: sequential updating, where the order of evidence does not change the final posterior.
 
 ## Questions this raises
-- Why log₂(1/p) and not some other function of p? The author promises to explore this but the question is not answered in these pages (p. 68).
+- Why log₂(1/p) and not some other function of p? The author answers informally through the examples (pp. 68, 72–73). What would a formal justification look like?
 - Since NH bits is only the limit for lossy compression with failure probability δ, how can a *lossless* code approach H (the author defers this to later chapters) (p. 74)?
 - How large must N be for a given ε and δ? The proof gives only N₀ from σ²/(ε²N₀)≤δ-type bounds. How fast does the flattening in figure 4.9 actually occur?
 - What replaces the law of large numbers, and hence the theorem, for sources whose log-probabilities have infinite variance, as for the Cauchy distribution?

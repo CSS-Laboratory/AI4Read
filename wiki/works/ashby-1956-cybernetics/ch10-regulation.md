@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 15
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 8
 ---
 # Regulation in Biological Systems
 
@@ -26,7 +28,7 @@ Ashby reviews the place of regulation in biology and shows briefly why it matter
 
 ## L2 — Key ideas (5–10 bullets)
 - Chapter 10 aims to tie regulation, information and survival together in one rigorous method, uniform with the rest of the book (p. 196).
-- The living world consists of "autocatalytic" processes, and "lifeless" is almost an equilibrium state, but an unstable one. Today's organisms bear the marks of long elimination of forms that could not survive (p. 197).
+- The living world consists of "autocatalytic" processes, and "lifeless" is almost an equilibrium state (a state the system stays in), but an unstable one (small pushes grow). Today's organisms bear the marks of long elimination of forms that could not survive (p. 196).
 - "Survival" is defined as the states of an organism staying inside a chosen subset. For a mouse that always survives, this is identical to the stability of a set, so facts about one can be used for the other, provided exactness is kept (p. 197).
 - What survives over the ages is gene-patterns, especially those that cause a defence mechanism to grow between themselves and the world, giving the scheme D → F → E (p. 198).
 - The essential variables E have a permitted set η, which has less variety than all of E's possible states. If F is a regulator, inserting it lessens the variety passing from D to E, and an essential function of F is to block it (p. 199).
@@ -37,17 +39,17 @@ Ashby reviews the place of regulation in biology and shows briefly why it matter
 
 ### 10/1–10/2. Place of the chapter
 - Parts I and II (Mechanism, Variety) were prerequisites. Part III treats regulation and control, "the central theme of cybernetics" (p. 195).
-- Chapter 11 will show a quantitative law: the amount of regulation achievable is bounded by the amount of information transmitted in a certain channel. Chapter 12 introduces the Markovian machine. Later chapters treat harder, larger systems (p. 195).
+- Chapter 11 will show a quantitative law: the amount of regulation achievable is bounded by the amount of information transmitted in a certain channel. Chapter 12 introduces the Markovian machine (a machine whose next state follows fixed probabilities, not certainty). Later chapters treat harder, larger systems (p. 195).
 - At first the regulator is assumed to be already provided. How it came to be made is deferred to S.13/10 (p. 195).
-- The chapter mainly supplies motive. Cannon's *Wisdom of the Body* covers internal, vegetative regulation. Ashby says a larger book is still needed to show that the "higher" outward-directed activities are also homeostatic (pp. 195–196).
+- The chapter mainly supplies motive. Cannon's *Wisdom of the Body* covers internal, vegetative (automatic bodily, like digestion or temperature) regulation. Ashby says a larger book is still needed to show that the "higher" outward-directed activities are also homeostatic (pp. 195–196).
 - The chief purpose is to tie together regulation, information and survival (p. 196).
 
 ### 10/3. The foundation
-- The earth is about two thousand million years old, and biologists study what exists today (p. 197).
-- Recalled from S.4/23: a large system made of repetitive parts, with an autocatalytic property (one occurrence raises the chance of another), is essentially unstable in that property's absence (p. 197).
-- Carbon, nitrogen and a few other elements form self-reproducing combinations. So "lifeless" is almost an equilibrium, but an unstable one (S.5/6): one deviation starts a trajectory leading further away (p. 197).
-- Today's forms show the effect of long elimination of forms defective in survival. Eyes, roots, cilia, shells and claws are so fashioned as to maximise the chance of survival, and the brain is likewise a means to survival (p. 197).
-- *Intuition note:* What exists now has passed a very long filter, and almost every feature of it bears the marks of being adapted to survival.
+- The earth is about two thousand million years old, and biologists study what exists today (p. 196).
+- Recalled from S.4/23: a large system made of repetitive parts, with an autocatalytic property (one occurrence raises the chance of another), is essentially unstable in that property's absence (p. 196).
+- Carbon, nitrogen and a few other elements form self-reproducing combinations. So "lifeless" is almost an equilibrium, but an unstable one (S.5/6): one deviation starts a trajectory (the path of successive states) leading further away (p. 196).
+- Today's forms show the effect of long elimination of forms defective in survival. Eyes, roots, cilia, shells and claws are so fashioned as to maximise the chance of survival, and the brain is likewise a means to survival (p. 196).
+- *Intuition note:* What exists now has passed a very long filter, and the features of almost every form bear the marks of being adapted to survival.
 
 ### 10/4. Survival as stability
 - A mouse is escaping a cat. The mouse can be in many states (posture, temperature, one ear or two) and still be "alive". States such as "in four pieces" do not count as survival (p. 197).
@@ -59,7 +61,7 @@ Ashby reviews the place of regulation in biology and shows briefly why it matter
 - Ex. 1–3 (p. 197) are listed under Exercises.
 
 ### 10/5. The regulator between disturbance and essential variables
-- What survives is not the individual but gene-patterns, especially those that make an individual carrying the pattern well protected, able to look after itself for one generation (p. 198).
+- What survives is not the individual but gene-patterns, especially those that lead to an individual that carries the gene-pattern well protected within itself and can look after itself for one generation (p. 198).
 - Such patterns are likely to survive if they grow a defence mechanism between themselves and the dangerous world. Examples: *Testudo* (shell), *Homo* (brain) (p. 198).
 - The cat–mouse diagram $C \to M$ is replaced by $D \to F \to E$ (p. 198):
   - E: set of essential variables;
@@ -68,7 +70,7 @@ Ashby reviews the place of regulation in biology and shows briefly why it matter
 - E's states are divided into η (the "living" or "good" ones) and not-η (the "bad" ones). A finer classification is allowed in principle (p. 198).
 - Examples (pp. 198–199):
   1. Thermostatic water-bath: E is the temperature, η is 36–37 °C, D is cold water, draughts and cold objects, F is the whole regulatory machinery. F tends to lessen D's effect on E.
-  2. Automatic pilot: E is the vector (yaw, pitch, roll), η is the set of positions with all three within limits, D includes gusts, passengers' movements and engine irregularities.
+  2. Automatic pilot: E is the vector (yaw, pitch, roll) (the plane's turning about its vertical, sideways and lengthwise axes), η is the set of positions with all three within limits, D includes gusts, passengers' movements and engine irregularities.
   3. Bicycle rider: E is chiefly the angle with the vertical, η is the set of small permissible deviations.
 - Summary: natural selection favours gene-patterns that get, in whatever way, a regulator F between D and E. Other things equal, the better F is, the larger the chance of survival (p. 199).
 - *Intuition note:* F is whatever is interposed between the world's disturbances D and the essential variables E (shell, brain, even parts of the environment).
@@ -87,7 +89,7 @@ Ashby reviews the place of regulation in biology and shows briefly why it matter
 ### 10/7. Two extreme forms of blocking
 - The forms prove, on closer examination, to be fundamentally the same (p. 201).
 - Passive block: something interposed that simply stops disturbances. Examples: tortoise shell, tree bark, seal's blubber, human skull (p. 201).
-- Active defence by skilled counter-action: get information about the coming disturbance, prepare, and meet it with a defence as complex and mobile as it is. Example: the unarmoured fencer. Higher organisms mostly use this, and they developed a nervous system for it (p. 201).
+- Active defence by skilled counter-action: get information about the coming disturbance, prepare, and meet it with a defence as complex and mobile as it is. Example: the unarmoured fencer. This is the defence used mostly by the higher organisms, who developed a nervous system for it (p. 201).
 - In the fencer's case information is essential: he must watch the opponent. Yet if he succeeds, his essential variables (e.g. blood-volume) stay in normal limits, much as if no duel had occurred. Information flows freely to non-essential variables, but the variety of the distinction "duel or no-duel" is prevented from reaching the essential ones (p. 201).
 - The remaining chapters study this active defence: which principles govern it, which mechanisms achieve it, and what to do when regulation is very difficult (p. 201).
 - *Intuition note:* The regulator may use a lot of information internally. The test of success is what gets through to E.
@@ -103,14 +105,14 @@ Ashby reviews the place of regulation in biology and shows briefly why it matter
 - B transmits less variety from D to E and keeps E inside η, so B is the better regulator.
 
 ## Concepts
-- [[homeostasis]] — maintenance of essential variables within limits; Ashby says "higher" activities are also homeostatic (p. 196).
+- [[homeostasis]] — maintenance of essential variables within limits (canon link; Ashby uses "homeostatic" without defining it here); Ashby says "higher" activities are also homeostatic (p. 196).
 - [[variety]] — (developed in Part II; not defined on these pages) here, η has less variety than the set of all possible values of E (p. 199).
 - [[disturbance and noise]] — D, the source of disturbances and dangers from the outside world (p. 198).
-- [[stability]] — a set is stable if the operation never maps its states outside it. Survival is identical to this (p. 197).
-- [[regulator-between-D-and-E]] (new) — F inserted between D and E, whose function is to block variety from D to E (pp. 198–199).
+- [[stability]] — a set is stable if the operation never maps its states outside it. For a mouse that always survives C, the representation of survival is identical to the stability of the set (p. 197).
+- [[regulator-between-D-and-E]] (new) — F inserted between D and E, an essential function of which is to block variety from D to E (pp. 198–199).
 - [[essential variables]] (new) — variables that must stay within physiological limits for life. Their acceptable states form η (pp. 197–198).
 - [[passive vs active regulation]] (new) — static barrier (shell) versus skilled counter-action using information (p. 201).
-- [[autocatalytic property]] (new) — one occurrence raises the probability of another elsewhere (p. 197).
+- [[autocatalytic property]] (new) — one occurrence raises the probability of another elsewhere (p. 196).
 
 ## Canonical instances
 - [[mouse-and-cat]] — survival as a set of living states stable under C (p. 197).
