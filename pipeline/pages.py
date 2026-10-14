@@ -79,8 +79,33 @@ MATH_CHARS = set("∑∏∫∂∇≤≥≠≈∈∉⊂⊆∪∩→←↔⇒⇔�
 WORD = re.compile(r"[A-Za-z]{2,}")
 
 
+LOGIC_STRONG = set("⊃∴⊢⊨≡")                       # rare outside logic: one is enough
+TF_ROW = re.compile(r"^\s*(?:[pqrs]\s+)*[TF](?:\s+[TF—–-])+\s*$")    # truth-table row: 'T F T', 'p T F'
+TF_WORD = re.compile(r"\b(?=[TF]*T)(?=[TF]*F)[TF]{4,}\b")            # '(TTFT)(p, q)'; needs both letters (not 'FFT')
+NEG = re.compile(r"[~∼¬]\s?[a-zA-Z(]")
+
+
+def is_logic(s, lines):
+    """Truth tables and logical notation lose glyphs in the text layer (wave-5 review, Tractatus §4.442)."""
+    if any(c in LOGIC_STRONG for c in s) or TF_WORD.search(s):
+        return True
+    if sum(1 for l in lines if TF_ROW.match(l)) >= 2:
+        return True
+    return len(NEG.findall(s)) + s.count("∨") + s.count("∧") >= 3
+
+
+def column_lines(lines):
+    """Lines laid out as >= 3 short cells separated by wide gaps (pdftotext -layout tables)."""
+    n = 0
+    for l in lines:
+        cells = [c for c in re.split(r"\s{3,}", l.strip()) if c]
+        if len(cells) >= 3 and all(len(c) <= 20 for c in cells):
+            n += 1
+    return n
+
+
 def page_kind(text, file_words_per_page=None):
-    """Classify a page: 'scan' | 'math' | 'table' | 'garbled' | 'prose' | 'blank'.
+    """Classify a page: 'scan' | 'math' | 'logic' | 'table' | 'garbled' | 'prose' | 'blank'.
 
     Pages other than 'prose' and 'blank' get a page image. When unsure, include the image.
     """
@@ -103,7 +128,9 @@ def page_kind(text, file_words_per_page=None):
         return "garbled"
     if math >= 4 or eq_lines >= 4 or singles / max(len(toks), 1) > 0.08:
         return "math"
-    if numeric_lines / max(len(lines), 1) > 0.25:
+    if is_logic(s, lines):
+        return "logic"
+    if numeric_lines / max(len(lines), 1) > 0.25 or column_lines(lines) >= 3:
         return "table"
     if re.search(r"^\s*(Figure|Fig\.|FIGURE|Table|TABLE)\s*\d", s, re.M):
         return "table"

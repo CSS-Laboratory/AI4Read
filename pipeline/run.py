@@ -32,6 +32,7 @@ PIPELINE_VERSION = "0.1"
 REFERENCE_UNITS = {"akerlof-1970-lemons/main", "cover-2006-elements/ch02-entropy"}
 TERMINAL = {"accepted", "needs_human", "skipped"}
 ONLINE_MODE = [False]
+BUDGET_HELD = set()             # units not started because the cap leaves no room (listed in STATUS.md)
 FIX_NOTE = ("Your edits could not be applied exactly. Return the same verdict and issues, leave <edits> empty, "
             "and give the COMPLETE corrected digest in <corrected>.")
 
@@ -333,7 +334,44 @@ def forecast_usd(uids, kind):
     return est * share * f
 
 
+def p2_reserve(exclude=()):
+    """P2 still to come for units whose P1/P3 is in flight or done (wave-5 review: the cap must not strand
+    digested-but-unverified units)."""
+    L = state.latest()
+    todo = [u for u, r in L.items() if u not in exclude and (r.get("state") == "p1_done" or (
+        r.get("state") == "p1_submitted" and r.get("kind") in ("p1", "p3")))]
+    return forecast_usd(todo, "p2") if todo else 0.0
+
+
 def submit(wave, kind, uids, ctl):
+    """Submit one batch job; returns None when the cap leaves no room. A P1 chunk is cut to the units whose
+    P1 + P2 fit under the cap; the rest stay 'planned' (BUDGET_HELD)."""
+    cap = ctl.get("max_spend_usd", CFG["max_spend_usd"])
+    spent = state.spent()
+    inflight = sum(j.get("forecast_usd", 0) for j in jobs().values() if j.get("status") == "submitted")
+    room = cap - spent - inflight - p2_reserve(exclude=set(uids))
+    if kind == "p1":
+        U = units()
+        est = {u: float(U[u]["est_cost_usd"] or 0) for u in uids}
+        per_est = (forecast_usd(uids, "p1") + forecast_usd(uids, "p2")) / max(sum(est.values()), 1e-9)   # linear
+        fit, tot = [], 0.0
+        for u in uids:
+            if tot + est[u] * per_est > room:
+                break
+            fit.append(u)
+            tot += est[u] * per_est
+        if len(fit) < len(uids):
+            BUDGET_HELD.update(uids[len(fit):])
+            log(f"BUDGET: room ${room:.2f}; P1 for {len(fit)} of {len(uids)} units, {len(uids) - len(fit)} held")
+        BUDGET_HELD.difference_update(fit)
+        if not fit:
+            return None
+        uids = fit
+    elif forecast_usd(uids, kind) > room:
+        log(f"BUDGET STOP: spent ${spent:.2f} + in flight ${inflight:.2f} + {kind} ${forecast_usd(uids, kind):.2f} > cap")
+        BUDGET_HELD.update(uids)
+        return None
+    BUDGET_HELD.difference_update(uids)
     reqs = []
     for uid in uids:
         st = state.latest().get(uid, {})
@@ -353,12 +391,7 @@ def submit(wave, kind, uids, ctl):
                     "Note: an automatic format checker also reported: "
                     + "; ".join(d["msg"] for d in det[:15])})
         reqs.append((uid, req, stats))
-    spent = state.spent()
     fc = forecast_usd([u for u, _, _ in reqs], kind)
-    inflight = sum(j.get("forecast_usd", 0) for j in jobs().values() if j.get("status") == "submitted")
-    if spent + inflight + fc > ctl.get("max_spend_usd", CFG["max_spend_usd"]):
-        log(f"BUDGET STOP: spent ${spent:.2f} + in flight ${inflight:.2f} + forecast ${fc:.2f} > cap")
-        return None
     stamp = time.strftime("%Y%m%d-%H%M%S")
     name = f"ai4read-{wave}-{kind}-{stamp}"
     blob = f"{CFG['gcs_prefix']}/{wave}/{kind}-{stamp}/input.jsonl"
@@ -475,6 +508,13 @@ def write_status(wave, ids, ctl):
         f"- **All units:** " + " · ".join(f"{k} {v}" for k, v in sorted(allc.items())),
         f"- **Updated:** {time.strftime('%Y-%m-%d %H:%M')}",
     ]
+    if BUDGET_HELD:
+        by = {}
+        for u in sorted(BUDGET_HELD):
+            w, _, part = u.partition("/")
+            by.setdefault(w, []).append(f"{part} ({L.get(u, {}).get('state', 'planned')})")
+        lines += [f"- **Cap reached — {len(BUDGET_HELD)} units unfinished** (to be digested just-in-time):"]
+        lines += [f"  - `{w}`: " + ", ".join(p) for w, p in by.items()]
     notes = PIPE / "STATUS_NOTES.md"            # hand-written notes survive the runner's rewrites
     if notes.exists():
         lines += [""] + notes.read_text().strip().splitlines()
@@ -525,11 +565,17 @@ def run(wave, once=False, sleep_s=120, use_online=False, out_dir=None):
                         stop = True
                         break
                     busy |= set(chunk)
-                if stop:
+                if stop and kind != "p1":       # a held P1 must not block verifying units already digested
                     break
         write_status(wave, ids, ctl)
         L = state.latest()
         done = all(L.get(u, {}).get("state") in TERMINAL for u in ids)
+        if not done and BUDGET_HELD and not any(j.get("status") == "submitted" for j in jobs().values()) and all(
+                L.get(u, {}).get("state") in TERMINAL or u in BUDGET_HELD for u in ids):
+            log(f"wave stopped at the cap: {len(BUDGET_HELD)} units not started")
+            write_status(wave, ids, ctl)
+            commit(f"digest: {wave} stopped at the cap ({len(BUDGET_HELD)} units not started)")
+            break
         if time.time() - last_commit > 900 or done or once:
             commit(f"digest: {wave} status ({sum(1 for u in ids if L.get(u, {}).get('state') == 'accepted')} accepted)")
             last_commit = time.time()
