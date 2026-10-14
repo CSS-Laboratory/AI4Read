@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- AI4Read Claude Code route: Thursdays 13:00 local time (JST). NOT installed/enabled yet.
+     To enable later (after Gate CC):  cp pipeline/launchd/com.ai4read.cc-run.plist ~/Library/LaunchAgents/
+                                       launchctl load ~/Library/LaunchAgents/com.ai4read.cc-run.plist -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.ai4read.cc-run</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-l</string>
+    <string>/Users/yangkunhao1993icloud.com/code/AI4Read/pipeline/launchd/cc_thursday.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>4</integer>
+    <key>Hour</key><integer>13</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+  <key>RunAtLoad</key><false/>
+  <key>StandardOutPath</key><string>/Users/yangkunhao1993icloud.com/code/AI4Read/pipeline/_work/logs/cc-launchd.out</string>
+  <key>StandardErrorPath</key><string>/Users/yangkunhao1993icloud.com/code/AI4Read/pipeline/_work/logs/cc-launchd.err</string>
+</dict>
+</plist>

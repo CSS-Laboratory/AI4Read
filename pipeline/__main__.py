@@ -20,10 +20,17 @@ def cmd_plan(_):
 
 
 def main():
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "cc-run":          # route options straight to pipeline.cc
+        from . import cc
+        return cc.main(sys.argv[2:])
     ap = argparse.ArgumentParser(prog="pipeline")
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("status").set_defaults(fn=cmd_status)
     sub.add_parser("plan").set_defaults(fn=cmd_plan)
+    c = sub.add_parser("cc-run", help="Claude Code route (deep + reference), see pipeline/CLAUDE_CODE_ROUTE.md")
+    c.add_argument("rest", nargs=argparse.REMAINDER)
+    c.set_defaults(fn=lambda a: __import__("pipeline.cc", fromlist=["main"]).main(a.rest))
     r = sub.add_parser("run")
     r.add_argument("wave")
     r.add_argument("--once", action="store_true")
