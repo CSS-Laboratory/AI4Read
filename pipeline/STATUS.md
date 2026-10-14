@@ -1,11 +1,11 @@
 # Digest pipeline — status
 
-- **Wave:** `wave3` — 375 units · accepted 371 · needs_human 1 · p2_submitted 3
+- **Wave:** `wave3` — 375 units · accepted 372 · needs_human 1 · p2_submitted 2
 - **Mode:** run
-- **Spent:** $225.41 of $325 cap
-- **Jobs running:** 1 (p2)
-- **All units:** accepted 692 · needs_human 1 · p2_submitted 3 · planned 1
-- **Updated:** 2026-10-14 16:10
+- **Spent:** $226.27 of $325 cap
+- **Jobs running:** 1 (p2fix)
+- **All units:** accepted 693 · needs_human 1 · p2_submitted 2 · planned 1
+- **Updated:** 2026-10-14 16:27
 
 - **Wave 3:** 375 core units (363 + 12 Ashby re-runs with spread splitting), 26 works, 5,433 pages · est ≈ $89 (v2.2 rates).
 - **Wave 4 (planned):** 336 core units, 41 works, 6,684 pages · est ≈ $105. Waves 3+4 + spent ≈ $317 vs $325 cap.
