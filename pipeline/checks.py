@@ -181,7 +181,8 @@ def check(md, row, uid=None):
     if re.search(r"\{\{[A-Z_]{3,}\}\}", md):          # template placeholder (LaTeX '{{' is legitimate)
         err("leak", "contains a {{PLACEHOLDER}}")
     for leak in LEAKS:
-        hit = (leak in md) if leak.isupper() else (leak.lower() in md.lower())   # 'UNIT METADATA' marker: exact case
+        hit = (leak in md) if leak.isupper() else bool(          # whole words: 'as an air-conditioner' is fine
+            re.search(r"(?<!\w)" + re.escape(leak) + r"(?!\w)", md, re.I))
         if hit:
             err("leak", f"contains '{leak}'")
     return issues

@@ -312,6 +312,9 @@ def unit_rows(work, cat, pdf, pages, pr, kinds, structure, note=""):
             p_lo = str(max(1, int(p_lo) - 1))
         if p_hi and "-" in p_hi:
             p_hi = p_hi.split("-")[-1]
+        if (p_lo and p_hi and p_lo.isdigit() and p_hi.isdigit() and "spread" not in structure
+                and abs((int(p_hi) - int(p_lo)) - (b - a)) > max(3, 0.25 * (b - a))):
+            p_lo = p_hi = None                     # implausible label range (e.g. a numbered list read as folios)
         rows.append({
             "work_id": work, "unit_id": unit_id, "title": title,
             "pdf_pages": f"{a}-{b}", "printed_pages": f"{p_lo}-{p_hi}" if p_lo and p_hi else "",
