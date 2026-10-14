@@ -1,3 +1,8 @@
-- **Option C (Kunhao):** deep + reference finish on Vertex; Claude Code route parked. Cap $445; GCP budget alert ¥72,000.
-- **Wave 5:** all 145 deep units, 53 works, 2,314 pages · est ≈ $33 (wave-4 rates).
-- **Wave 6 (after the wave-5 review):** 162 reference units, 9 works, 3,513 pages (2,968 image) · est ≈ $52.
+- **Wave 5 done (deep tier):** 145/145 accepted, 0 needs-review; 3 units took one P3 loop. All accepted files pass the deterministic checks (warnings only: 51 length, 12 L1 121–138 words, 4 page refs).
+- **Cost:** $44.40 for 2,314 pages (est. was $33). Per page: text $0.0124 · image $0.0201 (wave 4: $0.0121 · $0.0153).
+- **Length vs target:** median 1.30× (wave 4: 1.40×); 10–90% range 0.83–1.87×; 51/145 above 1.5×.
+- **Verifier issues per unit (wave 4 in brackets):** critical 4.0 (5.3) · major 3.0 (3.4) · minor 5.7 (5.2). Most are strength/voice (477c/249M), then faithfulness (83c/67M), format/level (82M), numbers (8c), math (5c). h_checks not ok: 22.4% (27.7%).
+- **Fix:** KaTeX crashed on `\,^{LC}\nabla`; `fix_math` now writes `\,{}^{LC}\nabla` (commit c500f97).
+- **Total spend:** $367.35 of the $445 cap ($77.65 left).
+- **Wave 6 forecast (162 reference units, 3,513 pages, 2,968 image):** ≈ **$66** at wave-5 rates (≈ $52 at wave-4 rates) → total ≈ $434, leaving **$11 (2.5%)** under the cap. The runner stops new submissions at the cap, so an overrun would leave late units in P3/fix, not overspend.
+- **Paused** (`control.json`: pause, next_wave wave5-review). Wave 6 waits for `pipeline/reviews/wave-5.md`. Full report: `pipeline/results/wave5_report.md`.
