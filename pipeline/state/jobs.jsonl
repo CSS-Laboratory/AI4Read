@@ -128,3 +128,5 @@
 {"ts": "2026-10-14T19:38:16", "job": "projects/628671067824/locations/us-east5/batchPredictionJobs/7999757432140070912", "status": "done", "state": "JOB_STATE_SUCCEEDED", "error": null, "n_results": 2}
 {"ts": "2026-10-14T19:41:48", "job": "projects/628671067824/locations/us-east5/batchPredictionJobs/5354596338501681152", "status": "done", "state": "JOB_STATE_SUCCEEDED", "error": null, "n_results": 2}
 {"ts": "2026-10-14T19:42:04", "job": "projects/628671067824/locations/us-east5/batchPredictionJobs/7541516170055122944", "status": "submitted", "kind": "p2", "wave": "wave4", "units": ["stone-2022-information/ch06-mutual", "strogatz-2024-nonlinear/ch07-limit-p2"], "output": "gs://ai4read-batch-628671/ai4read/wave4/p2-20261014-194200/output", "forecast_usd": 0.3674}
+{"ts": "2026-10-14T19:48:50", "job": "projects/628671067824/locations/us-east5/batchPredictionJobs/151109181540139008", "status": "done", "state": "JOB_STATE_SUCCEEDED", "error": null, "n_results": 6}
+{"ts": "2026-10-14T19:52:18", "job": "projects/628671067824/locations/us-east5/batchPredictionJobs/7541516170055122944", "status": "done", "state": "JOB_STATE_SUCCEEDED", "error": null, "n_results": 2}
