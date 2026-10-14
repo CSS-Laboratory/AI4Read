@@ -1,11 +1,11 @@
 # Digest pipeline — status
 
-- **Wave:** `wave6` — 162 units · p2_submitted 162
+- **Wave:** `wave6` — 162 units · accepted 39 · p1_submitted 2 · p2_submitted 121
 - **Mode:** run
-- **Spent:** $394.87 of $445 cap
-- **Jobs running:** 2 (p2, p2)
-- **All units:** accepted 1177 · p2_submitted 162
-- **Updated:** 2026-10-15 03:14
+- **Spent:** $402.68 of $445 cap
+- **Jobs running:** 3 (p2, p2fix, p3)
+- **All units:** accepted 1216 · p1_submitted 2 · p2_submitted 121
+- **Updated:** 2026-10-15 03:30
 
 - **Wave 5 accepted** (quality lead, `reviews/wave-5.md`): 6-unit audit, 48 hand fixes in audited files (never overwritten).
 - **Image heuristic (wave-5 request):** pages with T/F truth-table rows or words (TTFT), logic symbols (⊃ ∴ ⊢ ⊨ ≡, or ≥ 3 of ∨ ∧ ~p) and column-layout tables now get an image. Wave 6: +21 image pages (+0.7%); Tractatus p. 52 (§4.442) now has its image.
