@@ -16,7 +16,7 @@ SECTIONS = ["L0", "L1", "L2", "L3", "Toy example", "Concepts", "Canonical instan
 OPTIONAL = {"Exercises worth doing"}
 # model-chatter markers only; phrases like "I cannot" occur in sources (e.g. Wittgenstein) and are not leaks
 L1_HARD = 138            # 120 + 15%: above this L1 overrun is an error (engineering choice 2026-10-14; quality lead to confirm)
-LEAKS = ["DIGEST SPEC", "UNIT METADATA", "{{", "As an AI", "as a language model", "<page pdf=",
+LEAKS = ["DIGEST SPEC", "UNIT METADATA", "As an AI", "as a language model", "<page pdf=",
          "[page image:"]
 INLINE = re.compile(r"(?<![\\$])\$(?![\s$])([^$\n]+?)(?<![\s\\])\$(?![\d$])")
 DISPLAY = re.compile(r"\$\$(.+?)\$\$", re.S)
@@ -174,6 +174,8 @@ def check(md, row, uid=None):
     for e in katex_errors(md)[:20]:
         err("katex", f"{e['error']} in `{e['tex']}`")
 
+    if re.search(r"\{\{[A-Z_]{3,}\}\}", md):          # template placeholder (LaTeX '{{' is legitimate)
+        err("leak", "contains a {{PLACEHOLDER}}")
     for leak in LEAKS:
         hit = (leak in md) if leak.isupper() else (leak.lower() in md.lower())   # 'UNIT METADATA' marker: exact case
         if hit:
