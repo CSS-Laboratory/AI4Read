@@ -388,16 +388,18 @@ def p1_request(uid, issues=None):
                 {"SOURCE_WORDS": f"{sw:,}", "TARGET_WORDS": f"{stats['target_words']:,}"}), stats
 
 
-MAX_IMAGE_BYTES = 18_000_000     # batch rows of ~22–26 MB came back empty (Dennett spreads at 1500 px, wave 3)
+MAX_IMAGE_BYTES = 14_000_000     # batch rows of ~22–26 MB came back empty (Dennett spreads at 1500 px, wave 3)
 
 
 def p2_request(uid, digest_md):
     row = units()[uid]
     src, stats = source_blocks(row)
-    img_bytes = sum(len(b["source"]["data"]) for b in src if b["type"] == "image")
-    if img_bytes > MAX_IMAGE_BYTES:                # fall back to the digest's 1200 px images
-        src, stats = source_blocks(row, LONG_SIDE_P1)
-        stats["image_fallback_px"] = LONG_SIDE_P1
+    img_bytes = lambda s: sum(len(b["source"]["data"]) for b in s if b["type"] == "image")
+    for px in (LONG_SIDE_P1, 1000):                # fall back to smaller images for very image-heavy units
+        if img_bytes(src) <= MAX_IMAGE_BYTES:
+            break
+        src, stats = source_blocks(row, px)
+        stats["image_fallback_px"] = px
     task = "TASK: check the digest at the end against the source pages, following your instructions."
     content = [unit_header(row, task)] + src + [
         {"type": "text", "text": "=== DIGEST TO CHECK ===\n" + digest_md}]
