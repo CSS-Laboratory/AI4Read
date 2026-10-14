@@ -55,10 +55,27 @@ def fix_math(md):
         block = m.group(0)
         if block.count("\\tag") > 1 and "\\begin{aligned}" in block:
             block = block.replace("\\begin{aligned}", "\\begin{align}").replace("\\end{aligned}", "\\end{align}")
+        elif block.count("\\tag") > 1 and "\\begin" not in block:       # 'a\tag{1},\quad b\tag{2}' on one line
+            rows = re.sub(r"(\\tag\{[^{}]*\})\s*[,;]?\s*(?:\\q?quad\s*)?(?=\S)", r"\1 \\\\ ", m.group(1).strip())
+            block = "$$\\begin{align}" + rows + "\\end{align}$$"
         return block
-    md = DISPLAY.sub(one, md)
+    md = DISPLAY.sub(one, fix_frontmatter(md))
     # a script on a spacing command ('\,^{LC}\nabla') crashes KaTeX; attach it to an empty group instead
     return re.sub(r"\\([,;:!]|quad|qquad)(\s*)(?=[\^_])", r"\\\1\2{}", md)
+
+
+def fix_frontmatter(md):
+    """Quote frontmatter values with an unquoted ': ' (e.g. 'unit: 16 Orthodox methods: historical background')."""
+    m = re.match(r"^---\s*\n(.*?)\n---\s*\n", md, re.S)
+    if not m or split_frontmatter(md)[0] != "bad":
+        return md
+    def q(l):
+        k = re.match(r"^([A-Za-z_]+):\s+(.*\S)\s*$", l)
+        if k and ": " in k.group(2) and k.group(2)[0] not in "\"'[{":
+            return f'{k.group(1)}: "' + k.group(2).replace("\\", "\\\\").replace('"', '\\"') + '"'
+        return l
+    fm = "\n".join(q(l) for l in m.group(1).splitlines())
+    return md[:m.start(1)] + fm + md[m.end(1):]
 
 
 def katex_errors(md):
