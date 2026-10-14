@@ -1,4 +1,9 @@
-- **Wave 5 accepted** (quality lead, `reviews/wave-5.md`): 6-unit audit, 48 hand fixes in audited files (never overwritten).
-- **Image heuristic (wave-5 request):** pages with T/F truth-table rows or words (TTFT), logic symbols (⊃ ∴ ⊢ ⊨ ≡, or ≥ 3 of ∨ ∧ ~p) and column-layout tables now get an image. Wave 6: +21 image pages (+0.7%); Tractatus p. 52 (§4.442) now has its image.
-- **Budget guard:** a unit starts only if its P1 + P2 fit under the cap; units not started are listed here if the cap is reached.
-- **Wave 6 running** (approved by Kunhao): 162 reference units, 9 works, 3,513 pages · forecast P1+P2 $67.57 vs $77.65 left under the $445 cap.
+- **Wave 6 done (reference tier):** 162/162 accepted, 0 needs-review; 5 units took one P3 loop. The cap was not reached: no units unfinished. All accepted files pass the deterministic checks (warnings only: 13 length, 7 L1 121–138 words, 3 page refs). No audited file was touched.
+- **All tiers done:** 1,339 units accepted (core + deep + reference).
+- **Cost:** $66.39 for 3,513 pages (forecast $67.57). Per page: text $0.0119 · image $0.0197 (wave 5: $0.0124 · $0.0201). Retries/fixes +5%.
+- **Length vs target:** median 1.04× (wave 5: 1.30×); 10–90% range 0.85–1.46×; 13/162 above 1.5×.
+- **Verifier issues per unit (wave 5 in brackets):** critical 3.4 (4.0) · major 2.9 (3.0) · minor 5.7 (5.7). By kind: strength/voice 482c/286M, faithfulness 66c/56M, format/level 96M, math 4c/13M, numbers 3c/3M, pages 7M, coverage 8M, labels 2M. h_checks not ok: 19.6% (22.4%).
+- **Image heuristic (wave-5 request):** truth-table rows/words, logic symbols and column tables now get an image (+21 image pages in wave 6).
+- **Fixes during the wave (all three P3 causes were real errors):** `fix_math` now quotes frontmatter values with ': ' and splits one-line multi-`\tag` displays into `align` (commit 6c65ca6). The third cause was an L1 of 246 words (fixed by P3).
+- **Total spend:** $433.74 of the $445 cap ($11.26 left).
+- **Paused** (`control.json`: pause, next_wave wave6-review). Waiting for the quality lead. Full report: `pipeline/results/wave6_report.md`.
