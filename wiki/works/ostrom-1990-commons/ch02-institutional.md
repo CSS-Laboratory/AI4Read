@@ -7,256 +7,255 @@ fields: [political-science]
 level: UG
 grounding: primary-text
 digested_by: claude-sonnet-5-5
-digested_on: 2026-10-13
-spec_version: 1.1
+digested_on: 2026-10-14
+spec_version: 1.2
+prompt_version: v2.2
 verified: repaired
-verifier_issues: 3
+verifier_issues: 16
 pipeline_version: 0.1
 ---
 # An institutional approach to the study of self-organization and self-governance in CPR situations
 
 ## L0 — One line
-Standard theory explains collective action only by an outside "entrepreneur" (firm) or "ruler" (state), so Ostrom builds a new framework (many game structures, three rule levels, rules as working rules) to explain how a group of equals can supply its own rules, commit to them and monitor them.
+Theories of the firm and the state explain how outsiders organize collective action, but no accepted theory explains how users of a common-pool resource organize themselves, so Ostrom builds a framework (varied problem structures, nested rule levels, working rules) to study successful and failed cases.
 
 ## L1 — The gist (≤ 120 words)
-The chapter asks how users of a shared resource can organize and govern themselves, given the temptation to free-ride. Ostrom defines common-pool resources (CPRs) and separates the resource system (a stock) from the resource units taken from it (a flow). She adopts a broad view of rational choice that includes learning by trial and error, norms and discounting. The theories of the firm and the state solve the collective-action problem with an outsider, but no accepted theory explains self-organization. That leaves three puzzles: supply of rules, credible commitment and mutual monitoring. She then replaces the usual assumptions (always a prisoner's dilemma, one level of analysis) with a different framework and explains how she will study field cases.
+Ostrom asks how a group of people who share a common-pool resource can organize and govern themselves when each is tempted to free-ride. She separates the resource system (a stock) from the resource units it yields (a flow), and uses a broad view of rational choice. The theories of the firm and the state solve organizing problems through an outside entrepreneur or ruler. No equally accepted theory explains self-organization, which faces three puzzles: supplying rules, making credible commitments, and mutual monitoring. She replaces the usual framing (always a prisoner's dilemma, one level of analysis) with varied problem structures and nested levels of rules. This sets the questions and method for her later case studies.
+
+**Prerequisites:** prisoner's dilemma and free-riding; public vs private goods (subtractability); discounting of future benefits; the idea of a game with equilibria.
 
 ## L2 — Key ideas (5–10 bullets)
-- A CPR is a resource system where excluding users is costly but not impossible. The system is a stock; the units taken out are a flow. Keeping the two apart is essential (p. 30).
-- CPRs are not the same as public goods. Resource units are subtractable (one user's catch is gone for others) and the system is jointly used. Provision of the system looks like a public-good problem; appropriation of units looks like a private-good problem (pp. 32–33).
-- Appropriators are "broadly rational" but face uncertainty and learn by trial and error. Four internal variables shape their choices: expected benefits, expected costs, internal norms and discount rates (pp. 33–37).
-- Shared norms lower the cost of monitoring and sanctioning. Ostrom calls this social capital (p. 36).
-- The theory of the firm and the theory of the state both rely on an outsider (entrepreneur or ruler) who keeps the residual and so has an incentive to organize, monitor and punish. No comparable theory explains how principals organize themselves (pp. 40–42).
-- Three nested puzzles remain: supplying new institutions, making credible commitments, and mutual monitoring. Each looks like a "second-order" collective-action problem (pp. 42–45).
-- She rejects two framing assumptions. First, that every CPR problem is a prisoner's dilemma: game structures vary with parameters, and she splits problems into appropriation (the flow) and provision (the stock) problems (pp. 46–50). Second, that one level of analysis is enough: rules are nested at operational, collective-choice and constitutional-choice levels (pp. 50–53).
-- "Institutions" means working rules that are actually used, monitored and enforced and are common knowledge. They can differ from formal law (pp. 51, 55).
-- Her method: describe the physical, cultural and institutional setting of each case, abstract a playable game from it, and look for the design principles behind rules that work (pp. 55–57).
+- **The central question.** How can principals (the users themselves, with no outside boss) in an interdependent situation organize and govern themselves to get continuing joint benefits despite temptations to free-ride, shirk or act opportunistically? (p. 29)
+- **Stock vs flow.** A CPR is a resource system (stock) that produces resource units (flow). Units are subtractable (one user's take leaves less for others), but the system and its improvements are jointly used. So CPR problems mix private-good features (appropriation) and public-good features (provision). (pp. 30–33)
+- **Broad rationality.** Appropriators (people who withdraw resource units) weigh expected benefits, expected costs, internal norms and discount rates. They learn by trial and error under uncertainty, and can use contingent strategies (planned actions that depend on what others do). (pp. 33–38)
+- **Two existing "solutions", one gap.** The theory of the firm (entrepreneur) and of the state (ruler) both rely on an outsider who supplies rules, commits credibly and monitors. No comparable theory exists for a group organizing itself. (pp. 40–42)
+- **Three puzzles.** Supply of new rules, credible commitment and mutual monitoring are the three problems a self-organizing group must solve. Supply (Bates) and monitoring (Elster) are described as second-order dilemmas, meaning that providing the rules or the punishment is itself a shared benefit open to free-riding. Dilemmas nested inside one another appear able to defeat a group, and the usual prediction is that groups will not supply rules or monitor each other, yet some groups do. (pp. 42–45)
+- **Alternative framing.** Problem structures vary (PD, assurance, chicken, assignment, steal-and-monitor games), and solutions to appropriation and provision problems must be congruent. (pp. 46–50)
+- **Nested rules.** "Institutions" are working rules (rules actually used) that are common knowledge and monitored. They sit at operational, collective-choice and constitutional levels. Deeper levels change less easily. (pp. 50–55)
+- **Method.** Case studies are abstracted into games by identifying resource, flow and individual attributes. Appropriators are assumed to do as well as they can, not necessarily optimally. (pp. 55–57)
 
 ## L3 — Walkthrough
 
 ### Introduction (pp. 29–30)
-- Ostrom calls herself a "new institutionalist". She studies small-scale CPRs because self-organization is easier to observe there (p. 29).
-- Central question: how can a group of principals in an interdependent situation organize and govern themselves for continuing joint benefits, when all face temptations to free-ride, shirk or act opportunistically? (p. 29)
-- Parallel questions concern which variable combinations (1) raise the initial likelihood of self-organization, (2) help people keep up self-organized efforts, (3) exceed what self-organization can do without outside help (p. 29).
-- Plan of the chapter: define CPRs and individual behavior; show that the firm and the state solve the problem with external agents; state the puzzle of self-organization; then offer alternatives to three usual assumptions: that all problems are prisoner's dilemmas (PD), that one level of analysis suffices, and that transaction costs can be ignored (pp. 29–30).
+- Chapter 1 chose small-scale CPR situations because self-organization and self-governance are easier to observe there (p. 29).
+- Central question: how can a group of *principals* (people who act for themselves, with no outside boss) in an interdependent situation organize and govern themselves to obtain continuing joint benefits, when all face temptations to free-ride, shirk or act opportunistically? (p. 29)
+- Parallel questions: which variable combinations (1) raise the initial likelihood of self-organization, (2) strengthen individuals' ability to keep it going over time, (3) exceed the capacity of self-organization so that outside help is needed (p. 29).
+- Plan: define CPRs and individual behavior; examine the general problem of avoiding the bad outcomes of independent action; note that the theories of the firm and state solve it with external agents; then propose alternative assumptions (p. 29). Many analyses assume that all collective-action problems are prisoner's dilemma (PD) games, that one level of analysis is enough, and that transaction costs can be ignored (p. 30).
 
 ### The CPR situation (pp. 30–38)
 
-**CPRs and resource units (pp. 30–33).**
-- Definition: a natural or man-made resource system large enough that excluding potential beneficiaries is costly but not impossible (p. 30).
-- Resource systems are stock variables. Under favorable conditions they produce a maximum flow of resource units without harm to the stock. Examples: fishing grounds, groundwater basins, grazing areas, irrigation canals, bridges, parking garages, mainframe computers, streams and lakes (p. 30).
-- Resource units are what people appropriate: tons of fish, acre-feet of water, tons of fodder, bridge crossings, parking spaces, processor units, waste absorbed by a stream (p. 30).
-- For a renewable resource there is a replenishment rate. As long as the average withdrawal rate does not exceed it, the resource is sustained (p. 30).
-- Terms (following Plott and Meyer): "appropriation" is withdrawing units; "appropriators" are those who withdraw them (herders, fishers, irrigators, commuters). Appropriators may consume the units, use them as inputs (water on rice), or pass ownership on at once (fishers selling their catch) (pp. 30–31).
-- The analysis takes the appropriators' perspective. It assumes they have no market power in final-goods markets and no large effect on outsiders (p. 31).
-- "Providers" arrange for provision of a CPR. "Producers" build, repair or sustain it. They may be the same people or not. Example: a national government finances and designs an irrigation system and arranges with local farmers to maintain it. If farmers get authority over maintenance, they are both providers and producers (p. 31).
-- Key asymmetry: resource units are not jointly used (a boat's fish are not there for others; water on one field cannot go on another), but the resource system is jointly used. Improvements help all, and excluding anyone from them is costly. All benefit from maintenance whether they contribute or not (p. 31).
-- Confusion with public goods comes from not separating subtractability of units from jointness of the system. Taylor is quoted: open-access resources "need not be public goods" (p. 32).
-- What CPRs and public goods share is the high cost of exclusion. This gives the temptation to free-ride, so propositions based only on difficulty of exclusion apply to the *provision* of both (p. 32).
-- What differs is subtractability. A weather forecast or public security is not reduced by use. In CPRs, crowding and overuse are chronic. A bridge gets congested. A fishery or forest can lose its capacity to produce. Even a bridge can be destroyed by loads above its design (p. 32).
-- So public-good propositions based on non-subtractability do not apply to appropriation and use of units. These are closer to private goods. Designing and enforcing rules to coordinate provision is a local collective good (pp. 32–33).
-- The two aspects are bound together. If appropriation problems get severe, appropriators may refuse to provide. Without a fair method of allocating units they have little motivation to contribute to the system (p. 33).
+**CPRs and resource units (pp. 30–33)**
+- *Definition:* a natural or man-made resource system large enough to make it costly, but not impossible, to exclude potential beneficiaries (p. 30).
+- Resource *systems* are stock variables that, under favorable conditions, can produce a maximum flow of *resource units* without harm to the stock. Examples: fishing grounds, groundwater basins, irrigation canals, bridges, mainframe computers. Units are tons of fish, acre-feet of water, bridge crossings and so on (p. 30).
+- For renewable resources, a replenishment rate can be defined. As long as the average withdrawal rate does not exceed the average replenishment rate, the resource is sustained (p. 30).
+- Following Plott and Meyer, withdrawal is "appropriation" and those who withdraw are "appropriators" (herders, fishers, irrigators, commuters). They may consume units, use them as inputs, or pass ownership on at once (pp. 30–31).
+- The analysis takes the appropriators' perspective. It assumes they have no power in a final-goods market and no significant impact on outsiders (p. 31).
+- *Providers* arrange for provision of a CPR. *Producers* build, repair or sustain it. They are often the same people, but need not be (p. 31).
+- Resource units are not jointly used: one boat's fish are not available to another. The system is jointly used, and improvements are available to all. Excluding one appropriator from improvements is costly and sometimes infeasible. All benefit from maintenance whether they contribute or not (p. 31).
+- Confusing the subtractability of units with the jointness of the system has muddled the relation of CPRs to public goods (p. 32). M. Taylor wrote that open-access resources need not be public goods (p. 32).
+- Shared difficulty of exclusion produces the temptation to free-ride in both CPRs and public goods. Propositions derived solely from that difficulty apply to the *provision* of both (p. 32).
+- Subtractability produces "crowding effects" and "overuse," which are absent for pure public goods. A bridge is congested near its limit. A fishery or forest may lose its capacity to keep producing. A bridge can be destroyed by heavier use than it was designed for (p. 32).
+- Hence propositions based on the nonsubtractive nature of public goods do *not* apply to appropriation, which is more closely related to the theory of private goods. Designing, implementing and enforcing rules to coordinate provision is equivalent to providing a local collective good (pp. 32–33).
+- The two aspects are bound together. If appropriation problems become severe, appropriators may refuse to undertake provision. Without a fair, orderly and efficient allocation method, they have little motivation to contribute to provision (p. 33).
 
-> **Intuition note.** A CPR is a hybrid. Taking units is a private-goods problem (my fish is not yours). Keeping the resource system alive is a public-goods problem (everyone enjoys the maintenance). The two problems feed each other.
+*Intuition note.* A canal's water is used up, so one farmer's turn costs another farmer. The canal itself is repaired for everyone at once. Free-riding on repairs looks like a public-goods problem, while overuse of the water looks like a private-goods problem.
 
-**Rational appropriators in complex and uncertain situations (pp. 33–38).**
-- Appropriators are "broadly rational" people in complex, uncertain situations. Choices depend on how they learn about and weigh benefits, costs and their link to outcomes (p. 33).
-- External uncertainty: rainfall, temperature, sunlight, disease vectors, input and output prices. Internal uncertainty: lack of knowledge about the system's boundary and structure. Folk knowledge of a fishery or range comes from long use and must be passed on. A groundwater basin may need costly research by geologists and engineers (p. 33).
-- How actions affect yields and others' outcomes must also be learned. Example: an upstream irrigator may cut water use with little loss to himself and large gains downstream. Or the extra water may flow on to others lower down, and then restraint may not raise total yield (pp. 33–34).
-- Uncertainty can be reduced by pooling scientific and local time-and-place knowledge. This is costly and never complete. Uncertainty from strategic behavior remains (p. 34).
-- Hence appropriators engage in much trial-and-error learning. Some dams wash out, and some rules cannot be enforced because no one can monitor them. Over time they learn more about the physical world and each other (p. 34).
-- The completeness of information and its symmetry across appropriators depend on group size, complexity, stability and the cost of information (p. 34).
-- Discounting: people value near benefits more than distant ones. Time horizons depend on whether one expects oneself or one's children to be present, and on outside opportunities (p. 34).
-  - Example: local inshore fishers have long horizons. Mobile trawler operators can move on (p. 35).
-  - Insecurity (not knowing whether there will be food this year) raises discounting. So does a CPR that others can destroy whatever locals do. Shared norms about the future also matter (p. 35).
-- Norms: people also value actions in themselves, not only their consequences. A person who has internalized promise-keeping feels shame and guilt on breaking a promise. If the norm is shared, social censure follows too (p. 35).
-- Norms change what is perceived. Strongly proscribed actions may not even enter the set of strategies considered, or enter with a high cost. They occur less often even when payoffs are high (pp. 35–36).
-- Opportunism is defined as "self-interest with guile" (Williamson). Where few share norms against promise-breaking and shirking, each must expect all others to act opportunistically. Long-term commitments are then hard, and expensive monitoring and sanctioning are needed (p. 36).
-- Norms do not eliminate opportunism. Some individuals ignore norms, and some benefits are large enough to break even committed people (p. 36).
-- Shared norms that lower monitoring and sanctioning costs are "social capital" (p. 36).
-- Because CPR settings extend over time, people can use contingent strategies (planned actions contingent on conditions). Tit for tat is the best-studied: cooperate in round 1, then copy the opponent (Axelrod). Other contingent strategies differ in initial cooperation and in what triggers a switch (pp. 36–37).
-- Figure 2.1 (the internal world of individual choice): four internal variables (expected benefits, expected costs, internal norms, discount rates) affect the choice of strategies. Strategies jointly produce outcomes in the external world, and these feed back into expectations. Shared norms affect internal norms. Outside opportunities affect discount rates (p. 37). (Figure text is garbled; this summary follows the caption text.)
-- The model is open to many specifications. In simple, constrained, long-lived situations, convex, twice-differentiable preference functions may be fine. In complex, unstructured problems, assuming complete preference functions is not meaningful. The most one can say is that people learn by trial and error (pp. 37–38).
-- This follows Popper's advice to make the rationality principle "an almost empty principle" (p. 38). The weight of analysis goes on specifying situations with observable variables, rather than internal, hard-to-measure ones (p. 38).
+**Rational appropriators in complex and uncertain situations (pp. 33–38)**
+- Appropriators are "broadly rational" individuals in complex, uncertain situations. Their choices depend on how they learn about, view and weigh benefits, costs and the perceived link of actions to outcomes (p. 33).
+- Uncertainty has external sources (rainfall, temperature, disease vectors, input and product prices) and internal ones. A major internal source is lack of knowledge about the system's boundary and structure. Such knowledge may come from long use, as in fishing grounds, and must be passed between generations. For a groundwater basin it may need major research investment (p. 33).
+- Appropriators must also learn how their actions affect the system, yields and each other. Example: a head-end irrigator who restrains water use may sharply raise downstream yields with little loss to himself. In other cases the extra water he takes flows on to farmers lower down, so restraint may not raise total yield (pp. 33–34).
+- Uncertainty from lack of knowledge may be reduced over time by pooling scientific and local time-and-place knowledge. Reducing it is costly and never complete, and the uncertainty from strategic behavior remains (p. 34).
+- Therefore the only reasonable assumption is considerable trial-and-error learning: some dams wash out, some rules cannot be enforced. In many settings appropriators are strongly motivated to find better solutions if they can, since their livelihood depends on their ingenuity. Information quality and symmetry vary by number of appropriators, complexity, stability and information costs (p. 34).
+- *Discounting:* people value near benefits more than distant ones. Rates depend on whether they or their children will be present to reap benefits and on outside opportunities. Example: local inshore fishers hope their children and grandchildren will fish there, so they discount less than mobile trawler operators (pp. 34–35).
+- Discount rates also rise with physical and economic insecurity, with the belief that others can destroy the CPR whatever one does, and are also affected by shared norms about the importance of the future compared with the present (p. 35).
+- *Norms* reflect valuations placed on actions in themselves, not their immediate consequences. A strongly internalized norm (e.g. keeping promises) brings shame and guilt when broken, and social censure if shared. For many routine decisions, actions considered wrong may not even enter the set of strategies considered. If a very large payoff draws attention to them, they enter with a high cost attached. Strongly proscribed actions occur less often than in a community that does not censure them (p. 35–36).
+- Shared norms matter most for the level of opportunism one can expect from others. Opportunism is "self-interest with guile" (Williamson) (p. 36).
+  - Where few share norms against breaking promises or shirking, each must expect all others to act opportunistically when they can. Stable long-term commitments are then hard, and expensive monitoring and sanctioning may be needed (p. 36).
+  - Norms do not reduce opportunism to zero. Some ignore norms, and some benefits are large enough to make even committed people break them (p. 36).
+  - Shared norms that reduce the cost of monitoring and sanctioning can be viewed as *social capital* (p. 36).
+- Because CPR settings extend over time, individuals can use *contingent strategies*: planned actions contingent on conditions in the world. The best-known is tit for tat in a two-person game (cooperate first, then copy the opponent; Axelrod). Others differ in initial cooperation and in what triggers a switch. That individuals use them in complex field settings is a foundation for later analysis (pp. 36–37).
+- **Figure 2.1** (p. 37): four internal variables (expected benefits, expected costs, internal norms, discount rates) affect the choice of strategies. Jointly chosen strategies produce outcomes in the external world, which feed back into expectations. Internal norms are shaped by others' shared norms. Discount rates are shaped by outside opportunities (p. 37).
+- The model is open to specifications. In simple, constrained, long-interacting situations, convex, twice-differentiable preference functions may be appropriate. In complex, unstructured problems, assuming complete preference functions of any shape is not meaningful. Individuals then mainly engage in trial-and-error learning (pp. 37–38).
+- This follows Popper's advice to make the rationality principle almost empty (p. 38). The weight of analysis falls on specifying the situation with observable variables, rather than on subjective internal variables that are hard to measure (p. 38).
 
-> **Intuition note.** Ostrom does not drop rational choice. She keeps it thin: people respond to costs, benefits, norms and time, and they learn. The real explanatory work is done by describing the situation (rules, physical setting, information).
+*Intuition note.* Ostrom does not assume people calculate perfectly. She assumes they try to do well, learn from errors, and care about norms and the future, so the analyst's job is mostly to describe the situation they face.
 
-### Interdependence, independent action, and collective action (pp. 38–42)
-- Appropriators are tied in a "lattice of interdependence" as long as they share a CPR. Institutions do not remove physical interdependence; they change its results (p. 38).
-- Examples: a second fisher arriving at a taken site must travel or fight. One irrigator fixing a control gate affects all users, whether or not they want it or pay (p. 38).
-- Acting independently usually yields lower total net benefits than coordination. At worst the CPR is destroyed (pp. 38–39).
-- Olson is quoted: for a group with a common interest, unorganized action will not advance it at all, or not adequately (p. 39).
-- Prisoners in separate cells act independently because they are *coerced* into it. Hardin's herders also decide without regard for others' choices (p. 39).
-- The general problem is one of organizing: moving from independent to coordinated strategies. Organizing is a process; an organization is only one possible result (p. 39).
-- The core of organization: sequential, contingent and frequency-dependent decisions replace simultaneous, noncontingent and frequency-independent ones. Repetition lets cooperation evolve through contingent strategies. People will often forgo immediate returns when they see many others doing the same (p. 39).
-- Unlike prisoners, appropriators are not coerced, yet switching is costly. The benefits are shared whether or not one shares the cost. Empirically some succeed and some fail. Theory has no coherent explanation (pp. 39–40).
+### Interdependence, independent action, and collective action (pp. 38–40)
+- Co-appropriators are tied together by physical interdependence as long as they share one CPR. Institutional rules change the results, not the physical interdependence (p. 38). Examples: a second fisher must travel on or fight for a good site. A repaired control gate benefits all irrigators whether or not they contribute (p. 38).
+- When appropriators act independently, total net benefits usually are less than with coordination. At minimum, returns are lower; at worst, the CPR is destroyed (pp. 38–39).
+- Olson's statement (paraphrased): when individuals share a common interest, unorganized individual action either cannot advance that interest at all, or cannot advance it adequately (p. 39).
+- Prisoners in separate cells act independently because of coercion. Hardin's herders each decide their herd size without regard to others' choices (p. 39).
+- The general problem is *organizing*: moving from independent to coordinated strategies for higher joint benefits or lower joint harm. This need not mean creating an organization. Organizing is a process and an organization is one possible result (p. 39).
+- Core of organization: sequential, contingent and frequency-dependent decisions replace simultaneous, noncontingent and frequency-independent ones. Most organization specifies an ordered sequence of activities (p. 39). In repeated situations, contingent strategies give cooperation a greater chance to evolve and survive. People often forgo immediate returns when they see many others doing the same, and organizations can use this by requiring a minimal set of participants. Changing inducements and information also encourages coordination (p. 39).
+- Unlike prisoners, CPR appropriators are not coerced into acting independently. Switching to collective action is nontrivial: transformation costs can be high, and the benefits are shared by all whether or not they share the costs (pp. 39–40).
+- Empirically some solve this and some do not. Theoretically, there is no coherent explanation of why some succeed and others fail (p. 40).
 
-**The theory of the firm (pp. 40–41).**
-- An entrepreneur sees a chance to raise returns by coordinating interdependent people. He negotiates contracts that specify coordinated action. Participants join voluntarily but give up discretion and become the entrepreneur's agents (p. 40).
-- After paying agents, the entrepreneur keeps the residual profit or absorbs the loss. So he is motivated to organize efficiently, craft contracts, monitor agents, and fire non-performers. Voluntary entry makes the firm "private, voluntary, and, at least by some individuals, nonexploitative". Large residuals go to the entrepreneur (p. 40).
-- In an open market, competition pushes toward efficient internal institutions (pp. 40–41).
+*Intuition note.* Organizing means replacing simultaneous actions that ignore what others do with ordered actions that depend on what others did. That change gives cooperation a better chance to start and to last.
 
-**The theory of the state (p. 41).**
-- Hobbes's version: independent people over-invest in weapons and surveillance and live in fear. A ruler with a monopoly on force uses coercion to organize activities that produce collective benefits. He obtains taxes and labor under threat of sanctions (p. 41).
-- A "wise" ruler raises well-being enough to increase tax revenue while reducing oppression. Rulers, like entrepreneurs, keep residuals. Subjects may be better off. No competitive market disciplines the ruler. Rebellion or military defeat may (p. 41).
-- Common structure: one outside individual, whose return rises with the surplus, supplies the institutional change. He makes credible commitments to punish rule-breakers (because he gains the residual, punishing is in his interest) and has an interest in monitoring. So both theories answer: how new institutions arise, how commitments become credible, and why monitoring is supplied (p. 41).
+### Two existing theories of organizing (pp. 40–41)
+**Theory of the firm (p. 40).**
+- An entrepreneur sees a chance to raise returns and negotiates contracts that make participants act in a coordinated way. Each participant joins voluntarily but gives up discretion over some choices and becomes the entrepreneur's agent.
+- The entrepreneur pays agents and keeps the residual profits or absorbs the losses. This motivates him to organize efficiently, to craft contracts, to monitor agents and to end contracts of poor performers.
+- Because agents choose freely, the firm is considered private, voluntary and, by some, nonexploitative. Large residuals go to the entrepreneur, not the agents (p. 40).
+- In an open market, external competition presumably pushes the entrepreneur toward efficient internal institutions (pp. 40–41).
 
-> **Intuition note.** In both classical theories the problem is solved by someone who owns the leftover gains. That is why he pays the cost of rule-making, threats and monitoring. A group of equals has no such person.
+**Theory of the state (p. 41).**
+- A ruler replaces the entrepreneur. In Hobbes's formulation, individuals who protect themselves independently overinvest in weapons and live in constant fear. A ruler with a monopoly on force can use coercion to organize activities for collective benefits, obtaining taxes, labor or other resources by threatening sanctions (p. 41).
+- A "wise" ruler uses the resources to raise subjects' well-being, so tax revenue can rise while oppressive coercion falls. Rulers keep the residuals, and subjects may be substantially better off. No competitive market pressures the ruler toward efficient institutions. The ruler may face rebellion or military defeat (p. 41).
 
-### Three puzzles: supply, commitment, and monitoring (pp. 42–45)
-Theories of firm and state resolve these, but no equally accepted theory shows how principals alone can (1) supply new institutions, (2) make credible commitments, (3) monitor each other (p. 42).
+**What they share (p. 41).** One outsider bears the burden of organizing, and his returns are tied to the surplus. He makes credible commitments to punish rule-breakers, since as residual claimant it is in his interest to punish. It is also in his interest to monitor. Both theories thus address how a new institution arises, how credible commitments are made, and why monitoring is supplied (p. 41).
+
+### Three puzzles: supply, commitment, monitoring (pp. 42–45)
+No equally well-developed theory explains how a set of principals can solve (1) the supply of a new set of institutions, (2) credible commitment, and (3) mutual monitoring (p. 42).
 
 **The problem of supply (pp. 42–43).**
-- Bates (1988): new institutionalism is contractarian, so institutions are demanded because they raise welfare. "Why are they supplied?" (p. 42).
-- In assurance games, supply is easier than in PD games because mutually beneficial outcomes are equilibria. But equilibria differ in how they reward people, so participants disagree about which institution to choose. Bates: the solution to a coordination game "itself constitutes a collective dilemma" (p. 42).
-- For symmetric principals, supplying rules is providing another public good. Even with symmetric gains, rational individuals want the benefit free, so incentives to free-ride undermine the organizing. This is a second-order collective dilemma (pp. 42–43).
-- Bates assumes the second-order dilemma is no easier than the first (so rules will not be supplied), citing M. Taylor. Yet some groups solve it (p. 43).
-- Bates turns to repeated games under uncertainty. Kreps and associates showed that in a finitely repeated PD, small uncertainty about a player's payoff can produce cooperative equilibria among many others. So a player gains by signalling a will to cooperate. Trust and a sense of community are thus mechanisms for supplying institutions (p. 43).
-- Ostrom says Bates's approach is similar to hers (p. 43).
+- **Bates (1988):** the new institutionalism is contractarian in spirit, since institutions are demanded because they improve welfare, so the question is why they are supplied (p. 42).
+- Bates on assurance games: supplying new rules is easier than in PD games, because mutually beneficial outcomes exist that are equilibria. But equilibria do not reward everyone equally, so participants will disagree about which institution to choose. Bates says that agreeing on a solution to such games is itself a collective dilemma (p. 42).
+- Bates on symmetric principals: supplying new rules is providing another public good, hence a *second-order collective dilemma*. Even if payoffs were symmetric, there would be a failure of supply because rational individuals seek the benefits for free. The institution is "subject to the very incentive problems it is supposed to resolve" (p. 42).
+- Bates presumes the second-order dilemma is no easier than the first and concludes that principals will not provide a new rule set (citing M. Taylor 1987) (p. 43).
+- Bates still finds this puzzling because some individuals in the field do solve it. He remains an institutionalist and rational-choice theorist and turns to repeated-game theory under uncertainty. Kreps and associates showed that in a finitely repeated PD, some uncertainty about a player's payoff can produce cooperative equilibria, among many others. So a player may profit by signalling intent to cooperate. In Bates's view, establishing trust and a sense of community are mechanisms for supplying institutions (p. 43).
+- **Ostrom:** Bates's approach is similar to the approach in this volume (p. 43).
 
 **The problem of credible commitment (pp. 43–45).**
-- In all successful cases, appropriators set rules that severely limit authorized actions: how many units, when, where, how, and what labor, materials or money to contribute. If almost everyone follows them, allocation is more predictable, conflict is lower, and the system is sustained (p. 43).
-- Early on, an appropriator may accept rules to get others to agree. Later, the immediate return for breaking a rule may be high (e.g., stressed crops make "out of turn" water very valuable) (p. 44).
-- Minimal model: at each decision after the agreement, the appropriator chooses between complying, $C_t$, and breaking the rules, $B_t$. Often $B_t$ pays more immediately, unless breaking is detected and a sanction $S$ is imposed such that
+- In all cases where appropriators organized, they set rules that severely constrain authorized actions: how many units, when, where and how to appropriate, and what labor, materials or money to contribute. If almost everyone follows them, allocation is more predictable and efficient, conflict falls and the system is sustained (p. 43).
+- Early on, an appropriator may agree to the rules to get others to agree. Later the immediate return for breaking a rule can be high (e.g. taking water "out of turn" when crops are stressed) (p. 44).
+- Formalization: at each later decision the appropriator chooses between complying ($C_t$) and breaking the rules ($B_t$). Often $B_t$ gives a higher immediate return than $C_t$, unless $B_t$ is detected and a sanction $S$ is imposed such that
 $$C_t > B_t - S.$$
-  (The author gives this inequality unnumbered.)
-- Questions: how can one credibly commit to a rotation system when everyone knows temptation will be strong? How do past commitments bind future sacrifice? How do others know commitments are kept if water can be stolen unseen? No one wants to be a "sucker" (p. 44).
-- External coercion is the frequent theoretical solution (Schelling): an outside enforcer imposes a stiff sanction, $S > B_t$ [the text reads "S > B_-", a damaged symbol; read as $B_t$ from context]. Ostrom calls it a "sleight-of-hand" because it does not explain why the enforcer would monitor and sanction. A self-organized group must motivate itself (or its agents) to monitor and sanction (p. 44).
-- The puzzles accumulate: supply is pointless if commitments are not credible (pp. 44–45).
+- How can one credibly commit to a rotation system when all know the temptation to defect will be strong later? A pledge like "I will keep my commitment if you keep yours" does not say how past commitments bind future sacrifices. Others also cannot tell whether commitments are kept if water can be stolen unobserved. No one wants to be a "sucker" (p. 44).
+- *External coercion* is a frequently cited solution (Schelling 1984). The presumption is that if a stiff sanction by an external enforcer is imposed in all future periods, with $S$ greater than the gain from breaking (the text layer prints "S > B_" with a garbled subscript; read as $B_t$), then commitments are credible. Ostrom calls it at times a "sleight-of-hand," because it does not explain what motivates the enforcer to monitor and sanction (p. 44).
+- A self-organized group has no external enforcer, so it must motivate itself (or its agents) to monitor and sanction (p. 44).
+- The puzzles cumulate. Devising rules is pointless without commitment, and commitment is impossible without solving monitoring (pp. 44–45).
 
 **The problem of mutual monitoring (p. 45).**
-- The usual prediction is that principals will not monitor their own rules. Elster (union example) is quoted. Workers must first overcome a free-rider problem to join. If mutual monitoring supplies the incentive, a second-order free-rider problem arises: why should a selfish worker punish non-joiners, when punishment is costly to him and its benefits are spread over all members? Punishment is itself a public good. Providing it needs second-order selective incentives, which meet a third-order free-rider problem (p. 45).
-- "Dilemmas nested inside dilemmas" seem able to defeat self-organization. Without monitoring there is no credible commitment. Without commitment there is no reason to propose rules. The process unravels from both ends because supply is presumed unsolvable. Yet some groups did create institutions, commit and monitor. Understanding how is the study's challenge (p. 45).
+- The usual theoretical prediction is that principals will not monitor their own rules. **Elster (1989)**, on workers and a union: forcing workers to join must first overcome a free-rider problem. If the incentives are offered by decentralized mutual monitoring, this creates a second-order free-rider problem. Why should a selfish worker punish non-joiners? Punishment is costly to the punisher while its benefits are spread over all members, so it is a public good. Providing it would need second-order selective incentives, which would meet a third-order free-rider problem (p. 45).
+- **Ostrom:** "dilemmas nested inside dilemmas" appear able to defeat principals. Without monitoring there is no credible commitment, and without commitment there is no reason to propose rules, so the process unravels from both ends. But some individuals have created institutions, committed themselves and monitored conformance. Understanding how is the challenge of the study (p. 45).
 
-> **Intuition note.** Each solution needs someone to pay a cost for a shared benefit, so each solution is itself a public good. Theory says the chain never ends. Real groups break the chain, and Ostrom wants to know how.
+*Intuition note.* Making rules and checking on others are each a shared benefit that every person would prefer to leave to others, and without credible commitment and monitoring there is no reason to propose rules. The usual theory, as Bates and Elster present it, therefore predicts that principals will not supply rules or monitor each other, which conflicts with cases where some do.
 
-### Framing inquiry (pp. 45–53)
-- One must move back and forth between theory and action. Theory without empirical puzzles spins off; when predictions and observations disagree, theory must change (pp. 45–46).
-- Theory affects framing: which questions are asked and what one looks for. Two common presumptions lead to an overly pessimistic view: (1) the structure is always a PD, (2) one level of analysis is sufficient (p. 46).
-- Ostrom's alternatives (p. 46):
-  1. Appropriators face varied appropriation and provision problems whose structures vary with underlying parameters.
-  2. Appropriators must switch back and forth across arenas and levels of analysis.
+### Framing inquiry (pp. 45–55)
+- Understanding how individuals solve problems in field settings means moving between theory and action. Theory is needed for general mechanisms, and empirical puzzles must anchor it (pp. 45–46). When predictions and observations conflict, theory must be adjusted. The prediction that people will not devise, precommit to and monitor their own rules conflicts with evidence that some do (p. 46).
+- Theories frame which questions are asked. The usual presumptions (1) that the underlying structure is always a PD, and (2) that one level of analysis suffices, give an overly pessimistic view of people's capacity to restructure their situations (p. 46).
+- Ostrom's alternative presumptions: (1) appropriators face appropriation and provision problems whose structures vary with underlying parameters; (2) appropriators must switch across arenas and levels of analysis (p. 46).
 
-**Appropriation and provision problems (pp. 46–50).**
-- Some CPR situations are better described as assurance games or "chicken" (Runge; M. Taylor; Taylor and Ward). The Alanya fishing grounds have the structure of an "assignment" game (Gardner and Ostrom 1990) (pp. 46–47).
-- In many irrigation systems the choices are whether to steal water and whether to monitor. The resulting game is complex, has no single equilibrium, and depends on parameters: number of appropriators, monitoring cost, benefit from stealing, punishment, and reward to a monitor who detects a rule-breaker (Weissing and Ostrom) (p. 47).
-- Structure depends on value and predictability of the flow, ease of observing and measuring activity, and so on. Gardner, Walker and Ostrom group problems into two classes (p. 47):
-  - Appropriation problems: effects of ways of allocating a fixed, time-independent quantity of units on net returns. They concern the flow and are time-independent (p. 47).
-  - Provision problems: effects of ways of assigning responsibility for building, restoring or maintaining the system. They concern the stock and are time-dependent. Both occur in every CPR and their solutions must fit together (p. 47).
-- *Appropriation problems* (pp. 48–49):
-  - The aim is to avoid rent dissipation and reduce uncertainty and conflict over rights (p. 48).
-  - Rents are dissipated whenever marginal returns from appropriation are below marginal costs. Causes: too many appropriators, withdrawal above the economic optimum, or over-investment in equipment such as fishing gear (p. 48).
-  - In an open-access CPR, the time-independent appropriation process can often be characterized as a PD, and rent dissipation is likely endemic (Gordon; Scott). In a limited-access CPR with a well-defined group, incentives depend on rules about quantity, timing, location and technology and on their monitoring and enforcement. It is not a PD, and there is no dominant strategy (Dasgupta and Heal). Independent appropriators will still over-invest in any unconstrained input (Townsend and Wilson) (p. 48).
-  - Second type: assignment of spatial or temporal access, because units are heterogeneous and uncertain (fishing sites vary; grazing areas vary by year; head-end irrigators get more than tail-end ones). Well-enforced rules that fit the physical system reduce risk, so people can invest in activities that would otherwise not pay. Physical violence signals poor assignment. Perceived unfairness hurts willingness to invest in provision. The rules also affect monitoring costs and the detection/deterrence game (pp. 48–49).
-- *Provision problems* (p. 49):
-  - Supply side: construction and maintenance (type, level, emergency reserves). Hard even for a single entrepreneur, harder with multiple free-riders. They resemble providing a continuing public good. Under independent action, less than optimal effort goes to construction and especially to maintenance (p. 49).
-  - What makes CPRs harder than public goods: unless appropriation problems are resolved, provision problems may prove intractable. In public goods there is no appropriation problem since units are not subtractable (p. 49).
-  - Demand side: regulating withdrawal so the resource is not harmed. The fisheries literature (Clark; Clark, Munro, Charles) models the time-dependent link between current withdrawals and future yields. The rules that allocate this year's units affect next year's (p. 49).
-- The uniformities across CPRs are non-separability of one's choices from others', and the fact that solving provision depends on solving appropriation. They do not lie in one game representation. Oliver is quoted: "there is no one 'right' way to model collective action" (p. 50).
+**Appropriation and provision problems (pp. 46–50)**
+- Several scholars have shown that some simple situations may be better described as "assurance" games or as the game "chicken" (p. 46). The Alanya fishing grounds (Chapter 1) cannot be represented as a PD. A formal analysis shows an "assignment" game structure (p. 47).
+- In many irrigation systems the basic choices are whether to steal water and whether to monitor. The game is complex, has no single equilibrium, and the amounts of stealing and monitoring depend on parameters: number of appropriators, monitoring cost, benefit from stealing, punishment if detected, and the monitor's reward for detection (p. 47).
+- The structure of problems depends on parameters such as the value and predictability of the flow and the ease of observing and measuring appropriator activities (p. 47).
+- Two classes of problems (Gardner, Ostrom and Walker):
+  - *Appropriation problems:* the effects of ways of allocating a fixed, time-independent quantity of units on net returns. They concern the flow and are time-independent.
+  - *Provision problems:* the effects of ways of assigning responsibility to build, restore or maintain the system. They concern the stock and are time-dependent.
+  - Both are present in every CPR to some degree, so solutions must be congruent (p. 47).
 
-**Multiple levels of analysis (pp. 50–53).**
-- Most analyses use one level, the operational level. Rules and physical constraints are assumed given. Actions directly affect the physical world (units withdrawn, goods exchanged). Appropriation and provision problems are operational (p. 50).
-- Technology and rules both change over time. Analysis of institutional change is far harder than analysis within fixed rules (p. 50).
-- Rules for operational choice are made within collective-choice rules, which are made within constitutional-choice rules. Constitutional rules in a micro-setting are affected by those of larger jurisdictions. Self-organizing people switch between arenas, as managers switch between producing, introducing technology and investing in technology development. So one level is not sufficient (p. 50).
-- Definition: institutions are the sets of working rules used to determine who is eligible to make decisions in an arena, what actions are allowed or constrained, which aggregation rules are used, what procedures must be followed, what information must or must not be provided, and what payoffs are assigned to actions (Ostrom 1986a) (p. 51).
-- All rules prescribe forbidding, permitting or requiring some action or outcome. Working rules (Commons) are those actually used, monitored and enforced (p. 51). Enforcement may be by participants, hired agents, external enforcers, or a mix (p. 51).
-- One should not call something a "rule" unless most affected people know it exists and expect others to monitor and sanction nonconformance. Working rules are common knowledge: everyone knows them, knows others know them, and so on. They are always monitored and enforced to some extent by those directly involved. In repeated situations people learn the approximate level of monitoring (p. 51).
-- Working rules may differ from formal law: they may fill gaps (lacunae) or assign de facto rights contrary to de jure rights. A "rule of law" means formal law and working rules are closely aligned. Ostrom focuses on de facto rules used in CPR field settings (p. 51).
-- Rules are nested in other rules that say how they can be changed, like nested computer languages (software at several levels plus hardware, which is the CPR) (pp. 51–52).
-- Two points on institutional change (p. 52):
-  1. Changes at one level occur within a currently "fixed" set of deeper rules.
-  2. Deeper-level changes are usually harder and costlier, which raises the stability of mutual expectations.
-- Three rule levels (p. 52):
-  - Operational rules directly affect day-to-day decisions: when, where and how to withdraw units, who monitors whom, what information is exchanged, what rewards or sanctions follow.
-  - Collective-choice rules indirectly affect operational choices. Appropriators, their officials or external authorities use them to make policies (the operational rules).
-  - Constitutional-choice rules determine who is eligible and which rules are used to craft the collective-choice rules.
-- Figure 2.2 (p. 53) links rules, levels of analysis and processes: operational choice involves appropriation, provision, monitoring, enforcement; collective choice involves policy-making, management, adjudication; constitutional choice involves formulation, governance, adjudication, modification (pp. 52–53).
-- Critics object that endogenizing rule choice still needs some rules to govern the choice of rules. Ostrom answers that making operational rules endogenous does not make higher rules endogenous at once. For one analysis the theorist holds some rules fixed. They can be objects of choice in another analysis (e.g., sports leagues revise their rules each season) (pp. 52–53).
-- Rules are changed less often than strategies within them. Changing rules raises uncertainty because rules give stability of expectations. Operational rules are easier to change than collective-choice rules, which are easier to change than constitutional ones (pp. 53–54).
-- Analysts keep deeper-level variables fixed, otherwise the problem "would unravel". But self-governing people move across levels as a key strategy. People with no self-organizing authority are in a "single-tier world" (p. 54).
-- An arena is simply the situation in which a particular type of action occurs, formal (legislature, court) or informal (a coffeehouse, a co-op meeting, a dedicated organization). If appropriators cannot change operational rules, collective choice happens in external arenas (officials, legislatures, judges) (p. 54).
-- Several collective-choice arenas usually affect the operational rules in use. Figure 2.3 shows formal arenas (legislatures, regulatory agencies, courts) with formal monitoring and enforcement, and informal arenas (informal gatherings, appropriation teams, private associations) with informal monitoring and enforcement, all feeding into "operational rules in use" (pp. 53–54). Constitutional choice can likewise occur in local, regional or national arenas (p. 55).
-- Absence of national law is not absence of rules. Local appropriators may have long-standing working rules that limit entry and use. These may or may not be efficient and fair, but they shape strategies and outcomes (p. 55).
+*Appropriation problems (p. 48–49).*
+- Key problem: allocate a fixed quantity so as to avoid *rent dissipation* and reduce uncertainty and conflict over rights. Rents are dissipated whenever marginal returns from appropriation are smaller than marginal costs. This can happen because too many appropriators are allowed, because they withdraw more than the economically optimal quantity, or because they overinvest in equipment (p. 48).
+- In an *open-access* CPR (no limit on who can appropriate) the time-independent process can frequently be characterized as a PD. Rent dissipation is likely to be endemic, and no one has an incentive to leave units for others (Gordon; Scott) (p. 48).
+- In a *limited-access* CPR (a well-defined group), incentives depend on rules about quantity, timing, location and technology and their monitoring. Its structure is not a PD and lacks a dominant strategy for each participant. Still, independently acting appropriators will overinvest in any input not constrained by the rules (Townsend and Wilson) (p. 48).
+- A second problem is assignment of spatial or temporal access, since resource units are heterogeneous and uncertain over space and time. Examples: fishing sites of different productivity, grazing areas wet one year and lush the next, and head-end vs tail-end irrigators (p. 48).
+- Well-enforced rules that fit the physical system can reduce risks, and if risks fall enough, appropriators can invest in otherwise unviable enterprises. Physical violence among fishery or irrigation users is symptomatic of inadequate assignment. If rights seem unfair, uneconomic, uncertain or badly enforced, willingness to invest in provision may suffer. Appropriation rules also affect monitoring and policing costs and the strategic "detection/deterrence game" between appropriators and monitors (pp. 48–49).
 
-> **Intuition note.** To see why groups sometimes govern themselves, one must watch them change the rules, not only play within them. A group that can change its rules has a second "floor" of choices. A group that cannot is stuck with rules given from outside.
+*Provision problems (p. 49).*
+- They concern the time-dependent, productive nature of investment in the resource, and may arise on the supply side, the demand side or both (p. 49).
+- *Supply side:* construction (like any long-term infrastructure investment) and maintenance (regular maintenance and emergency reserves). These are hard even for a single entrepreneur, and harder with free-riding by multiple appropriators. If they act independently, less than optimal effort will go to construction, and particularly to maintenance (p. 49).
+- What makes this harder than ordinary public goods is that unless appropriation problems are resolved, provision problems may prove intractable. In public goods, appropriation problems do not exist because units are not subtractable (p. 49).
+- *Demand side:* regulate withdrawal rates so they do not harm the resource. Dynamic fishery rent-dissipation models (Clark and others) focus on the link between current withdrawals and future yields. The rules that allocate this year's units also affect availability in later years (p. 49).
+- The uniformities across CPRs: one's strategy is non-separable from others' choices, and solving provision depends on solving appropriation. They do not lie in any particular game representation. Many factors shape the strategic structure, including physical structure, technology, economic environment and rules. Oliver (1980) stressed that there is no single right way to model collective action (pp. 49–50).
+
+**Multiple levels of analysis (pp. 50–55)**
+- Most analyses use only the *operational* level (Kiser and E. Ostrom). They assume rules and physical and technological constraints are given. At this level individuals' actions directly affect the physical world: units withdrawn, goods exchanged. Appropriation and provision problems occur here (p. 50).
+- Technology and rules both change. Analyzing technological change is far harder than analyzing choices within a fixed technology, and analyzing institutional change is likewise harder than analyzing operational decisions within fixed rules (p. 50).
+- Rules for operational choice are made within *collective-choice* rules, which are made within *constitutional-choice* rules. Constitutional-choice rules for a micro-setting are affected by those of larger jurisdictions (p. 50).
+- Self-organizing individuals switch among the three arenas, like managers who switch between producing within a technology, introducing a new one and investing in development. Because appropriators in some of the cases do this, the assumption that a single level suffices must be dropped (p. 50).
+
+*Definition of institutions (p. 51).*
+- "Institutions" are the sets of working rules used to determine who is eligible to decide in an arena, what actions are allowed or constrained, what aggregation rules are used, what procedures must be followed, what information must or must not be provided, and what payoffs go to individuals depending on their actions (p. 51).
+- All rules contain prescriptions that forbid, permit or require action or outcome. *Working rules* are those actually used, monitored and enforced when people choose actions (Commons). Enforcement may be by others directly involved, hired agents, external enforcers, or any combination (p. 51).
+- One should not speak of a "rule" unless most people whose strategies it affects know it exists and expect others to monitor and sanction nonconformance. Working rules are thus *common knowledge*: everyone knows the rules, knows that others know, and knows that they know the participant knows (p. 51). Working rules are always monitored and enforced, at least to some extent, by those directly involved. In repetitive situations, people learn good approximations of the level of monitoring through experience (p. 51).
+- Working rules may or may not resemble formal law. Formal law is a major source of working rules when actively monitored and enforced. "Rule of law" expresses the idea that formal laws and working rules are closely aligned and that enforcers are accountable (p. 51). In many CPR settings working rules differ considerably from legislative, administrative or court rules. They may fill gaps, or assign de facto rights and duties contrary to de jure ones. Ostrom's primary focus is the de facto rules actually used (p. 51).
+
+*Nesting and three levels (pp. 51–55).*
+- All rules are nested in another set of rules that defines how they can be changed, like nested computer languages. What can be done at a level depends on the rules at that level, rules deeper down, and the hardware (the CPR) (pp. 51–52).
+- For institutional change: (1) changes in rules at one level occur within a currently "fixed" set of rules at a deeper level; (2) changes in deeper-level rules are usually more difficult and costly, which increases the stability of mutual expectations (p. 52).
+- *Operational rules* directly affect day-to-day decisions: when, where and how to withdraw, who monitors and how, what information is exchanged, and what rewards or sanctions apply. *Collective-choice rules* indirectly affect operational choices; appropriators, officials or external authorities use them to make policy, that is, to make operational rules. *Constitutional-choice rules* determine who is eligible, and which rules are used, in crafting the collective-choice rules (p. 52).
+- **Figure 2.2** (pp. 52–53): the processes at each level. Operational: appropriation, provision, monitoring, enforcement. Collective-choice: policy-making, management, adjudication. Constitutional: formulation, governance, adjudication, modification (p. 53).
+- Some critics object that theorists making rule choice endogenous must assume other rules that govern rule choice. Ostrom's reply: making operational rules endogenous does not make collective or constitutional rules endogenous at the same time. Some rules must be held exogenous for a given analysis, but they can be objects of choice in another analysis (p. 52–53). Example: intercollegiate sports leagues reconsider game rules every season (p. 53).
+- Rules change less often than strategies within them. Changing rules increases uncertainty, because rules provide stability of expectations. Operational rules are usually easier to change than collective-choice rules, and those are easier than constitutional rules. Deeper layers are harder for scholars and participants to analyze (pp. 53–54).
+- The analyst holds deeper-level variables fixed, or the problem would unravel. Self-organizing individuals go back and forth across levels as a key strategy. Those with no self-organizing authority are "stuck in a single-tier world" and can only choose strategies within given bounds (p. 54).
+- An *arena* is simply the situation in which a particular type of action occurs. It need not be formal, and can be a legislature or a court (p. 54). If appropriators can change at least some working rules, their collective-choice arena may be a coffeehouse, a producers' co-op meeting or an organization built to manage the CPR. If they cannot, collective choice happens in arenas external to them: officials, legislatures, judges (p. 54).
+- Usually several arenas affect operational rules. National decisions on access, once given legitimacy locally and enforced, are likely to affect local operational rules. **Figure 2.3** (p. 53) shows formal collective-choice arenas (legislatures, agencies, courts) and informal ones (gatherings, appropriation teams, private associations) feeding into operational rules in use, with formal and informal monitoring and enforcement. Similar formal and informal processes occur at the constitutional level (pp. 54–55).
+- Because working rules may have many sources and include de facto rules, the *absence* of national formal law is "not equivalent" to the absence of effective rules. Local rules developed over a long time may or may not lead to efficient and fair management, but they affect the strategies appropriators perceive and the outcomes (p. 55).
+
+*Intuition note.* Rules sit in layers: day-to-day rules are set by collective decisions, which are set by deeper constitutional rules. The analyst freezes the deeper layer to study the upper one, while real self-governing groups can act on several layers.
 
 ### Studying institutions in field settings (pp. 55–57)
-- Chapters 3–5 show only part of the detailed case material. Ostrom uses the method of institutional analysis of Kiser and Ostrom, Oakerson and others (p. 55).
-- Basic strategy: identify which physical, cultural and institutional features affect who takes part, what actions and costs are possible, which outcomes are achievable, how actions link to outcomes, what information exists, how much control people have, and what payoffs go with action-outcome combinations. Then abstract a "playable game" that captures the essence of the problem (p. 55).
-- People must learn about the physical system, their own use patterns, community norms, incentives from rule changes and transaction costs. The analyst must learn the same (pp. 55–56).
-- For Chapter 3's success cases, she does not know the initial structures, since the rule experiments began "in the mists of time". She knows the appropriators avoided the conflict and perceived unfairness of a poorly solved assignment problem, the over-investment of unsolved rent dissipation, and the resource deterioration of unsolved provision problems (p. 56).
-- She does not claim optimal solutions. People solved problems as well as they could given information, tools, costs and resources. Her task is to learn the structure of the problems and why the rules seem to work (p. 56).
-- Her checklist (p. 56):
-  - Resource: size, boundary clarity, internal structure.
-  - Resource units: predictability over time, space and quantity; reliance of appropriators; risks of different allocation schemes.
-  - Individuals: number, time horizons, multiple joint activities, similarity of interests, prior norms (an asset or a disadvantage).
-  - Rules: the rules they devised, and the design principles behind how they work and affect incentives.
-  - Monitoring and commitment: how appropriators mutually monitored and kept commitments.
-- Chapter 4 applies the framework to the structure before rule change and to the process of devising new institutions (supply) (p. 57).
-- The Chapter 5 "failure" cases show extreme rent dissipation, unresolved disagreements leading to violence, or resource deterioration. The same framework identifies the constraints (p. 57).
-- The conclusion will use the findings to build a theory of self-organized collective action to complement the theories of the firm and the state (p. 57).
+- Chapters 3–5 present only a fraction of the detailed case studies. Ostrom relies on the institutional analysis method described elsewhere (Kiser and E. Ostrom; Oakerson; E. Ostrom) (p. 55).
+- *Basic strategy:* identify the physical, cultural and institutional aspects likely to affect who is involved, their possible actions and costs, achievable outcomes, links of actions to outcomes, available information, individual control and payoffs. Then abstract from the case to a "playable game" that captures the essence of the problems (p. 55).
+- Individuals must learn about the physical system, their own use patterns, community norms, incentives that rule changes create, and the transaction costs of strategies or rule changes. The analyst must learn the same variables (pp. 55–56).
+- For Chapter 3 cases she does not know the original structure of the situations. She knows the appropriators in the "success" cases allocated units while avoiding the conflict and perceived unfairness of a poorly solved assignment problem, the overinvestment of an unsolved rent-dissipation problem, and the deterioration from unsolved provision problems (p. 56).
+- She does not know whether their solutions were optimal and strongly doubts it. They solved problems as most people do, as well as they could given the information, tools, costs and resources (p. 56). She seeks to learn the structure of the problems and why the adopted rules "seem to work" (p. 56).
+- *Order of inquiry (p. 56):*
+  - Resource: size, clarity of boundary, internal structure.
+  - Flow patterns: predictability over time, across space and in quantity; reliance on the resource; risks of allocation schemes.
+  - Individuals: number, likely time horizons, joint involvement in multiple activities, similarity or heterogeneity of interests, prior norms that can be drawn on or pose a disadvantage.
+  - Rules they devised: search for the *design principles* involved and how they affect incentives; then how mutual monitoring and generally kept commitments were achieved.
+- Chapter 4 applies the framework to the situation before a group changed its rules to solve interrelated provision and appropriation problems, and examines the process of devising institutions (the supply question). The "failure" cases of Chapter 5 show extreme rent dissipation, unresolved disagreements leading to violence, or resource deterioration. The same framework identifies the variables behind failure, again assuming individuals tried to do as well as they could (p. 57).
+- The concluding chapters aim to use the findings to advance a theory of self-organized collective action, complementing the theories of the firm and the state, which are theories of externally organized collective action (p. 57).
 
-## Toy example
-*(Ours, not from the text.) Ostrom's commitment condition, $C_t > B_t - S$, with detection added.*
+## Toy example (ours, not from the text)
+*Main idea: a monitoring duty is a second-order public good, and a rule can change the incentives.*
 
-Suppose an irrigator gets payoff $C = 10$ for complying in a dry week and $B = 14$ for taking water out of turn.
+Five irrigators share a canal. Suppose one person checking for water theft costs the checker 3 units, and everyone (all five) gets 2 units of benefit from the resulting compliance, whoever does the checking.
 
-1. Certain detection and a sanction $S = 6$: breaking nets $B - S = 14 - 6 = 8$. Since $10 > 8$, complying is better. The condition holds.
-2. Weaker sanction $S = 3$: $14 - 3 = 11$. Since $10 > 11$ is false, breaking pays.
-3. (added step) Real detection is uncertain. With detection probability $p$ and $S = 6$, the expected payoff of breaking is $B - pS$. Compliance is better when $10 > 14 - 6p$, i.e. $6p > 4$, i.e. $p > 2/3 \approx 0.67$.
-   - Check $p = 0.5$: $14 - 0.5 \times 6 = 11 > 10$. Breaking pays.
-   - Check $p = 0.8$: $14 - 0.8 \times 6 = 14 - 4.8 = 9.2 < 10$. Complying is better.
-4. Link to the puzzles: $p$ above $2/3$ requires someone to patrol the canal. If patrolling costs the patroller, say, 2 per week and the benefit is spread over all, patrolling is itself a public good. This is the second-order problem Ostrom takes from Elster (p. 45).
+- If one person volunteers, his net is $2 - 3 = -1$. A non-volunteer gets $+2$. Each prefers to wait, so on the standard prediction nobody monitors (the Elster-style second-order problem).
+- The group would gain $5 \times 2 = 10$ at a cost of 3, a net $10 - 3 = 7$.
+- Now suppose a *rule* (supplied by the appropriators themselves) rotates the duty so each person monitors one season in five. Each person's average cost per season is $3/5 = 0.6$, against benefit 2. Net per person per season: $2 - 0.6 = 1.4$, and $5 \times 1.4 = 7$, which matches the group's gain.
+- The rule is stable only if the rotation is itself monitored and enforced: the commitment problem. Take $C_t = 6$, $B_t = 10$ (stealing water out of turn). With sanction $S = 5$ if detected, $B_t - S = 5 < 6 = C_t$, so complying beats breaking (when detection is certain). With $S = 3$, $B_t - S = 7 > 6$ and the condition fails.
 
 ## Concepts
-- [[common-pool-resource-cpr]] — a natural or man-made resource system where exclusion is costly but not impossible and units are subtractable (p. 30)
-- [[public-good]] — here contrasted with CPRs: no subtractability, so no crowding or overuse (p. 32)
-- [[free-rider]] — the temptation to avoid contributing to provision, shared by CPRs and public goods because exclusion is costly (p. 32)
-- [[collective-action-problem]] — independent action gives lower joint returns than coordinated action, and the benefits are shared by all (pp. 38–40)
-- [[selective-incentive]] — Elster's "second-order selective incentives" needed to supply punishment (p. 45)
-- [[commitment-problem]] — how to bind oneself to rules when breaking them pays; $C_t > B_t - S$ (p. 44)
-- [[institutions]] — working rules actually used, monitored, enforced and common knowledge (p. 51)
-- [[social-capital]] — shared norms that lower the cost of monitoring and sanctioning (p. 36)
-- [[principal-agent-problem]] — in the firm and state theories, agents give discretion to an entrepreneur or ruler who monitors them (pp. 40–41)
-- [[design-principles-ostrom]] — named as what she will look for in the rules of the success cases (p. 56)
-- [[second-order-dilemma]] (new) — providing the rules, or the monitoring, that solve a dilemma is itself a public-good problem (pp. 42–45)
-- [[rent-dissipation]] (new) — appropriation continues until marginal returns fall below marginal costs, from too many users, too much withdrawal or over-investment (p. 48)
-- [[subtractability]] (new) — one user's units reduce what is left for others, which creates crowding and overuse (p. 32)
-- [[appropriation-vs-provision-problems]] (new) — appropriation allocates the flow (time-independent); provision builds and maintains the stock (time-dependent) (p. 47)
-- [[nested-rule-levels]] (new) — operational, collective-choice and constitutional-choice rules; each level is changed within a fixed deeper level (pp. 50–53)
-- [[working-rules]] (new) — rules in use that are common knowledge and monitored, whether or not they match formal law (p. 51)
-- [[contingent-strategies]] (new) — planned actions that depend on conditions, such as tit for tat (p. 36)
-- [[opportunism]] (new) — "self-interest with guile"; expected opportunism raises monitoring costs (p. 36)
+- [[common-pool-resource-cpr]] — resource system large enough that excluding beneficiaries is costly but not impossible; units are subtractable (p. 30)
+- [[resource-system-vs-resource-unit]] (new) — the system is a stock; units are the flow withdrawn from it. Units are not jointly used; the system is (pp. 30–31)
+- [[public-good]] — here: nonsubtractive goods. CPR provision resembles it, CPR appropriation resembles private goods (pp. 32–33)
+- [[free-rider]] — one who avoids contributing to provision, tempted by the high cost of exclusion (p. 32)
+- [[collective-action-problem]] — independent action gives lower joint returns than coordination; switching costs are high and benefits shared (pp. 38–40)
+- [[selective-incentive]] — Elster notes that punishing non-members of a union would need "second-order" selective incentives, which face a third-order free-rider problem (p. 45)
+- [[social-capital]] — shared norms that reduce the cost of monitoring and sanctioning (p. 36)
+- [[commitment-problem]] — in this chapter: credibly binding oneself to follow rules when later breaking pays and breaches may go unobserved; condition $C_t > B_t - S$ (p. 44).
+- [[institutions]] — sets of working rules: who decides, allowed actions, aggregation, procedures, information, payoffs. Common knowledge, monitored and enforced (p. 51)
+- [[working-rules]] (new) — rules actually used, monitored and enforced, whether or not they match formal law (p. 51)
+- [[nested-rule-levels]] (new) — operational, collective-choice and constitutional-choice rules; deeper changes are costlier and stabilise expectations (pp. 50–52)
+- [[appropriation-vs-provision-problems]] (new) — allocating a fixed flow (time-independent) vs building and maintaining the stock (time-dependent) (p. 47)
+- [[rent-dissipation]] (new) — marginal returns fall below marginal costs of appropriation (p. 48)
+- [[second-order-dilemma]] (new) — supplying or enforcing rules is itself a public good (Bates; Elster) (pp. 42, 45)
+- [[contingent-strategies]] (new) — planned actions conditional on conditions in the world, e.g. tit for tat (p. 36)
+- [[principal-agent-problem]] — (the term itself does not appear in these pages) in the theory of the firm, participants become agents of an entrepreneur who monitors them; this chapter's "principals" are self-organizing users with no outside boss (pp. 29, 40)
 
 ## Canonical instances
-- [[hardin-herders]] — herders decide independently on the meadow without regard to others' choices (p. 39)
-- [[prisoners-dilemma-framing]] — the usual presumption that CPR problems are PD games; Ostrom replaces it with a family of game structures (pp. 46–48)
-- [[alanya-fishery]] — an assignment game rather than a PD (p. 47)
-- [[irrigation-stealing-monitoring-game]] — choices to steal water and to monitor give a complex game with no single equilibrium (p. 47)
-- [[tit-for-tat]] — Axelrod's contingent strategy in a two-person game (p. 36)
-- [[kreps-repeated-pd]] — uncertainty in a finitely repeated PD can produce cooperative equilibria (p. 43)
-- [[elster-union-monitoring]] — second- and third-order free-rider problems in workers monitoring each other (p. 45)
-- [[upstream-downstream-irrigators]] — head-end restraint may or may not raise total yield (pp. 33–34)
-- [[inshore-vs-trawler-fishers]] — different discount rates for local and mobile fishers (p. 35)
-- [[sports-league-rule-change]] — end-of-season rule revision as a collective-choice example (p. 53)
+- [[hardin-herders]] — herders decide herd size independently, without regard to others' choices (p. 39)
+- [[prisoners-in-separate-cells]] — independence imposed by coercion, unlike CPR appropriators (p. 39)
+- [[inshore-vs-trawler-fishers]] — different time horizons give different discount rates (p. 35)
+- [[head-end-irrigator]] — restraint by an upstream farmer may or may not raise total yield (pp. 33–34)
+- [[alanya-fishery]] — a CPR whose problem has the structure of an assignment game, not a PD (p. 47)
+- [[irrigation-steal-and-monitor-game]] — complex game without a single equilibrium (p. 47)
+- [[elster-union-monitoring]] — second- and third-order free-rider problems in mutual monitoring (p. 45)
+- [[bates-supply-problem]] — institutional supply as a second-order dilemma (pp. 42–43)
+- [[sports-league-rule-change]] — rules held fixed for a season's analysis but changed between seasons (p. 53)
 
 ## Bridges (candidates)
-- [structural-analogy] second-order free-rider problem (monitoring and punishing are public goods) ↔ political-science: the paradox of voting and rational ignorance. In both, an individually costly act yields diffuse benefits, so individuals under-supply it.
-- [structural-analogy] theory of the firm / state with a residual claimant ↔ principal–agent problem and delegation: the entrepreneur or ruler monitors agents because he keeps the residual.
-- [structural-analogy] nested operational, collective-choice and constitutional levels ↔ institutions and path dependence: deeper rules are costlier to change and stabilize expectations.
-- [metaphor] "lattice of interdependence" ↔ spatial or network models of political interaction: a general picture of mutual dependence rather than a specific model.
-- [structural-analogy] contingent strategies such as tit for tat ↔ revolutionary thresholds / cascades: both make one's action depend on how many others act (frequency dependence).
+- [structural-analogy] Entrepreneur or ruler as residual claimant ↔ principal–agent theory: the outsider monitors agents and keeps the surplus, so threats are credible — same incentive logic as delegation.
+- [metaphor] Nested rules like nested computer languages (p. 51) ↔ constitutional design: what is possible at one level depends on rules deeper down.
+- [structural-analogy] Second-order free-rider problem in monitoring ↔ costly punishment in public-goods experiments: punishing is itself a public good.
+- [structural-analogy] Appropriation vs provision ↔ flow vs stock in resource economics (renewal rate vs withdrawal rate).
 
 ## Questions this raises
-- If a $C_t > B_t - S$ type condition depends on detection, who monitors at low cost, and why would they do it? (The chapter promises an answer in later chapters.)
-- How much of self-organization depends on the "broad" view of rationality (norms, learning), and how much would survive under a narrow, payoff-only view?
-- If the game structure varies with parameters, which parameters decide whether a CPR looks like a PD, an assurance game or an assignment game?
-- Can the success cases tell us anything about the supply of institutions, given that the author says she cannot observe their origins (p. 56)?
+- If the three puzzles look unsolvable in theory, which features of the resource, flow and appropriators (the variables listed on p. 56) explain who solves them?
+- How do Bates's signalling and trust mechanisms (repeated games under uncertainty) relate to the contingent strategies and shared norms Ostrom stresses?
+- Which "design principles" in the rules actually reduce monitoring costs and make sanctions credible (p. 56)?
+- How does the line between self-organized rules and externally supplied rules (formal law, external enforcers) work in practice when working rules differ from de jure rules?
 
 ## Reading notes
-- The text layer has many OCR errors (e.g., "theory of the hm" for "firm" on p. 29, "gnorganized" on p. 39, "flowj" on p. 47). I corrected these by context. Footnote markers appear inline as stray digits or letters. No footnote text was supplied.
-- Figure 2.1 (p. 37): only a garbled text layer was available. I did not see the page image, so my description follows its labels and the surrounding prose. Figures 2.2 and 2.3 (pp. 53–54) were checked against images.
-- The sanction condition on p. 44 appears as "S > B_-" in the text layer, a damaged symbol. I read it as $B_t$ by context. The inequality "C, > B, - S" is read as $C_t > B_t - S$. The author does not number the equation.
-- A few sentences are partly unreadable in OCR (p. 40, "Individuals are potentially involved"; p. 53 stray words). I reconstructed these from context without changing the meaning.
-- The detection-probability step in the Toy example is ours. The author's inequality assumes the sanction is imposed once breaking is detected.
-- No exercises in this chapter.
+- Printed page = pdf page − 14 (pdf 43 = p. 29, pdf 71 = p. 57).
+- Footnote markers appear as stray characters in the text layer (e.g. "appropriators."a, "goods. J"). Footnote texts are not part of these pages.
+- The text layer is noisy in places. Page images were provided only for pp. 32, 53 and 54. Elsewhere the text layer was used as is.
+- p. 44: the text layer prints the second sanction condition as "S > B_-" with a garbled subscript. I read it as $B_t$, by parallel with the earlier formula $C_t > B_t - S$. This is not checked against an image.
+- p. 36: the text layer prints "Williamson 1915". I did not check this against an image and left it as printed in the text layer.
+- Figures 2.1–2.3 are diagrams. Fig. 2.1 text is garbled. I described it from the surrounding prose (p. 37). Figs. 2.2 and 2.3 were checked against the page images.
+- This unit has no exercises.
