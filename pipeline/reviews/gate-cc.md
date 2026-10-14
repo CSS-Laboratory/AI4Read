@@ -24,3 +24,9 @@
 - **A. Fix the CC route, then re-test** (items 1–3) on the same 3 parity units; scale only if residuals ≤ batch. Cost: one more test round + audit; usage per unit rises (Opus verifier).
 - **B. Finish deep (145 units, ≈ $33) on Vertex** with the proven route; reference tier (162 units) stays just-in-time: digested via A when a post needs it.
 - **C. Finish deep + reference on Vertex (≈ $85)**, then use Thursday leftover usage for work that needs Claude anyway: summary-line re-checks across core digests, the knowledge graph, and posts.
+
+## Decision (Kunhao, 2026-10-14): option C
+- Finish **deep (145 units) and reference (162 units) on Vertex** with the proven route (prompts v2.2, current length target).
+- Estimate: deep $33–44, reference $52–71 (reference is image-heavy: Murphy PML2, Polyanskiy–Wu, Bertsekas, Prince, Särkkä) → total ≈ **$410–440**. Hard stop **$445**.
+- Order: wave 5 = all deep; wave 6 = all reference. `review_each_wave: true` (≈ 3% audit each).
+- Claude Code route: parked. Thursday spare usage goes to (1) a summary-line re-check of core digests, (2) the knowledge graph, (3) posts — specs to follow from the quality lead.

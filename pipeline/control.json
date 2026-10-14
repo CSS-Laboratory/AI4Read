@@ -1,7 +1,7 @@
 {
   "mode": "pause",
-  "max_spend_usd": 340,
+  "max_spend_usd": 445,
   "review_each_wave": true,
-  "next_wave": "gatecc-review",
+  "next_wave": "wave5",
   "note": "Set mode to 'run' to allow submissions; 'pause' = no new submissions; 'stop' = exit cleanly."
 }
