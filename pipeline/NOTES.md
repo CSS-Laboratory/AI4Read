@@ -74,3 +74,4 @@ No long-context (>200K) premium. Cloud Billing SKU ids: not found (Catalog API n
 - Deleted the BigQuery test dataset `playground-491901:ai4read_batch` (held only the 1-row `smoke_in` table).
 - Note: the successful `us-east5` batch test ran while that binding existed. If a future batch job fails reading/writing the bucket, re-test with a 1-row job before restoring the binding.
 - 2026-10-14: GCP budget `752397f5…` raised ¥48,000 → **¥53,000** (Kunhao approved); thresholds unchanged 50 / 83.33 / 100%.
+- 2026-10-14: GCP budget raised ¥53,000 → **¥72,000** (Kunhao approved; option C, cap $445).
