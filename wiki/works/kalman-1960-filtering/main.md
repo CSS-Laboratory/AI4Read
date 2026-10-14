@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 15
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 7
 ---
 # A New Approach to Linear Filtering and Prediction Problems (Kalman, 1960)
 
@@ -20,17 +22,17 @@ pipeline_version: 0.1
 If a random signal is modelled as a linear state system driven by white gaussian noise, the optimal linear estimate is a recursive filter whose gain follows from a nonlinear difference equation for the error covariance, and this problem is the dual of the noise-free optimal regulator.
 
 ## L1 — The gist (≤ 120 words)
-Wiener's solution to estimating a random signal from noisy data was specified by an impulse response. It was hard to synthesize or compute, and awkward for nonstationary or growing data. Kalman models the signal as a linear state system driven by white gaussian noise (independent random shocks). He then projects the unknown state orthogonally onto the observations. This gives a recursive linear filter. Its gain comes from a nonlinear difference equation for the error covariance (Theorem 3). The same equations, with time reversed and matrices transposed, solve the noise-free optimal regulator, a control problem with no randomness (Theorem 4). One derivation covers stationary, nonstationary, growing-memory and infinite-memory cases. It also ties estimation to control.
+Wiener's solution to estimating a random signal from noisy data was specified by an impulse response (its output after a single unit pulse). It was hard to synthesize or compute, and awkward for nonstationary or growing data. Kalman models the signal as a linear state system driven by white gaussian noise (independent random shocks). He then projects the unknown state orthogonally onto the observations. This gives a recursive linear filter. Its gain comes from a nonlinear difference equation for the error covariance (Theorem 3). The same equations, with time reversed and matrices transposed, solve the noise-free optimal regulator, a control problem with no randomness (Theorem 4). One derivation covers stationary, nonstationary, growing-memory and infinite-memory cases. It ties estimation to control.
 
 **Prerequisites:** matrix algebra (transpose, inverse, positive definite); expectation, covariance, conditional expectation; vector spaces with an inner product (orthogonality, projection); difference equations; the gaussian distribution.
 
 ## L2 — Key ideas (5–10 bullets)
-- **Problem and contribution.** Wiener's method (impulse response, spectral factorization) is hard to use. The paper recasts estimation with "state" and "state transition", so one derivation covers many cases, e.g. growing-memory filters (which use all data since the start) (pp. 35–36).
+- **Problem and contribution.** Wiener's method (impulse response, spectral factorization: splitting a spectrum into causal and anticausal factors) is hard to use. The paper recasts estimation with "state" and "state transition", so one derivation covers many cases, e.g. growing-memory filters (which use all data since the start) (pp. 35–36).
 - **Optimal estimate = conditional expectation.** For symmetric, convex-type conditional distributions and any loss of type (2), the optimal estimate is the conditional mean. For squared loss no extra assumptions are needed (Theorem 1, 1-a; p. 37).
-- **Projection.** The conditional mean equals the orthogonal projection onto the span of the observations if the processes are gaussian. The projection is also the best *linear* estimate under squared loss (Theorem 2; p. 38).
+- **Projection.** For zero-mean processes, the conditional mean equals the orthogonal projection onto the span of the observations if the processes are gaussian. The projection is also the best *linear* estimate under squared loss (Theorem 2; p. 38).
 - **Model.** Random phenomena are treated as linear dynamics driven by independent gaussian noise, $x(t+1)=\Phi x(t)+u(t)$, $y=Mx$. The paper gives reasons for this choice and sets aside how to identify the model (pp. 39–40).
 - **Theorem 3.** The optimal estimate is a linear dynamic system $x^*(t+1|t)=\Phi^* x^*(t|t-1)+\Delta^* y(t)$. Its gain $\Delta^*$ comes from the error covariance $P^*$, which obeys the nonlinear recursion (32) (pp. 40–41).
-- **The filter is a feedback system.** The innovation $\tilde y(t|t-1)$ (our label: the part of the new measurement orthogonal to the past ones) is a white (orthogonal) sequence. The author says this is apparently the first rigorous proof that every Wiener filter is realizable by feedback (Remark (m), p. 42).
+- **The filter is a feedback system.** The innovation $\tilde y(t|t-1)$ (our label: the part of the new measurement orthogonal to the past ones) is a white (orthogonal) sequence. The author says this is apparently the first rigorous proof that every Wiener filter is realizable (can be built as a physical system) by feedback (Remark (m), p. 42).
 - **Duality (Theorem 4).** Substituting $X(t_0+\tau)\to \hat X'(T-\tau)$ turns the filter recursions (28–30) into the regulator recursions (35–37) (p. 42).
 - **Worked cases.** Two examples are solved in closed form: signal plus white noise, and a constant-velocity particle with correlated noise. For $t\gg1$ and $\phi_{33}=0$ the second gives a result the author says is identical to those of Shinbrot and Solodovnikov (pp. 43–44).
 - **Open items.** Stability, convergence, continuous-time form and the joint identification of model and filter are deferred or not studied (Remarks (i), (j), p. 41–42; p. 40).
@@ -43,7 +45,7 @@ The paper re-examines the classical filtering and prediction problem. It uses th
 2. A nonlinear difference (or differential) equation is derived for the covariance matrix of the optimal estimation error. The filter coefficients follow from its solution without further calculation.
 3. The filtering problem is the dual of the noise-free regulator problem.
 
-**Background.** Wiener showed that prediction and signal–noise separation lead to the Wiener–Hopf integral equation. He solved it by spectral factorization for stationary statistics and rational spectra. Others extended this (Zadeh–Ragazzini, Booton, Darlington, Davis and others; p. 35).
+**Background.** Wiener showed that prediction and signal–noise separation lead to the Wiener–Hopf integral equation (an integral equation for the optimal filter's impulse response). He solved it by spectral factorization for stationary statistics and rational spectra (power spectra that are ratios of polynomials in frequency). Others extended this (Zadeh–Ragazzini, Booton, Darlington, Davis and others; p. 35).
 
 **Four limitations of Wiener's method** (p. 35):
 1. The filter is specified by an impulse response, which is hard to synthesize.
@@ -103,7 +105,7 @@ The proof (credited to Sherman [25]) says this follows from a well-known lemma i
 
 **Construction** (pp. 37–38):
 - All linear combinations $\sum_{i=t_0}^t a_iy(i)$ form a vector space $\mathcal Y(t)$ (6). Here "vector" means a point of this space, not a vector-valued variable.
-- $u,v\in\mathcal Y(t)$ are orthogonal if $Euv=0$. By Schmidt orthogonalization there is an orthonormal basis $e_{t_0},\dots,e_t$:
+- $u,v\in\mathcal Y(t)$ are orthogonal if $Euv=0$. By Schmidt orthogonalization (turning given vectors into mutually orthogonal unit vectors, one at a time) there is an orthonormal basis $e_{t_0},\dots,e_t$:
 $$Ee_ie_j=\delta_{ij}\quad(i,j=t_0,\dots,t)\tag{7}$$
 - Any $\bar x=\sum a_ie_i$ in $\mathcal Y(t)$ has coefficients
 $$E\bar xe_j=E\Big(\sum_i a_ie_i\Big)e_j=\sum_i a_iEe_ie_j=\sum_i a_i\delta_{ij}=a_j\tag{8}$$
@@ -123,7 +125,7 @@ $$0=E\tilde x(t_1|t)=E[\tilde x(t_1|t)|y(t_0),\dots,y(t)]=E[x(t_1)|y(t_0),\dots,
 Hence the conditional expectation equals the projection. (The labels (A)/(B) in the printed proof are swapped relative to the theorem; see Reading notes.)
 
 **Remarks (d)–(g)** (p. 38):
-- (d) A rigorous version as $t\to\infty$ needs Hilbert-space theory.
+- (d) A rigorous version as $t\to\infty$ needs Hilbert-space theory (inner-product spaces, possibly infinite-dimensional, in which limits behave well).
 - (e) If one trusts gaussianity, the projection is optimal for all reasonable loss functions. If one doubts it and only considers linear estimates, projections are *not* optimal for many reasonable losses. The author says it is hard to decide how broad Theorem 2 is, because the degree of gaussianness of physical processes is hard to establish.
 - (f) The vector-valued case follows by taking all linear combinations $\sum_i\sum_{j=1}^m a_{ij}y_j(i)$.
 - (g) Theorem 2 says that under condition (A) or (B) the optimal estimate is a linear combination of all past observations, i.e. the output of a linear filter. It gives a way to compute the impulse response, but the author does not give explicit formulas because the impulse response is not a complete solution.
@@ -223,7 +225,7 @@ $$x^*(t+s|t)=\Phi(t+s;t+1)x^*(t+1|t)=\Phi(t+s;t+1)\Phi^*(t+1;t)\Phi(t;t+s-1)x^*(
 
 *Shapes:* $\Phi,\Phi^*,P^*,Q$ are $n\times n$; $M$ is $p\times n$; $\Delta^*$ is $n\times p$; $MP^*M'$ is $p\times p$.
 
-*Intuition note.* At each step the filter predicts the next measurement from its current estimate and compares it with the real one. It corrects its estimate by $\Delta^*$ times the surprise. By (28), $\Delta^*$ grows with $P^*M'$, i.e. with the prior error as seen through the measurement. The covariance recursion does not depend on the data, so $\Delta^*$ can be computed in advance.
+*Intuition note.* At each step the filter predicts the next measurement from its current estimate and compares it with the real one. It corrects its estimate by $\Delta^*$ times the surprise. By (28), $\Delta^*$ depends on how the predicted error $P^*$ projects onto what is measured ($P^*M'$) relative to its size in measurement space ($MP^*M'$). The covariance recursion does not depend on the data, so $\Delta^*$ can be computed in advance.
 
 **Remarks (h)–(m)** (pp. 41–42):
 - (h) Eliminating $\Delta^*$ and $\Phi^*$ gives a nonlinear difference equation for $P^*$:
@@ -247,7 +249,8 @@ $$u^*(t)=-\hat\Delta^*(t)x(t)\tag{34}$$
 Closed loop (Fig. 4): $x(t+1)=\hat\Phi^*(t+1;t)x(t)$, and the minimum index is $V^*[x(t)]=x'(t)\hat P^*(t-1)x(t)$. With $t\le T$:
 $$\hat\Delta^*(t)=[\hat M'(t)\hat P^*(t)\hat M(t)]^{-1}\hat M'(t)\hat P^*(t)\hat\Phi(t+1;t)\tag{35}$$
 $$\hat\Phi^*(t+1;t)=\hat\Phi(t+1;t)-\hat M(t)\hat\Delta^*(t)\tag{36}$$
-$$\hat P^*(t-1)=\hat\Phi^{*\prime}(t+1;t)\hat P^*(t)\hat\Phi^*(t+1;t)+\hat Q(t)\tag{37}$$
+$$\hat P^*(t-1)=\hat\Phi'(t+1;t)\hat P^*(t)\hat\Phi^*(t+1;t)+\hat Q(t)\tag{37}$$
+(As printed: the first factor is $\hat\Phi'$, not $\hat\Phi^{*\prime}$; the two give the same product by the dual of the identity used for (24).)
 with the initial condition $\hat P^*(T)=\hat Q(T+1)$.
 
 **Theorem 4 (Duality Theorem).** Problems I and II are duals in this sense. Let $\tau\ge0$. Replace every matrix $X(t)=X(t_0+\tau)$ in (28–30) by $\hat X'(t)=\hat X'(T-\tau)$; then one has (35–37). Conversely, replace every $\hat X(T-\tau)$ in (35–37) by $X'(t_0+\tau)$; then one has (28–30). The proof is to carry out the substitutions (p. 42).
@@ -283,7 +286,7 @@ Data: $t_1=t+1$, $t_0=0$; $Ex_1^2(0)=0$ (so $x_1(0)=0$); $Eu_1^2=a^2$, $Eu_2^2=b
 $$\Delta^*(t)=\begin{bmatrix}\phi_{11}C(t)\\0\end{bmatrix},\quad \Phi^*(t+1;t)=\begin{bmatrix}\phi_{11}[1-C(t)]&0\\0&0\end{bmatrix},\quad P^*(t+1)=\begin{bmatrix}a^2+\phi_{11}^2b^2C(t)&0\\0&b^2\end{bmatrix}$$
 $$C(t+1)=1-\frac{b^2}{a^2+b^2+\phi_{11}^2b^2C(t)},\quad t\ge0\tag{38}$$
 - *Check (added):* with $p=P^*_{11}(t)$, $C(t)=p/(p+b^2)$, and (30) gives $p(t+1)=a^2+\phi_{11}^2b^2C(t)$. Then $C(t+1)=p(t+1)/(p(t+1)+b^2)$ reproduces (38).
-- $x_1(0)=0$ is known, so neither $x_1(1)$ nor $\tilde x_1(1)$ can be predicted from $y_1(0)$. The measurement at $t=0$ is useless, so $C(0)=0$. This and (38) determine $C(t)$. Equation (38) "plays the role of the Wiener–Hopf equation".
+- $x_1(0)=0$ is known, so neither $x_1(1)$ nor $x_2(1)$ can be predicted from $y_1(0)$. The measurement at $t=0$ is useless, so $C(0)=0$. This and (38) determine $C(t)$. Equation (38) "plays the role of the Wiener–Hopf equation".
 - If $b^2/a^2\ll1$, then $C\cong1$, "essentially pure prediction". If $b^2/a^2\gg1$, then $C\cong0$: the filter relies mainly on $x_1^*(t|t-1)$ and gives the measurement very small weight, as expected for very noisy data (p. 43).
 - $x_2^*(t|t-1)=0$ always, since one cannot predict independent noise. So $\phi^*_{12}$ can be set to zero, and the optimal predictor is first-order. For the stationary Wiener filter, put $t=\infty$ in (38) and solve the resulting quadratic (p. 43).
 
@@ -294,7 +297,7 @@ Conditions: $t_1=t$, $t_0=0$; $Ex_1^2(0)=Ex_2(0)=0$, $Ex_2^2(0)=a^2>0$; $Eu_3=0$
 $$P^*(1)=\begin{bmatrix}a^2&a^2&0\\a^2&a^2&0\\0&0&b^2\end{bmatrix},\quad\Delta^*(0)=\begin{bmatrix}0\\0\\1\end{bmatrix}$$
 - Substitution into (28–30) verifies that, for all $t\ge1$,
 $$P^*(t)=\frac{b^2}{C_1(t-1)}\begin{bmatrix}t^2&t&-\phi_{33}t(t-1)\\t&1&-\phi_{33}(t-1)\\-\phi_{33}t(t-1)&-\phi_{33}(t-1)&\phi_{33}^2(t-1)^2+C_1(t-1)\end{bmatrix}$$
-  with $C_1(0)=b^2/a^2$ and $C_1(t)=C_1(t-1)+[t-\phi_{33}(t-1)]^2$ for $t\ge1$. (Check, added: at $t=1$ this gives the $P^*(1)$ above.) The results hold also when $\phi_{33}$ depends on $t$. The author says the stationary/nonstationary-noise difference in conventional treatments is a misleading impression created by the special methods used there.
+  with $C_1(0)=b^2/a^2$ and $C_1(t)=C_1(t-1)+[t-\phi_{33}(t-1)]^2$ for $t\ge1$. (Check, added: at $t=1$ this gives the $P^*(1)$ above.) The results hold also when $\phi_{33}$ depends on $t$; the author says this is true also in Example 1. The author says the stationary/nonstationary-noise difference in conventional treatments is a misleading impression created by the special methods used there.
 - With $C_2(0)=0$ and $C_2(t)=t-\phi_{33}(t-1)$, $t\ge1$, one finds for $t\ge0$ (filtering):
 $$\Phi(t;t+1)\Delta^*(t)=\frac1{C_1(t)}\begin{bmatrix}tC_2(t)\\C_2(t)\\C_1(t)-tC_2(t)\end{bmatrix},\qquad \operatorname{cov}\tilde x(t|t)=E\tilde x(t|t)\tilde x'(t|t)=\frac{b^2}{C_1(t)}\begin{bmatrix}t^2&t&-t^2\\t&1&-t\\-t^2&-t&t^2\end{bmatrix}$$
   The author also gives (p. 44), with $C_1,C_2$ evaluated at $t$:
@@ -391,6 +394,6 @@ The surprise of +1 in position raises the position estimate by 1.5 and the veloc
 - **Equation (24).** The printed lines switch from $\Phi^{*\prime}$ to $\Phi'$ without comment; the added step in L3 shows they are equal.
 - **Sum before Theorem 3 (p. 41).** The printed coefficient in the sum for $x(t+s)$ appears as $\Phi(t+s;t+r)$. By (16) one would expect $\Phi(t+s;t+r+1)$. Not reproduced in L3; only its conclusion is used.
 - **Example 2, condition 2 (p. 43).** The page image reads $Ex_1^2(0)=Ex_2(0)=0$, $Ex_2^2(0)=a^2>0$ (the text layer is garbled here, as "ExS(0)"). The $P^*(1)$ printed on the same page, with $a^2$ in the (1,1), (1,2), (2,2) entries and $b^2$ in (3,3), agrees with $a^2$ being the variance of the velocity $x_2(0)$. The page also says particles have "random velocities". Taken as printed: $a^2$ is the initial velocity variance.
-- **OCR.** The text layer is garbled in many equations and in the two $3\times3$ matrices on p. 44. Equations were checked against the images. The $3\times3$ matrix $\Phi^{-1}\Phi^*\Phi$ on p. 44 is legible in the image and is transcribed in L3 (checked against $\Phi-(\Phi^{-1}\Delta^*)M\Phi$ with $M=[1\ 0\ 1]$). Its large-$t$ limit is also given.
+- **OCR.** The text layer is garbled in many equations and in the two $3\times3$ matrices on p. 44. Equations were checked against the images. The $3\times3$ matrix $\Phi^{-1}\Phi^*\Phi$ on p. 44 is legible in the image and is transcribed in L3 (checked against $\Phi-(\Phi^{-1}\Delta^*)M\Phi$ with $M=[1\ 0\ 1]$). Its large-$t$ limit is also given. The image prints $C_1(t)-tC_3(t)$ in entry (1,2) and $\phi_{3s}$ in entry (3,3) of this matrix; we read them as misprints for $C_2$ and $\phi_{33}$. Remark (o) prints "the matrix $\hat M(t)$ in Problem I"; we read it as a misprint for $M(t)$.
 - **Terminology.** The paper does not use the words "Kalman filter", "innovation", "Riccati" or "LQR", and uses "observer" only for the person who observes the signal (p. 39), not for a state estimator. These ids are our labels for the paper's constructs.
 - **Shape of $M$ in (12) (p. 39).** The text says "$M(t)$ is an $n\times p$ matrix", but $y=Mx$ with $x$ an $n$-vector and $y$ a $p$-vector needs $p\times n$, as Problem I states (p. 40). L3 uses $p\times n$.

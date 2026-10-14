@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 14
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 6
 ---
 # The Structure of Dynamic Programming Processes
 
@@ -22,7 +24,7 @@ The two earlier processes (allocation and gold mining) share one abstract struct
 ## L1 — The gist (≤ 120 words)
 The chapter asks what the allocation process of Chapter I and the gold-mining process of Chapter II have in common. Bellman finds the same structure: state variables, decisions that transform the state, no dependence on past history, and a function of the final state to maximize. From the principle of optimality he writes functional equations for discrete deterministic, discrete stochastic and continuous deterministic processes. The key step is to embed one problem in a family indexed by initial state and number of stages. He closes with two ways of approximating the solution: successive approximation of the return function, and approximation in policy space.
 
-**Prerequisites:** functions and vectors; max versus supremum; expectation as an integral against a distribution function; existence and uniqueness of ODE solutions; recurrence relations.
+**Prerequisites:** functions and vectors; max versus supremum; expectation as an integral against a distribution function (the Stieltjes integral $\int f\,dG$, an average of $f$ weighted by $G$); existence and uniqueness of ODE solutions; recurrence relations.
 
 ## L2 — Key ideas (5–10 bullets)
 - Both earlier processes fit one scheme: state variables, a choice of decisions, decisions transform the state, history is irrelevant, and a function of the state is maximized. The author deliberately keeps this description loose (pp. 81–82).
@@ -30,9 +32,9 @@ The chapter asks what the allocation process of Chapter I and the gold-mining pr
 - Deterministic discrete case: define $f_N(p)$ for every initial state and every number of stages, so one problem sits inside a family. Then $f_N(p)=\max_q f_{N-1}(T_q(p))$ (pp. 84–85).
 - The maximal return $f_N$ is unique, but the maximizing decisions need not be unique (p. 85).
 - Stochastic case: the maximand becomes an expected return, so $f_{N-1}$ is integrated against the distribution $dG_q(p,z)$. Only the case where the random outcome is observed before the next decision is treated (pp. 85–86).
-- Continuous case: use $f(p;S+T)=\max f(p_D;T)$ over decisions on $[0,S]$. Because a maximum may fail to exist for infinite processes, it is better to begin with a supremum (least upper bound). The limit $S\to0$ of the equation is a nonlinear partial differential equation (PDE) (p. 86).
+- Continuous case: use $f(p;S+T)=\max f(p_D;T)$ over decisions on $[0,S]$. Because it is difficult to establish that an actual maximum, rather than a supremum, exists for infinite processes, it is better to begin with a supremum (least upper bound). The limit $S\to0$ of the equation is a nonlinear partial differential equation (PDE) (p. 86).
 - The semi-group law $f(c,s+t)=f(f(c,s),t)$ expresses causality for processes with no decisions. Bellman says multi-stage decision processes may be regarded as a natural extension of semi-group theory; a semi-group law says that running for time $s$ and then for time $t$ equals running for $s+t$ (pp. 87–88).
-- The return function $f$ and the optimal policy determine each other. One can therefore start the approximation in function space (guess $f$) or in policy space (guess the decision rule $q(p)$). The function-space scheme is monotone increasing; the policy-space scheme is left to later treatment (pp. 88–89).
+- The return function $f$ and the optimal policy determine each other, so an initial approximation can be made in function space or in policy space (a decision rule $q(p)$). Starting from an initial policy $q_0$ and its return $f_0$, Bellman gives two ways on: policy improvement, "more natural" but not treated here, and the iteration $f_{N+1}=\max_q f_N(T_q)$. Because $f_0$ is a policy's return, $f_1\ge f_0$ and $\{f_N\}$ is monotone increasing (pp. 88–89).
 
 ## L3 — Walkthrough
 
@@ -70,7 +72,7 @@ The chapter asks what the allocation process of Chapter I and the gold-mining pr
 - In finite versions the number of stages remaining is an extra parameter. It is kept distinct from the other state variables because "time plays a unique role" (p. 82).
 
 **Terminology** (pp. 82–83):
-- *Policy*: any rule for making decisions that yields an allowable sequence of decisions. The key word is "allowable". Making this exact is easy for deterministic processes but needs more care for stochastic ones.
+- *Policy*: any rule for making decisions that yields an allowable sequence of decisions. The key word is "allowable". A more precise definition is not too difficult for deterministic processes, but stochastic ones need more care (p. 82).
 - *Optimal policy*: a policy that maximizes a preassigned function of the final state variables.
 - *Criterion function*: that preassigned function. Choosing it can be hard. A solution may be easy for one criterion and hard for a closely related one, so keep flexibility (pp. 82–83).
 
@@ -92,7 +94,7 @@ $$p_1=T_1(p),\quad p_2=T_2(p_1),\ \dots,\ p_N=T_N(p_{N-1}).\tag{1}$$
 
 **Existence of a maximum** (p. 84). A maximum, hence an optimal policy, exists in at least two easy cases:
 - there are only finitely many allowable $q$ at each stage;
-- $D$ is a finite closed region, $R(p)$ is continuous on $D$, and $T_q(p)$ is jointly continuous in $p$ and $q$, with $q$ in a finite closed region $S$.
+- $D$ is a finite closed region (bounded, and containing its boundary), $R(p)$ is continuous on $D$, and $T_q(p)$ is jointly continuous in $p$ and $q$ (continuous in both taken together), with $q$ in a finite closed region $S$.
 
 Bellman says these cover the most important finite processes, and their limiting forms account for the unbounded ones (p. 84).
 
@@ -132,9 +134,9 @@ $$f(p)=\max_{q} f(T_q(p)).\tag{5}$$
 - Maximizing "the return" is generally meaningless, so the value of a policy is measured by an average of the function of the final state. This expected value is called the return (p. 85).
 - $f_N$ is defined as in (4.2). If $z$ results from the first transformation, the return from the last $N-1$ stages is $f_{N-1}(z)$. The expected return from choosing $T_q$ first is
 
-$$\int f_{N-1}(z)\,dG_q(p,z).\tag{1}$$
+$$\int_{z\in D} f_{N-1}(z)\,dG_q(p,z).\tag{1}$$
 
-$$f_N(p)=\max_{q\in S}\int f_{N-1}(z)\,dG_q(p,z),\quad N\ge2,\tag{2}$$
+$$f_N(p)=\max_{q\in S}\int_{z\in D} f_{N-1}(z)\,dG_q(p,z),\quad N\ge2,\tag{2}$$
 
 $$f_1(p)=\max_{q\in S}\int_{z\in D}R(z)\,dG_q(p,z).\tag{3}$$
 
@@ -142,10 +144,10 @@ $$f_1(p)=\max_{q\in S}\int_{z\in D}R(z)\,dG_q(p,z).\tag{3}$$
 
 $$f(p)=\max_{q}\int_{z\in D} f(z)\,dG_q(p,z).\tag{4}$$
 
-(The integration domain $z\in D$ is printed under the integral in (3) and (4) on p. 86. In (1) and (2) on p. 85 the text layer shows no domain, and no page image was supplied for p. 85.)
+(The integration domain $z\in D$ is printed under the integral in (1) and (2) on p. 85 and in (3) and (4) on p. 86.)
 
 ### §6. Mathematical formulation III: continuous deterministic process (p. 86)
-- Decisions are made at every point of a continuum, such as a time interval. The calculus of variations provides the simplest examples. Chapter IX will give a new view of it.
+- Decisions are made at every point of a continuum, such as a time interval. The calculus of variations (choosing a whole function or path to maximise a quantity) provides the simplest examples. Chapter IX will give a new view of it.
 - Define $f(p;T)$ as the return over $[0,T]$ from initial state $p$ under an optimal policy:
 
 $$f(p;T)=\text{return on }[0,T]\text{ from }p\text{ with an optimal policy}\tag{1}$$
@@ -166,7 +168,7 @@ which is usually easy to establish. One then shows, under suitable assumptions, 
 
 ### §7–§8. Continuous stochastic processes; generalizations (p. 87)
 - General continuous stochastic decision processes (one-person and two-person) are an open question needing delicate arguments. One particular process is discussed in Chapter VIII, but not the general formulation (p. 87).
-- The equations above extend from finite-dimensional Euclidean spaces to more general spaces, such as Banach spaces. This is postponed to a second volume. Integral equations, variational problems in several variables and more general stochastic processes escape the finite-dimensional formulation and require functionals and operations (p. 87).
+- The equations above extend from finite-dimensional Euclidean spaces to more general spaces, such as Banach spaces (complete normed vector spaces, e.g. suitable spaces of functions). This is postponed to a second volume. Integral equations, variational problems in several variables and more general stochastic processes escape the finite-dimensional formulation and require functionals and operations (p. 87).
 
 ### §9. Causality and optimality (pp. 87–88)
 - Take a process with no decisions, generated by
@@ -230,7 +232,7 @@ $$f_{N+1}(p)=\max_q f_N(T_q(p)).\tag{5}$$
 - Procedure A is "more natural" but "seems more difficult to treat rigorously", and is not considered here. For continuous processes such as those from the calculus of variations it seems to be required. It returns in Chapter IX (p. 89).
 - Footnote 5: replacing a differential equation by a difference equation replaces the space of general functions by the subspace of step functions. He says this type of approximation (in policy space) is tacitly encountered elsewhere in analysis (p. 89).
 
-> **Intuition note.** You can improve your guess for the value function directly. Or you can guess a policy, evaluate it, and improve the policy. Bellman says it is immediate that $f_1\ge f_0$ in Procedure B, so its sequence of guesses is monotone increasing.
+> **Intuition note.** Ordinary successive approximation iterates on a guessed value function. Approximation in policy space instead starts from a guessed policy and its return $f_0$. Starting Procedure B from such a policy return is what makes $f_1\ge f_0$ immediate, so its sequence is monotone increasing.
 
 ### Exercises and research problems (pp. 90–114)
 Ninety-four problems. Listed topics:
@@ -250,8 +252,8 @@ Ninety-four problems. Listed topics:
 ### Bibliography and comments (p. 115)
 - The chapter's basic ideas and the principle of optimality were first stated in the 1953 RAND monograph, an outgrowth of a shorter 1952 paper, based on 1949–51 research.
 - Bellman says the principle of optimality is "actually a particular application" of the *principle of invariant imbedding* (Bellman–Kalaba 1956). He cites earlier uses of invariance, including Ambarzumian, Chandrasekhar and Stokes.
-- He relates the functional-equation technique to the "Point of Regeneration" method for branching processes.
-- He says he made no systematic effort to trace the origin of invariance principles. He cites Hadamard on causality, functional equations and Huygens' principle, and Hille as the classic reference on semi-groups.
+- He relates the functional-equation technique to the "Point of Regeneration" method for branching processes (populations in which each individual produces a random number of offspring).
+- He says he made no systematic effort to trace the origin of invariance principles. He cites Hadamard on causality, functional equations and Huygens' principle (each point of a wave front acts as a new source of waves), and Hille as the classic reference on semi-groups.
 - §6 refers to Chapter 9. §9 refers to a 1955 Bellman paper. Problem 92 refers to a 1956 Bellman paper on Lagrange multipliers (p. 115).
 
 ## Toy example (ours, not from the text)
@@ -298,7 +300,7 @@ Ninety-four problems. Listed topics:
 - [[functional-equation]] (new) — equation for the return function in terms of itself, e.g. (4.3), (4.5), (5.2) (pp. 84–86)
 - [[policy-space-approximation]] (new) — start successive approximation from a guessed policy, not a guessed return function (pp. 88–89)
 - [[semigroup-property]] (new) — $f(c,s+t)=f(f(c,s),t)$, the analytic form of causality for processes without decisions (p. 87)
-- [[hamilton-jacobi-bellman-equation]] — mentioned only: the limit of (6.2) as $S\to0$ is a nonlinear PDE, treated in Ch. IX (p. 86)
+- [[hamilton-jacobi-bellman-equation]] (canon link; not stated in this unit) — the name does not appear; the limit of (6.2) as $S\to0$ is a nonlinear PDE, treated in Ch. IX (p. 86)
 - [[markov-decision-process]] — the stochastic formulation with $dG_q(p,z)$ and expected return has this shape; Bellman does not use the term (pp. 85–86)
 
 ## Canonical instances

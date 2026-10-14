@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 25
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 8
 ---
 # Private language and sensation (§§243–312)
 
@@ -20,7 +22,7 @@ pipeline_version: 0.1
 Wittgenstein tries to show that sensation-words do not work by naming private objects that only the speaker can know: the diary case leaves no criterion of correct use, and such a private object drops out of how the word is used.
 
 ## L1 — The gist (≤ 120 words)
-Wittgenstein asks whether there could be a language whose words name only the speaker's own immediate sensations, so that nobody else could understand it. He tests this with a diary in which the sign "S" marks a sensation (§258), and finds that the diarist would have no criterion, that is, no independent standard, of correct use. If sensation-words are modelled on "object and name", the private object drops out as irrelevant (§293). He suggests that remarks like "Sensations are private" look like facts but are grammatical, that is, about how words are used (§251). He denies being a behaviourist, someone who treats everything except human behaviour as fiction, or a denier of inner processes (§§305–308).
+Wittgenstein asks whether there could be a language whose words name only the speaker's own immediate sensations, so that nobody else could understand it. He tests this with a diary in which the sign "S" marks a sensation (§258), and finds that the diarist would have no criterion, that is, no independent standard, of correct use. If sensation-words are modelled on "object and name", the private object drops out as irrelevant (§293). He suggests that remarks like "Sensations are private" look like facts but are grammatical, that is, about how words are used (§251). Asked if he is a behaviourist in disguise, he calls any fiction he speaks of grammatical; he does not want to deny mental processes (§§305–308).
 
 **Prerequisites:** Ordinary talk of pain, memory and colour; the idea that a word's use is what we look at (the text explains "language-game" only by example). No maths.
 
@@ -32,7 +34,7 @@ Wittgenstein asks whether there could be a language whose words name only the sp
 - In the manometer case and the case of the person who forgets what "pain" meant, a mistaken identification of the sensation makes no difference to the use, and he would like to say the supposed private item is like an idle wheel in a mechanism (§§270–271, p. 101). If the grammar of sensation-words is modelled on "object and name", the private object, like the beetle in the box, drops out as irrelevant (§293, pp. 106–107).
 - Remarks like "only I can know whether I am in pain" have the form of empirical propositions, but §251 says what we fend off by "I can't imagine the opposite" is really grammatical. §295 asks whether "I know… only from my own case" is grammatical; the pictures we then see are, he says, illustrations of our grammar (pp. 96, 107).
 - Only of a living human being and what behaves like one can we say it has sensations (§281, p. 103). Someone who knows what "pain" means but says he does not know whether this is pain makes a doubt that has no place in the language-game (§288, p. 105).
-- Charged with behaviourism, he says that he denies not the inner process but that its picture gives the correct idea of the use of "remember" (§§305–308, p. 109).
+- Told that an inner process surely takes place in remembering, he says that what he denies is only that the picture of an inner process gives the correct idea of the use of "remember" (§305); asked if he is a behaviourist in disguise, he says any fiction he speaks of is a grammatical fiction (§307) (§§305–308, p. 109).
 
 ## L3 — Walkthrough
 Remarks are cited as (§N, p. M). Wittgenstein often lets an interlocutor, a voice that objects, speak; I tag voices only where the text shows them. Remarks are grouped by number ranges; the author gives no headings here.
@@ -73,8 +75,8 @@ Remarks are cited as (§N, p. M). Wittgenstein often lets an interlocutor, a voi
 
 **§§261–269: justification.**
 - "Sensation" is a word of our common language, so its use needs a justification everybody understands. Saying "he has Something" does not help, because "has" and "something" also belong to our common language (§261, p. 99). An inarticulate sound is an expression only in a particular language-game, which now has to be described (p. 99).
-- Someone who has given himself a private explanation of a word must inwardly resolve to use it in a certain way. How does he resolve that? Does he invent the technique of applying the word or find it ready-made? The text asks this and leaves it open (§262, p. 99).
-- **Interlocutor:** Surely I can inwardly resolve to call this "pain" in the future. **Reply (speaker not marked, presumably Wittgenstein):** Is it certain that you have resolved this? Are you sure that concentrating your attention was enough? The first speaker calls this an odd question (§263, p. 100).
+- One might say: someone who has given himself a private explanation of a word must inwardly resolve to use it in a certain way. How does he resolve that? Does he invent the technique of applying the word or find it ready-made? The text asks this and leaves it open (§262, p. 99).
+- **Interlocutor (in quotation marks):** Surely I can (inwardly) resolve to call THIS "pain" in the future. **A second quoted voice:** Is it certain that you have resolved this? Are you sure that concentrating your attention on your feeling was enough? **Wittgenstein (unquoted):** An odd question (§263, p. 100).
 - §264 gives the view that once you know what the word signifies, you understand it and know its whole application. No reply appears on these pages (voice unclear) (p. 100).
 - Wittgenstein imagines a dictionary-like table that exists only in the imagination and asks whether looking it up only in the imagination can be called a justification. **Interlocutor:** Well, yes, then it is a subjective justification. **Wittgenstein:** But justification consists in appealing to an independent authority (§265, p. 100).
 - **Interlocutor:** But I can appeal from one memory to another, for example calling to mind how a timetable page looked. **Wittgenstein:** No; this procedure must actually call forth the correct memory. If the mental image of the timetable could not itself be tested for correctness, how could it confirm the first memory? It is as if someone bought several copies of today's morning paper to assure himself that what it said was true. Looking up a table in the imagination is no more looking up a table than the image of the result of an imagined experiment is the result of an experiment (§265, p. 100).
@@ -95,7 +97,7 @@ Remarks are cited as (§N, p. M). Wittgenstein often lets an interlocutor, a voi
 - §273 asks whether "red" signifies something confronting us all, with each person needing another word for his own impression, or whether it signifies something known to all and in addition something known only to each. §274 says that saying "refers to" rather than "signifies" does not help us grasp the word's function, but it is a more psychologically apt expression for an experience in doing philosophy: a sidelong glance at my own colour impression (p. 102).
 - When I say spontaneously "How blue the sky is!", the idea never crosses my mind that the impression belongs only to me. If I point, it is at the sky. I do not have the pointing-into-yourself feeling that often goes with "naming sensations" in thinking about the "private language" (§275, p. 102).
 - It is as if we detached the colour impression from the object like a membrane, and this ought to arouse suspicion (§276, p. 102).
-- When I mean the impression that belongs to me alone, I turn a different kind of attention on the colour and immerse myself in it (§277, pp. 102–103).
+- When I mean the colour impression that (as I should like to say) belongs to me alone, I turn a different kind of attention on the colour and immerse myself in it (§277, pp. 102–103).
 - "I know how the colour green looks to me" makes sense; but what use of the sentence is meant (§278, p. 103)? Compare "But I know how tall I am!" said while laying a hand on one's head (§279, p. 103).
 - A quoted view (speaker unmarked) says a picture of an imagined stage set has a double function: it informs others, and for the painter it is also the picture of his image. Wittgenstein asks what right he has to speak of a second representation if these words were correctly used in the first case (§280, p. 103).
 
@@ -135,7 +137,7 @@ Remarks are cited as (§N, p. M). Wittgenstein often lets an interlocutor, a voi
 - What is your aim in philosophy? "To show the fly the way out of the fly-bottle" (§309, p. 110).
 - I tell someone I am in pain, and he says it is not so bad. Doesn't that prove that he believes in something behind my utterance? Wittgenstein replies: "His attitude is proof of his attitude." He asks us to imagine the words and the reply replaced by instinctive noises and gestures (§310, p. 110).
 - Of the question what greater difference there could be, §311 says that in the case of pain I believe I can privately exhibit the difference to myself, whereas the difference between a broken and an unbroken tooth can be shown to anyone. For the private exhibition it is enough to imagine pain, say by screwing up one's face. Wittgenstein asks whether you know that what you exhibit to yourself is pain and not a facial expression, and how you know beforehand what to exhibit. He concludes that this private exhibition is an illusion (p. 110).
-- **§312** (first part only): an objector asks whether the tooth and pain cases are not similar, since the visual impression corresponds to the sensation of pain, and says that I can exhibit the visual impression to myself as little or as well as the pain. Wittgenstein then asks us to imagine surfaces with patches that cause pain in our skin when touched, so that we would speak of pain-patches as we now speak of red patches. The supplied text ends here (p. 110).
+- **§312** (first part only; voice unclear, since nothing is in quotation marks): the text asks whether the tooth and pain cases are not similar, since the visual impression corresponds to the sensation of pain, and says that I can exhibit the visual impression to myself as little or as well as the pain. Wittgenstein then asks us to imagine surfaces with patches that cause pain in our skin when touched, so that we would speak of pain-patches as we now speak of red patches. The supplied text ends here (p. 110).
 
 ## Toy example (ours, not from the text)
 Two diarists, A and B, each write "S" on the days they have "the sensation". A privately attends to sensation X, B to sensation Y; neither can see the other's. A manometer shows blood pressure rising on days 2, 3 and 5 of five days. Both write "S" on exactly days 2, 3 and 5.
@@ -147,12 +149,12 @@ Swap X and Y between A and B, and nothing in the diaries or in how "S" is used c
 ## Concepts
 - [[private language argument]] — Wittgenstein's examination of a language whose words name what only the speaker can know; the diary case leaves the diarist with no criterion of correct use (§§243, 258, pp. 95, 98–99)
 - [[language-game]] — an activity in which words are used; §290 says the game with a sensation-word does not end with the same expression but begins with it, and §261 says a sound is an expression only inside a particular game (pp. 99, 106)
-- [[meaning as use]] — perhaps the way "S" is employed is what makes it a sensation-name (§270, p. 101)
-- [[rule-following problem]] — one would still have to apply a rule in the particular case without guidance (§292, p. 106); in the diary case nothing besides my impression is available to check against (§258, p. 99)
+- [[meaning as use]] (canon link; not stated in this unit) — perhaps the way "S" is employed is what makes it a sensation-name (§270, p. 101)
+- [[rule-following problem]] (canon link; not stated in this unit) — one would still have to apply a rule in the particular case without guidance (§292, p. 106); in the diary case nothing besides my impression is available to check against (§258, p. 99)
 - [[grammatical-proposition]] (new) — a remark with the form of an empirical proposition that is really grammatical, as with "I can't imagine the opposite" and the rod example (§251, pp. 96–97); §295 asks whether "I know… only from my own case" is one (p. 107)
 - [[criterion-of-identity]] (new) — what settles that something is the same; Wittgenstein asks what counts as one for "my pains", and says stressing "this" does not supply one (§253, p. 97)
 - [[beetle-in-a-box]] (new) — a private object that cancels out of the language-game if the word still has a use (§293, p. 106)
-- [[logical form vs. grammatical form]] — §290 suggests the word "describe" may trick us about use, and §246 examines what "know" means in "I know I'm in pain" (pp. 95–96, 106)
+- [[logical form vs. grammatical form]] (canon link; not stated in this unit) — §290 suggests the word "describe" may trick us about use, and §246 examines what "know" means in "I know I'm in pain" (pp. 95–96, 106)
 
 ## Canonical instances
 - [[beetle-in-a-box]] — a private object drops out of the language-game (§293, p. 106)
@@ -175,7 +177,7 @@ Swap X and Y between A and B, and nothing in the diaries or in how "S" is used c
 - What is the "grammatical fiction" of §307 meant to cover, and how does it differ from an ordinary fiction?
 
 ## Reading notes
-- Edition: 4th ed., Wiley-Blackwell 2009 (running header "Philosophical Investigations"), English pages only, labelled "95e"–"110e". I cite them as p. 95–110 (the "e" is dropped); the German facing pages are absent.
+- Edition: not printed on these pages; they show the running header "Philosophical Investigations", a printer's slug "9781405159289_4_001.qxd 23/6/09", and English pages only, labelled "95e"–"110e". I cite them as p. 95–110 (the "e" is dropped); the German facing pages are absent.
 - The text layer shows the dash as "a" throughout (e.g. "pain a well"); I read it as a dash. In §261 "Something b" is probably a dash too.
 - Markers like "|89|" in the text show page breaks of another pagination (apparently the German text); I ignored them.
 - Asterisks stand beside §§272–274 and §312; the pages do not say what they mean.

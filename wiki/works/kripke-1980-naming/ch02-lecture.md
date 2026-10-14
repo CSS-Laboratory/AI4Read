@@ -13,16 +13,18 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 20
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 9
 ---
 # Kripke, Lecture II: against the cluster-of-descriptions theory, a better picture, and identity statements
 
 ## L0 — One line
-In general, names do not get their reference from descriptions the speaker associates with them but from a chain of communication back to a baptism, and because names are rigid, a true identity between names is necessary even though it is not known a priori.
+In general, names do not get their reference from descriptions the speaker associates with them but from a chain of communication back to a baptism, and because names are rigid, a true identity between names is necessary even though it need not be known a priori.
 
 ## L1 — The gist (≤ 120 words)
-Kripke tests the six-thesis description theory of names from Lecture I. Thesis (6) fails because names are rigid designators, so a description that fixes reference does not yield a necessary truth. Theses (2)–(5) also fail: speakers refer even when they know little, believe falsehoods, or are wrong about the bearer. Repairs based on what most people believe about someone fail, mainly by circularity. Kripke offers a picture, not a theory: a name passes from speaker to speaker back to an initial baptism. He then turns to identity statements. "Hesperus is Phosphorus" is not known a priori, yet if true it is necessary, because both names are rigid.
+Kripke tests the six-thesis description theory of names from Lecture I. Thesis (6) fails because names are rigid designators, so a description that fixes reference does not yield a necessary truth. Theses (2)–(5) also fail: speakers refer even when they know little, believe falsehoods, or are wrong about the bearer. Repairs based on what most people believe about someone meet counterexamples and, perhaps more significantly, circularity. Kripke offers a picture, not a theory: a name passes from speaker to speaker back to an initial baptism. He then turns to identity statements. "Hesperus is Phosphorus" is not known a priori, yet if true it is necessary, because both names are rigid.
 
-**Prerequisites:** Lecture I's notions (possible worlds; rigid designator = a term that names the same thing in every possible world; a priori = knowable by reasoning alone, versus necessary = true in every possible world); definite descriptions; initial baptism = the first act of naming; basic modal talk.
+**Prerequisites:** Lecture I's notions (possible worlds; rigid designator = a term that names the same thing in every possible world; a priori = knowable by reasoning alone, a posteriori = knowable only through experience, versus necessary = true in every possible world); definite descriptions; initial baptism = the first act of naming; basic modal talk.
 
 ## L2 — Key ideas (5–10 bullets)
 - **Thesis (6) is dropped.** A name designates its bearer rigidly. That the bearer satisfies the description used to fix its reference is not a necessary truth (Hitler, the meter stick, the yard) (pp. 75–78).
@@ -43,7 +45,7 @@ Lecture I ended with a description theory of names, listed on the board. The ext
 3. If most (or a weighted most) of the φ's are satisfied by one unique object y, then y is the referent of 'X'.
 4. If the vote yields no unique object, 'X' does not refer.
 5. 'If X exists, then X has most of the φ's' is known a priori by the speaker.
-6. That statement expresses a necessary truth (in the speaker's idiolect).
+6. That statement expresses a necessary truth (in the speaker's idiolect, i.e. his own personal version of the language).
 (C) For any successful theory, the account must not be circular. The properties used in the vote must not involve reference in a way that cannot be eliminated.
 
 (C) is a condition on satisfying the theses, not a thesis. The theses must not be satisfied in a way that gives no independent determination of reference (p. 71).
@@ -51,7 +53,7 @@ Lecture I ended with a description theory of names, listed on the board. The ext
 ### 1. Circularity: Kneale's example (pp. 71–73)
 - Kneale (Kripke checked the book) says it is trifling to be told that Socrates was called 'Socrates'. Kneale concludes that 'Socrates' simply means 'the individual called "Socrates"'. Kripke says Russell sometimes gives a similar analysis (p. 72).
 - In the past tense this is not circular, since one could decide to use 'Socrates' for whoever the Greeks so called. But then it is not trifling: it may be false. The Greeks may have pronounced the name differently. It is false that Isaiah was called 'Isaiah' (the prophet would not have recognized the name), and the Greeks did not call their country anything like 'Greece' (p. 72).
-- Amend it to say that Socrates is called 'Socrates' by us, or at least by me. In some sense this is fairly trifling, but Kripke does not think it necessary or analytic. 'Horses are called "horses"' is trifling, yet 'horse' does not mean 'the animal called a "horse"' (p. 72).
+- Amend it to say that Socrates is called 'Socrates' by us, or at least by me. In some sense this is fairly trifling, but Kripke does not think it necessary or analytic (true just by the meanings of the words). 'Horses are called "horses"' is trifling, yet 'horse' does not mean 'the animal called a "horse"' (p. 72).
 - As a theory of reference this is a vicious circle. 'I shall use "Glunk" for the man I call "Glunk"' gets nowhere without an independent determination of the referent. It is a good case of violating (C) (p. 73).
 - Theses (5) and (6) have converses. On the theory, it is a priori for the speaker that if any unique thing has most of the φ's it is X. It is also necessary that if anything has most of them it is X. So on the theory, "something is X iff it uniquely has most of the φ's" is both a priori and necessary (p. 73).
 - (5) and (6) just say that a sufficiently reflective speaker grasps the theory. Kripke's objections will not be that some speakers are unaware of it (p. 73).
@@ -68,7 +70,7 @@ Lecture I ended with a description theory of names, listed on the board. The ext
 
 > **Intuition note.** A description can pick out a thing without being part of what the name means. The name then follows the thing into other possible worlds, even worlds where the thing lacks the picking-out property. (Pp. 75–76)
 
-**Against transworld identification and counterpart theory.** Some theorists hold that a possible world is given only qualitatively. They identify Aristotle's counterparts with whatever most resembles him in his most important properties, weighted by importance (Lewis is quoted, p. 76). Kripke calls these notions incorrect. Aristotle's and Hitler's most important properties might have been lacking altogether. Important properties need not be essential, unless one uses 'importance' to mean essence (p. 77).
+**Against transworld identification and counterpart theory.** (Transworld identification: deciding which thing in another possible world is a given actual thing. Counterpart theory: a thing's stand-in in another world is whatever most resembles it there.) Some theorists hold that a possible world is given only qualitatively. They identify Aristotle's counterparts with whatever most resembles him in his most important properties, weighted by importance (Lewis is quoted, p. 76). Kripke calls these notions incorrect. Aristotle's and Hitler's most important properties might have been lacking altogether. Important properties need not be essential, unless one uses 'importance' to mean essence (p. 77).
 
 **Two clarifications on rigidity** (pp. 77–78):
 - Rigidity concerns the term as used in our language when we talk about counterfactual situations. We do not call 'two plus two equals four' contingent because people might have used those words to mean something else. Describing a world where we all speak German, we still speak English with our meanings.
@@ -80,7 +82,7 @@ Lecture I ended with a description theory of names, listed on the board. The ext
 - Thesis (5) is not about necessity. Example: I use 'Hesperus' for the body seen in a certain place in the evening. It is not necessary that Hesperus was ever seen in the evening, since that depends on contingent facts such as observers being there. But it may be a priori for me that if there is a Hesperus it is the thing I saw there (p. 78).
 - Without (6), theses (2)–(4) have many counterinstances. Even when they are true, (5) is usually false. That the referent coincides with the vote is an empirical "accident" the speaker could not know a priori. All of (2)–(5) hold only in a rare class of cases, usually initial baptisms (p. 78).
 - The picture of naming behind the theses is a "mental ceremony". I think of a unique description, for example 'By "Cicero" I shall mean the man who denounced Catiline', and use the name rigidly for the man who in fact did so. There may be cases where this happens, if one stretches 'description' and 'name': 'Hesperus' for the heavenly body over there, or the police name 'Jack the Ripper' for whoever did the murders (p. 79).
-- Footnote 33 gives Neptune as an even better case of reference fixed by description rather than ostension. Leverrier named the planet before anyone saw it, as the cause of certain perturbations. At that stage 'if such perturbations are caused by a planet, they are caused by Neptune' was a priori but not necessary. He could have believed that had Neptune been knocked off course earlier, some other object might have caused the perturbations (p. 79 n. 33).
+- Footnote 33 gives Neptune as an even better case of reference fixed by description rather than ostension (naming by pointing at the thing). If Leverrier indeed gave the name before the planet was ever seen, he fixed its reference by the description 'the planet causing certain perturbations'. At that stage 'if such perturbations are caused by a planet, they are caused by Neptune' was a priori but not necessary. He could have believed that had Neptune been knocked off course earlier, some other object might have caused the perturbations (p. 79 n. 33).
 - Footnote 34 (after Donnellan): the fixing description may turn out false of its object. 'Phosphorus' was fixed as 'the morning star', which is not a star. A more cautious substitute is then what fixes reference (p. 80 n. 34).
 
 ### 4. Thesis (2): the properties pick out someone uniquely (pp. 80–82)
@@ -110,7 +112,7 @@ Lecture I ended with a description theory of names, listed on the board. The ext
 - One may vary the descriptions, and most attempts meet counterexamples (p. 88).
 - **Proposal:** 'Gödel' means 'the man most people think proved incompleteness', not 'whoever proved it'. Two replies:
   1. *Counterexample.* Suppose most people now ascribe the axioms to Dedekind. A speaker with the old belief still refers to Peano and holds a false belief about Peano, not a true belief about Dedekind (pp. 88–89).
-  2. *Circularity, more significantly.* That most of us think Gödel proved it presupposes that we refer to Gödel when we say 'Gödel proved incompleteness'. If we all referred to Schmidt we would be attributing the theorem to Schmidt. We cannot fix the reference by 'the man to whom it is commonly attributed' without independent criteria. Otherwise we would only be saying that we attribute the achievement to the man to whom we attribute it, with no independent criterion of reference. This violates (C) (p. 89).
+  2. *Circularity, perhaps more significantly.* That most of us think Gödel proved it presupposes that we refer to Gödel when we say 'Gödel proved incompleteness'. If we all referred to Schmidt we would be attributing the theorem to Schmidt. We cannot fix the reference by 'the man to whom it is commonly attributed' without independent criteria. Otherwise we would only be saying that we attribute the achievement to the man to whom we attribute it, with no independent criterion of reference. This violates (C) (p. 89).
 - **Passing the buck.** Strawson's footnote (quoted, p. 90) lets an identifying description refer to another speaker's reference, so that one reference may borrow its credentials from another, and that from another, though Strawson says the regress is not infinite. Kripke: I might mean 'the man Joe thinks proved it', and Joe passes the question to Harry. Such chains do in general exist for a living man, but one will not know what they are, what descriptions others use, whether they loop, or whether they lead back to the right man. One may not remember whom one heard it from. So the move cannot be used with confidence as an identifying description (p. 90).
 
 ### 8. The picture: a chain of communication (pp. 90–93)
@@ -139,10 +141,10 @@ Lecture I ended with a description theory of names, listed on the board. The ext
 **Setting (pp. 97–99).**
 - Statements of identity may be necessary or contingent. Everyone agrees identities made with descriptions can be contingent, such as "the man who invented bifocals was the first Postmaster General" (p. 98).
 - Questions of interest: identities between names ('Hesperus is Phosphorus', 'Cicero is Tully'), and theoretical identifications (light with electromagnetic radiation of certain wavelengths or a stream of photons; heat with molecular motion; sound with a wave disturbance) (p. 98).
-- **The commonly held thesis:** these theoretical identities are obviously contingent. Identity theorists in philosophy of mind welcome this. They say pain is a certain state of the brain or body, such as stimulation of C-fibres. Objectors say the pain–brain correlation was an empirical discovery, so the two must be different things. Identity theorists reply that there are contingent identities (bifocals, light/photons, water/a hydrogen–oxygen compound), so psychophysical identities can be contingent too. Motivations include avoiding a "nomological dangler" (p. 99).
+- **The commonly held thesis:** these theoretical identities are obviously contingent. Identity theorists in philosophy of mind welcome this. They say pain is a certain state of the brain or body, such as stimulation of C-fibres. Objectors say the pain–brain correlation was an empirical discovery, so the two must be different things. Identity theorists reply that there are contingent identities (bifocals, light/photons, water/a hydrogen–oxygen compound), so psychophysical identities can be contingent too. Motivations include avoiding a "nomological dangler", a mysterious connection not accounted for by the laws of physics (pp. 98–99).
 
 **Kripke's position, stated in advance (pp. 99–100).**
-1. Characteristic theoretical identifications such as 'Heat is the motion of molecules' are not contingent but necessary, in the highest degree (Kripke adds, whatever that means), not merely physically necessary. Kripke does not prejudge whether physical necessity might turn out to be that, at least for this sort of example.
+1. Characteristic theoretical identifications such as 'Heat is the motion of molecules' are not contingent but necessary, in the highest degree (Kripke adds, whatever that means), not merely physically necessary. Physical necessity might turn out to be necessity in the highest degree, but Kripke does not wish to prejudge that; at least for this sort of example, what is physically necessary might always be necessary tout court.
 2. The way these have turned out necessary does not seem a way in which mind–brain identities could turn out either necessary or contingent. He concludes that this analogy has to go, and says it is hard to avoid concluding that the two are different.
 
 He first discusses identities between names (p. 99).
@@ -154,7 +156,7 @@ He first discusses identities between names (p. 99).
 - Russell concluded there should be no empirical question whether two names co-refer. This fails for ordinary names but holds for naming one's own sense datum ('this', 'that'). So, Russell concluded, ordinary 'names' cannot be genuine names (p. 101).
 
 **Kripke's diagnosis (pp. 101–105).**
-- One can use 'Cicero' and 'Tully' for the same man without knowing it. So we do not know a priori that a name-identity is true. It does not follow that, if true, it is contingent. There is a strong feeling that what cannot be known by a priori reasoning must be contingent, and Kripke thinks the feeling is wrong (p. 101).
+- One can use 'Cicero' and 'Tully' for the same man without knowing it. So it seems we do not necessarily know a priori that a name-identity is true. It does not follow that, if true, it is contingent. There is a strong feeling that what cannot be known by a priori reasoning must be contingent, and Kripke thinks the feeling is wrong (p. 101).
 - **The argument.**
   - Suppose 'Hesperus' and 'Phosphorus' are rigid names of Venus. In every possible world they refer to Venus, so Venus is Venus there, whatever anyone says there (p. 102).
   - A man in another world who calls two different stars 'Hesperus' and 'Phosphorus', even under the same conditions, is not (it seems to Kripke) in a world where Hesperus is not Phosphorus. If he pointed to Venus twice he would make the identity true there as well. So at least once he did not point to Venus, and then 'Phosphorus' might not have referred to Phosphorus (p. 102).
@@ -178,14 +180,14 @@ Facts: the kitten Ann baptised is black, lives on Oak St., and caught no mouse. 
 **Rigidity check.** Suppose Zorb had caught the mouse. 'Zorb' would still name that kitten, and Mia would not be Zorb. Whether Zorb catches mice is contingent. So even a description that fixed the reference would give no necessary truth (p. 75).
 
 ## Concepts
-- [[rigid designator]] — a term denoting the same thing in every possible world, as used in our language, even where the thing does not exist (pp. 75, 77–78)
+- [[rigid designator]] — a term denoting the same thing in every possible world, as used in our language, even where the thing does not exist; this differs from the canon's "in every possible world in which it exists" (pp. 75, 77–78)
 - [[causal-historical theory of reference]] — Kripke's "picture", not a full theory: reference comes via a chain of communication back to a baptism (pp. 91, 96)
-- [[necessary a posteriori]] — here, name-identities and theoretical identities held necessary though not known a priori (pp. 99, 101, 104)
+- [[necessary a posteriori]] (canon link; not stated in this unit) — here, name-identities and theoretical identities held necessary though not known a priori (pp. 99, 101, 104)
 - [[cluster-description theory of names]] (new) — Theses (1)–(6): a name refers to what satisfies most of the speaker's associated descriptions (p. 71)
 - [[reference-fixing vs. meaning]] (new) — a description may fix a name's reference without being synonymous with it (pp. 75, 96 n. 42)
 - [[noncircularity condition]] (new) — condition (C): the reference-determining properties must not essentially involve reference (pp. 71, 73, 89)
 - [[initial baptism]] (new) — the first naming, by ostension or by description. The description theory fits it best (pp. 78, 96)
-- [[epistemic possibility vs. metaphysical possibility]] (new) — saying something might have turned out either way can express ignorance, not contingency (p. 103)
+- [[epistemic possibility vs. metaphysical possibility]] (new; the lecture says "epistemic" but never "metaphysical possibility") — saying something might have turned out either way can express ignorance, not contingency (p. 103)
 
 ## Canonical instances
 - [[kneale-socrates-called-socrates]] — circular description theory ('the man called "Socrates"') (pp. 72–73)
@@ -206,13 +208,13 @@ Facts: the kitten Ann baptised is black, lives on Oak St., and caught no mouse. 
 ## Questions this raises
 - What conditions (beyond intention to keep reference) would stop a chain from drifting, as with 'Santa Claus', or being hijacked, as with 'Napoleon' the aardvark?
 - If the George Smith teacher's statement gives pupils a false belief about no one in particular, how should reference transmit through an utterance not aimed at the bearer?
-- Is physical necessity necessity in the highest degree? And if heat/molecular motion is necessary, why exactly can the same not hold for pain and C-fibres (Kripke only says the analogy "has to go")?
+- Is physical necessity necessity in the highest degree? And if heat/molecular motion is necessary, why exactly can the same not hold for pain and C-fibres (Kripke says the analogy "has to go", and that it is hard to avoid concluding that the two are different)?
 - How are identities between names that are "tags" related to Russell's view that ordinary names are not genuine names (p. 101)?
 
 ## Reading notes
 - **Page offset:** printed = pdf − 8 (pdf 79 = printed 71).
 - **Edition facts as given:** running header "NAMING AND NECESSITY"; Lecture II dated January 22, 1970 (p. 71).
-- **Text-layer problems:** the board list on p. 71 has missing numerals; I assigned (1)–(4) from the order on p. 71 and from p. 80 (Thesis 1 a definition, 2 "one of the properties…"), p. 82 (Thesis 3), p. 86 (Thesis 4), and p. 87 (Thesis 5). Footnote markers are garbled in places (e.g. "S1", "II", "8&"), and footnote numbers were inferred from sequence. The Strawson footnote on p. 90 reads "p. X82 n." in the text layer. Several OCR slips ("pIck" on p. 74, "reftr" in n. 36, "thaes true" on p. 103) were read as the obvious words. The text layer on p. 80 reads "Ziffin Semantic Analysis" for "Ziff in".
+- **Text-layer problems:** the text layer drops the numerals of the board list on p. 71; the page image prints (1)–(6) and (C) clearly. Footnote markers are garbled in places (e.g. "S1", "II", "8&"), and footnote numbers were inferred from sequence. The Strawson footnote on p. 90 reads "p. X82 n." in the text layer. Several OCR slips ("pIck" on p. 74, "reftr" in n. 36, "thaes true" on p. 103) were read as the obvious words. The text layer on p. 80 reads "Ziffin Semantic Analysis" for "Ziff in".
 - **Source note:** Kripke's own footnote on p. 80 n. 35 says the theses are loosely stated and that (5) and (6) presuppose the speaker's language is English.
 
 - No exercises appear in this unit.

@@ -13,11 +13,13 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 13
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 5
 ---
 # Entropy, Relative Entropy and Mutual Information
 
 ## L0 — One line
-Entropy measures the uncertainty of a random variable; relative entropy and mutual information are built from it, and Jensen's inequality underlies many of their basic properties (such as non-negativity); together with the chain rules it gives the data processing inequality.
+Entropy measures the uncertainty of a random variable; mutual information extends this notion and is a special case of relative entropy, and Jensen's inequality underlies many of their basic properties (such as non-negativity); together with the chain rules it gives the data processing inequality.
 
 ## L1 — The gist (≤ 120 words)
 This chapter defines the basic quantities of information theory for discrete random variables: entropy (uncertainty of one variable), joint and conditional entropy, relative entropy (a non-symmetric "distance" between distributions) and mutual information (how much one variable tells about another). It proves their main properties: chain rules, non-negativity of relative entropy and mutual information, conditioning on average reduces entropy, the data processing inequality, and Fano's inequality. Jensen's inequality and the log sum inequality are the main tools. It also shows that for Markov chains relative entropy does not increase, a version of the second law of thermodynamics, and links mutual information to sufficient statistics.
@@ -32,7 +34,8 @@ This chapter defines the basic quantities of information theory for discrete ran
 - Conditioning reduces entropy on average, not for every value of the conditioning variable (p. 28).
 - Data processing inequality: if $X\to Y\to Z$ is a Markov chain, then $I(X;Y)\ge I(X;Z)$, so processing cannot add information about $X$ (p. 32).
 - For Markov chains, relative entropy between two state distributions does not increase with time; entropy itself need not increase unless the stationary distribution is uniform (pp. 34–36).
-- A statistic is sufficient iff it preserves mutual information with the parameter for all distributions on the parameter (pp. 36–37, 42). Fano's inequality bounds $H(X|Y)$ above by a function of the error probability $P_e$ of guessing $X$ from $Y$; equivalently $P_e\ge\frac{H(X|Y)-1}{\log|\mathcal X|}$ (pp. 38–40).
+- A statistic is sufficient iff it preserves mutual information with the parameter for all distributions on the parameter (pp. 36–37, 42).
+- Fano's inequality bounds $H(X|Y)$ above by a function of the error probability $P_e$ of guessing $X$ from $Y$; a weaker form is $P_e\ge\frac{H(X|Y)-1}{\log|\mathcal X|}$ (pp. 38–40).
 
 ## L3 — Walkthrough
 
@@ -50,7 +53,7 @@ $$H(X)=-\sum_{x\in\mathcal X}p(x)\log p(x).\tag{2.1}$$
 $$H(X)=E_p\log\frac1{p(X)}.\tag{2.3}$$
 - The author will not justify $H$ axiomatically. He will show it answers natural questions such as the average length of the shortest description (pp. 13–14). An axiomatic route is in Problem 4 (p. 43).
 
-**Lemma 2.1.1.** $H(X)\ge0$, because $0<p(x)\le1$ implies $\log(1/p(x))\ge0$ (p. 14).
+**Lemma 2.1.1.** $H(X)\ge0$, because $0\le p(x)\le1$ implies $\log(1/p(x))\ge0$ (p. 14).
 
 **Lemma 2.1.2.** $H_b(X)=(\log_ba)H_a(X)$, because $\log_bp=\log_ba\,\log_ap$ (p. 14).
 
@@ -351,7 +354,7 @@ Let $X,Y$ be bits with joint pmf $p(0,0)=p(1,1)=3/8$, $p(0,1)=p(1,0)=1/8$.
 - Ex. 7 (pp. 43–44) — extracting fair coin flips from a bent coin; at most $nH(p)$ on average — difficulty: hard
 
 ## Reading notes
-- The PDF is the 1991 first edition (title page: Copyright 1991 John Wiley & Sons; Print ISBN 0-471-06259-6), not the 2006 second edition cited in the metadata. Chapter content and numbering may differ from the second edition.
+- The chapter's first page prints "Copyright © 1991 John Wiley & Sons, Inc." and Print ISBN 0-471-06259-6; no edition number is printed. The metadata cites the 2006 second edition, so chapter content and numbering may differ from it.
 - Page offset: printed = pdf − 22 (pdf 34 = printed 12). Printed numbers are given in the page labels; the unit is pp. 12–49.
 - The text layer is heavily garbled (e.g. pdf 38 header shows "36" while the image shows 16; many equations mangled). Equations were taken from the page images.
 - Misprint at p. 32/33: eq. (2.121) is printed as $I(X;Y,Z)=I(X;Z)+I(X;Y|Z)$, a repeat of (2.120). The proof needs $I(X;Y)+I(X;Z|Y)$ there; this is the version used in the text that follows.

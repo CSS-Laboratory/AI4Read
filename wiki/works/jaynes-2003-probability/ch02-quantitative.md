@@ -13,11 +13,13 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 14
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 4
 ---
 # The quantitative rules (Jaynes, ch. 2)
 
 ## L0 — One line
-If degrees of plausibility are real numbers that match common sense and are consistent, then they must obey the product rule and the sum rule, and they can be rescaled to ordinary probabilities, which are fixed by the data (for indifferent cases, to $1/n$).
+If degrees of plausibility are real numbers that match common sense and are consistent, then a monotonic function of them must obey the product rule and the sum rule; rescaled to an ordinary probability, it is fixed by the data (for indifferent cases, to $1/n$).
 
 ## L1 — The gist (≤ 120 words)
 The chapter asks which numerical rules a reasoning robot must use if it stores plausibilities as real numbers, agrees qualitatively with common sense, and is consistent. Jaynes derives, from the associativity of "and" and from the relation between A and not-A, a product rule and a sum rule. Every acceptable plausibility scale can be rescaled to a probability $p$ obeying these rules. A symmetry (relabelling) argument then gives probability $1/n$ to $n$ exhaustive, mutually exclusive propositions on which the information is indifferent. The chapter closes with comments on "subjective" versus "objective", Gödel's theorem, Venn diagrams and Kolmogorov's axioms.
@@ -30,7 +32,7 @@ The chapter asks which numerical rules a reasoning robot must use if it stores p
 - Consistency of the product rule applied to $AB$ and $A\bar B$ forces $w^m(A|B)+w^m(\bar A|B)=1$ with $m>0$. Setting $p=w^m$ gives the usual product and sum rules (2.63)–(2.64), and the extended sum rule (2.66) follows (pp. 30–34).
 - These rules suffice for every proposition in the Boolean algebra, once the basic conjunctions are given plausibilities. Deductive logic is their limiting case. The weak syllogisms, including the policeman's, follow from the product rule (pp. 34–37).
 - A permutation-symmetry argument gives $P(A_i|B)=1/n$ when $B$ is indifferent among $n$ exclusive, exhaustive propositions. The data fix $p$, not the original plausibility $x$, so the rules are unique (pp. 38–42).
-- Notation uses capital $P$ for propositions. The consistency theorems hold only for finite sets, hence the finite-sets policy for infinite problems (pp. 43–44).
+- Notation uses capital $P$ for propositions. The consistency theorems have been established only for finite sets, hence the finite-sets policy for infinite problems (pp. 43–44).
 - Jaynes's comments (pp. 44–50):
   - Probabilities are "subjective" in describing a state of knowledge, yet "objective" in not depending on the user.
   - Gödel's theorem is not treated as an obstacle, because the consistency-testing argument appeals to principles outside the propositions tested; whether consistency can be proved from outside probability theory is left open.
@@ -279,7 +281,7 @@ Jaynes says it took two chapters to return to (2.99), where Laplace started abou
 - If the axioms are inconsistent, the opposite $\bar T$ is also deducible, $\mathcal A\Rightarrow\bar T$ (2.103). So inconsistency is proved by exhibiting some $T$ and $\bar T$. Gödel's theorem says only that no consistency-testing procedure derivable from the axioms of the system tested exists (p. 46).
 - Probability theory comes close to such a procedure: probabilities conditional on contradictory premises do not exist (the hypothesis space is empty). A program computing $p(B|E)$ for $E=E_1\dots E_n$ will crash if a contradiction is hidden in $E$. Jaynes says this was found "empirically" and is a valuable diagnostic. If the program prints valid numbers, the $E_i$ are mutually consistent. This is no contradiction of Gödel, because the argument uses principles not derivable from the propositions tested (p. 46).
 - Undecidability: many simple questions are undecidable by deduction. Example: two sole witnesses give opposite testimony and both die; one lied, but which one cannot be determined. Undecidability signals incomplete information, not an inherent property. New external axioms might decide the proposition. Jaynes expects that, as science becomes more information-oriented, Gödel's result will be seen as more of a platitude than a paradox, and says undecidability marks a problem calling for inference rather than deduction (p. 47).
-- Whether consistency can be proved by going outside probability theory is an open question. Jaynes states that no inconsistency has been found from correct application of the rules; apparent ones were misapplications. Guided by Cox's theorems, he says he has never had difficulty exhibiting inconsistencies in ad hoc rules (Chapters 5, 15, 17) (p. 47).
+- Whether consistency can be proved by going outside probability theory appears to Jaynes, at the moment, to be an open question. Jaynes states that no inconsistency has been found from correct application of the rules; apparent ones were misapplications. Guided by Cox's theorems, he says he has never had difficulty exhibiting inconsistencies in ad hoc rules (Chapters 5, 15, 17) (p. 47).
 
 **2.6.3 Venn diagrams (pp. 47–49).**
 - **Reader's question:** why not illustrate $P(A+B|C)=P(A|C)+P(B|C)-P(AB|C)$ (2.104) by a Venn diagram? Jaynes's answer is that the diagram illustrates it in one special case but can mislead (p. 47).
@@ -292,7 +294,7 @@ Jaynes says it took two chapters to return to (2.99), where Laplace started abou
 **2.6.4 The "Kolmogorov axioms" (pp. 49–50).**
 - Kolmogorov (1933) phrased probability in set and measure theory, which Jaynes says gives some modern works the impression that probability began with him. He formalized the Venn-diagram picture (p. 49).
 - Appendix A shows that, for all practical purposes, the four axioms for his measure, stated arbitrarily, have all been derived in this chapter as necessary for consistency. Jaynes expects to defend Kolmogorov against critics on technical points. He urges readers who learned the Kolmogorov basis to read Appendix A (pp. 49–50).
-- Conceptual difference: Jaynes does not interpret propositions as sets, but interprets probability distributions as carriers of incomplete information. He claims this gives analytical resources absent from Kolmogorov's system, for "ill posed" and "generalized inverse" problems (p. 50).
+- Conceptual difference: Jaynes does not interpret propositions as sets, but interprets probability distributions as carriers of incomplete information. He says that partly as a result his system has analytical resources absent from Kolmogorov's system, for "ill posed" and "generalized inverse" problems (p. 50).
 
 ## Toy example (ours, not from the text)
 
@@ -335,7 +337,7 @@ A fair-looking six-sided die is a "6-ball urn": balls 1–6, indifferent backgro
 ## Questions this raises
 - The derivation assumes differentiability (Cox) and cites Aczél for the proof without it. What exactly do the continuity and monotonicity desiderata add, and what changes if one is dropped?
 - (2.95) needs information $B$ that is truly indifferent. How are probabilities assigned when $B$ is not symmetric? Jaynes says this is open-ended and promises Chapter 6.
-- Jaynes states that the consistency theorems hold only on finite sets. How are continuous variables handled by finite-limit procedures, and which paradoxes arise otherwise (Chapter 15)?
+- Jaynes states that the consistency theorems have been established only on finite sets. How are continuous variables handled by finite-limit procedures, and which paradoxes arise otherwise (Chapter 15)?
 - If the probability code stored by the robot is arbitrary up to monotonic transformation, what does it mean that $p$ "is directly determined by our information"?
 
 ## Exercises worth doing

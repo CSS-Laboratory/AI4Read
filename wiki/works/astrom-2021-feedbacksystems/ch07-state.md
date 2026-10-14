@@ -13,25 +13,27 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 14
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 5
 ---
 # State Feedback
 
 ## L0 — One line
-If a single-input linear system is reachable, feeding back its full state can place the closed-loop eigenvalues anywhere, so the designer can shape the dynamics directly. Practical limits are actuator size, the choice of eigenvalues, and the need for exact calibration (integral action removes the calibration need; an optimal cost is another way to choose the gains).
+If a single-input linear system is reachable, feeding back its full state can place the closed-loop eigenvalues anywhere, so the designer can shape the dynamics directly; practical limits are actuator size, the choice of eigenvalues, and the need for exact calibration (integral action removes the calibration need; an optimal cost is another way to choose the gains).
 
 ## L1 — The gist (≤ 120 words)
-The chapter asks what feedback of the full state can do to a linear system's dynamics. Answer: if the single-input system is reachable (its reachability matrix has full rank), the law u = −Kx + k_f r can give the closed loop any chosen characteristic polynomial. The feedforward gain k_f then fixes the steady state. Limits: eigenvalue choice is hard, and fast eigenvalues need large control signals. Integral action removes the need for exact calibration. The linear quadratic regulator (LQR) instead picks K by minimising a cost that trades state error against control effort. This matters because the eigenvalue locations determine the behavior of the closed loop, and later design chapters build on it.
+The chapter asks what feedback of the full state can do to a linear system's dynamics. Answer: if the single-input system is reachable (its reachability matrix has full rank), the law u = −Kx + k_f r can give the closed loop any chosen characteristic polynomial. The feedforward gain k_f then fixes the steady state. Limits: eigenvalue choice is hard, and fast eigenvalues will in general require large control signals. Integral action removes the need for exact calibration. The linear quadratic regulator (LQR) instead picks K by minimising a cost that trades state error against control effort. This matters because the eigenvalue locations shape the behavior of the closed loop.
 
 **Prerequisites:** matrix–vector algebra (rank, determinant, inverse); eigenvalues and characteristic polynomial; linear ODE x' = Ax + Bu and its convolution solution; change of coordinates z = Tx; step response (rise time, overshoot, settling time).
 
 ## L2 — Key ideas (5–10 bullets)
 - **Reachability** means any state can be reached from any other in finite time by some input. For $\dot x = Ax+Bu$ it holds iff $W_r=(B\ AB\ \cdots\ A^{n-1}B)$ has full rank (Theorem 7.1). It does not depend on the time allowed (p. 7-4).
 - **Unreachability** can arise, for example, when a linear combination $Hx$ of the states stays constant, or when identical subsystems share one input. In the constant-combination case $HW_r=0$ (p. 7-6).
-- **Reachable canonical form** exists for every reachable system. The coefficients of the characteristic polynomial appear directly in $\tilde A$, so state feedback can rewrite them one by one (Theorems 7.2, 7.3; pp. 7-9, 7-13, 7-14).
+- **Reachable canonical form** exists for every reachable system. The coefficients of the characteristic polynomial appear directly in $\tilde A$, so state feedback can rewrite them one by one (Theorems 7.2, 7.3; pp. 7-9, 7-13, 7-14, 7-15).
 - **Eigenvalue assignment** (Theorem 7.3): for a reachable single-input system, $u=-Kx+k_fr$ gives any desired closed-loop polynomial. $k_f=-1/(C(A-BK)^{-1}B)$ makes the zero-frequency gain (the steady-state gain from $r$ to $y$) equal to 1, but this needs exact knowledge of the model (pp. 7-11, 7-14, 7-15).
 - **Where to put eigenvalues** is the hard design question. Second-order formulas (damping ratio $\zeta$ and natural frequency $\omega_0$) and the dominant pair (the complex pair closest to the imaginary axis) give guidance. Large eigenvalues will in general need large and fast control signals (pp. 7-19 to 7-24).
 - **Integral action** augments the state with $z=\int(y-r)\,dt$. If the closed loop is stable, $y=r$ in steady state without calibration, and constant disturbances are rejected (pp. 7-25, 7-26).
-- **LQR** picks $K=Q_u^{-1}B^TS$, where $S$ solves a Riccati equation (a matrix equation), to minimise a quadratic cost. The weights $Q_x,Q_u$ trade performance against effort. For constant matrices over an infinite horizon, a reachable system gives a unique stabilising positive definite $S$ (pp. 7-28, 7-29).
+- **LQR** picks $K=Q_u^{-1}B^TS$, where $S$ solves a Riccati equation (a matrix equation), to minimise a quadratic cost. The weights $Q_x,Q_u$ trade performance against effort. For constant matrices over an infinite horizon, a reachable system gives a unique stabilising positive definite $S$ (positive definite: $x^TSx>0$ for every nonzero $x$) (pp. 7-28, 7-29).
 - Worked examples (steering, predator–prey, drug dosing, balance system, cruise control, thrust aircraft, web server) show the same recipe on different systems (pp. 7-11 to 7-32).
 
 ## L3 — Walkthrough
@@ -53,7 +55,7 @@ This lies in a one-dimensional (or possibly higher) subspace. If $A$ is invertib
 
 **Example 7.1 (double integrator).** $\dot x_1=x_2,\ \dot x_2=u$. The equilibria are the $x_1$ axis with $u_e=0$. To go from $(a,0)$ with $a>0$ to the origin, first set $u<0$ so $x_2<0$ and $x_1$ decreases. Later set $u>0$ to bring $x_2$ back toward zero. A positive $x_2$ moves the state the other way (p. 7-3). Points with $x_2\ne0$ can only be passed through transiently (p. 7-3).
 
-**Testing for reachability (heuristic argument with impulses; p. 7-3).** With $x(0)=0$,
+**Testing for reachability (heuristic argument with impulses, i.e. idealised infinitely short inputs of unit area, $\delta(t)$; p. 7-3).** With $x(0)=0$,
 $$x(t)=\int_0^t e^{A(t-\tau)}Bu(\tau)\,d\tau.\tag{7.2}$$
 An impulse input $\delta(t)$ gives $x_\delta(t)=e^{At}B$. Differentiating the impulse response gives the response to $\dot\delta$: $x_{\dot\delta}(t)=Ae^{At}B$. By linearity, the input
 $$u=\alpha_1\delta+\alpha_2\dot\delta+\cdots+\alpha_n\delta^{(n-1)}$$
@@ -63,7 +65,7 @@ This is a linear combination of the columns of the **reachability matrix**
 $$W_r=\begin{pmatrix}B&AB&\cdots&A^{n-1}B\end{pmatrix}.\tag{7.3}$$
 To reach an arbitrary point we need $n$ independent columns (full rank). For one input this is the same as a nonzero determinant (p. 7-4). The same test works for several inputs (then $W_r$ must have full column rank). Only terms up to $A^{n-1}B$ are needed (Exercise 7.3) (p. 7-4).
 
-Impulses are violent signals. For smooth inputs, write $x(t)=\int_0^te^{A\tau}Bu(t-\tau)d\tau$. By the Cayley–Hamilton theorem, $e^{A\tau}=I\alpha_0(\tau)+A\alpha_1(\tau)+\cdots+A^{n-1}\alpha_{n-1}(\tau)$ with scalar functions $\alpha_i$. Therefore
+Impulses are violent signals. For smooth inputs, write $x(t)=\int_0^te^{A\tau}Bu(t-\tau)d\tau$. By the Cayley–Hamilton theorem (every square matrix satisfies its own characteristic polynomial), $e^{A\tau}=I\alpha_0(\tau)+A\alpha_1(\tau)+\cdots+A^{n-1}\alpha_{n-1}(\tau)$ with scalar functions $\alpha_i$. Therefore
 $$x(t)=B\!\int_0^t\!\alpha_0(\tau)u(t-\tau)d\tau+AB\!\int_0^t\!\alpha_1(\tau)u(t-\tau)d\tau+\cdots+A^{n-1}B\!\int_0^t\!\alpha_{n-1}(\tau)u(t-\tau)d\tau.$$
 This is again a combination of the columns of $W_r$ (p. 7-4).
 
@@ -180,9 +182,9 @@ Maximum overshoot occurs at the first zero of $\dot y$ and equals $M_p=e^{-\pi\z
 | Overshoot | $M_p$ | 16% | 4% | 0% |
 | Settling (2%) | $T_s\approx4/\zeta\omega_0$ | 8.0/ω₀ | 5.6/ω₀ | 4.0/ω₀ |
 
-*Frequency response (pp. 7-19, 7-20).* $Me^{i\theta}=\frac{k\omega_0^2}{(i\omega)^2+2\zeta\omega_0(i\omega)+\omega_0^2}=\frac{k\omega_0^2}{\omega_0^2-\omega^2+2i\zeta\omega_0\omega}$. The resonant peak grows as $\zeta$ falls, and is described by $Q=1/2\zeta$ (Figure 7.9).
+*Frequency response (pp. 7-19, 7-20)* (the steady output's gain $M$ and phase $\theta$ for a sinusoidal input of frequency $\omega$): $Me^{i\theta}=\frac{k\omega_0^2}{(i\omega)^2+2\zeta\omega_0(i\omega)+\omega_0^2}=\frac{k\omega_0^2}{\omega_0^2-\omega^2+2i\zeta\omega_0\omega}$. The resonant peak (the maximum gain over frequency) grows as $\zeta$ falls, and is described by $Q=1/2\zeta$ (Figure 7.9).
 
-**Table 7.2** (0 < ζ ≤ 1; p. 7-20):
+**Table 7.2** (0 < ζ ≤ 1; p. 7-20; bandwidth = the frequency where the gain falls to $1/\sqrt2$ of its zero-frequency value):
 
 | Property | Value | ζ=0.1 | ζ=0.5 | ζ=1/√2 |
 |---|---|---|---|---|
@@ -195,7 +197,7 @@ Maximum overshoot occurs at the first zero of $\dot y$ and equals $M_p=e^{-\pi\z
 
 **Example 7.6 (drug administration; pp. 7-20 to 7-22).** Two-compartment model $\dot c=\begin{pmatrix}-k_0-k_1&k_1\\k_2&-k_2\end{pmatrix}c+\begin{pmatrix}b_0\\0\end{pmatrix}u$, $y=(0\ 1)c$. Both concentrations are assumed measurable; the aim is to hold $y$ at $r$. Choose $\zeta=1/\sqrt2$ and $T_r=10$ min. Table 7.1 then gives $\omega_0=0.22$. The text states the closed-loop eigenvalues satisfy $\lambda(s)=-0.2\pm0.096i$, uses $\tilde k_1=-0.2$, $\tilde k_2=0.2$ (with $K=(\tilde k_1,\tilde k_2)$ to avoid clashing with the rates $k_i$), and gets $k_f=0.065$ from (7.13). Figure 7.10: compared with periodic pulsed doses (open loop), the state-feedback dose keeps the concentration with substantially less variability (p. 7-22).
 
-**Higher-order systems (pp. 7-21, 7-22).** Eigenvalue assignment is harder. A complex pair $\lambda,\lambda^*$ of a stable system is **dominant** if it is closest to the imaginary axis; ties are broken by the lowest damping ratio $\zeta=-\operatorname{Re}\lambda/|\lambda|$. Argument: in Jordan form the response is a sum of subsystem responses. For $\zeta<1$ the slowest is the subsystem nearest the imaginary axis (Figure 7.8). So after other transients die out, the dominant pair is the main factor. This does not always hold (for example if non-dominant terms have larger coefficients), but often the dominant eigenvalues determine the step response (p. 7-22).
+**Higher-order systems (pp. 7-21, 7-22).** Eigenvalue assignment is harder. A complex pair $\lambda,\lambda^*$ of a stable system is **dominant** if it is closest to the imaginary axis; ties are broken by the lowest damping ratio $\zeta=-\operatorname{Re}\lambda/|\lambda|$. Argument: in Jordan form (a block-diagonal form splitting the system into simple subsystems) the response is a sum of subsystem responses. For $\zeta<1$ the slowest is the subsystem nearest the imaginary axis (Figure 7.8). So after other transients die out, the dominant pair is the main factor. This does not always hold (for example if non-dominant terms have larger coefficients), but often the dominant eigenvalues determine the step response (p. 7-22).
 
 The only formal requirement for assignment is reachability. In practice, large eigenvalues need large and fast control signals, and actuators limit the choice (Chapters 12–14) (p. 7-22).
 

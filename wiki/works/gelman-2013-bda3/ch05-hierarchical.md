@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 18
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 6
 ---
 # Hierarchical models (BDA3, ch. 5)
 
@@ -22,7 +24,7 @@ When many parameters are related, treat them as exchangeable draws from a popula
 ## L1 — The gist (≤ 120 words)
 How should we model many related parameters, such as effects in several schools or trials? The chapter treats them as draws from a common population distribution whose hyperparameters are themselves unknown and given a hyperprior. The full joint posterior then gives partial pooling: group estimates shrink toward the population mean, between the extremes of separate and fully pooled estimates, while uncertainty about the hyperparameters is kept. Worked examples are rat tumors, eight coaching experiments and beta-blocker trials. The chapter ends on choosing weakly informative priors for the group-level standard deviation, which matters when there are few groups.
 
-**Prerequisites:** Bayes' theorem; beta–binomial and normal–normal conjugacy; conditional/marginal densities; grid and inverse-cdf sampling; gamma function; basic ANOVA vocabulary.
+**Prerequisites:** Bayes' theorem; beta–binomial and normal–normal conjugacy; conditional/marginal densities; change of variables in densities; grid and inverse-cdf sampling; gamma function; basic ANOVA vocabulary.
 
 ## L2 — Key ideas (5–10 bullets)
 - Simple nonhierarchical models are usually inappropriate for hierarchical data: with few parameters they generally cannot fit large datasets accurately, and with many parameters they tend to overfit. Hierarchical models can have many parameters and still avoid overfitting, because a population distribution ties the parameters together (p. 101).
@@ -32,7 +34,7 @@ How should we model many related parameters, such as effects in several schools 
 - In the normal model, given $(\mu,\tau)$, $\hat\theta_j$ is a precision-weighted average of the group mean and the population mean (5.17). The marginal posterior of $\tau$ is a one-dimensional function (5.21) (pp. 116–117).
 - In the eight-schools example, separate and pooled estimates are both unsatisfactory. The hierarchical posterior partially pools, and conditioning on a modal $\tau=0$ would over-pool (pp. 119–123).
 - In the beta-blocker meta-analysis, complete pooling gives a narrower interval that an earlier discussion called unusually narrow; the hierarchical analysis suggests this was because the model implicitly claimed all studies identical, i.e. $\tau=0$ exactly. A predicted effect in a new study is more uncertain than the overall mean (pp. 125–128).
-- Priors for $\tau$ matter, especially for small $J$. Uniform on $\tau$ works for $J=8$ but gives a long tail for $J=3$, where a half-Cauchy weakly informative prior works better. Inverse-gamma$(\epsilon,\epsilon)$ and uniform on $\log\tau$ are problematic (pp. 128–132).
+- Priors for $\tau$ matter, especially for small $J$. Uniform on $\tau$ works for $J=8$ but gives a long tail for $J=3$, where a half-Cauchy (a Cauchy distribution restricted to positive values) weakly informative prior works better. Inverse-gamma$(\epsilon,\epsilon)$ (the distribution of $1/X$ for gamma-distributed $X$) and uniform on $\log\tau$ are problematic (pp. 128–132).
 
 ## L3 — Walkthrough
 
@@ -80,9 +82,9 @@ This mixture of independent identical distributions is usually all that is neede
 - Counterexample for finite $J$: the six face probabilities of a die are exchangeable but constrained to sum to 1, so they cannot be a mixture of independent identical distributions (p. 105).
 
 **Example: exchangeability and sampling (divorce rates, pp. 105–106).** Eight US states are chosen and their 1981 divorce rates $y_1,\dots,y_8$ recorded. The exchangeability is at the level of $y$, not $\theta$.
-- With no information on which state is which, model them exchangeably, with a fairly vague distribution (p. 105).
+- With no information to distinguish the states, model them exchangeably, e.g. with a beta or logit-normal distribution on [0, 1]; unless you are familiar with divorce statistics, it should be fairly vague (p. 105).
 - Seven randomly chosen values are revealed: 5.8, 6.6, 7.8, 5.6, 7.0, 7.1, 5.4. A reasonable posterior predictive for $y_8$ would probably be centred near 6.5, with most mass between 5.0 and 8.0. The $y_j$ are exchangeable but not independent (p. 105–106).
-- If you are also told the eight are the Mountain states (unordered), the prior is still exchangeable but should change. Utah is expected low and Nevada high, so the prior needs wide tails. The posterior for $y_8$ might be bimodal or trimodal, since the missing state might be Nevada or Utah (p. 106).
+- If you are also told the eight are the Mountain states (unordered), the prior is still exchangeable but should change. Utah is expected low and Nevada high, so perhaps, given the expected outliers, the prior should have wide tails. The posterior for $y_8$ might be bimodal or trimodal, since the missing state might be Nevada or Utah (p. 106).
 - If told the unsampled state is Nevada, exchangeability is lost even before seeing the data, and $p(y_8>\max(y_1..y_7)|y_1..y_7)$ should be large. Nevada's 1981 rate was 13.9 per 1000 (p. 106).
 
 **Partial or conditional exchangeability (pp. 106–107).**
@@ -135,8 +137,8 @@ $$p(\alpha,\beta|y)\propto p(\alpha,\beta)\prod_{j=1}^J\frac{\Gamma(\alpha+\beta
 It cannot be simplified analytically but is easy to evaluate for given $(\alpha,\beta)$ with a gamma-function routine (p. 110).
 
 **Hyperprior choice (pp. 110–111).**
-- Reparameterize as $\text{logit}\big(\tfrac{\alpha}{\alpha+\beta}\big)=\log\tfrac{\alpha}{\beta}$ (logit of the mean) and $\log(\alpha+\beta)$ (log of the "sample size"). Uniform priors on these give an *improper posterior*, with an infinite integral as $(\alpha+\beta)\to\infty$ (p. 110).
-- With a lot of data, a diffuse hyperprior dominated by the likelihood is possible. The choice is uniform on $\big(\tfrac{\alpha}{\alpha+\beta},(\alpha+\beta)^{-1/2}\big)$, which with the Jacobian gives
+- Reparameterize (logit: the log-odds, $\text{logit}(p)=\log\frac{p}{1-p}$) as $\text{logit}\big(\tfrac{\alpha}{\alpha+\beta}\big)=\log\tfrac{\alpha}{\beta}$ (logit of the mean) and $\log(\alpha+\beta)$ (log of the "sample size"). Uniform priors on these give an *improper posterior*, with an infinite integral as $(\alpha+\beta)\to\infty$ (p. 110).
+- With a lot of data, a diffuse hyperprior dominated by the likelihood is possible. One reasonable choice is uniform on $\big(\tfrac{\alpha}{\alpha+\beta},(\alpha+\beta)^{-1/2}\big)$, which with the Jacobian (the factor by which a change of variables rescales a density) gives
 $$p(\alpha,\beta)\propto(\alpha+\beta)^{-5/2}, \tag{5.9}$$
 $$p\Big(\log\tfrac{\alpha}{\beta},\log(\alpha+\beta)\Big)\propto\alpha\beta(\alpha+\beta)^{-5/2}. \tag{5.10}$$
 See Exercise 5.9 (pp. 110–111).
@@ -156,7 +158,7 @@ See Exercise 5.9 (pp. 110–111).
 
 ### 5.4 Normal model with exchangeable parameters (pp. 113–119)
 
-This is the one-way normal random-effects model with known data variance (p. 113).
+This is the one-way normal random-effects model (group means treated as random draws from a common distribution) with known data variance (p. 113).
 
 **Data structure.** $J$ independent experiments, with $n_j$ observations each:
 $$y_{ij}|\theta_j\sim\text{N}(\theta_j,\sigma^2),\quad i=1..n_j,\ j=1..J. \tag{5.11}$$
@@ -212,7 +214,7 @@ This must hold for any $\mu$, so set $\mu=\hat\mu$. Since $\text{N}(\hat\mu|\hat
 $$p(\tau|y)\propto p(\tau)\,V_\mu^{1/2}\prod_{j=1}^J(\sigma_j^2+\tau^2)^{-1/2}\exp\!\Big(-\frac{(\bar y_{.j}-\hat\mu)^2}{2(\sigma_j^2+\tau^2)}\Big), \tag{5.21}$$
 with $\hat\mu,V_\mu$ from (5.20). It is a complicated function of $\tau$ (p. 117).
 
-*Prior for $\tau$ (p. 117).* The illustrative choice is uniform, $p(\tau)\propto1$. The authors leave as an exercise that this gives a proper posterior, whereas $p(\log\tau)\propto1$ gives an improper one. Alternatively, elicit a "best guess" and an upper bound (e.g. 99th percentile) for $\tau$ and match them to a scaled inverse-$\chi^2$ prior. After an initial analysis, a sensitivity analysis with a more realistic prior is often desirable (p. 117).
+*Prior for $\tau$ (p. 117).* The illustrative choice is uniform, $p(\tau)\propto1$. The authors leave as an exercise that this gives a proper posterior, whereas $p(\log\tau)\propto1$ gives an improper one. Alternatively, elicit a "best guess" and an upper bound (e.g. 99th percentile) for $\tau$ and match them to a scaled inverse-$\chi^2$ prior (a standard distribution family for variances). After an initial analysis, a sensitivity analysis with a more realistic prior is often desirable (p. 117).
 
 **Computation (p. 118).** Use $p(\theta,\mu,\tau|y)=p(\tau|y)\,p(\mu|\tau,y)\,p(\theta|\mu,\tau,y)$. (1) Draw $\tau$ by the inverse-cdf method on a uniform grid using (5.21). (2) Draw $\mu$ from (5.20). (3) Draw each $\theta_j$ independently from (5.17) (p. 118).
 
@@ -239,7 +241,7 @@ Inference for $\theta$ then uses $p(\theta|\hat\mu,\hat\tau)$. Problems:
 **Separate estimates.** The 95% posterior intervals from separate analyses all overlap substantially, so it is hard to distinguish the experiments (p. 119).
 
 **Pooled estimate** (flat prior, common effect): posterior mean $\bar y_{..}=7.7$ (5.13 with $y_j$), variance $(\sum_j\sigma_j^{-2})^{-1}=16.6$, standard error $\sqrt{16.6}=4.1$, 95% interval $[-0.5,15.9]$ ($\approx8\pm8$). Supporting this, $\sum_j(y_j-\bar y_{..})^2/\sigma_j^2=4.6$ is below its 7 degrees of freedom, and $\hat\tau^2$ from (5.22) is negative (p. 120).
-- If all effects were equal, eight draws from N(8, 13²) (13 = square root of the mean of the $\sigma_j^2$) would have expected order statistics of about 26, 19, 14, 10, 6, 2, −3, −9. These are consistent with Table 5.2, so it would appear imprudent to believe school A's effect is 28 (p. 120).
+- If all effects were equal, eight draws from N(8, 13²) (13 = square root of the mean of the $\sigma_j^2$) would have expected order statistics (the values sorted by size) of about 26, 19, 14, 10, 6, 2, −3, −9. These are consistent with Table 5.2, so it would appear imprudent to believe school A's effect is 28 (p. 120).
 
 **Why both extremes fail (p. 120).** For school A, separate analysis gives 28.4 (se 14.9), pooled gives 7.7 (se 4.1). The separate analysis implies "probability ½ that the true effect in A exceeds 28.4", which is doubtful given the other schools. The pooled model implies "probability ½ that the effect in A is below 7.7" and "probability ½ that A's effect is below C's", also hard to justify. A compromise is wanted (pp. 120–121).
 
@@ -265,7 +267,7 @@ Inference for $\theta$ then uses $p(\theta|\hat\mu,\hat\tau)$. Problems:
 | G | −1 | 7 | 10 | 15 | 26 |
 | H | −6 | 3 | 8 | 13 | 33 |
 
-- Like the pooled interval, the eight 95% intervals overlap and are median-centred between 5 and 10. Unlike it, they are each almost twice as wide as the common interval, with greater probability of effects above 16 (especially A) and of negative effects (especially C) (p. 123).
+- Like the pooled interval, the eight 95% intervals largely overlap and are median-centred between 5 and 10 (p. 122). Unlike it, they are each almost twice as wide as the common interval, with greater probability of effects above 16 (especially A) and of negative effects (especially C) (p. 123).
 - The ordering of schools is essentially that of the separate estimates. But the probability that A's effect is as large as 28 is under 10%, against 50% from A's separate estimate (p. 123).
 - From simulations: only 22 of 200 draws of $\max_j\theta_j$ exceed 28.4, so $\Pr(\max\theta_j>28.4)\approx22/200$. $\Pr(\theta_1>\theta_3|y)\approx141/200=0.705$ (the share of draws with $\theta_1>\theta_3$) (p. 123).
 
@@ -286,7 +288,7 @@ Refinements exist (e.g. adding 0.5 to each count) but do not matter when sample 
 
 **If exchangeability is inappropriate.** Assuming it means assuming no important covariates, which is "perhaps misguidedly" widely adopted in meta-analysis. If other information distinguishes studies, expand to a hierarchical regression (Chapter 15), possibly to estimate a response surface (p. 126).
 
-**Model (p. 126).** $y_j|\theta_j,\sigma_j\sim\text{N}(\theta_j,\sigma_j^2)$, with $\sigma_j$ from (5.24) treated as known. Known variances matter little here because there are more than 50 persons per arm in nearly all studies. The second stage is exchangeable normal with unknown $(\mu,\tau)$. The hyperprior is locally uniform on $\mu$ (justified because even 5 or 10 studies are quite informative about the centre) and locally uniform on $\tau$ (for convenience) (p. 126).
+**Model (p. 126).** $y_j|\theta_j,\sigma_j\sim\text{N}(\theta_j,\sigma_j^2)$, with $\sigma_j$ from (5.24) treated as known. Known variances matter little here because there are more than 50 persons per arm in nearly all studies. The second stage is exchangeable normal with unknown $(\mu,\tau)$. The hyperprior is locally uniform on $\mu$ (reasonable because even 5 or 10 studies make the combined data relatively informative about the centre) and locally uniform on $\tau$ (for convenience) (p. 126).
 
 **Results (pp. 127–128).** Table 5.5 (log-odds scale, p. 127):
 
@@ -299,7 +301,7 @@ Refinements exist (e.g. adding 0.5 to each count) but do not matter when sample 
 - $p(\tau|y)$ peaks at a nonzero value, but zero has a density only about 25% lower than the mode (p. 127).
 - The posterior median of $\tau$ (0.13) is small compared with the $\sigma_j$, so there is considerable shrinkage, especially for imprecise studies (e.g. 1, 6, 18), and large reductions in posterior variance. Fixing $\tau$ would give standard deviations too small. Individual-effect posteriors are skewed away from the overall mean, and imprecise studies (2, 18) have longer tails than precise ones (7, 14) (p. 127).
 - $E(\mu|\tau,y)$ ranges only from about −0.26 to just over −0.24 over plausible $\tau$. But $\text{sd}(\mu|\tau,y)$ varies by a factor of more than 2. At $\tau=0.13$ it is 0.060, whereas averaging over $\tau$ gives $\text{sd}(\mu|y)=0.071$ (p. 127).
-- 95% highest-posterior-density interval for $\mu$ is $[-0.37,-0.11]$, or $[0.69,0.90]$ as an odds ratio. Complete pooling ($\tau=0$) gives the narrower $[0.70,0.85]$. The original discussion called that an "unusually narrow range of uncertainty". The hierarchical analysis suggests this was due to an inappropriate model that implicitly claimed all studies were identical. The data suggest $\tau$ near zero but plausibly up to about 0.3 (p. 127).
+- 95% highest-posterior-density interval (the narrowest interval holding 95% posterior probability) for $\mu$ is $[-0.37,-0.11]$, or $[0.69,0.90]$ as an odds ratio. Complete pooling ($\tau=0$) gives the narrower $[0.70,0.85]$. The original discussion called that an "unusually narrow range of uncertainty". The hierarchical analysis suggests this was due to an inappropriate model that implicitly claimed all studies were identical. The data suggest $\tau$ might be close to zero but might also plausibly be as high as 0.3 (p. 127).
 - For a population where no study was done, a new-study effect (exchangeable with the others) might be more reasonably targeted than the overall mean; in that case uncertainty is even greater (Table 5.5). Uncertainty for an individual patient adds another component. There is just over 10% posterior probability that a new study's true effect is positive (p. 128).
 
 > **Intuition note.** The overall mean is estimated well, but the effect in a new study carries both uncertainty about $\mu$ and real between-study variation $\tau$. Assuming $\tau=0$ would hide the second part.
@@ -318,7 +320,7 @@ The choice of "noninformative" prior for $\tau$ can have a big effect, especiall
 **Uniform priors (p. 129).**
 - *Uniform on $\log\tau$* gives an improper posterior. A compact range $[-A,A]$ makes the posterior depend strongly on the lower bound $-A$. The reason is that the marginal likelihood $p(y|\tau)$ approaches a finite nonzero value as $\tau\to0$, so the posterior has infinite mass as $\log\tau\to-\infty$. In a hierarchical model the data can never rule out a group-level variance of zero.
 - *Uniform on $\tau$* has a finite integral near zero and is the authors' usual choice (Section 5.5). But it has slight miscalibration toward positive values, from infinite prior mass as $\tau\to\infty$. With $J=1$ or $2$ the posterior is improper (essentially concluding $\tau=\infty$, no pooling). The authors find this reasonable in a sense but awkward because the data have no say. For small $J$ such as 4 or 5, the heavy right tail may overestimate $\tau$ and under-pool.
-- *Equivalences:* uniform on $\log\tau$ equals $p(\tau)\propto\tau^{-1}$ or $p(\tau^2)\propto\tau^{-2}$, an inverse-$\chi^2$ with 0 degrees of freedom (a limit of proper inverse-gamma priors). Uniform on $\tau$ equals $p(\tau^2)\propto\tau^{-1}$, an inverse-$\chi^2$ with $-1$ df. It is not easily a limit of inverse-$\chi^2$ densities, but can be a limit of the half-$t$ family on $\tau$ as the scale $\to\infty$ (any $\nu$).
+- *Equivalences:* uniform on $\log\tau$ equals $p(\tau)\propto\tau^{-1}$ or $p(\tau^2)\propto\tau^{-2}$, an inverse-$\chi^2$ with 0 degrees of freedom (a limit of proper inverse-gamma priors). Uniform on $\tau$ equals $p(\tau^2)\propto\tau^{-1}$, an inverse-$\chi^2$ with $-1$ df. It is not easily a limit of inverse-$\chi^2$ densities, but can be a limit of the half-$t$ family (the $t$ distribution restricted to positive values) on $\tau$ as the scale $\to\infty$ (any $\nu$).
 - *Uniform on $\tau^2$*: not recommended, with larger miscalibration toward high values, and it needs $J\ge4$ for a proper posterior (pp. 129–130).
 
 **Inverse-gamma$(\epsilon,\epsilon)$ (p. 130).** $\tau$'s marginal likelihood has no simple conjugate family, but inverse-gamma for $\tau^2$ is *conditionally conjugate* given the other parameters. Inverse-gamma$(\alpha,\beta)$ equals scaled inverse-$\chi^2$ with $s^2=\beta/\alpha$ and $\nu=2\alpha$. As $\epsilon\to0$ the posterior is improper, so $\epsilon$ must be chosen reasonably. When low $\tau$ is possible, inferences are very sensitive to $\epsilon$ and the prior hardly looks noninformative (p. 130).

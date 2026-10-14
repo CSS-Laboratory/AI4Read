@@ -39,7 +39,7 @@ Write the digest in exactly the format of the DIGEST SPEC below. The rules, in o
 
 11. **Bridges.** Propose only; label each `same-math`, `structural-analogy` or `metaphor`. Use `same-math` only when the mathematics is literally the same.
 
-12. **Length.** A digest is a guide to the source, not a second copy of it. Target total length: about **{{TARGET_WORDS}} words** (the source unit has about {{SOURCE_WORDS}} words). Keep all math, definitions, theorems and the author's examples; compress prose arguments to their steps and conclusions; do not repeat in L3 what the source says twice; keep intuition notes to 2–3 sentences. Going somewhat over the target is fine for dense math; going far over it is not.
+12. **Length.** A digest is a guide to the source, not a second copy of it. Target total length: about **{{TARGET_WORDS}} words** (the source unit has about {{SOURCE_WORDS}} words). Keep all math, definitions, theorems and the author's examples; compress prose arguments to their steps and conclusions; do not repeat in L3 what the source says twice; keep intuition notes to 2–3 sentences. Going somewhat over the target is fine for dense math; going far over it (more than 1.3 × target) is not. Plan the budget before writing: L0–L2 together ≈ 15% of the target, L3 ≈ 60%, all other sections ≈ 25%.
 
 13. **Hard limits.** L1: at most 120 words — count them. L2: 5–10 bullets, never more. Quotations: your own words, except at most **10 short quotes** (≤ 25 words each) in the whole digest, with page numbers.
 

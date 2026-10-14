@@ -13,26 +13,28 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 15
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 11
 ---
 # The Nature and Necessity of Scientific Revolutions
 
 ## L0 — One line
-Kuhn argues that scientific revolutions, in which an older paradigm gives way to an incompatible newer one, are historically the rule for new theories and almost all new kinds of phenomena, and that it is hard to see how new theories could arise without them; he also argues that paradigm choice cannot be settled by the criteria of normal science alone.
+Kuhn argues that, after the pre-paradigm period, scientific revolutions, in which an older paradigm gives way to an incompatible newer one, are historically the rule for new theories and almost all new kinds of phenomena, and that it is hard to see how new theories could arise without such destructive changes in beliefs about nature; he also argues that paradigm choice cannot be settled by the criteria of normal science alone.
 
 ## L1 — The gist (≤ 120 words)
-Kuhn asks what scientific revolutions are and why they are needed. He compares them with political revolutions: both start from a felt malfunction, and both end in a choice between incompatible ways of life that no neutral higher authority can settle. He argues that new phenomena and theories arise from anomalies, so a successful new theory must conflict with its predecessor. He rejects the positivist claim that Newton's laws are a special case of Einstein's, because the key terms change meaning. Paradigms also carry standards of problem and solution, so rival camps talk past each other and each argues partly in a circle. This matters because it explains why science is not simply cumulative.
+Kuhn asks what scientific revolutions are and why they are needed. Like political revolutions, they start from a felt malfunction and end in a choice between incompatible ways of life that no higher authority can settle. He argues that new phenomena and theories arise from anomalies, so a successful new theory must conflict with its predecessor. He rejects the positivist claim that Newton's laws can be derived from Einstein's as a special case: the derived laws are not Newton's unless their key terms are reinterpreted. Paradigms also carry standards of problem and solution; to the extent that rival camps disagree on these, they talk through each other, arguing partly in a circle. This is why science is not simply cumulative.
 
 **Prerequisites:** the earlier chapters' notions of paradigm, normal science, anomaly and crisis; basic Newtonian versus relativistic mechanics (mass, velocity, $c$); what a logical derivation is.
 
 ## L2 — Key ideas (5–10 bullets)
 - Scientific revolutions are non-cumulative episodes in which an older paradigm is replaced wholly or partly by an incompatible new one (p. 92). This is how Kuhn says revolutions are "here taken" to be.
 - The political parallel has two aspects. First, both begin with a growing sense of malfunction. Second, in both, the rival camps have no framework above themselves to judge the dispute (pp. 93–94).
-- Paradigm choice is circular: each side uses its own paradigm to defend itself. This can persuade, but it is not logically or probabilistically compelling for outsiders (p. 94).
+- When paradigms enter a debate about paradigm choice, their role is circular: each side uses its own paradigm to defend itself. This can persuade, but it is not logically or probabilistically compelling for outsiders (p. 94).
 - Cumulative acquisition of unanticipated novelty is logically possible but historically an almost non-existent exception. Novelty can emerge only where anticipations fail, so new theories come from anomalies and must predict differently from their predecessors (pp. 95–98).
-- The positivist view that Newtonian dynamics is a special case of Einsteinian dynamics fails. The "derived" laws use Einsteinian concepts, not Newtonian ones (pp. 98–102).
-- Rival paradigms differ in substance and also in methods, problem-fields and standards of solution. Kuhn calls successive traditions often "incommensurable" (p. 103).
+- The positivist view that Newtonian dynamics can be derived from Einsteinian as a special case fails. The "derived" laws use Einsteinian concepts, not Newtonian ones; an out-of-date theory can be viewed as a special case of its successor only after it is transformed (pp. 98–103).
+- Rival paradigms differ in substance and also in methods, problem-fields and standards of solution. Kuhn calls successive traditions often "incommensurable" (lacking a common standard by which to compare them) (p. 103).
 - The Newtonian, chemical and Maxwellian examples show that standards change without simply rising. Some changes have since been reversed (pp. 104–109).
-- Because paradigms bundle theory, methods and standards, rival camps talk through each other, and they must also weigh which solved problems matter more. The question of values lies outside normal science (pp. 109–110).
+- Because paradigms bundle theory, methods and standards, rival camps, to the extent that they disagree about what is a problem and what a solution, talk through each other, and they must also weigh which solved problems matter more. The question of values lies outside normal science (pp. 109–110).
 
 ## L3 — Walkthrough
 
@@ -87,21 +89,21 @@ Kuhn asks what scientific revolutions are and why they are needed. He compares t
 3. Recognized anomalies. Kuhn says this type alone gives rise to new theories (p. 97).
 
 - If new theories are called forth to resolve anomalies, then a successful new theory must somewhere predict differently from its predecessor. That cannot happen if the two are logically compatible, so the second must displace the first (p. 97).
-- Energy conservation seems today a logically higher theory. Historically it emerged from a crisis involving incompatibility between Newtonian dynamics and recent consequences of the caloric theory. It entered science only after the caloric theory was rejected (p. 98).
+- Energy conservation seems today a logically higher theory. Historically it emerged from a crisis involving incompatibility between Newtonian dynamics and recent consequences of the caloric theory (the theory that heat is a fluid substance). It entered science only after the caloric theory was rejected. Kuhn finds it hard to see how new theories could arise without such destructive changes in beliefs about nature (p. 98).
 - Kuhn's verdict: logical inclusiveness remains a permissible view of the relation between successive theories, but a historical implausibility (p. 98).
 
 *Intuition note.* New theories arise only from recognized anomalies, where the old paradigm fails. A theory logically compatible with the old one could not predict differently from it. So a successful new theory has to disagree with the old at some point.
 
 ### The positivist objection and Kuhn's reply (pp. 98–103)
-**Setting.** The prevalent interpretation of theory, associated with early logical positivism, would restrict an accepted theory's range and meaning so that it could not conflict with any later theory. The best-known case is Einstein versus Newton. Kuhn takes the two as incompatible in the way Copernican and Ptolemaic astronomy are: Einstein's can be accepted only if Newton's is recognized as wrong. He notes this is a minority view (p. 98).
+**Setting.** The prevalent interpretation of theory, associated with early logical positivism (a philosophy that treats as meaningful only claims checkable by observation or logic), would restrict an accepted theory's range and meaning so that it could not conflict with any later theory. The best-known case is Einstein versus Newton. Kuhn takes the two as incompatible in the way Copernican and Ptolemaic astronomy are: Einstein's can be accepted only if Newton's is recognized as wrong. He notes this is a minority view (p. 98).
 
 **Objection (positivist view, as Kuhn states it) (pp. 99–100).**
-- Relativistic dynamics cannot have shown Newtonian dynamics wrong, since engineers and some physicists still use it successfully (p. 99).
+- Relativistic dynamics cannot have shown Newtonian dynamics wrong, since most engineers and, in selected applications, many physicists still use it with great success (p. 99).
 - Einstein's theory shows Newtonian predictions are as good as our instruments under restrictive conditions, for example relative velocities small compared with the velocity of light. Newtonian theory seems then derivable from Einsteinian as a special case (p. 99).
 - No theory can conflict with its special case. Einstein refuted only extravagant claims, such as exact precision or validity at very high velocities. These were never properly part of science. Purged of them, Newtonian theory has never been challenged and cannot be (p. 99).
 
 **Kuhn: the argument would make any theory immune to attack.**
-- Some variant of it would make immune to attack any theory used by a significant group of competent scientists. Kuhn's example is phlogiston, which gave order to many phenomena. It explained burning and the common properties of metals. It also explained acid formation and the decrease of air volume in combustion (pp. 99–100).
+- Some variant of it would make immune to attack any theory used by a significant group of competent scientists. Kuhn's example is the phlogiston theory (phlogiston: a substance thought to be released when bodies burn), which gave order to many phenomena. It explained burning and the common properties of metals. It also explained acid formation and the decrease of air volume in combustion (pp. 99–100).
 - To save theories this way, their range must be limited to the phenomena and precision already tested. Taken a step further, this bars scientists from speaking "scientifically" about any phenomenon not already observed. It also bars them from relying on a theory in new areas or at new precision (p. 100).
 - Kuhn calls these prohibitions logically unexceptionable, but accepting them would end the research through which science develops (p. 100).
 - Commitment to a paradigm must extend to areas and precision with no full precedent. Otherwise there would be no unsolved puzzles. Without surprises, anomalies and crises, the community would return to something like its pre-paradigm state (pp. 100–101).
@@ -113,7 +115,7 @@ Kuhn asks what scientific revolutions are and why they are needed. He compares t
 - Kuhn calls the derivation spurious, at least to this point. The $N_i$ are a special case of relativistic mechanics but not Newton's laws, unless those laws are reinterpreted in a way impossible before Einstein (p. 101).
 - The variables in the $N_i$ still represent Einsteinian space, time and mass. Their referents differ from the Newtonian concepts of the same names. Newtonian mass is conserved, while Einsteinian mass is convertible with energy. Only at low velocities may they be measured alike, and even then they must not be conceived as the same (p. 102).
 - So either the $N_i$ are not Newtonian, or, if definitions are changed, Newton's laws have not been derived in any generally recognized sense of "derive" (p. 102).
-- The argument does explain why Newton's laws seemed to work. It justifies a driver acting as if in a Newtonian universe, and the teaching of earth-centered astronomy to surveyors. It does not show Newton's laws to be a limiting case of Einstein's. In the passage to the limit, Kuhn says we have had to alter the fundamental structural elements of which the universe is composed (p. 102).
+- The argument does explain why Newton's laws seemed to work. It justifies a driver acting as if in a Newtonian universe; an argument of the same type is used to justify teaching earth-centered astronomy to surveyors. It does not show Newton's laws to be a limiting case of Einstein's. In the passage to the limit, Kuhn says we have had to alter the fundamental structural elements of which the universe is composed (p. 102).
 - The change in meaning of familiar concepts is central to the revolutionary impact of Einstein's theory. It is subtler than the earlier shifts (geocentrism to heliocentrism, phlogiston to oxygen, corpuscles to waves) but no less destructive of a paradigm (p. 102).
 - Kuhn suggests it may be a prototype. Because no new objects or concepts were added, it shows revolution as a displacement of the conceptual network through which scientists view the world (p. 102).
 - An out-of-date theory can be viewed as a special case of its successor only after transformation, with hindsight and the new theory's guidance. Even if that transformation were a legitimate device, the result would be a theory so restricted that it could only restate what is known. It would have economy but could not guide research (p. 103).
@@ -132,13 +134,13 @@ Kuhn asks what scientific revolutions are and why they are needed. He compares t
 - **Collisions.** Corpuscles act only by contact, so collisions became a new subject. Descartes posed the problem. Huyghens, Wren and Wallis advanced it. Newton embedded their results in his laws. Equal "action" and "reaction" are the changes in quantity of motion in a collision, and the same change defines force in the second law (p. 105).
 - **Gravity.** Gravity, as innate attraction between every pair of particles, was an occult quality in the same sense as the scholastic "tendency to fall." While the standards of corpuscularism remained in effect, the search for a mechanical explanation of gravity was one of the most challenging problems for those who accepted the *Principia* as paradigm. The only apparent option was to reject Newton's theory, and many did (p. 105).
 - Neither view triumphed. Scientists gradually accepted that gravity is innate. By the mid-eighteenth century this was almost universal. It was a reversion, which Kuhn says is not a retrogression, to a scholastic standard. Innate attractions and repulsions joined size, shape, position and motion as irreducible primary properties of matter (pp. 105–106).
-- **Effects.** By the 1740s electricians could speak of the attractive "virtue" of the electric fluid without ridicule. Electrical action-at-a-distance became a subject of study, so charging by induction could be recognized. Previously it was attributed to electrical "atmospheres" or to leakage. This led to Franklin's analysis of the Leyden jar and a new Newtonian paradigm for electricity (p. 106).
-- Eighteenth-century work on chemical affinities derives from the same legitimization. Without it, Lavoisier's and Dalton's later work would be incomprehensible (p. 106).
+- **Effects.** By the 1740s electricians could speak of the attractive "virtue" of the electric fluid without ridicule. Electrical action-at-a-distance became a subject of study, so charging by induction (charging a body by bringing a charged body near it, without contact) could be recognized. Previously it was attributed to electrical "atmospheres" or to leakage. This led to Franklin's analysis of the Leyden jar (an early device for storing electric charge) and a new Newtonian paradigm for electricity (p. 106).
+- Eighteenth-century work on chemical affinities derives from the same legitimization. Without the data and chemical concepts developed in that work, Lavoisier's and, more particularly, Dalton's later work would be incomprehensible (p. 106).
 
 ### Examples 2–3: chemistry and Maxwell (pp. 107–108)
 - **Chemistry.** Before the chemical revolution, chemistry had to explain the qualities of substances using a few "principles," phlogiston among them. Lavoisier's reform did away with the principles and so removed some explanatory power. To compensate, standards changed. During much of the nineteenth century, failure to explain the qualities of compounds was no indictment of a theory (p. 107).
-- **Maxwell.** Wave theorists of light, Maxwell included, held that waves need a material ether, and designing one was a standard problem. Maxwell's electromagnetic theory gave no account of such a medium and made one harder to provide. It was initially widely rejected for this reason (p. 107).
-- As the theory became a paradigm, attitudes changed. Early twentieth-century scientists saw Maxwell's insistence on a mechanical ether as lip service, which Kuhn says it emphatically had not been. They abandoned the attempts and spoke of electrical "displacement" without saying what is displaced. The new problems and standards had much to do with the emergence of relativity (pp. 107–108).
+- **Maxwell.** Wave theorists of light, Maxwell included, held that waves need a material ether (a medium thought to fill space and carry light waves), and designing one was a standard problem. Maxwell's electromagnetic theory gave no account of such a medium and made one harder to provide. It was initially widely rejected for this reason (p. 107).
+- As the theory became a paradigm, attitudes changed. Early twentieth-century scientists saw Maxwell's insistence on a mechanical ether as lip service, which Kuhn says it emphatically had not been. They abandoned the attempts and spoke of electrical "displacement" (a quantity in Maxwell's theory of electric fields) without saying what is displaced. The new problems and standards had much to do with the emergence of relativity (pp. 107–108).
 
 ### Standards do not simply improve (pp. 108–109)
 - The case for cumulative development of problems and standards would be easier if changes always went from lower to higher methodological types. Some historians have argued this (p. 108).
@@ -153,7 +155,7 @@ Kuhn asks what scientific revolutions are and why they are needed. He compares t
 - This gives Kuhn's first explicit indication of why paradigm choice regularly raises questions that normal-science criteria cannot resolve. To the extent, "as significant as it is incomplete," that schools disagree about what counts as problem and solution, they will "inevitably talk through each other" (p. 109).
 - In the resulting partially circular arguments, each paradigm is shown to satisfy more or less its own criteria and to fall short of a few of its opponent's (pp. 109–110).
 - There is a further source of incomplete contact. No paradigm solves all the problems it defines, and no two leave all the same problems unsolved. So debates always ask which problems it is more significant to have solved. This is a question of values, answerable only by criteria outside normal science. That recourse to external criteria most obviously makes paradigm debates revolutionary (p. 110).
-- Kuhn announces something more fundamental: paradigms are constitutive of nature as well as of science (p. 110). He develops this in the next section.
+- Kuhn announces something more fundamental: so far he has argued only that paradigms are constitutive of science; now he wishes to display a sense in which they are constitutive of nature as well (p. 110). He develops this in the next section.
 
 *Intuition note.* A paradigm gives both a map of nature and some directions for map-making. To the extent that two groups differ on those directions, they talk through each other and shared tests settle less. Debates also involve the question which problems it is more significant to have solved.
 
@@ -197,9 +199,9 @@ Each group finds its own paradigm better, with no arithmetic error. Summing over
 - [metaphor] Paradigm as map plus map-making rules ↔ model selection: the criteria for good models are partly set by the modelling tradition itself.
 
 ## Questions this raises
-- If paradigm choice is "persuasion only," what makes some persuasions rational? Does Kuhn say what limits them (p. 94)?
+- If the circular argument in a paradigm debate has only the status of persuasion, what makes some persuasions rational? Does Kuhn say what limits them (p. 94)?
 - If standards of solution can reverse (gravity, chemical qualities), in what sense, if any, does science progress (p. 108)?
-- Kuhn says paradigms are constitutive of nature as well as of science. What does he mean, and how does it relate to the meaning-change argument (pp. 102, 110)?
+- Kuhn says he will display a sense in which paradigms are constitutive of nature as well as of science. What sense, and how does it relate to the meaning-change argument (pp. 102, 110)?
 - Can the tested-range restriction of the positivist view be defended for some purposes, such as engineering, without being a view of science as a whole (pp. 99–100, 102)?
 
 ## Reading notes
