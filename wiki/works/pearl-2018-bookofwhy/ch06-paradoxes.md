@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 17
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 7
 ---
 # Paradoxes Galore! (Monty Hall, Berkson, Simpson, Lord)
 
@@ -31,13 +33,13 @@ Why do the Monty Hall, Berkson, Simpson and Lord puzzles baffle even experts? Pe
 - Berkson's paradox, the two-coin experiment and the dating example are all collider bias from selecting which cases enter the data. Pearl says Reichenbach's common cause principle (a correlation needs one variable to cause the other, or a common cause) is too strong, because of such selection (pdf 183–186).
 - Simpson's reversal is a numerical fact about fractions, and Pearl does not call it a paradox by itself. The paradox is the clash with the intuition that a drug cannot be bad for men, bad for women and good for people (pdf 188–189).
 - Savage's sure-thing principle (if an action looks good whichever way an event C turns out, take it) needs, in Pearl's corrected version, a causal condition: the action must not change the probability of C. With that condition, Pearl says, no BBG drug (bad for men, bad for women, good for people overall) can exist (pdf 190–191).
-- Whether to pool or stratify depends on the causal diagram, not on the data. A confounder (Gender) means stratify. A mediator (Blood Pressure) means pool. Time order is a rule that works in many cases but is not foolproof (pdf 191–194).
+- Whether to pool or stratify depends on the causal diagram, not on the data. In his examples, a confounder (Gender) means stratify and a mediator (Blood Pressure) means pool. Time order is a rule that works in many cases but is not foolproof (pdf 191–194).
 - Lord's paradox is a cousin of Simpson's paradox. The data alone cannot say which of the two statisticians to believe. Pearl says the diagram shows which adjustment answers the question asked (pdf 196–200).
 
 ## L3 — Walkthrough
 
 ### Opening (pdf 177)
-Pearl says the birth-weight paradox from Chapter 5 belongs to a large class of paradoxes about the tension between causation and association. The two sit on different rungs of the Ladder of Causation (the book's hierarchy of levels of reasoning, introduced earlier). Intuition runs on causal logic, while data obey probabilities and proportions. Paradoxes appear when we apply the rules of one realm to the other. Pearl adds that, to the extent statisticians have struggled with these (he says they "whiffed rather badly"), it is a warning sign that something might be amiss with viewing the world without a causal lens.
+Pearl says the birth-weight paradox from Chapter 5 belongs to a large class of paradoxes about the tension between causation and association. The two sit on different rungs of the Ladder of Causation (the book's hierarchy of levels of reasoning, introduced earlier). Intuition runs on causal logic, while data obey probabilities and proportions. Paradoxes appear when we apply the rules of one realm to the other. Like optical illusions, they also reveal how the brain works. Pearl adds that, to the extent statisticians have struggled with these (he says they "whiffed rather badly"), this signals that looking at the world without causal thinking may be flawed.
 
 ### The Perplexing Monty Hall Problem (pdf 178–183)
 **The puzzle.** Marilyn vos Savant's 1990 column asked: you pick Door 1 of three (one car, two goats). The host, who knows what is behind the doors, opens Door 3 (a goat) and offers a switch to Door 2. Should you switch? (pdf 178)
@@ -70,7 +72,7 @@ Switching wins in 2 of 3 cases. The opened door is implicit. In row 2 the host m
 - Why does belief in Door 2 rise from 1/3 to 2/3 even though the host's goat was inevitable? He could not open Door 1, but he could have opened Door 2. His not doing so makes it more likely that he was forced to open Door 3 (pdf 181).
 - General theme of Bayesian analysis: a hypothesis that has survived a test that threatens its validity becomes more likely, and the greater the threat, the more likely it becomes (pdf 182). Door 2 was vulnerable, Door 1 was not, so Door 1 stays at 1/3.
 - In Let's Fake a Deal, Door 1 is also vulnerable (the host could have revealed the car), so both doors stay equal (pdf 182).
-- Belief propagation (Chapter 3) gives P(Door 2) = 2/3 for Let's Make a Deal and 1/2 for Let's Fake a Deal (pdf 182).
+- Belief propagation (Chapter 3; passing probability updates along the links of a network) gives P(Door 2) = 2/3 for Let's Make a Deal and 1/2 for Let's Fake a Deal (pdf 182).
 
 **Why we see a paradox.** Pearl wants a resolution to explain the paradox as well as dissolve it. Paul Erdos did not believe the answer until a simulation convinced him (pdf 183). Pearl cites Persi Diaconis, who said our brains are not wired to do probability problems very well. Pearl adds that brains are wired for causal problems, and this wiring produces systematic probabilistic errors. Because there is no direct or common cause linking the two, we find the association incomprehensible; our brains are not prepared to accept correlations without cause, so special training is needed to spot where they arise. Once we learn to recognize colliders, the paradox stops confusing us (pdf 183).
 
@@ -78,7 +80,7 @@ Switching wins in 2 of 3 cases. The opened door is implicit. In row 2 the host m
 
 ### More Collider Bias: Berkson's Paradox (pdf 183–186)
 - **Berkson (1946):** in hospital studies, two diseases unrelated in the general population can appear associated among patients (pdf 183).
-- **Diagram (Figure 6.3):** Disease 1 → Hospitalization ← Disease 2. A hospital-based study controls for Hospitalization, a collider. The induced association is positive here because both diseases must be present for hospitalization (in the extreme case imagined). In many earlier examples it was negative, through the explain-away effect (pdf 183–184).
+- **Diagram (Figure 6.3):** Disease 1 → Hospitalization ← Disease 2. A hospital-based study controls for Hospitalization, a collider. The induced association is positive here because both diseases must be present for hospitalization (in the extreme case imagined). In many earlier examples it was negative, through the explain-away effect (once one cause is known, the other becomes less likely) (pdf 183–184).
 - **Sackett (1979) data (Table 6.3, pdf 184).**
 
 | | General population: bone disease yes / no (% yes) | Hospitalized in last six months: yes / no (% yes) |
@@ -86,7 +88,7 @@ Switching wins in 2 of 3 cases. The opened door is implicit. In row 2 the host m
 | Respiratory yes | 17 / 207 (7.6) | 5 / 15 (25.0) |
 | Respiratory no (control) | 184 / 2,376 (7.2) | 18 / 219 (7.6) |
 
-Among hospitalized people with respiratory disease, bone disease jumps to 25 percent. Sackett called it "admission rate bias" or "Berkson bias." He admits that confounding could also contribute. The debate continues, now about how large the bias is (pdf 184).
+For a long time epidemiologists refused to believe in this bias, even in 1979, when Sackett gave strong evidence for it. Among hospitalized people with respiratory disease, bone disease jumps to 25 percent. Sackett called it "admission rate bias" or "Berkson bias." He admits that confounding could also contribute. The debate is, to some extent, ongoing, and has moved on to how large the bias can be (pdf 184).
 - Pearl lists earlier collider-induced correlations: Pigou (1911), Burks (1926), Simon (1954) (pdf 184).
 
 **Two-coin experiment (pdf 185).** Flip two coins 100 times and record only trials where at least one is heads (about 75 entries). In the record the coins look dependent: whenever Coin 1 is tails, Coin 2 is heads. You conditioned on a collider by censoring the tails-tails outcomes.
@@ -117,10 +119,10 @@ Women: 5% (control) vs 7.5% (drug). Men: 30% vs 40%. Total: 22% (control) vs 18%
 - Intuition says no drug can cause and prevent the same heart attacks. Pearl says this intuition is right, that a BBG drug cannot exist, and that this can be proved mathematically (pdf 189).
 
 **Savage's sure-thing principle (pdf 190–191).**
-- *Savage (1954):* a businessman would buy a property if the Democrat won and would buy if the Republican won, so he should buy. Pearl notes Savage called it "extra-logical" and says it rests on causal logic (pdf 190).
+- *Savage (1954):* a businessman would buy a property if the Democrat won and would buy if the Republican won, so he should buy. Pearl notes Savage called it "extra-logical" and says that, when properly interpreted, it rests on causal, not classical, logic (pdf 190).
 - Pearl's mapping: Property A vs B. If the Democrat wins, 5% vs 8% chance of $1. If the Republican wins, 30% vs 40%. Pearl says these quantities are the same as in the Simpson story (the text prints 8% here, while Table 6.4 gives 7.5%) (pdf 190).
 - *Flaw:* if the businessman's decision could change the election outcome, buying A might be better. Savage left unstated the causal assumption that the decision does not affect the election (pdf 190–191).
-- **Corrected principle (Pearl):** an action that increases the probability of an outcome given C and given not-C also increases it when C is unknown, provided the action does not change the probability of C. In particular, there is no BBG drug. This does not follow from classical logic. Its proof needs the do-operator calculus (pdf 191).
+- **Corrected principle (Pearl):** an action that increases the probability of an outcome given C and given not-C also increases it when C is unknown, provided the action does not change the probability of C. In particular, there is no BBG drug. This does not follow from classical logic. Its proof needs the do-operator calculus (rules for reasoning about interventions, written $do(X)$) (pdf 191).
 
 *Intuition note.* In Pearl's corrected principle, an action that is good in every subgroup is good overall, provided the action does not change the probability of the subgroup. Drug D does not change a patient's gender, so no BBG drug can exist causally. The totals in Table 6.4 mislead because gender also shapes who takes the drug (confounding).
 
@@ -137,7 +139,7 @@ Drug D is therefore BBB: bad for women, bad for men and bad for people (pdf 192;
 **History (pdf 193–194).**
 - Simpson (1951) gave two stories with the same data. In one, aggregating was "the sensible interpretation." In the other, partitioning was. So he saw a paradox, but offered only common sense (pdf 193).
 - Lindley and Novick (1981) considered using the language of causation but chose not to, because they said the concept does not seem well defined (pdf 193–194). Pearl says Lindley told him in 2009 he would not have written this had Pearl's book existed in 1981 (pdf 194).
-- **Objection (some readers):** use temporal order: stratify on variables measured before treatment (gender), aggregate over those measured after (blood pressure). **Pearl replies:** this works in many cases but is not foolproof. In M-bias (Game 4, Chapter 4), B can precede A, yet conditioning on B would violate the back-door criterion. We should consult the causal structure (pdf 194).
+- **Objection (some readers):** use temporal order: stratify on variables measured before treatment (gender), aggregate over those measured after (blood pressure). **Pearl replies:** this works in many cases but is not foolproof. In M-bias (Game 4, Chapter 4; a pre-treatment variable that is a collider on a back-door path), B can precede A, yet conditioning on B would violate the back-door criterion. We should consult the causal structure (pdf 194).
 
 **Real cases (pdf 194–195).**
 - *Kidney stones (1996, observational):* open surgery beat endoscopic surgery for small stones and for large stones, but had a lower success rate overall. Larger stones led more often to open surgery and had a worse prognosis (pdf 194).
@@ -158,7 +160,7 @@ Drug D is therefore BBB: bad for women, bad for men and bad for people (pdf 192;
 
 **Pearl's diagram (Figure 6.8, pdf 198–199).** Arrows: S (Sex) → $W_I$, S → $W_F$, $W_I \to W_F$. Gain is $Y = W_F - W_I$, a deterministic relation. The diagram marks coefficients $-1$ on $W_I \to Y$ and $+1$ on $W_F \to Y$.
 - Statistician 1: no back doors between S and Y need blocking, so the aggregate answer "no effect" is correct for the question asked (pdf 199).
-- Statistician 2: $W_I$ is not a confounder of S and Y. It is a mediator if Sex is the treatment. Controlling for it does not give the usual causal effect. At best it estimates a "direct effect" (Chapter 9). Pearl suspects he adjusted "out of habit" (pdf 199).
+- Statistician 2: $W_I$ is not a confounder of S and Y. It is a mediator if Sex is the treatment. Controlling for it does not give the usual causal effect. At best it estimates a "direct effect" (Chapter 9; the effect not passing through the mediator). Pearl suspects he adjusted "out of habit" (pdf 199).
 - Pearl notes that Lord never mentions a control diet, so we cannot even say anything about the diet's effect (pdf 199).
 
 **Wainer and Brown (2006) version (Figure 6.9, pdf 199–201).** The treatment is diet. Students eat in dining hall A or B, which serve different diets. Heavier students tend to go to B. Statistician 1 claims switching from A to B has no effect on gain ($W_F - W_I$ has the same distribution in both ellipses). Statistician 2 finds that students at $W_0$ gain more on B (pdf 199–200). Two changes in the diagram: the treatment is now D (diet), and the arrow reverses to $W_I \to D$. Now $W_I$ is a confounder of D and $W_F$ (and of D and Y). Pearl says Statistician 2 is unambiguously correct in this version, and Statistician 1 would be wrong because he measures only statistical association, not causal effects. Wainer and Brown conclude that the data alone cannot say whom to believe (pdf 200).
@@ -219,9 +221,9 @@ Joint probabilities: $\tfrac13\cdot\tfrac12=\tfrac16$ (car 1); $\tfrac13\cdot 1=
 - What changes in Lord's paradox if we want the direct effect of sex on weight gain, as the second statistician might? (Chapter 9, pdf 199)
 
 ## Reading notes
-- No printed page numbers are visible in the pages given, so all references use pdf numbers (pdf 177–202). Page 202 holds only a cartoon caption (Scaling "Mount Intervention") about methods for estimating intervention effects (back-door adjustment, instrumental variables, front-door adjustment, do-calculus), and I did not digest it.
+- No printed page numbers are visible in the pages given, so all references use pdf numbers (pdf 177–202). Page 202 holds only a cartoon caption (Scaling "Mount Intervention") about methods for estimating intervention effects (back-door adjustment, instrumental variables, front-door adjustment, do-calculus); it is not digested here.
 - Misprint, pdf 192: the text says "bad for women, bad for women, and bad for people" where "bad for men" is clearly meant.
 - Misprint, pdf 181: "different both from both Your Door and Location of Car."
 - Table 6.6 has its caption at the foot of pdf 192 and its body on pdf 193. Figure 6.6 is first mentioned on pdf 195 but printed on pdf 196.
 - The Monty Hall posterior calculation is only in the Toy example, labeled as ours. The text itself states only the results 2/3 and 1/2 and refers to belief propagation.
-- The main text says "17.5 percent" and "23.75 percent" are the adjusted rates. I checked the arithmetic.
+- The main text says "17.5 percent" and "23.75 percent" are the adjusted rates; the arithmetic is consistent with Table 6.4.

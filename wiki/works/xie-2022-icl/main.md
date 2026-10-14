@@ -13,26 +13,28 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 9
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 5
 ---
 # An Explanation of In-context Learning as Implicit Bayesian Inference
 
 ## L0 — One line
-If pretraining documents are generated from a latent document-level concept (a mixture of HMMs), a language model that fits this distribution can do in-context learning by implicitly inferring the shared concept of the prompt examples (Bayesian inference), provably so (asymptotically optimal error) under a distinguishability condition.
+If pretraining documents are generated from a latent document-level concept (a mixture of HMMs), a language model that fits this distribution can do in-context learning by implicitly inferring the shared concept of the prompt examples (Bayesian inference), provably so (asymptotically optimal error) under the paper's assumptions and a distinguishability condition.
 
 ## L1 — The gist (≤ 120 words)
-Large LMs can learn a task from a few input-output examples in the prompt, although they were never trained to do so and prompts look unlike natural text. The paper asks what makes this possible. Answer: if pretraining documents come from a mixture of HMMs with a latent concept, an LM that fits the pretraining distribution implicitly does Bayesian inference over that concept. Under a distinguishability condition, its error is asymptotically optimal despite the prompt/pretraining mismatch. In two further settings, error bounds still shrink with example length. A small synthetic dataset (GINC) shows Transformers and LSTMs reproducing several real-world phenomena. This is a first formal step toward explaining in-context learning.
+Large LMs can learn a task from a few input-output examples in the prompt, although they were never trained to do so and prompts look unlike natural text. The paper asks what makes this possible. Answer: if pretraining documents come from a mixture of HMMs with a latent concept, an LM that fits the pretraining distribution implicitly does Bayesian inference over that concept. Under the paper's assumptions and a distinguishability condition, its error is asymptotically optimal despite the prompt/pretraining mismatch. In two further settings, error bounds still shrink with example length. A small synthetic dataset (GINC) shows Transformers and LSTMs reproducing several real-world phenomena. This is a first formal step toward explaining in-context learning.
 
 **Prerequisites:** Bayes' rule and marginalization; Markov chains and hidden Markov models (HMMs); KL divergence; total-variation distance; Taylor expansion and Fisher information (for Theorem 2); matrix–vector notation.
 
 ## L2 — Key ideas (5–10 bullets)
 - **Setting.** Pretraining documents are drawn from a latent concept θ (which sets an HMM's transitions). Prompts concatenate independent examples sharing one concept θ*, so prompts are low-probability sequences under pretraining (pp. 2–4).
 - **Posterior predictive.** If the LM fits the pretraining distribution exactly, in-context prediction is a posterior predictive, p(output | prompt) = ∫ p(output | concept, prompt) p(concept | prompt) d(concept). If p(concept | prompt) concentrates on θ* as examples increase, the LM learns by "selecting" the prompt concept through marginalization (pp. 2–3).
-- **Main theorem.** Under a distinguishability condition (the KL "signal" summed over k tokens exceeds start and delimiter error terms), the in-context predictor reaches the optimal 0-1 risk as the number of examples n→∞ (Thm 1, p. 7).
+- **Main theorem.** Given the assumptions of §2.1 and a distinguishability condition (the KL "signal" summed over k tokens exceeds start and delimiter error terms), the in-context predictor reaches the optimal 0-1 risk as the number of examples n→∞ (Thm 1, p. 7).
 - **Longer examples help.** The signal grows with example length k, so information in inputs, not only in the input–output mapping, can be useful. When distinguishability fails, the bounds in Theorems 2 and 3 (under extra assumptions) shrink with k (pp. 7–9).
 - **GINC.** Transformers and LSTMs pretrained on a synthetic mixture-of-HMMs dataset show in-context accuracy rising with n and k (p. 10).
 - **Ablations.** Pretraining with one concept, or on random transitions, or testing on unseen concepts, makes in-context learning fail. A mixture of concepts matters; diverse token transitions alone are not enough (p. 10).
 - **Beyond the theory.** In GINC, larger Transformers can gain in-context accuracy even when pretraining loss is the same (e.g. 12 vs 16 layers at vocab 50). Example order matters, and zero-shot can beat few-shot (pp. 10–11).
-- **GPT-3 check.** On filtered LAMBADA, five long examples slightly beat five short ones, while duplicating short examples does not (pp. 30–31).
+- **GPT-3 check.** On filtered LAMBADA (a task of predicting a passage's final word), five long examples slightly beat five short ones, while duplicating short examples does not (pp. 30–31).
 
 ## L3 — Walkthrough
 
@@ -42,7 +44,7 @@ Large LMs can learn a task from a few input-output examples in the prompt, altho
 - **Idea.** Draw a latent concept θ that parameterizes the transitions of an HMM, then sample tokens from that HMM (p. 2). To continue documents coherently, the LM must infer θ. At test time, ICL occurs when it also infers the shared prompt concept. The authors assume the LM fits the pretraining distribution $p$ exactly. The question then becomes the *posterior predictive* of completions given prompts from a different distribution $p_{\text{prompt}}$ (p. 2):
 $$p(\text{output}\mid\text{prompt})=\int_{\text{concept}}p(\text{output}\mid\text{concept},\text{prompt})\,p(\text{concept}\mid\text{prompt})\,d(\text{concept}).\tag{1}$$
 - If $p(\text{concept}\mid\text{prompt})$ concentrates on the prompt concept as examples increase, the LM "selects" it by marginalization. ICL is then implicit Bayesian inference (p. 3).
-- **Challenge.** The Bernstein–von Mises theorem (posterior concentrates on the MLE under regularity conditions) usually assumes independent observations and/or data from the model's own distribution. Neither holds here (p. 3).
+- **Challenge.** The Bernstein–von Mises theorem (posterior concentrates on the MLE, the maximum-likelihood estimate, under regularity conditions) usually assumes independent observations and/or data from the model's own distribution. Neither holds here (p. 3).
 - **Claims** (p. 3): (i) asymptotic ICL error is optimal when the per-example signal about the concept exceeds the error from distribution mismatch; (ii) ICL error decreases with example length. The GINC dataset (Transformers and LSTMs) verifies these intuitions, and the latent concept structure is crucial in ablations.
 - Open questions beyond the theory, which studies only the pretraining distribution: scaling parameters improves ICL at the same pretraining loss; order sensitivity and zero-shot > few-shot are mirrored in GINC (p. 3).
 
@@ -55,7 +57,7 @@ $$[S_n,x_{\text{test}}]=[x_1,y_1,o^{\text{delim}},x_2,y_2,o^{\text{delim}},\dots
 - **Mismatch.** Prompts are low-probability under pretraining. Example: wiki bios go name → nationality → occupation, but prompts go name → nationality → name, with unlikely transitions such as "German" → "Mahatma Gandhi". Delimiter choice is another source (p. 4).
 - **Predictor and task.** The target is sampled from (p. 4)
 $$y_{\text{test}}\sim p_{\text{prompt}}(y\mid x_{\text{test}})=\mathbb E_{h^{\text{start}}_{\text{test}}\sim p_{\text{prompt}}(h^{\text{start}}_{\text{test}}\mid x_{\text{test}})}\big[p(y\mid x_{\text{test}},h^{\text{start}}_{\text{test}},\theta^*)\big].\tag{4}$$
-The analysed in-context predictor is $f_n(x_{\text{test}})=\arg\max_y p(y\mid S_n,x_{\text{test}})$, using the *pretraining* distribution conditioned on the prompt. Its error is $L_{0\text{-}1}(f_n)=\mathbb E_{x_{\text{test}},y_{\text{test}}\sim p_{\text{prompt}}}[\mathbf 1[f_n(x_{\text{test}})\neq y_{\text{test}}]]$ (p. 4).
+The analysed in-context predictor is $f_n(x_{\text{test}})=\arg\max_y p(y\mid S_n,x_{\text{test}})$, using the *pretraining* distribution conditioned on the prompt. Its error, the 0-1 risk (expected rate of wrong predictions), is $L_{0\text{-}1}(f_n)=\mathbb E_{x_{\text{test}},y_{\text{test}}\sim p_{\text{prompt}}}[\mathbf 1[f_n(x_{\text{test}})\neq y_{\text{test}}]]$ (p. 4).
 
 **§2.1 Assumptions** (pp. 4–5)
 - **A1 (delimiter states).** A subset $\mathcal D\subseteq\mathcal H$ emits $o^{\text{delim}}$ deterministically: $p(o^{\text{delim}}|h,\theta)=1$ for $h\in\mathcal D$, and $=0$ for $h\notin\mathcal D$. Seeing the delimiter reveals the state is in $\mathcal D$, not which one. No delimiter is assumed significantly more likely under one concept than another (p. 4).
@@ -72,7 +74,7 @@ $$\begin{aligned}p(y|S_n,x_{\text{test}})&=\int_\theta p(y|S_n,x_{\text{test}},\
 (law of total probability, Markov property, division by the constant $p(S_n,x_{\text{test}}|\theta^*)$), and so
 $$=\int_\theta\sum_{h^{\text{start}}_{\text{test}}}p(y|x_{\text{test}},h^{\text{start}}_{\text{test}},\theta)\,p(h^{\text{start}}_{\text{test}}|S_n,x_{\text{test}},\theta)\,\exp(n\cdot r_n(\theta))\,p(\theta)\,d\theta,\tag{6}$$
 with $r_n(\theta)=\tfrac1n\log\frac{p(S_n,x_{\text{test}}|\theta)}{p(S_n,x_{\text{test}}|\theta^*)}$.
-- Theorem 1 shows that under distinguishability $\exp(n\,r_n(\theta))\to0$ for every $\theta\ne\theta^*$, while $\exp(n\,r_n(\theta^*))=1$. Only θ* survives in the integral, so the prompt concept is "selected" (limit–integral exchange is justified by boundedness, dominated convergence; p. 6).
+- Theorem 1 shows that under distinguishability $\exp(n\,r_n(\theta))\to0$ for every $\theta\ne\theta^*$, while $\exp(n\,r_n(\theta^*))=1$. Only θ* survives in the integral, so the prompt concept is "selected" (limit–integral exchange is justified by boundedness, dominated convergence: a theorem allowing limit and integral to swap for bounded integrands; p. 6).
 - Lemma 1 shows that, restricted to θ*, the argmax equals the most likely label under $p_{\text{prompt}}(y|x_{\text{test}})$ (using A3). Together:
 $$\arg\max_y p(y|S_n,x_{\text{test}})\to\arg\max_y p_{\text{prompt}}(y|x_{\text{test}}).\tag{7}$$
 
@@ -107,7 +109,7 @@ so $f_n$ achieves optimal 0-1 risk: $\lim_{n\to\infty}L_{0\text{-}1}(f_n)=\inf_f
 $$\forall j>1,\quad KL_j(\theta^*\|\theta)=\tfrac12(\theta-\theta^*)^\top I_{j,\theta^*}(\theta-\theta^*)+O(\|\theta-\theta^*\|^3),\tag{16}$$
 where $I_{j,\theta^*}$ is the Fisher information matrix of the $j$-th token distribution. Let $\gamma_{\theta^*}=\frac{\max_j\lambda_{\max}(I_{j,\theta^*})}{\min_j\lambda_{\min}(I_{j,\theta^*})}$. Then for $k\ge2$ and as $n\to\infty$,
 $$\lim_{n\to\infty}L_{0\text{-}1}(f_n)\le\inf_fL_{0\text{-}1}(f)+g^{-1}\Big(O\Big(\frac{\gamma_{\theta^*}\sup_{\theta\in B}(\epsilon^\theta_{\text{start}}+\epsilon^\theta_{\text{delim}})}{k-1}\Big)\Big),\tag{17}$$
-where $g(\delta)=\tfrac12((1-\delta)\log(1-\delta)+(1+\delta)\log(1+\delta))$ is a calibration function for multiclass logistic loss on $\delta\in[0,1)$, assuming the minimizers of the 0-1 risk and the multiclass logistic risk coincide (p. 8). Since $g^{-1}$ is roughly linear for $\epsilon\le0.7$, excess risk decreases roughly as $O(1/k)$. A smaller ("well-conditioned") $\gamma_{\theta^*}$ lowers the error: no direction of θ* exists along which the output distribution changes sharply (p. 8).
+where $g(\delta)=\tfrac12((1-\delta)\log(1-\delta)+(1+\delta)\log(1+\delta))$ is a calibration function for multiclass logistic loss on $\delta\in[0,1)$, assuming the minimizers of the 0-1 risk and the multiclass logistic risk (expected log loss of the predicted label probabilities) coincide (p. 8). Since $g^{-1}$ is roughly linear for $\epsilon\le0.7$, excess risk decreases roughly as $O(1/k)$. A smaller ("well-conditioned") $\gamma_{\theta^*}$ lowers the error: no direction of θ* exists along which the output distribution changes sharply (p. 8).
 
 *Varying-length test examples.* **Theorem 3.** Let $|x_{\text{test}}|$ be uniform on $\{2,\dots,k\}$, $k\ge2$. Then for $k\ge2$ and $n\to\infty$,
 $$\lim_{n\to\infty}L_{0\text{-}1}(f_n)\le\inf_fL_{0\text{-}1}(f)+g^{-1}\Big(O\Big(\frac{\sup_{\theta\in B}(\epsilon^\theta_{\text{start}}+\epsilon^\theta_{\text{delim}})}{k-1}\Big)\Big),\tag{18}$$
@@ -119,13 +121,13 @@ under the same minimizer assumption and without continuity. The error is average
 - **GINC dataset** (Appendix F.1): uniform mixture of HMMs over 5 concepts; 1000 pretraining documents, about 10M tokens. Prompts have 0–64 examples, $k\in\{3,5,8,10\}$, 2500 prompts per setting. $y_{\text{test}}$ is the most likely output $\arg\max_yp_{\text{prompt}}(y|x_{\text{test}})$, so intrinsic error is 0 (p. 10).
 - **Main result.** GPT-2-based Transformers and LSTMs, vocabularies 50/100/150, averaged over 5 pretraining runs. In-context accuracy improves with $n$ and $k$ (Fig. 3, p. 9), "verifying our theory" (p. 10).
 - **Ablations** (4-layer Transformer, Fig. 4): one concept only (no prior) gives flat curves; pretraining on random data containing all transitions also fails; prompts from 5 random unseen concepts fail. So the mixture-of-concepts structure matters, and diverse token transitions alone do not enable ICL (p. 10).
-- **Model size and architecture** (Figs. 5–6, p. 11). Accuracy rises as Transformers grow from 4 to 12 to 16 layers. At vocab 50, 12- and 16-layer models both have validation loss 1.33, but in-context accuracy goes 81.2 → 84.7. So larger models may improve ICL beyond better pretraining loss (p. 10). The 4-layer model gets 60.2 ± 5.7 at validation loss 1.50, and the LSTM (28M parameters) gets 95.8 ± 1.11 at loss 1.35 (p. 11). LSTMs consistently beat Transformers despite fewer parameters, "perhaps" due to the similarity between HMMs and LSTMs. Scaling and architecture effects are left open (p. 10).
+- **Model size and architecture** (Figs. 5–6, p. 11). Accuracy rises as Transformers grow from 4 to 12 to 16 layers (except at vocab 150, where 12 layers give 98.4 and 16 give 98.1). At vocab 50, 12- and 16-layer models both have validation loss 1.33, but in-context accuracy goes 81.2 → 84.7. So larger models may improve ICL beyond better pretraining loss (p. 10). The 4-layer model gets 60.2 ± 5.7 at validation loss 1.50, and the LSTM (28M parameters) gets 95.8 ± 1.11 at loss 1.35 (p. 11). LSTMs consistently beat Transformers despite fewer parameters, "perhaps" due to the similarity between HMMs and LSTMs. Scaling and architecture effects are left open (p. 10).
 - **Order sensitivity** (Fig. 7 left): 10 sets of 4 examples, all 24 permutations each, one concept. Accuracy varies by 10–40% across permutations of the same set, as with GPT-3 (p. 10).
-- **Zero-shot can beat few-shot** (Fig. 7 right): with lower-entropy transitions (temperature 0.01 instead of 0.1), 12 concepts, vocab 100, few-shot accuracy first dips below zero-shot, then recovers with more examples. The authors hypothesize the distracting prompt structure causes the dip (p. 11).
+- **Zero-shot can beat few-shot** (Fig. 7 right): with lower-entropy transitions (temperature 0.01 instead of 0.1), 12 concepts, vocab 100, few-shot accuracy first dips below zero-shot, then can recover with more examples. The authors hypothesize the distracting prompt structure causes the dip (p. 11).
 
 ### §5 Discussion and related work (pp. 11–12)
 - Bernstein–von Mises does not apply since prompt examples are not independent under pretraining. Gunst and Shcherbakova give a BvM-type result for HMM observations but not for data from a different distribution (pp. 11–12). A possible route to extrapolation: factorize the concept into semantics and syntax; the LM might generalize to unseen pairs if it learns operations such as copying or reordering (p. 12).
-- Topic models (LDA) also have document-level latents but use algorithms such as EM or MCMC. Here, learning arises from Bayesian inference without an explicit algorithm. Wei et al. (2021a) analyse head/prompt tuning, not ICL (p. 12).
+- Topic models (LDA) also have document-level latents but use algorithms such as EM (expectation–maximization, iterative latent-variable fitting) or MCMC (Markov chain Monte Carlo sampling). Here, learning arises from Bayesian inference without an explicit algorithm. Wei et al. (2021a) analyse head/prompt tuning, not ICL (p. 12).
 - Prior work is said to support the intuition that reducing prompt/pretraining mismatch helps: finetuning on prompt formats, prompt-template optimization, calibration (p. 12). Meta-learning models are trained to learn, whereas ICL emerges from LM pretraining (p. 12).
 - GINC is small, so its data and models are relatively large compared with its distribution's complexity, which lets a large-scale phenomenon be studied at small scale with control over latent properties (p. 12).
 
@@ -208,7 +210,7 @@ then Lemma 2 applies.
 - *Prompts:* sample θ uniformly from Θ (A4). Start distribution uniform over entities with a randomly chosen fixed starting property per prompt. This may not satisfy A3 but works empirically (p. 27). Label $=\arg\max_yp_{\text{prompt}}(y|x_{\text{test}})$ (118), computed by conditioning the HMM on the generated prompt; this differs from the theory, which samples $y_{\text{test}}$ (pp. 27–28). Worked example (Fig. 8): start property 5, entity 3, tokens "l", then "aw", and so on (p. 28).
 - *Data sizes:* 1000 training documents of 10240 tokens and 100 validation documents of 1024 tokens. Prompts: $n\in\{0,1,2,4,8,16,32,64\}$, $k\in\{3,5,8,10\}$, 2500 per pair (p. 28).
 
-**F.2 Transformers.** GPT-2 architectures with 4, 12, 16 layers, 12 heads, 768-dim embeddings, dropout 0.1, context 1024; AdamW, batch 8, 5 epochs, peak learning rate 8e-4. Results use 5 seeds (p. 28). **F.3 LSTM.** 6 layers, embedding and hidden size 768, dropout 0.2, 10 epochs (p. 28).
+**F.2 Transformers.** GPT-2 architectures with 4, 12, 16 layers, 12 heads, 768-dim embeddings, dropout 0.1 (randomly zeroing units during training), context 1024; AdamW (an Adam-type gradient optimizer with weight decay), batch 8, 5 epochs, peak learning rate 8e-4. Results use 5 seeds (p. 28). **F.3 LSTM.** 6 layers, embedding and hidden size 768, dropout 0.2, 10 epochs (p. 28).
 
 **F.4 Vocabulary size** (pp. 29–30). To do well the model must infer both the concept and the last HMM hidden state. More symbols make hidden-state inference easier, even though the number of output classes increases. Accuracy generally improves with vocabulary size (Figs. 11–14).
 
@@ -229,7 +231,7 @@ In log terms the signal is $k\ln(1/0.8)=0.223k$ against an error of $\ln1.5=0.40
 ## Concepts
 - [[in-context-learning]] — the LM does a task by conditioning on a prompt of input-output examples, with no weight updates; here, implicit Bayesian inference of a shared latent concept (p. 1–3)
 - [[zero-shot-few-shot-prompting]] — prompts with 0 or $n$ examples; in GINC zero-shot can beat few-shot early on (p. 11)
-- [[latent-concept]] (new) — document-level latent θ that parameterizes an HMM's transitions and determines the task (pp. 2–3)
+- [[latent-concept]] (new) — document-level latent θ that parameterizes an HMM's transitions; together with the prompt start distribution it determines the in-context task (pp. 2–3, 26)
 - [[hidden-markov-model]] (new) — sequence model with hidden states $h_t$ that emit observed tokens; the pretraining document model (p. 3)
 - [[mixture-of-hmms-pretraining]] (new) — pretraining distribution $p(o_{1:T})=\int p(o_{1:T}|\theta)p(\theta)d\theta$ (p. 3)
 - [[posterior-predictive]] (new) — $p(\text{output}|\text{prompt})$ with the latent concept marginalized out (p. 2)

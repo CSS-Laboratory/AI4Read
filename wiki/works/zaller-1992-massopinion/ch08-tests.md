@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 18
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 9
 ---
 # Tests of the one-message model
 
@@ -20,18 +22,18 @@ pipeline_version: 0.1
 Zaller's reception–acceptance model, applied to a one-sided message, predicts different shapes of opinion change for different message intensities, issue familiarities and ages, and the available data roughly bear this out.
 
 ## L1 — The gist (≤ 120 words)
-Chapter 7's RAS model fitted some attitude-change data. Was that luck? Zaller derives further implications. Opinion-change curves should differ with message intensity (how far a message reaches inattentive people) and issue familiarity (stored considerations dilute new messages). He finds roughly the expected shapes on Reagan's approval, on new issues, and on Korea, Vietnam and race. The same logic appears to hold in how individual considerations form. Age, a predisposition that is not manifestly political, appears to interact with awareness as party or ideology does. The evidence is cumulative and supportive, not conclusive. The typology rests on weak measurement, and no case has a strictly one-sided message flow, as the model assumes.
+Chapter 7's RAS model fitted some attitude-change data. Was that luck? Zaller derives further implications. Opinion-change curves should differ with message intensity (how far a message reaches inattentive people) and issue familiarity (stored considerations dilute new messages). He finds roughly the expected shapes on Reagan's approval, on new issues, and on Korea, Vietnam and race. The same logic appears to hold in how individual considerations form. Age, a predisposition that is not manifestly political, appears to interact with awareness as party or ideology does. Evidence of several kinds is accumulating, no one piece of it conclusive. The typology rests on weak measurement, and no case has a strictly one-sided message flow, as the model assumes.
 
 **Prerequisites:** logistic functions; the RAS model and Equations 7.3/7.5 from Chapter 7 (reception rises with awareness, acceptance falls with awareness when a message conflicts with predispositions); the idea of a nonmonotonic (rise-then-fall) curve.
 
 ## L2 — Key ideas (5–10 bullets)
 - **Intensity is partly a property of the audience.** How many people receive a story depends on public interest and prior knowledge, not only on media volume. North's one-day sentencing reached more people than months of Wright coverage (pp. 152–153).
-- **Two message-level parameters.** Intensity is $a_0$ in the reception function; familiarity is $b_0$ in the acceptance function. Varying them produces a typology of six change curves (Figs. 8.2–8.3). Its general shape holds over all plausible values of $a_0$, $b_0$, provided awareness stays positively linked to reception and negatively linked to acceptance to a similar degree (pp. 154–158).
+- **Two message-level parameters.** Intensity is $a_0$ in the reception function; familiarity is $b_0$ in the acceptance function. Varying them produces a typology of six panels of change curves, cells A–F (Figs. 8.2–8.3). Its general shape holds over all plausible values of $a_0$, $b_0$, provided awareness stays positively linked to reception and negatively linked to acceptance to a similar degree (pp. 154–158).
 - **Predictions.** Low intensity concentrates change among the highly aware. High familiarity lowers total change and pushes the peak toward less-aware people. A moderately intense message reaching a group opposed to it produces nonmonotonic change, peaking among the moderately aware (p. 165).
 - **Tests on cases.** Reagan's approval after Iran–Contra (judged a louder and more familiar message than Central America), plus school desegregation, the nuclear freeze and economic news, fit reasonably. Zaller says the evidence for the first two deductions seems quite strong and that the typology is less strongly supported (pp. 159–166).
-- **Resistance at the level of considerations.** Highly aware people hold more non-Contra considerations, and the data are consistent with these diluting scandal news (inertial resistance). They also form fewer inconsistent considerations than moderately aware people (partisan resistance). Zaller calls this support helpful but not conclusive (pp. 168–172).
-- **Age works like any predisposition.** Older highly aware Republicans (Korea), older liberals (Vietnam, desegregation) show nonmonotonic patterns, which Zaller attributes to older partisan lessons they learned (pp. 174–179).
-- **Age is not generally linked to resistance.** Zaller sees no reason to expect age to be generally tied to greater resistance; he argues the RAS model can specify the effect of age, whatever its direction (p. 180).
+- **Resistance at the level of considerations.** Highly aware people hold more non-Contra considerations, and the data are consistent with these diluting scandal news (inertial resistance). They also form fewer inconsistent considerations than moderately aware people (partisan resistance). Zaller calls the partisan-resistance evidence helpful but not clinching (pp. 168–172).
+- **Age works like any predisposition.** Older Republicans (Korea), older liberals (Vietnam, desegregation) show nonmonotonic patterns, which Zaller says are presumably due to older partisan lessons they learned (pp. 174–179).
+- **Age need not mean resistance.** Zaller sees no reason to expect age to be generally tied to greater resistance; he argues the RAS model can specify the effect of age, whatever its direction (p. 180).
 - **Caveat.** No case has strictly one-sided information; a two-message model is promised for Chapter 9 (p. 166).
 
 ## L3 — Walkthrough
@@ -55,7 +57,7 @@ The chapter tests deductions from the Chapter 7 model, including nonintuitive on
 
 **Message familiarity (p. 154).** Messages on issues where the public has a large store of considerations meet inertial resistance (stored considerations dilute any new message). They are expected to produce less change, all else equal, than messages on novel topics. They also change the expected shape of the curve. Fn. 4 notes that intensity and familiarity are not wholly independent, since both depend on prior public information (p. 154).
 
-**The model (Eq. 7.5, repeated on p. 154).** The text layer for this page is garbled, and no page image was supplied. The following is my reconstruction of the equation from that text layer plus fn. 5 (p. 155), where "/" is the floor parameter $f$ and "$-b_2$ Predispositions" is a predisposition term:
+**The model (Eq. 7.5, repeated on p. 154).** Here $f$ is the floor parameter and $b_2$ weights predispositions:
 $$\text{Prob(Change)}=\Big(1-\big(1+f+\exp[a_0+a_1\,\text{Awareness}]\big)^{-1}\Big)\times\big(1+\exp[-b_0-b_1\,\text{Awareness}-b_2\,\text{Predispositions}]\big)^{-1}\tag{7.5}$$
 First factor = reception; second = acceptance. Intensity is captured by $a_0$: higher $a_0$ means more reception at a given awareness. Familiarity is captured by $b_0$: lower $b_0$ means lower acceptance (p. 154). The model is highly interactive, so shifts in $a_0$ and $b_0$ ramify (p. 155).
 
@@ -69,7 +71,7 @@ First factor = reception; second = acceptance. Intensity is captured by $a_0$: h
 A liberal message is assumed to diffuse through liberal, centrist and conservative subpopulations (p. 155).
 - *Top row (less familiar), panels A, B, C = low, medium, high intensity, roughly like the death-penalty, Wright and DC-10 stories of Fig. 8.1.* Low intensity: change is concentrated among the most aware, because they are the only ones who meet the reception requirement. As intensity rises, change becomes common among moderately and then modestly aware persons. Lower intensity means a smaller share of change among the less aware, and higher intensity a larger share (p. 155).
 - Central America (Fig. 7.5) roughly matches panel B (p. 155).
-- *Bottom row (more familiar), panels D, E, F.* Higher familiarity has two effects. Total change is smaller. And a higher proportion of the change is concentrated among less-aware persons, so peaks move toward the low-awareness end (pp. 155, 157). Fn. 6 gives the reason: awareness has both reception and acceptance effects.
+- *Bottom row (more familiar), panels D, E, F.* Higher familiarity has two effects. Total change is smaller. And a higher proportion of the change is concentrated among less-aware persons, so peaks move toward the low-awareness end (pp. 155, 157). Fn. 6 states the condition: given that awareness has both reception and acceptance effects.
 - Figure 8.2 does not exhaust the possible patterns. Even more intense messages would raise change among the least aware, and even less familiar issues would raise change especially among the highly aware (p. 157).
 
 **Fig. 8.3 (pp. 157–158).** A three-dimensional version is meant to show that the typology does not depend on the chosen parameters. The surface keeps the same general shape for $a_0$, $b_0$ between $\pm 10$ (fn. 7), provided awareness remains positively associated with reception and negatively associated with acceptance to roughly the same degree (p. 158).
@@ -144,7 +146,7 @@ Age is a predisposition that is not manifestly political. Generational differenc
 - Background: in the 1930s–early 1940s Democrats were the party of internationalism and Republicans of isolationism. After WWII the Republican Party under Vandenberg largely supported Truman's initiatives (Europe's rebuilding, alliances, the UN, Korea). By the 1950s liberal internationalism was a "mainstream" norm with few cueing messages that it was inconsistent with conservatism (p. 174; fn. 19 notes Bricker and the press treating isolationism as "provincial").
 - Expectation: the standard mainstream pattern (strong positive awareness–support relation) in most groups. Among *older* Republicans, the least aware would fail to receive the message and the most aware would resist (older contextual cues from the 1930s, and perhaps more isolationist ballast). Support would be greatest among moderately aware older Republicans (pp. 174–175).
 - Data: a 1951 CPS survey with a political-information measure. Support for the Truman Korean policy was measured as disagreement with the statement that the U.S. "should get out of Korea now and stay out." The model is Eq. 7.5 plus an age variable (a 5-point cohort variable, because age in years was unavailable; Table 8.7) (p. 175).
-- **Fig. 8.8, results.** Among all Democrats (data not shown) and younger Republicans, awareness and support are strongly positively related. Among older Republicans, but no other segment, the relation is strongly nonmonotonic, which Zaller presumes reflects resistance by highly aware Republicans who had not forgotten their party's old isolationist line. Some coefficients are not significant, but the critical age coefficient is significant at the .07 level (Table 8.7: $-1.60$, s.e. 1.09) (p. 175).
+- **Fig. 8.8, results.** Although based on a small number of cases in the critical cells, the results sustain expectations. Among all Democrats (data not shown) and younger Republicans, awareness and support are strongly positively related. Among older Republicans, but no other segment, the relation is strongly nonmonotonic, which Zaller presumes reflects resistance by highly aware Republicans who had not forgotten their party's old isolationist line. Some coefficients are not significant, but the critical age coefficient is significant at the .07 level (Table 8.7: $-1.60$, s.e. 1.09) (p. 175).
 
 **Resistance to the anti-Vietnam War movement (pp. 175–177).** Here the roles are reversed: it is highly aware older *liberals* who were forced to accommodate themselves to a shift in partisan norms.
 - Older liberals would have experienced the "lessons of Munich," communist takeovers, and apparent deterrence in Korea, Greece, Turkey and West Berlin. If they followed partisan interpretations of these events, they would have met many arguments to "stand up to communism" (p. 176). Liberal support for internationalism weakened and then reversed during the war. Zaller says "liberalism," not the Democratic Party, shifted, because the party had a large conservative wing (fn. 20).
@@ -230,7 +232,8 @@ Same acceptance pattern, higher reception: the proportion of change among the le
 
 ## Reading notes
 - Printed page = pdf − 16 (pdf 167 = printed 151).
-- No page image was supplied for printed p. 154. Equation 7.5 is reconstructed from a garbled text layer ("1 -I- Exp", "/" for $f$, "^Predispositions") plus fn. 5 and the appendix mention of a floor parameter. The exact form of the predisposition term and the sign convention should be checked against the book.
+- The text layer of p. 154 garbles Eq. 7.5 ("1 -I- Exp", "/" for $f$); the equation above matches the p. 154 image.
+- Source inconsistency: p. 155 says the lower panel of Fig. 8.2 sets "the $b_0$ coefficient ... higher" for more familiar topics, but fn. 5 gives $b_0=+3$ (low familiarity) and $0$ (high familiarity), i.e. lower. The digest follows fn. 5, which agrees with p. 154 (lower $b_0$, lower acceptance).
 - Table 8.2: the paired columns within each awareness level are not labelled in the source, so I did not assign meanings to them. Fn. 17 says the ideology scale was folded at the midpoint.
 - Table 8.4 labels only "Low" and "High" over four columns.
 - Misprints/oddities seen in the images: Table 8.7 reads "Domestic policy attiudes"; the subscripted "Time$_1$" in the Table 8.5 note comes through the text layer as "Timei"; the source varies between "egalitarianism" and "Equalitarianism"; the Fig. 8.8 raw-data N rows are not clearly tied to cells.

@@ -13,11 +13,13 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 9
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 6
 ---
 # Weakly Nonlinear Oscillators: Two-Timing and Averaged Equations
 
 ## L0 — One line
-For oscillators that are small perturbations of $\ddot x+x=0$, a plain power series in $\varepsilon$ breaks down, but two-timing (a fast time plus a slow time) gives averaged equations for a slowly varying amplitude and phase.
+For oscillators that are small perturbations of $\ddot x+x=0$, a plain power series in $\varepsilon$ breaks down at long times, but two-timing (a fast time plus a slow time) gives averaged equations for a slowly varying amplitude and phase.
 
 ## L1 — The gist (≤ 120 words)
 This unit asks how to predict the amplitude, frequency and shape of oscillations in equations that are small perturbations of $\ddot x+x=0$. A plain power series in $\varepsilon$ fails at long times: it produces terms that grow without bound (secular terms) and misrepresents slow amplitude change. Two-timing treats a fast time and a slow time $\varepsilon t$ as separate variables and removes the secular terms. This yields averaged equations for a slowly varying amplitude and phase. They show that the van der Pol equation has a stable limit cycle of radius $2+O(\varepsilon)$. For the Duffing equation, $\omega=1+\tfrac38\varepsilon a^2+O(\varepsilon^2)$, so for $\varepsilon>0$ (hardening spring) the frequency rises with amplitude.
@@ -25,8 +27,8 @@ This unit asks how to predict the amplitude, frequency and shape of oscillations
 **Prerequisites:** harmonic oscillator $\ddot x+x=0$; chain rule and partial derivatives; trig identities; power series; averages of periodic functions; polar coordinates in the phase plane; fixed points of a 1-D flow $\dot r=f(r)$.
 
 ## L2 — Key ideas
-- **Weakly nonlinear oscillators** $\ddot x+x+\varepsilon h(x,\dot x)=0$ are small perturbations of the harmonic oscillator. For van der Pol with $\varepsilon=0.1$, trajectories spiral slowly out to an almost circular cycle of radius near 2 (pp. 217–218).
-- **Regular perturbation theory fails over long times.** On a damped test oscillator it gives $\sin t-\varepsilon t\sin t$, with a secular term $t\sin t$. The approximation is expected to work only for $t\lesssim O(1/\varepsilon)$. It misses the slow decay and the frequency shift (pp. 219–220).
+- **Weakly nonlinear oscillators** $\ddot x+x+\varepsilon h(x,\dot x)=0$ are small perturbations of the harmonic oscillator. For van der Pol with $\varepsilon=0.1$, a trajectory started near the origin spirals slowly out to an almost circular cycle of radius near 2 (pp. 217–218).
+- **Regular perturbation theory fails over long times.** On a damped test oscillator it gives $\sin t-\varepsilon t\sin t$, with a secular term $t\sin t$. The approximation is expected to work only for $t\ll O(1/\varepsilon)$. It misses the slow decay and the frequency shift (pp. 219–220).
 - **Two-timing** uses a fast time $\tau=t$ and a slow time $T=\varepsilon t$, regarded as independent. Functions of $T$ are regarded as constants on the fast scale; the author says this is hard to justify rigorously but works (p. 221).
 - **Rule of the method:** choose the slow dependence of the amplitude and phase so that no resonant terms (forcing at the oscillator's own frequency, which would produce secular terms) appear at order $\varepsilon$ (p. 222). On the test problem this gives $e^{-\varepsilon t}\sin t$, nearly identical to the exact solution at $\varepsilon=0.1$ (p. 223).
 - **van der Pol:** $r'=\tfrac18 r(4-r^2)$ and $\phi'=0$. So there is a stable, nearly circular limit cycle of radius $2+O(\varepsilon)$, with $\omega=1+O(\varepsilon^2)$ (pp. 224–225).
@@ -57,7 +59,7 @@ For van der Pol with $\varepsilon=0.1$ and an initial condition near the origin,
 
 $$x(t,\varepsilon)=x_0(t)+\varepsilon x_1(t)+\varepsilon^2x_2(t)+\dots\tag{4}$$
 
-The hope is that the first two terms carry the important information. The test problem is a weakly damped linear oscillator, solvable exactly (p. 218):
+The hope is that the first two terms carry the important information. This regular perturbation theory works well on certain classes of problems (e.g. Exercise 7.3.9), but runs into trouble here (p. 218). The test problem is a weakly damped linear oscillator, solvable exactly (p. 218):
 
 $$\ddot x+2\varepsilon\dot x+x=0\tag{5}$$
 
@@ -65,7 +67,11 @@ $$x(0)=0,\quad \dot x(0)=1\tag{6}$$
 
 $$x(t,\varepsilon)=(1-\varepsilon^2)^{-1/2}e^{-\varepsilon t}\sin\!\big[(1-\varepsilon^2)^{1/2}t\big]\tag{7}$$
 
-Substituting (4) into (5) and grouping powers of $\varepsilon$ gives
+Substituting (4) into (5) gives
+
+$$\frac{d^2}{dt^2}(x_0+\varepsilon x_1+\dots)+2\varepsilon\frac{d}{dt}(x_0+\varepsilon x_1+\dots)+(x_0+\varepsilon x_1+\dots)=0.\tag{8}$$
+
+Grouping powers of $\varepsilon$ gives
 
 $$[\ddot x_0+x_0]+\varepsilon[\ddot x_1+2\dot x_0+x_1]+O(\varepsilon^2)=0.\tag{9}$$
 
@@ -93,7 +99,7 @@ The right side of (15) is a *resonant forcing*. Its solution (16) is a *secular 
 
 $$x(t,\varepsilon)=\sin t-\varepsilon t\sin t+O(\varepsilon^2).\tag{17}$$
 
-(17) is the first two terms of the series expansion of the exact solution (7) (Exercise 7.6.1). For fixed $t$ it is good if $\varepsilon t\ll1$, since the correction is really $O(\varepsilon^2t^2)$. For fixed $\varepsilon$, we can only expect it to work for $t\lesssim O(1/\varepsilon)$. With $\varepsilon=0.1$ it works reasonably for $t\ll10$ and breaks down afterwards (Fig. 7.6.2, p. 219).
+(17) is the first two terms, the beginning of a convergent series expansion, of the exact solution (7) (Exercise 7.6.1). For fixed $t$ it is good if $\varepsilon t\ll1$, since the correction is really $O(\varepsilon^2t^2)$. For fixed $\varepsilon$, we can only expect it to work for $t\ll O(1/\varepsilon)$. With $\varepsilon=0.1$ it works reasonably for $t\ll10$ and breaks down afterwards (Fig. 7.6.2, p. 219).
 
 Two failures (p. 220):
 1. The true solution has a fast time $t\sim O(1)$ for the oscillation and a slow time $t\sim1/\varepsilon$ for the amplitude decay. Because of $t\sin t$, (17) falsely suggests growth. This is because $e^{-\varepsilon t}=1-\varepsilon t+O(\varepsilon^2t^2)$. Fixing it by this route would need infinitely many terms.
@@ -221,7 +227,7 @@ The right side of (47) is
 
 $$2[r'\sin(\tau+\phi)+r\phi'\cos(t+\phi)]-h\tag{49}$$
 
-with $h=h(r\cos(\tau+\phi),-r\sin(\tau+\phi))$. Let $\theta=\tau+\phi$. Then $h$ is $2\pi$-periodic in $\theta$, so it has a Fourier series (p. 226):
+with $h=h(r\cos(\tau+\phi),-r\sin(\tau+\phi))$. Let $\theta=\tau+\phi$. Then $h$ is $2\pi$-periodic in $\theta$, so it has a Fourier series (a sum of cosines and sines of whole multiples of $\theta$) (p. 226):
 
 $$h(\theta)=\sum_{k=0}^\infty a_k\cos k\theta+\sum_{k=1}^\infty b_k\sin k\theta\tag{50}$$
 
@@ -276,14 +282,15 @@ $$\omega=1+\varepsilon\phi'=1+\tfrac38\varepsilon a^2+O(\varepsilon^2).\tag{57}$
 Frequency depending on amplitude is common and intrinsically nonlinear; it cannot occur for linear oscillators (p. 228). Physical reading (p. 229): the restoring force is $F(x)=-x-\varepsilon x^3=-kx$ with stiffness $k(x)=1+\varepsilon x^2$.
 - For $\varepsilon>0$ the spring gets stiffer with displacement (hardening spring). One expects higher frequency, consistent with (57).
 - For $\varepsilon<0$ it is a softening spring, exemplified by the pendulum (Exercise 7.6.15).
-- $r'=0$ makes sense: Duffing is a conservative system and, for all sufficiently small $\varepsilon$, has a nonlinear center at the origin (Exercise 6.5.13). All orbits near the origin are periodic, so there is no long-term amplitude change.
+- $r'=0$ makes sense: Duffing is a conservative system (one with a conserved quantity, such as energy) and, for all sufficiently small $\varepsilon$, has a nonlinear center (a fixed point surrounded by closed orbits) at the origin (Exercise 6.5.13). All orbits near the origin are periodic, so there is no long-term amplitude change.
 
 *Intuition note.* For van der Pol the averaged amplitude equation has a nonzero stable fixed point, which gives a limit cycle. For Duffing the amplitude equation is $r'=0$, so every amplitude persists. The nonlinearity acts only on the phase, which changes the frequency.
 
-**Validity of two-timing (p. 229).** Rule of thumb: the one-term approximation $x_0$ stays within $O(\varepsilon)$ of the true solution $x$ for all times up to and including $t\sim O(1/\varepsilon)$, assuming $x$ and $x_0$ start from the same initial condition. If $x$ is periodic, $x_0$ remains within $O(\varepsilon)$ of $x$ for all $t$. The author refers to Guckenheimer and Holmes (1983) and Grimshaw (1990) for rigorous results. Those authors use the *method of averaging*, which gives the same results as two-timing (Exercise 7.6.25). The relevant notion of approximation is *asymptotic* approximation; see Lin and Segel (1988) and Bender and Orszag (1978) (p. 229).
+**Validity of two-timing (p. 229).** Rule of thumb: the one-term approximation $x_0$ stays within $O(\varepsilon)$ of the true solution $x$ for all times up to and including $t\sim O(1/\varepsilon)$, assuming $x$ and $x_0$ start from the same initial condition. If $x$ is periodic, $x_0$ remains within $O(\varepsilon)$ of $x$ for all $t$. The author refers to Guckenheimer and Holmes (1983) and Grimshaw (1990) for rigorous results. Those authors use the *method of averaging* (averaging the equations over the fast oscillation directly), which gives the same results as two-timing (Exercise 7.6.25). The relevant notion of approximation is *asymptotic* approximation (error shrinks in a controlled way as $\varepsilon\to0$); see Lin and Segel (1988) and Bender and Orszag (1978) (p. 229).
 
 ### Exercises for Chapter 7 (pp. 230–243)
-The set covers Sections 7.1–7.6; it is only listed here, not solved. Exercises for 7.1–7.5 (pp. 230–238) include: phase portraits in polar coordinates, a circuit for the van der Pol oscillator and a circular pursuit problem (7.1, pp. 230–231); gradient systems, Liapunov functions and Dulac's criterion (7.2, pp. 231–233); Poincaré–Bendixson problems, cycle graphs and a heteroclinic cycle (7.3, pp. 234–236); Liénard systems (7.4, p. 236); relaxation oscillations and a cell-cycle model (7.5, pp. 237–238). The 7.6 exercises (pp. 238–243) include:
+The set covers Sections 7.1–7.6; it is only listed here, not solved. Exercises for 7.1–7.5 (pp. 230–238) include: phase portraits in polar coordinates, a circuit for the van der Pol oscillator and a circular pursuit problem (7.1, pp. 230–231); gradient systems, Liapunov functions (energy-like functions that decrease along trajectories) and Dulac's criterion (a test ruling out closed orbits in a region) (7.2, pp. 231–233); Poincaré–Bendixson problems, cycle graphs (closed loops of fixed points joined by trajectories) and a heteroclinic cycle (a loop of trajectories joining different fixed points; the source's other name for a cycle graph) (7.3, pp. 234–236); Liénard systems ($\ddot x+f(x)\dot x+g(x)=0$) (7.4, p. 236); relaxation oscillations and a cell-cycle model (7.5, pp. 237–238). The 7.6 exercises (pp. 238–243) include:
+- Expanding the exact solution (7) to recover (17) (7.6.1).
 - Calibration of regular perturbation theory (7.6.2–7.6.3).
 - Averaged equations for six given $h$ (7.6.4–7.6.9).
 - Deriving trig identities and Fourier coefficients (7.6.10, 7.6.12).

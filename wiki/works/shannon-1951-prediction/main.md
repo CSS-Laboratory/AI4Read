@@ -13,22 +13,24 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 8
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 6
 ---
 # Prediction and Entropy of Printed English
 
 ## L0 — One line
-Shannon estimates the entropy of English by having people guess the next letter, and he proves bounds that turn the frequencies of the guess numbers into bounds on the N-gram entropy.
+Shannon estimates the entropy of English by having people guess the next letter, and he proves bounds that turn an ideal predictor's guess-number frequencies into bounds on the N-gram entropy.
 
 ## L1 — The gist (≤ 120 words)
 How many bits per letter does English need once long-range structure counts? Tables of N-letter frequencies were not available beyond N = 3. Shannon has people guess the next letter and records how many guesses each letter takes. These guess numbers form a "reduced text" from which the original can, at least in principle, be recovered by an identical predictor. Their frequencies give an upper and a lower bound on the N-gram entropy; the lower bound is proved for an ideal predictor only. For 27-letter English with 100 letters known, his data give bounds of 1.3 and 0.6 bits per letter. He says it appears that entropy is of the order of one bit per letter, with redundancy roughly 75%.
 
-**Prerequisites:** base-2 logarithms; entropy as average uncertainty; conditional probability; sums over a table of rows and columns; concave functions (second derivative > 0 means the curve bends upward).
+**Prerequisites:** base-2 logarithms; entropy as average uncertainty; conditional probability; sums over a table of rows and columns; convex ("concave upward") functions: second derivative > 0 means the curve bends upward.
 
 ## L2 — Key ideas
 - Speakers know a great deal of English statistics implicitly. Guessing the next letter therefore tests that knowledge. It extends the estimate beyond what N-gram tables (frequency tables of N-letter blocks; digram = 2 letters, trigram = 3) allow (pp. 50, 52, 54).
 - Table-based values for 26 letters: $F_0 = 4.7$, $F_1 = 4.14$, $F_2 = 3.56$, $F_3 \approx 3.3$ bits/letter. Word frequencies (Zipf-type law) give an estimate of 2.62 bits/letter. Shannon says this corresponds more nearly to, say, $F_5$ or $F_6$ than to $F_{4.5}$, because the $F_N$ curve at 4.5 lies above it (pp. 51–54).
 - Replacing each letter by its guess number gives the "reduced text". It carries the same information, in the sense that the original can in principle be recovered with an identical predictor. The redundancy shows up as very unequal frequencies of the numbers (pp. 55–56).
-- In the experiments, a good subject guessed about 69–77% of letters on the first try. Prediction improves with more known letters, apart from statistical fluctuation. Reverse prediction was only slightly poorer (pp. 55–58).
+- In Experiments 1–2, a good subject guessed about 69–77% of letters on the first try. Prediction improves with more known letters, apart from statistical fluctuation. Reverse prediction was only slightly poorer (pp. 55–58).
 - An ideal N-gram predictor guesses in order of decreasing conditional probability. Its first-$S$-guess success frequencies cannot fall when N rises (11) (pp. 58–59).
 - Any transducer (a device translating an input sequence into an output sequence) whose output depends only on the present letter and the N−1 preceding letters, and which is instantaneously reversible, satisfies (15). So the ideal predictor's output frequencies majorize (are more concentrated than, in the sense of (15)) those of such a transducer (pp. 60–61).
 - Bounds (17): the upper bound is valid for any predictor. The lower bound is proved for ideal prediction, by a "rectangular decomposition". Both bounds decrease with N (pp. 61–64).
@@ -82,7 +84,7 @@ $$-\sum_{1}^{8727}p_n\log_2p_n=11.82\text{ bits per word}\tag{7}$$
 | 26 letters | 4.70 | 4.14 | 3.56 | 3.3 | 2.62 |
 | 27 letters (with space) | 4.76 | 4.03 | 3.32 | 3.1 | 2.14 |
 
-- The earlier estimate of 2.3 was found by several methods, one being extrapolation of the 26-letter series. Since the space is almost completely redundant over sequences of words, 27-letter $F_N$ is about .818 of the 26-letter $F_N$ for reasonably large $N$ (p. 54).
+- The earlier estimate of 2.3 for $F_8$ was found by several methods, one being extrapolation of the 26-letter series. Since the space is almost completely redundant over sequences of words, 27-letter $F_N$ is about .818 of the 26-letter $F_N$ for reasonably large $N$ (p. 54).
 
 *Intuition note.* $F_N$ is the average uncertainty about the next letter when $N-1$ letters are known. The entropy $H$ is defined as its limit as $N$ grows. Tables of $N$-gram frequencies were not available beyond $N=3$, so the word-frequency estimate (2.62) is a further approximation. Shannon says it corresponds more nearly to, say, $F_5$ or $F_6$, and that $F_{4.5}$ would lie above it (pp. 51–54).
 
@@ -90,7 +92,7 @@ $$-\sum_{1}^{8727}p_n\log_2p_n=11.82\text{ bits per word}\tag{7}$$
 - **Experiment 1.** The subject guesses the first letter of an unfamiliar passage and is told if right; otherwise he is told the correct letter. He continues letter by letter, with the correct text so far in front of him (27-letter alphabet). In example (8) the reduced text has a dash for each correct guess and the true letter for each wrong one (p. 54).
 - Of 129 letters, 89 (69%) were guessed correctly. Errors are most frequent at the beginnings of words and syllables, where the line of thought can branch (p. 55).
 - **Recoverability.** The reduced text contains the same information as the original, in the sense that the original can, at least in principle, be recovered. This needs an identical twin of the subject, "mathematically, not just biologically" identical (p. 55). The twin guesses the same way. A dash means his guess is right, and wrong letters are supplied (p. 55).
-- The twin can be dropped. Good prediction does not require more than $N$ preceding letters, with $N$ fairly small. There are finitely many $N$-grams, so the subject could guess the next letter for each one. This list serves both for reducing and for reconstructing the text (p. 55).
+- The twin can be dropped. In general, good prediction does not require more than $N$ preceding letters, with $N$ fairly small. There are finitely many $N$-grams, so the subject could guess the next letter for each one. This list serves both for reducing and for reconstructing the text (p. 55).
 - The reduced text is then an encoded form of the original, from a reversible transducer. A communication system could transmit only the reduced text, with two identical predictors (Fig. 2) (p. 55).
 - **Experiment 2.** The subject guesses until right, and the number of the successful guess is recorded (example (9)). Of 102 symbols he was right at the first guess 79 times, second 8, third 3, fourth and fifth 2 each; only eight needed more than five guesses (79+8+3+2+2+8 = 102). This is typical of a good subject with ordinary literary English. Newspaper writing, scientific work and poetry generally give somewhat poorer scores (p. 56).
 - Recovery works as before: the twin guesses as many times as the number given. Without a human, the subject lists for each $N$-gram the most probable next letter, the second most probable, and so on (p. 56).
@@ -112,7 +114,7 @@ $$-\sum_{1}^{8727}p_n\log_2p_n=11.82\text{ bits per word}\tag{7}$$
 
 ### 4. Ideal N-gram prediction (pp. 58–61)
 - For a language there is a set of conditional probabilities $p_{i_1,\dots,i_{N-1}}(j)$. The best guess is the letter with highest conditional probability, the second guess the second highest, and so on. Reducing a text with this **ideal predictor** maps the letters to $1,\dots,27$, with the most probable next letter mapped to 1 (p. 58).
-- The frequency of 1's in the reduced text, summed over all $(N-1)$-grams with $j$ the maximizing letter, is (added step: the equation is missing from the text layer, reconstructed from the prose):
+- The frequency of 1's in the reduced text, summed over all $(N-1)$-grams with $j$ the maximizing letter, is (p. 58):
 
 $$q_1^N=\sum p(i_1,\dots,i_{N-1},j)\tag{10}$$
 
@@ -132,8 +134,8 @@ $$p(i_2,\dots,i_N,j)=\sum_{i_1=1}^{27}p(i_1,i_2,\dots,i_N,j)\tag{12}$$
 - **Transducer properties.** The ideal predictor is a transducer with two properties (p. 60):
   1. Its output symbol is a function of the present input letter and the preceding $N-1$ letters.
   2. It is instantaneously reversible: the input can be recovered without loss of time, using only the $N-1$ preceding symbols of the reduced text and the present output.
-- For an $(N-1)$-gram predictor the same inequalities hold in the form $\sum_1^S q_i^N\ge\sum_1^S q_i^{N-1}$, $S=1,\dots,27$ (14) (added step: equation garbled in the text layer, reconstructed from (11)). The proof of (11) carries over to any transducer with these two properties (p. 60). Take the array with $(N-1)$-grams as rows and the present letter as columns, and enter the output symbol at each cell. Reversibility requires that no two entries in a row be the same, otherwise the reversal would be ambiguous (p. 60).
-- The probability of the $S$ most probable output symbols is the sum of $S$ entries per row, summed over rows. So it is at most the sum of the $S$ largest entries per row. With $r_i$ the output frequencies of such a transducer, this gives (15) (p. 60). The equation is missing from the text layer; this form is reconstructed from the reference on p. 61:
+- For an $(N-1)$-gram predictor the same inequalities hold in the form $\sum_1^S q_i^N\ge\sum_1^S q_i^{N-1}$, $S=1,\dots,27$ (14). The proof of (11) carries over to any transducer with these two properties (p. 60). Take the array with $(N-1)$-grams as rows and the present letter as columns, and enter the output symbol at each cell. Reversibility requires that no two entries in a row be the same, otherwise the reversal would be ambiguous (p. 60).
+- The probability of the $S$ most probable output symbols is the sum of $S$ entries per row, summed over rows. So it is at most the sum of the $S$ largest entries per row. With $r_i$ the output frequencies of such a transducer, this gives (p. 60):
 
 $$\sum_{1}^{S}q_i^N\ge\sum_{1}^{S}r_i,\qquad S=1,2,\dots,27\tag{15}$$
 
@@ -229,8 +231,7 @@ Take a source with no memory ($N=1$) and three letters a, b, c with probabilitie
 
 ## Reading notes
 - Printed page = pdf page + 49 (pdf 1 = p. 50). The page header reads *Bell System Technical Journal, January 1951*; the manuscript was received Sept. 15, 1950. The acknowledgment thanks Mrs. Mary E. Shannon and Dr. B. M. Oliver (p. 64).
-- Page images were supplied only for pdf 2, 3, 4, 6, 8, 10, 12, 13, 14. Pdf 1, 5, 7, 9, 11, 15 were read from the text layer alone, which is heavily garbled (OCR).
-- Equations (10) and (15) are missing from the text layer, and pdf 9 and 11 have no image. I reconstructed them from the prose and from the references to (15) on p. 61, and marked them above. (13) was checked on the image of p. 59.
+- The text layer is heavily garbled (OCR). Equations (10), (14) and (15) are missing or garbled in it; they are printed legibly on pp. 58 and 60 and were checked against the page images. (13) was checked on the image of p. 59.
 - Equation numbers jump from (18) to (20); no (19) appears on these pages.
 - In (18) the right-hand sum is printed without a leading minus sign. That would make it negative, so I wrote it with the minus, matching $F_N$ in (1). In (17) the minus before the upper-bound sum is visible in the image.
 - Page 57 (the sentence runs onto p. 58) says the digram table gives the entries "in column 1". The digram-based figures (29.2, 14.8, …) are in the second column of Table I. This is probably a misprint for column 2.

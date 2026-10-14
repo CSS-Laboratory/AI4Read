@@ -13,11 +13,13 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 15
 pipeline_version: 0.1
+audited: 2026-10-14
+audit_fixes: 11
 ---
 # On-policy Prediction with Approximation (part 2/2)
 
 ## L0 — One line
-Beyond hand-set linear SGD, on-policy value prediction can use step-size rules of thumb, neural networks, least-squares TD, stored-example (memory and kernel) methods, and interest/emphasis weighting to focus learning on the states that matter.
+Beyond basic linear semi-gradient SGD, on-policy value prediction can use a step-size rule of thumb, neural networks, least-squares TD, stored-example (memory and kernel) methods, and interest/emphasis weighting to focus learning on the states that matter.
 
 ## L1 — The gist (≤ 120 words)
 This part asks how to go beyond basic linear semi-gradient prediction. It gives a rule of thumb for the step size and presents neural networks as nonlinear approximators, trained by backpropagation with several tricks for deep nets. It then covers least-squares TD (LSTD), which is data-efficient but costs O(d²) per step, and memory-based and kernel methods, which store examples instead of learning weights. Finally it introduces "interest" and "emphasis" for focusing learning on important states, and closes with a chapter summary. This matters because the impressive RL applications use nonlinear approximation, while current theory covers mostly tabular and linear methods.
@@ -29,7 +31,7 @@ This part asks how to go beyond basic linear semi-gradient prediction. It gives 
 - **Step size by rule of thumb:** the classical $1/t$ is unsuitable here. For linear SGD, $\alpha=(\tau\,\mathbb E[\mathbf x^\top\mathbf x])^{-1}$ is a good rule of thumb for learning in about $\tau$ experiences with substantially the same feature vector; it works best if feature-vector length varies little. (pp. 222–223)
 - **Neural networks** are widely used nonlinear approximators. Training hidden layers builds features automatically, but deep nets bring overfitting and backward-pass derivatives that decay (slow learning) or grow (instability). Dropout, layer-wise pretraining, batch normalization, residual connections and convolution are techniques presented for training deep nets. (pp. 223–228)
 - **LSTD** computes the TD fixed point directly from running estimates of $\mathbf A$ and $\mathbf b$. It is the most data-efficient linear TD(0), but needs O(d²) memory and per-step computation. (pp. 228–230)
-- **Memory-based methods** store examples and compute values only at query time. They are nonparametric and local, and avoid exponential memory in the state dimension. (pp. 230–232)
+- **Memory-based methods** store examples and compute values only at query time. They are nonparametric; the local-learning ones the authors focus on avoid exponential memory in the state dimension. (pp. 230–232)
 - **Kernel regression** weights stored targets by a similarity kernel. Any linear parametric method can be recast as kernel regression with $k(s,s')=\mathbf x(s)^\top\mathbf x(s')$. (pp. 232–233)
 - **Interest and emphasis** generalise the on-policy distribution so that limited approximation resources can be used in a more targeted way, on states we care about. (pp. 234–235)
 
@@ -41,7 +43,7 @@ This part asks how to go beyond basic linear semi-gradient prediction. It gives 
 - An **RBF network** is a linear approximator with RBF features, learned by (9.7)–(9.8). Some methods also adapt centers and widths, which makes it nonlinear. That may fit targets more precisely, but costs more computation and manual tuning. (p. 222)
 
 ### 9.6 Selecting step-size parameters manually (pp. 222–223)
-- Theory helps little. The stochastic-approximation conditions (2.7) are sufficient to guarantee convergence but tend to give learning that is too slow. $\alpha_t=1/t$ is not appropriate for TD, nonstationary problems, or any function-approximation method. (p. 222)
+- Theory helps little. The stochastic-approximation conditions (2.7) (rules on how fast step sizes must shrink over time) are sufficient to guarantee convergence but tend to give learning that is too slow. $\alpha_t=1/t$ is not appropriate for TD, nonstationary problems, or any function-approximation method. (p. 222)
 - Recursive least-squares methods set an optimal *matrix* step size, and LSTD is one such extension. They need $O(d^2)$ step-size parameters, $d$ times more than the parameters learned, so they are ruled out for large problems. (p. 222)
 - Tabular intuition: $\alpha=1$ removes the sample error after one target. If $\alpha=1/\tau$, the estimate approaches the mean of its targets after about $\tau$ experiences, with recent targets weighted most. (p. 222)
 - With general approximation, "number of experiences with a state" is unclear. For linear SGD the authors give this rule of thumb, for learning in about $\tau$ experiences with substantially the same feature vector: (p. 223)
@@ -52,7 +54,7 @@ $$\alpha \doteq \left(\tau\,\mathbb E\!\left[\mathbf x^\top\mathbf x\right]\righ
 
 **Intuition note.** $\mathbf x^\top\mathbf x$ is the squared length of the feature vector, and it scales how much one update changes the estimate. Dividing by it turns "$1/\tau$" from the tabular case into a per-feature-vector step size.
 
-- Exercises 9.5 (tile-coding step size) and 9.6 (error reduced to zero in one update when $\tau=1$) follow here. (p. 223)
+- Exercises 9.5 (tile-coding step size) and 9.6 (error reduced to zero in one update when $\tau=1$ and $\mathbf x(S_t)^\top\mathbf x(S_t)=\mathbb E[\mathbf x^\top\mathbf x]$) follow here. (p. 223)
 
 ### 9.7 Nonlinear approximation: artificial neural networks (pp. 223–228)
 **Structure.**
@@ -60,13 +62,13 @@ $$\alpha \doteq \left(\tau\,\mathbb E\!\left[\mathbf x^\top\mathbf x\right]\righ
 - Units are typically *semi-linear*: a weighted sum of inputs passed through a nonlinear **activation function**. Typical choices are sigmoid functions such as the logistic $f(x)=1/(1+e^{-x})$, sometimes the rectifier $f(x)=\max(0,x)$. A step function ($1$ if $x\ge\theta$, else $0$) gives a binary threshold unit. Input units have externally set activations. (p. 224)
 - Each output is a nonlinear function of the input activations, parameterised by the weights. An ANN with no hidden layers can represent only a very small fraction of input–output functions. (p. 224)
 - With one hidden layer of enough sigmoid units, any continuous function on a compact input region can be approximated to any accuracy (Cybenko, 1989). This also holds for other activations satisfying mild conditions. Nonlinearity is essential: if all units are linear, the whole network equals one with no hidden layers. (p. 224)
-- Despite this, complex AI functions are made easier, and indeed may require, hierarchical compositions of many layers. Successive layers of a deep ANN compute increasingly abstract representations. (pp. 224–225)
+- Despite this, approximating the complex functions needed for many AI tasks is made easier, and indeed may require, hierarchical compositions of many layers. Successive layers of a deep ANN compute increasingly abstract representations. (pp. 224–225)
 
 **Training.**
 - Training hidden layers creates features automatically, without relying only on hand-crafted ones. ANNs usually learn by a stochastic gradient method. The objective is expected loss over labelled examples (supervised case), or TD errors for value learning, or expected reward as in gradient bandits or policy gradients. (p. 225)
 - All of these need the partial derivative of the objective with respect to each weight. The gradient is the vector of these. (p. 225)
 - **Backpropagation** (for differentiable activations) alternates a forward pass, which computes unit activations, with a backward pass, which efficiently computes a partial derivative for each weight. As in other stochastic methods, the vector is an *estimate* of the gradient. (p. 225)
-- It works well for shallow nets (1–2 hidden layers) but may not for deeper ones. Training $k+1$ hidden layers can do worse than $k$, though the deeper net can represent everything the shallower one can. (p. 225)
+- It can produce good results for shallow nets (1–2 hidden layers) but may not for deeper ones. Training $k+1$ hidden layers can do worse than $k$, though the deeper net can represent everything the shallower one can. (p. 225)
 - Two of several important factors: first, many weights make overfitting hard to avoid. Second, backward-pass derivatives either decay rapidly toward the input side, making deep-layer learning very slow, or grow rapidly, making it unstable. (p. 225)
 
 **Remedies.** (pp. 226–228)
@@ -78,7 +80,7 @@ $$\alpha \doteq \left(\tau\,\mathbb E\!\left[\mathbf x^\top\mathbf x\right]\righ
 - *Deep convolutional networks* suit data in spatial arrays such as images, and were inspired by early visual processing in the brain. Because of their architecture they can be trained by backpropagation without the methods above. (p. 227)
  - A *feature map* is a pattern of activity over units that all do the same operation on their **receptive field**. The fields are the same size and are shifted across the input. Units in a map share weights, so the map detects its feature wherever it appears. (p. 227)
  - Figure 9.15 (LeCun et al., 1998, handwritten characters): alternating convolutional and subsampling layers, then fully connected layers. The first convolutional layer has 6 maps of $28\times28$ units with $5\times5$ overlapping fields (overlap four rows and columns), so each map has just 25 adjustable weights. (pp. 227–228)
- - *Subsampling* layers average over receptive fields. In the first one, each unit averages a non-overlapping $2\times2$ field, giving six $14\times14$ maps. This makes responses spatially invariant, which helps because a feature useful in one place is likely useful elsewhere. (p. 228)
+ - *Subsampling* layers average over receptive fields. In the first one, each unit averages a non-overlapping $2\times2$ field, giving six $14\times14$ maps. This helps make responses spatially invariant, which helps because a feature useful in one place is likely useful elsewhere. (p. 228)
 - Current RL theory is mostly limited to tabular and linear methods, but notable applications owe much to multi-layer ANNs (Chapter 16). (p. 228)
 
 **Intuition note.** A hidden layer lets the network invent its own features instead of using hand-made ones. The price is a harder training problem: many weights and gradients that shrink or blow up across layers.
@@ -111,7 +113,7 @@ $$\widehat{\mathbf A}_t^{-1}=\left(\widehat{\mathbf A}_{t-1}+\mathbf x_{t-1}(\ma
  - $\mathbf w\leftarrow\widehat{\mathbf A^{-1}}\widehat{\mathbf b}$
  - $S\leftarrow S'$, $\mathbf x\leftarrow\mathbf x'$
 - Is it worth it? That depends on $d$, how important fast learning is, and the cost of other system parts. The "no step size" advantage is probably overstated. LSTD needs $\varepsilon$: too small and the inverses can vary wildly, too large and learning slows. (p. 229)
-- Having no step size also means LSTD never forgets. That is problematic if the target policy changes, as in GPI. Control applications then typically need another forgetting mechanism, mooting the initial advantage. (p. 229)
+- Having no step size also means LSTD never forgets. This is sometimes desirable, but it is problematic if the target policy changes, as in GPI (generalized policy iteration: evaluation and improvement alternate, so the policy keeps changing). Control applications then typically need another forgetting mechanism, mooting the initial advantage. (p. 229)
 
 **Intuition note.** Semi-gradient TD takes many small steps toward the TD fixed point. LSTD keeps running sums and solves for the fixed point directly, using the data more fully at the price of a $d\times d$ matrix.
 
@@ -124,7 +126,7 @@ $$\widehat{\mathbf A}_t^{-1}=\left(\widehat{\mathbf A}_{t-1}+\mathbf x_{t-1}(\ma
  - *Locally weighted regression* fits a surface to nearby states by a parametric method minimising a distance-weighted error like (9.1), evaluates it at the query state, and discards it. (p. 231)
 - Advantages: approximation is not limited to pre-specified forms, so accuracy can improve with data. Methods can focus on neighborhoods visited along real or simulated trajectories (Section 8.6), and experience affects nearby estimates immediately. (p. 231)
 - *Curse of dimensionality:* for $k$ state dimensions a global tabular method needs memory exponential in $k$. Memory-based storage needs memory proportional to $k$ per example and linear in the number $n$ of examples. The remaining issue is query speed, which degrades as memory grows. (p. 231)
-- Speed-ups: parallel or special hardware, and **k-d trees**, which recursively split $k$-dimensional space into binary-tree regions. Depending on the data, they can quickly eliminate large regions. Locally weighted regression also needs fast local computations, and methods for forgetting entries to bound database size. (p. 232)
+- Speed-ups: parallel or special hardware, and **k-d trees**, which recursively split $k$-dimensional space into binary-tree regions. Depending on the data, they can quickly eliminate large regions. Locally weighted regression also needs fast local computations. Among the many ways researchers developed to address these problems are methods for forgetting entries to bound database size. (p. 232)
 
 ### 9.10 Kernel-based function approximation (pp. 232–233)
 - The weight-assigning function is a **kernel** $k$. It may take distances, $k:\mathbb R\to\mathbb R$, or more generally $k:\mathcal S\times\mathcal S\to\mathbb R$, where $k(s,s')$ is the weight of data about $s'$ when answering queries about $s$. It measures strength of generalization from $s'$ to $s$. (p. 232)
@@ -147,24 +149,24 @@ $$k(s,s')=\mathbf x(s)^\top\mathbf x(s').\tag{9.24}$$
 ### 9.11 Interest and emphasis (pp. 234–235)
 - So far all encountered states were treated equally, which gives stronger theoretical results for semi-gradient methods (on-policy distribution). But we may care more about some states, for example early states in discounted episodic problems, or good actions over poor ones when learning action values. Limited approximation resources could be used in a more targeted way. (p. 234)
 - The on-policy distribution is generalised: there are many such distributions, all of states met while following the target policy, differing in how trajectories are initiated. (p. 234)
-- **Interest** $I_t\ge0$ is a random variable giving how much we care about accurately valuing the state (or state–action pair) at time $t$. Zero means no care; one means full care, though any non-negative value is allowed. It can be set in any causal way. The distribution $\mu$ in VE (9.1) becomes the target-policy state distribution weighted by interest. (p. 234)
+- **Interest** $I_t\ge0$ is a random variable giving how much we care about accurately valuing the state (or state–action pair) at time $t$. Zero means no care; if we fully care, it might be one, though any non-negative value is allowed. It can be set in any causal way. The distribution $\mu$ in VE (9.1) (the mean square value error, weighted over states by $\mu$) becomes the target-policy state distribution weighted by interest. (p. 234)
 - **Emphasis** $M_t\ge0$ multiplies the update at time $t$. The general $n$-step rule, replacing (9.15), uses the return (9.16): (p. 234)
 
 $$\mathbf w_{t+n}\doteq\mathbf w_{t+n-1}+\alpha M_t\left[G_{t:t+n}-\hat v(S_t,\mathbf w_{t+n-1})\right]\nabla\hat v(S_t,\mathbf w_{t+n-1}),\quad 0\le t<T\tag{9.25}$$
 
 $$M_t=I_t+\gamma^nM_{t-n},\quad 0\le t<T,\qquad M_t\doteq0\ \text{for } t<0\tag{9.26}$$
 
- This includes Monte Carlo: $G_{t:t+n}=G_t$, updates at episode end, $n=T-t$, $M_t=I_t$. (p. 234)
+ This includes Monte Carlo (learning from complete returns, updating only at episode end): $G_{t:t+n}=G_t$, updates at episode end, $n=T-t$, $M_t=I_t$. (p. 234)
 - **Example 9.4.** A four-state chain with reward $+1$ per step, true values $4,3,2,1$. States 1–2 share weight $w_1$ and states 3–4 share $w_2$. Interest is 1 in the leftmost state and 0 elsewhere. (p. 235)
  - Gradient MC without interest/emphasis converges to $\mathbf w_\infty=(3.5,1.5)$. The first state gets 3.5, between the true values of states 1 and 2. With interest and emphasis, $w_1\to4$ and $w_2$ is never updated, since emphasis is zero except at the leftmost state. (p. 235)
- - Two-step semi-gradient TD: without interest/emphasis $\mathbf w_\infty=(3.5,1.5)$. With them, $\mathbf w_\infty=(4,2)$, exact for the first state and for the third (which the first bootstraps from). The second and fourth states are never updated. (p. 235)
+ - Two-step semi-gradient TD: without interest/emphasis $\mathbf w_\infty=(3.5,1.5)$. With them, $\mathbf w_\infty=(4,2)$, exact for the first state and for the third (which the first bootstraps from, i.e. uses as the estimate in its update target). The second and fourth states are never updated. (p. 235)
  - (added step) With $n=2$, $\gamma=1$: $M_0=1$, $M_1=0$, $M_2=0+M_0=1$, $M_3=0+M_1=0$. So only updates at $t=0$ and $t=2$ are non-zero, matching the text.
 
 **Intuition note.** Emphasis passes "I care about this state" forward to the later states it bootstraps from. Effort goes to the states the valuation actually depends on, not to the rest.
 
 ### 9.12 Summary (p. 236)
 - RL needs generalization. Supervised function-approximation methods apply by treating each update as a training example. Parametrised approximation is perhaps the most suitable, and $\overline{VE}(\mathbf w)$ ranks approximations under the on-policy distribution $\mu$. (p. 236)
-- SGD variants are the most popular. $n$-step semi-gradient TD covers gradient Monte Carlo and semi-gradient TD(0) as special cases. Semi-gradient methods are not true gradient methods, because the weights in the target are ignored in the gradient, so classical SGD results do not apply. (p. 236)
+- SGD variants are the most popular. $n$-step semi-gradient TD covers gradient Monte Carlo and semi-gradient TD(0) as special cases ($n=\infty$ and $n=1$ respectively). Semi-gradient methods are not true gradient methods, because the weights in the target are ignored in the gradient, so classical SGD results do not apply. (p. 236)
 - Linear approximation is best understood theoretically and works well with appropriate features. Choosing features is one of the most important ways of adding prior domain knowledge. Polynomials generalise poorly online. Better choices are Fourier bases and coarse coding. Tile coding is computationally efficient and flexible. RBFs suit one- or two-dimensional tasks needing smooth response. LSTD is the most data-efficient linear TD but costs $O(d^2)$, the others $O(d)$. Nonlinear methods include ANNs trained by backpropagation and SGD variants, which have become very popular under the name deep reinforcement learning. (p. 236)
 - Linear semi-gradient $n$-step TD is guaranteed to converge under standard conditions, for all $n$, to a VE within a bound of the optimal error (asymptotically achieved by Monte Carlo). The bound is always tighter for higher $n$ and approaches zero as $n\to\infty$. Very high $n$ learns very slowly in practice, so some bootstrapping is usually preferable. (p. 236)
 - Exercises 9.7 (logistic unit learning rule from (9.7) with no gradient notation) and 9.8 (the same with cross-entropy loss, compared in complexity). (p. 237)
@@ -234,6 +236,6 @@ LSTD with $d=1$, to check (9.20)–(9.22) by hand. One nonterminal state $S$ wit
 ## Reading notes
 - This unit is the second half of Chapter 9. It starts mid-section 9.5.5 (the RBF discussion, top of p. 222) and ends with the end of the chapter's Bibliographical and Historical Remarks (p. 242). The source note says the split is at a section boundary, but the pages given begin mid-section. Printed = pdf − 22.
 - The text layer garbles symbols (γ, ε, ∞, ≥, hats); equations here were checked against the page images.
-- On p. 236 the Summary lists gradient Monte Carlo and semi-gradient TD(0) as special cases of $n$-step semi-gradient TD "respectively". The text layer shows "n = 1 and n = 1", so the ∞ symbol is garbled and I cannot confirm from the text layer which value goes with which method. Section 9.11 (p. 234) sets $n=T-t$ for the Monte Carlo case.
+- On p. 236 the text layer shows "n = 1 and n = 1 respectively"; the page image reads "$n=\infty$ and $n=1$ respectively" (gradient Monte Carlo and semi-gradient TD(0)).
 - The Summary on p. 236 says "the policy is parameterized by a weight vector w", though the context is value-function approximation. I have not reproduced this sentence.
 - Example 9.4 refers to equations (9.7), (9.15), (9.16) and boxes on pages 202 and 209, which are outside this unit.
