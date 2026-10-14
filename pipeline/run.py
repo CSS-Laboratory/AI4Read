@@ -87,6 +87,12 @@ def text_of(resp):
     return "".join(c.get("text", "") for c in resp.get("content", []) if c.get("type") == "text").strip()
 
 
+def strip_preamble(md):
+    """Claude Code sessions sometimes narrate first ('All confirmed. I now have ...'): start at the frontmatter."""
+    m = re.search(r"(?m)^---[ \t]*\n(?=id:)", md)
+    return md[m.start():] if m and m.start() > 0 else md
+
+
 def strip_fence(md):
     m = re.match(r"^```(?:markdown|md)?\s*\n(.*)\n```\s*$", md.strip(), re.S)
     return m.group(1) if m else md.strip()
@@ -201,7 +207,7 @@ def accept(uid, md, verified, n_issues):
 
 
 def handle_p1(uid, resp, rec):
-    md = strip_fence(text_of(resp))
+    md = strip_preamble(strip_fence(text_of(resp)))
     OUT.mkdir(parents=True, exist_ok=True)
     loop = rec.get("loop", 0)
     (OUT / f"{uid.replace('/', '__')}.p{1 if loop == 0 else 3}-{loop}.md").write_text(md)
@@ -245,7 +251,7 @@ def handle_p2(uid, resp, rec):
         if ONLINE_MODE[0]:
             return fix_online(uid, loop, digest, issues, fails)
         return state.record(uid, "p2_fix_queued", loop=loop, issues=issues[:40])
-    new = fix_math(new)
+    new = fix_math(strip_preamble(new))
     det = errors(check(new, units()[uid], uid))
     hc = v["h_checks"] or []
     state.record(uid, "p2_done", loop=loop, verdict=v["verdict"], n_issues=len(issues), n_major=n_crit,
@@ -266,7 +272,7 @@ def handle_p2fix(uid, resp, rec):
     issues = v["issues"] if isinstance(v["issues"], list) else []
     if not v["corrected"]:
         return requeue(uid, loop, issues, "fix pass returned no corrected digest")
-    v["corrected"] = fix_math(v["corrected"])
+    v["corrected"] = fix_math(strip_preamble(v["corrected"]))
     if errors(check(v["corrected"], units()[uid], uid)):
         return requeue(uid, loop, issues, "deterministic checks fail after fix pass")
     accept(uid, v["corrected"], "repaired", len(issues))
