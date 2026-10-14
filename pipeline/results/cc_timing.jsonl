@@ -3,3 +3,4 @@
 {"ts": "2026-10-14T21:32:49", "unit_id": "gelman-2013-bda3/ch05-hierarchical", "final": "accepted", "seconds": 2446, "isolate": "gatecc", "loop": 2, "verified": "repaired", "path": "wiki/works/gelman-2013-bda3/ch05-hierarchical.cc.md"}
 {"ts": "2026-10-14T21:47:43", "unit_id": "dennett-1987-intentional-stance/ch02-true", "final": "accepted", "seconds": 885, "isolate": "gatecc", "loop": 0, "verified": "repaired", "path": "wiki/works/dennett-1987-intentional-stance/ch02-true.cc.md"}
 {"ts": "2026-10-14T22:07:29", "unit_id": "meadows-2008-thinking/ch02-note", "final": "accepted", "seconds": 1182, "isolate": null, "loop": 0, "verified": "repaired", "path": "wiki/works/meadows-2008-thinking/ch02-note.md"}
+{"ts": "2026-10-14T22:37:02", "unit_id": "popper-1959-logic/front-preface-2", "final": "accepted", "seconds": 1770, "isolate": null, "loop": 1, "verified": "repaired", "path": "wiki/works/popper-1959-logic/front-preface-2.md"}
