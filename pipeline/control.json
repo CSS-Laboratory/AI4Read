@@ -1,5 +1,5 @@
 {
-  "mode": "pause",
+  "mode": "run",
   "max_spend_usd": 325,
   "review_each_wave": true,
   "next_wave": "wave3",
