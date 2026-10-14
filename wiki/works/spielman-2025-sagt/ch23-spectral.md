@@ -13,16 +13,18 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 14
 pipeline_version: 0.1
+audited: 2026-10-15
+audit_fixes: 7
 ---
 # Spectral Partitioning in a Stochastic Block Model
 
 ## L0 — One line
-In a planted-bisection random graph, the second eigenvector of the adjacency matrix is probably close to the second eigenvector of the expected matrix, so (under conditions on p and q) its signs are expected to recover the hidden partition up to a bounded number of errors.
+In a planted-bisection random graph, the second eigenvector of the adjacency matrix is probably close to the second eigenvector of the expected matrix, so (under conditions on p and q) its signs are expected to recover the hidden partition with at most $288p(1-p)/(p-q)^2$ errors: a constant number for fixed p and q, a constant fraction for p = 1/2, q = p − 17/√n.
 
 ## L1 — The gist (≤ 120 words)
 Question: can a graph's hidden two-block structure be found from the second eigenvector of its adjacency matrix? Setup: vertices are split into equal sets X and Y. Edges appear with probability p inside a set and q < p across. Answer: the random matrix M is the expected matrix A plus a small random matrix R. Bounds on ‖R‖, Weyl's inequality and the Davis–Kahan theorem keep the second eigenvector of M close to that of A. Given extra conditions, we expect at most 288p(1−p)/(p−q)² misclassified vertices. This is a constant number for fixed p and q. For q = p − 17/√n (p = 1/2) it allows a constant fraction. The chapter also proves a weak Davis–Kahan.
 
-**Prerequisites:** eigenvalues/eigenvectors of symmetric matrices; spectral norm; rank; Weyl's inequality (via Courant–Fischer); basic random-graph models.
+**Prerequisites:** eigenvalues/eigenvectors of symmetric matrices; spectral norm (largest stretch $\max_{\|x\|=1}\|Rx\|$; for symmetric $R$, the largest $|$eigenvalue$|$); rank; Weyl's inequality (via Courant–Fischer, which writes each eigenvalue as a max–min of $x^TAx/x^Tx$); basic random-graph models.
 
 ## L2 — Key ideas (5–10 bullets)
 - Planted bisection: edge probability p within X and within Y, q across, p > q; the algorithm sees only the graph (pp. 189–190).
@@ -31,11 +33,11 @@ Question: can a graph's hidden two-block structure be found from the second eige
 - Weyl's inequality moves eigenvalues by at most ‖R‖. Davis–Kahan bounds the (sine of the) angle of an eigenvector by about 2‖R‖ over the gap to the other eigenvalues (pp. 192–193).
 - At a misclassified vertex ψ₂ and φ₂ differ by at least 1/√n, so k errors force ‖ψ₂−φ₂‖ ≥ √(k/n). With the angle bound, and assuming q > p/3 and ‖R‖ ≤ 3√(p(1−p)n), this gives k ≤ 288p(1−p)/(p−q)² (pp. 193–194).
 - Weak Davis–Kahan proof: expand ψᵢ in A's eigenbasis, then bound ‖Aψᵢ‖ below by δ sinθᵢ and above by 2‖R‖ (pp. 194–195).
-- Warning: real data rarely resembles these models (p. 190).
+- Warning: real data rarely resembles these models, and there is no reason to expect algorithms tuned to them to work in practice; nevertheless, some do (p. 190).
 
 ## L3 — Walkthrough
 
-**Intro (pp. 189–190).** Graph bisection: split the vertices into two equal sets while minimizing edges between them. Planted model: choose equal sets X, Y, then probabilities p > q. Edge (a,b) has probability p if both ends are in X or both in Y, and q otherwise (p. 189). Expected crossing edges: q|X||Y|. For p = 1/2 and q = p − 17/√n the partition can be approximately recovered from the second eigenvector (p. 189). If q = p − ε/√n for small ε, the problem is information-theoretically unsolvable (p. 189). The analysis simplifies McSherry's. Idea: treat the generated matrix as a perturbation of the expected one (pp. 189–190). Warning: few real data sets look like these models (p. 190).
+**Intro (pp. 189–190).** Graph bisection: split the vertices into two equal sets while minimizing edges between them. Planted model: choose equal sets X, Y, then probabilities p > q. Edge (a,b) has probability p if both ends are in X or both in Y, and q otherwise (p. 189). Expected crossing edges: q|X||Y|. For p = 1/2 and q = p − 17/√n the partition can be approximately recovered from the second eigenvector (p. 189). If p is too close to q, the X/Y partition will not be the smallest; for example, if q = p − ε/√n for small ε, the problem is information-theoretically unsolvable (no method can recover the partition from the graph, whatever its computing power) (p. 189). The analysis simplifies McSherry's. Idea: treat the generated matrix as a perturbation of the expected one (pp. 189–190). Warning: few real data sets look like these models, and there is no reason to believe that algorithms optimized for them will be useful in practice. Nevertheless, some of them are (p. 190).
 
 **23.1 The perturbation approach (pp. 190–192).** Take X = {1..n/2}, Y = {n/2+1..n} (the algorithm is not told). Expected matrix:
 $$A=\begin{bmatrix} pJ_{n/2} & qJ_{n/2}\\ qJ_{n/2} & pJ_{n/2}\end{bmatrix}-pI_n,$$
@@ -65,11 +67,11 @@ $$\|R\|\le 2\sqrt{p(1-p)n}+c_1\big(p(1-p)n\big)^{1/4}\ln n,\quad\text{provided }
 $$|\mu_i-\alpha_i|\le\|R\|.\tag{23.1}$$
 Davis–Kahan says $\psi_2$ is close to $\phi_2$ in angle if $\|R\|$ is well below the distance from $\alpha_2$ to the other eigenvalues of $\widehat A$. An eigenvector does not move much if its eigenvalue is isolated (p. 192).
 
-Why the gap matters (p. 193): $\mathrm{diag}(1+\epsilon,1)$ and $\mathrm{diag}(1,1+\epsilon)$ are close, but their leading eigenvectors $(1,0)^T$ and $(0,1)^T$ are 90° apart. The matrix $\begin{bmatrix}1&\epsilon\\ \epsilon&1\end{bmatrix}$ has eigenvectors $(1,1)^T,(1,-1)^T$, 45° from both. The problem: an eigenvalue of multiplicity above 1 has no unique eigenvector (p. 193).
+Why the gap matters (pp. 192–193): $\mathrm{diag}(1+\epsilon,1)$ and $\mathrm{diag}(1,1+\epsilon)$ are close, but their leading eigenvectors $(1,0)^T$ and $(0,1)^T$ are 90° apart. The matrix $\begin{bmatrix}1&\epsilon\\ \epsilon&1\end{bmatrix}$ has eigenvectors $(1,1)^T,(1,-1)^T$, 45° from both. The problem: an eigenvalue of multiplicity above 1 (repeated, so several independent eigenvectors share it) has no unique eigenvector (p. 193).
 
 **Theorem 23.2.1.** $A,B$ symmetric, $R=A-B$. $A$ has eigenvalues $\alpha_i$ and eigenvectors $\phi_i$; $B$ has $\beta_i$ and $\psi_i$. $\theta_i$ is the angle between $\pm\psi_i$ and $\pm\phi_i$. Then
 $$\sin2\theta_i\le\frac{2\|R\|}{\min_{j\ne i}|\alpha_i-\alpha_j|}.$$
-The angle is at most $\pi/2$, since this bounds the angle between eigenspaces. The chapter proves a slightly weaker version, with $\theta$ in place of $2\theta$ (p. 193).
+The angle is at most $\pi/2$, since this bounds the angle between eigenspaces (the set of all eigenvectors of one eigenvalue, plus 0), not between particular eigenvectors. The chapter proves a slightly weaker version, with $\theta$ in place of $2\theta$ (p. 193).
 
 **23.3 Partitioning (pp. 193–194).** When $\|R\|$ is small, Weyl gives that $\mu_2$ has multiplicity one. Let $\phi_2$ be the unit eigenvector nearest in angle to $\psi_2$. Assign $a$ to $X$ if $\psi_2(a)>0$ (p. 193). Let $\delta=\psi_2-\phi_2$ and let $\theta$ be the angle between them. A misclassified vertex has $|\delta(a)|\ge 1/\sqrt n$. So if $k$ vertices are misclassified, $\|\delta\|\ge\sqrt{k/n}$. For unit vectors, $\|\delta\|\le\sqrt2\sin\theta$ (the $\sqrt2$ disappears for small $\theta$) (p. 193).
 
@@ -89,10 +91,14 @@ Hence $\sin\theta_i\le 2\|R\|/\delta$ (p. 195).
 
 *Intuition note:* $A$ stretches any part of $\psi_i$ outside $\phi_i$ by at least the gap $\delta$. But $\psi_i$ is nearly killed by $A$, up to a push of size $2\|R\|$. So the outside part must be small.
 
+**23.5 Further Reading (p. 195).** For bounding norms and eigenvalues of random matrices, the author recommends [Ver10] and [Tro12] (p. 195).
+
 ## Toy example (ours)
 $n=4$, $X=\{1,2\}$, $Y=\{3,4\}$, $p=0.6$, $q=0.2$. $\widehat A$ has $0.6$ in the diagonal 2×2 blocks and $0.2$ elsewhere. $\alpha_1=\frac42(0.8)=1.6$, $\alpha_2=\frac42(0.4)=0.8$, and the rest are 0. Check: $\phi_2=(\tfrac12,\tfrac12,-\tfrac12,-\tfrac12)$. Row 1 of $\widehat A\phi_2$ is $0.3+0.3-0.1-0.1=0.4=0.8\cdot\tfrac12$ ✓.
 
 Suppose noise gives $\psi_2=(\tfrac12,\tfrac12,\tfrac12,-\tfrac12)$, a unit vector. Then $\delta=(0,0,1,0)$ and $\|\delta\|=1$. Vertex 3 is wrong, so $k=1$. Check: $|\delta(3)|=1\ge1/\sqrt4=0.5$, and $\|\delta\|=1\ge\sqrt{1/4}=0.5$. Also $\cos\theta=\phi_2^T\psi_2=\tfrac14+\tfrac14-\tfrac14+\tfrac14=\tfrac12$, so $\theta=60^\circ$, $\sin\theta\approx0.866$, and $\sqrt2\sin\theta\approx1.22\ge1$ ✓.
+
+Limits of this toy: it shows only the step from wrong signs to $\|\delta\|$. It sits exactly at $q=p/3$ ($0.2=0.6/3$), the edge of the chapter's assumption $q>p/3$ (here $\alpha_1-\alpha_2=\alpha_2=0.8$, a tie). The $k$ bound would be $288\cdot0.24/0.16=432\gg n=4$, so it says nothing here.
 
 ## Concepts
 - [[stochastic-block-model]] (new) — random graph whose edge probability depends on the blocks of the endpoints; here p within, q across (p. 189)
@@ -102,7 +108,7 @@ Suppose noise gives $\psi_2=(\tfrac12,\tfrac12,\tfrac12,-\tfrac12)$, a unit vect
 - [[eigenvector-eigenvalue]] — second eigenvector of the adjacency matrix used as a partition indicator (p. 190)
 - [[rank]] — $\widehat A$ has rank 2, which makes its spectrum explicit (p. 191)
 - [[adjacency-matrix]] — here $M$, random, with entries 1 on edges (p. 190)
-- [[norm]] — matrix norm $\|R\|$ measures noise size (p. 192)
+- [[norm]] — spectral norm $\|R\|$ (largest $|$eigenvalue$|$ of symmetric $R$) measures noise size (p. 191)
 
 ## Canonical instances
 - [[planted-bisection]] (new) — the equal-sized X/Y model with probabilities p > q (p. 189)
@@ -110,7 +116,7 @@ Suppose noise gives $\psi_2=(\tfrac12,\tfrac12,\tfrac12,-\tfrac12)$, a unit vect
 
 ## Bridges (candidates)
 - [structural-analogy] signal-plus-noise recovery by the second eigenvector ↔ linear-algebra: Fiedler vector splitting a graph into communities — both read a partition from signs of an eigenvector.
-- [structural-analogy] Davis–Kahan angle bound ↔ linear-algebra: perturbation of invariant subspaces under symmetric noise — the theorem is the same statement.
+- [same-math] Davis–Kahan angle bound ↔ linear-algebra: perturbation of invariant subspaces under symmetric noise — the theorem is the same statement.
 
 ## Questions this raises
 - Why is the ‖R‖ bound needed with probability approaching 1, and how does Vu's theorem sharpen Chapter 8's bound?

@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 11
 pipeline_version: 0.1
+audited: 2026-10-15
+audit_fixes: 4
 ---
 # A New Interpretation of Information Rate
 
@@ -20,9 +22,9 @@ pipeline_version: 0.1
 A gambler who receives a noisy "private wire" about a chance event and bets, each time, a fraction of capital set by his posterior beliefs can make his capital grow exponentially (the odds being fair). With fair odds, the best growth rate equals Shannon's information rate.
 
 ## L1 — The gist (≤ 120 words)
-Shannon's transmission rate had meaning only through his coding theorem. Kelly asks whether the rate means anything when no coding is used. He models a gambler who gets noisy advance news of a chance event and bets repeatedly, reinvesting winnings. The gambler maximizes the exponential growth rate $G$ of his capital. With fair odds, maximum $G$ equals Shannon's rate $R=H(X)-H(X/Y)$. With unfair odds and no track take, $R$ is the extra growth due to the channel. With a track take (the house's cut), the formulas are more complex. The strategy is log-optimal: it maximizes the expected log of capital.
+Shannon's transmission rate had meaning only through his coding theorem (binary digits can be coded and sent at that rate with arbitrarily small error). Kelly asks whether the rate means anything when no coding is used. He models a gambler who gets noisy advance news of a chance event and bets repeatedly, reinvesting winnings. The gambler maximizes the exponential growth rate $G$ of his capital. With fair odds, maximum $G$ equals Shannon's rate $R=H(X)-H(X/Y)$. With unfair odds and no track take, $R$ is the extra growth due to the channel. With a track take (the house's cut), the formulas are more complex. The strategy is log-optimal: it maximizes the expected log of capital.
 
-**Prerequisites:** logarithms (base 2); probability and the law of large numbers; conditional and joint probability; basic partial derivatives; Shannon entropy $H$.
+**Prerequisites:** logarithms (base 2); probability and the law of large numbers; conditional and joint probability; basic partial derivatives; Shannon entropy $H$; conditional entropy $H(X/Y)$ (average uncertainty about the sent symbol left after seeing the received one).
 
 ## L2 — Key ideas (5–10 bullets)
 - Shannon's rate had significance only via the coding theorem. Kelly gives it a meaning where no coding is contemplated (p. 917).
@@ -31,14 +33,14 @@ Shannon's transmission rate had meaning only through his coding theorem. Kelly a
 - For a noisy binary channel with fair odds, $G_{\max}=1+p\log p+q\log q=R$ (p. 920).
 - In general with fair odds, betting $a(s/r)=q(s/r)$ gives $G_{\max}=H(X)-H(X/Y)$ (p. 922).
 - With unfair odds and no track take, the bets are the same and the posted odds are ignored. $R$ is the gain due to the channel, and any deviation from fair odds helps the gambler (pp. 922–923).
-- With a track take, the optimal bets come from setting the derivatives of $G$ equal to a constant $k$. Only outcomes with $p(s)\alpha_s$ above a threshold are bet on (pp. 923–925).
+- With a track take, the optimal bets set the derivative of $G$ equal to a constant $k$ for outcomes bet on, and at most $k$ for the rest. Only outcomes with $p(s)\alpha_s$ above a threshold are bet on (pp. 923–925).
 - The log criterion is justified by additivity and the law of large numbers, not by the gambler's value function. Optimality is proved only against fixed-fraction rules (pp. 925–926).
 
 ## L3 — Walkthrough
 
 ### Introduction (pp. 917–918)
-Shannon's rate has meaning through his theorem on encoding binary digits at that rate with arbitrarily small error. Some workers assume it also has meaning without coding, for example in radar detectors designed for minimum equivocation. Kelly says this is unjustified without further analysis (p. 917).
-For a system with errors, Kelly says the problem seems to have but one solution: a cost function on (signal, received symbol) pairs whose expected value is meaningful, for example obtained from von Neumann utility theory. That cost would depend on things outside the system, so its average could not be identified with Shannon's rate. Kelly believes such an approach is too general to shed light on the specific problems of communication theory. The distinguishing feature of a communication system is that the receiver can profit from knowing the input symbols or their probabilities better. An arbitrary pairing of channel and cost function need not be a communication system (p. 918). Kelly therefore picks a real situation: a gambler who bets using the received symbols (p. 918).
+Shannon's rate has meaning through his theorem on encoding binary digits at that rate with arbitrarily small error. Some workers assume it also has meaning without coding, for example in radar detectors designed for minimum equivocation (the uncertainty about the sent symbol that remains after reception; minimizing it maximizes the rate). Kelly says this is unjustified without further analysis (p. 917).
+For a system with errors, Kelly says the problem seems to have but one solution: a cost function on (signal, received symbol) pairs whose expected value is meaningful, for example obtained from von Neumann utility theory (numbers on outcomes such that rational choice maximizes their expected value). Generally, that cost would depend on things outside the system, so its average could not be identified with Shannon's rate. Kelly believes such an approach is too general to shed light on the specific problems of communication theory. The distinguishing feature of a communication system is that the receiver can profit from knowing the input symbols or their probabilities better. An arbitrary pairing of channel and cost function need not be a communication system (p. 918). Kelly therefore picks a real situation: a gambler who bets using the received symbols (p. 918).
 
 ### The gambler with a private wire (pp. 918–920)
 A channel carries the result of a chance event before it becomes common knowledge, so bets are still available at the original odds (p. 918).
@@ -54,9 +56,9 @@ $$G=\lim\Big[\tfrac WN\log(1+\ell)+\tfrac LN\log(1-\ell)\Big]=q\log(1+\ell)+p\lo
 *Intuition note:* Betting everything has a huge average but almost always ends in ruin. The strategy Kelly assumes maximizes $G$, the typical growth rate of the log of capital. With fair odds this typical growth rate is exactly the channel's information rate.
 
 ### The general case (pp. 920–922)
-Notation: $p(s)$ is the probability that symbol $s$ is sent. $p(r/s)$ is the probability of receiving $r$ given $s$ was sent. $p(s,r)$ is the joint probability. $q(r)$ is the received-symbol probability, and $q(s/r)$ is the probability of $s$ given $r$. $\alpha_s$ is the odds, that is, dollars returned per one-dollar bet. $a(s/r)$ is the fraction of capital bet on $s$ after seeing $r$ (p. 920). Only independent transmitted symbols and independent noise are considered (p. 921).
+Notation: $p(s)$ is the probability that symbol $s$ is sent. $p(r/s)$ is the probability of receiving $r$ given $s$ was sent. $p(s,r)$ is the joint probability. $q(r)$ is the received-symbol probability, and $q(s/r)$ is the probability of $s$ given $r$. $\alpha_s$ is the odds, that is, dollars returned per one-dollar bet (including that one dollar). $a(s/r)$ is the fraction of capital bet on $s$ after seeing $r$ (p. 920). Only independent transmitted symbols and independent noise are considered (p. 921).
 
-**Fair odds** means $\alpha_s=1/p(s)$. Without a track take, $\sum 1/\alpha_s=1$ because all money collected is paid to the winner. If $\alpha_s>1/p(s)$ for some $s$, a bettor could insure a profit by repeated bets on $s$. The extra betting would lower $\alpha_s$. Kelly says that in parimutuel betting there is a tendency for the odds to be fair (ignoring the track take), and that the same feedback probably operates in more complicated cases such as stock market speculation (p. 921).
+**Fair odds** means $\alpha_s=1/p(s)$. Without a track take, $\sum 1/\alpha_s=1$ because all money collected is paid to the winner. If $\alpha_s>1/p(s)$ for some $s$, a bettor could insure a profit by repeated bets on $s$. The extra betting would lower $\alpha_s$. Kelly says that in parimutuel betting (all stakes are pooled and paid out to the winners) there is a tendency for the odds to be fair (ignoring the track take), and that the same feedback probably operates in more complicated cases such as stock market speculation (p. 921).
 
 There is no loss of generality in setting $\sum_s a(s/r)=1$, since the gambler can hold back money by placing canceling bets (p. 921). With $W_{sr}$ the number of times $s$ is sent and $r$ received:
 $$V_N=\prod_{r,s}[a(s/r)\alpha_s]^{W_{sr}}V_0,\qquad \log\frac{V_N}{V_0}=\sum_{rs}W_{sr}\log\alpha_s a(s/r),$$

@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 16
 pipeline_version: 0.1
+audited: 2026-10-15
+audit_fixes: 11
 ---
 # The Compensation Principle (Arrow 1951, ch. IV)
 
@@ -20,25 +22,25 @@ pipeline_version: 0.1
 Arrow argues that the compensation principle with compensation actually paid only restates unanimity comparison, and that the version with compensation merely possible (Kaldor, Scitovsky) does not give a consistent social ordering meeting his conditions.
 
 ## L1 — The gist (≤ 120 words)
-Can the welfare-economics "compensation principle" serve as a social welfare function? Arrow separates two versions. If compensations are actually paid, the principle only restates unanimity comparison (everyone weakly prefers x to y), which leaves some pairs of alternatives incomparable. If compensation is only possible (Kaldor), the ranking depends on other alternatives, can say both "x better than y" and "y better than x" (Scitovsky), and rests on an arbitrary rule and an unclear measure of total output. Scitovsky's repair gives a weak ordering for two alternatives but is intransitive for three; Arrow's numerical example shows this. So, in Arrow's argument, the Kaldor and Scitovsky forms do not give a consistent social ordering.
+Can the welfare-economics "compensation principle" serve as a social welfare function? Arrow separates two versions. If compensations are actually paid, the principle only restates unanimity comparison (everyone weakly prefers x to y), which may leave some pairs of alternatives incomparable. If compensation is only possible (Kaldor), the ranking depends on other alternatives, can say both "x better than y" and "y better than x" (Scitovsky), and rests on an arbitrary rule and an unclear measure of total output. Scitovsky's repair gives a weak ordering for two alternatives (under the usual assumption (6)) but is intransitive for three; Arrow's numerical example shows this. So, in Arrow's argument, the Kaldor and Scitovsky forms do not give a consistent social ordering.
 
 **Prerequisites:** weak ordering (complete, transitive preference R, with strict P and indifference I); indifference curves; Arrow's Conditions 1–3 as named in this unit.
 
 ## L2 — Key ideas (5–10 bullets)
 - Compensation actually paid reduces to a unanimity rule: x Q y means everyone weakly prefers x to y. Q is only a quasi-ordering (reflexive and transitive, but some pairs may be incomparable), and a social ordering R should be compatible with it (pp. 34–36).
 - Studying "maximal alternatives" (the new welfare economics) is a possibly useful preliminary, but Arrow finds it hard to see how a policy recommendation can rest merely on it: it does not say which maximal state to pick or which state to move to (p. 37).
-- Arrow doubts that maximal-state analysis helps even for consumer-choice questions. If individuals order states only by their own commodities, Chapter VI will show that no social welfare function satisfying Conditions 1–5 exists (p. 37).
-- The Kaldor principle (compensation possible, not paid) has an arbitrary utility rule behind it. For several commodities, "total output" has no meaning independent of income distribution (pp. 38–40).
-- As stated, Kaldor's principle violates Condition 3 (the x–y choice should not depend on individual orderings of alternatives outside the pair). Restricting Condition 3 to admissible alternatives (one state chosen from each class of states derivable from one another by compensation) repairs this, but not Condition 1 (the social ordering must be a consistent ranking satisfying Axioms I and II) (pp. 40–42).
+- Arrow doubts that any study of maximal states will be useful for those aspects of social choice tied to consumer's (and worker's) choice. If individuals order states only by their own commodities, Chapter VI will show that no social welfare function satisfying Conditions 1–5 exists (p. 37).
+- The Kaldor principle (compensation possible, not paid) rests on a rule for choosing utility indicators that is arbitrary in the sense that another rule could have been chosen. For several commodities, "total output" has no meaning independent of income distribution (pp. 38–40).
+- As stated, Kaldor's principle violates Condition 3 (the x–y choice should not depend on individual orderings of alternatives outside the pair). Condition 3, read as applying only to admissible alternatives (one state chosen from each class of states derivable from one another by compensation), is satisfied by the restricted principle if one waives, as Arrow does for argument's sake (fn. 14), its application to nonadmissible alternatives. Condition 1 still fails (the social ordering must be a consistent ranking satisfying Axioms I and II) (pp. 40–42).
 - Scitovsky showed Kaldor can give both x P y and y P x. His double test (use the Kaldor test where it gives no contradiction; otherwise call the states indifferent) gives a weak ordering for two admissible alternatives, given the usual assumption (6) (pp. 42–43).
-- With three alternatives, Scitovsky indifference is not transitive (numerical example, pp. 44–45). Unaccomplished redistributions also seem irrelevant (p. 45).
+- With three alternatives, Scitovsky indifference is not transitive (numerical example, pp. 44–45). The x–y comparison also strongly suggests that unaccomplished redistributions are irrelevant (p. 45).
 
 ## L3 — Walkthrough
 
 ### 1. The payment of compensation (pp. 34–37)
 **Dictum.** If there is a method of paying compensations such that, after changing from y to x and paying them, each person prefers the resulting state to y (or is indifferent, and at least one actually prefers it), the community ought to prefer x to y *if the compensations are made* (p. 34). Arrow says this is not debatable, except perhaps on a philosophy of systematically denying people whatever they want (p. 34).
 
-It is "roundabout": what matters is the *resulting* state, so call it x. Then $x P y$ if $x R_i y$ for all $i$ and $x P_i y$ for at least one $i$. Adding $x I y$ if $x I_i y$ for all $i$ gives Bergson's Fundamental Value Propositions of Individual Preference (p. 34).
+It is "roundabout": what matters is the *resulting* state, so call it x. Then $x P y$ if $x R_i y$ for all $i$ and $x P_i y$ for at least one $i$. Adding $x I y$ if $x I_i y$ for all $i$ gives Bergson's Fundamental Value Propositions of Individual Preference (his basic value judgments: social preference follows unanimous individual preference) (p. 34).
 
 **Unanimity relation.** Define
 $$x\,Q\,y \text{ means that, for all } i,\ x R_i y. \tag{1}$$
@@ -63,22 +65,22 @@ Call Q the *unanimity quasi-ordering*. The principle becomes: for any set of ind
 
 **Arrow's criticism.**
 - Maximal alternatives may be a useful preliminary to analysing particular social welfare functions, but it is hard to see how any policy recommendation can be based merely on knowing them. There is no way of determining which maximal alternative to choose. Even from a nonmaximal state there is no way to know which better state to move to, so the community is in Buridan's ass's position (p. 37).
-- Arrow goes beyond Samuelson. The doctrine that marginal rates of substitution are equal for all consumers assumes each person orders social states solely by the commodities he receives. Chapter VI will show that no social welfare function consistent with Conditions 1–5 can be formed if individual orderings are formed in that individualistic way, because then valuations of alternative income distributions conflict most sharply (p. 37).
+- Arrow goes beyond Samuelson: he doubts that any study of maximal alternatives will be useful for those aspects of social choice tied to consumer's (and worker's) choice. The doctrine that marginal rates of substitution (how much of one good a person would give for one more unit of another) are equal for all consumers assumes each person orders social states solely by the commodities he receives. Chapter VI will show that no social welfare function consistent with Conditions 1–5 can be formed if individual orderings are formed in that individualistic way, because then valuations of alternative income distributions conflict most sharply (p. 37).
 - Hence the analysis of maximal states applies precisely when it cannot serve as a preliminary to a complete social ordering. This is "somewhat qualified" in Chapter VI, Section 3 (p. 37).
-- The argument does not hold against optimum conditions on the production side. Resources there matter to members of the community only indirectly, through productivity in different uses. Only this assumption distinguishes production conditions from exchange conditions (p. 37).
+- The argument does not hold against optimum conditions on the production side (rules for using resources efficiently across their uses). Resources there matter to members of the community only indirectly, through productivity in different uses. Only this assumption distinguishes production conditions from exchange conditions (p. 37).
 
 ### 2. The possibility of compensation (pp. 38–45)
 **Kaldor principle.** If there is a method of compensation under x such that everybody can be made better off than in y (or at least as well off, with one better off), x should be chosen above y *even if the compensation is not paid*. Kaldor does not claim ethical optimality (the distribution under x might be very unjust). He claims x is better from the viewpoint of aggregate production (p. 38).
 
 **Baumol's objections** (Hicks endorsed the principle) (p. 38):
-1. It implies an interpersonal comparison, since compensations are measured in money.
+1. It implies an interpersonal comparison of utility, since compensations are measured in money, so a unit of money counts the same for a rich man as for a poor man.
 2. Even in the seemingly innocuous case where everyone is actually better off, saying x is better would be valid only in some sort of utilitarian scheme of ethics.
 
-Arrow's reply to (2): no doubt formally valid, in that some value judgment is involved, but the value judgment is so generalized that we would all be well content to assume it. "Better off" may also depend on others' consumption and social structure (p. 38).
+Arrow's reply to (2): no doubt formally valid, in that some value judgment is involved, but the value judgment is so generalized that we would all be well content to assume it. This is especially so if "better off" depends also on others' consumption and on social structure, as Baumol himself observes in a footnote (p. 38).
 
-Arrow's reply to (1): the objection "seems to be somewhat vague". The results of the Kaldor principle would be the same as summation of utilities when the marginal utility of real income is constant and the same across individuals (assuming that proviso makes any sense). That is not the same as assuming interpersonal comparison. The principle chooses utility indicators by a rule that gives marginal utility of income certain properties (Ch. III §6). This is arbitrary: another rule asks what *fraction* of income each person would need under x to match y, and calls x better if the fractions sum to a positive number (tentatively Modigliani). That rule relates to the Bernoulli assumption (marginal utility inversely proportional to income) as Kaldor's rule relates to constant marginal utility. So Baumol's objection is essentially to the arbitrariness (p. 39).
+Arrow's reply to (1): the objection "seems to be somewhat vague". The results of the Kaldor principle would be the same as the summation-of-utilities criterion (rank states by the sum of individual utility numbers) when the marginal utility of real income (extra utility from one more unit of real income) is constant and the same across individuals (assuming that proviso makes any sense). That is not the same as assuming interpersonal comparison. The principle chooses utility indicators (numerical scales attached to each person's indifference map) by a rule that gives marginal utility of income certain properties (Ch. III §6). This is arbitrary in the sense that another rule of choosing utility indicators could have been chosen: for example, one asks what *fraction* of income each person would need under x to match y, and calls x better if the fractions sum to a positive number (tentatively Modigliani). That rule relates to the Bernoulli assumption (marginal utility inversely proportional to income) as Kaldor's rule relates to constant marginal utility. So Baumol's objection is essentially to the arbitrariness (p. 39).
 
-**Further objections (Arrow's).** Even among equally "reasonable" rules, why separate production from distribution? Any choice depends on both, and it is unclear how a production ordering would help (p. 39). More deeply, with several commodities, comparing total production requires a standard of value that makes commodities commensurable, and that standard usually depends on income distribution. So total output has no meaning independent of distribution. Only in a one-commodity world does the ambiguity vanish (p. 40). In general it would appear that replacing y by x as Kaldor's principle instructs changes the standard of value, so that we have, as Baumol says, "a measuring rod which bends, stretches, and ultimately falls to pieces in our hands" (Baumol, p. 40).
+**Further objections (Arrow's).** Even among equally "reasonable" rules, why separate production from distribution? Any choice depends on both, and it is unclear how a production ordering would help (p. 39). More deeply, with several commodities, comparing total production requires a standard of value that makes commodities commensurable, and that standard usually depends on income distribution. So total output has no meaning independent of distribution. In a one-commodity world, of course, the ambiguity disappears (p. 40). In general it would appear that replacing y by x as Kaldor's principle instructs changes the standard of value, so that we have, as Baumol says, "a measuring rod which bends, stretches, and ultimately falls to pieces in our hands" (Baumol, p. 40).
 
 **Formal treatment.** Let $xCy$ mean "x is derivable from y by compensation payments". Kaldor: $xPy$ if there is $x'$ with $x'Cx$, $x'Qy$ and not $yQx'$. As stated, this violates Condition 3: if we do not have both $xQy$ and not $yQx$, the choice between x and y depends on Q between alternatives outside $[x,y]$, hence on individual orderings of those alternatives (p. 40).
 
@@ -86,7 +88,7 @@ Arrow's restatement uses three properties of C:
 $$\text{(1) } xCx;\quad \text{(2) } xCy \Rightarrow yCx;\quad \text{(3) } xCy \wedge yCz \Rightarrow xCz.$$
 Reasons: zero payments; reversing a payment $c_i$ to $-c_i$; payments add, $c_i+c_i'$ (pp. 40–41). So C is an equivalence relation. It splits social states into mutually exclusive *compensatory-equivalent classes*. Footnote 13 proves this by defining the class generated by x as $\{x' : x'Cx\}$ and checking (a)–(d) with properties (1)–(3) (p. 41).
 
-Kaldor–Hicks spirit: states in one class are at the same production level, and choosing among them is an ethical question about distribution. We may imagine a preliminary value judgment that picks one *admissible* state per class, and the principle only ranks admissible states. If Condition 3 is read as requiring invariance only to changes in the orderings of other admissible alternatives, the restricted Kaldor principle satisfies it (pp. 41–42).
+Kaldor–Hicks spirit: states in one class are at the same production level, and choosing among them is an ethical question about distribution. We may imagine a preliminary value judgment that picks one *admissible* state per class, and the principle only ranks admissible states. If Condition 3 is read as requiring invariance only to changes in the orderings of other admissible alternatives, the restricted Kaldor principle satisfies it (pp. 41–42). Arrow adds that the reasoning behind Condition 3 would apply equally to nonadmissible alternatives; he is "simply waiving the issue here to get on with other matters" (fn. 14, p. 42).
 
 **Condition 1 still fails.** Scitovsky showed that, under Kaldor's principle, some individual orderings give both $xPy$ and $yPx$. That is incompatible with a social ordering, since $xPy$ implies not $yRx$ (Def. 1, Axiom I) (p. 42).
 
@@ -128,9 +130,10 @@ Two people, two goods A and B, 3 units of each in each state. Person 1 cares onl
 Kaldor test for x over y: redistribute x's totals (3,3) as person 1 = (3,0), person 2 = (0,3). Utilities (3,3) vs y's (3,0): nobody worse, person 2 better. So x beats y.
 Kaldor test for y over x: redistribute y's totals the same way. Utilities (3,3) vs x's (1,3): nobody worse, person 1 better. So y beats x.
 Both $xPy$ and $yPx$, which is impossible for a social ordering. Scitovsky's double test says both redistributions exist, so x and y are indifferent. With only these two states, that is consistent.
+Caveat: x and y have the same totals (3, 3), so $xCy$: they are in one compensatory-equivalent class, and under Arrow's restatement only one of them would be admissible. The toy shows Scitovsky's Kaldor paradox, not the three-state intransitivity.
 
 ## Concepts
-- [[compensation-principle]] (new) — rule that x is socially better if compensations could make everyone at least as well off, and one better off (pp. 34, 38)
+- [[compensation-principle]] (new) — a name for two related methods: (1) with compensation actually paid, x is preferred to y if, after the payments, everyone is at least as well off and someone better off, which reduces to unanimity (p. 34); (2) Kaldor's version, with compensation only possible, not paid (p. 38)
 - [[unanimity-quasi-ordering]] (new) — relation Q: x Q y iff everyone weakly prefers x to y. It is reflexive and transitive, but not necessarily complete (pp. 34–36)
 - [[quasi-ordering]] (new) — reflexive, transitive relation, not necessarily complete (Def. 7, p. 35)
 - [[compatible-with-Q]] (new) — R is a weak ordering agreeing with Q, as in Def. 8 (p. 35)
@@ -142,7 +145,7 @@ Both $xPy$ and $yPx$, which is impossible for a social ordering. Scitovsky's dou
 - [[independence of irrelevant alternatives (IIA)]] — Arrow's Condition 3 as used here: x–y choice should not depend on orderings of alternatives outside $[x,y]$ (p. 40) (canon link; name not used in this unit)
 
 ## Canonical instances
-- [[buridans-ass-welfare]] — many maximal states, no way to choose among them (p. 37)
+- [[buridans-ass-welfare]] — even from a known nonmaximal state, no way to know which of the better states to move to (p. 37)
 - [[tariff-schedules]] — ranking many tariffs, not just free trade vs one tariff (p. 43)
 - [[scitovsky-three-state-example]] — two goods, two people, x I y, y I z, but not x I z (pp. 44–45)
 

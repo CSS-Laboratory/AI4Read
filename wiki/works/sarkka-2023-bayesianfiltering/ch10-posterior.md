@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 14
 pipeline_version: 0.1
+audited: 2026-10-15
+audit_fixes: 6
 ---
 # Posterior Linearization Filtering
 
@@ -22,11 +24,11 @@ Linearize the measurement model with respect to the (iteratively improved) appro
 ## L1 — The gist (≤ 120 words)
 Gaussian filters linearize the models and then apply Kalman equations. Statistical linear regression (SLR) normally averages over the prior or predicted distribution. This chapter asks whether another linearization distribution is better. The proposed answer: use the posterior, since that is where the state is expected to lie after measuring. The posterior is unknown, so iterated posterior linearization (IPL) re-linearizes around the latest posterior approximation. This gives iterated posterior linearization filters (IPLFs) for additive-noise, non-additive-noise and conditional-distribution models, with sigma-point and Monte Carlo versions. The chapter also states in what sense Taylor, statistical, SLR and posterior linearizations are optimal.
 
-**Prerequisites:** Kalman filter update equations; Gaussian moments; statistical linear regression and sigma-point (cubature, Gauss–Hermite) integration from Chapters 8–9; Kullback–Leibler divergence.
+**Prerequisites:** Kalman filter update equations; Gaussian moments; statistical linear regression and sigma-point integration (sigma points: fixed weighted points that approximate Gaussian integrals; cubature and Gauss–Hermite are two such point rules) from Chapters 8–9; Kullback–Leibler divergence.
 
 ## L2 — Key ideas (5–10 bullets)
 - Generalized SLR (GSLR) lets the distribution used for linearization, $\pi(\mathbf x)$, differ from the distribution of $\mathbf x$ in the estimation problem. It then no longer reduces to moment matching (the linear model reproducing the true means and covariances of $(\mathbf x,\mathbf y)$) (pp. 204–206).
-- Posterior linearization (PL) sets $\pi(\mathbf x)=p(\mathbf x\mid\mathbf y)$. The linearization is then accurate where the state is expected to be after measuring (pp. 206–208).
+- Posterior linearization (PL) sets $\pi(\mathbf x)=p(\mathbf x\mid\mathbf y)$. The linearization then aims to be accurate where the state is expected to be after measuring (pp. 206–208).
 - The posterior is unknown, so IPL runs a loop: linearize at the current posterior approximation, update the *prior* with that linear model, repeat (Algorithm 10.6, pp. 209–210).
 - In the scalar example $y=x^3+q$, the first IPL iteration equals prior SLR (moment matching). After two iterations the approximation is accurate, and after three it is hard to distinguish from the true posterior (pp. 210–211).
 - IPLF = ordinary Gaussian-filter prediction + IPL measurement update. Between additive, non-additive, conditional-moment and conditional-distribution models, the update changes only in its moment integrals, while (10.14)–(10.15) stay the same; the prediction integrals also depend on the model (pp. 212–217).
@@ -36,7 +38,7 @@ Gaussian filters linearize the models and then apply Kalman equations. Statistic
 
 ## L3 — Walkthrough
 
-**Intro (p. 204).** Chapter 9 showed that the Gaussian filters are "linearize, then Kalman". How we linearize matters, and any affine function with additive Gaussian noise may be used. Posterior and iterated posterior linearization come from García-Fernández et al. (2015) and Tronarp et al. (2018).
+**Intro (p. 204).** Chapter 9 showed that the Gaussian filters are "linearize, then Kalman". How we linearize may strongly affect filter performance, and any affine function with additive Gaussian noise may be used. Posterior and iterated posterior linearization come from García-Fernández et al. (2015) and Tronarp et al. (2018).
 
 ### 10.1 Generalized Statistical Linear Regression (pp. 204–206)
 In the SLR filters, the prediction/update distributions of $\mathbf x_k$ were implicitly the linearization distribution, which gave moment matching. There is no inherent reason for this; the IEKF already decoupled linearization point from the distribution by iterating (p. 204).
@@ -87,7 +89,7 @@ $$\mathbf A^{(i)}=[\mathbf P^{xy,(i-1)}]^{\mathsf T}[\mathbf P^{(i-1)}]^{-1},\ \
 with moments taken under $\mathrm N(\mathbf x\mid\mathbf m^{(i-1)},\mathbf P^{(i-1)})$:
 $$\boldsymbol\mu^{+,(i-1)}=\!\int\!\mathbf g(\mathbf x)\,\mathrm N(\cdot)\,d\mathbf x,\ \ \mathbf P^{xy,(i-1)}=\!\int\!(\mathbf x-\mathbf m^{(i-1)})(\mathbf g(\mathbf x)-\boldsymbol\mu^{+,(i-1)})^{\mathsf T}\mathrm N(\cdot)\,d\mathbf x,$$
 $$\mathbf P^{y,(i-1)}=\!\int\!(\mathbf g(\mathbf x)-\boldsymbol\mu^{+,(i-1)})(\mathbf g(\mathbf x)-\boldsymbol\mu^{+,(i-1)})^{\mathsf T}\mathrm N(\cdot)\,d\mathbf x+\mathbf Q.\tag{10.10}$$
-2. Update (shapes: $\mathbf m,\mathbf m^{(i)}\in\mathbb R^n$, $\mathbf P\in\mathbb R^{n\times n}$, $\mathbf A^{(i)}\in\mathbb R^{d\times n}$ for $\mathbf y\in\mathbb R^d$; this is added bookkeeping):
+2. Update (shapes: $\mathbf m,\mathbf m^{(i)}\in\mathbb R^n$, $\mathbf P\in\mathbb R^{n\times n}$, $\mathbf A^{(i)}\in\mathbb R^{d\times n}$ for $\mathbf y\in\mathbb R^d$ (added step)):
 $$\boldsymbol\mu^{(i)}=\mathbf A^{(i)}\mathbf m+\mathbf b^{(i)},\ \ \mathbf S^{(i)}=\mathbf A^{(i)}\mathbf P[\mathbf A^{(i)}]^{\mathsf T}+\boldsymbol\Lambda^{(i)},\ \ \mathbf K^{(i)}=\mathbf P[\mathbf A^{(i)}]^{\mathsf T}\mathbf S^{-1},$$
 $$\mathbf m^{(i)}=\mathbf m+\mathbf K^{(i)}(\mathbf y-\boldsymbol\mu^{(i)}),\ \ \mathbf P^{(i)}=\mathbf P-\mathbf K^{(i)}\mathbf S^{(i)}[\mathbf K^{(i)}]^{\mathsf T}.\tag{10.11}$$
 (pp. 209–210)
@@ -100,7 +102,7 @@ Important: the update step starts from the *prior* $\mathrm N(\mathbf m,\mathbf 
 
 **Remarks (p. 211).**
 - The integrals can be computed with the strategies of Chapter 9, so IPL also applies to non-additive and conditional-distribution models.
-- If the integrals are approximated by Taylor-series linearization at the current guess, we obtain a Gauss–Newton method, also the basis of the IEKF.
+- If the integrals are approximated by Taylor-series linearization at the current guess, we obtain a Gauss–Newton method (an optimizer that repeatedly linearizes and solves a least-squares step), also the basis of the IEKF.
 - If the posterior variance is small, moment matching and Taylor expansion coincide, and we again get Gauss–Newton.
 - When measurement noise is large, the posterior resembles the prior, so prior and posterior SLR are likely to give similar results.
 
@@ -127,7 +129,7 @@ Relation to other filters (pp. 213–214):
 
 **Algorithm 10.9 (IPLF II, non-additive noise).** In the IPL-based update step only the moment integrals change; (10.14) and (10.15) stay as they are. Prediction (10.16) integrates $\mathbf f(\mathbf x_{k-1},\mathbf q_{k-1})$ over $\mathrm N(\mathbf x_{k-1}\mid\mathbf m_{k-1},\mathbf P_{k-1})\,\mathrm N(\mathbf q_{k-1}\mid\mathbf 0,\mathbf Q_{k-1})$ for mean and covariance (no added $\mathbf Q$). Update moments (10.17) use $\mathbf h(\mathbf x_k,\mathbf r_k)$ under $\mathrm N(\mathbf x_k\mid\mathbf m_k^{(i-1)},\mathbf P_k^{(i-1)})\,\mathrm N(\mathbf r_k\mid\mathbf 0,\mathbf R_k)$, with no added $\mathbf R_k$ (pp. 214–215).
 
-**Algorithm 10.10 (IPLF III, conditional moments).** Assuming the conditional moments of (9.68) can be computed: prediction uses $\mathbf m_k^-=\int\boldsymbol\mu_k^-(\mathbf x)\mathrm N\,d\mathbf x$ and $\mathbf P_k^-=\int(\boldsymbol\mu_k^--\mathbf m_k^-)(\cdot)^{\mathsf T}\mathrm N\,d\mathbf x+\int\mathbf P_k^x(\mathbf x)\mathrm N\,d\mathbf x$ (10.18). Update moments (10.19) use $\boldsymbol\mu_k(\mathbf x)$ in place of $\mathbf h_k$, and $\mathbf P_k^{y,(i-1)}$ has the extra term $\int\mathbf P_k^y(\mathbf x)\mathrm N\,d\mathbf x$. It works for all model types if these moments are computable. For additive noise it simplifies to Algorithm 10.8. The conditional moments for the other types are in (A.55)/(A.63) and (A.56)/(A.64). A closed form also exists for models with state-dependent covariance, $p(\mathbf x_k\mid\mathbf x_{k-1})=\mathrm N(\mathbf f_{k-1}(\mathbf x_{k-1}),\mathbf Q_{k-1}(\mathbf x_{k-1}))$ (pp. 215–216).
+**Algorithm 10.10 (IPLF III, conditional moments).** Assuming the conditional moments of (9.68) can be computed: prediction uses $\mathbf m_k^-=\int\boldsymbol\mu_k^-(\mathbf x)\mathrm N\,d\mathbf x$ and $\mathbf P_k^-=\int(\boldsymbol\mu_k^--\mathbf m_k^-)(\cdot)^{\mathsf T}\mathrm N\,d\mathbf x+\int\mathbf P_k^x(\mathbf x)\mathrm N\,d\mathbf x$ (10.18). Update moments (10.19) use $\boldsymbol\mu_k(\mathbf x)$ in place of $\mathbf h_k$, and $\mathbf P_k^{y,(i-1)}$ has the extra term $\int\mathbf P_k^y(\mathbf x)\mathrm N\,d\mathbf x$. It works for all model types if these moments are computable. For additive noise it simplifies to Algorithm 10.8. The conditional moments for the other types are in (A.55)/(A.63) and (A.56)/(A.64). Some non-additive noise models also have closed-form conditional moments; important examples are the Chapter 4 dynamic models with state-dependent covariance, $p(\mathbf x_k\mid\mathbf x_{k-1})=\mathrm N(\mathbf f_{k-1}(\mathbf x_{k-1}),\mathbf Q_{k-1}(\mathbf x_{k-1}))$ (pp. 215–216).
 
 **Algorithm 10.11 (IPLF IV, conditional distributions).** Moments are written as integrals over $\mathbf y_k\,p(\mathbf y_k\mid\mathbf x_k)\,\mathrm N(\mathbf x_k\mid\mathbf m_k^{(i-1)},\mathbf P_k^{(i-1)})$ (prediction: $\mathbf x_k\,p(\mathbf x_k\mid\mathbf x_{k-1})\,\mathrm N(\mathbf x_{k-1}\mid\cdot)$), eqs. (10.20)–(10.21). Steps 2–3 are (10.14) and (10.15) (pp. 216–217).
 
@@ -137,9 +139,9 @@ $$\mathbf m_k^-=\sum_{j=1}^mW_j\mathcal X_k^{-(j)},\ \ \mathbf P_k^-=\sum_{j=1}^
 Update, per iteration: $\mathcal X_k^{(j)}=\mathbf m_k^{(i-1)}+\sqrt{\mathbf P_k^{(i-1)}}\boldsymbol\xi^{(j)}$ (10.25), $\mathcal Y_k^{(j)}=\mathbf h(\mathcal X_k^{(j)})$ (10.26), and
 $$\boldsymbol\mu_k^{+,(i-1)}=\sum_jW_j\mathcal Y_k^{(j)},\ \ \mathbf P_k^{xy,(i-1)}=\sum_jW_j(\mathcal X_k^{(j)}-\mathbf m_k^{(i-1)})(\mathcal Y_k^{(j)}-\boldsymbol\mu_k^{+,(i-1)})^{\mathsf T},$$
 $$\mathbf P_k^{y,(i-1)}=\sum_jW_j(\mathcal Y_k^{(j)}-\boldsymbol\mu_k^{+,(i-1)})(\cdot)^{\mathsf T}+\mathbf R_k.\tag{10.27}$$
-Then (10.14) and (10.15). Depending on the sigma-point choice, the prediction is identical to that of the CKF, GHKF or UKF (pp. 218–219).
+Then (10.14) and (10.15). Depending on the sigma-point choice, the prediction is identical to that of the CKF, GHKF or UKF (cubature, Gauss–Hermite and unscented Kalman filters: Gaussian filters named after their sigma-point rule) (pp. 218–219).
 
-**Example 10.13 (pendulum, Gauss–Hermite IPLF).** RMSE 0.14, lower than EKF and IEKF (0.17) but higher than many non-iterated Gaussian filters. The authors say it appears that, in this model and data, the iteration does not improve the result over non-iterated Gaussian filters (pp. 219–220).
+**Example 10.13 (pendulum, Gauss–Hermite IPLF).** RMSE (root mean squared error of the state estimates) 0.14, lower than EKF (extended Kalman filter: linearizes by first-order Taylor expansion) and IEKF (0.17) but higher than many non-iterated Gaussian filters. The authors say it appears that, in this model and data, the iteration does not improve the result over non-iterated Gaussian filters (pp. 219–220).
 
 **Example 10.14 (coordinated turn, inaccurate initial guess).** GHKF RMSE 0.032, IPLF 0.031, explained by faster convergence at the start. The iteration helps initialize tracking, as IEKF versus EKF does, and afterwards the result is practically identical to the non-iterated filter (p. 220, Fig. 10.4).
 
@@ -156,7 +158,7 @@ Then (10.14) and (10.15). Depending on the sigma-point choice, the prediction is
 $$\mathrm{KL}(p\|q)=\tfrac12\Big[\mathrm{tr}\{\boldsymbol\Lambda^{-1}\mathbf Q\}-n+\log\tfrac{|\boldsymbol\Lambda|}{|\mathbf Q|}+(\mathbf g-\mathbf A\mathbf x-\mathbf b)^{\mathsf T}\boldsymbol\Lambda^{-1}(\mathbf g-\mathbf A\mathbf x-\mathbf b)\Big]\tag{10.51}$$
 Taking $\mathrm E$ over $\mathbf x\sim\mathrm N(\mathbf m,\mathbf P)$ gives the criterion $\mathrm{MKL}(\mathbf A,\mathbf b,\boldsymbol\Lambda)$ (10.52), which SLR minimizes (Exercise 10.7). GSLR minimizes the same criterion with $\pi$ in place of $\mathrm N(\mathbf m,\mathbf P)$ (p. 226).
 - For general $p(\mathbf y\mid\mathbf x)$, plugging it directly into the KL is *not* the correct generalization. The correct one approximates $p(\mathbf y\mid\mathbf x)\simeq\mathrm N(\mathbf y\mid\boldsymbol\mu_R(\mathbf x),\mathbf S_R(\mathbf x))$ (10.53) with the conditional moments of (9.46) (pp. 226–227).
-- **PL** ($\pi=p(\mathbf x\mid\mathbf y)$) needs iteration. Its optimality: the posterior mean and covariance computed with the linearized model match the exact posterior up to the Gaussian approximations used on the way. So it has maximal accuracy at the posterior. The IEKF linearization is a type of PL that linearizes at the MAP estimate (p. 227).
+- **PL** ($\pi=p(\mathbf x\mid\mathbf y)$) needs iteration. Its optimality: the posterior mean and covariance computed with the linearized model match the exact posterior up to the Gaussian approximations used on the way. So it has maximal accuracy at the posterior. The IEKF linearization can be seen as a type of PL that linearizes at the MAP (maximum a posteriori: the posterior's highest point) estimate (p. 227).
 - In Chapter 14 these methods are applied to smoothing (p. 227).
 
 ## Toy example (our own, not from the text)
