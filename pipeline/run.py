@@ -224,7 +224,12 @@ def handle_p2(uid, resp, rec):
         if n > 2:
             return state.record(uid, "needs_human", reason="verifier omitted <h_checks> 3 times", loop=loop)
         return state.record(uid, "p1_done", loop=loop, p2_reruns=n, note="rerun P2: <h_checks> missing")
-    if resp.get("stop_reason") == "max_tokens" or v["verdict"] is None or v["edits"] is None:
+    if resp.get("stop_reason") == "max_tokens":                 # verifier ran out of room: rerun P2, not P3
+        n = rec.get("p2_reruns", 0) + 1
+        if n > 2:
+            return state.record(uid, "needs_human", reason="verifier hit max_tokens 3 times", loop=loop)
+        return state.record(uid, "p1_done", loop=loop, p2_reruns=n, note="rerun P2: verifier hit max_tokens")
+    if v["verdict"] is None or v["edits"] is None:
         return requeue(uid, loop, issues or [{"severity": "major", "problem": "verifier output unparseable"}],
                        "verifier output unparseable or truncated")
     n_crit = sum(1 for i in issues if i.get("severity") in ("critical", "major"))
