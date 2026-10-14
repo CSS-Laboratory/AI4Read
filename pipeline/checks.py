@@ -81,9 +81,13 @@ def _range(s):
 def page_refs(text):
     """Yield ('p'|'pdf', n) for (p. N), (pp. N–M), (§N, p. Me), (pdf N)."""
     for m in re.finditer(r"\([^()]*?\b(p{1,2})\.\s*(\d+)[a-z]?(?:\s*[–-]\s*(\d+)[a-z]?)?", text):
-        yield "p", int(m.group(2))
+        a = int(m.group(2))
+        yield "p", a
         if m.group(3):
-            yield "p", int(m.group(3))
+            b = m.group(3)
+            if int(b) < a and len(b) < len(m.group(2)):          # abbreviated range: 1170–71 -> 1171
+                b = m.group(2)[:len(m.group(2)) - len(b)] + b
+            yield "p", int(b)
     for m in re.finditer(r"\(pdf\.?\s*(\d+)(?:\s*[–-]\s*(\d+))?", text):
         yield "pdf", int(m.group(1))
         if m.group(2):
