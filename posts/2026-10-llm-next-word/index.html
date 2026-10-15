@@ -226,6 +226,204 @@ textarea{width:100%;min-height:96px;font:16px/1.5 var(--f-ui);padding:10px;borde
 .status{font-size:13px;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
+/* ---- Figures, term boxes, exercises, extra labs ---- */
+figure.illus{margin:16px 0}
+figure.illus figcaption{font:13px/1.45 var(--f-ui);color:var(--muted);margin-top:6px}
+svg.fig{width:100%;height:auto;display:block;max-width:560px}
+svg.fig .t{font:12px var(--f-ui);fill:var(--ink)}
+svg.fig .th{font:600 12px var(--f-ui);fill:var(--ink)}
+svg.fig .ts{font:11px var(--f-ui);fill:var(--muted)}
+svg.fig .tn{font:600 11px var(--f-ui);fill:var(--stamp)}
+svg.fig .tgone{font:italic 11px var(--f-ui);fill:var(--muted)}
+svg.fig .bx{fill:var(--card);stroke:var(--ink);stroke-width:1.2}
+svg.fig .leaf{fill:var(--blue-soft);stroke:var(--blue);stroke-width:1}
+svg.fig .emb{fill:var(--blue-soft);stroke:var(--blue);stroke-width:1}
+svg.fig .hid{fill:var(--stamp-soft);stroke:var(--stamp);stroke-width:1.4}
+svg.fig .out,svg.fig .avg{fill:var(--card);stroke:var(--ink);stroke-width:1.2}
+svg.fig .gone{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:4 3}
+svg.fig .wd{fill:var(--chip);stroke:none}
+svg.fig .wt{fill:var(--ok-soft);stroke:var(--ok);stroke-width:1}
+svg.fig .ar{stroke:var(--muted);stroke-width:1.2}
+svg.fig .ahd{fill:var(--muted)}
+svg.fig .ax{stroke:var(--muted);stroke-width:1}
+svg.fig .grid{stroke:var(--rule);stroke-width:1}
+svg.fig .fitl{stroke:var(--blue);stroke-width:2}
+svg.fig .fitd{fill:var(--stamp);stroke:var(--paper);stroke-width:2}
+svg.fig .dot{fill:var(--ink)}
+svg.fig .halo{fill:var(--blue-soft);stroke:none;opacity:.8}
+svg.fig .basket{fill:var(--ok-soft);stroke:var(--ok);stroke-width:1.4}
+svg.fig .crate{fill:var(--chip);stroke:var(--ink);stroke-width:1.4}
+svg.fig .lid{stroke:var(--ink);stroke-width:3}
+svg.fig .cat ellipse,svg.fig .cat circle,svg.fig .cat path{fill:var(--stamp);stroke:var(--stamp);stroke-width:1.2}
+svg.fig .cat.ghost ellipse,svg.fig .cat.ghost circle,svg.fig .cat.ghost path{fill:none;stroke:var(--muted);stroke-dasharray:3 2}
+svg.fig .john circle{fill:none;stroke:var(--ink);stroke-width:1.6}
+svg.fig .john line{stroke:var(--ink);stroke-width:1.6}
+svg.fig .bubble{fill:var(--card);stroke:var(--ink);stroke-width:1}
+.term,.exercise{border:1px solid var(--blue);background:var(--blue-soft);border-radius:6px;padding:12px 14px;margin:16px 0;font-size:16.5px}
+.term-h{font:600 11px/1.2 var(--f-ui);letter-spacing:.1em;text-transform:uppercase;margin:0 0 8px;color:var(--blue)}
+.term p:last-child,.exercise p:last-child{margin-bottom:0}
+.exercise{border-color:var(--ok);background:var(--ok-soft)}
+.exercise .trap-h{color:var(--ok)}
+.exercise details{margin-top:8px;font:15px/1.5 var(--f-ui)}
+.exercise summary{cursor:pointer;font-weight:600}
+.arch{max-width:520px}
+.toks{display:flex;flex-wrap:wrap;gap:5px}
+.toks button{font:500 14px var(--f-ui);border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:4px;padding:6px 8px;cursor:pointer}
+.toks button[aria-pressed="true"]{border-color:var(--ink);outline:2px solid var(--ink);outline-offset:-1px}
+.toks button.future{opacity:.35}
+.cups{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
+.cups button{display:grid;gap:1px;padding:5px 0;border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:4px;cursor:pointer;min-width:0;font:600 12px var(--f-ui)}
+.cups button span{font:9.5px var(--f-mono);color:var(--muted);letter-spacing:-.02em}
+.cups button.drinks{background:var(--blue-soft);border-color:var(--blue)}
+.cups button.poison{background:var(--stamp);border-color:var(--stamp);color:var(--paper)}
+.cups button.poison span{color:var(--paper)}
+.rats{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.rats button{display:grid;gap:2px;padding:6px 2px;border:1px solid var(--rule);border-radius:4px;background:var(--card);color:var(--ink);font:600 12px var(--f-ui);cursor:pointer;min-width:0}
+.rats button small{font:500 10px var(--f-ui);color:var(--muted)}
+.rats button.dead{border-color:var(--stamp);background:var(--stamp-soft);color:var(--stamp)}
+.rats button[aria-pressed="true"]{outline:2px solid var(--blue);outline-offset:-1px}
+.chartbox svg{max-width:520px}
+.pmsg{font:12px var(--f-ui);color:var(--stamp);white-space:normal}
+.figcap{font:13px/1.45 var(--f-ui);color:var(--muted);margin:-6px 0 10px}
+
+/* Annotations: highlights in the text, a notes drawer from the right, and a small floating control above the audio bar. */
+:root{--anno-w:420px}
+
+/* Highlights. Notes use the stamp tint; annotations with a question or Claude's answer use the blue tint. */
+mark.anno{color:inherit;background:var(--stamp-soft);background:color-mix(in srgb,var(--stamp) 15%,transparent);
+  border-bottom:2px solid var(--stamp);border-bottom-color:color-mix(in srgb,var(--stamp) 55%,transparent);
+  border-radius:0;cursor:pointer}
+mark.anno.q{background:var(--blue-soft);background:color-mix(in srgb,var(--blue) 16%,transparent);
+  border-bottom-color:var(--blue);border-bottom-color:color-mix(in srgb,var(--blue) 55%,transparent)}
+mark.anno.pending{background:color-mix(in srgb,var(--stamp) 10%,transparent);border-bottom-style:dashed}
+mark.anno:focus-visible,.anno-m:focus-visible{outline:2px solid var(--stamp);outline-offset:2px}
+.anno-m{background:color-mix(in srgb,var(--stamp) 15%,transparent);border-radius:3px;cursor:pointer;box-shadow:inset 0 -2px 0 color-mix(in srgb,var(--stamp) 55%,transparent)}
+.anno-m.q{background:color-mix(in srgb,var(--blue) 16%,transparent);box-shadow:inset 0 -2px 0 color-mix(in srgb,var(--blue) 55%,transparent)}
+mark.anno.flash{animation:anno-flash 1.4s ease-out}
+@keyframes anno-flash{0%,30%{background:color-mix(in srgb,var(--stamp) 45%,transparent)}}
+
+/* Section-level notes */
+.anno-secpill{display:inline-flex;align-items:center;gap:4px;margin:-4px 0 14px;min-height:36px;padding:6px 12px;border-radius:999px;
+  border:1px solid var(--stamp);background:var(--stamp-soft);color:var(--stamp);font:500 13px/1.2 var(--f-ui);cursor:pointer;max-width:100%}
+.anno-secpill.q{border-color:var(--blue);background:var(--blue-soft);color:var(--blue)}
+.sec-tools .anno-secbtn{min-height:36px}
+
+/* Floating controls */
+.anno-fab{position:fixed;z-index:25;right:max(12px,env(safe-area-inset-right,0px));
+  bottom:calc(var(--bar-h,64px) + 14px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center}
+.anno-fab button,.anno-float{min-height:40px;padding:8px 14px;border-radius:999px;font:500 14px/1 var(--f-ui);cursor:pointer;
+  box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.anno-notes{background:var(--card);color:var(--ink);border:1px solid var(--rule)}
+.anno-annot{background:var(--stamp);color:var(--paper);border:1px solid var(--stamp)}
+.anno-float{position:absolute;z-index:35}
+.anno-fab button:focus-visible,.anno-float:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+html.anno-open .anno-fab{display:none}
+
+/* Drawer */
+.anno-scrim{position:fixed;inset:0;z-index:39;background:rgba(0,0,0,.32)}
+.anno-panel{position:fixed;top:0;right:0;bottom:0;z-index:40;width:92vw;width:min(92vw,var(--anno-w));
+  background:var(--paper);color:var(--ink);border-left:1px solid var(--ink);box-shadow:-8px 0 24px rgba(0,0,0,.16);
+  display:flex;flex-direction:column;font:15px/1.5 var(--f-ui);
+  transform:translateX(102%);visibility:hidden;transition:transform .22s ease,visibility 0s linear .22s}
+.anno-panel.open{transform:none;visibility:visible;transition:transform .22s ease}
+.anno-panel:focus{outline:none}
+.anno-panel :focus-visible{outline:2px solid var(--stamp);outline-offset:2px}
+.anno-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  padding:0 max(14px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) 14px}
+.anno-head{position:sticky;top:0;z-index:2;background:var(--paper);border-bottom:1px solid var(--rule);
+  padding:calc(10px + env(safe-area-inset-top,0px)) 0 10px}
+.anno-head-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.anno-kicker{margin:0;min-width:0;font:600 11px/1.3 var(--f-ui);letter-spacing:.1em;text-transform:uppercase;color:var(--stamp);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.anno-head-btns{display:flex;gap:6px;flex:none}
+.anno-quote{margin:8px 0 0;padding:2px 0 2px 10px;border-left:3px solid var(--stamp);font:italic 16px/1.45 var(--f-body);overflow-wrap:anywhere}
+.anno-quote.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.anno-quote.whole{font:500 14px/1.4 var(--f-ui);color:var(--muted)}
+.anno-more{border:0;background:none;color:var(--blue);font:500 13px var(--f-ui);padding:6px 0;min-height:32px;cursor:pointer}
+.anno-note{margin:8px 0 0;font-size:13px;color:var(--muted)}
+.anno-chip{display:inline-block;margin:8px 0 0;padding:3px 8px;border-radius:999px;font:600 11px/1.3 var(--f-ui);letter-spacing:.06em;text-transform:uppercase}
+.anno-chip.ok{background:var(--ok-soft);color:var(--ok)}
+.anno-guard{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 0;padding:10px;border:1px solid var(--stamp);border-radius:8px;background:var(--stamp-soft);font-size:14px}
+.anno-guard[hidden],.anno-confirm[hidden],.anno-composer[hidden]{display:none}
+
+/* Buttons */
+.anno-btn{min-height:40px;padding:8px 14px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font:500 14px/1 var(--f-ui);cursor:pointer}
+.anno-btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+.anno-btn.danger{background:var(--stamp);border-color:var(--stamp);color:var(--paper)}
+.anno-btn.busy{border-color:var(--stamp);color:var(--stamp)}
+.anno-btn:disabled{opacity:.45;cursor:default}
+.anno-sbtn{min-height:36px;padding:6px 11px;border-radius:999px;border:1px solid var(--rule);background:var(--card);color:var(--ink);font:500 13px/1 var(--f-ui);cursor:pointer}
+.anno-sbtn.danger{color:var(--stamp)}
+.anno-sbtn:disabled{color:var(--ok);border-color:var(--ok);background:var(--ok-soft);cursor:default}
+
+/* Saved items */
+.anno-cards{display:grid;gap:10px;padding:12px 0 4px}
+.anno-card{min-width:0;background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:10px 12px}
+.anno-card.t-question{border-color:var(--ink)}
+.anno-card.t-answer{border-color:var(--blue);background:var(--blue-soft)}
+.anno-card.live{border-style:dashed}
+.anno-card-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:0 0 6px;font:600 11px/1.3 var(--f-ui);letter-spacing:.08em;text-transform:uppercase}
+.anno-card-h time{font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);font-size:12px;white-space:nowrap}
+.t-note .anno-type{color:var(--stamp)}
+.t-answer .anno-type{color:var(--blue)}
+.anno-acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.anno-confirm{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px;padding:8px;border:1px solid var(--stamp);border-radius:6px;background:var(--stamp-soft);font-size:14px}
+.anno-empty{color:var(--muted);font-size:14px;margin:12px 0}
+.anno-thinking{color:var(--muted);font-style:italic}
+
+/* Rendered Markdown */
+.anno-md{font:15.5px/1.55 var(--f-ui);overflow-wrap:anywhere;min-width:0}
+.anno-md>:first-child{margin-top:0}
+.anno-md>:last-child{margin-bottom:0}
+.anno-md p,.anno-md ul,.anno-md ol,.anno-md pre,.anno-md blockquote,.anno-md table{margin:0 0 8px}
+.anno-md ul,.anno-md ol{padding-left:20px}
+.anno-md li{margin:2px 0}
+.anno-md h1,.anno-md h2,.anno-md h3,.anno-md h4,.anno-md h5,.anno-md h6{font:600 15px/1.35 var(--f-ui);margin:10px 0 4px;letter-spacing:0;text-transform:none}
+.anno-md code{font:13px/1.4 var(--f-mono);background:var(--chip);padding:1px 4px;border-radius:3px}
+.anno-md pre{background:var(--chip);padding:8px 10px;border-radius:4px;overflow-x:auto}
+.anno-md pre code{background:none;padding:0}
+.anno-md blockquote{border-left:3px solid var(--rule);padding-left:10px;color:var(--muted)}
+.anno-md table{display:block;overflow-x:auto;max-width:100%}
+.anno-md img{max-width:100%;height:auto}
+.anno-md a{color:var(--blue)}
+.anno-md hr{border:0;border-top:1px solid var(--rule);margin:10px 0}
+.anno-md .katex math[display="block"]{margin:6px 0}
+.anno-ph{color:var(--muted);font-style:italic}
+
+/* Composer: upper editor, lower preview */
+.anno-composer{display:grid;gap:6px;padding:12px 0 0;border-top:1px solid var(--rule);margin-top:8px}
+.anno-lbl{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font:600 11px/1.3 var(--f-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.anno-hint{font-weight:400;letter-spacing:0;text-transform:none}
+.anno-ed{display:block;width:100%;height:30vh;height:30svh;min-height:120px;resize:vertical;margin:0;
+  font:16px/1.5 var(--f-mono);padding:10px;border:1px solid var(--rule);border-radius:6px;background:var(--card);color:var(--ink)}
+.anno-pv{height:25vh;height:25svh;min-height:90px;overflow-y:auto;overscroll-behavior:contain;padding:10px;border:1px dashed var(--rule);border-radius:6px;background:var(--paper)}
+.anno-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.anno-status{margin:2px 0 0;min-height:1.2em;font-size:13px;color:var(--muted)}
+.anno-sync{margin:12px 0 0;font-size:12px;color:var(--muted)}
+
+/* All notes */
+.anno-list{display:grid;gap:16px;padding:12px 0}
+.anno-group{display:grid;gap:6px}
+.anno-group-h{margin:0;font:600 11px/1.3 var(--f-ui);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.anno-entry{display:grid;gap:3px;width:100%;min-height:44px;text-align:left;padding:9px 11px;border:1px solid var(--rule);border-left:3px solid var(--stamp);
+  border-radius:6px;background:var(--card);color:var(--ink);font:14px/1.45 var(--f-ui);cursor:pointer}
+.anno-entry.q{border-left-color:var(--blue)}
+.anno-entry-q{font:italic 15px/1.4 var(--f-body);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.anno-entry-q.whole{font:500 13px/1.4 var(--f-ui);color:var(--muted)}
+.anno-entry-f{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.anno-entry-m{font-size:12px;color:var(--muted)}
+
+/* Wide screens: the drawer sits beside the article instead of over it. */
+@media (min-width:1000px){
+  html.anno-open body{margin-right:var(--anno-w)}
+  html.anno-open .player{right:var(--anno-w)}
+  .anno-scrim{display:none!important}
+}
+@media (prefers-reduced-motion:reduce){
+  .anno-panel,.anno-panel.open{transition:none}
+  mark.anno.flash{animation:none;outline:2px solid var(--stamp)}
+}
+
 </style>
 <header class="masthead wrap">
   <p class="eyebrow">AI4Read · Post 01 · 15 October 2026</p>
@@ -267,18 +465,16 @@ textarea{width:100%;min-height:96px;font:16px/1.5 var(--f-ui);padding:10px;borde
   <h2>The guessing game</h2>
   <p>Take a book you have never read. Cover the page and uncover it one letter at a time. Before each letter, guess what it will be. If you are wrong, guess again until you are right, and write down how many guesses you needed.</p>
   <p>Claude Shannon ran this experiment and published it in 1951. Most of the time the answer was <i>one</i>: the person guessed right on the first try. In one run of this game, 79 of 102 letters were right on the first guess, about 77% <span class="cite">Shannon 1951, p. 56</span>. The list of guess numbers, which Shannon called the <dfn>reduced text</dfn>, is mostly 1s <span class="cite">p. 56</span>.</p>
-  <p>Then Shannon made a surprising point. Imagine an identical twin of the guesser. Give the twin only the guess numbers. At each position, the twin guesses in the same order as the first person and stops at the right guess number. So the twin can rebuild the whole text. Shannon adds that the twin must be identical “mathematically, not just biologically” <span class="cite">p. 55</span>. The lesson: <strong>a good predictor is also a good compressor.</strong> The better you predict, the shorter the code you need.</p>
-  <div class="trap twin"><p class="trap-h">Who does what · our example</p>
-  <p>The twin never guesses a number. The <b>first person</b> sees the real text and writes down guess numbers: that is the <b>encoder</b>. The <b>twin</b> receives only the numbers and rebuilds the text: that is the <b>decoder</b>. Because the twin is identical, after the same text so far it would try letters in exactly the same order.</p>
-  <p>Say the text so far is “TH”, and this predictor always tries E, then A, then I. If the next letter is E, the encoder writes <b>1</b>. If it is I, it writes <b>3</b>. The twin reads “3”, tries E (one), A (two), I (three), and stops: the letter is I.</p>
-  <p>Why is this compression? The numbers are mostly 1s, so they are very predictable, and a predictable stream can be written in few bits, for example with a short code for “1” and longer codes for rare numbers (rung 2 shows such a code). Rung 10 shows how Shannon turned this into bits per letter.</p></div>
-  <p>Today we have machines that play exactly this game, at a huge scale. A <dfn>large language model</dfn> (LLM) reads text one <dfn>token</dfn> at a time (a token is a word or a piece of a word) and gives a probability to every possible next token. Here is an example from the GPT-3 paper <span class="cite">Brown et al. 2020, p. 12</span>:</p>
+  <p>Then Shannon made a surprising point. Imagine an identical twin of the guesser, who never sees the book. There are two roles here. The first person is the <dfn>encoder</dfn>: they see the real text, play the game, and write down only the guess numbers. The twin is the <dfn>decoder</dfn>: they receive only those numbers and must rebuild the text. The twin never guesses a number. The twin guesses <i>letters</i>, exactly as the first person would, and the number tells the twin when to stop. Because the twins are identical, after the same text so far they try letters in exactly the same order. Shannon adds that the twin must be identical “mathematically, not just biologically” <span class="cite">pp. 55–56</span>.</p>
+  <p>A tiny example (ours). The text so far is “TH”, and after “TH” this predictor always tries E first, then A, then I. Suppose the next letter is really I. The encoder needs three tries, so it writes <b>3</b>. The twin reads “3”, tries E (one), A (two), I (three), and stops: the letter is I. Nothing about the letter itself was sent, only the number 3.</p>
+  <p>Why does this make the message shorter? Because the guess numbers are very predictable: they are mostly 1s. Writing a plain letter needs about 4.7 bits (you will see why in Lens 1), but a stream that is almost all 1s can be stored with a very short code for “1” and longer codes for the rare 2s, 3s and 4s. The better the guesser, the more 1s, and the shorter the message. The lesson: <strong>a good predictor is also a good compressor.</strong></p>
+  <p>Today we have machines that play exactly this game, at a huge scale. A <dfn>large language model</dfn> (LLM) reads text one <dfn>token</dfn> at a time. A token is a common word or a piece of a word; for example, a rare word may be split into two or three pieces (our example). For every possible next token, the model gives a probability. Here is an example from the GPT-3 paper <span class="cite">Brown et al. 2020, p. 12</span>:</p>
   <blockquote class="prompt">Alice was friends with Bob. Alice went to visit her friend ____. <span class="arrow">→</span> Bob</blockquote>
   <p>To fill that blank, you need more than spelling. You need to keep track of who is who. So here is the question of this post: <strong>to predict the next word this well, what does a machine have to know?</strong> Only which words follow which? Facts about the world? Something about the minds of the people who wrote the text?</p>
 
   <div class="lab" id="lab-game">
     <p class="lab-title">Try it · Shannon’s game</p>
-    <p class="lab-note">Guess the hidden phrase one letter at a time. Tap a letter (␣ is a space). Wrong letters fade. The number under each letter is how many guesses you needed.</p>
+    <p class="lab-note">Guess the hidden phrase one letter at a time. Tap a letter (␣ is a space). Wrong letters fade. The number under each letter is how many guesses you needed: that row of numbers is your reduced text.</p>
     <div class="game-text" id="game-text" aria-live="polite"></div>
     <div class="keys" id="game-keys"></div>
     <div class="game-foot">
@@ -301,12 +497,14 @@ textarea{width:100%;min-height:96px;font:16px/1.5 var(--f-ui);padding:10px;borde
     <p class="your" hidden></p>
   </div>
   <div class="quiz" data-q="g2">
-    <p class="q">2. GPT-3 has 175 billion numbers inside it (its weights). It “learns” a new task from five examples written in the prompt. How many of the weights change?</p>
+    <p class="q">2. GPT-3 has 175 billion numbers inside it, called its <dfn>weights</dfn>. It “learns” a new task from five examples written in the prompt. How many of the weights change?</p>
     <div class="opts"><button type="button">All of them</button><button type="button">A few million</button><button type="button">None</button></div>
     <p class="your" hidden></p>
   </div>
   <div class="quiz" data-q="g3">
-    <p class="q">3. GPT-4 answers a classic false-belief story correctly 97.5% of the time. Researchers change one detail: an object is put <i>on</i> a box instead of <i>in</i> it, so the person coming back can see where it is. How often is GPT-4 right now?</p>
+    <p class="q">3. Here is a classic false-belief story, in the version Kosinski used and Ullman quotes <span class="cite">Ullman 2023, p. 6</span>. John puts a cat <i>in</i> a basket and leaves. While he is away, Mark moves the cat <i>into</i> a box. John comes back. Where does John think the cat is? The right answer is “in the basket”: John did not see the move. GPT-4 gets stories of this kind right 97.5% of the time <span class="cite">Shapira et al. 2024, p. 2262</span>. Now change one small word: the cat is put <i>on</i> the basket and moved <i>on</i> the box, so when John comes back and looks around the room, he can see the cat. How often is GPT-4 right now?</p>
+    <figure class="illus" id="fig-inon" aria-label="Two pictures. Left: the cat is inside a closed box, John cannot see it, so he still believes it is in the basket. Right: the cat sits on top of the box, John can see it, so he should know where it is."></figure>
+    <p class="figcap">Our sketch of Ullman’s “in → on” change (Variation 2B, Ullman 2023, p. 6). The thought bubbles show the right answer, not the model’s.</p>
     <div class="opts"><button type="button">About 95%</button><button type="button">About 70%</button><button type="button">About 40%</button><button type="button">About 0%</button></div>
     <p class="your" hidden></p>
   </div>
@@ -316,34 +514,68 @@ textarea{width:100%;min-height:96px;font:16px/1.5 var(--f-ui);padding:10px;borde
 <section id="home" data-ch="home">
   <p class="sec-no">3 · The phenomenon in its home field</p>
   <h2>How a language model is built</h2>
-  <p>All the models in this post, from 2003 to 2020, are trained on the same task. Only the machinery changes. Here is the story in eight short steps.</p>
+  <p>All the models in this post, from 2003 to 2020, are trained on the same task: guess the next token. Only the machinery changes. Here is the story in eight steps.</p>
 
   <h3>Step 1. A sentence is a chain of guesses</h3>
-  <p>The probability of a whole sentence can be split into a chain of next-word probabilities <span class="cite">Bengio et al. 2003, p. 1138</span>:</p>
+  <p>Start with an instance (our toy numbers). In some collection of text, a sentence starts with “the” 5% of the time. After “the”, the next word is “cat” 1% of the time. After “the cat”, the next word is “sat” 20% of the time. Then the chance that a sentence starts with “the cat sat” is</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>0.05</mn><mo>×</mo><mn>0.01</mn><mo>×</mo><mn>0.20</mn><mo>=</mo><mn>0.0001</mn></mrow><annotation encoding="application/x-tex">0.05\times0.01\times0.20=0.0001</annotation></semantics></math></span></div>
+  <p>Each factor is a <dfn>conditional probability</dfn>: the chance of the next word <i>given</i> the words before it. Multiplying them is the ordinary rule of probability (the chance of A and then B is the chance of A times the chance of B given A), used again and again. Bengio and colleagues write the general pattern like this <span class="cite">Bengio et al. 2003, p. 1138</span>:</p>
   <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mi>P</mi><mo>^</mo></mover><mo stretchy="false">(</mo><msub><mi>w</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>w</mi><mi>T</mi></msub><mo stretchy="false">)</mo><mo>=</mo><munderover><mo>∏</mo><mrow><mi>t</mi><mo>=</mo><mn>1</mn></mrow><mi>T</mi></munderover><mover accent="true"><mi>P</mi><mo>^</mo></mover><mo stretchy="false">(</mo><msub><mi>w</mi><mi>t</mi></msub><mo>∣</mo><msub><mi>w</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>w</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\hat P(w_1,\dots,w_T)=\prod_{t=1}^{T}\hat P(w_t\mid w_1,\dots,w_{t-1})</annotation></semantics></math></span></div>
-  <p>In words: the chance of “the cat sat” is the chance of “the”, times the chance of “cat” after “the”, times the chance of “sat” after “the cat”. This is just the rule of conditional probability, used again and again. GPT-2 writes the same product <span class="cite">Radford et al. 2019, pdf 2</span>. So a model that predicts the next token well can also score whole texts.</p>
+  <p>Read it aloud: “the model’s probability of the words <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">w_1</annotation></semantics></math></span> to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>T</mi></msub></mrow><annotation encoding="application/x-tex">w_T</annotation></semantics></math></span> is the product, for every position <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span>, of the probability of word <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">w_t</annotation></semantics></math></span> given all the words before it.” The hat on <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>P</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat P</annotation></semantics></math></span> means “estimated by the model”. GPT-2 writes the same product <span class="cite">Radford et al. 2019, pdf 2</span>. So a machine that is good at the next-word game can also score whole texts.</p>
 
   <h3>Step 2. Counting runs out of data</h3>
-  <p>The oldest method is to count. How often does “sat” follow “the cat” in a big corpus? These models are called <dfn>n-grams</dfn>. The problem is size. Bengio and colleagues give a famous example: to model 10 words in a row with a vocabulary of 100,000 words, you would need up to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>50</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">10^{50}-1</annotation></semantics></math></span> free numbers <span class="cite">p. 1137</span>. Most word sequences never appear in any corpus, so counting gives them probability zero. This is the <dfn>curse of dimensionality</dfn>.</p>
+  <p>The oldest way to get these probabilities is to count. To estimate the chance of “sat” after “the cat”, count how often “the cat sat” appears in a big collection of text, and divide by how often “the cat” appears. A model that uses the last <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span> words this way is called an <dfn>n-gram</dfn> model (two words: bigram; three words: trigram).</p>
+  <p>The problem is size. Bengio and colleagues give a famous example <span class="cite">p. 1137</span>. Suppose the vocabulary has 100,000 words and you want the probability of every possible run of 10 words. Each of the 10 positions has 100,000 choices, so there are <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mo separator="true" lspace="0em" rspace="0em">,</mo><mn>00</mn><msup><mn>0</mn><mn>10</mn></msup><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><msup><mo stretchy="false">)</mo><mn>10</mn></msup><mo>=</mo><mn>1</mn><msup><mn>0</mn><mn>50</mn></msup></mrow><annotation encoding="application/x-tex">100{,}000^{10}=(10^5)^{10}=10^{50}</annotation></semantics></math></span> possible runs. A full table would need up to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>50</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">10^{50}-1</annotation></semantics></math></span> free numbers (minus one because all the probabilities must add up to 1, so the last one is fixed by the others). For comparison, a huge text collection has perhaps billions of words, around <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">10^{9}</annotation></semantics></math></span> to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>11</mn></msup></mrow><annotation encoding="application/x-tex">10^{11}</annotation></semantics></math></span> (our rough figure). Almost every possible 10-word run never appears even once, so pure counting gives it probability zero. This is the <dfn>curse of dimensionality</dfn>: the number of possible cases grows much faster than the data.</p>
 
   <h3>Step 3. Give every word a vector (2003)</h3>
-  <p>Bengio’s answer: give every word a short list of numbers, a <dfn>vector</dfn> <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">C(i)</annotation></semantics></math></span> with 30 to 100 entries, and learn these vectors together with the predictor <span class="cite">pp. 1139, 1141</span>. Similar words are expected to end up close together. Then one sentence such as “The cat is walking in the bedroom” also helps the model with “A dog was running in a room” <span class="cite">p. 1139</span>. On the Brown corpus, the new model’s perplexity (a measure of surprise we define in rung 4) was about 24% better than the best counting model; on a news corpus, about 8% <span class="cite">p. 1148</span>.</p>
+  <p>Bengio’s answer: give every word a short list of numbers, called a <dfn>vector</dfn>. Think of it as the word’s address on a map, but with 30 to 100 directions instead of two. The model learns these addresses (written <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">C(i)</annotation></semantics></math></span> for word <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span>) at the same time as it learns to predict <span class="cite">pp. 1139, 1141</span>. Words that appear in similar places in sentences are expected to get similar addresses.</p>
+  <figure class="illus" id="fig-wordmap" aria-label="A toy two-dimensional map of word vectors: cat and dog are close together; bedroom and room are close together; walking and running are close together."></figure>
+  <p>Why does this help? Because a lesson learned for one sentence now spreads to its neighbours on the map. Bengio’s example: if the model has seen “The cat is walking in the bedroom”, it can also give a sensible probability to “A dog was running in a room”, because cat/dog, walking/running and bedroom/room are expected to get nearby vectors <span class="cite">pp. 1139–1140</span>. On the Brown corpus, this model’s perplexity (a measure of the model’s surprise; rung 4 defines it) was about 24% better than the best counting model; on a news corpus, about 8% better <span class="cite">p. 1148</span>.</p>
 
   <h3>Step 4. Cheap vectors, big data (2013)</h3>
-  <p>Mikolov and colleagues removed the hidden layer to make training cheap enough for billions of words <span class="cite">Mikolov et al. 2013a, p. 4</span>. The vectors showed a surprise: some relations became directions. The vector for <i>biggest</i> minus <i>big</i> plus <i>small</i> lands near <i>smallest</i> <span class="cite">p. 5</span>. We test this idea in Lens 2.</p>
+  <p>Bengio’s network has two slow parts. After looking up the vectors of the previous words, it passes them through a <dfn>hidden layer</dfn>: extra units (50 to 100 in Bengio’s experiments; 500 to 1,000 was typical by 2013, Mikolov notes), each mixing all the inputs and then bending the result with a curve (the function tanh). Then a final layer, called a <dfn>softmax</dfn>, gives a probability to every word in the vocabulary <span class="cite">Bengio et al. 2003, pp. 1141–1142; Mikolov et al. 2013a, p. 3</span>. That final layer is the slowest: Bengio’s own diagram marks it “most computation here” <span class="cite">Bengio et al. 2003, p. 1142</span>, because it must score every word. Mikolov and colleagues counted the work for one training example. With 10 previous words (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span>), vectors of size <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span>, a hidden layer of size <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span> and a vocabulary of size <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span>, the cost is about <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>×</mo><mi>D</mi><mo>+</mo><mi>N</mi><mo>×</mo><mi>D</mi><mo>×</mo><mi>H</mi><mo>+</mo><mi>H</mi><mo>×</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">N\times D+N\times D\times H+H\times V</annotation></semantics></math></span> (Mikolov counts the numbers that must be touched for one example) <span class="cite">Mikolov et al. 2013a, pp. 2–3</span>. With a trick that makes the last term small (a word tree, so only about <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>V</mi></mrow><annotation encoding="application/x-tex">\log_2 V</annotation></semantics></math></span> outputs are computed), “most of the complexity is caused by the term <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>×</mo><mi>D</mi><mo>×</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">N\times D\times H</annotation></semantics></math></span>”, the hidden layer <span class="cite">p. 3</span>. So once the output is made cheap, the hidden layer becomes the bottleneck.</p>
+  <p>So they removed the hidden layer <span class="cite">p. 4</span>. Their <dfn>CBOW</dfn> model (continuous bag of words) averages the vectors of the surrounding words, four before and four after, and predicts the word in the middle. Their <dfn>skip-gram</dfn> model does the reverse: from the middle word it predicts each nearby word <span class="cite">p. 4</span>. They admit these simpler models “might not be able to represent the data as precisely”, but can “possibly be trained on much more data efficiently” <span class="cite">p. 4</span>. Try the three designs:</p>
+  <div class="lab" id="lab-arch">
+    <p class="lab-title">Try it · Remove the hidden layer</p>
+    <p class="lab-note">Switch between the three designs. Boxes are layers, arrows show what feeds what. The counter uses Mikolov’s cost formulas with our example sizes.</p>
+    <div class="seg" role="group" aria-label="Model design"><button type="button" data-m="nnlm" aria-pressed="true">Bengio 2003</button><button type="button" data-m="cbow" aria-pressed="false">CBOW 2013</button><button type="button" data-m="sg" aria-pressed="false">Skip-gram 2013</button></div>
+    <div class="arch" id="arch-svg"></div>
+    <p class="readout" id="arch-read"></p>
+  </div>
+  <p>The cheap vectors showed a surprise: some relations became directions on the map. The vector for <i>biggest</i> minus <i>big</i> plus <i>small</i> lands near <i>smallest</i> <span class="cite">p. 5</span>. Lens 2 tests how well this works.</p>
 
   <h3>Step 5. Attention (2017)</h3>
-  <p>The Transformer lets every position look at other positions and take a <dfn>weighted average</dfn> of what it finds. The weights come from how well a “query” at one position matches a “key” at another <span class="cite">Vaswani et al. 2017, pp. 3–4</span>. To predict text from left to right, a <dfn>mask</dfn> stops a position from looking at the future <span class="cite">pp. 3, 5</span>. (The 2017 model was built for translation. GPT-style models keep only the decoder half <span class="cite">Kaplan et al. 2020, p. 6</span>.)</p>
+  <p>Look again at “Alice was friends with Bob. Alice went to visit her friend ____.” To guess the blank, the word “friend” must collect information from earlier words, and some earlier words matter much more than others: “Bob” matters a lot, “to” hardly at all. The Transformer does exactly this. Every position takes a <dfn>weighted average</dfn> of information from other positions, with large weights for the positions that matter. The weights come from how well a “query” vector at one position matches a “key” vector at another <span class="cite">Vaswani et al. 2017, pp. 3–4</span>. To predict text from left to right, a <dfn>mask</dfn> stops a position from looking at the future <span class="cite">pp. 3, 5</span>. (The 2017 model was built for translation and has two halves, an encoder that reads the source sentence and a decoder that writes the translation. GPT-style models keep only the decoder half <span class="cite">Kaplan et al. 2020, p. 6</span>.)</p>
+  <div class="lab" id="lab-sent">
+    <p class="lab-title">Try it · Who looks at whom</p>
+    <p class="lab-note">Tap a word. The bars show how much weight it gives to itself and each earlier word. The vectors behind this are toy numbers we chose by hand, not a trained model; rung 6 shows the arithmetic.</p>
+    <div class="toks" id="sent-toks"></div>
+    <div class="icl-bars" id="sent-bars"></div>
+    <p class="readout" id="sent-read"></p>
+  </div>
 
   <h3>Step 6. Tasks are text too (2019)</h3>
-  <p>GPT-2’s authors noticed that a task can be written inside the text. Put “TL;DR:” after a news article, and the model tends to continue with a summary <span class="cite">Radford et al. 2019, pdf 6</span>. The summaries were weak: they “just barely” beat random sentences from the article <span class="cite">pdf 6</span>. But the authors made a speculation that frames this whole post: a model with enough capacity will begin to infer and perform the tasks shown in text “in order to better predict them” <span class="cite">pdf 3</span>.</p>
+  <p>GPT-2’s authors noticed that a task can be written inside the text. On the internet, “TL;DR:” (“too long; didn’t read”) is often followed by a short summary (our explanation of why the trick works). So put “TL;DR:” after a news article, and the model tends to continue with a summary <span class="cite">Radford et al. 2019, pdf 6</span>. The summaries were weak: they “just barely” beat random sentences from the article <span class="cite">pdf 6</span>. But the authors made a speculation that frames this whole post: a model with enough capacity will begin to infer and perform the tasks shown in text “in order to better predict them” <span class="cite">pdf 3</span>.</p>
 
   <h3>Step 7. Learning inside the prompt (2020)</h3>
-  <p>GPT-3 has 175 billion weights and was trained on 300 billion tokens <span class="cite">Brown et al. 2020, p. 8</span>. Show it a few examples of a task in the prompt and it often continues the pattern. The authors call this <dfn>in-context learning</dfn>, and they stress that it happens with no gradient updates: the weights do not change <span class="cite">pp. 3–4</span>.</p>
-  <div class="reveal" data-for="g2"><p class="reveal-h">Prediction 2 · answer</p><p><b>None.</b> In few-shot use, all “learning” happens in the forward pass, while the model reads the prompt. The authors also say their terms are “agnostic” about whether the model learns the task from scratch or recognizes a pattern it saw in training <span class="cite">p. 4, footnote 1</span>.</p></div>
+  <p>First, what does “training” mean? The model makes guesses, checks the real next tokens, and then <i>nudges</i> each of its weights a tiny bit in the direction that would have made the right tokens more likely. The direction of that nudge is called the <dfn>gradient</dfn>, and one round of nudges is a <dfn>gradient update</dfn>. In practice the model guesses for a large batch of text at once (3.2 million tokens at a time for GPT-3 <span class="cite">Brown et al. 2020, p. 8</span>), then nudges every weight together. Training GPT-3 took on the order of a hundred thousand such rounds (our estimate: 300 billion ÷ 3.2 million).</p>
+  <p>GPT-3 has 175 billion weights and was trained on 300 billion tokens <span class="cite">Brown et al. 2020, p. 8</span>. After training, show it a few examples of a task in the prompt, for example three English words with their French translations and then a fourth English word, and it often continues the pattern. The authors call this <dfn>in-context learning</dfn>, and they stress that it happens with no gradient updates: the weights do not change <span class="cite">pp. 3–4</span>.</p>
+  <div class="reveal" data-for="g2"><p class="reveal-h">Prediction 2 · answer</p><p><b>None.</b> In few-shot use, all “learning” happens in the forward pass, while the model reads the prompt; no nudges are made. The authors also say their terms are “agnostic” about whether the model learns the task from scratch or recognizes a pattern it saw in training <span class="cite">p. 4, footnote 1</span>.</p></div>
 
   <h3>Step 8. Smooth scaling laws (2020)</h3>
-  <p>Kaplan and colleagues measured the loss on held-out text for many model sizes. The loss falls as a smooth power law. Doubling the number of parameters multiplies the loss by about 0.95 <span class="cite">Kaplan et al. 2020, p. 5</span>. They add a warning: a smooth loss “may hide seemingly qualitative changes in capability” <span class="cite">p. 19</span>.</p>
+  <div class="term"><p class="term-h">Term · held-out data</p><p>Text the model never saw during training, kept aside only for testing. Like exam questions that were not in the homework: a student who memorized the homework answers can still fail the exam. Measuring the loss on held-out text tells us how well the model <i>generalizes</i>, not how well it memorized. Kaplan calls it the <dfn>test loss</dfn> <span class="cite">Kaplan et al. 2020, p. 4</span>.</p></div>
+  <p>Kaplan and colleagues trained many Transformers of different sizes and measured their average surprise on held-out text, in nats per token (a nat is like a bit but uses natural logarithms; Lens 1). They found that “the test loss … can be predicted using a power-law” <span class="cite">p. 4</span>. For models trained long enough on enough data, the loss depends on the number of parameters <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span> (weights, not counting the word vectors) like this <span class="cite">p. 4</span>:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>L</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mrow><mo fence="true">(</mo><mfrac><msub><mi>N</mi><mi>c</mi></msub><mi>N</mi></mfrac><mo fence="true">)</mo></mrow><mn>0.076</mn></msup><mo separator="true">,</mo><mspace width="2em"/><msub><mi>N</mi><mi>c</mi></msub><mo>≈</mo><mn>8.8</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>13</mn></msup></mrow><annotation encoding="application/x-tex">L(N)=\left(\frac{N_c}{N}\right)^{0.076},\qquad N_c\approx8.8\times10^{13}</annotation></semantics></math></span></div>
+  <p>Here <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">N_c</annotation></semantics></math></span> is a constant fitted to the data, and 0.076 sets how steep the line is <span class="cite">p. 4</span>.</p>
+  <p>What does this mean in plain words? Make the model twice as big, and the loss is multiplied by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>0.076</mn></mrow></msup><mo>≈</mo><mn>0.95</mn></mrow><annotation encoding="application/x-tex">2^{-0.076}\approx0.95</annotation></semantics></math></span>: about 5% lower <span class="cite">p. 5</span>. Make it twice as big again, and you get the same 5% again. The improvement per doubling is the same at every size. That is what <dfn>power law</dfn> means, and it is why the curve is <dfn>smooth</dfn>: no sudden jumps, only a steady slope. On a graph where both axes are logarithmic, it is a straight line. The authors observed such trends over more than six orders of magnitude (a factor of more than a million) <span class="cite">p. 3</span>.</p>
+  <div class="lab" id="lab-scale">
+    <p class="lab-title">Try it · Grow the model</p>
+    <p class="lab-note">Move the slider to change the number of parameters. The dot moves along Kaplan’s fitted line. This is only the fitted formula. The authors measured models from about 10³ to 10⁹ parameters <span class="cite">p. 4</span>; beyond that the line is an extrapolation. They saw no sign of deviation at the top, but the loss must flatten out somewhere above zero <span class="cite">p. 3</span>.</p>
+    <div class="sliders" id="scale-sliders"></div>
+    <div class="chartbox" id="scale-chart"></div>
+    <p class="readout" id="scale-read"></p>
+  </div>
+  <p>Why does a smooth law matter? Because it lets you <i>predict</i>. Train small models cheaply, fit the line, and, if the trend continues, you can forecast the loss of a much bigger model before you build it (our reading); the authors conclude that performance “improves smoothly and predictably” as size, data and compute grow together <span class="cite">p. 3</span>. Two warnings. The constant <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">N_c</annotation></semantics></math></span> has “no fundamental meaning”; it depends on the vocabulary and tokenization <span class="cite">p. 5</span>. And the law is about <i>loss</i>, not about abilities: a smooth loss “may hide seemingly qualitative changes in capability” <span class="cite">p. 19</span>. In other words (our gloss), a model might gain a new skill suddenly while its average surprise drops only a little.</p>
 
   <p class="keypoint">One training signal runs through all eight steps: make the next token less surprising. Every ability we see in an LLM either comes from this signal or rides along with it. The rest of the post asks what that signal can carry.</p>
 </section>
@@ -356,27 +588,52 @@ textarea{width:100%;min-height:96px;font:16px/1.5 var(--f-ui);padding:10px;borde
 
   <p>Shannon’s 1948 paper starts by setting meaning aside. The meaning of a message is “irrelevant to the engineering problem”. What matters is that a message is a <i>selection from a set</i> of possible messages <span class="cite">Shannon 1948, p. 1</span>. This choice made the theory possible. Keep it in mind, because it also limits what this lens can tell us.</p>
 
-  <h3>Surprise and entropy</h3>
-  <p>If an event has probability <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span>, its <dfn>surprise</dfn> is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>p</mi></mrow><annotation encoding="application/x-tex">-\log_2 p</annotation></semantics></math></span> bits. A coin flip (probability ½) carries 1 bit. Something with probability ⅛ carries 3 bits. <dfn>Entropy</dfn> is the average surprise of a source:</p>
+  <h3>A puzzle: 32 cups and 5 rats</h3>
+  <p>You have 32 cups of water. Exactly one is poisoned, and each cup is equally likely to be the one. A rat that drinks even one drop of poison dies after 24 hours; a rat can drink from many cups at once. You may run only one round: all rats drink at the same time, and you look after 24 hours. What is the smallest number of rats that always finds the poisoned cup?</p>
+  <p>The answer is 5. Number the cups 0 to 31 and write each number in binary with 5 digits: cup 0 is 00000, cup 1 is 00001, …, cup 31 is 11111. Give each rat one digit position. Rat 1 drinks from every cup whose first digit is 1, rat 2 from every cup whose second digit is 1, and so on. After 24 hours, write 1 for a dead rat and 0 for a living one. The five results spell the poisoned cup’s number. If rats 1, 3 and 5 die, the cup is 10101 in binary, which is cup 21 (16 + 4 + 1). Fewer rats cannot work: 4 rats give only <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>4</mn></msup><mo>=</mo><mn>16</mn></mrow><annotation encoding="application/x-tex">2^4=16</annotation></semantics></math></span> possible patterns of dead and alive, not enough for 32 cups.</p>
+  <div class="lab" id="lab-cups">
+    <p class="lab-title">Try it · Find the poison</p>
+    <p class="lab-note">Tap a cup to poison it, or tap a rat to see which cups it drinks from. Each rat is one yes/no question asked at the same time: “Is the poisoned cup among mine?”</p>
+    <div class="cups" id="cups-grid"></div>
+    <div class="rats" id="cups-rats"></div>
+    <p class="readout" id="cups-read"></p>
+  </div>
+  <p>Each rat answers one yes/no question. One yes/no answer, when both answers are equally likely, carries one <dfn>bit</dfn> of information. Finding one cup among 32 equally likely cups needs <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mn>32</mn><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\log_2 32=5</annotation></semantics></math></span> bits, because <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>5</mn></msup><mo>=</mo><mn>32</mn></mrow><annotation encoding="application/x-tex">2^5=32</annotation></semantics></math></span>.</p>
+
+  <h3>Surprise</h3>
+  <p>Now turn it around. Before the test, the poisoned cup is one of 32, so learning which one tells you 5 bits. A coin flip (2 outcomes) tells you 1 bit. Three coin flips have <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>3</mn></msup><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">2^3=8</annotation></semantics></math></span> outcomes, each with probability ⅛, and tell you 3 bits. The pattern: an outcome with probability <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span> carries</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>surprise</mtext><mo>=</mo><mo>−</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>p</mi><mtext> bits</mtext></mrow><annotation encoding="application/x-tex">\text{surprise}=-\log_2 p\ \text{bits}</annotation></semantics></math></span></div>
+  <p>Check: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-\log_2\tfrac12=1</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mfrac><mn>1</mn><mn>8</mn></mfrac><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">-\log_2\tfrac18=3</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mfrac><mn>1</mn><mn>32</mn></mfrac><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">-\log_2\tfrac1{32}=5</annotation></semantics></math></span>. Rare events carry more surprise. Why a logarithm? Because when independent events happen together their probabilities multiply (½ × ½ × ½ = ⅛), and we want their surprises to <i>add</i> (1 + 1 + 1 = 3 bits). The logarithm turns multiplication into addition.</p>
+
+  <h3>Entropy: the average surprise</h3>
+  <p>The cups were all equally likely. Real sources are not. Take our village weather report (we use it again in the ladder): rain ½ of the days, sun ¼, wind ⅛, snow ⅛. Cover and Thomas give a nice reading of entropy as a game of yes/no questions <span class="cite">Cover &amp; Thomas, pp. 14–15</span>. Ask the questions in the smart order, most likely first:</p>
+  <figure class="illus" id="fig-qtree" aria-label="A question tree. First question: rain? Yes in half of the days, done after 1 question. If no: sun? Yes in a quarter of the days, done after 2 questions. If no: wind? Yes or no settles wind or snow after 3 questions."></figure>
+  <p>Half of the days you are done after 1 question, a quarter of the days after 2, and the rest after 3. On average:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⋅</mo><mn>1</mn><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle><mo>⋅</mo><mn>2</mn><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>8</mn></mfrac></mstyle><mo>⋅</mo><mn>3</mn><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>8</mn></mfrac></mstyle><mo>⋅</mo><mn>3</mn><mo>=</mo><mn>1.75</mn><mtext> questions</mtext></mrow><annotation encoding="application/x-tex">\tfrac12\cdot1+\tfrac14\cdot2+\tfrac18\cdot3+\tfrac18\cdot3=1.75\ \text{questions}</annotation></semantics></math></span></div>
+  <p>The same number comes from averaging the surprises (1, 2, 3 and 3 bits). That average is the <dfn>entropy</dfn>:</p>
   <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><munder><mo>∑</mo><mi>x</mi></munder><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)=-\sum_x p(x)\log_2 p(x)</annotation></semantics></math></span></div>
-  <p>Cover and Thomas give a nice reading: entropy is close to the smallest average number of yes/no questions you need to find out what happened (the minimum lies between <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">H+1</annotation></semantics></math></span>). For a source with probabilities ½, ¼, ⅛, ⅛ the two match exactly: entropy 7/4 bits, and 1.75 questions on average <span class="cite">Cover &amp; Thomas, pp. 14–15</span>. Shannon uses the same numbers and the code 0, 10, 110, 111 <span class="cite">Shannon 1948, p. 18</span>.</p>
+  <p>Read it aloud: “for each outcome <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span>, take its probability times its surprise, and add them up.” For the weather, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mn>1.75</mn></mrow><annotation encoding="application/x-tex">H=1.75</annotation></semantics></math></span> bits. For the 32 cups, every cup has <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mn>1</mn><mn>32</mn></mfrac></mrow><annotation encoding="application/x-tex">p=\tfrac1{32}</annotation></semantics></math></span> and surprise 5, so <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H=5</annotation></semantics></math></span> bits: the rat puzzle again. In general the smallest average number of yes/no questions is not always exactly <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span>; it lies between <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">H+1</annotation></semantics></math></span>. For the weather it matches exactly <span class="cite">Cover &amp; Thomas, p. 15</span>, and so do the 32 cups (5 questions, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H=5</annotation></semantics></math></span>). The answers to the questions can be written as a code: rain = 0, sun = 10, wind = 110, snow = 111. Shannon uses exactly this example <span class="cite">Shannon 1948, p. 18</span>. Notice that the skewed weather needs fewer questions (1.75) than four equally likely words would need (2): predictability saves bits, just as in Shannon’s game.</p>
 
   <h3>The cost of a wrong model</h3>
-  <p>Now the key fact for LLMs. Suppose the truth is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span> but you build your code (or your predictions) from a model <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span>. Then your average cost is not <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)</annotation></semantics></math></span>. It is</p>
+  <p>Now the key fact for LLMs. Imagine a forecaster who wrongly believes all four weather words are equally likely. She uses a code that fits her belief: every word gets 2 digits (00, 01, 10, 11). Her code always costs 2 bits per day, while the code that fits the true weather costs 1.75 bits per day on average. She pays 0.25 extra bits per day for her wrong belief.</p>
+  <p>The general rule: if the truth is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span> but your code (or your predictions) come from a model <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span>, your average cost is</p>
   <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mtext> </mtext><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)+D(p\,\|\,q)</annotation></semantics></math></span></div>
-  <p>where <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> is the <dfn>relative entropy</dfn>, also called the KL divergence: the extra bits you pay for believing <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> when the truth is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span> <span class="cite">Cover &amp; Thomas, p. 18</span>. <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> is never negative, and it is zero only when <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">q=p</annotation></semantics></math></span> <span class="cite">p. 26</span>.</p>
-  <p>An LLM is trained to make its average surprise on real text as small as possible. That average is exactly <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mtext> </mtext><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)+D(p\,\|\,q)</annotation></semantics></math></span>, with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span> the true distribution of text and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> the model. The entropy <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)</annotation></semantics></math></span> is fixed by the language. So <strong>the only part training can reduce is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></strong>: the distance between the model and the truth about text.</p>
+  <p>where <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mtext> </mtext><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D(p\,\|\,q)</annotation></semantics></math></span> is the <dfn>relative entropy</dfn>, also called the <dfn>KL divergence</dfn>: the extra bits you pay for believing <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> when the truth is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span> <span class="cite">Cover &amp; Thomas, p. 18</span>. <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> is never negative, and it is zero only when <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">q=p</annotation></semantics></math></span> <span class="cite">p. 26</span>. For our forecaster, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">D=0.25</annotation></semantics></math></span>.</p>
+  <p>In machine learning, the average cost <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msub><mo>∑</mo><mi>x</mi></msub><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>q</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">-\sum_x p(x)\log_2 q(x)</annotation></semantics></math></span> is called the <dfn>cross-entropy</dfn> and is written <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p,q)</annotation></semantics></math></span>:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><munder><mo>∑</mo><mi>x</mi></munder><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>q</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mtext> </mtext><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p,q)=-\sum_x p(x)\log_2 q(x)=H(p)+D(p\,\|\,q)</annotation></semantics></math></span></div>
+  <p>Read the left part aloud: “the outcomes happen with the true probabilities <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span>, but each one is scored with the surprise the model <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> feels.” Why does it split into <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)</annotation></semantics></math></span> plus <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span>? That is a two-line exercise in rung 3. An LLM is trained to make exactly this quantity as small as possible on real text, with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span> the true distribution of text and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> the model (the training loss uses natural logs, so it comes out in nats, but the idea is the same). The entropy <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)</annotation></semantics></math></span> is fixed by the language. So <strong>the only part training can reduce is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></strong>: the distance between the model and the truth about text.</p>
 
-  <div class="trap"><p class="trap-h">Name trap</p><p>In machine learning, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mi mathvariant="normal">∥</mi><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)+D(p\|q)</annotation></semantics></math></span> is called <dfn>cross-entropy</dfn>. Cover and Thomas do not use the word that way: their historical notes list “cross entropy” as another name for <i>relative</i> entropy, that is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> itself <span class="cite">p. 49</span>. And Shannon’s 1948 “relative entropy” means something else again: entropy divided by its maximum, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi mathvariant="normal">/</mi><msub><mi>H</mi><mi>max</mi><mo>⁡</mo></msub></mrow><annotation encoding="application/x-tex">H/H_{\max}</annotation></semantics></math></span> <span class="cite">Shannon 1948, p. 14</span>. In this post, “cross-entropy” is our label for the ML sense.</p></div>
+  <div class="trap"><p class="trap-h">Name trap</p><p>Cover and Thomas do not use “cross-entropy” in the machine-learning way: their historical notes list “cross entropy” as another name for <i>relative</i> entropy, that is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> itself <span class="cite">p. 49</span>. And Shannon’s 1948 “relative entropy” means something else again: entropy divided by its maximum, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi mathvariant="normal">/</mi><msub><mi>H</mi><mi>max</mi><mo>⁡</mo></msub></mrow><annotation encoding="application/x-tex">H/H_{\max}</annotation></semantics></math></span> <span class="cite">Shannon 1948, p. 14</span>. In this post, “cross-entropy” always means <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p,q)</annotation></semantics></math></span> above.</p></div>
 
   <h3>Context lowers surprise</h3>
-  <p>Shannon calculated, from tables of letter, pair and triple frequencies, how uncertain the next letter of English is when you know the previous <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span> letters. He called this <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">F_N</annotation></semantics></math></span>. With 26 letters (no space): <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>0</mn></msub><mo>=</mo><mn>4.70</mn></mrow><annotation encoding="application/x-tex">F_0=4.70</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>1</mn></msub><mo>=</mo><mn>4.14</mn></mrow><annotation encoding="application/x-tex">F_1=4.14</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>2</mn></msub><mo>=</mo><mn>3.56</mn></mrow><annotation encoding="application/x-tex">F_2=3.56</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>3</mn></msub><mo>≈</mo><mn>3.3</mn></mrow><annotation encoding="application/x-tex">F_3\approx3.3</annotation></semantics></math></span> bits per letter <span class="cite">Shannon 1951, p. 54</span>. In theory <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">F_N</annotation></semantics></math></span> never goes up as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span> grows, and it approaches the true entropy <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span> <span class="cite">Shannon 1948, p. 14</span>. One careful point: knowing more lowers uncertainty <i>on average</i>. A particular context can make the next symbol <i>more</i> uncertain <span class="cite">Cover &amp; Thomas, p. 28</span>.</p>
+  <p>An instance first: after the letter Q, English almost always continues with U. If you know the previous letter is Q, the next letter carries almost no surprise. Knowing more of the past usually makes the next letter easier to guess.</p>
+  <p>Shannon calculated, from tables of letter, pair and triple frequencies, how uncertain the next letter of English is when you know the previous <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span> letters. He called this <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">F_N</annotation></semantics></math></span>. With 26 letters (no space): <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>0</mn></msub><mo>=</mo><mn>4.70</mn></mrow><annotation encoding="application/x-tex">F_0=4.70</annotation></semantics></math></span> bits (no knowledge at all: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mn>26</mn></mrow><annotation encoding="application/x-tex">\log_2 26</annotation></semantics></math></span>), <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>1</mn></msub><mo>=</mo><mn>4.14</mn></mrow><annotation encoding="application/x-tex">F_1=4.14</annotation></semantics></math></span> (you know how common each letter is), <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>2</mn></msub><mo>=</mo><mn>3.56</mn></mrow><annotation encoding="application/x-tex">F_2=3.56</annotation></semantics></math></span> (you also know the previous letter), <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>3</mn></msub><mo>≈</mo><mn>3.3</mn></mrow><annotation encoding="application/x-tex">F_3\approx3.3</annotation></semantics></math></span> <span class="cite">Shannon 1951, p. 54</span>. In theory <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">F_N</annotation></semantics></math></span> never goes up as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span> grows, and it approaches the true entropy <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span> <span class="cite">Shannon 1948, p. 14</span>. One careful point: knowing more lowers uncertainty <i>on average</i>. A particular context can make the next symbol <i>more</i> uncertain <span class="cite">Cover &amp; Thomas, p. 28</span>.</p>
   <figure class="chart" id="fig-shannon"><figcaption>First-guess success by amount of context (letters known before guessing). The first two bars (0 and 1 letters) were computed from frequency tables; the rest come from one person’s guesses. Data: Shannon 1951, p. 57.</figcaption></figure>
 
   <div class="reveal" data-for="g1"><p class="reveal-h">Prediction 1 · answer</p><p><b>About 1 bit.</b> Shannon wrote that long-range effects (up to 100 letters) seem to reduce the entropy to “something of the order of one bit per letter” <span class="cite">Shannon 1951, pp. 50–51</span>. His bounds at 100 letters were 0.6 to 1.3 bits <span class="cite">p. 64</span>. This is a hedged estimate from human guessers on one book, not a constant of nature <span class="cite">pp. 56–57</span>. For comparison, 4.7 bits is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mn>26</mn></mrow><annotation encoding="application/x-tex">\log_2 26</annotation></semantics></math></span>: no knowledge at all.</p></div>
 
   <h3>How low can a model go?</h3>
-  <p>Nobody knows the true entropy of a language. Kaplan and colleagues found that two of their trends contradict each other near a loss of about 1.7 <dfn>nats</dfn> per token (nats are like bits but use natural logarithms; 1 nat ≈ 1.44 bits). The most obvious reading, they say, is that the scaling laws break down at or before that point. They add a conjecture: the number <i>might</i> be a rough estimate of the entropy per token of natural language. The estimate is uncertain by an order of magnitude <span class="cite">Kaplan et al. 2020, pp. 17–18</span>. A rough conversion, just for fun: 1.7 nats = 2.45 bits per token. Kaplan’s own footnote says their text has about 4.3 characters per token <span class="cite">p. 18</span>, which gives about 0.57 bits per character. Another route, with a GPT-3 token at about 0.7 words <span class="cite">Brown et al. 2020, p. 24</span> and Shannon’s 4.5 letters per word without spaces <span class="cite">Shannon 1951, p. 53</span>, gives 0.78. So: roughly 0.6–0.8 bits per character, near Shannon’s “one bit”. Different texts, tokenizers and methods: treat it as a talking point, not a result.</p>
+  <p>Nobody knows the true entropy of a language. Kaplan and colleagues found that two of their trends contradict each other near a loss of about 1.7 <dfn>nats</dfn> per token. A nat is the same idea as a bit, but measured with natural logarithms (base <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>≈</mo><mn>2.718</mn></mrow><annotation encoding="application/x-tex">e\approx2.718</annotation></semantics></math></span>) instead of base 2; 1 nat ≈ 1.44 bits. The most obvious reading, they say, is that the scaling laws break down at or before that point. They add a conjecture: the number <i>might</i> be a rough estimate of the entropy per token of natural language. The estimate is uncertain by an order of magnitude <span class="cite">Kaplan et al. 2020, pp. 17–18</span>. A rough conversion, just for fun: 1.7 nats = 2.45 bits per token. Kaplan’s own footnote says their text has about 4.3 characters per token <span class="cite">p. 18</span>, which gives about 0.57 bits per character. Another route, with a GPT-3 token at about 0.7 words <span class="cite">Brown et al. 2020, p. 24</span> and Shannon’s 4.5 letters per word without spaces <span class="cite">Shannon 1951, p. 53</span>, gives 0.78. So: roughly 0.6–0.8 bits per character, near Shannon’s “one bit”. Different texts, tokenizers and methods: treat it as a talking point, not a result.</p>
 
   <p class="lens-sum"><b>What this lens says the model knows:</b> exactly as many bits about text as it saves. It is a precise, measurable kind of knowledge. But Shannon built the theory by setting meaning aside, so this lens cannot tell you what those bits are <i>about</i>.</p>
 </section>
@@ -389,12 +646,13 @@ textarea{width:100%;min-height:96px;font:16px/1.5 var(--f-ui);padding:10px;borde
   <h3>Words as points, relations as arrows</h3>
   <p>Mikolov, Yih and Zweig took a model trained only to predict words. Nothing in it was built for grammar or meaning <span class="cite">Mikolov et al. 2013b, p. 747</span>. Yet relations showed up as roughly constant offsets: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>a</mi><mi>p</mi><mi>p</mi><mi>l</mi><mi>e</mi></mrow></msub><mo>−</mo><msub><mi>x</mi><mrow><mi>a</mi><mi>p</mi><mi>p</mi><mi>l</mi><mi>e</mi><mi>s</mi></mrow></msub><mo>≈</mo><msub><mi>x</mi><mrow><mi>c</mi><mi>a</mi><mi>r</mi></mrow></msub><mo>−</mo><msub><mi>x</mi><mrow><mi>c</mi><mi>a</mi><mi>r</mi><mi>s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{apple}-x_{apples}\approx x_{car}-x_{cars}</annotation></semantics></math></span> <span class="cite">p. 746</span>. To answer “a is to b as c is to ?”, compute</p>
   <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>y</mi><mo>=</mo><msub><mi>x</mi><mi>b</mi></msub><mo>−</mo><msub><mi>x</mi><mi>a</mi></msub><mo>+</mo><msub><mi>x</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">y=x_b-x_a+x_c</annotation></semantics></math></span></div>
-  <p>and pick the word whose vector points most nearly in the same direction as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span> (highest <dfn>cosine</dfn>) <span class="cite">p. 748</span>. Their best model got 39.6% of 8,000 grammar questions right; an older method got 16.5% <span class="cite">pp. 748–749</span>. The authors call these regularities a by-product of maximum-likelihood training <span class="cite">p. 750</span>. Later, with much more data, a skip-gram model reached 65.6% on a larger test <span class="cite">Mikolov et al. 2013a, p. 9</span>. So the arrows are real but rough: about 40% to two thirds of analogies work exactly.</p>
+  <p>and pick the word whose vector points most nearly in the same direction as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span> <span class="cite">p. 748</span>. “Same direction” is measured by the <dfn>cosine</dfn> of the angle between two arrows: 1 if they point the same way, 0 if they are at a right angle, −1 if they point in opposite directions. It is computed from the <dfn>dot product</dfn> (multiply the matching entries and add: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo stretchy="false">)</mo><mo>⋅</mo><mo stretchy="false">(</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn><mo>⋅</mo><mn>3</mn><mo>+</mo><mn>2</mn><mo>⋅</mo><mn>4</mn><mo>=</mo><mn>11</mn></mrow><annotation encoding="application/x-tex">(1,2)\cdot(3,4)=1\cdot3+2\cdot4=11</annotation></semantics></math></span>) divided by the two lengths; rung 7 works an example by hand. Their best model got 39.6% of 8,000 grammar questions right; an older method got 16.5% <span class="cite">pp. 748–749</span>. The authors call these regularities a by-product of maximum-likelihood training <span class="cite">p. 750</span>. Later, with much more data, a skip-gram model reached 65.6% on a larger test <span class="cite">Mikolov et al. 2013a, p. 9</span>. So the arrows are real but rough: about 40% to two thirds of analogies work exactly.</p>
 
   <h3>Attention as a weighted average</h3>
-  <p>In a Transformer, each position makes three vectors: a <dfn>query</dfn> (what am I looking for?), a <dfn>key</dfn> (what do I contain?) and a <dfn>value</dfn> (what do I pass on?). The output at a position is an average of values, weighted by how well its query matches each key <span class="cite">Vaswani et al. 2017, pp. 3–4</span>. The <dfn>softmax</dfn> turns the match scores into weights that are positive and sum to 1 (rung 6 works it out by hand):</p>
+  <p>Think of a library (our analogy). You walk in with a question (your <dfn>query</dfn>). Every book has a label on its spine (its <dfn>key</dfn>) and contents inside (its <dfn>value</dfn>). You compare your question with every label, and you read the books whose labels match best. In a Transformer, each position makes these three vectors from its own word: a query (what am I looking for?), a key (what do I contain?) and a value (what do I pass on?). The match between a query and a key is their dot product. The output at a position is an average of values, weighted by how well its query matches each key <span class="cite">Vaswani et al. 2017, pp. 3–4</span>. The <dfn>softmax</dfn> turns the match scores into weights that are positive and sum to 1 (rung 6 works it out by hand):</p>
   <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mrow><mi mathvariant="normal">A</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow><mo stretchy="false">(</mo><mi>Q</mi><mo separator="true">,</mo><mi>K</mi><mo separator="true">,</mo><mi>V</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">x</mi></mrow><mtext> ⁣</mtext><mrow><mo fence="true">(</mo><mfrac><mrow><mi>Q</mi><msup><mi>K</mi><mi mathvariant="normal">⊤</mi></msup></mrow><msqrt><msub><mi>d</mi><mi>k</mi></msub></msqrt></mfrac><mo fence="true">)</mo></mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">\mathrm{Attention}(Q,K,V)=\mathrm{softmax}\!\left(\frac{QK^{\top}}{\sqrt{d_k}}\right)V</annotation></semantics></math></span></div>
-  <p>Why divide by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><msub><mi>d</mi><mi>k</mi></msub></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{d_k}</annotation></semantics></math></span>? If the parts of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span> are independent with mean 0 and variance 1, their dot product has variance <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">d_k</annotation></semantics></math></span>. The authors suspect large dot products push the softmax into regions with tiny gradients, so they scale them down <span class="cite">p. 4, footnote 4</span>. In one example sentence, some attention heads seem to link “its” to the noun it refers to; the authors say these heads are “apparently involved in anaphora resolution” <span class="cite">p. 14</span>. A picture of attention weights is a hint, not proof of what the model computes.</p>
+  <p>Read the formula from the inside out: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><msup><mi>K</mi><mi mathvariant="normal">⊤</mi></msup></mrow><annotation encoding="application/x-tex">QK^{\top}</annotation></semantics></math></span> holds every query–key dot product (a table of match scores), dividing by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><msub><mi>d</mi><mi>k</mi></msub></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{d_k}</annotation></semantics></math></span> shrinks them, the softmax turns each row of scores into weights, and multiplying by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span> takes the weighted average of the values. Here <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">d_k</annotation></semantics></math></span> is the length of each key vector (64 in the original model <span class="cite">p. 5</span>).</p>
+  <p>Why divide by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><msub><mi>d</mi><mi>k</mi></msub></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{d_k}</annotation></semantics></math></span>? An instance (ours): a dot product of two 64-number vectors is a sum of 64 products. If each product is a random +1 or −1, the spread (standard deviation) of the sum is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>64</mn></msqrt><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">\sqrt{64}=8</annotation></semantics></math></span>, so scores of ±8 are common. Such scores make the softmax extreme: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mn>8</mn></msup><mo>≈</mo><mn>2981</mn></mrow><annotation encoding="application/x-tex">e^{8}\approx2981</annotation></semantics></math></span> times more weight than <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">e^{0}</annotation></semantics></math></span>, so almost all weight goes to one position; then small changes in the scores barely change the attention weights, so learning gets a tiny signal. Dividing by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>64</mn></msqrt><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">\sqrt{64}=8</annotation></semantics></math></span> brings typical scores back to about ±1. The paper states the general fact: if the parts of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span> are independent with mean 0 and variance 1, their dot product has variance <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">d_k</annotation></semantics></math></span>. The authors suspect large dot products push the softmax into regions with tiny <dfn>gradients</dfn> (the learning signal from Step 7), so they scale them down <span class="cite">p. 4, footnote 4</span>. In one example sentence, some attention heads seem to link “its” to the noun it refers to; the authors say these heads are “apparently involved in anaphora resolution” <span class="cite">p. 14</span>, that is, in working out what a word like “its” or “she” refers to. A picture of attention weights is a hint, not proof of what the model computes.</p>
 
   <p class="lens-sum"><b>What this lens says the model knows:</b> relations between words, stored as positions and directions, and a way to mix information from earlier tokens. The geometry is real but approximate. Whether geometry is <i>meaning</i> is the question of Lens 4.</p>
   <p class="small">Try both ideas with numbers in rungs 6 and 7 of the math ladder.</p>
@@ -407,10 +665,11 @@ textarea{width:100%;min-height:96px;font:16px/1.5 var(--f-ui);padding:10px;borde
 
   <p>Here is a puzzle from Xie and colleagues <span class="cite">Xie et al. 2022, p. 1</span>:</p>
   <blockquote class="prompt">Albert Einstein was German<br>Mahatma Gandhi was Indian<br>Marie Curie was <span class="arrow">→</span> Polish</blockquote>
-  <p>Nobody told the model the task is “nationality”. How does it know? Xie’s idea: imagine that every document in the training data was written under some hidden <dfn>concept</dfn> <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span>, such as a topic, a format, or a task. To predict the next token of a document well, a model has to guess which concept is active. If it predicts perfectly, it must do this guessing implicitly, by averaging over concepts <span class="cite">p. 2</span>:</p>
+  <p>Nobody told the model the task is “nationality”. How does it know? Start with an instance (ours). Imagine a huge library where every document was written in one of a few styles: recipes, football reports, lists of famous people with their countries. You open a page at random and read “Albert Einstein was German. Mahatma Gandhi was Indian.” Which style is this? Before reading, you thought each style was about equally likely; this is your <dfn>prior</dfn>. The first line fits the “famous people and countries” style well and the recipe style badly; how well a style explains what you read is its <dfn>likelihood</dfn>. Multiply prior by likelihood, rescale so the numbers add up to 1, and you get your updated belief, the <dfn>posterior</dfn>. That is <dfn>Bayes’ rule</dfn>. After two lines, almost all your belief is on one style, so you predict “Polish” for Marie Curie.</p>
+  <p>Xie’s idea makes this precise: imagine that every document in the training data was written under some hidden <dfn>concept</dfn> <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span> (Greek letter theta), such as a topic, a format, or a task. To predict the next token of a document well, a model has to guess which concept is active. If it predicts perfectly, it must do this guessing implicitly, by averaging over concepts <span class="cite">p. 2</span>. Read the formula below aloud: “the chance of an output given the prompt is the average, over all concepts, of the chance of that output under each concept, weighted by how believable each concept is given the prompt.” (The integral sign is just a sum over many concepts.)</p>
   <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>p</mi><mo stretchy="false">(</mo><mtext>output</mtext><mo>∣</mo><mtext>prompt</mtext><mo stretchy="false">)</mo><mo>=</mo><mo>∫</mo><mi>p</mi><mo stretchy="false">(</mo><mtext>output</mtext><mo>∣</mo><mtext>concept</mtext><mo separator="true">,</mo><mtext>prompt</mtext><mo stretchy="false">)</mo><mtext>  </mtext><mi>p</mi><mo stretchy="false">(</mo><mtext>concept</mtext><mo>∣</mo><mtext>prompt</mtext><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mo stretchy="false">(</mo><mtext>concept</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">p(\text{output}\mid\text{prompt})=\int p(\text{output}\mid\text{concept},\text{prompt})\;p(\text{concept}\mid\text{prompt})\;d(\text{concept})</annotation></semantics></math></span></div>
   <p>A few-shot prompt is evidence about the concept. If the posterior <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false">(</mo><mtext>concept</mtext><mo>∣</mo><mtext>prompt</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">p(\text{concept}\mid\text{prompt})</annotation></semantics></math></span> concentrates on one concept, the model in effect “selects” it <span class="cite">p. 3</span>. In-context learning then looks like Bayesian inference, with no weight change at all.</p>
-  <p>Xie proves this inside a stylized world: documents come from a mixture of hidden Markov models (simple random processes with a hidden state that changes step by step), the language model fits the training distribution exactly, and the concepts are distinguishable enough. Under these conditions, prediction reaches the best possible accuracy as the number of examples grows <span class="cite">Theorem 1, p. 7</span>. Their synthetic tests also show limits. With concepts not seen in training, in-context learning failed <span class="cite">p. 10</span>. Changing the order of examples moved accuracy by 10–40%, and zero-shot sometimes beat few-shot <span class="cite">pp. 10–11</span>.</p>
+  <p>Xie proves this inside a stylized world: documents come from a mixture of <dfn>hidden Markov models</dfn>. A hidden Markov model is a simple random writer with a hidden state (ours: a writer whose hidden mood decides which words are likely next; the mood can change from step to step, and we only see the words); the language model fits the training distribution exactly, and the concepts are distinguishable enough. Under these conditions, prediction reaches the best possible accuracy as the number of examples grows <span class="cite">Theorem 1, p. 7</span>. Their synthetic tests also show limits. With concepts not seen in training, in-context learning failed <span class="cite">p. 10</span>. Changing the order of examples moved accuracy by 10–40%, and zero-shot sometimes beat few-shot <span class="cite">pp. 10–11</span>.</p>
 
   <p class="lens-sum"><b>What this lens says the model knows:</b> a prior over the kinds of documents people write, and the ability to narrow it down from a prompt. This is a clean story, but it is a theorem about a model of text, tested on synthetic data. It does not show that real LLMs compute posteriors. Xie calls it “a first step” <span class="cite">p. 12</span>.</p>
   <p class="small">Watch the posterior move in rung 8.</p>
@@ -422,14 +681,14 @@ textarea{width:100%;min-height:96px;font:16px/1.5 var(--f-ui);padding:10px;borde
   <p class="linktype"><span class="lt analogy">structural analogy</span> A thought experiment (an octopus on a cable) stands in for a language model. The argument works only if the analogy holds.</p>
 
   <h3>The octopus</h3>
-  <p>Bender and Koller define a language model as any system trained only to predict strings. They define meaning as the relation between a linguistic form and the speaker’s communicative intent. From this, they argue that training on form alone “cannot in principle” lead to learning meaning <span class="cite">Bender &amp; Koller 2020, p. 5185</span>.</p>
+  <p>Bender and Koller define a language model as any system trained only to predict strings. They define meaning as the relation between a linguistic <dfn>form</dfn> (anything observable: letters on a page, bytes, or the sounds of speech) and the speaker’s <dfn>communicative intent</dfn> (what the speaker wants to achieve: to inform, to ask for something, or just to socialize) <span class="cite">pp. 5185–5187</span>. From this, they argue that training on form alone “cannot in principle” lead to learning meaning <span class="cite">Bender &amp; Koller 2020, p. 5185</span>.</p>
   <p>Their story: two people, A and B, are stranded on two islands and talk through an underwater cable. A clever octopus, O, taps the cable. It learns the statistical patterns of their messages and starts to answer in B’s place. In small talk, O may pass. Then A writes that a bear is attacking and asks how to defend herself with some sticks. O has never seen a bear or a stick. It can only produce text that looks like an answer <span class="cite">pp. 5188–5189</span>. Bender and Koller do not say LMs learn nothing: they grant that BERT has “probably learned something about meaning”, and that language models learn “some reflection of meaning into the linguistic form” <span class="cite">p. 5193</span>.</p>
 
   <h3>Meaning without reference</h3>
   <p>Piantadosi and Hill reply that the octopus argument assumes that <dfn>reference</dfn> (pointing to things in the world) is what fixes meaning <span class="cite">Piantadosi &amp; Hill 2022, pdf 1–2</span>. But many words have no clear referent, such as “justice” <span class="cite">pdf 2</span>. On the <dfn>conceptual role</dfn> view, meaning comes mainly from how a concept relates to other concepts, the way “force” is tied to “mass” and “acceleration” through <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mi>m</mi><mo>⋅</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">f=m\cdot a</annotation></semantics></math></span> <span class="cite">pdf 2</span>. Whether next-word prediction discovers such roles is, they say, an empirical question, with a “promising, partial affirmative” answer so far <span class="cite">pdf 4</span>. Their claim is conditional: if conceptual role theories are correct, LLMs likely already share the foundation of meaning <span class="cite">pdf 5</span>.</p>
 
   <h3>Two kinds of competence</h3>
-  <p>Mahowald and colleagues suggest a cleaner split. <dfn>Formal competence</dfn> is knowing the rules and statistical patterns of a language. <dfn>Functional competence</dfn> is using language to do things in the world <span class="cite">Mahowald et al. 2024, pp. 2–3</span>. In the human brain, the language network is not used for arithmetic, logic or reasoning about other minds, and people with severe aphasia can still do arithmetic and play chess <span class="cite">p. 5</span>. For English, LLMs’ formal competence is close to human level; their functional competence is “patchy” <span class="cite">p. 2</span>. A test of formal competence: “The keys to the old, wooden kitchen cabinet <i>are</i>…”, where the verb must agree with “keys”, not with the nearer word “cabinet” <span class="cite">pp. 7–8</span>.</p>
+  <p>Mahowald and colleagues suggest a cleaner split. <dfn>Formal competence</dfn> is knowing the rules and statistical patterns of a language. <dfn>Functional competence</dfn> is using language to do things in the world <span class="cite">Mahowald et al. 2024, pp. 2–3</span>. In the human brain, the language network is not used for arithmetic, logic or reasoning about other minds, and people with severe <dfn>aphasia</dfn> (loss of language after brain damage) can still do arithmetic and play chess <span class="cite">p. 5</span>. So in people, being good with language and being good at thinking can come apart. For English, LLMs’ formal competence is close to human level; their functional competence is “patchy” <span class="cite">p. 2</span>. A test of formal competence: “The keys to the old, wooden kitchen cabinet <i>are</i>…”, where the verb must agree with “keys”, not with the nearer word “cabinet” <span class="cite">pp. 7–8</span>.</p>
 
   <p class="lens-sum"><b>What this lens says the model knows:</b> it depends on your theory of meaning. If meaning needs a link to intentions and the world, form alone gives at best a reflection. If meaning is mostly relations between concepts, prediction may build part of it. That is why more data alone cannot settle this debate.</p>
 </section>
@@ -439,14 +698,14 @@ textarea{width:100%;min-height:96px;font:16px/1.5 var(--f-ui);padding:10px;borde
   <h2>Lens 5 · Theory of mind</h2>
   <p class="linktype"><span class="lt analogy">structural analogy</span> Tests designed for children are given to machines. The open question is whether passing means the same thing in both cases.</p>
 
-  <p><dfn>Theory of mind</dfn> (ToM) is the ability to think about what other people believe, even when their beliefs are false. A classic test: a bag full of popcorn has a label that says “chocolate”. Sam has never seen inside. What does Sam think is in the bag? <span class="cite">Kosinski 2024, § Study 1.1</span>. To predict what Sam will <i>say</i>, you must track what Sam <i>believes</i>, not what is true. People who write stories describe false beliefs all the time, so a next-word predictor at least gets plenty of examples.</p>
+  <p><dfn>Theory of mind</dfn> (ToM) is the ability to think about what other people believe, even when their beliefs are false. You met one test in prediction 3: John did not see the cat being moved, so he <i>falsely</i> believes it is still in the basket. A <dfn>false-belief test</dfn> asks where John will look; a person who answers “in the box” is reporting the world, not John’s mind. A second classic test: a bag full of popcorn has a label that says “chocolate”. Sam has never seen inside. What does Sam think is in the bag? <span class="cite">Kosinski 2024, § Study 1.1</span>. To predict what Sam will <i>say</i>, you must track what Sam <i>believes</i>, not what is true. People who write stories describe false beliefs all the time, so a next-word predictor at least gets plenty of examples.</p>
 
   <h3>The claim</h3>
-  <p>Kosinski gave 40 such tasks to a series of models. Scoring was strict: a task counted only if all 16 prompts (the false-belief story, three true-belief controls, and reversed versions) were answered correctly <span class="cite">§ Abstract, § Study 3</span>. ChatGPT-4 solved 75% of tasks (95% interval 66–84%), which he compares with 6-year-old children <span class="cite">§ Study 3</span>. He suggests ToM <i>may</i> have emerged as a by-product of language training <span class="cite">§ Abstract</span>, and he is careful: failures do not necessarily show inability, and successes do not prove ToM <span class="cite">§ Discussion</span>.</p>
+  <p>Kosinski gave 40 such tasks to a series of models. Scoring was strict: each task had 8 versions of the story (the false-belief story, three <dfn>true-belief controls</dfn>, and reversed versions of all four), each asked with 2 prompts, and a task counted only if all 16 prompts were answered correctly. A true-belief control is the same story changed slightly so that the character’s belief is true (for example, she looks inside, or someone tells her), so the right answer flips. The controls catch a model that always gives the “false-belief” answer without reading the story <span class="cite">§ Study 1.3, § Discussion</span> <span class="cite">§ Abstract, § Study 3</span>. ChatGPT-4 solved 75% of tasks (95% interval 66–84%), which he compares with 6-year-old children <span class="cite">§ Study 3</span>. He suggests ToM <i>may</i> have emerged as a by-product of language training <span class="cite">§ Abstract</span>, and he is careful: failures do not necessarily show inability, and successes do not prove ToM <span class="cite">§ Discussion</span>.</p>
 
   <h3>The critics</h3>
-  <p>Ullman made “trivial alterations” to such stories. Make the popcorn bag transparent, so Sam can see the popcorn: on one of two belief prompts, GPT-3.5 still gave “chocolate” a probability of 95% <span class="cite">Ullman 2023, p. 3</span>. His rule of evidence: one clear failure can outweigh many average successes, in the same way that a machine that answers 100 easy multiplications correctly but fails 213 × 261 has probably memorized answers rather than learned to multiply <span class="cite">p. 2</span>. Has ToM emerged? “Probably not” <span class="cite">p. 8</span>. Shapira and colleagues tested 15 models on 6 datasets and concluded that “no model robustly exhibits ToM on all datasets” <span class="cite">Shapira et al. 2024, p. 2261</span>.</p>
-  <div class="reveal" data-for="g3"><p class="reveal-h">Prediction 3 · answer</p><p><b>About 0%.</b> GPT-4 scored 97.5% on the original false-belief transfer items and 0% when the object was put <i>on</i> the container, or when the container was transparent <span class="cite">Shapira et al. 2024, pp. 2262–2263</span>. Shapira’s team suggests models <i>might</i> recognize the familiar Sally–Anne pattern rather than track beliefs <span class="cite">p. 2262</span>.</p></div>
+  <p>Ullman made “trivial alterations” to such stories: small changes that, Ullman argues, obviously change the right answer. Make the popcorn bag transparent, so Sam can see the popcorn; now Sam should believe it holds popcorn, whatever the label says. Yet on one of two belief prompts, GPT-3.5 still gave “chocolate” a probability of 95% <span class="cite">Ullman 2023, p. 3</span>. His rule of evidence: one clear failure can outweigh many average successes, in the same way that a machine that answers 100 easy multiplications correctly but fails 213 × 261 has probably memorized answers rather than learned to multiply <span class="cite">p. 2</span>. Has ToM emerged? “Probably not” <span class="cite">p. 8</span>. Shapira and colleagues tested 15 models on 6 datasets and concluded that “no model robustly exhibits ToM on all datasets” <span class="cite">Shapira et al. 2024, p. 2261</span>.</p>
+  <div class="reveal" data-for="g3"><p class="reveal-h">Prediction 3 · answer</p><p><b>About 0%.</b> In Shapira’s tests GPT-4 scored 97.5% on the original false-belief transfer items and 0% when the object was put <i>on</i> the container (Ullman’s change “in → on”), or when the container was transparent. In Ullman’s own run with GPT-3.5, the model said John thinks the cat is on the basket with probability 97% <span class="cite">Ullman 2023, p. 6</span> <span class="cite">Shapira et al. 2024, pp. 2262–2263</span>. Shapira’s team suggests models <i>might</i> recognize the familiar Sally–Anne pattern rather than track beliefs <span class="cite">p. 2262</span>.</p></div>
 
   <h3>The twist</h3>
   <p>Strachan and colleagues compared models with 1,907 human participants. Humans also failed about half of the Ullman-style changes, which alter physical facts of the story <span class="cite">Strachan et al. 2024, § False belief</span>. GPT-4 matched or beat humans on irony, hinting and strange stories <span class="cite">§ Irony, § Hinting, § Strange stories</span>, but was worse on <dfn>faux pas</dfn> (noticing that someone said something awkward without knowing it). Its faux pas errors were mostly “not enough information”; when the question asked what was <i>more likely</i>, GPT-4 answered perfectly. The authors read this as <dfn>hyperconservatism</dfn>, an unwillingness to commit, not a failure to infer <span class="cite">§ Understanding faux pas</span>.</p>
@@ -480,10 +739,14 @@ textarea{width:100%;min-height:96px;font:16px/1.5 var(--f-ui);padding:10px;borde
 
   <!-- R3 -->
   <div class="rung"><p class="rung-h"><span class="lvl ug">Undergraduate</span> Rung 3 · Cross-entropy = entropy + KL divergence</p>
-  <p>A model <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> predicts the weather. On average, the surprise it feels is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msub><mo>∑</mo><mi>x</mi></msub><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>q</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">-\sum_x p(x)\log_2 q(x)</annotation></semantics></math></span>, because the words come from the truth <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span> but the surprise is computed with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span>. Split it in two. Add and subtract <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log_2 p(x)</annotation></semantics></math></span> inside the sum:</p>
-  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo>−</mo><munder><mo>∑</mo><mi>x</mi></munder><mi>p</mi><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>q</mi><mo>=</mo><mo>−</mo><munder><mo>∑</mo><mi>x</mi></munder><mi>p</mi><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>p</mi><mo>+</mo><munder><mo>∑</mo><mi>x</mi></munder><mi>p</mi><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mfrac><mi>p</mi><mi>q</mi></mfrac></mrow><annotation encoding="application/x-tex">-\sum_x p\log_2 q=-\sum_x p\log_2 p+\sum_x p\log_2\frac{p}{q}</annotation></semantics></math></span></div>
-  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo>=</mo><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mtext> </mtext><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">=H(p)+D(p\,\|\,q)</annotation></semantics></math></span></div>
-  <p>The first part is the language’s own entropy. The second is the KL divergence <span class="cite">Cover &amp; Thomas, p. 18</span>. Example: the model that thinks all four words are equally likely, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">q=(\tfrac14,\tfrac14,\tfrac14,\tfrac14)</annotation></semantics></math></span>, pays 2 bits per word: 1.75 for the language plus 0.25 for being wrong. A model with the order reversed, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">q=(\tfrac18,\tfrac18,\tfrac14,\tfrac12)</annotation></semantics></math></span>, pays</p>
+  <p>A model <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> predicts the weather. On average, the surprise it feels is the cross-entropy <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><msub><mo>∑</mo><mi>x</mi></msub><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>q</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p,q)=-\sum_x p(x)\log_2 q(x)</annotation></semantics></math></span>: the words come from the truth <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span>, but each surprise is computed with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span>. The KL divergence is defined as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mtext> </mtext><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>q</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mo>∑</mo><mi>x</mi></msub><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mfrac><mrow><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><mi>q</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">D(p\,\|\,q)=\sum_x p(x)\log_2\frac{p(x)}{q(x)}</annotation></semantics></math></span> <span class="cite">Cover &amp; Thomas, p. 18</span>.</p>
+  <div class="exercise"><p class="trap-h">Exercise · Why is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo stretchy="false">)</mo><mo>=</mo><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mtext> </mtext><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p,q)=H(p)+D(p\,\|\,q)</annotation></semantics></math></span>?</p>
+  <p>Show it in two lines, using only the definitions above and one rule of logarithms.</p>
+  <details><summary>Hint</summary><p>Use <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mi>log</mi><mo>⁡</mo><mi>a</mi><mo>−</mo><mi>log</mi><mo>⁡</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">\log\frac{a}{b}=\log a-\log b</annotation></semantics></math></span> on the definition of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span>. Or: inside <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>q</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">-\log_2 q(x)</annotation></semantics></math></span>, add and subtract <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log_2 p(x)</annotation></semantics></math></span>.</p></details>
+  <details><summary>Solution</summary>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mtext> </mtext><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>q</mi><mo stretchy="false">)</mo><mo>=</mo><munder><mo>∑</mo><mi>x</mi></munder><mi>p</mi><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>p</mi><mo>−</mo><munder><mo>∑</mo><mi>x</mi></munder><mi>p</mi><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>q</mi><mo>=</mo><mo>−</mo><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D(p\,\|\,q)=\sum_x p\log_2 p-\sum_x p\log_2 q=-H(p)+H(p,q)</annotation></semantics></math></span></div>
+  <p>Move <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)</annotation></semantics></math></span> to the other side: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo stretchy="false">)</mo><mo>=</mo><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mtext> </mtext><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p,q)=H(p)+D(p\,\|\,q)</annotation></semantics></math></span>. Check with numbers below: for the uniform model, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.00</mn><mo>=</mo><mn>1.75</mn><mo>+</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">2.00=1.75+0.25</annotation></semantics></math></span>.</p></details></div>
+  <p>The first part is the language’s own entropy. The second is the KL divergence. Example: the model that thinks all four words are equally likely, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">q=(\tfrac14,\tfrac14,\tfrac14,\tfrac14)</annotation></semantics></math></span>, pays 2 bits per word: 1.75 for the language plus 0.25 for being wrong. A model with the order reversed, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">q=(\tfrac18,\tfrac18,\tfrac14,\tfrac12)</annotation></semantics></math></span>, pays</p>
   <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⋅</mo><mn>3</mn><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle><mo>⋅</mo><mn>3</mn><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>8</mn></mfrac></mstyle><mo>⋅</mo><mn>2</mn><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>8</mn></mfrac></mstyle><mo>⋅</mo><mn>1</mn><mo>=</mo><mn>2.625</mn><mtext> bits</mtext><mo separator="true">,</mo><mspace width="1em"/><mi>D</mi><mo>=</mo><mn>0.875</mn></mrow><annotation encoding="application/x-tex">\tfrac12\cdot3+\tfrac14\cdot3+\tfrac18\cdot2+\tfrac18\cdot1=2.625\ \text{bits},\quad D=0.875</annotation></semantics></math></span></div>
   <p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> is not symmetric. Cover and Thomas show a two-outcome example where <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mi mathvariant="normal">∥</mi><mi>q</mi><mo stretchy="false">)</mo><mo>=</mo><mn>0.2075</mn></mrow><annotation encoding="application/x-tex">D(p\|q)=0.2075</annotation></semantics></math></span> but <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false">(</mo><mi>q</mi><mi mathvariant="normal">∥</mi><mi>p</mi><mo stretchy="false">)</mo><mo>=</mo><mn>0.1887</mn></mrow><annotation encoding="application/x-tex">D(q\|p)=0.1887</annotation></semantics></math></span> bits <span class="cite">p. 19</span>.</p>
   <div class="lab" id="lab-xent">
@@ -927,39 +1190,63 @@ $$(".code[data-copy]").forEach(box=>{const b=el("button",{type:"button",class:"c
     try{navigator.clipboard.writeText(t).then(done,()=>sel(box))}catch(e){sel(box)}})});
 function sel(box){const r=document.createRange();r.selectNodeContents($("code",box));const s=getSelection();s.removeAllRanges();s.addRange(r)}
 
-/* ---------- Audio player ---------- */
-const CH=window.CHAPTERS||[]; const audio=new Audio(); audio.preload="none";
-const P={i:LS.get("ch",0),mode:LS.get("mode","off"),rate:LS.get("rate",1)};
+/* ---------- Audio player (element first; Web Audio fallback if the page blocks media loads) ---------- */
+const CH=window.CHAPTERS||[];
+const P={i:Math.min(LS.get("ch",0),Math.max(0,CH.length-1)),mode:LS.get("mode","off"),rate:LS.get("rate",1),engine:LS.get("engine","el")};
 const bar=el("div",{class:"player",role:"region","aria-label":"Audio player"});
 bar.innerHTML=`<div class="player-in"><button type="button" class="pbtn" id="p-play" aria-label="Play"></button>
-<button type="button" class="pinfo" id="p-info" aria-label="Show chapters"><b id="p-title"></b><span class="prog"><i id="p-prog"></i></span></button>
+<button type="button" class="pinfo" id="p-info" aria-label="Show chapters"><b id="p-title"></b><span class="prog"><i id="p-prog"></i></span><small id="p-msg" class="pmsg" hidden></small></button>
 <div class="pctl"><button type="button" id="p-loop" title="Loop">Loop</button><button type="button" id="p-rate" title="Speed">1×</button></div></div>`;
 document.body.append(bar);
 const ICON={play:'<svg viewBox="0 0 16 16"><path d="M4 2l10 6-10 6z"/></svg>',pause:'<svg viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg>'};
 const fmtT=s=>{s=Math.round(s||0);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
-const CACHE={};
-function srcOf(i){return CACHE[CH[i].id]||CH[i].src}
-async function cacheOne(i){const c=CH[i];if(!c||CACHE[c.id])return true;try{const r=await fetch(c.src);if(!r.ok)return false;CACHE[c.id]=URL.createObjectURL(await r.blob());return true}catch(e){return false}}
-function load(i,play){P.i=(i+CH.length)%CH.length;LS.set("ch",P.i);audio.src=srcOf(P.i);audio.playbackRate=P.rate;paint();
+const BLOB={}, BUF={};            // id -> Blob ; id -> AudioBuffer
+const URLS={};                    // id -> object URL
+function msg(t){const m=$("#p-msg");if(!m)return;m.textContent=t||"";m.hidden=!t}
+async function getBlob(i){const c=CH[i];if(!c)return null;if(BLOB[c.id])return BLOB[c.id];
+  const r=await fetch(c.src);if(!r.ok)throw new Error("HTTP "+r.status);const b=await r.blob();BLOB[c.id]=b;URLS[c.id]=URL.createObjectURL(b);return b}
+async function cacheOne(i){try{await getBlob(((i%CH.length)+CH.length)%CH.length);return true}catch(e){return false}}
+/* Engine 1: <audio> element (keeps pitch at other speeds, lock-screen controls) */
+const audio=document.createElement("audio");audio.preload="auto";audio.setAttribute("playsinline","");audio.hidden=true;document.body.append(audio);
+let elFailed=false;
+audio.addEventListener("error",()=>{const code=audio.error&&audio.error.code;if(P.engine!=="el")return;
+  const id=CH[P.i].id;
+  if(!elFailed){elFailed=true;msg("Retrying…");             // first failure: retry from a downloaded copy (blob URL)
+    getBlob(P.i).then(()=>{audio.src=URLS[id];audio.setAttribute("data-id",id);return audio.play()}).then(()=>msg("")).catch(()=>msg("Tap play again."));return}
+  P.engine="wa";LS.set("engine","wa");msg("Switched to the backup player (error "+code+"). Tap play again.");paint()});
+/* Engine 2: Web Audio (decodes the MP3 itself, so it works even if media loads are blocked) */
+let AC=null, src=null, startAt=0, offset=0, playingWA=false;
+function ac(){if(!AC){const C=window.AudioContext||window.webkitAudioContext;AC=new C()}if(AC.state==="suspended")AC.resume();return AC}
+async function buf(i){const c=CH[i];if(BUF[c.id])return BUF[c.id];const b=await getBlob(i);const ab=await b.arrayBuffer();BUF[c.id]=await new Promise((ok,no)=>ac().decodeAudioData(ab,ok,no));return BUF[c.id]}
+function waStop(keep){if(src){src.onended=null;try{src.stop()}catch(e){}src=null}if(keep&&playingWA)offset+= (AC.currentTime-startAt)*P.rate;playingWA=false}
+async function waPlay(){const ctx=ac();msg("Loading…");try{const b=await buf(P.i);msg("");waStop(false);src=ctx.createBufferSource();src.buffer=b;src.playbackRate.value=P.rate;src.connect(ctx.destination);
+  src.onended=()=>{playingWA=false;offset=0;ended()};startAt=ctx.currentTime;src.start(0,Math.min(offset,b.duration-0.05));playingWA=true;paint()}catch(e){msg("Audio could not load ("+(e.message||e)+").");paint()}}
+function isPlaying(){return P.engine==="wa"?playingWA:!audio.paused}
+function curTime(){return P.engine==="wa"?(playingWA?offset+(AC.currentTime-startAt)*P.rate:offset):audio.currentTime}
+function duration(){const c=CH[P.i];return P.engine==="wa"?(BUF[c.id]?BUF[c.id].duration:c.dur):(audio.duration||c.dur)}
+function play(){if(P.engine==="wa"){waPlay();return}
+  const c=CH[P.i];const want=URLS[c.id]||c.src;if(audio.getAttribute("data-id")!==c.id){audio.src=want;audio.setAttribute("data-id",c.id)}
+  audio.playbackRate=P.rate;audio.play().then(()=>msg("")).catch(e=>{if(e&&e.name==="NotAllowedError")msg("Tap play to start.");});
+  cacheOne(P.i).then(()=>cacheOne(P.i+1))}
+function pause(){if(P.engine==="wa"){waStop(true);paint()}else audio.pause()}
+function load(i,go){if(P.engine==="wa")waStop(false);offset=0;P.i=((i%CH.length)+CH.length)%CH.length;LS.set("ch",P.i);audio.removeAttribute("data-id");paint();
   if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:CH[P.i].title,artist:"AI4Read",album:"Post 01 · What does an LLM know?"})}catch(e){}}
-  if(play) audio.play().catch(()=>{});
-  cacheOne(P.i).then(()=>cacheOne(P.i+1));}
-function paint(){$("#p-title").textContent=`${P.i+1}/${CH.length} · ${CH[P.i].title}`;$("#p-play").innerHTML=audio.paused?ICON.play:ICON.pause;$("#p-play").setAttribute("aria-label",audio.paused?"Play":"Pause");
+  if(go)play()}
+function ended(){if(P.mode==="one"){offset=0;audio.currentTime=0;play()}else if(P.i<CH.length-1)load(P.i+1,true);else if(P.mode==="all")load(0,true);else paint()}
+function paint(){$("#p-title").textContent=`${P.i+1}/${CH.length} · ${CH[P.i].title}`;const on=isPlaying();$("#p-play").innerHTML=on?ICON.pause:ICON.play;$("#p-play").setAttribute("aria-label",on?"Pause":"Play");
   const L={off:"Loop off",one:"Loop 1",all:"Loop all"}[P.mode];const lb=$("#p-loop");lb.textContent={off:"Loop",one:"Loop 1",all:"All"}[P.mode];lb.setAttribute("aria-label",L);lb.setAttribute("aria-pressed",String(P.mode!=="off"));
   $("#p-rate").textContent=P.rate+"×";}
 if(CH.length){
-  audio.src=CH[P.i%CH.length].src; P.i%=CH.length;
-  $("#p-play").addEventListener("click",()=>{if(audio.paused){audio.playbackRate=P.rate;audio.play().catch(()=>{})}else audio.pause()});
-  audio.addEventListener("play",()=>{paint();cacheOne(P.i).then(()=>cacheOne((P.i+1)%CH.length))});audio.addEventListener("pause",paint);
-  audio.addEventListener("timeupdate",()=>{$("#p-prog").style.width=(audio.duration?100*audio.currentTime/audio.duration:0)+"%"});
-  audio.addEventListener("ended",()=>{if(P.mode==="one"){audio.currentTime=0;audio.play()}else if(P.i<CH.length-1)load(P.i+1,true);else if(P.mode==="all")load(0,true);else paint()});
+  $("#p-play").addEventListener("click",()=>{if(P.engine==="wa")ac();isPlaying()?pause():play()});
+  audio.addEventListener("play",paint);audio.addEventListener("pause",paint);audio.addEventListener("ended",ended);
+  setInterval(()=>{const d=duration();$("#p-prog").style.width=(d?Math.min(100,100*curTime()/d):0)+"%"},500);
   $("#p-loop").addEventListener("click",()=>{P.mode={off:"one",one:"all",all:"off"}[P.mode];LS.set("mode",P.mode);paint()});
-  $("#p-rate").addEventListener("click",()=>{const R=[0.75,1,1.25,1.5];P.rate=R[(R.indexOf(P.rate)+1)%R.length];audio.playbackRate=P.rate;LS.set("rate",P.rate);paint()});
+  $("#p-rate").addEventListener("click",()=>{const R=[0.75,1,1.25,1.5];const was=isPlaying();if(P.engine==="wa"&&was)waStop(true);P.rate=R[(R.indexOf(P.rate)+1)%R.length];audio.playbackRate=P.rate;LS.set("rate",P.rate);if(P.engine==="wa"&&was)waPlay();paint()});
   $("#p-info").addEventListener("click",openChapters);
   if("mediaSession" in navigator){const ms=navigator.mediaSession;try{
-    ms.setActionHandler("play",()=>audio.play());ms.setActionHandler("pause",()=>audio.pause());
+    ms.setActionHandler("play",()=>play());ms.setActionHandler("pause",()=>pause());
     ms.setActionHandler("previoustrack",()=>load(P.i-1,true));ms.setActionHandler("nexttrack",()=>load(P.i+1,true));
-    ms.setActionHandler("seekbackward",()=>{audio.currentTime=Math.max(0,audio.currentTime-15)});ms.setActionHandler("seekforward",()=>{audio.currentTime+=15});}catch(e){}}
+    ms.setActionHandler("seekbackward",()=>{if(P.engine==="el")audio.currentTime=Math.max(0,audio.currentTime-15)});ms.setActionHandler("seekforward",()=>{if(P.engine==="el")audio.currentTime+=15});}catch(e){}}
   paint();
 } else bar.hidden=true;
 
@@ -974,7 +1261,7 @@ function openChapters(){openSheet(inn=>{inn.innerHTML=`<div class="sheet-h"><b>C
   $(".x",inn).addEventListener("click",closeSheet);
   const off=el("div",{class:"row"});const bAll=el("button",{type:"button",class:"btn"},"Keep all audio for the train (12 MB)");off.append(bAll);
   const bSave=el("button",{type:"button",class:"btn ghost"},"Save as one MP3 to this device");if(DL)off.append(bSave);
-  const st=el("p",{class:"status"},Object.keys(CACHE).length===CH.length?"All chapters are loaded. They keep playing without signal while this page stays open.":"Loading keeps every chapter in memory, so tunnels and weak signal do not stop playback. Keep this page open (closing it clears the memory).");
+  const st=el("p",{class:"status"},Object.keys(BLOB).length===CH.length?"All chapters are loaded. They keep playing without signal while this page stays open.":"Loading keeps every chapter in memory, so tunnels and weak signal do not stop playback. Keep this page open (closing it clears the memory).");
   inn.append(off,st);
   bAll.addEventListener("click",async()=>{bAll.disabled=true;let ok=0;for(let i=0;i<CH.length;i++){st.textContent=`Loading chapter ${i+1} of ${CH.length}…`;if(await cacheOne(i))ok++}
     st.textContent=ok===CH.length?"All chapters are loaded. They keep playing without signal while this page stays open.":`Loaded ${ok} of ${CH.length} chapters. Try again when the signal is better.`;bAll.disabled=false});
@@ -985,58 +1272,679 @@ function openChapters(){openSheet(inn=>{inn.innerHTML=`<div class="sheet-h"><b>C
   const list=el("div",{class:"chlist"});
   CH.forEach((c,i)=>{const b=el("button",{type:"button","aria-current":String(i===P.i)},`<b>${i+1}. ${c.title}</b><span>${fmtT(c.dur)}</span>`);b.addEventListener("click",()=>{load(i,true);closeSheet()});list.append(b)});inn.append(list)})}
 
-/* ---------- Section tools: listen + discuss ---------- */
-const NOTES=LS.get("notes",{}); // per-section local copy {sec:[{q,a,kind,at}]}
-const secTitle=s=>($("h2",s)||{}).textContent||s.id;
+/* ---------- Section tools: listen (notes are added by annotate.js) ---------- */
 $$("section[data-ch]").forEach(sec=>{
   const tools=el("div",{class:"sec-tools"}); const ci=CH.findIndex(c=>c.id===sec.dataset.ch);
   if(ci>=0){const b=el("button",{type:"button"},`Listen · ${fmtT(CH[ci].dur)}`);b.addEventListener("click",()=>load(ci,true));tools.append(b)}
-  const d=el("button",{type:"button"},"Discuss this section");d.addEventListener("click",()=>openDiscuss(sec));tools.append(d);
-  const n=(NOTES[sec.id]||[]).length; if(n) d.insertAdjacentHTML("beforeend",` <span class="n">${n}</span>`);
   sec.append(tools);
 });
-let BRIEF=null; try{BRIEF=JSON.parse(($("#brief-data")||{}).textContent||"null")}catch(e){}
-function plain(node){return node.innerText.replace(/\n{3,}/g,"\n\n")}
-const threads={};
-function openDiscuss(sec){openSheet(inn=>{
-  inn.innerHTML=`<div class="sheet-h"><b>${secTitle(sec)}</b><button type="button" class="x">Close</button></div>
-  <div class="thread" id="d-thread"></div>
-  <label class="status" for="d-text">Write a question, a confusion, or an idea. “Ask Claude” answers now, from this post and its sources. “Save note” keeps it for our next discussion.</label>
-  <textarea id="d-text" placeholder="e.g. Why can training only reduce D, not H?"></textarea>
-  <div class="row"><button type="button" class="btn" id="d-ask">Ask Claude</button><button type="button" class="btn ghost" id="d-save">Save note</button></div>
-  <p class="status" id="d-status"></p>`;
-  $(".x",inn).addEventListener("click",closeSheet);
-  const th=$("#d-thread",inn),ta=$("#d-text",inn),stt=$("#d-status",inn),ask=$("#d-ask",inn);
-  const list=NOTES[sec.id]||[]; list.forEach(m=>addMsg(th,m));
-  if(!SAMPLE){ask.hidden=true; stt.textContent=DB?"":"Notes are saved in this browser only.";}
-  $("#d-save",inn).addEventListener("click",async()=>{const q=ta.value.trim();if(!q)return;const m={kind:"note",q,at:new Date().toISOString()};
-    keep(sec,m);addMsg(th,m);ta.value="";const ok=await dbAdd("notes",{section:sec.id,title:secTitle(sec),...m});stt.textContent=ok?"Saved for our discussion.":"Saved in this browser.";});
-  ask.addEventListener("click",async()=>{const q=ta.value.trim();if(!q||!SAMPLE)return;ask.disabled=true;ta.value="";
-    const me={kind:"ask",q,at:new Date().toISOString()};addMsg(th,{...me,kind:"note-q"});const box=addMsg(th,{kind:"ai",a:"Thinking…"});
-    const hist=(threads[sec.id]=threads[sec.id]||[]);
-    try{
-      const lim=await SAMPLE.limits().catch(()=>({maxPromptBytes:60000}));
-      const budget=Math.max(8000,(lim.maxPromptBytes||60000)-6000);
-      let ctx=`SECTION THE READER IS ON: ${secTitle(sec)}\n${plain(sec)}\n`;
-      const post=plain($("main"));if((ctx+post).length<budget*0.7)ctx+=`\nWHOLE POST:\n${post}\n`;
-      if(BRIEF&&(ctx+BRIEF).length<budget)ctx+=`\nSOURCE BRIEF (claims with page refs, from the AI4Read digests):\n${BRIEF}\n`;
-      const sys=`You are the AI4Read tutor for Kunhao, an assistant professor in computational social science who reads on a phone. Answer his question about the post below.\n- English at B2 level (some C1), short sentences, define terms.\n- Intuition first, then the math step by step, with small numbers. No skipped steps.\n- Ground every factual claim in the post or the source brief and give the page reference. Keep the authors' hedges.\n- If the answer needs knowledge beyond these sources, say so clearly ("Beyond our sources: ...").\n- Plain text, no markdown headings. Use at most about 250 words unless he asks for more.\n\n${ctx}`;
-      const msgs=[{role:"user",content:sys+"\n\nQUESTION: "+(hist.length?hist[0].q:q)}];
-      if(hist.length){msgs.push({role:"assistant",content:hist[0].a});hist.slice(1).forEach(h=>{msgs.push({role:"user",content:h.q},{role:"assistant",content:h.a})});msgs.push({role:"user",content:q})}
-      const res=await SAMPLE(msgs,{modelTier:"complex",cache:false,onText:u=>{$(".body",box).textContent=u.text}});
-      $(".body",box).textContent=res.text;hist.push({q,a:res.text});
-      const m={kind:"ask",q,a:res.text,at:me.at};keep(sec,m);
-      const ok=await dbAdd("notes",{section:sec.id,title:secTitle(sec),...m});stt.textContent=ok?"Question and answer saved for our discussion.":"";
-    }catch(e){$(".body",box).textContent=(e&&e.code==="not_granted")?"Asking Claude is not allowed in this view. Use “Save note” instead.":(e&&e.code==="rate_limited")?"Too many questions in a short time. Wait a minute and try again.":"The answer did not arrive ("+((e&&e.message)||"error")+"). Your question is still here: save it as a note.";ta.value=q}
-    ask.disabled=false;});
-})}
-function keep(sec,m){(NOTES[sec.id]=NOTES[sec.id]||[]).push(m);LS.set("notes",NOTES)}
-function addMsg(th,m){let node;
-  if(m.kind==="ai"){node=el("div",{class:"msg ai"},'<small>Claude</small><span class="body"></span>');$(".body",node).textContent=m.a}
-  else{node=el("div",{class:"msg me"},`<small>${m.kind==="note"?"Note":"You asked"}</small><span class="body"></span>`);$(".body",node).textContent=m.q;
-    th.append(node); if(m.kind==="ask"&&m.a){const a=el("div",{class:"msg ai"},'<small>Claude</small><span class="body"></span>');$(".body",a).textContent=m.a;th.append(a)} return node}
-  th.append(node);return node}
 document.addEventListener("caps",()=>{});
+})();
+
+</script>
+<script>
+/* Illustrations and extra labs for post 01 (toy numbers are ours unless stated). */
+(function(){
+"use strict";
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const NS="http://www.w3.org/2000/svg";
+const esc=t=>String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const svg=(w,h,body,label)=>`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(label||"")}" class="fig">${body}</svg>`;
+const txt=(x,y,t,o={})=>`<text x="${x}" y="${y}" text-anchor="${o.a||"middle"}" class="${o.c||"t"}"${o.s?` font-size="${o.s}"`:""}>${esc(t)}</text>`;
+const box=(x,y,w,h,c="bx",r=4)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" class="${c}"/>`;
+const arrow=(x1,y1,x2,y2,c="ar")=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" class="${c}" marker-end="url(#ah)"/>`;
+const DEFS=`<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahd"/></marker></defs>`;
+
+/* ---- Prediction 3: in vs on (Ullman 2023, p. 6) ---- */
+(function(){const host=$("#fig-inon");if(!host)return;
+  const cat=(x,y,vis)=>`<g class="${vis?"cat":"cat ghost"}"><ellipse cx="${x}" cy="${y}" rx="15" ry="10"/><circle cx="${x+13}" cy="${y-9}" r="7"/><path d="M${x+8} ${y-14}l2-7 4 5zM${x+15} ${y-15}l4-6 2 7z"/><path d="M${x-15} ${y}q-10 -8 -6 -18" fill="none"/></g>`;
+  const panel=(ox,title,inside,thought,ok)=>{let g=`<g transform="translate(${ox},0)">`+txt(85,16,title,{c:"th"});
+    g+=box(14,92,58,40,"basket",6)+txt(43,148,"basket",{c:"ts"});
+    g+=box(98,92,58,40,"crate",2)+txt(127,148,"box",{c:"ts"});
+    g+=inside?cat(127,114,false)+`<line x1="98" y1="92" x2="156" y2="92" class="lid"/>`:cat(124,80,true);
+    g+=`<g class="john"><circle cx="16" cy="44" r="7"/><line x1="16" y1="51" x2="16" y2="70"/><line x1="16" y1="70" x2="9" y2="84"/><line x1="16" y1="70" x2="23" y2="84"/><line x1="7" y1="58" x2="25" y2="58"/></g>`+txt(16,30,"John",{c:"ts"});
+    g+=`<path d="M38 34 h84 a6 6 0 0 1 6 6 v18 a6 6 0 0 1 -6 6 h-80 l-6 7 v-7 a6 6 0 0 1 -4 -6 v-18 a6 6 0 0 1 6 -6z" class="bubble"/>`+txt(80,52,thought,{s:11})+txt(80,176,ok,{c:"tn"});
+    return g+"</g>"};
+  host.innerHTML=svg(360,190,DEFS+panel(0,"Original: cat IN the box",true,"in the basket","hidden: false belief")+panel(185,"Altered: cat ON the box",false,"on the box","visible: he should know"),"In versus on");
+})();
+
+/* ---- Step 3: toy word map ---- */
+(function(){const host=$("#fig-wordmap");if(!host)return;
+  const P=[["cat",62,150],["dog",92,132],["walking",150,58],["running",184,46],["bedroom",268,150],["room",292,128],["the",204,170],["in",40,60]];
+  let b=`<line x1="20" y1="190" x2="340" y2="190" class="ax"/><line x1="20" y1="190" x2="20" y2="14" class="ax"/>`+txt(330,184,"direction 1",{a:"end",c:"ts"})+txt(26,24,"direction 2",{a:"start",c:"ts"});
+  [["cat","dog"],["walking","running"],["bedroom","room"]].forEach(([a,c])=>{const A=P.find(p=>p[0]===a),C=P.find(p=>p[0]===c);b+=`<ellipse cx="${(A[1]+C[1])/2}" cy="${(A[2]+C[2])/2}" rx="44" ry="26" class="halo"/>`});
+  P.forEach(([w,x,y])=>{b+=`<circle cx="${x}" cy="${y}" r="4" class="dot"/>`+txt(x+7,y-7,w,{a:"start"})});
+  host.innerHTML=svg(360,200,b,"Toy word map")+`<figcaption>A toy map with two directions (real vectors have 30 to 100 or more). Neighbours share what the model learns about each other. Positions are ours, for illustration.</figcaption>`;
+})();
+
+/* ---- Lens 1: question tree for the weather ---- */
+(function(){const host=$("#fig-qtree");if(!host)return;
+  let b=DEFS;
+  const q=(x,y,t)=>box(x-38,y-14,76,28,"bx",14)+txt(x,y+5,t);
+  const leaf=(x,y,w,n,p)=>box(x-34,y-14,68,28,"leaf",4)+txt(x,y+1,w,{s:12})+txt(x,y+26,`${n} q · ${p}`,{c:"ts"});
+  b+=q(60,30,"rain?")+arrow(60,44,60,82)+txt(66,66,"yes",{a:"start",c:"ts"})+leaf(60,98,"rain",1,"½");
+  b+=arrow(98,30,150,30)+txt(124,24,"no",{c:"ts"})+q(188,30,"sun?")+arrow(188,44,188,82)+txt(194,66,"yes",{a:"start",c:"ts"})+leaf(188,98,"sun",2,"¼");
+  b+=arrow(226,30,268,30)+txt(247,24,"no",{c:"ts"})+q(306,30,"wind?")+arrow(296,44,268,82)+arrow(316,44,340,82)+txt(272,64,"yes",{a:"end",c:"ts"})+txt(338,64,"no",{a:"start",c:"ts"});
+  b+=leaf(262,98,"wind",3,"⅛")+leaf(336,98,"snow",3,"⅛");
+  host.innerHTML=svg(380,140,b,"Question tree")+`<figcaption>Ask about the most likely word first. Average number of questions: ½·1 + ¼·2 + ⅛·3 + ⅛·3 = 1.75.</figcaption>`;
+})();
+
+/* ---- Step 4: three architectures (cost formulas: Mikolov et al. 2013a, pp. 3–4) ---- */
+(function(){const host=$("#arch-svg");if(!host)return;const read=$("#arch-read");
+  const fmt=n=>n.toLocaleString("en-US");
+  const D=500,H=500,V=1e6,LV=20; // our example sizes; log2(10^6) ≈ 20
+  function draw(m){let b=DEFS;const W=360;
+    const word=(x,y,t,c="wd")=>box(x-28,y-12,56,24,c,12)+txt(x,y+4,t,{s:11});
+    if(m==="nnlm"){const xs=[70,180,290],lab=["w(t−3)","w(t−2)","w(t−1)"];
+      xs.forEach((x,i)=>{b+=word(x,232,lab[i])+arrow(x,219,x,196)+box(x-30,170,60,24,"emb")+txt(x,186,"vector C",{s:10})+arrow(x,169,180,146)});
+      b+=box(80,118,200,26,"hid")+txt(180,135,"hidden layer: H units, tanh",{s:11})+arrow(180,117,180,94);
+      b+=box(80,66,200,26,"out")+txt(180,83,"softmax: a probability for each of V words",{s:11})+arrow(180,65,180,44)+word(180,30,"w(t)","wt");
+      b+=txt(W-6,140,"N×D×H",{a:"end",c:"tn"});}
+    else if(m==="cbow"){const xs=[48,128,232,312],lab=["w(t−2)","w(t−1)","w(t+1)","w(t+2)"];
+      xs.forEach((x,i)=>{b+=word(x,232,lab[i])+arrow(x,219,x,196)+box(x-30,170,60,24,"emb")+txt(x,186,"vector C",{s:10})+arrow(x,169,180,146)});
+      b+=box(100,120,160,24,"avg")+txt(180,136,"average the vectors",{s:11});
+      b+=box(80,92,200,22,"gone")+txt(180,107,"hidden layer removed",{s:10,c:"tgone"})+arrow(180,119,180,72);
+      b+=box(80,46,200,26,"out")+txt(180,63,"word tree (≈ log₂V outputs)",{s:11})+arrow(180,45,180,30)+word(180,16,"w(t)","wt");}
+    else{const xs=[48,128,232,312],lab=["w(t−2)","w(t−1)","w(t+1)","w(t+2)"];
+      b+=word(180,232,"w(t)","wt")+arrow(180,219,180,196)+box(150,170,60,24,"emb")+txt(180,186,"vector C",{s:10});
+      b+=box(80,128,200,22,"gone")+txt(180,143,"hidden layer removed",{s:10,c:"tgone"});
+      b+=arrow(180,169,180,104)+box(80,78,200,26,"out")+txt(180,95,"word tree, once per neighbour",{s:11});
+      xs.forEach((x,i)=>{b+=arrow(180,77,x,46)+word(x,30,lab[i])});}
+    host.innerHTML=svg(W,250,b,"Model diagram");
+    const nn=10*D+10*D*H+H*V, nnT=10*D+10*D*H+H*LV, cb=8*D+D*LV, sg=5*(D+D*LV);
+    read.textContent={nnlm:`Bengio-style network, N = 10 previous words (the diagram draws 3), D = H = 500, V = 1,000,000 (our example sizes):\ncost ≈ N·D + N·D·H + H·V = ${fmt(nn)} operations per example (parameters touched).\nWith a word tree at the output (H·log₂V): ${fmt(nnT)} — now the hidden layer (2,500,000) is almost all of it.`,
+      cbow:`CBOW, 8 context words (4 before, 4 after; the diagram draws 4), D = 500, word tree:\ncost ≈ N·D + D·log₂V = ${fmt(cb)} per example — about ${Math.round(nnT/cb)}× cheaper than the network with a word tree.`,
+      sg:`Skip-gram, neighbours up to C = 5 away, D = 500, word tree:\ncost ≈ C·(D + D·log₂V) = ${fmt(sg)} per example.`}[m];}
+  read.style.whiteSpace="pre-line";
+  $$("#lab-arch .seg button").forEach(b=>b.addEventListener("click",()=>{$$("#lab-arch .seg button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));draw(b.dataset.m)}));
+  draw("nnlm");
+})();
+
+/* ---- Step 5: who looks at whom (toy vectors) ---- */
+(function(){const host=$("#sent-toks");if(!host)return;const bars=$("#sent-bars"),read=$("#sent-read");
+  const T=["Alice","was","friends","with","Bob",".","Alice","went","to","visit","her","friend"];
+  // features: person, female, male, friendship, travel, grammar word
+  const K={Alice:[1,1,0,0,0,0],was:[0,0,0,0,0,1],friends:[0,0,0,1,0,0],with:[0,0,0,0.3,0,1],Bob:[1,0,1,1,0,0],".":[0,0,0,0,0,0.5],went:[0,0,0,0,1,0],to:[0,0,0,0,0.3,1],visit:[0,0,0,0.5,1,0],her:[0.5,1,0,0,0,0],friend:[0.5,0,0,1,0,0]};
+  const Q={her:[2,2,0,0,0,0],friend:[1.5,0,0,2,0,0],visit:[0.5,0,0,0,2,0],went:[1,0,0,0,0,0]};
+  let sel=11;
+  const btns=T.map((w,i)=>{const b=document.createElement("button");b.type="button";b.textContent=w;b.addEventListener("click",()=>{sel=i;upd()});host.append(b);return b});
+  function upd(){const t=T[sel],q=Q[t]||K[t];
+    const s=T.slice(0,sel+1).map(w=>2*K[w].reduce((a,v,j)=>a+v*q[j],0)/Math.sqrt(6)),m=Math.max(...s),e=s.map(x=>Math.exp(x-m)),z=e.reduce((a,b)=>a+b,0),w=e.map(x=>x/z);
+    btns.forEach((b,i)=>{b.setAttribute("aria-pressed",String(i===sel));b.disabled=false;b.style.background=i<=sel?`color-mix(in srgb,var(--stamp) ${Math.round((i===sel?0:w[i])*90)}%,var(--paper))`:"";b.classList.toggle("future",i>sel)});
+    bars.innerHTML=T.slice(0,sel+1).map((x,i)=>`<div><span>${i+1}. ${esc(x)}</span><i style="width:${w[i]*100}%"></i><span>${w[i].toFixed(2)}</span></div>`).join("");
+    const top=w.map((v,i)=>[v,i]).sort((a,b)=>b[0]-a[0])[0];
+    read.textContent=`“${t}” gives its largest weight (${top[0].toFixed(2)}) to word ${top[1]+1}, “${T[top[1]]}”. Later words are masked: “${t}” cannot see them.`;}
+  upd();
+})();
+
+/* ---- Step 8: Kaplan's fitted line L(N) = (8.8e13/N)^0.076 (Kaplan et al. 2020, p. 4) ---- */
+(function(){const host=$("#scale-chart");if(!host)return;const sl=$("#scale-sliders"),read=$("#scale-read");
+  const L=n=>Math.pow(8.8e13/n,0.076);const lo=4,hi=10;
+  const row=document.createElement("div");row.className="sl";row.innerHTML=`<label for="sN">parameters</label><input type="range" id="sN" min="${lo}" max="${hi}" step="0.1" value="6"><output for="sN"></output>`;sl.append(row);
+  const inp=$("#sN",row),out=$("output",row);
+  const W=340,H=170,X0=40,Y0=150,X1=318,Y1=12,ymin=1.5,ymax=6;
+  const x=v=>X0+(v-lo)/(hi-lo)*(X1-X0),y=l=>Y0-(Math.log10(l)-Math.log10(ymin))/(Math.log10(ymax)-Math.log10(ymin))*(Y0-Y1);
+  const fmtN=n=>n>=1e9?(n/1e9).toFixed(n>=1e10?0:1)+" billion":n>=1e6?(n/1e6).toFixed(n>=1e7?0:1)+" million":Math.round(n/1e3)+" thousand";
+  function upd(){const v=+inp.value,n=Math.pow(10,v),l=L(n);out.textContent=fmtN(n).replace(" billion","B").replace(" million","M").replace(" thousand","k");
+    let b=`<line x1="${X0}" y1="${Y0}" x2="${X1}" y2="${Y0}" class="ax"/><line x1="${X0}" y1="${Y0}" x2="${X0}" y2="${Y1}" class="ax"/>`;
+    for(let k=lo;k<=hi;k+=2)b+=`<line x1="${x(k)}" y1="${Y0}" x2="${x(k)}" y2="${Y0+4}" class="ax"/>`+txt(x(k),Y0+16,"10"+String(k).split("").map(d=>"⁰¹²³⁴⁵⁶⁷⁸⁹"[+d]).join(""),{c:"ts"});
+    [2,3,4,5,6].forEach(l=>{b+=`<line x1="${X0}" y1="${y(l)}" x2="${X1}" y2="${y(l)}" class="grid"/>`+txt(X0-5,y(l)+4,l,{a:"end",c:"ts"})});
+    b+=`<line x1="${x(lo)}" y1="${y(L(1e4))}" x2="${x(hi)}" y2="${y(L(1e10))}" class="fitl"/>`+`<circle cx="${x(v)}" cy="${y(l)}" r="5" class="fitd"/>`;
+    b+=txt(X1,Y1+8,"loss (nats/token), log scale",{a:"end",c:"ts"});
+    host.innerHTML=svg(W,H+4,b,"Kaplan power law on log-log axes");
+    read.textContent=`N = ${fmtN(n)} parameters → L = ${l.toFixed(2)} nats per token (${(l/Math.LN2).toFixed(2)} bits).\nHalf as many parameters: ${L(n/2).toFixed(2)}. Twice as many: ${L(2*n).toFixed(2)} — ×${(L(2*n)/l).toFixed(3)} per doubling, at every size.`;}
+  read.style.whiteSpace="pre-line";inp.addEventListener("input",upd);upd();
+})();
+
+/* ---- Lens 1: 32 cups, 5 rats ---- */
+(function(){const grid=$("#cups-grid");if(!grid)return;const ratsH=$("#cups-rats"),read=$("#cups-read");
+  let poison=21,rat=-1;const bin=n=>n.toString(2).padStart(5,"0");
+  const cups=[...Array(32)].map((_,i)=>{const b=document.createElement("button");b.type="button";b.innerHTML=`<b>${i}</b><span>${bin(i)}</span>`;b.addEventListener("click",()=>{poison=i;rat=-1;upd()});grid.append(b);return b});
+  const rats=[...Array(5)].map((_,r)=>{const b=document.createElement("button");b.type="button";b.addEventListener("click",()=>{rat=rat===r?-1:r;upd()});ratsH.append(b);return b});
+  function upd(){const pb=bin(poison);
+    cups.forEach((b,i)=>{b.classList.toggle("poison",i===poison);b.classList.toggle("drinks",rat>=0&&bin(i)[rat]==="1")});
+    rats.forEach((b,r)=>{const dead=pb[r]==="1";b.className=dead?"dead":"alive";b.setAttribute("aria-pressed",String(r===rat));b.innerHTML=`Rat ${r+1}<small>digit ${r+1} · ${dead?"dies → 1":"lives → 0"}</small>`});
+    const dead=[...pb].map((d,r)=>d==="1"?r+1:0).filter(Boolean);
+    read.textContent=(rat>=0?`Rat ${rat+1} drinks from the 16 highlighted cups (digit ${rat+1} is 1).\n`:"")+`Poison in cup ${poison} = ${pb} in binary. Dead rats: ${dead.length?dead.join(", "):"none"} → read 1 for dead, 0 for alive → ${pb} → cup ${poison}.`;}
+  read.style.whiteSpace="pre-line";upd();
+})();
+})();
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script>
+/* AI4Read annotations.
+   Select text in <main> -> "Annotate" -> right-hand drawer with saved items (Note / Question / Claude's answer),
+   a Markdown editor (upper) and live preview (lower), "Save as note" and "Ask Claude".
+   Storage: one db document per annotation in "annotations" (doc id = annotation id), mirrored in localStorage
+   ("ai4read-p01-anno-<id>"). Anchors are text-quote selectors re-found on every load. Legacy "notes" docs are
+   migrated into section-level annotations "legacy-<id>". Deletions are soft (deleted:true) so they sync. */
+(function(){
+"use strict";
+const MAIN=document.querySelector("main"); if(!MAIN) return;
+const PFX="ai4read-p01-anno-", COLL="annotations", LEGACY="notes";
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const now=()=>new Date().toISOString();
+const uid=p=>p+Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const mq=q=>{try{return matchMedia(q).matches}catch(e){return false}};
+const coarse=()=>mq("(pointer: coarse)"), reduced=()=>mq("(prefers-reduced-motion: reduce)");
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const newer=(a,b)=>String(a.updatedAt||"")>String(b.updatedAt||"");
+function h(tag,attrs,...kids){const e=document.createElement(tag);
+  for(const k in attrs||{}){const v=attrs[k];if(v==null||v===false)continue;
+    if(k==="class")e.className=v;else if(k==="text")e.textContent=v;else if(k==="html")e.innerHTML=v;
+    else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else e.setAttribute(k,v===true?"":v)}
+  for(const c of kids)if(c!=null)e.append(c);return e}
+const fmtTime=iso=>{try{return new Intl.DateTimeFormat(undefined,{month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"}).format(new Date(iso))}catch(e){return ""}};
+const TYPE={note:"Note",question:"Question",answer:"Claude’s answer"};
+
+/* ---------- Markdown (marked + DOMPurify + KaTeX MathML), with an escaped-text fallback ---------- */
+const MATH_RE=/(```[\s\S]*?```|`[^`\n]+`)|\$\$([\s\S]+?)\$\$|\\\[([\s\S]+?)\\\]|\\\(([\s\S]+?)\\\)|\$([^\s$](?:[^$\n]*[^\s$\\])?)\$(?!\d)/g;
+function renderTex(tex,display){const K=window.katex;
+  if(K&&K.renderToString){try{return K.renderToString(tex,{output:"mathml",throwOnError:false,displayMode:display})}catch(e){}}
+  return `<code>${esc(display?"$$"+tex+"$$":"$"+tex+"$")}</code>`}
+function md(src){
+  src=String(src||"");const M=window.marked,P=window.DOMPurify;
+  if(!M||typeof M.parse!=="function"||!P||typeof P.sanitize!=="function")
+    return src.trim()?"<p>"+esc(src).replace(/\n/g,"<br>")+"</p>":"";
+  const maths=[];
+  const prot=src.replace(MATH_RE,(m,code,d1,d2,i1,i2,off,str)=>{
+    if(code)return m; if(off>0&&str[off-1]==="\\")return m;
+    const display=d1!=null||d2!=null; maths.push(renderTex((d1||d2||i1||i2).trim(),display));
+    return ""+(maths.length-1)+""});
+  let html;try{html=P.sanitize(M.parse(prot,{gfm:true,breaks:true}))}catch(e){return "<p>"+esc(src).replace(/\n/g,"<br>")+"</p>"}
+  return html.replace(/(\d+)/g,(_,i)=>maths[+i]||"")}
+const firstLine=s=>String(s||"").replace(/[#>*_`~\[\]]/g,"").replace(/\$+/g,"").split("\n").map(x=>x.trim()).find(Boolean)||"";
+
+/* ---------- Local mirror ---------- */
+const LS={
+  all(){const out=[];try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);
+    if(k&&k.startsWith(PFX)&&k.length>PFX.length){try{const a=JSON.parse(localStorage.getItem(k));if(a&&a.id)out.push(a)}catch(e){}}}}catch(e){}return out},
+  put(a){try{localStorage.setItem(PFX+a.id,JSON.stringify(a))}catch(e){}}
+};
+const S=new Map(); LS.all().forEach(a=>{if(!Array.isArray(a.items))a.items=[];S.set(a.id,a)});
+const live=()=>[...S.values()].filter(a=>!a.deleted&&a.items&&a.items.length);
+let pending=null;                       // a new annotation not yet saved (no items)
+const getA=id=>pending&&pending.id===id?pending:S.get(id);
+const DETACHED=new Set();
+
+/* ---------- Text map: normalized (whitespace-collapsed) text of a section, with positions back to text nodes ---------- */
+const EXCL="[data-anno-ui],.sec-tools,script,style,annotation,button,svg,input,textarea,select,noscript";
+function textMap(root){
+  const nodes=[],pos=[];let text="",prevWs=true;
+  const tw=document.createTreeWalker(root,NodeFilter.SHOW_ELEMENT|NodeFilter.SHOW_TEXT,{acceptNode(n){
+    if(n.nodeType===1)return n.matches(EXCL)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_SKIP;return NodeFilter.FILTER_ACCEPT}});
+  let n;while((n=tw.nextNode())){const s=n.data,idx=new Array(s.length+1),ni=nodes.length;
+    for(let k=0;k<s.length;k++){idx[k]=text.length;const c=s.charCodeAt(k);
+      const ws=c===32||c===10||c===9||c===13||c===12||c===160;
+      if(ws){if(prevWs)continue;text+=" ";pos.push(ni,k);prevWs=true}else{text+=s[k];pos.push(ni,k);prevWs=false}}
+    idx[s.length]=text.length;nodes.push({node:n,idx})}
+  const byNode=new Map();nodes.forEach((e,i)=>byNode.set(e.node,i));
+  return {text,pos,nodes,byNode}}
+function pointIdx(map,c,o){
+  if(c.nodeType===3){const i=map.byNode.get(c);if(i!=null)return map.nodes[i].idx[Math.min(o,c.data.length)]}
+  const p=document.createRange();try{p.setStart(c,o)}catch(e){return null}
+  for(const e of map.nodes){try{if(p.comparePoint(e.node,0)>=0)return e.idx[0]}catch(err){}}
+  return map.text.length}
+const norm=s=>String(s||"").replace(/\s+/g," ");
+function anchorFromRange(r){
+  const el=n=>n.nodeType===1?n:n.parentElement;
+  let sec=el(r.startContainer)&&el(r.startContainer).closest("section");
+  if(!sec||!MAIN.contains(sec))sec=el(r.endContainer)&&el(r.endContainer).closest("section");
+  if(!sec||!MAIN.contains(sec)||!sec.id)return null;
+  const map=textMap(sec);
+  let s=sec.contains(r.startContainer)?pointIdx(map,r.startContainer,r.startOffset):0;
+  let e=sec.contains(r.endContainer)?pointIdx(map,r.endContainer,r.endOffset):map.text.length;
+  if(s==null||e==null)return null;
+  while(s<e&&map.text[s]===" ")s++;while(e>s&&map.text[e-1]===" ")e--;
+  if(e-s<1)return null;
+  return {section:sec.id,quote:map.text.slice(s,e),prefix:map.text.slice(Math.max(0,s-32),s),suffix:map.text.slice(e,e+32)}}
+function locate(map,a){
+  const q=norm(a.quote).trim();if(!q)return null;const T=map.text,hits=[];
+  for(let i=T.indexOf(q);i>=0&&hits.length<500;i=T.indexOf(q,i+1))hits.push(i);
+  if(!hits.length)return null;
+  const pre=norm(a.prefix),suf=norm(a.suffix);let best=hits[0],bs=-1;
+  for(const x of hits){const p=T.slice(Math.max(0,x-pre.length),x),s=T.slice(x+q.length,x+q.length+suf.length);
+    if(p===pre&&s===suf)return [x,x+q.length];
+    let sc=0;while(sc<p.length&&sc<pre.length&&p[p.length-1-sc]===pre[pre.length-1-sc])sc++;
+    let sc2=0;while(sc2<s.length&&sc2<suf.length&&s[sc2]===suf[sc2])sc2++;
+    if(sc+sc2>bs){bs=sc+sc2;best=x}}
+  return [best,best+q.length]}
+const kind=a=>a.items.some(t=>t.type!=="note")?"q":"n";
+function applyMarks(map,s,e,a,isPending){
+  const pieces=new Map();
+  for(let i=s;i<e;i++){const ni=map.pos[2*i],k=map.pos[2*i+1],r=pieces.get(ni);if(!r)pieces.set(ni,[k,k+1]);else r[1]=k+1}
+  const cls="anno "+kind(a)+(isPending?" pending":"");let first=true;
+  for(const [ni,[k0,k1]] of pieces){const node=map.nodes[ni].node,par=node.parentElement;if(!par)continue;
+    const math=par.closest("math");
+    if(math){const host=math.closest(".katex")||math.parentElement;if(host&&MAIN.contains(host)){
+      host.classList.add("anno-m",kind(a));if(isPending)host.classList.add("pending");
+      const ids=(host.dataset.annoIds||"").split(" ").filter(Boolean);if(!ids.includes(a.id))ids.push(a.id);host.dataset.annoIds=ids.join(" ")}continue}
+    const t=node.data.slice(k0,k1);if(!/\S/.test(t)&&/\n/.test(t))continue;
+    let target=node;if(k1<node.data.length)node.splitText(k1);if(k0>0)target=node.splitText(k0);
+    const m=document.createElement("mark");m.className=cls;m.dataset.id=a.id;
+    if(first){m.tabIndex=0;m.title="Open note";first=false}
+    target.parentNode.insertBefore(m,target);m.appendChild(target)}}
+function wrap(a,isPending){
+  const tryIn=sec=>{if(!sec||!MAIN.contains(sec))return false;const map=textMap(sec),at=locate(map,a);
+    if(!at)return false;applyMarks(map,at[0],at[1],a,isPending);return true};
+  const home=document.getElementById(a.section);if(tryIn(home))return true;
+  if(norm(a.quote).trim().length<12)return false;
+  for(const sec of $$("section",MAIN))if(sec!==home&&tryIn(sec))return true;
+  return false}
+function clearMarks(){const parents=new Set();
+  $$("mark.anno",MAIN).forEach(m=>{const p=m.parentNode;if(!p)return;while(m.firstChild)p.insertBefore(m.firstChild,m);p.removeChild(m);parents.add(p)});
+  parents.forEach(p=>{if(p.isConnected)p.normalize()});
+  $$(".anno-m",MAIN).forEach(x=>{x.classList.remove("anno-m","q","n","pending");delete x.dataset.annoIds})}
+const selActive=()=>{const s=getSelection();return !!(s&&s.rangeCount&&!s.isCollapsed&&MAIN.contains(s.getRangeAt(0).commonAncestorContainer))};
+let needRepaint=false;
+function paint(){
+  if(selActive()){needRepaint=true;return}needRepaint=false;
+  clearMarks();DETACHED.clear();
+  const list=live().sort((x,y)=>String(x.createdAt).localeCompare(String(y.createdAt)));
+  for(const a of list)if(!a.sectionLevel&&!wrap(a,false))DETACHED.add(a.id);
+  if(pending&&!pending.sectionLevel)wrap(pending,true);
+  secPills();updateCount()}
+
+/* ---------- Section-level annotations: a pill under the heading; a button in each .sec-tools row ---------- */
+const secTitle=sec=>{const h2=sec&&$("h2",sec);return h2?h2.textContent.trim():(sec&&sec.id)||""};
+const titleOf=id=>{const s=document.getElementById(id);return s?secTitle(s):id};
+function secPills(){
+  $$(".anno-secpill",MAIN).forEach(x=>x.remove());const by={};
+  live().filter(a=>a.sectionLevel).forEach(a=>(by[a.section]=by[a.section]||[]).push(a));
+  for(const sid in by){const sec=document.getElementById(sid),list=by[sid];
+    if(!sec||!MAIN.contains(sec)){list.forEach(a=>DETACHED.add(a.id));continue}
+    const n=list.length,q=list.some(a=>kind(a)==="q");
+    const b=h("button",{type:"button",class:"anno-secpill"+(q?" q":""),"data-anno-ui":"",
+      "aria-label":`${n} note${n>1?"s":""} on this section`,onclick:()=>n===1?openAnno(list[0].id):openList(sid)},
+      h("span",{"aria-hidden":"true",text:"✎"}),` ${n} note${n>1?"s":""} on this section`);
+    const h2=$("h2",sec);if(h2)h2.after(b);else sec.prepend(b)}}
+function addSecButtons(){
+  $$("section[data-ch]",MAIN).forEach(sec=>{const t=[...sec.children].find(c=>c.classList.contains("sec-tools"));
+    if(!t||t.querySelector(".anno-secbtn"))return;
+    t.append(h("button",{type:"button",class:"anno-secbtn",onclick:()=>startSection(sec)},"Note on this section"))})}
+
+/* ---------- Floating controls ---------- */
+const fab=h("div",{class:"anno-fab","data-anno-ui":""});
+const annDock=h("button",{type:"button",class:"anno-annot",hidden:true},"Annotate");
+const notesBtn=h("button",{type:"button",class:"anno-notes","aria-label":"All notes"},"Notes");
+fab.append(annDock,notesBtn);
+const annFloat=h("button",{type:"button",class:"anno-annot anno-float","data-anno-ui":"",hidden:true},"Annotate");
+document.body.append(fab,annFloat);
+function updateCount(){const n=live().length;notesBtn.textContent=n?`Notes · ${n}`:"Notes";notesBtn.setAttribute("aria-label",n?`All notes, ${n}`:"All notes")}
+notesBtn.addEventListener("click",()=>openList(null));
+
+let selAnchor=null,hideT=0,selT=0;
+function hideAnn(){annDock.hidden=true;annFloat.hidden=true}
+function scheduleHide(){clearTimeout(hideT);hideT=setTimeout(()=>{hideAnn();selAnchor=null;if(needRepaint&&!selActive())paint()},700)}
+function onSel(){
+  const sel=getSelection();if(!sel||!sel.rangeCount||sel.isCollapsed){scheduleHide();return}
+  const r=sel.getRangeAt(0);if(!MAIN.contains(r.commonAncestorContainer)){scheduleHide();return}
+  const an=anchorFromRange(r);if(!an){scheduleHide();return}
+  clearTimeout(hideT);selAnchor=an;
+  if(coarse()){annFloat.hidden=true;annDock.hidden=false;return}
+  annDock.hidden=true;annFloat.hidden=false;
+  const rects=r.getClientRects(),last=rects.length?rects[rects.length-1]:r.getBoundingClientRect();
+  const vw=document.documentElement.clientWidth,bw=annFloat.offsetWidth||96;
+  const left=Math.max(8,Math.min(vw-bw-8,last.right-bw/2));
+  annFloat.style.left=(left+window.scrollX)+"px";annFloat.style.top=(last.bottom+window.scrollY+8)+"px"}
+document.addEventListener("selectionchange",()=>{clearTimeout(selT);selT=setTimeout(onSel,120)});
+[annDock,annFloat].forEach(b=>{
+  b.addEventListener("mousedown",e=>e.preventDefault());
+  b.addEventListener("pointerdown",()=>clearTimeout(hideT));
+  b.addEventListener("click",()=>{if(selAnchor)startNew(selAnchor)})});
+
+function startNew(an){
+  if(!closeGuard())return;
+  pending={id:uid("a-"),section:an.section,quote:an.quote,prefix:an.prefix,suffix:an.suffix,sectionLevel:false,items:[],createdAt:now(),updatedAt:now()};
+  selAnchor=null;hideAnn();try{getSelection().removeAllRanges()}catch(e){}
+  paint();openAnno(pending.id)}
+function startSection(sec){
+  if(!closeGuard())return;
+  pending={id:uid("a-"),section:sec.id,quote:"",prefix:"",suffix:"",sectionLevel:true,items:[],createdAt:now(),updatedAt:now()};
+  paint();openAnno(pending.id)}
+
+/* Tap a highlight (or the highlighted math) to open it. Single click only, so double-click selection still works. */
+let clickT=0;
+document.addEventListener("click",e=>{
+  const t=e.target instanceof Element?e.target:null;if(!t||!MAIN.contains(t))return;
+  const m=t.closest("mark.anno,.anno-m");if(!m||t.closest("a,button,input,label,summary,textarea,select"))return;
+  if(e.detail>1){clearTimeout(clickT);return}
+  const id=m.dataset.id||(m.dataset.annoIds||"").split(" ").filter(Boolean).pop();if(!id)return;
+  clearTimeout(clickT);clickT=setTimeout(()=>{if(!selActive())openAnno(id)},e.detail===0?0:260)});
+document.addEventListener("keydown",e=>{
+  if((e.key==="Enter"||e.key===" ")&&e.target instanceof Element&&e.target.matches("mark.anno[data-id]")){e.preventDefault();openAnno(e.target.dataset.id)}});
+
+/* ---------- Drawer ---------- */
+const scrim=h("div",{class:"anno-scrim","data-anno-ui":"",hidden:true});
+const panel=h("aside",{class:"anno-panel","data-anno-ui":"",role:"dialog","aria-label":"Notes","aria-hidden":"true",tabindex:"-1"});
+panel.inert=true;
+const scroller=h("div",{class:"anno-scroll"});
+const head=h("header",{class:"anno-head"});
+const guard=h("div",{class:"anno-guard",hidden:true,role:"alert"});
+const body=h("div",{class:"anno-body"});
+const ed=h("textarea",{class:"anno-ed",id:"anno-ed",spellcheck:"true",placeholder:"Write a note or a question. Markdown works; $x^2$ for math."});
+const pv=h("div",{class:"anno-pv anno-md","aria-label":"Preview"});
+const edLbl=h("label",{class:"anno-lbl",for:"anno-ed"},h("span",{class:"anno-lbl-t",text:"Write"}),h("span",{class:"anno-hint",text:"Markdown · $…$ math"}));
+const bSave=h("button",{type:"button",class:"anno-btn"},"Save as note");
+const bAsk=h("button",{type:"button",class:"anno-btn ghost",hidden:true},"Ask Claude");
+const bCancel=h("button",{type:"button",class:"anno-btn ghost",hidden:true},"Cancel");
+const status=h("p",{class:"anno-status",role:"status"});
+const syncLine=h("p",{class:"anno-sync"});
+const composer=h("div",{class:"anno-composer"},edLbl,ed,h("div",{class:"anno-lbl"},h("span",{class:"anno-lbl-t",text:"Preview"})),pv,
+  h("div",{class:"anno-row"},bSave,bAsk,bCancel),status);
+scroller.append(head,guard,body,composer,syncLine);panel.append(scroller);
+document.body.append(scrim,panel);
+
+let view="closed",cur=null,listFilter=null,lastFocus=null;
+let mode={m:"new",item:null};                // new | edit (item id) | fromAnswer (answer id)
+const drafts={};
+function showPanel(){
+  if(view==="closed"){lastFocus=document.activeElement}
+  panel.inert=false;panel.removeAttribute("aria-hidden");panel.classList.add("open");scrim.hidden=false;
+  document.documentElement.classList.add("anno-open");hideAnn()}
+function closePanel(force){
+  if(!force&&!closeGuard())return;
+  if(cur&&view==="anno"&&mode.m==="new")drafts[cur]=ed.value;
+  if(pending&&!asking.has(pending.id)){pending=null;paint()}
+  view="closed";cur=null;guard.hidden=true;
+  panel.classList.remove("open");panel.setAttribute("aria-hidden","true");panel.inert=true;scrim.hidden=true;
+  document.documentElement.classList.remove("anno-open");
+  if(lastFocus&&lastFocus.isConnected&&typeof lastFocus.focus==="function"){try{lastFocus.focus({preventScroll:true})}catch(e){}}lastFocus=null}
+/* Unsaved text in a brand-new annotation: ask in the page before throwing it away. Returns true if it is OK to leave. */
+function closeGuard(){
+  if(view!=="anno"||!pending||cur!==pending.id||!ed.value.trim()||asking.has(pending.id))return true;
+  guard.hidden=false;guard.replaceChildren(h("span",{text:"This note is not saved yet."}),
+    h("button",{type:"button",class:"anno-btn danger",onclick:()=>{ed.value="";updPv();guard.hidden=true;closePanel(true)}},"Discard"),
+    h("button",{type:"button",class:"anno-btn ghost",onclick:()=>{guard.hidden=true;ed.focus()}},"Keep editing"));
+  guard.querySelector("button").focus();return false}
+scrim.addEventListener("click",()=>closePanel());
+document.addEventListener("keydown",e=>{
+  if(e.key!=="Escape"||view==="closed")return;
+  const c=panel.querySelector(".anno-confirm:not([hidden])");
+  if(c){c.hidden=true;return}
+  if(!guard.hidden){guard.hidden=true;ed.focus();return}
+  closePanel()});
+
+function headRow(title,extra){
+  return h("div",{class:"anno-head-row"},h("p",{class:"anno-kicker",text:title}),
+    h("span",{class:"anno-head-btns"},extra||null,
+      h("button",{type:"button",class:"anno-sbtn anno-x","aria-label":"Close notes",onclick:()=>closePanel()},"Close")))}
+function openAnno(id,opts){
+  const a=getA(id);if(!a)return;
+  if(cur&&cur!==id&&!closeGuard())return;
+  if(pending&&pending.id!==id&&!asking.has(pending.id)){pending=null;paint()}
+  if(cur&&view==="anno"&&mode.m==="new")drafts[cur]=ed.value;
+  const changed=cur!==id||view!=="anno";
+  view="anno";cur=id;showPanel();composer.hidden=false;
+  if(changed){setMode("new");ed.value=drafts[id]||"";updPv();status.textContent=""}
+  renderAnno();
+  if(opts&&opts.scroll)reveal(id);
+  if(changed){scroller.scrollTop=0;
+    if(!a.items.length&&!coarse())ed.focus({preventScroll:true});else panel.focus({preventScroll:true})}}
+function reveal(id){
+  const t=MAIN.querySelector(`mark.anno[data-id="${CSS.escape(id)}"]`)||[...MAIN.querySelectorAll(".anno-m")].find(x=>(x.dataset.annoIds||"").split(" ").includes(id));
+  const a=getA(id);const target=t||(a&&a.sectionLevel&&document.getElementById(a.section));
+  if(!target)return;
+  target.scrollIntoView({block:"center",behavior:reduced()?"auto":"smooth"});
+  if(t){const all=MAIN.querySelectorAll(`mark.anno[data-id="${CSS.escape(id)}"]`);all.forEach(m=>{m.classList.remove("flash");void m.offsetWidth;m.classList.add("flash")});
+    setTimeout(()=>all.forEach(m=>m.classList.remove("flash")),1600)}}
+
+function renderAnno(){
+  const a=getA(cur);if(!a){closePanel(true);return}
+  const sec=document.getElementById(a.section);
+  const det=DETACHED.has(a.id);
+  const kick=(sec?secTitle(sec):"Section “"+a.section+"”")+(det?" · detached":"");
+  const nodes=[headRow(kick,h("button",{type:"button",class:"anno-sbtn",onclick:()=>openList(null)},"All notes"))];
+  if(a.sectionLevel){nodes.push(h("blockquote",{class:"anno-quote whole",text:"Note on the whole section"}))}
+  else{const q=h("blockquote",{class:"anno-quote clamp",text:a.quote});nodes.push(q);
+    const more=h("button",{type:"button",class:"anno-more",hidden:true,"aria-expanded":"false"},"Show all");
+    more.addEventListener("click",()=>{const open=q.classList.toggle("clamp");more.textContent=open?"Show all":"Show less";more.setAttribute("aria-expanded",String(!open))});
+    nodes.push(more);requestAnimationFrame(()=>{if(q.scrollHeight>q.clientHeight+2)more.hidden=false})}
+  if(det)nodes.push(h("p",{class:"anno-note",text:"This passage was not found in the current text, so it has no highlight. The note is kept."}));
+  if(a.status==="addressed")nodes.push(h("p",{class:"anno-chip ok",text:"Addressed"}));
+  head.replaceChildren(...nodes);
+  renderCards(a);bAsk.hidden=!canAsk()||mode.m!=="new"}
+const cards=h("div",{class:"anno-cards"});
+function renderCards(a){
+  a=a||getA(cur);if(!a)return;body.replaceChildren(cards);
+  const kids=a.items.map(it=>card(a,it));
+  if(!kids.length)kids.push(h("p",{class:"anno-empty",text:a.sectionLevel?"Write a note about this section below, or ask Claude about it.":"Write a note about the marked text below, or ask Claude about it."}));
+  cards.replaceChildren(...kids)}
+function card(a,it,bare){
+  const t=it.type in TYPE?it.type:"note";
+  const c=h("article",{class:"anno-card t-"+t,"data-item":it.id||""});
+  const time=it.at?fmtTime(it.at)+(it.editedAt?" · edited":""):"";
+  c.append(h("div",{class:"anno-card-h"},h("span",{class:"anno-type",text:TYPE[t]}),h("time",{datetime:it.editedAt||it.at||"",text:time})));
+  const b=h("div",{class:"anno-md"});b.innerHTML=md(it.md);c.append(b);
+  if(bare)return c;
+  const acts=h("div",{class:"anno-acts"});
+  const confirm=h("div",{class:"anno-confirm",hidden:true});
+  const askDel=()=>{confirm.hidden=false;confirm.replaceChildren(h("span",{text:`Delete this ${t==="answer"?"answer":t}?`}),
+    h("button",{type:"button",class:"anno-btn danger",onclick:()=>delItem(a,it.id)},"Delete"),
+    h("button",{type:"button",class:"anno-btn ghost",onclick:()=>{confirm.hidden=true}},"Keep"));confirm.querySelector("button").focus()};
+  if(t==="answer"){
+    const saved=a.items.some(x=>x.fromAnswer===it.id);
+    acts.append(h("button",{type:"button",class:"anno-sbtn",disabled:saved,onclick:()=>{
+        a.items.push({id:uid("i-"),type:"note",md:it.md,at:now(),fromAnswer:it.id});commitAnno(a);renderCards(a);status.textContent="Saved as a note. You can edit it any time."}},saved?"Saved as note ✓":"Save as note"),
+      h("button",{type:"button",class:"anno-sbtn",onclick:()=>{setMode("fromAnswer",it.id);ed.value=it.md;updPv();ed.focus({preventScroll:true});composer.scrollIntoView({block:"start",behavior:reduced()?"auto":"smooth"})}},"Edit, then save"))}
+  else acts.append(h("button",{type:"button",class:"anno-sbtn",onclick:()=>{setMode("edit",it.id);ed.value=it.md;updPv();ed.focus({preventScroll:true});composer.scrollIntoView({block:"start",behavior:reduced()?"auto":"smooth"})}},"Edit"));
+  acts.append(h("button",{type:"button",class:"anno-sbtn danger",onclick:askDel},"Delete"));
+  c.append(acts,confirm);return c}
+function delItem(a,itemId){
+  a.items=a.items.filter(x=>x.id!==itemId);
+  if(mode.item===itemId){setMode("new");ed.value="";updPv()}
+  if(!a.items.length){if(pending===a){closePanel(true);return}a.deleted=true;commitAnno(a);closePanel(true);return}
+  commitAnno(a);renderCards(a);status.textContent="Deleted."}
+
+function setMode(m,item){mode={m,item:item||null};
+  const lbl=$(".anno-lbl-t",edLbl);
+  if(m==="edit"){const it=(getA(cur)||{items:[]}).items.find(x=>x.id===item);lbl.textContent="Editing "+((it&&TYPE[it.type])||"note").toLowerCase();bSave.textContent="Save changes"}
+  else if(m==="fromAnswer"){lbl.textContent="New note from Claude’s answer";bSave.textContent="Save as note"}
+  else{lbl.textContent="Write";bSave.textContent="Save as note"}
+  bCancel.hidden=m==="new";bAsk.hidden=m!=="new"||!canAsk()}
+let pvRaf=0;
+function updPv(){cancelAnimationFrame(pvRaf);pvRaf=requestAnimationFrame(()=>{const v=ed.value;pv.innerHTML=v.trim()?md(v):'<p class="anno-ph">The preview appears here.</p>'})}
+ed.addEventListener("input",()=>{updPv();if(mode.m==="new"&&cur)drafts[cur]=ed.value});
+bCancel.addEventListener("click",()=>{setMode("new");ed.value=drafts[cur]||"";updPv();status.textContent=""});
+bSave.addEventListener("click",()=>{
+  const text=ed.value.trim();if(!text){status.textContent="Write something first.";ed.focus();return}
+  const a=getA(cur);if(!a)return;let newId=null;
+  if(mode.m==="edit"){const it=a.items.find(x=>x.id===mode.item);
+    if(it&&it.md!==text){it.md=text;it.editedAt=now();commitAnno(a)}newId=mode.item;status.textContent="Changes saved."}
+  else{const it={id:uid("i-"),type:"note",md:text,at:now()};if(mode.m==="fromAnswer")it.fromAnswer=mode.item;
+    a.items.push(it);commitAnno(a);newId=it.id;status.textContent="Saved."}
+  ed.value="";drafts[a.id]="";setMode("new");updPv();renderAnno();
+  const c=cards.querySelector(`[data-item="${CSS.escape(newId)}"]`);if(c)c.scrollIntoView({block:"nearest",behavior:reduced()?"auto":"smooth"})});
+function commitAnno(a){
+  if(pending&&pending.id===a.id)pending=null;
+  a.updatedAt=now();if(a.items.length)a.deleted=false;
+  S.set(a.id,a);LS.put(a);paint();push(a.id)}
+
+/* ---------- All notes ---------- */
+function openList(filter){
+  if(view==="anno"&&!closeGuard())return;
+  if(cur&&view==="anno"&&mode.m==="new")drafts[cur]=ed.value;
+  if(pending&&!asking.has(pending.id)){pending=null;paint()}
+  view="list";cur=null;listFilter=filter||null;showPanel();composer.hidden=true;status.textContent="";
+  renderList();scroller.scrollTop=0;panel.focus({preventScroll:true})}
+function renderList(){
+  const all=live(),secs=$$("section",MAIN),order=new Map(secs.map((s,i)=>[s.id,i]));
+  const shown=listFilter?all.filter(a=>a.section===listFilter):all;
+  head.replaceChildren(headRow(listFilter?titleOf(listFilter):`All notes · ${all.length}`,
+    listFilter?h("button",{type:"button",class:"anno-sbtn",onclick:()=>{listFilter=null;renderList()}},"All notes"):null));
+  if(!shown.length){body.replaceChildren(h("p",{class:"anno-empty",html:"No notes yet. Select any text in the post and tap <b>Annotate</b>, or use <b>Note on this section</b> at the end of a section."}));return}
+  const groups=new Map();
+  shown.forEach(a=>{const k=order.has(a.section)?a.section:"__detached";if(!groups.has(k))groups.set(k,[]);groups.get(k).push(a)});
+  const keys=[...groups.keys()].sort((x,y)=>(order.has(x)?order.get(x):1e9)-(order.has(y)?order.get(y):1e9));
+  const wrapEl=h("div",{class:"anno-list"});
+  for(const k of keys){const g=h("div",{class:"anno-group"},h("p",{class:"anno-group-h",text:k==="__detached"?"Detached (section not found)":titleOf(k)}));
+    groups.get(k).sort((x,y)=>{const d=(x.sectionLevel?0:1)-(y.sectionLevel?0:1);return d||String(x.createdAt).localeCompare(String(y.createdAt))})
+      .forEach(a=>{const first=a.items[0],det=DETACHED.has(a.id);
+        const b=h("button",{type:"button",class:"anno-entry "+kind(a),onclick:()=>openAnno(a.id,{scroll:!det})},
+          a.sectionLevel?h("span",{class:"anno-entry-q whole",text:"Whole section"}):h("span",{class:"anno-entry-q",text:"“"+a.quote+"”"}),
+          h("span",{class:"anno-entry-f",text:firstLine(first&&first.md)}),
+          h("span",{class:"anno-entry-m",text:[a.items.length+" item"+(a.items.length>1?"s":""),a.items.some(x=>x.type==="answer")?"Q&A":"",det?"detached":"",a.status==="addressed"?"addressed":""].filter(Boolean).join(" · ")}));
+        g.append(b)});
+    wrapEl.append(g)}
+  body.replaceChildren(wrapEl)}
+function refreshPanel(){if(view==="anno"&&cur){if(getA(cur))renderAnno();else closePanel(true)}else if(view==="list")renderList()}
+
+/* ---------- Ask Claude ---------- */
+let SAMPLE=null,askOff=false;const asking=new Set();let ctl=null;
+const canAsk=()=>!!SAMPLE&&!askOff;
+const BLOCK=/^(P|DIV|SECTION|H1|H2|H3|H4|H5|LI|UL|OL|FIGURE|FIGCAPTION|TABLE|TR|PRE|BLOCKQUOTE|DL|DT|DD|DETAILS|SUMMARY|HEADER|MAIN|ASIDE|BR)$/;
+const EXCL_PLAIN="[data-anno-ui],.sec-tools,script,style,button,svg,input,textarea,select,noscript";
+function plain(root){const out=[];
+  (function walk(n){for(const c of n.childNodes){
+    if(c.nodeType===3){out.push(c.data);continue}if(c.nodeType!==1||c.matches(EXCL_PLAIN))continue;
+    if(c.localName==="math"){const t=c.querySelector("annotation");const tex=t?t.textContent.trim():c.textContent;
+      out.push(c.getAttribute("display")==="block"?"\n$$"+tex+"$$\n":"$"+tex+"$");continue}
+    const b=BLOCK.test(c.tagName);if(b)out.push("\n");if(c.tagName==="TD"||c.tagName==="TH")out.push(" | ");walk(c);if(b)out.push("\n")}})(root);
+  return out.join("").replace(/[ \t ]+/g," ").replace(/ *\n */g,"\n").replace(/\n{3,}/g,"\n\n").trim()}
+let BRIEF=null;try{const b=document.getElementById("brief-data");BRIEF=b?JSON.parse(b.textContent):null}catch(e){BRIEF=null}
+const bytes=s=>new TextEncoder().encode(s).length;
+async function buildTurns(a,q){
+  let max=262144;try{const l=await SAMPLE.limits();if(l&&l.maxPromptBytes)max=l.maxPromptBytes}catch(e){}
+  const budget=max-12000;
+  const sec=document.getElementById(a.section),title=sec?secTitle(sec):a.section;
+  const pairs=[];a.items.forEach(it=>{if(it.type!=="question")return;const ans=a.items.find(x=>x.type==="answer"&&x.askedAbout===it.id);if(ans)pairs.push([it.md,ans.md])});
+  const notes=a.items.filter(x=>x.type==="note").map(x=>"- "+x.md.replace(/\n/g,"\n  ")).join("\n");
+  const rules=`You are the AI4Read tutor for Kunhao, an assistant professor in computational social science. His English is B2–C1. He has marked a passage in the AI4Read post "What does an LLM know when it predicts the next word?" and asks about it.
+How to answer:
+- Explain as if to a curious high-school student, but never skip steps.
+- Start with a concrete instance (small numbers, a real example), then generalise.
+- Ground every claim in the post or the source brief below and give the page reference, e.g. (Shannon 1951, p. 56). Keep the authors' hedges.
+- If you use knowledge from outside these sources, start that part with "Beyond our sources:".
+- Markdown is fine (short paragraphs, lists, bold). Write inline math as $...$ and display math as $$...$$.
+- About 250 words unless he asks for more.`;
+  const passage=a.sectionLevel?`HE IS ASKING ABOUT THE WHOLE SECTION "${title}".`:
+    `THE MARKED PASSAGE (section "${title}"; the marked words are between [[ and ]]):\n…${a.prefix||""}[[${a.quote}]]${a.suffix||""}…`;
+  const tail=[...pairs.flat(),q].join("\n");
+  let secText=sec?plain(sec):"";
+  const fixed=rules+"\n\n"+passage+(notes?"\n\nHIS OWN NOTES ON THIS PASSAGE:\n"+notes:"")+"\n\nTHE SECTION:\n";
+  const room=budget-bytes(fixed)-bytes(tail)-200;
+  if(bytes(secText)>room)secText=secText.slice(0,Math.max(0,Math.floor(room/3)))+"\n[section text shortened]";
+  let ctx=fixed+secText;
+  const post=plain(MAIN);
+  if(bytes(ctx)+bytes(tail)+bytes(post)+100<budget)ctx+="\n\nTHE WHOLE POST:\n"+post;
+  if(BRIEF&&bytes(ctx)+bytes(tail)+bytes(BRIEF)+100<budget)ctx+="\n\nSOURCE BRIEF (claims with page references, from the AI4Read reading digests):\n"+BRIEF;
+  const turns=[];
+  if(pairs.length){turns.push({role:"user",content:ctx+"\n\nQUESTION:\n"+pairs[0][0]},{role:"assistant",content:pairs[0][1]});
+    pairs.slice(1).forEach(([qq,aa])=>turns.push({role:"user",content:qq},{role:"assistant",content:aa}));
+    turns.push({role:"user",content:q})}
+  else turns.push({role:"user",content:ctx+"\n\nQUESTION:\n"+q});
+  return turns}
+function setAskBusy(on){bAsk.textContent=on?"Stop":"Ask Claude";bSave.disabled=on;bAsk.classList.toggle("busy",on)}
+bAsk.addEventListener("click",async()=>{
+  if(asking.size){if(ctl)ctl.abort();return}
+  const q=ed.value.trim();if(!q){status.textContent="Write your question first.";ed.focus();return}
+  if(!canAsk())return;
+  const a=getA(cur);if(!a)return;
+  asking.add(a.id);ctl=new AbortController();const myCtl=ctl;
+  ed.value="";drafts[a.id]="";updPv();status.textContent="";
+  const qCard=card(a,{type:"question",md:q,at:now()},true);qCard.classList.add("live");
+  const aCard=card(a,{type:"answer",md:"",at:""},true);aCard.classList.add("live");
+  const aBody=$(".anno-md",aCard);aBody.innerHTML='<p class="anno-thinking">Thinking…</p>';
+  const empty=$(".anno-empty",cards);if(empty)empty.remove();
+  cards.append(qCard,aCard);aCard.scrollIntoView({block:"nearest",behavior:reduced()?"auto":"smooth"});
+  setAskBusy(true);
+  let raf=0,latest="";
+  try{
+    const turns=await buildTurns(a,q);
+    const res=await SAMPLE(turns,{modelTier:"complex",cache:false,signal:myCtl.signal,onText:({text})=>{latest=text;
+      if(!raf)raf=requestAnimationFrame(()=>{raf=0;aBody.innerHTML=md(latest)})}});
+    cancelAnimationFrame(raf);
+    const qi={id:uid("i-"),type:"question",md:q,at:now()};
+    const ai={id:uid("i-"),type:"answer",md:res.text+(res.truncated?"\n\n*(The answer was cut short.)*":""),at:now(),askedAbout:qi.id};
+    a.items.push(qi,ai);commitAnno(a);
+    if(cur===a.id&&view==="anno"){renderAnno();status.textContent="Question and answer saved. “Save as note” keeps the answer as your own note."}
+  }catch(e){
+    cancelAnimationFrame(raf);qCard.remove();aCard.remove();
+    const code=e&&e.code;
+    if(cur===a.id&&view==="anno"){ed.value=q;updPv();if(!a.items.length)renderCards(a)}else drafts[a.id]=q;
+    const msg={not_granted:"Asking Claude is not allowed in this view. Your question is back in the editor; save it as a note instead.",
+      sampling_disabled:"Claude is not available for this account. Your question is back in the editor; save it as a note.",
+      not_declared:"Asking Claude is not available on this page. Save your question as a note.",
+      capability_disabled:"Asking Claude is not available here. Save your question as a note.",
+      capability_removed:"Asking Claude is not available here. Save your question as a note.",
+      rate_limited:"Too many questions in a short time. Wait a minute, then ask again. Your question is still in the editor.",
+      session_expired:"Your Claude session has expired. Sign in again, then ask. Your question is still in the editor.",
+      refused:"Claude did not answer this question. Try asking it differently.",
+      prompt_too_large:"The question and context were too long. Try a shorter question.",
+      cancelled:""}[code];
+    if(["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"].includes(code)){askOff=true;bAsk.hidden=true}
+    status.textContent=msg!=null?msg:`The answer did not arrive (${code||"error"}). Your question is still in the editor: ask again or save it as a note.`;
+  }finally{asking.delete(a.id);if(ctl===myCtl)ctl=null;setAskBusy(false);
+    if(pending&&pending.id===a.id&&!a.items.length&&cur!==a.id){pending=null;paint()}}});
+
+/* ---------- db sync ---------- */
+let DB=null,dbRO=false;const run={},again={};
+function setSync(s){syncLine.textContent={ok:"Synced to your account.",local:"Saved on this device only.",quota:"The notes store is full; new notes are saved on this device only.",busy:"Saving…"}[s]||"";syncLine.dataset.s=s}
+setSync("local");
+const toDoc=a=>{const o={};for(const k of ["section","quote","prefix","suffix","sectionLevel","items","createdAt","updatedAt","deleted","legacyFrom","legacyReply","status"])if(a[k]!==undefined)o[k]=a[k];
+  o.sectionLevel=!!o.sectionLevel;o.deleted=!!o.deleted;return JSON.parse(JSON.stringify(o))};
+const fromDoc=d=>{const o=JSON.parse(JSON.stringify(d.data()||{}));o.id=d.id;if(!Array.isArray(o.items))o.items=[];return o};
+async function push(id){
+  if(!DB||dbRO)return;if(run[id]){again[id]=true;return}
+  run[id]=true;
+  try{do{again[id]=false;const a=S.get(id);if(!a)break;await writeDoc(a,true)}while(again[id]&&DB&&!dbRO)}
+  finally{run[id]=false}}
+async function writeDoc(a,retry){
+  const body=toDoc(a);setSync("busy");
+  try{await DB.collection(COLL).doc(a.id).set(body);setSync("ok")}
+  catch(e){const c=e&&e.code;
+    if(c==="unavailable"&&retry){await sleep(700+Math.random()*1200);return writeDoc(a,false)}
+    if(c==="quota_exceeded"){setSync("quota");return}
+    if(c!=="unavailable"&&c!=="resource_exhausted")dbRO=true;
+    setSync("local")}}
+function merge(r){const l=S.get(r.id);if(!l||newer(r,l)){S.set(r.id,r);LS.put(r);return 1}if(newer(l,r))return -1;return 0}
+async function migrateLegacy(){
+  let snap;try{snap=await DB.collection(LEGACY).get()}catch(e){return}
+  for(const d of snap.docs){if(!d.exists)continue;const o=d.data()||{},id="legacy-"+d.id;
+    let a=S.get(id),changed=false;
+    if(!a){const at=o.at||now(),q=String(o.q||"").trim(),isAsk=o.kind==="ask"&&!!o.a;
+      a={id,section:String(o.section||""),quote:"",prefix:"",suffix:"",sectionLevel:true,items:[],createdAt:at,updatedAt:at,legacyFrom:d.id};
+      if(q)a.items.push({id:id+"-q",type:isAsk?"question":"note",md:q,at});
+      if(o.a)a.items.push({id:id+"-a",type:"answer",md:String(o.a),at,askedAbout:id+"-q"});
+      if(!a.items.length)continue;changed=true}
+    else a=JSON.parse(JSON.stringify(a));
+    if(!a.deleted&&o.reply&&String(o.reply)!==a.legacyReply){const r=String(o.reply),it=a.items.find(x=>x.id===id+"-r");
+      if(it){it.md=r;it.editedAt=now()}else a.items.push({id:id+"-r",type:"answer",md:r,at:o.repliedAt||now(),askedAbout:(a.items[0]||{}).id});
+      a.legacyReply=r;changed=true}
+    if(o.status&&o.status!==a.status){a.status=String(o.status);changed=true}
+    if(changed){a.updatedAt=now();S.set(id,a);LS.put(a);await push(id)}}}
+async function initDb(){
+  let db=null;try{if(window.claude&&typeof window.claude.use==="function")db=await window.claude.use("db")}catch(e){db=null}
+  if(!db)return;DB=db;
+  let snap=null;
+  for(let i=0;i<2&&!snap;i++){try{snap=await DB.collection(COLL).get()}catch(e){if(e&&e.code==="unavailable"&&i===0){await sleep(1000);continue}DB=null;return}}
+  if(!snap){DB=null;return}
+  const remote=new Set(),toPush=[];
+  snap.docs.forEach(d=>{if(!d.exists)return;const r=fromDoc(d);remote.add(r.id);if(merge(r)<0)toPush.push(r.id)});
+  for(const id of S.keys())if(!remote.has(id))toPush.push(id);
+  setSync("ok");
+  for(const id of toPush)await push(id);
+  await migrateLegacy();
+  paint();refreshPanel();
+  DB.collection(COLL).onSnapshot(qs=>{let ch=false;
+    for(const c of qs.docChanges()){if(c.type==="removed"||!c.doc.exists)continue;
+      const r=fromDoc(c.doc);if(asking.has(r.id))continue;if(merge(r)>0)ch=true}
+    if(ch){paint();if(!(view==="anno"&&mode.m!=="new"))refreshPanel()}},()=>{});}
+
+async function initSample(){
+  let s=null;try{if(window.claude&&typeof window.claude.use==="function")s=await window.claude.use("sample")}catch(e){s=null}
+  if(typeof s==="function"){SAMPLE=s;if(view==="anno"&&mode.m==="new")bAsk.hidden=!canAsk()}}
+
+/* ---------- start ---------- */
+addSecButtons();
+try{const mo=new MutationObserver(addSecButtons);$$("section",MAIN).forEach(s=>mo.observe(s,{childList:true}))}catch(e){}
+document.addEventListener("DOMContentLoaded",()=>setTimeout(addSecButtons,0));
+paint();updPv();
+initDb();initSample();
 })();
 
 </script>

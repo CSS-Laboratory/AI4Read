@@ -23,12 +23,22 @@ const out = `<title>What Does an LLM Know?</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 ${rd("src/style.css")}
+${rd("src/annotate.css")}
 </style>
 ${html}
 <script type="application/json" id="brief-data">${JSON.stringify(brief).replace(/</g, "\\u003c")}</script>
 <script>window.CHAPTERS=${JSON.stringify(chapters)};</script>
 <script>
 ${rd("src/app.js")}
+</script>
+<script>
+${rd("src/figs.js")}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script>
+${rd("src/annotate.js")}
 </script>
 `;
 fs.writeFileSync(path.join(D, "index.html"), out);
