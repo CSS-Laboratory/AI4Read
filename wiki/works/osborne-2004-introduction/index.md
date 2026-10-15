@@ -5,7 +5,9 @@ type: work-map
 units: [osborne-2004-introduction/ch01-introduction, osborne-2004-introduction/ch02-nash-p1, osborne-2004-introduction/ch02-nash-p2, osborne-2004-introduction/ch03-nash-p1, osborne-2004-introduction/ch03-nash-p2, osborne-2004-introduction/ch04-mixed-p1, osborne-2004-introduction/ch04-mixed-p2, osborne-2004-introduction/ch05-extensive, osborne-2004-introduction/ch06-extensive, osborne-2004-introduction/ch07-extensive, osborne-2004-introduction/ch08-coalitional, osborne-2004-introduction/ch09-bayesian, osborne-2004-introduction/ch11-strictly, osborne-2004-introduction/ch12-rationalizability, osborne-2004-introduction/ch13-evolutionary, osborne-2004-introduction/ch14-repeated, osborne-2004-introduction/ch15-repeated, osborne-2004-introduction/ch17-mathematics]
 ---
 
-# Osborne, M. J. (2004). *An Introduction to Game Theory*. Oxford University Press.
+# Osborne, M. J. (1995–2000). *An Introduction to Game Theory*: selected chapters from the author's draft (chapter versions dated 2000-11-06).
+
+*Edition used in AI4Read: the library copy above. The catalog lists Oxford University Press, 2004 (published book); page numbers follow the library copy.*
 
 ## In one paragraph
 The book teaches game theory as a set of models of interacting decision-makers. It starts from rational choice by one person. It then builds the Nash equilibrium: a steady state in which no player gains by changing her own action alone. The idea is extended step by step. Players may randomize. They may move in sequence, where subgame perfect equilibrium removes empty threats. They may lack information, as in Bayesian games. They may be genes under selection, or players of a repeated game. Each idea is tested on worked examples, such as the Prisoner's Dilemma, Cournot and Bertrand competition, auctions, Hawk–Dove and voting. Other chapters treat coalitions (the core), cautious play (maxminimization) and rationalizability. The point is to see which outcomes are stable, which are efficient, and when cooperation can last.

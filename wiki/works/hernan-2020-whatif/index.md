@@ -5,7 +5,9 @@ type: work-map
 units: [hernan-2020-whatif/ch01-definition, hernan-2020-whatif/ch02-randomized, hernan-2020-whatif/ch03-observational, hernan-2020-whatif/ch04-effect, hernan-2020-whatif/ch05-interaction, hernan-2020-whatif/ch06-graphical, hernan-2020-whatif/ch07-confounding, hernan-2020-whatif/ch08-selection, hernan-2020-whatif/ch09-measurement, hernan-2020-whatif/ch10-random, hernan-2020-whatif/ch11-model, hernan-2020-whatif/ch12-ip, hernan-2020-whatif/ch13-standardization, hernan-2020-whatif/ch14-g, hernan-2020-whatif/ch15-outcome, hernan-2020-whatif/ch16-instrumental, hernan-2020-whatif/ch17-causal, hernan-2020-whatif/ch18-variable, hernan-2020-whatif/ch19-time, hernan-2020-whatif/ch20-treatment, hernan-2020-whatif/ch21-g, hernan-2020-whatif/ch22-target, hernan-2020-whatif/ch23-causal]
 ---
 
-# Hernán, M. A., & Robins, J. M. (2020). *Causal Inference: What If*. Boca Raton: Chapman & Hall/CRC.
+# Hernán, M. A., & Robins, J. M. (2026). *Causal Inference: What If*. Online revision dated 19 August 2026. Boca Raton: Chapman & Hall/CRC.
+
+*Edition used in AI4Read: the library copy above. The catalog lists 2020 version; page numbers follow the library copy.*
 
 ## In one paragraph
 The book teaches how to ask causal questions precisely and when observational data can answer them. A causal effect is defined as a contrast between counterfactual outcomes under different treatments. It can be identified from data when exchangeability, positivity and consistency hold. Causal diagrams show the structural sources of bias: confounding, selection and measurement error. Methods such as standardization, IP weighting, g-estimation and instrumental variables then estimate the effect, each with its own modelling assumptions. For treatments that change over time, treatment-confounder feedback defeats ordinary adjustment, so the g-methods are needed. The unifying advice is to state the protocol of a hypothetical "target trial" and analyze observational data to emulate it. This makes assumptions explicit and open to criticism.

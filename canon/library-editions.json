@@ -1,0 +1,10 @@
+{
+ "_note": "Works whose library PDF differs from the catalog edition. Digests and work maps cite the library edition; catalog ids are kept. Source: pipeline/units.csv notes and the digests' Reading notes.",
+ "cover-2006-elements": {"citation": "Cover, T. M., & Thomas, J. A. (1991). *Elements of Information Theory* (1st ed.). New York: Wiley.", "catalog_edition": "2nd ed., Wiley-Interscience, 2006"},
+ "mcelreath-2020-rethinking": {"citation": "McElreath, R. (2016). *Statistical Rethinking: A Bayesian Course with Examples in R and Stan* (1st ed.). Boca Raton: Chapman & Hall/CRC.", "catalog_edition": "2nd ed., 2020"},
+ "pierce-1980-introduction": {"citation": "Pierce, J. R. (1961). *Symbols, Signals and Noise: The Nature and Process of Communication*. New York: Harper & Brothers.", "catalog_edition": "An Introduction to Information Theory: Symbols, Signals and Noise, 2nd rev. ed., Dover, 1980"},
+ "clark-2017-principles": {"citation": "Clark, W. R., Golder, M., & Golder, S. N. (2013). *Principles of Comparative Politics* (2nd ed.). Washington, DC: CQ Press.", "catalog_edition": "3rd ed., CQ Press / SAGE, 2017"},
+ "osborne-2004-introduction": {"citation": "Osborne, M. J. (1995–2000). *An Introduction to Game Theory*: selected chapters from the author's draft (chapter versions dated 2000-11-06).", "catalog_edition": "Oxford University Press, 2004 (published book)"},
+ "hernan-2020-whatif": {"citation": "Hernán, M. A., & Robins, J. M. (2026). *Causal Inference: What If*. Online revision dated 19 August 2026. Boca Raton: Chapman & Hall/CRC.", "catalog_edition": "2020 version"},
+ "wittgenstein-1953-investigations": {"citation": "Wittgenstein, L. (1953/2009). *Philosophical Investigations* (trans. G. E. M. Anscombe, P. M. S. Hacker & J. Schulte; rev. 4th ed., ed. Hacker & Schulte). Chichester: Wiley-Blackwell.", "catalog_edition": "1953 Anscombe translation"}
+}

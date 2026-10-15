@@ -5,7 +5,9 @@ type: work-map
 units: [wittgenstein-1953-investigations/ch01-augustine, wittgenstein-1953-investigations/ch02-family, wittgenstein-1953-investigations/ch03-understanding, wittgenstein-1953-investigations/ch04-private, wittgenstein-1953-investigations/ch05-thinking, wittgenstein-1953-investigations/ch06-intentionality, wittgenstein-1953-investigations/ch07-negation, wittgenstein-1953-investigations/ch08-ppf, wittgenstein-1953-investigations/ch09-ppf, wittgenstein-1953-investigations/ch10-ppf]
 ---
 
-# Wittgenstein, L. (1953/2009). *Philosophical Investigations* (trans. G. E. M. Anscombe, P. M. S. Hacker & J. Schulte; rev. 4th ed., ed. Hacker & Schulte). Chichester: Wiley-Blackwell. (German–English facing text.)
+# Wittgenstein, L. (1953/2009). *Philosophical Investigations* (trans. G. E. M. Anscombe, P. M. S. Hacker & J. Schulte; rev. 4th ed., ed. Hacker & Schulte). Chichester: Wiley-Blackwell.
+
+*Edition used in AI4Read: the library copy above. The catalog lists 1953 Anscombe translation; page numbers follow the library copy.*
 
 ## In one paragraph
 Wittgenstein rejects the picture that every word is a name of an object. He asks us to look at how words are used in "language-games", activities in which language and action are woven together. Concepts such as "game" are held together by overlapping similarities (family resemblance), not by a hidden essence. Following a rule is a trained, shared practice. No inner interpretation or private mental process fixes it, and justifications end in "this is simply what I do". He applies the same method to mental words such as sensation, thinking, meaning, expecting, believing and seeing-as. Instead of asking what inner object they name, he asks how they are used, in what circumstances and with what criteria. Philosophy, on this view, describes use and does not explain or reform it. The work is a foundation for usage-based views of meaning.

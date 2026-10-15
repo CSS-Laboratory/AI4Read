@@ -5,7 +5,9 @@ type: work-map
 units: [pierce-1980-introduction/ch01-world, pierce-1980-introduction/ch02-origins, pierce-1980-introduction/ch03-mathematical, pierce-1980-introduction/ch04-encoding, pierce-1980-introduction/ch05-entropy, pierce-1980-introduction/ch06-language, pierce-1980-introduction/ch07-efficient, pierce-1980-introduction/ch08-noisy, pierce-1980-introduction/ch09-many, pierce-1980-introduction/ch10-information, pierce-1980-introduction/ch11-cybernetics, pierce-1980-introduction/ch12-information, pierce-1980-introduction/ch13-information, pierce-1980-introduction/ch14-back, pierce-1980-introduction/app-mathematical]
 ---
 
-# Pierce, J. R. (1980). *An Introduction to Information Theory: Symbols, Signals and Noise* (2nd rev. ed.). Dover Publications. xii + 305 pp. (First published as *Symbols, Signals and Noise*, 1961.)
+# Pierce, J. R. (1961). *Symbols, Signals and Noise: The Nature and Process of Communication*. New York: Harper & Brothers.
+
+*Edition used in AI4Read: the library copy above. The catalog lists An Introduction to Information Theory: Symbols, Signals and Noise, 2nd rev. ed., Dover, 1980; page numbers follow the library copy.*
 
 ## In one paragraph
 Pierce explains Shannon's communication theory with little formal mathematics. The theory grew from telegraph and telephone problems. It treats a message source as an ergodic random process. Its entropy, in bits, is the average number of binary digits per symbol that any good code needs. A noisy channel has a capacity. Below that capacity, the right redundancy lets errors be made as rare as we like. For a band-limited channel with Gaussian noise, a geometric argument gives $C = W\log(1+P/N)$. Pierce then tests the ideas against physics, language, psychology and art, and is frank about their limits. He says that the "indubitably valuable" core is electrical communication, and that "information" does not mean meaning. The book helps a reader build intuition before the mathematics.

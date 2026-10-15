@@ -5,7 +5,9 @@ type: work-map
 units: [cover-2006-elements/ch01-introduction, cover-2006-elements/ch02-entropy, cover-2006-elements/ch03-asymptotic, cover-2006-elements/ch04-entropy, cover-2006-elements/ch05-data-p1, cover-2006-elements/ch05-data-p2, cover-2006-elements/ch06-gambling, cover-2006-elements/ch07-kolmogorov, cover-2006-elements/ch08-channel-p1, cover-2006-elements/ch08-channel-p2, cover-2006-elements/ch09-differential, cover-2006-elements/ch10-gaussian, cover-2006-elements/ch11-maximum, cover-2006-elements/ch12-information-p1, cover-2006-elements/ch12-information-p2, cover-2006-elements/ch12-information-p3, cover-2006-elements/ch13-rate, cover-2006-elements/ch14-network-p1, cover-2006-elements/ch14-network-p2, cover-2006-elements/ch14-network-p3, cover-2006-elements/ch14-network-p4, cover-2006-elements/ch15-information, cover-2006-elements/ch16-inequalities]
 ---
 
-# Cover, T. M., & Thomas, J. A. (2006). *Elements of Information Theory* (2nd ed.). Wiley-Interscience. ISBN 9780471241959.
+# Cover, T. M., & Thomas, J. A. (1991). *Elements of Information Theory* (1st ed.). New York: Wiley.
+
+*Edition used in AI4Read: the library copy above. The catalog lists 2nd ed., Wiley-Interscience, 2006; page numbers follow the library copy.*
 
 ## In one paragraph
 The book builds information theory from a few quantities: entropy, relative entropy and mutual information. Entropy sets the limit for compressing data, and channel capacity sets the limit for sending data reliably. Typical sets (the AEP) are the main proof tool. The same quantities then answer questions in other fields. In gambling and portfolio theory they give the growth rate of wealth. In statistics they give the exponents of hypothesis tests and large deviations. Maximum entropy gives a principle for choosing distributions, and Kolmogorov complexity describes single objects. Later chapters extend the theory to continuous variables, Gaussian channels, rate distortion and networks. They end with a web of inequalities. It matters because it supplies the precise definitions and bounds that you cite in papers.

@@ -5,7 +5,9 @@ type: work-map
 units: [mcelreath-2020-rethinking/front-preface, mcelreath-2020-rethinking/ch01-golem, mcelreath-2020-rethinking/ch02-small, mcelreath-2020-rethinking/ch03-sampling, mcelreath-2020-rethinking/ch04-linear-p1, mcelreath-2020-rethinking/ch04-linear-p2, mcelreath-2020-rethinking/ch05-multivariate-p1, mcelreath-2020-rethinking/ch05-multivariate-p2, mcelreath-2020-rethinking/ch06-overfitting-p1, mcelreath-2020-rethinking/ch06-overfitting-p2, mcelreath-2020-rethinking/ch07-interactions, mcelreath-2020-rethinking/ch08-markov, mcelreath-2020-rethinking/ch09-big, mcelreath-2020-rethinking/ch10-counting, mcelreath-2020-rethinking/ch11-monsters, mcelreath-2020-rethinking/ch12-multilevel, mcelreath-2020-rethinking/ch13-adventures, mcelreath-2020-rethinking/ch14-missing, mcelreath-2020-rethinking/ch15-horoscopes]
 ---
 
-# McElreath, R. (2020). *Statistical Rethinking: A Bayesian Course with Examples in R and Stan* (2nd ed.). Chapman & Hall/CRC. DOI: 10.1201/9780429029608
+# McElreath, R. (2016). *Statistical Rethinking: A Bayesian Course with Examples in R and Stan* (1st ed.). Boca Raton: Chapman & Hall/CRC.
+
+*Edition used in AI4Read: the library copy above. The catalog lists 2nd ed., 2020; page numbers follow the library copy.*
 
 ## In one paragraph
 The book teaches statistical modeling as the careful building and checking of "golems": models that are powerful but have no wisdom. It starts from Bayesian inference as counting. It then builds regression step by step: Gaussian models, several predictors, interactions, and generalized linear models for counts and ordered outcomes. Along the way it stresses overfitting, regularizing priors and information criteria. Multilevel models share information across clusters and across parameter types, so they are treated as the default regression. The book also shows how to put measurement error and missing data into the model. Throughout, you learn by running code and simulating, then interpret models through their predictions and not through tables of coefficients. The closing message is that statistics is one part of a scientific process, and openness is the part you control personally.
