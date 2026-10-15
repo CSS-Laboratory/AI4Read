@@ -1,7 +1,7 @@
 ---
 name: writing-principles
 description: How AI4Read posts are written. Read before drafting or revising any post; update after every review round (add the rule, the note that caused it, and the date).
-version: 0.2 (2026-10-16)
+version: 0.3 (2026-10-16)
 ---
 
 # AI4Read writing principles
@@ -44,11 +44,16 @@ Do not start a concept at step 4. (Note: “imagine you are explaining it to hig
 ## 7. Big claims need “what it means”
 - After any headline result (a scaling law, a theorem, a test score), answer three questions in plain words: **what was measured, on what, and what it lets you predict** — then what it does *not* show. (Note on Step 8, 2026-10-15.)
 
-## 8. Sources and honesty (from the charter, kept here so it is never forgotten)
+## 8. The English section
+- Two layers: (a) 8–10 phrases from the post's own topic (B2–C1), (b) a **B2 → C1 toolkit**: native expressions for discussing evidence (hedging, concession, emphasis), one or two sentence patterns, small error fixes typical for Chinese/Japanese speakers, and a short practice routine. Every example sentence uses an idea from the same post. (Request, 2026-10-16.)
+- Rotate the toolkit: each post adds new expressions and repeats 2–3 from earlier posts for spaced review.
+
+## 9. Sources and honesty (from the charter, kept here so it is never forgotten)
 - Every claim is checked against the cited page by an independent reviewer before publishing; digests are maps, not truth.
 - Keep the authors' hedges (may, suggest, appears). Our own examples and reasoning are labelled “ours”.
 - When an error is found in a post, fix the digest and the source brief too.
 
-## 9. Change log
+## 10. Change log
 - 0.1 (2026-10-15): charter style guide only.
+- 0.3 (2026-10-16): §8 English section with a B2 → C1 toolkit.
 - 0.2 (2026-10-16): §2 ladder, §3 term boxes, §4 explanations in text, §5 illustrations for mechanisms, §6 field formulas + exercises, §7 “what it means”. From Kunhao's first review of post 01.
