@@ -8,15 +8,18 @@
   --f-ui:"IBM Plex Sans",-apple-system,"Segoe UI",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
   --bar-h:64px;
+  --c-kw:#8A3FA0; --c-str:#2E6B4F; --c-num:#B4541A; --c-com:#7A828C; --c-fn:#2D5B8A; --c-bi:#A3342B;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#15181D; --card:#1D2128; --ink:#E6E8EA; --muted:#9AA3AE; --rule:#2E343D;
   --stamp:#E0796E; --stamp-soft:#3A2321; --ok:#7BC4A0; --ok-soft:#1E3329; --chip:#272C34;
-  --truth:#C9CED4; --model:#E0796E; --blue:#8DB6E0; --blue-soft:#1F2A36; color-scheme:dark}}
+  --truth:#C9CED4; --model:#E0796E; --blue:#8DB6E0; --blue-soft:#1F2A36;
+  --c-kw:#D19BE6; --c-str:#8FD1AE; --c-num:#F0A672; --c-com:#8B949E; --c-fn:#8DB6E0; --c-bi:#F09A90; color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#15181D; --card:#1D2128; --ink:#E6E8EA; --muted:#9AA3AE; --rule:#2E343D;
   --stamp:#E0796E; --stamp-soft:#3A2321; --ok:#7BC4A0; --ok-soft:#1E3329; --chip:#272C34;
-  --truth:#C9CED4; --model:#E0796E; --blue:#8DB6E0; --blue-soft:#1F2A36; color-scheme:dark}
+  --truth:#C9CED4; --model:#E0796E; --blue:#8DB6E0; --blue-soft:#1F2A36;
+  --c-kw:#D19BE6; --c-str:#8FD1AE; --c-num:#F0A672; --c-com:#8B949E; --c-fn:#8DB6E0; --c-bi:#F09A90; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font:18px/1.6 var(--f-body);margin:0;
@@ -167,6 +170,15 @@ dd{margin:2px 0 0;font-size:17px}
 .code pre{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:12px;overflow-x:auto;font:13px/1.5 var(--f-mono);margin:0}
 .code .copy{position:absolute;top:6px;right:6px;font:500 12px var(--f-ui);border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:4px;padding:4px 8px;cursor:pointer}
 code{font-family:var(--f-mono);font-size:.88em}
+.hljs{color:var(--ink)}
+.hljs-keyword,.hljs-meta .hljs-keyword{color:var(--c-kw);font-weight:500}
+.hljs-string,.hljs-subst .hljs-string{color:var(--c-str)}
+.hljs-number,.hljs-literal{color:var(--c-num)}
+.hljs-comment{color:var(--c-com);font-style:italic}
+.hljs-title,.hljs-title.function_,.hljs-title.class_{color:var(--c-fn);font-weight:500}
+.hljs-built_in{color:var(--c-bi)}
+.hljs-params{color:var(--ink)}
+.hljs-subst{color:var(--ink)}
 
 /* Section tools */
 .sec-tools{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;font:14px var(--f-ui)}

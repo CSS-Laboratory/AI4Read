@@ -3,6 +3,7 @@
 import fs from "fs"; import path from "path"; import { createRequire } from "module";
 const require = createRequire("/tmp/kt/");
 const katex = require("katex");
+const hljs = require("highlight.js/lib/core"); hljs.registerLanguage("python", require("highlight.js/lib/languages/python"));
 const D = path.dirname(new URL(import.meta.url).pathname);
 const rd = f => fs.readFileSync(path.join(D, f), "utf8");
 let html = rd("src/content.html"); let errors = 0;
@@ -12,7 +13,7 @@ html = html.replace(/\\\[([\s\S]+?)\\\]/g, (_, t) => `<div class="mjx">${render(
 html = html.replace(/\\\(([\s\S]+?)\\\)/g, (_, t) => render(t.trim(), false));
 const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const code = { "code-1": "notebook/ex1_shannon_fn.py", "code-2": "notebook/ex2_attention.py", "code-3": "notebook/ex3_bits_per_char.py" };
-for (const [id, f] of Object.entries(code)) html = html.replace(`<code id="${id}"></code>`, `<code id="${id}">${esc(rd(f))}</code>`);
+for (const [id, f] of Object.entries(code)) html = html.replace(`<code id="${id}"></code>`, `<code id="${id}" class="hljs language-python">${hljs.highlight(rd(f), { language: "python" }).value}</code>`);
 let chapters = [];
 try { chapters = JSON.parse(rd("audio/chapters.json")).map(c => ({ id: c.id, title: c.title, dur: c.dur, src: `audio/${c.id}.mp3` })); } catch (e) { console.error("no chapters yet"); }
 const brief = rd("source-brief.md").split("\n---\n").slice(1).join("\n---\n");

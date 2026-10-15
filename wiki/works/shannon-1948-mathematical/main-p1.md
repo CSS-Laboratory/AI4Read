@@ -15,6 +15,8 @@ verifier_issues: 13
 pipeline_version: 0.1
 audited: 2026-10-14
 audit_fixes: 9
+post_fixes: 1
+post_fixed: 2026-10-15
 ---
 # A Mathematical Theory of Communication — Part 1 (pp. 1–28)
 
@@ -178,10 +180,10 @@ $$G_N\le H'<G_N+\frac1N.$$
 - Analogy (author's): as a transformer matches generator and load for maximum power transfer, the encoder should match source to channel statistically. The source seen through the transducer should look like the entropy-maximizing source for the channel. Theorem 9 says this match can be approximated as closely as desired. Coding *efficiency* is the actual rate over $C$, equal to the ratio of the actual to the maximum entropy of channel symbols (pp. 17–18).
 - In general, ideal or nearly ideal encoding needs a long delay. The quantity $\big|\frac{\log p^{-1}}{T}-C\big|$ must be small for all but a small fraction of long messages (p. 18).
 - A source that can produce only one message has zero entropy and needs no channel (e.g. the digits of $\pi$, which a machine at the receiver could compute). If that is impractical, one may ignore some statistical knowledge and use the maximum-entropy source subject to the conditions retained. Its entropy fixes the capacity that is "necessary and sufficient". For $\pi$, retaining only that digits come from $\{0,\dots,9\}$; for English, retaining only letter frequencies gives the first-order approximation (p. 18).
-- **Example 1.** Letters A, B, C, D with probabilities $\tfrac12,\tfrac14,\tfrac18,\tfrac18$, independent:
+- **A simple example** (Shannon's words; the examples here are not numbered). Letters A, B, C, D with probabilities $\tfrac12,\tfrac14,\tfrac18,\tfrac18$, independent:
 $$H=-\big(\tfrac12\log\tfrac12+\tfrac14\log\tfrac14+\tfrac28\log\tfrac18\big)=\tfrac74\text{ bits per symbol}.$$
 The code A→0, B→10, C→110, D→111 achieves it: average length $N(\tfrac12\cdot1+\tfrac14\cdot2+\tfrac28\cdot3)=\tfrac74N$. The 0 and 1 have probabilities $\tfrac12,\tfrac12$, so the coded sequence has 1 bit per symbol. The maximum for the original set is $\log4=2$, so the relative entropy is $\tfrac78$. Translating binary pairs 00, 01, 10, 11 into A′, B′, C′, D′ re-encodes into the same symbols with compression ratio $\tfrac78$ (p. 18, 19).
-- **Example 2.** A's with probability $p$, B's with $q$, $p\ll q$:
+- **A second example.** A's with probability $p$, B's with $q$, $p\ll q$:
 $$H=-\log p^p(1-p)^{1-p}=-p\log p(1-p)^{(1-p)/p}\doteq p\log\frac ep.$$
 A fairly good code sends a special sequence (say 0000) for the rare A, followed by the binary count of B's after it, with numbers containing the special sequence deleted. Numbers up to 16 are normal; 16 is represented by 17 = 10001. Shannon says it can be shown that as $p\to0$ the coding approaches the ideal if the special sequence length is adjusted (p. 19).
 

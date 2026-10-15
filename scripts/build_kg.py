@@ -2,14 +2,17 @@
 """AI4Read knowledge graph builder (phase 2): deterministic extraction from digests plus
 curated data files.
 
-Reads wiki/works/<work>/<unit>.md digests (skips *.cc.md and *.pipeline.md, except
-that cover-2006-elements/ch02-entropy is read from its .pipeline.md), canon/catalog.json,
-canon/<field>.md, and the curated phase-2 files in wiki/kg/:
+Reads wiki/works/<work>/<unit>.md digests (skips *.cc.md, *.pipeline.md and the index.md
+work maps, except that cover-2006-elements/ch02-entropy is read from its .pipeline.md),
+canon/catalog.json, canon/<field>.md, and the curated files in wiki/kg/:
 
   aliases.json            variant concept id -> canonical id (curated by judgment)
   field-map.json          free-text bridge target field -> canon field id or other:<name>
   work-fields.json        field overrides for works (and units) that span several fields
   instance-matches.json   confirmed canon-instance matches (manual confirm list)
+  splits.json             record-level overrides (digest, id) -> disambiguated id for ids that
+                          mix two meanings; canon spine re-pointing; sense glosses
+  work-aliases.json       canon work-id variants -> digested work id (catalog and canon instances)
 
 and writes:
 
@@ -191,11 +194,13 @@ def load_json(path, default):
 
 
 # ---------------------------------------------------------------- canon
-def load_catalog():
-    """id -> list of catalog records (a work can be listed under several fields)."""
+def load_catalog(work_alias=None):
+    """id -> list of catalog records (a work can be listed under several fields).
+    A variant id in work_alias (work-aliases.json) is filed under its digested id."""
+    work_alias = work_alias or {}
     out = defaultdict(list)
     for c in json.loads((CANON / "catalog.json").read_text()):
-        out[c["id"]].append(c)
+        out[work_alias.get(c["id"], c["id"])].append(c)
     return out
 
 
@@ -231,7 +236,8 @@ def name_aliases(name):
 WORK_ID_RE = re.compile(r"\b[a-z0-9]+(?:-[a-z0-9]+)*-\d{4}-[a-z0-9]+(?:-[a-z0-9]+)*\b")
 
 
-def load_canon():
+def load_canon(work_alias=None):
+    work_alias = work_alias or {}
     spine, inst = {}, {}
     for f in sorted(CANON.glob("*.md")):
         text = f.read_text()
@@ -249,6 +255,7 @@ def load_canon():
             if " — " in desc:
                 tail = desc.rsplit(" — ", 1)[1]
                 works = sorted(set(WORK_ID_RE.findall(tail)), key=tail.find)
+                works = list(OrderedDict.fromkeys(work_alias.get(w, w) for w in works))
             inst.setdefault(iid, {"id": iid, "name": name, "field": slug, "def": desc,
                                   "aliases": name_aliases(name), "works": works})
     return spine, inst
@@ -285,8 +292,8 @@ def digest_files():
     out = []
     for wdir in sorted(p for p in WORKS.iterdir() if p.is_dir()):
         for f in sorted(wdir.glob("*.md")):
-            if f.name.endswith((".cc.md", ".pipeline.md")):
-                continue
+            if f.name.endswith((".cc.md", ".pipeline.md")) or f.name == "index.md":
+                continue  # index.md = work map (wiki/works/<work>/index.md), not a digest
             unit = f.stem
             if (wdir.name, unit) in PIPELINE_OVERRIDES:
                 f = wdir / f"{unit}.pipeline.md"
@@ -464,9 +471,15 @@ def field_root(f):
 
 # ---------------------------------------------------------------- main build
 def main():
-    catalog = load_catalog()
-    spine, canon_inst = load_canon()
+    work_alias = load_json(KG / "work-aliases.json", {})
+    catalog = load_catalog(work_alias)
+    spine, canon_inst = load_canon(work_alias)
     aliases = load_json(KG / "aliases.json", {})
+    splits_cfg = load_json(KG / "splits.json", {})
+    split_map = {(s["digest"], s["id"]): s["to"] for s in splits_cfg.get("splits", [])}
+    split_spine = splits_cfg.get("spine", {})
+    split_senses = splits_cfg.get("senses", {})
+    split_used = set()
     field_map = load_json(KG / "field-map.json", {})
     wf = WorkFields(catalog, load_json(KG / "work-fields.json", {}))
     inst_conf = load_json(KG / "instance-matches.json", {})
@@ -514,6 +527,10 @@ def main():
                         if not nid:
                             problems[f"empty id after normalisation ({sec})"] += 1
                             continue
+                        split_from = ""
+                        if sec == SECTION_CONCEPTS and (meta["digest"], nid) in split_map:
+                            split_used.add((meta["digest"], nid))
+                            split_from, nid = nid, split_map[(meta["digest"], nid)]
                         cid = canon_of(nid) if sec == SECTION_CONCEPTS else nid
                         if cid in seen:
                             r = seen[cid]
@@ -524,7 +541,8 @@ def main():
                             continue
                         seen[cid] = dict(id=cid, norm_id=nid, raw=raw, **meta, definition=definition,
                                          page=page, new=new, multi_id_line=len(raws) > 1,
-                                         other_definitions=[], variants=[nid])
+                                         other_definitions=[], variants=[nid],
+                                         **({"split_from": split_from} if split_from else {}))
             for r in seen.values():
                 r["weak"] = bool(WEAK_RE.search(r["definition"])) and not any(
                     od and not WEAK_RE.search(od) for od in r["other_definitions"])
@@ -554,6 +572,13 @@ def main():
                      source_fields=fields, tier=tier)
             bridges.append(b)
 
+    for key in sorted(set(split_map) - split_used):
+        problems["splits.json: record not found"] += 1
+        problem_examples["splits.json: record not found"].append(f"{key[0]}: {key[1]}")
+    for v, c in aliases.items():
+        if v in set(split_map.values()) or v in {k[1] for k in split_map}:
+            sys.exit(f"aliases.json: {v} is also a split id in splits.json")
+
     KG.mkdir(parents=True, exist_ok=True)
     for name, recs in (("concepts", concepts), ("instances", instances), ("bridges", bridges)):
         with open(KG / f"{name}.jsonl", "w") as fh:
@@ -571,7 +596,7 @@ def main():
     # canon spine entries per canonical id (several spine names can alias to one id)
     spine_by = defaultdict(list)
     for sid in sorted(spine):
-        spine_by[canon_of(sid)].append(spine[sid])
+        spine_by[canon_of(split_spine.get(sid, sid))].append(spine[sid])
     variants_by = defaultdict(set)
     for v, c in aliases.items():
         variants_by[c].add(v)
@@ -643,7 +668,9 @@ def main():
             for r in sorted(by_field[f], key=lambda r: r["digest"]):
                 notes_ = []
                 al = [v for v in r.get("variants", []) if v != r["id"]]
-                if r["raw"] != r["id"] and r["raw"] not in al:
+                if r.get("split_from"):
+                    notes_.append(f"split from `{r['split_from']}` (`wiki/kg/splits.json`)")
+                elif r["raw"] != r["id"] and r["raw"] not in al:
                     notes_.append(f"as `{r['raw']}`")
                 if al:
                     notes_.append("alias " + ", ".join(f"`{v}`" for v in al))
@@ -706,8 +733,9 @@ def main():
             m = re.search(r"^links:\s*\[(.*?)\]", t, re.M)
             if m:
                 hub_linked |= {canon_of(norm_id(x)) for x in m.group(1).split(",") if x.strip()}
+    # split targets (splits.json) get a page so the disambiguation pages' links resolve
     concept_page_ids = sorted({c for c, rs in cg.items() if n_digests(rs) >= 2} | set(spine_by)
-                              | (hub_linked & set(cg)))
+                              | (hub_linked & set(cg)) | ({canon_of(t) for t in split_map.values()} & set(cg)))
     for cid in concept_page_ids:
         recs = cg.get(cid, [])
         sps = spine_by.get(cid, [])
@@ -757,6 +785,27 @@ def main():
         c = canon_of(v)
         write_page(CONCEPT_DIR, v, "\n".join(["---", f"id: {v}", "type: alias", f"alias_of: {c}", GEN_MARK, "---", "",
                                               f"# {v}", "", f"Alias of [[{c}]] (see `wiki/kg/aliases.json`)."]) + "\n")
+    # disambiguation pages for ids split by record (splits.json); keep [[plain-id]] links working
+    split_bases = sorted({k[1] for k in split_map} - set(concept_page_ids) - set(alias_stub_ids))
+    for base in split_bases:
+        targets = sorted({t for (d, i), t in split_map.items() if i == base}
+                         | {s for s in split_senses if s.startswith(base + "-") and s in cg})
+        body = ["---", f"id: {base}", "type: disambiguation", f"senses: {yaml_list(targets)}", GEN_MARK, "---", "",
+                f"# {base}", "", f"The digests use `{base}` with different meanings, so the knowledge graph files each",
+                "record under a sense-specific id (record-level overrides in `wiki/kg/splits.json`; the digests are",
+                "unchanged, so their `[[" + base + "]]` links land here).", ""]
+        for t in targets:
+            recs = cg.get(t, [])
+            moved = sorted(d for (d, i), tt in split_map.items() if i == base and tt == t)
+            spine_note = [f"{sp['field']} canon spine" for sp in spine_by.get(t, [])]
+            gloss = split_senses.get(t, "")
+            line = f"- [[{t}]]" + (f" — {gloss}" if gloss else "") + f" — {n_digests(recs)} digest(s)"
+            if spine_note:
+                line += f"; {', '.join(spine_note)}"
+            if moved:
+                line += "; split from: " + ", ".join(f"[[{d}]]" for d in moved)
+            body.append(line)
+        write_page(CONCEPT_DIR, base, "\n".join(body) + "\n")
 
     # ---- instance matching
     clear(INSTANCE_DIR)
@@ -868,7 +917,13 @@ def main():
     # ---- index
     stats = write_index(concepts, instances, bridges, cg, ig, concept_page_ids, instance_page_ids,
                         spine, spine_by, canon_inst, rev, concept_match, n_digests, problems, problem_examples,
-                        notes, len(files), aliases, alias_stub_ids, curated_hubs, work_field_source, all_fields)
+                        notes, len(files), aliases, alias_stub_ids, curated_hubs, work_field_source, all_fields,
+                        extra_counts=[
+                            f"- record-level splits (`splits.json`): {len(split_used)} records of "
+                            f"{len({k[1] for k in split_map})} mixed-sense ids → {len(set(split_map.values()))} "
+                            f"sense ids; disambiguation pages: {len(split_bases)} ({', '.join(split_bases)})",
+                            f"- canon work-id aliases (`work-aliases.json`): "
+                            + ", ".join(f"{v} → {c}" for v, c in sorted(work_alias.items()))])
 
     print(f"digests: {len(files)}")
     print(f"concept records: {len(concepts)}  distinct ids: {len(cg)}  pages: {len(concept_page_ids)}  alias stubs: {len(alias_stub_ids)}")
@@ -1094,7 +1149,7 @@ def write_unmatched(canon_inst, rev, concept_match, ig, n_digests):
 # ---------------------------------------------------------------- index
 def write_index(concepts, instances, bridges, cg, ig, cpages, ipages, spine, spine_by, canon_inst,
                 rev, concept_match, n_digests, problems, problem_examples, notes, n_files, aliases,
-                alias_stubs, curated_hubs, work_field_source, all_fields):
+                alias_stubs, curated_hubs, work_field_source, all_fields, extra_counts=()):
     def nf(rs, strong=True):
         return len(all_fields(rs, strong))
 
@@ -1108,7 +1163,8 @@ def write_index(concepts, instances, bridges, cg, ig, cpages, ipages, spine, spi
              "cross3": sum(1 for c in cg if nf(cg[c]) >= 3), "cross2": sum(1 for c in cg if nf(cg[c]) >= 2)}
     L = ["# Knowledge graph index (phase 2)", "",
          "Generated by `scripts/build_kg.py` from the digests in `wiki/works/` and the curated files in `wiki/kg/`",
-         "(`aliases.json`, `field-map.json`, `work-fields.json`, `instance-matches.json`). See `PHASE2.md` for what",
+         "(`aliases.json`, `field-map.json`, `work-fields.json`, `instance-matches.json`, `splits.json`,",
+         "`work-aliases.json`). Work maps (`wiki/works/<work>/index.md`) are not digests and are skipped. See `PHASE2.md` for what",
          "changed. Field(s) of a digest = the catalog field(s) of its work, plus `work-fields.json` overrides.",
          "**Strong** records exclude definitions that say the concept is only a canon link / loosely related /",
          "not used in the unit; cross-field counts use strong records only.", ""]
@@ -1133,6 +1189,7 @@ def write_index(concepts, instances, bridges, cg, ig, cpages, ipages, spine, spi
           f"- concept ids appearing in only one digest: {once}",
           f"- works with several fields: {len(work_field_source)} ({', '.join(sorted(work_field_source))})",
           f"- merge-candidate groups: " + ", ".join(f"{k} {v}" for k, v in write_merge_candidates.stats.items()),
+          *extra_counts,
           ""]
     hubs = sorted(set(curated_hubs) | {p.stem for p in CONCEPT_DIR.glob("*.md")
                                         if CURATED_RE.search(p.read_text()[:4000])})

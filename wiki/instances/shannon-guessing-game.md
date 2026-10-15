@@ -21,4 +21,4 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[shannon-1951-prediction/main]] (p. 55): human next-letter prediction, 69% first-guess success on 129 letters [new]
+- [[shannon-1951-prediction/main]] (p. Experiment 2, p. 56): human next-letter prediction: 89 of 129 letters (69%) right in the single-guess version (Experiment 1, p. 55); 79 of 102 right at the first guess in the guess-until-right version [new]

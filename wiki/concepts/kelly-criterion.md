@@ -5,7 +5,7 @@ fields: [information-theory, bayesian, decision-game-theory, economics-finance]
 fields_strong: [information-theory, bayesian, decision-game-theory, economics-finance]
 n_sources: 8
 n_works: 5
-tiers: [core, deep]
+tiers: [core]
 grounding: digests
 sources: [cover-2006-elements/ch01-introduction, cover-2006-elements/ch06-gambling, cover-2006-elements/ch07-kolmogorov, cover-2006-elements/ch15-information, jaynes-2003-probability/ch13-decision, kelly-1956-information/main, mackay-2003-information/ch36-decision, pierce-1980-introduction/ch14-back]
 aliases: [doubling-rate, kelly-criterion-doubling-rate, kelly-criterion-log-optimal-growth]

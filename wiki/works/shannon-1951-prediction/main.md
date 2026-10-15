@@ -15,6 +15,8 @@ verifier_issues: 8
 pipeline_version: 0.1
 audited: 2026-10-14
 audit_fixes: 6
+post_fixes: 1
+post_fixed: 2026-10-15
 ---
 # Prediction and Entropy of Printed English
 
@@ -213,7 +215,7 @@ Take a source with no memory ($N=1$) and three letters a, b, c with probabilitie
 - [[zipf-law]] (new) — word probability roughly $.1/n$ for rank $n$ (p. 52)
 
 ## Canonical instances
-- [[shannon-guessing-game]] (new) — human next-letter prediction, 69% first-guess success on 129 letters (p. 55)
+- [[shannon-guessing-game]] (new) — human next-letter prediction: 89 of 129 letters (69%) right in the single-guess version (Experiment 1, p. 55); 79 of 102 right at the first guess in the guess-until-right version (Experiment 2, p. 56)
 - [[zipf-word-entropy]] (new) — 11.82 bits/word = 2.62 bits/letter from word ranks up to 8,727 (p. 53)
 - [[identical-twin-decoder]] (new) — conceptual twin that recovers the text from the reduced text (p. 55)
 

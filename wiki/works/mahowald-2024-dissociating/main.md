@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 16
 pipeline_version: 0.1
+post_fixes: 1
+post_fixed: 2026-10-15
 ---
 # Dissociating language and thought in large language models
 
@@ -26,7 +28,7 @@ The paper asks how to judge LLMs without confusing language with thought. It sep
 
 ## L2 — Key ideas (5–10 bullets)
 - Two fallacies come from conflating language and thought: *good at language → good at thought* and *bad at thought → bad at language*. The authors propose separating two kinds of competence to mitigate both (p. 2).
-- Formal competence is knowledge of the rules and statistical regularities of language. Functional competence is using language in the world, and it depends on non-language-specific cognition (p. 3).
+- Formal competence is knowledge of the rules and statistical regularities of language. Functional competence is using language in the world, and it depends on non-language-specific cognition (pp. 2–3).
 - Evidence from fMRI (brain imaging) and from aphasia (language loss after brain damage) shows that the human language network (the brain regions for language) is selective for language and does not support non-linguistic cognition. This motivates the distinction (p. 3, 5).
 - LLMs show substantial formal competence in English. They show evidence of handling hierarchy, some abstraction and rare constructions, and their representations partly predict language-network activity, although they are imperfect and data-hungry (p. 7–9, 10).
 - On four functional domains (formal reasoning, world knowledge, situation tracking, social reasoning), LLMs without added external modules (non-augmented LLMs) are uneven. They often need fine-tuning or external modules (p. 11–14).
@@ -157,7 +159,7 @@ Four capacities, none language-specific: (i) formal reasoning (logic, maths, com
 **Part B: form is not function.** Take *Sally doesn't own a dog. The dog is black.* Both sentences are grammatical, so a form checker gives 2 of 2 passes. Add a tiny symbolic tracker (the kind of module suggested on p. 14, 15). Sentence 1 sets owns(Sally, dog) = False, so the entity table has 0 dogs. Sentence 2 uses "the dog", which needs ≥ 1 dog in the table, and 0 < 1, so it flags a problem. Result: form checker 2/2, tracker flags 1 of 2. The two checks differ, which is the formal/functional gap in miniature.
 
 ## Concepts
-- [[formal-vs-functional-competence]] — formal: rules and statistical regularities of language; functional: using language in the world via non-language-specific cognition (p. 3)
+- [[formal-vs-functional-competence]] — formal: rules and statistical regularities of language; functional: using language in the world via non-language-specific cognition (pp. 2–3)
 - [[language-model]] — here, a model trained on word-in-context prediction; "large" refers to parameters and training data (p. 6, 16)
 - [[n-gram-model]] — a model storing frequencies of short word strings; cannot track agreement at arbitrary distance (p. 5, 7)
 - [[pretraining-fine-tuning]] — generic text-prediction training, then extra task-specific training; key for judging functional claims (p. 6, 11)

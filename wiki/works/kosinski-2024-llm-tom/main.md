@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 18
 pipeline_version: 0.1
+post_fixes: 1
+post_fixed: 2026-10-15
 ---
 # Evaluating large language models in theory of mind tasks (Kosinski, 2024)
 
@@ -25,7 +27,7 @@ Can language models track what other people believe, including false beliefs? Ko
 **Prerequisites:** what a language model does (predicts the next word); probability of independent events. Terms used below: theory of mind (ToM) = tracking other people's unobservable mental states; false-belief task = a story where a character holds a belief the reader knows is untrue; true-belief control = a slightly changed story where the character's belief is correct; API = software access to a model; Chinese room = Searle's thought experiment of a person following rules without understanding; contaminated = already seen in training data.
 
 ## L2 — Key ideas (5–10 bullets)
-- **Hypothesis:** theory of mind (ToM) need not be engineered into AI. The author hypothesizes that it may emerge as a by-product of training for other goals; LLMs are likely candidates because human language is full of mental-state descriptions (§ "Introduction").
+- **Hypothesis:** theory of mind (ToM) need not be engineered into AI. The author hypothesizes that it may emerge as a by-product of training for other goals; LLMs are likely candidates because human language is full of mental-state descriptions (§ "Abstract").
 - **Design:** each task has a false-belief scenario, three minimally changed true-belief controls and reversed versions. This is meant to reduce the risk of success by chance or by simple strategies, such as always assuming the protagonist is wrong or copying the label (§ "Study 1.3").
 - **Scoring is strict:** 16 prompts across 8 scenarios must all be correct. Pure random responding would succeed about once in 65,536 tasks (§ "Study 3", § "Discussion").
 - **Result:** the oldest models solved none (davinci-002: 5%), davinci-003 and ChatGPT-3.5 solved 20%, ChatGPT-4 solved 75% (§ "Study 3").
@@ -36,17 +38,17 @@ Can language models track what other people believe, including false beliefs? Ko
 
 ## L3 — Walkthrough
 
-### Significance, Abstract, Introduction
-- ToM is the tracking of others' unobservable mental states (knowledge, intentions, beliefs, desires). The author links it to social interaction, communication, empathy, moral judgment and more. Great apes trail humans on it (§ "Introduction").
-- Earlier work found that RoBERTa, early GPT-3 and custom question-answering models struggled with simple ToM tasks (§ "Introduction").
+### Significance, Abstract (with the untitled opening text)
+- ToM is the tracking of others' unobservable mental states (knowledge, intentions, beliefs, desires). The author links it to social interaction, communication, empathy, moral judgment and more. Great apes trail humans on it (§ "Abstract").
+- Earlier work found that RoBERTa, early GPT-3 and custom question-answering models struggled with simple ToM tasks (§ "Abstract").
 - **Hypothesis (author):** ToM may "emerge" in AI as a by-product of training for other goals. Footnote: "emergent abilities" are present in newer models and absent in older ones. "Emergent properties" belong to a whole system but to none of its parts (§ "Footnotes").
-- Why LLMs are candidates: human language describes protagonists with differing beliefs, so a model that interprets language would benefit from ToM. The author's example is a sentence that nests one person's belief about another person's thought (§ "Introduction").
-- In humans, ToM *may* have emerged from language ability. Evidence cited: correlation with language aptitude, delayed ToM in people with little language exposure, and overlapping brain regions (§ "Introduction").
-- Tests: two false-belief task types, Unexpected Contents and Unexpected Transfer. A hypothesis-blind research assistant wrote 20 bespoke tasks of each type, because LLMs likely saw the classic versions (§ "Introduction").
-- Each task has one false-belief scenario, three true-belief controls and the reversed versions of all four, so 8 scenarios. All 8 must be solved to score a point (§ "Introduction").
-- Eleven models: GPT-1, GPT-2, six GPT-3 family models, ChatGPT-3.5-turbo, ChatGPT-4 and Bloom (§ "Introduction").
-- Scenarios were written in August 2021 and later revised after reviewer feedback. Tasks went online in February 2023, and only models trained on data from before then were studied. Commercial APIs that did not collect data for training were used (§ "Introduction").
-- The author does not aim to settle whether AI should be credited with ToM. He notes that behaving *as if* it had ToM matters, and that Turing considered the distinction meaningless in practice (§ "Introduction").
+- Why LLMs are candidates: human language describes protagonists with differing beliefs, so a model that interprets language would benefit from ToM. The author's example is a sentence that nests one person's belief about another person's thought (§ "Abstract").
+- In humans, ToM *may* have emerged from language ability. Evidence cited: correlation with language aptitude, delayed ToM in people with little language exposure, and overlapping brain regions (§ "Abstract").
+- Tests: two false-belief task types, Unexpected Contents and Unexpected Transfer. A hypothesis-blind research assistant wrote 20 bespoke tasks of each type, because LLMs likely saw the classic versions (§ "Abstract").
+- Each task has one false-belief scenario, three true-belief controls and the reversed versions of all four, so 8 scenarios. All 8 must be solved to score a point (§ "Abstract").
+- Eleven models: GPT-1, GPT-2, six GPT-3 family models, ChatGPT-3.5-turbo, ChatGPT-4 and Bloom (§ "Abstract").
+- Scenarios were written in August 2021 and later revised after reviewer feedback. Tasks went online in February 2023, and only models trained on data from before then were studied. Commercial APIs that did not collect data for training were used (§ "Abstract").
+- The author does not aim to settle whether AI should be credited with ToM. He notes that behaving *as if* it had ToM matters, and that Turing considered the distinction meaningless in practice (§ "Abstract").
 
 ### Study 1: Unexpected Contents (Smarties) task
 **1.1 Task and prompts.**
@@ -140,13 +142,13 @@ Reversed versions (inside chocolate, label "popcorn"): false-belief → popcorn,
 
 ## Concepts
 - [[theory of mind / mentalizing / mindreading]] — tracking others' unobservable mental states; here the test is false-belief tasks (§ "Significance")
-- [[first-order false belief]] — protagonist holds a belief the participant knows is false; the text does not itself use the word first-order (§ "Introduction")
+- [[first-order false belief]] — protagonist holds a belief the participant knows is false; the text does not itself use the word first-order (§ "Abstract")
 - [[unexpected contents task]] — label and contents mismatch (Smarties task); used in Study 1 (§ "Study 1.1")
 - [[unexpected transfer task]] — object moved while protagonist is away (Maxi/Sally–Anne); used in Study 2 (§ "Study 2.1")
 - [[construct validity in LLM evaluation]] — whether passing a human-designed test shows the human capacity; the author stresses controls, scoring keys and alternatives (§ "Discussion")
-- [[data contamination]] — tasks seen in training; handled by bespoke tasks and pre-publication model selection (§ "Introduction", § "Methodological Notes")
+- [[data contamination]] — tasks seen in training; handled by bespoke tasks and pre-publication model selection (§ "Abstract", § "Methodological Notes")
 - [[Clever Hans effect]] — the cited sources include one titled on it; the author discusses guessing and response strategies without that term (§ "Discussion")
-- [[machine theory of mind]] — AI modelling others' mental states, here claimed possibly emergent, not engineered (§ "Introduction")
+- [[machine theory of mind]] — AI modelling others' mental states, here claimed possibly emergent, not engineered (§ "Abstract")
 - [[true-belief control]] (new) — a minimally changed story that removes the false-belief conditions (§ "Study 1.3")
 - [[emergence (abilities vs properties)]] (new) — abilities appearing in larger models; or system-level properties absent in parts (§ "Footnotes")
 - [[temperature (LLM sampling)]] (new) — parameter setting how random model outputs are (§ "Study 1.1")
@@ -173,7 +175,7 @@ Reversed versions (inside chocolate, label "popcorn"): false-belief → popcorn,
 - If tasks and scoring are public, how can later models be tested without contamination?
 
 ## Reading notes
-- Source is an HTML (PMC) version with no printed page numbers. References use section headings, written as (§ "Heading"). The opening text before the first heading is cited as "Introduction", but it has no heading in the source.
+- Source is an HTML (PMC) version with no printed page numbers. References use section headings, written as (§ "Heading"). The source has no "Introduction" heading: the untitled opening text follows the Abstract under the same heading, so both are cited as § "Abstract". The popcorn example and its prompts are in § "Study 1.1".
 - Figures 1–3 are described only in captions and text. Their images and SI Appendix figures were not available.
 - Inconsistencies in the source: (1) the text says older models failed all tasks, but davinci-002 is reported at 5%; (2) Study 1 reports 1,000 completions per prompt, while Methodological Notes say 2,000 runs per step.
 - The unit has about 11,500 words including references; the digest omits the reference list and the page furniture.

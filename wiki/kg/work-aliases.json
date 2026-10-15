@@ -1,0 +1,4 @@
+{
+ "_about": "Canon work-id aliases used only inside the KG (curated 2026-10-15, user-approved). The information-theory canon and catalog list Kelly (1956) as kelly-1956-new; the economics-finance catalog entry and the digest use kelly-1956-information. build_kg.py maps the variant to the digested id when it reads canon/catalog.json (so both listings count for the work) and the work ids named in canon instances (so canon-instance matching sees the digested work). canon/*.md and catalog.json are not edited.",
+ "kelly-1956-new": "kelly-1956-information"
+}

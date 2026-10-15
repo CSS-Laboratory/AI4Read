@@ -15,10 +15,11 @@ function slider(host,{id,label,min,max,step,value,fmt=f2},on){
 }
 
 /* ---------- capabilities (db for notes/guesses, sample for questions) ---------- */
-let DB=null, SAMPLE=null;
+let DB=null, SAMPLE=null, DL=null;
 const capsReady=(async()=>{
   try{ if(window.claude&&window.claude.use){ DB=await window.claude.use("db"); } }catch(e){DB=null}
   try{ if(window.claude&&window.claude.use){ SAMPLE=await window.claude.use("sample"); } }catch(e){SAMPLE=null}
+  try{ if(window.claude&&window.claude.use){ DL=await window.claude.use("downloads"); } }catch(e){DL=null}
   document.dispatchEvent(new Event("caps"));
 })();
 async function dbAdd(coll,data){ if(!DB) return false; try{ await DB.collection(coll).add(data); return true }catch(e){ return false } }
@@ -166,16 +167,20 @@ bar.innerHTML=`<div class="player-in"><button type="button" class="pbtn" id="p-p
 document.body.append(bar);
 const ICON={play:'<svg viewBox="0 0 16 16"><path d="M4 2l10 6-10 6z"/></svg>',pause:'<svg viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg>'};
 const fmtT=s=>{s=Math.round(s||0);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
-function load(i,play){P.i=(i+CH.length)%CH.length;LS.set("ch",P.i);audio.src=CH[P.i].src;audio.playbackRate=P.rate;paint();
+const CACHE={};
+function srcOf(i){return CACHE[CH[i].id]||CH[i].src}
+async function cacheOne(i){const c=CH[i];if(!c||CACHE[c.id])return true;try{const r=await fetch(c.src);if(!r.ok)return false;CACHE[c.id]=URL.createObjectURL(await r.blob());return true}catch(e){return false}}
+function load(i,play){P.i=(i+CH.length)%CH.length;LS.set("ch",P.i);audio.src=srcOf(P.i);audio.playbackRate=P.rate;paint();
   if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:CH[P.i].title,artist:"AI4Read",album:"Post 01 · What does an LLM know?"})}catch(e){}}
-  if(play) audio.play().catch(()=>{});}
+  if(play) audio.play().catch(()=>{});
+  cacheOne(P.i).then(()=>cacheOne(P.i+1));}
 function paint(){$("#p-title").textContent=`${P.i+1}/${CH.length} · ${CH[P.i].title}`;$("#p-play").innerHTML=audio.paused?ICON.play:ICON.pause;$("#p-play").setAttribute("aria-label",audio.paused?"Play":"Pause");
   const L={off:"Loop off",one:"Loop 1",all:"Loop all"}[P.mode];const lb=$("#p-loop");lb.textContent={off:"Loop",one:"Loop 1",all:"All"}[P.mode];lb.setAttribute("aria-label",L);lb.setAttribute("aria-pressed",String(P.mode!=="off"));
   $("#p-rate").textContent=P.rate+"×";}
 if(CH.length){
   audio.src=CH[P.i%CH.length].src; P.i%=CH.length;
   $("#p-play").addEventListener("click",()=>{if(audio.paused){audio.playbackRate=P.rate;audio.play().catch(()=>{})}else audio.pause()});
-  audio.addEventListener("play",paint);audio.addEventListener("pause",paint);
+  audio.addEventListener("play",()=>{paint();cacheOne(P.i).then(()=>cacheOne((P.i+1)%CH.length))});audio.addEventListener("pause",paint);
   audio.addEventListener("timeupdate",()=>{$("#p-prog").style.width=(audio.duration?100*audio.currentTime/audio.duration:0)+"%"});
   audio.addEventListener("ended",()=>{if(P.mode==="one"){audio.currentTime=0;audio.play()}else if(P.i<CH.length-1)load(P.i+1,true);else if(P.mode==="all")load(0,true);else paint()});
   $("#p-loop").addEventListener("click",()=>{P.mode={off:"one",one:"all",all:"off"}[P.mode];LS.set("mode",P.mode);paint()});
@@ -196,7 +201,18 @@ function openSheet(build){closeSheet();scrim=el("div",{class:"scrim"});sheet=el(
 function closeSheet(){if(scrim)scrim.remove();if(sheet)sheet.remove();scrim=sheet=null}
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet()});
 function openChapters(){openSheet(inn=>{inn.innerHTML=`<div class="sheet-h"><b>Chapters</b><button type="button" class="x">Close</button></div><p class="status">Loop 1 repeats one chapter; All repeats the whole post. The audio is written for listening, so it is shorter than the page and says formulas in words.</p>`;
-  $(".x",inn).addEventListener("click",closeSheet);const list=el("div",{class:"chlist"});
+  $(".x",inn).addEventListener("click",closeSheet);
+  const off=el("div",{class:"row"});const bAll=el("button",{type:"button",class:"btn"},"Keep all audio for the train (12 MB)");off.append(bAll);
+  const bSave=el("button",{type:"button",class:"btn ghost"},"Save as one MP3 to this device");if(DL)off.append(bSave);
+  const st=el("p",{class:"status"},Object.keys(CACHE).length===CH.length?"All chapters are loaded. They keep playing without signal while this page stays open.":"Loading keeps every chapter in memory, so tunnels and weak signal do not stop playback. Keep this page open (closing it clears the memory).");
+  inn.append(off,st);
+  bAll.addEventListener("click",async()=>{bAll.disabled=true;let ok=0;for(let i=0;i<CH.length;i++){st.textContent=`Loading chapter ${i+1} of ${CH.length}…`;if(await cacheOne(i))ok++}
+    st.textContent=ok===CH.length?"All chapters are loaded. They keep playing without signal while this page stays open.":`Loaded ${ok} of ${CH.length} chapters. Try again when the signal is better.`;bAll.disabled=false});
+  bSave.addEventListener("click",async()=>{bSave.disabled=true;st.textContent="Preparing the MP3…";
+    try{const r=await fetch("audio/all.mp3");if(!r.ok)throw new Error("fetch");const b=await r.blob();const res=await DL.save({filename:"AI4Read-01-what-does-an-LLM-know.mp3",data:b});st.textContent=res&&res.status==="saved"?"Saved. Play it from your Files or music app, even offline.":"Sent to your device."}
+    catch(e){st.textContent=(e&&e.code==="declined")?"Not saved.":(e&&e.code==="too_large")?"The file is too large to save from here.":"Could not save the file ("+((e&&(e.code||e.message))||"error")+")."}
+    bSave.disabled=false});
+  const list=el("div",{class:"chlist"});
   CH.forEach((c,i)=>{const b=el("button",{type:"button","aria-current":String(i===P.i)},`<b>${i+1}. ${c.title}</b><span>${fmtT(c.dur)}</span>`);b.addEventListener("click",()=>{load(i,true);closeSheet()});list.append(b)});inn.append(list)})}
 
 /* ---------- Section tools: listen + discuss ---------- */

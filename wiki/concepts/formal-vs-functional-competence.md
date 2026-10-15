@@ -22,4 +22,4 @@ generated_by: build_kg.py
 
 ### llm
 
-- [[mahowald-2024-dissociating/main]] (p. 3): formal: rules and statistical regularities of language; functional: using language in the world via non-language-specific cognition
+- [[mahowald-2024-dissociating/main]] (pp. 2–3): formal: rules and statistical regularities of language; functional: using language in the world via non-language-specific cognition

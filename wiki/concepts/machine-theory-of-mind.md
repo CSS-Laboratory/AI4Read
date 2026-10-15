@@ -23,7 +23,7 @@ generated_by: build_kg.py
 
 ### theory-of-mind
 
-- [[kosinski-2024-llm-tom/main]] (§ "Introduction"): AI modelling others' mental states, here claimed possibly emergent, not engineered [as `machine theory of mind`; work fields: theory-of-mind, llm]
+- [[kosinski-2024-llm-tom/main]] (§ "Abstract"): AI modelling others' mental states, here claimed possibly emergent, not engineered [as `machine theory of mind`; work fields: theory-of-mind, llm]
 - [[rabinowitz-2018-machine-tom/main]] (pdf 1): a system that learns to model other agents from limited data, with weak generative assumptions [as `machine theory of mind`; new]
 - [[shapira-2024-clever-hans/main]] (p. 2257, 2265): Neural ToM (N-ToM): ToM-like abilities in neural language models, measured on benchmarks; the authors make no claim about AI cognition [as `machine theory of mind`; work fields: theory-of-mind, llm]
 - [[strachan-2024-llm-humans/main]] (§ "Main"): LLM performance on ToM tasks; the authors speak of an artificial theory of mind [as `machine theory of mind`; work fields: theory-of-mind, llm]

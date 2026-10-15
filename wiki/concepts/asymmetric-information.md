@@ -5,7 +5,7 @@ fields: [economics-finance, information-theory]
 fields_strong: [economics-finance, information-theory]
 n_sources: 6
 n_works: 4
-tiers: [deep, core]
+tiers: [core, deep]
 grounding: digests
 sources: [akerlof-1970-lemons/main, grossman-1980-impossibility/main, kelly-1956-information/main, stiglitz-2002-paradigm/main-p1, stiglitz-2002-paradigm/main-p2, stiglitz-2002-paradigm/main-p3]
 raw_ids: [asymmetric information]

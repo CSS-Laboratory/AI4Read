@@ -15,6 +15,8 @@ verifier_issues: 9
 pipeline_version: 0.1
 audited: 2026-10-14
 audit_fixes: 5
+post_fixes: 1
+post_fixed: 2026-10-15
 ---
 # An Explanation of In-context Learning as Implicit Bayesian Inference
 
@@ -247,7 +249,7 @@ In log terms the signal is $k\ln(1/0.8)=0.223k$ against an error of $\ln1.5=0.40
 ## Canonical instances
 - [[ginc-dataset]] — synthetic mixture-of-HMMs dataset (entity × property factorial HMM) where Transformers and LSTMs exhibit ICL (pp. 10, 25–28)
 - [[names-to-nationalities-prompt]] — "Albert Einstein was German \n … Marie Curie was" illustrates concept inference and mismatch (pp. 1–2, 4)
-- [[example-order-sensitivity]] — 10–40% accuracy spread across permutations of 4 examples (p. 10)
+- [[example-order-sensitivity]] — in GINC (synthetic data, 4-layer Transformer), 10–40% accuracy spread across permutations of 4 examples, similar to GPT-3 per Zhao et al. (p. 10)
 - [[zero-shot-beats-few-shot-ginc]] — few-shot accuracy initially below zero-shot at temperature 0.01 (p. 11)
 - [[lambada-long-vs-short-examples]] — GPT-3: five long examples beat five short; duplication does not (pp. 30–31)
 

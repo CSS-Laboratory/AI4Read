@@ -3,11 +3,11 @@ id: private-wire-gambler
 type: instance
 fields: [economics-finance, information-theory]
 n_sources: 1
-tiers: [deep]
+tiers: [core]
 grounding: digests
 sources: [kelly-1956-information/main]
 canon_instance: [kelly-gambler-with-a-private-wire, kellys-gambler-with-a-private-wire]
-canon_match_rule: same-work-tokens+confirmed
+canon_match_rule: same-work-tokens
 generated_by: build_kg.py
 ---
 

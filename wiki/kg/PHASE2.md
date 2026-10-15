@@ -90,22 +90,64 @@ Bridges sections), "where definitions disagree", and links to the digests.
 - Every alias variant and canonical id exists in the records or the canon spine; no alias chains.
 - Two consecutive builds produce byte-identical output.
 
+## Update 2026-10-15 (after the post-01 fact-check)
+
+User-approved changes; digests, `canon/` and `catalog.json` untouched by the KG code.
+
+1. **Work maps skipped.** `digest_files()` now skips `wiki/works/<work>/index.md` (177 work maps, not
+   digests). Without the skip the build read 1,516 files and reported 177 × 2 "missing section" problems;
+   with it, 1,339 digests and no parse problems (same as the phase-2 build).
+2. **ML / deep learning → `llm` (decision recorded).** Bridge targets naming machine learning or deep
+   learning stay mapped to `llm` in `field-map.json` and in the keyword rules. Reason: the llm canon's
+   textbook strand covers them, and there is no separate ML field. Revisit only if the canon adds an ML field.
+3. **Mixed-sense ids split by record** (`wiki/kg/splits.json`, applied after id normalisation and before
+   aliases; each record's sense chosen by reading its definition):
+   | plain id | sense ids (records) |
+   |---|---|
+   | `value-function` | `value-function-econ` (thaler-2015 ch04), `value-function-rl` (todorov-2002) |
+   | `priming` | `priming-media` (entman-1993, lazer-2018; carries the communication-theory spine entry), `priming-cognitive` (kahneman-2011 ch11) |
+   | `paradox-of-voting` | `paradox-of-voting-turnout` (downs-1957, clark-2017 ch14, shepsle-2010 ch09; carries the political-science spine entry), `paradox-of-voting-cycle` (achen-2016 ch02, arrow-1951 ch05; joins arrow ch01's existing id) |
+   | `stereotype` | `stereotype-social` (kahneman-2011 ch16), `stereotype-semantic` (putnam-1975); Lippmann's records already use `stereotype-lippmann` |
+   The plain ids get a generated `type: disambiguation` page listing the senses, so `[[priming]]` etc. in
+   the digests still resolve; every sense id gets a page. Records carry `split_from`. The build stops if an
+   id is both a split id and an alias, and reports any split that matches no record.
+4. **Kelly id mismatch.** `wiki/kg/work-aliases.json` maps `kelly-1956-new` (information-theory canon and
+   catalog) → `kelly-1956-information` (digested work). Applied when reading the catalog (both listings now
+   count for the work, so its tier becomes `core` instead of `deep`) and the canon instances (Kelly's
+   gambler now matches `private-wire-gambler` by rule `same-work-tokens`, not only by the manual list).
+
+| measure | phase 2 (committed) | after this update |
+|---|---|---|
+| digests parsed | 1,339 (1,516 if index.md were read) | 1,339 |
+| distinct canonical concept ids | 7,999 | 8,002 |
+| concept pages | 1,679 (+241 alias stubs) | 1,683 (+241 alias stubs, +4 disambiguation pages) |
+| concepts in ≥ 3 / ≥ 2 fields (strong) | 197 / 1,264 | 197 / 1,261 |
+| concept ids in one digest only | 6,423 | 6,427 |
+| merge-candidate groups (rule 2 / rule 4) | 15 / 734 | 14 / 731 |
+| canon instances matched (instance record / incl. concept) | 117 / 138 | 117 / 138 (Kelly now matched automatically) |
+| parse problems | 0 | 0 |
+
+Verification after the rebuild: hub quotes **299 / 299** exact substrings of the cited digest; page refs
+**196 / 196** found (no hub-quoted digest text changed in the post-01 digest fixes, see
+`pipeline/reviews/audit/post01-digest-fixes.md`). Two consecutive builds are byte-identical.
+
 ## Open issues
 
-1. **Mixed-sense ids that an alias cannot split** (listed in `merge-review.md`): `value-function`
-   (prospect theory vs RL cost-to-go), `priming` (media vs cognitive), `paradox-of-voting` (Condorcet
-   cycle vs Downs's turnout paradox), `stereotype` (Lippmann / Kahneman / Putnam). A record-level override
-   (digest + id → new id) would fix them without touching the digests.
+1. ~~Mixed-sense ids that an alias cannot split~~ — done by record-level splits (update above). Possible
+   follow-ups for review: `priming-cognitive` ≟ `priming-effect` (Kahneman ch04), `priming-media` ≟
+   `priming-agenda-setting`, `value-function-econ` ≟ `prospect-theory-value-function`; and confirming the
+   canon instance "Paradox of voting (calculus of voting)" to `concept:paradox-of-voting-turnout` in
+   `instance-matches.json`.
 2. **51 review items** in `merge-review.md` need a human decision (e.g. `assignment-mechanism-ignorability`
    ≟ `ignorability`, `concept-drift` ≟ `concept-shift`, `shannon-information` ≟ `entropy`).
 3. **merge-candidates.md is still long** (rule 4, containment, 734 ids): most are sub-concepts, not synonyms;
    further curation should be done on the ids with ≥ 2 digests first.
 4. **Bridge targets**: 524 bridges name a target that is neither a field nor a known discipline/concept
-   (mapped to `other:<slug>`), and 606 bridges name no target field at all. The ML → llm policy is a choice;
-   change it in `field-map.json` if the canon gets an ML field.
-5. **Canon data issues (read-only for this phase)**: the information-theory canon names the Kelly instance's work
-   `kelly-1956-new`, while the catalog id is `kelly-1956-information`; the Kelly gambler instance appears in two
-   canon files under two ids.
+   (mapped to `other:<slug>`), and 606 bridges name no target field at all. The ML → llm policy is now a
+   recorded, user-approved decision (update above); change it in `field-map.json` only if the canon gets an ML field.
+5. **Canon data issues (read-only)**: the Kelly work-id mismatch (`kelly-1956-new` vs `kelly-1956-information`)
+   is now aliased inside the KG (`work-aliases.json`); the canon files themselves still carry both ids, and the
+   Kelly gambler instance still appears in two canon files under two ids (both match `private-wire-gambler`).
 6. **Unmatched canon instances**: 30 belong to works not digested; 5 have digested works but no matching
    instance (2008 financial crisis, Dennett's false-belief proposal, few-shot curves, least squares as
    orthogonal projection, Downs's paradox of voting).

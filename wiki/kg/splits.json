@@ -1,0 +1,44 @@
+{
+ "_about": "Record-level overrides for concept ids that mix two meanings (curated 2026-10-15, user-approved; see PHASE2.md). Each split maps one (digest, normalised id) record to a disambiguated id, chosen by reading that record's definition. Applied by scripts/build_kg.py after id normalisation and before aliases.json; the digests are not edited. 'spine' re-points a canon spine id whose plain name is now split to the sense its canon definition has. The plain id gets a generated disambiguation page.",
+ "splits": [
+  {"digest": "thaler-2015-misbehaving/ch04-value", "id": "value-function", "to": "value-function-econ",
+   "why": "'S-shaped curve over gains and losses from a reference point': prospect theory's value function"},
+  {"digest": "todorov-2002-ofc/main", "id": "value-function", "to": "value-function-rl",
+   "why": "'v*(t,x), the optimal cost-to-go; it determines pi*': dynamic-programming / RL value function"},
+  {"digest": "entman-1993-framing/main", "id": "priming", "to": "priming-media",
+   "why": "'framing primes values differentially, establishing salience': media priming"},
+  {"digest": "lazer-2018-fakenews/main", "id": "priming", "to": "priming-media",
+   "why": "'media ... are far more successful at changing what we think about': media effect (agenda-setting/priming)"},
+  {"digest": "kahneman-2011-thinking/ch11-anchors", "id": "priming", "to": "priming-cognitive",
+   "why": "'an idea or number automatically activates compatible thoughts': cognitive (associative) priming"},
+  {"digest": "achen-2016-realists/ch02-elusive", "id": "paradox-of-voting", "to": "paradox-of-voting-cycle",
+   "why": "'the majority-decision paradox explored by Condorcet and Dodgson': Condorcet cycle (same sense as Arrow ch01's existing paradox-of-voting-cycle)"},
+  {"digest": "arrow-1951-socialchoice/ch05-v", "id": "paradox-of-voting", "to": "paradox-of-voting-cycle",
+   "why": "'majority decision violates Condition 1 for more than two alternatives': Condorcet cycle"},
+  {"digest": "downs-1957-democracy/main", "id": "paradox-of-voting", "to": "paradox-of-voting-turnout",
+   "why": "'since a decisive vote is very unlikely, information for voting is not worth buying': Downs's decisive-vote paradox"},
+  {"digest": "clark-2017-principles/ch14-social-p1", "id": "paradox-of-voting", "to": "paradox-of-voting-turnout",
+   "why": "'voting is costly and one vote is very unlikely to decide': turnout paradox"},
+  {"digest": "shepsle-2010-analyzing/ch09-collective-p2", "id": "paradox-of-voting", "to": "paradox-of-voting-turnout",
+   "why": "'the chance of making or breaking a tie is tiny, so instrumental voting seems irrational': turnout paradox"},
+  {"digest": "kahneman-2011-thinking/ch16-causes", "id": "stereotype", "to": "stereotype-social",
+   "why": "'group statement accepted ... as fact about every member': social-cognition stereotype (Lippmann's sense stays stereotype-lippmann)"},
+  {"digest": "putnam-1975-meaning/main", "id": "stereotype", "to": "stereotype-semantic",
+   "why": "'the conventional (possibly inaccurate) idea of a kind that speakers must acquire': Putnam's semantic stereotype"}
+ ],
+ "spine": {
+  "priming": "priming-media",
+  "paradox-of-voting": "paradox-of-voting-turnout"
+ },
+ "senses": {
+  "value-function-econ": "prospect theory: S-shaped value of gains and losses from a reference point",
+  "value-function-rl": "dynamic programming / RL / optimal control: optimal cost-to-go or expected return",
+  "priming-media": "media priming: emphasis changes the standards used to judge leaders or issues",
+  "priming-cognitive": "cognitive priming: an idea automatically activates related ideas",
+  "paradox-of-voting-cycle": "Condorcet: pairwise majority preferences can cycle",
+  "paradox-of-voting-turnout": "Downs: one vote is almost never decisive, so costly voting seems irrational",
+  "stereotype-social": "social cognition: a belief about a group applied to its members",
+  "stereotype-semantic": "Putnam: the conventional idea of a kind that a speaker must acquire",
+  "stereotype-lippmann": "Lippmann: a culturally supplied picture in the head that shapes perception"
+ }
+}
