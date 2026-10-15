@@ -11,7 +11,7 @@ Let's start with a game. Take a book you have never read. Cover the page, and un
 
 Claude Shannon ran this experiment and published it in nineteen fifty-one. Most of the time, the answer was one. The person guessed right on the first try. In one run, seventy-nine of one hundred and two letters were right on the first guess. That is about seventy-seven percent.
 
-Then Shannon made a surprising point. Imagine an identical twin of the guesser. Give the twin only the list of guess numbers. At each position, the twin guesses in the same order as the first person, and stops at the right number. So the twin can rebuild the whole text. The lesson is simple, and it is the seed of this whole post. A good predictor is also a good compressor. The better you predict, the shorter the message you need.
+Then Shannon made a surprising point. Imagine an identical twin of the guesser. Give the twin only the list of guess numbers. At each position, the twin guesses in the same order as the first person, and stops at the right number. So the twin can rebuild the whole text. So the first person is the encoder, and the twin is the decoder. The twin never guesses a number. It receives the numbers, and uses them to know when to stop guessing. And because the numbers are mostly ones, they can be written down in very few bits. The lesson is simple, and it is the seed of this whole post. A good predictor is also a good compressor. The better you predict, the shorter the message you need.
 
 Today we have machines that play exactly this game, at a huge scale. A large language model reads text one token at a time. A token is a word, or a piece of a word. For every possible next token, the model gives a probability.
 
