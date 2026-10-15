@@ -280,3 +280,6 @@ svg.fig .bubble{fill:var(--card);stroke:var(--ink);stroke-width:1}
 .chartbox svg{max-width:520px}
 .pmsg{font:12px var(--f-ui);color:var(--stamp);white-space:normal}
 .figcap{font:13px/1.45 var(--f-ui);color:var(--muted);margin:-6px 0 10px}
+.loop-para{margin:14px 0;padding:14px 16px;background:var(--card);border-left:3px solid var(--stamp);font:18px/1.75 var(--f-body)}
+.loop-para i{font-style:normal;background:var(--stamp-soft);border-radius:2px;padding:0 2px}
+.loop-steps{font:15.5px/1.55 var(--f-ui);padding-left:22px;display:grid;gap:6px;margin:12px 0 18px}

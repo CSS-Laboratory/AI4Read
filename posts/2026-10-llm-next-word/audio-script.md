@@ -224,3 +224,6 @@ Nine. A talking point, not a result. Our bits-per-letter conversion is a talking
 Ten. The burden of proof lies with. Ullman thinks the burden of proof lies with those who claim the ability has emerged.
 
 That's the end of post one. Thank you for listening.
+
+## c1-loop | C1 paragraph to loop
+What Shannon showed was that predicting text and compressing it are the same problem. On the face of it, then, a model that predicts well must know a lot. But what does it actually know? Granted, the loss tells us how many bits the model saves. But it cannot tell us what those bits are about. Xie's account suggests that a prompt selects a hidden concept, but only if the model fits its training data exactly, and that's a big if. Attention maps are tempting, but we shouldn't read too much into them. The theory-of-mind results should give us pause: a drop from almost perfect to zero after one small change is a far cry from robust understanding. Then again, the argument cuts both ways, because people fail some of those changes too. In the end, the debate boils down to what we mean by meaning. Piantadosi and Hill stop short of saying that models understand language as we do, and for now, the jury is still out.

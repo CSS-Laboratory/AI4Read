@@ -235,6 +235,7 @@ if(CH.length){
   paint();
   probe().then(r=>{P.engine=r.engine;if(r.engine==="none")msg("This view cannot play audio here. Use “Save as one MP3” in the chapter list.");cacheOne(P.i)});
 } else bar.hidden=true;
+$$("[data-play-ch]").forEach(b=>b.addEventListener("click",()=>{const i=CH.findIndex(c=>c.id===b.dataset.playCh);if(i<0)return;P.mode="one";LS.set("mode","one");if(P.engine==="wa")ac();load(i,true)}));
 
 /* ---------- Sheets ---------- */
 let scrim=null,sheet=null;
