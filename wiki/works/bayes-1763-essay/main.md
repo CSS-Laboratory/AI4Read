@@ -13,14 +13,16 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 14
 pipeline_version: 0.1
+audited: 2026-10-15
+audit_fixes: 11
 ---
 # An Essay towards Solving a Problem in the Doctrine of Chances (Price's letter, Section I, Section II up to the Scholium)
 
 ## L0 — One line
-Bayes uses rules built from expectations, plus a ball-on-a-table model, to show how to find the chance that an unknown event's single-trial probability lies between two values, given only how often it happened and failed; he argues that the model fits events about which nothing is known beforehand.
+Bayes uses rules built from expectations, plus a ball-on-a-table model, to show how to find the chance that an unknown event's single-trial probability lies between two values, given only how often it happened and failed; he gives a reason why the rule seems to fit events about which nothing is known beforehand.
 
 ## L1 — The gist (≤ 120 words)
-Bayes asks the inverse of De Moivre's problem. Given that an unknown event happened p times and failed q times, what is the chance that its single-trial probability lies between two named values? He builds the sum and product rules from expectations (Section I). He then models the unknown probability by the landing point of a ball on a level table (Section II). The answer (Prop. 9) is a ratio of areas under the curve $y=E x^p r^q$. A scholium (a note added after a proposition) gives a reason why the same rule seems to fit any event about which nothing is known beforehand. The unit stops there.
+Price presents Bayes's problem as the converse of De Moivre's. Given that an unknown event happened p times and failed q times, what is the chance that its single-trial probability lies between two named values? He builds the sum and product rules from expectations (Section I). He then models the unknown probability by the landing point of a ball on a level table (Section II). The answer (Prop. 9) is a ratio of areas under the curve $y=E x^p r^q$. A scholium (a note added after a proposition) gives a reason why the same rule seems to fit any event about which nothing is known beforehand. The unit stops there.
 
 **Prerequisites:** ratios and proportions; the binomial expansion; area under a curve; the idea of "expectation" as value of a bet.
 
@@ -38,12 +40,12 @@ Bayes asks the inverse of De Moivre's problem. Given that an unknown event happe
 ### Price's letter (pp. 8–11)
 **Voice: Price, reporting Bayes.**
 - Price found the essay among Bayes's papers after his death and judged it worth preserving (p. 8).
-- Bayes's first aim was to judge the probability of an event, knowing only that in the same circumstances it had happened some number of times and failed some number of times (pp. 8–9).
+- Bayes's first aim was to judge the probability of an event, knowing only that in the same circumstances it had happened some number of times and failed some number of times (p. 8).
 - Bayes soon saw this would not be very difficult if one had a rule for the chance, before any experiment, that the unknown probability lies between two named degrees. It appeared to him that the rule must be to take the chance as the same for any two equidifferent degrees, i.e. equal-width intervals get equal chance. Price says Bayes did solve the problem this way (p. 8).
-- Bayes then considered that this postulate might not be looked upon by all as reasonable. So he stated a proposition in another form and put his reasons for it in a scholium, to keep disputable matter out of his mathematics (pp. 8–9).
+- Bayes then considered that this postulate might not perhaps be looked upon by all as reasonable. So he stated a proposition in another form and put his reasons for it in a scholium, to keep disputable matter out of his mathematics (pp. 8–9).
 - Price says the problem must be solved to give a sure foundation for reasoning about past facts and what is likely hereafter, and must be considered by anyone who wants a clear account of the strength of inductive reasoning (p. 9).
 - Price says that De Moivre (after Bernoulli) gives rules for the **direct** problem: how far the observed proportion of happenings is likely to differ from the single-trial probability. He knows of no one who solved the converse. He adds that De Moivre's rules are not pretended to be rigorously exact except for infinitely many trials, so it is not obvious how many trials suffice in practice (pp. 9–10).
-- Price says that the converse problem shows, for any observed order or recurrence, what reason there is to think it comes from stable causes rather than chance (p. 10).
+- Price says De Moivre applied his solution to show that there are fixed laws by which events happen, so that the frame of the world must be the effect of an intelligent cause, confirming the argument from final causes for the existence of the Deity. The converse problem, Price says, is more directly applicable to this purpose: it shows, for any observed order or recurrence, what reason there is to think it comes from stable causes rather than chance (p. 10).
 - The last two rules of the essay are given without proof, and Price adds an appendix of applications. Neither is in these pages (p. 10).
 - Price says Bayes apologised for his peculiar definition of probability. Bayes wanted to cut off disputes, and he used what all will allow to be the measure of probability: an expectation is worth more the likelier the event (p. 11).
 
@@ -73,7 +75,7 @@ Given the number of times an unknown event has happened and failed, find the cha
 - Let me receive $N$ if both happen. Let $P/N$ be the probability of both, $a/N$ of the 1st, and $b/N$ of the 2nd given the 1st. The expectation is worth $P$; if the 1st happens it becomes worth $b$ (p. 13).
 - If the 1st happens my gain is $b-P$. If it fails my loss is $P$ (p. 14).
 - By Prop. 2: $\frac aN : \frac{N-a}{N} = P : b-P$, i.e. $a : N-a :: P : b-P$ (p. 14).
-- *Componendo inversè* gives $a : N :: P : b$. (added step: from $\frac{a}{N-a}=\frac{P}{b-P}$ we get $\frac{N-a}{a}=\frac{b-P}{P}$, so $\frac Na=\frac bP$.) Hence $\frac PN=\frac Pb\cdot\frac bN=\frac aN\cdot\frac bN$ (p. 14).
+- *Componendo inversè* (a classical rule for rearranging proportions) gives $a : N :: P : b$. (added step: from $\frac{a}{N-a}=\frac{P}{b-P}$ we get $\frac{N-a}{a}=\frac{b-P}{P}$, so $\frac Na=\frac bP$.) Hence $\frac PN=\frac Pb\cdot\frac bN=\frac aN\cdot\frac bN$ (p. 14).
 - Corollary: if the 1st has probability $a/N$ and both together $P/N$, the 2nd given the 1st has probability $P/a$ (p. 14).
 
 **Prop. 4.** Two events are determined each day. The 2nd has probability $b/N$ and both have probability $P/N$ each day. I receive $N$ if both happen on the first day on which the 2nd happens. Then the probability of obtaining $N$ is $P/b$ (p. 14).
@@ -86,7 +88,7 @@ Given the number of times an unknown event has happened and failed, find the cha
 - So the probability of obtaining $N$ is still $P/b$. But that probability is now the probability that the 1st event has happened, given that the 2nd has. The probability that an event has happened equals the probability of guessing right when guessing it has (pp. 15–16).
 
 **Prop. 5.** For two subsequent events, with probability $b/N$ for the 2nd and $P/N$ for both, if it is first discovered that the 2nd happened and I guess the 1st also happened, the probability I am right is $P/b$ (pp. 15–16).
-- Footnote (p. 15): what is lost when the 2nd event happens is only a chance of being reinstated. That chance is always as much against me as for me, so the loss is no disadvantage.
+- Footnote (p. 15; voice unclear — Price says he added short notes, p. 10): what is lost when the 2nd event happens is only a chance of being reinstated. That chance is always as much against me as for me, so the loss is no disadvantage.
 - Footnote (p. 16; it refers to Mr. Bayes in the third person, so it is not Bayes's own wording): this is the same as asking for the probability that an event, when it happens, comes with another. With $x$ the probability of the other event, $\frac pN=\frac bN x$, so $x=\frac pb$.
 
 *Intuition note.* Props. 3 and 5 together are the rule for turning the probability of both events and the probability of the second event into the probability of the first given the second. In modern terms, this is conditional probability.
@@ -108,8 +110,8 @@ If an event has probability $a$ and failure $b$ in each trial, the probability t
 2. Ball $W$ is thrown first, and a line $os$ parallel to $AD$ is drawn through where it rests. Ball $O$ is then thrown $p+q=n$ times. Its resting between $AD$ and $os$ is called the happening of the event $M$ in a single trial.
 
 **Lemma 1.** The probability that the point $o$ falls between two points of line $AB$ is the ratio of the distance between them to the whole line $AB$ (p. 18).
-- Commensurable case: cut the plane into equal parts. Inconsistent events (resting on different parts) sum by Prop. 1, so the probability is proportional to the number of parts, i.e. to the width (p. 18).
-- Incommensurable case: the probability can be neither less nor greater than $fb/AB$. If it were less, choose points $p, t$ with commensurable segments and $pt$ larger than the supposed value. Then probability $\ge pt/AB>$ the supposed value, a contradiction. The "greater" case is the same (pp. 18–20).
+- Commensurable case (lengths that are whole multiples of one common unit): cut the plane into equal parts. Inconsistent events (resting on different parts) sum by Prop. 1, so the probability is proportional to the number of parts, i.e. to the width (p. 18).
+- Incommensurable case: the probability can be neither less nor greater than $fb/AB$. If it were less, choose points $p, t$ on $fb$ with $Bp, pt, tA$ commensurable and $pt$ larger than the supposed value. Then probability $\ge pt/AB>$ the supposed value, a contradiction. The "greater" case is the same (pp. 18–20).
 
 **Lemma 2.** After $W$ is thrown, the probability of $M$ in a single trial is $Ao/AB$ (p. 20).
 
@@ -123,11 +125,11 @@ Erect on $BA$ a figure $BghikmA$ with this property.
 **Claim.** Before $W$ is thrown, the probability that $o$ falls between $f$ and $b$ and that $M$ happens $p$ times and fails $q$ times in $p+q$ trials is the ratio of the area $fghikmb$ to the square $CA$ on $AB$ (p. 20).
 
 **Demonstration (by contradiction).**
-- Suppose first that the ratio is $D/CA$, with area $D$ greater than $fghikmb$. Choose points $e,d,c$ on $fb$, with $di$ the longest ordinate. Choose them so that the rectangles on $ef$, $ed$, $dc$, $cb$ together differ from the figure by less than $D$ does. Ordinates decrease on each side of $di$ (pp. 20–21).
+- Suppose first that the ratio is $D/CA$, with area $D$ greater than $fghikmb$. Choose points $e,d,c$ on $fb$, with $di$ the longest ordinate (a perpendicular from the base up to the curve). Choose them so that the rectangles on $ef$, $ed$, $dc$, $cb$ together differ from the figure by less than $D$ does. Ordinates decrease on each side of $di$ (pp. 20–21).
 - If $Ao=Ae$, then by Lemma 2 the single-trial chance is $x=Ae/AB$, with failure $r=Be/AB$. By Prop. 7 the probability of the counts is $Ex^pr^q=y=eh/AB$ (p. 21).
 - For $o$ anywhere between $f$ and $e$, the probability of the counts is therefore at most $eh/AB$, since $eh$ is the greatest ordinate on $ef$ (p. 21).
 - By Lemma 1, $P(o\in ef)=ef/AB$. By Prop. 3, the probability of both is at most $\frac{ef}{AB}\cdot\frac{eh}{AB}$, i.e. the ratio of the rectangle $fh$ to $CA$. The same holds for each other sub-interval (p. 21).
-- By Prop. 1 the sum of the four bounds bounds the probability on $fb$. So the probability is below $D/CA$, because the rectangles total less than $D$. This contradicts the supposition (pp. 21–22).
+- By Prop. 1 the sum of the four bounds bounds the probability on $fb$. So the probability is below $D/CA$, because the rectangles total less than $D$. This contradicts the supposition (p. 21).
 - Inscribed rectangles show likewise that the probability exceeds the ratio of any smaller figure to $CA$. So it equals $fghikmb/CA$ (p. 21).
 
 **Corollary.** Since $o$ certainly lies on $AB$, the probability, before $W$ is thrown, that $M$ happens $p$ times and fails $q$ times in $p+q$ trials is $AiB/CA$ (pp. 21–22).
@@ -151,8 +153,8 @@ Erect on $BA$ a figure $BghikmA$ with this property.
 - For an event like $M$, Prop. 9 lets one guess where its probability lies from its counts alone, and compute the chance the guess is right (p. 22).
 - Bayes says it seems to appear that this rule is also the proper one for an event about whose probability one knows absolutely nothing before any trials (pp. 22–23).
 - His reason: for such an event one has no reason to expect any one number of happenings in $n$ trials rather than another. One may then reason as if its probability were first unfixed and then fixed so as to give no such reason (p. 22).
-- This is exactly the case for $M$. Before $W$ is thrown, the probability of $p$ happenings in $n$ trials is $AiB/CA$. For a given $n$, this ratio is the same whatever $p$ is, as computing $AiB$ by the method of fluxions will show, Bayes says (p. 23).
-- Footnote: Bayes says it will be proved presently, in art. 4, that $AiB$ contracted in the ratio $E$ to $1$ is to $CA$ as $1$ to $(n+1)\times E$. So $AiB:CA=1:(n+1)$, constant for given $n$ (p. 23). The proof is not in these pages.
+- This is exactly the case for $M$. Before $W$ is thrown, the probability of $p$ happenings in $n$ trials is $AiB/CA$. For a given $n$, this ratio is the same whatever $p$ is, as computing $AiB$ by the method of fluxions (Newton's calculus) will show, Bayes says (p. 23).
+- Footnote (voice unclear; Price says he added short notes, p. 10): it will be proved presently, in art. 4, that $AiB$ contracted in the ratio $E$ to $1$ is to $CA$ as $1$ to $(n+1)\times E$. So $AiB:CA=1:(n+1)$, constant for given $n$ (p. 23). The proof is not in these pages.
 - Bayes then takes the Prop. 9 rule as the rule for any event about which nothing is known beforehand, and calls such an event an **unknown event** (p. 23).
 
 ## Toy example (ours, not from the text)
@@ -199,7 +201,7 @@ Every count has probability $\tfrac13=\tfrac1{n+1}$ before $W$ is thrown. This m
 
 ## Reading notes
 - Printed page = pdf page + 7. The inline "(page 371)" etc. mark the original journal pages; I cite printed pages only.
-- This unit ends at the scholium (original p. 394). The essay is longer (metadata: pp. 370–418), but later propositions, the appendix and the "last two rules" are not in these pages.
+- This unit ends at the scholium (original p. 394). The essay continues beyond these pages: later propositions, the appendix and the "last two rules" are not in these pages.
 - Page headers read "Chapter 2 / The Essay" and "Version zh25a.doc … 13 July, 2001", so this is a reprint copied from the Philosophical Transactions (p. 8).
 - The text layer is garbled in places. I checked pdf pages 6, 7, 10–16.
 - Prop. 8 text reads "as A B, and B b" for the two parts of the base. Context needs $Ab$ (p. 20).

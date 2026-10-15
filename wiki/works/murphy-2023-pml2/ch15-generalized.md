@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 9
 pipeline_version: 0.1
+audited: 2026-10-15
+audit_fixes: 6
 ---
 # Generalized linear models (Murphy, PML2, ch. 15)
 
@@ -66,7 +68,7 @@ For logistic regression $f'=\mu_n(1-\mu_n)$. Since $f'(\eta_n)>0$, the author co
 
 *Intuition note.* With the canonical link, the gradient is just "residual times input", and the curvature is a positive-weighted sum of $xx^\top$. That is why fitting is a convex problem.
 
-**15.1.4 Bayesian inference (p. 596).** MLE gives no uncertainty, which hypothesis testing needs. Priors depend on the link: a flat prior on an offset $\alpha\in\mathbb R$ is not flat on the probability scale after a sigmoid (see 15.3.4). For small data, HMC is the easiest method: write the log likelihood and log prior and use autodiff. Packages named: Bambi, RStanARM, BRMS (formula syntax). For large data, HMC is slow (full batch); use variational Bayes, expectation propagation or specialised methods (p. 596).
+**15.1.4 Bayesian inference (p. 596).** MLE gives no uncertainty, which hypothesis testing needs. Priors depend on the link: a flat prior on an offset $\alpha\in\mathbb R$ is not flat on the probability scale after a sigmoid (see 15.3.4). For small data, HMC (Hamiltonian Monte Carlo, a gradient-guided MCMC sampler) is the easiest method: write the log likelihood and log prior and use autodiff. Packages named: Bambi, RStanARM, BRMS (formula syntax). For large data, HMC is slow (full batch); use variational Bayes (fit a simple approximating distribution by optimization), expectation propagation or specialised methods (p. 596).
 
 ### 15.2 Linear regression (pp. 596–611)
 Model: $p(y\mid x,\theta)=\mathcal N(y\mid w_0+w^\top x,\sigma^2)$ (15.39).
@@ -84,7 +86,7 @@ $$\mathrm{IG}(\sigma^2\mid\breve a,\breve b)=\frac{\breve b^{\breve a}}{\Gamma(\
 The product is the normal inverse gamma (NIG), $\mathrm{NIG}(w,\sigma^2\mid\breve w,\breve\Sigma,\breve a,\breve b)\triangleq\mathcal N(w\mid\breve w,\sigma^2\breve\Sigma)\mathrm{IG}(\sigma^2\mid\breve a,\breve b)$ (15.55–15.56). The posterior is NIG with
 $$\hat w=\hat\Sigma(\breve\Sigma^{-1}\breve w+X^\top y),\ \hat\Sigma=(\breve\Sigma^{-1}+X^\top X)^{-1},\ \hat a=\breve a+N/2,$$
 $$\hat b=\breve b+\tfrac12\big(\breve w^\top\breve\Sigma^{-1}\breve w+y^\top y-\hat w^\top\hat\Sigma^{-1}\hat w\big)\tag{15.57–15.61}$$
-$\hat a$ updates counts. $\hat b$ is the prior sum of squares, plus the empirical sum of squares $y^\top y$, plus a term for the error in the prior on $w$ (p. 598). Marginals: $p(\sigma^2\mid\mathcal D)=\mathrm{IG}(\sigma^2\mid\hat a,\hat b)$ (15.62) and $p(w\mid\mathcal D)=\mathcal T(w\mid\hat w,\frac{\hat b}{\hat a}\hat\Sigma,2\hat a)$ (15.63) (p. 598).
+$\hat a$ updates counts. $\hat b$ is the prior sum of squares, plus the empirical sum of squares $y^\top y$, plus a term for the error in the prior on $w$ (p. 598). Marginals: $p(\sigma^2\mid\mathcal D)=\mathrm{IG}(\sigma^2\mid\hat a,\hat b)$ (15.62) and $p(w\mid\mathcal D)=\mathcal T(w\mid\hat w,\frac{\hat b}{\hat a}\hat\Sigma,2\hat a)$ (15.63), where $\mathcal T(\cdot\mid\text{location},\text{scale},\text{dof})$ is the Student t distribution, a heavier-tailed Gaussian (p. 598).
 
 *Posterior predictive (p. 599).* For $N'$ new inputs $\tilde X$:
 $$p(\tilde y\mid\tilde X,\mathcal D)=\iint\mathcal N(\tilde y\mid\tilde Xw,\sigma^2I_{N'})\,\mathrm{NIG}(w,\sigma^2\mid\hat w,\hat\Sigma,\hat a,\hat b)\,dw\,d\sigma^2=\mathcal T\!\big(\tilde y\mid\tilde X\hat w,\tfrac{\hat b}{\hat a}(I_{N'}+\tilde X\hat\Sigma\tilde X^\top),2\hat a\big)\tag{15.64–15.66}$$
@@ -110,13 +112,13 @@ Ways to set $g$: cross-validation, empirical Bayes, hierarchical Bayes (p. 601).
 - Forcing $\beta>0$ with $\beta\sim\mathcal{LN}(0,1)$ (log-normal) is much more reasonable (Fig. 15.1b).
 - For $\sigma$, McElreath uses $\mathrm{Unif}(0,50)$. An easier alternative is $\sigma\sim\mathrm{Expon}(\lambda)$ with $\mathbb E[\sigma]=1/\lambda$ set to the expected standard deviation, e.g. the empirical one.
 
-These priors are not conjugate. A quadratic (Laplace) approximation suffices here (Fig. 15.1c) (p. 602). With children included, the relation is nonlinear (Fig. 15.2a). A quadratic term $\mu_i=\alpha+\beta_1x_i+\beta_2x_i^2$ (15.85) with a log-Gaussian prior on $\beta_2$ underfits: an inverted quadratic needs a negative coefficient, which the prior forbids ($\mathbb E[\beta_2\mid\mathcal D]\approx0.08$). A Gaussian prior on $\beta_2$ avoids this (Fig. 15.2). Lesson: think about the functional form when specifying priors (p. 603).
+These priors are not conjugate. A quadratic (Laplace) approximation suffices here (Fig. 15.1c) (p. 602). With children included, the relation is nonlinear (Fig. 15.2a). A quadratic expansion of the standardized features, $\mu_i=\alpha+\beta_1x_i+\beta_2x_i^2$ (15.85), with a log-Gaussian prior on $\beta_2$ underfits: an inverted quadratic needs a negative coefficient, which the prior forbids ($\mathbb E[\beta_2\mid\mathcal D]\approx0.08$). A Gaussian prior on $\beta_2$ avoids this (Fig. 15.2). Lesson: think about the functional form when specifying priors (p. 603).
 
 **15.2.5 Spike and slab (p. 603).** Sparse $w$ (many zeros) gives feature selection. The spike-and-slab prior is a two-component mixture per weight:
 $$p(w)=\prod_{d=1}^D(1-\pi)\delta(w_d)+\pi\,\mathrm{Unif}(w_d\mid-a,a),\tag{15.86}$$
 where $\pi$ is the prior probability of a non-zero coefficient. The log prior is $\|w\|_0\log(1-\pi)+(D-\|w\|_0)\log\pi=-\lambda\|w\|_0+\text{const}$ with $\lambda=\log\frac\pi{1-\pi}$ (15.87), as printed (see Reading notes). So MAP with this prior is $\ell_0$ regularization, and posterior samples are also sparse. By contrast, lasso (Laplace prior, MAP) is sparse but its posterior samples are not. [EY09] show theoretically, and [SPZ09] confirm experimentally, that the posterior mean under spike-and-slab predicts better than the posterior mode under a Laplace prior. In practice the slab is a broad Gaussian: $\prod_d(1-\pi)\delta(w_d)+\pi\mathcal N(w_d\mid0,\sigma_w^2)$ (15.88), implemented with binary indicators $s_d\sim\mathrm{Ber}(\pi)$. MAP and full inference with such discrete mixtures are computationally hard; approximations are greedy search or MCMC (p. 604).
 
-**15.2.6 Laplace prior / Bayesian lasso (pp. 604–605).** Lasso is MAP under a Laplace prior: $\mathrm{PNLL}(w)=\|Xw-y\|_2^2+\lambda\|w\|_1+\text{const}$ (15.89). The Bayesian lasso assumes $p(w\mid\sigma^2)=\prod_j\frac{\gamma}{2\sqrt{\sigma^2}}e^{-\gamma|w_j|/\sqrt{\sigma^2}}$ (15.90). Conditioning on $\sigma^2$ ensures a unimodal full posterior. The Laplace is a Gaussian scale mixture:
+**15.2.6 Laplace prior / Bayesian lasso (pp. 604–605).** Lasso is MAP under a Laplace prior: $\mathrm{PNLL}(w)=\|Xw-y\|_2^2+\lambda\|w\|_1+\text{const}$ (15.89). The Bayesian lasso assumes $p(w\mid\sigma^2)=\prod_j\frac{\gamma}{2\sqrt{\sigma^2}}e^{-\gamma|w_j|/\sqrt{\sigma^2}}$ (15.90). Conditioning on $\sigma^2$ ensures a unimodal full posterior. The Laplace is a Gaussian scale mixture (a weighted average of zero-mean Gaussians with different variances):
 $$\mathrm{Laplace}(w\mid0,\gamma)=\int\mathcal N(w\mid0,\tau^2)\,\mathrm{Ga}(\tau^2\mid1,\gamma^2/2)\,d\tau^2\tag{15.91}$$
 This gives the hierarchical model (Fig. 15.3a), with joint $p(y,w,\tau,\sigma^2\mid X)=\mathcal N(y\mid Xw,\sigma^2I_N)\big[\prod_j\mathcal N(w_j\mid0,\sigma^2\tau_j^2)\mathrm{Ga}(\tau_j^2\mid1,\gamma^2/2)\big]p(\sigma^2)$ (15.92). The group lasso, which zeroes several coefficients together, uses $w_g\mid\sigma^2,\tau_g^2\sim\mathcal N(0,\sigma^2\tau_g^2I_{d_g})$, $\tau_g^2\sim\mathrm{Ga}(\frac{d_g+1}2,\frac{\gamma^2}2)$ (15.93–15.94). If $w_{1,1}$ is small, $\tau_1^2$ is estimated small, forcing $w_{1,2}$ small; if large, $w_{1,2}$ may be large (Fig. 15.3b) (p. 605). A Gibbs sampler is easy, but samples are not sparse even though the MAP is, because the prior gives infinitesimal probability to a coefficient being exactly zero (p. 605).
 
@@ -124,7 +126,7 @@ This gives the hierarchical model (Fig. 15.3a), with joint $p(y,w,\tau,\sigma^2\
 $$w_j\sim\mathcal N(0,\gamma_j^2\tau^2),\quad\gamma_j\sim\mathcal C_+(0,1),\quad\tau^2\sim\mathcal C_+(0,1)\tag{15.95–15.97}$$
 ($\mathcal C_+$ is half-Cauchy.) $\gamma_j$ is a local, $\tau$ a global shrinkage factor. Fat Cauchy tails make $w_j$ likely either near 0 or very far from 0, emulating spike-and-slab continuously (p. 606).
 
-**15.2.8 Automatic relevancy determination (ARD) (pp. 606–608).** Use a Gaussian prior $w_j\sim\mathcal N(0,1/\alpha_j)$ and optimize precisions by empirical Bayes: $\hat\alpha=\arg\max_\alpha p(y\mid X,\alpha)$, then $\hat w$ given $\hat\alpha$. Perhaps surprisingly the result is sparse (also called sparse Bayesian learning, NUV estimation) (p. 606).
+**15.2.8 Automatic relevancy determination (ARD) (pp. 606–608).** Use a Gaussian prior $w_j\sim\mathcal N(0,1/\alpha_j)$ and optimize precisions by empirical Bayes (choosing prior parameters by maximizing the marginal likelihood): $\hat\alpha=\arg\max_\alpha p(y\mid X,\alpha)$, then $\hat w$ given $\hat\alpha$. Perhaps surprisingly the result is sparse (also called sparse Bayesian learning, NUV estimation) (p. 606).
 
 *15.2.8.1 ARD for linear models.* Likelihood $\mathcal N(y\mid w^\top x,1/\beta)$, $\beta=1/\sigma^2$; prior $\mathcal N(w\mid0,A^{-1})$, $A=\mathrm{diag}(\alpha)$. The marginal likelihood is
 $$p(y\mid X,\alpha,\beta)=\int\mathcal N(y\mid Xw,\beta^{-1}I_N)\mathcal N(w\mid0,A^{-1})dw=\mathcal N(y\mid0,C_\alpha),\quad C_\alpha=\beta^{-1}I_N+XA^{-1}X^\top\tag{15.98–15.100}$$
@@ -144,7 +146,7 @@ The ARD objective is not convex but tends to give much sparser results than $\el
 
 **15.2.9 Multivariate linear regression (pp. 608–610; section by Xinglong Li).** Model $Y=WX+E$ with $W\in\mathbb R^{N_y\times N_x}$, $X\in\mathbb R^{N_x\times N}$, $Y\in\mathbb R^{N_y\times N}$ (columns are observations), $E=[e_1,\dots,e_N]$, $e_i\overset{iid}\sim\mathcal N(0,\Sigma)$ (15.105). Likelihood:
 $$p(Y\mid W,X,\Sigma)=\frac{\exp\!\big(-\tfrac12\mathrm{tr}[(Y-WX)^\top\Sigma^{-1}(Y-WX)]\big)}{(2\pi)^{N_y\times N}|\Sigma|^{N/2}}=\mathcal{MN}(Y\mid WX,\Sigma,I_{N\times N})\tag{15.106–15.108}$$
-Conjugate prior: matrix normal inverse Wishart, $W,\Sigma\sim\mathrm{MNIW}(M_0,V_0,\nu_0,\Psi_0)$, i.e. $W\mid\Sigma\sim\mathcal{MN}(M_0,\Sigma,V_0)$ (printed with $\Sigma_0$) and $\Sigma\sim\mathrm{IW}(\nu_0,\Psi_0)$, with $V_0\in\mathbb R_{++}^{N_x\times N_x}$, $\Psi_0\in\mathbb R_{++}^{N_y\times N_y}$, $\nu_0>N_x-1$ (15.109–15.111). Joint density:
+Conjugate prior: matrix normal inverse Wishart (matrix normal: Gaussian over a matrix with row and column covariances; inverse Wishart: distribution over covariance matrices), $W,\Sigma\sim\mathrm{MNIW}(M_0,V_0,\nu_0,\Psi_0)$, i.e. $W\mid\Sigma\sim\mathcal{MN}(M_0,\Sigma,V_0)$ (printed with $\Sigma_0$) and $\Sigma\sim\mathrm{IW}(\nu_0,\Psi_0)$, with $V_0\in\mathbb R_{++}^{N_x\times N_x}$, $\Psi_0\in\mathbb R_{++}^{N_y\times N_y}$, $\nu_0>N_x-1$ (15.109–15.111). Joint density:
 $$p(Y,W,\Sigma)\propto|\Sigma|^{-(\nu_0+N_y+1+N_x+N)/2}\exp\{-\tfrac12\mathrm{tr}(\Omega_0)\},$$
 $$\Omega_0\triangleq\Psi_0\Sigma^{-1}+(Y-WX)^\top\Sigma^{-1}(Y-WX)+(W-M_0)^\top\Sigma^{-1}(W-M_0)V_0\tag{15.112–15.113}$$
 Complete the square in $W$ (as in Section 3.4.4.3):
@@ -186,7 +188,7 @@ The multiclass generalized probit approximation [Gib97] is $\mathrm{softmax}\big
 
 **15.3.7 MCMC (pp. 617–618).** MCMC makes no assumption about the posterior form; samples give $q(\theta\mid\mathcal D)\approx\frac1S\sum_s\delta(\theta-\theta^s)$ (15.151), which can be plugged into (15.147). Example with HMC: iris data, two features (sepal length, width), two classes (text: Virginica vs non-Virginica; the Fig. 15.8 caption says setosa vs versicolor). The boundary is the line $x_2^*=-\frac b{w_2}+(-\frac{w_1}{w_2})x_1^*$ (15.152); sampling $(w_1,w_2,b)$ gives a posterior over boundaries (Fig. 15.8a: mean line and 95% credible band, wider away from the data). With imbalanced classes (Fig. 15.8b) uncertainty increases and the posterior mean boundary shifts toward the class with less data. The author links this to linear discriminant analysis, where changing the class prior moves the boundary so more of the input space goes to the a-priori more likely class (p. 618).
 
-**15.3.8 Other methods (p. 618).** Variational inference: choose $q(w;\psi)$ and maximize the ELBO (making KL small), via a stochastic ELBO estimate, conditionally conjugate VI, or a local quadratic bound on the logistic function. For online data, assumed density filtering recursively gives a Gaussian $p(w\mid\mathcal D_{1:t})$.
+**15.3.8 Other methods (p. 618).** Variational inference: choose $q(w;\psi)$ and maximize the ELBO (evidence lower bound, a lower bound on the log marginal likelihood), which makes the KL divergence to the posterior small, via a stochastic ELBO estimate, conditionally conjugate VI, or a local quadratic bound on the logistic function. For online data, assumed density filtering recursively gives a Gaussian $p(w\mid\mathcal D_{1:t})$.
 
 **15.3.9 Case study: Berkeley admissions (pp. 618–620).** Data from [BHO75]: 6 departments (A–F) × 2 genders (Table 15.1, 12 rows), total $N=4526$ applicants. Question: does gender "cause" imbalanced admission rates?
 
@@ -230,9 +232,9 @@ This is a generalized linear mixed model. The shared $\theta^0$ are *fixed effec
 
 **15.5.2 Radon regression (pp. 626–629).** Simplified radon example [Gel+14a, Sec 9.4]: predict log radon level from county (categorical) and a binary floor feature, in $J=85$ Minnesota counties with 2–80 measurements each. Likelihood: $p(y_n\mid x_n,g_n=j,\theta)=\mathcal N(y_n\mid\alpha_j+\beta_jx_n,\sigma_y^2)$ (15.190), with $x_n\in\{0,1\}$ for basement (level 0) or above ground (level 1). Hierarchical prior $\alpha_j\sim\mathcal N(\mu_\alpha,\sigma_\alpha^2)$, $\beta_j\sim\mathcal N(\mu_\beta,\sigma_\beta^2)$; weak priors $\mu_\alpha,\mu_\beta\sim\mathcal N(0,1)$, $\sigma_\alpha,\sigma_\beta,\sigma_y\sim\mathcal C_+(1)$ (Fig. 15.14, p. 627).
 - *Posterior (Figs. 15.15–15.16).* $\mu_\beta$ is close to $-0.6$ with high probability, supporting the suspicion that $x=1$ lowers radon. The $\alpha_j$ vary a lot across counties. Hierarchical predictions are more consistent across counties and work even when a county has no examples of some feature combination (e.g. no basement-free houses in Cass county). Posterior-predictive RMSE: 0.13 for the non-hierarchical model, 0.08 for the hierarchical (p. 627).
-- *Non-centered parameterization (pp. 628–629).* Hierarchical parameters are often strongly correlated, which hurts inference. Plotting $p(\beta_j,\sigma_\beta\mid\mathcal D)$ gives Neal's funnel (Fig. 15.17a): large $\sigma_\beta$ lets $\beta_j$ vary widely (top), small $\sigma_\beta$ pins $\beta_j$ near $\mu_\beta$ (narrow bottom). Sampling algorithms struggle at the bottom; the marginal posterior of $\sigma_\beta$ excludes $[0,0.1]$, ruling out shrinking $\beta_j$ to 0. Fix: replace $\beta_j\sim\mathcal N(\mu_\beta,\sigma_\beta^2)$ by $\beta_j=\mu_\beta+\tilde\beta_j\sigma_\beta$ with $\tilde\beta_j\sim\mathcal N(0,1)$. Correlation between $\tilde\beta_j$ and $\sigma_\beta$ is much smaller (Fig. 15.17b); see Section 12.6.5.
+- *Non-centered parameterization (pp. 628–629).* Hierarchical parameters are often strongly correlated, which hurts inference. Plotting $p(\beta_j,\sigma_\beta\mid\mathcal D)$ gives Neal's funnel (Fig. 15.17a): large $\sigma_\beta$ lets $\beta_j$ vary widely (top), small $\sigma_\beta$ pins $\beta_j$ near $\mu_\beta$ (narrow bottom). Sampling algorithms struggle at the bottom; the marginal posterior of $\sigma_\beta$ excludes $[0,0.1]$, ruling out shrinking $\beta_j$ to 0. Where a covariate has no useful predictive role we would want to induce such sparsity, so the problem must be overcome. Fix: replace $\beta_j\sim\mathcal N(\mu_\beta,\sigma_\beta^2)$ by $\beta_j=\mu_\beta+\tilde\beta_j\sigma_\beta$ with $\tilde\beta_j\sim\mathcal N(0,1)$. Correlation between $\tilde\beta_j$ and $\sigma_\beta$ is much smaller (Fig. 15.17b); see Section 12.6.5.
 
-*Intuition note.* The author uses a hierarchical prior because some counties have very few datapoints, and the hierarchical model fits better (RMSE 0.08 vs 0.13). Non-centering writes $\beta_j$ as $\mu_\beta+\tilde\beta_j\sigma_\beta$ with a standard-normal $\tilde\beta_j$, and the correlation with $\sigma_\beta$ is then much smaller (p. 629).
+*Intuition note.* The author uses a hierarchical prior because some counties have very few datapoints, and the hierarchical model fits better (RMSE 0.08 vs 0.13). Non-centering writes $\beta_j$ as $\mu_\beta+\tilde\beta_j\sigma_\beta$ with a standard-normal $\tilde\beta_j$, and the correlation with $\sigma_\beta$ is then much smaller (pp. 627, 629).
 
 ## Toy example (ours; not from the text)
 Binomial regression (15.10–15.17) with a bias and one binary feature, $N_n=10$ trials each. Data: $x=0$: $y=3$ successes; $x=1$: $y=6$. Features $\phi_n=(1,x_n)$, $w=(w_0,w_1)$, $\eta_n=w^\top\phi_n$.
@@ -268,7 +270,7 @@ Binomial regression (15.10–15.17) with a bias and one binary feature, $N_n=10$
 - [[non-centered-parameterization]] (new) — $\beta_j=\mu_\beta+\tilde\beta_j\sigma_\beta$ to avoid Neal's funnel (p. 629)
 - [[fork-chain-collider]] — conditioning on collider $D$ opens $G\to D\leftarrow U\to A$ (p. 620)
 - [[causal-dag]] — Fig. 15.10 models of admissions (p. 620)
-- [[credible-interval]] — 89%/95% intervals for weights and differences (pp. 602, 619)
+- [[credible-interval]] — 89%/95% intervals for weights and differences (pp. 601, 619)
 
 ## Canonical instances
 - [[kalahari-height-weight]] (new) — prior predictive checking of slope priors; log-normal vs Gaussian $\beta_2$ (pp. 601–603)
@@ -298,7 +300,7 @@ Binomial regression (15.10–15.17) with a bias and one binary feature, $N_n=10$
 - Eq. (15.87): with $\pi$ defined as the probability of a non-zero coefficient (15.86), the log prior would be $\|w\|_0\log\pi+(D-\|w\|_0)\log(1-\pi)$. The printed expression has $\pi$ and $1-\pi$ swapped, so $\lambda$ would be $\log\frac{1-\pi}\pi$ by my check. I report it as printed.
 - Section 15.3.5: "σ² = ∞ forces MAP $w=0$; σ² = 0 gives the MLE" is, by my check, reversed for a $\mathcal N(0,\sigma^2I)$ prior (large variance approaches the MLE; zero variance forces $w=0$). Reported as printed.
 - (15.81) $a_N=N/2$ does not follow from (15.60) with $\breve a=-D/2$ ($\hat a=(N-D)/2$ in the Jeffreys case, 15.70); (15.82) has $s^2/2$ where (15.71) has $s^2\nu/2$. Reported as printed; $s^2$ is not defined for the $g$-prior case.
-- Eq. (15.113) adds matrices of different sizes ($N_y\times N_y$, $N\times N$, $N_x\times N_x$); the trace manipulation (15.114–15.115) makes sense as a sum of traces. (15.110) prints $\Sigma_0$ where $\Sigma$ is presumably meant.
+- Eq. (15.113) adds matrices of different sizes ($N_y\times N_y$, $N\times N$, $N_x\times N_x$); the trace manipulation (15.114–15.115) makes sense as a sum of traces. (15.110) prints $\Sigma_0$ where $\Sigma$ is presumably meant. The condition $\nu_0>N_x-1$ after (15.111) is as printed; for an inverse Wishart on $N_y\times N_y$ matrices one would expect $N_y-1$ (my check).
 - Text says "where $\gamma\propto\gamma$" after (15.90) and writes $\tau^2\sim\mathcal C_+(0,1)$ in (15.97); both look like small misprints. The text calls the gamma variable a "precision" for (15.91) though it multiplies the variance $\tau^2$.
 - Fig. 15.5a legend says "variance=1.50/10.00", while the text uses $\mathcal N(0,\omega)$ and the panel titles in 15.5b say "std=1.50". Whether $\omega$ is variance or standard deviation is not clear from the pages.
 - Text in 15.3.7 describes Virginica vs non-Virginica for iris; Fig. 15.8's caption says setosa vs versicolor.

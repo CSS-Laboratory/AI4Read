@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 14
 pipeline_version: 0.1
+audited: 2026-10-15
+audit_fixes: 7
 ---
 # Error correcting codes
 
@@ -54,26 +56,26 @@ Setting: δ = 0.11, n = 1000, ε = 10⁻³ (p. 344).
 - **Uncoded** (k = 1000): $P_e=1-(1-\delta)^n\approx1$. Coding is needed, and there is a tradeoff: fewer data bits, more redundancy (p. 344).
 - **Repetition** (each bit repeated ℓ times, majority vote): $P_b=\mathbb P[\mathrm{Binom}(\ell,\delta)>\ell/2]$ and $P_e\le k\,P_b$ (essentially tight here). Constraints: $k\ell\le n=1000$ and $k\,\mathbb P[\mathrm{Binom}(\ell,\delta)>\ell/2]\le10^{-3}$. Solution: ℓ = 21, k = 47 bits (p. 345).
 - For repetition coding, better reliability needs larger ℓ, so the rate $k/n=1/\ell$ drops. Before Shannon it was almost universally accepted that vanishing error forces vanishing rate (p. 345).
-- **First-order Reed–Muller code (1,r)**: data $a\in\mathbb F_2^r$ is read as the polynomial $f_a(x)=\sum_{i=1}^{r-1}a_ix_i+a_0$, evaluated at all $x\in\mathbb F_2^{r-1}$. It maps r bits to $2^{r-1}$ bits, with $d_{\min}=2^{r-2}$ (p. 345). So (1,7) is a [64,7,32] code. The text states, without proof, that its optimal decoder has error ≤ 6·10⁻⁶ on BSC$_{0.11}^{\otimes64}$ (p. 345). Using 16 blocks on 1024 uses, the union bound gives $P_e\lesssim10^{-4}<10^{-3}$, so 7·16 = 112 bits are sent (p. 345).
-- **Shannon:** $\log M^*(\epsilon;P_{Y^n|X^n})=nC+o(n)$ (17.2) as n→∞, for any ε∈(0,1). Here $C=\max_{P_{X_1}}I(X_1;Y_1)$. For the BSC, $C=\log2-h(\delta)\approx\tfrac12$ bit, so about 500 bits are predicted, though not completely rigorously because of the $o(n)$ residual (pp. 345–346). This is not quite possible at n = 1000 (p. 346).
-- **Finite-blocklength bounds [334]:** $414\le\log_2M^*(10^{-3})\le416$ bits (17.3). Shannon's prediction is about 20% too optimistic (p. 346).
-- **History (p. 346):** about 60 years passed before practical codes met such performance. Turbo codes were the first to approach the bounds; this class is known as sparse-graph codes, of which Gallager's LDPC codes are well studied. As a rule of thumb they reach 80–90% of log M\* for n ≈ 10³–10⁴. For n ≈ 100–1000, polar codes with list decoding are an alternative.
+- **First-order Reed–Muller code (1,r)**: data $a\in\mathbb F_2^r$ is read as the polynomial $f_a(x)=\sum_{i=1}^{r-1}a_ix_i+a_0$, evaluated at all $x\in\mathbb F_2^{r-1}$. It maps r bits to $2^{r-1}$ bits, with $d_{\min}=2^{r-2}$ (p. 345). ($d_{\min}$, minimum distance: two distinct codewords differ in at least this many positions.) So (1,7) is a [64,7,32] code, in the notation $[n,k,d_{\min}]$ (p. 345). The text states, without proof, that its optimal decoder has error ≤ 6·10⁻⁶ on BSC$_{0.11}^{\otimes64}$ (p. 345). Using 16 blocks on 1024 uses, the union bound (block error ≤ sum of the 16 per-block errors) gives $P_e\lesssim10^{-4}<10^{-3}$, so 7·16 = 112 bits are sent (p. 345).
+- **Shannon:** over a memoryless channel $P_{Y^n|X^n}=(P_{Y|X})^n$ of blocklength n, $\log M^*(\epsilon;P_{Y^n|X^n})=nC+o(n)$ (17.2) as n→∞, for any ε∈(0,1). ($o(n)$: a term that grows more slowly than n.) Here $C=\max_{P_{X_1}}I(X_1;Y_1)$. For the BSC, $C=\log2-h(\delta)\approx\tfrac12$ bit, so about 500 bits are predicted, though not completely rigorously because of the $o(n)$ residual (pp. 345–346). This is not quite possible at n = 1000 (p. 346).
+- **Finite-blocklength bounds [334]:** computing $M^*$ exactly would require iterating over all encoders and decoders, impossible even for small n. Rigorous, computable bounds give $414\le\log_2M^*(10^{-3})\le416$ bits (17.3). Shannon's prediction is about 20% too optimistic. The bounds guarantee that a good encoder–decoder pair exists, but building one implementable in hardware or software is a different matter (p. 346).
+- **History (p. 346):** about 60 years passed before practical codes met such performance. Turbo codes were the first to approach the bounds; this class is known as sparse-graph codes, of which Gallager's LDPC codes are well studied. As a rule of thumb they typically approach 80–90% of log M\* for n ≈ 10³–10⁴. For n ≈ 100–1000, polar codes with list decoding are an alternative.
 - **Paradigm shift (p. 346):** a good code has M ≈ 2⁴⁰⁰ points in {0,1}¹⁰⁰⁰. Using it once a second for the universe's lifetime (≈10¹⁸ s) explores at most 2⁶⁰ codewords. Yet all must be placed carefully, because to transmit information is to convey a selection of W from [M], and we cannot know in advance which W will occur.
 
 *Intuition note:* The text contrasts simple repetition with more sophisticated ways of injecting redundancy into the whole block, such as Reed–Muller codes. The gap between 47, 112 and 414–416 bits shows how much code design matters.
 
 ### 17.3 Optimal decoder
-For a given encoder, the error-minimizing decoder is MAP, which equals ML because W is uniform (p. 347):
+For a given encoder, the error-minimizing decoder is MAP (maximum a posteriori: pick the most probable message given y), which equals ML (maximum likelihood: pick the message making y most probable) because W is uniform (p. 347):
 $$g^*(y)=\arg\max_m\mathbb P[W=m|Y=y]=\arg\max_m\mathbb P[Y=y|W=m]\tag{17.4}$$
 It is deterministic. For deterministic encoders with image 𝒞 (p. 347):
 $$P_{e,\mathrm{MAP}}(\mathcal C)=1-\frac1M\sum_{y\in\mathcal Y}\max_{x\in\mathcal C}P_{Y|X}(y|x)\tag{17.5}$$
-**Remark 17.1.** For BSC$_\delta^{\otimes n}$, with Hamming distance $d_H(x^n,y^n)=|\{i:x_i\ne y_i\}|$,
+**Remark 17.1.** For BSC$_\delta^{\otimes n}$, with Hamming distance $d_H(x^n,y^n)=|\{i:x_i\ne y_i\}|$ and a deterministic encoder with codewords $\{c_i\}$,
 $$g^*(y^n)=\arg\min_m d_H(c_m,y^n)\tag{17.6}$$
-So the decoding regions are Voronoi cells of the Hamming space. AWGN gives Voronoi cells in ℝⁿ (Section 20.3) (p. 347).
+So the decoding regions are Voronoi cells (the set of points nearer to one codeword than to any other) of the Hamming space. AWGN gives Voronoi cells in ℝⁿ (Section 20.3) (p. 347).
 
 **Randomized encoders.** Write $X=f(W,U)$ with $U\perp W$ and f deterministic. Then $\mathbb P[W\ne\hat W]=\mathbb E[\mathbb P[W\ne\hat W|U]]$. So if $\mathbb P[W\ne\hat W]\le\epsilon$, some $u_0$ has $\mathbb P[W\ne\hat W|U=u_0]\le\epsilon$. Hence $M^*(\epsilon)$ is unchanged by restricting to deterministic encoders and decoders (p. 347).
 
-This does not apply to $P_{e,\max}$: the text says $M^*_{\max}(\epsilon)$ does require considering randomized encoders and decoders. For M = 2, decoding is binary hypothesis testing. The optimal test minimizing $\max\{1-\alpha,\beta\}$ is not deterministic if that max is not attained at a vertex of the Neyman–Pearson region $\mathcal R(P_{Y|W=1},P_{Y|W=2})$ (pp. 347–348).
+This does not apply to $P_{e,\max}$: the text says $M^*_{\max}(\epsilon)$ does require considering randomized encoders and decoders. For M = 2, decoding is binary hypothesis testing. The optimal test minimizing the maximal Type-I and Type-II error probability (the two ways of deciding wrongly), $\max\{1-\alpha,\beta\}$, is not deterministic if that max is not attained at a vertex of the Neyman–Pearson region $\mathcal R(P_{Y|W=1},P_{Y|W=2})$ (the set of error pairs achievable by tests, Part III) (pp. 347–348).
 
 ### 17.4 Weak converse bound
 A converse bound is an impossibility result bounding M from above or ε from below (p. 348).
@@ -94,7 +96,7 @@ $$D(P_{X,Y}\|P_XP_Y)\overset{\rm DPI}{\ge}d\!\left(1-P_e\,\Big\|\,\tfrac1M\right
 
 *Intuition note:* If the decoder is usually right, the pair (X,Y) looks very different from an independent pair. The divergence between the two is I(X;Y), and data processing keeps the test from separating them by more than that, which limits how many messages can be told apart.
 
-**Remark 17.2.** Other divergences in the data-processing step improve the bound. This gives the "strong" converse (Section 22.1) and the meta-converse technique (Section 22.3) (p. 349).
+**Remark 17.2.** Other divergence measures in the data-processing step can improve the bound significantly. This gives the "strong" converse (Section 22.1) and the meta-converse technique (Section 22.3) (p. 349).
 
 ## Toy example (ours)
 *Repetition and MAP.* Let BSC with δ = 0.1 and code {000, 111} (ℓ = 3, k = 1). The error probability is $\mathbb P[\mathrm{Binom}(3,0.1)>1.5]=\mathbb P[\ge2\text{ flips}]=3(0.1)^2(0.9)+(0.1)^3=0.027+0.001=0.028$. For y = 010, distances are $d_H(000,y)=1$ and $d_H(111,y)=2$, so MAP/ML decoding (17.6) gives message 0.
@@ -108,7 +110,7 @@ $$D(P_{X,Y}\|P_XP_Y)\overset{\rm DPI}{\ge}d\!\left(1-P_e\,\Big\|\,\tfrac1M\right
 - [[fundamental-limits-M-star]] (new) — $M^*(\epsilon)$, the largest M with an (M,ε)-code (p. 343)
 - [[noisy-channel]] — here BSC$_\delta^{\otimes n}$, bits flipped independently with probability δ (p. 344)
 - [[channel-capacity]] — $C=\max I(X_1;Y_1)$; for BSC, log 2 − h(δ) (p. 346)
-- [[noisy-channel-coding-theorem]] — $\log M^*=nC+o(n)$ (p. 345)
+- [[noisy-channel-coding-theorem]] — for a memoryless channel, $\log M^*=nC+o(n)$ (p. 345)
 - [[map-ml-decoder]] (new) — decoder maximizing posterior; equals ML under uniform W (p. 347)
 - [[weak-converse]] (new) — $\log M\le(\sup I+h(\epsilon))/(1-\epsilon)$ (p. 348)
 - [[finite-blocklength-bounds]] (new) — rigorous, computable bounds on log M\* at fixed n (p. 346)
@@ -128,7 +130,7 @@ $$D(P_{X,Y}\|P_XP_Y)\overset{\rm DPI}{\ge}d\!\left(1-P_e\,\Big\|\,\tfrac1M\right
 - [structural-analogy] Voronoi decoding cells ↔ geometry/clustering: nearest-center classification (p. 347)
 
 ## Questions this raises
-- Why does the 1/(1−ε) factor make this converse "weak", and how does the strong converse remove it?
+- What makes this converse "weak" (the text defers the explanation to the strong converse in Section 22.1), and how much do other divergences improve it?
 - What do achievability bounds look like at finite n, and how do they compare with 414–416?
 - When does $M^*_{\max}$ differ from $M^*$ in a way that matters?
 - How can codes such as LDPC or polar codes be decoded efficiently, when MAP decoding needs a search over all M codewords?

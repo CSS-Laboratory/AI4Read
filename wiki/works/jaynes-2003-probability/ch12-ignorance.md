@@ -13,14 +13,16 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 15
 pipeline_version: 0.1
+audited: 2026-10-15
+audit_fixes: 9
 ---
 # Ignorance priors and transformation groups
 
 ## L0 — One line
-A prior for "complete ignorance" is fixed by naming the transformations (shift, rescaling, and so on) that turn the problem into an equivalent one, and demanding that the prior keep the same form under them.
+A prior for "complete ignorance" is restricted, and in many cases fully determined, by naming the transformations (shift, rescaling, and so on) that turn the problem into an equivalent one, and demanding that the prior keep the same form under them.
 
 ## L1 — The gist (≤ 120 words)
-Maximum entropy for continuous variables needs an invariant measure m(x), which is, up to a constant factor, the "complete ignorance" prior. Jaynes asks how to find it. His answer: state which transformations leave the problem unchanged, then require that equivalent problems get the same prior. This yields functional equations (equations whose unknown is the prior function itself). Location and scale give the Jeffreys prior dσ/σ. A Poisson rate gives dλ/λ. A Bernoulli probability gives 1/[θ(1−θ)]. Bertrand's chord problem gets a unique answer. Indifference is thus applied between problems, not between events. The result is often not normalizable, so it is a "pre-prior" that supplies the measure for maximum entropy.
+Maximum entropy for continuous variables needs an invariant measure m(x), which is, up to a constant factor, the "complete ignorance" prior. Jaynes asks how to find it. His answer: state which transformations leave the problem unchanged, then require that equivalent problems get the same prior. This yields functional equations (equations whose unknown is the prior function itself). Location and scale under the shift-and-rescale group give the Jeffreys prior dσ/σ; another group gives 1/σ². A Poisson rate gives dλ/λ. A Bernoulli probability gives 1/[θ(1−θ)]. Bertrand's chord problem gets a unique answer. Indifference is thus applied between problems, not between events. The result is often not normalizable, so it is a "pre-prior" that supplies the measure for maximum entropy.
 
 **Prerequisites:** Shannon entropy; change of variables with Jacobians; Lagrange multipliers; Bayes' theorem; simple functional and differential equations.
 
@@ -37,7 +39,7 @@ Maximum entropy for continuous variables needs an invariant measure m(x), which 
 ## L3 — Walkthrough
 
 ### 12.1 What are we trying to do? (p. 372–374)
-- **Subjective Bayesians (voice: Jaynes describing them):** they keep orthodox habits. Sampling probabilities are "frequencies of random variables", while priors and posteriors are private opinions updated by de Finetti's coherence. This leads to the same Bayesian algorithm (p. 372). If priors are only opinions, they look arbitrary, yet the language still implies a "true prior" (p. 373).
+- **Subjective Bayesians (voice: Jaynes describing them):** they keep orthodox habits ("orthodox": frequency-based, non-Bayesian statistics). Sampling probabilities are "frequencies of random variables", while priors and posteriors are private opinions updated by de Finetti's coherence (a consistency rule for an individual's betting-style degrees of belief). This leads to the same Bayesian algorithm (p. 372). If priors are only opinions, they look arbitrary, yet the language still implies a "true prior" (p. 373).
 - **Jaynes's three requirements (p. 373):**
   - (A) Priors represent prior information. They are found by logical analysis, not introspection.
   - (B) Prior information must be specified as fully as the data.
@@ -53,7 +55,7 @@ Maximum entropy for continuous variables needs an invariant measure m(x), which 
 - To the author's knowledge no other general method for setting up discrete priors has been proposed, and maximum entropy "may prove to be the final solution" for discrete priors (p. 374).
 
 ### 12.3 Continuous distributions (p. 374–378)
-**The continuous information measure.** The expression $H'=-\int dx\,p\log p$ \tag{12.1} is not derived and is not invariant under $x\to y(x)$, so it is not the right measure (p. 375). Shannon's theorem holds only for discrete distributions. Pass to the limit from
+**The continuous information measure.** Jaynes sets aside the well-known fact that $H'=-\int dx\,p\log p$ \tag{12.1} lacks invariance under $x\to y(x)$, because (12.1) is not the result of any derivation; it turns out not to be the correct information measure (p. 375). Shannon's theorem holds only for discrete distributions. Pass to the limit from
 
 $$H_I^d=-\sum_{i=1}^n p_i\log p_i \tag{12.2}$$
 
@@ -69,7 +71,7 @@ Then
 
 $$H_I^d\to\int dx\,p(x|I)\log\frac{p(x|I)}{n\,m(x)} \tag{12.7}$$
 
-This contains an infinite term $\log n$. Subtracting it gives
+(as printed, without a leading minus sign; see Reading notes). This contains an infinite term $\log n$. Subtracting it gives, in the cases of interest, a definite limit:
 
 $$H_I^c\equiv\lim_{n\to\infty}\left[H_I^d-\log n\right]=-\int dx\,p(x|I)\log\frac{p(x|I)}{m(x)} \tag{12.8}$$
 
@@ -82,6 +84,8 @@ $$p(x|I)=Z^{-1}m(x)\exp\{\lambda_1f_1(x)+\dots+\lambda_mf_m(x)\} \tag{12.11}$$
 $$Z(\lambda_1,\dots,\lambda_m)=\int dx\,m(x)\exp\{\lambda_1f_1+\dots+\lambda_mf_m\} \tag{12.12}$$
 
 $$F_k=-\frac{\partial\log Z}{\partial\lambda_k} \tag{12.13}$$
+
+($Z$ is the partition function, the normalizing constant; the $\lambda_k$ are Lagrange multipliers.)
 
 The quadratic-loss best estimate is $\langle q\rangle=\int dx\,q(x)p(x|I)$ \tag{12.14}. The conclusions, $Z$ and the $\lambda_k$ are all invariant under $x\to y(x)$ (p. 376). (The sign in (12.13) is as printed; see Reading notes.)
 
@@ -130,7 +134,7 @@ This is the Jeffreys rule (p. 380).
 
 *Intuition note.* Demanding the same prior in two equivalent problems turns "ignorance" into an equation. Under group (12.18) the only prior that survives is $1/\sigma$ (group (12.30) gives $1/\sigma^2$).
 
-*It is the group, not the form of $\phi$, that fixes the prior.* The composition law of (12.18) is $(a_2,b_2)(a_1,b_1)=(a_2a_1,\,b_2+b_1)$ \tag{12.28}. The group is Abelian, with faithful matrix representation $\begin{pmatrix}a&0\\0&e^{b}\end{pmatrix}$ \tag{12.29}. Alternative group: scale first, then translate:
+*It is the group, not the form of $\phi$, that fixes the prior.* The composition law of (12.18) is $(a_2,b_2)(a_1,b_1)=(a_2a_1,\,b_2+b_1)$ \tag{12.28}. The group is Abelian (the order of two operations does not matter), the direct product of two one-parameter groups, with faithful matrix representation (matrices that multiply exactly like the group elements) $\begin{pmatrix}a&0\\0&e^{b}\end{pmatrix}$ \tag{12.29}. Alternative group: scale first, then translate:
 
 $$\nu'=a\nu+b,\quad\sigma'=a\sigma,\quad x'=ax+b \tag{12.30}$$
 
@@ -152,7 +156,7 @@ Any other prior would change form when the time scale changes (p. 382).
 #### 12.4.3 Unknown probability for success (p. 382–386)
 Bernoulli trials: $p(r|n\theta)=\binom nr\theta^r(1-\theta)^{n-r}$ \tag{12.41}. What $f(\theta)\,d\theta$ describes ignorance of $\theta$?
 
-- Bayes and Laplace used $f_B=1$. Jeffreys and Carnap noted that its rule of succession fits inductive intuition poorly, and Jeffreys suggested more weight at $\theta=0,1$ (p. 383).
+- Bayes and Laplace used $f_B=1$. Jeffreys and Carnap noted that its rule of succession (the predicted probability of success on the next trial) does not seem to correspond well with intuitive inductive reasoning, and Jeffreys suggested more weight at $\theta=0,1$ (p. 383).
 - **Chemical example:** after one sample dissolves, we infer that all samples dissolve; this does not carry quite the force of deductive proof, but we feel strongly it is justified. The Bayes–Laplace rule gives a negligible probability for that and only $2/3$ for the next sample dissolving (p. 383).
 
 *Constructing the group.* The conceptual difficulty is "a probability for a probability". Jaynes removes it by imagining a population of individuals with different beliefs $\theta$, each reasoning by probability rules but holding different information. A common piece of evidence $E$ is given to all. Mr $X$ with $\theta=p(S|X)$ \tag{12.42} updates to
@@ -182,8 +186,8 @@ $$p(d\theta|rn)=\frac{(n-1)!}{(r-1)!(n-r-1)!}\theta^{r-1}(1-\theta)^{n-r-1}d\the
 $$\langle\theta\rangle=\frac rn=f,\qquad \sigma^2=\frac{f(1-f)}{n+1} \tag{12.52, 12.53}$$
 
 - The best estimate equals the observed frequency $f$ and the next-trial probability. The Bayes–Laplace prior gives $(r+1)/(n+2)$ instead.
-- Interval estimates from (12.51) are, by numerical analysis, practically equal to confidence intervals. For $r\gg1$, $n-r\gg1$ the $100P\%$ interval is $f\pm q\sigma$, with $q=1.645,1.960,2.576$ for 90%, 95%, 99%.
-- If $r=n-r=1$, (12.51) is uniform. So Bayes–Laplace describes having seen one success and one failure. It is appropriate when prior information assures that both outcomes are physically possible. (12.50) is a "pre-prior" state in which even that is unknown.
+- Interval estimates from (12.51) are, by numerical analysis, practically equal to confidence intervals (the orthodox interval estimates). For $r\gg1$, $n-r\gg1$ the $100P\%$ interval is $f\pm q\sigma$, with $q=1.645,1.960,2.576$ for 90%, 95%, 99%.
+- If $r=n-r=1$, (12.51) is uniform. So Bayes–Laplace describes having seen one success and one failure. It thus appears to be the appropriate prior when prior information assures that both outcomes are physically possible. (12.50) is a "pre-prior" state in which even that is unknown.
 - For $r=0$ or $r=n$ the posterior is unnormalizable, with weight concentrated on $\theta=0$ or $1$. This accounts for the chemical inference. After one success and one failure, all posteriors are normalized.
 
 Which prior is appropriate depends on the exact prior information (p. 386).
@@ -198,7 +202,7 @@ Which prior is appropriate depends on the exact prior information (p. 386).
 - When the tosser's "region of uncertainty" is large compared with the circle, chord lengths must surely go into one unique function obtainable by "pure thought" (p. 387).
 - Poincaré's argument asks for lines $ux+vy=1$ whose density $p(u,v)$ is invariant under rotations and translations of the plane. The answer is $p(u,v)=(u^2+v^2)^{-3/2}$. Later authors ignored it; Jaynes finds this understandable, since the problem does not say the straw distribution has that invariance (p. 387).
 
-**Jaynes's viewpoint (p. 388).** Ask which distribution describes our state of knowledge given only the problem statement. Consistency demands equal probabilities for equal knowledge. The statement leaves unspecified the circle's size and position. If the problem is to have any definite solution at all, it must be indifferent to them. The result may then be used as a prior, and frequency correspondence is a bonus.
+**Jaynes's viewpoint (p. 388).** Ask which distribution describes our state of knowledge given only the problem statement. Consistency demands equal probabilities for equal knowledge. The statement leaves unspecified the circle's size and position. If the problem is to have any definite solution at all, it must be indifferent to them. The result may then be used as a prior, and frequency correspondence is a bonus. Jaynes grants that the conventional ill-posed reading clearly represents one valid way of interpreting the problem; it would perhaps overstate the case to call his viewpoint more correct in principle, but it will surely be more useful in practice.
 
 *Rotational invariance (p. 388–389).* Use polar coordinates $(r,\theta)$ of the chord center. Chord-length statistics depend only on $g(r)=\int_0^{2\pi}d\theta\,f(r,\theta)$ \tag{12.54}. Observers $X,Y$ with lines of sight at angle $\alpha$ satisfy $f(r,\theta)=g(r,\theta-\alpha)$ \tag{12.55} (transformation equation). Symmetry says the problem looks the same, so $f=g$ \tag{12.56}. This must hold for all $\alpha$, so $f=f(r)$. Jaynes says the argument always has two steps, a transformation equation and a symmetry equation, and that combining them leads in most cases to a functional equation (p. 389).
 
@@ -208,7 +212,7 @@ $$f(r)=2\pi h(r)\int_0^{aR}r\,dr\,f(r),\quad 0<a\le1,\ 0\le r\le aR \tag{12.58}$
 
 (the upper limit is printed "$\alpha R$"). Scale invariance (the small problem is a scaled-down copy) gives $h(ar)(ar)\,d(ar)\,d\theta=f(r)\,r\,dr\,d\theta$ \tag{12.59}, i.e. $a^2h(ar)=f(r)$ \tag{12.60}. Combined:
 
-$$a^2f(ar)=2\pi f(r)\int_0^{aR}u\,du\,f(u) \tag{12.61}$$
+$$a^2f(ar)=2\pi f(r)\int_0^{aR}u\,du\,f(u),\quad 0<a\le1,\ 0\le r\le R \tag{12.61}$$
 
 Differentiating in $a$ at $a=1$, with normalization (12.57), gives
 
@@ -242,12 +246,12 @@ This agrees with Borel's conjecture (p. 392–393). (Added step: $x^2=1-r^2/R^2$
 
 *Intuition note.* We cannot guess what a "random" straw does, but we can ask what the problem statement leaves unspecified. Size and position are unspecified, and requiring indifference to them leaves one answer.
 
-*Frequency correspondence (p. 393–394).* The result is a state of knowledge, and in general no pure-thought argument forces real frequencies. But the derivation proves one fact: any rain of straws whose chord distribution differs from (12.68) will produce different distributions on different circles. If the tosser's uncertainty region is large compared with the circle, he lacks the skill to do that. So (12.68) should be observed in the limit of "zero skill". Jaynes and Dr Tyler tossed broom straws onto a 5-inch circle. 128 successful tosses in ten length categories confirmed (12.68) with "an embarrassingly low value of chi-squared" (p. 394). Jaynes says this contradicts von Mises, whose strict philosophy would nearly eliminate physical applications (p. 393).
+*Frequency correspondence (p. 393–394).* The result is a state of knowledge, and in general no pure-thought argument forces real frequencies. But the derivation proves one fact: any rain of straws whose chord distribution differs from (12.68) will produce different distributions on different circles. If the tosser's uncertainty region is large compared with the circle, he lacks the skill to do that. So (12.68) should be observed in the limit of "zero skill". Jaynes and Dr Tyler tossed broom straws onto a 5-inch circle. 128 successful tosses in ten length categories confirmed (12.68) with "an embarrassingly low value of chi-squared" (a goodness-of-fit statistic; low means close agreement). Jaynes adds that experimental results will no doubt be more convincing if reported by others (p. 394). He says these conclusions seem to be in direct contradiction to von Mises; it appears to him that von Mises' philosophy, applied strictly, would reduce physical applications almost to the vanishing point (p. 393).
 
 ### 12.5 Comments (p. 394–396)
 - Bertrand's problem is a model of a broader pattern: real problems look underspecified. Example: for a gas of $N$ molecules with known forces and total energy, predict velocity distribution, pressure, viscosity, etc. Maxwell predicted these by recognizing "equally possible" cases. The viscosity prediction seemed to contradict common sense but was confirmed by experiment. Poker calculations rest on the same kind of judgment (p. 394).
-- **Dilemma:** the principle of indifference leads to paradoxes and also to successful predictions, so it can be neither wholly accepted nor wholly rejected (p. 395).
-- **Jaynes's resolution:** apply indifference between *problems*, not between *events*. Every circumstance left unspecified defines an invariance that a unique solution must have. Not all invariances are useful: time of day or the luminosity of Betelgeuse are irrelevant, but this only helps if we already thought them germane. Successful past uses can be "reverbalized" as indifference between problems (p. 395).
+- **Dilemma:** the principle of indifference leads to paradoxes and also to successful predictions, so it appears that it can be neither wholly accepted nor wholly rejected (p. 395).
+- **Jaynes's resolution:** apply indifference between *problems*, not between *events*. Every circumstance left unspecified defines an invariance that a unique solution must have. Not all invariances are useful: time of day or the luminosity of Betelgeuse are irrelevant, but this only helps if we already thought them germane. He suggests that the successful past uses are just those that can be "reverbalized" as indifference between problems (p. 395).
 - **Jeffreys rule reinterpreted:** Jaynes says it appears that the fundamental justification is that the parameter is a *scale* parameter, not merely positive. If $\mu$ is a location parameter, both intuition and the analysis agree that a uniform prior is the appropriate way to express complete ignorance of it. For $\mu=\theta-\theta^{-1}$ mapping onto $0<\theta<\infty$, the prior is $\propto d\mu=(1+\theta^{-2})\,d\theta$, not $d\theta/\theta$ (p. 395).
 - **Non-normalizability:** one reading is that complete ignorance is an idealization; shifts from St Louis to Andromeda do not give equivalent problems. So the group parameters $(a,b)$ cannot truly range over infinite intervals, and the transformations do not strictly form a group. Over the range expressing ignorance, the arguments still hold (p. 395–396).
 - **Constructive reading:** the pre-prior does not strictly represent a realistic state of knowledge. It does define the invariant measure, without which finding a realistic prior by maximum entropy is mathematically indeterminate (p. 396).
@@ -266,7 +270,7 @@ Only $1/\lambda$ gives equal weight under the rescaling, as in (12.40).
 
 ## Concepts
 - [[maximum-entropy-principle]] — choose the max-entropy distribution given constraints, here relative to an invariant measure $m(x)$ (p. 374–376)
-- [[differential-entropy]] — $-\int p\log p$ is rejected as non-invariant; $-\int p\log(p/m)$ is the continuous measure (p. 375)
+- [[differential-entropy]] — $-\int p\log p$ is not derived and not the correct measure (it also lacks invariance); $-\int p\log(p/m)$ is the continuous measure (p. 375)
 - [[exponential-family-gibbs]] — the solution form (12.11) with partition function $Z$ (p. 376)
 - [[principle-of-indifference-maximum-entropy]] — Jaynes defends indifference between *problems*, not events (p. 395)
 - [[invariant-measure]] (new) — $m(x)$, proportional to the limiting density of discrete points; it is the ignorance prior up to a constant (p. 375–377)
@@ -300,6 +304,7 @@ Only $1/\lambda$ gives equal weight under the rescaling, as in (12.40).
 - Page offset: printed = pdf − 30 (pdf 402–426 ↔ printed 372–396).
 - No exercises are in this unit.
 - Misprints visible in the images/text:
+  - (12.7) is printed without the minus sign that (12.2) carries; with $p_i\to p\,[nm]^{-1}$ the limit is $-\int p\log[p/(nm)]=-\int p\log(p/m)+\log n$, which is what (12.8) requires (by my check). I kept the printed form above.
   - (12.13) prints $F_k=-\partial\log Z/\partial\lambda_k$ while $Z$ in (12.12) is defined with $\exp(+\lambda f)$. With that definition $\langle f_k\rangle=+\partial\log Z/\partial\lambda_k$ (checked by differentiating); I kept the printed sign above.
   - (12.31) prints $(a_2,b_2)(a_1,b_2)$, presumably $b_1$.
   - p. 381 prints "$\nu'=ax+b$" for the shift of $\nu$; (12.30) has $\nu'=a\nu+b$.

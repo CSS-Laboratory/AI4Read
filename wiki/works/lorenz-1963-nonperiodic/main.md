@@ -13,6 +13,8 @@ prompt_version: v2.2
 verified: repaired
 verifier_issues: 18
 pipeline_version: 0.1
+audited: 2026-10-15
+audit_fixes: 11
 ---
 # Deterministic Nonperiodic Flow (Lorenz 1963)
 
@@ -20,17 +22,17 @@ pipeline_version: 0.1
 Bounded, dissipative, forced deterministic systems can have solutions that never repeat, and such nonperiodic solutions are ordinarily unstable, so if the results apply to the atmosphere (ostensibly nonperiodic), very-long-range prediction would be impossible by any method unless the present state is known exactly.
 
 ## L1 — The gist (≤ 120 words)
-Can a deterministic system under steady forcing show irregular, never-repeating behaviour? Lorenz studies finite sets of nonlinear ordinary differential equations that mimic forced dissipative flow. He argues that such systems have bounded solutions and that nonperiodic ones are ordinarily unstable. He then integrates a three-variable convection model numerically. Its solution crosses irregularly between two spirals, and all solutions are found to be unstable. A one-dimensional map read off the numerics suggests why: nearby states separate. The result matters because, if it applies to the atmosphere (ostensibly nonperiodic), prediction of the distant future is impossible by any method unless present conditions are known exactly; an exception may exist if no "analogues" (past states matching within observation error) have occurred.
+Can a deterministic system under steady forcing show irregular, never-repeating behaviour? Lorenz studies finite sets of nonlinear ordinary differential equations that mimic forced dissipative flow. A typical forced dissipative form has bounded solutions; for bounded systems, nonperiodic solutions are ordinarily unstable. He integrates a three-variable convection model numerically. Its solution crosses irregularly between two spirals, and all solutions are found to be unstable. A one-dimensional map read off the numerics suggests why: nearby states separate. The result matters because, if it applies to the atmosphere (ostensibly nonperiodic), prediction of the distant future is impossible by any method unless present conditions are known exactly; an exception may exist if no "analogues" (past states matching within observation error) have occurred.
 
 **Prerequisites:** ordinary differential equations; phase space; linearization and eigenvalues; divergence of a vector field; rational vs irrational numbers; countable vs uncountable sets.
 
 ## L2 — Key ideas (5–10 bullets)
-- Nonperiodic flow need not come from random forcing: in linear systems constant forcing ultimately gives constant response, but nonlinear (advective) terms can let constant forcing give variable response. (p. 131)
+- Nonperiodic flow need not come from random forcing: in dissipative linear systems constant forcing ultimately gives constant response, but nonlinear (advective) terms can let constant forcing give variable response. (p. 131)
 - In systems of the form (4), dissipation that outweighs forcing at large values of the energy-like quantity $Q$ ultimately traps every trajectory in a bounded region. (pp. 131–132)
 - Central trajectories (those that return arbitrarily close to their own past) are unstable if nonperiodic; noncentral nonperiodic ones are not uniformly stable. For practical prediction, all nonperiodic trajectories are effectively unstable. (pp. 132–133)
 - If a forward-difference scheme with small $\Delta t$ is bounded, the double-approximation scheme (14) (a two-stage numerical step) also does not blow up, for forced dissipative systems of form (4). (p. 134)
-- The three-variable convection system (25)–(27) has volume contraction at the rate $\sigma+b+1$, three steady states and an onset of convection at $r=1$. (pp. 135–136)
-- At $\sigma=10$, $b=8/3$, $r=28$ the numerical solution is irregular and settles onto a pair of nearly merging surfaces. (pp. 136–138)
+- The three-variable convection system (25)–(27) has volume contraction at the rate $\sigma+b+1$, an onset of convection at $r=1$, and three steady states when $r>1$. (pp. 135–136)
+- At $\sigma=10$, $b=8/3$, $r=28$ the numerical solution is irregular. Within the accuracy of the printed values, it lies on a pair of surfaces that appear to merge. (pp. 136–138)
 - Successive maxima of $Z$ fall, within round-off, on a one-dimensional curve (a two-to-one relation). In an idealised piecewise-linear map (a tent map), all periodic sequences are unstable and all but a measure-zero set are nonperiodic; Lorenz infers the same for the real curve, whose slope apparently exceeds unity in magnitude. (pp. 138–140)
 - The conclusions are drawn from a finite numerical run, not a proof. (p. 140)
 - For the atmosphere, Lorenz says the results indicate that prediction of the sufficiently distant future is impossible by any method unless present conditions are known exactly. If two analogues (states matching within observation error) have occurred, no scheme could have been right both times; if none has, an accurate scheme may exist. The length of "very-long-range" is left open. (p. 141)
@@ -44,7 +46,7 @@ Lorenz studies **nonperiodic** solutions, which never repeat exactly. He studies
 
 He works with finite deterministic ordinary differential equations that are dissipative (viscous and thermal losses) and forced (to avoid decay to rest). For the system to be deterministic, forcing that is not constant must itself vary by a deterministic rule (p. 131).
 
-For dissipative systems governed by finite sets of linear equations, constant forcing leads ultimately to a constant response and periodic forcing to a periodic response, so nonperiodic flow has sometimes been attributed to nonperiodic or random forcing; this reasoning does not apply to nonlinear equations. With nonlinear advection, constant forcing can give a variable response. Both periodic and nonperiodic flow appear in rotating-basin experiments with constant heating (p. 131).
+For dissipative systems governed by finite sets of linear equations, constant forcing leads ultimately to a constant response and periodic forcing to a periodic response, so nonperiodic flow has sometimes been attributed to nonperiodic or random forcing; this reasoning does not apply to nonlinear equations. With nonlinear advection (transport of a fluid property by the fluid's own motion), constant forcing can give a variable response. Both periodic and nonperiodic flow appear in rotating-basin experiments with constant heating (p. 131).
 
 ### 2. Phase space (p. 131–132)
 The system is
@@ -87,9 +89,10 @@ Assume a unique trajectory through each point, continuous deformation, and unifo
 - Hence a stable central trajectory is quasi-periodic. Equivalently, a nonperiodic central trajectory is unstable.
 - A uniformly stable noncentral trajectory is quasi-periodic. Equivalently, a nonperiodic noncentral trajectory is not uniformly stable.
 - Lorenz thinks a stable but non-uniformly-stable nonperiodic noncentral trajectory is possible on paper but not characteristic of real flows. Its very stability would be one of its transient properties, which tends to die out as time progresses.
+- For an observable nonperiodic system, two states differing by imperceptible amounts may eventually evolve into two considerably different states. If there is any error in observing the present state, an acceptable prediction of an instantaneous state in the distant future may well be impossible (p. 133).
 - Since initial conditions cannot be measured precisely, central and nearby noncentral trajectories cannot be told apart. So all nonperiodic trajectories are effectively unstable for practical prediction (p. 133).
 
-*Intuition note:* A central trajectory that never repeats cannot be stable, because a stable one would keep close to its own past and so would repeat; for noncentral trajectories only the weaker result (not uniformly stable) holds. Two states that differ by an unmeasurable amount can therefore end up far apart.
+*Intuition note:* A central trajectory that never repeats cannot be stable, because a stable one would keep close to its own past and so would be quasi-periodic; for noncentral trajectories only the weaker result (not uniformly stable) holds. Two states that differ by an unmeasurable amount can therefore end up far apart.
 
 ### 4. Numerical integration (pp. 133–134)
 Let $X_{i,n}=X_i(t_0+n\Delta t)$ with auxiliary approximations
@@ -110,10 +113,13 @@ $$Q_{n+1}=Q_n+\tfrac12\sum_iF_i^2(P_n)\Delta t^2,\tag{16}$$
 which grows without limit unless the solution approaches a steady state asymptotically (p. 134). A similar result holds when the double-approximation scheme (14) is applied to a conservative system (p. 134).
 
 ### 5. The convection equations of Saltzman (pp. 134–135)
-For two-dimensional convection in a layer of depth $H$ with temperature difference $\Delta T$ (here $\psi$ is a stream function and $\theta$ the temperature departure):
+For two-dimensional convection in a layer of depth $H$ with temperature difference $\Delta T$ (here $\psi$ is a stream function, a function whose derivatives give the 2-d flow velocity, and $\theta$ the departure of temperature from the no-convection state; $g,\alpha,\nu,\kappa$ are gravity, the thermal expansion coefficient, kinematic viscosity and thermal conductivity; $\partial(\cdot,\cdot)/\partial(x,z)$ is a Jacobian, the advection term):
 $$\frac{\partial}{\partial t}\nabla^2\psi=-\frac{\partial(\psi,\nabla^2\psi)}{\partial(x,z)}+\nu\nabla^4\psi+g\alpha\frac{\partial\theta}{\partial x},\tag{17}$$
 $$\frac{\partial}{\partial t}\theta=-\frac{\partial(\psi,\theta)}{\partial(x,z)}+\frac{\Delta T}{H}\frac{\partial\psi}{\partial x}+\kappa\nabla^2\theta.\tag{18}$$
-Rayleigh found that convection develops, with fields of the form (19)–(20), when
+The problem is most tractable with free upper and lower boundaries, where $\psi$ and $\nabla^2\psi$ vanish (p. 134). Rayleigh found that fields of motion of the form
+$$\psi=\psi_0\sin(\pi aH^{-1}x)\sin(\pi H^{-1}z),\tag{19}$$
+$$\theta=\theta_0\cos(\pi aH^{-1}x)\sin(\pi H^{-1}z)\tag{20}$$
+would develop (here $a$ sets the horizontal scale of the cells relative to $H$) if the Rayleigh number (a dimensionless measure of the thermal driving)
 $$R_a=g\alpha H^3\Delta T\nu^{-1}\kappa^{-1}\tag{21}$$
 exceeds
 $$R_c=\pi^4a^{-2}(1+a^2)^3.\tag{22}$$
@@ -162,10 +168,10 @@ If $\sigma<b+1$, no positive $r$ satisfies (34), so steady convection is always 
 - Fig. 2 shows a spiral outward from $C'$. Near step 1650 the trajectory crosses to the neighbourhood of $C$, spirals there, then returns to $C'$.
 - Fig. 3, built from printed values, shows $X$ as a single-valued function over part of the $(Y,Z)$ plane, and as two values elsewhere.
 - Within the accuracy of the printed values, the trajectory lies on a pair of surfaces that appear to merge.
-- Other trajectories from far away soon meet these surfaces, so they seem formed of limiting trajectories. The origin is a steady state, so no trajectory can pass through it; however, two trajectories emanate from it (approach it as $\tau\to-\infty$), and the heavy curve they form in Fig. 3 is a natural boundary that trajectories tend to follow but not cross (p. 138).
-- The trajectory seems to leave a spiral only after exceeding a critical distance from the centre (p. 138).
+- Other trajectories from far away soon meet these surfaces, so they seem formed of limiting trajectories. The origin is a steady state, so no trajectory can pass through it; however, two trajectories emanate from it (approach it as $\tau\to-\infty$), and the heavy curve they form in Fig. 3 is a natural boundary that trajectories tend to follow but not cross. The holes near $C$ and $C'$ are also regions that cannot be occupied once abandoned (p. 138).
+- The trajectory seems to leave a spiral only after exceeding a critical distance from the centre. How far this distance is exceeded appears to determine where the next spiral is entered, which in turn seems to fix the number of circuits there. So some single feature of one circuit should predict the same feature of the next; Lorenz picks the maximum of $Z$ (p. 138).
 
-**First-return map (pp. 138–139).** Let $M_n$ be the $n$th maximum of $Z$ (Table 2). Fig. 4 plots $M_{n+1}$ against $M_n$. Within round-off, the relation is single-valued and two-to-one. $X$ and $Y$ change sign after a maximum above about 385. Maxima near 385 are followed by close approaches to the origin and then exceptionally large maxima, so the initial $M_1=483$ is shown as following 385. An observer could therefore build an empirical prediction scheme from Figs. 2 and 4 (pp. 138–139).
+**First-return map (pp. 138–139).** Let $M_n$ be the $n$th maximum of $Z$ (Table 2). Fig. 4 plots $M_{n+1}$ against $M_n$. Within round-off, the relation is single-valued and two-to-one. $X$ and $Y$ change sign after a maximum above about 385. Maxima near 385 are followed by close approaches to the origin and then exceptionally large maxima, so the initial $M_1=483$ is shown as following 385. An investigator unaware of the governing equations could therefore build an empirical prediction scheme from Figs. 2 and 4. Its accuracy would be limited by the exactness of the figures and by the accuracy with which the initial $X,Y,Z$ are observed (pp. 138–139).
 
 Lorenz idealises Fig. 4 by Fig. 5, for $M_n\in[0,1]$:
 $$M_{n+1}=2M_n \ (M_n<\tfrac12);\quad M_{n+1}\ \text{undefined}\ (M_n=\tfrac12);\quad M_{n+1}=2-2M_n\ (M_n>\tfrac12).\tag{35}$$
@@ -184,7 +190,7 @@ Lorenz says these conclusions rest on a finite numerical segment, cannot be rega
 $$V_0(\tau_1)=e^{-(\sigma+b+1)(\tau_1-\tau_0)}V_0(\tau_0),\tag{37}$$
 by (30). A circuit about $C$ or $C'$ takes about 70 iterations, so, as printed, $\tau_2=\tau_1+0.7$ (the times there are named $\tau_0,\tau_1$, so this is presumably a misprint for $\tau_1=\tau_0+0.7$). Since $\sigma+b+1=41/3$,
 $$V_0(\tau_1)=0.00007\,V_0(\tau_0).\tag{38}$$
-Particles in suitable directions come together very rapidly and appear to merge. Following the surfaces round a circuit, each "surface" is really a pair, so there are four where they appear to merge, then eight, and so on. Lorenz concludes there is an infinite complex of surfaces, each extremely close to one of two merging surfaces. The values at which a line parallel to the $X$-axis meets the surfaces may be likened to the numbers in $[0,1]$ whose expansions contain only zeros and ones. That set is nondenumerable but has measure zero. Repeating expansions, which are rational, correspond to periodic or quasi-periodic trajectories and form a denumerable set (p. 140).
+Particles in suitable directions come together very rapidly and appear to merge. Following the surfaces round a circuit, each "surface" is really a pair, so there are four where they appear to merge, then eight, and so on. Lorenz concludes there is an infinite complex of surfaces, each extremely close to one of two merging surfaces. The values at which a line parallel to the $X$-axis meets the surfaces may be likened to the numbers in $[0,1]$ whose expansions contain only zeros and ones. That set is nondenumerable but has measure zero (total length zero on the line). Repeating expansions, which are rational, correspond to periodic or quasi-periodic trajectories and form a denumerable set (p. 140).
 
 ### 8. Conclusion (pp. 140–141)
 - Forced dissipative systems may show periodic or irregular behaviour without matching forcing, and constant forcing can give either (p. 140).
@@ -213,7 +219,7 @@ From $n=2$ the first sequence alternates $0.8, 0.4, 0.8, 0.4$; this periodic pai
 ## Concepts
 - [[deterministic chaos]] — bounded, nonperiodic deterministic solutions that are unstable. Lorenz does not use the word "chaos" (p. 133).
 - [[state space / phase space]] — $M$-dimensional space whose points are states and whose curves are trajectories (p. 131).
-- [[attractor / basin of attraction]] — the ultimate set approached by trajectories. Here it is a zero-volume subspace holding all central trajectories (p. 135).
+- [[attractor / basin of attraction]] — the ultimate set approached by trajectories. Here it is a zero-volume subspace holding all central trajectories; Lorenz does not use the word "attractor" (canon link; not stated in this unit) (p. 135).
 - [[strange attractor / fractal]] — Lorenz describes an infinite complex of surfaces, but does not use this term (p. 140).
 - [[fixed point and stability]] — steady states of (25)–(27) and the definitions of stable and unstable trajectories (pp. 132, 135).
 - [[linear stability analysis]] — eigenvalues of (29) at steady states give $r=1$ and (34) (pp. 135–136).
@@ -228,7 +234,7 @@ From $n=2$ the first sequence alternates $0.8, 0.4, 0.8, 0.4$; this periodic pai
 - [[lorenz-system]] — equations (25)–(27) at $\sigma=10$, $b=8/3$, $r=28$ (pp. 135, 136).
 - [[rayleigh-benard-convection]] — the physical background for the three-variable truncation (p. 134).
 - [[tent-map]] — idealisation (35) of the Fig. 4 return map (p. 139).
-- [[atmospheric-predictability]] — the case that very-long-range forecasting is impossible unless the present state is known exactly, with the open question of analogues (p. 141).
+- [[atmospheric-predictability]] — if the results apply to the (ostensibly nonperiodic) atmosphere, prediction of the sufficiently distant future is impossible unless the present state is known exactly; with the open question of analogues (p. 141).
 
 ## Bridges (candidates)
 - [structural-analogy] Instability of nonperiodic trajectories ↔ Lyapunov exponent: the slope product $\Lambda$ with $|\text{slope}|>1$ is a local growth rate of separation.
