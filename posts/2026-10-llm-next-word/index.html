@@ -1,0 +1,1010 @@
+<title>What Does an LLM Know?</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column (~66ch) on paper; labs are bordered instruments set into the column; a fixed audio bar sits at the bottom edge. Same family identity as the AI4Read Library page. */
+:root{
+  --paper:#F4F5F2; --card:#FFFFFF; --ink:#1F2733; --muted:#5D6672; --rule:#DADDD6;
+  --stamp:#A3342B; --stamp-soft:#F6E4E1; --ok:#2E6B4F; --ok-soft:#E1EFE7; --chip:#E9EBE6;
+  --truth:#1F2733; --model:#A3342B; --blue:#2D5B8A; --blue-soft:#E2EBF4;
+  --f-display:"Newsreader",Georgia,"Times New Roman",serif;
+  --f-body:"Newsreader",Georgia,"Times New Roman",serif;
+  --f-ui:"IBM Plex Sans",-apple-system,"Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --bar-h:64px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#15181D; --card:#1D2128; --ink:#E6E8EA; --muted:#9AA3AE; --rule:#2E343D;
+  --stamp:#E0796E; --stamp-soft:#3A2321; --ok:#7BC4A0; --ok-soft:#1E3329; --chip:#272C34;
+  --truth:#C9CED4; --model:#E0796E; --blue:#8DB6E0; --blue-soft:#1F2A36; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#15181D; --card:#1D2128; --ink:#E6E8EA; --muted:#9AA3AE; --rule:#2E343D;
+  --stamp:#E0796E; --stamp-soft:#3A2321; --ok:#7BC4A0; --ok-soft:#1E3329; --chip:#272C34;
+  --truth:#C9CED4; --model:#E0796E; --blue:#8DB6E0; --blue-soft:#1F2A36; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:18px/1.6 var(--f-body);margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0 calc(var(--bar-h) + 40px + env(safe-area-inset-bottom,0px))}
+.wrap{max-width:40rem;margin:0 auto}
+a{color:var(--blue)}
+math{font-size:1.05em}
+math[display="block"]{display:block;overflow-x:auto;overflow-y:hidden;padding:6px 0;margin:10px 0;max-width:100%}
+.mjx{overflow-x:auto;overflow-y:hidden;max-width:100%;margin:10px 0}
+.mjx math[display="block"]{margin:0;overflow:visible;width:max-content;min-width:100%}
+
+.masthead{padding-block:28px 8px}
+.eyebrow,.sec-no{font:500 11px/1 var(--f-ui);letter-spacing:.12em;text-transform:uppercase;color:var(--stamp);margin:0 0 10px}
+h1{font:600 clamp(30px,8vw,44px)/1.08 var(--f-display);margin:0 0 14px;text-wrap:balance;letter-spacing:-.01em}
+.lede{font-size:19px;color:var(--muted);margin:0 0 18px}
+.meta{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:6px;font:14px/1.45 var(--f-ui);color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600;margin-right:6px}
+.toc{font:15px/1.5 var(--f-ui);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0}
+.toc summary{cursor:pointer;font-weight:600}
+.toc ol{margin:8px 0 0;padding-left:22px;display:grid;gap:4px}
+.toc a{color:var(--ink);text-decoration:none}
+
+section{padding-block:36px 8px;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0}
+h2{font:600 clamp(25px,6.4vw,32px)/1.15 var(--f-display);margin:0 0 14px;text-wrap:balance}
+h3{font:600 15px/1.3 var(--f-ui);margin:26px 0 8px;letter-spacing:.01em}
+p{margin:0 0 14px}
+dfn{font-style:normal;font-weight:600}
+.cite{font:12.5px/1 var(--f-ui);color:var(--muted);white-space:nowrap}
+.cite::before{content:"("}.cite::after{content:")"}
+.small{font:14.5px/1.5 var(--f-ui);color:var(--muted)}
+.prompt{margin:14px 0;padding:12px 14px;background:var(--card);border-left:3px solid var(--ink);font:15px/1.6 var(--f-mono)}
+.prompt .arrow{color:var(--stamp);font-weight:500}
+.keypoint{font:600 19px/1.45 var(--f-display);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:14px 0;margin:22px 0}
+.lens-sum{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;font-size:17px}
+.linktype{font:14px/1.5 var(--f-ui);color:var(--muted)}
+.lt{display:inline-block;font:600 11px/1 var(--f-ui);letter-spacing:.08em;text-transform:uppercase;padding:5px 7px;border-radius:3px;margin-right:6px;vertical-align:1px}
+.lt.same{background:var(--ink);color:var(--paper)}
+.lt.analogy{background:var(--blue-soft);color:var(--blue);border:1px solid var(--blue)}
+.trap,.challenge,.reveal{border:1px solid var(--stamp);background:var(--stamp-soft);border-radius:6px;padding:12px 14px;margin:18px 0;font-size:16.5px}
+.challenge{border-color:var(--ok);background:var(--ok-soft)}
+.trap-h,.reveal-h,.lab-title,.rung-h,.c3-h{font:600 11px/1.2 var(--f-ui);letter-spacing:.1em;text-transform:uppercase;margin:0 0 8px}
+.trap-h,.reveal-h{color:var(--stamp)}
+.challenge .trap-h{color:var(--ok)}
+.reveal{border-style:dashed}
+.reveal.locked > :not(.reveal-h){filter:blur(6px);user-select:none}
+.reveal.locked{cursor:pointer}
+.reveal.locked .reveal-h::after{content:" · tap to reveal";color:var(--muted);letter-spacing:.04em;text-transform:none;font-weight:500}
+
+figure.chart{margin:18px 0}
+figure.chart figcaption{font:13px/1.45 var(--f-ui);color:var(--muted);margin-bottom:6px}
+figure.chart svg{width:100%;height:auto;display:block}
+figure.chart text{font:11px var(--f-ui);fill:var(--muted)}
+
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;font:15px/1.3 var(--f-ui);font-variant-numeric:tabular-nums}
+th,td{padding:6px 10px;border-bottom:1px solid var(--rule);text-align:center}
+thead th{font-weight:600;border-bottom:2px solid var(--ink)}
+tbody th{text-align:left;font-weight:500;color:var(--muted)}
+ul.steps{padding-left:20px;margin:0 0 10px}
+ul.steps li{margin-bottom:6px}
+
+.rung{margin:26px 0;padding-top:4px}
+.rung-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:12px;color:var(--ink)}
+.lvl{font:600 10px/1 var(--f-ui);letter-spacing:.08em;padding:4px 6px;border-radius:3px}
+.lvl.hs{background:var(--ok-soft);color:var(--ok)}
+.lvl.ug{background:var(--blue-soft);color:var(--blue)}
+.lvl.grad{background:var(--stamp-soft);color:var(--stamp)}
+
+/* Labs */
+.lab{background:var(--card);border:1px solid var(--ink);border-radius:8px;padding:14px;margin:18px 0;font:15px/1.5 var(--f-ui);display:grid;gap:12px}
+.lab > *{margin:0;min-width:0}
+.lab-title{color:var(--ink)}
+.lab-note{color:var(--muted);font-size:14px}
+.readout{font:14px/1.55 var(--f-mono);font-variant-numeric:tabular-nums;color:var(--ink);background:var(--chip);border-radius:4px;padding:8px 10px;margin:0;overflow-wrap:anywhere}
+.btn{font:500 14px var(--f-ui);border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:999px;padding:8px 14px;cursor:pointer;min-height:38px}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--stamp);outline-offset:2px}
+.presets,.game-foot{display:flex;flex-wrap:wrap;gap:8px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:500 13px var(--f-ui);border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:999px;padding:7px 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sliders{display:grid;gap:8px}
+.sl{display:grid;grid-template-columns:5.5rem 1fr 3.4rem;align-items:center;gap:10px;font-size:14px}
+.sl label{color:var(--muted)}
+.sl output{font:13px var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--stamp);min-height:28px}
+
+.game-text{display:flex;flex-wrap:wrap;gap:3px;font:600 18px/1 var(--f-mono)}
+.gch{width:1.35em;text-align:center;display:grid;gap:3px}
+.gch .l{height:1.4em;border-bottom:2px solid var(--rule);display:grid;place-items:end center}
+.gch.cur .l{border-color:var(--stamp)}
+.gch .n{font:500 11px var(--f-ui);color:var(--muted);height:1em}
+.gch .n.one{color:var(--ok)}
+.keys{display:grid;grid-template-columns:repeat(9,1fr);gap:4px}
+.keys button{font:500 15px var(--f-mono);padding:9px 0;border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:4px;cursor:pointer;min-width:0}
+.keys button:disabled{opacity:.25;cursor:default}
+
+.bars{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:end;height:130px}
+.bar{display:grid;grid-template-rows:1fr auto;height:100%;gap:4px;text-align:center;font:12px var(--f-ui);color:var(--muted)}
+.bar .pair{display:flex;align-items:flex-end;justify-content:center;gap:3px}
+.bar .p,.bar .q{width:38%;border-radius:2px 2px 0 0;transition:height .15s}
+.bar .p{background:var(--truth)}
+.bar .q{background:var(--model)}
+.stack{display:flex;height:14px;border-radius:3px;overflow:hidden;background:var(--chip)}
+.stack span{display:block;height:100%;transition:width .15s}
+.stack .seg-h{background:var(--truth)}
+.stack .seg-d{background:var(--model)}
+.gen-out{font:17px/1.6 var(--f-mono);letter-spacing:.08em;overflow-wrap:anywhere;min-height:3.2em}
+.heat{display:grid;grid-template-columns:auto repeat(3,1fr);gap:4px;font:13px var(--f-mono);font-variant-numeric:tabular-nums}
+.heat div{padding:8px 4px;text-align:center;border-radius:3px}
+.heat .hd{color:var(--muted);font-family:var(--f-ui);font-size:12px;background:none}
+.heat .masked{background:repeating-linear-gradient(45deg,var(--chip),var(--chip) 4px,transparent 4px,transparent 8px);color:var(--muted)}
+.rank{display:grid;gap:6px;font:14px var(--f-mono);font-variant-numeric:tabular-nums}
+.rank div{display:grid;grid-template-columns:4.5rem 1fr 3.5rem;gap:8px;align-items:center}
+.rank i{display:block;height:10px;background:var(--blue);border-radius:2px}
+.rank .win i{background:var(--stamp)}
+.icl-bars{display:grid;gap:8px;font:13px var(--f-ui)}
+.icl-bars div{display:grid;grid-template-columns:7.5rem 1fr 3.5rem;gap:8px;align-items:center}
+.icl-bars i{display:block;height:12px;border-radius:2px;background:var(--blue);transition:width .15s}
+.icl-bars .ans i{background:var(--ok)}
+.icl-bars span:last-child{font-family:var(--f-mono);text-align:right}
+
+.quiz{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;margin:14px 0;font:15.5px/1.5 var(--f-ui)}
+.quiz .q{margin:0 0 10px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{font:500 14px var(--f-ui);border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 12px;cursor:pointer}
+.opts button[aria-pressed="true"]{background:var(--stamp);border-color:var(--stamp);color:var(--paper)}
+.quiz .your{margin:10px 0 0;font-size:13.5px;color:var(--muted)}
+
+.layers{padding-left:22px;display:grid;gap:10px}
+.cards3{display:grid;gap:12px}
+@media (min-width:640px){.cards3{grid-template-columns:1fr 1fr}}
+.c3{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;font-size:16px;min-width:0}
+.c3 p:last-child{margin:0}
+.c3-h{color:var(--blue)}
+.cards{display:grid;gap:8px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;font:15.5px/1.5 var(--f-ui)}
+.card summary{cursor:pointer;font-weight:500}
+.card p{margin:10px 0 0;color:var(--ink)}
+.phrases summary{font:600 14px var(--f-ui);cursor:pointer;margin-bottom:10px}
+dl{margin:0;display:grid;gap:12px}
+dt{font:600 16px var(--f-ui)}
+dd{margin:2px 0 0;font-size:17px}
+.srcs{font:14px/1.5 var(--f-ui);padding-left:22px;display:grid;gap:6px}
+.code{position:relative;margin:12px 0}
+.code pre{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:12px;overflow-x:auto;font:13px/1.5 var(--f-mono);margin:0}
+.code .copy{position:absolute;top:6px;right:6px;font:500 12px var(--f-ui);border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:4px;padding:4px 8px;cursor:pointer}
+code{font-family:var(--f-mono);font-size:.88em}
+
+/* Section tools */
+.sec-tools{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;font:14px var(--f-ui)}
+.sec-tools button{font:500 13px var(--f-ui);border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 12px;cursor:pointer}
+.sec-tools .n{color:var(--stamp);font-weight:600}
+
+/* Audio bar */
+.player{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--card);border-top:1px solid var(--ink);
+  padding:8px max(12px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));font:13px var(--f-ui)}
+.player-in{max-width:40rem;margin:0 auto;display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center}
+.pbtn{width:40px;height:40px;border-radius:50%;border:1px solid var(--ink);background:var(--ink);color:var(--paper);display:grid;place-items:center;cursor:pointer;padding:0}
+.pbtn svg{width:16px;height:16px;fill:currentColor}
+.pinfo{min-width:0;display:grid;gap:4px;cursor:pointer;background:none;border:0;color:var(--ink);text-align:left;padding:0;font:inherit}
+.pinfo b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prog{height:4px;background:var(--chip);border-radius:2px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--stamp)}
+.pctl{display:flex;gap:6px}
+.pctl button{font:600 12px var(--f-ui);border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 9px;cursor:pointer;min-width:42px;min-height:34px}
+.pctl button[aria-pressed="true"]{border-color:var(--stamp);color:var(--stamp)}
+
+/* Sheets */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:30}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:31;background:var(--paper);border-top:1px solid var(--ink);border-radius:12px 12px 0 0;
+  max-height:82vh;overflow-y:auto;padding:14px max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));font:15px/1.5 var(--f-ui)}
+.sheet-in{max-width:40rem;margin:0 auto;display:grid;gap:12px}
+.sheet-h{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.sheet-h b{font:600 17px var(--f-display)}
+.x{border:0;background:none;color:var(--muted);font:500 14px var(--f-ui);cursor:pointer;padding:8px}
+.chlist{display:grid;gap:4px}
+.chlist button{display:flex;justify-content:space-between;gap:8px;text-align:left;border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:6px;padding:10px 12px;font:15px var(--f-ui);cursor:pointer}
+.chlist button[aria-current="true"]{border-color:var(--stamp);color:var(--stamp)}
+.chlist span{color:var(--muted);font-variant-numeric:tabular-nums}
+textarea{width:100%;min-height:96px;font:16px/1.5 var(--f-ui);padding:10px;border:1px solid var(--rule);border-radius:6px;background:var(--card);color:var(--ink);resize:vertical}
+.row{display:flex;flex-wrap:wrap;gap:8px}
+.thread{display:grid;gap:10px}
+.msg{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:10px 12px;white-space:pre-wrap;overflow-wrap:anywhere}
+.msg.me{border-color:var(--ink)}
+.msg.ai{border-color:var(--blue);background:var(--blue-soft)}
+.msg small{display:block;color:var(--muted);font-size:12px;margin-bottom:4px}
+.status{font-size:13px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+</style>
+<header class="masthead wrap">
+  <p class="eyebrow">AI4Read · Post 01 · 15 October 2026</p>
+  <h1>What does an LLM know when it predicts the next word?</h1>
+  <p class="lede">A language model is trained on one job: guess the next piece of text. This post follows that one job through five fields and asks what kind of knowledge it needs, and what kind it can give you.</p>
+  <ul class="meta">
+    <li><b>Home field</b> Large language models</li>
+    <li><b>Lenses</b> Information theory · Linear algebra · Bayesian inference · Philosophy of meaning · Theory of mind</li>
+    <li><b>Level</b> High school → graduate, in 10 rungs</li>
+    <li><b>Time</b> About 40 min to read, 25 min to listen</li>
+  </ul>
+  <details class="toc">
+    <summary>Contents</summary>
+    <ol>
+      <li><a href="#hook">The guessing game</a></li>
+      <li><a href="#guess">Guess first</a></li>
+      <li><a href="#home">How a language model is built</a></li>
+      <li><a href="#lens-info">Lens 1 · Information theory</a></li>
+      <li><a href="#lens-linalg">Lens 2 · Linear algebra</a></li>
+      <li><a href="#lens-bayes">Lens 3 · Bayesian inference</a></li>
+      <li><a href="#lens-meaning">Lens 4 · Philosophy of meaning</a></li>
+      <li><a href="#lens-tom">Lens 5 · Theory of mind</a></li>
+      <li><a href="#ladder">The math ladder</a></li>
+      <li><a href="#answer">So what does it know?</a></li>
+      <li><a href="#turn">Your turn</a></li>
+      <li><a href="#work">Where this shows up in your work</a></li>
+      <li><a href="#recall">Recall questions</a></li>
+      <li><a href="#english">How to say it in English</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </details>
+</header>
+
+<main class="wrap">
+
+<!-- ============ 1 HOOK ============ -->
+<section id="hook" data-ch="hook">
+  <p class="sec-no">1 · Hook</p>
+  <h2>The guessing game</h2>
+  <p>Take a book you have never read. Cover the page and uncover it one letter at a time. Before each letter, guess what it will be. If you are wrong, guess again until you are right, and write down how many guesses you needed.</p>
+  <p>Claude Shannon ran this experiment and published it in 1951. Most of the time the answer was <i>one</i>: the person guessed right on the first try. In one run of this game, 79 of 102 letters were right on the first guess, about 77% <span class="cite">Shannon 1951, p. 56</span>. The list of guess numbers, which Shannon called the <dfn>reduced text</dfn>, is mostly 1s <span class="cite">p. 56</span>.</p>
+  <p>Then Shannon made a surprising point. Imagine an identical twin of the guesser. Give the twin only the guess numbers. At each position, the twin guesses in the same order as the first person and stops at the right guess number. So the twin can rebuild the whole text. Shannon adds that the twin must be identical “mathematically, not just biologically” <span class="cite">p. 55</span>. The lesson: <strong>a good predictor is also a good compressor.</strong> The better you predict, the shorter the code you need.</p>
+  <p>Today we have machines that play exactly this game, at a huge scale. A <dfn>large language model</dfn> (LLM) reads text one <dfn>token</dfn> at a time (a token is a word or a piece of a word) and gives a probability to every possible next token. Here is an example from the GPT-3 paper <span class="cite">Brown et al. 2020, p. 12</span>:</p>
+  <blockquote class="prompt">Alice was friends with Bob. Alice went to visit her friend ____. <span class="arrow">→</span> Bob</blockquote>
+  <p>To fill that blank, you need more than spelling. You need to keep track of who is who. So here is the question of this post: <strong>to predict the next word this well, what does a machine have to know?</strong> Only which words follow which? Facts about the world? Something about the minds of the people who wrote the text?</p>
+
+  <div class="lab" id="lab-game">
+    <p class="lab-title">Try it · Shannon’s game</p>
+    <p class="lab-note">Guess the hidden phrase one letter at a time. Tap a letter (␣ is a space). Wrong letters fade. The number under each letter is how many guesses you needed.</p>
+    <div class="game-text" id="game-text" aria-live="polite"></div>
+    <div class="keys" id="game-keys"></div>
+    <div class="game-foot">
+      <button type="button" class="btn ghost" id="game-reveal">Show this letter</button>
+      <button type="button" class="btn ghost" id="game-reset">Start again</button>
+    </div>
+    <p class="readout" id="game-stats">Your reduced text will appear here.</p>
+  </div>
+  <p class="small">Keep your result in mind. In rung 10 of the math ladder we turn your guess numbers into an estimate in bits, the way Shannon did.</p>
+</section>
+
+<!-- ============ 2 GUESS FIRST ============ -->
+<section id="guess" data-ch="guess">
+  <p class="sec-no">2 · Guess first</p>
+  <h2>Make three predictions</h2>
+  <p>Commit to an answer before you read on. A wrong guess you remember is worth more than a right answer you only read. The answers appear later in the post, each in its own section.</p>
+  <div class="quiz" data-q="g1">
+    <p class="q">1. Shannon asked people to predict English text with a long context (up to 100 letters). On average, how much new information does one letter carry?</p>
+    <div class="opts"><button type="button">About 4.7 bits</button><button type="button">About 2.6 bits</button><button type="button">About 1 bit</button><button type="button">About 0.1 bits</button></div>
+    <p class="your" hidden></p>
+  </div>
+  <div class="quiz" data-q="g2">
+    <p class="q">2. GPT-3 has 175 billion numbers inside it (its weights). It “learns” a new task from five examples written in the prompt. How many of the weights change?</p>
+    <div class="opts"><button type="button">All of them</button><button type="button">A few million</button><button type="button">None</button></div>
+    <p class="your" hidden></p>
+  </div>
+  <div class="quiz" data-q="g3">
+    <p class="q">3. GPT-4 answers a classic false-belief story correctly 97.5% of the time. Researchers change one detail: an object is put <i>on</i> a box instead of <i>in</i> it, so the person coming back can see where it is. How often is GPT-4 right now?</p>
+    <div class="opts"><button type="button">About 95%</button><button type="button">About 70%</button><button type="button">About 40%</button><button type="button">About 0%</button></div>
+    <p class="your" hidden></p>
+  </div>
+</section>
+
+<!-- ============ 3 HOME FIELD ============ -->
+<section id="home" data-ch="home">
+  <p class="sec-no">3 · The phenomenon in its home field</p>
+  <h2>How a language model is built</h2>
+  <p>All the models in this post, from 2003 to 2020, are trained on the same task. Only the machinery changes. Here is the story in eight short steps.</p>
+
+  <h3>Step 1. A sentence is a chain of guesses</h3>
+  <p>The probability of a whole sentence can be split into a chain of next-word probabilities <span class="cite">Bengio et al. 2003, p. 1138</span>:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mi>P</mi><mo>^</mo></mover><mo stretchy="false">(</mo><msub><mi>w</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>w</mi><mi>T</mi></msub><mo stretchy="false">)</mo><mo>=</mo><munderover><mo>∏</mo><mrow><mi>t</mi><mo>=</mo><mn>1</mn></mrow><mi>T</mi></munderover><mover accent="true"><mi>P</mi><mo>^</mo></mover><mo stretchy="false">(</mo><msub><mi>w</mi><mi>t</mi></msub><mo>∣</mo><msub><mi>w</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>w</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\hat P(w_1,\dots,w_T)=\prod_{t=1}^{T}\hat P(w_t\mid w_1,\dots,w_{t-1})</annotation></semantics></math></span></div>
+  <p>In words: the chance of “the cat sat” is the chance of “the”, times the chance of “cat” after “the”, times the chance of “sat” after “the cat”. This is just the rule of conditional probability, used again and again. GPT-2 writes the same product <span class="cite">Radford et al. 2019, pdf 2</span>. So a model that predicts the next token well can also score whole texts.</p>
+
+  <h3>Step 2. Counting runs out of data</h3>
+  <p>The oldest method is to count. How often does “sat” follow “the cat” in a big corpus? These models are called <dfn>n-grams</dfn>. The problem is size. Bengio and colleagues give a famous example: to model 10 words in a row with a vocabulary of 100,000 words, you would need up to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>50</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">10^{50}-1</annotation></semantics></math></span> free numbers <span class="cite">p. 1137</span>. Most word sequences never appear in any corpus, so counting gives them probability zero. This is the <dfn>curse of dimensionality</dfn>.</p>
+
+  <h3>Step 3. Give every word a vector (2003)</h3>
+  <p>Bengio’s answer: give every word a short list of numbers, a <dfn>vector</dfn> <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">C(i)</annotation></semantics></math></span> with 30 to 100 entries, and learn these vectors together with the predictor <span class="cite">pp. 1139, 1141</span>. Similar words are expected to end up close together. Then one sentence such as “The cat is walking in the bedroom” also helps the model with “A dog was running in a room” <span class="cite">p. 1139</span>. On the Brown corpus, the new model’s perplexity (a measure of surprise we define in rung 4) was about 24% better than the best counting model; on a news corpus, about 8% <span class="cite">p. 1148</span>.</p>
+
+  <h3>Step 4. Cheap vectors, big data (2013)</h3>
+  <p>Mikolov and colleagues removed the hidden layer to make training cheap enough for billions of words <span class="cite">Mikolov et al. 2013a, p. 4</span>. The vectors showed a surprise: some relations became directions. The vector for <i>biggest</i> minus <i>big</i> plus <i>small</i> lands near <i>smallest</i> <span class="cite">p. 5</span>. We test this idea in Lens 2.</p>
+
+  <h3>Step 5. Attention (2017)</h3>
+  <p>The Transformer lets every position look at other positions and take a <dfn>weighted average</dfn> of what it finds. The weights come from how well a “query” at one position matches a “key” at another <span class="cite">Vaswani et al. 2017, pp. 3–4</span>. To predict text from left to right, a <dfn>mask</dfn> stops a position from looking at the future <span class="cite">pp. 3, 5</span>. (The 2017 model was built for translation. GPT-style models keep only the decoder half <span class="cite">Kaplan et al. 2020, p. 6</span>.)</p>
+
+  <h3>Step 6. Tasks are text too (2019)</h3>
+  <p>GPT-2’s authors noticed that a task can be written inside the text. Put “TL;DR:” after a news article, and the model tends to continue with a summary <span class="cite">Radford et al. 2019, pdf 6</span>. The summaries were weak: they “just barely” beat random sentences from the article <span class="cite">pdf 6</span>. But the authors made a speculation that frames this whole post: a model with enough capacity will begin to infer and perform the tasks shown in text “in order to better predict them” <span class="cite">pdf 3</span>.</p>
+
+  <h3>Step 7. Learning inside the prompt (2020)</h3>
+  <p>GPT-3 has 175 billion weights and was trained on 300 billion tokens <span class="cite">Brown et al. 2020, p. 8</span>. Show it a few examples of a task in the prompt and it often continues the pattern. The authors call this <dfn>in-context learning</dfn>, and they stress that it happens with no gradient updates: the weights do not change <span class="cite">pp. 3–4</span>.</p>
+  <div class="reveal" data-for="g2"><p class="reveal-h">Prediction 2 · answer</p><p><b>None.</b> In few-shot use, all “learning” happens in the forward pass, while the model reads the prompt. The authors also say their terms are “agnostic” about whether the model learns the task from scratch or recognizes a pattern it saw in training <span class="cite">p. 4, footnote 1</span>.</p></div>
+
+  <h3>Step 8. Smooth scaling laws (2020)</h3>
+  <p>Kaplan and colleagues measured the loss on held-out text for many model sizes. The loss falls as a smooth power law. Doubling the number of parameters multiplies the loss by about 0.95 <span class="cite">Kaplan et al. 2020, p. 5</span>. They add a warning: a smooth loss “may hide seemingly qualitative changes in capability” <span class="cite">p. 19</span>.</p>
+
+  <p class="keypoint">One training signal runs through all eight steps: make the next token less surprising. Every ability we see in an LLM either comes from this signal or rides along with it. The rest of the post asks what that signal can carry.</p>
+</section>
+
+<!-- ============ 4 LENS: INFORMATION THEORY ============ -->
+<section id="lens-info" data-ch="lens-info">
+  <p class="sec-no">4 · Through the lenses</p>
+  <h2>Lens 1 · Information theory</h2>
+  <p class="linktype"><span class="lt same">same-math</span> The LLM training loss <i>is</i> Shannon’s average surprise. This is not an analogy; it is the same formula.</p>
+
+  <p>Shannon’s 1948 paper starts by setting meaning aside. The meaning of a message is “irrelevant to the engineering problem”. What matters is that a message is a <i>selection from a set</i> of possible messages <span class="cite">Shannon 1948, p. 1</span>. This choice made the theory possible. Keep it in mind, because it also limits what this lens can tell us.</p>
+
+  <h3>Surprise and entropy</h3>
+  <p>If an event has probability <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span>, its <dfn>surprise</dfn> is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>p</mi></mrow><annotation encoding="application/x-tex">-\log_2 p</annotation></semantics></math></span> bits. A coin flip (probability ½) carries 1 bit. Something with probability ⅛ carries 3 bits. <dfn>Entropy</dfn> is the average surprise of a source:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><munder><mo>∑</mo><mi>x</mi></munder><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)=-\sum_x p(x)\log_2 p(x)</annotation></semantics></math></span></div>
+  <p>Cover and Thomas give a nice reading: entropy is close to the smallest average number of yes/no questions you need to find out what happened (the minimum lies between <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">H+1</annotation></semantics></math></span>). For a source with probabilities ½, ¼, ⅛, ⅛ the two match exactly: entropy 7/4 bits, and 1.75 questions on average <span class="cite">Cover &amp; Thomas, pp. 14–15</span>. Shannon uses the same numbers and the code 0, 10, 110, 111 <span class="cite">Shannon 1948, p. 18</span>.</p>
+
+  <h3>The cost of a wrong model</h3>
+  <p>Now the key fact for LLMs. Suppose the truth is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span> but you build your code (or your predictions) from a model <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span>. Then your average cost is not <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)</annotation></semantics></math></span>. It is</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mtext> </mtext><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)+D(p\,\|\,q)</annotation></semantics></math></span></div>
+  <p>where <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> is the <dfn>relative entropy</dfn>, also called the KL divergence: the extra bits you pay for believing <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> when the truth is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span> <span class="cite">Cover &amp; Thomas, p. 18</span>. <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> is never negative, and it is zero only when <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">q=p</annotation></semantics></math></span> <span class="cite">p. 26</span>.</p>
+  <p>An LLM is trained to make its average surprise on real text as small as possible. That average is exactly <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mtext> </mtext><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)+D(p\,\|\,q)</annotation></semantics></math></span>, with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span> the true distribution of text and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> the model. The entropy <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)</annotation></semantics></math></span> is fixed by the language. So <strong>the only part training can reduce is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></strong>: the distance between the model and the truth about text.</p>
+
+  <div class="trap"><p class="trap-h">Name trap</p><p>In machine learning, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mi mathvariant="normal">∥</mi><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)+D(p\|q)</annotation></semantics></math></span> is called <dfn>cross-entropy</dfn>. Cover and Thomas do not use the word that way: their historical notes list “cross entropy” as another name for <i>relative</i> entropy, that is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> itself <span class="cite">p. 49</span>. And Shannon’s 1948 “relative entropy” means something else again: entropy divided by its maximum, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi mathvariant="normal">/</mi><msub><mi>H</mi><mi>max</mi><mo>⁡</mo></msub></mrow><annotation encoding="application/x-tex">H/H_{\max}</annotation></semantics></math></span> <span class="cite">Shannon 1948, p. 14</span>. In this post, “cross-entropy” is our label for the ML sense.</p></div>
+
+  <h3>Context lowers surprise</h3>
+  <p>Shannon calculated, from tables of letter, pair and triple frequencies, how uncertain the next letter of English is when you know the previous <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span> letters. He called this <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">F_N</annotation></semantics></math></span>. With 26 letters (no space): <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>0</mn></msub><mo>=</mo><mn>4.70</mn></mrow><annotation encoding="application/x-tex">F_0=4.70</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>1</mn></msub><mo>=</mo><mn>4.14</mn></mrow><annotation encoding="application/x-tex">F_1=4.14</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>2</mn></msub><mo>=</mo><mn>3.56</mn></mrow><annotation encoding="application/x-tex">F_2=3.56</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>3</mn></msub><mo>≈</mo><mn>3.3</mn></mrow><annotation encoding="application/x-tex">F_3\approx3.3</annotation></semantics></math></span> bits per letter <span class="cite">Shannon 1951, p. 54</span>. In theory <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">F_N</annotation></semantics></math></span> never goes up as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span> grows, and it approaches the true entropy <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span> <span class="cite">Shannon 1948, p. 14</span>. One careful point: knowing more lowers uncertainty <i>on average</i>. A particular context can make the next symbol <i>more</i> uncertain <span class="cite">Cover &amp; Thomas, p. 28</span>.</p>
+  <figure class="chart" id="fig-shannon"><figcaption>First-guess success by amount of context (letters known before guessing). The first two bars (0 and 1 letters) were computed from frequency tables; the rest come from one person’s guesses. Data: Shannon 1951, p. 57.</figcaption></figure>
+
+  <div class="reveal" data-for="g1"><p class="reveal-h">Prediction 1 · answer</p><p><b>About 1 bit.</b> Shannon wrote that long-range effects (up to 100 letters) seem to reduce the entropy to “something of the order of one bit per letter” <span class="cite">Shannon 1951, pp. 50–51</span>. His bounds at 100 letters were 0.6 to 1.3 bits <span class="cite">p. 64</span>. This is a hedged estimate from human guessers on one book, not a constant of nature <span class="cite">pp. 56–57</span>. For comparison, 4.7 bits is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mn>26</mn></mrow><annotation encoding="application/x-tex">\log_2 26</annotation></semantics></math></span>: no knowledge at all.</p></div>
+
+  <h3>How low can a model go?</h3>
+  <p>Nobody knows the true entropy of a language. Kaplan and colleagues found that two of their trends contradict each other near a loss of about 1.7 <dfn>nats</dfn> per token (nats are like bits but use natural logarithms; 1 nat ≈ 1.44 bits). The most obvious reading, they say, is that the scaling laws break down at or before that point. They add a conjecture: the number <i>might</i> be a rough estimate of the entropy per token of natural language. The estimate is uncertain by an order of magnitude <span class="cite">Kaplan et al. 2020, pp. 17–18</span>. A rough conversion, just for fun: 1.7 nats = 2.45 bits per token. Kaplan’s own footnote says their text has about 4.3 characters per token <span class="cite">p. 18</span>, which gives about 0.57 bits per character. Another route, with a GPT-3 token at about 0.7 words <span class="cite">Brown et al. 2020, p. 24</span> and Shannon’s 4.5 letters per word without spaces <span class="cite">Shannon 1951, p. 53</span>, gives 0.78. So: roughly 0.6–0.8 bits per character, near Shannon’s “one bit”. Different texts, tokenizers and methods: treat it as a talking point, not a result.</p>
+
+  <p class="lens-sum"><b>What this lens says the model knows:</b> exactly as many bits about text as it saves. It is a precise, measurable kind of knowledge. But Shannon built the theory by setting meaning aside, so this lens cannot tell you what those bits are <i>about</i>.</p>
+</section>
+
+<!-- ============ 5 LENS: LINEAR ALGEBRA ============ -->
+<section id="lens-linalg" data-ch="lens-linalg">
+  <h2>Lens 2 · Linear algebra</h2>
+  <p class="linktype"><span class="lt same">same-math</span> Attention is matrix multiplication and a weighted average. <span class="lt analogy">structural analogy</span> “Relations between words are directions in space” is an analogy, and it only partly holds.</p>
+
+  <h3>Words as points, relations as arrows</h3>
+  <p>Mikolov, Yih and Zweig took a model trained only to predict words. Nothing in it was built for grammar or meaning <span class="cite">Mikolov et al. 2013b, p. 747</span>. Yet relations showed up as roughly constant offsets: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>a</mi><mi>p</mi><mi>p</mi><mi>l</mi><mi>e</mi></mrow></msub><mo>−</mo><msub><mi>x</mi><mrow><mi>a</mi><mi>p</mi><mi>p</mi><mi>l</mi><mi>e</mi><mi>s</mi></mrow></msub><mo>≈</mo><msub><mi>x</mi><mrow><mi>c</mi><mi>a</mi><mi>r</mi></mrow></msub><mo>−</mo><msub><mi>x</mi><mrow><mi>c</mi><mi>a</mi><mi>r</mi><mi>s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{apple}-x_{apples}\approx x_{car}-x_{cars}</annotation></semantics></math></span> <span class="cite">p. 746</span>. To answer “a is to b as c is to ?”, compute</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>y</mi><mo>=</mo><msub><mi>x</mi><mi>b</mi></msub><mo>−</mo><msub><mi>x</mi><mi>a</mi></msub><mo>+</mo><msub><mi>x</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">y=x_b-x_a+x_c</annotation></semantics></math></span></div>
+  <p>and pick the word whose vector points most nearly in the same direction as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span> (highest <dfn>cosine</dfn>) <span class="cite">p. 748</span>. Their best model got 39.6% of 8,000 grammar questions right; an older method got 16.5% <span class="cite">pp. 748–749</span>. The authors call these regularities a by-product of maximum-likelihood training <span class="cite">p. 750</span>. Later, with much more data, a skip-gram model reached 65.6% on a larger test <span class="cite">Mikolov et al. 2013a, p. 9</span>. So the arrows are real but rough: about 40% to two thirds of analogies work exactly.</p>
+
+  <h3>Attention as a weighted average</h3>
+  <p>In a Transformer, each position makes three vectors: a <dfn>query</dfn> (what am I looking for?), a <dfn>key</dfn> (what do I contain?) and a <dfn>value</dfn> (what do I pass on?). The output at a position is an average of values, weighted by how well its query matches each key <span class="cite">Vaswani et al. 2017, pp. 3–4</span>. The <dfn>softmax</dfn> turns the match scores into weights that are positive and sum to 1 (rung 6 works it out by hand):</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mrow><mi mathvariant="normal">A</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mrow><mo stretchy="false">(</mo><mi>Q</mi><mo separator="true">,</mo><mi>K</mi><mo separator="true">,</mo><mi>V</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">x</mi></mrow><mtext> ⁣</mtext><mrow><mo fence="true">(</mo><mfrac><mrow><mi>Q</mi><msup><mi>K</mi><mi mathvariant="normal">⊤</mi></msup></mrow><msqrt><msub><mi>d</mi><mi>k</mi></msub></msqrt></mfrac><mo fence="true">)</mo></mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">\mathrm{Attention}(Q,K,V)=\mathrm{softmax}\!\left(\frac{QK^{\top}}{\sqrt{d_k}}\right)V</annotation></semantics></math></span></div>
+  <p>Why divide by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><msub><mi>d</mi><mi>k</mi></msub></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{d_k}</annotation></semantics></math></span>? If the parts of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span> are independent with mean 0 and variance 1, their dot product has variance <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">d_k</annotation></semantics></math></span>. The authors suspect large dot products push the softmax into regions with tiny gradients, so they scale them down <span class="cite">p. 4, footnote 4</span>. In one example sentence, some attention heads seem to link “its” to the noun it refers to; the authors say these heads are “apparently involved in anaphora resolution” <span class="cite">p. 14</span>. A picture of attention weights is a hint, not proof of what the model computes.</p>
+
+  <p class="lens-sum"><b>What this lens says the model knows:</b> relations between words, stored as positions and directions, and a way to mix information from earlier tokens. The geometry is real but approximate. Whether geometry is <i>meaning</i> is the question of Lens 4.</p>
+  <p class="small">Try both ideas with numbers in rungs 6 and 7 of the math ladder.</p>
+</section>
+
+<!-- ============ 6 LENS: BAYES ============ -->
+<section id="lens-bayes" data-ch="lens-bayes">
+  <h2>Lens 3 · Bayesian inference</h2>
+  <p class="linktype"><span class="lt same">same-math</span> inside one simplified model of text, where it is a theorem. <span class="lt analogy">structural analogy</span> for real LLMs, where it is not proved.</p>
+
+  <p>Here is a puzzle from Xie and colleagues <span class="cite">Xie et al. 2022, p. 1</span>:</p>
+  <blockquote class="prompt">Albert Einstein was German<br>Mahatma Gandhi was Indian<br>Marie Curie was <span class="arrow">→</span> Polish</blockquote>
+  <p>Nobody told the model the task is “nationality”. How does it know? Xie’s idea: imagine that every document in the training data was written under some hidden <dfn>concept</dfn> <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span>, such as a topic, a format, or a task. To predict the next token of a document well, a model has to guess which concept is active. If it predicts perfectly, it must do this guessing implicitly, by averaging over concepts <span class="cite">p. 2</span>:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>p</mi><mo stretchy="false">(</mo><mtext>output</mtext><mo>∣</mo><mtext>prompt</mtext><mo stretchy="false">)</mo><mo>=</mo><mo>∫</mo><mi>p</mi><mo stretchy="false">(</mo><mtext>output</mtext><mo>∣</mo><mtext>concept</mtext><mo separator="true">,</mo><mtext>prompt</mtext><mo stretchy="false">)</mo><mtext>  </mtext><mi>p</mi><mo stretchy="false">(</mo><mtext>concept</mtext><mo>∣</mo><mtext>prompt</mtext><mo stretchy="false">)</mo><mtext>  </mtext><mi>d</mi><mo stretchy="false">(</mo><mtext>concept</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">p(\text{output}\mid\text{prompt})=\int p(\text{output}\mid\text{concept},\text{prompt})\;p(\text{concept}\mid\text{prompt})\;d(\text{concept})</annotation></semantics></math></span></div>
+  <p>A few-shot prompt is evidence about the concept. If the posterior <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false">(</mo><mtext>concept</mtext><mo>∣</mo><mtext>prompt</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">p(\text{concept}\mid\text{prompt})</annotation></semantics></math></span> concentrates on one concept, the model in effect “selects” it <span class="cite">p. 3</span>. In-context learning then looks like Bayesian inference, with no weight change at all.</p>
+  <p>Xie proves this inside a stylized world: documents come from a mixture of hidden Markov models (simple random processes with a hidden state that changes step by step), the language model fits the training distribution exactly, and the concepts are distinguishable enough. Under these conditions, prediction reaches the best possible accuracy as the number of examples grows <span class="cite">Theorem 1, p. 7</span>. Their synthetic tests also show limits. With concepts not seen in training, in-context learning failed <span class="cite">p. 10</span>. Changing the order of examples moved accuracy by 10–40%, and zero-shot sometimes beat few-shot <span class="cite">pp. 10–11</span>.</p>
+
+  <p class="lens-sum"><b>What this lens says the model knows:</b> a prior over the kinds of documents people write, and the ability to narrow it down from a prompt. This is a clean story, but it is a theorem about a model of text, tested on synthetic data. It does not show that real LLMs compute posteriors. Xie calls it “a first step” <span class="cite">p. 12</span>.</p>
+  <p class="small">Watch the posterior move in rung 8.</p>
+</section>
+
+<!-- ============ 7 LENS: MEANING ============ -->
+<section id="lens-meaning" data-ch="lens-meaning">
+  <h2>Lens 4 · Philosophy of meaning</h2>
+  <p class="linktype"><span class="lt analogy">structural analogy</span> A thought experiment (an octopus on a cable) stands in for a language model. The argument works only if the analogy holds.</p>
+
+  <h3>The octopus</h3>
+  <p>Bender and Koller define a language model as any system trained only to predict strings. They define meaning as the relation between a linguistic form and the speaker’s communicative intent. From this, they argue that training on form alone “cannot in principle” lead to learning meaning <span class="cite">Bender &amp; Koller 2020, p. 5185</span>.</p>
+  <p>Their story: two people, A and B, are stranded on two islands and talk through an underwater cable. A clever octopus, O, taps the cable. It learns the statistical patterns of their messages and starts to answer in B’s place. In small talk, O may pass. Then A writes that a bear is attacking and asks how to defend herself with some sticks. O has never seen a bear or a stick. It can only produce text that looks like an answer <span class="cite">pp. 5188–5189</span>. Bender and Koller do not say LMs learn nothing: they grant that BERT has “probably learned something about meaning”, and that language models learn “some reflection of meaning into the linguistic form” <span class="cite">p. 5193</span>.</p>
+
+  <h3>Meaning without reference</h3>
+  <p>Piantadosi and Hill reply that the octopus argument assumes that <dfn>reference</dfn> (pointing to things in the world) is what fixes meaning <span class="cite">Piantadosi &amp; Hill 2022, pdf 1–2</span>. But many words have no clear referent, such as “justice” <span class="cite">pdf 2</span>. On the <dfn>conceptual role</dfn> view, meaning comes mainly from how a concept relates to other concepts, the way “force” is tied to “mass” and “acceleration” through <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mi>m</mi><mo>⋅</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">f=m\cdot a</annotation></semantics></math></span> <span class="cite">pdf 2</span>. Whether next-word prediction discovers such roles is, they say, an empirical question, with a “promising, partial affirmative” answer so far <span class="cite">pdf 4</span>. Their claim is conditional: if conceptual role theories are correct, LLMs likely already share the foundation of meaning <span class="cite">pdf 5</span>.</p>
+
+  <h3>Two kinds of competence</h3>
+  <p>Mahowald and colleagues suggest a cleaner split. <dfn>Formal competence</dfn> is knowing the rules and statistical patterns of a language. <dfn>Functional competence</dfn> is using language to do things in the world <span class="cite">Mahowald et al. 2024, pp. 2–3</span>. In the human brain, the language network is not used for arithmetic, logic or reasoning about other minds, and people with severe aphasia can still do arithmetic and play chess <span class="cite">p. 5</span>. For English, LLMs’ formal competence is close to human level; their functional competence is “patchy” <span class="cite">p. 2</span>. A test of formal competence: “The keys to the old, wooden kitchen cabinet <i>are</i>…”, where the verb must agree with “keys”, not with the nearer word “cabinet” <span class="cite">pp. 7–8</span>.</p>
+
+  <p class="lens-sum"><b>What this lens says the model knows:</b> it depends on your theory of meaning. If meaning needs a link to intentions and the world, form alone gives at best a reflection. If meaning is mostly relations between concepts, prediction may build part of it. That is why more data alone cannot settle this debate.</p>
+</section>
+
+<!-- ============ 8 LENS: THEORY OF MIND ============ -->
+<section id="lens-tom" data-ch="lens-tom">
+  <h2>Lens 5 · Theory of mind</h2>
+  <p class="linktype"><span class="lt analogy">structural analogy</span> Tests designed for children are given to machines. The open question is whether passing means the same thing in both cases.</p>
+
+  <p><dfn>Theory of mind</dfn> (ToM) is the ability to think about what other people believe, even when their beliefs are false. A classic test: a bag full of popcorn has a label that says “chocolate”. Sam has never seen inside. What does Sam think is in the bag? <span class="cite">Kosinski 2024, § Study 1.1</span>. To predict what Sam will <i>say</i>, you must track what Sam <i>believes</i>, not what is true. People who write stories describe false beliefs all the time, so a next-word predictor at least gets plenty of examples.</p>
+
+  <h3>The claim</h3>
+  <p>Kosinski gave 40 such tasks to a series of models. Scoring was strict: a task counted only if all 16 prompts (the false-belief story, three true-belief controls, and reversed versions) were answered correctly <span class="cite">§ Abstract, § Study 3</span>. ChatGPT-4 solved 75% of tasks (95% interval 66–84%), which he compares with 6-year-old children <span class="cite">§ Study 3</span>. He suggests ToM <i>may</i> have emerged as a by-product of language training <span class="cite">§ Abstract</span>, and he is careful: failures do not necessarily show inability, and successes do not prove ToM <span class="cite">§ Discussion</span>.</p>
+
+  <h3>The critics</h3>
+  <p>Ullman made “trivial alterations” to such stories. Make the popcorn bag transparent, so Sam can see the popcorn: on one of two belief prompts, GPT-3.5 still gave “chocolate” a probability of 95% <span class="cite">Ullman 2023, p. 3</span>. His rule of evidence: one clear failure can outweigh many average successes, in the same way that a machine that answers 100 easy multiplications correctly but fails 213 × 261 has probably memorized answers rather than learned to multiply <span class="cite">p. 2</span>. Has ToM emerged? “Probably not” <span class="cite">p. 8</span>. Shapira and colleagues tested 15 models on 6 datasets and concluded that “no model robustly exhibits ToM on all datasets” <span class="cite">Shapira et al. 2024, p. 2261</span>.</p>
+  <div class="reveal" data-for="g3"><p class="reveal-h">Prediction 3 · answer</p><p><b>About 0%.</b> GPT-4 scored 97.5% on the original false-belief transfer items and 0% when the object was put <i>on</i> the container, or when the container was transparent <span class="cite">Shapira et al. 2024, pp. 2262–2263</span>. Shapira’s team suggests models <i>might</i> recognize the familiar Sally–Anne pattern rather than track beliefs <span class="cite">p. 2262</span>.</p></div>
+
+  <h3>The twist</h3>
+  <p>Strachan and colleagues compared models with 1,907 human participants. Humans also failed about half of the Ullman-style changes, which alter physical facts of the story <span class="cite">Strachan et al. 2024, § False belief</span>. GPT-4 matched or beat humans on irony, hinting and strange stories <span class="cite">§ Irony, § Hinting, § Strange stories</span>, but was worse on <dfn>faux pas</dfn> (noticing that someone said something awkward without knowing it). Its faux pas errors were mostly “not enough information”; when the question asked what was <i>more likely</i>, GPT-4 answered perfectly. The authors read this as <dfn>hyperconservatism</dfn>, an unwillingness to commit, not a failure to infer <span class="cite">§ Understanding faux pas</span>.</p>
+  <div class="trap"><p class="trap-h">Version trap</p><p>Ullman <span class="cite">p. 2</span> and Shapira <span class="cite">pp. 2272–2273</span> criticize an earlier preprint of Kosinski’s paper, which reported higher scores. The published PNAS version, with stricter controls, reports lower ones (for example ChatGPT-4 down from 95% to 75%) <span class="cite">Kosinski 2024, § Study 3</span>. Always check which version a critique answers.</p></div>
+
+  <p class="lens-sum"><b>What this lens says the model knows:</b> enough about how people write about beliefs to pass many standard tests, but not robustly under small changes. The two sides also disagree about evidence: does one failure decide (Ullman, Shapira), or can a failure have other causes, so that it does not necessarily show inability (Kosinski)? And should we judge behaviour (Kosinski’s Turing-style view) or the likely process behind it (Ullman, p. 9)?</p>
+</section>
+
+<!-- ============ 9 MATH LADDER ============ -->
+<section id="ladder" data-ch="ladder">
+  <p class="sec-no">5 · The math ladder</p>
+  <h2>Ten rungs, from a coin flip to scaling laws</h2>
+  <p>Each rung uses small numbers you can check by hand. Rungs 1–2 need only high-school math, rungs 3–7 are undergraduate, rungs 8–10 are graduate level. Logs are base 2 (bits) unless stated.</p>
+
+  <!-- R1 -->
+  <div class="rung"><p class="rung-h"><span class="lvl hs">High school</span> Rung 1 · The chain rule</p>
+  <p>Shannon’s 1948 paper has a tiny three-letter language, A, B and C, where each letter depends on the one before <span class="cite">Shannon 1948, p. 6</span>. The table gives the probability of the next letter in each row:</p>
+  <div class="tbl"><table><thead><tr><th>after</th><th>A</th><th>B</th><th>C</th></tr></thead><tbody><tr><th>A</th><td>0</td><td>4/5</td><td>1/5</td></tr><tr><th>B</th><td>1/2</td><td>1/2</td><td>0</td></tr><tr><th>C</th><td>1/2</td><td>2/5</td><td>1/10</td></tr></tbody></table></div>
+  <p>In the long run the letters appear with frequencies 9/27, 16/27 and 2/27 <span class="cite">p. 6</span>. What is the probability that a random stretch of text reads “BAB”?</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mtext>BAB</mtext><mo stretchy="false">)</mo><mo>=</mo><mi>P</mi><mo stretchy="false">(</mo><mtext>B</mtext><mo stretchy="false">)</mo><mo>⋅</mo><mi>P</mi><mo stretchy="false">(</mo><mtext>A</mtext><mo>∣</mo><mtext>B</mtext><mo stretchy="false">)</mo><mo>⋅</mo><mi>P</mi><mo stretchy="false">(</mo><mtext>B</mtext><mo>∣</mo><mtext>A</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(\text{BAB})=P(\text{B})\cdot P(\text{A}\mid\text{B})\cdot P(\text{B}\mid\text{A})</annotation></semantics></math></span></div>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo>=</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>16</mn><mn>27</mn></mfrac></mstyle><mo>⋅</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⋅</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>4</mn><mn>5</mn></mfrac></mstyle><mo>=</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>64</mn><mn>270</mn></mfrac></mstyle><mo>≈</mo><mn>0.237</mn></mrow><annotation encoding="application/x-tex">=\tfrac{16}{27}\cdot\tfrac12\cdot\tfrac45=\tfrac{64}{270}\approx0.237</annotation></semantics></math></span></div>
+  <p>That is the whole idea of Step 1: a text’s probability is a product of next-symbol guesses. Notice the zeros in the table: in this language “AA” and “BC” really never happen. In real text, many word sequences are possible but unseen. Counting gives them zero unless it backs off to shorter contexts, and that is the gap Bengio’s vectors try to close <span class="cite">Bengio et al. 2003, pp. 1138–1139</span>.</p></div>
+
+  <!-- R2 -->
+  <div class="rung"><p class="rung-h"><span class="lvl hs">High school</span> Rung 2 · Surprise and entropy</p>
+  <p>Meet the toy world we will reuse in later posts: a village whose weather report has four words.</p>
+  <div class="tbl"><table><thead><tr><th>word</th><th>rain</th><th>sun</th><th>wind</th><th>snow</th></tr></thead><tbody><tr><th><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></th><td>1/2</td><td>1/4</td><td>1/8</td><td>1/8</td></tr><tr><th>surprise <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>p</mi></mrow><annotation encoding="application/x-tex">-\log_2 p</annotation></semantics></math></span></th><td>1</td><td>2</td><td>3</td><td>3</td></tr><tr><th>code</th><td>0</td><td>10</td><td>110</td><td>111</td></tr></tbody></table></div>
+  <p>Entropy is the average surprise, weighted by how often each word appears:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>H</mi><mo>=</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⋅</mo><mn>1</mn><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle><mo>⋅</mo><mn>2</mn><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>8</mn></mfrac></mstyle><mo>⋅</mo><mn>3</mn><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>8</mn></mfrac></mstyle><mo>⋅</mo><mn>3</mn><mo>=</mo><mn>0.5</mn><mo>+</mo><mn>0.5</mn><mo>+</mo><mn>0.375</mn><mo>+</mo><mn>0.375</mn><mo>=</mo><mn>1.75</mn><mtext> bits</mtext></mrow><annotation encoding="application/x-tex">H=\tfrac12\cdot1+\tfrac14\cdot2+\tfrac18\cdot3+\tfrac18\cdot3=0.5+0.5+0.375+0.375=1.75\ \text{bits}</annotation></semantics></math></span></div>
+  <p>The code in the last row uses exactly as many bits as each word’s surprise, so its average length is also 1.75 bits. That is Shannon’s worked example <span class="cite">Shannon 1948, p. 18</span>; Cover and Thomas use the same numbers <span class="cite">pp. 14–15</span>. Compare: with four equally likely words you would need 2 bits, because <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mn>4</mn><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\log_2 4=2</annotation></semantics></math></span>. Entropy is largest when all outcomes are equally likely <span class="cite">Cover &amp; Thomas, p. 27</span>.</p></div>
+
+  <!-- R3 -->
+  <div class="rung"><p class="rung-h"><span class="lvl ug">Undergraduate</span> Rung 3 · Cross-entropy = entropy + KL divergence</p>
+  <p>A model <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> predicts the weather. On average, the surprise it feels is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msub><mo>∑</mo><mi>x</mi></msub><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>q</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">-\sum_x p(x)\log_2 q(x)</annotation></semantics></math></span>, because the words come from the truth <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span> but the surprise is computed with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span>. Split it in two. Add and subtract <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log_2 p(x)</annotation></semantics></math></span> inside the sum:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo>−</mo><munder><mo>∑</mo><mi>x</mi></munder><mi>p</mi><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>q</mi><mo>=</mo><mo>−</mo><munder><mo>∑</mo><mi>x</mi></munder><mi>p</mi><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>p</mi><mo>+</mo><munder><mo>∑</mo><mi>x</mi></munder><mi>p</mi><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mfrac><mi>p</mi><mi>q</mi></mfrac></mrow><annotation encoding="application/x-tex">-\sum_x p\log_2 q=-\sum_x p\log_2 p+\sum_x p\log_2\frac{p}{q}</annotation></semantics></math></span></div>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo>=</mo><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mtext> </mtext><mi mathvariant="normal">∥</mi><mtext> </mtext><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">=H(p)+D(p\,\|\,q)</annotation></semantics></math></span></div>
+  <p>The first part is the language’s own entropy. The second is the KL divergence <span class="cite">Cover &amp; Thomas, p. 18</span>. Example: the model that thinks all four words are equally likely, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">q=(\tfrac14,\tfrac14,\tfrac14,\tfrac14)</annotation></semantics></math></span>, pays 2 bits per word: 1.75 for the language plus 0.25 for being wrong. A model with the order reversed, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">q=(\tfrac18,\tfrac18,\tfrac14,\tfrac12)</annotation></semantics></math></span>, pays</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⋅</mo><mn>3</mn><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle><mo>⋅</mo><mn>3</mn><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>8</mn></mfrac></mstyle><mo>⋅</mo><mn>2</mn><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>8</mn></mfrac></mstyle><mo>⋅</mo><mn>1</mn><mo>=</mo><mn>2.625</mn><mtext> bits</mtext><mo separator="true">,</mo><mspace width="1em"/><mi>D</mi><mo>=</mo><mn>0.875</mn></mrow><annotation encoding="application/x-tex">\tfrac12\cdot3+\tfrac14\cdot3+\tfrac18\cdot2+\tfrac18\cdot1=2.625\ \text{bits},\quad D=0.875</annotation></semantics></math></span></div>
+  <p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> is not symmetric. Cover and Thomas show a two-outcome example where <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mi mathvariant="normal">∥</mi><mi>q</mi><mo stretchy="false">)</mo><mo>=</mo><mn>0.2075</mn></mrow><annotation encoding="application/x-tex">D(p\|q)=0.2075</annotation></semantics></math></span> but <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false">(</mo><mi>q</mi><mi mathvariant="normal">∥</mi><mi>p</mi><mo stretchy="false">)</mo><mo>=</mo><mn>0.1887</mn></mrow><annotation encoding="application/x-tex">D(q\|p)=0.1887</annotation></semantics></math></span> bits <span class="cite">p. 19</span>.</p>
+  <div class="lab" id="lab-xent">
+    <p class="lab-title">Try it · Fit the weather model</p>
+    <p class="lab-note">The dark bars are the truth <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span>. Move the sliders to change the model <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> (they are rescaled to sum to 1). Watch the cost split into entropy (fixed) and KL (yours to reduce).</p>
+    <div class="bars" id="xent-bars"></div>
+    <div class="sliders" id="xent-sliders"></div>
+    <div class="presets"><button type="button" class="btn ghost" data-q="0.5,0.25,0.125,0.125">Truth</button><button type="button" class="btn ghost" data-q="0.25,0.25,0.25,0.25">Uniform</button><button type="button" class="btn ghost" data-q="0.125,0.125,0.25,0.5">Reversed</button></div>
+    <div class="stack" id="xent-stack" aria-hidden="true"><span class="seg-h"></span><span class="seg-d"></span></div>
+    <p class="readout" id="xent-read"></p>
+  </div></div>
+
+  <!-- R4 -->
+  <div class="rung"><p class="rung-h"><span class="lvl ug">Undergraduate</span> Rung 4 · Perplexity</p>
+  <p>Language-model papers often report <dfn>perplexity</dfn> instead of bits. It is 2 raised to the average surprise in bits (or <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span> raised to it, if the log is natural; Bengio defines it as the exponential of the average negative log-likelihood <span class="cite">p. 1141</span>):</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>perplexity</mtext><mo>=</mo><msup><mn>2</mn><mrow><mtext> </mtext><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mi mathvariant="normal">∥</mi><mi>q</mi><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">\text{perplexity}=2^{\,H(p)+D(p\|q)}</annotation></semantics></math></span></div>
+  <p>Read it as “the model is as unsure as if it were choosing among this many equally likely words.” For the weather: the true model has perplexity <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>1.75</mn></msup><mo>≈</mo><mn>3.36</mn></mrow><annotation encoding="application/x-tex">2^{1.75}\approx3.36</annotation></semantics></math></span>, the uniform model 4, the reversed model <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>2.625</mn></msup><mo>≈</mo><mn>6.17</mn></mrow><annotation encoding="application/x-tex">2^{2.625}\approx6.17</annotation></semantics></math></span>. In Bengio’s experiments on the Brown corpus, the neural model (averaged with a trigram model) reached a test perplexity of 252, while the best counting model, a class-based n-gram, reached 312 <span class="cite">p. 1149</span>. Units matter: Shannon works in bits per letter, Kaplan in nats per token <span class="cite">p. 6</span>. One nat is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>ln</mi><mo>⁡</mo><mn>2</mn><mo>≈</mo><mn>1.443</mn></mrow><annotation encoding="application/x-tex">1/\ln 2\approx1.443</annotation></semantics></math></span> bits.</p></div>
+
+  <!-- R5 -->
+  <div class="rung"><p class="rung-h"><span class="lvl ug">Undergraduate</span> Rung 5 · Context lowers entropy</p>
+  <p>Back to the A/B/C language. How uncertain is the next letter if you know nothing, if you know only the letter frequencies, and if you also know the previous letter?</p>
+  <ul class="steps">
+    <li>Know nothing (3 equally likely letters): <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>0</mn></msub><mo>=</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mn>3</mn><mo>=</mo><mn>1.585</mn></mrow><annotation encoding="application/x-tex">F_0=\log_2 3=1.585</annotation></semantics></math></span> bits.</li>
+    <li>Know the frequencies <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mfrac><mn>9</mn><mn>27</mn></mfrac><mo separator="true">,</mo><mfrac><mn>16</mn><mn>27</mn></mfrac><mo separator="true">,</mo><mfrac><mn>2</mn><mn>27</mn></mfrac><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\tfrac{9}{27},\tfrac{16}{27},\tfrac{2}{27})</annotation></semantics></math></span>: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>1</mn></msub><mo>=</mo><mn>1.254</mn></mrow><annotation encoding="application/x-tex">F_1=1.254</annotation></semantics></math></span> bits.</li>
+    <li>Know the previous letter: each row of the table has its own entropy, 0.722 (after A), 1.000 (after B) and 1.361 (after C). Average them with the letter frequencies:</li>
+  </ul>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>F</mi><mn>2</mn></msub><mo>=</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>9</mn><mn>27</mn></mfrac></mstyle><mo stretchy="false">(</mo><mn>0.722</mn><mo stretchy="false">)</mo><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>16</mn><mn>27</mn></mfrac></mstyle><mo stretchy="false">(</mo><mn>1.000</mn><mo stretchy="false">)</mo><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>2</mn><mn>27</mn></mfrac></mstyle><mo stretchy="false">(</mo><mn>1.361</mn><mo stretchy="false">)</mo><mo>=</mo><mn>0.934</mn><mtext> bits</mtext></mrow><annotation encoding="application/x-tex">F_2=\tfrac{9}{27}(0.722)+\tfrac{16}{27}(1.000)+\tfrac{2}{27}(1.361)=0.934\ \text{bits}</annotation></semantics></math></span></div>
+  <p>Perplexity falls from 3 to 2.38 to 1.91. Shannon’s English table shows the same pattern with 26 letters: 4.70, 4.14, 3.56, about 3.3 bits <span class="cite">Shannon 1951, p. 54</span>. Shannon also showed that text generated from such tables looks more and more like English at each step <span class="cite">Shannon 1948, pp. 6–7</span>. Try it with the A/B/C language:</p>
+  <div class="lab" id="lab-gen">
+    <p class="lab-title">Try it · Generate text with more context</p>
+    <div class="seg" role="group" aria-label="Order"><button type="button" data-o="0" aria-pressed="false">No knowledge</button><button type="button" data-o="1" aria-pressed="false">Frequencies</button><button type="button" data-o="2" aria-pressed="true">Previous letter</button></div>
+    <p class="gen-out" id="gen-out"></p>
+    <button type="button" class="btn" id="gen-go">Generate again</button>
+    <p class="readout" id="gen-read"></p>
+  </div></div>
+
+  <!-- R6 -->
+  <div class="rung"><p class="rung-h"><span class="lvl ug">Undergraduate</span> Rung 6 · Softmax and attention by hand</p>
+  <p>The <dfn>softmax</dfn> turns any list of scores into probabilities: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">x</mi></mrow><mo stretchy="false">(</mo><mi>s</mi><msub><mo stretchy="false">)</mo><mi>i</mi></msub><mo>=</mo><msup><mi>e</mi><msub><mi>s</mi><mi>i</mi></msub></msup><mi mathvariant="normal">/</mi><msub><mo>∑</mo><mi>j</mi></msub><msup><mi>e</mi><msub><mi>s</mi><mi>j</mi></msub></msup></mrow><annotation encoding="application/x-tex">\mathrm{softmax}(s)_i=e^{s_i}/\sum_j e^{s_j}</annotation></semantics></math></span>. Bengio’s model ends with one <span class="cite">p. 1142</span>; attention uses one inside. Take three tokens with 2-dimensional vectors, and let queries equal keys for simplicity:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>Q</mi><mo>=</mo><mi>K</mi><mo>=</mo><mrow><mo fence="true">(</mo><mtable rowspacing="0.16em" columnalign="center center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr></mtable><mo fence="true">)</mo></mrow><mo separator="true">,</mo><mspace width="2em"/><mi>V</mi><mo>=</mo><mrow><mo fence="true">(</mo><mtable rowspacing="0.16em" columnalign="center center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">Q=K=\begin{pmatrix}1&amp;0\\0&amp;1\\1&amp;1\end{pmatrix},\qquad V=\begin{pmatrix}1&amp;0\\0&amp;1\\2&amp;2\end{pmatrix}</annotation></semantics></math></span></div>
+  <p>Token 3 looks at tokens 1–3 (the mask hides nothing earlier). Its scores are dot products divided by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><msub><mi>d</mi><mi>k</mi></msub></msqrt><mo>=</mo><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{d_k}=\sqrt2</annotation></semantics></math></span>:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle displaystyle="false" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo><mo>⋅</mo><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><msqrt><mn>2</mn></msqrt></mfrac></mstyle><mo>=</mo><mn>0.707</mn><mo separator="true">,</mo><mspace width="1em"/><mstyle displaystyle="false" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo><mo>⋅</mo><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><msqrt><mn>2</mn></msqrt></mfrac></mstyle><mo>=</mo><mn>0.707</mn><mo separator="true">,</mo><mspace width="1em"/><mstyle displaystyle="false" scriptlevel="0"><mfrac><mrow><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo><mo>⋅</mo><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><msqrt><mn>2</mn></msqrt></mfrac></mstyle><mo>=</mo><mn>1.414</mn></mrow><annotation encoding="application/x-tex">\tfrac{(1,1)\cdot(1,0)}{\sqrt2}=0.707,\quad \tfrac{(1,1)\cdot(0,1)}{\sqrt2}=0.707,\quad \tfrac{(1,1)\cdot(1,1)}{\sqrt2}=1.414</annotation></semantics></math></span></div>
+  <p>Exponentiate: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mn>0.707</mn></msup><mo>=</mo><mn>2.028</mn></mrow><annotation encoding="application/x-tex">e^{0.707}=2.028</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mn>0.707</mn></msup><mo>=</mo><mn>2.028</mn></mrow><annotation encoding="application/x-tex">e^{0.707}=2.028</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mn>1.414</mn></msup><mo>=</mo><mn>4.113</mn></mrow><annotation encoding="application/x-tex">e^{1.414}=4.113</annotation></semantics></math></span>. The sum is 8.169, so the weights are 0.248, 0.248 and 0.503. The output is the weighted average of the values:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>0.248</mn><mtext> </mtext><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo><mo>+</mo><mn>0.248</mn><mtext> </mtext><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo><mo>+</mo><mn>0.503</mn><mtext> </mtext><mo stretchy="false">(</mo><mn>2</mn><mo separator="true">,</mo><mn>2</mn><mo stretchy="false">)</mo><mo>≈</mo><mo stretchy="false">(</mo><mn>1.255</mn><mo separator="true">,</mo><mtext> </mtext><mn>1.255</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">0.248\,(1,0)+0.248\,(0,1)+0.503\,(2,2)\approx(1.255,\,1.255)</annotation></semantics></math></span></div>
+  <p>Token 1 can only see itself, so its weight is 1 and its output is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(1,0)</annotation></semantics></math></span>. Token 2 sees tokens 1–2 with weights 0.330 and 0.670.</p>
+  <div class="lab" id="lab-att">
+    <p class="lab-title">Try it · Move token 3’s query</p>
+    <p class="lab-note">Change token 3’s query vector and the scale. The mask stops each token from looking ahead (grey cells).</p>
+    <div class="sliders" id="att-sliders"></div>
+    <div class="heat" id="att-heat"></div>
+    <p class="readout" id="att-read"></p>
+  </div></div>
+
+  <!-- R7 -->
+  <div class="rung"><p class="rung-h"><span class="lvl ug">Undergraduate</span> Rung 7 · Analogies with cosines</p>
+  <p>A 3-dimensional toy: man <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(1,0,0)</annotation></semantics></math></span>, woman <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(0,1,0)</annotation></semantics></math></span>, king <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>0.6</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mn>0.8</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(0.6,0,0.8)</annotation></semantics></math></span>, queen <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>0.6</mn><mo separator="true">,</mo><mn>0.8</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(0,0.6,0.8)</annotation></semantics></math></span>. For “man is to king as woman is to ?”, compute</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>y</mi><mo>=</mo><msub><mi>x</mi><mrow><mi>k</mi><mi>i</mi><mi>n</mi><mi>g</mi></mrow></msub><mo>−</mo><msub><mi>x</mi><mrow><mi>m</mi><mi>a</mi><mi>n</mi></mrow></msub><mo>+</mo><msub><mi>x</mi><mrow><mi>w</mi><mi>o</mi><mi>m</mi><mi>a</mi><mi>n</mi></mrow></msub><mo>=</mo><mo stretchy="false">(</mo><mo>−</mo><mn>0.4</mn><mo separator="true">,</mo><mtext> </mtext><mn>1</mn><mo separator="true">,</mo><mtext> </mtext><mn>0.8</mn><mo stretchy="false">)</mo><mo separator="true">,</mo><mspace width="2em"/><mi mathvariant="normal">∥</mi><mi>y</mi><mi mathvariant="normal">∥</mi><mo>=</mo><msqrt><mrow><mn>0.16</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>0.64</mn></mrow></msqrt><mo>=</mo><mn>1.342</mn></mrow><annotation encoding="application/x-tex">y=x_{king}-x_{man}+x_{woman}=(-0.4,\,1,\,0.8),\qquad \|y\|=\sqrt{0.16+1+0.64}=1.342</annotation></semantics></math></span></div>
+  <p>The <dfn>cosine</dfn> of two vectors is their dot product divided by both lengths. For queen:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mn>0</mn><mo>⋅</mo><mo stretchy="false">(</mo><mo>−</mo><mn>0.4</mn><mo stretchy="false">)</mo><mo>+</mo><mn>0.6</mn><mo>⋅</mo><mn>1</mn><mo>+</mo><mn>0.8</mn><mo>⋅</mo><mn>0.8</mn></mrow><mrow><mn>1</mn><mo>⋅</mo><mn>1.342</mn></mrow></mfrac><mo>=</mo><mfrac><mn>1.24</mn><mn>1.342</mn></mfrac><mo>=</mo><mn>0.924</mn></mrow><annotation encoding="application/x-tex">\frac{0\cdot(-0.4)+0.6\cdot1+0.8\cdot0.8}{1\cdot1.342}=\frac{1.24}{1.342}=0.924</annotation></semantics></math></span></div>
+  <p>For woman 0.745, king 0.298, man −0.298. Queen wins. Real papers differ on a detail: Mikolov 2013a removes the three input words from the search <span class="cite">p. 5</span>; whether Mikolov 2013b does is not stated. If woman had been closer than queen, that choice would decide the answer.</p>
+  <div class="lab" id="lab-ana">
+    <p class="lab-title">Try it · Bend the space</p>
+    <p class="lab-note">Move queen’s vector. When does the analogy break?</p>
+    <div class="sliders" id="ana-sliders"></div>
+    <div class="rank" id="ana-rank"></div>
+  </div></div>
+
+  <!-- R8 -->
+  <div class="rung"><p class="rung-h"><span class="lvl grad">Graduate</span> Rung 8 · In-context learning as a posterior</p>
+  <p>A toy version of Xie’s formula with two concepts, “nationality” (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>θ</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">\theta^*</annotation></semantics></math></span>, the true one) and “profession” (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>θ</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow><annotation encoding="application/x-tex">\theta&#x27;</annotation></semantics></math></span>). Prior ½ each. Each example in the prompt has probability 0.2 under <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>θ</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">\theta^*</annotation></semantics></math></span> and 0.05 under <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>θ</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow><annotation encoding="application/x-tex">\theta&#x27;</annotation></semantics></math></span>. Given the concept, the right answer to the query has probability 0.9 under <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>θ</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">\theta^*</annotation></semantics></math></span> and 0.1 under <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>θ</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow><annotation encoding="application/x-tex">\theta&#x27;</annotation></semantics></math></span>. These numbers are invented for the toy.</p>
+  <p>After <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> examples, Bayes’ rule gives</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><msup><mi>θ</mi><mo>∗</mo></msup><mo>∣</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false">(</mo><mn>0.2</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup></mrow><mrow><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false">(</mo><mn>0.2</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false">(</mo><mn>0.05</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup></mrow></mfrac><mo>=</mo><mfrac><msup><mn>4</mn><mi>n</mi></msup><mrow><msup><mn>4</mn><mi>n</mi></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">P(\theta^*\mid n)=\frac{\tfrac12(0.2)^n}{\tfrac12(0.2)^n+\tfrac12(0.05)^n}=\frac{4^n}{4^n+1}</annotation></semantics></math></span></div>
+  <p>and the probability of the right answer is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.9</mn><mtext> </mtext><mi>P</mi><mo stretchy="false">(</mo><msup><mi>θ</mi><mo>∗</mo></msup><mo>∣</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><mn>0.1</mn><mtext> </mtext><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>P</mi><mo stretchy="false">(</mo><msup><mi>θ</mi><mo>∗</mo></msup><mo>∣</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">0.9\,P(\theta^*\mid n)+0.1\,(1-P(\theta^*\mid n))</annotation></semantics></math></span>:</p>
+  <div class="tbl"><table><thead><tr><th><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead><tbody><tr><th><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><msup><mi>θ</mi><mo>∗</mo></msup><mo>∣</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(\theta^*\mid n)</annotation></semantics></math></span></th><td>0.50</td><td>0.80</td><td>0.941</td><td>0.985</td><td>0.996</td></tr><tr><th>P(right)</th><td>0.50</td><td>0.74</td><td>0.853</td><td>0.888</td><td>0.897</td></tr></tbody></table></div>
+  <p>Accuracy climbs toward 0.9, the best possible here. Xie writes the general case in a form that shows why: the weight on concept <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span> is proportional to <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>n</mi><mtext> </mtext><msub><mi>r</mi><mi>n</mi></msub><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></msup><mi>p</mi><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">e^{n\,r_n(\theta)}p(\theta)</annotation></semantics></math></span>, where <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">r_n</annotation></semantics></math></span> is the average log-likelihood ratio of the prompt under <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span> versus <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>θ</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">\theta^*</annotation></semantics></math></span> <span class="cite">p. 6</span>. Under their conditions, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">r_n</annotation></semantics></math></span> for a wrong concept tends to a negative number, so its weight shrinks exponentially <span class="cite">pp. 6–7</span>. The catch is the prompt format: examples glued together are unlike any training document, and that mismatch adds noise. Their Condition 1 says the concepts must differ by more than the noise added at the start of the prompt and at the delimiters between examples <span class="cite">p. 7</span>.</p>
+  <div class="lab" id="lab-icl">
+    <p class="lab-title">Try it · Watch the posterior concentrate</p>
+    <div class="sliders" id="icl-sliders"></div>
+    <div class="icl-bars" id="icl-bars"></div>
+    <p class="readout" id="icl-read"></p>
+  </div></div>
+
+  <!-- R9 -->
+  <div class="rung"><p class="rung-h"><span class="lvl grad">Graduate</span> Rung 9 · Power laws</p>
+  <p>Kaplan’s fit for loss as a function of non-embedding parameters <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span>, for models trained to convergence on enough data, is <span class="cite">p. 4</span>:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>L</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mrow><mo fence="true">(</mo><mfrac><msub><mi>N</mi><mi>c</mi></msub><mi>N</mi></mfrac><mo fence="true">)</mo></mrow><mn>0.076</mn></msup></mrow><annotation encoding="application/x-tex">L(N)=\left(\frac{N_c}{N}\right)^{0.076}</annotation></semantics></math></span></div>
+  <p>Double <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span>: the ratio is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>N</mi><mi mathvariant="normal">/</mi><mn>2</mn><mi>N</mi><msup><mo stretchy="false">)</mo><mn>0.076</mn></msup><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>0.076</mn></mrow></msup><mo>=</mo><mn>0.949</mn></mrow><annotation encoding="application/x-tex">(N/2N)^{0.076}=2^{-0.076}=0.949</annotation></semantics></math></span>. So each doubling cuts the loss by about 5%, the same factor at every size. On log-log axes a power law is a straight line: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mi>L</mi><mo>=</mo><mn>0.076</mn><mi>log</mi><mo>⁡</mo><msub><mi>N</mi><mi>c</mi></msub><mo>−</mo><mn>0.076</mn><mi>log</mi><mo>⁡</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">\log L=0.076\log N_c-0.076\log N</annotation></semantics></math></span>. The constant <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">N_c</annotation></semantics></math></span> has “no fundamental meaning” <span class="cite">p. 5</span>. Data must grow too: to avoid overfitting, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>≳</mo><mo stretchy="false">(</mo><mn>5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>3</mn></msup><mo stretchy="false">)</mo><mtext> </mtext><msup><mi>N</mi><mn>0.74</mn></msup></mrow><annotation encoding="application/x-tex">D\gtrsim(5\times10^3)\,N^{0.74}</annotation></semantics></math></span>, so an 8× bigger model needs about <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>0.74</mn></msup><mo>≈</mo><mn>4.7</mn></mrow><annotation encoding="application/x-tex">8^{0.74}\approx4.7</annotation></semantics></math></span> times more data, which the authors round to 5× <span class="cite">pp. 3, 12</span>. A power law cannot fall forever: the loss must flatten out somewhere above zero <span class="cite">p. 3</span>. Kaplan locates a likely breakdown at or before <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>L</mi><mo>∗</mo></msup><mo>∼</mo><mn>1.7</mn></mrow><annotation encoding="application/x-tex">L^*\sim1.7</annotation></semantics></math></span> nats per token, where two of his trends contradict each other, and conjectures that <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>L</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">L^*</annotation></semantics></math></span> might roughly estimate the entropy of language <span class="cite">pp. 17–18</span>.</p>
+  <p class="small">Link back to Rung 3: the loss Kaplan fits is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>+</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">H+D</annotation></semantics></math></span>. Scaling only shrinks <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span>. The floor is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span>.</p></div>
+
+  <!-- R10 -->
+  <div class="rung"><p class="rung-h"><span class="lvl grad">Graduate</span> Rung 10 · Bits from guess numbers</p>
+  <p>How did Shannon turn guess numbers into bits? Let <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">q_i</annotation></semantics></math></span> be the fraction of letters guessed right on the <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span>-th try. He proved two bounds on <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">F_N</annotation></semantics></math></span> <span class="cite">Shannon 1951, p. 61</span>:</p>
+  <div class="mjx"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munder><mo>∑</mo><mi>i</mi></munder><mi>i</mi><mtext> </mtext><mo stretchy="false">(</mo><msub><mi>q</mi><mi>i</mi></msub><mo>−</mo><msub><mi>q</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>i</mi><mtext>  </mtext><mo>≤</mo><mtext>  </mtext><msub><mi>F</mi><mi>N</mi></msub><mtext>  </mtext><mo>≤</mo><mtext>  </mtext><mo>−</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>q</mi><mi>i</mi></msub><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><msub><mi>q</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_i i\,(q_i-q_{i+1})\log_2 i\;\le\;F_N\;\le\;-\sum_i q_i\log_2 q_i</annotation></semantics></math></span></div>
+  <p>The upper bound is intuitive: the reduced text is a code for the text (the twin can decode it), so the text cannot carry more information than the entropy of the guess numbers. The upper bound holds for any predictor; the lower bound is proved for an ideal predictor only, and human data have sampling error <span class="cite">pp. 61, 64</span>.</p>
+  <p class="readout" id="game-bounds">Play the guessing game in section 1 to see your own bounds here.</p></div>
+</section>
+
+<!-- ============ 10 ANSWER ============ -->
+<section id="answer" data-ch="answer">
+  <p class="sec-no">6 · Synthesis</p>
+  <h2>So what does it know?</h2>
+  <p>The five lenses give four layers of answer, from the most certain to the most contested.</p>
+  <ol class="layers">
+    <li><b>Bits about text.</b> Certain and measurable. A lower loss means a smaller <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mi mathvariant="normal">∥</mi><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D(p\|q)</annotation></semantics></math></span>: the model is closer to the true distribution of text. This is knowledge in Shannon’s sense, with meaning set aside.</li>
+    <li><b>Structure in text.</b> Well supported. Grammar (formal competence near human level in English), relations between words (directions that work for about 40–66% of analogies), and task formats that a prompt can select (proved in a stylized model).</li>
+    <li><b>Meaning.</b> Depends on your theory. Bender and Koller: at most a reflection, if meaning is form plus intent. Piantadosi and Hill: possibly part of the foundation, if meaning is conceptual role.</li>
+    <li><b>Minds.</b> Contested. Many tests are passed, but small changes often break the result. Humans fail some of those changes too.</li>
+  </ol>
+  <p class="keypoint">The loss tells you <i>how much</i> a model knows about text. It cannot tell you <i>what kind</i> of knowledge that is. To learn that, you have to change the test in small ways and see what breaks (Ullman’s method), or look inside at the relations the model has built (Piantadosi and Hill’s suggestion, pdf 3).</p>
+  <p>Notice how the lenses connect. Shannon’s twin decodes text from guess numbers. Xie’s model decodes the concept from a prompt. Ullman’s trivial alterations ask whether the model decoded the <i>belief</i> or only the <i>story pattern</i>. All three are questions about what information the predictor has extracted, and the information-theory lens alone cannot answer the last two.</p>
+</section>
+
+<!-- ============ 11 YOUR TURN ============ -->
+<section id="turn" data-ch="turn">
+  <p class="sec-no">7 · Your turn</p>
+  <h2>Three exercises and a transfer challenge</h2>
+  <p>Run these on your computer. Each script prints numbers you can compare with the post.</p>
+
+  <h3>Exercise 1 · Shannon’s <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">F_N</annotation></semantics></math></span> for any text</h3>
+  <p>Use any plain-text book you have (a public-domain novel works well). The script estimates Shannon’s <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">F_N</annotation></semantics></math></span> for <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">N=0</annotation></semantics></math></span> to 3, that is, the uncertainty of the next letter given the <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span> letters before it (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">F_0</annotation></semantics></math></span> is the no-knowledge baseline). Then it measures each model’s cross-entropy on held-out text.</p>
+  <div class="code" data-copy><pre><code id="code-1"># Exercise 1: Shannon's F_0 ... F_3 for any text, plus held-out cross-entropy.
+TRAIN_FRACTION = 0.9                                # make smaller to see D grow
+import math, re, sys
+from collections import Counter
+
+text = open(sys.argv[1] if len(sys.argv) &gt; 1 else "book.txt", encoding="utf-8").read()
+text = re.sub(r"[^a-z ]+", " ", text.lower())      # at most 27 symbols: a-z and space
+text = re.sub(r" +", " ", text)
+cut = int(TRAIN_FRACTION * len(text))
+train, test = text[:cut], text[cut:]
+A = sorted(set(train))                              # the alphabet
+print(f"{len(train):,} training letters, alphabet of {len(A)}")
+
+def counts(s, n):                                   # n-letter blocks
+    return Counter(s[i:i + n] for i in range(len(s) - n + 1))
+
+def F(n):                                           # Shannon's F_N: next letter given the N-1 before it
+    if n == 0:
+        return math.log2(len(A))
+    c, prev = counts(train, n), counts(train, n - 1) if n &gt; 1 else None
+    total = sum(c.values())
+    h = 0.0
+    for block, k in c.items():
+        p_block = k / total
+        p_cond = k / prev[block[:-1]] if n &gt; 1 else p_block
+        h -= p_block * math.log2(p_cond)
+    return h
+
+def cross_entropy(n, k=0.5):                        # add-k smoothing, bits per letter on test
+    if n == 0:
+        return math.log2(len(A))
+    c, prev = counts(train, n), counts(train, n - 1) if n &gt; 1 else None
+    total = len(train)
+    bits = 0.0
+    for i in range(n - 1, len(test)):
+        block = test[i - n + 1:i + 1]
+        denom = (prev[block[:-1]] if n &gt; 1 else total) + k * len(A)
+        bits -= math.log2((c[block] + k) / denom)
+    return bits / (len(test) - n + 1)
+
+for n in range(4):
+    f, ce = F(n), cross_entropy(n)
+    print(f"N={n}:  F_N = {f:.3f} bits   held-out = {ce:.3f} bits   gap = {ce - f:+.3f}   perplexity = {2**ce:.2f}")
+</code></pre></div>
+  <p class="small">What to look for: the in-sample <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">F_N</annotation></semantics></math></span> falls with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span>, as in Shannon’s table. The script keeps spaces, so compare with his 27-symbol row: 4.76, 4.03, 3.32, 3.1 <span class="cite">Shannon 1951, p. 54</span>. On held-out text the gap between cross-entropy and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">F_N</annotation></semantics></math></span> is your model’s <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> plus estimation noise. Set <code>TRAIN_FRACTION</code> smaller and watch <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span> grow fastest for the longest context: that is the curse of dimensionality.</p>
+
+  <h3>Exercise 2 · Attention in eight lines</h3>
+  <div class="code" data-copy><pre><code id="code-2"># Exercise 2: masked attention for the three tokens of rung 6.
+import numpy as np
+Q = K = np.array([[1, 0], [0, 1], [1, 1]], float)
+V = np.array([[1, 0], [0, 1], [2, 2]], float)
+S = Q @ K.T / np.sqrt(K.shape[1])                     # scores, scaled by sqrt(d_k)
+S[np.triu_indices(3, k=1)] = -np.inf                  # mask: no looking ahead
+W = np.exp(S - S.max(1, keepdims=True)); W /= W.sum(1, keepdims=True)
+print("weights\n", W.round(3)); print("outputs\n", (W @ V).round(3))
+</code></pre></div>
+
+  <h3>Exercise 3 · Bits per character across languages</h3>
+  <p>Needs <code>pip install torch transformers</code>. Uses the small public GPT-2 model. Compare English and Japanese, per token and per character.</p>
+  <div class="code" data-copy><pre><code id="code-3"># Exercise 3: bits per token vs bits per character, English vs Japanese (GPT-2 small).
+import math, torch
+from transformers import AutoTokenizer, AutoModelForCausalLM
+tok = AutoTokenizer.from_pretrained("gpt2")
+model = AutoModelForCausalLM.from_pretrained("gpt2").eval()
+
+texts = {
+    "English": "The better you predict the next letter, the shorter the code you need to send the text.",
+    "Japanese": "次の文字をうまく予測できるほど、文章を送るために必要な符号は短くなる。",
+}
+for lang, s in texts.items():
+    ids = tok(s, return_tensors="pt").input_ids
+    with torch.no_grad():
+        loss = model(ids, labels=ids).loss.item()      # mean nats per predicted token
+    n_pred = ids.shape[1] - 1                           # the first token is not predicted
+    bits = loss * n_pred / math.log(2)                  # total bits for the text
+    print(f"{lang:9s} tokens={ids.shape[1]:3d}  chars={len(s):3d}  "
+          f"bits/token={bits / n_pred:5.2f}  bits/char={bits / len(s):5.2f}")
+</code></pre></div>
+  <p class="small">Per-token loss is not comparable across languages, because a token covers different amounts of text. Bits per character (or per byte) is fairer. GPT-2 was trained on English web text. In our test run, the English sentence cost 5.6 bits per token and 1.2 bits per character; the Japanese one cost 4.8 bits per token, which looks <i>better</i>, but 7.5 bits per character, which is far worse. Per-token numbers can point the wrong way.</p>
+
+  <div class="challenge"><p class="trap-h">Transfer challenge</p><p>Take one LLM labeling task you use in research, for example labeling the frame of a climate post. Write five “trivial alterations” in Ullman’s style: changes that should <i>flip</i> the correct label (one fact changed), and five that should <i>keep</i> it (wording changed, order of few-shot examples changed). Run each 10 times. Report three numbers: accuracy on the originals, flip-rate on the should-flip set, and stability on the should-keep set. Which number would you put in a paper, and why is accuracy alone not enough?</p></div>
+</section>
+
+<!-- ============ 12 YOUR WORK ============ -->
+<section id="work" data-ch="work">
+  <p class="sec-no">8 · Where this shows up in your work</p>
+  <h2>Collaboration, Communication, Computation</h2>
+  <div class="cards3">
+    <div class="c3"><p class="c3-h">Computation · LLM surrogate labeling</p><p>If few-shot prompting works by selecting a concept (Lens 3), your examples are evidence, not instructions. In Xie’s synthetic tests (which mirror earlier GPT-3 results), example order alone moved accuracy by 10–40% <span class="cite">p. 10</span>. Randomize the order of examples across runs and report the spread, not one number.</p></div>
+    <div class="c3"><p class="c3-h">Computation · Cross-lingual LLM safety</p><p>Tokens cover different amounts of text in different languages, so per-token loss or perplexity cannot be compared directly. Use bits per character or per byte (Exercise 3). A model can look “confident” in one language only because its tokens are shorter there.</p></div>
+    <div class="c3"><p class="c3-h">Computation · Explainable representations</p><p>Directions in embedding space are real but rough: exact analogies work about 40–66% of the time in Mikolov’s tests. Before you name a direction (“the misinformation axis”), check how often it gives the exact answer, and against which candidate set.</p></div>
+    <div class="c3"><p class="c3-h">Communication · Framing and misinformation</p><p>Surprise is measurable. The average surprise of a post under a model trained on one community’s text is a number in bits. That number measures distance from the community’s usual language. It does not measure whether the post is true; Shannon set meaning aside, and so does the number.</p></div>
+    <div class="c3"><p class="c3-h">Collaboration · Social simulation with LLM agents</p><p>Agents that “reason about other agents” may pass standard belief stories and still fail under small changes (Lens 5). Add perturbation tests to your simulation checks: change one physical fact the agent should notice, and see whether its beliefs about others update.</p></div>
+  </div>
+</section>
+
+<!-- ============ 13 RECALL ============ -->
+<section id="recall" data-ch="recall">
+  <p class="sec-no">9 · Recall questions</p>
+  <h2>Test yourself</h2>
+  <p>Answer aloud or in your head, then open the card. Questions marked ↻ will come back in later posts.</p>
+  <div class="cards" id="recall-cards">
+    <details class="card"><summary>↻ Why is a good predictor also a good compressor?</summary><p>Because the sequence of guess numbers is a code for the text: an identical predictor can decode it (Shannon’s twin). Better prediction means more 1s, so a shorter code.</p></details>
+    <details class="card"><summary>↻ The training loss of an LLM splits into two parts. Name them, and say which one training can reduce.</summary><p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false">(</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H(p)</annotation></semantics></math></span>, the entropy of the language, and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false">(</mo><mi>p</mi><mi mathvariant="normal">∥</mi><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D(p\|q)</annotation></semantics></math></span>, the KL divergence between truth and model. Training can only reduce <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span>.</p></details>
+    <details class="card"><summary>What is perplexity, and what is it for the uniform weather model?</summary><p>2 raised to the average surprise in bits: the number of equally likely choices with the same uncertainty. Uniform model: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>2</mn></msup><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">2^2=4</annotation></semantics></math></span>.</p></details>
+    <details class="card"><summary>In attention, why divide the scores by <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><msub><mi>d</mi><mi>k</mi></msub></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{d_k}</annotation></semantics></math></span>?</summary><p>If the parts of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span> are independent with mean 0 and variance 1, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>⋅</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">q\cdot k</annotation></semantics></math></span> has variance <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">d_k</annotation></semantics></math></span>. Large scores push the softmax into regions with tiny gradients, the authors suspect; scaling keeps them moderate.</p></details>
+    <details class="card"><summary>↻ In Xie’s account, what does a few-shot prompt do?</summary><p>It is evidence about a hidden concept. The posterior over concepts concentrates, and the model in effect selects the concept, with no weight change. This is proved only inside a stylized model of text.</p></details>
+    <details class="card"><summary>What does the octopus argument assume about meaning, according to Piantadosi and Hill?</summary><p>That reference (links to things in the world) determines meaning. On a conceptual role view, relations between concepts carry most of the meaning, so form could carry some of it.</p></details>
+    <details class="card"><summary>Formal vs functional competence: give one example of each.</summary><p>Formal: making the verb agree in “The keys to the old, wooden kitchen cabinet are…”. Functional: using language to reason or act in the world, for example to plan a defense against a bear.</p></details>
+    <details class="card"><summary>↻ Why does it matter which version of Kosinski’s paper a critic answers?</summary><p>Ullman and Shapira answered the preprint, which reported higher scores. The PNAS version used stricter controls and reports lower scores (ChatGPT-4: 75%).</p></details>
+  </div>
+</section>
+
+<!-- ============ 14 ENGLISH ============ -->
+<section id="english" data-ch="english">
+  <p class="sec-no">10 · How to say it in English</p>
+  <h2>Ten useful phrases</h2>
+  <details class="phrases" open><summary>Show phrases</summary>
+  <dl>
+    <dt>to set something aside</dt><dd>Shannon <i>set meaning aside</i> to solve the engineering problem.</dd>
+    <dt>a by-product of</dt><dd>Theory of mind may be <i>a by-product of</i> language training.</dd>
+    <dt>in principle / in practice</dt><dd>Bender and Koller argue that form alone cannot lead to meaning <i>in principle</i>, whatever happens <i>in practice</i>.</dd>
+    <dt>to be agnostic about</dt><dd>The GPT-3 authors are <i>agnostic about</i> whether the model learns tasks from scratch.</dd>
+    <dt>to hold up under</dt><dd>The result did not <i>hold up under</i> small changes to the story.</dd>
+    <dt>to over-generalize from</dt><dd>Shapira argues that earlier work <i>over-generalized from</i> a handful of examples.</dd>
+    <dt>an upper / lower bound on</dt><dd>The entropy of the guess numbers is <i>an upper bound on</i> the entropy of the text.</dd>
+    <dt>to be at ceiling</dt><dd>On the basic false-belief test, both humans and GPT-4 <i>were at ceiling</i>.</dd>
+    <dt>a talking point, not a result</dt><dd>Our bits-per-letter conversion is <i>a talking point, not a result</i>.</dd>
+    <dt>the burden of proof lies with</dt><dd>Ullman thinks <i>the burden of proof lies with</i> those who claim the ability has emerged.</dd>
+  </dl></details>
+</section>
+
+<!-- ============ 15 SOURCES ============ -->
+<section id="sources">
+  <p class="sec-no">11 · Sources</p>
+  <h2>Sources</h2>
+  <p class="small">Every claim was checked by an independent reviewer against the cited page of the source, not only against the AI4Read digest. Page numbers are printed pages; “pdf N” marks sources with no printed numbers; “§” marks web articles cited by section heading.</p>
+  <ol class="srcs">
+    <li>Shannon, C. E. (1948). A mathematical theory of communication. <i>Bell System Technical Journal</i>, 27. Part 1, pp. 1–28 of the reprint used.</li>
+    <li>Shannon, C. E. (1951). Prediction and entropy of printed English. <i>Bell System Technical Journal</i>, 30, 50–64.</li>
+    <li>Cover, T. M., &amp; Thomas, J. A. (1991). <i>Elements of Information Theory</i> (1st ed.), ch. 2, pp. 12–49.</li>
+    <li>Bengio, Y., Ducharme, R., Vincent, P., &amp; Jauvin, C. (2003). A neural probabilistic language model. <i>JMLR</i>, 3, 1137–1155.</li>
+    <li>Mikolov, T., Chen, K., Corrado, G., &amp; Dean, J. (2013a). Efficient estimation of word representations in vector space. arXiv:1301.3781.</li>
+    <li>Mikolov, T., Yih, W., &amp; Zweig, G. (2013b). Linguistic regularities in continuous space word representations. <i>NAACL-HLT</i>, 746–751.</li>
+    <li>Vaswani, A., et al. (2017). Attention is all you need. <i>NeurIPS</i>.</li>
+    <li>Radford, A., et al. (2019). Language models are unsupervised multitask learners. OpenAI.</li>
+    <li>Brown, T. B., et al. (2020). Language models are few-shot learners. <i>NeurIPS</i>.</li>
+    <li>Kaplan, J., et al. (2020). Scaling laws for neural language models. arXiv:2001.08361.</li>
+    <li>Xie, S. M., Raghunathan, A., Liang, P., &amp; Ma, T. (2022). An explanation of in-context learning as implicit Bayesian inference. <i>ICLR</i>.</li>
+    <li>Bender, E. M., &amp; Koller, A. (2020). Climbing towards NLU: On meaning, form, and understanding in the age of data. <i>ACL</i>, 5185–5198.</li>
+    <li>Piantadosi, S. T., &amp; Hill, F. (2022). Meaning without reference in large language models. arXiv:2208.02957.</li>
+    <li>Mahowald, K., Ivanova, A. A., Blank, I. A., Kanwisher, N., Tenenbaum, J. B., &amp; Fedorenko, E. (2024). Dissociating language and thought in large language models. <i>Trends in Cognitive Sciences</i>. Pages cited from arXiv:2301.06627v3.</li>
+    <li>Kosinski, M. (2024). Evaluating large language models in theory of mind tasks. <i>PNAS</i>.</li>
+    <li>Ullman, T. (2023). Large language models fail on trivial alterations to theory-of-mind tasks. arXiv:2302.08399.</li>
+    <li>Strachan, J. W. A., et al. (2024). Testing theory of mind in large language models and humans. <i>Nature Human Behaviour</i>.</li>
+    <li>Shapira, N., et al. (2024). Clever Hans or neural theory of mind? Stress testing social reasoning in large language models. <i>EACL</i>, 2257–2273.</li>
+  </ol>
+</section>
+
+</main>
+
+<script type="application/json" id="brief-data">"\n# Source brief — \"What does an LLM know when it predicts the next word?\"\n\n**Citations.** \"(p. N)\" = printed page; \"(pdf N)\" for GPT-2 and Piantadosi & Hill (no printed numbers); \"(§ …)\" = section heading for Kosinski and Strachan (HTML sources). Hedges are copied from the digests: keep them. Logs base 2 unless a source uses nats.\n\n**Three traps for the whole post**\n1. *Relative entropy.* Shannon 1948 means $H/H_{\\max}$ (p. 14); Cover means KL, $D(p\\|q)$ (p. 18).\n2. *Cross-entropy.* Cover shows a code built for $q$ costs $H(p)+D(p\\|q)$ bits on average (p. 18), but his historical notes list \"cross entropy\" as another name for *relative entropy* (p. 49). If we call $H(p)+D(p\\|q)$ \"cross-entropy\" (ML usage), say it is our label.\n3. *Units.* Shannon: bits/letter. Kaplan: nats/token (p. 6). Bengio, GPT-2: perplexity. Use $1\\text{ nat}=1/\\ln2\\approx1.443$ bits and perplexity $=2^{H_\\text{bits}}=e^{H_\\text{nats}}$.\n\n---\n\n## A. Information theory\n\n### 1. Shannon (1948), *Mathematical Theory of Communication*, part 1 (pp. 1–28)\n**Claims**\n- Semantic aspects are \"irrelevant to the engineering problem\"; a message is a *selection from a set* (p. 1).\n- Any stochastic process producing symbols from a finite set can be seen as a discrete source (p. 5).\n- English can be approximated by zero- to third-order letter and first/second-order word approximations; resemblance \"increases quite noticeably at each step\", and samples are reasonable out to about twice the range used to build them (pp. 6–7).\n- It *appears* that a sufficiently complex stochastic process will give a satisfactory representation of a discrete source (p. 7).\n- Theorem 2 singles out $-K\\sum p\\log p$, but Shannon says it is \"in no way necessary\"; the \"real justification\" lies in the implications (p. 11).\n- $F_N$ (uncertainty of the next symbol given $N-1$ previous) decreases with $N$ and tends to $H$ (Thm 6, p. 14).\n- English redundancy is roughly 50% *ignoring structure beyond about eight letters* (p. 14).\n\n**Numbers & equations.** E = .12, W = .02 (p. 7); 27 symbols (p. 7). Example 1: $(\\tfrac12,\\tfrac14,\\tfrac18,\\tfrac18)\\Rightarrow H=\\tfrac74$ bits, code 0/10/110/111 (p. 18). Example C (p. 6): rows A $(0,\\tfrac45,\\tfrac15)$, B $(\\tfrac12,\\tfrac12,0)$, C $(\\tfrac12,\\tfrac25,\\tfrac1{10})$; frequencies $\\tfrac9{27},\\tfrac{16}{27},\\tfrac2{27}$. About $2^{HN}$ typical sequences (Thm 4, p. 14).\n$$H=-\\sum_i p_i\\log p_i,\\qquad H_x(y)=H(x,y)-H(x),\\qquad H=\\sum_i P_iH_i\\ \\ (\\text{pp. 11–13})$$\n\n**Instance.** The series of approximations to English (p. 7). The sample texts are not in the digest; copy them from the source.\n\n**Careful!** Shannon sets meaning aside; he does not say a good stochastic model captures meaning.\n\n### 2. Shannon (1951), *Prediction and Entropy of Printed English* (pp. 50–64)\n**Claims**\n- It *appears* that long-range effects (up to 100 letters) reduce entropy to \"something of the order of one bit per letter\", redundancy roughly 75%; it *may be* higher with paragraph/chapter structure (pp. 50–51).\n- The reduced text (guess numbers) can, at least in principle, be decoded by an identical twin, \"mathematically, not just biologically\" — prediction is encoding (p. 55).\n- Errors cluster at the beginnings of words and syllables (p. 55).\n- An ideal predictor with more context never does worse (ineq. 11, p. 59).\n- Upper bound valid for any predictor; lower bound proved for the ideal predictor only; human data carry sampling error (pp. 61, 64).\n- Reverse prediction scored only slightly worse (p. 58).\n\n**Numbers & equations.** 26 letters: $F_0=4.70, F_1=4.14, F_2=3.56, F_3\\approx3.3, F_{word}=2.62$; 27 letters: 4.76, 4.03, 3.32, 3.1, 2.14 (p. 54). Zipf $p_n=.1/n$ to rank 8,727: 11.82 bits/word ÷ 4.5 = 2.62 bits/letter (pp. 52–53). Exp. 1: 89/129 (69%) right first time (p. 55); Exp. 2: 79/102 (p. 56). First-guess %, N = 1…15, 100: 18.2, 29.2, 36, 47, 51, 58, 48, 66, 66, 67, 62, 58, 66, 72, 60, 80 (p. 57). At 100 letters: 0.6–1.3 bits/letter (p. 64).\n$$F_N=-\\sum_{i,j}p(b_i,j)\\log_2 p_{b_i}(j),\\quad H=\\lim_{N\\to\\infty}F_N\\ (\\text{p. 51});\\qquad \\sum_i i(q_i-q_{i+1})\\log i\\le F_N\\le-\\sum_i q_i\\log q_i\\ (\\text{p. 61})$$\n\n**Instance.** The guessing game: the reduced text is mostly 1s (p. 56).\n\n**Careful!** \"About one bit per letter\" is hedged, from human guessers on one book (*Jefferson the Virginian*, p. 56); not a measured constant.\n\n### 3. Cover & Thomas, ch. 2 (pp. 12–49)\n**Claims**\n- $H(X)=E\\log\\frac1{p(X)}$ depends only on probabilities (p. 13); $H\\le\\log|\\mathcal X|$, equality iff uniform (p. 27).\n- $D(p\\|q)$ = inefficiency of assuming $q$ when truth is $p$; the $q$-code costs $H(p)+D(p\\|q)$ bits (p. 18).\n- $D\\ge0$, equality iff $p=q$ (p. 26); not symmetric (pp. 18–19).\n- Chain rule $H(X_1..X_n)=\\sum_i H(X_i\\mid X_{i-1}..X_1)$ (p. 21).\n- Conditioning reduces entropy *on average only* (p. 28).\n- Data processing: $X\\to Y\\to Z\\Rightarrow I(X;Y)\\ge I(X;Z)$ (p. 32). Fano: leftover $H(X|Y)$ forces errors (p. 39).\n\n**Numbers & equations.** 7/4 bits = 1.75 yes/no questions (p. 15). $D(p\\|q)=0.2075$ vs $D(q\\|p)=0.1887$ bits for $r=\\tfrac12,s=\\tfrac14$ (p. 19).\n$$D(p\\|q)=\\sum_x p(x)\\log\\frac{p(x)}{q(x)},\\qquad I(X;Y)=H(X)-H(X\\mid Y),\\qquad D(p\\|u)=\\log|\\mathcal X|-H(X)$$\n\n**Instance.** \"Coding with the wrong distribution costs $D$ extra bits\" (p. 18).\n\n**Careful!** Trap 2. And a specific context can *raise* uncertainty (p. 28).\n\n---\n\n## B. Linear algebra (embeddings, attention)\n\n### 4. Bengio et al. (2003), *Neural Probabilistic LM* (pp. 1137–1155)\n**Claims**\n- Curse of dimensionality: 10 words, $|V|=100{,}000$ → potentially $10^{50}-1$ free parameters (p. 1137).\n- In the authors' view n-grams ignore context beyond 1–2 words and word similarity (pp. 1138–1139).\n- A learned vector $C(i)\\in\\mathbb R^m$ per word, trained jointly; similar words are *expected* to sit close (p. 1139). Smoothness lets one sentence raise a \"combinatorial number\" of neighbours (p. 1140).\n- Fixed PCA features were tried \"unsuccessfully\", which *suggests* joint learning helps (p. 1141).\n- Perplexity ≈24% (Brown) and ≈8% (AP) better than the best n-gram; mixing with a trigram always helped, *suggesting* different errors (p. 1148).\n- The authors *believe* the gain comes from the distributed representation (p. 1152); polysemy is \"probably not well served\" (p. 1152).\n\n**Numbers & equations.** $m=30,60,100$ vs $|V|\\approx17{,}000$ (p. 1139). Brown: MLP10 252, KN 321, class-based 312; AP: 109 vs KN 117 (pp. 1149–1150). Softmax ≈99.7% of compute (p. 1145).\n$$\\hat P(w_1^T)=\\prod_t\\hat P(w_t\\mid w_1^{t-1})\\ (\\text{p. 1138});\\qquad \\hat P(w_t\\mid\\cdot)=\\frac{e^{y_{w_t}}}{\\sum_ie^{y_i}},\\ \\ y=b+Wx+U\\tanh(d+Hx)\\ (\\text{p. 1143})$$\n$$L=\\tfrac1T\\textstyle\\sum_t\\log f(w_t,\\dots,w_{t-n+1};\\theta)+R(\\theta)\\ (\\text{p. 1142});\\quad \\text{perplexity}=\\exp(\\text{mean NLL})\\ (\\text{p. 1141})$$\n\n**Instance.** \"The cat is walking in the bedroom\" → \"A dog was running in a room\" (p. 1139).\n\n**Careful!** Conclusion says \"10–20%\" (p. 1152); §4 says ≈24%/≈8% — use §4. Embeddings are not tested separately from the hidden layer.\n\n### 5. Mikolov et al. (2013a), *Efficient Estimation* (pp. 1–12)\n**Claims**\n- CBOW and Skip-gram drop the hidden layer; they *might* represent data less precisely but can *possibly* train on much more data (p. 4).\n- Analogy: nearest word (cosine) to vec(biggest) − vec(big) + vec(small), inputs discarded (p. 5).\n- Exact match required; 100% \"likely impossible\"; authors *believe* accuracy correlates with usefulness (p. 6).\n- Dimension and data must grow together (pp. 6–7). Skip-gram is much better on semantics (p. 7).\n- Table 8 examples would score only ≈60% under exact match (pp. 9–10).\n\n**Numbers & equations.** 8,869 semantic + 10,675 syntactic questions (p. 6). Table 3, sem/syn %: RNNLM 9/36, NNLM 23/53, CBOW 24/64, Skip-gram 55/59 (p. 7). Skip-gram 1000-dim, 6B words: 65.6 total (p. 9).\n$$O=E\\times T\\times Q;\\quad Q_{\\text{CBOW}}=N D+D\\log_2V;\\quad Q_{\\text{SG}}=C(D+D\\log_2V)\\ (\\text{pp. 3–4})$$\n\n**Instance.** big : biggest :: small : smallest; France : Paris :: Germany : Berlin (p. 5).\n\n**Careful!** King − Man + Woman ≈ Queen is cited from earlier work [20] (p. 2). Best totals are about two thirds.\n\n### 6. Mikolov, Yih & Zweig (2013b), *Linguistic Regularities* (pp. 746–751)\n**Claims**\n- Word vectors = columns of $\\mathbf U$ of an RNN LM trained only for likelihood, with no built-in syntax or semantics (p. 747).\n- Relations show up as *roughly* constant offsets, $x_{apple}-x_{apples}\\approx x_{car}-x_{cars}$ (p. 746); the method *assumes* one offset per relation (p. 748).\n- RNN-1600: 39.6% of 8,000 syntactic questions vs best LSA 16.5% (p. 749).\n- RNN-320+ beat the prior best on SemEval-2012 Task 2 without task training (p. 750). Both called byproducts of maximum-likelihood training (p. 750).\n\n**Equations.**\n$$\\mathbf s(t)=f(\\mathbf U\\mathbf w(t)+\\mathbf W\\mathbf s(t-1)),\\ \\ \\mathbf y(t)=g(\\mathbf V\\mathbf s(t))\\ (\\text{p. 747});\\qquad y=x_b-x_a+x_c,\\ \\ w^*=\\arg\\max_w\\frac{x_w\\cdot y}{\\|x_w\\|\\|y\\|}\\ (\\text{p. 748})$$\n\n**Instance.** man→woman, uncle→aunt, king→queen (Fig. 2, p. 749).\n\n**Careful!** ≈40% correct, \"≈\" offsets. Whether $a,b,c$ are excluded from the search is not stated.\n\n### 7. Mikolov et al. (2013c), *Words and Phrases* (pp. 1–9)\n**Claims**\n- Full softmax costs ∝ $W\\approx10^5$–$10^7$: impractical (p. 3).\n- Negative sampling: true context vs $k$ noise words; $U(w)^{3/4}/Z$ was best of those tried (p. 4).\n- Madrid − Spain + France is closer to Paris than to any other word vector (p. 1).\n- Reply to \"linearity makes analogies easy\": non-linear RNNs also improve with data, which *suggests* non-linear models also prefer linear structure (p. 5).\n- Authors *explain* vector addition as a product (\"AND\") of context distributions (p. 7).\n- Phrase analogies 72% (≈33B words) vs 66% (6B), *suggesting* large data is crucial (p. 7).\n\n**Equations.** $k$ = 5–20 small data, 2–5 large (p. 4). NEG-15: 61% total (Table 1, p. 5).\n$$\\frac1T\\sum_t\\sum_{-c\\le j\\le c,j\\ne0}\\log p(w_{t+j}\\mid w_t),\\quad p(w_O\\mid w_I)=\\frac{\\exp({v'_{w_O}}^{\\top}v_{w_I})}{\\sum_w\\exp({v'_w}^{\\top}v_{w_I})}\\ (\\text{pp. 2–3})$$\n$$\\log\\sigma({v'_{w_O}}^{\\top}v_{w_I})+\\textstyle\\sum_{i=1}^k\\mathbb E_{w_i\\sim P_n}[\\log\\sigma(-{v'_{w_i}}^{\\top}v_{w_I})]\\ (\\text{p. 4})$$\n\n**Instance.** Country–capital PCA (Fig. 2, p. 4).\n\n**Careful!** \"AND\" is informal. Intro says \"Russia\" + \"river\" (p. 2); Table 5 uses \"Russian\", with \"Volga River\" *second* after \"Moscow\" (p. 7).\n\n### 8. Vaswani et al. (2017), *Attention Is All You Need* (pp. 1–15)\n**Claims**\n- Output = weighted sum of values, weights from query–key compatibility (pp. 3–4).\n- Authors *suspect* large $d_k$ pushes softmax into tiny-gradient regions, hence $1/\\sqrt{d_k}$; under independence $\\mathrm{Var}(q\\cdot k)=d_k$ (p. 4, fn. 4).\n- Multi-head lets the model attend to different representation subspaces (p. 5).\n- Masking ($-\\infty$ before softmax) makes position $i$ depend only on positions $\u003ci$ (pp. 3, 5).\n- Self-attention: $O(1)$ path length, $O(n^2d)$ per layer (pp. 6–7).\n- Heads \"apparently involved in anaphora resolution\" (p. 14).\n\n**Numbers & equations.** $N=6$, $d_{model}=512$, $h=8$, $d_k=d_v=64$, $d_{ff}=2048$ (pp. 3, 5); BLEU 28.4 EN-DE, 41.8 EN-FR (p. 8); single head −0.9 BLEU (p. 9).\n$$\\mathrm{Attention}(Q,K,V)=\\mathrm{softmax}\\Big(\\frac{QK^T}{\\sqrt{d_k}}\\Big)V\\ (\\text{p. 4});\\qquad \\mathrm{head}_i=\\mathrm{Attention}(QW_i^Q,KW_i^K,VW_i^V)\\ (\\text{p. 5})$$\n\n**Instance.** Sharp attention from \"its\" to \"Law\" and \"application\" (Fig. 4, p. 14).\n\n**Careful!** This is an encoder–decoder translation model; GPT-style LMs are decoder-only (Kaplan p. 6). Visualizations are not causal evidence. EN-FR 41.0 in §6.1 vs 41.8 in Table 2 (p. 8).\n\n---\n\n## C. Scale\n\n### 9. Radford et al. (2019), *GPT-2* (pdf 1–24)\n**Claims**\n- A general system should model $p(\\text{output}\\mid\\text{input},\\text{task})$; language puts all three in one sequence (pdf 2).\n- In a \"slightly toy setting\" the supervised and unsupervised objectives share a global minimum; learning is \"much slower\" than supervised (pdf 3).\n- *Speculation:* a model with enough capacity will begin to infer and perform tasks shown in text \"in order to better predict them\" (pdf 3).\n- Zero-shot SOTA on 7 of 8 LM datasets; still underfits WebText (pdf 5, 8).\n- Summaries \"just barely\" beat random sentences; zero-shot is \"far from use-able\" (pdf 6, 9).\n- Overlap gives a \"small but consistent benefit\" (pdf 8).\n\n**Numbers & equations.** 117M–1542M parameters; vocab 50,257; context 1024 (pdf 4). WebText >8M docs, 40 GB (pdf 3). LAMBADA ppl 99.8 → 8.6, acc 63.24% (pdf 5); CoQA 55 F1 (pdf 6); EN→FR 5 BLEU, FR→EN 11.5 (pdf 6–7); NQ 4.1% (pdf 7). \"TL;DR:\" removed → −6.4 points (pdf 6).\n$$p(x)=\\prod_{i=1}^n p(s_n\\mid s_1,\\dots,s_{n-1})\\quad(\\text{pdf 2, printed with } s_n)$$\n\n**Instance.** \"TL;DR:\" turns prediction into summarization (pdf 6).\n\n**Careful!** \"Unsupervised multitask learning\" is a hypothesis; most task scores are weak.\n\n### 10. Brown et al. (2020), *GPT-3* (pp. 1–28; §5 pp. 33–34)\n**Claims**\n- In-context learning = inner loop in the forward pass, no gradient updates (pp. 3–4).\n- The terms are \"agnostic\" on learning from scratch vs recognizing trained patterns (p. 4, fn. 1); §5: it is a spectrum and *may* vary by task (p. 34).\n- *Plausible* that ICL gains with scale (p. 4); growing zero/few-shot gap \"perhaps suggesting\" larger models are better meta-learners (p. 6).\n- Arithmetic: 0.8% of problems found in training data *suggests* trivial memorization; missed carries *suggest* attempted computation (p. 23).\n- Scrambling tasks *appear* learned at test time; \"cannot confirm\" (p. 24).\n- Limits: every token weighted equally; not grounded in video or physical interaction; pure self-supervised scaling *likely* hits limits (pp. 33–34).\n\n**Numbers & equations.** 175B, 96 layers, $d_{model}=12288$, $n_{ctx}=2048$, 300B tokens (p. 8). $L=2.57\\,C^{-0.048}$ (p. 11). LAMBADA 76.2/72.5/86.4 vs SOTA 68.0 (p. 12); TriviaQA 64.3/68.0/71.2 (p. 13). Few-shot 2D+ 100.0, 3D+ 80.4, 5D+ 9.3 (p. 23); WiC 49.4 (p. 20). News detection ≈52% vs control ≈86% (pp. 25–26).\n\n**Instance.** \"Alice was friends with Bob. Alice went to visit her friend ____. → Bob\" (p. 12).\n\n**Careful!** No weights change in \"few-shot learning\". A filtering bug left some overlap (p. 9). 3D+ is 80.2 in text, 80.4 in table.\n\n### 11. Kaplan et al. (2020), *Scaling Laws* (pp. 1–30)\n**Claims**\n- Loss depends strongly on scale, very weakly on shape (pp. 3, 8). Doubling $N$ multiplies loss by 0.95 (p. 5).\n- Constants $N_c,D_c,C_c$ \"have no fundamental meaning\" (p. 5).\n- $D\\gtrsim(5\\times10^3)N^{0.74}$ avoids overfitting; 8× model needs ≈5× data (pp. 3, 12).\n- Compute-optimal $N\\propto C_{\\min}^{0.73}$; stop well before convergence (pp. 3, 16).\n- *Conjecture:* the laws must break near $N^*\\sim10^{12}$, $L^*\\sim1.7$ nats/token, which *might* estimate entropy per token; uncertain by an order of magnitude (pp. 17–18).\n- No theory (p. 22); smooth loss \"may hide seemingly qualitative changes in capability\" (p. 19).\n\n**Equations.** Loss in **nats**/token over 1024 tokens; $N$ excludes embeddings (p. 6).\n$$L(N)=(N_c/N)^{0.076},\\ \\ L(D)=(D_c/D)^{0.095},\\ \\ L(C_{\\min})=(C_c^{\\min}/C_{\\min})^{0.050}\\ (\\text{p. 4});\\quad L(N,D)=\\Big[\\Big(\\tfrac{N_c}{N}\\Big)^{\\alpha_N/\\alpha_D}+\\tfrac{D_c}{D}\\Big]^{\\alpha_D}\\ (\\text{p. 5})$$\nCode-checked: $2^{-0.076}=0.949$, $8^{0.74}=4.66$, $10^{0.73}=5.37$.\n\n**Instance.** Billion-fold compute: >10⁶× model, ≈100× batch, \u003c10× steps (Fig. 3, p. 4).\n\n**Careful!** Fits of *loss* on WebText2, not ability. $\\alpha_D$ 0.095 vs 0.103; $C_c^{\\min}$ 3.1e8 vs 2.3e8 in figures.\n\n---\n\n## D. Bayesian\n\n### 12. Xie et al. (2022), *ICL as Implicit Bayesian Inference* (pp. 1–31)\n**Claims**\n- *Assumes* documents from a mixture of HMMs with latent concept θ, and an LM that fits pretraining exactly (pp. 2–3).\n- Prompts are low-probability under pretraining (mismatch) (p. 4).\n- If $p(\\text{concept}\\mid\\text{prompt})$ concentrates, the LM \"selects\" the concept by marginalization (p. 3).\n- Thm 1: under the assumptions *and* distinguishability, optimal 0-1 risk as $n\\to\\infty$ (p. 7). Longer examples help; inputs carry signal too (pp. 7–8).\n- GINC: unseen concepts or one concept → ICL fails (p. 10). Same loss 1.33, ICL 81.2 vs 84.7 (12 vs 16 layers): larger models *may* gain beyond loss (p. 10). Order shifts accuracy 10–40%; zero-shot can beat few-shot (pp. 10–11).\n- \"A first step\" (p. 12).\n\n**Equations.** GPT-3 LAMBADA 5-shot short 69.8, long 70.7; 10 duplicated 69.6; 10 independent 71.4 (p. 30).\n$$p(\\text{output}\\mid\\text{prompt})=\\int p(\\text{output}\\mid\\text{concept},\\text{prompt})\\,p(\\text{concept}\\mid\\text{prompt})\\,d(\\text{concept})\\ (\\text{p. 2})$$\n$$p(o_{1:T})=\\int_\\Theta p(o_{1:T}\\mid\\theta)p(\\theta)d\\theta\\ (\\text{p. 3});\\quad \\text{weight}(\\theta)\\propto e^{n\\,r_n(\\theta)}p(\\theta),\\ r_n=\\tfrac1n\\log\\tfrac{p(S_n,x\\mid\\theta)}{p(S_n,x\\mid\\theta^*)}\\ (\\text{p. 6})$$\n$$\\textstyle\\sum_{j=1}^kKL_j(\\theta^*\\|\\theta)>\\epsilon_{\\text{start}}^\\theta+\\epsilon_{\\text{delim}}^\\theta\\quad(\\text{Condition 1, p. 7})$$\n\n**Instance.** \"Albert Einstein was German \\n Mahatma Gandhi was Indian \\n Marie Curie was\" → Polish (p. 1).\n\n**Careful!** A theorem inside a stylized model, tested on synthetic data; it does not show real LLMs compute posteriors.\n\n---\n\n## E. Philosophy of meaning\n\n### 13. Bender & Koller (2020), *Climbing towards NLU* (pp. 5185–5198)\n**Claims**\n- LM = any system trained only on string prediction; meaning = relation between form and communicative intent (p. 5185).\n- Form-only training \"cannot in principle\" lead to learning meaning (p. 5185).\n- $M\\subseteq E\\times I$; standing meanings $C\\subseteq E\\times S$ must have interpretations (p. 5187).\n- The octopus *may* pass in social chat but fails at the bear; the listener does the sense-making (pp. 5188–5189).\n- Children learn through interaction and joint attention, not passive exposure (p. 5190).\n- With grounding data, meaning can \"conceivably\" be learned (p. 5192); quantity of form is \"not relevant\" (p. 5193).\n- BERT has \"probably\" learned \"some reflection of meaning\", useful but incomplete (p. 5193).\n\n**Numbers.** GPT-2 on \"Three plus five equals\": seven, six, unrelated, ten, five (p. 5198).\n\n**Instance.** The octopus test; Java without I/O; text plus unconnected photos (pp. 5188–5190).\n\n**Careful!** They do not say LMs learn nothing; the claim concerns form→intent and \"human-analogous NLU\"; evidence is BERT/GPT-2 era.\n\n### 14. Piantadosi & Hill (2022), *Meaning without reference* (pdf 1–8)\n**Claims**\n- Contests that LLMs are *necessarily* meaningless; meanings may be similar \"in many (but not all) ways\" (pdf 1).\n- The octopus test *assumes* reference determines meaning (pdf 1–2): \"justice\", \"king of San Francisco\", morning/evening star, postage stamp (pdf 2).\n- Conceptual role: meaning mainly from relations ($f=m\\cdot a$) (pdf 2).\n- If so, meaning cannot be read off architecture or objective; examine internal relations (pdf 3).\n- Whether prediction discovers roles is \"empirical\"; a \"promising, partial affirmative\" (pdf 4). Embedding theorems and AlphaFold are *analogies* making it \"plausible\" (pdf 5).\n- Reference is one *optional* aspect (pdf 4). \"If conceptual role theories are correct, LLMs likely already share the foundation\" (pdf 5).\n\n**Instance.** The postage stamp (pdf 2).\n\n**Careful!** Conditional claim in a short comment; no claim of human-level meaning.\n\n### 15. Mahowald et al. (2024), *Dissociating language and thought* (pp. 1–18)\n**Claims**\n- Fallacies: good at language → good at thought; bad at thought → bad at language (p. 2).\n- Formal competence = rules and statistical regularities; functional = using language in the world (p. 3).\n- The human language network ignores arithmetic, logic, music, mental-state reasoning; global aphasics still do arithmetic and chess (p. 5).\n- English formal competence near human level; functional \"patchy\" (p. 2). Prediction gives formal but \"not necessarily\" functional competence (p. 2); not out of reach in principle (p. 14).\n- Lexical/compositional semantics count as *formal* (Box 2, p. 7).\n- ToM: mastery claim [185] vs controls below chance [186] (p. 14); \"particularly large\" overclaiming on functional skills (p. 11).\n\n**Numbers.** BLiMP 86% (BabyLM) vs human 89% (p. 7); a construction with 58 examples in 7B sentences (p. 8).\n\n**Instance.** \"The keys to the old, wooden kitchen cabinet *are*…\" (pp. 7–8).\n\n**Careful!** Brain dissociation motivates, does not prove, modularity. Refs [185]/[186] are unnamed in the digest; check before naming Kosinski/Ullman.\n\n---\n\n## F. Theory of mind\n\n### 16. Kosinski (2024), PNAS (§ headings)\n**Claims**\n- ToM *may* emerge as a by-product of training (§ \"Introduction\").\n- 40 bespoke tasks; 8 scenarios (false belief, 3 true-belief controls, reversals) × 2 prompts, all 16 correct (§ \"Introduction\", § \"Study 3\").\n- GPT-1/2 none; davinci-002 5%; davinci-003 and ChatGPT-3.5 20%; ChatGPT-4 75% [66, 84], \"on par with 6-year-olds\" (meta-analysis, 178 studies) (§ \"Study 3\").\n- Earlier scores higher: davinci-003 90 → 60 → 20%; ChatGPT-4 95 → 75% (§ \"Study 3\").\n- Failures do not prove inability; successes do not prove ToM (§ \"Discussion\").\n- Leaves credit for ToM open; Turing-style \"polite convention\" (§ \"Conclusion\").\n\n**Numbers.** $(1/2)^{16}=1/65{,}536$ (§ \"Discussion\"). Contents 90% vs transfer 60%; R = 0.98 across task types (§ \"Study 3\", § \"Discussion\").\n\n**Instance.** Sam's popcorn bag labelled \"chocolate\", revealed sentence by sentence (§ \"Study 1\").\n\n**Careful!** Strict scoring; child comparison uses different procedures. Text says older models failed all, yet davinci-002 = 5%.\n\n### 17. Ullman (2023), *Trivial Alterations* (pp. 1–11)\n**Claims**\n- Quotes Kosinski's preprint: GPT-3.5 comparable to 9-year-olds (p. 2).\n- One failure outweighs averages: 213×261 after 100 easy products (p. 2).\n- Has ToM emerged? \"Probably not\"; presume strongly it has not (p. 8).\n- A later LLM *may* pass; a benchmark can be absorbed (pp. 8–9).\n- One can doubt LLM ToM yet trust tests for people, judging likely algorithms (p. 9).\n\n**Numbers (GPT-3.5).** Transparent bag P(chocolate) 95%; cannot read 98%; trusted friend 97%; Sam writes label 87% (pp. 3–5). Transparent containers P(chest) 94/90%; phone call P(basket) 97/94%; asking about Mark P(basket) 99/54% (pp. 6–8).\n\n**Instance.** The transparent popcorn bag (p. 3).\n\n**Careful!** One model, few variants, no repeated runs. In 1A prompt 2 there was *no* flip (58/36%; p. 3).\n\n### 18. Strachan et al. (2024), Nat. Hum. Behav. (§ headings)\n**Claims**\n- Five tests, 15 sessions per model, 1,907 humans (§ \"Main\").\n- False belief at ceiling; LLM success *may* have lower-level explanations; humans (N = 757) also failed half of Ullman-style perturbations, which change physical properties (§ \"False belief\").\n- GPT-4 above humans on irony, hinting, strange stories; below on faux pas (§ results).\n- Faux pas errors were \"not enough information\"; 2/349 said \"knew\" (§ \"Understanding faux pas\"). Likelihood wording → GPT-4 perfect: supports *hyperconservatism*.\n- LLaMA2-70B's faux pas success *may* be a \"didn't know\" bias (§ \"Testing information integration\").\n- Mitigation measures *may*, disembodiment \"could\", explain it (§ \"Discussion\").\n\n**Numbers.** Irony P = 0.040, r = 0.32; faux pas P = 5.42×10⁻⁵, r = 0.55 (§ results); $r=Z/\\sqrt N$ (§ Methods).\n\n**Instance.** The curtains faux pas (§ \"Understanding faux pas\").\n\n**Careful!** Test-specific; authors deny output imitation implies human cognition. Reported Z values are inconsistent; cite P and r only.\n\n### 19. Shapira et al. (2024), *Clever Hans or Neural ToM?* (pp. 2257–2273)\n**Claims**\n- 15 LLMs, 6 datasets: \"no model robustly exhibits ToM on all datasets\" (p. 2261). Probing method changes scores (p. 2261).\n- ToMi′ vs ToM-k gap *suggests* no generalization; models *might* recognize Sally–Anne patterns (p. 2262).\n- GPT-4: 97.5% on original false-belief transfer items, 0% on in→on and transparent access (pp. 2262–2263).\n- Hedged causes: reporting bias, instruction tuning, recency bias (\"might\") (p. 2264).\n- Kosinski/Bubeck over-generalized from 40/10 examples; they say \"proving\" no robust N-ToM (p. 2264). Fail one task → no ToM in general (p. 2265).\n- Emergence claims \"unfounded\" and \"unfalsifiable\" without training data (p. 2265).\n\n**Numbers.** ToMi′/ToM-k: davinci-003 10/87, GPT-3.5 27/65, GPT-4 20/87 (p. 2262). FauxPas-EAI 27% vs baseline 30% (p. 2261). Rerun of Kosinski: 85–90% vs reported 93% (pp. 2272–2273).\n\n**Instance.** Cat placed *on* the box: GPT-4 0% (p. 2263).\n\n**Careful!** Their rule is a stance; they concede physics may explain some failures (p. 2266). Self-contradiction on transparent access (p. 2263).\n\n---\n\n## Cross-source tensions\n1. **Meaning from form.** B&K: \"cannot in principle\" (p. 5185). P&H: B&K *assume* reference fixes meaning (pdf 1–2); relations in text may carry meaning (pdf 4). Shared ground: richer input enriches (B&K p. 5192; P&H pdf 4); \"reflection of meaning\" (p. 5193) vs \"foundation\" (pdf 5). Mahowald counts lexical semantics as formal (p. 7). GPT-3's authors list lack of grounding as a limit (p. 34).\n2. **Embedding geometry.** Mikolov: offsets are likelihood byproducts, ≈40–66% exact (2013b p. 749; 2013a p. 9). B&K: \"only a weak reflection\" (p. 5193). P&H: evidence of conceptual role (pdf 3).\n3. **ToM.** *Versions:* Ullman (p. 2) and Shapira (pp. 2272–2273) target Kosinski's preprint; PNAS has davinci-003 at 20%, ChatGPT-4 at 75% after controls. *Asymmetry:* one failure decides (Ullman p. 2; Shapira p. 2265) vs failures prove nothing (Kosinski § \"Discussion\"). *Perturbations:* humans fail half too (Strachan § \"False belief\"); physics confound (Shapira p. 2266). *Behaviour vs process:* Turing (Kosinski) vs algorithms (Ullman p. 9).\n4. **What ICL learns.** GPT-3: agnostic, scrambling *seems* de novo (pp. 4, 24, 34). Xie: concept *selection* from pretraining; unseen concepts fail (p. 10).\n5. **Smooth loss vs jumps.** Kaplan smooth (p. 4) yet \"may hide\" (p. 19); GPT-3 arithmetic jump 13B→175B (p. 22); Xie: ICL varies at equal loss (p. 10).\n6. **Entropy floor.** Shannon ≈1 bit/letter (p. 50) vs Kaplan $L^*\\approx1.7$ nats/token, a conjecture (pp. 17–18). Our rough conversion: 2.45 bits/token ÷ 0.7 words/token (GPT-3 p. 24) ÷ 4.5 letters/word (Shannon p. 53) ≈ 0.78 bits/letter. Different corpora and tokenizers: a talking point only.\n7. **Memorization.** GPT-2 \"small but consistent\" (pdf 8); GPT-3 0.8% (p. 23); Ullman: benchmarks get absorbed (p. 9); Shapira: unfalsifiable without data (p. 2265).\n\n---\n\n## Toy-example ideas (numbers checked by code)\n**T1. 4-word language.** True $p=(\\tfrac12,\\tfrac14,\\tfrac18,\\tfrac18)$ (Cover p. 15). Average $-\\log_2q$ under $p$ (= $H+D$, Cover p. 18): true model 1.75 bits, perplexity 3.36; uniform 2.00 bits ($D=0.25$), perplexity 4; reversed $(\\tfrac18,\\tfrac18,\\tfrac14,\\tfrac12)$ 2.625 bits ($D=0.875$), perplexity 6.17.\n\n**T2. Shannon's Example C as a bigram table** (p. 6). Stationary (1/3, 16/27, 2/27) (checked). $F_0=1.585$, $F_1=1.254$; row entropies 0.722 / 1.000 / 1.361; $F_2=0.934$ bits. Perplexity 3 → 2.38 → 1.91. The zero cells show Bengio's unseen-pair problem (p. 1138).\n\n**T3. 3-token causal attention, $d_k=2$.** $Q=K=[(1,0),(0,1),(1,1)]$, $V=[(1,0),(0,1),(2,2)]$. Row-3 scores $/\\sqrt2$: 0.707, 0.707, 1.414. Weights: (1,0,0); (0.330, 0.670, 0); (0.248, 0.248, 0.504). Outputs: (1,0); (0.330, 0.670); (1.255, 1.255). Hand values $e^{0.707}=2.028$, $e^{1.414}=4.113$.\n\n**T4. Two-concept ICL** (Xie eq. 1). Prior ½–½; per-example likelihood 0.2 vs 0.05; right answer 0.9 vs 0.1 (invented). Posterior/answer: $n=0$ 0.50/0.50; 1: 0.80/0.74; 2: 0.941/0.853; 3: 0.985/0.888; 4: 0.996/0.897. Mismatch version: join penalty ×1.5 vs per-token 0.8 → selection needs $k\\ge2$ (0.446 > 0.405 nats).\n\n**T5. 3-D analogy** (Mikolov 2013b). man (1,0,0), woman (0,1,0), king (0.6,0,0.8), queen (0,0.6,0.8). $y=(-0.4,1,0.8)$, $\\|y\\|=1.342$. Cosines: queen 0.924, woman 0.745, king 0.298, man −0.298.\n\n*Optional T6.* \"Copy the label\" gets 4/8 belief prompts in Kosinski's design; coin flips pass with $1.5\\times10^{-5}$.\n\n**Also check at source:** Shannon 1948 sample texts (p. 7); GPT-2 eq. (1) misprint; Kosinski 1,000 vs 2,000 runs; Shapira Table 9 vs Table 4 (p. 2273).\n"</script>
+<script>window.CHAPTERS=[{"id":"hook","title":"The guessing game","dur":124.2,"src":"audio/hook.mp3"},{"id":"guess","title":"Guess first","dur":71.2,"src":"audio/guess.mp3"},{"id":"home","title":"How a language model is built","dur":192.9,"src":"audio/home.mp3"},{"id":"lens-info","title":"Lens one: information theory","dur":181.7,"src":"audio/lens-info.mp3"},{"id":"lens-linalg","title":"Lens two: linear algebra","dur":111.1,"src":"audio/lens-linalg.mp3"},{"id":"lens-bayes","title":"Lens three: Bayesian inference","dur":103.7,"src":"audio/lens-bayes.mp3"},{"id":"lens-meaning","title":"Lens four: philosophy of meaning","dur":124.1,"src":"audio/lens-meaning.mp3"},{"id":"lens-tom","title":"Lens five: theory of mind","dur":145.2,"src":"audio/lens-tom.mp3"},{"id":"ladder","title":"The math ladder, spoken","dur":172.9,"src":"audio/ladder.mp3"},{"id":"answer","title":"So what does it know?","dur":75.9,"src":"audio/answer.mp3"},{"id":"work","title":"Where this shows up in your work","dur":74.3,"src":"audio/work.mp3"},{"id":"recall","title":"Recall questions","dur":84.2,"src":"audio/recall.mp3"},{"id":"english","title":"How to say it in English","dur":77.8,"src":"audio/english.mp3"}];</script>
+<script>
+(function(){
+"use strict";
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const LS={get(k,d){try{const v=localStorage.getItem("ai4read-p01-"+k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+          set(k,v){try{localStorage.setItem("ai4read-p01-"+k,JSON.stringify(v))}catch(e){}}};
+const f3=x=>Number.isFinite(x)?x.toFixed(3):"∞", f2=x=>x.toFixed(2);
+const log2=Math.log2;
+const el=(tag,attrs={},html)=>{const e=document.createElement(tag);for(const k in attrs){if(k==="class")e.className=attrs[k];else e.setAttribute(k,attrs[k])}if(html!=null)e.innerHTML=html;return e};
+function slider(host,{id,label,min,max,step,value,fmt=f2},on){
+  const row=el("div",{class:"sl"});
+  const lab=el("label",{for:id},label); const inp=el("input",{type:"range",id,min,max,step,value}); const out=el("output",{for:id});
+  row.append(lab,inp,out); host.append(row);
+  const upd=()=>{out.textContent=fmt(+inp.value);on()}; inp.addEventListener("input",upd); out.textContent=fmt(+inp.value);
+  return inp;
+}
+
+/* ---------- capabilities (db for notes/guesses, sample for questions) ---------- */
+let DB=null, SAMPLE=null;
+const capsReady=(async()=>{
+  try{ if(window.claude&&window.claude.use){ DB=await window.claude.use("db"); } }catch(e){DB=null}
+  try{ if(window.claude&&window.claude.use){ SAMPLE=await window.claude.use("sample"); } }catch(e){SAMPLE=null}
+  document.dispatchEvent(new Event("caps"));
+})();
+async function dbAdd(coll,data){ if(!DB) return false; try{ await DB.collection(coll).add(data); return true }catch(e){ return false } }
+async function dbSet(path,data){ if(!DB) return false; try{ await DB.doc(path).set(data); return true }catch(e){ return false } }
+
+/* ---------- Guess first ---------- */
+const guesses=LS.get("guesses",{});
+$$(".quiz").forEach(qz=>{
+  const id=qz.dataset.q, btns=$$(".opts button",qz), your=$(".your",qz);
+  const mark=i=>{btns.forEach((b,j)=>b.setAttribute("aria-pressed",String(i===j)));your.hidden=false;
+    your.textContent="Your guess is saved. The answer is in section "+({g1:"4 (Lens 1)",g2:"3 (Step 7)",g3:"4 (Lens 5)"}[id])+".";};
+  btns.forEach((b,i)=>{b.setAttribute("aria-pressed","false");b.addEventListener("click",()=>{
+    guesses[id]={i,text:b.textContent,at:new Date().toISOString()};LS.set("guesses",guesses);mark(i);unlock(id);
+    dbSet("guesses/"+id,{question:id,choice:b.textContent,at:guesses[id].at});
+  })});
+  if(guesses[id]) mark(guesses[id].i);
+});
+function unlock(id){const r=$(`.reveal[data-for="${id}"]`); if(r) r.classList.remove("locked")}
+$$(".reveal").forEach(r=>{ if(!guesses[r.dataset.for]) r.classList.add("locked");
+  r.addEventListener("click",()=>r.classList.remove("locked")); r.tabIndex=0;
+  r.addEventListener("keydown",e=>{if(e.key==="Enter")r.classList.remove("locked")}); });
+
+/* ---------- Shannon's guessing game ---------- */
+(function(){
+  const PHRASE="A GOOD GUESS IS A SHORT MESSAGE", ALPH="ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+  const textHost=$("#game-text"), keys=$("#game-keys"), stats=$("#game-stats"), bounds=$("#game-bounds");
+  let st=LS.get("game",null); if(!st||st.phrase!==PHRASE) st={phrase:PHRASE,pos:0,counts:[],tried:[]};
+  const cells=[...PHRASE].map(()=>{const c=el("div",{class:"gch"},'<span class="l"></span><span class="n"></span>');textHost.append(c);return c});
+  const kb=[...ALPH].map(ch=>{const b=el("button",{type:"button","aria-label":ch===" "?"space":ch},ch===" "?"␣":ch);
+    b.addEventListener("click",()=>guess(ch));keys.append(b);return b});
+  function guess(ch){ if(st.pos>=PHRASE.length||st.tried.includes(ch))return; st.tried.push(ch);
+    if(ch===PHRASE[st.pos]){st.counts[st.pos]=st.tried.length;st.pos++;st.tried=[]} save();render(); }
+  function save(){LS.set("game",st); if(st.pos>=PHRASE.length) dbSet("game/result",{counts:st.counts,at:new Date().toISOString()})}
+  $("#game-reveal").addEventListener("click",()=>{if(st.pos<PHRASE.length){st.counts[st.pos]=null;st.pos++;st.tried=[];save();render()}});
+  $("#game-reset").addEventListener("click",()=>{st={phrase:PHRASE,pos:0,counts:[],tried:[]};save();render()});
+  function render(){
+    cells.forEach((c,i)=>{const done=i<st.pos;c.classList.toggle("cur",i===st.pos);
+      $(".l",c).textContent=done?(PHRASE[i]===" "?"␣":PHRASE[i]):"";
+      const n=$(".n",c);n.textContent=done?(st.counts[i]==null?"–":st.counts[i]):"";n.classList.toggle("one",done&&st.counts[i]===1)});
+    kb.forEach((b,j)=>b.disabled=st.pos>=PHRASE.length||st.tried.includes(ALPH[j]));
+    const got=st.counts.slice(0,st.pos).filter(x=>x!=null);
+    if(!got.length){stats.textContent="Your reduced text will appear here.";bounds.textContent="Play the guessing game in section 1 to see your own bounds here.";return}
+    const n=got.length, ones=got.filter(x=>x===1).length, maxI=Math.max(...got);
+    const q=[];for(let i=1;i<=maxI+1;i++)q[i]=got.filter(x=>x===i).length/n;
+    let up=0,lo=0;for(let i=1;i<=maxI;i++){if(q[i]>0)up-=q[i]*log2(q[i]);lo+=i*(q[i]-(q[i+1]||0))*log2(i)}
+    stats.textContent=`Reduced text: ${got.join(" ")}\nFirst-try hits: ${ones} of ${n} (${Math.round(100*ones/n)}%).`+(st.pos>=PHRASE.length?" Done. Shannon’s subject got 77% right on the first guess (79 of 102 letters).":"");
+    bounds.textContent=`From your ${n} letters: upper bound −Σ q·log q = ${f2(up)} bits/letter; lower bound Σ i(qᵢ−qᵢ₊₁)log i = ${f2(lo)} bits/letter. With so few letters these are rough, and this phrase is short and easy to guess.`;
+  }
+  stats.style.whiteSpace="pre-line"; render();
+})();
+
+/* ---------- Shannon chart: first-guess % by context (Shannon 1951, p. 57) ---------- */
+(function(){
+  const N=["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","100"], V=[18.2,29.2,36,47,51,58,48,66,66,67,62,58,66,72,60,80];
+  const W=340,H=170,L=30,B=24,T=8,bw=(W-L-6)/N.length;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Bar chart: first-guess success rises from 18% with no letters known to 80% with 100 letters known">`;
+  [0,25,50,75,100].forEach(t=>{const y=T+(H-B-T)*(1-t/100);s+=`<line x1="${L}" x2="${W-4}" y1="${y}" y2="${y}" stroke="var(--rule)" stroke-width="1"/><text x="${L-4}" y="${y+3.5}" text-anchor="end">${t}%</text>`});
+  V.forEach((v,i)=>{const x=L+3+i*bw,h=(H-B-T)*v/100;s+=`<rect x="${x+1}" y="${H-B-h}" width="${bw-3}" height="${h}" fill="${i===15?"var(--stamp)":"var(--ink)"}" opacity="${i===15?1:.8}"/>`;
+    if(i%2===0||i===15)s+=`<text x="${x+bw/2-1}" y="${H-B+13}" text-anchor="middle">${N[i]}</text>`});
+  s+=`<text x="${L+(W-L)/2}" y="${H-1}" text-anchor="middle">letters known before guessing</text></svg>`;
+  $("#fig-shannon").insertAdjacentHTML("beforeend",s);
+})();
+
+/* ---------- Cross-entropy lab ---------- */
+(function(){
+  const P=[.5,.25,.125,.125], W=["rain","sun","wind","snow"], H=1.75;
+  const barsHost=$("#xent-bars"), sl=$("#xent-sliders"), read=$("#xent-read");
+  const bars=W.map((w,i)=>{const b=el("div",{class:"bar"},`<div class="pair"><i class="p" style="height:${P[i]*100}%"></i><i class="q"></i></div><span>${w}</span>`);barsHost.append(b);return $(".q",b)});
+  const ins=W.map((w,i)=>slider(sl,{id:"xq"+i,label:"q("+w+")",min:.01,max:1,step:.01,value:.25},upd));
+  function q(){const r=ins.map(x=>+x.value),s=r.reduce((a,b)=>a+b,0);return r.map(x=>x/s)}
+  function upd(){const Q=q();Q.forEach((v,i)=>bars[i].style.height=(v*100)+"%");
+    const ce=-P.reduce((a,p,i)=>a+p*log2(Q[i]),0),D=ce-H;
+    $("#xent-stack .seg-h").style.width=(100*H/Math.max(ce,4))+"%";$("#xent-stack .seg-d").style.width=(100*D/Math.max(ce,4))+"%";
+    read.textContent=`q = (${Q.map(f3).join(", ")})\ncost H+D = ${f3(ce)} bits  =  H ${f3(H)}  +  D ${f3(D)}\nperplexity 2^${f3(ce)} = ${f2(2**ce)}`;}
+  read.style.whiteSpace="pre-line";
+  $$("#lab-xent .presets button").forEach(b=>b.addEventListener("click",()=>{b.dataset.q.split(",").forEach((v,i)=>{ins[i].value=v;ins[i].dispatchEvent(new Event("input"))})}));
+  upd();
+})();
+
+/* ---------- A/B/C text generator ---------- */
+(function(){
+  const L="ABC", PI=[9/27,16/27,2/27], T=[[0,.8,.2],[.5,.5,0],[.5,.4,.1]];
+  const F=[log2(3),1.2538,0.9340], PP=[3,2.3847,1.9106];
+  let order=2; const out=$("#gen-out"), read=$("#gen-read");
+  const pick=p=>{let r=Math.random(),c=0;for(let i=0;i<p.length;i++){c+=p[i];if(r<c)return i}return p.length-1};
+  function gen(){let s="",prev=pick(PI);for(let k=0;k<48;k++){const i=order===0?pick([1/3,1/3,1/3]):order===1?pick(PI):pick(T[prev]);s+=L[i];prev=i}
+    out.textContent=s; read.textContent=`F = ${F[order].toFixed(3)} bits per letter, perplexity ${PP[order].toFixed(2)}`+(order===2?"  ·  never AA, never BC":"");}
+  $$("#lab-gen .seg button").forEach(b=>b.addEventListener("click",()=>{order=+b.dataset.o;$$("#lab-gen .seg button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));gen()}));
+  $("#gen-go").addEventListener("click",gen); gen();
+})();
+
+/* ---------- Attention lab ---------- */
+(function(){
+  const K=[[1,0],[0,1],[1,1]], V=[[1,0],[0,1],[2,2]];
+  const sl=$("#att-sliders"), heat=$("#att-heat"), read=$("#att-read");
+  const qx=slider(sl,{id:"aqx",label:"query x",min:-2,max:2,step:.1,value:1,fmt:x=>x.toFixed(1)},upd);
+  const qy=slider(sl,{id:"aqy",label:"query y",min:-2,max:2,step:.1,value:1,fmt:x=>x.toFixed(1)},upd);
+  const sc=slider(sl,{id:"asc",label:"sharpness",min:.25,max:4,step:.25,value:1,fmt:x=>"×"+x},upd);
+  function upd(){const Q=[[1,0],[0,1],[+qx.value,+qy.value]],k=+sc.value;
+    let h='<div class="hd"></div>'+["t1","t2","t3"].map(t=>`<div class="hd">key ${t}</div>`).join("");let o3=[0,0];
+    for(let i=0;i<3;i++){const s=K.slice(0,i+1).map(kk=>k*(Q[i][0]*kk[0]+Q[i][1]*kk[1])/Math.SQRT2),m=Math.max(...s),e=s.map(x=>Math.exp(x-m)),z=e.reduce((a,b)=>a+b,0),w=e.map(x=>x/z);
+      h+=`<div class="hd">q t${i+1}</div>`;for(let j=0;j<3;j++){if(j>i)h+='<div class="masked">–</div>';else h+=`<div style="background:color-mix(in srgb,var(--stamp) ${Math.round(w[j]*85)}%,transparent);color:${w[j]>.55?"var(--paper)":"var(--ink)"}">${w[j].toFixed(3)}</div>`}
+      if(i===2)o3=[0,1].map(d=>w.reduce((a,wj,j)=>a+wj*V[j][d],0));}
+    heat.innerHTML=h; read.textContent=`token 3 output = (${o3[0].toFixed(3)}, ${o3[1].toFixed(3)})  ·  values: (1,0) (0,1) (2,2)`;}
+  upd();
+})();
+
+/* ---------- Analogy lab ---------- */
+(function(){
+  const base={man:[1,0,0],woman:[0,1,0],king:[.6,0,.8]}; const sl=$("#ana-sliders"), rank=$("#ana-rank");
+  const qs=["x","y","z"].map((a,i)=>slider(sl,{id:"aq"+a,label:"queen "+a,min:-1,max:1,step:.05,value:[0,.6,.8][i]},upd));
+  const cos=(a,b)=>{const d=a[0]*b[0]+a[1]*b[1]+a[2]*b[2],n=Math.hypot(...a)*Math.hypot(...b);return n?d/n:0};
+  function upd(){const W={...base,queen:qs.map(x=>+x.value)};const y=W.king.map((v,i)=>v-W.man[i]+W.woman[i]);
+    const r=Object.entries(W).map(([w,v])=>[w,cos(v,y)]).sort((a,b)=>b[1]-a[1]);
+    rank.innerHTML=r.map(([w,c],i)=>`<div class="${i===0?"win":""}"><span>${w}</span><i style="width:${Math.max(0,c)*100}%"></i><span>${c.toFixed(3)}</span></div>`).join("")+
+      `<p class="small" style="margin:4px 0 0">y = king − man + woman = (${y.map(v=>v.toFixed(2)).join(", ")}). ${r[0][0]==="queen"?"The analogy works.":"The analogy fails: "+r[0][0]+" is closest. Excluding the input words would change the answer."}</p>`;}
+  upd();
+})();
+
+/* ---------- ICL posterior lab ---------- */
+(function(){
+  const sl=$("#icl-sliders"), bars=$("#icl-bars"), read=$("#icl-read");
+  const n=slider(sl,{id:"in",label:"examples n",min:0,max:10,step:1,value:2,fmt:x=>String(x)},upd);
+  const lr=slider(sl,{id:"ilr",label:"evidence ratio",min:1,max:8,step:.5,value:4,fmt:x=>x+"×"},upd);
+  const pr=slider(sl,{id:"ipr",label:"prior θ*",min:.05,max:.95,step:.05,value:.5},upd);
+  function upd(){const N=+n.value,R=+lr.value,p0=+pr.value;const a=p0*Math.pow(R,N),post=a/(a+(1-p0));const right=.9*post+.1*(1-post);
+    bars.innerHTML=`<div><span>P(θ* | prompt)</span><i style="width:${post*100}%"></i><span>${post.toFixed(3)}</span></div><div class="ans"><span>P(right answer)</span><i style="width:${right*100}%"></i><span>${right.toFixed(3)}</span></div>`;
+    read.textContent=`posterior = ${p0}·${R}^${N} / (${p0}·${R}^${N} + ${(1-p0).toFixed(2)}) = ${post.toFixed(3)}\nP(right) = 0.9·${post.toFixed(3)} + 0.1·${(1-post).toFixed(3)} = ${right.toFixed(3)}`;}
+  read.style.whiteSpace="pre-line"; upd();
+})();
+
+/* ---------- Copy buttons ---------- */
+$$(".code[data-copy]").forEach(box=>{const b=el("button",{type:"button",class:"copy"},"Copy");box.append(b);
+  b.addEventListener("click",()=>{const t=$("code",box).textContent;const done=()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1500)};
+    try{navigator.clipboard.writeText(t).then(done,()=>sel(box))}catch(e){sel(box)}})});
+function sel(box){const r=document.createRange();r.selectNodeContents($("code",box));const s=getSelection();s.removeAllRanges();s.addRange(r)}
+
+/* ---------- Audio player ---------- */
+const CH=window.CHAPTERS||[]; const audio=new Audio(); audio.preload="none";
+const P={i:LS.get("ch",0),mode:LS.get("mode","off"),rate:LS.get("rate",1)};
+const bar=el("div",{class:"player",role:"region","aria-label":"Audio player"});
+bar.innerHTML=`<div class="player-in"><button type="button" class="pbtn" id="p-play" aria-label="Play"></button>
+<button type="button" class="pinfo" id="p-info" aria-label="Show chapters"><b id="p-title"></b><span class="prog"><i id="p-prog"></i></span></button>
+<div class="pctl"><button type="button" id="p-loop" title="Loop">Loop</button><button type="button" id="p-rate" title="Speed">1×</button></div></div>`;
+document.body.append(bar);
+const ICON={play:'<svg viewBox="0 0 16 16"><path d="M4 2l10 6-10 6z"/></svg>',pause:'<svg viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg>'};
+const fmtT=s=>{s=Math.round(s||0);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
+function load(i,play){P.i=(i+CH.length)%CH.length;LS.set("ch",P.i);audio.src=CH[P.i].src;audio.playbackRate=P.rate;paint();
+  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:CH[P.i].title,artist:"AI4Read",album:"Post 01 · What does an LLM know?"})}catch(e){}}
+  if(play) audio.play().catch(()=>{});}
+function paint(){$("#p-title").textContent=`${P.i+1}/${CH.length} · ${CH[P.i].title}`;$("#p-play").innerHTML=audio.paused?ICON.play:ICON.pause;$("#p-play").setAttribute("aria-label",audio.paused?"Play":"Pause");
+  const L={off:"Loop off",one:"Loop 1",all:"Loop all"}[P.mode];const lb=$("#p-loop");lb.textContent={off:"Loop",one:"Loop 1",all:"All"}[P.mode];lb.setAttribute("aria-label",L);lb.setAttribute("aria-pressed",String(P.mode!=="off"));
+  $("#p-rate").textContent=P.rate+"×";}
+if(CH.length){
+  audio.src=CH[P.i%CH.length].src; P.i%=CH.length;
+  $("#p-play").addEventListener("click",()=>{if(audio.paused){audio.playbackRate=P.rate;audio.play().catch(()=>{})}else audio.pause()});
+  audio.addEventListener("play",paint);audio.addEventListener("pause",paint);
+  audio.addEventListener("timeupdate",()=>{$("#p-prog").style.width=(audio.duration?100*audio.currentTime/audio.duration:0)+"%"});
+  audio.addEventListener("ended",()=>{if(P.mode==="one"){audio.currentTime=0;audio.play()}else if(P.i<CH.length-1)load(P.i+1,true);else if(P.mode==="all")load(0,true);else paint()});
+  $("#p-loop").addEventListener("click",()=>{P.mode={off:"one",one:"all",all:"off"}[P.mode];LS.set("mode",P.mode);paint()});
+  $("#p-rate").addEventListener("click",()=>{const R=[0.75,1,1.25,1.5];P.rate=R[(R.indexOf(P.rate)+1)%R.length];audio.playbackRate=P.rate;LS.set("rate",P.rate);paint()});
+  $("#p-info").addEventListener("click",openChapters);
+  if("mediaSession" in navigator){const ms=navigator.mediaSession;try{
+    ms.setActionHandler("play",()=>audio.play());ms.setActionHandler("pause",()=>audio.pause());
+    ms.setActionHandler("previoustrack",()=>load(P.i-1,true));ms.setActionHandler("nexttrack",()=>load(P.i+1,true));
+    ms.setActionHandler("seekbackward",()=>{audio.currentTime=Math.max(0,audio.currentTime-15)});ms.setActionHandler("seekforward",()=>{audio.currentTime+=15});}catch(e){}}
+  paint();
+} else bar.hidden=true;
+
+/* ---------- Sheets ---------- */
+let scrim=null,sheet=null;
+function openSheet(build){closeSheet();scrim=el("div",{class:"scrim"});sheet=el("div",{class:"sheet",role:"dialog","aria-modal":"true"});
+  const inn=el("div",{class:"sheet-in"});sheet.append(inn);build(inn);document.body.append(scrim,sheet);scrim.addEventListener("click",closeSheet);
+  const f=sheet.querySelector("textarea,button");if(f)f.focus();}
+function closeSheet(){if(scrim)scrim.remove();if(sheet)sheet.remove();scrim=sheet=null}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet()});
+function openChapters(){openSheet(inn=>{inn.innerHTML=`<div class="sheet-h"><b>Chapters</b><button type="button" class="x">Close</button></div><p class="status">Loop 1 repeats one chapter; All repeats the whole post. The audio is written for listening, so it is shorter than the page and says formulas in words.</p>`;
+  $(".x",inn).addEventListener("click",closeSheet);const list=el("div",{class:"chlist"});
+  CH.forEach((c,i)=>{const b=el("button",{type:"button","aria-current":String(i===P.i)},`<b>${i+1}. ${c.title}</b><span>${fmtT(c.dur)}</span>`);b.addEventListener("click",()=>{load(i,true);closeSheet()});list.append(b)});inn.append(list)})}
+
+/* ---------- Section tools: listen + discuss ---------- */
+const NOTES=LS.get("notes",{}); // per-section local copy {sec:[{q,a,kind,at}]}
+const secTitle=s=>($("h2",s)||{}).textContent||s.id;
+$$("section[data-ch]").forEach(sec=>{
+  const tools=el("div",{class:"sec-tools"}); const ci=CH.findIndex(c=>c.id===sec.dataset.ch);
+  if(ci>=0){const b=el("button",{type:"button"},`Listen · ${fmtT(CH[ci].dur)}`);b.addEventListener("click",()=>load(ci,true));tools.append(b)}
+  const d=el("button",{type:"button"},"Discuss this section");d.addEventListener("click",()=>openDiscuss(sec));tools.append(d);
+  const n=(NOTES[sec.id]||[]).length; if(n) d.insertAdjacentHTML("beforeend",` <span class="n">${n}</span>`);
+  sec.append(tools);
+});
+let BRIEF=null; try{BRIEF=JSON.parse(($("#brief-data")||{}).textContent||"null")}catch(e){}
+function plain(node){return node.innerText.replace(/\n{3,}/g,"\n\n")}
+const threads={};
+function openDiscuss(sec){openSheet(inn=>{
+  inn.innerHTML=`<div class="sheet-h"><b>${secTitle(sec)}</b><button type="button" class="x">Close</button></div>
+  <div class="thread" id="d-thread"></div>
+  <label class="status" for="d-text">Write a question, a confusion, or an idea. “Ask Claude” answers now, from this post and its sources. “Save note” keeps it for our next discussion.</label>
+  <textarea id="d-text" placeholder="e.g. Why can training only reduce D, not H?"></textarea>
+  <div class="row"><button type="button" class="btn" id="d-ask">Ask Claude</button><button type="button" class="btn ghost" id="d-save">Save note</button></div>
+  <p class="status" id="d-status"></p>`;
+  $(".x",inn).addEventListener("click",closeSheet);
+  const th=$("#d-thread",inn),ta=$("#d-text",inn),stt=$("#d-status",inn),ask=$("#d-ask",inn);
+  const list=NOTES[sec.id]||[]; list.forEach(m=>addMsg(th,m));
+  if(!SAMPLE){ask.hidden=true; stt.textContent=DB?"":"Notes are saved in this browser only.";}
+  $("#d-save",inn).addEventListener("click",async()=>{const q=ta.value.trim();if(!q)return;const m={kind:"note",q,at:new Date().toISOString()};
+    keep(sec,m);addMsg(th,m);ta.value="";const ok=await dbAdd("notes",{section:sec.id,title:secTitle(sec),...m});stt.textContent=ok?"Saved for our discussion.":"Saved in this browser.";});
+  ask.addEventListener("click",async()=>{const q=ta.value.trim();if(!q||!SAMPLE)return;ask.disabled=true;ta.value="";
+    const me={kind:"ask",q,at:new Date().toISOString()};addMsg(th,{...me,kind:"note-q"});const box=addMsg(th,{kind:"ai",a:"Thinking…"});
+    const hist=(threads[sec.id]=threads[sec.id]||[]);
+    try{
+      const lim=await SAMPLE.limits().catch(()=>({maxPromptBytes:60000}));
+      const budget=Math.max(8000,(lim.maxPromptBytes||60000)-6000);
+      let ctx=`SECTION THE READER IS ON: ${secTitle(sec)}\n${plain(sec)}\n`;
+      const post=plain($("main"));if((ctx+post).length<budget*0.7)ctx+=`\nWHOLE POST:\n${post}\n`;
+      if(BRIEF&&(ctx+BRIEF).length<budget)ctx+=`\nSOURCE BRIEF (claims with page refs, from the AI4Read digests):\n${BRIEF}\n`;
+      const sys=`You are the AI4Read tutor for Kunhao, an assistant professor in computational social science who reads on a phone. Answer his question about the post below.\n- English at B2 level (some C1), short sentences, define terms.\n- Intuition first, then the math step by step, with small numbers. No skipped steps.\n- Ground every factual claim in the post or the source brief and give the page reference. Keep the authors' hedges.\n- If the answer needs knowledge beyond these sources, say so clearly ("Beyond our sources: ...").\n- Plain text, no markdown headings. Use at most about 250 words unless he asks for more.\n\n${ctx}`;
+      const msgs=[{role:"user",content:sys+"\n\nQUESTION: "+(hist.length?hist[0].q:q)}];
+      if(hist.length){msgs.push({role:"assistant",content:hist[0].a});hist.slice(1).forEach(h=>{msgs.push({role:"user",content:h.q},{role:"assistant",content:h.a})});msgs.push({role:"user",content:q})}
+      const res=await SAMPLE(msgs,{modelTier:"complex",cache:false,onText:u=>{$(".body",box).textContent=u.text}});
+      $(".body",box).textContent=res.text;hist.push({q,a:res.text});
+      const m={kind:"ask",q,a:res.text,at:me.at};keep(sec,m);
+      const ok=await dbAdd("notes",{section:sec.id,title:secTitle(sec),...m});stt.textContent=ok?"Question and answer saved for our discussion.":"";
+    }catch(e){$(".body",box).textContent=(e&&e.code==="not_granted")?"Asking Claude is not allowed in this view. Use “Save note” instead.":(e&&e.code==="rate_limited")?"Too many questions in a short time. Wait a minute and try again.":"The answer did not arrive ("+((e&&e.message)||"error")+"). Your question is still here: save it as a note.";ta.value=q}
+    ask.disabled=false;});
+})}
+function keep(sec,m){(NOTES[sec.id]=NOTES[sec.id]||[]).push(m);LS.set("notes",NOTES)}
+function addMsg(th,m){let node;
+  if(m.kind==="ai"){node=el("div",{class:"msg ai"},'<small>Claude</small><span class="body"></span>');$(".body",node).textContent=m.a}
+  else{node=el("div",{class:"msg me"},`<small>${m.kind==="note"?"Note":"You asked"}</small><span class="body"></span>`);$(".body",node).textContent=m.q;
+    th.append(node); if(m.kind==="ask"&&m.a){const a=el("div",{class:"msg ai"},'<small>Claude</small><span class="body"></span>');$(".body",a).textContent=m.a;th.append(a)} return node}
+  th.append(node);return node}
+document.addEventListener("caps",()=>{});
+})();
+
+</script>

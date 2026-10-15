@@ -1,0 +1,80 @@
+[
+ {
+  "id": "hook",
+  "title": "The guessing game",
+  "hash": "f877dcf8fc14",
+  "dur": 124.2
+ },
+ {
+  "id": "guess",
+  "title": "Guess first",
+  "hash": "ebd326ed83be",
+  "dur": 71.2
+ },
+ {
+  "id": "home",
+  "title": "How a language model is built",
+  "hash": "9bba1ef39cda",
+  "dur": 192.9
+ },
+ {
+  "id": "lens-info",
+  "title": "Lens one: information theory",
+  "hash": "4e1369f3105e",
+  "dur": 181.7
+ },
+ {
+  "id": "lens-linalg",
+  "title": "Lens two: linear algebra",
+  "hash": "9314dbc081ce",
+  "dur": 111.1
+ },
+ {
+  "id": "lens-bayes",
+  "title": "Lens three: Bayesian inference",
+  "hash": "50db4ec5ccb7",
+  "dur": 103.7
+ },
+ {
+  "id": "lens-meaning",
+  "title": "Lens four: philosophy of meaning",
+  "hash": "abce5984bea6",
+  "dur": 124.1
+ },
+ {
+  "id": "lens-tom",
+  "title": "Lens five: theory of mind",
+  "hash": "b7a925b938a1",
+  "dur": 145.2
+ },
+ {
+  "id": "ladder",
+  "title": "The math ladder, spoken",
+  "hash": "3788708b4368",
+  "dur": 172.9
+ },
+ {
+  "id": "answer",
+  "title": "So what does it know?",
+  "hash": "24e8027303c4",
+  "dur": 75.9
+ },
+ {
+  "id": "work",
+  "title": "Where this shows up in your work",
+  "hash": "c2ba731dd3f6",
+  "dur": 74.3
+ },
+ {
+  "id": "recall",
+  "title": "Recall questions",
+  "hash": "53881d510474",
+  "dur": 84.2
+ },
+ {
+  "id": "english",
+  "title": "How to say it in English",
+  "hash": "89ad31ade6f4",
+  "dur": 77.8
+ }
+]

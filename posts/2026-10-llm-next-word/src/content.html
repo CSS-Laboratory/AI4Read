@@ -1,0 +1,464 @@
+<header class="masthead wrap">
+  <p class="eyebrow">AI4Read · Post 01 · 15 October 2026</p>
+  <h1>What does an LLM know when it predicts the next word?</h1>
+  <p class="lede">A language model is trained on one job: guess the next piece of text. This post follows that one job through five fields and asks what kind of knowledge it needs, and what kind it can give you.</p>
+  <ul class="meta">
+    <li><b>Home field</b> Large language models</li>
+    <li><b>Lenses</b> Information theory · Linear algebra · Bayesian inference · Philosophy of meaning · Theory of mind</li>
+    <li><b>Level</b> High school → graduate, in 10 rungs</li>
+    <li><b>Time</b> About 40 min to read, 25 min to listen</li>
+  </ul>
+  <details class="toc">
+    <summary>Contents</summary>
+    <ol>
+      <li><a href="#hook">The guessing game</a></li>
+      <li><a href="#guess">Guess first</a></li>
+      <li><a href="#home">How a language model is built</a></li>
+      <li><a href="#lens-info">Lens 1 · Information theory</a></li>
+      <li><a href="#lens-linalg">Lens 2 · Linear algebra</a></li>
+      <li><a href="#lens-bayes">Lens 3 · Bayesian inference</a></li>
+      <li><a href="#lens-meaning">Lens 4 · Philosophy of meaning</a></li>
+      <li><a href="#lens-tom">Lens 5 · Theory of mind</a></li>
+      <li><a href="#ladder">The math ladder</a></li>
+      <li><a href="#answer">So what does it know?</a></li>
+      <li><a href="#turn">Your turn</a></li>
+      <li><a href="#work">Where this shows up in your work</a></li>
+      <li><a href="#recall">Recall questions</a></li>
+      <li><a href="#english">How to say it in English</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </details>
+</header>
+
+<main class="wrap">
+
+<!-- ============ 1 HOOK ============ -->
+<section id="hook" data-ch="hook">
+  <p class="sec-no">1 · Hook</p>
+  <h2>The guessing game</h2>
+  <p>Take a book you have never read. Cover the page and uncover it one letter at a time. Before each letter, guess what it will be. If you are wrong, guess again until you are right, and write down how many guesses you needed.</p>
+  <p>Claude Shannon ran this experiment and published it in 1951. Most of the time the answer was <i>one</i>: the person guessed right on the first try. In one run of this game, 79 of 102 letters were right on the first guess, about 77% <span class="cite">Shannon 1951, p. 56</span>. The list of guess numbers, which Shannon called the <dfn>reduced text</dfn>, is mostly 1s <span class="cite">p. 56</span>.</p>
+  <p>Then Shannon made a surprising point. Imagine an identical twin of the guesser. Give the twin only the guess numbers. At each position, the twin guesses in the same order as the first person and stops at the right guess number. So the twin can rebuild the whole text. Shannon adds that the twin must be identical “mathematically, not just biologically” <span class="cite">p. 55</span>. The lesson: <strong>a good predictor is also a good compressor.</strong> The better you predict, the shorter the code you need.</p>
+  <p>Today we have machines that play exactly this game, at a huge scale. A <dfn>large language model</dfn> (LLM) reads text one <dfn>token</dfn> at a time (a token is a word or a piece of a word) and gives a probability to every possible next token. Here is an example from the GPT-3 paper <span class="cite">Brown et al. 2020, p. 12</span>:</p>
+  <blockquote class="prompt">Alice was friends with Bob. Alice went to visit her friend ____. <span class="arrow">→</span> Bob</blockquote>
+  <p>To fill that blank, you need more than spelling. You need to keep track of who is who. So here is the question of this post: <strong>to predict the next word this well, what does a machine have to know?</strong> Only which words follow which? Facts about the world? Something about the minds of the people who wrote the text?</p>
+
+  <div class="lab" id="lab-game">
+    <p class="lab-title">Try it · Shannon’s game</p>
+    <p class="lab-note">Guess the hidden phrase one letter at a time. Tap a letter (␣ is a space). Wrong letters fade. The number under each letter is how many guesses you needed.</p>
+    <div class="game-text" id="game-text" aria-live="polite"></div>
+    <div class="keys" id="game-keys"></div>
+    <div class="game-foot">
+      <button type="button" class="btn ghost" id="game-reveal">Show this letter</button>
+      <button type="button" class="btn ghost" id="game-reset">Start again</button>
+    </div>
+    <p class="readout" id="game-stats">Your reduced text will appear here.</p>
+  </div>
+  <p class="small">Keep your result in mind. In rung 10 of the math ladder we turn your guess numbers into an estimate in bits, the way Shannon did.</p>
+</section>
+
+<!-- ============ 2 GUESS FIRST ============ -->
+<section id="guess" data-ch="guess">
+  <p class="sec-no">2 · Guess first</p>
+  <h2>Make three predictions</h2>
+  <p>Commit to an answer before you read on. A wrong guess you remember is worth more than a right answer you only read. The answers appear later in the post, each in its own section.</p>
+  <div class="quiz" data-q="g1">
+    <p class="q">1. Shannon asked people to predict English text with a long context (up to 100 letters). On average, how much new information does one letter carry?</p>
+    <div class="opts"><button type="button">About 4.7 bits</button><button type="button">About 2.6 bits</button><button type="button">About 1 bit</button><button type="button">About 0.1 bits</button></div>
+    <p class="your" hidden></p>
+  </div>
+  <div class="quiz" data-q="g2">
+    <p class="q">2. GPT-3 has 175 billion numbers inside it (its weights). It “learns” a new task from five examples written in the prompt. How many of the weights change?</p>
+    <div class="opts"><button type="button">All of them</button><button type="button">A few million</button><button type="button">None</button></div>
+    <p class="your" hidden></p>
+  </div>
+  <div class="quiz" data-q="g3">
+    <p class="q">3. GPT-4 answers a classic false-belief story correctly 97.5% of the time. Researchers change one detail: an object is put <i>on</i> a box instead of <i>in</i> it, so the person coming back can see where it is. How often is GPT-4 right now?</p>
+    <div class="opts"><button type="button">About 95%</button><button type="button">About 70%</button><button type="button">About 40%</button><button type="button">About 0%</button></div>
+    <p class="your" hidden></p>
+  </div>
+</section>
+
+<!-- ============ 3 HOME FIELD ============ -->
+<section id="home" data-ch="home">
+  <p class="sec-no">3 · The phenomenon in its home field</p>
+  <h2>How a language model is built</h2>
+  <p>All the models in this post, from 2003 to 2020, are trained on the same task. Only the machinery changes. Here is the story in eight short steps.</p>
+
+  <h3>Step 1. A sentence is a chain of guesses</h3>
+  <p>The probability of a whole sentence can be split into a chain of next-word probabilities <span class="cite">Bengio et al. 2003, p. 1138</span>:</p>
+  \[\hat P(w_1,\dots,w_T)=\prod_{t=1}^{T}\hat P(w_t\mid w_1,\dots,w_{t-1})\]
+  <p>In words: the chance of “the cat sat” is the chance of “the”, times the chance of “cat” after “the”, times the chance of “sat” after “the cat”. This is just the rule of conditional probability, used again and again. GPT-2 writes the same product <span class="cite">Radford et al. 2019, pdf 2</span>. So a model that predicts the next token well can also score whole texts.</p>
+
+  <h3>Step 2. Counting runs out of data</h3>
+  <p>The oldest method is to count. How often does “sat” follow “the cat” in a big corpus? These models are called <dfn>n-grams</dfn>. The problem is size. Bengio and colleagues give a famous example: to model 10 words in a row with a vocabulary of 100,000 words, you would need up to \(10^{50}-1\) free numbers <span class="cite">p. 1137</span>. Most word sequences never appear in any corpus, so counting gives them probability zero. This is the <dfn>curse of dimensionality</dfn>.</p>
+
+  <h3>Step 3. Give every word a vector (2003)</h3>
+  <p>Bengio’s answer: give every word a short list of numbers, a <dfn>vector</dfn> \(C(i)\) with 30 to 100 entries, and learn these vectors together with the predictor <span class="cite">pp. 1139, 1141</span>. Similar words are expected to end up close together. Then one sentence such as “The cat is walking in the bedroom” also helps the model with “A dog was running in a room” <span class="cite">p. 1139</span>. On the Brown corpus, the new model’s perplexity (a measure of surprise we define in rung 4) was about 24% better than the best counting model; on a news corpus, about 8% <span class="cite">p. 1148</span>.</p>
+
+  <h3>Step 4. Cheap vectors, big data (2013)</h3>
+  <p>Mikolov and colleagues removed the hidden layer to make training cheap enough for billions of words <span class="cite">Mikolov et al. 2013a, p. 4</span>. The vectors showed a surprise: some relations became directions. The vector for <i>biggest</i> minus <i>big</i> plus <i>small</i> lands near <i>smallest</i> <span class="cite">p. 5</span>. We test this idea in Lens 2.</p>
+
+  <h3>Step 5. Attention (2017)</h3>
+  <p>The Transformer lets every position look at other positions and take a <dfn>weighted average</dfn> of what it finds. The weights come from how well a “query” at one position matches a “key” at another <span class="cite">Vaswani et al. 2017, pp. 3–4</span>. To predict text from left to right, a <dfn>mask</dfn> stops a position from looking at the future <span class="cite">pp. 3, 5</span>. (The 2017 model was built for translation. GPT-style models keep only the decoder half <span class="cite">Kaplan et al. 2020, p. 6</span>.)</p>
+
+  <h3>Step 6. Tasks are text too (2019)</h3>
+  <p>GPT-2’s authors noticed that a task can be written inside the text. Put “TL;DR:” after a news article, and the model tends to continue with a summary <span class="cite">Radford et al. 2019, pdf 6</span>. The summaries were weak: they “just barely” beat random sentences from the article <span class="cite">pdf 6</span>. But the authors made a speculation that frames this whole post: a model with enough capacity will begin to infer and perform the tasks shown in text “in order to better predict them” <span class="cite">pdf 3</span>.</p>
+
+  <h3>Step 7. Learning inside the prompt (2020)</h3>
+  <p>GPT-3 has 175 billion weights and was trained on 300 billion tokens <span class="cite">Brown et al. 2020, p. 8</span>. Show it a few examples of a task in the prompt and it often continues the pattern. The authors call this <dfn>in-context learning</dfn>, and they stress that it happens with no gradient updates: the weights do not change <span class="cite">pp. 3–4</span>.</p>
+  <div class="reveal" data-for="g2"><p class="reveal-h">Prediction 2 · answer</p><p><b>None.</b> In few-shot use, all “learning” happens in the forward pass, while the model reads the prompt. The authors also say their terms are “agnostic” about whether the model learns the task from scratch or recognizes a pattern it saw in training <span class="cite">p. 4, footnote 1</span>.</p></div>
+
+  <h3>Step 8. Smooth scaling laws (2020)</h3>
+  <p>Kaplan and colleagues measured the loss on held-out text for many model sizes. The loss falls as a smooth power law. Doubling the number of parameters multiplies the loss by about 0.95 <span class="cite">Kaplan et al. 2020, p. 5</span>. They add a warning: a smooth loss “may hide seemingly qualitative changes in capability” <span class="cite">p. 19</span>.</p>
+
+  <p class="keypoint">One training signal runs through all eight steps: make the next token less surprising. Every ability we see in an LLM either comes from this signal or rides along with it. The rest of the post asks what that signal can carry.</p>
+</section>
+
+<!-- ============ 4 LENS: INFORMATION THEORY ============ -->
+<section id="lens-info" data-ch="lens-info">
+  <p class="sec-no">4 · Through the lenses</p>
+  <h2>Lens 1 · Information theory</h2>
+  <p class="linktype"><span class="lt same">same-math</span> The LLM training loss <i>is</i> Shannon’s average surprise. This is not an analogy; it is the same formula.</p>
+
+  <p>Shannon’s 1948 paper starts by setting meaning aside. The meaning of a message is “irrelevant to the engineering problem”. What matters is that a message is a <i>selection from a set</i> of possible messages <span class="cite">Shannon 1948, p. 1</span>. This choice made the theory possible. Keep it in mind, because it also limits what this lens can tell us.</p>
+
+  <h3>Surprise and entropy</h3>
+  <p>If an event has probability \(p\), its <dfn>surprise</dfn> is \(-\log_2 p\) bits. A coin flip (probability ½) carries 1 bit. Something with probability ⅛ carries 3 bits. <dfn>Entropy</dfn> is the average surprise of a source:</p>
+  \[H(p)=-\sum_x p(x)\log_2 p(x)\]
+  <p>Cover and Thomas give a nice reading: entropy is close to the smallest average number of yes/no questions you need to find out what happened (the minimum lies between \(H\) and \(H+1\)). For a source with probabilities ½, ¼, ⅛, ⅛ the two match exactly: entropy 7/4 bits, and 1.75 questions on average <span class="cite">Cover &amp; Thomas, pp. 14–15</span>. Shannon uses the same numbers and the code 0, 10, 110, 111 <span class="cite">Shannon 1948, p. 18</span>.</p>
+
+  <h3>The cost of a wrong model</h3>
+  <p>Now the key fact for LLMs. Suppose the truth is \(p\) but you build your code (or your predictions) from a model \(q\). Then your average cost is not \(H(p)\). It is</p>
+  \[H(p)+D(p\,\|\,q)\]
+  <p>where \(D\) is the <dfn>relative entropy</dfn>, also called the KL divergence: the extra bits you pay for believing \(q\) when the truth is \(p\) <span class="cite">Cover &amp; Thomas, p. 18</span>. \(D\) is never negative, and it is zero only when \(q=p\) <span class="cite">p. 26</span>.</p>
+  <p>An LLM is trained to make its average surprise on real text as small as possible. That average is exactly \(H(p)+D(p\,\|\,q)\), with \(p\) the true distribution of text and \(q\) the model. The entropy \(H(p)\) is fixed by the language. So <strong>the only part training can reduce is \(D\)</strong>: the distance between the model and the truth about text.</p>
+
+  <div class="trap"><p class="trap-h">Name trap</p><p>In machine learning, \(H(p)+D(p\|q)\) is called <dfn>cross-entropy</dfn>. Cover and Thomas do not use the word that way: their historical notes list “cross entropy” as another name for <i>relative</i> entropy, that is \(D\) itself <span class="cite">p. 49</span>. And Shannon’s 1948 “relative entropy” means something else again: entropy divided by its maximum, \(H/H_{\max}\) <span class="cite">Shannon 1948, p. 14</span>. In this post, “cross-entropy” is our label for the ML sense.</p></div>
+
+  <h3>Context lowers surprise</h3>
+  <p>Shannon calculated, from tables of letter, pair and triple frequencies, how uncertain the next letter of English is when you know the previous \(N-1\) letters. He called this \(F_N\). With 26 letters (no space): \(F_0=4.70\), \(F_1=4.14\), \(F_2=3.56\), \(F_3\approx3.3\) bits per letter <span class="cite">Shannon 1951, p. 54</span>. In theory \(F_N\) never goes up as \(N\) grows, and it approaches the true entropy \(H\) <span class="cite">Shannon 1948, p. 14</span>. One careful point: knowing more lowers uncertainty <i>on average</i>. A particular context can make the next symbol <i>more</i> uncertain <span class="cite">Cover &amp; Thomas, p. 28</span>.</p>
+  <figure class="chart" id="fig-shannon"><figcaption>First-guess success by amount of context (letters known before guessing). The first two bars (0 and 1 letters) were computed from frequency tables; the rest come from one person’s guesses. Data: Shannon 1951, p. 57.</figcaption></figure>
+
+  <div class="reveal" data-for="g1"><p class="reveal-h">Prediction 1 · answer</p><p><b>About 1 bit.</b> Shannon wrote that long-range effects (up to 100 letters) seem to reduce the entropy to “something of the order of one bit per letter” <span class="cite">Shannon 1951, pp. 50–51</span>. His bounds at 100 letters were 0.6 to 1.3 bits <span class="cite">p. 64</span>. This is a hedged estimate from human guessers on one book, not a constant of nature <span class="cite">pp. 56–57</span>. For comparison, 4.7 bits is \(\log_2 26\): no knowledge at all.</p></div>
+
+  <h3>How low can a model go?</h3>
+  <p>Nobody knows the true entropy of a language. Kaplan and colleagues found that two of their trends contradict each other near a loss of about 1.7 <dfn>nats</dfn> per token (nats are like bits but use natural logarithms; 1 nat ≈ 1.44 bits). The most obvious reading, they say, is that the scaling laws break down at or before that point. They add a conjecture: the number <i>might</i> be a rough estimate of the entropy per token of natural language. The estimate is uncertain by an order of magnitude <span class="cite">Kaplan et al. 2020, pp. 17–18</span>. A rough conversion, just for fun: 1.7 nats = 2.45 bits per token. Kaplan’s own footnote says their text has about 4.3 characters per token <span class="cite">p. 18</span>, which gives about 0.57 bits per character. Another route, with a GPT-3 token at about 0.7 words <span class="cite">Brown et al. 2020, p. 24</span> and Shannon’s 4.5 letters per word without spaces <span class="cite">Shannon 1951, p. 53</span>, gives 0.78. So: roughly 0.6–0.8 bits per character, near Shannon’s “one bit”. Different texts, tokenizers and methods: treat it as a talking point, not a result.</p>
+
+  <p class="lens-sum"><b>What this lens says the model knows:</b> exactly as many bits about text as it saves. It is a precise, measurable kind of knowledge. But Shannon built the theory by setting meaning aside, so this lens cannot tell you what those bits are <i>about</i>.</p>
+</section>
+
+<!-- ============ 5 LENS: LINEAR ALGEBRA ============ -->
+<section id="lens-linalg" data-ch="lens-linalg">
+  <h2>Lens 2 · Linear algebra</h2>
+  <p class="linktype"><span class="lt same">same-math</span> Attention is matrix multiplication and a weighted average. <span class="lt analogy">structural analogy</span> “Relations between words are directions in space” is an analogy, and it only partly holds.</p>
+
+  <h3>Words as points, relations as arrows</h3>
+  <p>Mikolov, Yih and Zweig took a model trained only to predict words. Nothing in it was built for grammar or meaning <span class="cite">Mikolov et al. 2013b, p. 747</span>. Yet relations showed up as roughly constant offsets: \(x_{apple}-x_{apples}\approx x_{car}-x_{cars}\) <span class="cite">p. 746</span>. To answer “a is to b as c is to ?”, compute</p>
+  \[y=x_b-x_a+x_c\]
+  <p>and pick the word whose vector points most nearly in the same direction as \(y\) (highest <dfn>cosine</dfn>) <span class="cite">p. 748</span>. Their best model got 39.6% of 8,000 grammar questions right; an older method got 16.5% <span class="cite">pp. 748–749</span>. The authors call these regularities a by-product of maximum-likelihood training <span class="cite">p. 750</span>. Later, with much more data, a skip-gram model reached 65.6% on a larger test <span class="cite">Mikolov et al. 2013a, p. 9</span>. So the arrows are real but rough: about 40% to two thirds of analogies work exactly.</p>
+
+  <h3>Attention as a weighted average</h3>
+  <p>In a Transformer, each position makes three vectors: a <dfn>query</dfn> (what am I looking for?), a <dfn>key</dfn> (what do I contain?) and a <dfn>value</dfn> (what do I pass on?). The output at a position is an average of values, weighted by how well its query matches each key <span class="cite">Vaswani et al. 2017, pp. 3–4</span>. The <dfn>softmax</dfn> turns the match scores into weights that are positive and sum to 1 (rung 6 works it out by hand):</p>
+  \[\mathrm{Attention}(Q,K,V)=\mathrm{softmax}\!\left(\frac{QK^{\top}}{\sqrt{d_k}}\right)V\]
+  <p>Why divide by \(\sqrt{d_k}\)? If the parts of \(q\) and \(k\) are independent with mean 0 and variance 1, their dot product has variance \(d_k\). The authors suspect large dot products push the softmax into regions with tiny gradients, so they scale them down <span class="cite">p. 4, footnote 4</span>. In one example sentence, some attention heads seem to link “its” to the noun it refers to; the authors say these heads are “apparently involved in anaphora resolution” <span class="cite">p. 14</span>. A picture of attention weights is a hint, not proof of what the model computes.</p>
+
+  <p class="lens-sum"><b>What this lens says the model knows:</b> relations between words, stored as positions and directions, and a way to mix information from earlier tokens. The geometry is real but approximate. Whether geometry is <i>meaning</i> is the question of Lens 4.</p>
+  <p class="small">Try both ideas with numbers in rungs 6 and 7 of the math ladder.</p>
+</section>
+
+<!-- ============ 6 LENS: BAYES ============ -->
+<section id="lens-bayes" data-ch="lens-bayes">
+  <h2>Lens 3 · Bayesian inference</h2>
+  <p class="linktype"><span class="lt same">same-math</span> inside one simplified model of text, where it is a theorem. <span class="lt analogy">structural analogy</span> for real LLMs, where it is not proved.</p>
+
+  <p>Here is a puzzle from Xie and colleagues <span class="cite">Xie et al. 2022, p. 1</span>:</p>
+  <blockquote class="prompt">Albert Einstein was German<br>Mahatma Gandhi was Indian<br>Marie Curie was <span class="arrow">→</span> Polish</blockquote>
+  <p>Nobody told the model the task is “nationality”. How does it know? Xie’s idea: imagine that every document in the training data was written under some hidden <dfn>concept</dfn> \(\theta\), such as a topic, a format, or a task. To predict the next token of a document well, a model has to guess which concept is active. If it predicts perfectly, it must do this guessing implicitly, by averaging over concepts <span class="cite">p. 2</span>:</p>
+  \[p(\text{output}\mid\text{prompt})=\int p(\text{output}\mid\text{concept},\text{prompt})\;p(\text{concept}\mid\text{prompt})\;d(\text{concept})\]
+  <p>A few-shot prompt is evidence about the concept. If the posterior \(p(\text{concept}\mid\text{prompt})\) concentrates on one concept, the model in effect “selects” it <span class="cite">p. 3</span>. In-context learning then looks like Bayesian inference, with no weight change at all.</p>
+  <p>Xie proves this inside a stylized world: documents come from a mixture of hidden Markov models (simple random processes with a hidden state that changes step by step), the language model fits the training distribution exactly, and the concepts are distinguishable enough. Under these conditions, prediction reaches the best possible accuracy as the number of examples grows <span class="cite">Theorem 1, p. 7</span>. Their synthetic tests also show limits. With concepts not seen in training, in-context learning failed <span class="cite">p. 10</span>. Changing the order of examples moved accuracy by 10–40%, and zero-shot sometimes beat few-shot <span class="cite">pp. 10–11</span>.</p>
+
+  <p class="lens-sum"><b>What this lens says the model knows:</b> a prior over the kinds of documents people write, and the ability to narrow it down from a prompt. This is a clean story, but it is a theorem about a model of text, tested on synthetic data. It does not show that real LLMs compute posteriors. Xie calls it “a first step” <span class="cite">p. 12</span>.</p>
+  <p class="small">Watch the posterior move in rung 8.</p>
+</section>
+
+<!-- ============ 7 LENS: MEANING ============ -->
+<section id="lens-meaning" data-ch="lens-meaning">
+  <h2>Lens 4 · Philosophy of meaning</h2>
+  <p class="linktype"><span class="lt analogy">structural analogy</span> A thought experiment (an octopus on a cable) stands in for a language model. The argument works only if the analogy holds.</p>
+
+  <h3>The octopus</h3>
+  <p>Bender and Koller define a language model as any system trained only to predict strings. They define meaning as the relation between a linguistic form and the speaker’s communicative intent. From this, they argue that training on form alone “cannot in principle” lead to learning meaning <span class="cite">Bender &amp; Koller 2020, p. 5185</span>.</p>
+  <p>Their story: two people, A and B, are stranded on two islands and talk through an underwater cable. A clever octopus, O, taps the cable. It learns the statistical patterns of their messages and starts to answer in B’s place. In small talk, O may pass. Then A writes that a bear is attacking and asks how to defend herself with some sticks. O has never seen a bear or a stick. It can only produce text that looks like an answer <span class="cite">pp. 5188–5189</span>. Bender and Koller do not say LMs learn nothing: they grant that BERT has “probably learned something about meaning”, and that language models learn “some reflection of meaning into the linguistic form” <span class="cite">p. 5193</span>.</p>
+
+  <h3>Meaning without reference</h3>
+  <p>Piantadosi and Hill reply that the octopus argument assumes that <dfn>reference</dfn> (pointing to things in the world) is what fixes meaning <span class="cite">Piantadosi &amp; Hill 2022, pdf 1–2</span>. But many words have no clear referent, such as “justice” <span class="cite">pdf 2</span>. On the <dfn>conceptual role</dfn> view, meaning comes mainly from how a concept relates to other concepts, the way “force” is tied to “mass” and “acceleration” through \(f=m\cdot a\) <span class="cite">pdf 2</span>. Whether next-word prediction discovers such roles is, they say, an empirical question, with a “promising, partial affirmative” answer so far <span class="cite">pdf 4</span>. Their claim is conditional: if conceptual role theories are correct, LLMs likely already share the foundation of meaning <span class="cite">pdf 5</span>.</p>
+
+  <h3>Two kinds of competence</h3>
+  <p>Mahowald and colleagues suggest a cleaner split. <dfn>Formal competence</dfn> is knowing the rules and statistical patterns of a language. <dfn>Functional competence</dfn> is using language to do things in the world <span class="cite">Mahowald et al. 2024, pp. 2–3</span>. In the human brain, the language network is not used for arithmetic, logic or reasoning about other minds, and people with severe aphasia can still do arithmetic and play chess <span class="cite">p. 5</span>. For English, LLMs’ formal competence is close to human level; their functional competence is “patchy” <span class="cite">p. 2</span>. A test of formal competence: “The keys to the old, wooden kitchen cabinet <i>are</i>…”, where the verb must agree with “keys”, not with the nearer word “cabinet” <span class="cite">pp. 7–8</span>.</p>
+
+  <p class="lens-sum"><b>What this lens says the model knows:</b> it depends on your theory of meaning. If meaning needs a link to intentions and the world, form alone gives at best a reflection. If meaning is mostly relations between concepts, prediction may build part of it. That is why more data alone cannot settle this debate.</p>
+</section>
+
+<!-- ============ 8 LENS: THEORY OF MIND ============ -->
+<section id="lens-tom" data-ch="lens-tom">
+  <h2>Lens 5 · Theory of mind</h2>
+  <p class="linktype"><span class="lt analogy">structural analogy</span> Tests designed for children are given to machines. The open question is whether passing means the same thing in both cases.</p>
+
+  <p><dfn>Theory of mind</dfn> (ToM) is the ability to think about what other people believe, even when their beliefs are false. A classic test: a bag full of popcorn has a label that says “chocolate”. Sam has never seen inside. What does Sam think is in the bag? <span class="cite">Kosinski 2024, § Study 1.1</span>. To predict what Sam will <i>say</i>, you must track what Sam <i>believes</i>, not what is true. People who write stories describe false beliefs all the time, so a next-word predictor at least gets plenty of examples.</p>
+
+  <h3>The claim</h3>
+  <p>Kosinski gave 40 such tasks to a series of models. Scoring was strict: a task counted only if all 16 prompts (the false-belief story, three true-belief controls, and reversed versions) were answered correctly <span class="cite">§ Abstract, § Study 3</span>. ChatGPT-4 solved 75% of tasks (95% interval 66–84%), which he compares with 6-year-old children <span class="cite">§ Study 3</span>. He suggests ToM <i>may</i> have emerged as a by-product of language training <span class="cite">§ Abstract</span>, and he is careful: failures do not necessarily show inability, and successes do not prove ToM <span class="cite">§ Discussion</span>.</p>
+
+  <h3>The critics</h3>
+  <p>Ullman made “trivial alterations” to such stories. Make the popcorn bag transparent, so Sam can see the popcorn: on one of two belief prompts, GPT-3.5 still gave “chocolate” a probability of 95% <span class="cite">Ullman 2023, p. 3</span>. His rule of evidence: one clear failure can outweigh many average successes, in the same way that a machine that answers 100 easy multiplications correctly but fails 213 × 261 has probably memorized answers rather than learned to multiply <span class="cite">p. 2</span>. Has ToM emerged? “Probably not” <span class="cite">p. 8</span>. Shapira and colleagues tested 15 models on 6 datasets and concluded that “no model robustly exhibits ToM on all datasets” <span class="cite">Shapira et al. 2024, p. 2261</span>.</p>
+  <div class="reveal" data-for="g3"><p class="reveal-h">Prediction 3 · answer</p><p><b>About 0%.</b> GPT-4 scored 97.5% on the original false-belief transfer items and 0% when the object was put <i>on</i> the container, or when the container was transparent <span class="cite">Shapira et al. 2024, pp. 2262–2263</span>. Shapira’s team suggests models <i>might</i> recognize the familiar Sally–Anne pattern rather than track beliefs <span class="cite">p. 2262</span>.</p></div>
+
+  <h3>The twist</h3>
+  <p>Strachan and colleagues compared models with 1,907 human participants. Humans also failed about half of the Ullman-style changes, which alter physical facts of the story <span class="cite">Strachan et al. 2024, § False belief</span>. GPT-4 matched or beat humans on irony, hinting and strange stories <span class="cite">§ Irony, § Hinting, § Strange stories</span>, but was worse on <dfn>faux pas</dfn> (noticing that someone said something awkward without knowing it). Its faux pas errors were mostly “not enough information”; when the question asked what was <i>more likely</i>, GPT-4 answered perfectly. The authors read this as <dfn>hyperconservatism</dfn>, an unwillingness to commit, not a failure to infer <span class="cite">§ Understanding faux pas</span>.</p>
+  <div class="trap"><p class="trap-h">Version trap</p><p>Ullman <span class="cite">p. 2</span> and Shapira <span class="cite">pp. 2272–2273</span> criticize an earlier preprint of Kosinski’s paper, which reported higher scores. The published PNAS version, with stricter controls, reports lower ones (for example ChatGPT-4 down from 95% to 75%) <span class="cite">Kosinski 2024, § Study 3</span>. Always check which version a critique answers.</p></div>
+
+  <p class="lens-sum"><b>What this lens says the model knows:</b> enough about how people write about beliefs to pass many standard tests, but not robustly under small changes. The two sides also disagree about evidence: does one failure decide (Ullman, Shapira), or can a failure have other causes, so that it does not necessarily show inability (Kosinski)? And should we judge behaviour (Kosinski’s Turing-style view) or the likely process behind it (Ullman, p. 9)?</p>
+</section>
+
+<!-- ============ 9 MATH LADDER ============ -->
+<section id="ladder" data-ch="ladder">
+  <p class="sec-no">5 · The math ladder</p>
+  <h2>Ten rungs, from a coin flip to scaling laws</h2>
+  <p>Each rung uses small numbers you can check by hand. Rungs 1–2 need only high-school math, rungs 3–7 are undergraduate, rungs 8–10 are graduate level. Logs are base 2 (bits) unless stated.</p>
+
+  <!-- R1 -->
+  <div class="rung"><p class="rung-h"><span class="lvl hs">High school</span> Rung 1 · The chain rule</p>
+  <p>Shannon’s 1948 paper has a tiny three-letter language, A, B and C, where each letter depends on the one before <span class="cite">Shannon 1948, p. 6</span>. The table gives the probability of the next letter in each row:</p>
+  <div class="tbl"><table><thead><tr><th>after</th><th>A</th><th>B</th><th>C</th></tr></thead><tbody><tr><th>A</th><td>0</td><td>4/5</td><td>1/5</td></tr><tr><th>B</th><td>1/2</td><td>1/2</td><td>0</td></tr><tr><th>C</th><td>1/2</td><td>2/5</td><td>1/10</td></tr></tbody></table></div>
+  <p>In the long run the letters appear with frequencies 9/27, 16/27 and 2/27 <span class="cite">p. 6</span>. What is the probability that a random stretch of text reads “BAB”?</p>
+  \[P(\text{BAB})=P(\text{B})\cdot P(\text{A}\mid\text{B})\cdot P(\text{B}\mid\text{A})\]
+  \[=\tfrac{16}{27}\cdot\tfrac12\cdot\tfrac45=\tfrac{64}{270}\approx0.237\]
+  <p>That is the whole idea of Step 1: a text’s probability is a product of next-symbol guesses. Notice the zeros in the table: in this language “AA” and “BC” really never happen. In real text, many word sequences are possible but unseen. Counting gives them zero unless it backs off to shorter contexts, and that is the gap Bengio’s vectors try to close <span class="cite">Bengio et al. 2003, pp. 1138–1139</span>.</p></div>
+
+  <!-- R2 -->
+  <div class="rung"><p class="rung-h"><span class="lvl hs">High school</span> Rung 2 · Surprise and entropy</p>
+  <p>Meet the toy world we will reuse in later posts: a village whose weather report has four words.</p>
+  <div class="tbl"><table><thead><tr><th>word</th><th>rain</th><th>sun</th><th>wind</th><th>snow</th></tr></thead><tbody><tr><th>\(p\)</th><td>1/2</td><td>1/4</td><td>1/8</td><td>1/8</td></tr><tr><th>surprise \(-\log_2 p\)</th><td>1</td><td>2</td><td>3</td><td>3</td></tr><tr><th>code</th><td>0</td><td>10</td><td>110</td><td>111</td></tr></tbody></table></div>
+  <p>Entropy is the average surprise, weighted by how often each word appears:</p>
+  \[H=\tfrac12\cdot1+\tfrac14\cdot2+\tfrac18\cdot3+\tfrac18\cdot3=0.5+0.5+0.375+0.375=1.75\ \text{bits}\]
+  <p>The code in the last row uses exactly as many bits as each word’s surprise, so its average length is also 1.75 bits. That is Shannon’s worked example <span class="cite">Shannon 1948, p. 18</span>; Cover and Thomas use the same numbers <span class="cite">pp. 14–15</span>. Compare: with four equally likely words you would need 2 bits, because \(\log_2 4=2\). Entropy is largest when all outcomes are equally likely <span class="cite">Cover &amp; Thomas, p. 27</span>.</p></div>
+
+  <!-- R3 -->
+  <div class="rung"><p class="rung-h"><span class="lvl ug">Undergraduate</span> Rung 3 · Cross-entropy = entropy + KL divergence</p>
+  <p>A model \(q\) predicts the weather. On average, the surprise it feels is \(-\sum_x p(x)\log_2 q(x)\), because the words come from the truth \(p\) but the surprise is computed with \(q\). Split it in two. Add and subtract \(\log_2 p(x)\) inside the sum:</p>
+  \[-\sum_x p\log_2 q=-\sum_x p\log_2 p+\sum_x p\log_2\frac{p}{q}\]
+  \[=H(p)+D(p\,\|\,q)\]
+  <p>The first part is the language’s own entropy. The second is the KL divergence <span class="cite">Cover &amp; Thomas, p. 18</span>. Example: the model that thinks all four words are equally likely, \(q=(\tfrac14,\tfrac14,\tfrac14,\tfrac14)\), pays 2 bits per word: 1.75 for the language plus 0.25 for being wrong. A model with the order reversed, \(q=(\tfrac18,\tfrac18,\tfrac14,\tfrac12)\), pays</p>
+  \[\tfrac12\cdot3+\tfrac14\cdot3+\tfrac18\cdot2+\tfrac18\cdot1=2.625\ \text{bits},\quad D=0.875\]
+  <p>\(D\) is not symmetric. Cover and Thomas show a two-outcome example where \(D(p\|q)=0.2075\) but \(D(q\|p)=0.1887\) bits <span class="cite">p. 19</span>.</p>
+  <div class="lab" id="lab-xent">
+    <p class="lab-title">Try it · Fit the weather model</p>
+    <p class="lab-note">The dark bars are the truth \(p\). Move the sliders to change the model \(q\) (they are rescaled to sum to 1). Watch the cost split into entropy (fixed) and KL (yours to reduce).</p>
+    <div class="bars" id="xent-bars"></div>
+    <div class="sliders" id="xent-sliders"></div>
+    <div class="presets"><button type="button" class="btn ghost" data-q="0.5,0.25,0.125,0.125">Truth</button><button type="button" class="btn ghost" data-q="0.25,0.25,0.25,0.25">Uniform</button><button type="button" class="btn ghost" data-q="0.125,0.125,0.25,0.5">Reversed</button></div>
+    <div class="stack" id="xent-stack" aria-hidden="true"><span class="seg-h"></span><span class="seg-d"></span></div>
+    <p class="readout" id="xent-read"></p>
+  </div></div>
+
+  <!-- R4 -->
+  <div class="rung"><p class="rung-h"><span class="lvl ug">Undergraduate</span> Rung 4 · Perplexity</p>
+  <p>Language-model papers often report <dfn>perplexity</dfn> instead of bits. It is 2 raised to the average surprise in bits (or \(e\) raised to it, if the log is natural; Bengio defines it as the exponential of the average negative log-likelihood <span class="cite">p. 1141</span>):</p>
+  \[\text{perplexity}=2^{\,H(p)+D(p\|q)}\]
+  <p>Read it as “the model is as unsure as if it were choosing among this many equally likely words.” For the weather: the true model has perplexity \(2^{1.75}\approx3.36\), the uniform model 4, the reversed model \(2^{2.625}\approx6.17\). In Bengio’s experiments on the Brown corpus, the neural model (averaged with a trigram model) reached a test perplexity of 252, while the best counting model, a class-based n-gram, reached 312 <span class="cite">p. 1149</span>. Units matter: Shannon works in bits per letter, Kaplan in nats per token <span class="cite">p. 6</span>. One nat is \(1/\ln 2\approx1.443\) bits.</p></div>
+
+  <!-- R5 -->
+  <div class="rung"><p class="rung-h"><span class="lvl ug">Undergraduate</span> Rung 5 · Context lowers entropy</p>
+  <p>Back to the A/B/C language. How uncertain is the next letter if you know nothing, if you know only the letter frequencies, and if you also know the previous letter?</p>
+  <ul class="steps">
+    <li>Know nothing (3 equally likely letters): \(F_0=\log_2 3=1.585\) bits.</li>
+    <li>Know the frequencies \((\tfrac{9}{27},\tfrac{16}{27},\tfrac{2}{27})\): \(F_1=1.254\) bits.</li>
+    <li>Know the previous letter: each row of the table has its own entropy, 0.722 (after A), 1.000 (after B) and 1.361 (after C). Average them with the letter frequencies:</li>
+  </ul>
+  \[F_2=\tfrac{9}{27}(0.722)+\tfrac{16}{27}(1.000)+\tfrac{2}{27}(1.361)=0.934\ \text{bits}\]
+  <p>Perplexity falls from 3 to 2.38 to 1.91. Shannon’s English table shows the same pattern with 26 letters: 4.70, 4.14, 3.56, about 3.3 bits <span class="cite">Shannon 1951, p. 54</span>. Shannon also showed that text generated from such tables looks more and more like English at each step <span class="cite">Shannon 1948, pp. 6–7</span>. Try it with the A/B/C language:</p>
+  <div class="lab" id="lab-gen">
+    <p class="lab-title">Try it · Generate text with more context</p>
+    <div class="seg" role="group" aria-label="Order"><button type="button" data-o="0" aria-pressed="false">No knowledge</button><button type="button" data-o="1" aria-pressed="false">Frequencies</button><button type="button" data-o="2" aria-pressed="true">Previous letter</button></div>
+    <p class="gen-out" id="gen-out"></p>
+    <button type="button" class="btn" id="gen-go">Generate again</button>
+    <p class="readout" id="gen-read"></p>
+  </div></div>
+
+  <!-- R6 -->
+  <div class="rung"><p class="rung-h"><span class="lvl ug">Undergraduate</span> Rung 6 · Softmax and attention by hand</p>
+  <p>The <dfn>softmax</dfn> turns any list of scores into probabilities: \(\mathrm{softmax}(s)_i=e^{s_i}/\sum_j e^{s_j}\). Bengio’s model ends with one <span class="cite">p. 1142</span>; attention uses one inside. Take three tokens with 2-dimensional vectors, and let queries equal keys for simplicity:</p>
+  \[Q=K=\begin{pmatrix}1&0\\0&1\\1&1\end{pmatrix},\qquad V=\begin{pmatrix}1&0\\0&1\\2&2\end{pmatrix}\]
+  <p>Token 3 looks at tokens 1–3 (the mask hides nothing earlier). Its scores are dot products divided by \(\sqrt{d_k}=\sqrt2\):</p>
+  \[\tfrac{(1,1)\cdot(1,0)}{\sqrt2}=0.707,\quad \tfrac{(1,1)\cdot(0,1)}{\sqrt2}=0.707,\quad \tfrac{(1,1)\cdot(1,1)}{\sqrt2}=1.414\]
+  <p>Exponentiate: \(e^{0.707}=2.028\), \(e^{0.707}=2.028\), \(e^{1.414}=4.113\). The sum is 8.169, so the weights are 0.248, 0.248 and 0.503. The output is the weighted average of the values:</p>
+  \[0.248\,(1,0)+0.248\,(0,1)+0.503\,(2,2)\approx(1.255,\,1.255)\]
+  <p>Token 1 can only see itself, so its weight is 1 and its output is \((1,0)\). Token 2 sees tokens 1–2 with weights 0.330 and 0.670.</p>
+  <div class="lab" id="lab-att">
+    <p class="lab-title">Try it · Move token 3’s query</p>
+    <p class="lab-note">Change token 3’s query vector and the scale. The mask stops each token from looking ahead (grey cells).</p>
+    <div class="sliders" id="att-sliders"></div>
+    <div class="heat" id="att-heat"></div>
+    <p class="readout" id="att-read"></p>
+  </div></div>
+
+  <!-- R7 -->
+  <div class="rung"><p class="rung-h"><span class="lvl ug">Undergraduate</span> Rung 7 · Analogies with cosines</p>
+  <p>A 3-dimensional toy: man \((1,0,0)\), woman \((0,1,0)\), king \((0.6,0,0.8)\), queen \((0,0.6,0.8)\). For “man is to king as woman is to ?”, compute</p>
+  \[y=x_{king}-x_{man}+x_{woman}=(-0.4,\,1,\,0.8),\qquad \|y\|=\sqrt{0.16+1+0.64}=1.342\]
+  <p>The <dfn>cosine</dfn> of two vectors is their dot product divided by both lengths. For queen:</p>
+  \[\frac{0\cdot(-0.4)+0.6\cdot1+0.8\cdot0.8}{1\cdot1.342}=\frac{1.24}{1.342}=0.924\]
+  <p>For woman 0.745, king 0.298, man −0.298. Queen wins. Real papers differ on a detail: Mikolov 2013a removes the three input words from the search <span class="cite">p. 5</span>; whether Mikolov 2013b does is not stated. If woman had been closer than queen, that choice would decide the answer.</p>
+  <div class="lab" id="lab-ana">
+    <p class="lab-title">Try it · Bend the space</p>
+    <p class="lab-note">Move queen’s vector. When does the analogy break?</p>
+    <div class="sliders" id="ana-sliders"></div>
+    <div class="rank" id="ana-rank"></div>
+  </div></div>
+
+  <!-- R8 -->
+  <div class="rung"><p class="rung-h"><span class="lvl grad">Graduate</span> Rung 8 · In-context learning as a posterior</p>
+  <p>A toy version of Xie’s formula with two concepts, “nationality” (\(\theta^*\), the true one) and “profession” (\(\theta'\)). Prior ½ each. Each example in the prompt has probability 0.2 under \(\theta^*\) and 0.05 under \(\theta'\). Given the concept, the right answer to the query has probability 0.9 under \(\theta^*\) and 0.1 under \(\theta'\). These numbers are invented for the toy.</p>
+  <p>After \(n\) examples, Bayes’ rule gives</p>
+  \[P(\theta^*\mid n)=\frac{\tfrac12(0.2)^n}{\tfrac12(0.2)^n+\tfrac12(0.05)^n}=\frac{4^n}{4^n+1}\]
+  <p>and the probability of the right answer is \(0.9\,P(\theta^*\mid n)+0.1\,(1-P(\theta^*\mid n))\):</p>
+  <div class="tbl"><table><thead><tr><th>\(n\)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead><tbody><tr><th>\(P(\theta^*\mid n)\)</th><td>0.50</td><td>0.80</td><td>0.941</td><td>0.985</td><td>0.996</td></tr><tr><th>P(right)</th><td>0.50</td><td>0.74</td><td>0.853</td><td>0.888</td><td>0.897</td></tr></tbody></table></div>
+  <p>Accuracy climbs toward 0.9, the best possible here. Xie writes the general case in a form that shows why: the weight on concept \(\theta\) is proportional to \(e^{n\,r_n(\theta)}p(\theta)\), where \(r_n\) is the average log-likelihood ratio of the prompt under \(\theta\) versus \(\theta^*\) <span class="cite">p. 6</span>. Under their conditions, \(r_n\) for a wrong concept tends to a negative number, so its weight shrinks exponentially <span class="cite">pp. 6–7</span>. The catch is the prompt format: examples glued together are unlike any training document, and that mismatch adds noise. Their Condition 1 says the concepts must differ by more than the noise added at the start of the prompt and at the delimiters between examples <span class="cite">p. 7</span>.</p>
+  <div class="lab" id="lab-icl">
+    <p class="lab-title">Try it · Watch the posterior concentrate</p>
+    <div class="sliders" id="icl-sliders"></div>
+    <div class="icl-bars" id="icl-bars"></div>
+    <p class="readout" id="icl-read"></p>
+  </div></div>
+
+  <!-- R9 -->
+  <div class="rung"><p class="rung-h"><span class="lvl grad">Graduate</span> Rung 9 · Power laws</p>
+  <p>Kaplan’s fit for loss as a function of non-embedding parameters \(N\), for models trained to convergence on enough data, is <span class="cite">p. 4</span>:</p>
+  \[L(N)=\left(\frac{N_c}{N}\right)^{0.076}\]
+  <p>Double \(N\): the ratio is \((N/2N)^{0.076}=2^{-0.076}=0.949\). So each doubling cuts the loss by about 5%, the same factor at every size. On log-log axes a power law is a straight line: \(\log L=0.076\log N_c-0.076\log N\). The constant \(N_c\) has “no fundamental meaning” <span class="cite">p. 5</span>. Data must grow too: to avoid overfitting, \(D\gtrsim(5\times10^3)\,N^{0.74}\), so an 8× bigger model needs about \(8^{0.74}\approx4.7\) times more data, which the authors round to 5× <span class="cite">pp. 3, 12</span>. A power law cannot fall forever: the loss must flatten out somewhere above zero <span class="cite">p. 3</span>. Kaplan locates a likely breakdown at or before \(L^*\sim1.7\) nats per token, where two of his trends contradict each other, and conjectures that \(L^*\) might roughly estimate the entropy of language <span class="cite">pp. 17–18</span>.</p>
+  <p class="small">Link back to Rung 3: the loss Kaplan fits is \(H+D\). Scaling only shrinks \(D\). The floor is \(H\).</p></div>
+
+  <!-- R10 -->
+  <div class="rung"><p class="rung-h"><span class="lvl grad">Graduate</span> Rung 10 · Bits from guess numbers</p>
+  <p>How did Shannon turn guess numbers into bits? Let \(q_i\) be the fraction of letters guessed right on the \(i\)-th try. He proved two bounds on \(F_N\) <span class="cite">Shannon 1951, p. 61</span>:</p>
+  \[\sum_i i\,(q_i-q_{i+1})\log_2 i\;\le\;F_N\;\le\;-\sum_i q_i\log_2 q_i\]
+  <p>The upper bound is intuitive: the reduced text is a code for the text (the twin can decode it), so the text cannot carry more information than the entropy of the guess numbers. The upper bound holds for any predictor; the lower bound is proved for an ideal predictor only, and human data have sampling error <span class="cite">pp. 61, 64</span>.</p>
+  <p class="readout" id="game-bounds">Play the guessing game in section 1 to see your own bounds here.</p></div>
+</section>
+
+<!-- ============ 10 ANSWER ============ -->
+<section id="answer" data-ch="answer">
+  <p class="sec-no">6 · Synthesis</p>
+  <h2>So what does it know?</h2>
+  <p>The five lenses give four layers of answer, from the most certain to the most contested.</p>
+  <ol class="layers">
+    <li><b>Bits about text.</b> Certain and measurable. A lower loss means a smaller \(D(p\|q)\): the model is closer to the true distribution of text. This is knowledge in Shannon’s sense, with meaning set aside.</li>
+    <li><b>Structure in text.</b> Well supported. Grammar (formal competence near human level in English), relations between words (directions that work for about 40–66% of analogies), and task formats that a prompt can select (proved in a stylized model).</li>
+    <li><b>Meaning.</b> Depends on your theory. Bender and Koller: at most a reflection, if meaning is form plus intent. Piantadosi and Hill: possibly part of the foundation, if meaning is conceptual role.</li>
+    <li><b>Minds.</b> Contested. Many tests are passed, but small changes often break the result. Humans fail some of those changes too.</li>
+  </ol>
+  <p class="keypoint">The loss tells you <i>how much</i> a model knows about text. It cannot tell you <i>what kind</i> of knowledge that is. To learn that, you have to change the test in small ways and see what breaks (Ullman’s method), or look inside at the relations the model has built (Piantadosi and Hill’s suggestion, pdf 3).</p>
+  <p>Notice how the lenses connect. Shannon’s twin decodes text from guess numbers. Xie’s model decodes the concept from a prompt. Ullman’s trivial alterations ask whether the model decoded the <i>belief</i> or only the <i>story pattern</i>. All three are questions about what information the predictor has extracted, and the information-theory lens alone cannot answer the last two.</p>
+</section>
+
+<!-- ============ 11 YOUR TURN ============ -->
+<section id="turn" data-ch="turn">
+  <p class="sec-no">7 · Your turn</p>
+  <h2>Three exercises and a transfer challenge</h2>
+  <p>Run these on your computer. Each script prints numbers you can compare with the post.</p>
+
+  <h3>Exercise 1 · Shannon’s \(F_N\) for any text</h3>
+  <p>Use any plain-text book you have (a public-domain novel works well). The script estimates Shannon’s \(F_N\) for \(N=0\) to 3, that is, the uncertainty of the next letter given the \(N-1\) letters before it (\(F_0\) is the no-knowledge baseline). Then it measures each model’s cross-entropy on held-out text.</p>
+  <div class="code" data-copy><pre><code id="code-1"></code></pre></div>
+  <p class="small">What to look for: the in-sample \(F_N\) falls with \(N\), as in Shannon’s table. The script keeps spaces, so compare with his 27-symbol row: 4.76, 4.03, 3.32, 3.1 <span class="cite">Shannon 1951, p. 54</span>. On held-out text the gap between cross-entropy and \(F_N\) is your model’s \(D\) plus estimation noise. Set <code>TRAIN_FRACTION</code> smaller and watch \(D\) grow fastest for the longest context: that is the curse of dimensionality.</p>
+
+  <h3>Exercise 2 · Attention in eight lines</h3>
+  <div class="code" data-copy><pre><code id="code-2"></code></pre></div>
+
+  <h3>Exercise 3 · Bits per character across languages</h3>
+  <p>Needs <code>pip install torch transformers</code>. Uses the small public GPT-2 model. Compare English and Japanese, per token and per character.</p>
+  <div class="code" data-copy><pre><code id="code-3"></code></pre></div>
+  <p class="small">Per-token loss is not comparable across languages, because a token covers different amounts of text. Bits per character (or per byte) is fairer. GPT-2 was trained on English web text. In our test run, the English sentence cost 5.6 bits per token and 1.2 bits per character; the Japanese one cost 4.8 bits per token, which looks <i>better</i>, but 7.5 bits per character, which is far worse. Per-token numbers can point the wrong way.</p>
+
+  <div class="challenge"><p class="trap-h">Transfer challenge</p><p>Take one LLM labeling task you use in research, for example labeling the frame of a climate post. Write five “trivial alterations” in Ullman’s style: changes that should <i>flip</i> the correct label (one fact changed), and five that should <i>keep</i> it (wording changed, order of few-shot examples changed). Run each 10 times. Report three numbers: accuracy on the originals, flip-rate on the should-flip set, and stability on the should-keep set. Which number would you put in a paper, and why is accuracy alone not enough?</p></div>
+</section>
+
+<!-- ============ 12 YOUR WORK ============ -->
+<section id="work" data-ch="work">
+  <p class="sec-no">8 · Where this shows up in your work</p>
+  <h2>Collaboration, Communication, Computation</h2>
+  <div class="cards3">
+    <div class="c3"><p class="c3-h">Computation · LLM surrogate labeling</p><p>If few-shot prompting works by selecting a concept (Lens 3), your examples are evidence, not instructions. In Xie’s synthetic tests (which mirror earlier GPT-3 results), example order alone moved accuracy by 10–40% <span class="cite">p. 10</span>. Randomize the order of examples across runs and report the spread, not one number.</p></div>
+    <div class="c3"><p class="c3-h">Computation · Cross-lingual LLM safety</p><p>Tokens cover different amounts of text in different languages, so per-token loss or perplexity cannot be compared directly. Use bits per character or per byte (Exercise 3). A model can look “confident” in one language only because its tokens are shorter there.</p></div>
+    <div class="c3"><p class="c3-h">Computation · Explainable representations</p><p>Directions in embedding space are real but rough: exact analogies work about 40–66% of the time in Mikolov’s tests. Before you name a direction (“the misinformation axis”), check how often it gives the exact answer, and against which candidate set.</p></div>
+    <div class="c3"><p class="c3-h">Communication · Framing and misinformation</p><p>Surprise is measurable. The average surprise of a post under a model trained on one community’s text is a number in bits. That number measures distance from the community’s usual language. It does not measure whether the post is true; Shannon set meaning aside, and so does the number.</p></div>
+    <div class="c3"><p class="c3-h">Collaboration · Social simulation with LLM agents</p><p>Agents that “reason about other agents” may pass standard belief stories and still fail under small changes (Lens 5). Add perturbation tests to your simulation checks: change one physical fact the agent should notice, and see whether its beliefs about others update.</p></div>
+  </div>
+</section>
+
+<!-- ============ 13 RECALL ============ -->
+<section id="recall" data-ch="recall">
+  <p class="sec-no">9 · Recall questions</p>
+  <h2>Test yourself</h2>
+  <p>Answer aloud or in your head, then open the card. Questions marked ↻ will come back in later posts.</p>
+  <div class="cards" id="recall-cards">
+    <details class="card"><summary>↻ Why is a good predictor also a good compressor?</summary><p>Because the sequence of guess numbers is a code for the text: an identical predictor can decode it (Shannon’s twin). Better prediction means more 1s, so a shorter code.</p></details>
+    <details class="card"><summary>↻ The training loss of an LLM splits into two parts. Name them, and say which one training can reduce.</summary><p>\(H(p)\), the entropy of the language, and \(D(p\|q)\), the KL divergence between truth and model. Training can only reduce \(D\).</p></details>
+    <details class="card"><summary>What is perplexity, and what is it for the uniform weather model?</summary><p>2 raised to the average surprise in bits: the number of equally likely choices with the same uncertainty. Uniform model: \(2^2=4\).</p></details>
+    <details class="card"><summary>In attention, why divide the scores by \(\sqrt{d_k}\)?</summary><p>If the parts of \(q\) and \(k\) are independent with mean 0 and variance 1, \(q\cdot k\) has variance \(d_k\). Large scores push the softmax into regions with tiny gradients, the authors suspect; scaling keeps them moderate.</p></details>
+    <details class="card"><summary>↻ In Xie’s account, what does a few-shot prompt do?</summary><p>It is evidence about a hidden concept. The posterior over concepts concentrates, and the model in effect selects the concept, with no weight change. This is proved only inside a stylized model of text.</p></details>
+    <details class="card"><summary>What does the octopus argument assume about meaning, according to Piantadosi and Hill?</summary><p>That reference (links to things in the world) determines meaning. On a conceptual role view, relations between concepts carry most of the meaning, so form could carry some of it.</p></details>
+    <details class="card"><summary>Formal vs functional competence: give one example of each.</summary><p>Formal: making the verb agree in “The keys to the old, wooden kitchen cabinet are…”. Functional: using language to reason or act in the world, for example to plan a defense against a bear.</p></details>
+    <details class="card"><summary>↻ Why does it matter which version of Kosinski’s paper a critic answers?</summary><p>Ullman and Shapira answered the preprint, which reported higher scores. The PNAS version used stricter controls and reports lower scores (ChatGPT-4: 75%).</p></details>
+  </div>
+</section>
+
+<!-- ============ 14 ENGLISH ============ -->
+<section id="english" data-ch="english">
+  <p class="sec-no">10 · How to say it in English</p>
+  <h2>Ten useful phrases</h2>
+  <details class="phrases" open><summary>Show phrases</summary>
+  <dl>
+    <dt>to set something aside</dt><dd>Shannon <i>set meaning aside</i> to solve the engineering problem.</dd>
+    <dt>a by-product of</dt><dd>Theory of mind may be <i>a by-product of</i> language training.</dd>
+    <dt>in principle / in practice</dt><dd>Bender and Koller argue that form alone cannot lead to meaning <i>in principle</i>, whatever happens <i>in practice</i>.</dd>
+    <dt>to be agnostic about</dt><dd>The GPT-3 authors are <i>agnostic about</i> whether the model learns tasks from scratch.</dd>
+    <dt>to hold up under</dt><dd>The result did not <i>hold up under</i> small changes to the story.</dd>
+    <dt>to over-generalize from</dt><dd>Shapira argues that earlier work <i>over-generalized from</i> a handful of examples.</dd>
+    <dt>an upper / lower bound on</dt><dd>The entropy of the guess numbers is <i>an upper bound on</i> the entropy of the text.</dd>
+    <dt>to be at ceiling</dt><dd>On the basic false-belief test, both humans and GPT-4 <i>were at ceiling</i>.</dd>
+    <dt>a talking point, not a result</dt><dd>Our bits-per-letter conversion is <i>a talking point, not a result</i>.</dd>
+    <dt>the burden of proof lies with</dt><dd>Ullman thinks <i>the burden of proof lies with</i> those who claim the ability has emerged.</dd>
+  </dl></details>
+</section>
+
+<!-- ============ 15 SOURCES ============ -->
+<section id="sources">
+  <p class="sec-no">11 · Sources</p>
+  <h2>Sources</h2>
+  <p class="small">Every claim was checked by an independent reviewer against the cited page of the source, not only against the AI4Read digest. Page numbers are printed pages; “pdf N” marks sources with no printed numbers; “§” marks web articles cited by section heading.</p>
+  <ol class="srcs">
+    <li>Shannon, C. E. (1948). A mathematical theory of communication. <i>Bell System Technical Journal</i>, 27. Part 1, pp. 1–28 of the reprint used.</li>
+    <li>Shannon, C. E. (1951). Prediction and entropy of printed English. <i>Bell System Technical Journal</i>, 30, 50–64.</li>
+    <li>Cover, T. M., &amp; Thomas, J. A. (1991). <i>Elements of Information Theory</i> (1st ed.), ch. 2, pp. 12–49.</li>
+    <li>Bengio, Y., Ducharme, R., Vincent, P., &amp; Jauvin, C. (2003). A neural probabilistic language model. <i>JMLR</i>, 3, 1137–1155.</li>
+    <li>Mikolov, T., Chen, K., Corrado, G., &amp; Dean, J. (2013a). Efficient estimation of word representations in vector space. arXiv:1301.3781.</li>
+    <li>Mikolov, T., Yih, W., &amp; Zweig, G. (2013b). Linguistic regularities in continuous space word representations. <i>NAACL-HLT</i>, 746–751.</li>
+    <li>Vaswani, A., et al. (2017). Attention is all you need. <i>NeurIPS</i>.</li>
+    <li>Radford, A., et al. (2019). Language models are unsupervised multitask learners. OpenAI.</li>
+    <li>Brown, T. B., et al. (2020). Language models are few-shot learners. <i>NeurIPS</i>.</li>
+    <li>Kaplan, J., et al. (2020). Scaling laws for neural language models. arXiv:2001.08361.</li>
+    <li>Xie, S. M., Raghunathan, A., Liang, P., &amp; Ma, T. (2022). An explanation of in-context learning as implicit Bayesian inference. <i>ICLR</i>.</li>
+    <li>Bender, E. M., &amp; Koller, A. (2020). Climbing towards NLU: On meaning, form, and understanding in the age of data. <i>ACL</i>, 5185–5198.</li>
+    <li>Piantadosi, S. T., &amp; Hill, F. (2022). Meaning without reference in large language models. arXiv:2208.02957.</li>
+    <li>Mahowald, K., Ivanova, A. A., Blank, I. A., Kanwisher, N., Tenenbaum, J. B., &amp; Fedorenko, E. (2024). Dissociating language and thought in large language models. <i>Trends in Cognitive Sciences</i>. Pages cited from arXiv:2301.06627v3.</li>
+    <li>Kosinski, M. (2024). Evaluating large language models in theory of mind tasks. <i>PNAS</i>.</li>
+    <li>Ullman, T. (2023). Large language models fail on trivial alterations to theory-of-mind tasks. arXiv:2302.08399.</li>
+    <li>Strachan, J. W. A., et al. (2024). Testing theory of mind in large language models and humans. <i>Nature Human Behaviour</i>.</li>
+    <li>Shapira, N., et al. (2024). Clever Hans or neural theory of mind? Stress testing social reasoning in large language models. <i>EACL</i>, 2257–2273.</li>
+  </ol>
+</section>
+
+</main>
