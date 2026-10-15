@@ -1,0 +1,194 @@
+---
+id: axler-2024-ladr/index
+work: axler-2024-ladr
+type: work-map
+units: [axler-2024-ladr/ch01-vector, axler-2024-ladr/ch02-finite, axler-2024-ladr/ch03-linear-p1, axler-2024-ladr/ch03-linear-p2, axler-2024-ladr/ch03-linear-p3, axler-2024-ladr/ch04-polynomials, axler-2024-ladr/ch05-eigenvalues-p1, axler-2024-ladr/ch05-eigenvalues-p2, axler-2024-ladr/ch06-inner-p1, axler-2024-ladr/ch06-inner-p2, axler-2024-ladr/ch07-operators-p1, axler-2024-ladr/ch07-operators-p2, axler-2024-ladr/ch07-operators-p3, axler-2024-ladr/ch08-operators, axler-2024-ladr/ch09-multilinear-p1, axler-2024-ladr/ch09-multilinear-p2]
+---
+
+# Axler, S. (2024). *Linear Algebra Done Right* (4th ed.). Springer, Undergraduate Texts in Mathematics. Open Access (CC BY-NC). https://doi.org/10.1007/978-3-031-41026-0
+
+## In one paragraph
+Axler builds linear algebra from structure rather than computation. He starts with abstract vector spaces, bases and dimension. Linear maps come next, and their key tool is the fundamental theorem of linear maps. He then studies operators, which map a space to itself, through invariant subspaces, polynomials and the minimal polynomial. Inner products add length and orthogonality. With them he proves the spectral theorem, positive operators and the singular value decomposition. Later chapters treat generalized eigenvectors, the Jordan form and the trace. Determinants and tensor products come last and are defined without bases. The book explains why symmetric (self-adjoint) operators have orthonormal eigenbases and why the SVD exists, by deriving them from the underlying structure.
+
+## The path through the work
+- [[axler-2024-ladr/ch01-vector]] — A vector space is any set with addition and scalar multiplication obeying a short list of algebraic rules; subspaces, sums and direct sums are the basic ways to build and split such spaces.
+- [[axler-2024-ladr/ch02-finite]] — In a vector space that some finite list spans, all bases (independent spanning lists) have the same length, so "dimension" is well defined, and dimensions obey $\dim(V_1+V_2)=\dim V_1+\dim V_2-\dim(V_1\cap V_2)$.
+- [[axler-2024-ladr/ch03-linear-p1]] — For a linear map $T$ on a finite-dimensional space, $\dim V=\dim\operatorname{null}T+\dim\operatorname{range}T$, and this forces maps to smaller spaces to be non-injective, maps to bigger spaces to be non-surjective, and gives results on linear systems.
+- [[axler-2024-ladr/ch03-linear-p2]] — Once bases are fixed, a linear map is a matrix, composition of maps is matrix multiplication, invertible maps are isomorphisms, and the dimension alone decides whether two finite-dimensional spaces are isomorphic.
+- [[axler-2024-ladr/ch03-linear-p3]] — Products, quotients V/U and the dual space V′ are new vector spaces built from old ones. Several of their dimensions are computed with the fundamental theorem of linear maps, and the dual map T′ has, in dual bases, the transpose of the matrix of T as its matrix.
+- [[axler-2024-ladr/ch04-polynomials]] — Zeros of a polynomial correspond to degree-one factors; since every nonconstant complex polynomial has a zero, every nonconstant complex polynomial splits completely into degree-one factors, and every nonconstant real polynomial into factors of degree at most two.
+- [[axler-2024-ladr/ch05-eigenvalues-p1]] — Studying an operator through subspaces it maps into themselves leads to eigenvectors, and polynomials applied to the operator show that every operator on a finite-dimensional nonzero complex space has an eigenvalue, and that on a finite-dimensional space the eigenvalues are exactly the zeros of a unique "minimal polynomial".
+- [[axler-2024-ladr/ch05-eigenvalues-p2]] — Whether an operator on a finite-dimensional space has a triangular or diagonal matrix in some basis is decided by its minimal polynomial (split into degree-1 factors, or into *distinct* degree-1 factors), and commuting operators over C can be made upper triangular together, and commuting diagonalizable operators can be diagonalized together.
+- [[axler-2024-ladr/ch06-inner-p1]] — An inner product is an abstract "dot product" on any real or complex vector space. It gives every vector a length (norm) and a notion of perpendicularity (orthogonality), and from its axioms the Pythagorean theorem, Cauchy–Schwarz, the triangle inequality and the parallelogram equality all follow.
+- [[axler-2024-ladr/ch06-inner-p2]] — In a finite-dimensional inner product space, orthonormal bases (built by Gram–Schmidt) turn inner products into coordinates, and orthogonal projection onto a subspace gives the unique closest point, which also yields the pseudoinverse.
+- [[axler-2024-ladr/ch07-operators-p1]] — On a finite-dimensional inner product space, an operator has an orthonormal basis of eigenvectors exactly when it is self-adjoint (real case) or normal (complex case).
+- [[axler-2024-ladr/ch07-operators-p2]] — Positive operators (the analogue of nonnegative numbers) have a unique positive square root, and the norm-preserving maps (isometries, unitary operators) lead to the QR factorization and, from it, the Cholesky factorization $B=R^*R$.
+- [[axler-2024-ladr/ch07-operators-p3]] — Every linear map between inner product spaces acts by stretching along one orthonormal list by the singular values $s_k$ and landing on another orthonormal list (the SVD); this leads to norms, best approximations by maps of lower-dimensional range, the polar decomposition (for operators), and volume change (for invertible operators on real spaces).
+- [[axler-2024-ladr/ch08-operators]] — On a finite-dimensional complex vector space every operator has a basis of generalized eigenvectors, so the space splits into invariant pieces on which the operator is "scalar plus nilpotent", which gives multiplicity, the Cayley–Hamilton theorem, square roots of invertible operators, Jordan form and the trace.
+- [[axler-2024-ladr/ch09-multilinear-p1]] — Alternating $n$-linear forms on an $n$-dimensional space form a one-dimensional space, given by an explicit sum over permutations; this is the groundwork for a basis-free determinant.
+- [[axler-2024-ladr/ch09-multilinear-p2]] — The determinant of an operator is the scalar by which the operator acts on the one-dimensional space of alternating $n$-linear forms (functions linear in each argument that vanish when two arguments are equal), and tensor products are built, also without bases, as spaces of bilinear functionals (functions linear in each of two arguments) on the dual spaces.
+
+## Big ideas across units
+- **Dimension counting as a proof tool.** Basis length gives dimension (ch02). The fundamental theorem of linear maps then drives results on injectivity, surjectivity and linear systems (ch03-p1), isomorphism (ch03-p2), and quotient and annihilator dimensions (ch03-p3). It also appears in the odd-dimension eigenvalue argument (ch05-p1) and in the multiplicity and generalized-eigenspace chapter (ch08). Units: ch02, ch03-p1, ch03-p2, ch03-p3, ch05-p1, ch08.
+- **Matrices as representations of maps.** A matrix depends on chosen bases, and matrix multiplication is defined to match composition. Change of basis, the dual map's transpose matrix, triangular and diagonal matrices, the conjugate transpose and the Jordan form all express properties of a map in a good basis. Units: ch03-p2, ch03-p3, ch05-p2, ch07-p1, ch08, ch09-p1.
+- **Understanding an operator through invariant subspaces.** Invariant subspaces, eigenvectors, eigenspaces, generalized eigenspaces and orthogonal complements all split a space into simpler pieces. Units: ch01 (direct sums), ch05-p1, ch05-p2, ch06-p2, ch08.
+- **Polynomials applied to operators.** The factor theorem and the fundamental theorem of algebra feed the minimal polynomial. The minimal polynomial decides upper-triangular and diagonalizable forms, and it leads on to Cayley–Hamilton and the characteristic polynomial. The real/complex difference shows up repeatedly. Units: ch04, ch05-p1, ch05-p2, ch07-p1, ch08, ch09-p2.
+- **Inner products supply geometry, with orthonormal bases as the tool.** Norm, orthogonality, Cauchy–Schwarz, Gram–Schmidt, orthogonal projection and the closest point, Riesz representation and the adjoint all rest on the inner product. Units: ch06-p1, ch06-p2, ch07-p1, ch07-p2, ch07-p3.
+- **Special operator classes mirror classes of numbers.** Self-adjoint operators behave like real numbers, positive operators like nonnegative numbers, and unitary operators like numbers of absolute value 1. The spectral theorems and the square root of a positive operator follow. Units: ch07-p1, ch07-p2, ch07-p3.
+- **Singular values extend eigenvalue ideas to arbitrary maps.** The SVD, the operator norm, best low-rank approximation, polar decomposition, the pseudoinverse and the ellipsoid image of the ball all come from $T^*T$ and orthonormal lists. Units: ch06-p2 (pseudoinverse), ch07-p2, ch07-p3.
+- **Basis-free constructions late in the book.** Dual spaces and quotients early on, then determinants defined through alternating forms and tensor products defined through bilinear functionals. The determinant is derived from the one-dimensional space of alternating $n$-linear forms, not from the $n!$-term formula. Units: ch03-p3, ch09-p1, ch09-p2.
+
+## How to read it
+- **Essential for the book's central goals (the spectral theorem and the SVD):** ch01, ch02, ch03-p1, ch03-p2, ch04, ch05-p1, ch06-p1, ch06-p2, ch07-p1, ch07-p2 (positive operators, 7C), ch07-p3. The catalog also highlights duality (ch03-p3), diagonalizable operators and upper-triangular matrices (ch05-p2).
+- **Dependencies:**
+  - ch02 needs ch01, and ch03 needs ch02.
+  - ch03-p3 needs the fundamental theorem and the matrix of a map (ch03-p1, ch03-p2).
+  - ch05 needs polynomials (ch04) and linear maps (ch03).
+  - ch06-p2 uses upper-triangular matrices and the minimal polynomial (ch05) and builds on ch06-p1.
+  - ch07-p1 needs ch06-p2 (Riesz, Schur) and the eigenvalue material of ch05.
+  - ch07-p2 needs ch07-p1.
+  - ch07-p3 needs ch07-p1 and ch07-p2, plus the pseudoinverse and Bessel's inequality from ch06.
+  - ch08 needs ch05 and rank–nullity.
+  - ch09-p1 needs the dual space, change of basis, transpose and the real spectral theorem.
+  - ch09-p2 needs ch09-p1 and reuses eigenvalues, upper-triangular matrices, singular values, and unitary and positive operators.
+- **Can be skipped on a first pass:**
+  - Commuting operators and the Gershgorin theorem (end of ch05-p2).
+  - The isometry, QR and Cholesky parts of ch07-p2 (7D). The catalog's focus list covers only 7C there.
+  - Ch08, apart from the idea of generalized eigenvectors.
+  - Ch09: bilinear and quadratic forms, Hadamard and Vandermonde, and tensor products.
+  - Ch03-p3's products and quotients (3E), if you read only the duality material, though 3F builds on 3E.
+- **Determinants:** determinants are postponed to ch09-p2. Earlier units mention them only as forward references (for example, volume scaling in ch07-p3).
+
+## Concepts introduced
+- [[vector-space]] — ch01-vector
+- [[vector]] — ch01-vector
+- [[field]] — ch01-vector
+- [[scalar]] — ch01-vector
+- [[complex-numbers]] — ch01-vector
+- [[list]] — ch01-vector
+- [[subspace]] — ch01-vector
+- [[sum-of-subspaces]] — ch01-vector
+- [[direct-sum]] — ch01-vector
+- [[additive-identity-and-inverse]] — ch01-vector
+- [[function-space]] — ch01-vector
+- [[linear combination]] — ch02-finite
+- [[span]] — ch02-finite
+- [[linear independence]] — ch02-finite
+- [[linear dependence lemma]] — ch02-finite
+- [[finite-dimensional vector space]] — ch02-finite
+- [[basis]] — ch02-finite
+- [[dimension]] — ch02-finite
+- [[standard basis]] — ch02-finite
+- [[polynomial space P_m(F)]] — ch02-finite
+- [[direct sum complement]] — ch02-finite
+- [[dimension of a sum]] — ch02-finite
+- [[linear map / transformation]] — ch03-linear-p1
+- [[linear map lemma]] — ch03-linear-p1
+- [[vector space of linear maps]] — ch03-linear-p1
+- [[matrix multiplication as composition]] — ch03-linear-p1
+- [[null space (kernel)]] — ch03-linear-p1
+- [[column space (range)]] — ch03-linear-p1
+- [[injective]] — ch03-linear-p1
+- [[surjective]] — ch03-linear-p1
+- [[rank–nullity (Fundamental Theorem of Linear Maps)]] — ch03-linear-p1
+- [[homogeneous system of linear equations]] — ch03-linear-p1
+- [[matrix as transformation]] — ch03-linear-p2
+- [[rank]] — ch03-linear-p2
+- [[inverse matrix]] — ch03-linear-p2
+- [[change of basis]] — ch03-linear-p2
+- [[isomorphism]] — ch03-linear-p2
+- [[invertible linear map]] — ch03-linear-p2
+- [[transpose]] — ch03-linear-p2
+- [[column–row factorization]] — ch03-linear-p2
+- [[matrix of a vector]] — ch03-linear-p2
+- [[product-of-vector-spaces]] — ch03-linear-p3
+- [[translate]] — ch03-linear-p3
+- [[quotient-space]] — ch03-linear-p3
+- [[quotient-map]] — ch03-linear-p3
+- [[linear-functional]] — ch03-linear-p3
+- [[dual-space]] — ch03-linear-p3
+- [[dual-basis]] — ch03-linear-p3
+- [[dual-map]] — ch03-linear-p3
+- [[annihilator]] — ch03-linear-p3
+- [[complex-conjugate]] — ch04-polynomials
+- [[triangle-inequality]] — ch04-polynomials
+- [[polynomial-zero]] — ch04-polynomials
+- [[factor-theorem]] — ch04-polynomials
+- [[polynomial-division-algorithm]] — ch04-polynomials
+- [[fundamental-theorem-of-algebra]] — ch04-polynomials
+- [[conjugate-pair-zeros]] — ch04-polynomials
+- [[operator]] — ch05-eigenvalues-p1
+- [[invariant-subspace]] — ch05-eigenvalues-p1
+- [[eigenvector-eigenvalue]] — ch05-eigenvalues-p1
+- [[polynomial-of-an-operator]] — ch05-eigenvalues-p1
+- [[monic-polynomial]] — ch05-eigenvalues-p1
+- [[minimal-polynomial]] — ch05-eigenvalues-p1
+- [[upper-triangular-matrix]] — ch05-eigenvalues-p2
+- [[eigenspace]] — ch05-eigenvalues-p2
+- [[diagonalization]] — ch05-eigenvalues-p2
+- [[direct sum of eigenspaces]] — ch05-eigenvalues-p2
+- [[gershgorin-disk-theorem]] — ch05-eigenvalues-p2
+- [[commuting-operators]] — ch05-eigenvalues-p2
+- [[simultaneous-diagonalization]] — ch05-eigenvalues-p2
+- [[simultaneous-triangularization]] — ch05-eigenvalues-p2
+- [[inner-product]] — ch06-inner-p1
+- [[inner-product-space]] — ch06-inner-p1
+- [[norm]] — ch06-inner-p1
+- [[orthogonality]] — ch06-inner-p1
+- [[conjugate-symmetry]] — ch06-inner-p1
+- [[pythagorean-theorem-inner-product]] — ch06-inner-p1
+- [[orthogonal-decomposition]] — ch06-inner-p1
+- [[cauchy-schwarz-inequality]] — ch06-inner-p1
+- [[parallelogram-equality]] — ch06-inner-p1
+- [[orthonormal-basis]] — ch06-inner-p2
+- [[gram-schmidt-and-qr]] — ch06-inner-p2
+- [[bessel-inequality]] — ch06-inner-p2
+- [[parseval-identity]] — ch06-inner-p2
+- [[orthogonal-complement]] — ch06-inner-p2
+- [[projection]] — ch06-inner-p2
+- [[least-squares]] — ch06-inner-p2
+- [[riesz-representation-theorem]] — ch06-inner-p2
+- [[schur-theorem]] — ch06-inner-p2
+- [[pseudoinverse]] — ch06-inner-p2
+- [[adjoint]] — ch07-operators-p1
+- [[conjugate-transpose]] — ch07-operators-p1
+- [[self-adjoint-operator]] — ch07-operators-p1
+- [[normal-operator]] — ch07-operators-p1
+- [[spectral-theorem]] — ch07-operators-p1
+- [[four-fundamental-subspaces]] — ch07-operators-p1
+- [[positive (semi)definite matrix]] — ch07-operators-p2
+- [[operator-square-root]] — ch07-operators-p2
+- [[isometry]] — ch07-operators-p2
+- [[cholesky-factorization]] — ch07-operators-p2
+- [[singular-values]] — ch07-operators-p3
+- [[singular-value-decomposition]] — ch07-operators-p3
+- [[operator-norm]] — ch07-operators-p3
+- [[eckart-young-theorem]] — ch07-operators-p3
+- [[polar-decomposition]] — ch07-operators-p3
+- [[ellipsoid-image-of-ball]] — ch07-operators-p3
+- [[determinant]] — ch07-operators-p3
+- [[generalized-eigenvector]] — ch08-operators
+- [[generalized-eigenspace]] — ch08-operators
+- [[nilpotent-operator]] — ch08-operators
+- [[generalized-eigenspace-decomposition]] — ch08-operators
+- [[multiplicity]] — ch08-operators
+- [[characteristic-polynomial]] — ch08-operators
+- [[cayley-hamilton-theorem]] — ch08-operators
+- [[block-diagonal-matrix]] — ch08-operators
+- [[jordan-form]] — ch08-operators
+- [[trace]] — ch08-operators
+- [[bilinear-form]] — ch09-multilinear-p1
+- [[matrix-of-bilinear-form]] — ch09-multilinear-p1
+- [[symmetric-bilinear-form]] — ch09-multilinear-p1
+- [[alternating-form]] — ch09-multilinear-p1
+- [[multilinear-form]] — ch09-multilinear-p1
+- [[quadratic-form]] — ch09-multilinear-p1
+- [[permutation-sign]] — ch09-multilinear-p1
+- [[alternating-multilinear-form]] — ch09-multilinear-p2
+- [[permutation-formula-determinant]] — ch09-multilinear-p2
+- [[hadamard-inequality]] — ch09-multilinear-p2
+- [[vandermonde-determinant]] — ch09-multilinear-p2
+- [[bilinear-functional]] — ch09-multilinear-p2
+- [[tensor-product]] — ch09-multilinear-p2
+- [[universal-property-tensor-product]] — ch09-multilinear-p2
+- [[rank-one matrix / outer product]] — ch09-multilinear-p2

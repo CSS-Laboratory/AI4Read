@@ -1,0 +1,342 @@
+---
+id: polyanskiy-2025-information/index
+work: polyanskiy-2025-information
+type: work-map
+units: [polyanskiy-2025-information/ch01-introduction, polyanskiy-2025-information/ch02-entropy, polyanskiy-2025-information/ch03-divergence, polyanskiy-2025-information/ch04-mutual, polyanskiy-2025-information/ch05-variational, polyanskiy-2025-information/ch06-extremization, polyanskiy-2025-information/ch07-tensorization, polyanskiy-2025-information/ch08-f-p1, polyanskiy-2025-information/ch08-f-p2, polyanskiy-2025-information/ch09-entropy, polyanskiy-2025-information/ch10-random, polyanskiy-2025-information/ch11-lossless, polyanskiy-2025-information/ch12-variable, polyanskiy-2025-information/ch13-fixed, polyanskiy-2025-information/ch14-entropy, polyanskiy-2025-information/ch15-universal, polyanskiy-2025-information/ch16-neyman, polyanskiy-2025-information/ch17-information, polyanskiy-2025-information/ch18-hypothesis, polyanskiy-2025-information/ch19-error, polyanskiy-2025-information/ch20-random, polyanskiy-2025-information/ch21-channel, polyanskiy-2025-information/ch22-channels, polyanskiy-2025-information/ch23-capacity, polyanskiy-2025-information/ch24-strong, polyanskiy-2025-information/ch25-channel, polyanskiy-2025-information/ch26-rate, polyanskiy-2025-information/ch27-rate, polyanskiy-2025-information/ch28-rate, polyanskiy-2025-information/ch29-evaluating, polyanskiy-2025-information/ch30-metric, polyanskiy-2025-information/ch31-basics, polyanskiy-2025-information/ch32-classical, polyanskiy-2025-information/ch33-mutual, polyanskiy-2025-information/ch34-lower, polyanskiy-2025-information/ch35-entropic, polyanskiy-2025-information/ch36-strong-p1, polyanskiy-2025-information/ch36-strong-p2]
+---
+
+# Polyanskiy, Y., & Wu, Y. (2025). *Information Theory: From Coding to Learning* (1st ed.). Cambridge University Press. DOI 10.1017/9781108966351.
+
+## In one paragraph
+The book treats information as a measure of how different two beliefs are. KL divergence is the main case, but other f-divergences are also needed. From a few tools (entropy, divergence, mutual information, the data-processing inequality, variational formulas) it builds two things. The first is Shannon's classical theory: lossless and lossy compression, channel coding, capacity, error exponents and finite-blocklength limits. The second is a modern theory of statistical limits: hypothesis testing, large deviations, minimax lower bounds, metric entropy and strong data-processing inequalities. One idea runs through the whole book. Fundamental limits come from pairing a converse (information cannot increase) with an achievability argument (random coding, tests or estimators). This matters because the same machinery gives rigorous limits for communication, compression, learning and noisy computation.
+
+## The path through the work
+- [[polyanskiy-2025-information/ch01-introduction]] — The authors treat information as a measure of difference between two beliefs, with Shannon's KL-based version as the case that gets premium treatment, and present information theory as a field whose true scope is much broader than compression and transmission, with recent developments in statistics, learning and computer science.
+- [[polyanskiy-2025-information/ch02-entropy]] — Shannon entropy $H(X)=\mathbb E[\log 1/P_X(X)]$ measures the randomness of a discrete variable, obeys a chain rule and "conditioning reduces entropy", and has axiomatic, physical and combinatorial justifications.
+- [[polyanskiy-2025-information/ch03-divergence]] — KL divergence $D(P\|Q)=\mathbb E_Q[\frac{dP}{dQ}\log\frac{dP}{dQ}]$ is non-negative, obeys a chain rule, and therefore cannot increase under any random processing (data-processing inequality); in smooth parametric families (under regularity conditions) it is locally quadratic with the Fisher information as Hessian.
+- [[polyanskiy-2025-information/ch04-mutual]] — Mutual information is the KL divergence between a joint law and the product of its marginals, and its basic properties (non-negativity, chain rule, data processing) lead to Fano's inequality, which the author calls a main workhorse for showing that some tasks cannot be done.
+- [[polyanskiy-2025-information/ch05-variational]] — Writing divergence and mutual information as a sup or inf over simple objects (partitions, functions, reference measures) gives convexity, lower semicontinuity and easy bounds, and these give the "Gibbs principle", continuity theorems and PAC-Bayes generalization bounds.
+- [[polyanskiy-2025-information/ch06-extremization]] — Capacity (max over inputs of I(X;Y)) is also a min over output distributions of the worst-case divergence, so the problem has a saddle point (when an optimal input exists) and, for finite capacity, capacity equals an "information radius" in KL divergence.
+- [[polyanskiy-2025-information/ch07-tensorization]] — For memoryless channels and sources, the mutual information of long vectors is bounded by (channel) or bounds (source) the sum of single-letter terms (tensorization), and entropy and mutual information are extended to processes as per-symbol rates, which exist for stationary processes in the entropy case.
+- [[polyanskiy-2025-information/ch08-f-p1]] — KL divergence is one member of the convex-function family of f-divergences. All members obey data processing and joint convexity. Different members suit different tasks (TV and Hellinger for testing), and the joint range of any two members can be found from binary or quaternary distributions.
+- [[polyanskiy-2025-information/ch08-f-p2]] — For nearby distributions most f-divergences behave like (f''(1)/2)·χ², with Fisher information as the coefficient in parametric families, and every f-divergence has a dual form as a supremum over test functions built from the convex conjugate of f.
+- [[polyanskiy-2025-information/ch09-entropy]] — To bound the size of a set, draw a uniform random element: its entropy is $\log|C|$, so any upper bound on its joint entropy bounds $|C|$.
+- [[polyanskiy-2025-information/ch10-random]] — From i.i.d. Ber(p) coins with unknown p one can extract exactly fair coin flips at a rate that approaches, but never exceeds, the binary entropy $h(p)$.
+- [[polyanskiy-2025-information/ch11-lossless]] — The main reason compression is possible is the empirical law that real-world sources produce very restricted sets of sequences (often well described probabilistically), and the book will study three modes: variable-length lossless, fixed-length almost lossless, and lossy.
+- [[polyanskiy-2025-information/ch12-variable]] — The shortest possible average description of a discrete random variable X is essentially its entropy H(X): for the best unrestricted code f* the mean length lies between H(X) − log₂[e(H(X)+1)] and H(X), and for prefix or uniquely decodable codes (attained by Huffman) it lies between H(X) and H(X)+1.
+- [[polyanskiy-2025-information/ch13-fixed]] — If a small error probability is tolerated, fixed-length compression reaches the entropy $H(S)$ per symbol, and random hashing lets a decompressor holding side information $Y$ get away with only $H(X|Y)$ bits, even though the compressor never sees $Y$.
+- [[polyanskiy-2025-information/ch14-entropy]] — For a stationary ergodic source with memory, the per-symbol log-likelihood converges to the entropy rate, so the iid compression and AEP results carry over, and entropy rates also underlie the Kolmogorov–Sinai entropy, which measures how chaotic a deterministic map is.
+- [[polyanskiy-2025-information/ch15-universal]] — Compressing without knowing the source distribution is the same problem as sequential prediction under log-loss: pick a good probability assignment $Q_{X^n}$ for the whole class of sources, and its redundancy equals a channel capacity.
+- [[polyanskiy-2025-information/ch16-neyman]] — The best trade-off between the two error types of a binary hypothesis test is achieved by thresholding the log-likelihood ratio (with randomization at the threshold), and for many i.i.d. samples, when the other error is only required to stay below a fixed $\epsilon<1$, the best exponential decay rate of the missed-detection error is the KL divergence $D(P\|Q)$.
+- [[polyanskiy-2025-information/ch17-information]] — For E[X] < γ < B (B = top of the range of X), the exponent of the probability that an empirical mean exceeds γ is the smallest KL divergence D(Q‖P) over distributions Q with mean ≥ γ, and the minimiser is the exponentially tilted P.
+- [[polyanskiy-2025-information/ch18-hypothesis]] — With n i.i.d. samples, the best pair of error exponents (E0, E1) is traced out by tilting P toward Q (a Legendre-transform curve), and letting the tester stop adaptively enlarges the region to E0E1 ≤ D(P‖Q)D(Q‖P).
+- [[polyanskiy-2025-information/ch19-error]] — A code is an encoder/decoder pair judged by its error probability, and for any code with average error at most ε, log M cannot exceed (capacity + h(ε))/(1−ε), a bound proved by treating the code as a hypothesis test.
+- [[polyanskiy-2025-information/ch20-random]] — Good channel codes exist because the information density of the channel lets us bound the error of randomly drawn codebooks (Shannon, DT, RCU, Gallager) or greedily grown ones (Feinstein), and submodularity explains why both are near-optimal.
+- [[polyanskiy-2025-information/ch21-channel]] — For a stationary memoryless channel, the largest reliably achievable rate (Shannon capacity) equals the maximum single-letter mutual information $\sup_{P_X} I(X;Y)$, and, for a stationary memoryless source and channel, compressing and then channel coding separately loses nothing at leading order (separation theorem).
+- [[polyanskiy-2025-information/ch22-channels]] — With a cost constraint on codewords, capacity of an information-stable channel equals the information capacity, which for memoryless channels is the single-letter supremum of $I(X;Y)$ over inputs meeting the constraint on average; for the AWGN channel this is $\tfrac12\log(1+P/\sigma^2)$, and for parallel, colored or intersymbol-interference Gaussian channels it becomes water-filling over noise levels.
+- [[polyanskiy-2025-information/ch23-capacity]] — When the total cost of a codeword is limited instead of the blocklength, the best rate per unit cost is the supremum of a ratio of KL divergence to cost (for memoryless channels with a zero-cost symbol), which gives the AWGN minimum of $N_0/\log_2 e$ energy per bit (−1.59 dB).
+- [[polyanskiy-2025-information/ch24-strong]] — Besides capacity $C$, the best achievable $\log M^*(n,\epsilon)$ obeys the strong converse $nC+o(n)$ (finite alphabets), a refined expansion $nC-\sqrt{nV}\,Q^{-1}(\epsilon)+O(\log n)$ for several channels and $\epsilon<\tfrac12$, and can be bounded sharply at finite $n$; hypothesis testing drives the strong converse and the converse bounds.
+- [[polyanskiy-2025-information/ch25-channel]] — Noiseless feedback cannot raise the capacity of a stationary memoryless channel, but used adaptively it can give zero error, variable length and variable power schemes with much better reliability and complexity.
+- [[polyanskiy-2025-information/ch26-rate]] — Part V extends compression from exact reconstruction of discrete sources to lossy compression of continuous ones, where the cost is measured by bits versus allowed distortion.
+- [[polyanskiy-2025-information/ch27-rate]] — Any lossy compressor with $M$ codewords and average distortion $\le D$ must satisfy $\log M \ge \inf I(X;Y)$ over channels meeting the distortion constraint, and for an iid source this bound is a single-letter quantity.
+- [[polyanskiy-2025-information/ch28-rate]] — Random codebooks drawn from the output marginal compress a memoryless source at rate $\phi_S(D)=\min I(S;\hat S)$, so $R(D)=R^{(I)}(D)$; the same random-coding idea gives the covering lemma ($R>I(A;B)$) and the soft-covering lemma (about $2^{I(X;Y)}$ i.i.d. inputs), which is used to show that fooling every tester in total variation is possible at rate $R>C(A;B)$.
+- [[polyanskiy-2025-information/ch29-evaluating]] — The rate-distortion function can be computed in closed form for Bernoulli and Gaussian sources by guessing the optimal "backward channel" (the channel from the reconstruction to the source), and for lossy joint source-channel coding over a channel of capacity $C$ the best rate is $C/R(D)$, reached by separate compression and channel coding under a technical assumption on the distortion.
+- [[polyanskiy-2025-information/ch30-metric]] — The metric entropy of a set is the logarithm of the number of ε-balls needed to cover it (equivalently, of a maximal ε-separated packing); volume ratios bound it (giving order $\epsilon^{-d}$) for small ε in fixed dimension, and Gaussian-process, random-covering, small-ball and rate–distortion arguments handle the other regimes.
+- [[polyanskiy-2025-information/ch31-basics]] — Statistical estimation is a game against Nature. The minimax (worst-case) risk is at least the largest Bayes (average-case) risk, with equality under mild conditions. The author says essentially all lower-bound techniques in this book boil down to this, and it gives the exact minimax risk of the unconstrained Gaussian location model.
+- [[polyanskiy-2025-information/ch32-classical]] — For smooth parametric models in fixed dimension, the minimax squared error is asymptotically $\frac{1+o(1)}{n}\sup_\theta \mathrm{Tr}\,J_F^{-1}(\theta)$, under suitable conditions, where the lower bound comes from the Bayesian Cramér–Rao bound (motivated by data processing for $\chi^2$-divergence) and the maximum likelihood estimator (MLE) heuristically matches it.
+- [[polyanskiy-2025-information/ch33-mutual]] — To lower-bound estimation error, compare the information the data carry about the parameter (an upper bound on $I(\theta;X)$) with the information any estimator needs to reach a given accuracy (the rate-distortion function).
+- [[polyanskiy-2025-information/ch34-lower]] — Minimax risk is at least the minimax risk on a well-chosen finite subfamily (two points, a hypercube, or a packing), and on that subfamily estimation is at least as hard as testing, which total variation or Fano's inequality can control.
+- [[polyanskiy-2025-information/ch35-entropic]] — For KL, squared Hellinger and squared total-variation loss, the minimax estimation risk is bounded, up to constants, by $\inf_{\epsilon>0}\{\epsilon^2+\frac1n\log N(\epsilon)\}$, where $N$ is the covering number of the model under the matching distance.
+- [[polyanskiy-2025-information/ch36-strong-p1]] — Along a known noisy channel, mutual information and f-divergences can often be shown to shrink by a factor η < 1 that depends only on the channel (one coefficient η_f for each f). This gives impossibility bounds for noisy computation and inference on trees, and the exact rate for communication-limited correlation estimation.
+- [[polyanskiy-2025-information/ch36-strong-p2]] — Contraction coefficients of channels let you bound information flow in graphs (via percolation) and through one-way processing (post-SDPI), which gives converses that are sharp for spiked Wigner recovery and order-optimal in bits for distributed mean estimation.
+
+## Big ideas across units
+- **Information as divergence, and the data-processing inequality (DPI).** Everything is built from D(P‖Q), and processing cannot increase it. DPI drives converses throughout: [[polyanskiy-2025-information/ch01-introduction]], [[polyanskiy-2025-information/ch03-divergence]], [[polyanskiy-2025-information/ch04-mutual]], [[polyanskiy-2025-information/ch08-f-p1]], [[polyanskiy-2025-information/ch19-error]], [[polyanskiy-2025-information/ch29-evaluating]], [[polyanskiy-2025-information/ch33-mutual]], [[polyanskiy-2025-information/ch36-strong-p1]], [[polyanskiy-2025-information/ch36-strong-p2]].
+- **Beyond KL: f-divergences and strong DPI.** TV, Hellinger, χ² and Rényi divergences suit tasks other than coding. Strong DPI quantifies how much a channel shrinks information. Units: [[polyanskiy-2025-information/ch01-introduction]], [[polyanskiy-2025-information/ch08-f-p1]], [[polyanskiy-2025-information/ch08-f-p2]], [[polyanskiy-2025-information/ch32-classical]], [[polyanskiy-2025-information/ch36-strong-p1]], [[polyanskiy-2025-information/ch36-strong-p2]].
+- **Variational forms and extremization.** Divergence and mutual information are written as sup/inf, giving bounds, continuity, saddle points and capacity as an information radius. Units: [[polyanskiy-2025-information/ch05-variational]], [[polyanskiy-2025-information/ch06-extremization]], [[polyanskiy-2025-information/ch08-f-p2]], [[polyanskiy-2025-information/ch17-information]], [[polyanskiy-2025-information/ch15-universal]].
+- **Entropy as counting and as the compression limit.** A uniform element of a set has entropy log|C|. Compression limits are entropy or entropy rate, for iid sources and then for ergodic ones. Units: [[polyanskiy-2025-information/ch02-entropy]], [[polyanskiy-2025-information/ch09-entropy]], [[polyanskiy-2025-information/ch10-random]], [[polyanskiy-2025-information/ch12-variable]], [[polyanskiy-2025-information/ch13-fixed]], [[polyanskiy-2025-information/ch14-entropy]], [[polyanskiy-2025-information/ch15-universal]].
+- **Tensorization and single-letterization.** Long-blocklength problems reduce to one-letter quantities for memoryless models, and fail or need care with memory. Units: [[polyanskiy-2025-information/ch03-divergence]], [[polyanskiy-2025-information/ch07-tensorization]], [[polyanskiy-2025-information/ch08-f-p1]], [[polyanskiy-2025-information/ch21-channel]], [[polyanskiy-2025-information/ch22-channels]], [[polyanskiy-2025-information/ch27-rate]], [[polyanskiy-2025-information/ch31-basics]].
+- **Random coding for achievability, hypothesis testing for converses.** Random codebooks, hashing and covering give achievability. Neyman–Pearson and meta-converse arguments give impossibility. Units: [[polyanskiy-2025-information/ch13-fixed]], [[polyanskiy-2025-information/ch16-neyman]], [[polyanskiy-2025-information/ch19-error]], [[polyanskiy-2025-information/ch20-random]], [[polyanskiy-2025-information/ch21-channel]], [[polyanskiy-2025-information/ch24-strong]], [[polyanskiy-2025-information/ch28-rate]].
+- **Sharper channel-coding questions around capacity.** Constraints, Gaussian channels, cost, finite blocklength (dispersion), error exponents and feedback refine the basic capacity theorem: [[polyanskiy-2025-information/ch19-error]], [[polyanskiy-2025-information/ch21-channel]], [[polyanskiy-2025-information/ch22-channels]], [[polyanskiy-2025-information/ch23-capacity]], [[polyanskiy-2025-information/ch24-strong]], [[polyanskiy-2025-information/ch25-channel]].
+- **Information measures as tools for statistical lower bounds.** Metric entropy and rate-distortion feed Bayes/minimax risk bounds (mutual information method, Le Cam, Assouad, Fano, entropic bounds): [[polyanskiy-2025-information/ch27-rate]], [[polyanskiy-2025-information/ch29-evaluating]], [[polyanskiy-2025-information/ch30-metric]], [[polyanskiy-2025-information/ch31-basics]], [[polyanskiy-2025-information/ch33-mutual]], [[polyanskiy-2025-information/ch34-lower]], [[polyanskiy-2025-information/ch35-entropic]].
+
+## How to read it
+These dependencies come from the units' stated prerequisites.
+- **Essential first.** Read ch02-entropy, ch03-divergence and ch04-mutual in that order. Nearly every later unit lists KL divergence, mutual information, the chain rule or the DPI as a prerequisite. The catalog also points to Part I as the focus, so start there. ch01-introduction is short and sets the lens.
+- **Information measures, second layer.** ch05-variational needs ch03 and ch04. ch06-extremization needs ch05 (the golden formula). ch08-f-p1 and ch08-f-p2 need ch03 and ch04, and f-p2 needs f-p1. ch07-tensorization needs ch04.
+- **Compression strand.** ch11-lossless is a short preview. Then ch12-variable, ch13-fixed (builds on the varentropy from ch12), ch14-entropy and ch15-universal (needs capacity ideas and ergodic processes). On a first pass ch14 can be skipped except for the statement of the Shannon–McMillan–Breiman theorem. ch10-random, ch09-entropy and the exercises are applications and can be skipped.
+- **Testing and large deviations.** ch16-neyman comes first. ch17-information needs ch03. ch18-hypothesis needs both ch16 and ch17. Ch16 is also used later for the converses in ch19–ch24 and ch28.
+- **Channel coding.** Read ch19-error, then ch20-random, then ch21-channel (it uses ch19 and ch20). After that, ch22-channels, ch24-strong and ch25-channel build on ch21. ch23-capacity builds on ch22 and ch16. ch25 (feedback) and the later exponent parts of ch24 are optional on a first pass.
+- **Lossy compression.** ch26-rate is a short opening, followed by ch27-rate, ch28-rate and ch29-evaluating. ch28 needs ch17 and ch27. ch29 needs ch27 and ch21. ch30-metric needs ch27–ch29.
+- **Statistical applications (Part VI, recommended by the catalog).** Read ch31-basics first. Then ch32-classical, ch33-mutual and ch34-lower can be read in any order, though ch33 needs rate-distortion (ch27–ch29). ch35-entropic needs ch30 and ch34 and also uses capacity and universal coding (ch15). ch36-strong-p1 and ch36-strong-p2 are an advanced tail that builds on ch08 and on the DPI. P2 needs P1 and is the most specialized part of the book.
+
+## Concepts introduced
+Variants of the same concept (for example the entropy, KL, Fano, contraction-coefficient, covering-number and online-to-batch ids) are merged under one id. Each entry shows the unit where the concept first appears.
+- [[entropy]] — ch01-introduction
+- [[relative-entropy-kl-divergence]] — ch01-introduction
+- [[f-divergence]] — ch01-introduction
+- [[bit]] — ch01-introduction
+- [[noisy-channel]] — ch01-introduction
+- [[noisy-channel-coding-theorem]] — ch01-introduction
+- [[data-processing-inequality]] — ch01-introduction
+- [[fisher-information]] — ch01-introduction
+- [[rate-distortion-function]] — ch01-introduction
+- [[universal-coding]] — ch01-introduction
+- [[one-shot-coding]] — ch01-introduction
+- [[metric-entropy]] — ch01-introduction
+- [[mutual-information-method]] — ch01-introduction
+- [[self-information-surprisal]] — ch02-entropy
+- [[joint-and-conditional-entropy]] — ch02-entropy
+- [[chain-rule]] — ch02-entropy
+- [[binary-entropy-function]] — ch02-entropy
+- [[jensen-inequality]] — ch02-entropy
+- [[renyi-entropy]] — ch02-entropy
+- [[method-of-types]] — ch02-entropy
+- [[submodularity]] — ch02-entropy
+- [[han-shearer-inequalities]] — ch02-entropy
+- [[mutual-information]] — ch02-entropy
+- [[cross-entropy]] — ch03-divergence
+- [[differential-entropy]] — ch03-divergence
+- [[maximum-entropy-principle]] — ch03-divergence
+- [[fisher-rao-metric-information-geometry]] — ch03-divergence
+- [[markov-kernel]] — ch03-divergence
+- [[radon-nikodym-derivative]] — ch03-divergence
+- [[conditional-divergence]] — ch03-divergence
+- [[score-function]] — ch03-divergence
+- [[tensorization]] — ch03-divergence
+- [[fanos-inequality]] — ch04-mutual
+- [[channel-capacity]] — ch04-mutual
+- [[conditional-mutual-information]] — ch04-mutual
+- [[sufficient-statistic]] — ch04-mutual
+- [[markov-chain-d-separation]] — ch04-mutual
+- [[strong-data-processing-inequality]] — ch04-mutual
+- [[meta-converse]] — ch04-mutual
+- [[i-mmse-relation]] — ch04-mutual
+- [[entropy-power-inequality]] — ch04-mutual
+- [[golden-formula]] — ch05-variational
+- [[gelfand-yaglom-perez-theorem]] — ch05-variational
+- [[donsker-varadhan-formula]] — ch05-variational
+- [[gibbs-variational-principle]] — ch05-variational
+- [[lower-semicontinuity-of-divergence]] — ch05-variational
+- [[sigma-algebra-continuity]] — ch05-variational
+- [[evidence-lower-bound]] — ch05-variational
+- [[mean-field-approximation]] — ch05-variational
+- [[pac-bayes-inequality]] — ch05-variational
+- [[subgaussian-random-variable]] — ch05-variational
+- [[exponential-family-gibbs-distribution]] — ch05-variational
+- [[saddle-point]] — ch06-extremization
+- [[capacity-achieving-output-distribution]] — ch06-extremization
+- [[information-radius]] — ch06-extremization
+- [[alternating-minimization-blahut-arimoto]] — ch06-extremization
+- [[expectation-maximization]] — ch06-extremization
+- [[sinkhorn-algorithm]] — ch06-extremization
+- [[single-letterization]] — ch07-tensorization
+- [[entropy-rate]] — ch07-tensorization
+- [[stationary-process]] — ch07-tensorization
+- [[hidden-markov-model]] — ch07-tensorization
+- [[blackwell-measure]] — ch07-tensorization
+- [[ornstein-distance]] — ch07-tensorization
+- [[mutual-information-rate]] — ch07-tensorization
+- [[water-filling]] — ch07-tensorization
+- [[total-variation]] — ch08-f-p1
+- [[hellinger-distance]] — ch08-f-p1
+- [[chi-square-divergence]] — ch08-f-p1
+- [[coupling]] — ch08-f-p1
+- [[contiguity]] — ch08-f-p1
+- [[joint-range]] — ch08-f-p1
+- [[pinsker-inequality]] — ch08-f-p1
+- [[f-information]] — ch08-f-p1
+- [[chi-square-divergence-and-information]] — ch08-f-p2
+- [[empirical-distribution-bound]] — ch08-f-p2
+- [[fisher-defect]] — ch08-f-p2
+- [[renyi-divergence]] — ch08-f-p2
+- [[convex-conjugate-variational-representation]] — ch08-f-p2
+- [[plug-in-entropy-estimator]] — ch08-f-p2
+- [[entropy-method]] — ch09-entropy
+- [[shearers-lemma]] — ch09-entropy
+- [[fractional-covering-number]] — ch09-entropy
+- [[permanent]] — ch09-entropy
+- [[randomness-extractor]] — ch10-random
+- [[extractor-rate]] — ch10-random
+- [[type-class]] — ch10-random
+- [[exchangeability]] — ch10-random
+- [[bernoulli-factory]] — ch10-random
+- [[source-coding-theorem]] — ch11-lossless
+- [[prefix-code-kraft]] — ch11-lossless
+- [[lossless-variable-length-compression]] — ch11-lossless
+- [[almost-lossless-fixed-length-compression]] — ch11-lossless
+- [[stochastic-dominance]] — ch12-variable
+- [[single-shot-lossless-compressor]] — ch12-variable
+- [[varentropy]] — ch12-variable
+- [[uniquely-decodable-code]] — ch12-variable
+- [[shannon-code]] — ch12-variable
+- [[zipfs-law]] — ch12-variable
+- [[mandelbrot-argument]] — ch12-variable
+- [[huffman-arithmetic-coding]] — ch12-variable
+- [[fixed-length-almost-lossless-code]] — ch13-fixed
+- [[typical-set-aep]] — ch13-fixed
+- [[random-coding]] — ch13-fixed
+- [[linear-compression-hashing]] — ch13-fixed
+- [[varentropy-normal-approximation]] — ch13-fixed
+- [[slepian-wolf-theorem]] — ch13-fixed
+- [[slepian-wolf-rate-region]] — ch13-fixed
+- [[time-sharing]] — ch13-fixed
+- [[compression-with-helper]] — ch13-fixed
+- [[measure-preserving-transformation]] — ch14-entropy
+- [[ergodic-process]] — ch14-entropy
+- [[mixing]] — ch14-entropy
+- [[shannon-mcmillan-breiman]] — ch14-entropy
+- [[birkhoff-ergodic-theorem]] — ch14-entropy
+- [[markov-approximation]] — ch14-entropy
+- [[kolmogorov-sinai-entropy]] — ch14-entropy
+- [[generator-sinai]] — ch14-entropy
+- [[universal-probability-assignment]] — ch15-universal
+- [[minimax-redundancy]] — ch15-universal
+- [[capacity-redundancy-theorem]] — ch15-universal
+- [[normalized-maximum-likelihood]] — ch15-universal
+- [[jeffreys-prior]] — ch15-universal
+- [[krichevsky-trofimov]] — ch15-universal
+- [[individual-sequence-regret]] — ch15-universal
+- [[online-to-batch]] — ch15-universal
+- [[lempel-ziv]] — ch15-universal
+- [[kac-lemma]] — ch15-universal
+- [[redundancy]] — ch15-universal
+- [[neyman-pearson-region]] — ch16-neyman
+- [[likelihood-ratio-test]] — ch16-neyman
+- [[log-likelihood-ratio]] — ch16-neyman
+- [[stein-regime]] — ch16-neyman
+- [[chernoff-regime]] — ch16-neyman
+- [[log-mgf-cumulant-generating-function]] — ch17-information
+- [[cramer-condition]] — ch17-information
+- [[rate-function]] — ch17-information
+- [[chernoff-bound]] — ch17-information
+- [[exponential-tilting]] — ch17-information
+- [[information-projection]] — ch17-information
+- [[pythagorean-identity-for-kl]] — ch17-information
+- [[kl-geodesic]] — ch17-information
+- [[sanov-theorem]] — ch17-information
+- [[convex-support]] — ch17-information
+- [[error-exponent-tradeoff]] — ch18-hypothesis
+- [[chernoff-information]] — ch18-hypothesis
+- [[tilted-distribution]] — ch18-hypothesis
+- [[sprt]] — ch18-hypothesis
+- [[stopping-time]] — ch18-hypothesis
+- [[f-i-curve]] — ch18-hypothesis
+- [[sdpi-constant]] — ch18-hypothesis
+- [[composite-hypothesis-testing]] — ch18-hypothesis
+- [[error-correcting-code]] — ch19-error
+- [[m-code]] — ch19-error
+- [[max-vs-average-error]] — ch19-error
+- [[fundamental-limits-M-star]] — ch19-error
+- [[map-ml-decoder]] — ch19-error
+- [[weak-converse]] — ch19-error
+- [[finite-blocklength-bounds]] — ch19-error
+- [[information-density]] — ch20-random
+- [[random-coding-bound]] — ch20-random
+- [[feinstein-maximal-coding]] — ch20-random
+- [[rho-trick]] — ch20-random
+- [[linear-code]] — ch20-random
+- [[submodularity-of-decoding]] — ch20-random
+- [[source-channel-separation]] — ch21-channel
+- [[information-stability]] — ch21-channel
+- [[expurgation]] — ch21-channel
+- [[zero-error-capacity]] — ch21-channel
+- [[strong-converse]] — ch21-channel
+- [[bit-error-rate]] — ch21-channel
+- [[channel-symmetry-classes]] — ch21-channel
+- [[channel-dispersion]] — ch21-channel
+- [[input-cost-constraint]] — ch22-channels
+- [[capacity-cost-function]] — ch22-channels
+- [[awgn-channel]] — ch22-channels
+- [[shannon-hartley-formula]] — ch22-channels
+- [[csir-fading-channel]] — ch22-channels
+- [[energy-per-bit]] — ch23-capacity
+- [[capacity-per-unit-cost]] — ch23-capacity
+- [[pulse-position-modulation]] — ch23-capacity
+- [[flash-signaling]] — ch23-capacity
+- [[reliability-function]] — ch24-strong
+- [[gallager-e0-function]] — ch24-strong
+- [[sphere-packing-bound]] — ch24-strong
+- [[normal-approximation]] — ch24-strong
+- [[normalized-rate]] — ch24-strong
+- [[channel-with-feedback]] — ch25-channel
+- [[directed-information]] — ch25-channel
+- [[posterior-matching]] — ch25-channel
+- [[confusability-graph]] — ch25-channel
+- [[variable-length-feedback-code]] — ch25-channel
+- [[zero-dispersion]] — ch25-channel
+- [[burnashev-exponent]] — ch25-channel
+- [[elias-scheme]] — ch25-channel
+- [[schalkwijk-kailath-scheme]] — ch25-channel
+- [[lossy-compression]] — ch26-rate
+- [[distortion-metric]] — ch26-rate
+- [[quantization]] — ch26-rate
+- [[scalar-uniform-quantization]] — ch27-rate
+- [[companding]] — ch27-rate
+- [[lloyd-algorithm]] — ch27-rate
+- [[panter-dite-approximation]] — ch27-rate
+- [[excess-distortion]] — ch27-rate
+- [[random-coding-quantizer]] — ch28-rate
+- [[fail-safe-codeword]] — ch28-rate
+- [[excess-distortion-vs-average-distortion]] — ch28-rate
+- [[covering-lemma]] — ch28-rate
+- [[soft-covering-lemma]] — ch28-rate
+- [[wyner-common-information]] — ch28-rate
+- [[renyi-mutual-information]] — ch28-rate
+- [[markov-lemma]] — ch28-rate
+- [[channel-simulation]] — ch28-rate
+- [[shannon-lower-bound]] — ch29-evaluating
+- [[rd-saddle-point-condition]] — ch29-evaluating
+- [[lossy-jscc]] — ch29-evaluating
+- [[generalized-triangle-inequality]] — ch29-evaluating
+- [[graceful-degradation]] — ch29-evaluating
+- [[covering-number]] — ch30-metric
+- [[packing-number]] — ch30-metric
+- [[entropy-numbers]] — ch30-metric
+- [[volume-bound]] — ch30-metric
+- [[minkowski-dimension]] — ch30-metric
+- [[gilbert-varshamov-bound]] — ch30-metric
+- [[gaussian-width]] — ch30-metric
+- [[sudakov-minoration]] — ch30-metric
+- [[maurey-empirical-method]] — ch30-metric
+- [[small-ball-probability]] — ch30-metric
+- [[rkhs-unit-ball]] — ch30-metric
+- [[statistical-experiment]] — ch31-basics
+- [[risk-function]] — ch31-basics
+- [[randomized-estimator]] — ch31-basics
+- [[bayes-risk]] — ch31-basics
+- [[minimax-risk]] — ch31-basics
+- [[least-favorable-prior]] — ch31-basics
+- [[minimax-theorem]] — ch31-basics
+- [[gaussian-location-model]] — ch31-basics
+- [[sample-complexity]] — ch31-basics
+- [[tensorization-of-experiments]] — ch31-basics
+- [[bowl-shaped-loss]] — ch31-basics
+- [[anderson-lemma]] — ch31-basics
+- [[log-concave-measure]] — ch31-basics
+- [[cramer-rao-bound]] — ch32-classical
+- [[bayesian-cramer-rao-van-trees]] — ch32-classical
+- [[maximum-likelihood-estimator]] — ch32-classical
+- [[bayes-minimax-risk]] — ch33-mutual
+- [[almost-exact-recovery]] — ch33-mutual
+- [[weak-recovery]] — ch33-mutual
+- [[le-cam-two-point-method]] — ch34-lower
+- [[assouad-lemma]] — ch34-lower
+- [[fano-method]] — ch34-lower
+- [[alpha-triangle-inequality]] — ch34-lower
+- [[proper-vs-improper-estimator]] — ch35-entropic
+- [[predictive-density-estimator]] — ch35-entropic
+- [[local-entropy-doubling-dimension]] — ch35-entropic
+- [[yatracos-class]] — ch35-entropic
+- [[renyi-radius]] — ch35-entropic
+- [[contraction-coefficient]] — ch36-strong-p1
+- [[input-dependent-contraction-coefficient]] — ch36-strong-p1
+- [[maximal-correlation]] — ch36-strong-p1
+- [[directed-information-percolation]] — ch36-strong-p1
+- [[broadcasting-on-trees]] — ch36-strong-p1
+- [[less-noisy-order]] — ch36-strong-p1
+- [[information-percolation]] — ch36-strong-p2
+- [[post-sdpi]] — ch36-strong-p2
+- [[t1-transportation-inequality]] — ch36-strong-p2
+- [[spiked-wigner-model]] — ch36-strong-p2
+- [[distributed-estimation-communication-lower-bound]] — ch36-strong-p2

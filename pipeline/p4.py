@@ -79,7 +79,8 @@ def check_map(md, work, uids):
         issues.append(f"frontmatter id/type wrong: {fm.get('id')} / {fm.get('type')}")
     if list(fm.get("units") or []) != uids:
         issues.append("frontmatter units differ from the accepted units")
-    sec = dict(sections(body))
+    parts = re.split(r"^## +(.+?)\s*$", body, flags=re.M)        # raw headings: checks.sections() maps
+    sec = {parts[i]: parts[i + 1] for i in range(1, len(parts), 2)}   # 'Concepts introduced' to 'Concepts'
     for s in MAP_SECTIONS:
         if s not in sec:
             issues.append(f"missing section '{s}'")
@@ -146,6 +147,21 @@ def cmd_submit(a):
     print(f"submitted p4 for {len(rec['works'])} works: {job['name'].split('/')[-1]} (forecast ${total:.2f})")
 
 
+def cmd_recheck(a):
+    """Re-run check_map on the maps already written (no model call)."""
+    W = [json.loads(l) for l in open(JOB) if l.strip()][-1]["works"]
+    report = json.loads((PIPE / "results" / "p4_report.json").read_text())
+    for r in report:
+        if r.get("path"):
+            r["issues"] = check_map((REPO / r["path"]).read_text(), r["work"], W[r["work"]])
+            r["status"] = "ok" if not r["issues"] else "issues"
+    (PIPE / "results" / "p4_report.json").write_text(json.dumps(report, indent=1))
+    print(f"{sum(r['status'] == 'ok' for r in report)}/{len(report)} maps pass checks")
+    for r in report:
+        if r["status"] != "ok":
+            print(f"  {r['work']}: {r.get('issues') or r['status']}")
+
+
 def cmd_collect(a):
     rec = [json.loads(l) for l in open(JOB) if l.strip()][-1]
     while True:
@@ -190,12 +206,12 @@ def cmd_collect(a):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="pipeline.p4")
-    ap.add_argument("cmd", choices=["plan", "submit", "collect"])
+    ap.add_argument("cmd", choices=["plan", "submit", "collect", "recheck"])
     ap.add_argument("--works", nargs="*")
     ap.add_argument("--max-usd", type=float, default=10.0)
     ap.add_argument("--sleep", type=int, default=120)
     a = ap.parse_args(argv)
-    {"plan": cmd_plan, "submit": cmd_submit, "collect": cmd_collect}[a.cmd](a)
+    {"plan": cmd_plan, "submit": cmd_submit, "collect": cmd_collect, "recheck": cmd_recheck}[a.cmd](a)
 
 
 if __name__ == "__main__":

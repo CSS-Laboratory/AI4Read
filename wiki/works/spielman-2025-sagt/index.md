@@ -1,0 +1,297 @@
+---
+id: spielman-2025-sagt/index
+work: spielman-2025-sagt
+type: work-map
+units: [spielman-2025-sagt/ch01-introduction, spielman-2025-sagt/ch02-eigenvalues, spielman-2025-sagt/ch03-laplacian, spielman-2025-sagt/ch04-adjacency, spielman-2025-sagt/ch05-fundamental, spielman-2025-sagt/ch06-comparing, spielman-2025-sagt/ch07-cayley, spielman-2025-sagt/ch08-eigenvalues, spielman-2025-sagt/ch09-strongly, spielman-2025-sagt/ch10-random, spielman-2025-sagt/ch11-walks, spielman-2025-sagt/ch12-effective, spielman-2025-sagt/ch13-random, spielman-2025-sagt/ch14-approximating, spielman-2025-sagt/ch15-tutte, spielman-2025-sagt/ch16-lov, spielman-2025-sagt/ch17-monotonicity, spielman-2025-sagt/ch18-dynamic, spielman-2025-sagt/ch19-independent, spielman-2025-sagt/ch20-graph, spielman-2025-sagt/ch21-cheeger, spielman-2025-sagt/ch22-local, spielman-2025-sagt/ch23-spectral, spielman-2025-sagt/ch24-nodal, spielman-2025-sagt/ch25-second, spielman-2025-sagt/ch26-planar, spielman-2025-sagt/ch27-properties, spielman-2025-sagt/ch28-brief, spielman-2025-sagt/ch29-expander, spielman-2025-sagt/ch30-simple, spielman-2025-sagt/ch31-psrgs, spielman-2025-sagt/ch32-sparsification, spielman-2025-sagt/ch33-linear, spielman-2025-sagt/ch34-iterative, spielman-2025-sagt/ch35-conjugate, spielman-2025-sagt/ch36-preconditioning, spielman-2025-sagt/ch37-augmented, spielman-2025-sagt/ch38-fast, spielman-2025-sagt/ch39-testing, spielman-2025-sagt/ch40-testing, spielman-2025-sagt/ch41-expected, spielman-2025-sagt/ch42-quadrature, spielman-2025-sagt/ch43-ramanujan, spielman-2025-sagt/ch44-bipartite, spielman-2025-sagt/ch45-matching]
+---
+
+# Spielman, D. A. (2025). *Spectral and Algebraic Graph Theory* (incomplete draft, dated April 2, 2025). Yale University, author's website.
+
+## In one paragraph
+The book teaches graphs through their matrices. Its main objects are the Laplacian, which measures how smooth a function on the vertices is, and the walk and adjacency matrices. The eigenvalues and eigenvectors of these matrices are tied to concrete graph properties: connectivity, good cuts, mixing of random walks, electrical behaviour, colouring and drawing. Courant–Fischer, Perron–Frobenius, interlacing and Cheeger's inequality supply the main tools. The same ideas then lead to graph approximation: expanders, sparsifiers and nearly-linear-time Laplacian solvers. The later chapters add Ramanujan graphs, isomorphism testing and coding theory. The book matters because it links linear algebra to network structure, partitioning and algorithms, using physical pictures such as springs, resistors and walks. It is an unfinished draft, and some chapters are rough.
+
+## The path through the work
+- [[spielman-2025-sagt/ch01-introduction]] — Eigenvalues and eigenvectors of a graph are meaningful mainly when taken from a natural operator (the diffusion/walk matrix) or a natural quadratic form (the Laplacian), and the chapter's examples are offered to suggest that they carry information about smoothness, connectivity and geometry.
+- [[spielman-2025-sagt/ch02-eigenvalues]] — The eigenvalues of a symmetric matrix are the optimal values of the Rayleigh quotient $x^TMx/x^Tx$, and optimizing it also proves the Spectral Theorem.
+- [[spielman-2025-sagt/ch03-laplacian]] — The Laplacian matrix is built so that $x^TLx$ sums squared differences across edges. Hall's method draws a graph using the eigenvectors $\psi_2,\dots,\psi_{k+1}$ for the smallest eigenvalues after 0, which minimize total squared edge length under scale, centring and orthogonality constraints.
+- [[spielman-2025-sagt/ch04-adjacency]] — The largest adjacency eigenvalue $\mu_1$ is squeezed between average and maximum degree, never increases when vertices are deleted, bounds the chromatic number and (for connected graphs) has a positive eigenvector and satisfies $|\mu_n|\le\mu_1$, with equality exactly for bipartite graphs.
+- [[spielman-2025-sagt/ch05-fundamental]] — The Laplacian eigenvalues and eigenvectors of complete graphs, stars, hypercubes, rings and paths can be computed exactly, or bounded, using orthogonality, trace, graph products, test vectors and quotients.
+- [[spielman-2025-sagt/ch06-comparing]] — If one graph's Laplacian dominates a multiple of another's in the Loewner order, its eigenvalues dominate that multiple of the other's eigenvalues, so comparing a graph with the complete graph gives lower bounds on $\lambda_2$.
+- [[spielman-2025-sagt/ch07-cayley]] — In a Cayley graph over an Abelian group the eigenvectors depend only on the group, which makes the eigenvalues much easier to compute; Paley graphs and (with high probability) random generalized hypercubes then have eigenvalues close enough together to approximate the complete graph.
+- [[spielman-2025-sagt/ch08-eigenvalues]] — Write a random graph's adjacency matrix as the mean matrix $p(J-I)$ (the rank-one matrix $pJ$ minus $pI$) plus a zero-mean random matrix $R$, then show $\|R\|$ is, with high probability, about at most $2\sqrt{np(1-p)}$, by bounding $\mathbb E\,\mathrm{Tr}\,R^l$ through counting closed walks.
+- [[spielman-2025-sagt/ch09-strongly]] — A connected regular graph is strongly regular exactly when its adjacency matrix has at most three distinct eigenvalues, and then the eigenvalues other than $k$ are the two roots of one quadratic; the eigenspaces give a two-distance point set whose dimension is at least $\sqrt{2n}-2$.
+- [[spielman-2025-sagt/ch10-random]] — The lazy random walk on a connected graph converges to the degree-proportional distribution π, and the second eigenvalue ω₂ of the walk matrix (equivalently ν₂ of the normalized Laplacian) controls how fast.
+- [[spielman-2025-sagt/ch11-walks]] — Absorbing random walks, spring networks and resistor networks all lead to the same object: a function that is harmonic away from the boundary, found by solving a linear system in the Laplacian matrix or one of its submatrices.
+- [[spielman-2025-sagt/ch12-effective]] — Eliminating internal vertices from a weighted graph by Gaussian elimination leaves a smaller weighted graph (a Schur complement of the Laplacian) with the same voltages and currents on the kept vertices, and effective resistance, defined by $L^+$, is a squared Euclidean distance that also satisfies the triangle inequality.
+- [[spielman-2025-sagt/ch13-random]] — For a connected weighted graph, $\sigma_{n-1}(L_G)$ equals $n$ times the sum over spanning trees of the product of their edge weights, and a spanning tree drawn with probability proportional to that product contains edge $e$ with probability equal to its leverage score $w_e R_{\rm eff}(e)$.
+- [[spielman-2025-sagt/ch14-approximating]] — Effective resistances are squared Euclidean distances, so, with high probability, a random Gaussian projection to $d=8\ln(n^2/\delta)/\epsilon^2$ dimensions preserves all of them up to a factor $1\pm\epsilon$, and the projected vectors can be computed approximately with only Laplacian solves.
+- [[spielman-2025-sagt/ch15-tutte]] — In a 3-connected planar graph, fix one face as a strictly convex polygon and put every other vertex at a weighted average of its neighbours (the proof only needs it to lie inside the convex hull of its neighbours); drawing edges as straight lines then gives a planar drawing.
+- [[spielman-2025-sagt/ch16-lov]] — After one lazy-walk step, the "sum of the k largest entries" curve of a vector lies below a chord of the old curve whose width grows with the graph's conductance; the same tool gives a variant of Cheeger's inequality.
+- [[spielman-2025-sagt/ch17-monotonicity]] — In linear spring or resistor networks, weakening an edge can never improve the effective connection between two vertices, but in nonlinear networks (springs with wires) and selfish traffic networks, adding or keeping material can hurt, and a road can make everyone slower.
+- [[spielman-2025-sagt/ch18-dynamic]] — Resistor networks with nonlinear resistors keep a unique, energy-minimizing equilibrium, and the author argues that a thermistor network (resistors that heat up) has an equilibrium law of this type; in the low-ambient-temperature limit its energy minimization becomes a minimum s-t cut.
+- [[spielman-2025-sagt/ch19-independent]] — The extreme (largest) Laplacian eigenvalue $\lambda_n$ and the extreme adjacency eigenvalues $\mu_1,\mu_n$ give provable bounds on how big an independent set can be and on how many colors a graph needs.
+- [[spielman-2025-sagt/ch20-graph]] — The second-smallest eigenvalue of the Laplacian ($\lambda_2$), or of the normalized Laplacian ($\nu_2$), lower-bounds how cheaply any vertex set can be cut off, measured by isoperimetric ratio or conductance.
+- [[spielman-2025-sagt/ch21-cheeger]] — If a vector $z$, centered with respect to the degree vector $d$, has a small generalized Rayleigh quotient $\rho$, then a random threshold cut of $z$ has expected boundary at most $\sqrt{2\rho}$ times the expected smaller side, so some threshold set has conductance at most $\sqrt{2\rho}$.
+- [[spielman-2025-sagt/ch22-local]] — A lazy random walk of $t=1/2\phi$ steps from a well-chosen seed vertex in a low-conductance set $S$ is in $S$ with probability at least $1/2$, and a threshold sweep over $D^{-1}\widetilde W^t\delta_a$ then yields a set of conductance at most $\sqrt{8\ln(8|S|)\,\phi}$ (pp. 181, 188).
+- [[spielman-2025-sagt/ch23-spectral]] — In a planted-bisection random graph, the second eigenvector of the adjacency matrix is probably close to the second eigenvector of the expected matrix, so (under conditions on p and q) its signs are expected to recover the hidden partition with at most $288p(1-p)/(p-q)^2$ errors: a constant number for fixed p and q, a constant fraction for p = 1/2, q = p − 17/√n.
+- [[spielman-2025-sagt/ch24-nodal]] — The sign pattern of a Laplacian eigenvector is tied to its eigenvalue index: on a weighted path (stated for trees, proved only for paths), if the $k$th eigenvector has no zero entry it has $k-1$ sign changes, and on any weighted connected graph the set where it is non-negative induces at most $k-1$ connected components (proved for threshold $t=0$).
+- [[spielman-2025-sagt/ch25-second]] — For a planar graph with n vertices and maximum degree d, λ₂ ≤ 8d/n, proved by embedding the graph on a sphere as touching disks and using disjointness of the disks' areas.
+- [[spielman-2025-sagt/ch26-planar]] — For a three-connected planar graph, the Colin de Verdière number is 3 (sketched in the chapter, with one step only cited): a 3D polytope gives a generalized Laplacian whose second eigenvalue has multiplicity 3, and a multiplicity of 4 or more would force a forbidden $K_{3,3}$ minor.
+- [[spielman-2025-sagt/ch27-properties]] — A d-regular graph whose nontrivial adjacency eigenvalues are all at most εd in absolute value approximates the complete graph; this forces random-like edge counts and strong neighbour growth, and, for fixed d and large n, ε cannot be much below 2√(d−1)/d.
+- [[spielman-2025-sagt/ch28-brief]] — A linear error-correcting code is a subspace of $\mathbb F_2^n$, and a randomly chosen generator matrix gives, with high probability, a code with good rate and minimum distance (when $H(\delta)<1-r$, see 28.6).
+- [[spielman-2025-sagt/ch29-expander]] — Put one bit on each edge of a bipartite expander graph and make every vertex see a codeword of a small code: under suitable conditions on $r_0$ and on how well the graph approximates the complete bipartite graph, the result is a code with constant rate and relative distance, and alternating local corrections decode a constant fraction of errors.
+- [[spielman-2025-sagt/ch30-simple]] — Take the line graph of a graph (its vertices are the edges of the original), replace each of its cliques (groups of mutually adjacent vertices) by a small expander (a sparse, well-connected graph), then square twice; the spectral gap (a measure of how well connected the graph is) stays above a fixed bound while the degree stays fixed, so repeating this builds an infinite family of constant-degree expanders.
+- [[spielman-2025-sagt/ch31-psrgs]] — A random walk on an expander graph can feed a randomized algorithm correlated inputs that need only about 9 fresh random bits per run, and the majority-vote error still falls exponentially, proved by a 2-norm bound on $D_X W$.
+- [[spielman-2025-sagt/ch32-sparsification]] — Sampling each edge with probability proportional to its leverage score, and reweighting it by 1/probability, gives with high probability a sparse graph with O(ε⁻² n log n) edges that ε-approximates the original graph's Laplacian.
+- [[spielman-2025-sagt/ch33-linear]] — Choosing vectors one at a time while two "barrier" potentials stay at most 1 shows that O(n) reweighted edges can approximate a whole graph's Laplacian.
+- [[spielman-2025-sagt/ch34-iterative]] — Solving $Ax=b$ by repeated multiplication by $A$ costs a number of steps governed by the condition number $\kappa=\lambda_{\max}/\lambda_{\min}$. For Richardson iteration, about $\kappa\ln(1/\epsilon)$ steps are shown to suffice; Chebyshev polynomials give a guarantee of about $\sqrt\kappa\,\ln(1/\epsilon)$ steps.
+- [[spielman-2025-sagt/ch35-conjugate]] — Conjugate Gradient (CG) finds the A-norm-optimal vector in the Krylov subspace using an A-orthogonal basis, and the same polynomial viewpoint shows that a Laplacian with few distinct eigenvalues forces a small graph diameter.
+- [[spielman-2025-sagt/ch36-preconditioning]] — Preconditioning a graph Laplacian $L_G$ by the Laplacian of a low-stretch spanning tree bounds the largest eigenvalue of $L_T^{-1}L_G$ by the total stretch, which makes preconditioned conjugate gradient fast.
+- [[spielman-2025-sagt/ch37-augmented]] — Scale up a low-stretch spanning tree, sample the other edges, and eliminate degree 1 and 2 vertices; recursing on the smaller graph gives a Laplacian solver for constant accuracy in time $\widetilde O(m\log^2 n)$.
+- [[spielman-2025-sagt/ch38-fast]] — Writing $(I-B)^{-1}$ in a symmetric squaring form lets us recurse, and sparsifying at each level keeps matrices sparse, so Laplacian and M-matrix systems can be solved in nearly linear time (in a sketch that assumes good sparsifiers exist).
+- [[spielman-2025-sagt/ch39-testing]] — If all eigenvalues of a graph have multiplicity 1, eigenvectors are fixed up to sign, so its automorphism group is isomorphic to a subspace of $(\mathbb Z/2)^n$, and the chapter's algorithm finds a basis of it in polynomial time using Gaussian elimination.
+- [[spielman-2025-sagt/ch40-testing]] — A strongly regular graph has only three distinct adjacency eigenvalues, and every such graph has a "distinguishing set" of $O(\sqrt n\log n)$ vertices, which gives isomorphism testing in time $n^{O(\sqrt n\log n)}$.
+- [[spielman-2025-sagt/ch41-expected]] — The average of $\chi_x(A+\Pi B\Pi^T)$ over a uniformly random permutation $\Pi$ is real rooted (all its roots are real), because a uniform random permutation can be built from random swaps and interlacing shows that each random swap preserves real-rootedness.
+- [[spielman-2025-sagt/ch42-quadrature]] — The expected characteristic polynomial of $A+QBQ^T$ over a Haar-random orthogonal $Q$ equals an average over the finite hyperoctahedral group, which gives an explicit coefficient formula for this expected polynomial, the finite free convolution.
+- [[spielman-2025-sagt/ch43-ramanujan]] — The expected characteristic polynomial of a sum of $d$ random perfect matchings has second-largest root at most $2\sqrt{d-1}$, and an interlacing-family argument shows that some single graph in the family does at least as well.
+- [[spielman-2025-sagt/ch44-bipartite]] — Every d-regular graph has a signed adjacency matrix whose smallest eigenvalue is at least −2√(d−1); this follows because the expected characteristic polynomial over random signings (the matching polynomial, whose zeros are at most 2√(d−1) in absolute value) is the root of a tree of interlacing polynomials, so some signing does at least as well.
+- [[spielman-2025-sagt/ch45-matching]] — The matching polynomial of a graph counts matchings in its coefficients, equals the adjacency characteristic polynomial for trees, and (Godsil's route) is linked to a tree through the path tree.
+
+## Big ideas across units
+- **The Laplacian as a smoothness measure, and the spectrum as connectivity.** $x^TLx$ sums squared differences over edges. $\lambda_2>0$ exactly when the graph is connected, and low-frequency eigenvectors give drawings. Units: ch01, ch03, ch05, ch06, ch20, ch24.
+- **Eigenvalues as optimization problems.** The Rayleigh quotient and Courant–Fischer give upper bounds from test vectors and underlie the Hall drawing, isoperimetric bounds, independent-set and colouring bounds, Cheeger's rounding and the planar-graph bound. Units: ch02, ch03, ch05, ch19, ch20, ch21, ch25, ch27.
+- **Harmonic functions, springs and resistors.** Absorbing walks, spring energy and voltages all reduce to Laplacian systems. This leads to effective resistance, Schur complements, spanning-tree probabilities, resistance estimation and monotonicity (including its failures). Units: ch11, ch12, ch13, ch14, ch17, ch18, and ch15 (Tutte's harmonic drawing).
+- **Random walks, conductance and Cheeger's inequality.** The mixing speed of a walk is set by $\omega_2$ (or $\nu_2$). Conductance is bounded below by $\nu_2/2$, and Cheeger gives a converse (a set with $\phi\le\sqrt{2\nu_2}$). Local clustering and the Lovàsz–Simonovits curve reuse these ideas. Units: ch10, ch16, ch20, ch21, ch22, ch25.
+- **Approximating graphs in the Loewner order.** Comparing Laplacians gives eigenvalue bounds. Expanders approximate complete graphs, and the idea reaches expander codes, constant-degree constructions, pseudo-random generators and sparsifiers. Units: ch06, ch07, ch27, ch29, ch30, ch31, ch32, ch33.
+- **Fast Laplacian solvers.** Iterative methods have costs set by eigenvalues and condition numbers (Richardson, Chebyshev, CG). Preconditioning with low-stretch trees, sampling, and recursive sparsification then give nearly-linear-time solvers. Units: ch34, ch35, ch36, ch37, ch38 (building on ch12, ch32).
+- **Planarity and geometry in the spectrum.** Planar graphs have convex-position (Tutte) drawings, a small $\lambda_2$ via disk packings and Koebe's theorem, and Colin de Verdière number 3. Eigenvector sign patterns (nodal domains) link back to these results. Units: ch15, ch24, ch25, ch26.
+- **Interlacing and real-rooted polynomials.** Interlacing bounds the extreme eigenvalue $\mu_1$ and proves Wilf's theorem. Later, interlacing families and expected characteristic polynomials show that Ramanujan graphs exist. Units: ch04, ch24, ch41, ch42, ch43, ch44, ch45.
+
+## How to read it
+- **Essential core** (the catalog's focus): ch01–ch04 (Part I), ch10 (random walks), ch11 (springs and resistor networks), ch20 (partitioning), ch21 (Cheeger) and ch23 (stochastic block model).
+- **Dependencies in the core.** ch03 uses ch02. ch04 uses the spectral theorem and Courant–Fischer (ch02). ch21 needs ch20, and ch22 needs ch21. ch23 uses Weyl's inequality (via Courant–Fischer) and a bound on the noise norm, as in ch08. ch10 uses Perron–Frobenius (ch04).
+- **Useful companions.** ch05 gives worked spectra and the test-vector technique. ch06 introduces the Loewner order that much of the later book uses. ch12 follows ch11. ch13 and ch14 build on ch12, and ch17 reuses its monotonicity result. ch16 gives an alternative route to a Cheeger-type bound.
+- **Can be skipped on a first pass** (their prerequisites are self-contained): ch07–ch09 (Cayley graphs, random-graph eigenvalues, strongly regular graphs), ch15, ch18, ch19, ch24–ch26 (nodal domains, planar graphs), ch28 (coding theory), ch31, ch39–ch40 (isomorphism testing).
+- **Chains.** The expander sequence runs ch27 → ch29 and ch27 → ch30, and ch28 feeds ch29. The sparsification and solver sequence runs ch32 → ch33, then ch34 → ch35 → ch36 → ch37, with ch38 using sparsification. ch39 → ch40 is a pair on isomorphism. The Ramanujan sequence runs ch41 → ch42 → ch43, then ch44 and ch45 (which proves the matching polynomial is real rooted).
+- **Draft status.** ch16 is a rough draft, ch37 has an empty section, ch39 is marked as needing editing, and ch45 stops inside the proof of Theorem 45.4.2.
+
+## Concepts introduced
+Some ids below name the same idea (for example expander-graph and expander); they are kept as the units give them.
+
+- [[graph-laplacian]] — ch01
+- [[quadratic-form]] — ch01
+- [[adjacency-matrix]] — ch01
+- [[eigenvector-eigenvalue]] — ch01
+- [[characteristic-polynomial]] — ch01
+- [[spectral-theorem]] — ch01
+- [[positive-semidefinite-matrix]] — ch01
+- [[fiedler-vector-algebraic-connectivity]] — ch01
+- [[walk-matrix]] — ch01
+- [[low-frequency-eigenvector]] — ch01
+- [[spectral-graph-drawing]] — ch01
+- [[eigenvalue-multiplicity]] — ch01
+- [[expander-graph]] — ch01
+- [[rayleigh-quotient]] — ch02
+- [[courant-fischer-theorem]] — ch02
+- [[orthonormal-basis]] — ch02
+- [[null-space]] — ch02
+- [[rank]] — ch02
+- [[singular-value-decomposition]] — ch02
+- [[deflation-by-induction]] — ch02
+- [[rank-one-matrix-outer-product]] — ch03
+- [[orthogonality]] — ch03
+- [[doubly-stochastic-matrix]] — ch03
+- [[hall-graph-drawing]] — ch03
+- [[perron-frobenius-theorem]] — ch04
+- [[cauchy-interlacing-theorem]] — ch04
+- [[chromatic-number]] — ch04
+- [[wilf-theorem]] — ch04
+- [[bipartite-graph]] — ch04
+- [[dilation-matrix]] — ch04
+- [[isoperimetric-ratio]] — ch05
+- [[graph-product]] — ch05
+- [[kronecker-product]] — ch05
+- [[test-vector]] — ch05
+- [[equitable-partition]] — ch05
+- [[loewner-order]] — ch06
+- [[graph-approximation]] — ch06
+- [[cauchy-schwarz-inequality]] — ch06
+- [[cayley-graph]] — ch07
+- [[paley-graph]] — ch07
+- [[quadratic-character]] — ch07
+- [[generalized-hypercube]] — ch07
+- [[chernoff-bound]] — ch07
+- [[expander]] — ch07
+- [[erdos-renyi-random-graph]] — ch08
+- [[eigenvalue-interlacing]] — ch08
+- [[norm]] — ch08
+- [[hoeffding-inequality]] — ch08
+- [[wigner-trace-method]] — ch08
+- [[significant-closed-walk]] — ch08
+- [[semicircle-law]] — ch08
+- [[strongly-regular-graph]] — ch09
+- [[projection]] — ch09
+- [[gram-matrix]] — ch09
+- [[two-distance-point-set]] — ch09
+- [[linear-independence]] — ch09
+- [[lazy-random-walk]] — ch10
+- [[normalized-adjacency-matrix]] — ch10
+- [[normalized-laplacian]] — ch10
+- [[stable-distribution]] — ch10
+- [[mixing-time]] — ch10
+- [[power-iteration]] — ch10
+- [[diffusion-matrix-exponential]] — ch10
+- [[harmonic-function]] — ch11
+- [[absorbing-random-walk]] — ch11
+- [[incidence-matrix]] — ch11
+- [[spring-energy]] — ch11
+- [[potential-flow]] — ch11
+- [[pseudoinverse]] — ch11
+- [[effective-resistance]] — ch12
+- [[effective-conductance]] — ch12
+- [[schur-complement]] — ch12
+- [[rayleigh-monotonicity]] — ch12
+- [[harmonic-vector]] — ch12
+- [[elementary-symmetric-eigenvalue-function]] — ch13
+- [[determinant]] — ch13
+- [[matrix-tree-theorem]] — ch13
+- [[leverage-score]] — ch13
+- [[johnson-lindenstrauss-lemma]] — ch14
+- [[gaussian-random-matrix]] — ch14
+- [[chi-squared-concentration]] — ch14
+- [[union-bound]] — ch14
+- [[tutte-embedding]] — ch15
+- [[k-connected-graph]] — ch15
+- [[planar-drawing]] — ch15
+- [[graph-minor]] — ch15
+- [[strictly-convex-polygon]] — ch15
+- [[harmonic-function-on-graph]] — ch15
+- [[kuratowski-theorem]] — ch15
+- [[top-k-sum-curve]] — ch16
+- [[conductance]] — ch16
+- [[markov-stochastic-matrix]] — ch16
+- [[cheeger-inequality]] — ch16
+- [[effective-spring-constant]] — ch17
+- [[nash-equilibrium]] — ch17
+- [[social-optimum]] — ch17
+- [[price-of-anarchy]] — ch17
+- [[convex-function]] — ch17
+- [[nonlinear-resistor-network]] — ch18
+- [[edge-energy-potential]] — ch18
+- [[dual-flow-energy]] — ch18
+- [[thermistor-network]] — ch18
+- [[minimum-s-t-cut]] — ch18
+- [[independent-set]] — ch19
+- [[hoffman-bound]] — ch19
+- [[hoffman-chromatic-bound]] — ch19
+- [[ramsey-graph]] — ch19
+- [[centered-vector]] — ch21
+- [[random-threshold-cut]] — ch21
+- [[local-graph-clustering]] — ch22
+- [[good-seed-vertex]] — ch22
+- [[power-means-inequality]] — ch22
+- [[stochastic-block-model]] — ch23
+- [[matrix-perturbation]] — ch23
+- [[weyl-inequality]] — ch23
+- [[davis-kahan-theorem]] — ch23
+- [[nodal-domain]] — ch24
+- [[sylvester-law-of-inertia]] — ch24
+- [[fiedler-vector]] — ch24
+- [[kissing-disk-embedding]] — ch25
+- [[koebe-embedding-theorem]] — ch25
+- [[stereographic-projection]] — ch25
+- [[brouwer-fixed-point-theorem]] — ch25
+- [[generalized-laplacian-matrix]] — ch26
+- [[colin-de-verdiere-number]] — ch26
+- [[strong-arnold-property]] — ch26
+- [[convex-polytope]] — ch26
+- [[steinitz-theorem]] — ch26
+- [[nodal-domain-theorem]] — ch26
+- [[epsilon-expander]] — ch27
+- [[epsilon-approximation]] — ch27
+- [[expander-mixing-bound]] — ch27
+- [[tanner-theorem]] — ch27
+- [[alon-boppana-bound]] — ch27
+- [[ramanujan-graph]] — ch27
+- [[null-space-kernel]] — ch28
+- [[column-space-range]] — ch28
+- [[hamming-weight]] — ch28
+- [[hamming-distance]] — ch28
+- [[minimum-distance]] — ch28
+- [[code-rate]] — ch28
+- [[linear-code]] — ch28
+- [[asymptotically-good-codes]] — ch28
+- [[gilbert-varshamov-bound]] — ch28
+- [[binary-entropy]] — ch28
+- [[reed-solomon-code]] — ch28
+- [[finite-field]] — ch28
+- [[spectral-approximation]] — ch29
+- [[bipartite-double-cover]] — ch29
+- [[column-space]] — ch29
+- [[rank-nullity]] — ch29
+- [[expander-code]] — ch29
+- [[relative-spectral-gap]] — ch30
+- [[graph-squaring]] — ch30
+- [[line-graph]] — ch30
+- [[pseudo-random-generator]] — ch31
+- [[markov-matrix]] — ch31
+- [[graph-sparsification]] — ch32
+- [[matrix-chernoff-bound]] — ch32
+- [[importance-sampling-reweighting]] — ch32
+- [[isotropic-position]] — ch33
+- [[spectral-sparsifier]] — ch33
+- [[barrier-function]] — ch33
+- [[sherman-morrison-formula]] — ch33
+- [[condition-number]] — ch34
+- [[richardson-iteration]] — ch34
+- [[polynomial-approximation-of-inverse]] — ch34
+- [[chebyshev-polynomials]] — ch34
+- [[numerical-stability]] — ch34
+- [[krylov-subspace-methods]] — ch35
+- [[matrix-norm-a-norm]] — ch35
+- [[a-orthogonality]] — ch35
+- [[conjugate-gradient]] — ch35
+- [[graph-diameter]] — ch35
+- [[chebyshev-iteration]] — ch35
+- [[preconditioner]] — ch36
+- [[a-norm-approximate-solution]] — ch36
+- [[iterative-refinement]] — ch36
+- [[stretch]] — ch36
+- [[low-stretch-spanning-tree]] — ch36
+- [[generalized-eigenvalue]] — ch36
+- [[spanning-tree-preconditioner]] — ch37
+- [[stretch-of-tree-edge]] — ch37
+- [[schur-complement-elimination]] — ch37
+- [[sparsification-by-sampling]] — ch37
+- [[heavy-tree-scaling]] — ch37
+- [[m-matrix]] — ch38
+- [[alpha-beta-pair]] — ch38
+- [[spectral-sparsification]] — ch38
+- [[graph-isomorphism]] — ch39
+- [[permutation-matrix]] — ch39
+- [[diagonalization]] — ch39
+- [[orthonormal-basis-orthogonal-matrix]] — ch39
+- [[automorphism-group]] — ch39
+- [[orbit-and-valid-partition]] — ch39
+- [[balanced-class]] — ch39
+- [[base-of-balanced-class]] — ch39
+- [[individualization-refinement]] — ch40
+- [[distinguishing-set]] — ch40
+- [[interlacing]] — ch41
+- [[real-rooted-polynomial]] — ch41
+- [[obreschkoff-theorem]] — ch41
+- [[expected-characteristic-polynomial]] — ch41
+- [[random-swap]] — ch41
+- [[finite-free-convolution]] — ch42
+- [[haar-measure]] — ch42
+- [[quadrature]] — ch42
+- [[hyperoctahedral-group]] — ch42
+- [[interlacing-family]] — ch43
+- [[common-interlacing]] — ch43
+- [[cauchy-transform]] — ch43
+- [[signed-adjacency-matrix]] — ch44
+- [[two-lift]] — ch44
+- [[matching-polynomial]] — ch44
+- [[interlacing-polynomials]] — ch44
+- [[matching]] — ch45
+- [[path-tree]] — ch45

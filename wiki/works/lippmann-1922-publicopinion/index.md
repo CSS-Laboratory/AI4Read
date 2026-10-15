@@ -1,0 +1,178 @@
+---
+id: lippmann-1922-publicopinion/index
+work: lippmann-1922-publicopinion
+type: work-map
+units: [lippmann-1922-publicopinion/ch01-introduction, lippmann-1922-publicopinion/ch02-censorship, lippmann-1922-publicopinion/ch03-contact, lippmann-1922-publicopinion/ch04-time, lippmann-1922-publicopinion/ch05-speed, lippmann-1922-publicopinion/ch06-stereotypes, lippmann-1922-publicopinion/ch07-stereotypes, lippmann-1922-publicopinion/ch08-blind, lippmann-1922-publicopinion/ch09-codes, lippmann-1922-publicopinion/ch10-detection, lippmann-1922-publicopinion/ch11-enlisting, lippmann-1922-publicopinion/ch12-self, lippmann-1922-publicopinion/ch13-transfer, lippmann-1922-publicopinion/ch14-yes, lippmann-1922-publicopinion/ch15-leaders, lippmann-1922-publicopinion/ch16-self, lippmann-1922-publicopinion/ch17-self, lippmann-1922-publicopinion/ch18-role, lippmann-1922-publicopinion/ch19-old, lippmann-1922-publicopinion/ch21-buying, lippmann-1922-publicopinion/ch22-constant, lippmann-1922-publicopinion/ch23-nature, lippmann-1922-publicopinion/ch24-news, lippmann-1922-publicopinion/ch25-entering, lippmann-1922-publicopinion/ch26-intelligence]
+---
+
+# Lippmann, W. (1922). *Public Opinion*. Harcourt, Brace. (Project Gutenberg eBook #6456.)
+
+## In one paragraph
+Lippmann argues that nobody sees the large political world directly. People act on "pictures in their heads", a pseudo-environment built from limited access to facts, stereotypes they inherit and the reports of others. Stereotypes save effort and defend our social position, but they also blind us. Leaders and symbols turn these different private pictures into a common will that can only say Yes or No. Newspapers cannot fix this, because news reports events that have become overt and recorded, and it is not the same as truth. Traditional democratic theory assumed an "omnicompetent citizen" who could judge everything. Lippmann instead proposes independent expert "intelligence" bureaus that record and make visible the unseen environment, so that decisions rest on better facts.
+
+## The path through the work
+- [[lippmann-1922-publicopinion/ch01-introduction]] — People act on mental pictures of an environment they cannot see directly, so the study of public opinion should start from the relation between those pictures and the real world.
+- [[lippmann-1922-publicopinion/ch02-censorship]] — Propaganda needs a barrier between the public and the event, so those who control access to facts can decide what picture the public acts on.
+- [[lippmann-1922-publicopinion/ch03-contact]] — Beyond censorship and secrecy, the circulation of ideas is limited by travel, trade, cost and supply, and the "social set" (the group whose approval matters most to us) plays a big part in deciding which information and sources are admissible.
+- [[lippmann-1922-publicopinion/ch04-time]] — Lippmann uses rough survey and newspaper-content figures only to make more concrete how much effort goes each day into informing people about public affairs, mainly through newspapers, and he adds that daily direct exposure to the "unseen environment" is small.
+- [[lippmann-1922-publicopinion/ch05-speed]] — Our access to the unseen environment is limited by compressed news, imprecise words, and poor conditions for attention; and because the world is vast and the messages are few, the biggest part of opinion must be constructed in the imagination (§2, §6).
+- [[lippmann-1922-publicopinion/ch06-stereotypes]] — We see only a small part of the world, and for the most part we define first and then see: we pick out what our culture has already defined and tend to perceive it in a stereotyped (ready-made, standard) form.
+- [[lippmann-1922-publicopinion/ch07-stereotypes]] — Lippmann argues that stereotypes do more than save effort: they may be a defense of our position in society, which is a further reason we so often hold to them.
+- [[lippmann-1922-publicopinion/ch08-blind]] — A stereotype saves effort and focuses energy because it hides some facts, but those blind spots can move to the centre of events and frustrate the people who rely on it.
+- [[lippmann-1922-publicopinion/ch09-codes]] — Moral codes rest on stereotyped pictures of facts, so, Lippmann argues, public opinion is mainly a moralized version of the facts (in the present state of education), and opponents who see different facts look perverse to us.
+- [[lippmann-1922-publicopinion/ch10-detection]] — Lippmann argues that stereotypes distort our pictures of space, time, numbers, causes and values, and he points to signs that help us spot these distortions.
+- [[lippmann-1922-publicopinion/ch11-enlisting]] — Distant public affairs interest more than a few people for long when they are turned into pictures that allow identification with a side; outsiders especially need a struggle with suspense.
+- [[lippmann-1922-publicopinion/ch12-self]] — "Self-interest" explains opinion only once we know which of a person's many selves, and which learned idea of its interest, is engaged, so economic position, though it limits opinion, cannot by itself say which opinion follows.
+- [[lippmann-1922-publicopinion/ch13-transfer]] — Lippmann argues that a common public will can form when a vague, emotionally charged symbol is found to which many people with different private opinions can attach the same feeling, so the differences stay hidden.
+- [[lippmann-1922-publicopinion/ch14-yes]] — Symbols have no power of their own; trusted authorities plant them in minds, and because a mass can for practical purposes only say Yes or No, a few people in organized hierarchies must present the choices.
+- [[lippmann-1922-publicopinion/ch15-leaders]] — Leaders hold their followers through shared symbols and tend to prefer policies whose costs the followers do not directly see; persuasion has become a self-conscious art, and the old democratic belief that knowledge rises spontaneously from the people can no longer be believed.
+- [[lippmann-1922-publicopinion/ch16-self]] — Democratic theory inherited the old premise that governing is a natural endowment, so that spontaneous politics works only within the ruler's direct and certain knowledge, but modern record, measurement and continuous reporting now make it feasible to bring the unseen environment into judgment (§3).
+- [[lippmann-1922-publicopinion/ch17-self]] — Lippmann argues that the American democratic ideal was built for a small, isolated, uniform community where everyone sees the same facts, and that problems arise when its picture is applied to a wide, unseen environment.
+- [[lippmann-1922-publicopinion/ch18-role]] — The less material for a common consciousness separate communities have, the more a national government's hold on them depends on force, or on the milder alternative of patronage and privilege, rather than on a voluntary system based on shared information (§6).
+- [[lippmann-1922-publicopinion/ch19-old]] — Lippmann argues that guild socialism, by moving democracy's "natural unit" from the farm township to the workshop, still gives no better way than orthodox democracy to turn self-centred opinion into social judgment, because the wider environment is known only by inference.
+- [[lippmann-1922-publicopinion/ch21-buying]] — Democratic theory assumed that good public opinion would arise spontaneously, but for an invisible environment the machinery for gathering news is technical and expensive, and readers pay for it only in a concealed way (through the prices of advertised goods), so the press must respect the buying public that advertisers want to reach.
+- [[lippmann-1922-publicopinion/ch22-constant]] — Readers tend to judge a newspaper by how it treats the part of the news they feel involved in, so papers hold readers with features beyond general news; and Lippmann argues that tracing the press's faults to "Big Business" alone is a logical error.
+- [[lippmann-1922-publicopinion/ch23-nature]] — In the first instance, news is not a mirror of social conditions but a report of events that have taken a recordable, overt shape, and so it is shaped by systems of record, press agents, editors' routines and readers' stereotypes.
+- [[lippmann-1922-publicopinion/ch24-news]] — News signals events and truth is a different thing; as social truth is organised today the press cannot supply the knowledge democratic theory demands, and Lippmann says the remedy lies deeper than the press, in social organisation built on analysis and record.
+- [[lippmann-1922-publicopinion/ch25-entering]] — Lippmann argues that experts who prepare facts for men of action, working inside organizations, are the true pioneers of a new social science, and he thinks they mark the beginning of experimental method, from which both action and science would benefit.
+- [[lippmann-1922-publicopinion/ch26-intelligence]] — Lippmann argues that permanent, independent fact-gathering bureaus, kept separate from decision-makers, can make unseen reality visible and so help self-government with its central difficulty (if his analysis is sound).
+
+## Big ideas across units
+- **People act on a pseudo-environment, not the world itself.** The idea is introduced in ch01 and is the premise of the whole book. It returns in the barriers chapters (ch02, ch03, ch05), in the democratic-theory critique (ch16, ch17) and in the remedy (ch24, ch26). The related idea of the "unseen" or "invisible" environment appears in ch04, ch16 and ch21.
+- **Access to facts is limited.** Censorship and privacy (ch02), contact, cost and social sets (ch03), limited attention time (ch04), and compressed news, vague words and poor conditions for attention (ch05) all limit what people can know. Later, weak systems of record do the same for news (ch23).
+- **Stereotypes shape what we see.** We define first and then see (ch06). Stereotypes defend our social position (ch07), have blind spots (ch08), carry moral codes (ch09) and distort space, time, number and cause (ch10). The same idea reappears in drama and personification (ch11), in newspaper routine (ch22, ch23) and in the case for expert fact-gathering (ch25).
+- **Interest and identification make opinion.** Remote affairs are made interesting by personification, a clear side and a fight (ch11). Self-interest explains little until we know which self and which idea of interest is engaged (ch12). News reaches a wide audience through personal identification (ch23), and fact-based reform is unattractive because it removes the drama (ch25).
+- **Symbols, hierarchies and leaders turn many pictures into a "common will".** Symbols can unite factions by staying vague (ch13). Trusted authorities plant them in minds, and the mass can only say Yes or No (ch14). Leaders voice existing feeling, and the costs of their policies are often hidden (ch15). Lippmann treats the "oversoul" as unnecessary (ch13, ch14).
+- **Democratic theory assumed an omnicompetent citizen in a small, self-contained world.** Lippmann traces this assumption through the democrats' premises (ch16), the township model (ch17), and force and patronage in American history (ch18). He then tests it on guild socialism (ch19), on the "democratic fallacy" (ch21) and on the "Court of Public Opinion" idea (ch24).
+- **The press reflects social organisation; it cannot replace it.** Papers are paid for indirectly through advertising and must hold constant readers (ch21, ch22). News is a report of overt events and is not truth (ch23, ch24). The quality of news indexes how well society is organised (ch24).
+- **The remedy is expert "intelligence work".** The need for experts is set out in ch01 and ch24. Experts who prepare facts before decisions are the "entering wedge" (ch25). Independent bureaus separate from decision-makers make the unseen visible (ch26).
+
+## How to read it
+- **Essential:** the catalog marks ch01 (the pseudo-environment idea), ch06–ch10 (stereotypes) and ch23 (the nature of news) as the focus. Ch06 is the base for the rest of the stereotype sequence.
+- **Dependencies:**
+  - Ch07–ch10 assume the stereotype idea from ch06.
+  - Ch11 and ch12 assume stereotypes.
+  - Ch13 assumes the pseudo-environment and stereotypes.
+  - Ch14 refers back to ch05 and ch06.
+  - Ch15 draws on stereotypes and the unseen environment.
+  - Ch17 and ch18 assume the stereotype idea.
+  - Ch19 assumes stereotypes and the inferred environment.
+  - Ch21–ch24 build on each other: advertising, the constant reader, then the nature of news, then news and truth.
+  - Ch25 and ch26 assume the earlier chapters and the idea of a controlled experiment.
+- **Can be skipped on a first pass (judgment from the material):**
+  - Ch04, because Lippmann himself says its figures are rough and allow no "elaborate deductions".
+  - Ch18 and ch19, which apply the argument to US history and to guild socialism. Skipping them still leaves the main line of argument intact.
+  - The details of ch12 on economic determinism, if you only want the media-effects thread.
+- **Suggested route for media effects:** ch01, ch02, ch06, ch11, ch13–ch15, then ch21–ch24, and finally ch26 for the proposed remedy. Ch20 (the "New Image" chapter) is not a separate unit here. It is covered in the ch21-buying unit.
+
+## Concepts introduced
+- [[pseudo-environment]] — ch01
+- [[stereotype-lippmann]] — ch01
+- [[fiction-lippmann]] — ch01
+- [[public-opinion-lippmann]] — ch01
+- [[triangular-relationship]] — ch01
+- [[public-affairs]] — ch01
+- [[symbol-consensus-union-sacree]] — ch01
+- [[propaganda]] — ch02
+- [[censorship-as-barrier]] — ch02
+- [[privacy-norms]] — ch02
+- [[source-chain-questioning]] — ch02
+- [[social-set]] — ch03
+- [[barriers-to-circulation]] — ch03
+- [[social-leaders-as-links]] — ch03
+- [[radiant-points-of-conventionality]] — ch03
+- [[opinion-leader]] — ch03
+- [[attention-budget]] — ch04
+- [[self-report-bias]] — ch04
+- [[newspaper-space-analysis]] — ch04
+- [[unseen-environment]] — ch04
+- [[words-as-currency]] — ch05
+- [[lucidity-of-mind]] — ch05
+- [[psychic-level-of-appeal]] — ch05
+- [[conditions-of-attention]] — ch05
+- [[define-first-then-see]] — ch06
+- [[economy-of-stereotypes]] — ch06
+- [[group-mind-confusion]] — ch06
+- [[stereotype-as-defense]] — ch07
+- [[stereotype-confirmation-and-revision]] — ch07
+- [[synthetic-enemy]] — ch07
+- [[blind-spot]] — ch08
+- [[current-versions-of-ideas]] — ch08
+- [[blind-automatism]] — ch08
+- [[diffusion-s-curve]] — ch08
+- [[moral-code]] — ch09
+- [[myth-vs-hypothesis]] — ch09
+- [[public-opinion-as-codified-facts]] — ch09
+- [[opponent-explanation]] — ch09
+- [[false-absolutism]] — ch10
+- [[practical-space-and-time]] — ch10
+- [[specious-present]] — ch10
+- [[casual-sample]] — ch10
+- [[faith-ladder]] — ch10
+- [[post-hoc-reasoning]] — ch10
+- [[personification]] — ch11
+- [[identification-empathy]] — ch11
+- [[fight-motif]] — ch11
+- [[realistic-romantic-formula]] — ch11
+- [[multiple-selves]] — ch12
+- [[self-interest-tautology]] — ch12
+- [[cognitive-conception-of-interest]] — ch12
+- [[economic-determinism]] — ch12
+- [[false-determinism]] — ch12
+- [[learned-instinct]] — ch12
+- [[symbol-as-truce]] — ch13
+- [[omnibus-vs-symbol]] — ch13
+- [[transfer-of-emotion]] — ch13
+- [[hierarchy-of-symbols]] — ch13
+- [[least-common-denominator-vote]] — ch13
+- [[oversoul]] — ch13
+- [[morale-lippmann]] — ch13
+- [[symbol-earmarking]] — ch14
+- [[trusted-authority-proxy]] — ch14
+- [[machine-hierarchy]] — ch14
+- [[yes-no-limit]] — ch14
+- [[symbolic-phrase-compression]] — ch14
+- [[two-visions-of-democracy]] — ch14
+- [[symbol-as-focal-point]] — ch15
+- [[incidence-of-policy]] — ch15
+- [[morale]] — ch15
+- [[manufacture-of-consent]] — ch15
+- [[realistic-opinion]] — ch16
+- [[innate-political-wisdom-premise]] — ch16
+- [[range-of-attention-premise]] — ch16
+- [[self-contained-community]] — ch17
+- [[omnicompetent-citizen]] — ch17
+- [[pre-established-harmony]] — ch17
+- [[subjective-judgment]] — ch17
+- [[guild-socialism]] — ch19
+- [[coercion-as-surd]] — ch19
+- [[natural-unit-of-government]] — ch19
+- [[functional-representation]] — ch19
+- [[invisible-environment]] — ch21
+- [[democratic-fallacy]] — ch21
+- [[self-centered-opinion]] — ch21
+- [[audit-and-objective-standards]] — ch21
+- [[buying-public]] — ch21
+- [[advertising-subsidized-press]] — ch21
+- [[constant-readers]] — ch21
+- [[reader-constancy]] — ch22
+- [[own-experience-test]] — ch22
+- [[home-town-diary]] — ch22
+- [[indirect-taxation-advertising]] — ch22
+- [[brass-check-thesis]] — ch22
+- [[news-as-overt-act]] — ch23
+- [[machinery-of-record]] — ch23
+- [[press-agent]] — ch23
+- [[personal-identification]] — ch23
+- [[news-vs-truth]] — ch24
+- [[reportable-truth]] — ch24
+- [[press-as-searchlight]] — ch24
+- [[machinery-of-knowledge]] — ch24
+- [[expert-as-fact-preparer]] — ch25
+- [[ex-post-facto-social-science]] — ch25
+- [[entering-wedge]] — ch25
+- [[blind-natural-selection-of-experts]] — ch25
+- [[intelligence-bureau]] — ch26
+- [[separation-of-investigation-and-execution]] — ch26
+- [[index-numbers-lippmann]] — ch26
+- [[expert-as-representative-of-the-unseen]] — ch26

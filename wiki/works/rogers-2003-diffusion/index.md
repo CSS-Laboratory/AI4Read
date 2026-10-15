@@ -1,0 +1,234 @@
+---
+id: rogers-2003-diffusion/index
+work: rogers-2003-diffusion
+type: work-map
+units: [rogers-2003-diffusion/ch01-elements-p1, rogers-2003-diffusion/ch01-elements-p2, rogers-2003-diffusion/ch02-history-p1, rogers-2003-diffusion/ch02-history-p2, rogers-2003-diffusion/ch02-history-p3, rogers-2003-diffusion/ch03-contributions, rogers-2003-diffusion/ch04-generation, rogers-2003-diffusion/ch05-innovation-p1, rogers-2003-diffusion/ch05-innovation-p2, rogers-2003-diffusion/ch05-innovation-p3, rogers-2003-diffusion/ch06-attributes-p1, rogers-2003-diffusion/ch06-attributes-p2, rogers-2003-diffusion/ch07-innovativeness, rogers-2003-diffusion/ch08-diffusion-p1, rogers-2003-diffusion/ch08-diffusion-p2, rogers-2003-diffusion/ch08-diffusion-p3, rogers-2003-diffusion/ch09-change-p1, rogers-2003-diffusion/ch09-change-p2, rogers-2003-diffusion/ch10-innovation, rogers-2003-diffusion/ch11-consequences-p1, rogers-2003-diffusion/ch11-consequences-p2]
+---
+
+# Rogers, E. M. (2003). *Diffusion of Innovations* (5th ed.). Free Press. ISBN 0743222091.
+
+## In one paragraph
+Rogers argues that diffusion is the communication of a new idea through channels, over time, within a social system. It is a social process, so a better idea does not spread on its merits alone. Adoption speed depends on how people perceive an innovation, on the stages of the decision process, on adopter categories, and on networks, opinion leaders and critical mass. Change agents and organizations shape the process. Rogers also criticizes the field: it has been biased toward innovations, blamed individuals instead of systems, and ignored consequences. Innovations often widen gaps between rich and poor. The book matters because it joins thousands of studies into one framework, and it links communication research to network-contagion models.
+
+## The path through the work
+- [[rogers-2003-diffusion/ch01-elements-p1]] — Diffusion is the communication of a new idea through channels, over time, within a social system, and a better idea does not spread on its merits alone.
+- [[rogers-2003-diffusion/ch01-elements-p2]] — Diffusion unfolds over time (decision stages, adopter categories, S-shaped adoption) inside a social system whose structure, norms, leaders and decision types shape who adopts, and when.
+- [[rogers-2003-diffusion/ch02-history-p1]] — Diffusion research began in separate disciplinary "invisible colleges", took its basic paradigm from the Ryan and Gross hybrid corn study (rural sociology), and later merged into one tradition, with gains and costs.
+- [[rogers-2003-diffusion/ch02-history-p2]] — In these studies of schools, doctors, family planning and news, Rogers reports that peer networks and opinion leaders play an important part in adoption, that mass media created awareness in the drug and Taichung studies, and that for news events the balance between media and personal channels depends on salience and situation.
+- [[rogers-2003-diffusion/ch02-history-p3]] — Diffusion research now spans many disciplines, Rogers identifies eight main types of diffusion study, and he ends by challenging future scholars to widen the area of digging.
+- [[rogers-2003-diffusion/ch03-contributions]] — Diffusion research is valuable and well established, but four inherited weaknesses (pro-innovation bias, individual-blame bias, the recall problem, neglect of equality) limit what it can explain, and each has proposed remedies.
+- [[rogers-2003-diffusion/ch04-generation]] — Much that influences diffusion happens before the first adopter: problem recognition, research, development and commercialization can help shape which innovation spreads and who gains from it.
+- [[rogers-2003-diffusion/ch05-innovation-p1]] — Adopting an innovation is a process over time, in five stages, in which a person reduces uncertainty, and at the implementation stage users often change the innovation itself (re-invention).
+- [[rogers-2003-diffusion/ch05-innovation-p2]] — Adopters actively reshape innovations (re-invention) and sometimes drop them later (discontinuance), and tentative evidence supports the idea that adoption is a staged process over time.
+- [[rogers-2003-diffusion/ch05-innovation-p3]] — Which communication channel is relatively more important in adoption differs by stage of the innovation-decision process and by adopter category, and later adopters have a longer decision period.
+- [[rogers-2003-diffusion/ch06-attributes-p1]] — How fast an innovation spreads is substantially explained by how potential adopters *perceive* five of its attributes (relative advantage, compatibility, complexity, trialability, observability). This part covers the framework, its measurement, relative advantage in detail, and the start of compatibility.
+- [[rogers-2003-diffusion/ch06-attributes-p2]] — People judge a new idea by how it fits their own experience, needs and perceptions, so perceived compatibility, complexity, trialability and observability help predict how fast it is adopted.
+- [[rogers-2003-diffusion/ch07-innovativeness]] — Because adoption over time usually approaches a normal curve, the mean and standard deviation of adoption time can be used to split the adopters of an innovation into five standard categories, and earlier adopters generally differ from later ones in socioeconomic, personality and communication variables.
+- [[rogers-2003-diffusion/ch08-diffusion-p1]] — Interpersonal networks are important in convincing people to adopt innovations, and opinion leaders, who are somewhat ahead of their followers but stay close to their system's norms, are important in determining how fast adoption takes off.
+- [[rogers-2003-diffusion/ch08-diffusion-p2]] — Rogers argues that adoption of innovations is shaped by interpersonal network links: connected people adopt earlier, neighbours cluster, weak ties bring new information, and interactive innovations need a critical mass.
+- [[rogers-2003-diffusion/ch08-diffusion-p3]] — For interactive innovations, adoption stays slow until a critical mass of users exists, and individuals' decisions often depend on how many others (in their own network) have adopted.
+- [[rogers-2003-diffusion/ch09-change-p1]] — Change agents link experts and clients, and their success is positively related to effort, client orientation, empathy and homophily, and campaigns can succeed if they are well designed. Yet they tend to reach the clients who need them least.
+- [[rogers-2003-diffusion/ch09-change-p2]] — Change agents succeed more when they are credible, work through opinion leaders and strengthen clients' own judgment. Diffusion systems range from expert-led (centralized) to user-led (decentralized), and each type suits different conditions.
+- [[rogers-2003-diffusion/ch10-innovation]] — Organizations adopt innovations through a five-stage process (agenda-setting, matching, redefining/restructuring, clarifying, routinizing) in which implementation is complex and does not always follow the adoption decision, and in which the innovation and the organization both usually change.
+- [[rogers-2003-diffusion/ch11-consequences-p1]] — Adopting an innovation brings consequences, desirable and undesirable, that are often indirect and unanticipated; change agents seldom predict them and usually cannot separate the undesirable from the desirable ones.
+- [[rogers-2003-diffusion/ch11-consequences-p2]] — Innovations usually widen socioeconomic gaps between early and late adopters and between the high and low in status, but special efforts by diffusion agencies can narrow or at least avoid widening them.
+
+## Big ideas across units
+- **Diffusion is a social process, not a contest of merits.** Useful innovations often spread slowly. Peer evaluation, norms and network position matter more than scientific proof. Units: ch01-elements-p1, ch01-elements-p2, ch02-history-p2, ch05-innovation-p3, ch08-diffusion-p1, ch08-diffusion-p2.
+- **Time, the S-curve and adopter categories.** Cumulative adoption is usually S-shaped. Cutting the normal curve at standard deviations gives five categories, which are used for audience segmentation. Units: ch01-elements-p2, ch02-history-p1, ch02-history-p2, ch07-innovativeness, ch08-diffusion-p1, ch08-diffusion-p2, ch08-diffusion-p3.
+- **Perceived attributes explain rate of adoption.** Perceptions of relative advantage, compatibility, complexity, trialability and observability count more than expert ratings. Units: ch01-elements-p1, ch06-attributes-p1, ch06-attributes-p2.
+- **Uncertainty, stages and channels.** The decision process (knowledge to confirmation) is a way of coping with uncertainty. Mass media matter more for knowledge and interpersonal channels for persuasion. Units: ch01-elements-p1, ch01-elements-p2, ch05-innovation-p1, ch05-innovation-p2, ch05-innovation-p3, ch02-history-p2.
+- **Re-invention: adopters reshape innovations.** Adopters are active co-constructors, which can speed adoption and sustainability. Units: ch01-elements-p1, ch02-history-p2, ch05-innovation-p1, ch05-innovation-p2, ch06-attributes-p2, ch09-change-p2, ch10-innovation.
+- **Opinion leaders, homophily/heterophily and network ties.** Similarity eases communication, but dissimilar "bridge" or weak ties carry new information. Leaders start the takeoff. Units: ch01-elements-p1, ch02-history-p1, ch02-history-p2, ch07-innovativeness, ch08-diffusion-p1, ch08-diffusion-p2, ch09-change-p2.
+- **Critical mass and thresholds.** For interactive innovations, adoption becomes self-sustaining after a critical mass. Individual thresholds help explain the S-curve. Units: ch08-diffusion-p2, ch08-diffusion-p3.
+- **Pro-innovation bias, consequences and inequality.** Research and agencies have assumed adoption is good and have neglected consequences. Innovations usually widen gaps, though special efforts can narrow them. Units: ch02-history-p1, ch03-contributions, ch04-generation, ch07-innovativeness, ch09-change-p1, ch11-consequences-p1, ch11-consequences-p2.
+
+## How to read it
+This advice is a suggestion based only on the digests' stated prerequisites and content.
+- **Essential first:** Chapter 1 (both parts) defines the four elements and the vocabulary that everything else uses. Chapters 5, 6, 7 and 8 form the core of the framework (decision process, attributes, adopter categories, networks and critical mass). Chapter 11 completes it with consequences.
+- **Dependencies:** Chapter 5 builds on Chapter 1 (and on the S-curve). Chapter 6 assumes adopter categories, the decision process and opinion leaders. Chapter 7 assumes basic diffusion terms and the normal curve. Chapter 8 assumes the five stages and adopter categories. Chapter 9 assumes the Chapter 5 stages, homophily/heterophily and opinion leaders. Chapter 10 assumes the individual decision process, adopter categories and critical mass. Chapter 11 part 2 assumes part 1. Chapter 4 assumes the S-curve and the definition of innovation (Chapters 1 and 3).
+- **Can be skimmed on a first pass:** Chapter 2 (parts 1–3) is a history of research traditions. It is useful context, and part 2 contains study evidence that Chapter 8 returns to. Chapter 3 is a critique that Chapter 11 echoes, so read it before Chapter 11 if you can. Chapter 4 (before the first adopter) and Chapter 10 (organizations) are specialized extensions.
+
+## Concepts introduced
+Some ids in the digests are near-duplicates (for example `indigenous-knowledge-system` and `indigenous-knowledge-systems`, or `sustainability` and `sustainability-routinization`). They are kept as written.
+
+- [[diffusion-definition]] — ch01-elements-p1
+- [[communication-as-convergence]] — ch01-elements-p1
+- [[uncertainty-information-rogers]] — ch01-elements-p1
+- [[Information (Shannon)]] — ch01-elements-p1
+- [[innovation]] — ch01-elements-p1
+- [[technology-hardware-software]] — ch01-elements-p1
+- [[technology-cluster]] — ch01-elements-p1
+- [[perceived-attributes]] — ch01-elements-p1
+- [[re-invention]] — ch01-elements-p1
+- [[mass-media-vs-interpersonal-channels]] — ch01-elements-p1
+- [[homophily-heterophily]] — ch01-elements-p1 (written "Homophily / heterophily" there)
+- [[critical-mass]] — ch01-elements-p1 (written "Critical mass" there)
+- [[diffusion-s-curve]] — ch01-elements-p1 (written "Diffusion S-curve" there)
+- [[opinion-leader]] — ch01-elements-p1 (written "Opinion leader" there)
+- [[innovation-decision-process]] — ch01-elements-p2
+- [[innovation-decision-period]] — ch01-elements-p2
+- [[discontinuance]] — ch01-elements-p2
+- [[innovativeness]] — ch01-elements-p2
+- [[adopter-categories]] — ch01-elements-p2
+- [[rate-of-adoption]] — ch01-elements-p2
+- [[social-system]] — ch01-elements-p2
+- [[social-structure-and-communication-structure]] — ch01-elements-p2
+- [[system-effects-and-norms]] — ch01-elements-p2
+- [[change-agent-and-aide]] — ch01-elements-p2
+- [[innovation-decision-types]] — ch01-elements-p2
+- [[consequences-of-innovation]] — ch01-elements-p2
+- [[research-tradition]] — ch02-history-p1
+- [[invisible-college]] — ch02-history-p1
+- [[diffusion-paradigm]] — ch02-history-p1
+- [[cross-tradition-citation-index]] — ch02-history-p1
+- [[stranger-simmel]] — ch02-history-p1
+- [[diffusionism]] — ch02-history-p1
+- [[participant-observation]] — ch02-history-p1
+- [[pro-innovation-bias]] — ch02-history-p1
+- [[indigenous-knowledge-system]] — ch02-history-p1
+- [[sociometric-isolate]] — ch02-history-p2
+- [[preventive-innovation]] — ch02-history-p2
+- [[kap-gap]] — ch02-history-p2
+- [[field-experiment]] — ch02-history-p2
+- [[firehouse-research]] — ch02-history-p2
+- [[news-salience]] — ch02-history-p2
+- [[parasocial-interaction]] — ch02-history-p2
+- [[news-event-diffusion]] — ch02-history-p3
+- [[maven]] — ch02-history-p3
+- [[social-marketing]] — ch02-history-p3
+- [[audience-segmentation]] — ch02-history-p3
+- [[formative-research]] — ch02-history-p3
+- [[taboo-innovation]] — ch02-history-p3
+- [[neighborhood-effect]] — ch02-history-p3
+- [[diffusion-simulation]] — ch02-history-p3
+- [[source-bias]] — ch02-history-p3
+- [[individual-blame-bias]] — ch03-contributions
+- [[system-blame]] — ch03-contributions
+- [[cause-vs-blame]] — ch03-contributions
+- [[recall-problem]] — ch03-contributions
+- [[field-experiment-diffusion]] — ch03-contributions
+- [[communication-network-analysis]] — ch03-contributions
+- [[socioeconomic-gap-widening]] — ch03-contributions
+- [[dominant-development-paradigm]] — ch03-contributions
+- [[innovation-development-process]] — ch04-generation
+- [[agenda-setting]] — ch04-generation
+- [[basic-vs-applied-research]] — ch04-generation
+- [[serendipity]] — ch04-generation
+- [[lead-users]] — ch04-generation
+- [[social-construction-of-technology]] — ch04-generation
+- [[skunkworks]] — ch04-generation
+- [[technology-transfer]] — ch04-generation
+- [[commercialization]] — ch04-generation
+- [[innovation-gatekeeping]] — ch04-generation
+- [[consensus-development]] — ch04-generation
+- [[tracer-studies]] — ch04-generation
+- [[agricultural-extension-model]] — ch04-generation
+- [[five-stages-model]] — ch05-innovation-p1
+- [[selective-exposure]] — ch05-innovation-p1
+- [[selective-perception]] — ch05-innovation-p1
+- [[three-types-of-knowledge]] — ch05-innovation-p1
+- [[cue-to-action]] — ch05-innovation-p1
+- [[vicarious-trial]] — ch05-innovation-p1
+- [[active-vs-passive-rejection]] — ch05-innovation-p1
+- [[sustainability]] — ch05-innovation-p1
+- [[tight-vs-loose-bundling]] — ch05-innovation-p2
+- [[confirmation-stage]] — ch05-innovation-p2
+- [[cognitive-dissonance]] — ch05-innovation-p2
+- [[process-vs-variance-research]] — ch05-innovation-p2
+- [[innovation-decision-stages]] — ch05-innovation-p2
+- [[hierarchy-of-effects]] — ch05-innovation-p2
+- [[stages-of-change]] — ch05-innovation-p2
+- [[communication-channel]] — ch05-innovation-p3
+- [[cosmopolite-vs-localite-channels]] — ch05-innovation-p3
+- [[near-peer-evaluation]] — ch05-innovation-p3
+- [[bass-model]] — ch05-innovation-p3
+- [[relative-advantage]] — ch06-attributes-p1
+- [[compatibility]] — ch06-attributes-p1
+- [[overadoption]] — ch06-attributes-p1
+- [[incentives-and-mandates]] — ch06-attributes-p1
+- [[innovation-negativism]] — ch06-attributes-p2
+- [[positioning-innovation]] — ch06-attributes-p2
+- [[acceptability-research]] — ch06-attributes-p2
+- [[empty-vessels-fallacy]] — ch06-attributes-p2
+- [[indigenous-knowledge-systems]] — ch06-attributes-p2
+- [[complexity-innovation]] — ch06-attributes-p2
+- [[trialability]] — ch06-attributes-p2
+- [[observability]] — ch06-attributes-p2
+- [[ideal-type]] — ch07-innovativeness
+- [[cosmopoliteness]] — ch07-innovativeness
+- [[innovativeness-needs-paradox]] — ch07-innovativeness
+- [[knowledge-gap-hypothesis]] — ch07-innovativeness
+- [[opinion-leadership]] — ch08-diffusion-p1
+- [[two-step-flow]] — ch08-diffusion-p1
+- [[magic-bullet-hypodermic-model]] — ch08-diffusion-p1
+- [[sociogram]] — ch08-diffusion-p1
+- [[clique]] — ch08-diffusion-p1
+- [[bridge-weak-ties]] — ch08-diffusion-p1
+- [[polymorphic-monomorphic-leadership]] — ch08-diffusion-p1
+- [[sociometric-method]] — ch08-diffusion-p1
+- [[viral-marketing]] — ch08-diffusion-p1
+- [[randomized-controlled-trial]] — ch08-diffusion-p1
+- [[network-interconnectedness]] — ch08-diffusion-p2
+- [[structural-equivalence]] — ch08-diffusion-p2
+- [[threshold-model]] — ch08-diffusion-p2
+- [[cluster-adoption]] — ch08-diffusion-p2
+- [[communication-proximity]] — ch08-diffusion-p2
+- [[radial-vs-interlocking-network]] — ch08-diffusion-p2
+- [[strength-of-weak-ties]] — ch08-diffusion-p2
+- [[social-learning-theory]] — ch08-diffusion-p2
+- [[reciprocal-interdependence]] — ch08-diffusion-p2
+- [[interactive-innovation]] — ch08-diffusion-p3
+- [[network-externalities]] — ch08-diffusion-p3
+- [[tragedy-of-the-commons]] — ch08-diffusion-p3
+- [[logic-of-collective-action]] — ch08-diffusion-p3
+- [[adoption-threshold]] — ch08-diffusion-p3
+- [[watching-while-being-watched]] — ch08-diffusion-p3
+- [[pluralistic-ignorance]] — ch08-diffusion-p3
+- [[turbocharger-effect]] — ch08-diffusion-p3
+- [[time-to-take-off]] — ch08-diffusion-p3
+- [[change-agent]] — ch09-change-p1
+- [[targeting]] — ch09-change-p1
+- [[tailoring]] — ch09-change-p1
+- [[effectiveness-and-cost-effectiveness]] — ch09-change-p1
+- [[change-agent-roles]] — ch09-change-p1
+- [[adoption-quality-vs-quantity]] — ch09-change-p1
+- [[empathy]] — ch09-change-p1
+- [[entertainment-education]] — ch09-change-p1
+- [[information-overload]] — ch09-change-p1
+- [[aide]] — ch09-change-p2
+- [[competence-credibility]] — ch09-change-p2
+- [[safety-credibility]] — ch09-change-p2
+- [[inauthentic-professionalism]] — ch09-change-p2
+- [[experimental-vs-exemplary-demonstration]] — ch09-change-p2
+- [[client-evaluative-ability]] — ch09-change-p2
+- [[centralized-decentralized-diffusion]] — ch09-change-p2
+- [[convergence-communication]] — ch09-change-p2
+- [[organizational-innovativeness]] — ch10-innovation
+- [[authority-innovation-decision]] — ch10-innovation
+- [[collective-innovation-decision]] — ch10-innovation
+- [[contingent-innovation-decision]] — ch10-innovation
+- [[organizational-slack]] — ch10-innovation
+- [[centralization-formalization-complexity]] — ch10-innovation
+- [[innovation-champion]] — ch10-innovation
+- [[innovation-process-organizations]] — ch10-innovation
+- [[performance-gap]] — ch10-innovation
+- [[mutual-adaptation]] — ch10-innovation
+- [[radical-innovation]] — ch10-innovation
+- [[sustainability-routinization]] — ch10-innovation
+- [[desirable-undesirable-consequences]] — ch11-consequences-p1
+- [[direct-indirect-consequences]] — ch11-consequences-p1
+- [[anticipated-unanticipated-consequences]] — ch11-consequences-p1
+- [[windfall-profits]] — ch11-consequences-p1
+- [[inseparability-of-consequences]] — ch11-consequences-p1
+- [[form-function-meaning]] — ch11-consequences-p1
+- [[cultural-relativism]] — ch11-consequences-p1
+- [[dynamic-equilibrium]] — ch11-consequences-p1
+- [[communication-effects-gap]] — ch11-consequences-p2
+- [[ups-and-downs]] — ch11-consequences-p2
+- [[gap-widening-generalizations]] — ch11-consequences-p2
+- [[ceiling-effect-strategy]] — ch11-consequences-p2
+- [[trickle-down-theory]] — ch11-consequences-p2
+- [[organizing-for-social-change]] — ch11-consequences-p2
+- [[digital-divide]] — ch11-consequences-p2
+- [[stable-dynamic-disequilibrium]] — ch11-consequences-p2

@@ -1,0 +1,234 @@
+---
+id: thaler-2015-misbehaving/index
+work: thaler-2015-misbehaving
+type: work-map
+units: [thaler-2015-misbehaving/ch01-supposedly, thaler-2015-misbehaving/ch02-endowment, thaler-2015-misbehaving/ch03-list, thaler-2015-misbehaving/ch04-value, thaler-2015-misbehaving/ch05-california, thaler-2015-misbehaving/ch06-gauntlet, thaler-2015-misbehaving/ch07-bargains, thaler-2015-misbehaving/ch08-sunk, thaler-2015-misbehaving/ch09-buckets, thaler-2015-misbehaving/ch10-at, thaler-2015-misbehaving/ch11-willpower, thaler-2015-misbehaving/ch12-planner, thaler-2015-misbehaving/interlude, thaler-2015-misbehaving/ch14-seems, thaler-2015-misbehaving/ch15-fairness, thaler-2015-misbehaving/ch16-mugs, thaler-2015-misbehaving/ch17-debate, thaler-2015-misbehaving/ch18-anomalies, thaler-2015-misbehaving/ch19-forming, thaler-2015-misbehaving/ch20-narrow, thaler-2015-misbehaving/ch21-beauty, thaler-2015-misbehaving/ch22-does, thaler-2015-misbehaving/ch23-reaction, thaler-2015-misbehaving/ch24-price, thaler-2015-misbehaving/ch25-battle, thaler-2015-misbehaving/ch26-fruit, thaler-2015-misbehaving/ch27-law, thaler-2015-misbehaving/ch28-offices, thaler-2015-misbehaving/ch29-football, thaler-2015-misbehaving/ch30-game, thaler-2015-misbehaving/ch31-save, thaler-2015-misbehaving/ch32-going, thaler-2015-misbehaving/ch33-nudging, thaler-2015-misbehaving/conclusion-next]
+---
+
+# Thaler, R. H. (2015). *Misbehaving: The Making of Behavioral Economics*. W. W. Norton. ISBN 9780393080940.
+
+## In one paragraph
+Thaler tells how behavioral economics was built, from his own point of view. Standard economics models people as "Econs", who optimize perfectly and have unbiased beliefs. Real "Humans" are swayed by "supposedly irrelevant factors" (SIFs), such as how a deal is framed, what they already own, and what they have spent. They also lack willpower and care about fairness. He builds the case in steps. First come anomalies seen in the lab and in everyday choices, then the replies to economists' objections. Then he turns to market evidence in finance, where prices can be wrong and stay wrong. The book ends with policy, where defaults, choice architecture and randomized trials help Humans choose better. The point is that economics predicts better, and gives better advice, when it models real people. Thaler expects "behavioral" to disappear as a label once all economics is as behavioral as it needs to be.
+
+## The path through the work
+- [[thaler-2015-misbehaving/ch01-supposedly]] — Standard economic theory models people as perfectly optimizing "Econs", but real Humans are swayed by factors the theory calls irrelevant, so economics needs to take these factors seriously (behavioral economics).
+- [[thaler-2015-misbehaving/ch02-endowment]] — Thaler found evidence that people value things already in their endowment (what they own) more than things that are only available to them, a pattern he tied to people feeling opportunity costs less than cash costs.
+- [[thaler-2015-misbehaving/ch03-list]] — Thaler's blackboard list of behaviours that conflict with rational-choice theory gained a framework when he read Kahneman and Tversky's argument that heuristics (rules of thumb) cause predictable errors, which are not random and so do not average out.
+- [[thaler-2015-misbehaving/ch04-value]] — Thaler learns from an early draft of prospect theory that economics needs separate descriptive models of real human choice, built on a value function over gains and losses (not levels of wealth) with diminishing sensitivity and loss aversion.
+- [[thaler-2015-misbehaving/ch05-california]] — In 1977–78 at Stanford, Thaler learned from Kahneman and Tversky that asking people hypothetical questions can yield useful evidence, was not ready to call himself primarily an experimental economist, decided to go "all in" on behavioral work, and took a job at Cornell.
+- [[thaler-2015-misbehaving/ch06-gauntlet]] — Thaler lists the standard one-line objections economists used to dismiss behavioral findings ("as if", incentives, learning, markets) and sketches his first replies.
+- [[thaler-2015-misbehaving/ch07-bargains]] — Besides the surplus from the thing bought, people also enjoy or dislike the deal itself (price versus a reference price), which Econs (the textbook-style decision makers) do not feel and sellers exploit.
+- [[thaler-2015-misbehaving/ch08-sunk]] — Humans often let money already spent and unrecoverable shape later choices, and Thaler explains this through mental accounting: an unused purchase feels like a loss, while a prepaid "investment" can make later consumption feel free.
+- [[thaler-2015-misbehaving/ch09-buckets]] — Many households and organizations treat money as sorted into labelled "buckets", so spending can depend on which bucket the money is in, which can violate the economic principle that money is fungible.
+- [[thaler-2015-misbehaving/ch10-at]] — Earlier gains or losses in a mental account change risk-taking: people gamble more with "house money" and, when behind, are especially willing to gamble when a bet offers a chance to break even.
+- [[thaler-2015-misbehaving/ch11-willpower]] — Early economists treated self-control problems as real, but after Samuelson's constant-rate discounting model, theories of saving and consumption assumed ever smarter Econs with perfect willpower, and Thaler argues we must return to modeling Humans.
+- [[thaler-2015-misbehaving/ch12-planner]] — Thaler models self-control as a conflict between a far-sighted "planner" and a present-focused "doer", where the planner can influence the doer through rewards or penalties (in the energy-bar example, costly guilt) or through rules that limit his options (pp. 71–74).
+- [[thaler-2015-misbehaving/interlude]] — Behavioral ideas such as mental accounting helped a small ski resort price better, while GM's huge promotion sold many cars but its management declined to study why it worked.
+- [[thaler-2015-misbehaving/ch14-seems]] — Ordinary people judge firms' prices and wage decisions by fairness norms tied to a reference point, and firms that break these norms risk losing long-term goodwill, even when standard theory says the action is correct.
+- [[thaler-2015-misbehaving/ch15-fairness]] — Lab games (Ultimatum, Dictator, Punishment, Prisoner's Dilemma, Public Goods) show that people are not purely selfish: they punish unfairness, and many cooperate conditionally.
+- [[thaler-2015-misbehaving/ch16-mugs]] — Thaler and colleagues built a market experiment with induced-value tokens as a control, and showed that people given coffee mugs demanded about twice what non-owners would pay, so trade volume fell far below the theory's prediction.
+- [[thaler-2015-misbehaving/ch17-debate]] — At the 1985 Chicago conference, behavioral economics got its first major public hearing in a debate with rationalist economists, and even a leading rationalist (Miller) conceded that a behavioral model best describes how firms pay dividends.
+- [[thaler-2015-misbehaving/ch18-anomalies]] — Following Kuhn's model, in which paradigms change only once experts believe there are many unexplained anomalies, Thaler used a regular journal column to document a broad list of them.
+- [[thaler-2015-misbehaving/ch19-forming]] — Thaler's attempt to get psychologists and economists working together failed, but a small, flexible fund for training young economists (the Russell Sage summer camps) was, by Thaler's account, a huge success: he says it is largely the research of its graduates that turned behavioral economics into a vibrant part of mainstream economics.
+- [[thaler-2015-misbehaving/ch20-narrow]] — People who judge risky choices one at a time, instead of as a portfolio, tend to take too little risk, and this may help explain managers' timidity, the equity premium puzzle and cab drivers' hours.
+- [[thaler-2015-misbehaving/ch21-beauty]] — Keynes's beauty contest, in which you must guess what average opinion will be, has the same structure as the guess-two-thirds-of-the-average game, and Thaler believes it remains an apt description of how financial markets work.
+- [[thaler-2015-misbehaving/ch22-does]] — Thaler and De Bondt used a psychology finding (extreme forecasts from flimsy data) to predict a new stock-market anomaly, and found that past Loser stocks later beat past Winner stocks, which the efficient market hypothesis (EMH: prices already reflect all available information) says should not happen.
+- [[thaler-2015-misbehaving/ch23-reaction]] — To save the no-free-lunch part of market efficiency, defenders had to explain the higher returns of Loser and value stocks as compensation for risk; Thaler argues that beta does not support this, and Fama and French conceded they had no theory for why their size and value "factors" are risks.
+- [[thaler-2015-misbehaving/ch24-price]] — Thaler argues that Shiller's findings, together with the 1987 crash, suggest stock prices are too variable to be "right", yet Shiller's valuation-ratio signals are too imprecise to be a sure way to beat the market.
+- [[thaler-2015-misbehaving/ch25-battle]] — Closed-end funds that trade away from their net asset value break the law of one price, and Thaler and co-authors argue that the shifting "investor sentiment" of individual (noise-trading) investors helps explain why the discounts vary; Merton Miller attacked the paper.
+- [[thaler-2015-misbehaving/ch26-fruit]] — Clear violations of the law of one price (identical assets should sell at the same price), such as 3Com/Palm and Royal Dutch/Shell, show that prices can be wrong and stay wrong, because noise traders (irrational buyers) exist and smart money (informed arbitrageurs) faces limits, so policy-makers should not assume prices are always right.
+- [[thaler-2015-misbehaving/ch27-law]] — Thaler recounts presenting "behavioral law and economics" to Chicago's law-and-economics establishment, arguing that the endowment effect undercuts the Coase theorem even when transaction costs are essentially zero, and that anger over unfair offers is another reason its predictions often fail.
+- [[thaler-2015-misbehaving/ch28-offices]] — A comic case study of how Chicago Booth's faculty assigned offices in a new building illustrates, in Thaler's telling, a possible endowment effect, the over-weighting of an easily measured number, and the anger that a ranking process with an unannounced number of bins caused (with some blame, he says, on an architect who was not told how offices would be assigned).
+- [[thaler-2015-misbehaving/ch29-football]] — NFL teams overpay for early draft picks, so Becker's idea that high stakes and competitive markets put "Econ-like" people in key jobs fails in this setting.
+- [[thaler-2015-misbehaving/ch30-game]] — Data from two TV game shows (Deal or No Deal, Golden Balls) show that prospect-theory-type behavior, path dependence and substantial cooperation (about 40–50%) in a Prisoner's Dilemma remain when stakes are very high.
+- [[thaler-2015-misbehaving/ch31-save]] — Retirement saving can be raised a lot by plan design that fits human biases (defaults, commitment now to save out of future raises), even though standard theory calls such design features irrelevant.
+- [[thaler-2015-misbehaving/ch32-going]] — Thaler tells how "libertarian paternalism" became *Nudge*: policy can reduce people's predictable errors without removing their freedom to choose, and wording and design matter.
+- [[thaler-2015-misbehaving/ch33-nudging]] — Thaler argues that governments can use behavioral science to improve policy by letting departments set the agenda, making the wanted action easy, and testing interventions with randomized trials wherever possible.
+- [[thaler-2015-misbehaving/conclusion-next]] — Thaler hopes economics becomes "evidence-based", building theory from observed behaviour of real people (Humans), and urges everyone to observe, collect data and speak up.
+
+## Big ideas across units
+- **Econs versus Humans, and supposedly irrelevant factors.** The model of optimizing, unbiased Econs is wrong as a description. Factors it calls irrelevant matter in practice. Units: ch01, ch02, ch03, ch07, ch09, ch19, ch27, ch29, ch31, ch32, conclusion.
+- **Descriptive versus normative theory, and prospect theory.** One theory cannot both guide rational choice and describe real choice. Outcomes are judged as changes from a reference point, with diminishing sensitivity and loss aversion. Units: ch04, ch05, ch10, ch30, conclusion.
+- **Loss aversion, reference points and the endowment effect.** Owning something raises its value, and losses weigh about twice as much as gains. These ideas recur in lab markets, fairness judgments, myopic risk-taking and policy design. Units: ch02, ch04, ch14, ch16, ch20, ch27, ch31.
+- **Mental accounting.** People treat money as labelled and non-fungible. This shapes how they react to deals, sunk costs, budgets, windfalls and risk, and it can also serve as a self-control tool. Units: ch07, ch08, ch09, ch10, ch11, ch12, interlude, ch17, ch20.
+- **Self-control, time inconsistency and commitment.** The history of discounting models leads to planner–doer and present bias. The same thread leads to commitment devices and Save More Tomorrow. Units: ch11, ch12, ch29, ch31.
+- **Fairness and conditional cooperation.** People punish unfairness and often cooperate, in surveys and games, and the effects persist at high stakes. These facts also undercut Coasean bargaining. Units: ch14, ch15, ch27, ch30.
+- **Prices can be wrong: the EMH, split in two.** The "price is right" and "no free lunch" parts are separated. Evidence comes from overreaction, the joint-hypothesis problem, excess volatility, the law of one price and limits to arbitrage. Units: ch17, ch18, ch21, ch22, ch23, ch24, ch25, ch26, ch29, conclusion.
+- **Evidence, replies to objections, and policy.** Thaler answers "as if", incentive, learning and market objections with experiments and field data. He then applies the findings through choice architecture, nudges and randomized trials. Units: ch06, ch16, ch18, ch30, ch31, ch32, ch33, conclusion.
+
+## How to read it
+- **Essential first.** Read ch01–ch04 for the core vocabulary: Econs and Humans, SIFs, the endowment effect, heuristics and prospect theory. Then read ch07–ch10 on mental accounting, ch16 (mugs), and ch22 and ch26 on finance. Finish with ch31–ch33, which turn the ideas into policy.
+- **Dependencies stated in the digests.**
+  - ch06 builds on ch04.
+  - ch08 builds on ch07, and ch10 on ch04's prospect theory.
+  - ch12 builds on ch11.
+  - ch19 and ch27 assume the Ultimatum and Dictator Games from ch15, and ch27 also draws on ch02 and ch16.
+  - ch30 assumes prospect theory, house money (ch10) and the Prisoner's Dilemma (ch15).
+  - ch23 follows ch22. ch24–ch26 build on the efficient-market ideas introduced in ch17 and ch21.
+  - ch29 uses limits to arbitrage and present bias.
+  - ch33 builds on ch32's nudge, and the conclusion recalls EMH, CAPM, prospect theory and the Palm/3Com story (ch26).
+- **Can be skipped or skimmed on a first pass.** The digests mark these as lighter, narrative or specialist:
+  - ch05 is a career and methods memoir.
+  - ch19 covers building the field.
+  - ch28 is described as a light anecdote, not an experiment.
+  - The interlude is a business illustration of earlier ideas.
+  - ch23–ch25 are the most technical finance detail. A reader mainly interested in policy could go from ch10 to ch14 and then ch31.
+
+## Concepts introduced
+Near-duplicate ids that the units spell differently are merged under the first form. Variants are shown in "also".
+
+- [[econ-vs-human]] — ch01 (also: [[econs]] ch05, [[econs-vs-humans]] ch08, [[humans-vs-econs]] ch32)
+- [[supposedly-irrelevant-factors]] — ch01 (also: [[supposedly-irrelevant-factor]], [[sif-supposedly-irrelevant-factor]])
+- [[constrained-optimization]] — ch01
+- [[rational expectations]] — ch01
+- [[equilibrium]] — ch01
+- [[bounded rationality / heuristics]] — ch01 (also: [[bounded-rationality-heuristics]])
+- [[behavioral-economics]] — ch01
+- [[endowment-effect]] — ch02
+- [[opportunity-cost]] — ch02
+- [[wtp-wta-gap]] — ch02
+- [[identified-vs-statistical-life]] — ch02
+- [[framing]] — ch02 (also: [[framing effect]] ch17)
+- [[systematic-bias]] — ch03
+- [[sunk-cost-fallacy]] — ch03 (also: [[sunk-cost]] interlude)
+- [[hindsight-bias]] — ch03
+- [[availability-heuristic]] — ch03
+- [[marginal reasoning]] — ch03
+- [[normative-vs-descriptive-theory]] — ch04
+- [[expected-utility-theory]] — ch04
+- [[prospect-theory]] — ch04
+- [[value-function]] — ch04
+- [[diminishing-sensitivity]] — ch04
+- [[reference-dependence]] — ch04
+- [[mental accounting, endowment effect, loss aversion]] — ch04 (also: [[mental-accounting]] ch08, [[loss-aversion]] ch05)
+- [[weber-fechner-law]] — ch04
+- [[hypothetical-questions-method]] — ch05
+- [[induced-value-methodology]] — ch05 (also: [[induced-value-method]] ch16)
+- [[experimental-economics]] — ch05
+- [[slow-hunch]] — ch05
+- [[as-if-defense]] — ch06
+- [[well-defined-preferences]] — ch06
+- [[preference-reversal]] — ch06
+- [[incentives-objection]] — ch06
+- [[learning-objection]] — ch06
+- [[invisible-handwave]] — ch06
+- [[acquisition-utility]] — ch07
+- [[transaction-utility]] — ch07
+- [[reference-price]] — ch07
+- [[payment-depreciation]] — ch08
+- [[escalation-of-commitment]] — ch08
+- [[fungibility]] — ch09 (also: [[fungibility-of-money]] ch10, [[fungibility of money]] ch17)
+- [[mental-account-hierarchy]] — ch09
+- [[house-money-effect]] — ch10
+- [[break-even-effect]] — ch10
+- [[reference-point]] — ch10 (also: [[reference point / status quo]] ch14)
+- [[prospect-theory-risk-seeking-in-losses]] — ch10
+- [[exponential-discounting]] — ch11
+- [[discounted-utility-model]] — ch11
+- [[present-bias]] — ch11
+- [[time-inconsistency]] — ch11
+- [[theory-induced-blindness]] — ch11
+- [[marginal-propensity-to-consume]] — ch11
+- [[permanent-income-and-life-cycle-hypotheses]] — ch11
+- [[behavioral-life-cycle-hypothesis]] — ch11
+- [[commitment-strategy]] — ch12 (also: [[commitment-planner-doer]] interlude)
+- [[planner-doer-model]] — ch12
+- [[principal-agent-model]] — ch12
+- [[hyperbolic-discounting]] — ch12
+- [[sophisticated-vs-naive]] — ch12
+- [[hot-cold-empathy-gap]] — ch12
+- [[secret-sale]] — interlude
+- [[overconfidence]] — interlude
+- [[fairness norms]] — ch14
+- [[sticky wages]] — ch14
+- [[nominal vs real wage cut]] — ch14
+- [[reputation / long-term goodwill]] — ch14
+- [[social dilemma]] — ch15
+- [[ultimatum-game]] — ch15
+- [[dictator-game]] — ch15
+- [[public-goods-game]] — ch15
+- [[public-good]] — ch15
+- [[conditional-cooperators]] — ch15
+- [[free riding]] — ch15
+- [[costly-punishment]] — ch15
+- [[status-quo-bias]] — ch16
+- [[reservation-price]] — ch16
+- [[efficient market hypothesis (weak/semi-strong/strong)]] — ch17 (also: [[efficient-market-hypothesis]] ch23)
+- [[irrelevance theorem]] — ch17
+- [[dividend puzzle]] — ch17
+- [[anomaly]] — ch18
+- [[paradigm-shift]] — ch18
+- [[confirmation-bias]] — ch18
+- [[pari-mutuel-betting]] — ch18
+- [[calendar-effects]] — ch18
+- [[behavioral-game-theory]] — ch19
+- [[anomaly-mining]] — ch19
+- [[reciprocity]] — ch19
+- [[gift-exchange-in-employment]] — ch19
+- [[incomplete-contracts]] — ch19
+- [[narrow-framing]] — ch20
+- [[inside-outside-view]] — ch20
+- [[dumb-principal]] — ch20 (also: [[dumb-principal-problem]] ch29)
+- [[equity-premium-puzzle]] — ch20
+- [[myopic-loss-aversion]] — ch20
+- [[target-income]] — ch20
+- [[price is right]] — ch21
+- [[no free lunch]] — ch21
+- [[beauty contest / higher-order beliefs]] — ch21
+- [[Nash equilibrium]] — ch21
+- [[animal spirits]] — ch21
+- [[level-k thinking]] — ch21
+- [[limits to arbitrage]] — ch21 (also: [[limits-to-arbitrage]] ch26)
+- [[overreaction]] — ch22
+- [[regression toward the mean]] — ch22
+- [[value investing / P/E effect]] — ch22
+- [[no-trade theorem]] — ch22
+- [[joint-hypothesis-problem]] — ch23
+- [[capm-and-beta]] — ch23 (also: [[CAPM & beta]] conclusion)
+- [[diversification-and-covariance]] — ch23
+- [[mispricing-predictable-drift]] — ch23
+- [[value-and-size-premium]] — ch23
+- [[multifactor-model]] — ch23
+- [[excess volatility]] — ch24
+- [[present value of dividends]] — ch24
+- [[mean reversion of valuation ratios]] — ch24
+- [[law-of-one-price]] — ch25
+- [[arbitrage]] — ch25
+- [[closed-end-fund-puzzle]] — ch25
+- [[net-asset-value]] — ch25
+- [[noise traders]] — ch25 (also: [[noise-traders]] ch26)
+- [[investor-sentiment]] — ch25
+- [[stub-value]] — ch26
+- [[equity-carve-out]] — ch26
+- [[short-selling]] — ch26
+- [[finance-fruit-flies]] — ch26
+- [[coase-theorem]] — ch27
+- [[transaction-costs]] — ch27
+- [[three-bounds]] — ch27
+- [[consumer-sovereignty]] — ch27
+- [[anti-antipaternalism]] — ch27
+- [[nudge]] — ch27 (also: [[nudge-choice-architecture]] conclusion)
+- [[overweighting of salient numbers]] — ch28
+- [[choice architecture]] — ch28 (also: [[choice-architecture]] ch32)
+- [[process transparency]] — ch28
+- [[becker-conjecture]] — ch29
+- [[surplus-value]] — ch29
+- [[winners-curse]] — ch29
+- [[false-consensus-effect]] — ch29
+- [[peter-principle]] — ch29
+- [[path-dependence]] — ch30
+- [[big-peanuts-hypothesis]] — ch30
+- [[cheap-talk]] — ch30
+- [[default-effect-automatic-enrollment]] — ch31 (also: [[default-options]] ch32)
+- [[inertia]] — ch31
+- [[save-more-tomorrow]] — ch31
+- [[libertarian-paternalism]] — ch31
+- [[prompted-choice]] — ch32
+- [[asymmetric-paternalism]] — ch32
+- [[randomized-controlled-trial]] — ch33 (also: [[randomized-control-trial]] conclusion)
+- [[make-it-easy-unfreezing]] — ch33
+- [[social-norm-message]] — ch33
+- [[one-click-intervention]] — ch33
+- [[transparent-nudge]] — ch33
+- [[evidence-based-economics]] — conclusion
+- [[confirmation-bias-overconfidence]] — conclusion

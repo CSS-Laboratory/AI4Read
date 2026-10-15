@@ -1,0 +1,202 @@
+---
+id: sarkka-2023-bayesianfiltering/index
+work: sarkka-2023-bayesianfiltering
+type: work-map
+units: [sarkka-2023-bayesianfiltering/ch01-symbols, sarkka-2023-bayesianfiltering/ch01-are, sarkka-2023-bayesianfiltering/ch02-bayesian, sarkka-2023-bayesianfiltering/ch03-batch, sarkka-2023-bayesianfiltering/ch04-discretization, sarkka-2023-bayesianfiltering/ch05-modeling, sarkka-2023-bayesianfiltering/ch06-bayesian, sarkka-2023-bayesianfiltering/ch07-extended, sarkka-2023-bayesianfiltering/ch08-general, sarkka-2023-bayesianfiltering/ch09-gaussian, sarkka-2023-bayesianfiltering/ch10-posterior, sarkka-2023-bayesianfiltering/ch11-particle, sarkka-2023-bayesianfiltering/ch12-bayesian, sarkka-2023-bayesianfiltering/ch13-extended, sarkka-2023-bayesianfiltering/ch14-general, sarkka-2023-bayesianfiltering/ch15-particle, sarkka-2023-bayesianfiltering/ch16-parameter, sarkka-2023-bayesianfiltering/ch17-epilogue, sarkka-2023-bayesianfiltering/ch19-56ptappendixadditional, sarkka-2023-bayesianfiltering/ch20-list, sarkka-2023-bayesianfiltering/ch21-list]
+---
+
+# Särkkä, S., & Svensson, L. (2023). *Bayesian Filtering and Smoothing* (2nd ed.). Cambridge University Press. ISBN 9781108926645.
+
+## In one paragraph
+The book shows how to estimate a hidden, changing state from noisy measurements. It computes only marginal posterior distributions (filtering, prediction, smoothing), so the work per time step stays constant. Filtering is a recursion of two steps, predict and update. For linear Gaussian models this recursion has an exact closed form, the Kalman filter, and the Rauch–Tung–Striebel (RTS) smoother is its backward counterpart. For non-linear models the book builds approximations. The extended and iterated Kalman filters use Taylor expansion. Sigma-point filters use moment matching. Statistical linear regression and posterior linearization give a unified view of these. Particle filters and smoothers use weighted samples when Gaussian approximations fail. The book also covers model building, parameter estimation with filter output, and advice on choosing a method. It links control-style state estimation to Bayesian inference.
+
+## The path through the work
+- [[sarkka-2023-bayesianfiltering/ch01-symbols]] — This front-matter reference fixes the book's typography, matrix and probability conventions, a long symbol list in which many letters carry several context-dependent meanings, and a list of abbreviations covering filters, smoothers, sampling methods, models and general terms.
+- [[sarkka-2023-bayesianfiltering/ch01-are]] — Bayesian filtering and smoothing estimate a hidden, time-varying state from noisy measurements. They do this by computing marginal posterior distributions, with a constant amount of work per time step, instead of the intractable full joint posterior.
+- [[sarkka-2023-bayesianfiltering/ch02-bayesian]] — Treat unknown parameters as random variables, compute their posterior with Bayes' rule, pick a point estimate by minimising expected loss, and use numerical methods when the integrals cannot be solved.
+- [[sarkka-2023-bayesianfiltering/ch03-batch]] — Treating each posterior as the next prior gives recursive Bayesian estimation, which matches the batch answer and, once a dynamic model is added, leads to the Kalman filter.
+- [[sarkka-2023-bayesianfiltering/ch04-discretization]] — Physical tracking models are written as white-noise-driven differential equations in continuous time; to use them in discrete-time filters, they are discretized exactly if linear and time-invariant, and approximately (Euler–Maruyama, linearization, fast sampling) if non-linear.
+- [[sarkka-2023-bayesianfiltering/ch05-modeling]] — A probabilistic state space model needs a measurement model $p(\mathbf{y}_k \mid \mathbf{x}_k)$ as well as dynamics, and many estimation problems (outliers, biases, regression, AR models, discrete HMMs) can be written in this form.
+- [[sarkka-2023-bayesianfiltering/ch06-bayesian]] — In a Markovian state space model, the filtering distribution follows from a predict step (Chapman–Kolmogorov) and an update step (Bayes' rule), and these steps are solvable in closed form for linear Gaussian models (the Kalman filter) and for discrete-state hidden Markov models (HMMs).
+- [[sarkka-2023-bayesianfiltering/ch07-extended]] — The extended Kalman filter (EKF) handles non-linear models by replacing the model functions with Taylor-series approximations around the current mean, so that the Kalman filter equations can be reused with Gaussian approximations.
+- [[sarkka-2023-bayesianfiltering/ch08-general]] — Gaussian filters assume the filtering density is Gaussian and compute its mean and covariance as Gaussian integrals. The Gauss–Hermite, cubature and unscented Kalman filters (GHKF, CKF, UKF) are obtained by computing those integrals with different numerical rules.
+- [[sarkka-2023-bayesianfiltering/ch09-gaussian]] — The Gaussian filters of the book (EKF, IEKF, UKF, CKF, GHKF, …) can arguably all be seen as an affine, additive-Gaussian-noise approximation of the models followed by the exact Kalman filter, so the main difference between them is how that "enabling" linearization is chosen.
+- [[sarkka-2023-bayesianfiltering/ch10-posterior]] — Linearize the measurement model with respect to the (iteratively improved) approximate posterior instead of the prior, then do an ordinary Kalman update; this gives the iterated posterior linearization filters.
+- [[sarkka-2023-bayesianfiltering/ch11-particle]] — A particle filter approximates the Bayesian filtering distribution by weighted random samples that are propagated, reweighted by the new measurement, and resampled when the weights degenerate.
+- [[sarkka-2023-bayesianfiltering/ch12-bayesian]] — A smoother runs backward from a filter's output and conditions each state on all measurements; for linear Gaussian models it has a closed form (the RTS smoother), and for discrete states it becomes sums over states; the Viterbi algorithm is a separate method that finds the most probable whole state path (the MAP trajectory).
+- [[sarkka-2023-bayesianfiltering/ch13-extended]] — Replacing the prediction step of the RTS smoother by a Taylor-series approximation gives a smoother for nonlinear models, and relinearizing the whole trajectory repeatedly turns it into a Gauss–Newton method for the MAP trajectory.
+- [[sarkka-2023-bayesianfiltering/ch14-general]] — Gaussian smoothers keep the RTS backward recursion and compute the moments it needs by moment matching or sigma-point integration. They are equivalent to statistically linearizing the dynamic model around the filtering density, and relinearizing iteratively around the smoothing density gives the iterated posterior linearization smoother (IPLS).
+- [[sarkka-2023-bayesianfiltering/ch15-particle]] — Particle smoothers approximate smoothing distributions by Monte Carlo; because the plain SIR smoother tends to be degenerate, other smoothers (backward simulation, reweighting) reuse the stored filter particles, and backward simulation is stated to be much less degenerate.
+- [[sarkka-2023-bayesianfiltering/ch16-parameter]] — The parameters of a state space model can be estimated by running a filter for each fixed parameter value to get the marginal likelihood or the "energy function" (the unnormalised negative log-posterior), then using it in optimization or MCMC (EM instead works with smoother output).
+- [[sarkka-2023-bayesianfiltering/ch17-epilogue]] — For non-linear state estimation, start with the extended Kalman filter and its smoother (EKF/ERTSS), move to sigma-point methods if these work badly, or to particle methods if Gaussian approximations fail, and use Monte Carlo sampling as a last resort.
+- [[sarkka-2023-bayesianfiltering/ch19-56ptappendixadditional]] — This appendix holds the supporting derivations (Gaussian conditioning, matrix identities, affine SDE solution, model discretizations, SLR moment formulas, and parameter derivatives of filter energy functions) that the main chapters use without proof.
+- [[sarkka-2023-bayesianfiltering/ch20-list]] — This is an index of 73 numbered worked examples across chapters 4–16, giving each title and its page in the book.
+- [[sarkka-2023-bayesianfiltering/ch21-list]] — This unit is a page-numbered index of the book's numbered theorems, corollaries and algorithms, from Chapter 4 to Appendix A, and, judging from the titles, it can serve as a partial map of the book's methods.
+
+## Big ideas across units
+- **Recursive Bayesian updating with constant work per step.** Marginals replace the growing full joint posterior. The posterior becomes the next prior, then predict and update. Units: [[sarkka-2023-bayesianfiltering/ch01-are]], [[sarkka-2023-bayesianfiltering/ch03-batch]], [[sarkka-2023-bayesianfiltering/ch06-bayesian]], [[sarkka-2023-bayesianfiltering/ch11-particle]].
+- **The Kalman filter as the exact linear Gaussian answer and the base for everything else.** It is introduced in a regression setting, derived from the Bayesian filter, then reused inside the non-linear filters, the smoothers and parameter estimation. Units: [[sarkka-2023-bayesianfiltering/ch03-batch]], [[sarkka-2023-bayesianfiltering/ch06-bayesian]], [[sarkka-2023-bayesianfiltering/ch07-extended]], [[sarkka-2023-bayesianfiltering/ch09-gaussian]], [[sarkka-2023-bayesianfiltering/ch12-bayesian]], [[sarkka-2023-bayesianfiltering/ch16-parameter]].
+- **Gaussian approximation of non-linear models through different "enabling" linearizations.** The approaches are Taylor expansion (EKF), moment matching with sigma points (GHKF/CKF/UKF), statistical linear regression and posterior linearization. Chapter 9 casts them as variants of one scheme. Units: [[sarkka-2023-bayesianfiltering/ch07-extended]], [[sarkka-2023-bayesianfiltering/ch08-general]], [[sarkka-2023-bayesianfiltering/ch09-gaussian]], [[sarkka-2023-bayesianfiltering/ch10-posterior]], [[sarkka-2023-bayesianfiltering/ch14-general]].
+- **Iterated relinearization as Gauss–Newton towards the MAP estimate.** Units: [[sarkka-2023-bayesianfiltering/ch07-extended]], [[sarkka-2023-bayesianfiltering/ch10-posterior]], [[sarkka-2023-bayesianfiltering/ch13-extended]], [[sarkka-2023-bayesianfiltering/ch14-general]].
+- **Smoothing: using later measurements too.** It is previewed in a regression setting, then given exactly (RTS, Viterbi), approximately for non-linear models, and by Monte Carlo. Units: [[sarkka-2023-bayesianfiltering/ch03-batch]], [[sarkka-2023-bayesianfiltering/ch12-bayesian]], [[sarkka-2023-bayesianfiltering/ch13-extended]], [[sarkka-2023-bayesianfiltering/ch14-general]], [[sarkka-2023-bayesianfiltering/ch15-particle]].
+- **Monte Carlo and particles when Gaussian approximations fail.** Importance sampling leads to SIS, resampling, bootstrap and Rao–Blackwellized filters, then to particle smoothers. Degeneracy is a recurring problem. Units: [[sarkka-2023-bayesianfiltering/ch02-bayesian]], [[sarkka-2023-bayesianfiltering/ch11-particle]], [[sarkka-2023-bayesianfiltering/ch15-particle]], [[sarkka-2023-bayesianfiltering/ch16-parameter]].
+- **Building the state space model.** Continuous-time dynamics are discretized, measurement models are chosen (including outlier models), and regression, bias, AR and HMM problems are recast as state space models. Units: [[sarkka-2023-bayesianfiltering/ch04-discretization]], [[sarkka-2023-bayesianfiltering/ch05-modeling]], [[sarkka-2023-bayesianfiltering/ch06-bayesian]].
+- **Parameter estimation from filter and smoother by-products.** A filter gives the marginal likelihood and energy function for optimization or MCMC, and smoothers feed EM. Units: [[sarkka-2023-bayesianfiltering/ch01-are]], [[sarkka-2023-bayesianfiltering/ch16-parameter]], [[sarkka-2023-bayesianfiltering/ch19-56ptappendixadditional]].
+
+## How to read it
+- **Essential (the catalog's focus chapters):** [[sarkka-2023-bayesianfiltering/ch01-are]], [[sarkka-2023-bayesianfiltering/ch03-batch]], [[sarkka-2023-bayesianfiltering/ch06-bayesian]], [[sarkka-2023-bayesianfiltering/ch07-extended]], [[sarkka-2023-bayesianfiltering/ch11-particle]], [[sarkka-2023-bayesianfiltering/ch12-bayesian]].
+- **Dependencies:**
+  - Chapter 6 builds on the recursive idea in Chapter 3.
+  - Chapter 7 needs the Kalman filter from Chapter 6.
+  - Chapters 8–10 need Chapter 7. Chapter 9 also needs the sigma-point integration of Chapter 8, and Chapter 10 needs Chapters 8–9.
+  - Chapter 11 needs the filtering equations (Chapter 6) and importance sampling (introduced in Chapter 2).
+  - Chapter 12 needs the Kalman filter.
+  - Chapter 13 needs Chapters 7 and 12.
+  - Chapter 14 needs Chapters 8–10, 12 and 13.
+  - Chapter 15 needs Chapters 11 and 12.
+  - Chapter 16 needs Kalman filters, smoothers, Gaussian filters and particle filters.
+  - Chapter 17 draws on all the methods.
+- **Can be skipped or skimmed on a first pass:**
+  - [[sarkka-2023-bayesianfiltering/ch01-symbols]], [[sarkka-2023-bayesianfiltering/ch20-list]] and [[sarkka-2023-bayesianfiltering/ch21-list]] are lookup tables.
+  - [[sarkka-2023-bayesianfiltering/ch19-56ptappendixadditional]] holds proofs and formulas the chapters cite.
+  - [[sarkka-2023-bayesianfiltering/ch02-bayesian]] can be skimmed if Bayesian inference is familiar.
+  - [[sarkka-2023-bayesianfiltering/ch04-discretization]] and [[sarkka-2023-bayesianfiltering/ch05-modeling]] can be read when you need the models.
+  - The deeper Gaussian-filter chapters ([[sarkka-2023-bayesianfiltering/ch08-general]] to [[sarkka-2023-bayesianfiltering/ch10-posterior]]) and the smoother extensions ([[sarkka-2023-bayesianfiltering/ch13-extended]] to [[sarkka-2023-bayesianfiltering/ch15-particle]]) are not in the catalog's focus list, apart from Chapter 12.
+- [[sarkka-2023-bayesianfiltering/ch17-epilogue]] is a short guide to choosing a method and works well as a wrap-up.
+
+## Concepts introduced
+- [[covariance]] — ch01-symbols
+- [[cross-covariance]] — ch01-symbols
+- [[matrix-square-root]] — ch01-symbols
+- [[proportionality-notation]] — ch01-symbols
+- [[state]] — ch01-symbols
+- [[state-space-model]] — ch01-symbols
+- [[kalman-filter]] — ch01-symbols
+- [[kalman-gain]] — ch01-symbols
+- [[innovation]] — ch01-symbols
+- [[disturbance-and-noise]] — ch01-symbols
+- [[sigma-point]] — ch01-symbols
+- [[bayesian-filtering]] — ch01-are
+- [[bayesian-smoothing]] — ch01-are
+- [[prediction-distribution]] — ch01-are
+- [[probabilistic-state-space-model]] — ch01-are
+- [[markov-sequence]] — ch01-are
+- [[full-joint-posterior]] — ch01-are
+- [[rts-smoother]] — ch01-are
+- [[parameter-marginal-posterior]] — ch01-are
+- [[data-association]] — ch01-are
+- [[bayesian-inference]] — ch02-bayesian
+- [[maximum-likelihood]] — ch02-bayesian
+- [[prior-distribution]] — ch02-bayesian
+- [[measurement-model]] — ch02-bayesian
+- [[posterior-distribution]] — ch02-bayesian
+- [[predictive-posterior]] — ch02-bayesian
+- [[loss-function]] — ch02-bayesian
+- [[map-mmse-estimates]] — ch02-bayesian
+- [[monte-carlo-integration]] — ch02-bayesian
+- [[importance-sampling]] — ch02-bayesian
+- [[batch-bayesian-estimation]] — ch03-batch
+- [[recursive-bayesian-estimation]] — ch03-batch
+- [[optimal-prediction]] — ch03-batch
+- [[chapman-kolmogorov-equation]] — ch03-batch
+- [[linearization]] — ch04-discretization
+- [[discretization]] — ch04-discretization
+- [[spectral-density-white-noise]] — ch04-discretization
+- [[matrix-exponential-discretization]] — ch04-discretization
+- [[wiener-velocity-model]] — ch04-discretization
+- [[euler-maruyama-method]] — ch04-discretization
+- [[singular-process-noise]] — ch04-discretization
+- [[lyapunov-differential-equation]] — ch04-discretization
+- [[additive-noise-approximation]] — ch04-discretization
+- [[fast-sampling]] — ch04-discretization
+- [[robustness]] — ch05-modeling
+- [[heavy-tailed-noise]] — ch05-modeling
+- [[clutter-mixture-model]] — ch05-modeling
+- [[state-augmentation]] — ch05-modeling
+- [[measurements-as-inputs]] — ch05-modeling
+- [[hidden-markov-model]] — ch05-modeling
+- [[autoregressive-model]] — ch05-modeling
+- [[bayesian-filtering-equations]] — ch06-bayesian
+- [[markov-property]] — ch06-bayesian
+- [[observer]] — ch06-bayesian
+- [[stationary-kalman-filter]] — ch06-bayesian
+- [[affine-kalman-filter]] — ch06-bayesian
+- [[extended-kalman-filter]] — ch07-extended
+- [[taylor-gaussian-approximation]] — ch07-extended
+- [[second-order-ekf]] — ch07-extended
+- [[iterated-ekf]] — ch07-extended
+- [[gauss-newton-method]] — ch07-extended
+- [[map-estimate]] — ch07-extended
+- [[levenberg-marquardt]] — ch07-extended
+- [[automatic-differentiation]] — ch07-extended
+- [[moment-matching]] — ch08-general
+- [[gaussian-filter-adf]] — ch08-general
+- [[sigma-points]] — ch08-general
+- [[gauss-hermite-cubature]] — ch08-general
+- [[spherical-cubature-rule]] — ch08-general
+- [[unscented-transform]] — ch08-general
+- [[curse-of-dimensionality-quadrature]] — ch08-general
+- [[enabling-approximation]] — ch09-gaussian
+- [[statistical-linearization]] — ch09-gaussian
+- [[statistical-linear-regression]] — ch09-gaussian
+- [[moment-matching-gaussian-filter]] — ch09-gaussian
+- [[sigma-point-method]] — ch09-gaussian
+- [[conditional-moments-slr]] — ch09-gaussian
+- [[monte-carlo-kalman-filter]] — ch09-gaussian
+- [[generalized-slr]] — ch10-posterior
+- [[posterior-linearization]] — ch10-posterior
+- [[iterated-posterior-linearization]] — ch10-posterior
+- [[iterated-posterior-linearization-filter]] — ch10-posterior
+- [[iterated-extended-kalman-filter]] — ch10-posterior
+- [[kl-divergence-optimality-of-slr]] — ch10-posterior
+- [[monte-carlo-approximation]] — ch11-particle
+- [[sequential-importance-sampling]] — ch11-particle
+- [[degeneracy-problem]] — ch11-particle
+- [[resampling]] — ch11-particle
+- [[effective-sample-size]] — ch11-particle
+- [[particle-filter]] — ch11-particle
+- [[optimal-importance-distribution]] — ch11-particle
+- [[bootstrap-filter]] — ch11-particle
+- [[sample-impoverishment]] — ch11-particle
+- [[auxiliary-particle-filter]] — ch11-particle
+- [[rao-blackwellization]] — ch11-particle
+- [[forward-backward-smoother]] — ch12-bayesian
+- [[two-filter-smoother]] — ch12-bayesian
+- [[map-trajectory]] — ch12-bayesian
+- [[viterbi-algorithm]] — ch12-bayesian
+- [[extended-rts-smoother]] — ch13-extended
+- [[iterated-extended-rts-smoother]] — ch13-extended
+- [[map-trajectory-estimate]] — ch13-extended
+- [[levenberg-marquardt-and-line-search]] — ch13-extended
+- [[gaussian-rts-smoother]] — ch14-general
+- [[cross-covariance-D]] — ch14-general
+- [[iterated-posterior-linearization-smoother]] — ch14-general
+- [[particle-smoother]] — ch15-particle
+- [[sir-particle-smoother]] — ch15-particle
+- [[particle-degeneracy]] — ch15-particle
+- [[backward-simulation-smoother]] — ch15-particle
+- [[reweighting-particle-smoother]] — ch15-particle
+- [[rejection-sampling]] — ch15-particle
+- [[rao-blackwellized-particle-smoother]] — ch15-particle
+- [[kims-approximation]] — ch15-particle
+- [[state-estimation-smoothing]] — ch15-particle
+- [[observer-state-estimator]] — ch16-parameter
+- [[marginal-likelihood]] — ch16-parameter
+- [[prediction-error-decomposition]] — ch16-parameter
+- [[energy-function]] — ch16-parameter
+- [[map-ml-estimation]] — ch16-parameter
+- [[laplace-approximation]] — ch16-parameter
+- [[metropolis-hastings]] — ch16-parameter
+- [[em-algorithm]] — ch16-parameter
+- [[fishers-identity]] — ch16-parameter
+- [[rao-blackwellization-of-parameters]] — ch16-parameter
+- [[particle-mcmc]] — ch16-parameter
+- [[sigma-point-methods]] — ch17-epilogue
+- [[multiple-model-methods]] — ch17-epilogue
+- [[observability]] — ch17-epilogue
+- [[controllability]] — ch17-epilogue
+- [[gaussian-conditioning]] — ch19-56ptappendixadditional
+- [[matrix-inversion-lemma]] — ch19-56ptappendixadditional
+- [[cholesky-factor]] — ch19-56ptappendixadditional
+- [[affine-sde-solution]] — ch19-56ptappendixadditional
+- [[sensitivity-equations]] — ch19-56ptappendixadditional

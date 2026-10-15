@@ -1,0 +1,295 @@
+---
+id: kahneman-2011-thinking/index
+work: kahneman-2011-thinking
+type: work-map
+units: [kahneman-2011-thinking/ch00-introduction, kahneman-2011-thinking/ch01-characters, kahneman-2011-thinking/ch02-attention, kahneman-2011-thinking/ch03-lazy, kahneman-2011-thinking/ch04-associative, kahneman-2011-thinking/ch05-cognitive, kahneman-2011-thinking/ch06-norms, kahneman-2011-thinking/ch07-machine, kahneman-2011-thinking/ch08-judgments, kahneman-2011-thinking/ch09-answering, kahneman-2011-thinking/ch10-law, kahneman-2011-thinking/ch11-anchors, kahneman-2011-thinking/ch12-science, kahneman-2011-thinking/ch13-availability, kahneman-2011-thinking/ch14-tom, kahneman-2011-thinking/ch15-linda, kahneman-2011-thinking/ch16-causes, kahneman-2011-thinking/ch17-regression, kahneman-2011-thinking/ch18-taming, kahneman-2011-thinking/ch19-illusion, kahneman-2011-thinking/ch20-illusion, kahneman-2011-thinking/ch21-intuitions, kahneman-2011-thinking/ch22-expert, kahneman-2011-thinking/ch23-outside, kahneman-2011-thinking/ch24-engine, kahneman-2011-thinking/ch25-bernoulli, kahneman-2011-thinking/ch26-prospect, kahneman-2011-thinking/ch27-endowment, kahneman-2011-thinking/ch28-bad, kahneman-2011-thinking/ch29-fourfold, kahneman-2011-thinking/ch30-rare, kahneman-2011-thinking/ch31-risk, kahneman-2011-thinking/ch32-keeping, kahneman-2011-thinking/ch33-reversals, kahneman-2011-thinking/ch34-frames, kahneman-2011-thinking/ch35-two, kahneman-2011-thinking/ch36-life, kahneman-2011-thinking/ch37-experienced, kahneman-2011-thinking/ch38-thinking, kahneman-2011-thinking/conclusions, kahneman-2011-thinking/appa-judgment, kahneman-2011-thinking/appb-choices, kahneman-2011-thinking/ch39-footnotes]
+---
+
+# Kahneman, D. (2011). *Thinking, Fast and Slow*. Farrar, Straus and Giroux, 1st ed., 499 pp.
+
+## In one paragraph
+Kahneman argues that human judgment and choice contain predictable errors. These come from how the mind is built, not mainly from emotion. He uses two "characters": a fast, automatic System 1 and a slow, effortful, often lazy System 2. System 1 builds coherent stories from whatever information is at hand. When a question is hard, it answers an easier one instead. This explains biases in probability, prediction and confidence. The same ideas lead to prospect theory: people value gains and losses from a reference point, and they weight probabilities unevenly. Kahneman also separates the experiencing self from the remembering self, which decides. He ends by asking how people, nudges and organizations can reduce the damage. Better vocabulary for errors is one tool.
+
+## The path through the work
+- [[kahneman-2011-thinking/ch00-introduction]] — People's judgments and choices can contain predictable errors (biases), many of which Kahneman and Tversky linked to the mind's mental shortcuts (heuristics), and a richer vocabulary for these errors may help us notice them and, in at least some cases, limit the damage.
+- [[kahneman-2011-thinking/ch01-characters]] — Kahneman introduces two "characters" of the mind, a fast automatic System 1 and a slow effortful System 2, as useful fictions for describing how intuition, effort, error and self-control interact.
+- [[kahneman-2011-thinking/ch02-attention]] — Effortful System 2 thinking uses a limited, measurable supply of mental effort, which pupil size tracks, and, under a "law of least effort", people tend to gravitate to the least demanding way of reaching a goal.
+- [[kahneman-2011-thinking/ch03-lazy]] — Slow, effortful thinking (System 2) and self-control seem to draw on one limited effort budget, and people often accept an intuitive answer without checking it.
+- [[kahneman-2011-thinking/ch04-associative]] — System 1 works by associative activation: an idea triggers many linked ideas, feelings and bodily reactions, so unnoticed primes (cues that make related ideas easier to evoke) can change what you think, feel and do.
+- [[kahneman-2011-thinking/ch05-cognitive]] — System 1 keeps a "dial" of cognitive ease, and many unrelated causes (clear font, repetition, good mood, priming) move it in the same way, so we can mistake ease for familiarity, truth, liking and coherence.
+- [[kahneman-2011-thinking/ch06-norms]] — System 1 automatically keeps a model of what is normal and instantly builds causal and intentional stories, and we are prone to apply causal thinking where statistical thinking is needed.
+- [[kahneman-2011-thinking/ch07-machine]] — System 1 quickly builds the best story it can from whatever information is active, hides ambiguity and doubt, and so jumps to conclusions (WYSIATI: what you see is all there is).
+- [[kahneman-2011-thinking/ch08-judgments]] — System 1 continuously computes basic assessments, matches intensities across dimensions and over-computes ("mental shotgun"), so an easier assessment can readily stand in for a harder question.
+- [[kahneman-2011-thinking/ch09-answering]] — When a hard question has no quick answer, System 1 answers a related easier question instead, and you may not notice the swap.
+- [[kahneman-2011-thinking/ch10-law]] — Small samples produce extreme results more often than large ones, but our mind is not adequately sensitive to sample size and is quick to seek causes for what is only chance (pdf 109, 112, 116).
+- [[kahneman-2011-thinking/ch11-anchors]] — Considering a number before estimating an unknown quantity pulls the estimate toward that number, through two mechanisms: deliberate but insufficient adjustment (System 2) and automatic priming (System 1).
+- [[kahneman-2011-thinking/ch12-science]] — When people judge how common something is, they often report how easily examples come to mind, and this fluency can outweigh the number or content of the examples; the effect is weaker when System 2 is more engaged and is no longer found when the fluency is given a spurious explanation.
+- [[kahneman-2011-thinking/ch13-availability]] — Judgments of risk are shaped by what comes easily and vividly to mind, so media-driven "availability cascades" can distort public policy, and Kahneman argues that policy should still respect public fear.
+- [[kahneman-2011-thinking/ch14-tom]] — Asked how probable something is, people often answer how similar it is to a stereotype, and so ignore base rates and the quality of the evidence.
+- [[kahneman-2011-thinking/ch15-linda]] — People often rate a more detailed, more plausible story (feminist bank teller) as more probable than a broader event that contains it (bank teller), in part because intuition judges by coherence and a lazy System 2 often fails to check the logic.
+- [[kahneman-2011-thinking/ch16-causes]] — People readily use base rates that fit a causal story about the individual case, and tend to underweight or neglect purely statistical facts about a group; but even compelling causal statistics do not change long-held beliefs.
+- [[kahneman-2011-thinking/ch17-regression]] — When two measures are imperfectly correlated, extreme results tend to be followed by less extreme ones, and this needs a statistical explanation, not a causal story.
+- [[kahneman-2011-thinking/ch18-taming]] — Intuitive predictions match the extremeness of the evidence and ignore regression to the mean, so they should be pulled back toward the average in proportion to how weak the evidence is.
+- [[kahneman-2011-thinking/ch19-illusion]] — Tidy stories about the past make us feel we understand it, but they hide luck and the events that did not happen, so we overrate how predictable the world is.
+- [[kahneman-2011-thinking/ch20-illusion]] — Subjective confidence is a feeling produced by a coherent story, so people stay sure of predictions (soldiers, stocks, politics) that the evidence shows to be little better than chance, or even worse.
+- [[kahneman-2011-thinking/ch21-intuitions]] — In uncertain ("low-validity") environments, simple formulas match or beat expert judgment, so intuition should be used only after objective information has been collected and scored in a disciplined way.
+- [[kahneman-2011-thinking/ch22-expert]] — Expert intuition is likely to be valid when the environment is regular enough to be predictable and the expert has had enough practice with good feedback; the expert's own confidence is not a reliable guide.
+- [[kahneman-2011-thinking/ch23-outside]] — Forecasts built from the details of one's own project (the inside view) tend to be too optimistic. Starting from the statistics of similar past projects (the outside view) gives a better indication of the realistic range when the reference class is well chosen, but people tend to ignore those statistics.
+- [[kahneman-2011-thinking/ch24-engine]] — Optimism, helped by WYSIATI, competition neglect and social pressure to look confident, can sometimes lead people and firms to take risks they would avoid if they knew the odds; it helps action and resilience, and a premortem is a partial remedy (pdf 248, 256–257).
+- [[kahneman-2011-thinking/ch25-bernoulli]] — Bernoulli's utility-of-wealth theory explains risk aversion but wrongly judges outcomes by final wealth rather than by change from a reference point, a flaw that, Kahneman suggests, survived for so long because of "theory-induced blindness."
+- [[kahneman-2011-thinking/ch26-prospect]] — Bernoulli's utility-of-wealth model lacks a reference point; prospect theory adds it, so outcomes are valued as gains and losses, with diminishing sensitivity and loss aversion.
+- [[kahneman-2011-thinking/ch27-endowment]] — People often demand more for a good they own and use than they would pay for it, because losses from a reference point weigh more than equal gains, so choices depend on the status quo and not only on the final state.
+- [[kahneman-2011-thinking/ch28-bad]] — Losses loom larger than gains, as part of a broad "bad is stronger than good" pattern, and this one idea predicts surprising behavior in sport, bargaining, reform, fairness judgments and law.
+- [[kahneman-2011-thinking/ch29-fourfold]] — People weight outcomes by "decision weights" that are not their probabilities (small chances are overweighted, near-certainty is underweighted), and combined with gain/loss thinking this produces four typical attitudes to risk.
+- [[kahneman-2011-thinking/ch30-rare]] — A rare event is often overestimated and overweighted when it gets focused attention (through vividness, concrete format or explicit description), and, when it is not overweighted, neglected.
+- [[kahneman-2011-thinking/ch31-risk]] — Humans tend to decide each risky choice separately (narrow framing), which together with loss aversion is costly; a broad frame, such as a risk policy, is the remedy Kahneman proposes.
+- [[kahneman-2011-thinking/ch32-keeping]] — People keep emotional "scores" in their heads (mental accounts, regret, responsibility), and these scores push them into costly choices that a purely rational agent would not make.
+- [[kahneman-2011-thinking/ch33-reversals]] — People can judge the same options differently when they see them one at a time than when they see them together, so their single-evaluation judgments may not be consistent with principles they endorse when they compare the options.
+- [[kahneman-2011-thinking/ch34-frames]] — Logically equivalent descriptions of a choice can produce different decisions, because System 1 reacts to words and not to the underlying reality, so preferences are often attached to frames and not to states of the world.
+- [[kahneman-2011-thinking/ch35-two]] — Our memory of a painful episode tends to follow the peak and the end and to neglect duration, so choices guided by memory can conflict with what was actually experienced.
+- [[kahneman-2011-thinking/ch36-life]] — We judge whole lives, and we choose whether to repeat experiences, by the story we remember (its peaks and its ending), while the length of the experience is largely ignored.
+- [[kahneman-2011-thinking/ch37-experienced]] — Well-being can be measured by how people feel moment to moment (the experiencing self), and this differs from how satisfied they say they are with life (the remembering self).
+- [[kahneman-2011-thinking/ch38-thinking]] — When people judge their life or predict their happiness, they often use a quick substitute (mood, a salient thought, one aspect such as climate), so "nothing in life is as important as you think it is when you are thinking about it" (pdf 393).
+- [[kahneman-2011-thinking/conclusions]] — Kahneman revisits his three distinctions (two selves, Econs vs Humans, two systems) and argues that Humans, who are not irrational but often err, can be helped by nudges and other well-designed policies and institutions, and by organizational routines and a richer vocabulary for criticism.
+- [[kahneman-2011-thinking/appa-judgment]] — People judge probabilities and predict values with three shortcuts (representativeness, availability, anchoring) that are usually useful but sometimes cause systematic, predictable errors.
+- [[kahneman-2011-thinking/appb-choices]] — People value gains and losses from a reference point and give probabilities nonlinear weights, so the way a problem is framed can change their choice, which breaks the rational-choice rule of invariance.
+- [[kahneman-2011-thinking/ch39-footnotes]] — These pages hold no argument, only footnote text: a bare numeric note, a repeated cross-reference to part 4, and two origin notes for reprinted articles.
+
+## Big ideas across units
+- **Two systems, and a lazy System 2.** System 1 is fast and automatic. System 2 is slow and effortful, draws on a limited effort budget, and often endorses intuition without checking. Units: ch00-introduction, ch01-characters, ch02-attention, ch03-lazy, ch04-associative, ch05-cognitive, ch14-tom, ch15-linda, ch34-frames, conclusions.
+- **Substitution: answering an easier question.** Heuristics work by replacing a hard question with an easier one, such as resemblance, ease of recall, an anchor or a current mood. Units: ch00-introduction, ch08-judgments, ch09-answering, ch11-anchors, ch12-science, ch14-tom, ch18-taming, ch33-reversals, ch38-thinking, appa-judgment.
+- **Coherence over evidence (WYSIATI).** System 1 builds a story from the active ideas, and confidence tracks the story's coherence, not the quality or quantity of the evidence. Units: ch07-machine, ch09-answering, ch19-illusion, ch20-illusion, ch22-expert, ch24-engine, ch33-reversals.
+- **Poor statistical intuition.** People neglect sample size, base rates and regression to the mean, and prefer causal stories. The corrections are statistical: baselines, the outside view and regressive prediction. Units: ch06-norms, ch10-law, ch14-tom, ch16-causes, ch17-regression, ch18-taming, ch23-outside, appa-judgment.
+- **Overconfidence and when to trust intuition.** Hindsight and the illusion of validity inflate confidence. Simple formulas often beat experts. Expert intuition is trustworthy only in regular environments with good feedback. Optimism drives risk taking. Units: ch19-illusion, ch20-illusion, ch21-intuitions, ch22-expert, ch23-outside, ch24-engine.
+- **Reference points, loss aversion and decision weights.** Value attaches to gains and losses from a reference point, losses loom larger, and probabilities are weighted unevenly. This produces the endowment effect, the fourfold pattern and the effects of rare events. Units: ch25-bernoulli, ch26-prospect, ch27-endowment, ch28-bad, ch29-fourfold, ch30-rare, appb-choices.
+- **Frames, broad vs narrow, and joint vs single evaluation.** The same options judged narrowly, singly or under different wording yield different choices. Broader frames and comparison serve rationality better. Units: ch15-linda, ch31-risk, ch32-keeping, ch33-reversals, ch34-frames, appb-choices, conclusions.
+- **Two selves.** Memory follows the peak and the end and neglects duration, so the remembering self decides at the experiencing self's expense. Experienced well-being differs from life evaluation. Units: ch00-introduction, ch35-two, ch36-life, ch37-experienced, ch38-thinking, conclusions.
+
+## How to read it
+- **Essential.** Start with ch00-introduction and ch01-characters, which set the System 1 / System 2 vocabulary that later chapters assume. The catalog's focus is the heuristics-and-biases chapters (small numbers, anchors, availability, Tom W, Linda, regression and the chapters near them) and the choices chapters. In Part IV these are ch25-bernoulli, ch26-prospect, ch29-fourfold and ch34-frames. For a first pass, ch09-answering (substitution) and ch07-machine (WYSIATI) are also core ideas.
+- **Read the priming material critically.** The catalog warns that several priming studies cited in Part I have failed to replicate. Treat ch04-associative with that in mind. The digest itself says the effects are "robust but not necessarily large".
+- **Dependencies.**
+  - ch02-attention needs ch01-characters.
+  - ch14-tom and ch16-causes use base rates and System 1/2 from earlier chapters.
+  - ch18-taming builds directly on ch17-regression.
+  - ch19-illusion needs regression, WYSIATI and the halo effect.
+  - ch20-illusion needs the correlation coefficient, base rates and WYSIATI.
+  - ch22-expert uses the illusion of validity, substitution and Meehl's result from ch21-intuitions.
+  - ch26-prospect needs ch25-bernoulli, and ch27-endowment needs ch26-prospect.
+  - ch28-bad uses the reference-point idea from ch26-prospect.
+  - ch29-fourfold needs expected value and gains vs. losses, and ch30-rare needs the decision-weight idea from prospect theory.
+  - ch32-keeping needs loss aversion and the fourfold pattern (mentioned, not explained there).
+  - ch36-life, ch37-experienced and ch38-thinking depend on the experiencing/remembering self from ch35-two. ch36-life refers back to the cold-hand experiment.
+  - conclusions draws on the whole book.
+- **Lower priority on a first pass.** ch39-footnotes contains only provenance notes, no argument. The two appendices reprint the original papers. The catalog says the book is an on-ramp to those papers, so read appa-judgment and appb-choices after the main text, or in place of it if you want the originals. Within the main text, ch02-attention, ch03-lazy and ch06-norms are more detailed on how System 1 and System 2 work than the later argument needs.
+
+## Concepts introduced
+Variants of the same concept (different spelling or hyphenation) are merged under the id of first appearance. Where one is merged, the other form is shown in parentheses.
+
+- [[bias]] — ch00-introduction
+- [[heuristic]] — ch00-introduction
+- [[representativeness / availability / anchoring]] — ch00-introduction (also [[representativeness-availability-anchoring]])
+- [[halo effect]] — ch00-introduction (also [[halo-effect]])
+- [[affect heuristic]] — ch00-introduction (also [[affect-heuristic]])
+- [[attribute substitution]] — ch00-introduction (also [[attribute-substitution]])
+- [[expert intuition as recognition]] — ch00-introduction (related: [[intuition-as-recognition]], ch22-expert)
+- [[system 1 and system 2]] — ch00-introduction (also [[system-1-system-2]], ch03-lazy)
+- [[prospect theory]] — ch00-introduction (also [[prospect-theory]])
+- [[framing effect]] — ch00-introduction (also [[framing-effect]])
+- [[experiencing vs remembering self]] — ch00-introduction (also [[experiencing-vs-remembering-self]], [[experiencing-self-vs-remembering-self]])
+- [[system-1]] — ch01-characters
+- [[system-2]] — ch01-characters
+- [[attention-budget]] — ch01-characters
+- [[cognitive-illusion]] — ch01-characters
+- [[self-control-conflict]] — ch01-characters
+- [[mental-effort]] — ch02-attention
+- [[cognitive-pupillometry]] — ch02-attention
+- [[law-of-least-effort]] — ch02-attention
+- [[task-set-and-executive-control]] — ch02-attention
+- [[bounded-rationality]] — ch02-attention
+- [[ego-depletion]] — ch03-lazy
+- [[cognitive-load]] — ch03-lazy
+- [[flow]] — ch03-lazy
+- [[cognitive-reflection-test]] — ch03-lazy
+- [[delay-of-gratification]] — ch03-lazy
+- [[rationality-vs-intelligence]] — ch03-lazy
+- [[associative-activation]] — ch04-associative
+- [[associative-coherence]] — ch04-associative
+- [[associative-memory]] — ch04-associative
+- [[priming-effect]] — ch04-associative (also [[priming]], ch11-anchors)
+- [[ideomotor-effect]] — ch04-associative
+- [[embodied-cognition]] — ch04-associative
+- [[cognitive-ease]] — ch05-cognitive
+- [[cognitive-strain]] — ch05-cognitive
+- [[illusion-of-truth]] — ch05-cognitive
+- [[mere-exposure-effect]] — ch05-cognitive
+- [[remote-association-test]] — ch05-cognitive
+- [[norm-theory]] — ch06-norms
+- [[surprise]] — ch06-norms
+- [[category-norms]] — ch06-norms
+- [[automatic-causal-search]] — ch06-norms
+- [[illusion-of-causality]] — ch06-norms
+- [[intentional-causality]] — ch06-norms
+- [[statistical-thinking]] — ch06-norms
+- [[wysiati]] — ch07-machine (also written [[WYSIATI]])
+- [[suppression-of-ambiguity]] — ch07-machine
+- [[bias-to-believe]] — ch07-machine
+- [[confirmation-bias]] — ch07-machine
+- [[decorrelate-error]] — ch07-machine
+- [[overconfidence]] — ch07-machine
+- [[base-rate-neglect]] — ch07-machine
+- [[basic-assessment]] — ch08-judgments
+- [[prototype-and-sum-like-variables]] — ch08-judgments (related: [[sum-like-variable]], ch15-linda)
+- [[intensity-matching]] — ch08-judgments
+- [[mental-shotgun]] — ch08-judgments
+- [[substitution]] — ch09-answering
+- [[target-question]] — ch09-answering
+- [[heuristic-question]] — ch09-answering
+- [[anchoring-effect]] — ch11-anchors
+- [[adjust-and-anchor-heuristic]] — ch11-anchors
+- [[anchoring-index]] — ch11-anchors
+- [[availability-heuristic]] — ch12-science
+- [[fluency-of-retrieval]] — ch12-science
+- [[unexplained-unavailability]] — ch12-science
+- [[debiasing]] — ch12-science
+- [[availability-cascade]] — ch13-availability
+- [[probability-neglect]] — ch13-availability
+- [[risk-as-measurement-choice]] — ch13-availability
+- [[base-rate]] — ch14-tom
+- [[bayes-rule]] — ch14-tom
+- [[diagnosticity]] — ch14-tom
+- [[conjunction-fallacy]] — ch15-linda
+- [[joint-vs-single-evaluation]] — ch15-linda (also [[single-vs-joint-evaluation]], ch33-reversals)
+- [[sum-like-variable]] — ch15-linda
+- [[less-is-more-effect]] — ch15-linda
+- [[frequency-representation]] — ch15-linda
+- [[plausibility-vs-probability]] — ch15-linda
+- [[statistical-base-rate]] — ch16-causes
+- [[causal-base-rate]] — ch16-causes
+- [[bayesian-inference]] — ch16-causes
+- [[stereotype]] — ch16-causes
+- [[system-1-causal-thinking]] — ch16-causes
+- [[diffusion-of-responsibility]] — ch16-causes
+- [[regression-to-the-mean]] — ch17-regression (also [[regression-toward-the-mean]], appa-judgment)
+- [[talent-plus-luck]] — ch17-regression
+- [[correlation-coefficient]] — ch17-regression
+- [[causal-bias]] — ch17-regression
+- [[control-group]] — ch17-regression
+- [[regressive-prediction]] — ch17-regression
+- [[base-rate-baseline]] — ch18-taming
+- [[correlation-as-shared-factors]] — ch18-taming
+- [[law-of-small-numbers]] — ch18-taming (the topic of ch10-law, which lists no concept links)
+- [[bias-variance-trade-off]] — ch18-taming
+- [[narrative-fallacy]] — ch19-illusion
+- [[illusion-of-understanding]] — ch19-illusion
+- [[hindsight-bias]] — ch19-illusion
+- [[outcome-bias]] — ch19-illusion
+- [[risk-aversion]] — ch19-illusion (also [[risk aversion]])
+- [[illusion-of-validity]] — ch20-illusion
+- [[illusion-of-skill]] — ch20-illusion
+- [[confidence-by-coherence]] — ch20-illusion
+- [[persistence-test-of-skill]] — ch20-illusion
+- [[hindsight-illusion]] — ch20-illusion
+- [[hedgehog-vs-fox]] — ch20-illusion
+- [[algorithm-vs-expert-judgment]] — ch21-intuitions
+- [[low-validity-environment]] — ch21-intuitions
+- [[broken-leg-rule]] — ch21-intuitions
+- [[equal-weighting-formula]] — ch21-intuitions
+- [[recognition-primed-decision]] — ch22-expert
+- [[intuition-as-recognition]] — ch22-expert
+- [[valid-environment-and-practice]] — ch22-expert
+- [[zero-validity-environment]] — ch22-expert
+- [[wicked-environment]] — ch22-expert
+- [[feedback-quality]] — ch22-expert
+- [[adversarial-collaboration]] — ch22-expert
+- [[inside-view]] — ch23-outside
+- [[outside-view]] — ch23-outside
+- [[planning-fallacy]] — ch23-outside
+- [[baseline-prediction]] — ch23-outside
+- [[reference-class-forecasting]] — ch23-outside
+- [[irrational-perseverance]] — ch23-outside
+- [[sunk-cost-fallacy]] — ch23-outside
+- [[unknown-unknowns]] — ch23-outside
+- [[optimistic-bias]] — ch23-outside
+- [[competition-neglect]] — ch24-engine
+- [[excess-entry]] — ch24-engine
+- [[above-average-effect]] — ch24-engine
+- [[illusion-of-control]] — ch24-engine
+- [[premortem]] — ch24-engine
+- [[expected utility]] — ch25-bernoulli (also [[expected-utility]])
+- [[utility function]] — ch25-bernoulli (also [[utility-function]])
+- [[reference dependence]] — ch25-bernoulli (also [[reference-dependence]])
+- [[expected value]] — ch25-bernoulli
+- [[diminishing marginal utility]] — ch25-bernoulli
+- [[psychophysics]] — ch25-bernoulli
+- [[theory-induced blindness]] — ch25-bernoulli (also [[theory-induced-blindness]])
+- [[econs-and-humans]] — ch25-bernoulli (also [[econs-vs-humans]], ch34-frames)
+- [[loss-aversion]] — ch26-prospect (also written [[loss aversion]])
+- [[diminishing-sensitivity]] — ch26-prospect
+- [[risk-seeking]] — ch26-prospect
+- [[regret-and-disappointment]] — ch26-prospect
+- [[preference-relation]] — ch27-endowment
+- [[endowment-effect]] — ch27-endowment
+- [[status-quo-bias]] — ch27-endowment
+- [[held-for-use-vs-exchange]] — ch27-endowment
+- [[negativity-dominance]] — ch28-bad
+- [[dual-entitlement]] — ch28-bad
+- [[altruistic-punishment]] — ch28-bad
+- [[probability weighting]] — ch29-fourfold
+- [[decision-weight]] — ch29-fourfold (also [[decision weight]])
+- [[possibility-effect]] — ch29-fourfold (also [[possibility effect]])
+- [[certainty-effect]] — ch29-fourfold (also [[certainty effect]])
+- [[fourfold-pattern]] — ch29-fourfold
+- [[independence axiom]] — ch29-fourfold
+- [[denominator neglect]] — ch30-rare
+- [[choice from experience]] — ch30-rare
+- [[narrow-framing]] — ch31-risk
+- [[broad-framing]] — ch31-risk
+- [[risk-policy]] — ch31-risk
+- [[mental-accounts]] — ch32-keeping (also [[mental-accounting]], ch34-frames and appb-choices)
+- [[disposition-effect]] — ch32-keeping
+- [[agency-problem]] — ch32-keeping
+- [[regret]] — ch32-keeping
+- [[default-option]] — ch32-keeping (also [[default-effect]], ch34-frames)
+- [[taboo-tradeoff]] — ch32-keeping
+- [[precautionary-principle]] — ch32-keeping
+- [[preference-reversal]] — ch33-reversals
+- [[evaluability-hypothesis]] — ch33-reversals
+- [[reference-class-coherence]] — ch33-reversals
+- [[reality-bound-preferences]] — ch34-frames
+- [[neuroeconomics]] — ch34-frames
+- [[experienced-utility]] — ch35-two
+- [[decision-utility]] — ch35-two
+- [[hedonimeter-total]] — ch35-two
+- [[peak-end-rule]] — ch35-two
+- [[duration-neglect]] — ch35-two
+- [[remembering-self]] — ch36-life
+- [[experiencing-self]] — ch36-life
+- [[prototype-substitution]] — ch36-life
+- [[experienced-well-being]] — ch37-experienced
+- [[experience-sampling]] — ch37-experienced
+- [[day-reconstruction-method]] — ch37-experienced
+- [[u-index]] — ch37-experienced
+- [[life-evaluation]] — ch37-experienced
+- [[satiation-level-of-income]] — ch37-experienced
+- [[affective-forecasting]] — ch38-thinking
+- [[focusing-illusion]] — ch38-thinking
+- [[adaptation-as-attention-withdrawal]] — ch38-thinking
+- [[miswanting]] — ch38-thinking
+- [[duration-weighted-wellbeing]] — conclusions
+- [[rationality-as-coherence]] — conclusions
+- [[libertarian-paternalism]] — conclusions
+- [[choice-architecture]] — conclusions
+- [[premortem-and-reference-class-forecasting]] — conclusions
+- [[insensitivity-to-sample-size]] — appa-judgment
+- [[gambler's-fallacy]] — appa-judgment
+- [[conservatism]] — appa-judgment
+- [[illusory-correlation]] — appa-judgment
+- [[conjunctive-disjunctive-bias]] — appa-judgment
+- [[calibration]] — appa-judgment
+- [[subjective expected utility]] — appa-judgment
+- [[invariance]] — appb-choices
+- [[dominance-principle]] — appb-choices
+- [[pseudo-certainty-effect]] — appb-choices
+- [[cost-loss-discrepancy]] — appb-choices
+- [[experience-vs-decision-value]] — appb-choices

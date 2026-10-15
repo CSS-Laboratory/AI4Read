@@ -1,0 +1,190 @@
+---
+id: strogatz-2024-nonlinear/index
+work: strogatz-2024-nonlinear
+type: work-map
+units: [strogatz-2024-nonlinear/ch01-overview, strogatz-2024-nonlinear/ch02-flows, strogatz-2024-nonlinear/ch03-bifurcations-p1, strogatz-2024-nonlinear/ch03-bifurcations-p2, strogatz-2024-nonlinear/ch04-flows, strogatz-2024-nonlinear/ch05-linear, strogatz-2024-nonlinear/ch06-phase-p1, strogatz-2024-nonlinear/ch06-phase-p2, strogatz-2024-nonlinear/ch07-limit-p1, strogatz-2024-nonlinear/ch07-limit-p2, strogatz-2024-nonlinear/ch08-bifurcations-p1, strogatz-2024-nonlinear/ch08-bifurcations-p2, strogatz-2024-nonlinear/ch08-bifurcations-p3, strogatz-2024-nonlinear/ch09-lorenz-p1, strogatz-2024-nonlinear/ch09-lorenz-p2, strogatz-2024-nonlinear/ch10-one-p1, strogatz-2024-nonlinear/ch10-one-p2, strogatz-2024-nonlinear/ch11-fractals, strogatz-2024-nonlinear/ch12-strange]
+---
+
+# Strogatz, S. H. (2024). *Nonlinear Dynamics and Chaos: With Applications to Physics, Biology, Chemistry, and Engineering* (3rd ed.). Chapman & Hall/CRC Press. (2nd ed. 2015 is equally usable.)
+
+## In one paragraph
+Strogatz teaches how to understand systems that change in time by drawing their trajectories instead of solving their equations. The book climbs in dimension. On the line there are only fixed points. On the circle and in the plane, oscillations and limit cycles appear. In three or more dimensions, or in simple one-dimensional maps, chaos and strange attractors appear. A parameter change can create, destroy or exchange these long-term states; these changes are bifurcations. Through them the book builds the language of stability, thresholds, hysteresis, synchronization and universality. Examples come from many sciences: lasers, insect outbreaks, chemical clocks, Josephson junctions and fluids. This language is the basis of most tipping-point arguments.
+
+## The path through the work
+- [[strogatz-2024-nonlinear/ch01-overview]] — Dynamics studies how systems change in time; it is organised by the number of variables and by linear versus nonlinear structure, and chaos and fractals appear in the nonlinear, three-or-more-variable part.
+- [[strogatz-2024-nonlinear/ch02-flows]] — A one-dimensional system $\dot x=f(x)$ can be understood qualitatively from the graph of $f$: trajectories run monotonically to fixed points or to $\pm\infty$, so stability can be read off geometrically, and oscillation is impossible.
+- [[strogatz-2024-nonlinear/ch03-bifurcations-p1]] — In a one-dimensional flow, changing a parameter can create, destroy or swap the stability of fixed points, and three normal forms (saddle-node, transcritical, pitchfork) capture these changes.
+- [[strogatz-2024-nonlinear/ch03-bifurcations-p2]] — A small symmetry-breaking term turns a pitchfork bifurcation into a "cusp catastrophe" with possible sudden jumps, and a simple budworm model of insect outbreaks shows the same cusp structure, with a threshold and hysteresis.
+- [[strogatz-2024-nonlinear/ch04-flows]] — A first-order flow on a circle can oscillate, and the nonuniform oscillator $\dot\theta=\omega-a\sin\theta$ appears in pendulums, fireflies and Josephson junctions, with a saddle-node bifurcation ending the oscillation.
+- [[strogatz-2024-nonlinear/ch05-linear]] — The phase portrait of a 2D linear system $\dot{\mathbf x}=A\mathbf x$ is fixed by the eigenvalues and eigenvectors of $A$; since the eigenvalues depend only on the trace $\tau$ and determinant $\Delta$, one $(\Delta,\tau)$ diagram shows the type and stability of the fixed points (stars and degenerate nodes share a borderline).
+- [[strogatz-2024-nonlinear/ch06-phase-p1]] — Near a fixed point of a 2-D system, the Jacobian's eigenvalues give the local picture, except in marginal cases such as centers, which conservation or reversibility can protect.
+- [[strogatz-2024-nonlinear/ch06-phase-p2]] — The index of a closed curve (the net number of counterclockwise turns of the vector field along it) equals the sum of the indices of the enclosed fixed points, so a closed orbit must enclose fixed points whose indices sum to +1.
+- [[strogatz-2024-nonlinear/ch07-limit-p1]] — A limit cycle is an isolated closed orbit that only nonlinear systems can have; in the plane we have tests that rule such orbits out, theorems that prove they exist, and a large-μ approximation for the van der Pol cycle.
+- [[strogatz-2024-nonlinear/ch07-limit-p2]] — For oscillators that are small perturbations of $\ddot x+x=0$, a plain power series in $\varepsilon$ breaks down at long times, but two-timing (a fast time plus a slow time) gives averaged equations for a slowly varying amplitude and phase.
+- [[strogatz-2024-nonlinear/ch08-bifurcations-p1]] — In two dimensions, fixed points still collide and vanish along one line (a zero eigenvalue), but a new route exists: a pair of complex eigenvalues crosses the imaginary axis (Hopf bifurcation), switching oscillations on or off.
+- [[strogatz-2024-nonlinear/ch08-bifurcations-p2]] — Limit cycles can appear or vanish through four routes, three of them global. Each route has its own amplitude and period scaling, and the Poincaré (first-return) map turns questions about closed orbits into questions about fixed points of a map.
+- [[strogatz-2024-nonlinear/ch08-bifurcations-p3]] — Linearizing the Poincaré map shows that the in-phase state of the Josephson-junction array has all characteristic multipliers equal to 1 (neutral stability), and the chapter's exercises then drill many bifurcation types on models from biology, chemistry, physics and social science.
+- [[strogatz-2024-nonlinear/ch09-lorenz-p1]] — A simple three-variable deterministic system, which a chaotic waterwheel reproduces exactly, has, over a range of parameters, apparently no stable fixed point or stable cycle, yet stays bounded, and so ends on a strange attractor with exponential divergence of nearby trajectories.
+- [[strogatz-2024-nonlinear/ch09-lorenz-p2]] — The chaotic Lorenz system can be reduced to a one-dimensional map whose slope exceeds 1 in size everywhere (ruling out stable cycles, at least plausibly), it passes through many regimes as r changes, and two chaotic copies can provably synchronize, which has been used for chaos-masked communication (the masking case itself is not proven).
+- [[strogatz-2024-nonlinear/ch10-one-p1]] — A simple one-dimensional map such as the logistic map $x_{n+1}=rx_n(1-x_n)$ goes from a steady state to period-doubling to chaos as $r$ grows, and fixed-point stability, cobwebs and the Liapunov exponent let us analyse this.
+- [[strogatz-2024-nonlinear/ch10-one-p2]] — Period-doubling in smooth one-humped maps follows universal rules (order of cycles; ratios 4.669… and −2.5029…), which Feigenbaum's renormalization theory explains and experiments support.
+- [[strogatz-2024-nonlinear/ch11-fractals]] — Fractals are shapes with fine structure at arbitrarily small scales, and non-integer "dimensions" (similarity, box, correlation) measure how that structure scales, which gives tools for describing strange attractors.
+- [[strogatz-2024-nonlinear/ch12-strange]] — The basic mechanism behind strange attractors is repeated stretching and folding of phase space, which the chapter shows in simple maps (baker's, Hénon), in the Rössler flow, and in real experiments (a chemical reaction, a driven beam).
+
+## Big ideas across units
+- **Geometry before formulas.** Trajectories, vector fields, graphs of $f$, nullclines and phase portraits answer qualitative questions without solving the equations. Units: ch01-overview, ch02-flows, ch05-linear, ch06-phase-p1, ch06-phase-p2, ch10-p1 (cobwebs).
+- **Fixed points, stability and linearization.** The sign of $f'(x^*)$, the eigenvalues of the Jacobian, the $(\Delta,\tau)$ diagram and the multiplier of a map decide local behaviour. Marginal cases need other tools. Units: ch02-flows, ch05-linear, ch06-phase-p1, ch08-bifurcations-p1, ch10-one-p1.
+- **Bifurcations as qualitative change.** Saddle-node, transcritical, pitchfork, Hopf, and the global bifurcations of cycles (saddle-node of cycles, infinite-period, homoclinic) are the standard ways states appear, vanish or swap stability. Their normal forms and scaling laws help identify the mechanism. Units: ch03-bifurcations-p1, ch03-bifurcations-p2, ch04-flows, ch08-bifurcations-p1, ch08-bifurcations-p2, ch09-lorenz-p2, ch10-one-p1.
+- **Thresholds, bistability and hysteresis.** Coexisting stable states, jumps and non-reversibility appear in subcritical pitchfork and Hopf bifurcations, the cusp catastrophe and the budworm outbreak. They also appear in the Josephson junction and, in Lorenz, for $24.06<r<24.74$. Units: ch03-bifurcations-p1, ch03-bifurcations-p2, ch04-flows, ch08-bifurcations-p1, ch08-bifurcations-p2, ch09-lorenz-p2.
+- **Dimension limits what can happen.** On the line there are only fixed points. On the circle, fixed points or oscillations exist, but not at the same time. In the plane, limit cycles are possible but chaos is not (Poincaré–Bendixson). Chaos needs $n\ge3$ or a map. Units: ch01-overview, ch02-flows, ch04-flows, ch07-limit-p1, ch09-lorenz-p1, ch12-strange.
+- **Oscillation, entrainment and synchronization.** Phase oscillators lock or drift, limit cycles are born and die, coupled oscillators phase-lock or become quasiperiodic, and chaotic systems can synchronize. Units: ch04-flows, ch07-limit-p1, ch07-limit-p2, ch08-bifurcations-p2, ch08-bifurcations-p3, ch09-lorenz-p2.
+- **Chaos: sensitive dependence on a bounded attractor.** Deterministic chaos appears in the Lorenz system and in the logistic map. It is explained by stretching and folding, diagnosed by the Liapunov exponent, and described with fractal dimensions. Units: ch09-lorenz-p1, ch09-lorenz-p2, ch10-one-p1, ch11-fractals, ch12-strange.
+- **Reduction and universality.** Flows are reduced to maps or simpler equations through singular limits, time-scale separation, two-timing, the Poincaré map and the Lorenz map. Renormalization then explains why different maps share Feigenbaum's constants. Units: ch03-bifurcations-p2, ch07-limit-p2, ch08-bifurcations-p2, ch09-lorenz-p2, ch10-one-p1, ch10-one-p2.
+
+## How to read it
+- **Essential (the catalog's focus chapters):** ch02-flows, ch03-bifurcations-p1, ch05-linear, ch06-phase-p1, ch08-bifurcations-p1, ch09-lorenz-p1 and ch10-one-p1. Read ch01-overview first for orientation. ch03-bifurcations-p2 is the clearest tipping-point example (threshold, hysteresis).
+- **Dependencies from the stated prerequisites:**
+  - ch03 needs ch02.
+  - ch04 needs ch02–03.
+  - ch06 needs ch02 and ch05.
+  - ch07-limit-p1 needs the phase plane (ch06).
+  - ch08-bifurcations-p1 needs ch03 and the trapping-region and Poincaré–Bendixson material of ch07-limit-p1.
+  - ch08-bifurcations-p2 needs ch04 (nonuniform oscillator) and ch08-bifurcations-p1; ch08-bifurcations-p3 continues it.
+  - ch09-lorenz-p1 needs the Hopf bifurcation; ch09-lorenz-p2 needs Liapunov functions and iterated maps.
+  - ch10-one-p1 needs only ch02–03.
+  - ch10-one-p2 needs ch10-one-p1 and the Lorenz map of ch09-lorenz-p2.
+  - ch12-strange needs ch11-fractals (box dimension, Cantor sets), the Lorenz system and the logistic map.
+- **Can be skipped on a first pass:** ch06-phase-p2 (index theory, plus exercises), ch07-limit-p2 (two-timing), ch08-bifurcations-p3 (mostly exercises), ch10-one-p2 (renormalization and the universality derivations), and ch11-fractals and ch12-strange unless you want the geometry of chaos. ch10-one-p1 can be read right after ch03 if you only want maps. ch07-limit-p1 is the main route to ch08-bifurcations-p2 and the two Hopf-related chapters.
+- The catalog's focus also lists Ch. 13 (Kuramoto model, new in the 3rd edition). No unit for it appears in this material.
+
+## Concepts introduced
+- [[nonlinearity]] — ch01-overview
+- [[state-space-phase-space]] — ch01-overview
+- [[deterministic-chaos]] — ch01-overview
+- [[strange-attractor-fractal]] — ch01-overview
+- [[universality]] — ch01-overview
+- [[bifurcation]] — ch01-overview
+- [[limit-cycle]] — ch01-overview
+- [[fixed-point-and-stability]] — ch01-overview
+- [[autonomous-vs-nonautonomous-system]] — ch01-overview
+- [[iterated-map]] — ch01-overview
+- [[linear-stability-analysis]] — ch02-flows
+- [[vector-field-on-the-line]] — ch02-flows
+- [[phase-portrait]] — ch02-flows
+- [[local-vs-global-stability]] — ch02-flows
+- [[characteristic-time-scale]] — ch02-flows
+- [[logistic-equation]] — ch02-flows
+- [[existence-and-uniqueness]] — ch02-flows
+- [[blow-up]] — ch02-flows
+- [[overdamped-limit]] — ch02-flows
+- [[potential-function]] — ch02-flows
+- [[numerical-integration]] — ch02-flows
+- [[saddle-node-fold-bifurcation]] — ch03-bifurcations-p1
+- [[hysteresis]] — ch03-bifurcations-p1
+- [[critical-slowing-down]] — ch03-bifurcations-p1
+- [[normal-form]] — ch03-bifurcations-p1
+- [[transcritical-bifurcation]] — ch03-bifurcations-p1
+- [[pitchfork-bifurcation]] — ch03-bifurcations-p1
+- [[symmetry-breaking]] — ch03-bifurcations-p1
+- [[nondimensionalization]] — ch03-bifurcations-p1
+- [[tipping-point]] — ch03-bifurcations-p2
+- [[imperfect-bifurcation]] — ch03-bifurcations-p2
+- [[cusp-catastrophe]] — ch03-bifurcations-p2
+- [[codimension]] — ch03-bifurcations-p2
+- [[stability-diagram]] — ch03-bifurcations-p2
+- [[singular-limit]] — ch03-bifurcations-p2
+- [[time-scale-separation]] — ch03-bifurcations-p2
+- [[vector-field-on-circle]] — ch04-flows
+- [[phase-oscillator]] — ch04-flows
+- [[beat-phenomenon]] — ch04-flows
+- [[bottleneck-ghost]] — ch04-flows (also written ghost-bottleneck in ch08-bifurcations-p1)
+- [[square-root-scaling-law]] — ch04-flows
+- [[synchronization]] — ch04-flows
+- [[entrainment-phase-locking]] — ch04-flows
+- [[linear-system-2d]] — ch05-linear
+- [[eigensolution]] — ch05-linear
+- [[stable-unstable-manifold]] — ch05-linear
+- [[fixed-point-types-2d]] — ch05-linear
+- [[trace-determinant-classification]] — ch05-linear
+- [[attractor-basin]] — ch05-linear
+- [[jacobian-matrix]] — ch06-phase-p1
+- [[nullcline]] — ch06-phase-p1
+- [[hyperbolic-fixed-point]] — ch06-phase-p1
+- [[topological-equivalence]] — ch06-phase-p1
+- [[structural-stability]] — ch06-phase-p1
+- [[stable-manifold-separatrix]] — ch06-phase-p1
+- [[competitive-exclusion]] — ch06-phase-p1
+- [[conservative-system]] — ch06-phase-p1
+- [[homoclinic-heteroclinic-orbit]] — ch06-phase-p1
+- [[reversible-system]] — ch06-phase-p1
+- [[index-of-closed-curve]] — ch06-phase-p2
+- [[index-of-fixed-point]] — ch06-phase-p2
+- [[hamiltonian-system]] — ch06-phase-p2
+- [[gradient-system]] — ch07-limit-p1
+- [[liapunov-function]] — ch07-limit-p1
+- [[dulac-criterion]] — ch07-limit-p1
+- [[trapping-region]] — ch07-limit-p1
+- [[poincare-bendixson-theorem]] — ch07-limit-p1
+- [[lienard-system]] — ch07-limit-p1
+- [[relaxation-oscillation]] — ch07-limit-p1
+- [[weakly-nonlinear-oscillator]] — ch07-limit-p2
+- [[regular-perturbation-theory]] — ch07-limit-p2
+- [[secular-term]] — ch07-limit-p2
+- [[two-timing]] — ch07-limit-p2
+- [[averaged-equations]] — ch07-limit-p2
+- [[amplitude-dependent-frequency]] — ch07-limit-p2
+- [[hardening-softening-spring]] — ch07-limit-p2
+- [[zero-eigenvalue-bifurcation]] — ch08-bifurcations-p1
+- [[hopf-bifurcation]] — ch08-bifurcations-p1
+- [[global-bifurcation-of-cycles]] — ch08-bifurcations-p2
+- [[infinite-period-bifurcation]] — ch08-bifurcations-p2
+- [[homoclinic-bifurcation]] — ch08-bifurcations-p2
+- [[bifurcation-scaling-laws]] — ch08-bifurcations-p2
+- [[nongeneric-degenerate-bifurcation]] — ch08-bifurcations-p2
+- [[poincare-map]] — ch08-bifurcations-p2
+- [[floquet-multiplier]] — ch08-bifurcations-p2
+- [[quasiperiodicity]] — ch08-bifurcations-p2
+- [[neutral-stability]] — ch08-bifurcations-p3
+- [[characteristic-multiplier]] — ch08-bifurcations-p3 (the same notion as floquet-multiplier, under another name)
+- [[complex-system]] — ch09-lorenz-p1
+- [[lorenz-system]] — ch09-lorenz-p1
+- [[dissipative-system-volume-contraction]] — ch09-lorenz-p1
+- [[hopf-bifurcation-subcritical]] — ch09-lorenz-p1
+- [[saddle-cycle]] — ch09-lorenz-p1
+- [[rayleigh-number]] — ch09-lorenz-p1
+- [[prediction-time-horizon]] — ch09-lorenz-p1
+- [[lyapunov-exponent]] — ch09-lorenz-p1
+- [[lorenz-map]] — ch09-lorenz-p2
+- [[transient-chaos]] — ch09-lorenz-p2
+- [[chaotic-masking]] — ch09-lorenz-p2
+- [[superstable-fixed-point]] — ch10-one-p1
+- [[cobweb-diagram]] — ch10-one-p1
+- [[logistic-map]] — ch10-one-p1
+- [[period-doubling-route-to-chaos]] — ch10-one-p1
+- [[feigenbaum-delta]] — ch10-one-p1
+- [[orbit-diagram]] — ch10-one-p1
+- [[periodic-window]] — ch10-one-p1
+- [[intermittency]] — ch10-one-p1
+- [[tent-map]] — ch10-one-p1
+- [[unimodal-map]] — ch10-one-p2
+- [[u-sequence]] — ch10-one-p2
+- [[feigenbaum-constants]] — ch10-one-p2
+- [[superstable-cycle]] — ch10-one-p2
+- [[renormalization]] — ch10-one-p2
+- [[functional-equation-g]] — ch10-one-p2
+- [[countable-uncountable-sets]] — ch11-fractals
+- [[diagonal-argument]] — ch11-fractals
+- [[cantor-set]] — ch11-fractals
+- [[topological-cantor-set]] — ch11-fractals
+- [[similarity-dimension]] — ch11-fractals
+- [[box-dimension]] — ch11-fractals
+- [[correlation-dimension]] — ch11-fractals
+- [[pointwise-dimension]] — ch11-fractals
+- [[multifractal]] — ch11-fractals
+- [[scale-invariance]] — ch11-fractals
+- [[heavy-tail-power-law]] — ch11-fractals
+- [[stretching-and-folding]] — ch12-strange
+- [[dissipative-vs-area-preserving]] — ch12-strange
+- [[poincare-section]] — ch12-strange
+- [[attractor-reconstruction]] — ch12-strange
+- [[fractal-basin-boundary]] — ch12-strange

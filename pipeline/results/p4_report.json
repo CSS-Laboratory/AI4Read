@@ -1,0 +1,642 @@
+[
+ {
+  "work": "achen-2016-realists",
+  "units": 12,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/achen-2016-realists/index.md",
+  "words": 1643
+ },
+ {
+  "work": "apperly-2009-two-systems",
+  "units": 3,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/apperly-2009-two-systems/index.md",
+  "words": 734
+ },
+ {
+  "work": "apperly-2011-mindreaders",
+  "units": 8,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/apperly-2011-mindreaders/index.md",
+  "words": 1162
+ },
+ {
+  "work": "argyle-2023-silicon",
+  "units": 2,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/argyle-2023-silicon/index.md",
+  "words": 733
+ },
+ {
+  "work": "arrow-1951-socialchoice",
+  "units": 7,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/arrow-1951-socialchoice/index.md",
+  "words": 1155
+ },
+ {
+  "work": "ashby-1956-cybernetics",
+  "units": 13,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/ashby-1956-cybernetics/index.md",
+  "words": 1443
+ },
+ {
+  "work": "astrom-2021-feedbacksystems",
+  "units": 18,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/astrom-2021-feedbacksystems/index.md",
+  "words": 1998
+ },
+ {
+  "work": "axelrod-1984-cooperation",
+  "units": 11,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/axelrod-1984-cooperation/index.md",
+  "words": 1222
+ },
+ {
+  "work": "axler-2024-ladr",
+  "units": 16,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/axler-2024-ladr/index.md",
+  "words": 2057
+ },
+ {
+  "work": "bellman-1957-dp",
+  "units": 13,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/bellman-1957-dp/index.md",
+  "words": 1599
+ },
+ {
+  "work": "bertsekas-2026-rlcourse",
+  "units": 18,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/bertsekas-2026-rlcourse/index.md",
+  "words": 1735
+ },
+ {
+  "work": "betancourt-2017-hmc",
+  "units": 3,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/betancourt-2017-hmc/index.md",
+  "words": 787
+ },
+ {
+  "work": "blei-2017-variational",
+  "units": 2,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/blei-2017-variational/index.md",
+  "words": 773
+ },
+ {
+  "work": "boyd-2018-vmls",
+  "units": 20,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/boyd-2018-vmls/index.md",
+  "words": 1728
+ },
+ {
+  "work": "brown-2020-gpt3",
+  "units": 3,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/brown-2020-gpt3/index.md",
+  "words": 754
+ },
+ {
+  "work": "carey-1989-cultural",
+  "units": 9,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/carey-1989-cultural/index.md",
+  "words": 1394
+ },
+ {
+  "work": "castellano-2009-socialdynamics",
+  "units": 3,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/castellano-2009-socialdynamics/index.md",
+  "words": 849
+ },
+ {
+  "work": "clark-2017-principles",
+  "units": 35,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/clark-2017-principles/index.md",
+  "words": 2685
+ },
+ {
+  "work": "clauset-2009-powerlaw",
+  "units": 2,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/clauset-2009-powerlaw/index.md",
+  "words": 686
+ },
+ {
+  "work": "converse-1964-beliefsystems",
+  "units": 3,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/converse-1964-beliefsystems/index.md",
+  "words": 795
+ },
+ {
+  "work": "cover-2006-elements",
+  "units": 23,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/cover-2006-elements/index.md",
+  "words": 2159
+ },
+ {
+  "work": "craig-1999-field",
+  "units": 2,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/craig-1999-field/index.md",
+  "words": 744
+ },
+ {
+  "work": "deisenroth-2020-mml",
+  "units": 15,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/deisenroth-2020-mml/index.md",
+  "words": 1591
+ },
+ {
+  "work": "dennett-1987-intentional-stance",
+  "units": 11,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/dennett-1987-intentional-stance/index.md",
+  "words": 1635
+ },
+ {
+  "work": "dixit-2008-art-strategy",
+  "units": 15,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/dixit-2008-art-strategy/index.md",
+  "words": 1727
+ },
+ {
+  "work": "elhage-2022-superposition",
+  "units": 2,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/elhage-2022-superposition/index.md",
+  "words": 749
+ },
+ {
+  "work": "gelman-2013-bda3",
+  "units": 26,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/gelman-2013-bda3/index.md",
+  "words": 2262
+ },
+ {
+  "work": "gelman-2020-workflow",
+  "units": 3,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/gelman-2020-workflow/index.md",
+  "words": 993
+ },
+ {
+  "work": "godfreysmith-2003-theory",
+  "units": 15,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/godfreysmith-2003-theory/index.md",
+  "words": 1585
+ },
+ {
+  "work": "grimmer-2022-textasdata",
+  "units": 28,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/grimmer-2022-textasdata/index.md",
+  "words": 2167
+ },
+ {
+  "work": "habermas-1989-publicsphere",
+  "units": 10,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/habermas-1989-publicsphere/index.md",
+  "words": 1402
+ },
+ {
+  "work": "hernan-2020-whatif",
+  "units": 23,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/hernan-2020-whatif/index.md",
+  "words": 1921
+ },
+ {
+  "work": "jaynes-2003-probability",
+  "units": 30,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/jaynes-2003-probability/index.md",
+  "words": 2517
+ },
+ {
+  "work": "kahneman-2011-thinking",
+  "units": 43,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/kahneman-2011-thinking/index.md",
+  "words": 3360
+ },
+ {
+  "work": "katz-1955-personalinfluence",
+  "units": 27,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/katz-1955-personalinfluence/index.md",
+  "words": 2498
+ },
+ {
+  "work": "keynes-1936-general",
+  "units": 22,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/keynes-1936-general/index.md",
+  "words": 1916
+ },
+ {
+  "work": "kripke-1980-naming",
+  "units": 7,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/kripke-1980-naming/index.md",
+  "words": 1329
+ },
+ {
+  "work": "kuhn-1962-structure",
+  "units": 15,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/kuhn-1962-structure/index.md",
+  "words": 1513
+ },
+ {
+  "work": "liberzon-2012-calculus",
+  "units": 8,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/liberzon-2012-calculus/index.md",
+  "words": 1368
+ },
+ {
+  "work": "lippmann-1922-publicopinion",
+  "units": 25,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/lippmann-1922-publicopinion/index.md",
+  "words": 2281
+ },
+ {
+  "work": "lupia-1998-dilemma",
+  "units": 14,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/lupia-1998-dilemma/index.md",
+  "words": 1532
+ },
+ {
+  "work": "lycan-2019-language",
+  "units": 15,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/lycan-2019-language/index.md",
+  "words": 1852
+ },
+ {
+  "work": "mackay-2003-information",
+  "units": 49,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/mackay-2003-information/index.md",
+  "words": 3350
+ },
+ {
+  "work": "magnus-2025-forallx",
+  "units": 42,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/magnus-2025-forallx/index.md",
+  "words": 2820
+ },
+ {
+  "work": "mcelreath-2020-rethinking",
+  "units": 19,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/mcelreath-2020-rethinking/index.md",
+  "words": 2204
+ },
+ {
+  "work": "mcgrayne-2011-theory",
+  "units": 17,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/mcgrayne-2011-theory/index.md",
+  "words": 1634
+ },
+ {
+  "work": "meadows-2008-thinking",
+  "units": 10,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/meadows-2008-thinking/index.md",
+  "words": 1365
+ },
+ {
+  "work": "mitchell-2009-guidedtour",
+  "units": 19,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/mitchell-2009-guidedtour/index.md",
+  "words": 1674
+ },
+ {
+  "work": "murphy-2023-pml2",
+  "units": 50,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/murphy-2023-pml2/index.md",
+  "words": 3664
+ },
+ {
+  "work": "nielsen-2020-elementary",
+  "units": 2,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/nielsen-2020-elementary/index.md",
+  "words": 769
+ },
+ {
+  "work": "olson-1965-collectiveaction",
+  "units": 9,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/olson-1965-collectiveaction/index.md",
+  "words": 1293
+ },
+ {
+  "work": "osborne-2004-introduction",
+  "units": 18,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/osborne-2004-introduction/index.md",
+  "words": 1594
+ },
+ {
+  "work": "ostrom-1990-commons",
+  "units": 7,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/ostrom-1990-commons/index.md",
+  "words": 1222
+ },
+ {
+  "work": "ouyang-2022-instructgpt",
+  "units": 3,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/ouyang-2022-instructgpt/index.md",
+  "words": 788
+ },
+ {
+  "work": "pearl-2016-primer",
+  "units": 4,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/pearl-2016-primer/index.md",
+  "words": 1090
+ },
+ {
+  "work": "pearl-2018-bookofwhy",
+  "units": 12,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/pearl-2018-bookofwhy/index.md",
+  "words": 1539
+ },
+ {
+  "work": "pierce-1980-introduction",
+  "units": 15,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/pierce-1980-introduction/index.md",
+  "words": 1829
+ },
+ {
+  "work": "polyanskiy-2025-information",
+  "units": 38,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/polyanskiy-2025-information/index.md",
+  "words": 3544
+ },
+ {
+  "work": "popper-1959-logic",
+  "units": 30,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/popper-1959-logic/index.md",
+  "words": 2331
+ },
+ {
+  "work": "prince-2023-udl",
+  "units": 23,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/prince-2023-udl/index.md",
+  "words": 1968
+ },
+ {
+  "work": "rogers-2003-diffusion",
+  "units": 21,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/rogers-2003-diffusion/index.md",
+  "words": 2137
+ },
+ {
+  "work": "rosvall-2008-maps",
+  "units": 3,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/rosvall-2008-maps/index.md",
+  "words": 798
+ },
+ {
+  "work": "sarkka-2023-bayesianfiltering",
+  "units": 21,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/sarkka-2023-bayesianfiltering/index.md",
+  "words": 2037
+ },
+ {
+  "work": "schelling-1960-conflict",
+  "units": 16,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/schelling-1960-conflict/index.md",
+  "words": 1669
+ },
+ {
+  "work": "schelling-1971-segregation",
+  "units": 2,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/schelling-1971-segregation/index.md",
+  "words": 661
+ },
+ {
+  "work": "shannon-1948-mathematical",
+  "units": 2,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/shannon-1948-mathematical/index.md",
+  "words": 738
+ },
+ {
+  "work": "shepsle-2010-analyzing",
+  "units": 21,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/shepsle-2010-analyzing/index.md",
+  "words": 1701
+ },
+ {
+  "work": "shiller-2019-narrative",
+  "units": 21,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/shiller-2019-narrative/index.md",
+  "words": 1733
+ },
+ {
+  "work": "spielman-2025-sagt",
+  "units": 45,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/spielman-2025-sagt/index.md",
+  "words": 3611
+ },
+ {
+  "work": "stiglitz-2002-paradigm",
+  "units": 3,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/stiglitz-2002-paradigm/index.md",
+  "words": 824
+ },
+ {
+  "work": "stone-2022-information",
+  "units": 15,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/stone-2022-information/index.md",
+  "words": 1487
+ },
+ {
+  "work": "strang-2023-introduction",
+  "units": 18,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/strang-2023-introduction/index.md",
+  "words": 1659
+ },
+ {
+  "work": "strogatz-2024-nonlinear",
+  "units": 19,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/strogatz-2024-nonlinear/index.md",
+  "words": 1999
+ },
+ {
+  "work": "sutton-2018-rl",
+  "units": 19,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/sutton-2018-rl/index.md",
+  "words": 2483
+ },
+ {
+  "work": "thaler-2015-misbehaving",
+  "units": 34,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/thaler-2015-misbehaving/index.md",
+  "words": 2867
+ },
+ {
+  "work": "wei-2022-cot",
+  "units": 2,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/wei-2022-cot/index.md",
+  "words": 628
+ },
+ {
+  "work": "wittgenstein-1922-tractatus",
+  "units": 6,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/wittgenstein-1922-tractatus/index.md",
+  "words": 1247
+ },
+ {
+  "work": "wittgenstein-1953-investigations",
+  "units": 10,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/wittgenstein-1953-investigations/index.md",
+  "words": 1437
+ },
+ {
+  "work": "zaller-1992-massopinion",
+  "units": 15,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/zaller-1992-massopinion/index.md",
+  "words": 1719
+ },
+ {
+  "work": "ziems-2024-css",
+  "units": 2,
+  "status": "ok",
+  "issues": [],
+  "path": "wiki/works/ziems-2024-css/index.md",
+  "words": 652
+ }
+]

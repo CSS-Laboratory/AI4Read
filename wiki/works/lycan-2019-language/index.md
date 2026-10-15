@@ -1,0 +1,171 @@
+---
+id: lycan-2019-language/index
+work: lycan-2019-language
+type: work-map
+units: [lycan-2019-language/ch01-introduction, lycan-2019-language/ch02-definite, lycan-2019-language/ch03-proper, lycan-2019-language/ch04-proper, lycan-2019-language/ch05-traditional, lycan-2019-language/ch06-use, lycan-2019-language/ch07-psychological, lycan-2019-language/ch08-verificationism, lycan-2019-language/ch09-truth, lycan-2019-language/ch10-truth, lycan-2019-language/ch11-semantic, lycan-2019-language/ch12-speech, lycan-2019-language/ch13-implicative, lycan-2019-language/ch14-expressive, lycan-2019-language/ch15-metaphor]
+---
+
+# Lycan, W. G. (2019). *Philosophy of Language: A Contemporary Introduction* (3rd ed.). New York/London: Routledge. 252 pp.
+
+## In one paragraph
+Lycan asks what makes strings of marks or noises meaningful, what makes each mean what it does, and how speakers grasp even brand-new sentences at once. He starts with the simple idea that words mean what they stand for. After showing that reference is not the whole story, he studies how descriptions and names refer. He then tests the main theories of meaning: ideas or propositions, "use", Gricean intentions, verification, and truth conditions (with possible worlds). The last chapters move to context, speech acts, implicature, expressive language and metaphor. Each chapter states a theory, gives the standard objections, and says where the debate stands. The book matters because it ties the classic papers into one connected map of the field.
+
+## The path through the work
+- [[lycan-2019-language/ch01-introduction]] — The attractive idea that words mean what they stand for (the Referential Theory) faces several objections, and it looks as though meaning must involve more than naming.
+- [[lycan-2019-language/ch02-definite]] — Russell analysed "the F is G" as three general statements (at least one F, at most one F, every F is G), which, Russell argued, solves four puzzles about singular terms for the case of descriptions, though Strawson and Donnellan object and anaphoric uses may resist the analysis.
+- [[lycan-2019-language/ch03-proper]] — Russell held that ordinary proper names are equivalent to definite descriptions, which would let him extend his solutions to the four reference puzzles to names; Searle loosened this to clusters of descriptions, and Kripke and others raise many objections to both versions.
+- [[lycan-2019-language/ch04-proper]] — Proper names are normally rigid, which counts against description theories; on Kripke's picture, what ties a name to its bearer is a causal–historical chain rather than a description in the speaker's head, though that picture needs repair.
+- [[lycan-2019-language/ch05-traditional]] — A theory of meaning must explain the "meaning facts"; the two traditional entity theories (meanings as mental ideas, or as abstract propositions) are tested against them, and the Proposition Theory survives better but is not unproblematic.
+- [[lycan-2019-language/ch06-use]] — "Use" theories hold that an expression's meaning is its role in rule-governed social practice, but they struggle to say what makes such a practice a language rather than a mere game.
+- [[lycan-2019-language/ch07-psychological]] — Grice tried to reduce sentence meaning to speaker-meaning, and speaker-meaning to speakers' intentions and other mental states. Lycan judges the second step defensible, but the first step seems to succeed only by conceding too much to rival theories of sentence meaning.
+- [[lycan-2019-language/ch08-verificationism]] — The Verification Theory says a sentence's meaning is the set of experiences that would tend to show it true, but Lycan argues that, by Duhem's and Quine's point, an individual sentence has no distinctive set of such experiences of its own.
+- [[lycan-2019-language/ch09-truth]] — Davidson proposes that a theory of meaning should assign each sentence its truth condition rather than its verification condition; a compositional truth definition modelled on formal logic can (as shown for a toy language) derive the truth conditions of infinitely many sentences from finitely many words and rules, and the hope is that this also captures meaning.
+- [[lycan-2019-language/ch10-truth]] — If a sentence's truth condition (and, for the truth-condition theorist, its meaning) is the set of possible worlds in which it is true, and word meanings are functions from worlds to extensions, meaning can be computed compositionally and several of Davidson's problems are avoided.
+- [[lycan-2019-language/ch11-semantic]] — Context fixes *what proposition* many sentences express (semantic pragmatics), and Harman's open-ended assignment function α, unlike fixed lists of contextual variables, lets truth theories handle this.
+- [[lycan-2019-language/ch12-speech]] — Saying something is often doing something (promising, warning, stating), so an utterance has an illocutionary force as well as a content, and it seems that theories that count only truth-conditional content leave out part of meaning.
+- [[lycan-2019-language/ch13-implicative]] — Utterances can imply things that their sentences do not entail, and Lycan distinguishes several kinds (conversational, presuppositional, conventional, indirect-force); some of these differ in how they are grasped, whether they can be cancelled (denied without contradiction), and what happens when the implied thing is false.
+- [[lycan-2019-language/ch14-expressive]] — Some language expresses feelings or attitudes, either primarily or by the way (exclamations, expressive words, irony, sarcasm, slurs), and it is not covered by speech-act theory or by purely Gricean conversational implicature.
+- [[lycan-2019-language/ch15-metaphor]] — Metaphor is far more common than philosophers usually admit, and several theories give rival answers to what "metaphorical meaning" is and how hearers grasp it: a purely causal effect, a hidden simile, speaker-meaning, a make-believe frame, a stretched word-concept, or analogical word meaning.
+
+## Big ideas across units
+- **Reference is not the whole of meaning.** Objections to the Referential Theory (empty names, coreferring terms that differ in meaning) are developed through the four puzzles (nonexistents, negative existentials, Frege's puzzle, substitutivity). They come back for descriptions, names, belief sentences and intensions. Units: ch01, ch02, ch03, ch04, ch10.
+- **Surface grammar can hide logical form.** Russell's analysis removes the description at the level of logical form. The Name Claim extends this to names, and Davidson's program needs syntax to link English to logical form. Units: ch02, ch03, ch09.
+- **What a name contributes versus what ties it to its bearer.** Description and cluster theories face Kripke's rigidity argument. Direct Reference faces the puzzles again. The causal–historical picture is a theory of referring and needs repair. Units: ch03, ch04, ch07 (a Gricean theory of referring).
+- **Is meaning "in the head"?** Twin Earth and natural-kind terms suggest meaning is not fixed by the head alone. This returns as an objection to use theories and to wide truth conditions. Units: ch04, ch06, ch10.
+- **Compositionality and novel sentences.** Speakers' instant grasp of new sentences is a constraint on every theory. It drives the objections to use and Gricean theories and is the main argument for truth-condition theory. Units: ch01, ch06, ch07, ch09, ch10.
+- **Rival answers to "what is sentence meaning?"** Meanings are ideas or propositions, social use, speaker intentions, verification conditions, or truth conditions (sets of worlds). Each is tested against the "meaning facts" and the same recurring objections. Units: ch05, ch06, ch07, ch08, ch09, ch10.
+- **Context and what is said.** Context fixes propositional content (deixis, anaphora, restricted quantification). It also raises the question of how far pragmatics is needed before a full proposition exists. Units: ch02, ch11, ch13.
+- **Meaning beyond truth-conditional content.** Force, implicature, presupposition, expressive attitudes and figurative meaning go beyond fact-stating content. Grice's speaker-meaning and implicature are repeatedly used (and challenged) in explaining them. Units: ch07, ch12, ch13, ch14, ch15.
+
+## How to read it
+- **Essential first:** ch01 and ch02. Ch03 and ch04 depend on ch02, and ch04 also depends on ch03.
+- **Theories of meaning:** ch05 builds on ch01 and ch02 (the sentence/proposition contrast). Ch06 depends on ch05 and uses ideas from ch02 and ch04. Ch07 and ch08 can be read after ch05. Ch09 assumes ch02 and ch08. Ch10 needs ch04 and ch09.
+- **Pragmatics part:** ch11 needs ch09, and ch10 for intensions. Ch12 builds on ch08, ch09, ch06 and ch07. Ch13 builds on ch02 (the Strawson debate), ch07 and ch12.
+- **Can be skipped on a first pass:** the catalog's focus list does not include ch10 (possible-worlds semantics), ch14 (expressive language) or ch15 (metaphor). Ch14 and ch15 lean on ch07, ch12 and ch13, so read those first if you want them.
+- **Within chapters:** ch08's "Big One" objection (Quine–Duhem holism) and ch09's objections are the most carried forward into later chapters.
+
+## Concepts introduced
+- [[referential-theory-of-meaning]] — ch01
+- [[bradley-regress]] — ch01
+- [[novel-sentence-understanding]] — ch01
+- [[coreferring-terms-not-synonymous]] — ch01
+- [[sense (Sinn) vs. reference (Bedeutung)]] — ch01 (also appears as [[sense-vs-reference]] in ch05)
+- [[theory of descriptions]] — ch02
+- [[logical form vs. grammatical form]] — ch02
+- [[singular-term]] — ch02
+- [[quantifier]] — ch02
+- [[scope-distinction]] — ch02
+- [[referential-opacity]] — ch02
+- [[Frege's puzzle]] — ch02 (also [[freges-puzzle]] in ch04)
+- [[presupposition-failure]] — ch02
+- [[restricted-quantification]] — ch02
+- [[attributive-vs-referential-use]] — ch02
+- [[speaker (non-natural) meaning]] — ch02 (also [[speaker-non-natural-meaning]] in ch15)
+- [[semantic-referent]] — ch02
+- [[compositionality]] — ch02
+- [[anaphora]] — ch02
+- [[millian-name]] — ch03
+- [[name-claim]] — ch03
+- [[description-theory-of-names]] — ch03
+- [[cluster-theory]] — ch03
+- [[scope-of-descriptions]] — ch03
+- [[rigid-designator]] — ch04
+- [[flaccid-designator]] — ch04
+- [[possible-world]] — ch04
+- [[direct-reference-theory]] — ch04
+- [[reference-fixing-vs-meaning]] — ch04
+- [[transparent-vs-opaque-reading]] — ch04
+- [[pretense-theory]] — ch04
+- [[causal-historical-theory-of-reference]] — ch04
+- [[multiple-grounding]] — ch04
+- [[qua-problem]] — ch04
+- [[causal-descriptivism]] — ch04
+- [[natural-kind-term]] — ch04
+- [[semantic-externalism]] — ch04
+- [[meaning-facts]] — ch05
+- [[reification]] — ch05
+- [[entity-theory-of-meaning]] — ch05
+- [[ideational-theory]] — ch05
+- [[proposition-theory]] — ch05
+- [[expressing-relation]] — ch05
+- [[grasping]] — ch05
+- [[concept-abstract]] — ch05
+- [[meaning-as-use]] — ch05 (also written [[meaning as use]] in ch06)
+- [[language-game]] — ch06
+- [[inferential-theory-of-meaning]] — ch06
+- [[inferentialism-brandom]] — ch06
+- [[propositional-content]] — ch06
+- [[explication]] — ch07
+- [[analysis]] — ch07
+- [[conversational implicature]] — ch07 (also [[conversational-implicature]] in ch15)
+- [[convention]] — ch07
+- [[reductive-program]] — ch07
+- [[idiolect]] — ch07
+- [[structured-vs-unstructured-utterance]] — ch07
+- [[resultant-procedure]] — ch07
+- [[speaker-reference]] — ch07
+- [[verification-principle]] — ch08
+- [[verification-condition]] — ch08
+- [[epistemic-theory-of-meaning]] — ch08
+- [[cognitive-meaning]] — ch08
+- [[analytic / synthetic distinction]] — ch08
+- [[observation-language]] — ch08
+- [[instrumentalism]] — ch08
+- [[confirmation holism (Quine–Duhem thesis)]] — ch08
+- [[indeterminacy of translation]] — ch08
+- [[truth-condition-theory]] — ch09
+- [[truth-definition]] — ch09
+- [[T-sentence]] — ch09 (also [[t-sentence]] in ch11)
+- [[validity / soundness]] — ch09
+- [[transformation]] — ch09
+- [[intensional-context]] — ch09
+- [[deflationism-about-truth]] — ch09
+- [[possible-worlds-truth-condition]] — ch10
+- [[intension]] — ch10
+- [[extension]] — ch10
+- [[counterfactual-conditional-semantics]] — ch10
+- [[intensional-isomorphism]] — ch10
+- [[wide-vs-narrow-content]] — ch10
+- [[semantic-pragmatics]] — ch11
+- [[pragmatic-pragmatics]] — ch11
+- [[deixis]] — ch11
+- [[assignment-function-alpha]] — ch11
+- [[context-index]] — ch11
+- [[semantic-minimalism]] — ch11
+- [[character-vs-content]] — ch11
+- [[disambiguation]] — ch11
+- [[speech act]] — ch12
+- [[performative utterance]] — ch12
+- [[locutionary / illocutionary / perlocutionary act]] — ch12
+- [[felicity conditions]] — ch12
+- [[cooperative principle & maxims]] — ch13
+- [[conveyed-meaning]] — ch13
+- [[invited-inference]] — ch13
+- [[cancelability]] — ch13
+- [[flouting-a-maxim]] — ch13
+- [[common-ground]] — ch13
+- [[relevance-theory]] — ch13
+- [[explicature]] — ch13
+- [[saturation]] — ch13
+- [[free-enrichment]] — ch13
+- [[ad-hoc-concept-construction]] — ch13
+- [[semantic-presupposition]] — ch13
+- [[conventional-implicature]] — ch13
+- [[indirect-force]] — ch13
+- [[expressive-kaplan]] — ch14
+- [[verbal-irony]] — ch14
+- [[echoic-theory-of-irony]] — ch14
+- [[pretense-theory-of-irony]] — ch14
+- [[sarcasm-meaning-inversion]] — ch14
+- [[received-view-of-slurs]] — ch14
+- [[use vs. mention]] — ch14
+- [[metaphorical-meaning]] — ch15
+- [[conceptual-tension]] — ch15
+- [[dead-metaphor]] — ch15
+- [[causal-theory-of-metaphor]] — ch15
+- [[naive-simile-theory]] — ch15
+- [[figurative-simile-theory]] — ch15
+- [[salience-based-similarity]] — ch15
+- [[pragmatic-theory-of-metaphor]] — ch15
+- [[make-believe-framing]] — ch15
+- [[infinite-polysemy]] — ch15

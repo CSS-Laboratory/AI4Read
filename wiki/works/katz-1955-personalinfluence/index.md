@@ -1,0 +1,204 @@
+---
+id: katz-1955-personalinfluence/index
+work: katz-1955-personalinfluence
+type: work-map
+units: [katz-1955-personalinfluence/ch00-introduction, katz-1955-personalinfluence/ch01-between, katz-1955-personalinfluence/ch02-played, katz-1955-personalinfluence/ch03-essay, katz-1955-personalinfluence/ch04-norms, katz-1955-personalinfluence/ch05-role, katz-1955-personalinfluence/ch06-interpersonal, katz-1955-personalinfluence/ch07-group, katz-1955-personalinfluence/ch01-criteria, katz-1955-personalinfluence/ch02-technique, katz-1955-personalinfluence/ch03-place, katz-1955-personalinfluence/ch04-searching, katz-1955-personalinfluence/ch05-evaluating, katz-1955-personalinfluence/ch06-role, katz-1955-personalinfluence/ch07-further, katz-1955-personalinfluence/ch08-variations, katz-1955-personalinfluence/ch09-describing, katz-1955-personalinfluence/ch10-marketing, katz-1955-personalinfluence/ch11-fashion, katz-1955-personalinfluence/ch12-public, katz-1955-personalinfluence/ch13-movie, katz-1955-personalinfluence/ch14-two, katz-1955-personalinfluence/ch15-summary, katz-1955-personalinfluence/appa-choice, katz-1955-personalinfluence/appb-guide, katz-1955-personalinfluence/appc-follow, katz-1955-personalinfluence/appd-construction]
+---
+
+# Katz, E., & Lazarsfeld, P. F. (1955). *Personal Influence: The Part Played by People in the Flow of Mass Communications*. Free Press. (Transaction re-issue 2005/2006 with a new preface by Katz.)
+
+## In one paragraph
+Katz and Lazarsfeld argue that mass communication cannot be understood by picturing media acting on isolated individuals. People live in primary groups. Shared group norms anchor their opinions, and group networks relay, block or reinforce media messages. The first part of the book reviews small-group research to build this case. The second part reports a 1945 survey of women in Decatur, Illinois. It looked for opinion leaders in marketing, fashion, public affairs and movie-going, and compared personal influence with media influence in specific decisions. Personal contacts had more impact than media in marketing and movies; fashion was the exception. Leaders appeared at every status level. They were concentrated by life-cycle position and gregariousness, and each topic largely had its own leaders. The study matters because it links media research to the study of social networks, and it shows concrete methods for tracing influence.
+
+## The path through the work
+- [[katz-1955-personalinfluence/ch00-introduction]] — The authors argue that the person who reads and talks about media content must be studied as both a communicator and a relay point in mass communication, and they explain how the Decatur field study and the small-group review fit that aim.
+- [[katz-1955-personalinfluence/ch01-between]] — Early mass-media research seems to have pictured powerful media acting directly on an atomized audience; four "intervening variables" qualified that picture, and the authors argue that interpersonal relations is a fifth one that research had underestimated.
+- [[katz-1955-personalinfluence/ch02-played]] — Mass-communications research, like research in the factory, army and city, began with a model of isolated individuals and then found that close personal ties (primary-group relations) were an important intervening variable (a factor between stimulus and response); the authors suggest that work on the opinion leader (a person with unusually great influence on others' votes) led mass-communications research to this discovery.
+- [[katz-1955-personalinfluence/ch03-essay]] — The authors guess that two features of small primary groups, shared norms ("anchorage") and communication networks (relay and reinforcement), are the keys to understanding how interpersonal ties intervene in mass persuasion, and they plan to look for corroborating evidence in small group research.
+- [[katz-1955-personalinfluence/ch04-norms]] — Drawing on small-group research, the authors argue that people's seemingly private opinions are often maintained, sometimes generated and sometimes merely enforced together with the small groups around them.
+- [[katz-1955-personalinfluence/ch05-role]] — Because opinions are anchored in group ties, groups can press members to change toward group norms, and groups resist or help outside influence depending on how that influence fits those norms and ties.
+- [[katz-1955-personalinfluence/ch06-interpersonal]] — Katz and Lazarsfeld review small-group research to examine how patterns of communication, and the key roles in passing on information and influence, are associated (the authors think) with group structure, climate and situation. They say they care less about "leaders" than about key communication roles, which they link to nomination, social location and cultural certification.
+- [[katz-1955-personalinfluence/ch07-group]] — Outside messages may have to pass "gatekeepers" to reach a group, and may then be passed on or blocked by influentials and group norms, so mass media research must study people inside their groups, not as isolated respondents.
+- [[katz-1955-personalinfluence/ch01-criteria]] — Which "opinion leaders" you find depends on how you ask, so Katz and Lazarsfeld compare three ways of naming influentials and choose recent, specific influence episodes, mostly located by self-report, as their criterion.
+- [[katz-1955-personalinfluence/ch02-technique]] — To check women's self-reports of giving or taking advice, the authors interviewed the named partners; the partners confirmed most reports, contradicted few, and confirmed least on public affairs.
+- [[katz-1955-personalinfluence/ch03-place]] — The authors limit their study to recent, specific, face-to-face decisions and choose the "incident approach", which compares the impact of personal contacts with that of mass media within single decisions.
+- [[katz-1955-personalinfluence/ch04-searching]] — To compare personal influence with mass media, the authors ask women to recall a recent decision, name every influence, pick the main one, and then compute how often an exposure was judged decisive.
+- [[katz-1955-personalinfluence/ch05-evaluating]] — In marketing and movie choice, personal contacts had more impact than mass media (fashion is the one exception), and the authors offer as the probably most important reason that people can influence both through what they say and through who they are to us.
+- [[katz-1955-personalinfluence/ch06-role]] — Any "impact study" contains an accounting scheme that should be made explicit, and applying a simple two-step scheme to Decatur women's movie decisions suggests that most media have a characteristic place in the sequence of influences, with the first exposure most often rated most influential.
+- [[katz-1955-personalinfluence/ch07-further]] — In an impact study (a study asking people what influenced a recent choice), cases often need pre-sorting, interviews have several pitfalls, and single-case impact ratings are uncertain, so the authors rely on the hope that errors cancel statistically.
+- [[katz-1955-personalinfluence/ch08-variations]] — The effectiveness of a source of influence varies with the respondent's state of mind (in these small data, dissatisfied or discriminating people seem more open) and, it seems, with how specific the source is on the topic.
+- [[katz-1955-personalinfluence/ch09-describing]] — To describe who leads and who follows in informal networks that lack labelled roles, the authors build three indices (life-cycle position, social-economic status, gregariousness, i.e. extent of social contacts) and first test how these relate to one another.
+- [[katz-1955-personalinfluence/ch10-marketing]] — In everyday household marketing, opinion leaders are found at all status levels, are most concentrated among large family wives, and become more common with gregariousness; limited follow-up data suggest advice mostly passes between women of like status, with no clear flow from higher to lower status.
+- [[katz-1955-personalinfluence/ch11-fashion]] — Fashion opinion leadership depends most on life-cycle position, and, the authors suggest, also on social context (who can seek and recognise advice), not on personal interest alone.
+- [[katz-1955-personalinfluence/ch12-public]] — Among the women surveyed, public affairs opinion leadership is rare and is related to social status and, more strongly, to gregariousness; influence flows mostly from men, and tends to flow from older to younger people and, it seems, from higher- to lower-status people.
+- [[katz-1955-personalinfluence/ch13-movie]] — Among women who go to the movies at least monthly, movie opinion leaders come mostly from the young, unmarried women, and they are more often frequent and choosy goers than non-leaders. Movie leadership is virtually unrelated to gregariousness; the authors think influence flows largely inside movie-going companion groups of age peers, and a movie "expert" is often sought among the young.
+- [[katz-1955-personalinfluence/ch14-two]] — In the Decatur data, opinion leaders in all four realms (marketing, fashion, public affairs, movie-going) are more exposed to the mass media than non-leaders, and often in a way matched to their realm, but only fashion leaders also clearly credit the media more in their own decisions.
+- [[katz-1955-personalinfluence/ch15-summary]] — Opinion leaders (people others turn to for everyday advice) are concentrated mainly by life-cycle position (such as unmarried "girls" or large-family wives) and gregariousness (extent of friendships and social contacts), less by social status except in public affairs, and it seems each topic area has largely its own leaders.
+- [[katz-1955-personalinfluence/appa-choice]] — The authors chose Decatur, Illinois as the study site by scoring 18 mid-sized Middle Western cities against their own group average and eliminating the unrepresentative ones.
+- [[katz-1955-personalinfluence/appb-guide]] — The appendix sorts the two-wave Decatur panel questionnaire into eight functional groups, so the reader can relate the questions to parts of the book; it shows the questions behind its key variables (decisions, influences, opinion leadership, status, gregariousness, life-cycle position).
+- [[katz-1955-personalinfluence/appc-follow]] — To check "who influenced whom" the Decatur team interviewed the people named by respondents, and learned that influential-side and influencee-side follow-ups should not be expected to be mirror images, that some bias must be assumed in the follow-ups, and that a flow table has three interdependent aspects.
+- [[katz-1955-personalinfluence/appd-construction]] — The authors list their indices, explain how four of them were built (latent structure, a correlation-type "importance" index, a three-question leadership index), and report that popular-fiction exposure rises with lower gregariousness and with anxiety.
+
+## Big ideas across units
+- **Media effects are filtered through people (two-step flow).** The idea starts from small effects in the 1940 voting study and the finding that leaders are more exposed to media. It is then qualified and tested in four realms. It appears in [[katz-1955-personalinfluence/ch00-introduction]], [[katz-1955-personalinfluence/ch01-between]], [[katz-1955-personalinfluence/ch02-played]], [[katz-1955-personalinfluence/ch07-group]] and [[katz-1955-personalinfluence/ch14-two]].
+- **The atomized-audience picture fails, and primary groups anchor opinion.** Research in several fields "rediscovered" the primary group. Group norms then explain why opinions are shared, resist change, or change together. See [[katz-1955-personalinfluence/ch01-between]], [[katz-1955-personalinfluence/ch02-played]], [[katz-1955-personalinfluence/ch03-essay]], [[katz-1955-personalinfluence/ch04-norms]], [[katz-1955-personalinfluence/ch05-role]] and [[katz-1955-personalinfluence/ch07-group]].
+- **Leadership is a communication role that depends on situation, location and culture, not a fixed trait.** Roles such as originator, transmitter, influential and gatekeeper are separable. See [[katz-1955-personalinfluence/ch02-played]], [[katz-1955-personalinfluence/ch06-interpersonal]], [[katz-1955-personalinfluence/ch07-group]] and [[katz-1955-personalinfluence/ch01-criteria]].
+- **Relay and reinforcement through networks.** Networks carry media content to the less exposed, and they make media effects stronger when personal communication matches the message. See [[katz-1955-personalinfluence/ch03-essay]], [[katz-1955-personalinfluence/ch06-interpersonal]] and [[katz-1955-personalinfluence/ch07-group]].
+- **Who counts as an influential depends on how you ask, and self-reports need checking.** The authors compare criteria, use self-designation, and confirm it by follow-up interviews. See [[katz-1955-personalinfluence/ch01-criteria]], [[katz-1955-personalinfluence/ch02-technique]], [[katz-1955-personalinfluence/ch03-place]], [[katz-1955-personalinfluence/appb-guide]], [[katz-1955-personalinfluence/appc-follow]] and [[katz-1955-personalinfluence/appd-construction]].
+- **Impact analysis: exposure is not influence.** The authors build an effectiveness index and an explicit accounting scheme. They find personal contacts more effective than media in marketing and movies, and they discuss the limits of the method. See [[katz-1955-personalinfluence/ch03-place]], [[katz-1955-personalinfluence/ch04-searching]], [[katz-1955-personalinfluence/ch05-evaluating]], [[katz-1955-personalinfluence/ch06-role]], [[katz-1955-personalinfluence/ch07-further]] and [[katz-1955-personalinfluence/ch08-variations]].
+- **Opinion leadership is horizontal and topic-specific.** Leaders appear at all status levels. Life-cycle position and gregariousness matter more than status (except in public affairs), influence tends to pass between like people, and different areas have largely different leaders. See [[katz-1955-personalinfluence/ch00-introduction]], [[katz-1955-personalinfluence/ch09-describing]], [[katz-1955-personalinfluence/ch10-marketing]], [[katz-1955-personalinfluence/ch11-fashion]], [[katz-1955-personalinfluence/ch12-public]], [[katz-1955-personalinfluence/ch13-movie]] and [[katz-1955-personalinfluence/ch15-summary]].
+- **Why people use media (uses and gratifications).** Leaders' exposure and the media's content are tied to realm and needs. See [[katz-1955-personalinfluence/ch01-between]], [[katz-1955-personalinfluence/ch14-two]] and [[katz-1955-personalinfluence/appd-construction]].
+
+## How to read it
+- **Essential:** [[katz-1955-personalinfluence/ch00-introduction]] (aims and design), [[katz-1955-personalinfluence/ch01-between]] and [[katz-1955-personalinfluence/ch02-played]] (the argument against the atomized audience and the origin of the two-step flow), [[katz-1955-personalinfluence/ch03-essay]] (the two hypotheses of anchorage and networks), [[katz-1955-personalinfluence/ch14-two]] (the two-step flow tested) and [[katz-1955-personalinfluence/ch15-summary]] (where leaders are found). The catalog's reading focus is "Ch. 1" plus Katz's 2006 preface. The digests do not include the preface, and I assume "Ch. 1" means [[katz-1955-personalinfluence/ch01-between]].
+- **Order and dependencies:** The first eight units (the theoretical and small-group half) build in sequence. [[katz-1955-personalinfluence/ch03-essay]] sets up chapters IV–VII. [[katz-1955-personalinfluence/ch05-role]] relies on the conformity functions in [[katz-1955-personalinfluence/ch04-norms]], and [[katz-1955-personalinfluence/ch07-group]] relies on the opinion-leader and group-norm ideas.
+- **The Decatur half:** The measurement units come first: [[katz-1955-personalinfluence/ch01-criteria]], [[katz-1955-personalinfluence/ch02-technique]] and [[katz-1955-personalinfluence/ch03-place]]. The impact-analysis units follow ([[katz-1955-personalinfluence/ch04-searching]] to [[katz-1955-personalinfluence/ch08-variations]]), each building on the one before. [[katz-1955-personalinfluence/ch07-further]] and [[katz-1955-personalinfluence/ch08-variations]] presuppose the accounting-scheme and effectiveness-index ideas from chs. IV–VI.
+- **Leader profiles:** [[katz-1955-personalinfluence/ch09-describing]] defines the three indices used in [[katz-1955-personalinfluence/ch10-marketing]], [[katz-1955-personalinfluence/ch11-fashion]], [[katz-1955-personalinfluence/ch12-public]] and [[katz-1955-personalinfluence/ch13-movie]]. [[katz-1955-personalinfluence/ch15-summary]] pulls them together.
+- **Can be skipped on a first pass:** the technical units [[katz-1955-personalinfluence/ch07-further]] and [[katz-1955-personalinfluence/ch08-variations]], the single-arena chapters if you read the summary, and the appendices. The appendices serve as reference: [[katz-1955-personalinfluence/appa-choice]] (site choice), [[katz-1955-personalinfluence/appb-guide]] (questionnaire), [[katz-1955-personalinfluence/appc-follow]] (follow-up interviews, and background for [[katz-1955-personalinfluence/ch02-technique]]) and [[katz-1955-personalinfluence/appd-construction]] (index construction).
+
+## Concepts introduced
+Some ids are near-duplicates (for example group-norm and group-norms). They are kept as given in the digests.
+
+- [[lasswell-formula]] — [[katz-1955-personalinfluence/ch00-introduction]]
+- [[opinion-leader]] — [[katz-1955-personalinfluence/ch00-introduction]]
+- [[two-step-flow]] — [[katz-1955-personalinfluence/ch00-introduction]]
+- [[horizontal-opinion-leadership]] — [[katz-1955-personalinfluence/ch00-introduction]]
+- [[molecular-leaders]] — [[katz-1955-personalinfluence/ch00-introduction]]
+- [[impact-analysis]] — [[katz-1955-personalinfluence/ch00-introduction]]
+- [[sociometric-choice]] — [[katz-1955-personalinfluence/ch00-introduction]]
+- [[personal-influence]] — [[katz-1955-personalinfluence/ch00-introduction]]
+- [[primary-group-setting]] — [[katz-1955-personalinfluence/ch00-introduction]]
+- [[magic-bullet-hypodermic-model]] — [[katz-1955-personalinfluence/ch01-between]]
+- [[limited-effects-paradigm]] — [[katz-1955-personalinfluence/ch01-between]]
+- [[selective-exposure]] — [[katz-1955-personalinfluence/ch01-between]]
+- [[intervening-variable-media]] — [[katz-1955-personalinfluence/ch01-between]]
+- [[campaign-effects]] — [[katz-1955-personalinfluence/ch01-between]]
+- [[atomized-mass]] — [[katz-1955-personalinfluence/ch01-between]]
+- [[social-mechanism-wiebe]] — [[katz-1955-personalinfluence/ch01-between]]
+- [[group-norms-and-media-use]] — [[katz-1955-personalinfluence/ch01-between]]
+- [[uses-and-gratifications]] — [[katz-1955-personalinfluence/ch01-between]]
+- [[primary-group-rediscovery]] — [[katz-1955-personalinfluence/ch02-played]]
+- [[intervening-variable]] — [[katz-1955-personalinfluence/ch02-played]]
+- [[atomized-audience-image]] — [[katz-1955-personalinfluence/ch02-played]]
+- [[decision-making-study]] — [[katz-1955-personalinfluence/ch02-played]]
+- [[group-anchorage]] — [[katz-1955-personalinfluence/ch03-essay]]
+- [[group-norms]] — [[katz-1955-personalinfluence/ch03-essay]]
+- [[relay-function]] — [[katz-1955-personalinfluence/ch03-essay]]
+- [[reinforcement-function]] — [[katz-1955-personalinfluence/ch03-essay]]
+- [[small-group-research]] — [[katz-1955-personalinfluence/ch03-essay]]
+- [[primary-group]] — [[katz-1955-personalinfluence/ch04-norms]]
+- [[sociometric-connection]] — [[katz-1955-personalinfluence/ch04-norms]]
+- [[reference-group]] — [[katz-1955-personalinfluence/ch04-norms]]
+- [[group-norm]] — [[katz-1955-personalinfluence/ch04-norms]]
+- [[instrumental-function-of-conformity]] — [[katz-1955-personalinfluence/ch04-norms]]
+- [[social-reality]] — [[katz-1955-personalinfluence/ch04-norms]]
+- [[homophily]] — [[katz-1955-personalinfluence/ch04-norms]]
+- [[propinquity]] — [[katz-1955-personalinfluence/ch04-norms]]
+- [[group-locomotion]] — [[katz-1955-personalinfluence/ch04-norms]]
+- [[group-as-medium-of-change]] — [[katz-1955-personalinfluence/ch05-role]]
+- [[group-as-target-of-change]] — [[katz-1955-personalinfluence/ch05-role]]
+- [[prestige-suggestion]] — [[katz-1955-personalinfluence/ch05-role]]
+- [[group-cohesiveness]] — [[katz-1955-personalinfluence/ch05-role]]
+- [[group-decision-method]] — [[katz-1955-personalinfluence/ch05-role]]
+- [[perceived-unanimity]] — [[katz-1955-personalinfluence/ch05-role]]
+- [[sociometry]] — [[katz-1955-personalinfluence/ch06-interpersonal]]
+- [[group-climate]] — [[katz-1955-personalinfluence/ch06-interpersonal]]
+- [[pressure-toward-uniformity]] — [[katz-1955-personalinfluence/ch06-interpersonal]]
+- [[strategic-points]] — [[katz-1955-personalinfluence/ch06-interpersonal]]
+- [[nominated-located-certified-leader]] — [[katz-1955-personalinfluence/ch06-interpersonal]]
+- [[centrality]] — [[katz-1955-personalinfluence/ch06-interpersonal]]
+- [[attributed-power]] — [[katz-1955-personalinfluence/ch06-interpersonal]]
+- [[behavioral-contagion]] — [[katz-1955-personalinfluence/ch06-interpersonal]]
+- [[gatekeeper]] — [[katz-1955-personalinfluence/ch07-group]]
+- [[local-cosmopolitan-leaders]] — [[katz-1955-personalinfluence/ch07-group]]
+- [[originator-transmitter-influential]] — [[katz-1955-personalinfluence/ch07-group]]
+- [[certification-vs-nomination]] — [[katz-1955-personalinfluence/ch07-group]]
+- [[leadership-succession-in-social-change]] — [[katz-1955-personalinfluence/ch07-group]]
+- [[group-norms-as-anchorage]] — [[katz-1955-personalinfluence/ch07-group]]
+- [[general-influential]] — [[katz-1955-personalinfluence/ch01-criteria]]
+- [[specific-influential]] — [[katz-1955-personalinfluence/ch01-criteria]]
+- [[everyday-contact]] — [[katz-1955-personalinfluence/ch01-criteria]]
+- [[contact-vs-influence]] — [[katz-1955-personalinfluence/ch01-criteria]]
+- [[self-detecting-method]] — [[katz-1955-personalinfluence/ch01-criteria]]
+- [[designation-technique]] — [[katz-1955-personalinfluence/ch02-technique]]
+- [[designator-designatee]] — [[katz-1955-personalinfluence/ch02-technique]]
+- [[influential-influencee]] — [[katz-1955-personalinfluence/ch02-technique]]
+- [[follow-up-interview]] — [[katz-1955-personalinfluence/ch02-technique]]
+- [[role-acknowledgment-categories]] — [[katz-1955-personalinfluence/ch02-technique]]
+- [[self-detecting-question]] — [[katz-1955-personalinfluence/ch02-technique]]
+- [[incident-approach]] — [[katz-1955-personalinfluence/ch03-place]]
+- [[group-approach]] — [[katz-1955-personalinfluence/ch03-place]]
+- [[person-approach]] — [[katz-1955-personalinfluence/ch03-place]]
+- [[face-to-face-influence]] — [[katz-1955-personalinfluence/ch03-place]]
+- [[specific-influence-question]] — [[katz-1955-personalinfluence/ch04-searching]]
+- [[assessment-question]] — [[katz-1955-personalinfluence/ch04-searching]]
+- [[exposure-question]] — [[katz-1955-personalinfluence/ch04-searching]]
+- [[impact-rating]] — [[katz-1955-personalinfluence/ch04-searching]]
+- [[contributory-vs-effective-influence]] — [[katz-1955-personalinfluence/ch04-searching]]
+- [[assessment-vs-evaluation]] — [[katz-1955-personalinfluence/ch04-searching]]
+- [[effectiveness-index]] — [[katz-1955-personalinfluence/ch04-searching]]
+- [[informational-vs-influential-role]] — [[katz-1955-personalinfluence/ch04-searching]]
+- [[effective-contributory-ineffective-exposure]] — [[katz-1955-personalinfluence/ch05-evaluating]]
+- [[index-of-effectiveness]] — [[katz-1955-personalinfluence/ch05-evaluating]]
+- [[four-types-of-influence-activation]] — [[katz-1955-personalinfluence/ch05-evaluating]]
+- [[control-vs-indirect-attraction]] — [[katz-1955-personalinfluence/ch05-evaluating]]
+- [[impact-study]] — [[katz-1955-personalinfluence/ch06-role]]
+- [[accounting-scheme]] — [[katz-1955-personalinfluence/ch06-role]]
+- [[two-step-decision-scheme]] — [[katz-1955-personalinfluence/ch06-role]]
+- [[sequence-of-influences]] — [[katz-1955-personalinfluence/ch06-role]]
+- [[position-and-impact]] — [[katz-1955-personalinfluence/ch06-role]]
+- [[pre-classification-of-cases]] — [[katz-1955-personalinfluence/ch07-further]]
+- [[assessment-of-impact]] — [[katz-1955-personalinfluence/ch07-further]]
+- [[inner-vs-outer-personal-influence]] — [[katz-1955-personalinfluence/ch07-further]]
+- [[logical-vs-psychological-question-order]] — [[katz-1955-personalinfluence/ch07-further]]
+- [[statistical-cancellation-of-errors]] — [[katz-1955-personalinfluence/ch07-further]]
+- [[impact-equals-coverage-times-effectiveness]] — [[katz-1955-personalinfluence/ch07-further]]
+- [[effective-vs-ineffective-exposure]] — [[katz-1955-personalinfluence/ch08-variations]]
+- [[satisfied-vs-dissatisfied-changer]] — [[katz-1955-personalinfluence/ch08-variations]]
+- [[discriminating-movie-goer]] — [[katz-1955-personalinfluence/ch08-variations]]
+- [[people-on-the-lookout]] — [[katz-1955-personalinfluence/ch08-variations]]
+- [[source-specificity]] — [[katz-1955-personalinfluence/ch08-variations]]
+- [[request-vs-influence]] — [[katz-1955-personalinfluence/ch08-variations]]
+- [[initiation-vs-continuation]] — [[katz-1955-personalinfluence/ch08-variations]]
+- [[life-cycle-position]] — [[katz-1955-personalinfluence/ch09-describing]]
+- [[social-economic-status-index]] — [[katz-1955-personalinfluence/ch09-describing]]
+- [[gregariousness-index]] — [[katz-1955-personalinfluence/ch09-describing]]
+- [[vertical-vs-horizontal-influence]] — [[katz-1955-personalinfluence/ch09-describing]]
+- [[controlling-a-variable]] — [[katz-1955-personalinfluence/ch09-describing]]
+- [[marketing-leader]] — [[katz-1955-personalinfluence/ch10-marketing]]
+- [[gregariousness]] — [[katz-1955-personalinfluence/ch10-marketing]]
+- [[follow-up-interview-method]] — [[katz-1955-personalinfluence/ch10-marketing]]
+- [[requests-vs-influence]] — [[katz-1955-personalinfluence/ch10-marketing]]
+- [[homophily-heterophily]] — [[katz-1955-personalinfluence/ch10-marketing]]
+- [[fashion-interest-index]] — [[katz-1955-personalinfluence/ch11-fashion]]
+- [[contextual-factor-in-leadership]] — [[katz-1955-personalinfluence/ch11-fashion]]
+- [[saliency-attractiveness-export-index]] — [[katz-1955-personalinfluence/ch11-fashion]]
+- [[public-affairs-leader]] — [[katz-1955-personalinfluence/ch12-public]]
+- [[enabling-factor]] — [[katz-1955-personalinfluence/ch12-public]]
+- [[specific-vs-general-influentials]] — [[katz-1955-personalinfluence/ch12-public]]
+- [[snowball-follow-up]] — [[katz-1955-personalinfluence/ch12-public]]
+- [[vertical-influence]] — [[katz-1955-personalinfluence/ch12-public]]
+- [[cosmopolitan-local-orientation]] — [[katz-1955-personalinfluence/ch14-two]]
+- [[flow-of-influence-vs-information]] — [[katz-1955-personalinfluence/ch14-two]]
+- [[exposure-vs-effect-of-leaders]] — [[katz-1955-personalinfluence/ch14-two]]
+- [[index-of-importance]] — [[katz-1955-personalinfluence/ch15-summary]]
+- [[export-index]] — [[katz-1955-personalinfluence/ch15-summary]]
+- [[interest-control-and-shared-interest]] — [[katz-1955-personalinfluence/ch15-summary]]
+- [[general-leader-hypothesis]] — [[katz-1955-personalinfluence/ch15-summary]]
+- [[representativeness-score]] — [[katz-1955-personalinfluence/appa-choice]]
+- [[group-mean-indexing]] — [[katz-1955-personalinfluence/appa-choice]]
+- [[occupational-diversity-index]] — [[katz-1955-personalinfluence/appa-choice]]
+- [[selection-by-elimination]] — [[katz-1955-personalinfluence/appa-choice]]
+- [[town-type-classification]] — [[katz-1955-personalinfluence/appa-choice]]
+- [[panel-design]] — [[katz-1955-personalinfluence/appb-guide]]
+- [[self-designation-index]] — [[katz-1955-personalinfluence/appb-guide]]
+- [[potential-influentials]] — [[katz-1955-personalinfluence/appb-guide]]
+- [[two-step-confirmation]] — [[katz-1955-personalinfluence/appc-follow]]
+- [[temporal-priority-index]] — [[katz-1955-personalinfluence/appc-follow]]
+- [[follow-up-mortality]] — [[katz-1955-personalinfluence/appc-follow]]
+- [[non-comparability-of-follow-ups]] — [[katz-1955-personalinfluence/appc-follow]]
+- [[flow-table]] — [[katz-1955-personalinfluence/appc-follow]]
+- [[direction-homogeneity-range]] — [[katz-1955-personalinfluence/appc-follow]]
+- [[latent-structure-analysis]] — [[katz-1955-personalinfluence/appd-construction]]
+- [[self-designated-leadership-index]] — [[katz-1955-personalinfluence/appd-construction]]
+- [[popular-fiction-index]] — [[katz-1955-personalinfluence/appd-construction]]

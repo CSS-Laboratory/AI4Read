@@ -1,0 +1,242 @@
+---
+id: sutton-2018-rl/index
+work: sutton-2018-rl
+type: work-map
+units: [sutton-2018-rl/ch01-introduction, sutton-2018-rl/ch02-multi, sutton-2018-rl/ch03-finite, sutton-2018-rl/ch04-dynamic, sutton-2018-rl/ch05-monte, sutton-2018-rl/ch06-temporal, sutton-2018-rl/ch07-n, sutton-2018-rl/ch08-planning, sutton-2018-rl/ch09-policy-p1, sutton-2018-rl/ch09-policy-p2, sutton-2018-rl/ch10-policy, sutton-2018-rl/ch11-off, sutton-2018-rl/ch12-eligibility, sutton-2018-rl/ch13-policy, sutton-2018-rl/ch14-psychology, sutton-2018-rl/ch15-neuroscience-p1, sutton-2018-rl/ch15-neuroscience-p2, sutton-2018-rl/ch16-applications, sutton-2018-rl/ch17-frontiers]
+---
+
+# Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press. ISBN 9780262039246.
+
+## In one paragraph
+Reinforcement learning (RL) is learning what to do from a numerical reward signal, by trial-and-error search, with rewards that may arrive late. The book states the problem precisely as a Markov decision process. It then builds methods in steps. Dynamic programming assumes a known model. Monte Carlo and temporal-difference (TD) learning work from experience alone. n-step methods, planning and eligibility traces link these approaches, and function approximation scales them to large problems. Policy-gradient methods learn the policy directly. The book also shows that TD error and actor–critic ideas match findings in animal learning and in dopamine neurons. It closes with case studies and open questions, including safety. It matters because it gives one coherent framework, close to optimal control, for agents that learn to act without a model of their world.
+
+## The path through the work
+- [[sutton-2018-rl/ch01-introduction]] — Reinforcement learning is learning what to do so as to maximize a numerical reward signal; its two most important distinguishing features are trial-and-error search and delayed reward, and the chapter explains it with the tic-tac-toe example and a history of three threads.
+- [[sutton-2018-rl/ch02-multi]] — When feedback only evaluates the action you took (it never says which action was best), you must trade off exploiting your current estimates against exploring, and a few simple methods work much better than always exploiting.
+- [[sutton-2018-rl/ch03-finite]] — A finite MDP formalizes goal-directed interaction as states, actions and rewards with probabilistic dynamics; the goal is a policy that maximizes expected discounted return, characterized by value functions that satisfy Bellman equations.
+- [[sutton-2018-rl/ch04-dynamic]] — Given a complete model of a finite MDP, you can compute optimal policies by turning the Bellman equations into repeated update rules, and all later methods in the book can be viewed as attempts to achieve much the same effect with less computation and without assuming a perfect model.
+- [[sutton-2018-rl/ch05-monte]] — Monte Carlo methods learn value functions and good policies by averaging complete sampled returns from whole episodes, with no model of the environment, and importance sampling lets them learn about one policy from data produced by another.
+- [[sutton-2018-rl/ch06-temporal]] — Temporal-difference (TD) learning updates a value estimate toward "observed reward + current estimate of the next state's value", so an agent can learn online, from raw experience, without a model and without waiting for the final outcome.
+- [[sutton-2018-rl/ch07-n]] — Updating a value estimate from n real rewards plus a bootstrapped estimate n steps later gives a family of methods between one-step TD (n = 1) and Monte Carlo (n = ∞), and intermediate n often works best.
+- [[sutton-2018-rl/ch08-planning]] — Planning (using a model) and learning (using real experience) are both done by small backing-up updates to value functions, so they can share one algorithm and differ mainly in the source of experience; the key design question is which updates to do and where to focus them.
+- [[sutton-2018-rl/ch09-policy-p1]] — Replace the value table by a parameterized function $\hat v(s,\mathbf w)$ and learn $\mathbf w$ by (semi-)gradient descent on a state-weighted squared error. Linear features make this analyzable, and the choice of features sets how learning generalizes.
+- [[sutton-2018-rl/ch09-policy-p2]] — Beyond basic linear semi-gradient SGD, on-policy value prediction can use a step-size rule of thumb, neural networks, least-squares TD, stored-example (memory and kernel) methods, and interest/emphasis weighting to focus learning on the states that matter.
+- [[sutton-2018-rl/ch10-policy]] — Episodic control with a parametric action-value function is a direct extension of semi-gradient TD (Sarsa), but for continuing tasks discounting stops defining the problem, and average reward with "differential" values takes its place.
+- [[sutton-2018-rl/ch11-off]] — Combining function approximation, bootstrapping and off-policy training (the "deadly triad") can make learning diverge, and the improved methods (Gradient-TD, Emphatic-TD) come with weaker theory and less satisfying results than on-policy learning.
+- [[sutton-2018-rl/ch12-eligibility]] — An eligibility trace is a fading short-term memory vector that lets a TD learner spread each one-step TD error backward over recently visited states, giving an efficient, incremental, backward-view way to obtain, exactly or approximately, the effect of "forward-view" updates that average n-step returns, with Monte Carlo at one end and one-step TD at the other.
+- [[sutton-2018-rl/ch13-policy]] — Instead of learning action values and acting on them, learn a differentiable parameterized policy directly by stochastic gradient ascent on performance, using the policy gradient theorem, which gives that gradient without differentiating the state distribution.
+- [[sutton-2018-rl/ch14-psychology]] — Reinforcement-learning ideas (prediction with TD error, trial-and-error control, eligibility traces, environment models) correspond to several findings and theories of animal-learning psychology, and the TD model of classical conditioning is one instance where the algorithm accounts for some details of animal data.
+- [[sutton-2018-rl/ch15-neuroscience-p1]] — The phasic (burst-like) activity of dopamine neurons in mammals behaves like the TD error of reinforcement learning, and this suggests the brain may implement something like an actor–critic algorithm.
+- [[sutton-2018-rl/ch15-neuroscience-p2]] — The learning rules of the actor and the critic in an actor–critic algorithm differ only in the kind of eligibility trace they use, and this difference may match how dopamine-modulated corticostriatal synapses change.
+- [[sutton-2018-rl/ch16-applications]] — The chapter's case studies (TD-Gammon, Watson, DQN, AlphaGo and others) illustrate the trade-offs of real applications, in particular how domain knowledge is incorporated and how often representation is critical; such applications typically require as much art as science.
+- [[sutton-2018-rl/ch17-frontiers]] — The chapter points to topics it sees as important for RL's future: predicting many signals, planning with multi-step options, building states from observation histories, designing rewards with care, and making embedded agents safe.
+
+## Big ideas across units
+- **Exploration versus exploitation.** The authors call it a challenge particular to RL. It appears first as a bandit trade-off (ε-greedy, optimistic values, UCB, soft-max), then returns in ε-soft Monte Carlo control, Dyna-Q+ exploration bonuses, Mountain Car (zero initial values act as optimism) and soft-max policies. Units: [[sutton-2018-rl/ch01-introduction]], [[sutton-2018-rl/ch02-multi]], [[sutton-2018-rl/ch05-monte]], [[sutton-2018-rl/ch08-planning]], [[sutton-2018-rl/ch10-policy]], [[sutton-2018-rl/ch13-policy]].
+- **Value functions, Bellman equations and generalized policy iteration (GPI).** The MDP and its Bellman equations are turned into update rules by DP. Evaluation and improvement are then repeated in Monte Carlo and TD control. AlphaGo Zero is described as a form of policy iteration. Units: [[sutton-2018-rl/ch03-finite]], [[sutton-2018-rl/ch04-dynamic]], [[sutton-2018-rl/ch05-monte]], [[sutton-2018-rl/ch06-temporal]], [[sutton-2018-rl/ch16-applications]].
+- **Bootstrapping and TD learning.** TD combines Monte Carlo sampling with DP-style updates from other estimates. It is online, needs no model, and gives Sarsa, Q-learning and Expected Sarsa. Its error is later matched to animal conditioning and dopamine. Units: [[sutton-2018-rl/ch01-introduction]], [[sutton-2018-rl/ch04-dynamic]], [[sutton-2018-rl/ch06-temporal]], [[sutton-2018-rl/ch14-psychology]], [[sutton-2018-rl/ch15-neuroscience-p1]].
+- **A spectrum between one-step TD and Monte Carlo.** n-step returns and the λ-return with eligibility traces both interpolate between the two. Intermediate settings usually work best. Sampling versus expectation also appears in expected updates, Expected Sarsa and Q(σ). Units: [[sutton-2018-rl/ch05-monte]], [[sutton-2018-rl/ch06-temporal]], [[sutton-2018-rl/ch07-n]], [[sutton-2018-rl/ch08-planning]], [[sutton-2018-rl/ch12-eligibility]].
+- **Off-policy learning, importance sampling and instability.** Importance sampling (ordinary or weighted, with control variates) lets one policy's data teach another. Combined with function approximation and bootstrapping it can diverge (the deadly triad). Gradient-TD and Emphatic-TD respond to this. Units: [[sutton-2018-rl/ch05-monte]], [[sutton-2018-rl/ch06-temporal]], [[sutton-2018-rl/ch07-n]], [[sutton-2018-rl/ch11-off]], [[sutton-2018-rl/ch12-eligibility]].
+- **Approximation to scale beyond tables.** Exact solution is usually impractical. The book moves to parameterized value functions (linear, tile coding, neural networks, LSTD, memory-based), semi-gradient control, and average reward for continuing tasks. Case studies such as DQN and TD-Gammon then show the methods in use. Units: [[sutton-2018-rl/ch03-finite]], [[sutton-2018-rl/ch09-policy-p1]], [[sutton-2018-rl/ch09-policy-p2]], [[sutton-2018-rl/ch10-policy]], [[sutton-2018-rl/ch11-off]], [[sutton-2018-rl/ch16-applications]].
+- **Learning the policy directly, and actor–critic.** Policy-gradient methods (REINFORCE, baselines, actor–critic) use a performance gradient and stay variance-focused. The same actor–critic structure becomes a hypothesised brain circuit. Units: [[sutton-2018-rl/ch13-policy]], [[sutton-2018-rl/ch14-psychology]], [[sutton-2018-rl/ch15-neuroscience-p1]], [[sutton-2018-rl/ch15-neuroscience-p2]].
+- **RL as a framework linked to animals and brains.** Prediction corresponds to classical conditioning, control to instrumental conditioning, and model-based versus model-free learning to goal-directed versus habitual behavior. The authors present RL as an idealized engineering framework, not a detailed model of animals. Units: [[sutton-2018-rl/ch14-psychology]], [[sutton-2018-rl/ch15-neuroscience-p1]], [[sutton-2018-rl/ch15-neuroscience-p2]].
+
+## How to read it
+- **Essential first.** Ch. 1, 3, 4 and 6 form the core. Ch. 2 introduces exploration and the incremental update rule that Ch. 6 reuses. Ch. 13 gives the policy-gradient approach. Ch. 14 and 15 are the psychology and neuroscience payoff. The catalog's suggested focus is exactly Ch. 1, 2, 3, 4, 6, 13, 14 and 15.
+- **Dependencies.** Ch. 3 builds on Ch. 1. Ch. 4 needs Ch. 3 (value functions and Bellman equations). Ch. 5 needs Ch. 4 (GPI, policy improvement) and Ch. 2 (incremental averages). Ch. 6 lists Monte Carlo prediction (Ch. 5) as a prerequisite, so skim Ch. 5 first if you skip it. Ch. 7 needs one-step TD and Sarsa (Ch. 6). Ch. 8 needs Ch. 4 and Ch. 6. Ch. 9 (both parts) needs tabular MC and TD(0). Ch. 10 and 11 need Ch. 9. Ch. 12 needs Ch. 7 and Ch. 9. Ch. 13 lists eligibility traces (Ch. 12) among its prerequisites.
+- **Neuroscience and psychology.** Ch. 14 needs TD(λ) with traces and actor–critic. Ch. 15 part 1 needs Ch. 13.5 (actor–critic) and the CSC representation from Ch. 14. Ch. 15 part 2 needs Ch. 13 (REINFORCE and actor–critic) and part 1.
+- **Can wait on a first pass.** Ch. 5 (starred importance-sampling refinements), Ch. 7 beyond n-step TD and Sarsa (control variates, tree backup, Q(σ)), the second half of Ch. 9 (neural nets, LSTD, kernel methods), Ch. 11, and Ch. 12 are not in the catalog focus. Ch. 16 and 17 are case studies and open issues; Ch. 17 itself says many of its topics go beyond what is reliably known. They are best read after the core.
+
+## Concepts introduced
+- [[policy]] — ch01
+- [[bellman-equation-value-function]] — ch01
+- [[markov-decision-process]] — ch01
+- [[exploration-vs-exploitation]] — ch01
+- [[temporal-difference-learning]] — ch01
+- [[model-based-vs-model-free-rl]] — ch01
+- [[state]] — ch01
+- [[reward-signal]] — ch01
+- [[trial-and-error-learning]] — ch01
+- [[credit-assignment]] — ch01
+- [[evolutionary-methods]] — ch01
+- [[dynamic-programming]] — ch01
+- [[supervised-vs-reinforcement-learning]] — ch01
+- [[step-size-parameter]] — ch01
+- [[evaluative-vs-instructive-feedback]] — ch02
+- [[action-value]] — ch02
+- [[sample-average-method]] — ch02
+- [[epsilon-greedy]] — ch02
+- [[incremental-update-rule]] — ch02
+- [[error signal]] — ch02
+- [[constant-step-size]] — ch02
+- [[nonstationarity]] — ch02
+- [[optimistic-initial-values]] — ch02
+- [[ucb-action-selection]] — ch02
+- [[gradient-bandit]] — ch02
+- [[reward-baseline]] — ch02
+- [[contextual-bandit]] — ch02
+- [[gittins-index-and-thompson-sampling]] — ch02
+- [[markov-property]] — ch03
+- [[dynamics-function]] — ch03
+- [[plant]] — ch03
+- [[agent-environment-boundary]] — ch03
+- [[reward-hypothesis]] — ch03
+- [[return]] — ch03
+- [[discount-rate]] — ch03
+- [[episodic-vs-continuing-tasks]] — ch03
+- [[action-value-function]] — ch03
+- [[bellman-optimality-equation]] — ch03
+- [[backup-diagram]] — ch03
+- [[greedy-policy]] — ch03
+- [[tabular-methods]] — ch03
+- [[policy-evaluation]] — ch04
+- [[policy-improvement]] — ch04
+- [[policy-iteration]] — ch04
+- [[value-iteration]] — ch04
+- [[asynchronous-dp]] — ch04
+- [[generalized-policy-iteration]] — ch04
+- [[expected-update]] — ch04
+- [[bootstrapping]] — ch04
+- [[curse-of-dimensionality]] — ch04
+- [[monte-carlo-prediction]] — ch05
+- [[first-visit-vs-every-visit-mc]] — ch05
+- [[exploring-starts]] — ch05
+- [[epsilon-soft-policy]] — ch05
+- [[on-policy-vs-off-policy]] — ch05
+- [[importance-sampling]] — ch05
+- [[ordinary-vs-weighted-importance-sampling]] — ch05
+- [[coverage-assumption]] — ch05
+- [[per-decision-importance-sampling]] — ch05
+- [[sample-vs-expected-update]] — ch06
+- [[batch-updating]] — ch06
+- [[certainty-equivalence]] — ch06
+- [[sarsa]] — ch06
+- [[q-learning]] — ch06
+- [[expected-sarsa]] — ch06
+- [[maximization-bias]] — ch06
+- [[double-learning]] — ch06
+- [[afterstate]] — ch06
+- [[n-step-return]] — ch07
+- [[n-step-td]] — ch07
+- [[error-reduction-property]] — ch07
+- [[n-step-sarsa]] — ch07
+- [[expected-approximate-value]] — ch07
+- [[importance-sampling-ratio]] — ch07
+- [[control-variate]] — ch07
+- [[tree-backup]] — ch07
+- [[q-sigma]] — ch07
+- [[planning]] — ch08
+- [[distribution-vs-sample-model]] — ch08
+- [[dyna-architecture]] — ch08
+- [[direct-vs-indirect-rl]] — ch08
+- [[exploration-bonus]] — ch08
+- [[prioritized-sweeping]] — ch08
+- [[expected-vs-sample-update]] — ch08
+- [[trajectory-sampling]] — ch08
+- [[real-time-dynamic-programming]] — ch08
+- [[decision-time-planning]] — ch08
+- [[heuristic-search]] — ch08
+- [[rollout-algorithm]] — ch08
+- [[monte-carlo-tree-search]] — ch08
+- [[temporal-difference-learning-reward-prediction-error]] — ch08
+- [[function-approximation]] — ch09 part 1
+- [[mean-square-value-error]] — ch09 part 1
+- [[on-policy-distribution]] — ch09 part 1
+- [[stochastic-gradient-descent]] — ch09 part 1
+- [[semi-gradient-methods]] — ch09 part 1
+- [[state-aggregation]] — ch09 part 1
+- [[linear-function-approximation]] — ch09 part 1
+- [[td-fixed-point]] — ch09 part 1
+- [[stability]] — ch09 part 1
+- [[bootstrapping-bias-bound]] — ch09 part 1
+- [[feature-construction]] — ch09 part 1
+- [[coarse-coding]] — ch09 part 1
+- [[tile-coding]] — ch09 part 1
+- [[linear-sgd-step-size-rule]] — ch09 part 2
+- [[rbf-network]] — ch09 part 2
+- [[feedforward-ann]] — ch09 part 2
+- [[activation-function]] — ch09 part 2
+- [[backpropagation]] — ch09 part 2
+- [[overfitting]] — ch09 part 2
+- [[convolutional-network]] — ch09 part 2
+- [[lstd]] — ch09 part 2
+- [[sherman-morrison-update]] — ch09 part 2
+- [[memory-based-approximation]] — ch09 part 2
+- [[nonparametric-method]] — ch09 part 2
+- [[kernel-function]] — ch09 part 2
+- [[kernel-trick]] — ch09 part 2
+- [[interest-and-emphasis]] — ch09 part 2
+- [[semi-gradient-sarsa]] — ch10
+- [[average-reward]] — ch10
+- [[ergodicity]] — ch10
+- [[differential-value-function]] — ch10
+- [[policy-improvement-theorem]] — ch10
+- [[off-policy-learning]] — ch11
+- [[deadly-triad]] — ch11
+- [[bellman-error]] — ch11
+- [[projected-bellman-error]] — ch11
+- [[residual-gradient-algorithm]] — ch11
+- [[learnability]] — ch11
+- [[gradient-td]] — ch11
+- [[emphatic-td]] — ch11
+- [[eligibility-trace]] — ch12
+- [[lambda-return]] — ch12
+- [[forward-and-backward-views]] — ch12
+- [[trace-decay-parameter]] — ch12
+- [[dutch-trace]] — ch12
+- [[true-online-td-lambda]] — ch12
+- [[termination-function]] — ch12
+- [[delay-dead-time]] — ch12
+- [[policy-gradient-theorem]] — ch13
+- [[reinforce]] — ch13
+- [[eligibility-vector]] — ch13
+- [[baseline]] — ch13
+- [[actor-critic]] — ch13
+- [[softmax-action-preferences]] — ch13
+- [[gaussian-policy]] — ch13
+- [[differential-return]] — ch13
+- [[classical-conditioning]] — ch14
+- [[instrumental-conditioning]] — ch14
+- [[blocking]] — ch14
+- [[rescorla-wagner-model]] — ch14
+- [[td-model-of-conditioning]] — ch14
+- [[stimulus-representation]] — ch14
+- [[conditioned-reinforcement]] — ch14
+- [[credit-assignment-problem]] — ch14
+- [[law-of-effect]] — ch14
+- [[shaping]] — ch14
+- [[cognitive-map]] — ch14
+- [[outcome-devaluation]] — ch14
+- [[perceptual control]] — ch14
+- [[reward-prediction-error-hypothesis]] — ch15 part 1
+- [[reinforcement-signal]] — ch15 part 1
+- [[synaptic-plasticity]] — ch15 part 1
+- [[neuromodulator]] — ch15 part 1
+- [[complete-serial-compound-representation]] — ch15 part 1
+- [[optogenetics]] — ch15 part 1
+- [[feedback]] — ch15 part 2
+- [[contingent-eligibility-trace]] — ch15 part 2
+- [[non-contingent-eligibility-trace]] — ch15 part 2
+- [[three-factor-learning-rule]] — ch15 part 2
+- [[reward-modulated-stdp]] — ch15 part 2
+- [[hedonistic-neuron]] — ch15 part 2
+- [[team-problem]] — ch15 part 2
+- [[structural-credit-assignment]] — ch15 part 2
+- [[self-play]] — ch16
+- [[experience-replay]] — ch16
+- [[target-network]] — ch16
+- [[policy-improvement-operator]] — ch16
+- [[off-policy-evaluation]] — ch16
+- [[general-value-function]] — ch17
+- [[cumulant]] — ch17
+- [[auxiliary-task]] — ch17
+- [[option]] — ch17
+- [[option-model]] — ch17
+- [[hierarchical-policy]] — ch17
+- [[history-and-markov-state]] — ch17
+- [[state-update-function]] — ch17
+- [[belief-state]] — ch17
+- [[predictive-state-representation]] — ch17
+- [[reward-shaping]] — ch17
+- [[intrinsic-reward]] — ch17
+- [[inverse reinforcement learning (inverse optimal control)]] — ch17

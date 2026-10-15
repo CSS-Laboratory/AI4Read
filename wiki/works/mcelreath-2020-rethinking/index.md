@@ -1,0 +1,238 @@
+---
+id: mcelreath-2020-rethinking/index
+work: mcelreath-2020-rethinking
+type: work-map
+units: [mcelreath-2020-rethinking/front-preface, mcelreath-2020-rethinking/ch01-golem, mcelreath-2020-rethinking/ch02-small, mcelreath-2020-rethinking/ch03-sampling, mcelreath-2020-rethinking/ch04-linear-p1, mcelreath-2020-rethinking/ch04-linear-p2, mcelreath-2020-rethinking/ch05-multivariate-p1, mcelreath-2020-rethinking/ch05-multivariate-p2, mcelreath-2020-rethinking/ch06-overfitting-p1, mcelreath-2020-rethinking/ch06-overfitting-p2, mcelreath-2020-rethinking/ch07-interactions, mcelreath-2020-rethinking/ch08-markov, mcelreath-2020-rethinking/ch09-big, mcelreath-2020-rethinking/ch10-counting, mcelreath-2020-rethinking/ch11-monsters, mcelreath-2020-rethinking/ch12-multilevel, mcelreath-2020-rethinking/ch13-adventures, mcelreath-2020-rethinking/ch14-missing, mcelreath-2020-rethinking/ch15-horoscopes]
+---
+
+# McElreath, R. (2020). *Statistical Rethinking: A Bayesian Course with Examples in R and Stan* (2nd ed.). Chapman & Hall/CRC. DOI: 10.1201/9780429029608
+
+## In one paragraph
+The book teaches statistical modeling as the careful building and checking of "golems": models that are powerful but have no wisdom. It starts from Bayesian inference as counting. It then builds regression step by step: Gaussian models, several predictors, interactions, and generalized linear models for counts and ordered outcomes. Along the way it stresses overfitting, regularizing priors and information criteria. Multilevel models share information across clusters and across parameter types, so they are treated as the default regression. The book also shows how to put measurement error and missing data into the model. Throughout, you learn by running code and simulating, then interpret models through their predictions and not through tables of coefficients. The closing message is that statistics is one part of a scientific process, and openness is the part you control personally.
+
+## The path through the work
+- [[mcelreath-2020-rethinking/front-preface]] — The book is a "scaffold": a sequential, code-heavy course whose slow, step-by-step calculations are meant to build understanding that you keep after you drop the scaffold.
+- [[mcelreath-2020-rethinking/ch01-golem]] — Statistical models are powerful but unwise "golems", so researchers should learn to build and criticise several models (using Bayesian analysis, multilevel models and information criteria) instead of picking pre-made tests to falsify null hypotheses.
+- [[mcelreath-2020-rethinking/ch02-small]] — Bayesian inference is counting the ways each possible explanation could have produced the data, then standardising the counts. Its logic is consistent in the model's "small world", but that is no guarantee of optimal performance in the real "large world".
+- [[mcelreath-2020-rethinking/ch03-sampling]] — Draw random samples from the posterior, and integral calculus becomes counting and summarizing, for parameters (intervals, point estimates) and for predictions (posterior predictive checks).
+- [[mcelreath-2020-rethinking/ch04-linear-p1]] — Normal distributions tend to arise when many fluctuations are added together, so a Gaussian likelihood with unknown mean and spread, written in a standard model notation and updated by Bayes, is a sensible first "golem" (the book's word for a statistical model that does what it is told) for measurements.
+- [[mcelreath-2020-rethinking/ch04-linear-p2]] — Make the Gaussian mean a deterministic linear function of a predictor, fit it, and then understand it by sampling from the posterior and computing any quantity (line, interval, prediction) for each sample.
+- [[mcelreath-2020-rethinking/ch05-multivariate-p1]] — A regression coefficient answers "what does this predictor add once the other predictors are known?", so adding a predictor can erase an association (spurious) or reveal one (masked).
+- [[mcelreath-2020-rethinking/ch05-multivariate-p2]] — Adding predictors can hurt: nearly redundant predictors give a wide, uninformative posterior for each slope, and controlling for a consequence of the treatment can hide a real effect.
+- [[mcelreath-2020-rethinking/ch06-overfitting-p1]] — The chapter's target for a model is predictive accuracy on new data, measured as out-of-sample deviance (an approximation of relative K-L divergence), because fit to the sample improves as parameters are added (always, in the models seen so far).
+- [[mcelreath-2020-rethinking/ch06-overfitting-p2]] — Skeptical (regularizing) priors reduce overfitting while you estimate, and information criteria such as WAIC estimate out-of-sample deviance from the training sample alone, so models can be compared and their predictions averaged rather than one model being "selected".
+- [[mcelreath-2020-rethinking/ch07-interactions]] — When the effect of one predictor depends on another, make that slope itself a linear function of the other predictor; the resulting coefficients are hard to read from tables, so centre the predictors and plot predictions.
+- [[mcelreath-2020-rethinking/ch08-markov]] — A random walk that moves between parameter values with probabilities tied to posterior density can produce posterior samples without assuming a Gaussian shape, but you must inspect the chain to check that it worked.
+- [[mcelreath-2020-rethinking/ch09-big]] — When choosing a likelihood (or prior), bet on the distribution with the biggest entropy that fits what you know, then attach linear models to its parameters through link functions.
+- [[mcelreath-2020-rethinking/ch10-counting]] — Model the counts you actually observed with a binomial or Poisson likelihood and a link function, and then interpret the fitted parameters on the outcome scale through implied predictions, because the parameters themselves sit on a different scale.
+- [[mcelreath-2020-rethinking/ch11-monsters]] — Likelihoods and link functions can be assembled from simpler parts (cumulative logits, mixtures of a binary event with a count, per-observation random rates) to fit ordered, zero-heavy or over-dispersed outcomes, at the price of models that are harder to fit and interpret.
+- [[mcelreath-2020-rethinking/ch12-multilevel]] — A multilevel model gives each cluster its own parameter and learns the prior shared by those parameters from the data, so clusters share information (partial pooling), which tends to improve estimates.
+- [[mcelreath-2020-rethinking/ch13-adventures]] — Give all varying effects of a unit (intercepts and slopes) one joint multivariate Gaussian prior whose covariance is learned from data, so the model pools information across units and across parameter types; Gaussian processes extend this to continuous "distances".
+- [[mcelreath-2020-rethinking/ch14-missing]] — State your assumptions about measurement error or missingness as part of the model, and Bayesian conditioning will estimate the true or missing values and the regression coefficients together.
+- [[mcelreath-2020-rethinking/ch15-horoscopes]] — Statistical analysis is only one part of a scientific process that can produce mostly false findings at any one time, so every stage of research needs attention, and one thing you do personally control is openness.
+
+## Big ideas across units
+- **Models are golems whose assumptions you must understand.** Models do what they are told, so the assumptions belong to the model and not necessarily to the world. This runs from the golem metaphor, through the small-world/large-world split, to the Gaussian as a convenient servant and model checking. Units: ch01-golem, ch02-small, ch04-linear-p1, ch03-sampling, ch13-adventures, ch15-horoscopes.
+- **Inference as counting, made practical by samples.** Counting the ways data can arise leads to the posterior. Samples then turn integrals into counting, and MCMC supplies samples when the posterior is not Gaussian. Units: ch02-small, ch03-sampling, ch04-linear-p1, ch08-markov, ch12-multilevel.
+- **Interpret models through predictions, not coefficient tables.** Compute any quantity for each posterior sample, plot predictions (intervals, counterfactual plots, triptychs, cumulative curves), and use posterior predictive checks. Units: ch03-sampling, ch04-linear-p2, ch05-multivariate-p1, ch07-interactions, ch10-counting, ch11-monsters.
+- **What a coefficient means depends on what else is in the model.** Spurious and masked associations, near-redundant predictors, post-treatment bias, interactions, and the Berkeley department example all show this. Units: ch05-multivariate-p1, ch05-multivariate-p2, ch07-interactions, ch10-counting.
+- **Prediction, overfitting and regularization.** More parameters always improve fit to the sample but not always prediction. Regularizing priors, information criteria (WAIC) and model averaging address this. Priors that rule out absurd values also help sampling. Units: ch01-golem, ch06-overfitting-p1, ch06-overfitting-p2, ch08-markov, ch12-multilevel.
+- **Maximum entropy, likelihoods and link functions.** Entropy guides the choice of distribution (Gaussian, binomial), and link functions attach linear models to it. This extends to counts, ordered categories and mixtures. Units: ch04-linear-p1, ch06-overfitting-p1, ch09-big, ch10-counting, ch11-monsters.
+- **Partial pooling and shrinkage.** Multilevel models learn the population of clusters. They shrink estimates, pool slopes and intercepts together through a learned covariance, and extend to Gaussian processes. The same shrinkage appears for uncertain or missing values. Units: ch01-golem, ch12-multilevel, ch13-adventures, ch14-missing, ch06-overfitting-p2.
+- **Put uncertainty and assumptions into the model, and be open.** Measurement error and missingness become parameters. At the level of the scientific process, openness is the part under your control. Units: ch14-missing, ch15-horoscopes, front-preface.
+
+## How to read it
+- **Essential:** ch01–ch06 form the core: the counting logic, sampling, Gaussian regression, multiple regression and overfitting. ch08 (MCMC) and ch12 (multilevel models) are the key later steps.
+- **Dependencies, from the stated prerequisites:**
+  - ch03 needs ch02.
+  - ch04 needs the ch02–ch03 grid approximation and sampling, and ch04-p2 needs ch04-p1.
+  - ch05 builds on ch04, and ch05-p2 on ch05-p1.
+  - ch06-p2 needs ch06-p1.
+  - ch07 uses dummy variables, MAP fitting and WAIC (ch05, ch06).
+  - ch08 uses ch03 and the ch05/ch07 regressions.
+  - ch09 needs entropy and KL divergence from ch06.
+  - ch10 uses link functions (ch09) and WAIC.
+  - ch11 builds on ch10.
+  - ch12 needs ch10, ch06 and MCMC diagnostics (ch08).
+  - ch13 needs ch12.
+  - ch14 builds on shrinkage (ch12) but is also a short way into measurement error and imputation.
+- **Can be skipped or skimmed first time:** the preface (setup and orientation), the later parts of ch10 (multinomial and other distributions are only sketched), and ch11 (hybrid "monsters", harder to fit and compare) unless you need ordered or zero-inflated outcomes. ch15 has no math and depends on little beyond earlier ideas of overfitting and significance testing. It can be read at any time.
+- **Note on numbering:** the digests use their own chapter numbers (for example, MCMC is Ch. 8 and covariance is Ch. 13). These differ from the catalog's focus list, and the digests contain no DAG, collider or confounding-graph material. Match topics, not chapter numbers, when using the catalog's reading list.
+
+## Concepts introduced
+Ids are kept as written in the units; a few near-duplicates (for example `markov-chain-monte-carlo` and `markov-chain-monte-carlo-mcmc`) have different spellings in different units.
+
+- [[scaffold-learning]] — front-preface
+- [[log-probability]] — front-preface
+- [[reproducible-scripting]] — front-preface
+- [[frequentist-vs-bayesian]] — front-preface
+- [[statistical-golem]] — ch01-golem
+- [[modus-tollens-falsification]] — ch01-golem
+- [[null-hypothesis-significance-testing]] — ch01-golem
+- [[hypotheses-vs-models]] — ch01-golem
+- [[probability-as-extended-logic]] — ch01-golem
+- [[sampling-distribution]] — ch01-golem
+- [[hierarchical-model]] — ch01-golem
+- [[information-criteria]] — ch01-golem
+- [[overfitting]] — ch01-golem
+- [[principle-of-indifference-maximum-entropy]] — ch01-golem
+- [[small-world-large-world]] — ch02-small
+- [[garden-of-forking-data]] — ch02-small
+- [[bayes-theorem]] — ch02-small
+- [[prior-distribution]] — ch02-small
+- [[likelihood]] — ch02-small
+- [[posterior-distribution]] — ch02-small
+- [[marginal-likelihood]] — ch02-small
+- [[sequential-updating]] — ch02-small
+- [[principle-of-indifference]] — ch02-small
+- [[subjective-probability]] — ch02-small
+- [[parameter]] — ch02-small
+- [[data-story]] — ch02-small
+- [[regularizing-prior]] — ch02-small
+- [[grid-approximation]] — ch02-small
+- [[quadratic-approximation]] — ch02-small
+- [[markov-chain-monte-carlo]] — ch02-small
+- [[base-rate-neglect]] — ch03-sampling
+- [[monte-carlo-integration]] — ch03-sampling
+- [[markov-chain-monte-carlo-mcmc]] — ch03-sampling
+- [[credible-interval]] — ch03-sampling
+- [[frequentist-vs-bayesian-inference]] — ch03-sampling
+- [[posterior-predictive-distribution]] — ch03-sampling
+- [[posterior-predictive-check]] — ch03-sampling
+- [[percentile-interval]] — ch03-sampling
+- [[hpdi]] — ch03-sampling
+- [[point-estimate-loss-function]] — ch03-sampling
+- [[dummy-data-generative-model]] — ch03-sampling
+- [[natural-frequencies]] — ch03-sampling
+- [[small-world-number]] — ch03-sampling
+- [[gaussian-by-addition]] — ch04-linear-p1
+- [[gaussian-by-multiplication]] — ch04-linear-p1
+- [[model-definition-notation]] — ch04-linear-p1
+- [[iid-assumption]] — ch04-linear-p1
+- [[exchangeability]] — ch04-linear-p1
+- [[prior-predictive-check]] — ch04-linear-p1
+- [[variance-covariance-matrix]] — ch04-linear-p1
+- [[prior-strength-as-implied-data]] — ch04-linear-p1
+- [[linear-regression-model]] — ch04-linear-p2
+- [[map-quadratic-approximation]] — ch04-linear-p2
+- [[centering]] — ch04-linear-p2
+- [[standardization]] — ch04-linear-p2
+- [[polynomial-regression]] — ch04-linear-p2
+- [[prediction-interval]] — ch04-linear-p2
+- [[posterior-sampling-recipe]] — ch04-linear-p2
+- [[multiple-regression]] — ch05-multivariate-p1
+- [[confound]] — ch05-multivariate-p1
+- [[spurious-association]] — ch05-multivariate-p1
+- [[masked-relationship]] — ch05-multivariate-p1
+- [[simpsons-paradox]] — ch05-multivariate-p1
+- [[design-matrix]] — ch05-multivariate-p1
+- [[predictor-residual-plot]] — ch05-multivariate-p1
+- [[counterfactual-plot]] — ch05-multivariate-p1
+- [[multicollinearity]] — ch05-multivariate-p2
+- [[non-identifiability]] — ch05-multivariate-p2
+- [[post-treatment-bias]] — ch05-multivariate-p2
+- [[omitted-variable-bias]] — ch05-multivariate-p2
+- [[dummy-variable]] — ch05-multivariate-p2
+- [[index-variable]] — ch05-multivariate-p2
+- [[contrast]] — ch05-multivariate-p2
+- [[design-formula]] — ch05-multivariate-p2
+- [[ordinary-least-squares]] — ch05-multivariate-p2
+- [[underfitting]] — ch06-overfitting-p1
+- [[r-squared]] — ch06-overfitting-p1
+- [[information-entropy]] — ch06-overfitting-p1
+- [[kl-divergence]] — ch06-overfitting-p1
+- [[cross-entropy]] — ch06-overfitting-p1
+- [[deviance]] — ch06-overfitting-p1
+- [[out-of-sample-deviance]] — ch06-overfitting-p1
+- [[bias-variance-tradeoff]] — ch06-overfitting-p1
+- [[cross-validation-loo-waic]] — ch06-overfitting-p2
+- [[aic]] — ch06-overfitting-p2
+- [[dic]] — ch06-overfitting-p2
+- [[waic]] — ch06-overfitting-p2
+- [[effective-number-of-parameters]] — ch06-overfitting-p2
+- [[akaike-weights]] — ch06-overfitting-p2
+- [[model-comparison]] — ch06-overfitting-p2
+- [[model-averaging]] — ch06-overfitting-p2
+- [[marginal-likelihood-evidence]] — ch06-overfitting-p2
+- [[partial-pooling-shrinkage]] — ch06-overfitting-p2
+- [[interaction]] — ch07-interactions
+- [[linear-interaction]] — ch07-interactions
+- [[interaction-symmetry]] — ch07-interactions
+- [[triptych-plot]] — ch07-interactions
+- [[survivorship-conditioning]] — ch07-interactions
+- [[partial-pooling]] — ch07-interactions
+- [[metropolis-hastings]] — ch08-markov
+- [[gibbs-sampling]] — ch08-markov
+- [[conjugate-prior]] — ch08-markov
+- [[hamiltonian-monte-carlo-hmc-nuts]] — ch08-markov
+- [[convergence-diagnostics-rhat-ess-divergences]] — ch08-markov
+- [[trace-plot]] — ch08-markov
+- [[stationarity-and-mixing]] — ch08-markov
+- [[warmup-vs-burn-in]] — ch08-markov
+- [[weakly-informative-prior]] — ch08-markov
+- [[non-identifiable-parameters]] — ch08-markov
+- [[cauchy-distribution]] — ch08-markov
+- [[folk-theorem-of-statistical-computing]] — ch08-markov
+- [[multiplicity-wallis-derivation]] — ch09-big
+- [[gaussian-max-entropy]] — ch09-big
+- [[binomial-max-entropy]] — ch09-big
+- [[generalized-linear-model]] — ch09-big
+- [[link-function]] — ch09-big
+- [[logit-link]] — ch09-big
+- [[log-link]] — ch09-big
+- [[exponential-family]] — ch09-big
+- [[conditional-independence]] — ch09-big
+- [[sensitivity-analysis]] — ch09-big
+- [[histomancy]] — ch09-big
+- [[binomial-regression]] — ch10-counting
+- [[logit-link-log-odds]] — ch10-counting
+- [[proportional-odds-relative-effect]] — ch10-counting
+- [[absolute-vs-relative-effect]] — ch10-counting
+- [[aggregated-binomial]] — ch10-counting
+- [[poisson-regression]] — ch10-counting
+- [[log-link-exposure-offset]] — ch10-counting
+- [[index-variable-vector-of-intercepts]] — ch10-counting
+- [[quadratic-approximation-map]] — ch10-counting
+- [[centering-predictors]] — ch10-counting
+- [[multinomial-softmax-link]] — ch10-counting
+- [[multinomial-poisson-transformation]] — ch10-counting
+- [[geometric-distribution]] — ch10-counting
+- [[overdispersion-mixture-counts]] — ch10-counting
+- [[ordered-categorical-outcome]] — ch11-monsters
+- [[cumulative-link]] — ch11-monsters
+- [[log-cumulative-odds]] — ch11-monsters
+- [[ordered-logit-model]] — ch11-monsters
+- [[mixture-model]] — ch11-monsters
+- [[zero-inflated-poisson]] — ch11-monsters
+- [[over-dispersion]] — ch11-monsters
+- [[beta-binomial]] — ch11-monsters
+- [[gamma-poisson]] — ch11-monsters
+- [[continuous-mixture]] — ch11-monsters
+- [[hierarchical-multilevel-model]] — ch12-multilevel
+- [[varying-intercepts]] — ch12-multilevel
+- [[hyperparameter]] — ch12-multilevel
+- [[complete-pooling-no-pooling]] — ch12-multilevel
+- [[cluster-variable]] — ch12-multilevel
+- [[cross-classified-model]] — ch12-multilevel
+- [[prediction-focus]] — ch12-multilevel
+- [[convergence-diagnostics]] — ch12-multilevel
+- [[hamiltonian-monte-carlo-nuts]] — ch12-multilevel
+- [[varying-slopes-model]] — ch13-adventures
+- [[covariance-matrix-factorization]] — ch13-adventures
+- [[lkjcorr-prior]] — ch13-adventures
+- [[non-centered-parameterization]] — ch13-adventures
+- [[cholesky-decomposition]] — ch13-adventures
+- [[divergent-iterations]] — ch13-adventures
+- [[gaussian-process-regression]] — ch13-adventures
+- [[squared-exponential-kernel]] — ch13-adventures
+- [[automatic-relevance-determination]] — ch13-adventures
+- [[model-misspecification]] — ch13-adventures
+- [[measurement-error-model]] — ch14-missing
+- [[bayesian-imputation]] — ch14-missing
+- [[mcar]] — ch14-missing
+- [[complete-case-analysis]] — ch14-missing
+- [[missing-not-at-random]] — ch14-missing
+- [[hamiltonian-monte-carlo]] — ch14-missing
+- [[pessimistic-induction]] — ch15-horoscopes
+- [[science-as-variation-and-selective-retention]] — ch15-horoscopes
+- [[preregistration-and-open-data]] — ch15-horoscopes
