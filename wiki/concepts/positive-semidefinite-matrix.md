@@ -2,16 +2,25 @@
 id: positive-semidefinite-matrix
 type: concept
 fields: [linear-algebra]
-n_sources: 23
+fields_strong: [linear-algebra]
+n_sources: 24
+n_works: 5
 tiers: [core, deep]
 grounding: digests
-sources: [axler-2024-ladr/ch07-operators-p2, axler-2024-ladr/ch07-operators-p3, axler-2024-ladr/ch09-multilinear-p2, deisenroth-2020-mml/ch03-analytic, deisenroth-2020-mml/ch04-matrix-p1, deisenroth-2020-mml/ch04-matrix-p2, deisenroth-2020-mml/ch06-probability-p2, deisenroth-2020-mml/ch07-continuous, deisenroth-2020-mml/ch09-linear, deisenroth-2020-mml/ch12-classification, spielman-2025-sagt/ch01-introduction, spielman-2025-sagt/ch06-comparing, spielman-2025-sagt/ch11-walks, spielman-2025-sagt/ch12-effective, spielman-2025-sagt/ch24-nodal, spielman-2025-sagt/ch32-sparsification, spielman-2025-sagt/ch36-preconditioning, spielman-2025-sagt/ch38-fast, strang-2023-introduction/ch02-solving-p2, strang-2023-introduction/ch06-eigenvalues-p2, strang-2023-introduction/ch06-eigenvalues-p3, strang-2023-introduction/ch10-learning, vonluxburg-2007-spectralclustering/main]
+sources: [axler-2024-ladr/ch07-operators-p2, axler-2024-ladr/ch07-operators-p3, axler-2024-ladr/ch09-multilinear-p2, deisenroth-2020-mml/ch03-analytic, deisenroth-2020-mml/ch04-matrix-p1, deisenroth-2020-mml/ch04-matrix-p2, deisenroth-2020-mml/ch06-probability-p2, deisenroth-2020-mml/ch07-continuous, deisenroth-2020-mml/ch09-linear, deisenroth-2020-mml/ch12-classification, spielman-2025-sagt/ch01-introduction, spielman-2025-sagt/ch06-comparing, spielman-2025-sagt/ch11-walks, spielman-2025-sagt/ch12-effective, spielman-2025-sagt/ch24-nodal, spielman-2025-sagt/ch32-sparsification, spielman-2025-sagt/ch36-preconditioning, spielman-2025-sagt/ch38-fast, strang-2023-introduction/ch02-solving-p2, strang-2023-introduction/ch06-eigenvalues-p2, strang-2023-introduction/ch06-eigenvalues-p3, strang-2023-introduction/ch09-linear, strang-2023-introduction/ch10-learning, vonluxburg-2007-spectralclustering/main]
+aliases: [positive-definite-matrix]
 raw_ids: [positive (semi)definite matrix]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
 # positive-semidefinite-matrix
+
+## Aliases
+
+Variant ids merged into this page (curated in `wiki/kg/aliases.json`):
+
+- `positive-definite-matrix` — 1 digest(s)
 
 ## Canon spine entry
 
@@ -42,5 +51,10 @@ generated_by: build_kg.py
 - [[strang-2023-introduction/ch02-solving-p2]] (p. 79): n positive (nonnegative) pivots; K, T positive definite, B semidefinite [as `positive (semi)definite matrix`]
 - [[strang-2023-introduction/ch06-eigenvalues-p2]] (p. 247–250): S = Sᵀ with xᵀSx > 0 (definite) or ≥ 0 (semidefinite); five tests
 - [[strang-2023-introduction/ch06-eigenvalues-p3]] (p. 263): ĀᵀA and AĀᵀ have real eigenvalues ≥ 0
+- [[strang-2023-introduction/ch09-linear]] (p. 335–336): here S(x) positive definite everywhere makes F convex; the model bowl has S symmetric positive definite [alias `positive-definite-matrix`]
 - [[strang-2023-introduction/ch10-learning]] (pp. 396–397): V is semidefinite by cᵀVc ≥ 0, and by being a sum of rank-one terms [as `positive (semi)definite matrix`]
 - [[vonluxburg-2007-spectralclustering/main]] (pp. 4–6): $L,L_{\rm sym},L_{\rm rw}$ all PSD, from the quadratic forms
+
+## Candidate bridges
+
+- [same-math] Cholesky sampling $\Sigma=AA^\top$ ↔ linear-algebra: Cholesky factorization of a symmetric positive definite matrix. — from [[deisenroth-2020-mml/ch06-probability-p2]] (linear-algebra → linear-algebra)

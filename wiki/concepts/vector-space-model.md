@@ -2,7 +2,9 @@
 id: vector-space-model
 type: concept
 fields: [linear-algebra, political-science]
+fields_strong: [linear-algebra, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [brin-1998-anatomy/main, grimmer-2022-textasdata/ch07-vector]

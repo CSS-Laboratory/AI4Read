@@ -1,7 +1,7 @@
 ---
 id: cluttered-pendulum-tracking
 type: instance
-fields: [control-theory]
+fields: [bayesian, control-theory]
 n_sources: 2
 tiers: [deep]
 grounding: digests
@@ -15,5 +15,5 @@ generated_by: build_kg.py
 
 ### control-theory
 
-- [[sarkka-2023-bayesianfiltering/ch11-particle]] (pp. 243–244): 50% clutter: PF RMSE 0.20 vs GHKF 0.89
-- [[sarkka-2023-bayesianfiltering/ch15-particle]] (p. 312): BS-PS RMSE 0.05 versus GHRTSS 0.83 without a clutter model
+- [[sarkka-2023-bayesianfiltering/ch11-particle]] (pp. 243–244): 50% clutter: PF RMSE 0.20 vs GHKF 0.89 [work fields: control-theory, bayesian]
+- [[sarkka-2023-bayesianfiltering/ch15-particle]] (p. 312): BS-PS RMSE 0.05 versus GHRTSS 0.83 without a clutter model [work fields: control-theory, bayesian]

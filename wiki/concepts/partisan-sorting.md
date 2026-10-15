@@ -2,11 +2,13 @@
 id: partisan-sorting
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [iyengar-2012-affect/main]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Awareness × ideology interaction ↔ partisan sorting: party and ideology line up more among the engaged. — from [[zaller-1992-massopinion/ch06-mainstream]] (political-science → other)
+- [structural-analogy] Awareness × ideology interaction ↔ partisan sorting: party and ideology line up more among the engaged. — from [[zaller-1992-massopinion/ch06-mainstream]] (political-science → political-science)

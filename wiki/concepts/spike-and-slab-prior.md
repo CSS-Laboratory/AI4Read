@@ -2,7 +2,9 @@
 id: spike-and-slab-prior
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch15-generalized, murphy-2023-pml2/ch28-latent-p1]

@@ -2,7 +2,9 @@
 id: political-entrepreneur
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [olson-1965-collectiveaction/app-untitled, shepsle-2010-analyzing/ch09-collective-p2, shepsle-2010-analyzing/ch14-leadership]
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Political entrepreneur/whip-holder monitoring ↔ principal–agent problem: a hired monitor addresses unobservable effort. — from [[shepsle-2010-analyzing/ch09-collective-p2]] (political-science → other)
+- [structural-analogy] Political entrepreneur/whip-holder monitoring ↔ principal–agent problem: a hired monitor addresses unobservable effort. — from [[shepsle-2010-analyzing/ch09-collective-p2]] (political-science → political-science)

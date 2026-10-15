@@ -2,7 +2,9 @@
 id: cayley-hamilton-theorem
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch08-operators, axler-2024-ladr/ch09-multilinear-p2, strang-2023-introduction/app1-ranks]

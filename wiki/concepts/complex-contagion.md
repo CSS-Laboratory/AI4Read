@@ -2,11 +2,13 @@
 id: complex-contagion
 type: concept
 fields: [communication-theory]
+fields_strong: []
 n_sources: 0
+n_works: 0
 tiers: []
 grounding: digests
 sources: []
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 
@@ -22,7 +24,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Revolutionary thresholds and cascades ↔ computational social science: threshold models of diffusion and complex contagion on networks — adoption depends on how many others have adopted. — from [[clark-2017-principles/ch08-democratic-p1]] (political-science → other)
+- [structural-analogy] Revolutionary thresholds and cascades ↔ computational social science: threshold models of diffusion and complex contagion on networks — adoption depends on how many others have adopted. — from [[clark-2017-principles/ch08-democratic-p1]] (political-science → other:computational-social-science)
 - [structural-analogy] Positive reinforcement from personal contacts ↔ complex contagion: adoption helped by repeated signals from several contacts. The text only claims effectiveness is "likely"; it does not give the adoption mechanism. — from [[katz-1955-personalinfluence/ch03-essay]] (communication-theory → complex-systems)
 - [structural-analogy] Leadership concentrated where a group already exists ↔ complex contagion: influence works through clustered, reinforcing ties, not isolated contacts. — from [[katz-1955-personalinfluence/ch13-movie]] (communication-theory → complex-systems)
 - [structural-analogy] Critical mass and take-off at 10–20% ↔ Complex contagion: adoption becomes self-sustaining once enough network contacts adopt. — from [[rogers-2003-diffusion/ch01-elements-p1]] (communication-theory → complex-systems)

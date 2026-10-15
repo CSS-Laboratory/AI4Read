@@ -2,12 +2,14 @@
 id: cooperative-principle-maxims
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [grice-1975-conversation/main, lycan-2019-language/ch13-implicative]
 raw_ids: ["cooperative principle & maxims"]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

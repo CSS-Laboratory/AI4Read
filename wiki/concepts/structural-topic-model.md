@@ -2,7 +2,9 @@
 id: structural-topic-model
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch13-topic, grimmer-2022-textasdata/ch25-text]

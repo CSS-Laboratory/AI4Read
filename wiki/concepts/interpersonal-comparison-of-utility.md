@@ -2,7 +2,9 @@
 id: interpersonal-comparison-of-utility
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 3
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [arrow-1951-socialchoice/ch01-i, arrow-1951-socialchoice/ch02-ii, arrow-1951-socialchoice/ch05-v]

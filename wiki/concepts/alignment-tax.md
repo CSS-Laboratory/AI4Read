@@ -2,12 +2,14 @@
 id: alignment-tax
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [ouyang-2022-instructgpt/main-p1, ouyang-2022-instructgpt/main-p2, ouyang-2022-instructgpt/main-p3]
 raw_ids: [alignment tax]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

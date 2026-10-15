@@ -2,7 +2,9 @@
 id: expander-graph
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 3
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [spielman-2025-sagt/ch01-introduction, spielman-2025-sagt/ch30-simple, spielman-2025-sagt/ch31-psrgs]

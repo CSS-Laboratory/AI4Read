@@ -2,7 +2,9 @@
 id: importance-sampling-ratio
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [sutton-2018-rl/ch07-n, sutton-2018-rl/ch11-off, sutton-2018-rl/ch12-eligibility]

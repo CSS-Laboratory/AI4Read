@@ -2,7 +2,9 @@
 id: underfitting
 type: concept
 fields: [bayesian, linear-algebra]
+fields_strong: [bayesian, linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [deisenroth-2020-mml/ch08-when, mcelreath-2020-rethinking/ch06-overfitting-p1]
@@ -27,4 +29,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] overfitting/underfitting ↔ machine learning: variance vs bias. — from [[mcelreath-2020-rethinking/ch06-overfitting-p1]] (bayesian → other)
+- [structural-analogy] overfitting/underfitting ↔ machine learning: variance vs bias. — from [[mcelreath-2020-rethinking/ch06-overfitting-p1]] (bayesian → llm)

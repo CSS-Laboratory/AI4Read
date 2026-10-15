@@ -2,7 +2,9 @@
 id: he-initialization
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 2
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [prince-2023-udl/ch07-gradients, prince-2023-udl/ch11-residual]

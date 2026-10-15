@@ -2,11 +2,13 @@
 id: structural-virality
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [vosoughi-2018-spread/main]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 

@@ -2,11 +2,13 @@
 id: psychometric-paradigm-dread-unknown
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 1
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [slovic-1987-perception/main]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 

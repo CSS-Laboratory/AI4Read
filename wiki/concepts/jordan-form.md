@@ -2,7 +2,9 @@
 id: jordan-form
 type: concept
 fields: [linear-algebra, control-theory]
+fields_strong: [linear-algebra, control-theory]
 n_sources: 4
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch06-linear, axler-2024-ladr/ch08-operators, strang-2023-introduction/app1-ranks, strang-2023-introduction/ch08-linear]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Jordan form's instability ↔ numerical analysis: tiny perturbations split repeated eigenvalues, so discontinuous structure is lost. — from [[strang-2023-introduction/ch08-linear]] (linear-algebra → other)
+- [structural-analogy] Jordan form's instability ↔ numerical analysis: tiny perturbations split repeated eigenvalues, so discontinuous structure is lost. — from [[strang-2023-introduction/ch08-linear]] (linear-algebra → other:numerical-analysis)

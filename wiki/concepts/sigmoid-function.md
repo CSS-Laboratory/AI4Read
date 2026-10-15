@@ -2,7 +2,9 @@
 id: sigmoid-function
 type: concept
 fields: [linear-algebra, llm]
+fields_strong: [linear-algebra, llm]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [boyd-2018-vmls/ch18-nonlinear, prince-2023-udl/ch05-loss]
@@ -23,4 +25,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Two-action soft-max ↔ statistics: the logistic (sigmoid) function (the text poses this as Exercise 2.9, p. 37). — from [[sutton-2018-rl/ch02-multi]] (control-theory → other)
+- [same-math] Two-action soft-max ↔ statistics: the logistic (sigmoid) function (the text poses this as Exercise 2.9, p. 37). — from [[sutton-2018-rl/ch02-multi]] (control-theory → other:statistics)

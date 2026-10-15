@@ -2,7 +2,9 @@
 id: choice-architecture
 type: concept
 fields: [economics-finance, decision-game-theory]
+fields_strong: [economics-finance, decision-game-theory]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/conclusions, thaler-2015-misbehaving/ch28-offices, thaler-2015-misbehaving/ch32-going]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] choice architecture ↔ product and interface design: policy as user-centered design (the text draws this analogy itself). — from [[thaler-2015-misbehaving/ch32-going]] (economics-finance → other)
+- [metaphor] choice architecture ↔ product and interface design: policy as user-centered design (the text draws this analogy itself). — from [[thaler-2015-misbehaving/ch32-going]] (economics-finance → other:product-and-interface-design)

@@ -2,12 +2,14 @@
 id: four-fundamental-subspaces
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 7
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch07-operators-p1, strang-2023-introduction/ch03-four-p1, strang-2023-introduction/ch03-four-p3, strang-2023-introduction/ch04-orthogonality-p1, strang-2023-introduction/ch04-orthogonality-p2, strang-2023-introduction/ch06-eigenvalues-p3, strang-2023-introduction/ch07-singular]
 raw_ids: [four fundamental subspaces]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -31,4 +33,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] adjoint $T^*$ with real entries = transpose ↔ the transpose in $\operatorname{null}(A^{\mathrm t})=(\operatorname{col}A)^\perp$ (four fundamental subspaces): 7.6 over $\mathbf R$ with orthonormal bases. — from [[axler-2024-ladr/ch07-operators-p1]] (linear-algebra → other)
+- [same-math] adjoint $T^*$ with real entries = transpose ↔ the transpose in $\operatorname{null}(A^{\mathrm t})=(\operatorname{col}A)^\perp$ (four fundamental subspaces): 7.6 over $\mathbf R$ with orthonormal bases. — from [[axler-2024-ladr/ch07-operators-p1]] (linear-algebra → other:the-transpose-in-operatornamenullamathrm)

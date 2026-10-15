@@ -2,7 +2,9 @@
 id: transient-chaos
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [strogatz-2024-nonlinear/ch09-lorenz-p2, strogatz-2024-nonlinear/ch12-strange]
@@ -26,4 +28,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Transient chaos ↔ systems that wander before settling (such as dice): sensitive dependence without a chaotic final state — from [[strogatz-2024-nonlinear/ch09-lorenz-p2]] (complex-systems → other)
+- [metaphor] Transient chaos ↔ systems that wander before settling (such as dice): sensitive dependence without a chaotic final state — from [[strogatz-2024-nonlinear/ch09-lorenz-p2]] (complex-systems → other:systems-that-wander-before)

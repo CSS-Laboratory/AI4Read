@@ -2,7 +2,9 @@
 id: hammersley-clifford-theorem
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch04-graphical-p2, robert-2011-mcmc/main]

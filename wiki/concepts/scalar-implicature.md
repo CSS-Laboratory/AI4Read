@@ -2,11 +2,13 @@
 id: scalar-implicature
 type: concept
 fields: [theory-of-mind]
+fields_strong: []
 n_sources: 0
+n_works: 0
 tiers: []
 grounding: digests
 sources: []
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 

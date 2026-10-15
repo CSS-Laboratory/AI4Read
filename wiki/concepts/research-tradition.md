@@ -2,7 +2,9 @@
 id: research-tradition
 type: concept
 fields: [communication-theory, analytic-philosophy]
+fields_strong: [communication-theory]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch07-lakatos, rogers-2003-diffusion/ch02-history-p1, rogers-2003-diffusion/ch02-history-p3]
@@ -20,7 +22,7 @@ generated_by: build_kg.py
 
 ### analytic-philosophy
 
-- [[godfreysmith-2003-theory/ch07-lakatos]] (p. 108): Laudan's looser unit: theories loosely related, core can shift, theories can move between traditions [new]
+- [[godfreysmith-2003-theory/ch07-lakatos]] (p. 108): Laudan's looser unit: theories loosely related, core can shift, theories can move between traditions [new; weak: not really used in this unit]
 
 ## Instances that use it
 

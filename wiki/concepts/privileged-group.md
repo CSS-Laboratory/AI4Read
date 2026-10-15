@@ -2,7 +2,9 @@
 id: privileged-group
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [olson-1965-collectiveaction/ch01-theory-p2, olson-1965-collectiveaction/ch02-group, shepsle-2010-analyzing/ch09-collective-p2, shepsle-2010-analyzing/ch10-public-p1]

@@ -2,7 +2,9 @@
 id: grim-trigger-strategy
 type: concept
 fields: [decision-game-theory, political-science]
+fields_strong: [decision-game-theory, political-science]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch04-origins-p2, osborne-2004-introduction/ch14-repeated, osborne-2004-introduction/ch15-repeated]

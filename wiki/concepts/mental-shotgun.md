@@ -2,7 +2,9 @@
 id: mental-shotgun
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch08-judgments, kahneman-2011-thinking/ch09-answering]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Mental shotgun ↔ interference effects in cognitive tasks: an irrelevant dimension slows a main task. — from [[kahneman-2011-thinking/ch08-judgments]] (decision-game-theory → other)
+- [metaphor] Mental shotgun ↔ interference effects in cognitive tasks: an irrelevant dimension slows a main task. — from [[kahneman-2011-thinking/ch08-judgments]] (decision-game-theory → other:interference-effects-in-cognitive)

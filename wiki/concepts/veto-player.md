@@ -2,12 +2,14 @@
 id: veto-player
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 10
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch01-introduction, clark-2017-principles/ch09-democracy, clark-2017-principles/ch15-institutional-p1, clark-2017-principles/ch15-institutional-p2, clark-2017-principles/ch15-institutional-p3, clark-2017-principles/ch16-consequences-p1, clark-2017-principles/ch16-consequences-p2, clark-2017-principles/ch16-consequences-p4, shepsle-2010-analyzing/ch13-bureaucracy, shepsle-2010-analyzing/ch16-cabinet]
 raw_ids: [veto player]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 
@@ -29,7 +31,7 @@ generated_by: build_kg.py
 - [[clark-2017-principles/ch16-consequences-p1]] (p. 761): veto institutions such as bicameralism and federalism that can block a government's platform
 - [[clark-2017-principles/ch16-consequences-p2]] (p. 787): each cabinet party is a veto player; more veto players mean slower policy change
 - [[clark-2017-principles/ch16-consequences-p4]] (p. 823): more, and more diverse, veto players make status-quo change harder; in extreme form this is deadlock [as `veto player`]
-- [[shepsle-2010-analyzing/ch13-bureaucracy]] (p. 428): (canon link; not stated in this unit) punishing the agency needs all coalition members to agree
+- [[shepsle-2010-analyzing/ch13-bureaucracy]] (p. 428): (canon link; not stated in this unit) punishing the agency needs all coalition members to agree [weak: not really used in this unit]
 - [[shepsle-2010-analyzing/ch16-cabinet]] (p. 526): here, each party has a veto over every government it would join, since it can refuse to join [as `veto player`]
 
 ## Instances that use it
@@ -41,7 +43,7 @@ generated_by: build_kg.py
 
 - [structural-analogy] Necessary vs sufficient condition (p. 40) ↔ veto-player or threshold arguments: a condition may be needed for change without guaranteeing it. — from [[clark-2017-principles/ch02-science]] (political-science → political-science)
 - [structural-analogy] Presidential veto threat (p. 70) ↔ veto player: an actor whose agreement is needed shapes outcomes through anticipation, even if it rarely acts. — from [[clark-2017-principles/ch03-politics]] (political-science → political-science)
-- [structural-analogy] Parliament's veto over taxes ↔ canon: veto player — an actor whose consent constrains the ruler. — from [[clark-2017-principles/ch06-economic-p2]] (political-science → other)
+- [structural-analogy] Parliament's veto over taxes ↔ canon: veto player — an actor whose consent constrains the ruler. — from [[clark-2017-principles/ch06-economic-p2]] (political-science → other:unnamed)
 - [structural-analogy] Kalyvas's hierarchical vs decentralized religions ↔ veto player / principal–agent: credibility depends on whether the leader can control members. — from [[clark-2017-principles/ch08-democratic-p3]] (political-science → political-science)
 - [structural-analogy] Capitalists' "veto" through investment (Block) ↔ veto player: an actor whose cooperation limits policy change, though here the veto works by market behaviour, not formal vote. — from [[clark-2017-principles/ch09-democracy]] (political-science → political-science)
 - [structural-analogy] Dictators' reliance on a winning coalition ↔ veto players: the group whose consent the ruler needs. — from [[clark-2017-principles/ch10-varieties-p1]] (political-science → political-science)
@@ -63,7 +65,7 @@ generated_by: build_kg.py
 - [metaphor] Knowledge as protection against loss ↔ veto player — a principal who can reject bad proposals can always fall back on $sq$ (p. 85) — from [[lupia-1998-dilemma/ch05-delegation]] (political-science → unspecified)
 - [structural-analogy] The agent anticipates how an enlightened principal will respond and so proposes only acceptable options ↔ political-science (veto player): a proposer shapes proposals to what the veto player will accept. — from [[lupia-1998-dilemma/ch08-laboratory]] (political-science → political-science)
 - [structural-analogy] The 100%-participation holdout in exclusive groups ↔ political science: veto players under a unanimity rule — one actor's consent is needed, giving bargaining power. — from [[olson-1965-collectiveaction/ch01-theory-p2]] (political-science → political-science)
-- [structural-analogy] Special-interest theory (concentrated benefits to few, diffuse costs to many) ↔ agenda control and veto players: organized minorities win despite majority rule — a rough resemblance only. — from [[olson-1965-collectiveaction/ch06-by]] (political-science → control-theory)
+- [structural-analogy] Special-interest theory (concentrated benefits to few, diffuse costs to many) ↔ agenda control and veto players: organized minorities win despite majority rule — a rough resemblance only. — from [[olson-1965-collectiveaction/ch06-by]] (political-science → political-science)
 - [structural-analogy] Status quo rules that persist until changed ↔ veto player: whether the status quo changes depends on who must agree to move it. — from [[ostrom-1990-commons/ch04-analyzing]] (political-science → political-science)
 - [structural-analogy] Transformation costs rising with number of decision makers and inclusive aggregation rules (pp. 198, 201) ↔ political-science: veto player — more required consenters make change harder. — from [[ostrom-1990-commons/ch06-framework]] (political-science → political-science)
 - [structural-analogy] McNollgast's triangle $HSP$ ↔ veto players and the winset of the status quo: points in the triangle that no unanimous coalition of principals can improve on (canon link; not stated in this unit). — from [[shepsle-2010-analyzing/ch13-bureaucracy]] (political-science → political-science)

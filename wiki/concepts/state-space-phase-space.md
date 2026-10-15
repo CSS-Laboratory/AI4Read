@@ -1,17 +1,26 @@
 ---
 id: state-space-phase-space
 type: concept
-fields: [complex-systems]
-n_sources: 8
-tiers: [core, reference]
+fields: [complex-systems, bayesian, control-theory]
+fields_strong: [complex-systems, bayesian, control-theory]
+n_sources: 11
+n_works: 4
+tiers: [core, deep, reference]
 grounding: digests
-sources: [lorenz-1963-nonperiodic/main, strogatz-2024-nonlinear/ch01-overview, strogatz-2024-nonlinear/ch02-flows, strogatz-2024-nonlinear/ch03-bifurcations-p1, strogatz-2024-nonlinear/ch05-linear, strogatz-2024-nonlinear/ch06-phase-p2, strogatz-2024-nonlinear/ch07-limit-p1, strogatz-2024-nonlinear/ch09-lorenz-p1]
+sources: [ashby-1956-cybernetics/ch03-determinate, betancourt-2017-hmc/main-p2, lorenz-1963-nonperiodic/main, strogatz-2024-nonlinear/ch01-overview, strogatz-2024-nonlinear/ch02-flows, strogatz-2024-nonlinear/ch03-bifurcations-p1, strogatz-2024-nonlinear/ch05-linear, strogatz-2024-nonlinear/ch06-phase-p1, strogatz-2024-nonlinear/ch06-phase-p2, strogatz-2024-nonlinear/ch07-limit-p1, strogatz-2024-nonlinear/ch09-lorenz-p1]
+aliases: [phase-space]
 raw_ids: [state space / phase space]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
 # state-space-phase-space
+
+## Aliases
+
+Variant ids merged into this page (curated in `wiki/kg/aliases.json`):
+
+- `phase-space` — 3 digest(s)
 
 ## Canon spine entry
 
@@ -26,6 +35,21 @@ generated_by: build_kg.py
 - [[strogatz-2024-nonlinear/ch02-flows]] (p. 19): here the real line, with the "phase fluid" flowing on it [as `state space / phase space`]
 - [[strogatz-2024-nonlinear/ch03-bifurcations-p1]] (p. 68): here the phase plane $(\phi,\Omega)$ for second-order systems
 - [[strogatz-2024-nonlinear/ch05-linear]] (pp. 126–127): here the phase plane, with state $(x,v)$ or $(x,y)$ and solutions drawn as trajectories
+- [[strogatz-2024-nonlinear/ch06-phase-p1]] (p. 146): here the phase plane: points $(x_1,x_2)$ with $\dot{\mathbf x}$ as the velocity vector; trajectories fill it [alias `phase-space`]
 - [[strogatz-2024-nonlinear/ch06-phase-p2]] (p. 175): the phase plane, where index curves are drawn as probes, not necessarily trajectories [as `state space / phase space`]
 - [[strogatz-2024-nonlinear/ch07-limit-p1]] (p. 205–206): the plane, with trajectories, nullclines and trapping regions [as `state space / phase space`]
 - [[strogatz-2024-nonlinear/ch09-lorenz-p1]] (p. 309, p. 320): space in which trajectories and volume evolution are studied [as `state space / phase space`]
+
+### bayesian
+
+- [[betancourt-2017-hmc/main-p2]] (p. 23): $2D$-dimensional space of positions and dual momenta, where volume is preserved [alias `phase-space`; new]
+
+### control-theory
+
+- [[ashby-1956-cybernetics/ch03-determinate]] (pp. 37–38): the plane or space where states are points and the transformation is drawn as arrows [alias `phase-space`; new]
+
+## Candidate bridges
+
+- [structural-analogy] Phase space with arrow field ↔ control-theory: phase portrait / vector field of a dynamical system. — from [[ashby-1956-cybernetics/ch03-determinate]] (control-theory → control-theory)
+- [structural-analogy] Level-set foliation of phase space ↔ bayesian: marginal energy distribution as a one-dimensional summary of the joint, with trajectories moving within and resampling moving across. — from [[betancourt-2017-hmc/main-p2]] (bayesian → bayesian)
+- [same-math] $H=-\sum p_i\log p_i$ ↔ statistical mechanics: entropy over cells of phase space, Boltzmann's $H$ — the author notes the same form (p. 11) — from [[shannon-1948-mathematical/main-p1]] (information-theory → complex-systems)

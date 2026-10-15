@@ -2,7 +2,9 @@
 id: probability-of-hypotheses
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [popper-1959-logic/appi-untitled-2, popper-1959-logic/ch10-corroboration]

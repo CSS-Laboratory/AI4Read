@@ -2,7 +2,9 @@
 id: systematic-bias
 type: concept
 fields: [bayesian, economics-finance]
+fields_strong: [bayesian, economics-finance]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch06-graphical, thaler-2015-misbehaving/ch03-list]

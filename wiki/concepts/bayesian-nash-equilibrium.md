@@ -2,11 +2,13 @@
 id: bayesian-nash-equilibrium
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [osborne-2004-introduction/ch09-bayesian]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Bayes' rule with states and signals ↔ Bayesian game / Bayesian Nash equilibrium: beliefs about types updated on a signal. — from [[osborne-2004-introduction/ch17-mathematics]] (decision-game-theory → bayesian)
+- [same-math] Bayes' rule with states and signals ↔ Bayesian game / Bayesian Nash equilibrium: beliefs about types updated on a signal. — from [[osborne-2004-introduction/ch17-mathematics]] (decision-game-theory → decision-game-theory)

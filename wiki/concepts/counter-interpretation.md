@@ -2,7 +2,9 @@
 id: counter-interpretation
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [magnus-2025-forallx/ch34-reasoning, magnus-2025-forallx/ch44-semantics]
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Proof vs. counter-interpretation ↔ computer science: certificate checking (a witness is easy to check, hard to find) — the text says each method is easy to check once found (p. 333). — from [[magnus-2025-forallx/ch41-proofs]] (analytic-philosophy → other)
+- [structural-analogy] Proof vs. counter-interpretation ↔ computer science: certificate checking (a witness is easy to check, hard to find) — the text says each method is easy to check once found (p. 333). — from [[magnus-2025-forallx/ch41-proofs]] (analytic-philosophy → other:computer-science)

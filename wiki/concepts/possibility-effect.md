@@ -2,7 +2,9 @@
 id: possibility-effect
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch29-fourfold, kahneman-2011-thinking/ch30-rare]

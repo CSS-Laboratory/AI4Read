@@ -2,7 +2,9 @@
 id: satisfaction
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [magnus-2025-forallx/ch31-truth, magnus-2025-forallx/ch34-reasoning]
@@ -27,5 +29,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Puzzle rules limiting admissible solutions ↔ constraint satisfaction: solutions must satisfy fixed constraints. — from [[kuhn-1962-structure/ch04-normal]] (analytic-philosophy → other)
+- [structural-analogy] Puzzle rules limiting admissible solutions ↔ constraint satisfaction: solutions must satisfy fixed constraints. — from [[kuhn-1962-structure/ch04-normal]] (analytic-philosophy → other:constraint-satisfaction)
 - [structural-analogy] Compounding of demands through moves ↔ feedback: each move changes others' satisfaction (p. 159). — from [[schelling-1971-segregation/main-p1]] (complex-systems → control-theory)

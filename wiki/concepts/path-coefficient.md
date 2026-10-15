@@ -2,7 +2,9 @@
 id: path-coefficient
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [pearl-2016-primer/ch03-effects, pearl-2018-bookofwhy/ch02-buccaneers]

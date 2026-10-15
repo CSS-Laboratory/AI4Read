@@ -2,7 +2,9 @@
 id: ablation-study
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [argyle-2023-silicon/main-p2, devlin-2019-bert/main]
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] ablations removing memory components ↔ mechanistic ablation studies of model components: removing a part to test its causal role. — from [[park-2023-agents/main]] (llm → other)
+- [structural-analogy] ablations removing memory components ↔ mechanistic ablation studies of model components: removing a part to test its causal role. — from [[park-2023-agents/main]] (llm → other:mechanistic-ablation-studies-of)

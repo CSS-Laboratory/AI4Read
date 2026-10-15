@@ -2,7 +2,9 @@
 id: ethnic-head-count
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch14-social-p3, clark-2017-principles/ch16-consequences-p3]

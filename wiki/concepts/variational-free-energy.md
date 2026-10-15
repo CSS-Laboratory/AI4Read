@@ -2,7 +2,9 @@
 id: variational-free-energy
 type: concept
 fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [mackay-2003-information/ch33-variational, murphy-2023-pml2/ch10-variational-p1]
@@ -19,7 +21,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch33-variational]] (p. 423): βF̃(θ) = β⟨E⟩_Q − S_Q = D_KL(Q‖P) + βF; objective minimized over Q [new]
+- [[mackay-2003-information/ch33-variational]] (p. 423): βF̃(θ) = β⟨E⟩_Q − S_Q = D_KL(Q‖P) + βF; objective minimized over Q [new; work fields: information-theory, bayesian]
 
 ## Candidate bridges
 

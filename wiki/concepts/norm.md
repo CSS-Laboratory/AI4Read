@@ -1,12 +1,14 @@
 ---
 id: norm
 type: concept
-fields: [linear-algebra]
+fields: [linear-algebra, llm]
+fields_strong: [linear-algebra, llm]
 n_sources: 22
+n_works: 8
 tiers: [core, deep]
 grounding: digests
 sources: [axler-2024-ladr/ch06-inner-p1, axler-2024-ladr/ch07-operators-p2, boyd-2018-vmls/ch03-norm, boyd-2018-vmls/ch04-clustering, boyd-2018-vmls/ch06-matrices, boyd-2018-vmls/ch07-matrix, bryan-2006-eigenvector/main, deisenroth-2020-mml/ch03-analytic, deisenroth-2020-mml/ch04-matrix-p2, deisenroth-2020-mml/ch10-dimensionality, deisenroth-2020-mml/ch12-classification, eckart-1936-lowrank/main, mikolov-2013-regularities/main, spielman-2025-sagt/ch08-eigenvalues, spielman-2025-sagt/ch14-approximating, spielman-2025-sagt/ch23-spectral, spielman-2025-sagt/ch27-properties, spielman-2025-sagt/ch31-psrgs, spielman-2025-sagt/ch32-sparsification, strang-2023-introduction/ch01-vectors, strang-2023-introduction/ch07-singular, strang-2023-introduction/ch09-linear]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -32,7 +34,7 @@ generated_by: build_kg.py
 - [[deisenroth-2020-mml/ch10-dimensionality]] (pp. 327, 334): spectral norm in (10.50); squared Euclidean norm in the error
 - [[deisenroth-2020-mml/ch12-classification]] (p. 375, 377): the Euclidean norm $\|\boldsymbol w\|$; the margin equals $1/\|\boldsymbol w\|$ under the scaling of 12.2.2
 - [[eckart-1936-lowrank/main]] (p. 212): "length" $l=(\alpha,\alpha)^{1/2}$ of a matrix; distance is the length of the difference
-- [[mikolov-2013-regularities/main]] (p. 748): vectors are normalized to unit norm before computing $y$
+- [[mikolov-2013-regularities/main]] (p. 748): vectors are normalized to unit norm before computing $y$ [work fields: linear-algebra, llm]
 - [[spielman-2025-sagt/ch08-eigenvalues]] (p. 71): spectral norm $\|R\|=\max_x|x^TRx/x^Tx|$
 - [[spielman-2025-sagt/ch14-approximating]] (p. 129): here the matrix norm $\|x\|_A=\sqrt{x^TAx}=\|A^{1/2}x\|$ for PSD $A$
 - [[spielman-2025-sagt/ch23-spectral]] (p. 191): spectral norm $\|R\|$ (largest $|$eigenvalue$|$ of symmetric $R$) measures noise size
@@ -73,34 +75,34 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Ratchet effect ↔ social norms: once reciprocity is established it does not slide back. — from [[axelrod-1984-cooperation/ch09-robustness]] (decision-game-theory → other)
+- [metaphor] Ratchet effect ↔ social norms: once reciprocity is established it does not slide back. — from [[axelrod-1984-cooperation/ch09-robustness]] (decision-game-theory → other:social-norms)
 - [same-math] 7.92 ↔ Eckart–Young theorem (spectral-norm version) — same statement: truncated SVD is the best rank-$k$ approximation, error $s_{k+1}$. — from [[axler-2024-ladr/ch07-operators-p3]] (linear-algebra → unspecified)
 - [same-math] Type Two equation with constant $h=\beta$ and sup over actions ↔ control-theory: value iteration for a discounted decision process; the argument is a sup-norm contraction by factor $\beta$. — from [[bellman-1957-dp/ch04-iv]] (control-theory → control-theory)
-- [structural-analogy] FIM scaling ↔ Newton's method: both rescale the gradient by curvature, in different norms. — from [[bertsekas-2026-rlcourse/ch03-learning-p4]] (control-theory → other)
+- [structural-analogy] FIM scaling ↔ Newton's method: both rescale the gradient by curvature, in different norms. — from [[bertsekas-2026-rlcourse/ch03-learning-p4]] (control-theory → other:optimization)
 - [same-math] Max-norm contraction of $H$ ↔ standard Bellman-operator contraction in discounted DP — the same argument ($\alpha$-discounting plus averaging by probabilities) — from [[bertsekas-2026-rlcourse/ch03-learning-p5]] (control-theory → unspecified)
-- [same-math] $a^Ta=\sum a_i^2$ ↔ norm: squared Euclidean length of a vector (the norm is not defined in this unit). — from [[boyd-2018-vmls/ch01-vectors]] (linear-algebra → other)
+- [same-math] $a^Ta=\sum a_i^2$ ↔ norm: squared Euclidean length of a vector (the norm is not defined in this unit). — from [[boyd-2018-vmls/ch01-vectors]] (linear-algebra → linear-algebra)
 - [metaphor] Choice of units changing which houses are "close" ↔ feature scaling in nearest-neighbour methods (the chapter itself proposes weighted norms in ex. 3.28). — from [[boyd-2018-vmls/ch03-norm]] (linear-algebra → unspecified)
 - [same-math] Least norm solution $C^T(CC^T)^{-1}d$ ↔ linear-algebra: pseudo-inverse of a wide full-row-rank matrix — the chapter states they are the same matrix. — from [[boyd-2018-vmls/ch16-constrained]] (linear-algebra → linear-algebra)
-- [metaphor] Popper's "recklessly critical quest" ↔ the unit's culture of science: willingness to be wrong as a norm. — from [[clark-2017-principles/ch02-science]] (political-science → other)
-- [structural-analogy] W/S as loyalty norm ↔ exit/voice/loyalty: a credible exit threat weakens loyalty, as the text itself notes (n. 32) — from [[clark-2017-principles/ch10-varieties-p3]] (political-science → other)
-- [same-math] $x=(A^\top A)^{-1}A^\top b$ ↔ least squares: normal equations $A^\top Ax=A^\top b$ — same equation, which the unit equates with the minimum-norm least-squares solution. — from [[deisenroth-2020-mml/ch02-linear-p1]] (linear-algebra → other)
-- [structural-analogy] Authors' evolutionary account of fairness norms ↔ evolution: group-level selection of cooperative norms. The authors call it speculation. — from [[dixit-2008-art-strategy/ch02-games]] (decision-game-theory → other)
-- [same-math] Linear-model interference $\sum_{i\ne j}|W_i\cdot W_j|^2$ ↔ compressed sensing: coherence $\max_{i\ne j}|W_i\cdot W_j|$ — the $L^2$ and $L^\infty$ norms of the same off-diagonal vector. — from [[elhage-2022-superposition/main-p1]] (llm → other)
-- [metaphor] Category norms with typical value and range ↔ descriptive statistics: a summary by a central value and a spread (the text gives no numbers). — from [[kahneman-2011-thinking/ch06-norms]] (decision-game-theory → other)
+- [metaphor] Popper's "recklessly critical quest" ↔ the unit's culture of science: willingness to be wrong as a norm. — from [[clark-2017-principles/ch02-science]] (political-science → other:the-units-culture-of)
+- [structural-analogy] W/S as loyalty norm ↔ exit/voice/loyalty: a credible exit threat weakens loyalty, as the text itself notes (n. 32) — from [[clark-2017-principles/ch10-varieties-p3]] (political-science → political-science)
+- [same-math] $x=(A^\top A)^{-1}A^\top b$ ↔ least squares: normal equations $A^\top Ax=A^\top b$ — same equation, which the unit equates with the minimum-norm least-squares solution. — from [[deisenroth-2020-mml/ch02-linear-p1]] (linear-algebra → linear-algebra)
+- [structural-analogy] Authors' evolutionary account of fairness norms ↔ evolution: group-level selection of cooperative norms. The authors call it speculation. — from [[dixit-2008-art-strategy/ch02-games]] (decision-game-theory → other:biology)
+- [same-math] Linear-model interference $\sum_{i\ne j}|W_i\cdot W_j|^2$ ↔ compressed sensing: coherence $\max_{i\ne j}|W_i\cdot W_j|$ — the $L^2$ and $L^\infty$ norms of the same off-diagonal vector. — from [[elhage-2022-superposition/main-p1]] (llm → other:signal-processing)
+- [metaphor] Category norms with typical value and range ↔ descriptive statistics: a summary by a central value and a spread (the text gives no numbers). — from [[kahneman-2011-thinking/ch06-norms]] (decision-game-theory → other:statistics)
 - [metaphor] Wiring a new norm to a shared value (p. 79) ↔ framing: both change the frame in which behaviour is seen. Framing is not stated in this unit (canon link). — from [[katz-1955-personalinfluence/ch05-role]] (communication-theory → communication-theory)
-- [metaphor] "Closeness depends on the norm" ↔ robustness: which perturbations count as small depends on the chosen measure (not stated in this unit) — from [[liberzon-2012-calculus/ch01-introduction]] (control-theory → other)
+- [metaphor] "Closeness depends on the norm" ↔ robustness: which perturbations count as small depends on the chosen measure (not stated in this unit) — from [[liberzon-2012-calculus/ch01-introduction]] (control-theory → other:unnamed)
 - [structural-analogy] ∨I allowing odd disjunctions ↔ analytic-philosophy: conversational implicature — the text says such inferences may "violate implicit conversational norms" yet are logically fine (p. 132). — from [[magnus-2025-forallx/ch17-basic]] (analytic-philosophy → analytic-philosophy)
-- [metaphor] Ritschl's "communal spirit" ↔ Ostrom's local norms: both stress non-market motives, but Olson here treats them as metaphysical (canon link; not stated in this unit) — from [[olson-1965-collectiveaction/ch04-orthodox]] (political-science → other)
-- [structural-analogy] Multiple equilibria and focal points ↔ social conventions and norm selection: an outside cue picks among self-sustaining regularities. — from [[osborne-2004-introduction/ch02-nash-p1]] (decision-game-theory → political-science)
+- [metaphor] Ritschl's "communal spirit" ↔ Ostrom's local norms: both stress non-market motives, but Olson here treats them as metaphysical (canon link; not stated in this unit) — from [[olson-1965-collectiveaction/ch04-orthodox]] (political-science → other:ostroms-local-norms)
+- [structural-analogy] Multiple equilibria and focal points ↔ social conventions and norm selection: an outside cue picks among self-sustaining regularities. — from [[osborne-2004-introduction/ch02-nash-p1]] (decision-game-theory → other:social-conventions-and-norm)
 - [metaphor] Grokking as weight norm falling into the Goldilocks zone ↔ llm: delayed generalization during long pretraining — from [[prince-2023-udl/ch20-does]] (llm → llm)
 - [structural-analogy] Double descent via weight norm ↔ classical bias/variance trade-off — from [[prince-2023-udl/ch20-does]] (llm → unspecified)
-- [structural-analogy] Spectral norm bounding Lipschitz behaviour ↔ stability of repeated layer products in deep networks: large stretch compounds across layers. — from [[prince-2023-udl/ch22-mathematics]] (llm → other)
+- [structural-analogy] Spectral norm bounding Lipschitz behaviour ↔ stability of repeated layer products in deep networks: large stretch compounds across layers. — from [[prince-2023-udl/ch22-mathematics]] (llm → other:stability-of-repeated-layer)
 - [structural-analogy] Opinion leaders as central, norm-conforming nodes ↔ network analysis: high-centrality nodes relaying influence. — from [[rogers-2003-diffusion/ch01-elements-p2]] (communication-theory → complex-systems)
 - [structural-analogy] Minimum norm brain imaging ↔ Gaussian process regression — the text says the Bayesian reading is equivalent to statistical inversion/GP regression (p. 5). — from [[sarkka-2023-bayesianfiltering/ch01-are]] (control-theory → unspecified)
 - [structural-analogy] Joint norm formation under indeterminacy (Sherif) ↔ decision-game-theory: convention — a regularity that settles in to solve a recurring coordination problem. — from [[schelling-1960-conflict/ch06-game]] (decision-game-theory → decision-game-theory)
-- [structural-analogy] Wage-cut anger ↔ incomplete contracts and fairness norms: unspecified fairness expectations constrain what firms can do. — from [[shiller-2019-narrative/ch17-boycotts]] (economics-finance → other)
-- [same-math] Theorem 2.3.2 ↔ SVD: $\sigma_1=\max u^TAv$ is the spectral norm of $A$. — from [[spielman-2025-sagt/ch02-eigenvalues]] (linear-algebra → other)
-- [structural-analogy] Richardson convergence ↔ random walks on graphs: both are analysed through powers of a matrix with norm below 1 (the author notes the analogy to Chapter 10, p. 273) — from [[spielman-2025-sagt/ch34-iterative]] (linear-algebra → other)
+- [structural-analogy] Wage-cut anger ↔ incomplete contracts and fairness norms: unspecified fairness expectations constrain what firms can do. — from [[shiller-2019-narrative/ch17-boycotts]] (economics-finance → economics-finance)
+- [same-math] Theorem 2.3.2 ↔ SVD: $\sigma_1=\max u^TAv$ is the spectral norm of $A$. — from [[spielman-2025-sagt/ch02-eigenvalues]] (linear-algebra → linear-algebra)
+- [structural-analogy] Richardson convergence ↔ random walks on graphs: both are analysed through powers of a matrix with norm below 1 (the author notes the analogy to Chapter 10, p. 273) — from [[spielman-2025-sagt/ch34-iterative]] (linear-algebra → other:random-walks-on-graphs)
 - [structural-analogy] Double descent's minimum-norm solution ↔ linear algebra: pseudoinverse solution of underdetermined Ax = b — the unit's setting is nonlinear and it does not mention the pseudoinverse — from [[strang-2023-introduction/ch10-learning]] (linear-algebra → linear-algebra)
 - [metaphor] Costly punishment and the nailed-down box ↔ incomplete contracts — norms and safeguards fill gaps that formal enforcement leaves. — from [[thaler-2015-misbehaving/ch15-fairness]] (economics-finance → unspecified)
-- [metaphor] Social-norm message ↔ conditional cooperators: Thaler's footnote links the idea to conditional cooperators, ch. 15 (p. 288, fn). — from [[thaler-2015-misbehaving/ch33-nudging]] (economics-finance → other)
+- [metaphor] Social-norm message ↔ conditional cooperators: Thaler's footnote links the idea to conditional cooperators, ch. 15 (p. 288, fn). — from [[thaler-2015-misbehaving/ch33-nudging]] (economics-finance → other:conditional-cooperators)

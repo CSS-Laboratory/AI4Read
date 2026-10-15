@@ -2,11 +2,13 @@
 id: lasswell-formula
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [katz-1955-personalinfluence/ch00-introduction]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 

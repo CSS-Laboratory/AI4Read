@@ -2,12 +2,14 @@
 id: period-doubling-route-to-chaos
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [mitchell-2009-guidedtour/ch02-dynamics, strogatz-2024-nonlinear/ch10-one-p1, strogatz-2024-nonlinear/ch10-one-p2, strogatz-2024-nonlinear/ch12-strange]
 raw_ids: [period-doubling route to chaos]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 

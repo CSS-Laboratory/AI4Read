@@ -30,4 +30,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Ultimatum Game rejection of low offers ↔ social-choice/bargaining theory: a credible threat of costly refusal shapes the first mover's offer. — from [[clark-2017-principles/ch07-cultural-p2]] (political-science → other)
+- [structural-analogy] Ultimatum Game rejection of low offers ↔ social-choice/bargaining theory: a credible threat of costly refusal shapes the first mover's offer. — from [[clark-2017-principles/ch07-cultural-p2]] (political-science → decision-game-theory)

@@ -2,11 +2,13 @@
 id: katz-bonacich-centrality
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [bonacich-1987-power/main]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [same-math] $(I-T)^{-1}=I+T+\dots+T^{m-1}$ for nilpotent $T$ (Exercise 8A.17) ↔ linear-algebra: Katz–Bonacich centrality $(I-\beta A)^{-1}$ for an acyclic-graph adjacency matrix (finite walk count) — same Neumann series. — from [[axler-2024-ladr/ch08-operators]] (linear-algebra → linear-algebra)
-- [structural-analogy] $(I-B)^{-1}=I+\sum B^i$ ↔ Katz–Bonacich centrality: both are walk-counting series. — from [[spielman-2025-sagt/ch11-walks]] (linear-algebra → other)
+- [structural-analogy] $(I-B)^{-1}=I+\sum B^i$ ↔ Katz–Bonacich centrality: both are walk-counting series. — from [[spielman-2025-sagt/ch11-walks]] (linear-algebra → linear-algebra)

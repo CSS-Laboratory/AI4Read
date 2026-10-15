@@ -2,7 +2,9 @@
 id: opportunity-cost
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [thaler-2015-misbehaving/ch02-endowment, thaler-2015-misbehaving/ch08-sunk]

@@ -2,12 +2,14 @@
 id: scaling-law
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 10
+n_works: 8
 tiers: [core, deep]
 grounding: digests
 sources: [brown-2020-gpt3/main-p1, brown-2020-gpt3/main-p2, brown-2020-gpt3/main-p3, hoffmann-2022-chinchilla/main, kaplan-2020-scaling/main, radford-2019-gpt2/main, schaeffer-2023-mirage/main, wei-2022-cot/main-p1, wei-2022-emergent/main, ziems-2024-css/main-p1]
 raw_ids: [scaling law]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

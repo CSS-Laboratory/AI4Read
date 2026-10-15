@@ -2,7 +2,9 @@
 id: subjective-vs-objective-probability
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [popper-1959-logic/appix-untitled, popper-1959-logic/ch08-probability-p1]

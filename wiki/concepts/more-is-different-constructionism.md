@@ -2,12 +2,14 @@
 id: more-is-different-constructionism
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 3
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [anderson-1972-moreisdifferent/main, mitchell-2009-guidedtour/ch19-past, simon-1962-architecture/main]
 raw_ids: [more is different / constructionism]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 

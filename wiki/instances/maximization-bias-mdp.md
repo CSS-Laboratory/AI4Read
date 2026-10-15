@@ -1,7 +1,7 @@
 ---
 id: maximization-bias-mdp
 type: instance
-fields: [bayesian, control-theory]
+fields: [control-theory, bayesian]
 n_sources: 2
 tiers: [core, reference]
 grounding: digests
@@ -15,7 +15,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch35-reinforcement]] (pp. 1154, 1156): states A and B with $\mathcal N(-0.1,1)$ rewards; Q-learning vs double Q-learning
+- [[murphy-2023-pml2/ch35-reinforcement]] (pp. 1154, 1156): states A and B with $\mathcal N(-0.1,1)$ rewards; Q-learning vs double Q-learning [work fields: bayesian, control-theory]
 
 ### control-theory
 

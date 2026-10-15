@@ -2,7 +2,9 @@
 id: algebraic-loop
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch03-system-p2, astrom-2021-feedbacksystems/ch09-transfer-p1]

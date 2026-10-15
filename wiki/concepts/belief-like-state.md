@@ -2,7 +2,9 @@
 id: belief-like-state
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [apperly-2009-two-systems/main-p1, apperly-2009-two-systems/main-p2]

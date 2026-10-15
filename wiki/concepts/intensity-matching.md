@@ -2,7 +2,9 @@
 id: intensity-matching
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 4
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch08-judgments, kahneman-2011-thinking/ch09-answering, kahneman-2011-thinking/ch18-taming, kahneman-2011-thinking/ch33-reversals]

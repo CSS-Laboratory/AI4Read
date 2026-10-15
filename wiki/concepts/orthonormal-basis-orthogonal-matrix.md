@@ -2,12 +2,14 @@
 id: orthonormal-basis-orthogonal-matrix
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 18
+n_works: 6
 tiers: [core, deep]
 grounding: digests
 sources: [axler-2024-ladr/ch07-operators-p2, axler-2024-ladr/ch09-multilinear-p2, boyd-2018-vmls/ch05-linear, boyd-2018-vmls/ch10-matrix, boyd-2018-vmls/ch11-matrix, deisenroth-2020-mml/ch03-analytic, deisenroth-2020-mml/ch09-linear, deisenroth-2020-mml/ch10-dimensionality, eckart-1936-lowrank/main, spielman-2025-sagt/ch39-testing, spielman-2025-sagt/ch42-quadrature, strang-2023-introduction/app10-computer, strang-2023-introduction/ch02-solving-p2, strang-2023-introduction/ch04-orthogonality-p2, strang-2023-introduction/ch06-eigenvalues-p2, strang-2023-introduction/ch06-eigenvalues-p3, strang-2023-introduction/ch07-singular, strang-2023-introduction/ch08-linear]
 raw_ids: [orthonormal basis / orthogonal matrix]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 

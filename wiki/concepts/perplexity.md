@@ -1,12 +1,14 @@
 ---
 id: perplexity
 type: concept
-fields: [llm, bayesian]
+fields: [llm, bayesian, information-theory]
+fields_strong: [llm, bayesian, information-theory]
 n_sources: 12
+n_works: 10
 tiers: [core, deep, reference]
 grounding: digests
 sources: [bengio-2003-nplm/main, brown-2020-gpt3/main-p1, brown-2020-gpt3/main-p3, devlin-2019-bert/main, hoffmann-2022-chinchilla/main, mikolov-2013-efficient/main, murphy-2023-pml2/ch05-information-p1, murphy-2023-pml2/ch20-generative, radford-2019-gpt2/main, vaswani-2017-transformer/main, wei-2022-emergent/main, xie-2022-icl/main]
-canon_spine: information-theory
+canon_spine: [information-theory]
 generated_by: build_kg.py
 ---
 
@@ -33,8 +35,8 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch05-information-p1]] (p. 237): $2^{\mathbb H_{ce}}$ [new]
-- [[murphy-2023-pml2/ch20-generative]] (p. 783): $2^H$, with $H$ the NLL/cross entropy [new]
+- [[murphy-2023-pml2/ch05-information-p1]] (p. 237): $2^{\mathbb H_{ce}}$ [new; work fields: bayesian, information-theory]
+- [[murphy-2023-pml2/ch20-generative]] (p. 783): $2^H$, with $H$ the NLL/cross entropy [new; work fields: bayesian, llm]
 
 ## Instances that use it
 

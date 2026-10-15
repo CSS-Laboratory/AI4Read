@@ -2,7 +2,9 @@
 id: less-is-more-effect
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch15-linda, kahneman-2011-thinking/ch35-two, kahneman-2011-thinking/ch36-life]

@@ -2,11 +2,13 @@
 id: simple-vs-complex-contagion
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [granovetter-1978-threshold/main]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 

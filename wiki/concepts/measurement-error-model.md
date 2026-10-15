@@ -2,7 +2,9 @@
 id: measurement-error-model
 type: concept
 fields: [bayesian, political-science]
+fields_strong: [bayesian, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [mcelreath-2020-rethinking/ch14-missing, zaller-1992-massopinion/ch04-coming]

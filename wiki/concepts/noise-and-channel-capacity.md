@@ -2,11 +2,13 @@
 id: noise-and-channel-capacity
 type: concept
 fields: [communication-theory]
+fields_strong: []
 n_sources: 0
+n_works: 0
 tiers: []
 grounding: digests
 sources: []
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 
@@ -22,4 +24,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Flattening by distraction ↔ Noise and channel capacity: disturbance degrades reception. — from [[lippmann-1922-publicopinion/ch05-speed]] (communication-theory → other)
+- [structural-analogy] Flattening by distraction ↔ Noise and channel capacity: disturbance degrades reception. — from [[lippmann-1922-publicopinion/ch05-speed]] (communication-theory → information-theory)

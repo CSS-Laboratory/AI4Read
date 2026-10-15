@@ -2,12 +2,14 @@
 id: necessary-a-posteriori
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 6
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [kripke-1980-naming/addenda, kripke-1980-naming/ch01-lecture-p1, kripke-1980-naming/ch02-lecture, kripke-1980-naming/ch03-lecture-p1, kripke-1980-naming/ch03-lecture-p2, putnam-1975-meaning/main]
 raw_ids: [necessary a posteriori]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

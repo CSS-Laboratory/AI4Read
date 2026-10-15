@@ -2,12 +2,14 @@
 id: diffusion-s-curve
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 14
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [lippmann-1922-publicopinion/ch08-blind, rogers-2003-diffusion/ch01-elements-p1, rogers-2003-diffusion/ch01-elements-p2, rogers-2003-diffusion/ch02-history-p1, rogers-2003-diffusion/ch02-history-p2, rogers-2003-diffusion/ch02-history-p3, rogers-2003-diffusion/ch03-contributions, rogers-2003-diffusion/ch04-generation, rogers-2003-diffusion/ch05-innovation-p3, rogers-2003-diffusion/ch07-innovativeness, rogers-2003-diffusion/ch08-diffusion-p1, rogers-2003-diffusion/ch08-diffusion-p2, rogers-2003-diffusion/ch08-diffusion-p3, rogers-2003-diffusion/ch09-change-p1]
 raw_ids: [Diffusion S-curve]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 
@@ -21,7 +23,7 @@ generated_by: build_kg.py
 
 ### communication-theory
 
-- [[lippmann-1922-publicopinion/ch08-blind]] (§1, para. 5): loosely related: Bury says a speculative idea finds it hard to reach the general mind until it has a concrete embodiment or striking material evidence (§1, para. 5); Lippmann gives no curve
+- [[lippmann-1922-publicopinion/ch08-blind]] (§1, para. 5): loosely related: Bury says a speculative idea finds it hard to reach the general mind until it has a concrete embodiment or striking material evidence (§1, para. 5); Lippmann gives no curve [weak: not really used in this unit]
 - [[rogers-2003-diffusion/ch01-elements-p1]] (pdf 49–50): cumulative adoption curve that "takes off" at about 10–20% [as `Diffusion S-curve`]
 - [[rogers-2003-diffusion/ch01-elements-p2]] (pdf 62): cumulative adoption over time is usually S-shaped; steepness varies
 - [[rogers-2003-diffusion/ch02-history-p1]] (pdf 82, 94): cumulative adoption over time is S-shaped; seen by Tarde and Bowers
@@ -42,5 +44,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Rise and decline of publications on diffusion ↔ the diffusion S-curve: the field's own growth follows a spread-then-saturation shape. — from [[rogers-2003-diffusion/ch02-history-p1]] (communication-theory → other)
-- [structural-analogy] critical mass (self-sustaining adoption) ↔ diffusion S-curve inflection: acceleration when adoption feeds on itself (a looser fit; the curve is only drawn, pdf 425) — from [[rogers-2003-diffusion/ch08-diffusion-p2]] (communication-theory → other)
+- [structural-analogy] Rise and decline of publications on diffusion ↔ the diffusion S-curve: the field's own growth follows a spread-then-saturation shape. — from [[rogers-2003-diffusion/ch02-history-p1]] (communication-theory → other:the-diffusion-s-curve)
+- [structural-analogy] critical mass (self-sustaining adoption) ↔ diffusion S-curve inflection: acceleration when adoption feeds on itself (a looser fit; the curve is only drawn, pdf 425) — from [[rogers-2003-diffusion/ch08-diffusion-p2]] (communication-theory → other:diffusion-s-curve-inflection)

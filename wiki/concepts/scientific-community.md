@@ -2,7 +2,9 @@
 id: scientific-community
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kuhn-1962-structure/ch02-route, kuhn-1962-structure/postscript-1969]

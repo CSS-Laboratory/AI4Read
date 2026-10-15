@@ -2,12 +2,14 @@
 id: principal-component-analysis
 type: concept
 fields: [linear-algebra, political-science]
+fields_strong: [linear-algebra, political-science]
 n_sources: 5
+n_works: 4
 tiers: [core, deep]
 grounding: digests
 sources: [deisenroth-2020-mml/ch04-matrix-p2, deisenroth-2020-mml/ch10-dimensionality, grimmer-2022-textasdata/ch14-low, strang-2023-introduction/ch07-singular, vonluxburg-2007-spectralclustering/main]
 raw_ids: [principal component analysis]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -32,9 +34,9 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] SVD directions $e_k$ ↔ statistics: principal component analysis (not stated in this unit) — a possible link, to be confirmed later. — from [[axler-2024-ladr/ch07-operators-p3]] (linear-algebra → other)
-- [metaphor] representatives as archetypes ↔ principal component analysis: both summarise data by a few prototype vectors, but via different constructions. — from [[boyd-2018-vmls/ch04-clustering]] (linear-algebra → other)
-- [structural-analogy] Truncated SVD of term-document counts ↔ principal component analysis: keep the dominant directions, treat the rest as noise. The matrix here is not centred. — from [[deerwester-1990-lsa/main]] (linear-algebra → other)
-- [same-math] Eckart–Young best rank-$r$ approximation ↔ principal component analysis: truncated canonic form of the data matrix, keep largest components — same decomposition and truncation. — from [[eckart-1936-lowrank/main]] (linear-algebra → other)
-- [same-math] sum–difference recoding ↔ statistics: principal component analysis — the source says the recoding is also obtained by PCA. — from [[stone-2022-information/ch11-information]] (information-theory → other)
-- [structural-analogy] Choosing a basis that diagonalizes A (U⁻¹AV = Σ) ↔ principal component analysis: finding axes in which a data matrix is simple. — from [[strang-2023-introduction/ch08-linear]] (linear-algebra → other)
+- [structural-analogy] SVD directions $e_k$ ↔ statistics: principal component analysis (not stated in this unit) — a possible link, to be confirmed later. — from [[axler-2024-ladr/ch07-operators-p3]] (linear-algebra → other:statistics)
+- [metaphor] representatives as archetypes ↔ principal component analysis: both summarise data by a few prototype vectors, but via different constructions. — from [[boyd-2018-vmls/ch04-clustering]] (linear-algebra → linear-algebra)
+- [structural-analogy] Truncated SVD of term-document counts ↔ principal component analysis: keep the dominant directions, treat the rest as noise. The matrix here is not centred. — from [[deerwester-1990-lsa/main]] (linear-algebra → linear-algebra)
+- [same-math] Eckart–Young best rank-$r$ approximation ↔ principal component analysis: truncated canonic form of the data matrix, keep largest components — same decomposition and truncation. — from [[eckart-1936-lowrank/main]] (linear-algebra → linear-algebra)
+- [same-math] sum–difference recoding ↔ statistics: principal component analysis — the source says the recoding is also obtained by PCA. — from [[stone-2022-information/ch11-information]] (information-theory → other:statistics)
+- [structural-analogy] Choosing a basis that diagonalizes A (U⁻¹AV = Σ) ↔ principal component analysis: finding axes in which a data matrix is simple. — from [[strang-2023-introduction/ch08-linear]] (linear-algebra → linear-algebra)

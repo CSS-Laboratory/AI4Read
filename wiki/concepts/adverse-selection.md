@@ -2,12 +2,14 @@
 id: adverse-selection
 type: concept
 fields: [decision-game-theory, economics-finance, political-science]
+fields_strong: [decision-game-theory, economics-finance, political-science]
 n_sources: 8
+n_works: 6
 tiers: [core, deep]
 grounding: digests
 sources: [akerlof-1970-lemons/main, clark-2017-principles/ch12-parliamentary-p3, dixit-2008-art-strategy/ch08-interpreting, dixit-2008-art-strategy/ch13-incentives, myerson-2008-mechanism/main, osborne-2004-introduction/ch09-bayesian, stiglitz-2002-paradigm/main-p1, stiglitz-2002-paradigm/main-p2]
 raw_ids: [adverse selection]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 
@@ -45,5 +47,5 @@ generated_by: build_kg.py
 
 - [same-math] Akerlof's adverse selection and Spence-style signaling ↔ decision-game-theory: Bayesian games with incomplete information — the seller's type (quality) is private, and the buyer's belief must match the distribution of types who choose to trade. — from [[akerlof-1970-lemons/main]] (economics-finance → decision-game-theory)
 - [structural-analogy] Moral hazard/adverse selection in delegation ↔ information problems elsewhere (insurance, labour markets): the unit itself borrows its examples from insurance and hiring. — from [[clark-2017-principles/ch12-parliamentary-p3]] (political-science → economics-finance)
-- [structural-analogy] Adverse selection in insurance and used cars ↔ selection bias in data: the sample that accepts an offer is not representative of the population. — from [[dixit-2008-art-strategy/ch08-interpreting]] (decision-game-theory → political-science)
-- [structural-analogy] unraveling of disclosure ↔ adverse selection/lemons: both are processes in which one group's exit or disclosure changes the pool that remains. — from [[stiglitz-2002-paradigm/main-p1]] (economics-finance → political-science)
+- [structural-analogy] Adverse selection in insurance and used cars ↔ selection bias in data: the sample that accepts an offer is not representative of the population. — from [[dixit-2008-art-strategy/ch08-interpreting]] (decision-game-theory → bayesian)
+- [structural-analogy] unraveling of disclosure ↔ adverse selection/lemons: both are processes in which one group's exit or disclosure changes the pool that remains. — from [[stiglitz-2002-paradigm/main-p1]] (economics-finance → economics-finance)

@@ -2,12 +2,14 @@
 id: mentalizing-network
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 5
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [apperly-2009-two-systems/main-p2, apperly-2011-mindreaders/ch04-evidence, apperly-2011-mindreaders/ch07-elaborating, heyes-2014-cultural-evolution/main, saxe-2003-tpj/main]
 raw_ids: [mentalizing network]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 

@@ -2,12 +2,14 @@
 id: matrix-multiplication-as-composition
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 11
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch03-linear-p1, axler-2024-ladr/ch03-linear-p2, axler-2024-ladr/ch09-multilinear-p2, boyd-2018-vmls/app-appendices, boyd-2018-vmls/ch09-linear, boyd-2018-vmls/ch10-matrix, deisenroth-2020-mml/ch02-linear-p2, strang-2023-introduction/app10-computer, strang-2023-introduction/ch08-linear, strang-2023-introduction/ch09-linear, strang-2023-introduction/ch10-learning]
 raw_ids: [matrix multiplication as composition]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 

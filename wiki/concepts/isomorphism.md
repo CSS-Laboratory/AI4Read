@@ -2,7 +2,9 @@
 id: isomorphism
 type: concept
 fields: [linear-algebra, control-theory]
+fields_strong: [linear-algebra, control-theory]
 n_sources: 3
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch06-black, axler-2024-ladr/ch03-linear-p2, deisenroth-2020-mml/ch02-linear-p2]
@@ -29,7 +31,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] 3.70 (dimension classifies vector spaces) ↔ other fields: classification of structures up to isomorphism by one invariant; the author notes this is hard for groups or topological spaces (p. 86) — from [[axler-2024-ladr/ch03-linear-p2]] (linear-algebra → other)
-- [metaphor] Isomorphism as "relabeling elements" ↔ data representation: choosing coordinates as an encoding that preserves all structure — from [[axler-2024-ladr/ch03-linear-p2]] (linear-algebra → other)
+- [structural-analogy] 3.70 (dimension classifies vector spaces) ↔ other fields: classification of structures up to isomorphism by one invariant; the author notes this is hard for groups or topological spaces (p. 86) — from [[axler-2024-ladr/ch03-linear-p2]] (linear-algebra → other:other-fields)
+- [metaphor] Isomorphism as "relabeling elements" ↔ data representation: choosing coordinates as an encoding that preserves all structure — from [[axler-2024-ladr/ch03-linear-p2]] (linear-algebra → other:data-representation)
 - [structural-analogy] V/U (collapsing a subspace to zero) ↔ linear-algebra: null space of a map. T̃ identifies V/(null T) with range T, a "first isomorphism" pattern. — from [[axler-2024-ladr/ch03-linear-p3]] (linear-algebra → linear-algebra)
 - [structural-analogy] Sentence and fact sharing logical form ↔ structure-preserving mapping (isomorphism) between model and target — the shared form does the representing (pp. 9–10). — from [[wittgenstein-1922-tractatus/ch00-introduction]] (analytic-philosophy → unspecified)

@@ -2,11 +2,13 @@
 id: prior-predictive-check
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 5
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch06-model, gelman-2020-workflow/main-p1, gelman-2020-workflow/main-p2, mcelreath-2020-rethinking/ch04-linear-p1, murphy-2023-pml2/ch15-generalized]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
@@ -29,4 +31,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Sensitivity of Bayesian causal-discovery intervals to the prior (Technical Point 10.7) ↔ Bayesian: prior sensitivity / prior predictive checks — prior choice drives conclusions when data cannot discriminate. — from [[hernan-2020-whatif/ch10-random]] (bayesian → bayesian)
-- [structural-analogy] Joy Pratt's calibration against data ↔ prior predictive checks: testing a prior against real data — from [[mcgrayne-2011-theory/ch11-business]] (bayesian → other)
+- [structural-analogy] Joy Pratt's calibration against data ↔ prior predictive checks: testing a prior against real data — from [[mcgrayne-2011-theory/ch11-business]] (bayesian → bayesian)

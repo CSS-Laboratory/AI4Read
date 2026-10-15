@@ -2,7 +2,9 @@
 id: policy-gradient
 type: concept
 fields: [control-theory, llm]
+fields_strong: [control-theory, llm]
 n_sources: 3
+n_works: 3
 tiers: [reference, core]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch03-learning-p4, prince-2023-udl/ch19-reinforcement, recht-2019-tour/main]

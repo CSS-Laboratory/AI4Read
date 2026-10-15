@@ -2,7 +2,9 @@
 id: pro-innovation-bias
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [rogers-2003-diffusion/ch02-history-p1, rogers-2003-diffusion/ch03-contributions, rogers-2003-diffusion/ch11-consequences-p1]
@@ -21,5 +23,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] "Electrical sublime" ↔ diffusion research: pro-innovation bias — both are over-optimism about a technology's effects. — from [[carey-1989-cultural/ch05-mythos]] (communication-theory → other)
-- [structural-analogy] Pro-innovation bias via retrospective success selection ↔ statistics: survivorship/selection bias — failed cases leave no trace, as in the toy example. — from [[rogers-2003-diffusion/ch03-contributions]] (communication-theory → other)
+- [metaphor] "Electrical sublime" ↔ diffusion research: pro-innovation bias — both are over-optimism about a technology's effects. — from [[carey-1989-cultural/ch05-mythos]] (communication-theory → communication-theory)
+- [structural-analogy] Pro-innovation bias via retrospective success selection ↔ statistics: survivorship/selection bias — failed cases leave no trace, as in the toy example. — from [[rogers-2003-diffusion/ch03-contributions]] (communication-theory → other:statistics)

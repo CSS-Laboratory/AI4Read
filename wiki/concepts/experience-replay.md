@@ -2,7 +2,9 @@
 id: experience-replay
 type: concept
 fields: [control-theory, llm]
+fields_strong: [control-theory, llm]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [prince-2023-udl/ch19-reinforcement, sutton-2018-rl/ch16-applications]

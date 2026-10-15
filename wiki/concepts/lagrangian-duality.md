@@ -2,7 +2,9 @@
 id: lagrangian-duality
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [deisenroth-2020-mml/ch07-continuous, deisenroth-2020-mml/ch12-classification]

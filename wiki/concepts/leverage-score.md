@@ -2,7 +2,9 @@
 id: leverage-score
 type: concept
 fields: [linear-algebra, llm]
+fields_strong: [linear-algebra, llm]
 n_sources: 3
+n_works: 2
 tiers: [deep]
 grounding: digests
 sources: [elhage-2022-superposition/main-p2, spielman-2025-sagt/ch13-random, spielman-2025-sagt/ch32-sparsification]

@@ -2,7 +2,9 @@
 id: doubly-stochastic-matrix
 type: concept
 fields: [information-theory, linear-algebra]
+fields_strong: [information-theory, linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [cover-2006-elements/ch02-entropy, spielman-2025-sagt/ch03-laplacian]

@@ -2,12 +2,14 @@
 id: ladder-of-causation
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 13
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch04-graphical-p3, murphy-2023-pml2/ch36-causality-p1, pearl-2018-bookofwhy/ch00-introduction, pearl-2018-bookofwhy/ch01-ladder, pearl-2018-bookofwhy/ch02-buccaneers, pearl-2018-bookofwhy/ch03-evidence, pearl-2018-bookofwhy/ch04-confounding, pearl-2018-bookofwhy/ch06-paradoxes, pearl-2018-bookofwhy/ch07-beyond, pearl-2018-bookofwhy/ch08-counterfactuals, pearl-2018-bookofwhy/ch09-mediation-p1, pearl-2018-bookofwhy/ch09-mediation-p2, pearl-2018-bookofwhy/ch10-big]
 raw_ids: [Ladder of causation]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
@@ -37,4 +39,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Logical vs. causal dependence (3.40) ↔ bayesian: association vs. intervention in the ladder of causation / do-operator — conditioning on information is not the same as physical intervention. — from [[jaynes-2003-probability/ch03-elementary]] (information-theory → bayesian)
+- [structural-analogy] Logical vs. causal dependence (3.40) ↔ bayesian: association vs. intervention in the ladder of causation / do-operator — conditioning on information is not the same as physical intervention. — from [[jaynes-2003-probability/ch03-elementary]] (bayesian → bayesian)

@@ -2,12 +2,14 @@
 id: meaning-as-use
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 13
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [lycan-2019-language/ch05-traditional, lycan-2019-language/ch06-use, lycan-2019-language/ch12-speech, lycan-2019-language/ch14-expressive, wittgenstein-1953-investigations/ch01-augustine, wittgenstein-1953-investigations/ch02-family, wittgenstein-1953-investigations/ch03-understanding, wittgenstein-1953-investigations/ch04-private, wittgenstein-1953-investigations/ch05-thinking, wittgenstein-1953-investigations/ch06-intentionality, wittgenstein-1953-investigations/ch07-negation, wittgenstein-1953-investigations/ch09-ppf, wittgenstein-1953-investigations/ch10-ppf]
 raw_ids: [meaning as use]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 
@@ -37,8 +39,8 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Learning "force" by solving problems ↔ meaning as use: understanding grows from practice, not from definitions. — from [[kuhn-1962-structure/ch05-priority]] (analytic-philosophy → other)
-- [structural-analogy] Definitions as pedagogic aids that gain content from context ↔ meaning as use: a concept's significance comes from its role in a network of practices. — from [[kuhn-1962-structure/ch11-invisibility]] (analytic-philosophy → other)
+- [structural-analogy] Learning "force" by solving problems ↔ meaning as use: understanding grows from practice, not from definitions. — from [[kuhn-1962-structure/ch05-priority]] (analytic-philosophy → analytic-philosophy)
+- [structural-analogy] Definitions as pedagogic aids that gain content from context ↔ meaning as use: a concept's significance comes from its role in a network of practices. — from [[kuhn-1962-structure/ch11-invisibility]] (analytic-philosophy → analytic-philosophy)
 - [structural-analogy] Stage 1 (sentence meaning from use) ↔ Wittgenstein's meaning as use (the text cites Wittgenstein for the plausibility of stage 1). — from [[lycan-2019-language/ch07-psychological]] (analytic-philosophy → unspecified)
-- [metaphor] expressive language outside fact-stating ↔ meaning as use: Wittgenstein-style use theory resists treating expressive uses as marginal (pp. 183–184, 193). — from [[lycan-2019-language/ch14-expressive]] (analytic-philosophy → other)
+- [metaphor] expressive language outside fact-stating ↔ meaning as use: Wittgenstein-style use theory resists treating expressive uses as marginal (pp. 183–184, 193). — from [[lycan-2019-language/ch14-expressive]] (analytic-philosophy → analytic-philosophy)
 - [structural-analogy] "Look at how the sign is applied, not what accompanies it" (§557) ↔ analytic-philosophy: the idea of meaning as use / language-game (§§559–560). — from [[wittgenstein-1953-investigations/ch07-negation]] (analytic-philosophy → analytic-philosophy)

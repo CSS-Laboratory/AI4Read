@@ -2,7 +2,9 @@
 id: effective-sample-size
 type: concept
 fields: [bayesian, control-theory]
+fields_strong: [bayesian, control-theory]
 n_sources: 6
+n_works: 4
 tiers: [core, deep, reference]
 grounding: digests
 sources: [betancourt-2017-hmc/main-p1, gelman-2013-bda3/appc-computation, gelman-2013-bda3/ch10-introduction, gelman-2013-bda3/ch11-basics, murphy-2023-pml2/ch13-sequential, sarkka-2023-bayesianfiltering/ch11-particle]
@@ -23,9 +25,9 @@ generated_by: build_kg.py
 
 ### control-theory
 
-- [[sarkka-2023-bayesianfiltering/ch11-particle]] (p. 240): $1/\sum w^2$, used to trigger adaptive resampling [new]
+- [[sarkka-2023-bayesianfiltering/ch11-particle]] (p. 240): $1/\sum w^2$, used to trigger adaptive resampling [new; work fields: control-theory, bayesian]
 
 ## Candidate bridges
 
-- [structural-analogy] n_eff for MCMC ↔ survey sampling: effective sample size under dependence, like cluster sampling (our link; the text compares only the var⁺ estimator to cluster sampling, p. 284). — from [[gelman-2013-bda3/ch11-basics]] (bayesian → other)
+- [structural-analogy] n_eff for MCMC ↔ survey sampling: effective sample size under dependence, like cluster sampling (our link; the text compares only the var⁺ estimator to cluster sampling, p. 284). — from [[gelman-2013-bda3/ch11-basics]] (bayesian → other:statistics)
 - [metaphor] "Premature optimization" in software engineering ↔ running MCMC to large effective sample size for an untested model — compute is wasted if bugs appear early (p. 14). — from [[gelman-2020-workflow/main-p1]] (bayesian → unspecified)

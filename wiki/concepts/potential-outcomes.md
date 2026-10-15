@@ -2,12 +2,14 @@
 id: potential-outcomes
 type: concept
 fields: [bayesian, political-science]
+fields_strong: [bayesian, political-science]
 n_sources: 23
+n_works: 7
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch08-modeling, gelman-2013-bda3/ch14-introduction, grimmer-2022-textasdata/ch24-causal, hernan-2020-whatif/ch01-definition, hernan-2020-whatif/ch02-randomized, hernan-2020-whatif/ch03-observational, hernan-2020-whatif/ch05-interaction, hernan-2020-whatif/ch07-confounding, hernan-2020-whatif/ch08-selection, hernan-2020-whatif/ch12-ip, hernan-2020-whatif/ch14-g, hernan-2020-whatif/ch16-instrumental, hernan-2020-whatif/ch19-time, hernan-2020-whatif/ch20-treatment, hernan-2020-whatif/ch21-g, hernan-2020-whatif/ch22-target, hernan-2020-whatif/ch23-causal, holland-1986-statistics/main, murphy-2023-pml2/ch04-graphical-p3, murphy-2023-pml2/ch36-causality-p1, pearl-2016-primer/ch04-counterfactuals, pearl-2018-bookofwhy/ch04-confounding, pearl-2018-bookofwhy/ch08-counterfactuals]
 raw_ids: [Potential outcomes]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
@@ -51,19 +53,19 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] unobserved outcome under the treatment not received (p. 4) ↔ causal inference: potential outcomes and the fundamental problem. The text only notes it as an estimand needing inference. — from [[gelman-2013-bda3/ch01-probability]] (bayesian → bayesian)
-- [structural-analogy] Predicting outcomes under each candidate incentive (p. 243) ↔ potential outcomes: the decision problem needs outcomes under each option, though only one is ever realized. — from [[gelman-2013-bda3/ch09-decision]] (bayesian → other)
-- [structural-analogy] Mixture indicators $z$ as missing data ↔ missing-data and potential-outcomes inference (canon): both treat unobserved quantities as unknowns to impute or average over. — from [[gelman-2013-bda3/ch22-finite]] (bayesian → other)
+- [structural-analogy] Predicting outcomes under each candidate incentive (p. 243) ↔ potential outcomes: the decision problem needs outcomes under each option, though only one is ever realized. — from [[gelman-2013-bda3/ch09-decision]] (bayesian → bayesian)
+- [structural-analogy] Mixture indicators $z$ as missing data ↔ missing-data and potential-outcomes inference (canon): both treat unobserved quantities as unknowns to impute or average over. — from [[gelman-2013-bda3/ch22-finite]] (bayesian → other:missing-data-and-potential)
 - [structural-analogy] individual effects unidentified because the other potential outcome is missing ↔ Bayesian: unobserved quantities treated as unknowns with a prior. — from [[hernan-2020-whatif/ch01-definition]] (bayesian → bayesian)
-- [structural-analogy] Three-block dataset with missing $Y$ imputed by a model ↔ Potential outcomes: filling in the unobserved outcome under each treatment (the missing-data view of causal inference). — from [[hernan-2020-whatif/ch13-standardization]] (bayesian → other)
-- [same-math] mediation formula as a g-formula ↔ potential outcomes: a standardization (mixing over $\Pr[M|A=0]$) of a conditional mean. — from [[hernan-2020-whatif/ch23-causal]] (bayesian → other)
+- [structural-analogy] Three-block dataset with missing $Y$ imputed by a model ↔ Potential outcomes: filling in the unobserved outcome under each treatment (the missing-data view of causal inference). — from [[hernan-2020-whatif/ch13-standardization]] (bayesian → bayesian)
+- [same-math] mediation formula as a g-formula ↔ potential outcomes: a standardization (mixing over $\Pr[M|A=0]$) of a conditional mean. — from [[hernan-2020-whatif/ch23-causal]] (bayesian → bayesian)
 - [same-math] Holland's $(Y_t, Y_c)$ and $T=E(Y_t-Y_c)$ ↔ bayesian/causal canon: potential outcomes and the average treatment effect — same definitions. — from [[holland-1986-statistics/main]] (bayesian → bayesian)
-- [metaphor] The Fundamental Problem ↔ missing-data problem: each unit has one unobserved potential outcome. — from [[holland-1986-statistics/main]] (bayesian → other)
+- [metaphor] The Fundamental Problem ↔ missing-data problem: each unit has one unobserved potential outcome. — from [[holland-1986-statistics/main]] (bayesian → other:missing-data-problem)
 - [structural-analogy] Missing neocortex values as parameters ↔ causal inference: unobserved potential outcomes — both treat unobserved quantities as unknowns inferred from a model. — from [[mcelreath-2020-rethinking/ch14-missing]] (bayesian → bayesian)
 - [same-math] SCM ↔ potential outcomes (causal inference): the author says the two frameworks are mathematically equivalent. — from [[murphy-2023-pml2/ch04-graphical-p3]] (bayesian → bayesian)
-- [structural-analogy] Causal-impact counterfactual forecast ↔ potential outcomes: treated unit's untreated outcome is the missing quantity, here predicted by a model. — from [[murphy-2023-pml2/ch29-state-p3]] (bayesian → other)
+- [structural-analogy] Causal-impact counterfactual forecast ↔ potential outcomes: treated unit's untreated outcome is the missing quantity, here predicted by a model. — from [[murphy-2023-pml2/ch29-state-p3]] (bayesian → bayesian)
 - [structural-analogy] Randomization in user-study design "marginalizes over" confounds ↔ causal inference: randomized assignment makes the assignment mechanism independent of potential outcomes (canon link; not stated in this unit). — from [[murphy-2023-pml2/ch33-interpretability]] (bayesian → bayesian)
-- [same-math] Potential outcomes with consistency ↔ potential outcomes framework in canon: $Y_x(u)$ and $Y=XY_1+(1-X)Y_0$. — from [[pearl-2016-primer/ch04-counterfactuals]] (bayesian → other)
+- [same-math] Potential outcomes with consistency ↔ potential outcomes framework in canon: $Y_x(u)$ and $Y=XY_1+(1-X)Y_0$. — from [[pearl-2016-primer/ch04-counterfactuals]] (bayesian → other:potential-outcomes-framework-in)
 - [structural-analogy] Table 4.4 randomization (missing entries independent of potential outcomes) ↔ missing-data view of causal inference: unobserved potential outcomes missing at random. — from [[pearl-2016-primer/ch04-counterfactuals]] (bayesian → bayesian)
-- [structural-analogy] Vaccination counterfactual (everyone unvaccinated vs actual) ↔ potential outcomes: outcomes of the same units under different treatments. — from [[pearl-2018-bookofwhy/ch01-ladder]] (bayesian → other)
-- [structural-analogy] Instrument as natural experiment ↔ potential outcomes/assignment mechanism: Z behaves like random assignment to X (Snow's "ready-made" experiment). — from [[pearl-2018-bookofwhy/ch07-beyond]] (bayesian → other)
-- [same-math] Back-door formula (Eq. 7.2) ↔ standardization over covariate strata in potential-outcomes adjustment: a weighted average of stratum-specific conditional probabilities by the covariate distribution. — from [[pearl-2018-bookofwhy/ch07-beyond]] (bayesian → other)
+- [structural-analogy] Vaccination counterfactual (everyone unvaccinated vs actual) ↔ potential outcomes: outcomes of the same units under different treatments. — from [[pearl-2018-bookofwhy/ch01-ladder]] (bayesian → bayesian)
+- [structural-analogy] Instrument as natural experiment ↔ potential outcomes/assignment mechanism: Z behaves like random assignment to X (Snow's "ready-made" experiment). — from [[pearl-2018-bookofwhy/ch07-beyond]] (bayesian → bayesian)
+- [same-math] Back-door formula (Eq. 7.2) ↔ standardization over covariate strata in potential-outcomes adjustment: a weighted average of stratum-specific conditional probabilities by the covariate distribution. — from [[pearl-2018-bookofwhy/ch07-beyond]] (bayesian → other:standardization-over-covariate-strata)

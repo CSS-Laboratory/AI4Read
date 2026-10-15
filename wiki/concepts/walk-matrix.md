@@ -2,7 +2,9 @@
 id: walk-matrix
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [spielman-2025-sagt/ch01-introduction, spielman-2025-sagt/ch10-random]
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Walk matrix $W_G=M_GD_G^{-1}$ ↔ probability/Markov chains: the author names "probability that a random walk is at that vertex"; each non-isolated vertex's column sums to 1. — from [[spielman-2025-sagt/ch01-introduction]] (linear-algebra → other)
+- [same-math] Walk matrix $W_G=M_GD_G^{-1}$ ↔ probability/Markov chains: the author names "probability that a random walk is at that vertex"; each non-isolated vertex's column sums to 1. — from [[spielman-2025-sagt/ch01-introduction]] (linear-algebra → other:probability)

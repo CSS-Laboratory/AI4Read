@@ -2,12 +2,14 @@
 id: micromotives-vs-macrobehavior
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [granovetter-1978-threshold/main, schelling-1971-segregation/main-p1, schelling-1971-segregation/main-p2]
 raw_ids: [micromotives vs. macrobehavior]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
@@ -27,7 +29,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] invisible hand ↔ micromotives vs. macrobehavior: individual aims, collective pattern. — from [[mitchell-2009-guidedtour/ch01-complexity]] (complex-systems → other)
+- [structural-analogy] invisible hand ↔ micromotives vs. macrobehavior: individual aims, collective pattern. — from [[mitchell-2009-guidedtour/ch01-complexity]] (complex-systems → complex-systems)
 - [structural-analogy] Adam Smith's invisible hand (self-interested individuals, collective benefit) ↔ micromotives vs. macrobehavior, a source of ideas Darwin read (pdf 104). — from [[mitchell-2009-guidedtour/ch05-evolution]] (complex-systems → unspecified)
 - [metaphor] Schelling's depressions and bank failures as macro-effects of savers ↔ micromotives vs. macrobehavior (p. 146). — from [[schelling-1971-segregation/main-p1]] (complex-systems → unspecified)
-- [metaphor] Romeo–Juliet feedback ↔ micromotives vs. macrobehavior: simple personal rules give outcomes (cycle, apathy, war) that neither partner chose. — from [[strogatz-2024-nonlinear/ch05-linear]] (complex-systems → other)
+- [metaphor] Romeo–Juliet feedback ↔ micromotives vs. macrobehavior: simple personal rules give outcomes (cycle, apathy, war) that neither partner chose. — from [[strogatz-2024-nonlinear/ch05-linear]] (complex-systems → complex-systems)

@@ -2,7 +2,9 @@
 id: information-density
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [polyanskiy-2025-information/ch20-random, polyanskiy-2025-information/ch28-rate]

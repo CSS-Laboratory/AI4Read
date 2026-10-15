@@ -2,11 +2,13 @@
 id: magic-bullet-hypodermic-model
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [katz-1955-personalinfluence/ch01-between, rogers-2003-diffusion/ch08-diffusion-p1]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 

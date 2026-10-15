@@ -2,7 +2,9 @@
 id: affect-heuristic
 type: concept
 fields: [decision-game-theory, economics-finance]
+fields_strong: [decision-game-theory, economics-finance]
 n_sources: 6
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch00-introduction, kahneman-2011-thinking/ch09-answering, kahneman-2011-thinking/ch13-availability, kahneman-2011-thinking/ch16-causes, shiller-2019-narrative/ch06-diverse, shiller-2019-narrative/ch16-stock]

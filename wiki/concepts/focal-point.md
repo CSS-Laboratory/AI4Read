@@ -2,12 +2,14 @@
 id: focal-point
 type: concept
 fields: [decision-game-theory, political-science]
+fields_strong: [decision-game-theory, political-science]
 n_sources: 13
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch01-ten, dixit-2008-art-strategy/ch04-beautiful, osborne-2004-introduction/ch02-nash-p1, schelling-1960-conflict/appa-nuclear, schelling-1960-conflict/appb-abandonment, schelling-1960-conflict/appc-re-p1, schelling-1960-conflict/appc-re-p2, schelling-1960-conflict/appc-re-p3, schelling-1960-conflict/ch03-bargaining, schelling-1960-conflict/ch04-toward, schelling-1960-conflict/ch05-enforcement-p1, schelling-1960-conflict/ch05-enforcement-p2, shepsle-2010-analyzing/ch09-collective-p1]
 raw_ids: [focal point]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 
@@ -21,7 +23,7 @@ generated_by: build_kg.py
 
 ### decision-game-theory
 
-- [[dixit-2008-art-strategy/ch01-ten]]: not used in this unit
+- [[dixit-2008-art-strategy/ch01-ten]]: not used in this unit [weak: not really used in this unit]
 - [[dixit-2008-art-strategy/ch04-beautiful]] (p. 112): an equilibrium that is obvious ad infinitum, so players' expectations converge on it
 - [[osborne-2004-introduction/ch02-nash-p1]] (p. 30): an equilibrium that seems more likely than others to attract players' attention (for example because of the nature of the actions or other information, or, in Figure 29.1, because it is preferable). The term is Schelling's
 - [[schelling-1960-conflict/appa-nuclear]] (p. 303): a limit with uniqueness and qualitative character on which both sides' expectations converge [as `focal point`]
@@ -49,13 +51,13 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Labels sustaining self-confirming stereotypes ↔ convention/focal point: a shared expectation that stays stable because everyone acts on it. — from [[axelrod-1984-cooperation/ch08-social]] (decision-game-theory → other)
+- [metaphor] Labels sustaining self-confirming stereotypes ↔ convention/focal point: a shared expectation that stays stable because everyone acts on it. — from [[axelrod-1984-cooperation/ch08-social]] (decision-game-theory → analytic-philosophy)
 - [metaphor] Weingast's coordination of beliefs about government transgression as "democratic culture" ↔ coordination games/focal points: a shared belief that lets citizens act together. — from [[clark-2017-principles/ch07-cultural-p1]] (political-science → decision-game-theory)
-- [structural-analogy] Focal point of the beauty contest ↔ common knowledge: "obvious that it is obvious that…" has the same regress shape. — from [[dixit-2008-art-strategy/ch04-beautiful]] (decision-game-theory → other)
+- [structural-analogy] Focal point of the beauty contest ↔ common knowledge: "obvious that it is obvious that…" has the same regress shape. — from [[dixit-2008-art-strategy/ch04-beautiful]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] Reference points set in negotiation ↔ decision-game-theory: anchors and focal points that coordinate expectations — both fix a shared starting point. — from [[kahneman-2011-thinking/ch28-bad]] (decision-game-theory → decision-game-theory)
-- [metaphor] Mental accounts and defaults ↔ focal points: both are salient reference structures that guide choices. — from [[kahneman-2011-thinking/ch32-keeping]] (decision-game-theory → other)
+- [metaphor] Mental accounts and defaults ↔ focal points: both are salient reference structures that guide choices. — from [[kahneman-2011-thinking/ch32-keeping]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] symbol as focal point ↔ coordination games: a shared salient signal lets differing individuals converge on one action — similar function, not the same math. — from [[lippmann-1922-publicopinion/ch15-leaders]] (communication-theory → decision-game-theory)
-- [structural-analogy] Multiple equilibria and focal points ↔ social conventions and norm selection: an outside cue picks among self-sustaining regularities. — from [[osborne-2004-introduction/ch02-nash-p1]] (decision-game-theory → political-science)
+- [structural-analogy] Multiple equilibria and focal points ↔ social conventions and norm selection: an outside cue picks among self-sustaining regularities. — from [[osborne-2004-introduction/ch02-nash-p1]] (decision-game-theory → other:social-conventions-and-norm)
 - [structural-analogy] Signalling qualities of a "solution" ↔ decision-game-theory: focal point — the salient solution people coordinate on without communicating. — from [[schelling-1960-conflict/appc-re-p2]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] Hint theory ↔ decision-game-theory: focal points (n. 158, p. 389) — from [[schelling-1960-conflict/appc-re-p3]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] Focal point ↔ decision-game-theory: coordination game with several equilibria, where salience selects one. Schelling gives no formal treatment here. — from [[schelling-1960-conflict/ch03-bargaining]] (decision-game-theory → decision-game-theory)

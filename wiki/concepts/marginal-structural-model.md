@@ -2,7 +2,9 @@
 id: marginal-structural-model
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch12-ip, hernan-2020-whatif/ch17-causal, hernan-2020-whatif/ch21-g]

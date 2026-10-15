@@ -2,7 +2,9 @@
 id: lorenz-map
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [strogatz-2024-nonlinear/ch09-lorenz-p2, strogatz-2024-nonlinear/ch10-one-p2]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Lorenz map, $|f'|>1$ ⇒ unstable cycles ↔ iterated 1-D maps (logistic map, Ch. 10): same reduction of a flow to a map, and a similar alternation of chaotic and periodic windows — from [[strogatz-2024-nonlinear/ch09-lorenz-p2]] (complex-systems → other)
+- [structural-analogy] Lorenz map, $|f'|>1$ ⇒ unstable cycles ↔ iterated 1-D maps (logistic map, Ch. 10): same reduction of a flow to a map, and a similar alternation of chaotic and periodic windows — from [[strogatz-2024-nonlinear/ch09-lorenz-p2]] (complex-systems → other:iterated-1-d-maps)

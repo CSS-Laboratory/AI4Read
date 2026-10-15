@@ -2,11 +2,13 @@
 id: allometric-urban-scaling
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [mitchell-2009-guidedtour/ch17-mystery]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 

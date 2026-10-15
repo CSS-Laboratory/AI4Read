@@ -2,7 +2,9 @@
 id: do-calculus
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 3
 tiers: [core, deep, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch36-causality-p2, pearl-2009-causality/main, pearl-2018-bookofwhy/ch07-beyond]

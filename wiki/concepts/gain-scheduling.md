@@ -2,7 +2,9 @@
 id: gain-scheduling
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 3
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch08-output, astrom-2021-feedbacksystems/ch13-robust, bertsekas-2026-rlcourse/ch01-exact-p5]

@@ -2,7 +2,9 @@
 id: advi
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch07-inference, murphy-2023-pml2/ch10-variational-p1]

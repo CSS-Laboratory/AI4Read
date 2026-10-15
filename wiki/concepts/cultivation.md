@@ -2,11 +2,13 @@
 id: cultivation
 type: concept
 fields: [communication-theory]
+fields_strong: []
 n_sources: 0
+n_works: 0
 tiers: []
 grounding: digests
 sources: []
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 

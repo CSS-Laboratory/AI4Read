@@ -2,7 +2,9 @@
 id: gram-matrix
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 5
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [boyd-2018-vmls/ch10-matrix, boyd-2018-vmls/ch11-matrix, boyd-2018-vmls/ch12-least, deisenroth-2020-mml/ch12-classification, spielman-2025-sagt/ch09-strongly]
@@ -29,8 +31,8 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [same-math] Cholesky $B=R^*R$ ↔ positive (semi)definite matrices (canon): "Gram matrix" form $A^*A$ (7.38 (f)), refined to a triangular factor. — from [[axler-2024-ladr/ch07-operators-p2]] (linear-algebra → linear-algebra)
-- [same-math] $C^{\mathrm t}BC$ rule for the matrix of a bilinear form ↔ inner products: the Gram matrix $\langle e_j,e_k\rangle$ changes this way under a basis change — the inner product is a symmetric bilinear form here (9.10). — from [[axler-2024-ladr/ch09-multilinear-p1]] (linear-algebra → other)
+- [same-math] $C^{\mathrm t}BC$ rule for the matrix of a bilinear form ↔ inner products: the Gram matrix $\langle e_j,e_k\rangle$ changes this way under a basis change — the inner product is a symmetric bilinear form here (9.10). — from [[axler-2024-ladr/ch09-multilinear-p1]] (linear-algebra → other:inner-products)
 - [same-math] Gram matrix of a 0/1 membership matrix ↔ social network analysis: co-membership counts in two-mode (affiliation) networks — the same product $A^TA$ on an incidence-style matrix. — from [[boyd-2018-vmls/ch10-matrix]] (linear-algebra → complex-systems)
-- [same-math] Covariance-like Gram matrix $\tilde A^T\tilde A/n$ (exercise 10.16) ↔ statistics: covariance matrix of de-meaned data. — from [[boyd-2018-vmls/ch10-matrix]] (linear-algebra → other)
+- [same-math] Covariance-like Gram matrix $\tilde A^T\tilde A/n$ (exercise 10.16) ↔ statistics: covariance matrix of de-meaned data. — from [[boyd-2018-vmls/ch10-matrix]] (linear-algebra → other:statistics)
 - [same-math] SVM Gram matrix $\boldsymbol K$ (symmetric PSD, 12.53) ↔ linear-algebra: positive semidefinite matrices — the Gram matrix of inner products is a PSD matrix. — from [[deisenroth-2020-mml/ch12-classification]] (linear-algebra → linear-algebra)
 - [same-math] "Any $M$ with $M^TM=L^+$" ↔ factorizations of a PSD matrix: only the Gram matrix matters, not which factor is used. — from [[spielman-2025-sagt/ch14-approximating]] (linear-algebra → linear-algebra)

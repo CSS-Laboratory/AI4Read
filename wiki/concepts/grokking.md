@@ -2,7 +2,9 @@
 id: grokking
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 2
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [prince-2023-udl/ch20-does, schaeffer-2023-mirage/main]

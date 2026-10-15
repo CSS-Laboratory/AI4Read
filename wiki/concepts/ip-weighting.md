@@ -2,7 +2,9 @@
 id: ip-weighting
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 4
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch02-randomized, hernan-2020-whatif/ch08-selection, hernan-2020-whatif/ch12-ip, hernan-2020-whatif/ch13-standardization]
@@ -28,5 +30,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] IP weighting by $1/\Pr[C=0|L,A]$ ↔ Monte Carlo: reweighting samples by inverse probability to mimic another distribution. — from [[hernan-2020-whatif/ch08-selection]] (bayesian → other)
-- [structural-analogy] cloning + censoring + IP weighting ↔ survey sampling / missing data: reweighting retained cases to represent those lost to informative selection. — from [[hernan-2020-whatif/ch22-target]] (bayesian → other)
+- [structural-analogy] IP weighting by $1/\Pr[C=0|L,A]$ ↔ Monte Carlo: reweighting samples by inverse probability to mimic another distribution. — from [[hernan-2020-whatif/ch08-selection]] (bayesian → other:statistics)
+- [structural-analogy] cloning + censoring + IP weighting ↔ survey sampling / missing data: reweighting retained cases to represent those lost to informative selection. — from [[hernan-2020-whatif/ch22-target]] (bayesian → other:statistics)

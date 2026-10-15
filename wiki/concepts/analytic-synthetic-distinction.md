@@ -2,12 +2,14 @@
 id: analytic-synthetic-distinction
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 14
+n_works: 8
 tiers: [core, deep]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch02-logic, godfreysmith-2003-theory/ch07-lakatos, kripke-1980-naming/ch01-lecture-p1, kripke-1980-naming/ch03-lecture-p1, kripke-1980-naming/ch03-lecture-p2, kuhn-1962-structure/front-preface, lycan-2019-language/ch08-verificationism, popper-1959-logic/ch01-survey, popper-1959-logic/ch03-theories, popper-1959-logic/ch04-falsifiability, popper-1959-logic/ch10-corroboration, putnam-1975-meaning/main, quine-1951-dogmas/main, wittgenstein-1922-tractatus/ch06-propositions]
 raw_ids: [analytic / synthetic distinction]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 
@@ -38,4 +40,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Symbolic generalizations as part law, part definition ↔ analytic/synthetic distinction: Kuhn calls definitions "tautologies" and says their force shifts over time (p. 183). — from [[kuhn-1962-structure/postscript-1969]] (analytic-philosophy → other)
+- [structural-analogy] Symbolic generalizations as part law, part definition ↔ analytic/synthetic distinction: Kuhn calls definitions "tautologies" and says their force shifts over time (p. 183). — from [[kuhn-1962-structure/postscript-1969]] (analytic-philosophy → analytic-philosophy)

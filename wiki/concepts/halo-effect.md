@@ -2,7 +2,9 @@
 id: halo-effect
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 5
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch00-introduction, kahneman-2011-thinking/ch07-machine, kahneman-2011-thinking/ch10-law, kahneman-2011-thinking/ch19-illusion, kahneman-2011-thinking/ch21-intuitions]

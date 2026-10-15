@@ -2,7 +2,9 @@
 id: calibration
 type: concept
 fields: [decision-game-theory, bayesian, llm, political-science]
+fields_strong: [decision-game-theory, bayesian, llm, political-science]
 n_sources: 5
+n_works: 5
 tiers: [core, deep, reference]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch19-classifying, kahneman-2011-thinking/appa-judgment, murphy-2023-pml2/ch14-predictive, tversky-1974-heuristics/main, wei-2022-emergent/main]
@@ -38,10 +40,10 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] "$n+1$ measurements fix an affine function" ↔ system identification / calibration of a sensor from reference inputs. — from [[boyd-2018-vmls/ch02-linear]] (linear-algebra → unspecified)
-- [structural-analogy] Posterior calibration ↔ frequentist bias: conditions on data instead of on the true parameter. — from [[gelman-2013-bda3/ch05-hierarchical]] (bayesian → other)
-- [metaphor] Binned residuals with 95% bounds ↔ calibration plots in forecasting: averaged errors judged against expected variation. — from [[gelman-2013-bda3/ch06-model]] (bayesian → other)
-- [structural-analogy] Assay unknown $\theta_j$ rescales the $x$-axis of a common curve ↔ calibration/measurement models in the social sciences: one shared response function, a unit-specific latent position. — from [[gelman-2013-bda3/ch19-parametric]] (bayesian → other)
-- [structural-analogy] Overly narrow confidence intervals ↔ machine-learning model calibration: stated confidence exceeds hit rate. — from [[kahneman-2011-thinking/appa-judgment]] (decision-game-theory → other)
-- [structural-analogy] Rabin's theorem ↔ scaling or calibration arguments in other fields: a pattern fitted at small scale, extended by the model's own rules, gives absurd results at large scale. — from [[kahneman-2011-thinking/ch26-prospect]] (decision-game-theory → other)
-- [structural-analogy] Congress needing calibrated local pictures ↔ measurement theory: combining unverified local reports without calibration instruments. — from [[lippmann-1922-publicopinion/ch18-role]] (communication-theory → other)
-- [structural-analogy] Joy Pratt's calibration against data ↔ prior predictive checks: testing a prior against real data — from [[mcgrayne-2011-theory/ch11-business]] (bayesian → other)
+- [structural-analogy] Posterior calibration ↔ frequentist bias: conditions on data instead of on the true parameter. — from [[gelman-2013-bda3/ch05-hierarchical]] (bayesian → other:frequentist-bias)
+- [metaphor] Binned residuals with 95% bounds ↔ calibration plots in forecasting: averaged errors judged against expected variation. — from [[gelman-2013-bda3/ch06-model]] (bayesian → other:calibration-plots-in-forecasting)
+- [structural-analogy] Assay unknown $\theta_j$ rescales the $x$-axis of a common curve ↔ calibration/measurement models in the social sciences: one shared response function, a unit-specific latent position. — from [[gelman-2013-bda3/ch19-parametric]] (bayesian → other:sociology)
+- [structural-analogy] Overly narrow confidence intervals ↔ machine-learning model calibration: stated confidence exceeds hit rate. — from [[kahneman-2011-thinking/appa-judgment]] (decision-game-theory → other:machine-learning-model-calibration)
+- [structural-analogy] Rabin's theorem ↔ scaling or calibration arguments in other fields: a pattern fitted at small scale, extended by the model's own rules, gives absurd results at large scale. — from [[kahneman-2011-thinking/ch26-prospect]] (decision-game-theory → other:scaling-or-calibration-arguments)
+- [structural-analogy] Congress needing calibrated local pictures ↔ measurement theory: combining unverified local reports without calibration instruments. — from [[lippmann-1922-publicopinion/ch18-role]] (communication-theory → other:statistics)
+- [structural-analogy] Joy Pratt's calibration against data ↔ prior predictive checks: testing a prior against real data — from [[mcgrayne-2011-theory/ch11-business]] (bayesian → bayesian)

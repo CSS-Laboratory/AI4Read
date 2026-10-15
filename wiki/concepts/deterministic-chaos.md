@@ -2,12 +2,14 @@
 id: deterministic-chaos
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 9
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [lorenz-1963-nonperiodic/main, mitchell-2009-guidedtour/ch02-dynamics, mitchell-2009-guidedtour/ch18-evolution, strogatz-2024-nonlinear/ch01-overview, strogatz-2024-nonlinear/ch07-limit-p1, strogatz-2024-nonlinear/ch09-lorenz-p1, strogatz-2024-nonlinear/ch09-lorenz-p2, strogatz-2024-nonlinear/ch10-one-p1, strogatz-2024-nonlinear/ch12-strange]
 raw_ids: [deterministic chaos]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
@@ -33,4 +35,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Class 3 "random-looking" CA behavior ↔ deterministic chaos: both are rule-based yet unpredictable. — from [[mitchell-2009-guidedtour/ch10-cellular]] (complex-systems → other)
+- [metaphor] Class 3 "random-looking" CA behavior ↔ deterministic chaos: both are rule-based yet unpredictable. — from [[mitchell-2009-guidedtour/ch10-cellular]] (complex-systems → complex-systems)

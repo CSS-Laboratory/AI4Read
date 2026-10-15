@@ -2,11 +2,13 @@
 id: screening
 type: concept
 fields: [economics-finance, decision-game-theory]
+fields_strong: [economics-finance, decision-game-theory]
 n_sources: 4
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [akerlof-1970-lemons/main, dixit-2008-art-strategy/ch08-interpreting, stiglitz-2002-paradigm/main-p1, stiglitz-2002-paradigm/main-p2]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 
@@ -41,6 +43,6 @@ generated_by: build_kg.py
 
 - [metaphor] Menu of party "contracts" in Poland ↔ screening in principal–agent models. — from [[clark-2017-principles/ch10-varieties-p1]] (political-science → unspecified)
 - [structural-analogy] Moral hazard contract ↔ mechanism design: incentive-compatibility and participation constraints appear in both; the chapter itself draws the parallel to screening (p. 357). — from [[dixit-2008-art-strategy/ch13-incentives]] (decision-game-theory → decision-game-theory)
-- [structural-analogy] Granger and Suppes screening-off ↔ d-separation: both express "no predictive value given $Z$". — from [[holland-1986-statistics/main]] (bayesian → other)
+- [structural-analogy] Granger and Suppes screening-off ↔ d-separation: both express "no predictive value given $Z$". — from [[holland-1986-statistics/main]] (bayesian → bayesian)
 - [same-math] screening results (HIV, PSA) ↔ Bayes' theorem and base-rate neglect: a positive result is weighed against disease prevalence. — from [[mcgrayne-2011-theory/ch16-eureka]] (bayesian → bayesian)
-- [structural-analogy] Screening labelers by agreement with researcher labels ↔ survey research: rater reliability checks and selection of coders. — from [[ouyang-2022-instructgpt/main-p2]] (llm → other)
+- [structural-analogy] Screening labelers by agreement with researcher labels ↔ survey research: rater reliability checks and selection of coders. — from [[ouyang-2022-instructgpt/main-p2]] (llm → other:statistics)

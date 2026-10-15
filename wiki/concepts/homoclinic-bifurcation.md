@@ -2,7 +2,9 @@
 id: homoclinic-bifurcation
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [strogatz-2024-nonlinear/ch08-bifurcations-p2, strogatz-2024-nonlinear/ch09-lorenz-p2]

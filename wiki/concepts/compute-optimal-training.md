@@ -2,11 +2,13 @@
 id: compute-optimal-training
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 3
+n_works: 3
 tiers: [deep, core]
 grounding: digests
 sources: [hoffmann-2022-chinchilla/main, kaplan-2020-scaling/main, wei-2022-emergent/main]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

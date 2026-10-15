@@ -2,11 +2,13 @@
 id: stereotype-lippmann
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 18
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [carey-1989-cultural/ch03-reconceiving, lippmann-1922-publicopinion/ch01-introduction, lippmann-1922-publicopinion/ch06-stereotypes, lippmann-1922-publicopinion/ch07-stereotypes, lippmann-1922-publicopinion/ch08-blind, lippmann-1922-publicopinion/ch09-codes, lippmann-1922-publicopinion/ch10-detection, lippmann-1922-publicopinion/ch11-enlisting, lippmann-1922-publicopinion/ch13-transfer, lippmann-1922-publicopinion/ch14-yes, lippmann-1922-publicopinion/ch15-leaders, lippmann-1922-publicopinion/ch17-self, lippmann-1922-publicopinion/ch18-role, lippmann-1922-publicopinion/ch19-old, lippmann-1922-publicopinion/ch22-constant, lippmann-1922-publicopinion/ch23-nature, lippmann-1922-publicopinion/ch24-news, lippmann-1922-publicopinion/ch25-entering]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 

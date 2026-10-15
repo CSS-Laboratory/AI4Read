@@ -2,7 +2,9 @@
 id: dynamic-equilibrium
 type: concept
 fields: [control-theory, communication-theory]
+fields_strong: [control-theory, communication-theory]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [meadows-2008-thinking/app-untitled, meadows-2008-thinking/ch01-basics, meadows-2008-thinking/ch02-brief, rogers-2003-diffusion/ch11-consequences-p1]
@@ -26,4 +28,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] dynamic equilibrium vs disequilibrium ↔ systems stability: change faster than adjustment capacity breaks the system. — from [[rogers-2003-diffusion/ch11-consequences-p1]] (communication-theory → other)
+- [structural-analogy] dynamic equilibrium vs disequilibrium ↔ systems stability: change faster than adjustment capacity breaks the system. — from [[rogers-2003-diffusion/ch11-consequences-p1]] (communication-theory → other:systems-stability)

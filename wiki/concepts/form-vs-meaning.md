@@ -2,11 +2,13 @@
 id: form-vs-meaning
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 3
+n_works: 3
 tiers: [deep, core]
 grounding: digests
 sources: [bender-2020-octopus/main, mahowald-2024-dissociating/main, piantadosi-2022-meaning/main]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

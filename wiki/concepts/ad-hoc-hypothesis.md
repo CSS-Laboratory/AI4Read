@@ -2,7 +2,9 @@
 id: ad-hoc-hypothesis
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [popper-1959-logic/ch04-falsifiability, popper-1959-logic/ch07-simplicity]

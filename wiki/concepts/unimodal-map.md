@@ -2,7 +2,9 @@
 id: unimodal-map
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [mitchell-2009-guidedtour/ch02-dynamics, strogatz-2024-nonlinear/ch10-one-p2]
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Universality of δ ↔ universality (grad concept): different systems share macro behaviour near a transition. Here the systems are different unimodal maps. — from [[strogatz-2024-nonlinear/ch10-one-p2]] (complex-systems → other)
+- [structural-analogy] Universality of δ ↔ universality (grad concept): different systems share macro behaviour near a transition. Here the systems are different unimodal maps. — from [[strogatz-2024-nonlinear/ch10-one-p2]] (complex-systems → complex-systems)

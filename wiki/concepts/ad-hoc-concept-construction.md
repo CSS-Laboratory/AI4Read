@@ -2,7 +2,9 @@
 id: ad-hoc-concept-construction
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lycan-2019-language/ch13-implicative, lycan-2019-language/ch15-metaphor]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Relevance theory's *magician\** ↔ ad hoc concept construction in the literal use of words: the same inference process at different distances from literal (p. 210). — from [[lycan-2019-language/ch15-metaphor]] (analytic-philosophy → other)
+- [structural-analogy] Relevance theory's *magician\** ↔ ad hoc concept construction in the literal use of words: the same inference process at different distances from literal (p. 210). — from [[lycan-2019-language/ch15-metaphor]] (analytic-philosophy → other:ad-hoc-concept-construction)

@@ -2,12 +2,14 @@
 id: sutva
 type: concept
 fields: [bayesian, political-science]
+fields_strong: [bayesian, political-science]
 n_sources: 6
+n_works: 5
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch08-modeling, grimmer-2022-textasdata/ch24-causal, hernan-2020-whatif/ch01-definition, hernan-2020-whatif/ch04-effect, murphy-2023-pml2/ch04-graphical-p3, pearl-2018-bookofwhy/ch08-counterfactuals]
 raw_ids: [SUTVA]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 

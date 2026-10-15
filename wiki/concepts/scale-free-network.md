@@ -2,7 +2,9 @@
 id: scale-free-network
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [mitchell-2009-guidedtour/ch15-science, mitchell-2009-guidedtour/ch16-applying]

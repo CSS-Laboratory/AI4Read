@@ -2,12 +2,14 @@
 id: research-programme-hard-core-protective-belt
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch07-lakatos, godfreysmith-2003-theory/ch11-naturalism, godfreysmith-2003-theory/ch15-empiricism]
 raw_ids: ["research programme (hard core, protective belt)"]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

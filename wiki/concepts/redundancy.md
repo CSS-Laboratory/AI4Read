@@ -1,12 +1,14 @@
 ---
 id: redundancy
 type: concept
-fields: [information-theory, control-theory]
+fields: [information-theory, bayesian, control-theory]
+fields_strong: [information-theory, bayesian, control-theory]
 n_sources: 29
+n_works: 10
 tiers: [core, deep, reference]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch07-quantity, ashby-1956-cybernetics/ch09-incessant, cover-2006-elements/ch08-channel-p1, cover-2006-elements/ch08-channel-p2, gibson-2019-efficiency/main, mackay-2003-information/ch01-introduction, mackay-2003-information/ch02-probability, mackay-2003-information/ch04-source, mackay-2003-information/ch06-stream, mackay-2003-information/ch15-further, mackay-2003-information/ch17-communication, mackay-2003-information/ch18-crosswords, mackay-2003-information/ch19-have, pierce-1980-introduction/ch02-origins, pierce-1980-introduction/ch04-encoding, pierce-1980-introduction/ch07-efficient, pierce-1980-introduction/ch08-noisy, pierce-1980-introduction/ch12-information, pierce-1980-introduction/ch13-information, polyanskiy-2025-information/ch15-universal, shannon-1948-mathematical/main-p1, shannon-1951-prediction/main, stone-2022-information/appa-glossary, stone-2022-information/ch01-information, stone-2022-information/ch02-entropy, stone-2022-information/ch03-source, stone-2022-information/ch04-noisy, stone-2022-information/ch11-information, todorov-2002-ofc/main]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 
@@ -23,19 +25,19 @@ generated_by: build_kg.py
 - [[cover-2006-elements/ch08-channel-p1]] (p. 184): added in a controlled way during transmission to fight errors
 - [[cover-2006-elements/ch08-channel-p2]] (p. 216): added deliberately by coding so loss can be repaired (p. 209); source redundancy may suit the channel
 - [[gibson-2019-efficiency/main]] (p. 11): extra marking (e.g. gender) that may act like parity bits against noise
-- [[mackay-2003-information/ch01-introduction]] (p. 4): extra bits added by the encoder, which the decoder uses to infer both message and noise
-- [[mackay-2003-information/ch02-probability]] (p. 33): $1-H(X)/\log|\mathcal A_X|$, as defined here; not used later in the book
-- [[mackay-2003-information/ch04-source]] (p. 73): structure making a file compressible, e.g. unused ASCII bit, unequal letter frequencies
-- [[mackay-2003-information/ch06-stream]] (p. 110): English has redundancy in character frequencies, letter pairs and word predictability
-- [[mackay-2003-information/ch15-further]] (p. 236): extra digits needed for detection vs correction
-- [[mackay-2003-information/ch17-communication]] (p. 249): C₁'s forced 0 is redundant and can be removed
-- [[mackay-2003-information/ch18-crosswords]] (p. 260): here: why crosswords constrain a language. No redundancy means any grid is valid, and high redundancy makes crosswords hard
-- [[mackay-2003-information/ch19-have]] (p. 269): the selection signal's bits are redundant because similar unfit individuals fail for similar reasons
+- [[mackay-2003-information/ch01-introduction]] (p. 4): extra bits added by the encoder, which the decoder uses to infer both message and noise [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch02-probability]] (p. 33): $1-H(X)/\log|\mathcal A_X|$, as defined here; not used later in the book [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch04-source]] (p. 73): structure making a file compressible, e.g. unused ASCII bit, unequal letter frequencies [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch06-stream]] (p. 110): English has redundancy in character frequencies, letter pairs and word predictability [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch15-further]] (p. 236): extra digits needed for detection vs correction [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch17-communication]] (p. 249): C₁'s forced 0 is redundant and can be removed [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch18-crosswords]] (p. 260): here: why crosswords constrain a language. No redundancy means any grid is valid, and high redundancy makes crosswords hard [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch19-have]] (p. 269): the selection signal's bits are redundant because similar unfit individuals fail for similar reasons [work fields: information-theory, bayesian]
 - [[pierce-1980-introduction/ch02-origins]] (p. 39): Nyquist's sense: a signal component that conveys no intelligence because it is predictable at the receiver
-- [[pierce-1980-introduction/ch04-encoding]] (p. 75): not named in this unit. The word-versus-letter comparison (p. 75) concerns restricting codes to sequences that actually occur.
+- [[pierce-1980-introduction/ch04-encoding]] (p. 75): not named in this unit. The word-versus-letter comparison (p. 75) concerns restricting codes to sequences that actually occur. [weak: not really used in this unit]
 - [[pierce-1980-introduction/ch07-efficient]] (pp. 143–144): the clues messages give the recipient; it lets errors be survived or detected; removing it saves digits but makes errors dangerous
 - [[pierce-1980-introduction/ch08-noisy]] (p. 164): here: added deliberately, in the right form, to permit correction
-- [[pierce-1980-introduction/ch12-information]]: not named in this unit; not listed here.
+- [[pierce-1980-introduction/ch12-information]]: not named in this unit; not listed here. [weak: not really used in this unit]
 - [[pierce-1980-introduction/ch13-information]] (p. 251–252): repetition and rule-governed structure that make the next event partly expected
 - [[polyanskiy-2025-information/ch15-universal]] (pp. 248, 251, 263): used with the meanings of the canon list
 - [[shannon-1948-mathematical/main-p1]] (p. 14): $1-$relative entropy; for English about 50% (considering structure up to about eight letters)
@@ -49,8 +51,8 @@ generated_by: build_kg.py
 
 ### control-theory
 
-- [[ashby-1956-cybernetics/ch07-quantity]] (p. 130): the name used in Shannon's work for constraints [new]
-- [[ashby-1956-cybernetics/ch09-incessant]] (pp. 181–182): the set of vectors uses fewer combinations than independent components would allow, so components can be dropped without loss of variety; relative to a specified set [new]
+- [[ashby-1956-cybernetics/ch07-quantity]] (p. 130): the name used in Shannon's work for constraints [new; work fields: control-theory, information-theory]
+- [[ashby-1956-cybernetics/ch09-incessant]] (pp. 181–182): the set of vectors uses fewer combinations than independent components would allow, so components can be dropped without loss of variety; relative to a specified set [new; work fields: control-theory, information-theory]
 - [[todorov-2002-ofc/main]] (p. 4): states with equal cost-to-go $v^*$ are task-equivalent, so $\Delta v^*=0$ means a redundant deviation [new]
 
 ## Instances that use it
@@ -65,10 +67,10 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] constraint as reduction of variety ↔ information theory: redundancy (Ashby links them himself, p. 130) — from [[ashby-1956-cybernetics/ch07-quantity]] (control-theory → information-theory)
-- [metaphor] Black's "excess gain thrown away by feedback" ↔ error-correcting redundancy: spend gain to buy insensitivity. — from [[astrom-2021-feedbacksystems/ch13-robust]] (control-theory → other)
-- [structural-analogy] Redundant gender marking ↔ error-correcting codes: parity bits add redundancy for robustness to noise. — from [[gibson-2019-efficiency/main]] (information-theory → other)
+- [metaphor] Black's "excess gain thrown away by feedback" ↔ error-correcting redundancy: spend gain to buy insensitivity. — from [[astrom-2021-feedbacksystems/ch13-robust]] (control-theory → other:error-correcting-redundancy)
+- [structural-analogy] Redundant gender marking ↔ error-correcting codes: parity bits add redundancy for robustness to noise. — from [[gibson-2019-efficiency/main]] (information-theory → information-theory)
 - [metaphor] Adding structured redundancy so noise can be undone ↔ bayesian: priors that let an inference "correct" noisy data. — from [[mackay-2003-information/ch09-communication]] (information-theory → bayesian)
 - [structural-analogy] Word-level code reserving patterns only for real words ↔ information-theory: redundancy — a restricted set of sequences leaves room to compress. — from [[pierce-1980-introduction/ch04-encoding]] (information-theory → information-theory)
-- [structural-analogy] Redundancy removed means errors become false messages ↔ error-correcting codes: structured redundancy is added back (Pierce only says the next chapter treats noise). — from [[pierce-1980-introduction/ch07-efficient]] (information-theory → other)
+- [structural-analogy] Redundancy removed means errors become false messages ↔ error-correcting codes: structured redundancy is added back (Pierce only says the next chapter treats noise). — from [[pierce-1980-introduction/ch07-efficient]] (information-theory → information-theory)
 - [same-math] $C_n$ as capacity of $\theta\mapsto X^n$ ↔ information-theory: redundancy and minimax regret of universal compression — the source states they are the same quantity (p. 604). — from [[polyanskiy-2025-information/ch35-entropic]] (information-theory → information-theory)
 - [structural-analogy] constraints on a language remove garbles in a message ↔ information theory: redundancy that lets a receiver correct errors — Schelling's own comparison (p. 338) is an analogy, not the same math. — from [[schelling-1960-conflict/appc-re-p1]] (decision-game-theory → information-theory)

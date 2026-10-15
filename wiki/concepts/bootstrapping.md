@@ -2,7 +2,9 @@
 id: bootstrapping
 type: concept
 fields: [control-theory, llm]
+fields_strong: [control-theory, llm]
 n_sources: 6
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [prince-2023-udl/ch19-reinforcement, sutton-2018-rl/ch04-dynamic, sutton-2018-rl/ch05-monte, sutton-2018-rl/ch06-temporal, sutton-2018-rl/ch07-n, sutton-2018-rl/ch12-eligibility]

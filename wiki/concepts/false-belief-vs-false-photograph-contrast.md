@@ -2,12 +2,14 @@
 id: false-belief-vs-false-photograph-contrast
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 5
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [apperly-2011-mindreaders/ch02-evidence, apperly-2011-mindreaders/ch04-evidence, apperly-2011-mindreaders/ch06-cognitive, apperly-2011-mindreaders/ch07-elaborating, saxe-2003-tpj/main]
 raw_ids: [false-belief vs false-photograph contrast]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 

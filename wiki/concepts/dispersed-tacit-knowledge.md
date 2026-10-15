@@ -2,11 +2,13 @@
 id: dispersed-tacit-knowledge
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [hayek-1945-knowledge/main]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 
@@ -24,5 +26,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Narratives unspoken at decision time ↔ dispersed / tacit knowledge: influence without explicit articulation (p. 93). — from [[shiller-2019-narrative/ch08-seven]] (economics-finance → other)
+- [structural-analogy] Narratives unspoken at decision time ↔ dispersed / tacit knowledge: influence without explicit articulation (p. 93). — from [[shiller-2019-narrative/ch08-seven]] (economics-finance → economics-finance)
 - [structural-analogy] Secrecy as artificial scarcity yielding rents ↔ economics-finance: dispersed/tacit knowledge and price as signal — who controls information gets power over outcomes. — from [[stiglitz-2002-paradigm/main-p3]] (economics-finance → economics-finance)

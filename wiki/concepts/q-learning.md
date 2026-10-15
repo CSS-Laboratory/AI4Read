@@ -2,7 +2,9 @@
 id: q-learning
 type: concept
 fields: [control-theory, bayesian, llm]
+fields_strong: [control-theory, bayesian, llm]
 n_sources: 4
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch35-reinforcement, prince-2023-udl/ch19-reinforcement, recht-2019-tour/main, sutton-2018-rl/ch06-temporal]
@@ -20,7 +22,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1153): off-policy TD control with greedy next-action target, learning $Q_*$ [new]
+- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1153): off-policy TD control with greedy next-action target, learning $Q_*$ [new; work fields: bayesian, control-theory]
 
 ### llm
 
@@ -36,5 +38,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Q-learning update (3.7) ↔ stochastic approximation: a step-size-weighted average of the old value and a noisy Bellman target. — from [[recht-2019-tour/main]] (control-theory → other)
+- [same-math] Q-learning update (3.7) ↔ stochastic approximation: a step-size-weighted average of the old value and a noisy Bellman target. — from [[recht-2019-tour/main]] (control-theory → other:optimization)
 - [structural-analogy] Q-learning's max backup ↔ Bellman equation / value iteration — a sampled version of the optimality backup. — from [[sutton-2018-rl/ch06-temporal]] (control-theory → unspecified)

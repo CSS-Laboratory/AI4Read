@@ -2,7 +2,9 @@
 id: spurious-correlation
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [pearl-2009-causality/main, pearl-2018-bookofwhy/ch02-buccaneers]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] shortcut reliance revealed by adversarial variants ↔ machine-learning evaluation: spurious correlations and shortcut learning — same logic of changing what should not matter. — from [[shapira-2024-clever-hans/main]] (theory-of-mind → other)
+- [structural-analogy] shortcut reliance revealed by adversarial variants ↔ machine-learning evaluation: spurious correlations and shortcut learning — same logic of changing what should not matter. — from [[shapira-2024-clever-hans/main]] (theory-of-mind → other:machine-learning-evaluation)

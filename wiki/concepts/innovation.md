@@ -1,8 +1,10 @@
 ---
 id: innovation
 type: concept
-fields: [control-theory, communication-theory]
+fields: [control-theory, bayesian, communication-theory]
+fields_strong: [control-theory, bayesian, communication-theory]
 n_sources: 3
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [kalman-1960-filtering/main, rogers-2003-diffusion/ch01-elements-p1, sarkka-2023-bayesianfiltering/ch01-symbols]
@@ -16,7 +18,7 @@ generated_by: build_kg.py
 ### control-theory
 
 - [[kalman-1960-filtering/main]] (p. 40): the part $\tilde y(t|t-1)$ of the new measurement orthogonal to the past; the paper does not use this word [new]
-- [[sarkka-2023-bayesianfiltering/ch01-symbols]] (p. xxv): $\mathbf v_k$ with covariance $\mathbf S_k$ in a Kalman/Gaussian filter [new]
+- [[sarkka-2023-bayesianfiltering/ch01-symbols]] (p. xxv): $\mathbf v_k$ with covariance $\mathbf S_k$ in a Kalman/Gaussian filter [new; work fields: control-theory, bayesian]
 
 ### communication-theory
 
@@ -37,12 +39,12 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] "Nervous system in reverse" (the same lines carry unity or contagion) ↔ diffusion research: the same ties spread innovations and also unwanted influence. — from [[carey-1989-cultural/ch00-introduction]] (communication-theory → other)
-- [metaphor] "Electrical sublime" ↔ diffusion research: pro-innovation bias — both are over-optimism about a technology's effects. — from [[carey-1989-cultural/ch05-mythos]] (communication-theory → other)
+- [structural-analogy] "Nervous system in reverse" (the same lines carry unity or contagion) ↔ diffusion research: the same ties spread innovations and also unwanted influence. — from [[carey-1989-cultural/ch00-introduction]] (communication-theory → communication-theory)
+- [metaphor] "Electrical sublime" ↔ diffusion research: pro-innovation bias — both are over-optimism about a technology's effects. — from [[carey-1989-cultural/ch05-mythos]] (communication-theory → communication-theory)
 - [metaphor] White "innovation" after the first summer ↔ any residual-whiteness diagnostic in time-series model checking. — from [[kalman-1960-filtering/main]] (control-theory → unspecified)
 - [metaphor] Entrepreneur finding selective incentives ↔ innovation in markets: a Schumpeterian actor organizing a new supply. — from [[olson-1965-collectiveaction/app-untitled]] (political-science → economics-finance)
-- [structural-analogy] Elias' scheme (send the innovation, orthogonal to past outputs) ↔ estimation theory: recursive linear MMSE/innovations estimation. — from [[polyanskiy-2025-information/ch25-channel]] (information-theory → other)
-- [structural-analogy] Pro-innovation bias via retrospective success selection ↔ statistics: survivorship/selection bias — failed cases leave no trace, as in the toy example. — from [[rogers-2003-diffusion/ch03-contributions]] (communication-theory → other)
+- [structural-analogy] Elias' scheme (send the innovation, orthogonal to past outputs) ↔ estimation theory: recursive linear MMSE/innovations estimation. — from [[polyanskiy-2025-information/ch25-channel]] (information-theory → other:statistics)
+- [structural-analogy] Pro-innovation bias via retrospective success selection ↔ statistics: survivorship/selection bias — failed cases leave no trace, as in the toy example. — from [[rogers-2003-diffusion/ch03-contributions]] (communication-theory → other:statistics)
 - [metaphor] Skunkworks protecting innovation from bureaucracy ↔ organizational slack/niche protection — only a loose resemblance. — from [[rogers-2003-diffusion/ch04-generation]] (communication-theory → unspecified)
-- [structural-analogy] EKF ↔ observer (state estimator): a model run in parallel, corrected by gain times innovation, with the gain from the covariance. — from [[sarkka-2023-bayesianfiltering/ch07-extended]] (control-theory → other)
+- [structural-analogy] EKF ↔ observer (state estimator): a model run in parallel, corrected by gain times innovation, with the gain from the covariance. — from [[sarkka-2023-bayesianfiltering/ch07-extended]] (control-theory → control-theory)
 - [same-math] Kalman innovations $v_k,S_k$ in the energy (16.38) ↔ control-theory: Kalman filter innovation and its covariance — same quantities, here used to score θ. — from [[sarkka-2023-bayesianfiltering/ch16-parameter]] (control-theory → control-theory)

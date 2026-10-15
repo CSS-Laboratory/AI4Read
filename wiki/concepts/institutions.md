@@ -2,11 +2,13 @@
 id: institutions
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 46
+n_works: 8
 tiers: [core, deep]
 grounding: digests
 sources: [achen-2016-realists/ch03-tumbling, achen-2016-realists/ch07-chicken, arrow-1951-socialchoice/ch01-i, arrow-1951-socialchoice/ch07-vii, clark-2017-principles/ch01-introduction, clark-2017-principles/ch05-democracy, clark-2017-principles/ch06-economic-p2, clark-2017-principles/ch07-cultural-p1, clark-2017-principles/ch08-democratic-p2, clark-2017-principles/ch09-democracy, clark-2017-principles/ch10-varieties-p1, clark-2017-principles/ch10-varieties-p2, clark-2017-principles/ch10-varieties-p3, clark-2017-principles/ch11-problems-p2, clark-2017-principles/ch13-elections-p2, clark-2017-principles/ch13-elections-p3, clark-2017-principles/ch14-social-p2, clark-2017-principles/ch15-institutional-p1, clark-2017-principles/ch15-institutional-p2, clark-2017-principles/ch15-institutional-p3, clark-2017-principles/ch16-consequences-p2, clark-2017-principles/ch16-consequences-p3, clark-2017-principles/ch16-consequences-p4, downs-1957-democracy/main, lupia-1998-dilemma/ch01-knowledge, lupia-1998-dilemma/ch04-people, lupia-1998-dilemma/ch10-institutions, olson-1965-collectiveaction/ch04-orthodox, ostrom-1990-commons/ch01-reflections, ostrom-1990-commons/ch02-institutional, ostrom-1990-commons/ch03-analyzing-p1, ostrom-1990-commons/ch03-analyzing-p2, ostrom-1990-commons/ch04-analyzing, ostrom-1990-commons/ch05-analyzing, ostrom-1990-commons/ch06-framework, shepsle-2010-analyzing/ch01-it, shepsle-2010-analyzing/ch03-getting, shepsle-2010-analyzing/ch05-spatial-p2, shepsle-2010-analyzing/ch05-spatial-p3, shepsle-2010-analyzing/ch06-strategic, shepsle-2010-analyzing/ch08-cooperation, shepsle-2010-analyzing/ch11-institutions, shepsle-2010-analyzing/ch12-legislatures, shepsle-2010-analyzing/ch15-courts, shepsle-2010-analyzing/ch16-cabinet, shepsle-2010-analyzing/ch17-final]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 
@@ -87,7 +89,7 @@ generated_by: build_kg.py
 - [metaphor] Elections as "lottery" accepted by losers (p. 317) ↔ institutions: legitimacy through procedural acceptance. — from [[achen-2016-realists/ch11-groups]] (political-science → political-science)
 - [structural-analogy] Decision-process hierarchy $x_1,x_2,\dots$ ↔ institutions as rules about making rules: constitutional levels (pp. 89–90). — from [[arrow-1951-socialchoice/ch07-vii]] (political-science → political-science)
 - [metaphor] Technocrat as modern oracle ↔ Autopoietic media system: an institution that certifies what counts as information. — from [[carey-1989-cultural/ch07-history]] (communication-theory → communication-theory)
-- [metaphor] Fixed-asset elites as "captive" payers ↔ canon: extractive institutions — both describe rulers whom payers cannot discipline. — from [[clark-2017-principles/ch06-economic-p2]] (political-science → other)
+- [metaphor] Fixed-asset elites as "captive" payers ↔ canon: extractive institutions — both describe rulers whom payers cannot discipline. — from [[clark-2017-principles/ch06-economic-p2]] (political-science → other:unnamed)
 - [metaphor] Culture as a "shared way of playing everyday games" ↔ institutions as "rules of the game". — from [[clark-2017-principles/ch07-cultural-p2]] (political-science → unspecified)
 - [structural-analogy] Royal courts as commitment devices ↔ political-science: early modern legislatures that bound monarchs (Chapter 6) — an institution that constrains the ruler makes promises credible. The authors make this comparison themselves. — from [[clark-2017-principles/ch10-varieties-p2]] (political-science → political-science)
 - [structural-analogy] Rules that stop cycling (agendas, restricted preferences) ↔ institutions as the "rules of the game": institutions create stability that preferences alone do not. — from [[clark-2017-principles/ch11-problems-p1]] (political-science → political-science)
@@ -101,5 +103,5 @@ generated_by: build_kg.py
 - [metaphor] Olson's idea of a sanction or attraction separate from the public good ↔ institutions: rules that make cooperation individually worthwhile (pp. 15–16) — from [[olson-1965-collectiveaction/ch01-theory-p1]] (political-science → political-science)
 - [metaphor] Polycentric overlapping agencies ↔ institutions / nested enterprises: no one centre, yet coordinated (design principle of nesting). — from [[ostrom-1990-commons/ch04-analyzing]] (political-science → political-science)
 - [structural-analogy] Opera/ballet coordination with two equilibria ↔ institutions: rules that select among equally good outcomes — Shepsle says groups typically institutionalize a solution. — from [[shepsle-2010-analyzing/ch09-collective-p1]] (political-science → political-science)
-- [metaphor] Institutions as "governance structure" ↔ organization theory: blending ambition and purpose (p. 368). — from [[shepsle-2010-analyzing/ch11-institutions]] (political-science → other)
+- [metaphor] Institutions as "governance structure" ↔ organization theory: blending ambition and purpose (p. 368). — from [[shepsle-2010-analyzing/ch11-institutions]] (political-science → other:sociology)
 - [structural-analogy] Information and oversight undersupplied ↔ public good/collective action: institutions give incentives to a few to produce them (p. 377). — from [[shepsle-2010-analyzing/ch12-legislatures]] (political-science → political-science)

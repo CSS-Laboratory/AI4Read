@@ -2,7 +2,9 @@
 id: correlation-coefficient
 type: concept
 fields: [decision-game-theory, bayesian, information-theory, linear-algebra]
+fields_strong: [decision-game-theory, bayesian, information-theory, linear-algebra]
 n_sources: 5
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [boyd-2018-vmls/ch03-norm, kahneman-2011-thinking/ch17-regression, kahneman-2011-thinking/ch19-illusion, pearl-2018-bookofwhy/ch02-buccaneers, stone-2022-information/ch07-channel]
@@ -32,7 +34,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Cauchy–Schwarz ⇒ cos θ ∈ [−1,1] ↔ statistics: correlation coefficient lies in [−1,1] — the same inequality bounds both. — from [[boyd-2018-vmls/ch03-norm]] (linear-algebra → other)
+- [structural-analogy] Cauchy–Schwarz ⇒ cos θ ∈ [−1,1] ↔ statistics: correlation coefficient lies in [−1,1] — the same inequality bounds both. — from [[boyd-2018-vmls/ch03-norm]] (linear-algebra → other:statistics)
 - [same-math] Correlation coefficient ρ = cos∠(ã, b̃) ↔ cosine similarity of centred data vectors — the same formula, applied to mean-removed vectors. — from [[boyd-2018-vmls/ch03-norm]] (linear-algebra → unspecified)
-- [structural-analogy] I(X;Y) = −½ log(1−ρ²) for Gaussians ↔ statistics: correlation coefficient — both measure dependence, but I is bijection-invariant (p. 48). — from [[polyanskiy-2025-information/ch04-mutual]] (information-theory → other)
-- [same-math] $\rho=\sqrt{1-2^{-2I}}$ for Gaussians ↔ statistics: correlation coefficient — the same bivariate Gaussian quantity expressed two ways. — from [[stone-2022-information/ch07-channel]] (information-theory → other)
+- [structural-analogy] I(X;Y) = −½ log(1−ρ²) for Gaussians ↔ statistics: correlation coefficient — both measure dependence, but I is bijection-invariant (p. 48). — from [[polyanskiy-2025-information/ch04-mutual]] (information-theory → other:statistics)
+- [same-math] $\rho=\sqrt{1-2^{-2I}}$ for Gaussians ↔ statistics: correlation coefficient — the same bivariate Gaussian quantity expressed two ways. — from [[stone-2022-information/ch07-channel]] (information-theory → other:statistics)

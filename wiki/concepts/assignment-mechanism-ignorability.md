@@ -2,12 +2,14 @@
 id: assignment-mechanism-ignorability
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 19
+n_works: 5
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch08-modeling, gelman-2013-bda3/ch14-introduction, hernan-2020-whatif/ch02-randomized, hernan-2020-whatif/ch04-effect, hernan-2020-whatif/ch06-graphical, hernan-2020-whatif/ch07-confounding, hernan-2020-whatif/ch10-random, hernan-2020-whatif/ch12-ip, hernan-2020-whatif/ch13-standardization, hernan-2020-whatif/ch14-g, hernan-2020-whatif/ch15-outcome, hernan-2020-whatif/ch16-instrumental, hernan-2020-whatif/ch17-causal, hernan-2020-whatif/ch18-variable, hernan-2020-whatif/ch19-time, hernan-2020-whatif/ch22-target, holland-1986-statistics/main, murphy-2023-pml2/ch36-causality-p1, pearl-2018-bookofwhy/ch08-counterfactuals]
 raw_ids: [Assignment mechanism / ignorability]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
@@ -38,7 +40,7 @@ generated_by: build_kg.py
 - [[hernan-2020-whatif/ch19-time]] (p. 259): the sequential version replaces ordinary conditional exchangeability
 - [[hernan-2020-whatif/ch22-target]] (p. 308): here, conditional exchangeability given measured covariates, needed for per-protocol effects
 - [[holland-1986-statistics/main]] (p. 948–949): $S$ decides exposure. Independence of $S$ from $Y_t,Y_c$ gives $T=T_{PF}$. Conditional versions are mentioned as "strong ignorability"
-- [[murphy-2023-pml2/ch36-causality-p1]] (pp. 1194, 1196): here via "all common causes observed" and RCT random assignment; the term "ignorability" is not used in this unit
+- [[murphy-2023-pml2/ch36-causality-p1]] (pp. 1194, 1196): here via "all common causes observed" and RCT random assignment; the term "ignorability" is not used in this unit [weak: not really used in this unit]
 - [[pearl-2018-bookofwhy/ch08-counterfactuals]] (pdf 255–256): $Y_x$ independent of received $X$ given $Z$; Pearl says it is in essence exchangeability
 
 ## Candidate bridges

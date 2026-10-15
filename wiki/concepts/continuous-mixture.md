@@ -2,7 +2,9 @@
 id: continuous-mixture
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [gelman-2013-bda3/ch22-finite, mcelreath-2020-rethinking/ch11-monsters]

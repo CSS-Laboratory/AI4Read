@@ -2,7 +2,9 @@
 id: stereotype
 type: concept
 fields: [analytic-philosophy, decision-game-theory]
+fields_strong: [analytic-philosophy, decision-game-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [kahneman-2011-thinking/ch16-causes, putnam-1975-meaning/main]
@@ -36,8 +38,8 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Labels sustaining self-confirming stereotypes ↔ convention/focal point: a shared expectation that stays stable because everyone acts on it. — from [[axelrod-1984-cooperation/ch08-social]] (decision-game-theory → other)
-- [metaphor] "Internet-scale biases" ↔ social science: a corpus as a mirror of society — the unit says models reflect stereotypes in their training data, but the measured quantity is only word co-occurrence. — from [[brown-2020-gpt3/main-p2]] (llm → other)
+- [metaphor] Labels sustaining self-confirming stereotypes ↔ convention/focal point: a shared expectation that stays stable because everyone acts on it. — from [[axelrod-1984-cooperation/ch08-social]] (decision-game-theory → analytic-philosophy)
+- [metaphor] "Internet-scale biases" ↔ social science: a corpus as a mirror of society — the unit says models reflect stereotypes in their training data, but the measured quantity is only word co-occurrence. — from [[brown-2020-gpt3/main-p2]] (llm → other:social-science)
 - [structural-analogy] Lippmann's stereotypes and pseudo-reality ↔ pseudo-environment and stereotype concepts; Carey adds that Dewey denies the image/stereotype line can be drawn (p. 62) — from [[carey-1989-cultural/ch03-reconceiving]] (communication-theory → unspecified)
 - [structural-analogy] Stereotype as pre-set template ↔ communication-theory: Goffman's frame (schema of interpretation) — both organise what an event "is" before details are processed. — from [[lippmann-1922-publicopinion/ch06-stereotypes]] (communication-theory → communication-theory)
 - [structural-analogy] Stereotypes shape what evidence is taken in ↔ communication-theory: selective exposure — both describe existing views filtering input. — from [[lippmann-1922-publicopinion/ch07-stereotypes]] (communication-theory → communication-theory)
@@ -47,5 +49,5 @@ generated_by: build_kg.py
 - [structural-analogy] Pioneer's form becoming the next stereotype ↔ encoding/decoding: audiences read new texts through established codes. — from [[lippmann-1922-publicopinion/ch11-enlisting]] (communication-theory → communication-theory)
 - [structural-analogy] Township-based stereotypes for the outer world ↔ stereotype (Lippmann) / pseudo-environment — habits formed in one environment applied to another. — from [[lippmann-1922-publicopinion/ch17-self]] (communication-theory → unspecified)
 - [metaphor] Reader's stereotype injected into a bare bulletin ↔ priors in Bayesian updating. — from [[lippmann-1922-publicopinion/ch23-nature]] (communication-theory → unspecified)
-- [structural-analogy] Compatibility (new ideas judged through old ideas) ↔ Lippmann's stereotypes: familiar templates shape how new information is understood. — from [[rogers-2003-diffusion/ch06-attributes-p1]] (communication-theory → other)
-- [structural-analogy] Model defaults to a generic label ("stereotype", "metaphor", "neutral") ↔ measurement validity: taxonomy mismatch between a coder's everyday concept and an expert codebook. — from [[ziems-2024-css/main-p1]] (llm → other)
+- [structural-analogy] Compatibility (new ideas judged through old ideas) ↔ Lippmann's stereotypes: familiar templates shape how new information is understood. — from [[rogers-2003-diffusion/ch06-attributes-p1]] (communication-theory → communication-theory)
+- [structural-analogy] Model defaults to a generic label ("stereotype", "metaphor", "neutral") ↔ measurement validity: taxonomy mismatch between a coder's everyday concept and an expert codebook. — from [[ziems-2024-css/main-p1]] (llm → other:statistics)

@@ -1,8 +1,10 @@
 ---
 id: levenberg-marquardt
 type: concept
-fields: [control-theory, linear-algebra]
+fields: [bayesian, control-theory, linear-algebra]
+fields_strong: [bayesian, control-theory, linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [boyd-2018-vmls/ch18-nonlinear, sarkka-2023-bayesianfiltering/ch07-extended]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### control-theory
 
-- [[sarkka-2023-bayesianfiltering/ch07-extended]] (p. 126): Gauss–Newton with an added regularisation term [new]
+- [[sarkka-2023-bayesianfiltering/ch07-extended]] (p. 126): Gauss–Newton with an added regularisation term [new; work fields: control-theory, bayesian]
 
 ### linear-algebra
 

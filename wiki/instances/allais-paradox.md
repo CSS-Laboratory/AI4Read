@@ -1,7 +1,7 @@
 ---
 id: allais-paradox
 type: instance
-fields: [decision-game-theory, information-theory]
+fields: [decision-game-theory, bayesian, information-theory]
 n_sources: 2
 tiers: [core]
 grounding: digests
@@ -25,4 +25,4 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch36-decision]] (p. 454): common preferences that no utility function can represent [new]
+- [[mackay-2003-information/ch36-decision]] (p. 454): common preferences that no utility function can represent [new; work fields: information-theory, bayesian, decision-game-theory]

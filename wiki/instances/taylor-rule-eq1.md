@@ -1,7 +1,7 @@
 ---
 id: taylor-rule-eq1
 type: instance
-fields: [control-theory]
+fields: [control-theory, economics-finance]
 n_sources: 1
 tiers: [deep]
 grounding: digests
@@ -21,4 +21,4 @@ generated_by: build_kg.py
 
 ### control-theory
 
-- [[taylor-1993-discretion/main]] (pp. 202–203): $r = p + .5y + .5(p-2) + 2$ tracks the 1987–1992 funds rate
+- [[taylor-1993-discretion/main]] (pp. 202–203): $r = p + .5y + .5(p-2) + 2$ tracks the 1987–1992 funds rate [work fields: control-theory, economics-finance]

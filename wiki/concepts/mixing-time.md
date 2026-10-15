@@ -2,7 +2,9 @@
 id: mixing-time
 type: concept
 fields: [bayesian, linear-algebra]
+fields_strong: [bayesian, linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch12-markov-p2, spielman-2025-sagt/ch10-random]

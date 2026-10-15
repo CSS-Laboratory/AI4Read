@@ -2,7 +2,9 @@
 id: niceness
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [axelrod-1984-cooperation/ch02-success, axelrod-1984-cooperation/ch06-choose]

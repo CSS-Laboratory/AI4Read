@@ -2,11 +2,13 @@
 id: framing-entman
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [entman-1993-framing/main, lazer-2018-fakenews/main]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 

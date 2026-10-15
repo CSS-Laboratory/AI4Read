@@ -2,12 +2,14 @@
 id: critical-mass
 type: concept
 fields: [communication-theory, decision-game-theory]
+fields_strong: [communication-theory, decision-game-theory]
 n_sources: 12
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch09-cooperation, rogers-2003-diffusion/ch01-elements-p1, rogers-2003-diffusion/ch02-history-p2, rogers-2003-diffusion/ch06-attributes-p1, rogers-2003-diffusion/ch06-attributes-p2, rogers-2003-diffusion/ch07-innovativeness, rogers-2003-diffusion/ch08-diffusion-p1, rogers-2003-diffusion/ch08-diffusion-p2, rogers-2003-diffusion/ch08-diffusion-p3, rogers-2003-diffusion/ch09-change-p1, rogers-2003-diffusion/ch09-change-p2, rogers-2003-diffusion/ch10-innovation]
 raw_ids: [Critical mass]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 
@@ -47,12 +49,12 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Kuhn's critical mass of anomalies ↔ phase transition (melting): sudden change after gradual build-up (p. 82; the author uses the comparison himself) — from [[godfreysmith-2003-theory/ch05-kuhn]] (analytic-philosophy → other)
+- [structural-analogy] Kuhn's critical mass of anomalies ↔ phase transition (melting): sudden change after gradual build-up (p. 82; the author uses the comparison himself) — from [[godfreysmith-2003-theory/ch05-kuhn]] (analytic-philosophy → complex-systems)
 - [structural-analogy] Critical mass and take-off at 10–20% ↔ Complex contagion: adoption becomes self-sustaining once enough network contacts adopt. — from [[rogers-2003-diffusion/ch01-elements-p1]] (communication-theory → complex-systems)
 - [structural-analogy] Hybrid corn's 1935 takeoff threshold ↔ critical mass (the text does not name the term). — from [[rogers-2003-diffusion/ch01-elements-p2]] (communication-theory → unspecified)
 - [structural-analogy] Tipping point (Gladwell) in smoking cessation ↔ critical mass in diffusion — Rogers calls this process critical mass. — from [[rogers-2003-diffusion/ch02-history-p2]] (communication-theory → unspecified)
-- [metaphor] Pump-priming incentives, with adoption "self-generating" after a threshold ↔ critical mass: both describe a tipping level beyond which promotion is unneeded. — from [[rogers-2003-diffusion/ch06-attributes-p1]] (communication-theory → other)
-- [structural-analogy] critical mass (self-sustaining adoption) ↔ diffusion S-curve inflection: acceleration when adoption feeds on itself (a looser fit; the curve is only drawn, pdf 425) — from [[rogers-2003-diffusion/ch08-diffusion-p2]] (communication-theory → other)
+- [metaphor] Pump-priming incentives, with adoption "self-generating" after a threshold ↔ critical mass: both describe a tipping level beyond which promotion is unneeded. — from [[rogers-2003-diffusion/ch06-attributes-p1]] (communication-theory → communication-theory)
+- [structural-analogy] critical mass (self-sustaining adoption) ↔ diffusion S-curve inflection: acceleration when adoption feeds on itself (a looser fit; the curve is only drawn, pdf 425) — from [[rogers-2003-diffusion/ch08-diffusion-p2]] (communication-theory → other:diffusion-s-curve-inflection)
 - [structural-analogy] Critical mass and tipping point ↔ communication-theory: spiral of silence — behaviour depends on perceived numbers of others. — from [[rogers-2003-diffusion/ch08-diffusion-p3]] (communication-theory → communication-theory)
-- [metaphor] Critical mass from nuclear physics ↔ diffusion: self-sustaining chain reaction. — from [[rogers-2003-diffusion/ch08-diffusion-p3]] (communication-theory → other)
-- [structural-analogy] critical mass for e-mail ↔ diffusion: critical mass — low early benefit for first users slows adoption. — from [[rogers-2003-diffusion/ch10-innovation]] (communication-theory → other)
+- [metaphor] Critical mass from nuclear physics ↔ diffusion: self-sustaining chain reaction. — from [[rogers-2003-diffusion/ch08-diffusion-p3]] (communication-theory → communication-theory)
+- [structural-analogy] critical mass for e-mail ↔ diffusion: critical mass — low early benefit for first users slows adoption. — from [[rogers-2003-diffusion/ch10-innovation]] (communication-theory → communication-theory)

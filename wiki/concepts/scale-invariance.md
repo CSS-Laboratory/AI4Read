@@ -2,12 +2,14 @@
 id: scale-invariance
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 6
+n_works: 5
 tiers: [core, reference]
 grounding: digests
 sources: [bak-1987-soc/main, barabasi-1999-scaling/main, mitchell-2009-guidedtour/ch15-science, mitchell-2009-guidedtour/ch17-mystery, scheffer-2009-earlywarning/main, strogatz-2024-nonlinear/ch11-fractals]
 raw_ids: [scale invariance]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
@@ -30,5 +32,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Median prediction under a power-law prior ↔ scale invariance: $P(t_{total}>kt\mid t)=k^{-\gamma}$ (for $k\ge1$) does not depend on $t$ — from [[griffiths-2006-optimal/main]] (bayesian → other)
+- [same-math] Median prediction under a power-law prior ↔ scale invariance: $P(t_{total}>kt\mid t)=k^{-\gamma}$ (for $k\ge1$) does not depend on $t$ — from [[griffiths-2006-optimal/main]] (bayesian → complex-systems)
 - [metaphor] Fractal "cascade of detail" ↔ scale invariance in complex systems (canon link; not stated in this unit). — from [[mitchell-2009-guidedtour/ch07-defining]] (complex-systems → unspecified)

@@ -2,12 +2,14 @@
 id: graph-laplacian
 type: concept
 fields: [linear-algebra, control-theory]
+fields_strong: [linear-algebra, control-theory]
 n_sources: 33
+n_works: 4
 tiers: [deep, core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch03-system-p2, boyd-2018-vmls/ch07-matrix, boyd-2018-vmls/ch15-multi, spielman-2025-sagt/ch01-introduction, spielman-2025-sagt/ch03-laplacian, spielman-2025-sagt/ch04-adjacency, spielman-2025-sagt/ch05-fundamental, spielman-2025-sagt/ch06-comparing, spielman-2025-sagt/ch07-cayley, spielman-2025-sagt/ch10-random, spielman-2025-sagt/ch11-walks, spielman-2025-sagt/ch12-effective, spielman-2025-sagt/ch13-random, spielman-2025-sagt/ch14-approximating, spielman-2025-sagt/ch17-monotonicity, spielman-2025-sagt/ch19-independent, spielman-2025-sagt/ch20-graph, spielman-2025-sagt/ch21-cheeger, spielman-2025-sagt/ch22-local, spielman-2025-sagt/ch24-nodal, spielman-2025-sagt/ch25-second, spielman-2025-sagt/ch26-planar, spielman-2025-sagt/ch27-properties, spielman-2025-sagt/ch29-expander, spielman-2025-sagt/ch30-simple, spielman-2025-sagt/ch32-sparsification, spielman-2025-sagt/ch33-linear, spielman-2025-sagt/ch34-iterative, spielman-2025-sagt/ch35-conjugate, spielman-2025-sagt/ch36-preconditioning, spielman-2025-sagt/ch37-augmented, spielman-2025-sagt/ch38-fast, vonluxburg-2007-spectralclustering/main]
 raw_ids: [graph Laplacian]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -40,7 +42,7 @@ generated_by: build_kg.py
 - [[spielman-2025-sagt/ch21-cheeger]] (p. 177): $z^TLz$ as the numerator of the Rayleigh quotient
 - [[spielman-2025-sagt/ch22-local]] (p. 185): $L$, and normalized $N=D^{-1/2}LD^{-1/2}$
 - [[spielman-2025-sagt/ch24-nodal]] (p. 200): here also with negative edge weights; $x^TMx=\sum w_{uv}(x(u)-x(v))^2$
-- [[spielman-2025-sagt/ch25-second]] (p. 204): the Laplacian matrix of a graph (not defined on these pages); λ₂ is its second-smallest eigenvalue
+- [[spielman-2025-sagt/ch25-second]] (p. 204): the Laplacian matrix of a graph (not defined on these pages); λ₂ is its second-smallest eigenvalue [weak: not really used in this unit]
 - [[spielman-2025-sagt/ch26-planar]] (p. 211): here $L$ of a weighted graph; the base of a generalized Laplacian [as `graph Laplacian`]
 - [[spielman-2025-sagt/ch27-properties]] (p. 220): $L_G$; eigenvalues $\lambda_i=d-\mu_i$ for d-regular graphs [as `graph Laplacian`]
 - [[spielman-2025-sagt/ch29-expander]] (p. 236): its spectrum defines "$\epsilon$-approximates $\frac dnK_{n,n}$"
@@ -66,11 +68,11 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Dirichlet energy $\|A^Tv\|^2$ ↔ graph Laplacian: the unit itself calls it the Laplacian quadratic form of the graph. — from [[boyd-2018-vmls/ch07-matrix]] (linear-algebra → other)
-- [structural-analogy] diffusion on a grid (heat) ↔ graph Laplacian (canon): incidence matrix $A$ and a resistance matrix $R$ appear in the system — from [[boyd-2018-vmls/ch11-matrix]] (linear-algebra → other)
+- [same-math] Dirichlet energy $\|A^Tv\|^2$ ↔ graph Laplacian: the unit itself calls it the Laplacian quadratic form of the graph. — from [[boyd-2018-vmls/ch07-matrix]] (linear-algebra → linear-algebra)
+- [structural-analogy] diffusion on a grid (heat) ↔ graph Laplacian (canon): incidence matrix $A$ and a resistance matrix $R$ appear in the system — from [[boyd-2018-vmls/ch11-matrix]] (linear-algebra → linear-algebra)
 - [same-math] Dirichlet energy $\|A^Tx\|^2$ (incidence matrix) ↔ linear-algebra canon: graph Laplacian quadratic form $\sum(x_i-x_j)^2$ — both are $x^T(AA^T)x$ for the incidence matrix $A$. — from [[boyd-2018-vmls/ch15-multi]] (linear-algebra → linear-algebra)
-- [same-math] Harmonic condition at non-boundary vertices ↔ graph Laplacian: weighted-Laplacian equation $(Lz)(a)=0$ off the boundary — the averaging condition is the same linear equation. — from [[spielman-2025-sagt/ch15-tutte]] (linear-algebra → other)
-- [same-math] Linear case $\Phi=\tfrac12v^2/r$ ↔ graph Laplacian: quadratic form $\sum(x(a)-x(b))^2$ (the source calls it the Lecture 13 energy). — from [[spielman-2025-sagt/ch18-dynamic]] (linear-algebra → other)
+- [same-math] Harmonic condition at non-boundary vertices ↔ graph Laplacian: weighted-Laplacian equation $(Lz)(a)=0$ off the boundary — the averaging condition is the same linear equation. — from [[spielman-2025-sagt/ch15-tutte]] (linear-algebra → linear-algebra)
+- [same-math] Linear case $\Phi=\tfrac12v^2/r$ ↔ graph Laplacian: quadratic form $\sum(x(a)-x(b))^2$ (the source calls it the Lecture 13 energy). — from [[spielman-2025-sagt/ch18-dynamic]] (linear-algebra → linear-algebra)
 - [structural-analogy] replace a clique by a sparse expander ↔ spectral sparsification: both approximate a dense graph's Laplacian by a sparse one — from [[spielman-2025-sagt/ch30-simple]] (linear-algebra → linear-algebra)
-- [structural-analogy] Kirchhoff's law $A^{\mathsf T}y=0$ ↔ graph Laplacian and network flow: nullspace of the incidence transpose. — from [[strang-2023-introduction/ch04-orthogonality-p2]] (linear-algebra → other)
-- [same-math] Matrix in the heat-equation example (Figure 6.8) ↔ graph Laplacian: A = [−1 1 0; 1 −2 1; 0 1 −1] is minus the Laplacian of a 3-node path graph, so du/dt = Au smooths a signal on a network. — from [[strang-2023-introduction/ch06-eigenvalues-p3]] (linear-algebra → other)
+- [structural-analogy] Kirchhoff's law $A^{\mathsf T}y=0$ ↔ graph Laplacian and network flow: nullspace of the incidence transpose. — from [[strang-2023-introduction/ch04-orthogonality-p2]] (linear-algebra → linear-algebra)
+- [same-math] Matrix in the heat-equation example (Figure 6.8) ↔ graph Laplacian: A = [−1 1 0; 1 −2 1; 0 1 −1] is minus the Laplacian of a 3-node path graph, so du/dt = Au smooths a signal on a network. — from [[strang-2023-introduction/ch06-eigenvalues-p3]] (linear-algebra → linear-algebra)

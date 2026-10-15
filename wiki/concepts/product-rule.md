@@ -1,9 +1,11 @@
 ---
 id: product-rule
 type: concept
-fields: [information-theory, linear-algebra]
+fields: [information-theory, bayesian, linear-algebra]
+fields_strong: [information-theory, bayesian, linear-algebra]
 n_sources: 3
-tiers: [core, reference]
+n_works: 3
+tiers: [core]
 grounding: digests
 sources: [deisenroth-2020-mml/ch06-probability-p1, jaynes-2003-probability/ch02-quantitative, stone-2022-information/appf-rules]
 generated_by: build_kg.py
@@ -13,9 +15,12 @@ generated_by: build_kg.py
 
 ## Definitions in the sources
 
+### bayesian
+
+- [[jaynes-2003-probability/ch02-quantitative]] (pp. 27–29, 33): $w(AB|C)=w(A|BC)w(B|C)$ forced by associativity and commutativity of the logical product; becomes (2.63) after rescaling [new; work fields: bayesian, information-theory]
+
 ### information-theory
 
-- [[jaynes-2003-probability/ch02-quantitative]] (pp. 27–29, 33): $w(AB|C)=w(A|BC)w(B|C)$ forced by associativity and commutativity of the logical product; becomes (2.63) after rescaling [new]
 - [[stone-2022-information/appf-rules]] (p. 261): $p(x,y)=p(x|y)p(y)$ [new]
 
 ### linear-algebra
@@ -28,7 +33,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Prop. 3 and Cor. ↔ probability: product rule $P(A\cap B)=P(A)P(B\mid A)$ — Bayes derives the same rule from expectations. — from [[bayes-1763-essay/main]] (bayesian → other)
-- [structural-analogy] multiplicative $w$ (2.26) ↔ information-theory: surprisal $-\log p$ is additive for independent events. Taking $\log w$ turns the product rule into addition, but this unit does not make that move. — from [[jaynes-2003-probability/ch02-quantitative]] (information-theory → information-theory)
-- [structural-analogy] Cox-style derivation of the rules ↔ Dutch book argument: two different routes to the same sum and product rules from consistency. — from [[jaynes-2003-probability/ch02-quantitative]] (information-theory → other)
-- [same-math] special multiplication theorem $(1_s)$ ↔ probability: product rule for independent events — the same counting identity in frequency form. — from [[popper-1959-logic/appii-following]] (analytic-philosophy → other)
+- [same-math] Prop. 3 and Cor. ↔ probability: product rule $P(A\cap B)=P(A)P(B\mid A)$ — Bayes derives the same rule from expectations. — from [[bayes-1763-essay/main]] (bayesian → other:probability)
+- [structural-analogy] multiplicative $w$ (2.26) ↔ information-theory: surprisal $-\log p$ is additive for independent events. Taking $\log w$ turns the product rule into addition, but this unit does not make that move. — from [[jaynes-2003-probability/ch02-quantitative]] (bayesian → information-theory)
+- [structural-analogy] Cox-style derivation of the rules ↔ Dutch book argument: two different routes to the same sum and product rules from consistency. — from [[jaynes-2003-probability/ch02-quantitative]] (bayesian → bayesian)
+- [same-math] special multiplication theorem $(1_s)$ ↔ probability: product rule for independent events — the same counting identity in frequency form. — from [[popper-1959-logic/appii-following]] (analytic-philosophy → other:probability)

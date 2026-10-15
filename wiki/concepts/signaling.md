@@ -2,11 +2,13 @@
 id: signaling
 type: concept
 fields: [decision-game-theory, economics-finance]
+fields_strong: [decision-game-theory, economics-finance]
 n_sources: 6
+n_works: 4
 tiers: [core, deep]
 grounding: digests
 sources: [akerlof-1970-lemons/main, dixit-2008-art-strategy/ch07-making, dixit-2008-art-strategy/ch08-interpreting, dixit-2008-art-strategy/ch11-bargaining, schelling-1960-conflict/ch04-toward, stiglitz-2002-paradigm/main-p2]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 
@@ -54,5 +56,5 @@ generated_by: build_kg.py
 - [structural-analogy] Identification and contingent identification ↔ signaling and Bayesian types: revealing a private type can be costly or conditional. — from [[schelling-1960-conflict/ch05-enforcement-p1]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] Positive evidence in a crisis ↔ [[signaling]]: a party who wants to be believed shows verifiable facts rather than only asserting them. — from [[schelling-1960-conflict/ch10-surprise]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] Visible purchases as social signals ↔ signaling: spending (or abstaining) reveals status or sympathy, and the meaning of the signal changed (poverty chic). — from [[shiller-2019-narrative/ch11-frugality]] (economics-finance → decision-game-theory)
-- [metaphor] "Cellular receptors and signaling molecules" ↔ biology: used for many narratives acting together (p. 267). — from [[shiller-2019-narrative/ch18-wage]] (economics-finance → other)
+- [metaphor] "Cellular receptors and signaling molecules" ↔ biology: used for many narratives acting together (p. 267). — from [[shiller-2019-narrative/ch18-wage]] (economics-finance → other:biology)
 - [structural-analogy] cheap talk with explicit promises ↔ signaling: some statements carry information despite no penalty for lying. — from [[thaler-2015-misbehaving/ch30-game]] (economics-finance → decision-game-theory)

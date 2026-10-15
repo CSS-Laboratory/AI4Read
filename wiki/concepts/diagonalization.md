@@ -2,11 +2,13 @@
 id: diagonalization
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 10
+n_works: 4
 tiers: [core, deep]
 grounding: digests
 sources: [axler-2024-ladr/ch05-eigenvalues-p2, axler-2024-ladr/ch07-operators-p1, axler-2024-ladr/ch08-operators, deisenroth-2020-mml/ch04-matrix-p1, spielman-2025-sagt/ch39-testing, spielman-2025-sagt/ch42-quadrature, strang-2023-introduction/ch06-eigenvalues-p1, strang-2023-introduction/ch06-eigenvalues-p2, strang-2023-introduction/ch06-eigenvalues-p3, strang-2023-introduction/ch08-linear]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -38,6 +40,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] splitting $V=V_1\oplus\cdots\oplus V_m$ into invariant pieces ↔ diagonalization: in an eigenbasis the map acts independently on each direction (canon link; not stated in this unit). — from [[axler-2024-ladr/ch05-eigenvalues-p1]] (linear-algebra → other)
+- [structural-analogy] splitting $V=V_1\oplus\cdots\oplus V_m$ into invariant pieces ↔ diagonalization: in an eigenbasis the map acts independently on each direction (canon link; not stated in this unit). — from [[axler-2024-ladr/ch05-eigenvalues-p1]] (linear-algebra → linear-algebra)
 - [structural-analogy] Fibonacci via diagonalization (Ex. 21) ↔ adjacency matrix: counting walks via $A^k$ by diagonalizing $A$. — from [[axler-2024-ladr/ch05-eigenvalues-p2]] (linear-algebra → linear-algebra)
 - [structural-analogy] Simultaneous diagonalization of commuting operators (5.76) ↔ spectral theorem: orthonormal eigenbasis for symmetric matrices (the text only points forward to 7.29, 7.31). — from [[axler-2024-ladr/ch05-eigenvalues-p2]] (linear-algebra → linear-algebra)

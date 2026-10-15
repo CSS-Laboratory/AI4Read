@@ -2,7 +2,9 @@
 id: geometric-ergodicity
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [betancourt-2017-hmc/main-p1, betancourt-2017-hmc/main-p3]

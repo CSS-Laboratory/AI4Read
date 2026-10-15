@@ -2,7 +2,9 @@
 id: relu
 type: concept
 fields: [linear-algebra, llm]
+fields_strong: [linear-algebra, llm]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [prince-2023-udl/ch03-shallow, strang-2023-introduction/ch10-learning]
@@ -31,7 +33,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Random ReLU features ↔ neural-network hidden layer: the text says neural network features are another feature-engineering route (p. 302); it does not say the two are the same. — from [[boyd-2018-vmls/ch14-least]] (linear-algebra → other)
+- [structural-analogy] Random ReLU features ↔ neural-network hidden layer: the text says neural network features are another feature-engineering route (p. 302); it does not say the two are the same. — from [[boyd-2018-vmls/ch14-least]] (linear-algebra → other:neural-network-hidden-layer)
 - [structural-analogy] Hidden-layer ReLU network ↔ llm: the per-token feed-forward block of a Transformer — same layer shape (linear, nonlinearity, linear), but the book here covers only the shallow case. — from [[prince-2023-udl/ch03-shallow]] (llm → llm)
 - [structural-analogy] Composition F_L(…F₁(v)) with ReLU ↔ linear algebra: matrix product A_L⋯A₁ — without the nonlinearity the chain would be one matrix (p. 379) — from [[strang-2023-introduction/ch10-learning]] (linear-algebra → linear-algebra)
-- [metaphor] ReLU folds making an "origami" graph ↔ geometry: folding paper — the author's own picture, with pieces extending to infinity (p. 376) — from [[strang-2023-introduction/ch10-learning]] (linear-algebra → other)
+- [metaphor] ReLU folds making an "origami" graph ↔ geometry: folding paper — the author's own picture, with pieces extending to infinity (p. 376) — from [[strang-2023-introduction/ch10-learning]] (linear-algebra → other:mathematics)

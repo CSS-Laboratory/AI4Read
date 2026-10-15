@@ -1,8 +1,10 @@
 ---
 id: inception-score
 type: concept
-fields: [bayesian, llm]
+fields: [llm, bayesian]
+fields_strong: [llm, bayesian]
 n_sources: 2
+n_works: 2
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch20-generative, prince-2023-udl/ch14-unsupervised]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch20-generative]] (p. 785): $\exp\mathbb E\,D_{\mathrm{KL}}(p_{\rm disc}(Y|\boldsymbol x)\|p_{\boldsymbol\theta}(Y))$ [new]
+- [[murphy-2023-pml2/ch20-generative]] (p. 785): $\exp\mathbb E\,D_{\mathrm{KL}}(p_{\rm disc}(Y|\boldsymbol x)\|p_{\boldsymbol\theta}(Y))$ [new; work fields: bayesian, llm]
 
 ### llm
 

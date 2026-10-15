@@ -1,8 +1,10 @@
 ---
 id: transducer
 type: concept
-fields: [control-theory]
+fields: [control-theory, information-theory]
+fields_strong: [control-theory, information-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch04-machine, ashby-1956-cybernetics/ch08-transmission]
@@ -16,7 +18,7 @@ generated_by: build_kg.py
 ### control-theory
 
 - [[ashby-1956-cybernetics/ch04-machine]] (p. 44): real machine representable by closed single-valued transformations with a parameter; "machine with input" (new)
-- [[ashby-1956-cybernetics/ch08-transmission]] (p. 143): Ashby's "machine with input": next state fixed by present state and parameter values [new]
+- [[ashby-1956-cybernetics/ch08-transmission]] (p. 143): Ashby's "machine with input": next state fixed by present state and parameter values [new; work fields: control-theory, information-theory]
 
 ## Instances that use it
 
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] variety cannot exist in one transducer, only across a set of them ↔ statistics: a distribution describes a population, not an individual draw — from [[ashby-1956-cybernetics/ch08-transmission]] (control-theory → other)
+- [metaphor] variety cannot exist in one transducer, only across a set of them ↔ statistics: a distribution describes a population, not an individual draw — from [[ashby-1956-cybernetics/ch08-transmission]] (control-theory → other:statistics)

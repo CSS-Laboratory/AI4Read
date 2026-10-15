@@ -1,12 +1,14 @@
 ---
 id: satisficing
 type: concept
-fields: [decision-game-theory, theory-of-mind]
+fields: [decision-game-theory, economics-finance, theory-of-mind]
+fields_strong: [decision-game-theory, economics-finance, theory-of-mind]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [dennett-1987-intentional-stance/ch07-intentional, simon-1955-behavioral/main]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 
@@ -20,7 +22,7 @@ generated_by: build_kg.py
 
 ### decision-game-theory
 
-- [[simon-1955-behavioral/main]] (p. 106): seeking an alternative whose payoff meets an aspiration level, then stopping. Simon does not use the word here, only "satisfactory" and "good enough"
+- [[simon-1955-behavioral/main]] (p. 106): seeking an alternative whose payoff meets an aspiration level, then stopping. Simon does not use the word here, only "satisfactory" and "good enough" [work fields: decision-game-theory, economics-finance]
 
 ### theory-of-mind
 
@@ -28,7 +30,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Law of least effort ↔ satisficing: stopping at an easier route that works — from [[kahneman-2011-thinking/ch02-attention]] (decision-game-theory → other)
+- [structural-analogy] Law of least effort ↔ satisficing: stopping at an easier route that works — from [[kahneman-2011-thinking/ch02-attention]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] Substitution (answer an easier question) ↔ decision-game-theory: bounded rationality / satisficing — both are shortcuts under limited effort, but the chapter does not link them. — from [[kahneman-2011-thinking/ch09-answering]] (decision-game-theory → decision-game-theory)
-- [metaphor] Anchor that limits movement ↔ satisficing: stopping at the near edge of uncertainty, as people do when adjusting (pdf 119–120). — from [[kahneman-2011-thinking/ch11-anchors]] (decision-game-theory → other)
-- [structural-analogy] Win-stay, lose-shift ↔ satisficing: keep your action while payoff meets an aspiration, otherwise change. — from [[nowak-2006-five-rules/main]] (decision-game-theory → other)
+- [metaphor] Anchor that limits movement ↔ satisficing: stopping at the near edge of uncertainty, as people do when adjusting (pdf 119–120). — from [[kahneman-2011-thinking/ch11-anchors]] (decision-game-theory → decision-game-theory)
+- [structural-analogy] Win-stay, lose-shift ↔ satisficing: keep your action while payoff meets an aspiration, otherwise change. — from [[nowak-2006-five-rules/main]] (decision-game-theory → decision-game-theory)

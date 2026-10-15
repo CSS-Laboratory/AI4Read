@@ -2,7 +2,9 @@
 id: bias-of-communication
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [carey-1989-cultural/ch05-mythos, carey-1989-cultural/ch06-space]

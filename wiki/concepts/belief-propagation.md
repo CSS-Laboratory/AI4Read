@@ -2,7 +2,9 @@
 id: belief-propagation
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch09-message, pearl-2018-bookofwhy/ch03-evidence]
@@ -26,4 +28,4 @@ generated_by: build_kg.py
 
 - [same-math] Sum–product decoding ↔ bayesian: belief propagation on a factor graph, computing marginal posteriors exactly on trees — the text itself gives the name belief propagation (p. 557). — from [[mackay-2003-information/ch47-low]] (information-theory → bayesian)
 - [structural-analogy] Peeling decoder with certain/uncertain messages ↔ bayesian: belief propagation on a factor graph — the text calls it sum–product with extreme messages. — from [[mackay-2003-information/ch50-digital]] (information-theory → bayesian)
-- [structural-analogy] VMP ↔ belief propagation: message passing, but messages are expected sufficient statistics (p. 470) — from [[murphy-2023-pml2/ch10-variational-p2]] (bayesian → other)
+- [structural-analogy] VMP ↔ belief propagation: message passing, but messages are expected sufficient statistics (p. 470) — from [[murphy-2023-pml2/ch10-variational-p2]] (bayesian → bayesian)

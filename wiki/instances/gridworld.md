@@ -25,4 +25,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Sally-Anne gridworld ↔ developmental psychology: predicting where an agent will go, not asking what it believes (pdf 7) — from [[rabinowitz-2018-machine-tom/main]] (theory-of-mind → other)
+- [structural-analogy] Sally-Anne gridworld ↔ developmental psychology: predicting where an agent will go, not asking what it believes (pdf 7) — from [[rabinowitz-2018-machine-tom/main]] (theory-of-mind → other:psychology-cognitive-science)

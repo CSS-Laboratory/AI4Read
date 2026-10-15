@@ -2,7 +2,9 @@
 id: disambiguation
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [lycan-2019-language/ch11-semantic, magnus-2025-forallx/ch07-ambiguity]
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Disambiguation ↔ NLP: word-sense disambiguation, choosing among possible readings in context. — from [[lycan-2019-language/ch11-semantic]] (analytic-philosophy → llm)
-- [metaphor] Astell's disambiguation ↔ argument analysis: strong vs. weak readings of a claim. — from [[magnus-2025-forallx/ch25-multiple]] (analytic-philosophy → other)
+- [metaphor] Astell's disambiguation ↔ argument analysis: strong vs. weak readings of a claim. — from [[magnus-2025-forallx/ch25-multiple]] (analytic-philosophy → analytic-philosophy)

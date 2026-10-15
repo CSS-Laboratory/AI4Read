@@ -2,11 +2,13 @@
 id: common-prior
 type: concept
 fields: [decision-game-theory]
+fields_strong: []
 n_sources: 0
+n_works: 0
 tiers: []
 grounding: digests
 sources: []
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 

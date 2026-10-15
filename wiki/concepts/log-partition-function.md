@@ -2,7 +2,9 @@
 id: log-partition-function
 type: concept
 fields: [bayesian, linear-algebra]
+fields_strong: [bayesian, linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [deisenroth-2020-mml/ch06-probability-p2, murphy-2023-pml2/ch02-probability-p2]
@@ -23,5 +25,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] $\log Z$ derivatives give means and covariances (11.60, 11.73) ↔ exponential-family theory: log-partition function as cumulant generating function — the same identities — from [[jaynes-2003-probability/ch11-discrete]] (information-theory → other)
+- [same-math] $\log Z$ derivatives give means and covariances (11.60, 11.73) ↔ exponential-family theory: log-partition function as cumulant generating function — the same identities — from [[jaynes-2003-probability/ch11-discrete]] (bayesian → other:exponential-family-theory)
 - [same-math] $\mathrm{var}(E)=\partial^2\ln Z/\partial\beta^2$ ↔ information-theory: variance of the sufficient statistic as the second derivative of the log-partition function in an exponential family — same derivative identity. — from [[mackay-2003-information/ch31-ising]] (information-theory → information-theory)

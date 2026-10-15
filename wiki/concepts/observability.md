@@ -1,12 +1,14 @@
 ---
 id: observability
 type: concept
-fields: [control-theory, communication-theory]
+fields: [control-theory, bayesian, communication-theory]
+fields_strong: [control-theory, bayesian, communication-theory]
 n_sources: 10
+n_works: 6
 tiers: [core, deep]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch06-black, astrom-2021-feedbacksystems/ch03-system-p1, astrom-2021-feedbacksystems/ch08-output, astrom-2021-feedbacksystems/ch09-transfer-p1, astrom-2021-feedbacksystems/ch09-transfer-p2, astrom-2021-feedbacksystems/ch15-architecture-p2, liberzon-2012-calculus/ch06-linear, rogers-2003-diffusion/ch06-attributes-p2, sarkka-2023-bayesianfiltering/ch17-epilogue, welch-2004-kalmanintro/main]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 
@@ -27,7 +29,7 @@ generated_by: build_kg.py
 - [[astrom-2021-feedbacksystems/ch09-transfer-p2]] (p. 9-27): lost under pole/zero cancellation
 - [[astrom-2021-feedbacksystems/ch15-architecture-p2]] (p. 15-28): here: the cancelled mode $I_1-I_2$ is neither reachable from the forces nor observable from $v$
 - [[liberzon-2012-calculus/ch06-linear]] (p. 157): of $(A,C)$ with $Q=C^TC$; gives stability and $P>0$
-- [[sarkka-2023-bayesianfiltering/ch17-epilogue]] (p. 353): whether the state can be determined from measurements; mentioned as omitted
+- [[sarkka-2023-bayesianfiltering/ch17-epilogue]] (p. 353): whether the state can be determined from measurements; mentioned as omitted [work fields: control-theory, bayesian]
 - [[welch-2004-kalmanintro/main]] (p. 11): if over all measurements there is not a one-to-one mapping between measurement and state via $h$, the filter will quickly diverge ("as you might expect") and the process is "unobservable"
 
 ### communication-theory
@@ -44,7 +46,7 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] "Memory is a hypothesis forced by limited observation" (p. 172) ↔ control-theory: observability, where hidden state is inferred from a sequence of outputs. Ashby himself links this to S.6/21. — from [[ashby-1956-cybernetics/ch09-incessant]] (control-theory → control-theory)
-- [structural-analogy] Hidden cancelled mode ↔ observability/reachability: an unobservable or unreachable mode does not show in the transfer function. — from [[astrom-2021-feedbacksystems/ch09-transfer-p2]] (control-theory → other)
+- [structural-analogy] Hidden cancelled mode ↔ observability/reachability: an unobservable or unreachable mode does not show in the transfer function. — from [[astrom-2021-feedbacksystems/ch09-transfer-p2]] (control-theory → control-theory)
 - [metaphor] Blind men touching parts ↔ control-theory: observability — partial measurements may not reveal the whole internal state. — from [[meadows-2008-thinking/ch00-introduction]] (control-theory → control-theory)
 - [structural-analogy] observability/controllability omitted here ↔ control-theory observability/controllability: same questions, asked for estimation — from [[sarkka-2023-bayesianfiltering/ch17-epilogue]] (control-theory → control-theory)
 - [structural-analogy] BE unlearnable from feature vectors ↔ control-theory/observability: different internal systems giving identical outputs cannot be told apart from data — from [[sutton-2018-rl/ch11-off]] (control-theory → control-theory)

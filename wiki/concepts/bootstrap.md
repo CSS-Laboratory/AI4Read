@@ -2,7 +2,9 @@
 id: bootstrap
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [hernan-2020-whatif/ch13-standardization, murphy-2023-pml2/ch03-statistics-p1]
@@ -29,9 +31,9 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Monte Carlo $p$-value with refitting ↔ parametric bootstrap: simulate from the fitted model, repeat the same fit on each simulation — from [[clauset-2009-powerlaw/main-p1]] (complex-systems → other)
-- [structural-analogy] Efron's tree: apparent vs bootstrap success rate ↔ machine learning: training error vs held-out error — both correct optimism from fitting and testing on the same data. — from [[efron-1986-bayesian/main]] (bayesian → other)
-- [structural-analogy] posterior predictive p-value ↔ frequentist parametric-bootstrap goodness-of-fit: both simulate replicates from the fitted model, but the Bayesian one averages over the posterior and the bootstrap plugs in a point estimate (pp. 12, 15) — from [[gelman-2013-philosophy/main]] (bayesian → other)
+- [structural-analogy] Monte Carlo $p$-value with refitting ↔ parametric bootstrap: simulate from the fitted model, repeat the same fit on each simulation — from [[clauset-2009-powerlaw/main-p1]] (complex-systems → other:parametric-bootstrap)
+- [structural-analogy] Efron's tree: apparent vs bootstrap success rate ↔ machine learning: training error vs held-out error — both correct optimism from fitting and testing on the same data. — from [[efron-1986-bayesian/main]] (bayesian → llm)
+- [structural-analogy] posterior predictive p-value ↔ frequentist parametric-bootstrap goodness-of-fit: both simulate replicates from the fitted model, but the Bayesian one averages over the posterior and the bootstrap plugs in a point estimate (pp. 12, 15) — from [[gelman-2013-philosophy/main]] (bayesian → other:frequentist-parametric-bootstrap-goodnes)
 - [structural-analogy] Bootstrap standard errors ↔ Bayesian posterior sampling: both use many simulated draws to describe uncertainty, though they target different things. — from [[hernan-2020-whatif/ch13-standardization]] (bayesian → bayesian)
 - [structural-analogy] Bootstrap distribution ↔ Bayesian posterior sampling: both give a cloud of parameter values, from refitting vs from conditioning (p. 75). — from [[murphy-2023-pml2/ch03-statistics-p1]] (bayesian → bayesian)
 - [metaphor] choosing λ between MC and TD ↔ control-theory: trade-off between trusting a model prediction (bootstrap) and measured outcomes (Kalman-gain-like weighting). — from [[sutton-2018-rl/ch12-eligibility]] (control-theory → control-theory)

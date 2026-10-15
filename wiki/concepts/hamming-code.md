@@ -1,8 +1,10 @@
 ---
 id: hamming-code
 type: concept
-fields: [information-theory]
+fields: [information-theory, bayesian]
+fields_strong: [information-theory, bayesian]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [cover-2006-elements/ch08-channel-p2, mackay-2003-information/ch01-introduction, mackay-2003-information/ch13-binary]
@@ -16,8 +18,8 @@ generated_by: build_kg.py
 ### information-theory
 
 - [[cover-2006-elements/ch08-channel-p2]] (p. 211): linear code from parity-check matrix with all non-zero columns; $n=2^l-1$, $k=2^l-l-1$, $d=3$; corrects one error [new]
-- [[mackay-2003-information/ch01-introduction]] (p. 9): the (7,4) linear block code with three parity checks that corrects any single flip [new]
-- [[mackay-2003-information/ch13-binary]] (p. 210): single-error-correcting code whose $\mathbf H$ columns are all nonzero $M$-bit vectors, $N=2^M-1$ [new]
+- [[mackay-2003-information/ch01-introduction]] (p. 9): the (7,4) linear block code with three parity checks that corrects any single flip [new; work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch13-binary]] (p. 210): single-error-correcting code whose $\mathbf H$ columns are all nonzero $M$-bit vectors, $N=2^M-1$ [new; work fields: information-theory, bayesian]
 
 ## Instances that use it
 
@@ -29,4 +31,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Hat-puzzle strategy ↔ coding: Hamming-code decoding (win prob. $N/(N+1)$) — the strategy literally uses the code's decoder (p. 227). — from [[mackay-2003-information/ch13-binary]] (information-theory → other)
+- [same-math] Hat-puzzle strategy ↔ coding: Hamming-code decoding (win prob. $N/(N+1)$) — the strategy literally uses the code's decoder (p. 227). — from [[mackay-2003-information/ch13-binary]] (information-theory → information-theory)

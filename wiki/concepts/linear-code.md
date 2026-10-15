@@ -2,7 +2,9 @@
 id: linear-code
 type: concept
 fields: [linear-algebra, information-theory]
+fields_strong: [linear-algebra, information-theory]
 n_sources: 3
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [polyanskiy-2025-information/ch20-random, spielman-2025-sagt/ch28-brief, spielman-2025-sagt/ch29-expander]
@@ -30,6 +32,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Typical-set decoding ↔ Chapter 10's random-code proof: the unit says both use typical sets (p. 228) and contrasts this linear-code proof with Chapter 10's random-code proof. — from [[mackay-2003-information/ch14-very]] (information-theory → other)
-- [structural-analogy] Random linear codes vs fully random codes ↔ compression: Theorems 11.5 vs 11.8, as the text states (p. 364). — from [[polyanskiy-2025-information/ch20-random]] (information-theory → other)
+- [structural-analogy] Typical-set decoding ↔ Chapter 10's random-code proof: the unit says both use typical sets (p. 228) and contrasts this linear-code proof with Chapter 10's random-code proof. — from [[mackay-2003-information/ch14-very]] (information-theory → other:chapter-10s-random-code)
+- [structural-analogy] Random linear codes vs fully random codes ↔ compression: Theorems 11.5 vs 11.8, as the text states (p. 364). — from [[polyanskiy-2025-information/ch20-random]] (information-theory → information-theory)
 - [same-math] linear code as column space or null space ↔ linear algebra: range and kernel, here over $\mathbb F_2$ (p. 232) — from [[spielman-2025-sagt/ch28-brief]] (linear-algebra → linear-algebra)

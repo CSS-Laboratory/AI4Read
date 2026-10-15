@@ -2,7 +2,9 @@
 id: bag-of-words
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 3
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [grimmer-2013-textasdata/main, grimmer-2022-textasdata/ch03-principles, grimmer-2022-textasdata/ch05-bag]

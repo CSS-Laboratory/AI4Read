@@ -2,11 +2,13 @@
 id: silicon-sample
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 3
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [argyle-2023-silicon/main-p1, argyle-2023-silicon/main-p2, ziems-2024-css/main-p2]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 
@@ -30,7 +32,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] A form-only LM versus real human subgroups ↔ silicon samples / algorithmic fidelity: an LM reproduces distributions of forms that people produced, which the paper describes as a reflection of the speakers' communicative intents and the meaning relation. — from [[bender-2020-octopus/main]] (llm → other)
-- [structural-analogy] interviewing agents ↔ silicon samples and algorithmic fidelity: both use LLM outputs as proxies for human respondents. — from [[park-2023-agents/main]] (llm → other)
+- [structural-analogy] A form-only LM versus real human subgroups ↔ silicon samples / algorithmic fidelity: an LM reproduces distributions of forms that people produced, which the paper describes as a reflection of the speakers' communicative intents and the meaning relation. — from [[bender-2020-octopus/main]] (llm → llm)
+- [structural-analogy] interviewing agents ↔ silicon samples and algorithmic fidelity: both use LLM outputs as proxies for human respondents. — from [[park-2023-agents/main]] (llm → llm)
 - [structural-analogy] Mode dropping (missing parts of the data) ↔ llm: algorithmic fidelity of silicon samples — both ask whether generated output covers all real subgroups — from [[prince-2023-udl/ch15-generative]] (llm → llm)
 - [metaphor] A persona/backstory prompt selecting a subgroup distribution ↔ silicon sample / algorithmic fidelity (conditioning an LM selects a conditional distribution); the paper does not discuss this. — from [[xie-2022-icl/main]] (llm → unspecified)

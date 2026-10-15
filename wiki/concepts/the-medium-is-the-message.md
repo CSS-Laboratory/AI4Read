@@ -2,11 +2,13 @@
 id: the-medium-is-the-message
 type: concept
 fields: [communication-theory]
+fields_strong: []
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [carey-1989-cultural/ch05-mythos]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ### communication-theory
 
-- [[carey-1989-cultural/ch05-mythos]] (p. 104): canon link; the phrase is not used in this unit. The authors say media impact stems from a simple technological fact, the capacity to control space, "despite what Marshall McLuhan said concerning the effect of television on the senses"
+- [[carey-1989-cultural/ch05-mythos]] (p. 104): canon link; the phrase is not used in this unit. The authors say media impact stems from a simple technological fact, the capacity to control space, "despite what Marshall McLuhan said concerning the effect of television on the senses" [weak: not really used in this unit]

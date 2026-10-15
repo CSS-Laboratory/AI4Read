@@ -1,8 +1,10 @@
 ---
 id: langevin-monte-carlo
 type: concept
-fields: [bayesian, information-theory]
+fields: [bayesian, information-theory, llm]
+fields_strong: [bayesian, information-theory, llm]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [mackay-2003-information/ch41-learning, murphy-2023-pml2/ch12-markov-p1]
@@ -19,4 +21,4 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch41-learning]] (pp. 496, 498): gradient descent with noise plus accept/reject, with detailed balance [new]
+- [[mackay-2003-information/ch41-learning]] (pp. 496, 498): gradient descent with noise plus accept/reject, with detailed balance [new; work fields: information-theory, bayesian, llm]

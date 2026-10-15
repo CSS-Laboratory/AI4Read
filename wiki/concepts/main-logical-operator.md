@@ -2,7 +2,9 @@
 id: main-logical-operator
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [magnus-2025-forallx/ch03-truth-p1, magnus-2025-forallx/ch06-sentences]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Main logical operator and scope ↔ the TFL case of main operator and scope (p. 238: "Here we follow the case of TFL") — quantifiers now count as operators too. — from [[magnus-2025-forallx/ch27-sentences]] (analytic-philosophy → other)
+- [structural-analogy] Main logical operator and scope ↔ the TFL case of main operator and scope (p. 238: "Here we follow the case of TFL") — quantifiers now count as operators too. — from [[magnus-2025-forallx/ch27-sentences]] (analytic-philosophy → other:the-tfl-case-of)

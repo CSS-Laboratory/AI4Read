@@ -2,12 +2,14 @@
 id: hamilton-jacobi-bellman-equation
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 9
+n_works: 4
 tiers: [core, deep, reference]
 grounding: digests
 sources: [bellman-1957-dp/ch03-iii, bellman-1957-dp/ch06-vi, bellman-1957-dp/ch08-viii, bellman-1957-dp/ch09-ix, bertsekas-2026-rlcourse/ch02-approximation-p4, liberzon-2012-calculus/ch05-hamilton, liberzon-2012-calculus/ch06-linear, liberzon-2012-calculus/ch07-advanced, todorov-2002-ofc/main]
 raw_ids: [Hamilton–Jacobi–Bellman equation]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 
@@ -22,9 +24,9 @@ generated_by: build_kg.py
 ### control-theory
 
 - [[bellman-1957-dp/ch03-iii]] (p. 86): the name does not appear; the limit of (6.2) as $S\to0$ is a nonlinear PDE, treated in Ch. IX
-- [[bellman-1957-dp/ch06-vi]] (p. 193): the author calls (9.3) a nonlinear PDE. The HJB name is not used in this unit (canon link; not stated in this unit) [as `Hamilton–Jacobi–Bellman equation`]
-- [[bellman-1957-dp/ch08-viii]] (p. 223): the limiting first-order equation (2.3) is of this kind (canon link; not named in this unit). Bellman rejects it as the working route
-- [[bellman-1957-dp/ch09-ix]] (p. 252): the limiting PDE $0=\max_v[F+Gf_c-f_T]$ (name not used in this unit; same equation)
+- [[bellman-1957-dp/ch06-vi]] (p. 193): the author calls (9.3) a nonlinear PDE. The HJB name is not used in this unit (canon link; not stated in this unit) [as `Hamilton–Jacobi–Bellman equation`; weak: not really used in this unit]
+- [[bellman-1957-dp/ch08-viii]] (p. 223): the limiting first-order equation (2.3) is of this kind (canon link; not named in this unit). Bellman rejects it as the working route [weak: not really used in this unit]
+- [[bellman-1957-dp/ch09-ix]] (p. 252): the limiting PDE $0=\max_v[F+Gf_c-f_T]$ (name not used in this unit; same equation) [weak: not really used in this unit]
 - [[bertsekas-2026-rlcourse/ch02-approximation-p4]] (p. 256): PDE (2.67) satisfied by a policy's cost; implies (2.63) when $H_t=J_{\pi,t}$
 - [[liberzon-2012-calculus/ch05-hamilton]] (p. 130): PDE (5.10) for $V$; equivalently $V_t=\sup_uH(t,x,u,-V_x)$ [as `Hamilton–Jacobi–Bellman equation`]
 - [[liberzon-2012-calculus/ch06-linear]] (p. 149): specialised to (6.16), used as sufficient condition

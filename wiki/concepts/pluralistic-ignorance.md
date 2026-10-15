@@ -2,7 +2,9 @@
 id: pluralistic-ignorance
 type: concept
 fields: [communication-theory, complex-systems]
+fields_strong: [communication-theory, complex-systems]
 n_sources: 3
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [granovetter-1978-threshold/main, lewandowsky-2012-misinformation/main, rogers-2003-diffusion/ch08-diffusion-p3]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [metaphor] pluralistic ignorance ↔ hidden information in network adoption — hidden actions block cascades. — from [[granovetter-1978-threshold/main]] (complex-systems → unspecified)
-- [structural-analogy] Pluralistic ignorance / false consensus ↔ spiral of silence: misperceived opinion climate shapes expression and belief — both rest on people's estimates of what others think. — from [[lewandowsky-2012-misinformation/main]] (communication-theory → other)
+- [structural-analogy] Pluralistic ignorance / false consensus ↔ spiral of silence: misperceived opinion climate shapes expression and belief — both rest on people's estimates of what others think. — from [[lewandowsky-2012-misinformation/main]] (communication-theory → communication-theory)

@@ -2,7 +2,9 @@
 id: canonical-representation
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch03-determinate, ashby-1956-cybernetics/ch04-machine, ashby-1956-cybernetics/ch06-black]

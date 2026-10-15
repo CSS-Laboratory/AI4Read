@@ -2,7 +2,9 @@
 id: tacit-bargaining
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [schelling-1960-conflict/appa-nuclear, schelling-1960-conflict/ch03-bargaining, schelling-1960-conflict/ch04-toward]

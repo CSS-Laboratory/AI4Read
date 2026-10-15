@@ -2,11 +2,13 @@
 id: polysemantic-monosemantic
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 2
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [elhage-2022-superposition/main-p1, elhage-2022-superposition/main-p2]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

@@ -2,12 +2,14 @@
 id: linear-stability-analysis
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 13
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [castellano-2009-socialdynamics/main-p3, lorenz-1963-nonperiodic/main, scheffer-2009-earlywarning/main, strogatz-2024-nonlinear/ch02-flows, strogatz-2024-nonlinear/ch03-bifurcations-p1, strogatz-2024-nonlinear/ch05-linear, strogatz-2024-nonlinear/ch06-phase-p1, strogatz-2024-nonlinear/ch06-phase-p2, strogatz-2024-nonlinear/ch07-limit-p1, strogatz-2024-nonlinear/ch08-bifurcations-p1, strogatz-2024-nonlinear/ch08-bifurcations-p2, strogatz-2024-nonlinear/ch09-lorenz-p1, strogatz-2024-nonlinear/ch10-one-p1]
 raw_ids: [linear stability analysis]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 

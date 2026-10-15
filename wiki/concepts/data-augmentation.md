@@ -2,7 +2,9 @@
 id: data-augmentation
 type: concept
 fields: [bayesian, llm]
+fields_strong: [bayesian, llm]
 n_sources: 3
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch12-computationally, gelman-2013-bda3/ch18-models, prince-2023-udl/ch09-regularization]
@@ -30,5 +32,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] adding $J$ prior rows to the regression (16.7) ↔ ridge-type penalized regression: normal prior as data augmentation — same weighted least-squares algebra — from [[gelman-2013-bda3/ch16-generalized]] (bayesian → other)
-- [same-math] data augmentation ↔ Gibbs sampling: alternately draw $y_{\rm mis}$ and parameters from full conditionals (the text calls it a special case of Gibbs) (p. 465). — from [[gelman-2013-bda3/ch18-models]] (bayesian → other)
+- [same-math] adding $J$ prior rows to the regression (16.7) ↔ ridge-type penalized regression: normal prior as data augmentation — same weighted least-squares algebra — from [[gelman-2013-bda3/ch16-generalized]] (bayesian → other:statistics)
+- [same-math] data augmentation ↔ Gibbs sampling: alternately draw $y_{\rm mis}$ and parameters from full conditionals (the text calls it a special case of Gibbs) (p. 465). — from [[gelman-2013-bda3/ch18-models]] (bayesian → bayesian)

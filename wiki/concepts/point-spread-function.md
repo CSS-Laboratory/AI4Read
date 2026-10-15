@@ -1,8 +1,10 @@
 ---
 id: point-spread-function
 type: concept
-fields: [information-theory, linear-algebra]
+fields: [bayesian, information-theory, linear-algebra]
+fields_strong: [bayesian, information-theory, linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [boyd-2018-vmls/ch07-matrix, mackay-2003-information/ch46-deconvolution]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch46-deconvolution]] (p. 549): the image of a point source; defines the convolution $\mathbf R$ [new]
+- [[mackay-2003-information/ch46-deconvolution]] (p. 549): the image of a point source; defines the convolution $\mathbf R$ [new; work fields: information-theory, bayesian]
 
 ### linear-algebra
 

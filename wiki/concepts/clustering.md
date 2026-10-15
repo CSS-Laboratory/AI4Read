@@ -1,8 +1,10 @@
 ---
 id: clustering
 type: concept
-fields: [decision-game-theory, complex-systems, information-theory, linear-algebra]
+fields: [decision-game-theory, bayesian, complex-systems, information-theory, linear-algebra]
+fields_strong: [decision-game-theory, bayesian, complex-systems, information-theory, linear-algebra]
 n_sources: 6
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [axelrod-1984-cooperation/ch05-evolution, axelrod-1984-cooperation/ch07-promote, axelrod-1984-cooperation/ch09-robustness, boyd-2018-vmls/ch04-clustering, mackay-2003-information/ch20-example, mitchell-2009-guidedtour/ch15-science]
@@ -25,7 +27,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch20-example]] (p. 284): grouping N objects into K clusters [new]
+- [[mackay-2003-information/ch20-example]] (p. 284): grouping N objects into K clusters [new; work fields: information-theory, bayesian]
 
 ### linear-algebra
 
@@ -46,13 +48,13 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Clustering of TIT FOR TAT ↔ network reciprocity: local interaction helps cooperators. — from [[axelrod-1984-cooperation/ch05-evolution]] (decision-game-theory → other)
-- [structural-analogy] Feature-space partitioning (Ex. 3.1.7–3.1.8) ↔ clustering: grouping states by similar features, like clusters in a feature space. — from [[bertsekas-2026-rlcourse/ch03-learning-p1]] (control-theory → other)
-- [metaphor] Fractal field structure ↔ multilevel or hierarchical clustering: the same dialogical pattern recurs at each level of granularity. — from [[craig-1999-field/main-p2]] (communication-theory → other)
+- [structural-analogy] Clustering of TIT FOR TAT ↔ network reciprocity: local interaction helps cooperators. — from [[axelrod-1984-cooperation/ch05-evolution]] (decision-game-theory → decision-game-theory)
+- [structural-analogy] Feature-space partitioning (Ex. 3.1.7–3.1.8) ↔ clustering: grouping states by similar features, like clusters in a feature space. — from [[bertsekas-2026-rlcourse/ch03-learning-p1]] (control-theory → linear-algebra)
+- [metaphor] Fractal field structure ↔ multilevel or hierarchical clustering: the same dialogical pattern recurs at each level of granularity. — from [[craig-1999-field/main-p2]] (communication-theory → bayesian)
 - [structural-analogy] Mixture model with observed $\pi_i$ ↔ supervised classification of documents by group (the book defers it to Ch. 19); unobserved $\pi$ ↔ clustering (Ch. 12). — from [[grimmer-2022-textasdata/ch06-multinomial]] (political-science → unspecified)
 - [same-math] Hard clustering with $\Sigma_k=I$, uniform prior ↔ K-means nearest-centroid rule (28.10) — from [[murphy-2023-pml2/ch28-latent-p1]] (bayesian → unspecified)
-- [structural-analogy] LDA vs mixture models ↔ Clustering: mixed vs single-cluster assignment (p. 963). — from [[murphy-2023-pml2/ch28-latent-p2]] (bayesian → other)
-- [structural-analogy] Voronoi decoding cells ↔ geometry/clustering: nearest-center classification (p. 347) — from [[polyanskiy-2025-information/ch19-error]] (information-theory → other)
-- [structural-analogy] journal clusters ↔ network community detection (title of the work: maps of random walks reveal community structure) — each field here would be one module found in a journal network; the clustering method is not in these pages. — from [[rosvall-2008-maps/main-p3]] (information-theory → other)
+- [structural-analogy] LDA vs mixture models ↔ Clustering: mixed vs single-cluster assignment (p. 963). — from [[murphy-2023-pml2/ch28-latent-p2]] (bayesian → linear-algebra)
+- [structural-analogy] Voronoi decoding cells ↔ geometry/clustering: nearest-center classification (p. 347) — from [[polyanskiy-2025-information/ch19-error]] (information-theory → other:mathematics)
+- [structural-analogy] journal clusters ↔ network community detection (title of the work: maps of random walks reveal community structure) — each field here would be one module found in a journal network; the clustering method is not in these pages. — from [[rosvall-2008-maps/main-p3]] (information-theory → other:network-community-detection-title)
 - [structural-analogy] Rounding $y$ to $x$ and sweeping thresholds ↔ spectral clustering: Fiedler-vector sweep cut. — from [[spielman-2025-sagt/ch22-local]] (linear-algebra → linear-algebra)
-- [structural-analogy] Tanner neighbour growth ↔ community structure: a large λ₂ means no sparse cuts, the opposite of Fiedler-vector clustering. — from [[spielman-2025-sagt/ch27-properties]] (linear-algebra → other)
+- [structural-analogy] Tanner neighbour growth ↔ community structure: a large λ₂ means no sparse cuts, the opposite of Fiedler-vector clustering. — from [[spielman-2025-sagt/ch27-properties]] (linear-algebra → complex-systems)

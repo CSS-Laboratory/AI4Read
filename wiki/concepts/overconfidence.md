@@ -2,7 +2,9 @@
 id: overconfidence
 type: concept
 fields: [economics-finance, decision-game-theory]
+fields_strong: [economics-finance, decision-game-theory]
 n_sources: 5
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch07-machine, kahneman-2011-thinking/ch24-engine, thaler-2015-misbehaving/ch22-does, thaler-2015-misbehaving/ch29-football, thaler-2015-misbehaving/interlude]
@@ -30,4 +32,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Small-sample overconfidence (pdf 9) ↔ statistics: sampling variability and replication. — from [[kahneman-2011-thinking/ch00-introduction]] (decision-game-theory → other)
+- [structural-analogy] Small-sample overconfidence (pdf 9) ↔ statistics: sampling variability and replication. — from [[kahneman-2011-thinking/ch00-introduction]] (decision-game-theory → other:statistics)

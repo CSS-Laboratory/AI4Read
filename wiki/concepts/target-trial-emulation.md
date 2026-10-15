@@ -2,12 +2,14 @@
 id: target-trial-emulation
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 4
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch03-observational, hernan-2020-whatif/ch12-ip, hernan-2020-whatif/ch13-standardization, hernan-2020-whatif/ch22-target]
 raw_ids: [Target trial emulation]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 

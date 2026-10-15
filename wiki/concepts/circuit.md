@@ -2,11 +2,13 @@
 id: circuit
 type: concept
 fields: [llm]
+fields_strong: []
 n_sources: 0
+n_works: 0
 tiers: []
 grounding: digests
 sources: []
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 
@@ -41,11 +43,11 @@ generated_by: build_kg.py
 
 - [same-math] Mechanical spring–wheel–friction system, RLC circuit and $a\ddot z + b\dot z + cz = w$ (pp. 95–96) ↔ control-theory: systems sharing one second-order transfer function — the same differential equation with matched parameters. — from [[ashby-1956-cybernetics/ch06-black]] (control-theory → control-theory)
 - [same-math] PI controller as a controller state $z$ with $\dot z=v_r-v$ (4.4) ↔ op-amp PI circuit (p. 4-11) — both realize a PI law (the op-amp circuit with an inversion sign). — from [[astrom-2021-feedbacksystems/ch04-examples]] (control-theory → unspecified)
-- [structural-analogy] Generalised impedance $Z(s)$ with algebraic circuit analysis ↔ resistor networks: same series/parallel rules with $Z$ replacing $R$. — from [[astrom-2021-feedbacksystems/ch09-transfer-p1]] (control-theory → other)
-- [metaphor] Selective attention allocation under overload ↔ computing: priority scheduling versus a circuit breaker (pdf 36) — from [[kahneman-2011-thinking/ch02-attention]] (decision-game-theory → other)
-- [structural-analogy] functional completeness of ↑ or ↓ ↔ digital logic: a single gate type (NAND or NOR) can build any Boolean function — the text itself does not mention circuits. — from [[magnus-2025-forallx/ch46-functional]] (analytic-philosophy → analytic-philosophy)
-- [metaphor] Forney factor graph ↔ circuit or neural-network diagram: signals flow along edges, modified by nodes. — from [[murphy-2023-pml2/ch04-graphical-p3]] (bayesian → other)
-- [same-math] Reverse-mode AD on circuits ↔ neural networks: backpropagation — the text states they are the same algorithm (p. 270) — from [[murphy-2023-pml2/ch06-optimization-p1]] (bayesian → other)
-- [structural-analogy] Wiener filtering of signal in noise ↔ signal processing: choose a circuit that best estimates a signal from a mixture. — from [[pierce-1980-introduction/ch02-origins]] (information-theory → other)
+- [structural-analogy] Generalised impedance $Z(s)$ with algebraic circuit analysis ↔ resistor networks: same series/parallel rules with $Z$ replacing $R$. — from [[astrom-2021-feedbacksystems/ch09-transfer-p1]] (control-theory → other:resistor-networks)
+- [metaphor] Selective attention allocation under overload ↔ computing: priority scheduling versus a circuit breaker (pdf 36) — from [[kahneman-2011-thinking/ch02-attention]] (decision-game-theory → other:computer-science)
+- [structural-analogy] functional completeness of ↑ or ↓ ↔ digital logic: a single gate type (NAND or NOR) can build any Boolean function — the text itself does not mention circuits. — from [[magnus-2025-forallx/ch46-functional]] (analytic-philosophy → other:computer-science)
+- [metaphor] Forney factor graph ↔ circuit or neural-network diagram: signals flow along edges, modified by nodes. — from [[murphy-2023-pml2/ch04-graphical-p3]] (bayesian → other:circuit-or-neural-network)
+- [same-math] Reverse-mode AD on circuits ↔ neural networks: backpropagation — the text states they are the same algorithm (p. 270) — from [[murphy-2023-pml2/ch06-optimization-p1]] (bayesian → llm)
+- [structural-analogy] Wiener filtering of signal in noise ↔ signal processing: choose a circuit that best estimates a signal from a mixture. — from [[pierce-1980-introduction/ch02-origins]] (information-theory → other:signal-processing)
 - [structural-analogy] unraveled residual net as many paths ↔ llm: circuit/path analysis in interpretability — both decompose output into paths through the graph. — from [[prince-2023-udl/ch11-residual]] (llm → llm)
-- [structural-analogy] spring chain K, T, B ↔ circuits: voltage drops e and currents y with heat loss eᵀy (p. 68). — from [[strang-2023-introduction/ch02-solving-p2]] (linear-algebra → other)
+- [structural-analogy] spring chain K, T, B ↔ circuits: voltage drops e and currents y with heat loss eᵀy (p. 68). — from [[strang-2023-introduction/ch02-solving-p2]] (linear-algebra → llm)

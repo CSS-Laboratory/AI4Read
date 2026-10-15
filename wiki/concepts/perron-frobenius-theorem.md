@@ -2,12 +2,14 @@
 id: perron-frobenius-theorem
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 8
+n_works: 3
 tiers: [deep, core]
 grounding: digests
 sources: [bryan-2006-eigenvector/main, spielman-2025-sagt/ch04-adjacency, spielman-2025-sagt/ch10-random, spielman-2025-sagt/ch11-walks, spielman-2025-sagt/ch24-nodal, spielman-2025-sagt/ch30-simple, spielman-2025-sagt/ch38-fast, strang-2023-introduction/app1-ranks]
 raw_ids: [Perron–Frobenius theorem]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 

@@ -2,11 +2,13 @@
 id: corroboration
 type: concept
 fields: [analytic-philosophy, political-science]
+fields_strong: [analytic-philosophy, political-science]
 n_sources: 15
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch02-science, godfreysmith-2003-theory/ch04-popper, popper-1959-logic/appii-untitled, popper-1959-logic/appiv-untitled-2, popper-1959-logic/appix-untitled, popper-1959-logic/appvi-untitled, popper-1959-logic/appvii-untitled-2, popper-1959-logic/appviii-untitled, popper-1959-logic/ch01-survey, popper-1959-logic/ch04-falsifiability, popper-1959-logic/ch05-problem, popper-1959-logic/ch08-probability-p1, popper-1959-logic/ch08-probability-p3, popper-1959-logic/ch09-observations, popper-1959-logic/ch10-corroboration]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 
@@ -46,6 +48,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Corroboration as transcript, confirmation as letter ↔ forecasting: backward-looking fit vs. predictive support (p. 68) — from [[godfreysmith-2003-theory/ch04-popper]] (analytic-philosophy → other)
+- [metaphor] Corroboration as transcript, confirmation as letter ↔ forecasting: backward-looking fit vs. predictive support (p. 68) — from [[godfreysmith-2003-theory/ch04-popper]] (analytic-philosophy → other:statistics)
 - [structural-analogy] Corroboration versus probability of hypotheses ↔ Bayesian confirmation ($P(H\mid E)>P(H)$): Popper rejects probability as a measure of evidential support, and notes only limited formal analogies with Bayes's theorem (p. 261, note 1). — from [[popper-1959-logic/ch10-corroboration]] (analytic-philosophy → bayesian)
-- [structural-analogy] Corroboration indexed to the accepted basic statements ↔ confirmation holism / web of belief: evidence is assessed relative to other statements that are themselves tentative (pp. 275, 280). — from [[popper-1959-logic/ch10-corroboration]] (analytic-philosophy → other)
+- [structural-analogy] Corroboration indexed to the accepted basic statements ↔ confirmation holism / web of belief: evidence is assessed relative to other statements that are themselves tentative (pp. 275, 280). — from [[popper-1959-logic/ch10-corroboration]] (analytic-philosophy → analytic-philosophy)

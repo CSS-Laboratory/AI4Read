@@ -2,12 +2,14 @@
 id: beauty-contest-higher-order-beliefs
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 7
+n_works: 5
 tiers: [core]
 grounding: digests
 sources: [arthur-1994-elfarol/main, keynes-1936-general/ch12-state, keynes-1936-general/ch22-notes, morris-2002-public/main, shiller-2019-narrative/ch06-diverse, shiller-2019-narrative/ch10-panic, thaler-2015-misbehaving/ch21-beauty]
 raw_ids: [beauty contest / higher-order beliefs]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 
@@ -31,5 +33,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Speculators forecasting market sentiment ↔ beauty contest / higher-order beliefs: price depends on beliefs about others' beliefs. — from [[keynes-1936-general/ch22-notes]] (economics-finance → other)
+- [structural-analogy] Speculators forecasting market sentiment ↔ beauty contest / higher-order beliefs: price depends on beliefs about others' beliefs. — from [[keynes-1936-general/ch22-notes]] (economics-finance → economics-finance)
 - [structural-analogy] Self-referential value of Bitcoin ↔ economics-finance: beauty contest / higher-order beliefs — value depends on beliefs about others' beliefs. — from [[shiller-2019-narrative/ch01-bitcoin]] (economics-finance → economics-finance)

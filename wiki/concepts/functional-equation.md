@@ -2,7 +2,9 @@
 id: functional-equation
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [bellman-1957-dp/ch01-i-p1, bellman-1957-dp/ch01-i-p3, bellman-1957-dp/ch03-iii]
@@ -21,5 +23,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Discrete functional equation (4.2) ↔ RL: Bellman optimality equation for a deterministic MDP with action-dependent immediate payoff. — from [[bellman-1957-dp/ch06-vi]] (control-theory → other)
+- [same-math] Discrete functional equation (4.2) ↔ RL: Bellman optimality equation for a deterministic MDP with action-dependent immediate payoff. — from [[bellman-1957-dp/ch06-vi]] (control-theory → control-theory)
 - [structural-analogy] Max-Min functional equation ↔ control-theory: Bellman equation of a one-person problem — replacing $\max$ by $\max\min$ keeps the "payoff plus value of next state" form. — from [[bellman-1957-dp/ch10-x]] (control-theory → control-theory)

@@ -1,8 +1,10 @@
 ---
 id: label-switching
 type: concept
-fields: [bayesian]
+fields: [bayesian, control-theory]
+fields_strong: [bayesian, control-theory]
 n_sources: 4
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [blei-2017-variational/main-p1, gelman-2013-bda3/ch22-finite, murphy-2023-pml2/ch28-latent-p1, murphy-2023-pml2/ch29-state-p1]
@@ -18,7 +20,7 @@ generated_by: build_kg.py
 - [[blei-2017-variational/main-p1]] (p. 11): symmetric posterior modes from permuting cluster labels; one mode suffices for clusters or prediction [new]
 - [[gelman-2013-bda3/ch22-finite]] (p. 533): likelihood is invariant to permuting component labels, so under an exchangeable prior the marginal posterior is identical for every component [new]
 - [[murphy-2023-pml2/ch28-latent-p1]] (p. 939): permuting cluster labels leaves the likelihood unchanged, so cluster parameters are unidentifiable [new]
-- [[murphy-2023-pml2/ch29-state-p1]] (p. 993): learned states permuted relative to the truth because of unidentifiability [new]
+- [[murphy-2023-pml2/ch29-state-p1]] (p. 993): learned states permuted relative to the truth because of unidentifiability [new; work fields: bayesian, control-theory]
 
 ## Instances that use it
 
@@ -27,4 +29,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Label switching ↔ rotation unidentifiability in FA: both are symmetries of the likelihood that make some parameters meaningless — from [[murphy-2023-pml2/ch28-latent-p1]] (bayesian → other)
+- [structural-analogy] Label switching ↔ rotation unidentifiability in FA: both are symmetries of the likelihood that make some parameters meaningless — from [[murphy-2023-pml2/ch28-latent-p1]] (bayesian → other:rotation-unidentifiability-in-fa)

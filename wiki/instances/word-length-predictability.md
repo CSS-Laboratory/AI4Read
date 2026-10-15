@@ -7,7 +7,7 @@ tiers: [core]
 grounding: digests
 sources: [gibson-2019-efficiency/main]
 canon_instance: [word-length-vs-predictability]
-canon_match_rule: same-work-tokens
+canon_match_rule: title-key
 generated_by: build_kg.py
 ---
 

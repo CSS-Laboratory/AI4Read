@@ -2,7 +2,9 @@
 id: effect-modification
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 5
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch02-randomized, hernan-2020-whatif/ch04-effect, hernan-2020-whatif/ch05-interaction, hernan-2020-whatif/ch06-graphical, hernan-2020-whatif/ch12-ip]
@@ -27,4 +29,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Effect modification by V ↔ hierarchical models: group-specific effects of A varying across levels of V. — from [[hernan-2020-whatif/ch05-interaction]] (bayesian → other)
+- [structural-analogy] Effect modification by V ↔ hierarchical models: group-specific effects of A varying across levels of V. — from [[hernan-2020-whatif/ch05-interaction]] (bayesian → bayesian)

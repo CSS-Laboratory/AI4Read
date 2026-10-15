@@ -1,8 +1,10 @@
 ---
 id: noise-contrastive-estimation
 type: concept
-fields: [bayesian, llm]
+fields: [llm, bayesian]
+fields_strong: [llm, bayesian]
 n_sources: 2
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [mikolov-2013-compositionality/main, murphy-2023-pml2/ch24-energy]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch24-energy]] (p. 860): noise-vs-data classification; $Z_\theta$ learned as a parameter [new]
+- [[murphy-2023-pml2/ch24-energy]] (p. 860): noise-vs-data classification; $Z_\theta$ learned as a parameter [new; work fields: bayesian, llm]
 
 ### llm
 

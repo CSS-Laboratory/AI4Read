@@ -2,7 +2,9 @@
 id: g-estimation
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch14-g, hernan-2020-whatif/ch21-g]
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] G-estimation confidence set from inverting score tests over a grid of $\psi^\dagger$ ↔ frequentist inference: confidence sets by test inversion. — from [[hernan-2020-whatif/ch21-g]] (bayesian → other)
+- [structural-analogy] G-estimation confidence set from inverting score tests over a grid of $\psi^\dagger$ ↔ frequentist inference: confidence sets by test inversion. — from [[hernan-2020-whatif/ch21-g]] (bayesian → other:statistics)

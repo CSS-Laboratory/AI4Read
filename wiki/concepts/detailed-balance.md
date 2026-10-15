@@ -2,7 +2,9 @@
 id: detailed-balance
 type: concept
 fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 5
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch12-computationally, mackay-2003-information/ch29-monte, mackay-2003-information/ch30-efficient, murphy-2023-pml2/ch02-probability-p3, murphy-2023-pml2/ch12-markov-p1]
@@ -21,8 +23,8 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch29-monte]] (p. 374): T(a;b)P(b) = T(b;a)P(a); implies invariance; defines reversible chains [new]
-- [[mackay-2003-information/ch30-efficient]] (p. 391): reversibility condition; each coordinate update has it, the fixed-order sweep does not [new]
+- [[mackay-2003-information/ch29-monte]] (p. 374): T(a;b)P(b) = T(b;a)P(a); implies invariance; defines reversible chains [new; work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch30-efficient]] (p. 391): reversibility condition; each coordinate update has it, the fixed-order sweep does not [new; work fields: information-theory, bayesian]
 
 ## Instances that use it
 
@@ -30,4 +32,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Metropolis–Hastings acceptance ↔ Markov-chain reversibility: acceptance probability makes $\pi$ invariant (detailed balance). — from [[robert-2011-mcmc/main]] (bayesian → other)
+- [same-math] Metropolis–Hastings acceptance ↔ Markov-chain reversibility: acceptance probability makes $\pi$ invariant (detailed balance). — from [[robert-2011-mcmc/main]] (bayesian → other:markov-chain-reversibility)

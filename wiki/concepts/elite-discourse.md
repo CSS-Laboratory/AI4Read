@@ -2,7 +2,9 @@
 id: elite-discourse
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [zaller-1992-massopinion/ch01-introduction, zaller-1992-massopinion/ch02-information]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Counting media stories by direction as a simple measure of elite discourse ↔ [[text as data / validation]]: crude coded counts, justified by their relation to opinion. — from [[zaller-1992-massopinion/ch02-information]] (political-science → other)
+- [structural-analogy] Counting media stories by direction as a simple measure of elite discourse ↔ [[text as data / validation]]: crude coded counts, justified by their relation to opinion. — from [[zaller-1992-massopinion/ch02-information]] (political-science → political-science)

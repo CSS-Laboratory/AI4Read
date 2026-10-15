@@ -23,4 +23,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Matrix in the heat-equation example (Figure 6.8) ↔ graph Laplacian: A = [−1 1 0; 1 −2 1; 0 1 −1] is minus the Laplacian of a 3-node path graph, so du/dt = Au smooths a signal on a network. — from [[strang-2023-introduction/ch06-eigenvalues-p3]] (linear-algebra → other)
+- [same-math] Matrix in the heat-equation example (Figure 6.8) ↔ graph Laplacian: A = [−1 1 0; 1 −2 1; 0 1 −1] is minus the Laplacian of a 3-node path graph, so du/dt = Au smooths a signal on a network. — from [[strang-2023-introduction/ch06-eigenvalues-p3]] (linear-algebra → linear-algebra)

@@ -2,7 +2,9 @@
 id: kernel-trick
 type: concept
 fields: [linear-algebra, bayesian, control-theory]
+fields_strong: [linear-algebra, bayesian, control-theory]
 n_sources: 4
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [boyd-2018-vmls/ch15-multi, deisenroth-2020-mml/ch12-classification, murphy-2023-pml2/ch18-gaussian-p1, sutton-2018-rl/ch09-policy-p2]

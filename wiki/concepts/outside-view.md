@@ -2,7 +2,9 @@
 id: outside-view
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch23-outside, kahneman-2011-thinking/ch31-risk]
@@ -24,6 +26,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Outside view ↔ statistics: using the reference-class mean as the best guess when case features are weakly informative. — from [[kahneman-2011-thinking/ch23-outside]] (decision-game-theory → other)
-- [structural-analogy] Outside view and risk policy ↔ forecasting: both replace case-specific detail with reference-class statistics. — from [[kahneman-2011-thinking/ch31-risk]] (decision-game-theory → other)
-- [structural-analogy] Inside vs outside view ↔ conventional expectations: both concern judging the future from the current situation versus broader evidence. — from [[thaler-2015-misbehaving/ch20-narrow]] (economics-finance → other)
+- [structural-analogy] Outside view ↔ statistics: using the reference-class mean as the best guess when case features are weakly informative. — from [[kahneman-2011-thinking/ch23-outside]] (decision-game-theory → other:statistics)
+- [structural-analogy] Outside view and risk policy ↔ forecasting: both replace case-specific detail with reference-class statistics. — from [[kahneman-2011-thinking/ch31-risk]] (decision-game-theory → other:statistics)
+- [structural-analogy] Inside vs outside view ↔ conventional expectations: both concern judging the future from the current situation versus broader evidence. — from [[thaler-2015-misbehaving/ch20-narrow]] (economics-finance → economics-finance)

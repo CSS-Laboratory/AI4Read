@@ -2,7 +2,9 @@
 id: knowledge-distillation
 type: concept
 fields: [control-theory, llm]
+fields_strong: [control-theory, llm]
 n_sources: 2
+n_works: 2
 tiers: [reference]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch03-learning-p5, prince-2023-udl/ch20-does]
@@ -23,4 +25,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] soft AI preference labels distilled into a PM ↔ knowledge distillation: a teacher's probabilities used as training targets (the paper itself says it "distils" LM interpretations of principles into a PM, p. 5). — from [[bai-2022-constitutional/main]] (llm → other)
+- [structural-analogy] soft AI preference labels distilled into a PM ↔ knowledge distillation: a teacher's probabilities used as training targets (the paper itself says it "distils" LM interpretations of principles into a PM, p. 5). — from [[bai-2022-constitutional/main]] (llm → other:knowledge-distillation)

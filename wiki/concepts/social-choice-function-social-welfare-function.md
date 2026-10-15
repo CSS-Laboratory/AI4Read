@@ -2,12 +2,14 @@
 id: social-choice-function-social-welfare-function
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 5
+n_works: 2
 tiers: [deep, core]
 grounding: digests
 sources: [arrow-1951-socialchoice/ch01-i, arrow-1951-socialchoice/ch04-iv, arrow-1951-socialchoice/ch05-v, arrow-1951-socialchoice/ch06-vi, shepsle-2010-analyzing/ch04-group]
 raw_ids: [social choice function / social welfare function]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 

@@ -2,7 +2,9 @@
 id: bregman-divergence
 type: concept
 fields: [information-theory, bayesian]
+fields_strong: [information-theory, bayesian]
 n_sources: 3
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch05-information-p1, nielsen-2020-elementary/main-p1, nielsen-2020-elementary/main-p2]
@@ -20,7 +22,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch05-information-p1]] (p. 233): $f(w)-f(v)-(w-v)^\top\nabla f(v)$ [new]
+- [[murphy-2023-pml2/ch05-information-p1]] (p. 233): $f(w)-f(v)-(w-v)^\top\nabla f(v)$ [new; work fields: bayesian, information-theory]
 
 ## Candidate bridges
 

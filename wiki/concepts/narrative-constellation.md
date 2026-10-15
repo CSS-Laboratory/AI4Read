@@ -2,7 +2,9 @@
 id: narrative-constellation
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 7
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [shiller-2019-narrative/ch03-contagion, shiller-2019-narrative/ch05-laffer, shiller-2019-narrative/ch07-causality, shiller-2019-narrative/ch08-seven, shiller-2019-narrative/ch10-panic, shiller-2019-narrative/ch12-gold, shiller-2019-narrative/ch16-stock]
@@ -26,5 +28,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Narrative constellation ↔ astronomy: chance alignments read as meaningful patterns. — from [[shiller-2019-narrative/ch03-contagion]] (economics-finance → other)
-- [metaphor] Narrative constellation ↔ network effects: linked stories reinforce each other. — from [[shiller-2019-narrative/ch05-laffer]] (economics-finance → other)
+- [metaphor] Narrative constellation ↔ astronomy: chance alignments read as meaningful patterns. — from [[shiller-2019-narrative/ch03-contagion]] (economics-finance → other:astronomy)
+- [metaphor] Narrative constellation ↔ network effects: linked stories reinforce each other. — from [[shiller-2019-narrative/ch05-laffer]] (economics-finance → economics-finance)

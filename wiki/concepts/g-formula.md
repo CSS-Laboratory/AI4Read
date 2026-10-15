@@ -2,7 +2,9 @@
 id: g-formula
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch21-g, hernan-2020-whatif/ch23-causal]
@@ -29,5 +31,5 @@ generated_by: build_kg.py
 
 - [structural-analogy] Parametric g-formula ↔ bayesian: posterior predictive averaging — model outcome given covariates, then average over the covariate distribution. — from [[hernan-2020-whatif/ch17-causal]] (bayesian → bayesian)
 - [structural-analogy] g-formula simulation of $(Y^{\bar a},\bar L^{\bar a})$ and Monte Carlo of Technical Point 21.9 ↔ Bayesian computation: ancestral sampling from a sequential generative model, drawing each $L_k$ given the history set by the strategy. — from [[hernan-2020-whatif/ch21-g]] (bayesian → bayesian)
-- [same-math] mediation formula as a g-formula ↔ potential outcomes: a standardization (mixing over $\Pr[M|A=0]$) of a conditional mean. — from [[hernan-2020-whatif/ch23-causal]] (bayesian → other)
+- [same-math] mediation formula as a g-formula ↔ potential outcomes: a standardization (mixing over $\Pr[M|A=0]$) of a conditional mean. — from [[hernan-2020-whatif/ch23-causal]] (bayesian → bayesian)
 - [structural-analogy] the *The $F$ is $G$* formula ↔ analytic-philosophy canon: theory of descriptions (canon link; not stated in this unit). — from [[magnus-2025-forallx/ch100-quick]] (analytic-philosophy → analytic-philosophy)

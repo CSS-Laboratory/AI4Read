@@ -2,7 +2,9 @@
 id: orthogonal-complement
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 3
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch06-inner-p2, deisenroth-2020-mml/ch03-analytic, strang-2023-introduction/ch04-orthogonality-p1]

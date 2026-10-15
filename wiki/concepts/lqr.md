@@ -2,12 +2,14 @@
 id: lqr
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 7
+n_works: 5
 tiers: [core, deep, reference]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch07-state, astrom-2021-feedbacksystems/ch08-output, astrom-2021-feedbacksystems/ch13-robust, bertsekas-2026-rlcourse/ch01-exact-p2, kalman-1960-filtering/main, liberzon-2012-calculus/ch06-linear, recht-2019-tour/main]
 raw_ids: [LQR]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 
@@ -42,13 +44,13 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] LQR cost weights $Q_x,Q_u$ ↔ economics/decision theory: a loss that trades off outcome error against effort or cost of action. — from [[astrom-2021-feedbacksystems/ch07-state]] (control-theory → economics-finance)
-- [same-math] Kalman–Bucy Riccati equation ↔ LQR Riccati equation: equivalences (8.32) map one into the other (p. 8-20). — from [[astrom-2021-feedbacksystems/ch08-output]] (control-theory → other)
-- [structural-analogy] Program synthesis ↔ LQR design: given a model and specification, produce a controller that by construction meets the specification — the authors draw this comparison (p. 15-16). — from [[astrom-2021-feedbacksystems/ch15-architecture-p1]] (control-theory → other)
-- [structural-analogy] Quadratic closed forms of §17 ↔ LQR: value function quadratic in the state — here only on a restricted interval with constraint $0\le y\le x$. — from [[bellman-1957-dp/ch01-i-p2]] (control-theory → other)
-- [structural-analogy] Riccati equation as $\min_w$ of linear equations (§8) ↔ LQR: a Riccati equation arising from minimizing over linear feedback-like choices. — from [[bellman-1957-dp/ch11-xi]] (control-theory → other)
+- [same-math] Kalman–Bucy Riccati equation ↔ LQR Riccati equation: equivalences (8.32) map one into the other (p. 8-20). — from [[astrom-2021-feedbacksystems/ch08-output]] (control-theory → control-theory)
+- [structural-analogy] Program synthesis ↔ LQR design: given a model and specification, produce a controller that by construction meets the specification — the authors draw this comparison (p. 15-16). — from [[astrom-2021-feedbacksystems/ch15-architecture-p1]] (control-theory → control-theory)
+- [structural-analogy] Quadratic closed forms of §17 ↔ LQR: value function quadratic in the state — here only on a restricted interval with constraint $0\le y\le x$. — from [[bellman-1957-dp/ch01-i-p2]] (control-theory → control-theory)
+- [structural-analogy] Riccati equation as $\min_w$ of linear equations (§8) ↔ LQR: a Riccati equation arising from minimizing over linear feedback-like choices. — from [[bellman-1957-dp/ch11-xi]] (control-theory → control-theory)
 - [same-math] Riccati operator fixed point $K=F(K)$ and its optimal gain $L^*$ ↔ control-theory LQR: the scalar LQR solution (the unit does not use the word LQR). — from [[bertsekas-2026-rlcourse/ch01-exact-p3]] (control-theory → control-theory)
 - [same-math] Theorem 4 duality (filter ↔ noise-free regulator) ↔ control-theory: the LQR design equations — the paper itself gives the substitution $X\to\hat X'(T-\tau)$ between (28–30) and (35–37). — from [[kalman-1960-filtering/main]] (control-theory → control-theory)
 - [structural-analogy] Riccati equation (2.64) and its matrix form ↔ control theory: LQR Riccati equation (the author says matrix Riccati equations play a central role in Chapter 6, p. 54) — from [[liberzon-2012-calculus/ch02-calculus]] (control-theory → control-theory)
-- [structural-analogy] Exercise 3.8 (linear system, quadratic cost) ↔ LQR: the text points to Chapter 6 for this class (p. 78) — from [[liberzon-2012-calculus/ch03-calculus]] (control-theory → other)
+- [structural-analogy] Exercise 3.8 (linear system, quadratic cost) ↔ LQR: the text points to Chapter 6 for this class (p. 78) — from [[liberzon-2012-calculus/ch03-calculus]] (control-theory → control-theory)
 - [structural-analogy] Output-feedback LQR and optimal state estimation (Kalman filter) ↔ estimation theory; the text only mentions this relation as not discussed (p. 160). — from [[liberzon-2012-calculus/ch06-linear]] (control-theory → unspecified)
 - [structural-analogy] ARE (7.19) ↔ LQR ARE of Ch. 6 — similar matrix form with sign changes, but the author stresses that the meanings differ. — from [[liberzon-2012-calculus/ch07-advanced]] (control-theory → unspecified)

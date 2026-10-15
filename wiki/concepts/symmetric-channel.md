@@ -1,8 +1,10 @@
 ---
 id: symmetric-channel
 type: concept
-fields: [information-theory]
+fields: [information-theory, bayesian]
+fields_strong: [information-theory, bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [cover-2006-elements/ch08-channel-p1, mackay-2003-information/ch10-noisy]
@@ -16,7 +18,7 @@ generated_by: build_kg.py
 ### information-theory
 
 - [[cover-2006-elements/ch08-channel-p1]] (p. 190): rows are permutations of each other and columns too; weakly symmetric: every row a permutation of every other row, and equal column sums; capacity $\log|\mathcal Y|-H(\text{row})$ [new]
-- [[mackay-2003-information/ch10-noisy]] (p. 170): Gallager's partition-into-permutation-matrices definition; Ex. 10.10 asks to prove that the uniform input is optimal (p. 171) [new]
+- [[mackay-2003-information/ch10-noisy]] (p. 170): Gallager's partition-into-permutation-matrices definition; Ex. 10.10 asks to prove that the uniform input is optimal (p. 171) [new; work fields: information-theory, bayesian]
 
 ## Instances that use it
 

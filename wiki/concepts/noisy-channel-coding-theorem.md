@@ -1,13 +1,15 @@
 ---
 id: noisy-channel-coding-theorem
 type: concept
-fields: [information-theory]
+fields: [information-theory, bayesian]
+fields_strong: [information-theory, bayesian]
 n_sources: 24
+n_works: 6
 tiers: [core, reference]
 grounding: digests
 sources: [cover-2006-elements/ch01-introduction, cover-2006-elements/ch08-channel-p1, cover-2006-elements/ch08-channel-p2, cover-2006-elements/ch10-gaussian, cover-2006-elements/ch14-network-p2, mackay-2003-information/ch01-introduction, mackay-2003-information/ch09-communication, mackay-2003-information/ch10-noisy, mackay-2003-information/ch11-error, mackay-2003-information/ch13-binary, mackay-2003-information/ch14-very, mackay-2003-information/ch15-further, pierce-1980-introduction/ch08-noisy, polyanskiy-2025-information/ch01-introduction, polyanskiy-2025-information/ch19-error, polyanskiy-2025-information/ch21-channel, polyanskiy-2025-information/ch22-channels, polyanskiy-2025-information/ch24-strong, polyanskiy-2025-information/ch25-channel, shannon-1948-mathematical/main-p1, shannon-1948-mathematical/main-p2, stone-2022-information/ch04-noisy, stone-2022-information/ch07-channel, stone-2022-information/ch08-rate]
 raw_ids: [noisy-channel coding theorem]
-canon_spine: information-theory
+canon_spine: [information-theory]
 generated_by: build_kg.py
 ---
 
@@ -26,13 +28,13 @@ generated_by: build_kg.py
 - [[cover-2006-elements/ch08-channel-p2]] (pp. 206, 219): rates $R<C$ achievable; converse $\lambda^{(n)}\to0\Rightarrow R\le C$
 - [[cover-2006-elements/ch10-gaussian]] (pp. 242–247): Theorem 10.1.1: rates below $\frac12\log(1+P/N)$ are achievable; rates above are not
 - [[cover-2006-elements/ch14-network-p2]] (p. 393): its random-coding proof is extended here to two senders
-- [[mackay-2003-information/ch01-introduction]] (pp. 14–16): rates up to C are achievable with arbitrarily small error, and rates beyond C are not
-- [[mackay-2003-information/ch09-communication]] (p. 152): part one: any R < C is achievable with arbitrarily small maximal block error for large N
-- [[mackay-2003-information/ch10-noisy]] (pp. 162, 167–168): for rates $R<C$, codes with arbitrarily small (maximal) block error exist; above $R(p_b)$ they do not
-- [[mackay-2003-information/ch11-error]] (p. 181): here extended to the Gaussian channel via derived discrete channels or sphere-packing intuition
-- [[mackay-2003-information/ch13-binary]] (p. 212): used as in the canon; here for the BSC with $C=1-H_2(f)$
-- [[mackay-2003-information/ch14-very]] (p. 231): here proved for the binary symmetric channel: good linear codes exist for $R<1-H(X)$
-- [[mackay-2003-information/ch15-further]] (pp. 234, 238): Ex. 15.9 forbids invoking it; Ex. 15.20 refers to expectations from "Shannon's theories"
+- [[mackay-2003-information/ch01-introduction]] (pp. 14–16): rates up to C are achievable with arbitrarily small error, and rates beyond C are not [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch09-communication]] (p. 152): part one: any R < C is achievable with arbitrarily small maximal block error for large N [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch10-noisy]] (pp. 162, 167–168): for rates $R<C$, codes with arbitrarily small (maximal) block error exist; above $R(p_b)$ they do not [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch11-error]] (p. 181): here extended to the Gaussian channel via derived discrete channels or sphere-packing intuition [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch13-binary]] (p. 212): used as in the canon; here for the BSC with $C=1-H_2(f)$ [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch14-very]] (p. 231): here proved for the binary symmetric channel: good linear codes exist for $R<1-H(X)$ [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch15-further]] (pp. 234, 238): Ex. 15.9 forbids invoking it; Ex. 15.20 refers to expectations from "Shannon's theories" [work fields: information-theory, bayesian]
 - [[pierce-1980-introduction/ch08-noisy]] (p. 156): Shannon's fundamental theorem for the noisy channel
 - [[polyanskiy-2025-information/ch01-introduction]] (p. xviii): named as a classical coding theorem (Theorem 19.9)
 - [[polyanskiy-2025-information/ch19-error]] (p. 345): for a memoryless channel, $\log M^*=nC+o(n)$

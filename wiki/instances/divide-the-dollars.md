@@ -21,4 +21,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] "Divide the dollars" instability ↔ coalition-bargaining games: some majority can always improve by excluding a member. — from [[shepsle-2010-analyzing/ch04-group]] (political-science → other)
+- [structural-analogy] "Divide the dollars" instability ↔ coalition-bargaining games: some majority can always improve by excluding a member. — from [[shepsle-2010-analyzing/ch04-group]] (political-science → decision-game-theory)

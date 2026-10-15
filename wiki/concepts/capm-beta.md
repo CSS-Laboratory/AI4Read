@@ -2,12 +2,14 @@
 id: capm-beta
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [fama-1970-efficient/main, thaler-2015-misbehaving/conclusion-next]
 raw_ids: ["CAPM & beta"]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 

@@ -2,7 +2,9 @@
 id: intraclass-correlation
 type: concept
 fields: [bayesian, llm]
+fields_strong: [bayesian, llm]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [argyle-2023-silicon/main-p2, gelman-2013-bda3/ch15-hierarchical]

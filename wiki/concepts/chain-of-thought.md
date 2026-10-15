@@ -2,11 +2,13 @@
 id: chain-of-thought
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 5
+n_works: 4
 tiers: [deep, core]
 grounding: digests
 sources: [bai-2022-constitutional/main, mahowald-2024-dissociating/main, wei-2022-cot/main-p1, wei-2022-cot/main-p2, wei-2022-emergent/main]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 
@@ -34,6 +36,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] critique-then-revise loop ↔ chain-of-thought as inference-time reasoning: both write intermediate text before the final output, and here the text is also training data. — from [[bai-2022-constitutional/main]] (llm → other)
+- [structural-analogy] critique-then-revise loop ↔ chain-of-thought as inference-time reasoning: both write intermediate text before the final output, and here the text is also training data. — from [[bai-2022-constitutional/main]] (llm → other:chain-of-thought-as)
 - [structural-analogy] chain-of-thought prompting ↔ llm: scratchpads (Nye et al. 2021, cited here) — both have the model write intermediate steps before the answer (p. 9) — from [[wei-2022-cot/main-p1]] (llm → llm)
-- [metaphor] chain of thought as extra computation per problem ↔ computation: time spent per instance — the paper says this holds "in principle" (p. 3), and its dots-only test does not support it as a sufficient cause (p. 6) — from [[wei-2022-cot/main-p1]] (llm → other)
+- [metaphor] chain of thought as extra computation per problem ↔ computation: time spent per instance — the paper says this holds "in principle" (p. 3), and its dots-only test does not support it as a sufficient cause (p. 6) — from [[wei-2022-cot/main-p1]] (llm → other:computer-science)

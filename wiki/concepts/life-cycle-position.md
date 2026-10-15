@@ -2,7 +2,9 @@
 id: life-cycle-position
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 6
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [katz-1955-personalinfluence/appb-guide, katz-1955-personalinfluence/ch09-describing, katz-1955-personalinfluence/ch10-marketing, katz-1955-personalinfluence/ch11-fashion, katz-1955-personalinfluence/ch12-public, katz-1955-personalinfluence/ch13-movie]

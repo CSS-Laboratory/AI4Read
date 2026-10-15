@@ -2,7 +2,9 @@
 id: decision-weight
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch29-fourfold, kahneman-2011-thinking/ch30-rare]
@@ -21,5 +23,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] regressive decision weights ↔ regression to the mean: stated probabilities map to weights that are pulled toward the middle, but this is a psychological curve, not a statistical effect. — from [[kahneman-2011-thinking/appb-choices]] (decision-game-theory → other)
+- [structural-analogy] regressive decision weights ↔ regression to the mean: stated probabilities map to weights that are pulled toward the middle, but this is a psychological curve, not a statistical effect. — from [[kahneman-2011-thinking/appb-choices]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] Decision weights ↔ behavioural finance/insurance pricing: paying above expected value for peace of mind — both price a premium for removing small risks. — from [[kahneman-2011-thinking/ch29-fourfold]] (decision-game-theory → economics-finance)

@@ -2,7 +2,9 @@
 id: endowment-effect
 type: concept
 fields: [economics-finance, decision-game-theory]
+fields_strong: [economics-finance, decision-game-theory]
 n_sources: 6
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/appb-choices, kahneman-2011-thinking/ch27-endowment, thaler-2015-misbehaving/ch02-endowment, thaler-2015-misbehaving/ch16-mugs, thaler-2015-misbehaving/ch27-law, thaler-2015-misbehaving/ch28-offices]

@@ -2,12 +2,14 @@
 id: median-voter-theorem
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 13
+n_works: 4
 tiers: [core, deep]
 grounding: digests
 sources: [achen-2016-realists/ch02-elusive, achen-2016-realists/ch11-groups, arrow-1951-socialchoice/ch07-vii, clark-2017-principles/ch11-problems-p1, clark-2017-principles/ch11-problems-p2, clark-2017-principles/ch16-consequences-p1, clark-2017-principles/ch16-consequences-p2, shepsle-2010-analyzing/ch05-spatial-p1, shepsle-2010-analyzing/ch05-spatial-p2, shepsle-2010-analyzing/ch05-spatial-p3, shepsle-2010-analyzing/ch07-voting, shepsle-2010-analyzing/ch12-legislatures, shepsle-2010-analyzing/ch15-courts]
 raw_ids: [median voter theorem]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 

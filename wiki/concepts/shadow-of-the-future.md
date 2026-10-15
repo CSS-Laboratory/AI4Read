@@ -2,12 +2,14 @@
 id: shadow-of-the-future
 type: concept
 fields: [decision-game-theory, political-science]
+fields_strong: [decision-game-theory, political-science]
 n_sources: 18
+n_works: 6
 tiers: [core]
 grounding: digests
 sources: [axelrod-1984-cooperation/appb-proofs, axelrod-1984-cooperation/ch01-problemof, axelrod-1984-cooperation/ch02-success, axelrod-1984-cooperation/ch03-chronology, axelrod-1984-cooperation/ch04-live, axelrod-1984-cooperation/ch05-evolution, axelrod-1984-cooperation/ch06-choose, axelrod-1984-cooperation/ch07-promote, axelrod-1984-cooperation/ch08-social, axelrod-1984-cooperation/ch09-robustness, dixit-2008-art-strategy/ch03-prisoners, dixit-2008-art-strategy/ch07-making, dixit-2008-art-strategy/ch11-bargaining, dixit-2008-art-strategy/ch13-incentives, nowak-2006-five-rules/main, osborne-2004-introduction/ch14-repeated, schelling-1960-conflict/ch05-enforcement-p1, shepsle-2010-analyzing/ch08-cooperation]
 raw_ids: [shadow of the future]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 
@@ -23,7 +25,7 @@ generated_by: build_kg.py
 
 - [[axelrod-1984-cooperation/appb-proofs]] (p. 207): here the discount parameter w; many results hold only if w is large enough
 - [[axelrod-1984-cooperation/ch01-problemof]] (p. 12): the chance of meeting again lets future payoffs influence present choices
-- [[axelrod-1984-cooperation/ch02-success]] (p. 42): the weight on future moves is $w = .99654$ in round two, via the end-of-game probability 0.00346 (p. 42); the chapter does not use the term itself (canon link; not stated in this unit)
+- [[axelrod-1984-cooperation/ch02-success]] (p. 42): the weight on future moves is $w = .99654$ in round two, via the end-of-game probability 0.00346 (p. 42); the chapter does not use the term itself (canon link; not stated in this unit) [weak: not really used in this unit]
 - [[axelrod-1984-cooperation/ch03-chronology]] (p. 59): the weight w on future moves; stability of reciprocity needs it large enough [as `shadow of the future`]
 - [[axelrod-1984-cooperation/ch04-live]] (pp. 77, 83): the long contact that let cooperation sustain itself [as `shadow of the future`]
 - [[axelrod-1984-cooperation/ch05-evolution]] (p. 93): here the probability $w$ that the same two individuals meet again; set by lifespan, mobility, health [as `shadow of the future`]

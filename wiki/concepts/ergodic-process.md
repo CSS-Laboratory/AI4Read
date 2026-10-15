@@ -2,7 +2,9 @@
 id: ergodic-process
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [cover-2006-elements/ch15-information, polyanskiy-2025-information/ch14-entropy]

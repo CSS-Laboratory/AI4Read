@@ -2,7 +2,9 @@
 id: label-smoothing
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [prince-2023-udl/ch09-regularization, vaswani-2017-transformer/main]

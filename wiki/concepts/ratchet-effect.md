@@ -2,7 +2,9 @@
 id: ratchet-effect
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [axelrod-1984-cooperation/ch05-evolution, axelrod-1984-cooperation/ch09-robustness]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Ratchet effect ↔ social norms: once reciprocity is established it does not slide back. — from [[axelrod-1984-cooperation/ch09-robustness]] (decision-game-theory → other)
+- [metaphor] Ratchet effect ↔ social norms: once reciprocity is established it does not slide back. — from [[axelrod-1984-cooperation/ch09-robustness]] (decision-game-theory → other:social-norms)

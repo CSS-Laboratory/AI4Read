@@ -2,7 +2,9 @@
 id: instrumentalism
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 5
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch01-introduction, godfreysmith-2003-theory/ch12-scientific, lycan-2019-language/ch08-verificationism, popper-1959-logic/appx-untitled, popper-1959-logic/ch03-theories]

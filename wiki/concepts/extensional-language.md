@@ -2,7 +2,9 @@
 id: extensional-language
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [magnus-2025-forallx/ch30-extensionality, quine-1951-dogmas/main]

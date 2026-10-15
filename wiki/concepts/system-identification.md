@@ -2,7 +2,9 @@
 id: system-identification
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 3
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch03-system-p2, recht-2019-tour/main, welch-2004-kalmanintro/main]

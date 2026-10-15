@@ -2,7 +2,9 @@
 id: quantity-theory-of-money
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [keynes-1936-general/ch15-psychological, keynes-1936-general/ch20-employment, keynes-1936-general/ch21-theory]

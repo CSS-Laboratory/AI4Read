@@ -2,7 +2,9 @@
 id: symmetric-game
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [osborne-2004-introduction/ch02-nash-p2, osborne-2004-introduction/ch03-nash-p2]
@@ -28,4 +30,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] foot race of equals ↔ symmetric games: when the outcome is foregone, tactics lose meaning — from [[schelling-1960-conflict/appb-abandonment]] (decision-game-theory → other)
+- [metaphor] foot race of equals ↔ symmetric games: when the outcome is foregone, tactics lose meaning — from [[schelling-1960-conflict/appb-abandonment]] (decision-game-theory → other:symmetric-games)

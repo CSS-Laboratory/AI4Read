@@ -2,7 +2,9 @@
 id: sequential-improvement
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 5
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch02-approximation-p1, bertsekas-2026-rlcourse/ch02-approximation-p2, bertsekas-2026-rlcourse/ch02-approximation-p3, bertsekas-2026-rlcourse/ch02-approximation-p4, bertsekas-2026-rlcourse/ch02-approximation-p7]
@@ -28,4 +30,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Sequential improvement ↔ MPC: the condition behind MPC's stability properties (p. 188). — from [[bertsekas-2026-rlcourse/ch02-approximation-p1]] (control-theory → other)
+- [structural-analogy] Sequential improvement ↔ MPC: the condition behind MPC's stability properties (p. 188). — from [[bertsekas-2026-rlcourse/ch02-approximation-p1]] (control-theory → control-theory)

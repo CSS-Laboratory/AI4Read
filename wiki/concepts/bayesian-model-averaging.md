@@ -1,8 +1,10 @@
 ---
 id: bayesian-model-averaging
 type: concept
-fields: [bayesian]
+fields: [bayesian, llm]
+fields_strong: [bayesian, llm]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [mcgrayne-2011-theory/ch17-rosetta, murphy-2023-pml2/ch17-bayesian]
@@ -16,7 +18,7 @@ generated_by: build_kg.py
 ### bayesian
 
 - [[mcgrayne-2011-theory/ch17-rosetta]] (p. 244): when two models that are not highly correlated are combined smartly, the result often beats either alone, per Volinsky [new]
-- [[murphy-2023-pml2/ch17-bayesian]] (p. 647): predict by averaging $p(y|x,\theta)$ over the posterior, Eq. (17.1) [new]
+- [[murphy-2023-pml2/ch17-bayesian]] (p. 647): predict by averaging $p(y|x,\theta)$ over the posterior, Eq. (17.1) [new; work fields: bayesian, llm]
 
 ## Candidate bridges
 

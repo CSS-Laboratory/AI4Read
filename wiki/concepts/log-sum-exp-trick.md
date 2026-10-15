@@ -2,7 +2,9 @@
 id: log-sum-exp-trick
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [blei-2017-variational/main-p1, murphy-2023-pml2/ch28-latent-p1]

@@ -2,7 +2,9 @@
 id: all-d
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [axelrod-1984-cooperation/appb-proofs, axelrod-1984-cooperation/ch05-evolution]
@@ -26,4 +28,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] cluster invasion of ALL D ↔ network reciprocity: cooperators who meet each other locally thrive. — from [[axelrod-1984-cooperation/ch03-chronology]] (decision-game-theory → other)
+- [metaphor] cluster invasion of ALL D ↔ network reciprocity: cooperators who meet each other locally thrive. — from [[axelrod-1984-cooperation/ch03-chronology]] (decision-game-theory → decision-game-theory)

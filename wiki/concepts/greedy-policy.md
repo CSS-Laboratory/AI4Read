@@ -2,7 +2,9 @@
 id: greedy-policy
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch02-approximation-p2, sutton-2018-rl/ch03-finite]

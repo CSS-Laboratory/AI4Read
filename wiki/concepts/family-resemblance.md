@@ -2,12 +2,14 @@
 id: family-resemblance
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 5
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [kripke-1980-naming/ch01-lecture-p1, kuhn-1962-structure/ch02-route, kuhn-1962-structure/ch05-priority, wittgenstein-1953-investigations/ch02-family, wittgenstein-1953-investigations/ch03-understanding]
 raw_ids: [family resemblance]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 
@@ -30,8 +32,8 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Cluster theory of names ↔ analytic-philosophy: Wittgenstein's family resemblance — both give an overlapping set of features in place of one definition. — from [[kripke-1980-naming/ch01-lecture-p1]] (analytic-philosophy → analytic-philosophy)
-- [structural-analogy] Family resemblance and modelling on exemplars ↔ machine learning: classifying a new case by similarity to stored examples (nearest neighbour) instead of an explicit rule. — from [[kuhn-1962-structure/ch05-priority]] (analytic-philosophy → other)
+- [structural-analogy] Family resemblance and modelling on exemplars ↔ machine learning: classifying a new case by similarity to stored examples (nearest neighbour) instead of an explicit rule. — from [[kuhn-1962-structure/ch05-priority]] (analytic-philosophy → llm)
 - [structural-analogy] Paradigm as shared model ↔ analytic-philosophy: family resemblance / language-game — a shared practice, not explicit rules, unites a community. This is only a candidate link; the Preface does not make it. — from [[kuhn-1962-structure/front-preface]] (analytic-philosophy → analytic-philosophy)
 - [structural-analogy] Exemplars teach "seeing as" without explicit criteria ↔ analytic-philosophy: Wittgenstein-style rule-following, where examples fix use and no finite set of criteria does. Both stress learning a practice by cases (the unit itself mentions "family resemblance", p. 189). — from [[kuhn-1962-structure/postscript-1969]] (analytic-philosophy → analytic-philosophy)
 - [structural-analogy] Searle's weighted cluster of descriptions ↔ family resemblance (analytic-philosophy): a concept applies via enough overlapping features, with no single essence. — from [[lycan-2019-language/ch03-proper]] (analytic-philosophy → analytic-philosophy)
-- [structural-analogy] family resemblance (overlapping features, no core) ↔ graph theory: a connected network where no node or edge is shared by all paths — each object is linked to others through shared features. — from [[wittgenstein-1953-investigations/ch02-family]] (analytic-philosophy → other)
+- [structural-analogy] family resemblance (overlapping features, no core) ↔ graph theory: a connected network where no node or edge is shared by all paths — each object is linked to others through shared features. — from [[wittgenstein-1953-investigations/ch02-family]] (analytic-philosophy → other:graph-theory)

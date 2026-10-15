@@ -1,13 +1,15 @@
 ---
 id: risk-aversion
 type: concept
-fields: [decision-game-theory]
+fields: [decision-game-theory, economics-finance]
+fields_strong: [decision-game-theory, economics-finance]
 n_sources: 10
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [kahneman-1979-prospect/main, kahneman-2011-thinking/appb-choices, kahneman-2011-thinking/ch19-illusion, kahneman-2011-thinking/ch25-bernoulli, kahneman-2011-thinking/ch26-prospect, kahneman-2011-thinking/ch29-fourfold, kahneman-2011-thinking/ch31-risk, kahneman-2011-thinking/ch34-frames, osborne-2004-introduction/ch04-mixed-p1, osborne-2004-introduction/ch09-bayesian]
 raw_ids: [risk aversion]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 
@@ -21,7 +23,7 @@ generated_by: build_kg.py
 
 ### decision-game-theory
 
-- [[kahneman-1979-prospect/main]] (p. 264): preferring a sure $x$ to any risky prospect with expected value $x$; in expected utility equivalent to concave $u$ [as `risk aversion`]
+- [[kahneman-1979-prospect/main]] (p. 264): preferring a sure $x$ to any risky prospect with expected value $x$; in expected utility equivalent to concave $u$ [as `risk aversion`; work fields: decision-game-theory, economics-finance]
 - [[kahneman-2011-thinking/appb-choices]] (pdf 432): preferring a sure outcome to a gamble of higher or equal expectation; here explained by concave value of gains [as `risk aversion`]
 - [[kahneman-2011-thinking/ch19-illusion]] (pdf 199): here, bureaucratic caution of agents fearing hindsight scrutiny
 - [[kahneman-2011-thinking/ch25-bernoulli]] (pdf 265): preferring a sure thing to a gamble of equal or slightly higher expected value, which Bernoulli proposed is explained by diminishing marginal utility [as `risk aversion`]

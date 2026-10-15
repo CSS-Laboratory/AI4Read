@@ -2,11 +2,13 @@
 id: basis
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 12
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch02-finite, axler-2024-ladr/ch03-linear-p1, axler-2024-ladr/ch04-polynomials, boyd-2018-vmls/ch02-linear, boyd-2018-vmls/ch05-linear, boyd-2018-vmls/ch06-matrices, boyd-2018-vmls/ch11-matrix, deisenroth-2020-mml/ch02-linear-p1, deisenroth-2020-mml/ch02-linear-p2, deisenroth-2020-mml/ch03-analytic, strang-2023-introduction/ch01-vectors, strang-2023-introduction/ch03-four-p2]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -66,40 +68,40 @@ generated_by: build_kg.py
 
 - [metaphor] Parties as "coalitions of groups with loose edges" ↔ social capital/network membership as basis for collective action — membership shapes behavior more than stated goals (p. 266). — from [[achen-2016-realists/ch09-partisan]] (political-science → unspecified)
 - [structural-analogy] basis and unique coordinates (2.28) ↔ linear-algebra canon: change of basis — a basis gives the coordinates that the canon's change-of-basis acts on. — from [[axler-2024-ladr/ch02-finite]] (linear-algebra → linear-algebra)
-- [structural-analogy] reducing a spanning list to a basis (2.30) ↔ numerical methods: a greedy, left-to-right procedure that keeps only vectors outside the span of earlier ones — compare with Gram–Schmidt in the canon. — from [[axler-2024-ladr/ch02-finite]] (linear-algebra → other)
+- [structural-analogy] reducing a spanning list to a basis (2.30) ↔ numerical methods: a greedy, left-to-right procedure that keeps only vectors outside the span of earlier ones — compare with Gram–Schmidt in the canon. — from [[axler-2024-ladr/ch02-finite]] (linear-algebra → other:numerical-methods)
 - [same-math] 3.84 A=C⁻¹BC ↔ linear-algebra spine: change of basis A ↦ P⁻¹AP — from [[axler-2024-ladr/ch03-linear-p2]] (linear-algebra → linear-algebra)
-- [structural-analogy] Dual basis as coordinate functionals ↔ statistics/data: a regression coefficient or weight vector as a linear readout of a feature vector. — from [[axler-2024-ladr/ch03-linear-p3]] (linear-algebra → other)
-- [structural-analogy] Best polynomial approximation as projection ↔ machine learning: regression on basis functions. — from [[axler-2024-ladr/ch06-inner-p2]] (linear-algebra → other)
+- [structural-analogy] Dual basis as coordinate functionals ↔ statistics/data: a regression coefficient or weight vector as a linear readout of a feature vector. — from [[axler-2024-ladr/ch03-linear-p3]] (linear-algebra → other:statistics)
+- [structural-analogy] Best polynomial approximation as projection ↔ machine learning: regression on basis functions. — from [[axler-2024-ladr/ch06-inner-p2]] (linear-algebra → llm)
 - [same-math] spectral theorem for real symmetric matrices ($S=Q\Lambda Q^{\mathrm t}$) ↔ linear-algebra canon "spectral theorem": 7.29 in matrix form (orthonormal basis ↔ columns of $Q$). — from [[axler-2024-ladr/ch07-operators-p1]] (linear-algebra → linear-algebra)
-- [same-math] $C^{\mathrm t}BC$ rule for the matrix of a bilinear form ↔ inner products: the Gram matrix $\langle e_j,e_k\rangle$ changes this way under a basis change — the inner product is a symmetric bilinear form here (9.10). — from [[axler-2024-ladr/ch09-multilinear-p1]] (linear-algebra → other)
-- [same-math] quadratic form $q(v)=\beta(v,v)$ on $\mathbf R^n$ with symmetric matrix ↔ canon "quadratic form $x^{\mathsf T}Sx$": the same function, shown diagonalisable by an orthonormal basis (9.23b). — from [[axler-2024-ladr/ch09-multilinear-p1]] (linear-algebra → other)
+- [same-math] $C^{\mathrm t}BC$ rule for the matrix of a bilinear form ↔ inner products: the Gram matrix $\langle e_j,e_k\rangle$ changes this way under a basis change — the inner product is a symmetric bilinear form here (9.10). — from [[axler-2024-ladr/ch09-multilinear-p1]] (linear-algebra → other:inner-products)
+- [same-math] quadratic form $q(v)=\beta(v,v)$ on $\mathbf R^n$ with symmetric matrix ↔ canon "quadratic form $x^{\mathsf T}Sx$": the same function, shown diagonalisable by an orthonormal basis (9.23b). — from [[axler-2024-ladr/ch09-multilinear-p1]] (linear-algebra → other:canon-quadratic-form-xmathsf)
 - [same-math] Diagonalising a symmetric form in an orthonormal basis (9.13) ↔ spectral theorem: it follows from that theorem, using $C^{-1}=C^{\mathrm t}$. — from [[axler-2024-ladr/ch09-multilinear-p1]] (linear-algebra → linear-algebra)
-- [structural-analogy] $e_i^Ta=a_i$ and $b=\sum b_ie_i$ ↔ basis and coordinates: unit vectors play the role of a coordinate system. — from [[boyd-2018-vmls/ch01-vectors]] (linear-algebra → other)
+- [structural-analogy] $e_i^Ta=a_i$ and $b=\sum b_ie_i$ ↔ basis and coordinates: unit vectors play the role of a coordinate system. — from [[boyd-2018-vmls/ch01-vectors]] (linear-algebra → linear-algebra)
 - [structural-analogy] Determining $f$ from $f(e_i)$ ↔ matrix as transformation: columns of $A$ are the images of the basis vectors (the scalar case is a single row). — from [[boyd-2018-vmls/ch02-linear]] (linear-algebra → linear-algebra)
 - [structural-analogy] Unique coefficients in a basis ↔ linear-algebra: injectivity of a map $\beta\mapsto\sum\beta_ia_i$ — independence means this map never sends two coefficient lists to the same vector. — from [[boyd-2018-vmls/ch05-linear]] (linear-algebra → linear-algebra)
 - [same-math] Orthonormal expansion $x=\sum(a_i^Tx)a_i$ ↔ linear-algebra: coordinates in an orthonormal basis (canon link; not stated in this unit). — from [[boyd-2018-vmls/ch05-linear]] (linear-algebra → linear-algebra)
 - [same-math] linear function determined by $f(e_k)$ ↔ linear-algebra: matrix as transformation (columns are images of basis vectors) — same statement. — from [[boyd-2018-vmls/ch08-linear]] (linear-algebra → linear-algebra)
-- [same-math] dual basis coefficients $\beta=A^{-1}x$ ↔ change of basis: $A^{-1}$ converts standard coordinates into coordinates in the basis of columns of $A$ — from [[boyd-2018-vmls/ch11-matrix]] (linear-algebra → other)
-- [structural-analogy] adding basis functions until test error rises ↔ model selection generally: complexity versus generalization. — from [[boyd-2018-vmls/ch13-least]] (linear-algebra → political-science)
+- [same-math] dual basis coefficients $\beta=A^{-1}x$ ↔ change of basis: $A^{-1}$ converts standard coordinates into coordinates in the basis of columns of $A$ — from [[boyd-2018-vmls/ch11-matrix]] (linear-algebra → linear-algebra)
+- [structural-analogy] adding basis functions until test error rises ↔ model selection generally: complexity versus generalization. — from [[boyd-2018-vmls/ch13-least]] (linear-algebra → other:statistics)
 - [same-math] Basis change $T^{-1}AS$ ↔ linear-algebra: diagonalisation $A=X\Lambda X^{-1}$ — the diagonal case $\tilde A=\mathrm{diag}$ of Example 2.23 is this with a well-chosen $S$ (the author defers this to Chapter 4). — from [[deisenroth-2020-mml/ch02-linear-p2]] (linear-algebra → linear-algebra)
 - [metaphor] Coordinates in a basis ↔ choice of feature representation in machine learning — the same object, different numbers. — from [[deisenroth-2020-mml/ch02-linear-p2]] (linear-algebra → unspecified)
-- [structural-analogy] Projection onto an orthonormal basis $\lambda=B^\top x$ ↔ Fourier series: coordinates are inner products with orthogonal functions (p. 81, 88). — from [[deisenroth-2020-mml/ch03-analytic]] (linear-algebra → other)
-- [structural-analogy] Eigendecomposition as $P^{-1}$, then $D$, then $P$ ↔ change of basis: do the easy operation in the right coordinates, then return. — from [[deisenroth-2020-mml/ch04-matrix-p1]] (linear-algebra → other)
+- [structural-analogy] Projection onto an orthonormal basis $\lambda=B^\top x$ ↔ Fourier series: coordinates are inner products with orthogonal functions (p. 81, 88). — from [[deisenroth-2020-mml/ch03-analytic]] (linear-algebra → other:signal-processing)
+- [structural-analogy] Eigendecomposition as $P^{-1}$, then $D$, then $P$ ↔ change of basis: do the easy operation in the right coordinates, then return. — from [[deisenroth-2020-mml/ch04-matrix-p1]] (linear-algebra → linear-algebra)
 - [metaphor] Domain basis change, scaling, codomain basis change ↔ "rotate, stretch, rotate" as a general picture of any linear map. — from [[deisenroth-2020-mml/ch04-matrix-p2]] (linear-algebra → unspecified)
 - [same-math] Jacobian of a linear map ↔ linear-algebra: matrix of a linear map. $\mathbf f=\mathbf A\mathbf x$ has Jacobian $\mathbf A$, and the basis-change matrix equals the Jacobian (pp. 151–153). — from [[deisenroth-2020-mml/ch05-vector]] (linear-algebra → linear-algebra)
 - [structural-analogy] Shrinkage of basis coefficients ↔ Bayesian partial pooling: coefficients are pulled toward a common centre by a prior scale learned from data. — from [[gelman-2013-bda3/ch20-basis]] (bayesian → bayesian)
 - [same-math] Basis model with Gaussian coefficient prior ↔ GP with $k=b(x)^T\Sigma_\beta b(x')$ (p. 502). — from [[gelman-2013-bda3/ch21-gaussian]] (bayesian → unspecified)
-- [structural-analogy] Hall's denotative errors as channel noise ↔ Shannon noise: Hall calls literal errors a kind of noise in the channel but treats connotative misreadings as a different matter with a societal, not communicative, basis (p. 16). — from [[hall-1973-encoding/main]] (communication-theory → other)
-- [structural-analogy] Fundamental domain of a symmetry group fixing the prior ↔ bayesian: Principle of indifference / maximum entropy — symmetry as the formal basis for uninformative priors. — from [[jaynes-2003-probability/ch10-physics]] (information-theory → bayesian)
+- [structural-analogy] Hall's denotative errors as channel noise ↔ Shannon noise: Hall calls literal errors a kind of noise in the channel but treats connotative misreadings as a different matter with a societal, not communicative, basis (p. 16). — from [[hall-1973-encoding/main]] (communication-theory → information-theory)
+- [structural-analogy] Fundamental domain of a symmetry group fixing the prior ↔ bayesian: Principle of indifference / maximum entropy — symmetry as the formal basis for uninformative priors. — from [[jaynes-2003-probability/ch10-physics]] (bayesian → bayesian)
 - [structural-analogy] MAP basis dependence (22.29) ↔ Bayesian: Jacobian of a density under change of variables — densities transform with $|\partial\theta/\partial u|$, so maxima move. — from [[mackay-2003-information/ch22-maximum]] (information-theory → bayesian)
-- [same-math] softmax basis (23.33) ↔ machine learning: softmax output layer of a classifier — same normalized-exponential map. — from [[mackay-2003-information/ch23-useful]] (information-theory → other)
+- [same-math] softmax basis (23.33) ↔ machine learning: softmax output layer of a classifier — same normalized-exponential map. — from [[mackay-2003-information/ch23-useful]] (information-theory → llm)
 - [structural-analogy] KL $\approx\frac12\delta^\top F\delta$ ↔ squared Mahalanobis distance with the Fisher matrix as metric (an approximation), the basis of natural gradient (§5.1.9). — from [[murphy-2023-pml2/ch05-information-p1]] (bayesian → unspecified)
 - [same-math] EM's ELBO (6.140–6.145) ↔ Bayesian inference: variational ELBO and KL to the posterior — the text itself says this bound is the basis of variational inference. — from [[murphy-2023-pml2/ch06-optimization-p2]] (bayesian → bayesian)
 - [same-math] Product decomposition (1.29) ↔ Bayesian network factorization: the book itself says it became the semantic basis of Bayesian networks (p. 33). — from [[pearl-2016-primer/ch01-preliminaries]] (bayesian → bayesian)
-- [same-math] JS variational formula (Example 7.5) ↔ machine learning: the text says this characterization is the basis of the GAN objective. — from [[polyanskiy-2025-information/ch08-f-p2]] (information-theory → other)
-- [structural-analogy] Choosing a representation basis ↔ feature engineering: structure sometimes becomes visible only after a change of basis. — from [[polyanskiy-2025-information/ch11-lossless]] (information-theory → other)
+- [same-math] JS variational formula (Example 7.5) ↔ machine learning: the text says this characterization is the basis of the GAN objective. — from [[polyanskiy-2025-information/ch08-f-p2]] (information-theory → llm)
+- [structural-analogy] Choosing a representation basis ↔ feature engineering: structure sometimes becomes visible only after a change of basis. — from [[polyanskiy-2025-information/ch11-lossless]] (information-theory → other:statistics)
 - [structural-analogy] CG's A-orthogonal basis ↔ linear-algebra: Lanczos-type bases for Krylov subspaces — both build a basis of a Krylov subspace by a short recurrence. — from [[spielman-2025-sagt/ch35-conjugate]] (linear-algebra → linear-algebra)
 - [structural-analogy] Decoupling by A-orthogonality ↔ PCA: diagonalizing a covariance matrix — a good basis removes cross terms. — from [[spielman-2025-sagt/ch35-conjugate]] (linear-algebra → linear-algebra)
-- [structural-analogy] translate–act–translate back, T₋PT₊ ↔ change of basis: A ↦ P⁻¹AP — conjugating by an invertible map. — from [[strang-2023-introduction/app10-computer]] (linear-algebra → other)
-- [structural-analogy] $V=WB$ with B invertible ↔ change of basis: the same space described by different basis vectors (p. 123). — from [[strang-2023-introduction/ch03-four-p2]] (linear-algebra → other)
-- [structural-analogy] Choosing a basis that diagonalizes A (U⁻¹AV = Σ) ↔ principal component analysis: finding axes in which a data matrix is simple. — from [[strang-2023-introduction/ch08-linear]] (linear-algebra → other)
+- [structural-analogy] translate–act–translate back, T₋PT₊ ↔ change of basis: A ↦ P⁻¹AP — conjugating by an invertible map. — from [[strang-2023-introduction/app10-computer]] (linear-algebra → linear-algebra)
+- [structural-analogy] $V=WB$ with B invertible ↔ change of basis: the same space described by different basis vectors (p. 123). — from [[strang-2023-introduction/ch03-four-p2]] (linear-algebra → linear-algebra)
+- [structural-analogy] Choosing a basis that diagonalizes A (U⁻¹AV = Σ) ↔ principal component analysis: finding axes in which a data matrix is simple. — from [[strang-2023-introduction/ch08-linear]] (linear-algebra → linear-algebra)

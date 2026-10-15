@@ -2,7 +2,9 @@
 id: reasoned-choice
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 6
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lupia-1998-dilemma/app-ch02, lupia-1998-dilemma/ch01-knowledge, lupia-1998-dilemma/ch02-people, lupia-1998-dilemma/ch04-people, lupia-1998-dilemma/ch07-laboratory-p1, lupia-1998-dilemma/ch07-laboratory-p2]

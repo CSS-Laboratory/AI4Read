@@ -2,7 +2,9 @@
 id: random-walk-metropolis
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [betancourt-2017-hmc/main-p1, murphy-2023-pml2/ch12-markov-p1]

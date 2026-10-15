@@ -2,7 +2,9 @@
 id: finite-free-convolution
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [spielman-2025-sagt/ch42-quadrature, spielman-2025-sagt/ch43-ramanujan]

@@ -2,11 +2,13 @@
 id: social-capital
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch07-cultural-p1, ostrom-1990-commons/ch02-institutional, ostrom-1990-commons/ch06-framework]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 
@@ -31,6 +33,6 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [metaphor] Parties as "coalitions of groups with loose edges" ↔ social capital/network membership as basis for collective action — membership shapes behavior more than stated goals (p. 266). — from [[achen-2016-realists/ch09-partisan]] (political-science → unspecified)
-- [structural-analogy] Varshney's interethnic associations ↔ social capital: networks that constrain polarization. — from [[clark-2017-principles/ch16-consequences-p3]] (political-science → other)
-- [structural-analogy] Face-to-face social sanctions ↔ social capital: trust and networks support collective action in small groups. — from [[olson-1965-collectiveaction/ch02-group]] (political-science → other)
-- [structural-analogy] by-product theory ↔ social capital / civic association: groups built for other reasons later serve collective action — the by-product idea resembles the idea that civic networks lower the cost of cooperation. — from [[olson-1965-collectiveaction/ch06-by]] (political-science → other)
+- [structural-analogy] Varshney's interethnic associations ↔ social capital: networks that constrain polarization. — from [[clark-2017-principles/ch16-consequences-p3]] (political-science → political-science)
+- [structural-analogy] Face-to-face social sanctions ↔ social capital: trust and networks support collective action in small groups. — from [[olson-1965-collectiveaction/ch02-group]] (political-science → political-science)
+- [structural-analogy] by-product theory ↔ social capital / civic association: groups built for other reasons later serve collective action — the by-product idea resembles the idea that civic networks lower the cost of cooperation. — from [[olson-1965-collectiveaction/ch06-by]] (political-science → political-science)

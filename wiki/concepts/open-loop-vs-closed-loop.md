@@ -2,12 +2,14 @@
 id: open-loop-vs-closed-loop
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 9
+n_works: 5
 tiers: [core, deep]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch12-error, astrom-2021-feedbacksystems/ch01-introduction, astrom-2021-feedbacksystems/ch02-feedback, astrom-2021-feedbacksystems/ch04-examples, liberzon-2012-calculus/ch04-maximum-p2, liberzon-2012-calculus/ch05-hamilton, meadows-2008-thinking/ch01-basics, meadows-2008-thinking/ch07-living, todorov-2002-ofc/main]
 raw_ids: [open loop vs closed loop]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 

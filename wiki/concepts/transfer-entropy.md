@@ -2,12 +2,14 @@
 id: transfer-entropy
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 5
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [stone-2022-information/appa-glossary, stone-2022-information/appb-mathematical, stone-2022-information/appf-rules, stone-2022-information/ch08-rate, stone-2022-information/ch09-transfer]
 raw_ids: [transfer entropy]
-canon_spine: information-theory
+canon_spine: [information-theory]
 generated_by: build_kg.py
 ---
 

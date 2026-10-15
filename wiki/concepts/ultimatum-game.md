@@ -2,7 +2,9 @@
 id: ultimatum-game
 type: concept
 fields: [economics-finance, decision-game-theory, political-science]
+fields_strong: [economics-finance, decision-game-theory, political-science]
 n_sources: 4
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch07-cultural-p2, osborne-2004-introduction/ch06-extensive, thaler-2015-misbehaving/ch15-fairness, thaler-2015-misbehaving/ch27-law]
@@ -35,4 +37,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Ultimatum Game rejection of low offers ↔ social-choice/bargaining theory: a credible threat of costly refusal shapes the first mover's offer. — from [[clark-2017-principles/ch07-cultural-p2]] (political-science → other)
+- [structural-analogy] Ultimatum Game rejection of low offers ↔ social-choice/bargaining theory: a credible threat of costly refusal shapes the first mover's offer. — from [[clark-2017-principles/ch07-cultural-p2]] (political-science → decision-game-theory)

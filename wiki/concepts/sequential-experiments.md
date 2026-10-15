@@ -2,7 +2,9 @@
 id: sequential-experiments
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch24-causal, grimmer-2022-textasdata/ch25-text]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Sequential experiments ↔ science studies: replication as community practice — the authors describe the same logic at the level of a research community (p. 427). — from [[grimmer-2022-textasdata/ch24-causal]] (political-science → other)
+- [metaphor] Sequential experiments ↔ science studies: replication as community practice — the authors describe the same logic at the level of a research community (p. 427). — from [[grimmer-2022-textasdata/ch24-causal]] (political-science → other:sociology)

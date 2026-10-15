@@ -2,7 +2,9 @@
 id: afterstate
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [sutton-2018-rl/ch06-temporal, sutton-2018-rl/ch16-applications]

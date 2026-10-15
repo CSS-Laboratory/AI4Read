@@ -2,12 +2,14 @@
 id: causal-historical-theory-of-reference
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 7
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [kripke-1980-naming/addenda, kripke-1980-naming/ch02-lecture, kripke-1980-naming/ch03-lecture-p1, kripke-1980-naming/ch03-lecture-p2, lycan-2019-language/ch04-proper, lycan-2019-language/ch06-use, putnam-1975-meaning/main]
 raw_ids: [causal-historical theory of reference]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

@@ -1,17 +1,26 @@
 ---
 id: propositional-attitude
 type: concept
-fields: [theory-of-mind]
-n_sources: 9
-tiers: [core]
+fields: [theory-of-mind, analytic-philosophy]
+fields_strong: [theory-of-mind, analytic-philosophy]
+n_sources: 10
+n_works: 4
+tiers: [core, deep]
 grounding: digests
-sources: [apperly-2009-two-systems/main-p1, apperly-2011-mindreaders/ch01-introduction, dennett-1987-intentional-stance/ch03-three, dennett-1987-intentional-stance/ch04-making, dennett-1987-intentional-stance/ch05-beyond-p1, dennett-1987-intentional-stance/ch05-beyond-p2, dennett-1987-intentional-stance/ch06-styles, dennett-1987-intentional-stance/ch07-intentional, dennett-1987-intentional-stance/ch10-mid]
+sources: [apperly-2009-two-systems/main-p1, apperly-2011-mindreaders/ch01-introduction, dennett-1987-intentional-stance/ch03-three, dennett-1987-intentional-stance/ch04-making, dennett-1987-intentional-stance/ch05-beyond-p1, dennett-1987-intentional-stance/ch05-beyond-p2, dennett-1987-intentional-stance/ch06-styles, dennett-1987-intentional-stance/ch07-intentional, dennett-1987-intentional-stance/ch10-mid, wittgenstein-1922-tractatus/ch00-introduction]
+aliases: [propositional-attitudes]
 raw_ids: [propositional attitude]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 
 # propositional-attitude
+
+## Aliases
+
+Variant ids merged into this page (curated in `wiki/kg/aliases.json`):
+
+- `propositional-attitudes` — 1 digest(s)
 
 ## Canon spine entry
 
@@ -30,6 +39,10 @@ generated_by: build_kg.py
 - [[dennett-1987-intentional-stance/ch06-styles]] (p. 228): belief-like states; Fodor's realism takes them to be computational relations to internal representations
 - [[dennett-1987-intentional-stance/ch07-intentional]] (p. 243): attitudes like believes that p, wants that q, expressed with intentional idioms [as `propositional attitude`]
 - [[dennett-1987-intentional-stance/ch10-mid]] (p. 342): belief, desire and similar states, attributed through intentional idioms [as `propositional attitude`]
+
+### analytic-philosophy
+
+- [[wittgenstein-1922-tractatus/ch00-introduction]] (pp. 16–17): believing, doubting, desiring, etc., covered by the problem of the logical form of belief; Russell analyses belief as a relation between facts [alias `propositional-attitudes`; new]
 
 ## Instances that use it
 

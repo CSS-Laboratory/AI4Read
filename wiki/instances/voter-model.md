@@ -25,5 +25,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Voter-model duality ↔ probability: exact mapping to coalescing random walkers; transience of random walks in $d>2$ is linked to the lack of consensus there (p. 9–10). — from [[castellano-2009-socialdynamics/main-p1]] (complex-systems → other)
-- [structural-analogy] Random genetic drift ↔ opinion dynamics: chance fluctuation fixes one variant in a small population, as in voter-model consensus. — from [[mitchell-2009-guidedtour/ch05-evolution]] (complex-systems → other)
+- [same-math] Voter-model duality ↔ probability: exact mapping to coalescing random walkers; transience of random walks in $d>2$ is linked to the lack of consensus there (p. 9–10). — from [[castellano-2009-socialdynamics/main-p1]] (complex-systems → other:probability)
+- [structural-analogy] Random genetic drift ↔ opinion dynamics: chance fluctuation fixes one variant in a small population, as in voter-model consensus. — from [[mitchell-2009-guidedtour/ch05-evolution]] (complex-systems → complex-systems)

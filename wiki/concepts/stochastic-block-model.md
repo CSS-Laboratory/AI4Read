@@ -2,7 +2,9 @@
 id: stochastic-block-model
 type: concept
 fields: [bayesian, linear-algebra]
+fields_strong: [bayesian, linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch30-graph, spielman-2025-sagt/ch23-spectral]
@@ -23,4 +25,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] stochastic block model's latent community labels ↔ hierarchical models: latent group-level structure explains observed data. — from [[murphy-2023-pml2/ch30-graph]] (bayesian → other)
+- [structural-analogy] stochastic block model's latent community labels ↔ hierarchical models: latent group-level structure explains observed data. — from [[murphy-2023-pml2/ch30-graph]] (bayesian → bayesian)

@@ -2,12 +2,14 @@
 id: logical-form-vs-grammatical-form
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 19
+n_works: 5
 tiers: [core, deep]
 grounding: digests
 sources: [lycan-2019-language/ch02-definite, lycan-2019-language/ch03-proper, lycan-2019-language/ch09-truth, magnus-2025-forallx/ch02-scope, magnus-2025-forallx/ch04-first, magnus-2025-forallx/ch07-ambiguity, magnus-2025-forallx/ch23-building, magnus-2025-forallx/ch24-sentences, magnus-2025-forallx/ch25-multiple, magnus-2025-forallx/ch28-definite, magnus-2025-forallx/ch29-ambiguity, magnus-2025-forallx/ch33-using, russell-1905-denoting/main, wittgenstein-1922-tractatus/ch00-introduction, wittgenstein-1922-tractatus/ch03-proposition, wittgenstein-1922-tractatus/ch04-proposition, wittgenstein-1953-investigations/ch01-augustine, wittgenstein-1953-investigations/ch04-private, wittgenstein-1953-investigations/ch06-intentionality]
 raw_ids: [logical form vs. grammatical form]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

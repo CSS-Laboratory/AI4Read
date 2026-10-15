@@ -2,7 +2,9 @@
 id: availability-heuristic
 type: concept
 fields: [decision-game-theory, economics-finance]
+fields_strong: [decision-game-theory, economics-finance]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch12-science, thaler-2015-misbehaving/ch03-list]
@@ -27,4 +29,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] fluency as cue for truth ↔ judgment under uncertainty: availability heuristic (canon link; not stated in this unit) — both judge by how easily something comes to mind. — from [[kahneman-2011-thinking/ch05-cognitive]] (decision-game-theory → other)
+- [structural-analogy] fluency as cue for truth ↔ judgment under uncertainty: availability heuristic (canon link; not stated in this unit) — both judge by how easily something comes to mind. — from [[kahneman-2011-thinking/ch05-cognitive]] (decision-game-theory → decision-game-theory)

@@ -7,7 +7,7 @@ tiers: [core]
 grounding: digests
 sources: [rogers-2003-diffusion/ch01-elements-p1]
 canon_instance: [hybrid-seed-corn-in-iowa-ryan-gross]
-canon_match_rule: same-work-tokens
+canon_match_rule: title-key
 generated_by: build_kg.py
 ---
 

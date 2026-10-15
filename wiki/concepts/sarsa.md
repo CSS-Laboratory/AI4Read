@@ -1,8 +1,10 @@
 ---
 id: sarsa
 type: concept
-fields: [bayesian, control-theory]
+fields: [control-theory, bayesian]
+fields_strong: [control-theory, bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch35-reinforcement, sutton-2018-rl/ch06-temporal]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1153): on-policy TD control using the sampled next action [new]
+- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1153): on-policy TD control using the sampled next action [new; work fields: bayesian, control-theory]
 
 ### control-theory
 
@@ -32,4 +34,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] SARSA update (3.27) ↔ temporal-difference learning: parameter moves along a gradient times the Q prediction error — from [[bertsekas-2026-rlcourse/ch03-learning-p2]] (control-theory → other)
+- [structural-analogy] SARSA update (3.27) ↔ temporal-difference learning: parameter moves along a gradient times the Q prediction error — from [[bertsekas-2026-rlcourse/ch03-learning-p2]] (control-theory → control-theory)

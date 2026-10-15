@@ -2,12 +2,14 @@
 id: common-knowledge-vs-public-information
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [morris-2002-public/main]
 raw_ids: [common knowledge vs public information]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 

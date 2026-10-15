@@ -2,7 +2,9 @@
 id: jointness-of-supply
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [olson-1965-collectiveaction/ch01-theory-p1, shepsle-2010-analyzing/ch10-public-p1]

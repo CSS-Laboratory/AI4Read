@@ -2,12 +2,14 @@
 id: complex-system
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 7
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [mitchell-2009-guidedtour/ch01-complexity, mitchell-2009-guidedtour/ch02-dynamics, mitchell-2009-guidedtour/ch10-cellular, mitchell-2009-guidedtour/ch18-evolution, mitchell-2009-guidedtour/ch19-past, simon-1962-architecture/main, strogatz-2024-nonlinear/ch09-lorenz-p1]
 raw_ids: [complex system]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
@@ -45,7 +47,7 @@ generated_by: build_kg.py
 - [structural-analogy] threshold-model equilibrium $F(r)=r$ ↔ complex-systems: fixed point of a one-dimensional map — the same iteration on the c.d.f.; author does not frame it as dynamics theory. — from [[granovetter-1978-threshold/main]] (complex-systems → complex-systems)
 - [metaphor] "Natural" tendencies persisting absent correction ↔ self-organised regularities in complex systems, which can change if rules change. — from [[keynes-1936-general/ch18-general]] (economics-finance → unspecified)
 - [structural-analogy] Deviation-amplifying system ↔ complex systems: positive feedback — reactions reinforce, not damp, a movement. — from [[minsky-1992-instability/main]] (economics-finance → complex-systems)
-- [structural-analogy] Logistic map as an "idea model" ↔ many-model thinking: simple models that isolate fundamental properties of complex systems (pdf 62). — from [[mitchell-2009-guidedtour/ch02-dynamics]] (complex-systems → other)
+- [structural-analogy] Logistic map as an "idea model" ↔ many-model thinking: simple models that isolate fundamental properties of complex systems (pdf 62). — from [[mitchell-2009-guidedtour/ch02-dynamics]] (complex-systems → complex-systems)
 - [structural-analogy] Statistical mechanics (macro from micro statistics) ↔ complex systems: emergence of macro patterns from many micro interactions (pdf 72). — from [[mitchell-2009-guidedtour/ch03-information]] (complex-systems → complex-systems)
 - [metaphor] Turing's interest in how brain and body "compute" ↔ complex-systems usage of "computation" in cells and markets — the chapter 12 theme (pdf 81, 97). — from [[mitchell-2009-guidedtour/ch04-computation]] (complex-systems → unspecified)
 - [metaphor] 1950s–60s genetics breakthrough as a "tipping point" ↔ complex systems: threshold-driven rapid change. The author puts the phrase in quotation marks (pdf 120). — from [[mitchell-2009-guidedtour/ch06-genetics]] (complex-systems → complex-systems)

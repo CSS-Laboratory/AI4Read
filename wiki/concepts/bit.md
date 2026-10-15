@@ -1,16 +1,25 @@
 ---
 id: bit
 type: concept
-fields: [information-theory, complex-systems, control-theory]
-n_sources: 28
+fields: [information-theory, bayesian, complex-systems, control-theory]
+fields_strong: [information-theory, bayesian, complex-systems, control-theory]
+n_sources: 29
+n_works: 11
 tiers: [core, reference]
 grounding: digests
-sources: [ashby-1956-cybernetics/ch07-quantity, cover-2006-elements/ch01-introduction, cover-2006-elements/ch02-entropy, gibson-2019-efficiency/main, jaynes-2003-probability/ch22-introduction, mackay-2003-information/ch02-probability, mackay-2003-information/ch04-source, mackay-2003-information/ch18-crosswords, mackay-2003-information/ch19-have, mitchell-2009-guidedtour/ch03-information, pierce-1980-introduction/ch01-world, pierce-1980-introduction/ch02-origins, pierce-1980-introduction/ch04-encoding, pierce-1980-introduction/ch05-entropy, pierce-1980-introduction/ch10-information, pierce-1980-introduction/ch12-information, pierce-1980-introduction/ch13-information, polyanskiy-2025-information/ch01-introduction, polyanskiy-2025-information/ch02-entropy, shannon-1948-mathematical/main-p1, stone-2022-information/appa-glossary, stone-2022-information/ch01-information, stone-2022-information/ch02-entropy, stone-2022-information/ch03-source, stone-2022-information/ch04-noisy, stone-2022-information/ch05-entropy, stone-2022-information/ch10-thermodynamic, stone-2022-information/ch11-information]
-canon_spine: information-theory
+sources: [ashby-1956-cybernetics/ch07-quantity, cover-2006-elements/ch01-introduction, cover-2006-elements/ch02-entropy, gibson-2019-efficiency/main, jaynes-2003-probability/ch22-introduction, mackay-2003-information/ch02-probability, mackay-2003-information/ch04-source, mackay-2003-information/ch18-crosswords, mackay-2003-information/ch19-have, mcgrayne-2011-theory/ch04-bayes, mitchell-2009-guidedtour/ch03-information, pierce-1980-introduction/ch01-world, pierce-1980-introduction/ch02-origins, pierce-1980-introduction/ch04-encoding, pierce-1980-introduction/ch05-entropy, pierce-1980-introduction/ch10-information, pierce-1980-introduction/ch12-information, pierce-1980-introduction/ch13-information, polyanskiy-2025-information/ch01-introduction, polyanskiy-2025-information/ch02-entropy, shannon-1948-mathematical/main-p1, stone-2022-information/appa-glossary, stone-2022-information/ch01-information, stone-2022-information/ch02-entropy, stone-2022-information/ch03-source, stone-2022-information/ch04-noisy, stone-2022-information/ch05-entropy, stone-2022-information/ch10-thermodynamic, stone-2022-information/ch11-information]
+aliases: [information-theory-bit]
+canon_spine: [information-theory]
 generated_by: build_kg.py
 ---
 
 # bit
+
+## Aliases
+
+Variant ids merged into this page (curated in `wiki/kg/aliases.json`):
+
+- `information-theory-bit` — 1 digest(s)
 
 ## Canon spine entry
 
@@ -23,11 +32,10 @@ generated_by: build_kg.py
 - [[cover-2006-elements/ch01-introduction]] (p. 5): unit of entropy when logs are base 2
 - [[cover-2006-elements/ch02-entropy]] (p. 13): unit of entropy when $\log$ is base 2; a fair coin has 1 bit; base $e$ gives nats
 - [[gibson-2019-efficiency/main]] (p. 4): information unit when the log base is 2
-- [[jaynes-2003-probability/ch22-introduction]] (p. 629): information in one yes–no decision; 1 bit = 0.69315 nits
-- [[mackay-2003-information/ch02-probability]] (p. 32): the unit of $h$ and $H$; also a variable valued 0 or 1
-- [[mackay-2003-information/ch04-source]] (p. 73): here also "a binary symbol with two values", distinguished from the unit of information content
-- [[mackay-2003-information/ch18-crosswords]] (p. 265): one unit of information content, alongside nat, ban and deciban; backup name shannon
-- [[mackay-2003-information/ch19-have]] (pp. 269, 276): here the unit for the information gained by a species, and a genome bit's good/bad state
+- [[mackay-2003-information/ch02-probability]] (p. 32): the unit of $h$ and $H$; also a variable valued 0 or 1 [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch04-source]] (p. 73): here also "a binary symbol with two values", distinguished from the unit of information content [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch18-crosswords]] (p. 265): one unit of information content, alongside nat, ban and deciban; backup name shannon [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch19-have]] (pp. 269, 276): here the unit for the information gained by a species, and a genome bit's good/bad state [work fields: information-theory, bayesian]
 - [[pierce-1980-introduction/ch01-world]] (p. 8): universal measure of information as choice; choosing between two equally probable alternatives is one bit
 - [[pierce-1980-introduction/ch02-origins]] (pp. 37–38): here an independent "0-or-1 choice"; $\log_2$ of the number of symbols counts them
 - [[pierce-1980-introduction/ch04-encoding]] (p. 73): named on p. 66 as the unit of the measure of information (called entropy); this chapter does not define either term. It does describe the binary digit (p. 70) as an elementary choice between two possibilities
@@ -47,13 +55,18 @@ generated_by: build_kg.py
 - [[stone-2022-information/ch10-thermodynamic]] (p. 210): here tied to a physical change, $\Delta H=1$ bit for halving the available states
 - [[stone-2022-information/ch11-information]] (p. 218, 222): here also identified with one nucleotide in MacKay's model; the author notes bit and binary digit are used loosely
 
+### bayesian
+
+- [[jaynes-2003-probability/ch22-introduction]] (p. 629): information in one yes–no decision; 1 bit = 0.69315 nits [work fields: bayesian, information-theory]
+- [[mcgrayne-2011-theory/ch04-bayes]] (pp. 76–77): Shannon's logarithmic unit of information; in a perfect secrecy system prior equals posterior [alias `information-theory-bit`; new]
+
 ### complex-systems
 
 - [[mitchell-2009-guidedtour/ch03-information]] (pdf 69): information from the answer to a yes/no question [new]
 
 ### control-theory
 
-- [[ashby-1956-cybernetics/ch07-quantity]] (p. 126): unit of logarithmic variety; 1 bit = variety of two elements [new]
+- [[ashby-1956-cybernetics/ch07-quantity]] (p. 126): unit of logarithmic variety; 1 bit = variety of two elements [new; work fields: control-theory, information-theory]
 
 ## Instances that use it
 
@@ -113,16 +126,16 @@ generated_by: build_kg.py
 
 - [structural-analogy] $\log_2 r$ bits per step through an $r$-state channel ↔ information theory: channel capacity — Ashby derives only an upper bound from state count, in a determinate setting — from [[ashby-1956-cybernetics/ch08-transmission]] (control-theory → information-theory)
 - [same-math] quantity of selection as bits ↔ information theory: $\log_2$ of the number of equally available options — Ashby uses the same scale as information (pp. 255–256) — from [[ashby-1956-cybernetics/ch13-regulating]] (control-theory → information-theory)
-- [structural-analogy] 20 questions / Huffman code ↔ decision trees: each yes/no split is one bit of a binary code. — from [[cover-2006-elements/ch05-data-p1]] (information-theory → other)
-- [structural-analogy] Generating $X$ from fair bits (tree of flips) ↔ simulation in computational social science: drawing categorical samples from a pseudo-random bit stream; $H(X)$ lower-bounds the random bits used. — from [[cover-2006-elements/ch05-data-p2]] (information-theory → other)
-- [structural-analogy] Excess code length / lost growth $D(p\|b)$ (6.48) ↔ cross-entropy training loss of language models: a worse model estimate costs more bits. — from [[cover-2006-elements/ch06-gambling]] (information-theory → llm)
-- [structural-analogy] Polynomially many types vs. exponentially many sequences ↔ MDL / universal coding: model cost is only $O(\log n)$ bits per parameter. — from [[cover-2006-elements/ch12-information-p1]] (information-theory → other)
+- [structural-analogy] 20 questions / Huffman code ↔ decision trees: each yes/no split is one bit of a binary code. — from [[cover-2006-elements/ch05-data-p1]] (information-theory → llm)
+- [structural-analogy] Generating $X$ from fair bits (tree of flips) ↔ simulation in computational social science: drawing categorical samples from a pseudo-random bit stream; $H(X)$ lower-bounds the random bits used. — from [[cover-2006-elements/ch05-data-p2]] (information-theory → other:sociology)
+- [structural-analogy] Excess code length / lost growth $D(p\|b)$ (6.48) ↔ cross-entropy training loss of language models: a worse model estimate costs more bits. — from [[cover-2006-elements/ch06-gambling]] (information-theory → information-theory)
+- [structural-analogy] Polynomially many types vs. exponentially many sequences ↔ MDL / universal coding: model cost is only $O(\log n)$ bits per parameter. — from [[cover-2006-elements/ch12-information-p1]] (information-theory → information-theory)
 - [structural-analogy] "Opportunistic oversimplification" (vision oracle of 8 bits) ↔ simplified agent models in Bayesian theory of mind: simplify and hope the molar behaviour survives. — from [[dennett-1987-intentional-stance/ch09-fast]] (theory-of-mind → bayesian)
-- [structural-analogy] Redundant gender marking ↔ error-correcting codes: parity bits add redundancy for robustness to noise. — from [[gibson-2019-efficiency/main]] (information-theory → other)
-- [structural-analogy] Informativeness–complexity trade-off in lexica ↔ rate–distortion theory: bits spent against loss of useful distinctions. — from [[gibson-2019-efficiency/main]] (information-theory → other)
-- [same-math] Evidence in db, $10\log_{10}$ odds ↔ information-theory: log-likelihood ratio in bits (change of log base). — from [[jaynes-2003-probability/ch05-queer]] (information-theory → information-theory)
-- [structural-analogy] B's posterior as a product of two routes' distributions (6.136) ↔ information-theory: combining independent evidence by adding log-likelihoods (bits) — from [[jaynes-2003-probability/ch06-elementary-p2]] (information-theory → information-theory)
-- [structural-analogy] Ockham factor / marginal likelihood ↔ information-theory: Minimum Description Length — model complexity is charged against fit, as bits for the model plus bits for the data. — from [[jaynes-2003-probability/ch20-model]] (information-theory → information-theory)
+- [structural-analogy] Redundant gender marking ↔ error-correcting codes: parity bits add redundancy for robustness to noise. — from [[gibson-2019-efficiency/main]] (information-theory → information-theory)
+- [structural-analogy] Informativeness–complexity trade-off in lexica ↔ rate–distortion theory: bits spent against loss of useful distinctions. — from [[gibson-2019-efficiency/main]] (information-theory → information-theory)
+- [same-math] Evidence in db, $10\log_{10}$ odds ↔ information-theory: log-likelihood ratio in bits (change of log base). — from [[jaynes-2003-probability/ch05-queer]] (bayesian → information-theory)
+- [structural-analogy] B's posterior as a product of two routes' distributions (6.136) ↔ information-theory: combining independent evidence by adding log-likelihoods (bits) — from [[jaynes-2003-probability/ch06-elementary-p2]] (bayesian → information-theory)
+- [structural-analogy] Ockham factor / marginal likelihood ↔ information-theory: Minimum Description Length — model complexity is charged against fit, as bits for the model plus bits for the data. — from [[jaynes-2003-probability/ch20-model]] (bayesian → information-theory)
 - [same-math] Raw bit content H₀ ↔ statistical mechanics: Boltzmann entropy k_B ln Ω for a microcanonical ensemble (p. 87). — from [[mackay-2003-information/ch04-source]] (information-theory → complex-systems)
 - [structural-analogy] Mixture code with $\log K$-bit header and incompleteness ↔ Bayesian: model averaging over $K$ models with a uniform prior. The source only points to bits-back coding (p. 108), so the link is ours. — from [[mackay-2003-information/ch05-symbol]] (information-theory → bayesian)
 - [structural-analogy] random hash into M < N bits ↔ information-theory: random codes in channel coding — same random-code idea, but here mapping down instead of up. — from [[mackay-2003-information/ch12-hash]] (information-theory → information-theory)
@@ -140,21 +153,21 @@ generated_by: build_kg.py
 - [structural-analogy] Parity-bit decoding ↔ bayesian: posterior over codewords from a likelihood (bit-flip noise) and a deterministic prior constraint. — from [[murphy-2023-pml2/ch05-information-p2]] (bayesian → bayesian)
 - [same-math] Nyquist's $\log m$ for $m$ symbols ↔ information theory: bits per symbol for equiprobable symbols — same counting argument as $\log_2$ of the number of outcomes (pp. 37–38). — from [[pierce-1980-introduction/ch02-origins]] (information-theory → information-theory)
 - [structural-analogy] Guessing the next letter (Shannon's experiment) ↔ next-token prediction by language models: both measure how predictable text is, in bits per symbol. — from [[pierce-1980-introduction/ch05-entropy]] (information-theory → llm)
-- [structural-analogy] Fidelity criterion over long stretches ↔ rate–distortion theory: required bits depend on the allowed distortion measure. — from [[pierce-1980-introduction/ch07-efficient]] (information-theory → other)
+- [structural-analogy] Fidelity criterion over long stretches ↔ rate–distortion theory: required bits depend on the allowed distortion measure. — from [[pierce-1980-introduction/ch07-efficient]] (information-theory → information-theory)
 - [structural-analogy] minimum energy $0.693\,kT$ per bit (10.6) ↔ information theory/physics: Landauer's principle ($kT\ln 2$ per bit); the same numerical bound, though this unit derives it from capacity, not from erasure. — from [[pierce-1980-introduction/ch10-information]] (information-theory → information-theory)
-- [structural-analogy] one-molecule engine's bit-for-work trade ↔ Kelly criterion: side information has a measurable, bounded value (it raises growth by its mutual information). — from [[pierce-1980-introduction/ch10-information]] (information-theory → other)
-- [structural-analogy] number of equally likely states, $\log_2 m$ bits ↔ source entropy: the same counting idea behind both entropies (p. 202). — from [[pierce-1980-introduction/ch10-information]] (information-theory → other)
+- [structural-analogy] one-molecule engine's bit-for-work trade ↔ Kelly criterion: side information has a measurable, bounded value (it raises growth by its mutual information). — from [[pierce-1980-introduction/ch10-information]] (information-theory → information-theory)
+- [structural-analogy] number of equally likely states, $\log_2 m$ bits ↔ source entropy: the same counting idea behind both entropies (p. 202). — from [[pierce-1980-introduction/ch10-information]] (information-theory → information-theory)
 - [structural-analogy] fidelity criterion with penalties ↔ rate–distortion function — both ask how many bits suffice for a given tolerated damage (Pierce gives no formula). — from [[pierce-1980-introduction/ch14-back]] (information-theory → unspecified)
-- [structural-analogy] Elias' extractor ↔ source coding: uniform-on-a-set to bits mirrors enumerative coding of a type class, although the author says the variable-length encoders are studied in Chapter 10. — from [[polyanskiy-2025-information/ch10-random]] (information-theory → other)
-- [structural-analogy] SDPI constant as the slope of F_I at 0 ↔ distributed inference: bits communicated replace sample size. — from [[polyanskiy-2025-information/ch18-hypothesis]] (information-theory → other)
+- [structural-analogy] Elias' extractor ↔ source coding: uniform-on-a-set to bits mirrors enumerative coding of a type class, although the author says the variable-length encoders are studied in Chapter 10. — from [[polyanskiy-2025-information/ch10-random]] (information-theory → information-theory)
+- [structural-analogy] SDPI constant as the slope of F_I at 0 ↔ distributed inference: bits communicated replace sample size. — from [[polyanskiy-2025-information/ch18-hypothesis]] (information-theory → other:distributed-inference)
 - [metaphor] "Bits as universal currency" (separation theorem) ↔ economics: common unit of exchange — the compressor and channel code interface only through bits (p. 392). — from [[polyanskiy-2025-information/ch21-channel]] (information-theory → economics-finance)
-- [metaphor] Minimal energy per bit ↔ physics: Landauer's principle (energy cost of information) — both are energy-per-bit floors; the text only mentions $N_0=kT$ (p. 410). — from [[polyanskiy-2025-information/ch23-capacity]] (information-theory → other)
+- [metaphor] Minimal energy per bit ↔ physics: Landauer's principle (energy cost of information) — both are energy-per-bit floors; the text only mentions $N_0=kT$ (p. 410). — from [[polyanskiy-2025-information/ch23-capacity]] (information-theory → other:physics)
 - [metaphor] "bits as currency" ↔ economics: the text says the separation principle explains why bits are the natural currency of the digital age (p. 476). — from [[polyanskiy-2025-information/ch26-rate]] (information-theory → economics-finance)
-- [structural-analogy] Capacity $\approx\inf_\epsilon\{\epsilon^2+\log N\}$ ↔ model selection / description length: trade-off between a quantization error and the bits naming the cell. — from [[polyanskiy-2025-information/ch35-entropic]] (information-theory → political-science)
-- [metaphor] distributed bit budget ↔ rational inattention: limited channel capacity per agent restricts aggregate inference. — from [[polyanskiy-2025-information/ch36-strong-p2]] (information-theory → other)
-- [structural-analogy] Capacity limit on received information ↔ rational inattention: an agent's attention treated as a channel with a bit-rate ceiling. — from [[shannon-1948-mathematical/main-p2]] (information-theory → other)
-- [structural-analogy] Descending the interlacing tree ↔ derandomization: the method of conditional expectations; fix one random bit at a time without worsening the quantity. — from [[spielman-2025-sagt/ch44-bipartite]] (linear-algebra → other)
-- [metaphor] efficient coding hypothesis ↔ neuroscience: neurons as channels with an energy cost per bit — from [[stone-2022-information/ch01-information]] (information-theory → other)
+- [structural-analogy] Capacity $\approx\inf_\epsilon\{\epsilon^2+\log N\}$ ↔ model selection / description length: trade-off between a quantization error and the bits naming the cell. — from [[polyanskiy-2025-information/ch35-entropic]] (information-theory → information-theory)
+- [metaphor] distributed bit budget ↔ rational inattention: limited channel capacity per agent restricts aggregate inference. — from [[polyanskiy-2025-information/ch36-strong-p2]] (information-theory → information-theory)
+- [structural-analogy] Capacity limit on received information ↔ rational inattention: an agent's attention treated as a channel with a bit-rate ceiling. — from [[shannon-1948-mathematical/main-p2]] (information-theory → information-theory)
+- [structural-analogy] Descending the interlacing tree ↔ derandomization: the method of conditional expectations; fix one random bit at a time without worsening the quantity. — from [[spielman-2025-sagt/ch44-bipartite]] (linear-algebra → other:derandomization)
+- [metaphor] efficient coding hypothesis ↔ neuroscience: neurons as channels with an energy cost per bit — from [[stone-2022-information/ch01-information]] (information-theory → other:neuroscience)
 - [metaphor] Speed–accuracy trade-off ↔ rate–distortion trade-off — fast, low-bit responses are less accurate. — from [[stone-2022-information/ch08-rate]] (information-theory → unspecified)
 - [same-math] "Entropy $n$ bits ≈ $2^n$ equiprobable states" ↔ language modelling: perplexity $=2^{\text{entropy}}$ — the effective number of choices. — from [[stone-2022-information/ch10-thermodynamic]] (information-theory → llm)
 - [structural-analogy] genome gaining bits from selection ↔ Kelly criterion/doubling rate — both treat growth as information gained about an environment (the source does not make this link). — from [[stone-2022-information/ch11-information]] (information-theory → unspecified)

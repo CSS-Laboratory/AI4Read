@@ -2,7 +2,9 @@
 id: situation-model
 type: concept
 fields: [theory-of-mind, llm]
+fields_strong: [theory-of-mind, llm]
 n_sources: 3
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [apperly-2011-mindreaders/ch06-cognitive, apperly-2011-mindreaders/ch07-elaborating, mahowald-2024-dissociating/main]

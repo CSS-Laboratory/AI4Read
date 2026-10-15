@@ -2,7 +2,9 @@
 id: inverse-probability
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [mcgrayne-2011-theory/ch01-causes, mcgrayne-2011-theory/ch03-many, pearl-2018-bookofwhy/ch03-evidence]
@@ -27,5 +29,5 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Importance weights $q/g$ and $S_{\rm eff}$ ↔ causal inference: inverse-probability weighting — reweighting draws from one distribution to represent another, with a few huge weights hurting precision. — from [[gelman-2013-bda3/ch10-introduction]] (bayesian → bayesian)
-- [structural-analogy] IP weighting by $1/\Pr[C=0|L,A]$ ↔ Monte Carlo: reweighting samples by inverse probability to mimic another distribution. — from [[hernan-2020-whatif/ch08-selection]] (bayesian → other)
+- [structural-analogy] IP weighting by $1/\Pr[C=0|L,A]$ ↔ Monte Carlo: reweighting samples by inverse probability to mimic another distribution. — from [[hernan-2020-whatif/ch08-selection]] (bayesian → other:statistics)
 - [structural-analogy] inverse probability weighting ($1/P(x|z)$) ↔ Bayesian computation: importance sampling — both reweight samples drawn from one distribution to mimic another. — from [[pearl-2016-primer/ch03-effects]] (bayesian → bayesian)

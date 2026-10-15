@@ -2,11 +2,13 @@
 id: encoding-decoding
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 1
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [hall-1973-encoding/main]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 
@@ -25,7 +27,7 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [metaphor] Marx's "weapons of publicity pointed against the bourgeoisie" ↔ encoding/decoding: institutions turned to oppositional uses. — from [[habermas-1989-publicsphere/ch04-bourgeois-p2]] (communication-theory → communication-theory)
-- [metaphor] Encoding/decoding asymmetry ↔ transmission view: Hall turns the sender-to-receiver model into a relation of positions and codes. — from [[hall-1973-encoding/main]] (communication-theory → other)
+- [metaphor] Encoding/decoding asymmetry ↔ transmission view: Hall turns the sender-to-receiver model into a relation of positions and codes. — from [[hall-1973-encoding/main]] (communication-theory → communication-theory)
 - [structural-analogy] gap between a thinker's system and its current versions ↔ encoding/decoding: meaning is remade by those who receive it — from [[lippmann-1922-publicopinion/ch08-blind]] (communication-theory → communication-theory)
 - [structural-analogy] Pioneer's form becoming the next stereotype ↔ encoding/decoding: audiences read new texts through established codes. — from [[lippmann-1922-publicopinion/ch11-enlisting]] (communication-theory → communication-theory)
 - [structural-analogy] Larger audiences share only abstract common factors, so responses diverge ↔ encoding/decoding: meaning is made again at reception. — from [[lippmann-1922-publicopinion/ch12-self]] (communication-theory → communication-theory)

@@ -2,12 +2,14 @@
 id: rigid-designator
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 9
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [kripke-1980-naming/ch01-lecture-p1, kripke-1980-naming/ch01-lecture-p2, kripke-1980-naming/ch02-lecture, kripke-1980-naming/ch03-lecture-p1, kripke-1980-naming/ch03-lecture-p2, kripke-1980-naming/front-preface, lycan-2019-language/ch04-proper, lycan-2019-language/ch10-truth, putnam-1975-meaning/main]
 raw_ids: [rigid designator]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 
@@ -37,5 +39,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] rigid designator vs. descriptions ↔ programming: a constant vs. a function re-evaluated in each environment — one value across worlds vs. a value that varies with the situation. — from [[kripke-1980-naming/ch01-lecture-p2]] (analytic-philosophy → other)
-- [structural-analogy] Rigid designator vs. nonrigid description ↔ formal semantics: a constant function from worlds to objects vs. a function that varies by world — a gloss we propose; the text does not state it. — from [[kripke-1980-naming/front-preface]] (analytic-philosophy → other)
+- [structural-analogy] rigid designator vs. descriptions ↔ programming: a constant vs. a function re-evaluated in each environment — one value across worlds vs. a value that varies with the situation. — from [[kripke-1980-naming/ch01-lecture-p2]] (analytic-philosophy → other:computer-science)
+- [structural-analogy] Rigid designator vs. nonrigid description ↔ formal semantics: a constant function from worlds to objects vs. a function that varies by world — a gloss we propose; the text does not state it. — from [[kripke-1980-naming/front-preface]] (analytic-philosophy → analytic-philosophy)

@@ -1,7 +1,7 @@
 ---
 id: noisy-typewriter
 type: instance
-fields: [information-theory]
+fields: [information-theory, bayesian]
 n_sources: 4
 tiers: [core]
 grounding: digests
@@ -17,7 +17,7 @@ generated_by: build_kg.py
 
 - [[cover-2006-elements/ch08-channel-p1]] (pp. 185–186): $C=\log13$
 - [[cover-2006-elements/ch08-channel-p2]] (p. 208): alternate-letter code with 13 codewords achieves $\log13$ and satisfies the equality conditions
-- [[mackay-2003-information/ch09-communication]] (pp. 148, 152): C = log₂9 reached with a length-1 code on every third letter
+- [[mackay-2003-information/ch09-communication]] (pp. 148, 152): C = log₂9 reached with a length-1 code on every third letter [work fields: information-theory, bayesian]
 - [[stone-2022-information/ch04-noisy]] (pp. 108–110): non-confusable subset gives error-free 3.17 bits/s
 
 ## Candidate bridges

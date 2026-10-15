@@ -2,7 +2,9 @@
 id: duration-neglect
 type: concept
 fields: [decision-game-theory, political-science]
+fields_strong: [decision-game-theory, political-science]
 n_sources: 5
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [achen-2016-realists/ch06-musical, kahneman-2011-thinking/ch35-two, kahneman-2011-thinking/ch36-life, kahneman-2011-thinking/ch38-thinking, kahneman-2011-thinking/conclusions]
@@ -33,4 +35,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Musical chairs and duration neglect ↔ behavioral psychology: judgment by final moments (pp. 147, 175). — from [[achen-2016-realists/ch06-musical]] (political-science → other)
+- [metaphor] Musical chairs and duration neglect ↔ behavioral psychology: judgment by final moments (pp. 147, 175). — from [[achen-2016-realists/ch06-musical]] (political-science → other:psychology-cognitive-science)

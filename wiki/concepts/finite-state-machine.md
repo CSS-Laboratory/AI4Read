@@ -2,7 +2,9 @@
 id: finite-state-machine
 type: concept
 fields: [control-theory, information-theory]
+fields_strong: [control-theory, information-theory]
 n_sources: 5
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch01-introduction, astrom-2021-feedbacksystems/ch03-system-p1, astrom-2021-feedbacksystems/ch04-examples, pierce-1980-introduction/ch03-mathematical, pierce-1980-introduction/ch06-language]
@@ -35,5 +37,5 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] syndrome-as-state ↔ information-theory: a parity-check constraint turned into a finite-state machine. — from [[mackay-2003-information/ch25-exact]] (information-theory → information-theory)
-- [same-math] finite-state machine with coin-flip transitions ↔ probability: Markov chain with given transition probabilities (here, 1/2 per arrow) — from [[pierce-1980-introduction/ch03-mathematical]] (information-theory → other)
+- [same-math] finite-state machine with coin-flip transitions ↔ probability: Markov chain with given transition probabilities (here, 1/2 per arrow) — from [[pierce-1980-introduction/ch03-mathematical]] (information-theory → other:probability)
 - [metaphor] man as a possible finite-state machine with a fantastic number of states, beside a gas whose many molecular configurations are summarised by pressure and temperature ↔ statistical physics: summarising many micro-states by a few variables (p. 62) — from [[pierce-1980-introduction/ch03-mathematical]] (information-theory → complex-systems)

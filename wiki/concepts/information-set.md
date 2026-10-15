@@ -2,11 +2,13 @@
 id: information-set
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch08-democratic-p3]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 

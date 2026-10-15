@@ -2,7 +2,9 @@
 id: estimand
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [pearl-2018-bookofwhy/ch00-introduction, pearl-2018-bookofwhy/ch01-ladder, pearl-2018-bookofwhy/ch07-beyond]

@@ -2,7 +2,9 @@
 id: tensorization
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 3
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [polyanskiy-2025-information/ch03-divergence, polyanskiy-2025-information/ch07-tensorization, polyanskiy-2025-information/ch08-f-p2]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Rényi tensorization ↔ hypothesis testing: the text says Rényi divergence will feature prominently in characterizing optimal error exponents (§16.1). — from [[polyanskiy-2025-information/ch08-f-p2]] (information-theory → other)
+- [structural-analogy] Rényi tensorization ↔ hypothesis testing: the text says Rényi divergence will feature prominently in characterizing optimal error exponents (§16.1). — from [[polyanskiy-2025-information/ch08-f-p2]] (information-theory → other:statistics)

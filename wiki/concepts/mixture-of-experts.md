@@ -2,7 +2,9 @@
 id: mixture-of-experts
 type: concept
 fields: [llm, control-theory]
+fields_strong: [llm, control-theory]
 n_sources: 3
+n_works: 3
 tiers: [deep, reference]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch03-learning-p5, elhage-2022-superposition/main-p2, wei-2022-emergent/main]

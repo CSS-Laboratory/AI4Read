@@ -2,7 +2,9 @@
 id: re-invention
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 8
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [rogers-2003-diffusion/ch01-elements-p1, rogers-2003-diffusion/ch01-elements-p2, rogers-2003-diffusion/ch02-history-p2, rogers-2003-diffusion/ch03-contributions, rogers-2003-diffusion/ch05-innovation-p1, rogers-2003-diffusion/ch05-innovation-p2, rogers-2003-diffusion/ch09-change-p2, rogers-2003-diffusion/ch10-innovation]

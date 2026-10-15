@@ -2,7 +2,9 @@
 id: method-of-types
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 4
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [cover-2006-elements/ch12-information-p1, cover-2006-elements/ch12-information-p3, cover-2006-elements/ch16-inequalities, polyanskiy-2025-information/ch02-entropy]
@@ -22,4 +24,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Multiplicity $M\sim e^{nH}$ ↔ information-theory: number of sequences of a given type is $\approx 2^{nH}$ (method of types / typical set) — same counting by Stirling, in natural logs. — from [[jaynes-2003-probability/ch09-repetitive-p1]] (information-theory → information-theory)
+- [same-math] Multiplicity $M\sim e^{nH}$ ↔ information-theory: number of sequences of a given type is $\approx 2^{nH}$ (method of types / typical set) — same counting by Stirling, in natural logs. — from [[jaynes-2003-probability/ch09-repetitive-p1]] (bayesian → information-theory)

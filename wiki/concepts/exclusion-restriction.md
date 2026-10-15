@@ -2,7 +2,9 @@
 id: exclusion-restriction
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [hernan-2020-whatif/ch16-instrumental, hernan-2020-whatif/ch22-target, murphy-2023-pml2/ch36-causality-p2]

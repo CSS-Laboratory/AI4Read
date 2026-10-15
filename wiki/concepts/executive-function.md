@@ -2,7 +2,9 @@
 id: executive-function
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [apperly-2011-mindreaders/ch02-evidence, apperly-2011-mindreaders/ch03-evidence, apperly-2011-mindreaders/ch06-cognitive]

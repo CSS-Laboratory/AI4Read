@@ -2,7 +2,9 @@
 id: categorical-distribution
 type: concept
 fields: [llm, political-science]
+fields_strong: [llm, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch06-multinomial, prince-2023-udl/ch05-loss]

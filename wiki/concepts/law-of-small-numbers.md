@@ -2,7 +2,9 @@
 id: law-of-small-numbers
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch10-law, kahneman-2011-thinking/ch18-taming, tversky-1974-heuristics/main]

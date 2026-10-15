@@ -1,8 +1,10 @@
 ---
 id: convolutional-layer
 type: concept
-fields: [bayesian, llm]
+fields: [llm, bayesian]
+fields_strong: [llm, bayesian]
 n_sources: 2
+n_works: 2
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch16-deep, prince-2023-udl/ch10-convolutional]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch16-deep]] (pp. 633–634): shared-kernel layer, eqs. 16.4–16.5; gives shift equivariance [new]
+- [[murphy-2023-pml2/ch16-deep]] (pp. 633–634): shared-kernel layer, eqs. 16.4–16.5; gives shift equivariance [new; work fields: bayesian, llm]
 
 ### llm
 

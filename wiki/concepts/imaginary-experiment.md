@@ -2,7 +2,9 @@
 id: imaginary-experiment
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [popper-1959-logic/appvii-untitled, popper-1959-logic/appxi-untitled]

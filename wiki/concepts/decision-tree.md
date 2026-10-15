@@ -2,7 +2,9 @@
 id: decision-tree
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [gelman-2013-bda3/ch09-decision, mcgrayne-2011-theory/ch11-business, mcgrayne-2011-theory/ch14-three]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] 20 questions / Huffman code ↔ decision trees: each yes/no split is one bit of a binary code. — from [[cover-2006-elements/ch05-data-p1]] (information-theory → other)
+- [structural-analogy] 20 questions / Huffman code ↔ decision trees: each yes/no split is one bit of a binary code. — from [[cover-2006-elements/ch05-data-p1]] (information-theory → llm)

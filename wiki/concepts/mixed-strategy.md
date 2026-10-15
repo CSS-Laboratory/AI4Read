@@ -2,12 +2,14 @@
 id: mixed-strategy
 type: concept
 fields: [decision-game-theory, control-theory]
+fields_strong: [decision-game-theory, control-theory]
 n_sources: 15
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [bellman-1957-dp/ch10-x, dixit-2008-art-strategy/ch01-ten, dixit-2008-art-strategy/ch04-beautiful, dixit-2008-art-strategy/ch05-choice, dixit-2008-art-strategy/ch08-interpreting, dixit-2008-art-strategy/ch14-case, osborne-2004-introduction/ch04-mixed-p1, osborne-2004-introduction/ch04-mixed-p2, osborne-2004-introduction/ch09-bayesian, osborne-2004-introduction/ch11-strictly, osborne-2004-introduction/ch13-evolutionary, schelling-1960-conflict/appc-re-p2, schelling-1960-conflict/appc-re-p3, schelling-1960-conflict/ch04-toward, schelling-1960-conflict/ch07-randomization]
 raw_ids: [mixed strategy]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 
@@ -48,8 +50,8 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Strictly dominated by a mixed strategy ↔ the dominance notion used in iterated elimination of dominated strategies: the same definition used on a different footing. — from [[osborne-2004-introduction/ch12-rationalizability]] (decision-game-theory → other)
+- [same-math] Strictly dominated by a mixed strategy ↔ the dominance notion used in iterated elimination of dominated strategies: the same definition used on a different footing. — from [[osborne-2004-introduction/ch12-rationalizability]] (decision-game-theory → other:the-dominance-notion-used)
 - [same-math] Mixed ESS as a polymorphic population (fractions = probabilities) ↔ mixed-strategy equilibrium interpreted as population proportions (the author cites Section 4.1) (p. 289). — from [[osborne-2004-introduction/ch13-evolutionary]] (decision-game-theory → unspecified)
-- [structural-analogy] Cumulative distribution on a continuum ↔ mixed strategy over a continuum of actions: the chapter points to Section 4.11 for this use. — from [[osborne-2004-introduction/ch17-mathematics]] (decision-game-theory → other)
-- [metaphor] Least-favorable prior ↔ capacity-achieving input distribution: the adversary's best mixed strategy. — from [[polyanskiy-2025-information/ch31-basics]] (information-theory → other)
-- [structural-analogy] fractional threat probability $\pi$ ↔ mixed strategy: both are probability distributions over actions, but here the odds are meant to be learned by the other player. — from [[schelling-1960-conflict/ch07-randomization]] (decision-game-theory → other)
+- [structural-analogy] Cumulative distribution on a continuum ↔ mixed strategy over a continuum of actions: the chapter points to Section 4.11 for this use. — from [[osborne-2004-introduction/ch17-mathematics]] (decision-game-theory → other:mixed-strategy-over-a)
+- [metaphor] Least-favorable prior ↔ capacity-achieving input distribution: the adversary's best mixed strategy. — from [[polyanskiy-2025-information/ch31-basics]] (information-theory → other:capacity-achieving-input-distribution)
+- [structural-analogy] fractional threat probability $\pi$ ↔ mixed strategy: both are probability distributions over actions, but here the odds are meant to be learned by the other player. — from [[schelling-1960-conflict/ch07-randomization]] (decision-game-theory → decision-game-theory)

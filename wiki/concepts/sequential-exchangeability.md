@@ -2,7 +2,9 @@
 id: sequential-exchangeability
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch19-time, hernan-2020-whatif/ch20-treatment, hernan-2020-whatif/ch21-g]

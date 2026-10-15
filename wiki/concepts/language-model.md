@@ -2,12 +2,14 @@
 id: language-model
 type: concept
 fields: [llm, political-science]
+fields_strong: [llm, political-science]
 n_sources: 13
+n_works: 10
 tiers: [core, deep, reference]
 grounding: digests
 sources: [argyle-2023-silicon/main-p1, bender-2020-octopus/main, bengio-2003-nplm/main, brown-2020-gpt3/main-p1, brown-2020-gpt3/main-p2, grimmer-2022-textasdata/ch06-multinomial, mahowald-2024-dissociating/main, mikolov-2013-efficient/main, piantadosi-2022-meaning/main, prince-2023-udl/ch01-introduction, prince-2023-udl/ch05-loss, prince-2023-udl/ch12-transformers, radford-2019-gpt2/main]
 raw_ids: [language model]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 
@@ -30,7 +32,7 @@ generated_by: build_kg.py
 - [[mikolov-2013-efficient/main]] (pp. 3–4): here, NNLM and RNNLM, which predict a word from history
 - [[piantadosi-2022-meaning/main]] (pdf 1): here, a system trained to predict words from surrounding context
 - [[prince-2023-udl/ch01-introduction]] (p. 8): here only (the text says "generative model of text data"; the term "language model" does not appear): a model that assigns a probability to every output string and can be sampled; no next-token factoring is given
-- [[prince-2023-udl/ch05-loss]] (p. 67): not defined here; the chapter's K-class example of predicting the next word is one case
+- [[prince-2023-udl/ch05-loss]] (p. 67): not defined here; the chapter's K-class example of predicting the next word is one case [weak: not really used in this unit]
 - [[prince-2023-udl/ch12-transformers]] (p. 223): autoregressive factorisation of joint token probability (Eq. 12.15) [as `language model`]
 - [[radford-2019-gpt2/main]] (pdf 2): a model of $p(x)=\prod p(s_n\mid s_1..s_{n-1})$ over symbol sequences, Eq. (1) [as `language model`]
 
@@ -45,7 +47,7 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [same-math] temperature in sampling ↔ language models: scaling next-token scores before the softmax (canon link; the source describes it only in words). — from [[argyle-2023-silicon/main-p2]] (llm → llm)
-- [structural-analogy] Excess code length / lost growth $D(p\|b)$ (6.48) ↔ cross-entropy training loss of language models: a worse model estimate costs more bits. — from [[cover-2006-elements/ch06-gambling]] (information-theory → llm)
+- [structural-analogy] Excess code length / lost growth $D(p\|b)$ (6.48) ↔ cross-entropy training loss of language models: a worse model estimate costs more bits. — from [[cover-2006-elements/ch06-gambling]] (information-theory → information-theory)
 - [structural-analogy] Bird-watcher missing species ↔ smoothing in language models: unseen events get nonzero probability — avoids zero-probability errors. — from [[mcgrayne-2011-theory/ch07-tool]] (bayesian → llm)
 - [structural-analogy] Guessing the next letter (Shannon's experiment) ↔ next-token prediction by language models: both measure how predictable text is, in bits per symbol. — from [[pierce-1980-introduction/ch05-entropy]] (information-theory → llm)
 - [structural-analogy] Digram- and trigram-based generation of music ↔ n-gram language models: generating from short-context probabilities gives locally plausible but globally wandering output. — from [[pierce-1980-introduction/ch13-information]] (information-theory → llm)
@@ -55,4 +57,4 @@ generated_by: build_kg.py
 - [same-math] KL divergence ↔ language models: cross-entropy equals entropy plus KL, so minimizing log-loss minimizes KL to the data distribution (canon link; not stated in this unit). — from [[prince-2023-udl/ch23-probability]] (llm → llm)
 - [metaphor] Bayes' rule posterior ↔ language models: Bayesian reading of conditioning on a prompt (canon link; not stated here). — from [[prince-2023-udl/ch23-probability]] (llm → llm)
 - [structural-analogy] Ancestral sampling ↔ language models: autoregressive generation draws each token given earlier ones, like the chain in C.32. — from [[prince-2023-udl/ch23-probability]] (llm → llm)
-- [structural-analogy] next-letter prediction with $N-1$ letters of context ↔ language-model next-token prediction: uncertainty left after a context is measured the same way. — from [[shannon-1951-prediction/main]] (information-theory → other)
+- [structural-analogy] next-letter prediction with $N-1$ letters of context ↔ language-model next-token prediction: uncertainty left after a context is measured the same way. — from [[shannon-1951-prediction/main]] (information-theory → other:language-model-next-token)

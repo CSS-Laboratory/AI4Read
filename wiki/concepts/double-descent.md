@@ -2,7 +2,9 @@
 id: double-descent
 type: concept
 fields: [llm, linear-algebra]
+fields_strong: [llm, linear-algebra]
 n_sources: 3
+n_works: 2
 tiers: [reference, core]
 grounding: digests
 sources: [prince-2023-udl/ch08-measuring, prince-2023-udl/ch20-does, strang-2023-introduction/ch10-learning]

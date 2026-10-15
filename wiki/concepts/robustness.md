@@ -1,12 +1,14 @@
 ---
 id: robustness
 type: concept
-fields: [control-theory]
+fields: [control-theory, bayesian]
+fields_strong: [control-theory, bayesian]
 n_sources: 17
+n_works: 5
 tiers: [core, reference, deep]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch01-introduction, astrom-2021-feedbacksystems/ch02-feedback, astrom-2021-feedbacksystems/ch03-system-p1, astrom-2021-feedbacksystems/ch04-examples, astrom-2021-feedbacksystems/ch06-linear, astrom-2021-feedbacksystems/ch07-state, astrom-2021-feedbacksystems/ch10-frequency, astrom-2021-feedbacksystems/ch11-pid, astrom-2021-feedbacksystems/ch12-frequency, astrom-2021-feedbacksystems/ch13-robust, astrom-2021-feedbacksystems/ch14-fundamental, bertsekas-2026-rlcourse/ch01-exact-p4, bertsekas-2026-rlcourse/ch01-exact-p5, bertsekas-2026-rlcourse/ch02-approximation-p6, liberzon-2012-calculus/ch07-advanced, recht-2019-tour/main, sarkka-2023-bayesianfiltering/ch05-modeling]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 
@@ -36,7 +38,7 @@ generated_by: build_kg.py
 - [[bertsekas-2026-rlcourse/ch02-approximation-p6]] (p. 313): here, a base policy $\pi$ that works adequately for all $\theta^i$
 - [[liberzon-2012-calculus/ch07-advanced]] (p. 174): $\mathcal H_\infty$ design keeps disturbance-to-output gain bounded
 - [[recht-2019-tour/main]] (pp. 13–14): here, guaranteed stabilisation for every system in an estimated uncertainty set
-- [[sarkka-2023-bayesianfiltering/ch05-modeling]] (p. 78): here: tolerance to outlier measurements via heavy-tailed or clutter noise
+- [[sarkka-2023-bayesianfiltering/ch05-modeling]] (p. 78): here: tolerance to outlier measurements via heavy-tailed or clutter noise [work fields: control-theory, bayesian]
 
 ## Instances that use it
 
@@ -49,15 +51,15 @@ generated_by: build_kg.py
 - [structural-analogy] stability only against specified disturbances ↔ control-theory: robustness over a stated class of disturbances/models — the verdict depends on the set. — from [[ashby-1956-cybernetics/ch05-stability]] (control-theory → control-theory)
 - [structural-analogy] Hubs dominating connectivity ↔ complex-systems: robustness and fragility — hubs matter for network tolerance (not discussed in this unit). — from [[barabasi-1999-scaling/main]] (complex-systems → complex-systems)
 - [structural-analogy] Stability bound $\sum_nD(c^nx)$ ↔ control-theory: robustness of optimal value to model error — bounds how much a perturbed return changes the solution. — from [[bellman-1957-dp/ch01-i-p2]] (control-theory → control-theory)
-- [structural-analogy] Stability Thm 3–4 ($u(c)/(1-a)$) ↔ robustness: error in the model data bounded by a geometric-series amplification. — from [[bellman-1957-dp/ch04-iv]] (control-theory → other)
-- [structural-analogy] Redundant gender marking ↔ error-correcting codes: parity bits add redundancy for robustness to noise. — from [[gibson-2019-efficiency/main]] (information-theory → other)
-- [structural-analogy] Robustness–accuracy trade-off ↔ information-theory: minimax/universal coding — performance is traded across a model class. — from [[jaynes-2003-probability/ch21-outliers]] (information-theory → information-theory)
-- [metaphor] "Closeness depends on the norm" ↔ robustness: which perturbations count as small depends on the chosen measure (not stated in this unit) — from [[liberzon-2012-calculus/ch01-introduction]] (control-theory → other)
+- [structural-analogy] Stability Thm 3–4 ($u(c)/(1-a)$) ↔ robustness: error in the model data bounded by a geometric-series amplification. — from [[bellman-1957-dp/ch04-iv]] (control-theory → other:unnamed)
+- [structural-analogy] Redundant gender marking ↔ error-correcting codes: parity bits add redundancy for robustness to noise. — from [[gibson-2019-efficiency/main]] (information-theory → information-theory)
+- [structural-analogy] Robustness–accuracy trade-off ↔ information-theory: minimax/universal coding — performance is traded across a model class. — from [[jaynes-2003-probability/ch21-outliers]] (bayesian → information-theory)
+- [metaphor] "Closeness depends on the norm" ↔ robustness: which perturbations count as small depends on the chosen measure (not stated in this unit) — from [[liberzon-2012-calculus/ch01-introduction]] (control-theory → other:unnamed)
 - [structural-analogy] Resilience from redundant loops on different time scales ↔ control-theory: robustness through multiple feedback paths — both keep performance when one mechanism fails. — from [[meadows-2008-thinking/ch03-systems]] (control-theory → control-theory)
-- [structural-analogy] hub dependence ↔ robustness and fragility: the same structure gives resilience to random loss and vulnerability to targeted loss (p. 114) — from [[mitchell-2009-guidedtour/ch15-science]] (complex-systems → other)
+- [structural-analogy] hub dependence ↔ robustness and fragility: the same structure gives resilience to random loss and vulnerability to targeted loss (p. 114) — from [[mitchell-2009-guidedtour/ch15-science]] (complex-systems → complex-systems)
 - [structural-analogy] Equilibrium strategy that guarantees the value ↔ mechanism design / robustness: strategies that do not depend on correct beliefs about the other player. — from [[osborne-2004-introduction/ch11-strictly]] (decision-game-theory → decision-game-theory)
-- [structural-analogy] Noise added to cover linearization error ↔ robustness: model uncertainty treated as extra disturbance. — from [[sarkka-2023-bayesianfiltering/ch09-gaussian]] (control-theory → other)
-- [structural-analogy] Random spanning tree marginals ↔ network robustness: an edge whose removal disconnects $G$ has $\ell_e=1$ (p. 126), so by Theorem 13.5.1 it lies in every spanning tree. — from [[spielman-2025-sagt/ch13-random]] (linear-algebra → other)
+- [structural-analogy] Noise added to cover linearization error ↔ robustness: model uncertainty treated as extra disturbance. — from [[sarkka-2023-bayesianfiltering/ch09-gaussian]] (control-theory → other:unnamed)
+- [structural-analogy] Random spanning tree marginals ↔ network robustness: an edge whose removal disconnects $G$ has $\ell_e=1$ (p. 126), so by Theorem 13.5.1 it lies in every spanning tree. — from [[spielman-2025-sagt/ch13-random]] (linear-algebra → other:network-robustness)
 - [structural-analogy] Hyperbolic (robust) vs. marginal (fragile) fixed points ↔ complex-systems: robustness and fragility — some structures survive small perturbations and others do not. — from [[strogatz-2024-nonlinear/ch06-phase-p1]] (complex-systems → complex-systems)
 - [structural-analogy] RL safety via modelling, testing and stability theory ↔ control theory: robustness and adaptive-control guarantees (p. 477). — from [[sutton-2018-rl/ch17-frontiers]] (control-theory → control-theory)
-- [structural-analogy] Robustness to trivial alterations ↔ ML evaluation: out-of-distribution/adversarial testing of generalization — both probe whether a model learned the rule or surface correlations. — from [[ullman-2023-trivial-alterations/main]] (theory-of-mind → other)
+- [structural-analogy] Robustness to trivial alterations ↔ ML evaluation: out-of-distribution/adversarial testing of generalization — both probe whether a model learned the rule or surface correlations. — from [[ullman-2023-trivial-alterations/main]] (theory-of-mind → llm)

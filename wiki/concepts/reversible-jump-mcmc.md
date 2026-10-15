@@ -2,7 +2,9 @@
 id: reversible-jump-mcmc
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 3
 tiers: [core, deep, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch12-computationally, murphy-2023-pml2/ch12-markov-p2, robert-2011-mcmc/main]

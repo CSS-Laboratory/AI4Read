@@ -2,7 +2,9 @@
 id: stochastic-variational-inference
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [blei-2017-variational/main-p1, blei-2017-variational/main-p2, murphy-2023-pml2/ch10-variational-p1]

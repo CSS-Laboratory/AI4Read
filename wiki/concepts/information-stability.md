@@ -2,7 +2,9 @@
 id: information-stability
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [polyanskiy-2025-information/ch21-channel, polyanskiy-2025-information/ch22-channels]

@@ -2,12 +2,14 @@
 id: fixed-point-and-stability
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 21
+n_works: 7
 tiers: [core, reference]
 grounding: digests
 sources: [castellano-2009-socialdynamics/main-p1, castellano-2009-socialdynamics/main-p2, granovetter-1978-threshold/main, lorenz-1963-nonperiodic/main, mitchell-2009-guidedtour/ch02-dynamics, scheffer-2009-earlywarning/main, schelling-1971-segregation/main-p1, schelling-1971-segregation/main-p2, strogatz-2024-nonlinear/ch01-overview, strogatz-2024-nonlinear/ch02-flows, strogatz-2024-nonlinear/ch03-bifurcations-p1, strogatz-2024-nonlinear/ch03-bifurcations-p2, strogatz-2024-nonlinear/ch04-flows, strogatz-2024-nonlinear/ch06-phase-p1, strogatz-2024-nonlinear/ch06-phase-p2, strogatz-2024-nonlinear/ch07-limit-p1, strogatz-2024-nonlinear/ch07-limit-p2, strogatz-2024-nonlinear/ch08-bifurcations-p3, strogatz-2024-nonlinear/ch09-lorenz-p1, strogatz-2024-nonlinear/ch09-lorenz-p2, strogatz-2024-nonlinear/ch10-one-p1]
 raw_ids: [fixed point and stability]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
@@ -29,7 +31,7 @@ generated_by: build_kg.py
 - [[scheffer-2009-earlywarning/main]] (p. 55): Box 2 shows stability via the sign of $\partial f/\partial x$ at equilibrium [as `fixed point and stability`]
 - [[schelling-1971-segregation/main-p1]] (pp. 148, 150): an arrangement in which nobody wants to move; complete segregation can be stable
 - [[schelling-1971-segregation/main-p2]] (pp. 20, 22): stable equilibria are curve intersections or one-color corners; stability against small or large perturbations [as `fixed point and stability`]
-- [[strogatz-2024-nonlinear/ch01-overview]] (pp. 10–11): fixed points listed as the $n=1$ nonlinear phenomenon; not defined here [as `fixed point and stability`]
+- [[strogatz-2024-nonlinear/ch01-overview]] (pp. 10–11): fixed points listed as the $n=1$ nonlinear phenomenon; not defined here [as `fixed point and stability`; weak: not really used in this unit]
 - [[strogatz-2024-nonlinear/ch02-flows]] (pp. 17, 19): a point where $f(x^*)=0$; stable if small disturbances die out [as `fixed point and stability`]
 - [[strogatz-2024-nonlinear/ch03-bifurcations-p1]] (p. 48): a state with $f(x^*)=0$, stable or unstable by sign of $f'(x^*)$
 - [[strogatz-2024-nonlinear/ch03-bifurcations-p2]] (p. 77): stability alternates along the $x$-axis; $a$ stable, $b$ unstable, $c$ stable
@@ -45,4 +47,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Equilibrium of "everybody content" in Schelling's models ↔ fixed point and stability: a state where nobody moves, stable against small deviations but not toward other states (p. 148). — from [[schelling-1971-segregation/main-p1]] (complex-systems → other)
+- [structural-analogy] Equilibrium of "everybody content" in Schelling's models ↔ fixed point and stability: a state where nobody moves, stable against small deviations but not toward other states (p. 148). — from [[schelling-1971-segregation/main-p1]] (complex-systems → complex-systems)

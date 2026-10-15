@@ -2,7 +2,9 @@
 id: natural-direct-effect
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [pearl-2016-primer/ch04-counterfactuals, pearl-2018-bookofwhy/ch09-mediation-p1, pearl-2018-bookofwhy/ch09-mediation-p2]

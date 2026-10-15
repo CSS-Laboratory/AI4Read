@@ -2,7 +2,9 @@
 id: microstate-macrostate
 type: concept
 fields: [complex-systems, information-theory]
+fields_strong: [complex-systems, information-theory]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [mitchell-2009-guidedtour/ch03-information, stone-2022-information/ch10-thermodynamic]

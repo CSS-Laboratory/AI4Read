@@ -2,7 +2,9 @@
 id: representative-publicity
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [habermas-1989-publicsphere/ch00-introduction, habermas-1989-publicsphere/ch04-bourgeois-p2, habermas-1989-publicsphere/ch06-transformation-p1]

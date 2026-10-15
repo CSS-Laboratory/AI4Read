@@ -2,12 +2,14 @@
 id: bayesian-theory-of-mind-btom
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 1
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [rabinowitz-2018-machine-tom/main]
 raw_ids: [Bayesian theory of mind (BToM)]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 

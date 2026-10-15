@@ -2,7 +2,9 @@
 id: conventional-implicature
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [grice-1975-conversation/main, lycan-2019-language/ch13-implicative, lycan-2019-language/ch14-expressive]

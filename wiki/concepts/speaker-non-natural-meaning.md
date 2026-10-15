@@ -2,12 +2,14 @@
 id: speaker-non-natural-meaning
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lycan-2019-language/ch02-definite, lycan-2019-language/ch07-psychological, lycan-2019-language/ch15-metaphor]
 raw_ids: [speaker (non-natural) meaning]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

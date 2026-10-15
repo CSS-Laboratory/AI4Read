@@ -2,12 +2,14 @@
 id: violation-of-expectation-paradigm
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 4
+n_works: 4
 tiers: [core, deep]
 grounding: digests
 sources: [apperly-2009-two-systems/main-p1, apperly-2011-mindreaders/ch03-evidence, heyes-2014-cultural-evolution/main, onishi-2005-infant-false-belief/main]
 raw_ids: [violation-of-expectation paradigm]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 
@@ -28,4 +30,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Sentence-by-sentence probing ↔ violation-of-expectation paradigm: both infer belief tracking from how responses shift when evidence changes. — from [[kosinski-2024-llm-tom/main]] (theory-of-mind → other)
+- [structural-analogy] Sentence-by-sentence probing ↔ violation-of-expectation paradigm: both infer belief tracking from how responses shift when evidence changes. — from [[kosinski-2024-llm-tom/main]] (theory-of-mind → theory-of-mind)

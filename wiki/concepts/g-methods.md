@@ -2,7 +2,9 @@
 id: g-methods
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 4
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch07-confounding, hernan-2020-whatif/ch14-g, hernan-2020-whatif/ch19-time, hernan-2020-whatif/ch20-treatment]

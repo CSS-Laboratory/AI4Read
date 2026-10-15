@@ -2,7 +2,9 @@
 id: regression-model
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [boyd-2018-vmls/ch02-linear, boyd-2018-vmls/ch13-least]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Interaction on additive scale ↔ regression models: a product term in a linear model measures departure from additive effects. The source does not state this; it is our proposal. — from [[hernan-2020-whatif/ch05-interaction]] (bayesian → other)
+- [structural-analogy] Interaction on additive scale ↔ regression models: a product term in a linear model measures departure from additive effects. The source does not state this; it is our proposal. — from [[hernan-2020-whatif/ch05-interaction]] (bayesian → other:statistics)

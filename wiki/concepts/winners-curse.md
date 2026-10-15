@@ -2,7 +2,9 @@
 id: winners-curse
 type: concept
 fields: [decision-game-theory, economics-finance]
+fields_strong: [decision-game-theory, economics-finance]
 n_sources: 5
+n_works: 4
 tiers: [core, deep]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch01-ten, dixit-2008-art-strategy/ch10-auctions, osborne-2004-introduction/ch09-bayesian, stiglitz-2002-paradigm/main-p1, thaler-2015-misbehaving/ch29-football]
@@ -33,7 +35,7 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [same-math] Average quality of sellers at price $p$, $E[x \mid x \le p] = p/2$ ↔ information-theory / Bayesian updating: conditioning on a selection event — the act of selling is a signal about quality, and the price changes who selects in; the same truncated-expectation calculation appears in the winner's curse in auctions. — from [[akerlof-1970-lemons/main]] (economics-finance → information-theory)
-- [structural-analogy] Winner's curse ↔ statistics: selection bias, since conditioning on winning an auction selects the most optimistic estimate. — from [[dixit-2008-art-strategy/ch01-ten]] (decision-game-theory → other)
-- [structural-analogy] Bid as if you've won ↔ statistics: conditioning on selection (winner's curse as selection bias). — from [[dixit-2008-art-strategy/ch10-auctions]] (decision-game-theory → other)
-- [structural-analogy] winner's curse (condition on winning) ↔ statistics: selection effects/conditioning on being pivotal — the jury juror conditions on her vote mattering, the bidder conditions on her bid winning. — from [[osborne-2004-introduction/ch09-bayesian]] (decision-game-theory → other)
-- [structural-analogy] pick-price overpayment ↔ auction theory: the winner's curse among bidders for the same prospect. — from [[thaler-2015-misbehaving/ch29-football]] (economics-finance → other)
+- [structural-analogy] Winner's curse ↔ statistics: selection bias, since conditioning on winning an auction selects the most optimistic estimate. — from [[dixit-2008-art-strategy/ch01-ten]] (decision-game-theory → other:statistics)
+- [structural-analogy] Bid as if you've won ↔ statistics: conditioning on selection (winner's curse as selection bias). — from [[dixit-2008-art-strategy/ch10-auctions]] (decision-game-theory → other:statistics)
+- [structural-analogy] winner's curse (condition on winning) ↔ statistics: selection effects/conditioning on being pivotal — the jury juror conditions on her vote mattering, the bidder conditions on her bid winning. — from [[osborne-2004-introduction/ch09-bayesian]] (decision-game-theory → other:statistics)
+- [structural-analogy] pick-price overpayment ↔ auction theory: the winner's curse among bidders for the same prospect. — from [[thaler-2015-misbehaving/ch29-football]] (economics-finance → decision-game-theory)

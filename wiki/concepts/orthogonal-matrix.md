@@ -2,7 +2,9 @@
 id: orthogonal-matrix
 type: concept
 fields: [linear-algebra, llm]
+fields_strong: [linear-algebra, llm]
 n_sources: 3
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [deisenroth-2020-mml/ch04-matrix-p2, prince-2023-udl/ch22-mathematics, strang-2023-introduction/ch05-determinants]

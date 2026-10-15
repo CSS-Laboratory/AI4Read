@@ -2,12 +2,14 @@
 id: noise-traders
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [grossman-1980-impossibility/main, thaler-2015-misbehaving/ch25-battle, thaler-2015-misbehaving/ch26-fruit]
 raw_ids: [noise traders]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 

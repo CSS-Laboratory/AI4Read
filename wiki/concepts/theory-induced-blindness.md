@@ -2,7 +2,9 @@
 id: theory-induced-blindness
 type: concept
 fields: [decision-game-theory, economics-finance]
+fields_strong: [decision-game-theory, economics-finance]
 n_sources: 5
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch25-bernoulli, kahneman-2011-thinking/ch26-prospect, kahneman-2011-thinking/ch27-endowment, thaler-2015-misbehaving/ch11-willpower, thaler-2015-misbehaving/ch14-seems]
@@ -27,4 +29,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Theory-induced blindness ↔ the fruit fly as a model system: a model's simplifications can hide what it leaves out. — from [[kahneman-2011-thinking/ch25-bernoulli]] (decision-game-theory → other)
+- [metaphor] Theory-induced blindness ↔ the fruit fly as a model system: a model's simplifications can hide what it leaves out. — from [[kahneman-2011-thinking/ch25-bernoulli]] (decision-game-theory → other:the-fruit-fly-as)

@@ -2,7 +2,9 @@
 id: ergodic-source
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [pierce-1980-introduction/ch03-mathematical, pierce-1980-introduction/ch05-entropy, shannon-1948-mathematical/main-p1]

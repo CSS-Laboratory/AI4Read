@@ -2,11 +2,13 @@
 id: explication
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [lycan-2019-language/ch07-psychological, popper-1959-logic/appix-untitled, quine-1951-dogmas/main]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 
@@ -27,4 +29,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Uninterpreted "elements" with axioms ↔ analytic-philosophy: formal system vs. interpretation (e.g. explication) — syntax is fixed and meaning supplied separately. — from [[popper-1959-logic/appii-untitled]] (analytic-philosophy → analytic-philosophy)
-- [metaphor] Ideal type of disorder ↔ explication: replacing a vague concept (disorder) with a constructed precise one. — from [[popper-1959-logic/appvi-untitled-2]] (analytic-philosophy → other)
+- [metaphor] Ideal type of disorder ↔ explication: replacing a vague concept (disorder) with a constructed precise one. — from [[popper-1959-logic/appvi-untitled-2]] (analytic-philosophy → analytic-philosophy)

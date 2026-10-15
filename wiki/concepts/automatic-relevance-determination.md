@@ -2,7 +2,9 @@
 id: automatic-relevance-determination
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 4
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [blei-2017-variational/main-p2, mcelreath-2020-rethinking/ch13-adventures, murphy-2023-pml2/ch15-generalized, murphy-2023-pml2/ch28-latent-p1]

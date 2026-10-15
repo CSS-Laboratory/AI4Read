@@ -2,7 +2,9 @@
 id: unmodeled-dynamics
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch02-feedback, astrom-2021-feedbacksystems/ch13-robust]

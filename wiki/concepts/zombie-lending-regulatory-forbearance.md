@@ -2,11 +2,13 @@
 id: zombie-lending-regulatory-forbearance
 type: concept
 fields: [economics-finance]
+fields_strong: []
 n_sources: 0
+n_works: 0
 tiers: []
 grounding: digests
 sources: []
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 

@@ -2,7 +2,9 @@
 id: humans-in-the-loop
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch02-social, grimmer-2022-textasdata/ch28-conclusion]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Human-in-the-loop prompt tuning ↔ codebook development in qualitative social science: iterating instructions as one iterates a codebook. — from [[ziems-2024-css/main-p1]] (llm → other)
+- [metaphor] Human-in-the-loop prompt tuning ↔ codebook development in qualitative social science: iterating instructions as one iterates a codebook. — from [[ziems-2024-css/main-p1]] (llm → other:sociology)

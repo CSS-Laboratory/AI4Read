@@ -1,13 +1,15 @@
 ---
 id: unexpected-contents-task
 type: concept
-fields: [theory-of-mind]
+fields: [theory-of-mind, llm]
+fields_strong: [theory-of-mind, llm]
 n_sources: 6
+n_works: 4
 tiers: [core, deep]
 grounding: digests
 sources: [apperly-2011-mindreaders/ch02-evidence, apperly-2011-mindreaders/ch03-evidence, apperly-2011-mindreaders/ch04-evidence, kosinski-2024-llm-tom/main, shapira-2024-clever-hans/main, ullman-2023-trivial-alterations/main]
 raw_ids: [unexpected contents task]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 
@@ -24,9 +26,9 @@ generated_by: build_kg.py
 - [[apperly-2011-mindreaders/ch02-evidence]] (p. 12): a Smarties tube holds paperclips; what will a naive observer think is inside?
 - [[apperly-2011-mindreaders/ch03-evidence]] (pp. 37–38): analogue: a box looks as if it holds a doll but holds a skunk (Song & Baillargeon)
 - [[apperly-2011-mindreaders/ch04-evidence]] (p. 78): the 3-choice task extends it
-- [[kosinski-2024-llm-tom/main]] (§ "Study 1.1"): label and contents mismatch (Smarties task); used in Study 1 [as `unexpected contents task`]
-- [[shapira-2024-clever-hans/main]] (p. 2258): a container's contents differ from its label; Smarties test [as `unexpected contents task`]
-- [[ullman-2023-trivial-alterations/main]] (p. 3): container holds an unexpected item; asks what a naive person will think is inside
+- [[kosinski-2024-llm-tom/main]] (§ "Study 1.1"): label and contents mismatch (Smarties task); used in Study 1 [as `unexpected contents task`; work fields: theory-of-mind, llm]
+- [[shapira-2024-clever-hans/main]] (p. 2258): a container's contents differ from its label; Smarties test [as `unexpected contents task`; work fields: theory-of-mind, llm]
+- [[ullman-2023-trivial-alterations/main]] (p. 3): container holds an unexpected item; asks what a naive person will think is inside [work fields: theory-of-mind, llm]
 
 ## Instances that use it
 

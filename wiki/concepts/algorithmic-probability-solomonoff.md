@@ -2,12 +2,14 @@
 id: algorithmic-probability-solomonoff
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [cover-2006-elements/ch01-introduction, cover-2006-elements/ch07-kolmogorov]
 raw_ids: [algorithmic probability (Solomonoff)]
-canon_spine: information-theory
+canon_spine: [information-theory]
 generated_by: build_kg.py
 ---
 

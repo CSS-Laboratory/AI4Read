@@ -2,7 +2,9 @@
 id: tensor
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [deisenroth-2020-mml/ch05-vector, strang-2023-introduction/ch09-linear]
@@ -26,5 +28,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] $J_F$ transforming as $A^\top J_FA$ ↔ differential geometry: Riemannian metric tensor (p. 40). — from [[polyanskiy-2025-information/ch03-divergence]] (information-theory → other)
-- [structural-analogy] CP tensor decomposition ↔ data science: low-rank matrix factorization, extended to three indices without orthogonality. — from [[strang-2023-introduction/app1-ranks]] (linear-algebra → other)
+- [structural-analogy] $J_F$ transforming as $A^\top J_FA$ ↔ differential geometry: Riemannian metric tensor (p. 40). — from [[polyanskiy-2025-information/ch03-divergence]] (information-theory → other:mathematics)
+- [structural-analogy] CP tensor decomposition ↔ data science: low-rank matrix factorization, extended to three indices without orthogonality. — from [[strang-2023-introduction/app1-ranks]] (linear-algebra → other:statistics)

@@ -2,7 +2,9 @@
 id: impact-analysis
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [katz-1955-personalinfluence/appb-guide, katz-1955-personalinfluence/ch00-introduction, katz-1955-personalinfluence/ch03-place]

@@ -2,7 +2,9 @@
 id: propensity-to-consume
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 9
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [keynes-1936-general/ch03-principle, keynes-1936-general/ch06-definition, keynes-1936-general/ch08-propensity, keynes-1936-general/ch09-propensity, keynes-1936-general/ch16-sundry, keynes-1936-general/ch18-general, keynes-1936-general/ch19-changes, keynes-1936-general/ch22-notes, keynes-1936-general/ch23-notes]

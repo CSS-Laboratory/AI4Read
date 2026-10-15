@@ -1,8 +1,10 @@
 ---
 id: responsibility
 type: concept
-fields: [information-theory, bayesian, linear-algebra]
+fields: [bayesian, information-theory, linear-algebra]
+fields_strong: [bayesian, information-theory, linear-algebra]
 n_sources: 4
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [deisenroth-2020-mml/ch11-density, mackay-2003-information/ch20-example, mackay-2003-information/ch22-maximum, murphy-2023-pml2/ch28-latent-p1]
@@ -15,8 +17,8 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch20-example]] (pp. 286, 289): degree $r_k^{(n)}$ to which cluster k owns point n; 0/1 in hard, in [0,1] in soft K-means [new]
-- [[mackay-2003-information/ch22-maximum]] (pp. 303–304): $r_k^{(n)}$ or $p_{k|n}$: posterior probability that point $n$ belongs to cluster $k$ [new]
+- [[mackay-2003-information/ch20-example]] (pp. 286, 289): degree $r_k^{(n)}$ to which cluster k owns point n; 0/1 in hard, in [0,1] in soft K-means [new; work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch22-maximum]] (pp. 303–304): $r_k^{(n)}$ or $p_{k|n}$: posterior probability that point $n$ belongs to cluster $k$ [new; work fields: information-theory, bayesian]
 
 ### bayesian
 
@@ -35,9 +37,9 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Blame shifting in federalism ↔ retrospective voting: voting by outcomes works only if responsibility is identifiable (p. 691). — from [[clark-2017-principles/ch15-institutional-p2]] (political-science → political-science)
-- [structural-analogy] clarity of responsibility as a necessary condition for accountability ↔ principal–agent problem: voters cannot sanction agents they cannot identify. — from [[clark-2017-principles/ch16-consequences-p1]] (political-science → other)
+- [structural-analogy] clarity of responsibility as a necessary condition for accountability ↔ principal–agent problem: voters cannot sanction agents they cannot identify. — from [[clark-2017-principles/ch16-consequences-p1]] (political-science → political-science)
 - [structural-analogy] Weighted covariance update (11.30) ↔ PCA/covariance matrix: the same average of outer products of centered data, but with responsibility weights. — from [[deisenroth-2020-mml/ch11-density]] (linear-algebra → linear-algebra)
-- [structural-analogy] Responsibilities $r_n$ as a normalized probability vector (margin note: Boltzmann/Gibbs) ↔ softmax: normalizing positive scores into a distribution. — from [[deisenroth-2020-mml/ch11-density]] (linear-algebra → other)
+- [structural-analogy] Responsibilities $r_n$ as a normalized probability vector (margin note: Boltzmann/Gibbs) ↔ softmax: normalizing positive scores into a distribution. — from [[deisenroth-2020-mml/ch11-density]] (linear-algebra → llm)
 - [same-math] soft-min responsibilities (20.7) ↔ softmax / Gibbs distribution $p\propto\exp(-\beta\,\text{energy})$ — same exponential-normalized form — from [[mackay-2003-information/ch20-example]] (information-theory → unspecified)
 - [same-math] Responsibilities $r_{nk}$ (28.8) ↔ Bayesian inference: posterior over a discrete hypothesis from prior × likelihood, normalised — from [[murphy-2023-pml2/ch28-latent-p1]] (bayesian → bayesian)
-- [structural-analogy] Baum-Welch E/M steps ↔ EM for mixture models: soft responsibilities and normalised expected counts, with $\gamma$ and $\xi$ computed by forwards-backwards. — from [[murphy-2023-pml2/ch29-state-p1]] (bayesian → other)
+- [structural-analogy] Baum-Welch E/M steps ↔ EM for mixture models: soft responsibilities and normalised expected counts, with $\gamma$ and $\xi$ computed by forwards-backwards. — from [[murphy-2023-pml2/ch29-state-p1]] (bayesian → other:em-for-mixture-models)

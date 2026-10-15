@@ -1,16 +1,30 @@
 ---
 id: theory-of-mind
 type: concept
-fields: [theory-of-mind, economics-finance, llm]
-n_sources: 7
+fields: [theory-of-mind, llm, economics-finance]
+fields_strong: [theory-of-mind, llm, economics-finance]
+n_sources: 14
+n_works: 13
 tiers: [core, deep]
 grounding: digests
-sources: [apperly-2009-two-systems/main-p1, apperly-2011-mindreaders/ch01-introduction, mahowald-2024-dissociating/main, premack-1978-chimpanzee/main, shiller-2019-narrative/ch06-diverse, ullman-2023-trivial-alterations/main, wimmer-1983-beliefs-about-beliefs/main]
+sources: [apperly-2009-two-systems/main-p1, apperly-2011-mindreaders/ch01-introduction, apperly-2011-mindreaders/coda, baron-cohen-1985-autism/main, dennett-1987-intentional-stance/ch07-intentional, kosinski-2024-llm-tom/main, mahowald-2024-dissociating/main, premack-1978-chimpanzee/main, saxe-2003-tpj/main, shapira-2024-clever-hans/main, shiller-2019-narrative/ch06-diverse, strachan-2024-llm-humans/main, ullman-2023-trivial-alterations/main, wimmer-1983-beliefs-about-beliefs/main]
+aliases: [theory-of-mind-mentalizing-mindreading]
 raw_ids: [theory of mind]
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 
 # theory-of-mind
+
+## Aliases
+
+Variant ids merged into this page (curated in `wiki/kg/aliases.json`):
+
+- `theory-of-mind-mentalizing-mindreading` — 7 digest(s)
+
+## Canon spine entry
+
+- **theory of mind / mentalizing / mindreading** (theory-of-mind): attributing unobservable mental states (beliefs, desires, intentions) to explain and predict behaviour (HS)
 
 ## Definitions in the sources
 
@@ -18,8 +32,15 @@ generated_by: build_kg.py
 
 - [[apperly-2009-two-systems/main-p1]] (p. 3): ascribing beliefs, desires and intentions to explain, predict and justify behaviour
 - [[apperly-2011-mindreaders/ch01-introduction]] (pp. 3–4): here a term Apperly avoids as tendentious, because it implies mindreading consists in having a theory; he uses "mindreading", which he describes as inferring unobservable mental states
+- [[apperly-2011-mindreaders/coda]] (p. 183): here "mindreading": ascribing mental states, studied by Apperly mainly for epistemic states [as `theory of mind / mentalizing / mindreading`; alias `theory-of-mind-mentalizing-mindreading`]
+- [[baron-cohen-1985-autism/main]] (p. 39): the ability to impute mental states to oneself and others, hence to predict behaviour (Premack & Woodruff, as adopted here) [as `theory of mind / mentalizing / mindreading`; alias `theory-of-mind-mentalizing-mindreading`]
+- [[dennett-1987-intentional-stance/ch07-intentional]] (pp. 250, 269): attributing mental states; appears in Premack and Woodruff’s question whether chimps have a theory of mind [as `theory of mind / mentalizing / mindreading`; alias `theory-of-mind-mentalizing-mindreading`]
+- [[kosinski-2024-llm-tom/main]] (§ "Significance"): tracking others' unobservable mental states; here the test is false-belief tasks [as `theory of mind / mentalizing / mindreading`; alias `theory-of-mind-mentalizing-mindreading`; work fields: theory-of-mind, llm]
 - [[premack-1978-chimpanzee/main]] (p. 515): imputing unobservable mental states to self and others to predict behaviour
-- [[ullman-2023-trivial-alterations/main]] (p. 1): adult-level ability to reason about others' mental states; used as shorthand
+- [[saxe-2003-tpj/main]] (p. 1, footnote 1): here: any reasoning about another person's representational mental states, also called belief-desire psychology; broader than the narrow "theory-theory" sense [as `theory of mind / mentalizing / mindreading`; alias `theory-of-mind-mentalizing-mindreading`]
+- [[shapira-2024-clever-hans/main]] (p. 2257): the ability to understand that others have thoughts, beliefs and emotions that differ from one's own; here asked of LLMs as N-ToM [as `theory of mind / mentalizing / mindreading`; alias `theory-of-mind-mentalizing-mindreading`; work fields: theory-of-mind, llm]
+- [[strachan-2024-llm-humans/main]] (§ "Main"): ability to track others' mental states; here treated as a set of interconnected notions, not one construct [as `theory of mind / mentalizing / mindreading`; alias `theory-of-mind-mentalizing-mindreading`; work fields: theory-of-mind, llm]
+- [[ullman-2023-trivial-alterations/main]] (p. 1): adult-level ability to reason about others' mental states; used as shorthand [work fields: theory-of-mind, llm]
 - [[wimmer-1983-beliefs-about-beliefs/main]] (p. 104): ability to impute mental states to self and others (Premack and Woodruff, as cited)
 
 ### economics-finance
@@ -37,7 +58,7 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Self-perspective inhibition (p. 75) ↔ theory-of-mind canon, reality bias / curse of knowledge: one's own true knowledge pulling judgements about others' beliefs. — from [[apperly-2011-mindreaders/ch04-evidence]] (theory-of-mind → theory-of-mind)
-- [metaphor] Similarity-to-self narrowing the plausible thoughts of others under uncertainty (p. 70) ↔ Bayesian theory of mind: priors that constrain inference over mental states. — from [[apperly-2011-mindreaders/ch04-evidence]] (theory-of-mind → bayesian)
+- [metaphor] Similarity-to-self narrowing the plausible thoughts of others under uncertainty (p. 70) ↔ Bayesian theory of mind: priors that constrain inference over mental states. — from [[apperly-2011-mindreaders/ch04-evidence]] (theory-of-mind → theory-of-mind)
 - [structural-analogy] Answering from reality instead of from the doll's belief ↔ theory-of-mind canon: reality bias / curse of knowledge (the paper itself does not use these terms) — from [[baron-cohen-1985-autism/main]] (theory-of-mind → theory-of-mind)
 - [metaphor] Control questions that must be passed before interpreting the key question ↔ machine theory of mind evaluation: sanity checks before interpreting a model's failure on a false-belief item — from [[baron-cohen-1985-autism/main]] (theory-of-mind → theory-of-mind)
 - [structural-analogy] intentional stance, attribute what the system *ought* to want and believe, revised downward ↔ theory-of-mind: rational-agent assumption / inverse planning with noisy (Boltzmann) rationality — both infer mental states from behaviour via a model of an approximately rational agent. — from [[dennett-1987-intentional-stance/ch02-true]] (theory-of-mind → theory-of-mind)
@@ -58,5 +79,5 @@ generated_by: build_kg.py
 - [same-math] Speaker softmax $e^{\alpha U}$ with $\alpha=1$ ↔ theory of mind (canon): Boltzmann rationality — the same exponentiated-utility choice rule. — from [[frank-2012-rsa/main]] (theory-of-mind → theory-of-mind)
 - [structural-analogy] Listener inferring the referent via Bayes ↔ theory of mind: inverse planning — both invert a rational-agent model to recover what the agent intended. — from [[frank-2012-rsa/main]] (theory-of-mind → theory-of-mind)
 - [structural-analogy] Speaker informativeness via a literal listener ↔ theory of mind: recursive mindreading — the speaker reasons about how a listener would interpret a word. — from [[frank-2012-rsa/main]] (theory-of-mind → theory-of-mind)
-- [structural-analogy] Formal/functional split ↔ cognitive neuroscience: language network vs multiple-demand, default and theory-of-mind networks — the paper uses brain dissociations as a template for model evaluation. — from [[mahowald-2024-dissociating/main]] (llm → other)
+- [structural-analogy] Formal/functional split ↔ cognitive neuroscience: language network vs multiple-demand, default and theory-of-mind networks — the paper uses brain dissociations as a template for model evaluation. — from [[mahowald-2024-dissociating/main]] (llm → other:biology-neuroscience)
 - [structural-analogy] Sarah's choices answer "what would the actor do?" ↔ theory of mind: predicting action from imputed goals and knowledge — the paper uses goal imputation as its core inference. — from [[premack-1978-chimpanzee/main]] (theory-of-mind → theory-of-mind)

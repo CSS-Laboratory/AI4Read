@@ -2,7 +2,9 @@
 id: logical-probability
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [popper-1959-logic/ch06-degrees, popper-1959-logic/ch10-corroboration, wittgenstein-1922-tractatus/ch05-proposition]

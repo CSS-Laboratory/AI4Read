@@ -2,11 +2,13 @@
 id: bifurcation
 type: concept
 fields: [complex-systems, control-theory]
+fields_strong: [complex-systems, control-theory]
 n_sources: 18
+n_works: 7
 tiers: [core, reference]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch05-dynamic, castellano-2009-socialdynamics/main-p3, granovetter-1978-threshold/main, lorenz-1963-nonperiodic/main, mitchell-2009-guidedtour/ch02-dynamics, scheffer-2009-earlywarning/main, strogatz-2024-nonlinear/ch01-overview, strogatz-2024-nonlinear/ch02-flows, strogatz-2024-nonlinear/ch03-bifurcations-p1, strogatz-2024-nonlinear/ch03-bifurcations-p2, strogatz-2024-nonlinear/ch06-phase-p2, strogatz-2024-nonlinear/ch08-bifurcations-p1, strogatz-2024-nonlinear/ch08-bifurcations-p2, strogatz-2024-nonlinear/ch08-bifurcations-p3, strogatz-2024-nonlinear/ch09-lorenz-p1, strogatz-2024-nonlinear/ch09-lorenz-p2, strogatz-2024-nonlinear/ch10-one-p1, strogatz-2024-nonlinear/ch10-one-p2]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
@@ -21,11 +23,11 @@ generated_by: build_kg.py
 ### complex-systems
 
 - [[castellano-2009-socialdynamics/main-p3]] (p. 41): change of dynamics at $\rho_c$; subcritical for $\eta<2$, critical for $\eta\ge2$
-- [[granovetter-1978-threshold/main]] (p. 1427): author notes a discontinuous jump of $r_e$ at $\sigma_c\approx12.2$. He does not use the term
+- [[granovetter-1978-threshold/main]] (p. 1427): author notes a discontinuous jump of $r_e$ at $\sigma_c\approx12.2$. He does not use the term [weak: not really used in this unit]
 - [[lorenz-1963-nonperiodic/main]] (pp. 135–136): onset of convection at $r=1$ and the instability of steady convection at (34), without the word "bifurcation"
 - [[mitchell-2009-guidedtour/ch02-dynamics]] (pdf 56): an abrupt period doubling as the control parameter changes
 - [[scheffer-2009-earlywarning/main]] (p. 53): our gloss: qualitative change of dynamics at a parameter value; fundamental shifts at bifurcations are called critical transitions
-- [[strogatz-2024-nonlinear/ch01-overview]] (pp. 10–11): named as a new phenomenon appearing at $n=1$; not defined here
+- [[strogatz-2024-nonlinear/ch01-overview]] (pp. 10–11): named as a new phenomenon appearing at $n=1$; not defined here [weak: not really used in this unit]
 - [[strogatz-2024-nonlinear/ch02-flows]] (p. 26): only mentioned: the degenerate cases $f'(x^*)=0$ "arise naturally" there
 - [[strogatz-2024-nonlinear/ch03-bifurcations-p1]] (p. 45): qualitative change of the flow as a parameter varies; bifurcation point = parameter value where it occurs
 - [[strogatz-2024-nonlinear/ch03-bifurcations-p2]] (p. 71): qualitative change in the fixed points as a parameter varies; here the saddle-node bifurcations along $h=\pm h_c(r)$
@@ -60,6 +62,6 @@ generated_by: build_kg.py
 
 - [structural-analogy] Bonabeau/$\sigma$-model coexisting stable states above a critical density ↔ saddle-node bifurcation and hysteresis — dependence on initial conditions resembles hysteresis in tipping points. — from [[castellano-2009-socialdynamics/main-p3]] (complex-systems → unspecified)
 - [structural-analogy] jump at $\sigma_c$ ↔ saddle-node (fold) bifurcation — two intersections merging into a tangent point and vanishing. — from [[granovetter-1978-threshold/main]] (complex-systems → unspecified)
-- [structural-analogy] Punctuated equilibria ↔ tipping points or bifurcations: long stability, then rapid shift. — from [[mitchell-2009-guidedtour/ch05-evolution]] (complex-systems → other)
+- [structural-analogy] Punctuated equilibria ↔ tipping points or bifurcations: long stability, then rapid shift. — from [[mitchell-2009-guidedtour/ch05-evolution]] (complex-systems → complex-systems)
 - [structural-analogy] Hopf bifurcation ↔ complex-systems: onset of self-sustained oscillation as a control parameter passes a threshold — from [[strogatz-2024-nonlinear/ch08-bifurcations-p1]] (complex-systems → complex-systems)
-- [same-math] tangent bifurcation of $f^3$ ↔ saddle-node bifurcation of flows: author states they are the same bifurcation under another name (p. 371). — from [[strogatz-2024-nonlinear/ch10-one-p1]] (complex-systems → other)
+- [same-math] tangent bifurcation of $f^3$ ↔ saddle-node bifurcation of flows: author states they are the same bifurcation under another name (p. 371). — from [[strogatz-2024-nonlinear/ch10-one-p1]] (complex-systems → complex-systems)

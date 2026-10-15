@@ -2,7 +2,9 @@
 id: momentum
 type: concept
 fields: [control-theory, linear-algebra, llm]
+fields_strong: [control-theory, linear-algebra, llm]
 n_sources: 3
+n_works: 3
 tiers: [core, deep, reference]
 grounding: digests
 sources: [deisenroth-2020-mml/ch07-continuous, liberzon-2012-calculus/ch02-calculus, prince-2023-udl/ch06-fitting]
@@ -37,9 +39,9 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Satellite orbit ↔ gradient flow around a mode: momentum prevents falling in. — from [[betancourt-2017-hmc/main-p2]] (bayesian → other)
-- [structural-analogy] momentum as moving average ↔ time-series: exponential smoothing of past updates. — from [[deisenroth-2020-mml/ch07-continuous]] (linear-algebra → other)
+- [metaphor] Satellite orbit ↔ gradient flow around a mode: momentum prevents falling in. — from [[betancourt-2017-hmc/main-p2]] (bayesian → other:gradient-flow-around-a)
+- [structural-analogy] momentum as moving average ↔ time-series: exponential smoothing of past updates. — from [[deisenroth-2020-mml/ch07-continuous]] (linear-algebra → other:time-series)
 - [metaphor] Using a system's momentum the way a judo expert uses an opponent's ↔ control design that exploits slow dynamics. — from [[meadows-2008-thinking/ch01-basics]] (control-theory → unspecified)
-- [structural-analogy] Shutter/filter trade-off: short wavetrain versus narrow momentum range ↔ signal processing: time–bandwidth trade-off — both involve sums of waves, but the source gives no formulas. — from [[popper-1959-logic/appvi-untitled]] (analytic-philosophy → other)
-- [same-math] Momentum and Adam's $\mathbf m,\mathbf v$ ↔ statistics: exponentially weighted moving averages — the recursions have the same form — from [[prince-2023-udl/ch06-fitting]] (llm → other)
-- [structural-analogy] AB = BA ↔ quantum mechanics: non-commuting position and momentum matrices (p. 224). — from [[strang-2023-introduction/ch06-eigenvalues-p1]] (linear-algebra → other)
+- [structural-analogy] Shutter/filter trade-off: short wavetrain versus narrow momentum range ↔ signal processing: time–bandwidth trade-off — both involve sums of waves, but the source gives no formulas. — from [[popper-1959-logic/appvi-untitled]] (analytic-philosophy → other:signal-processing)
+- [same-math] Momentum and Adam's $\mathbf m,\mathbf v$ ↔ statistics: exponentially weighted moving averages — the recursions have the same form — from [[prince-2023-udl/ch06-fitting]] (llm → other:statistics)
+- [structural-analogy] AB = BA ↔ quantum mechanics: non-commuting position and momentum matrices (p. 224). — from [[strang-2023-introduction/ch06-eigenvalues-p1]] (linear-algebra → other:physics)

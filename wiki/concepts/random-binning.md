@@ -2,7 +2,9 @@
 id: random-binning
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [cover-2006-elements/ch14-network-p2, cover-2006-elements/ch14-network-p4]
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Random binning ↔ hashing in computer science — the author says the idea is "very similar to hash functions" (p. 410). — from [[cover-2006-elements/ch14-network-p2]] (information-theory → unspecified)
-- [metaphor] random binning ↔ computer science: hashing — only a bin label is sent, and extra knowledge at the receiver disambiguates it. — from [[cover-2006-elements/ch14-network-p4]] (information-theory → other)
+- [metaphor] random binning ↔ computer science: hashing — only a bin label is sent, and extra knowledge at the receiver disambiguates it. — from [[cover-2006-elements/ch14-network-p4]] (information-theory → other:computer-science)

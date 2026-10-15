@@ -2,7 +2,9 @@
 id: jensen-shannon-divergence
 type: concept
 fields: [llm, bayesian]
+fields_strong: [llm, bayesian]
 n_sources: 3
+n_works: 2
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch26-generative, prince-2023-udl/ch15-generative, prince-2023-udl/ch23-probability]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch26-generative]] (p. 897): (26.16); the optimal-critic value of the original GAN loss is $\mathrm{JSD}-\log2$ [new]
+- [[murphy-2023-pml2/ch26-generative]] (p. 897): (26.16); the optimal-critic value of the original GAN loss is $\mathrm{JSD}-\log2$ [new; work fields: bayesian, llm]

@@ -2,7 +2,9 @@
 id: political-predispositions
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [zaller-1992-massopinion/ch02-information, zaller-1992-massopinion/ch13-measures]

@@ -2,12 +2,14 @@
 id: public-good
 type: concept
 fields: [political-science, economics-finance]
+fields_strong: [political-science, economics-finance]
 n_sources: 24
+n_works: 6
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch08-democratic-p1, clark-2017-principles/ch08-democratic-p3, clark-2017-principles/ch09-democracy, clark-2017-principles/ch10-varieties-p3, clark-2017-principles/ch15-institutional-p1, clark-2017-principles/ch16-consequences-p3, downs-1957-democracy/main, olson-1965-collectiveaction/app-untitled, olson-1965-collectiveaction/ch01-theory-p1, olson-1965-collectiveaction/ch01-theory-p2, olson-1965-collectiveaction/ch02-group, olson-1965-collectiveaction/ch03-labor, olson-1965-collectiveaction/ch04-orthodox, olson-1965-collectiveaction/ch05-orthodox, olson-1965-collectiveaction/ch06-by, ostrom-1990-commons/ch01-reflections, ostrom-1990-commons/ch02-institutional, ostrom-1990-commons/ch04-analyzing, shepsle-2010-analyzing/ch09-collective-p1, shepsle-2010-analyzing/ch10-public-p1, shepsle-2010-analyzing/ch10-public-p2, shepsle-2010-analyzing/ch12-legislatures, shepsle-2010-analyzing/ch17-final, thaler-2015-misbehaving/ch15-fairness]
 raw_ids: [public good]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 
@@ -63,19 +65,19 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Counterterrorism preemption game (public benefit, private cost) ↔ [[public good]] / [[free rider]]: the text's own hint links it to the free-rider problem (Chapter 8). — from [[clark-2017-principles/ch04-origins-p2]] (political-science → other)
+- [structural-analogy] Counterterrorism preemption game (public benefit, private cost) ↔ [[public good]] / [[free rider]]: the text's own hint links it to the free-rider problem (Chapter 8). — from [[clark-2017-principles/ch04-origins-p2]] (political-science → political-science)
 - [structural-analogy] Leaders' choice between public and private goods ↔ public goods vs selective incentives (canon link; not stated in this unit) — from [[clark-2017-principles/ch10-varieties-p3]] (political-science → unspecified)
-- [same-math] Contribution game, where giving nothing is dominant ↔ public goods provision: the same dominance logic as the pricing game, with more players. — from [[dixit-2008-art-strategy/ch03-prisoners]] (decision-game-theory → other)
-- [structural-analogy] Informed electorate as indivisible benefit ↔ public-goods theory: under-provision when contributions are individually costly. Downs cites Samuelson. — from [[downs-1957-democracy/main]] (political-science → other)
+- [same-math] Contribution game, where giving nothing is dominant ↔ public goods provision: the same dominance logic as the pricing game, with more players. — from [[dixit-2008-art-strategy/ch03-prisoners]] (decision-game-theory → other:public-goods-provision)
+- [structural-analogy] Informed electorate as indivisible benefit ↔ public-goods theory: under-provision when contributions are individually costly. Downs cites Samuelson. — from [[downs-1957-democracy/main]] (political-science → other:public-goods-theory)
 - [structural-analogy] Rational non-contribution to a public good ↔ political-science: the paradox of voting — one's own act has a negligible effect on a collective outcome (p. 12) — from [[olson-1965-collectiveaction/ch01-theory-p1]] (political-science → political-science)
 - [metaphor] Olson's idea of a sanction or attraction separate from the public good ↔ institutions: rules that make cooperation individually worthwhile (pp. 15–16) — from [[olson-1965-collectiveaction/ch01-theory-p1]] (political-science → political-science)
 - [structural-analogy] union dues and meeting attendance ↔ public finance: voluntary taxes for public goods — both involve a benefit available regardless of contribution (pp. 87, 91) — from [[olson-1965-collectiveaction/ch03-labor]] (political-science → economics-finance)
-- [structural-analogy] Worker : proletariat = taxpayer : state = competitive firm : industry ↔ public goods: the same non-participation logic across levels (p. 107) — from [[olson-1965-collectiveaction/ch04-orthodox]] (political-science → other)
-- [metaphor] Public-good free-riding ↔ "tragedy of the commons" (named in the Notes, p. 52): the source mentions the idea but does not model it in this way. — from [[osborne-2004-introduction/ch02-nash-p2]] (decision-game-theory → other)
+- [structural-analogy] Worker : proletariat = taxpayer : state = competitive firm : industry ↔ public goods: the same non-participation logic across levels (p. 107) — from [[olson-1965-collectiveaction/ch04-orthodox]] (political-science → political-science)
+- [metaphor] Public-good free-riding ↔ "tragedy of the commons" (named in the Notes, p. 52): the source mentions the idea but does not model it in this way. — from [[osborne-2004-introduction/ch02-nash-p2]] (decision-game-theory → political-science)
 - [metaphor] public-good cutoff $v^*>c$ ↔ collective action/free-riding: each waits for someone else. — from [[osborne-2004-introduction/ch09-bayesian]] (decision-game-theory → political-science)
-- [structural-analogy] Second-order free-rider problem in monitoring ↔ costly punishment in public-goods experiments: punishing is itself a public good. — from [[ostrom-1990-commons/ch02-institutional]] (political-science → other)
+- [structural-analogy] Second-order free-rider problem in monitoring ↔ costly punishment in public-goods experiments: punishing is itself a public good. — from [[ostrom-1990-commons/ch02-institutional]] (political-science → other:costly-punishment-in-public)
 - [structural-analogy] Monitoring as a costly public good ↔ the collective action problem: here the cost is offset by private rewards. — from [[ostrom-1990-commons/ch03-analyzing-p2]] (political-science → political-science)
-- [structural-analogy] Mosquito-marsh farmers ↔ public goods / free riders: non-cooperators benefit without paying, so cooperation is hard to sustain. — from [[shepsle-2010-analyzing/ch01-it]] (political-science → other)
+- [structural-analogy] Mosquito-marsh farmers ↔ public goods / free riders: non-cooperators benefit without paying, so cooperation is hard to sustain. — from [[shepsle-2010-analyzing/ch01-it]] (political-science → political-science)
 - [structural-analogy] Two-person cooperation ↔ collective action and public goods (Chs. 9–10): Shepsle calls the two-person society a building block for larger ones (p. 253) — from [[shepsle-2010-analyzing/ch08-cooperation]] (political-science → political-science)
 - [structural-analogy] Public goods game payoff $y-g_i+\alpha\sum g_j$ ↔ collective action: each contributor gets only a fraction of the return, so free-riding dominates. — from [[shepsle-2010-analyzing/ch10-public-p2]] (political-science → political-science)
 - [structural-analogy] Information and oversight undersupplied ↔ public good/collective action: institutions give incentives to a few to produce them (p. 377). — from [[shepsle-2010-analyzing/ch12-legislatures]] (political-science → political-science)

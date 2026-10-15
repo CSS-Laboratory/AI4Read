@@ -2,11 +2,13 @@
 id: continued-influence-effect
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lewandowsky-2012-misinformation/main]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 

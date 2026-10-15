@@ -2,7 +2,9 @@
 id: mutual-information-method
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [polyanskiy-2025-information/ch01-introduction, polyanskiy-2025-information/ch33-mutual]

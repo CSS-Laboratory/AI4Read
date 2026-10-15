@@ -1,7 +1,7 @@
 ---
 id: russian-roulette-zeckhauser
 type: instance
-fields: [decision-game-theory, economics-finance]
+fields: [economics-finance, decision-game-theory]
 n_sources: 2
 tiers: [core]
 grounding: digests
@@ -15,7 +15,7 @@ generated_by: build_kg.py
 
 ### decision-game-theory
 
-- [[kahneman-1979-prospect/main]] (p. 283): illustrates the hypothesized nonlinearity of $\pi$
+- [[kahneman-1979-prospect/main]] (p. 283): illustrates the hypothesized nonlinearity of $\pi$ [work fields: decision-game-theory, economics-finance]
 
 ### economics-finance
 

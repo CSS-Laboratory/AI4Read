@@ -1,7 +1,7 @@
 ---
 id: binary-erasure-channel
 type: instance
-fields: [information-theory]
+fields: [information-theory, bayesian]
 n_sources: 4
 tiers: [core]
 grounding: digests
@@ -17,5 +17,5 @@ generated_by: build_kg.py
 
 - [[cover-2006-elements/ch08-channel-p1]] (pp. 187–189): $C=1-\alpha$; feedback by retransmission achieves it
 - [[cover-2006-elements/ch08-channel-p2]] (p. 214): feedback helps encoding and decoding but not capacity
-- [[mackay-2003-information/ch09-communication]] (pp. 148, 158): erases with prob. f; C = 1 − f
-- [[mackay-2003-information/ch10-noisy]] (p. Ex. 10.12, p. 172): capacity $1-q$
+- [[mackay-2003-information/ch09-communication]] (pp. 148, 158): erases with prob. f; C = 1 − f [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch10-noisy]] (p. Ex. 10.12, p. 172): capacity $1-q$ [work fields: information-theory, bayesian]

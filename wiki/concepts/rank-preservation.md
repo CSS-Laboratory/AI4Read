@@ -2,7 +2,9 @@
 id: rank-preservation
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch14-g, hernan-2020-whatif/ch17-causal]

@@ -2,12 +2,14 @@
 id: theory-of-descriptions
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 10
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [kripke-1980-naming/ch01-lecture-p1, kripke-1980-naming/ch01-lecture-p2, kripke-1980-naming/front-preface, lycan-2019-language/ch02-definite, lycan-2019-language/ch03-proper, lycan-2019-language/ch09-truth, magnus-2025-forallx/ch100-quick, magnus-2025-forallx/ch28-definite, magnus-2025-forallx/ch29-ambiguity, russell-1905-denoting/main]
 raw_ids: [theory of descriptions]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

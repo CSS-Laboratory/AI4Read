@@ -2,12 +2,14 @@
 id: model-based-vs-model-free-rl
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 17
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch01-exact-p2, bertsekas-2026-rlcourse/ch01-exact-p5, bertsekas-2026-rlcourse/ch02-approximation-p2, bertsekas-2026-rlcourse/ch02-approximation-p6, bertsekas-2026-rlcourse/ch03-learning-p2, bertsekas-2026-rlcourse/ch03-learning-p4, recht-2019-tour/main, sutton-2018-rl/ch01-introduction, sutton-2018-rl/ch03-finite, sutton-2018-rl/ch04-dynamic, sutton-2018-rl/ch05-monte, sutton-2018-rl/ch06-temporal, sutton-2018-rl/ch08-planning, sutton-2018-rl/ch14-psychology, sutton-2018-rl/ch15-neuroscience-p2, sutton-2018-rl/ch16-applications, sutton-2018-rl/ch17-frontiers]
 raw_ids: [model-based vs model-free RL]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 

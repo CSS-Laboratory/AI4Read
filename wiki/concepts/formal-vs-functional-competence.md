@@ -2,11 +2,13 @@
 id: formal-vs-functional-competence
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 1
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [mahowald-2024-dissociating/main]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

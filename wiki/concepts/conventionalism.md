@@ -2,7 +2,9 @@
 id: conventionalism
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [popper-1959-logic/ch04-falsifiability, popper-1959-logic/ch05-problem, popper-1959-logic/ch07-simplicity]

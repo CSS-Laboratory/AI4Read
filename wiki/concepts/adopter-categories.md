@@ -2,11 +2,13 @@
 id: adopter-categories
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 14
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [rogers-2003-diffusion/ch01-elements-p2, rogers-2003-diffusion/ch02-history-p1, rogers-2003-diffusion/ch02-history-p3, rogers-2003-diffusion/ch03-contributions, rogers-2003-diffusion/ch05-innovation-p1, rogers-2003-diffusion/ch05-innovation-p2, rogers-2003-diffusion/ch05-innovation-p3, rogers-2003-diffusion/ch06-attributes-p1, rogers-2003-diffusion/ch06-attributes-p2, rogers-2003-diffusion/ch07-innovativeness, rogers-2003-diffusion/ch08-diffusion-p1, rogers-2003-diffusion/ch09-change-p1, rogers-2003-diffusion/ch10-innovation, rogers-2003-diffusion/ch11-consequences-p2]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 

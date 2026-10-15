@@ -6,10 +6,16 @@ n_sources: 2
 tiers: [core, deep]
 grounding: digests
 sources: [liberzon-2012-calculus/ch06-linear, recht-2019-tour/main]
+canon_instance: [lqr-with-unknown-dynamics]
+canon_match_rule: confirmed
 generated_by: build_kg.py
 ---
 
 # double-integrator-lqr
+
+## Canon entry
+
+- **LQR with unknown dynamics** (control-theory): the simplest control problem used as a benchmark to compare model-based and model-free RL — recht-2019-tour
 
 ## Descriptions in the sources
 

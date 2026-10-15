@@ -2,14 +2,23 @@
 id: rollout
 type: concept
 fields: [control-theory]
-n_sources: 11
-tiers: [reference]
+fields_strong: [control-theory]
+n_sources: 15
+n_works: 2
+tiers: [reference, core]
 grounding: digests
-sources: [bertsekas-2026-rlcourse/ch01-exact-p1, bertsekas-2026-rlcourse/ch01-exact-p2, bertsekas-2026-rlcourse/ch01-exact-p3, bertsekas-2026-rlcourse/ch01-exact-p4, bertsekas-2026-rlcourse/ch01-exact-p5, bertsekas-2026-rlcourse/ch01-exact-p6, bertsekas-2026-rlcourse/ch02-approximation-p1, bertsekas-2026-rlcourse/ch02-approximation-p4, bertsekas-2026-rlcourse/ch02-approximation-p6, bertsekas-2026-rlcourse/ch02-approximation-p7, bertsekas-2026-rlcourse/ch03-learning-p2]
+sources: [bertsekas-2026-rlcourse/ch01-exact-p1, bertsekas-2026-rlcourse/ch01-exact-p2, bertsekas-2026-rlcourse/ch01-exact-p3, bertsekas-2026-rlcourse/ch01-exact-p4, bertsekas-2026-rlcourse/ch01-exact-p5, bertsekas-2026-rlcourse/ch01-exact-p6, bertsekas-2026-rlcourse/ch02-approximation-p1, bertsekas-2026-rlcourse/ch02-approximation-p2, bertsekas-2026-rlcourse/ch02-approximation-p3, bertsekas-2026-rlcourse/ch02-approximation-p4, bertsekas-2026-rlcourse/ch02-approximation-p5, bertsekas-2026-rlcourse/ch02-approximation-p6, bertsekas-2026-rlcourse/ch02-approximation-p7, bertsekas-2026-rlcourse/ch03-learning-p2, sutton-2018-rl/ch08-planning]
+aliases: [rollout-algorithm]
 generated_by: build_kg.py
 ---
 
 # rollout
+
+## Aliases
+
+Variant ids merged into this page (curated in `wiki/kg/aliases.json`):
+
+- `rollout-algorithm` — 4 digest(s)
 
 ## Definitions in the sources
 
@@ -22,10 +31,14 @@ generated_by: build_kg.py
 - [[bertsekas-2026-rlcourse/ch01-exact-p5]] (pp. 112, 122): one-step or multistep lookahead with cost-to-go approximated by a base policy; here used for replanning [new]
 - [[bertsekas-2026-rlcourse/ch01-exact-p6]] (pp. 143–144): apply a base policy's value as the cost approximation in one-step lookahead; equals one policy-iteration step [new]
 - [[bertsekas-2026-rlcourse/ch02-approximation-p1]] (p. 178): approximation in value space where $\tilde J_{k+1}$ is the cost of a base heuristic run from the next state [new]
+- [[bertsekas-2026-rlcourse/ch02-approximation-p2]] (p. 190): one-step lookahead whose tail cost is the cost of running a base heuristic or policy [alias `rollout-algorithm`; new]
+- [[bertsekas-2026-rlcourse/ch02-approximation-p3]] (pp. 216, 221): one-step or multistep lookahead whose leaves are evaluated by running a base policy or heuristic [alias `rollout-algorithm`; new]
 - [[bertsekas-2026-rlcourse/ch02-approximation-p4]] (p. 243): one-step lookahead that scores controls by the cost of a base heuristic or policy; in this unit also constrained, continuous-time and stochastic [new]
+- [[bertsekas-2026-rlcourse/ch02-approximation-p5]] (pp. 282, 292): one-step (or multistep) lookahead with a base policy's cost estimated by simulation or optimization; the resulting policy is no worse than the base for standard and multiagent rollout (p. 290), but not necessarily for truncated or certainty-equivalent variants (pp. 282, 292); see also pp. 275, 283 [alias `rollout-algorithm`; new]
 - [[bertsekas-2026-rlcourse/ch02-approximation-p6]] (p. 305, 321): one-step lookahead whose tail cost is the simulated cost of a base policy; here applied to belief-state and minimax problems [new]
 - [[bertsekas-2026-rlcourse/ch02-approximation-p7]] (pp. 322, 335): policy improvement from a base policy/heuristic evaluated by simulation or, here, by DP/maximization [new]
 - [[bertsekas-2026-rlcourse/ch03-learning-p2]] (p. 392): improve a base policy by lookahead plus simulation of that policy, possibly truncated with a terminal cost [new]
+- [[sutton-2018-rl/ch08-planning]] (p. 183): Monte Carlo action-value estimates for the current state under a rollout policy [alias `rollout-algorithm`; new]
 
 ## Instances that use it
 
@@ -64,7 +77,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] MPC "apply the first control, then replan" ↔ rollout/approximation in value space: both are one Newton step on the Bellman equation (pp. 119–122). — from [[bertsekas-2026-rlcourse/ch01-exact-p5]] (control-theory → other)
+- [structural-analogy] MPC "apply the first control, then replan" ↔ rollout/approximation in value space: both are one Newton step on the Bellman equation (pp. 119–122). — from [[bertsekas-2026-rlcourse/ch01-exact-p5]] (control-theory → other:rollout-approximation-in-value)
 - [structural-analogy] MPC (rolling horizon plus terminal cost) ↔ rollout and approximation in value space — author links them (pp. 147–148). — from [[bertsekas-2026-rlcourse/ch01-exact-p6]] (control-theory → unspecified)
 - [structural-analogy] Rollout with a consistent base heuristic ↔ control-theory: one policy-improvement (Newton) step on the base policy — the author states this link to Chapter 1's Newton interpretation (p. 184, p. 188). — from [[bertsekas-2026-rlcourse/ch02-approximation-p1]] (control-theory → control-theory)
 - [metaphor] Fortified rollout's "keep the best trajectory so far" ↔ incumbent solution in search heuristics. — from [[bertsekas-2026-rlcourse/ch02-approximation-p1]] (control-theory → unspecified)
@@ -74,8 +87,8 @@ generated_by: build_kg.py
 - [structural-analogy] Rollout or lookahead with $\tilde J$ as one Newton step ↔ Newton's method for fixed-point equations — the page states the Newton-step view for Bellman's equation. — from [[bertsekas-2026-rlcourse/ch02-approximation-p3]] (control-theory → unspecified)
 - [structural-analogy] Rollout improvement via the continuous-time inequality (2.63) ↔ control theory: Lyapunov-style decreasing functions — the heuristic's cost-to-go must not rise along the controlled path. — from [[bertsekas-2026-rlcourse/ch02-approximation-p4]] (control-theory → control-theory)
 - [structural-analogy] Fortified rollout's tentative best trajectory ↔ anytime/incumbent solutions in branch-and-bound — the author notes rollout traverses the branch-and-bound tree. — from [[bertsekas-2026-rlcourse/ch02-approximation-p4]] (control-theory → unspecified)
-- [structural-analogy] Agent-by-agent rollout ↔ optimization: coordinate descent on a function of $m$ components — the author's own footnote (p. 290). — from [[bertsekas-2026-rlcourse/ch02-approximation-p5]] (control-theory → other)
+- [structural-analogy] Agent-by-agent rollout ↔ optimization: coordinate descent on a function of $m$ components — the author's own footnote (p. 290). — from [[bertsekas-2026-rlcourse/ch02-approximation-p5]] (control-theory → other:optimization)
 - [structural-analogy] Certainty-equivalent rollout ↔ control theory: optimizing with future disturbances fixed at nominal values, as in model predictive control (p. 276). — from [[bertsekas-2026-rlcourse/ch02-approximation-p5]] (control-theory → control-theory)
 - [structural-analogy] Minimax rollout/worst-case lookahead ↔ robust (worst-case) control: the text contrasts engineering worst-case design with zero-sum theory (p. 340). — from [[bertsekas-2026-rlcourse/ch02-approximation-p7]] (control-theory → control-theory)
-- [structural-analogy] rollout or one-step lookahead as a Newton step ↔ optimization: Newton iteration on the Bellman equation (pp. 378, 386) — from [[bertsekas-2026-rlcourse/ch03-learning-p2]] (control-theory → other)
-- [metaphor] Latent overshooting ↔ model-based RL planning horizons: training for multi-step rollouts. — from [[murphy-2023-pml2/ch29-state-p3]] (bayesian → other)
+- [structural-analogy] rollout or one-step lookahead as a Newton step ↔ optimization: Newton iteration on the Bellman equation (pp. 378, 386) — from [[bertsekas-2026-rlcourse/ch03-learning-p2]] (control-theory → other:optimization)
+- [metaphor] Latent overshooting ↔ model-based RL planning horizons: training for multi-step rollouts. — from [[murphy-2023-pml2/ch29-state-p3]] (bayesian → other:model-based-rl-planning)

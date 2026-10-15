@@ -2,12 +2,14 @@
 id: integral-action
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 11
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch01-introduction, astrom-2021-feedbacksystems/ch02-feedback, astrom-2021-feedbacksystems/ch04-examples, astrom-2021-feedbacksystems/ch07-state, astrom-2021-feedbacksystems/ch08-output, astrom-2021-feedbacksystems/ch09-transfer-p2, astrom-2021-feedbacksystems/ch11-pid, astrom-2021-feedbacksystems/ch12-frequency, astrom-2021-feedbacksystems/ch15-architecture-p1, astrom-2021-feedbacksystems/ch15-architecture-p2, bertsekas-2026-rlcourse/ch01-exact-p5]
 raw_ids: [integral action]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 
@@ -42,7 +44,7 @@ generated_by: build_kg.py
 
 - [structural-analogy] Integral action u = k_i∫e ↔ accumulator or error-correction terms in learning rules — only if both are the same running sum of errors (not stated in this unit). — from [[astrom-2021-feedbacksystems/ch01-introduction]] (control-theory → unspecified)
 - [structural-analogy] Integral action ($\dot z=y-r$ forces $y=r$) ↔ perceptual control: behavior keeps a perceived variable at a reference by acting on the error. — from [[astrom-2021-feedbacksystems/ch07-state]] (control-theory → control-theory)
-- [structural-analogy] Integral action / perfect adaptation ↔ biology: adaptation in sensory systems such as the pupillary reflex — the text links both to feedback with integral action (p. 11-6). — from [[astrom-2021-feedbacksystems/ch11-pid]] (control-theory → other)
+- [structural-analogy] Integral action / perfect adaptation ↔ biology: adaptation in sensory systems such as the pupillary reflex — the text links both to feedback with integral action (p. 11-6). — from [[astrom-2021-feedbacksystems/ch11-pid]] (control-theory → other:biology)
 - [structural-analogy] Piece $B$ accumulating the speed error, so final speed is exactly $V$ (eq. 5) ↔ control-theory: integral action removes steady-state error. — from [[maxwell-1868-governors/main]] (control-theory → control-theory)
 - [structural-analogy] Thermostat settling below its setting ↔ proportional-only control leaving a steady offset; the integral-action fix is not in this unit (canon link; not stated in this unit). — from [[meadows-2008-thinking/ch02-brief]] (control-theory → unspecified)
 - [metaphor] "Never forgets" in LSTD ↔ control theory: integral action accumulating past error — both accumulate history, with no built-in forgetting. — from [[sutton-2018-rl/ch09-policy-p2]] (control-theory → control-theory)

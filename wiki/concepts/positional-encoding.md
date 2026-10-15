@@ -2,12 +2,14 @@
 id: positional-encoding
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 3
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [devlin-2019-bert/main, prince-2023-udl/ch12-transformers, vaswani-2017-transformer/main]
 raw_ids: [positional encoding]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

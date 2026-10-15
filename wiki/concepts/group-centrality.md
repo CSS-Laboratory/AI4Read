@@ -2,7 +2,9 @@
 id: group-centrality
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [converse-1964-beliefsystems/ch02-sections, converse-1964-beliefsystems/ch03-sections]

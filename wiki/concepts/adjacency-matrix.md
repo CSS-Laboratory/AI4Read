@@ -2,12 +2,14 @@
 id: adjacency-matrix
 type: concept
 fields: [linear-algebra, llm]
+fields_strong: [linear-algebra, llm]
 n_sources: 24
+n_works: 6
 tiers: [deep, core, reference]
 grounding: digests
 sources: [bonacich-1987-power/main, boyd-2018-vmls/ch06-matrices, boyd-2018-vmls/ch07-matrix, boyd-2018-vmls/ch10-matrix, deisenroth-2020-mml/ch04-matrix-p1, prince-2023-udl/ch13-graph, spielman-2025-sagt/ch01-introduction, spielman-2025-sagt/ch03-laplacian, spielman-2025-sagt/ch04-adjacency, spielman-2025-sagt/ch07-cayley, spielman-2025-sagt/ch08-eigenvalues, spielman-2025-sagt/ch09-strongly, spielman-2025-sagt/ch10-random, spielman-2025-sagt/ch19-independent, spielman-2025-sagt/ch23-spectral, spielman-2025-sagt/ch29-expander, spielman-2025-sagt/ch30-simple, spielman-2025-sagt/ch38-fast, spielman-2025-sagt/ch39-testing, spielman-2025-sagt/ch40-testing, spielman-2025-sagt/ch43-ramanujan, spielman-2025-sagt/ch44-bipartite, spielman-2025-sagt/ch45-matching, vonluxburg-2007-spectralclustering/main]
 raw_ids: [adjacency matrix]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -56,4 +58,4 @@ generated_by: build_kg.py
 - [same-math] Adjacency matrix $A_{ij}$ ↔ network analysis: the graph as a table of 0/1 ties, where $A=A^T$ means an undirected network. — from [[boyd-2018-vmls/ch06-matrices]] (linear-algebra → complex-systems)
 - [same-math] Matrix powers of the adjacency matrix ↔ graph theory/network science: counting walks of length ℓ — the same entries $(A^\ell)_{ij}$. — from [[boyd-2018-vmls/ch10-matrix]] (linear-algebra → complex-systems)
 - [structural-analogy] Trace method: $\mathrm{Tr}\,R^l$ as a sum over closed walks ↔ adjacency matrix: $(A^k)_{ij}$ counts walks of length $k$ — same expansion, but weighted by random entries here. — from [[spielman-2025-sagt/ch08-eigenvalues]] (linear-algebra → linear-algebra)
-- [structural-analogy] $B=D^{-1/2}AD^{-1/2}$ ↔ graph theory: normalized adjacency matrix — similar form, but here $D$ need not be the degree matrix and $A$ may have diagonal entries. — from [[spielman-2025-sagt/ch38-fast]] (linear-algebra → other)
+- [structural-analogy] $B=D^{-1/2}AD^{-1/2}$ ↔ graph theory: normalized adjacency matrix — similar form, but here $D$ need not be the degree matrix and $A$ may have diagonal entries. — from [[spielman-2025-sagt/ch38-fast]] (linear-algebra → other:graph-theory)

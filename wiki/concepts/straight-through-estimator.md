@@ -1,8 +1,10 @@
 ---
 id: straight-through-estimator
 type: concept
-fields: [bayesian]
+fields: [bayesian, llm]
+fields_strong: [bayesian, llm]
 n_sources: 2
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch06-optimization-p1, murphy-2023-pml2/ch21-variational]
@@ -16,4 +18,4 @@ generated_by: build_kg.py
 ### bayesian
 
 - [[murphy-2023-pml2/ch06-optimization-p1]] (p. 279): use $g(x)=x$ (or hard tanh) as backward pass for a threshold [new]
-- [[murphy-2023-pml2/ch21-variational]] (p. 815): copy decoder-input gradients to the encoder output, bypassing quantization [new]
+- [[murphy-2023-pml2/ch21-variational]] (p. 815): copy decoder-input gradients to the encoder output, bypassing quantization [new; work fields: bayesian, llm]

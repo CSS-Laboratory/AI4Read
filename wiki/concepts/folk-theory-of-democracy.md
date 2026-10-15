@@ -2,12 +2,14 @@
 id: folk-theory-of-democracy
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 11
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [achen-2016-realists/ch01-democratic, achen-2016-realists/ch02-elusive, achen-2016-realists/ch03-tumbling, achen-2016-realists/ch04-rational, achen-2016-realists/ch05-blind, achen-2016-realists/ch07-chicken, achen-2016-realists/ch08-very, achen-2016-realists/ch09-partisan, achen-2016-realists/ch10-it, achen-2016-realists/ch11-groups, downs-1957-democracy/main]
 raw_ids: [folk theory of democracy]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 
@@ -35,4 +37,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Bergson's unanimous ethics ↔ folk theory of democracy: agreeing on principles does not by itself yield a consistent aggregate ranking. — from [[arrow-1951-socialchoice/ch06-vi]] (political-science → other)
+- [metaphor] Bergson's unanimous ethics ↔ folk theory of democracy: agreeing on principles does not by itself yield a consistent aggregate ranking. — from [[arrow-1951-socialchoice/ch06-vi]] (political-science → political-science)

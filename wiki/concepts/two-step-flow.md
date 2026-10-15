@@ -2,11 +2,13 @@
 id: two-step-flow
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 8
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [habermas-1989-publicsphere/ch06-transformation-p2, habermas-1989-publicsphere/ch07-concept, katz-1955-personalinfluence/ch00-introduction, katz-1955-personalinfluence/ch02-played, katz-1955-personalinfluence/ch03-essay, katz-1955-personalinfluence/ch07-group, katz-1955-personalinfluence/ch14-two, rogers-2003-diffusion/ch08-diffusion-p1]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 
@@ -20,7 +22,7 @@ generated_by: build_kg.py
 
 ### communication-theory
 
-- [[habermas-1989-publicsphere/ch06-transformation-p2]] (p. 213): Habermas speaks of a two-tiered communication process mediated by opinion leaders; he does not use the term itself
+- [[habermas-1989-publicsphere/ch06-transformation-p2]] (p. 213): Habermas speaks of a two-tiered communication process mediated by opinion leaders; he does not use the term itself [weak: not really used in this unit]
 - [[habermas-1989-publicsphere/ch07-concept]] (p. 242): mentioned as example of psychology-biased communication research
 - [[katz-1955-personalinfluence/ch00-introduction]] (pp. 3–4): media influence reaches opinion leaders, who pass it to others; reported as something the 1940 study "seemed" to show
 - [[katz-1955-personalinfluence/ch02-played]] (p. 32): ideas often seem to flow from media to opinion leaders, then to less active people

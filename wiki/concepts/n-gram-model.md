@@ -2,12 +2,14 @@
 id: n-gram-model
 type: concept
 fields: [llm, bayesian]
+fields_strong: [llm, bayesian]
 n_sources: 4
+n_works: 4
 tiers: [deep, reference]
 grounding: digests
 sources: [bengio-2003-nplm/main, mahowald-2024-dissociating/main, mikolov-2013-efficient/main, murphy-2023-pml2/ch02-probability-p3]
 raw_ids: [n-gram model]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

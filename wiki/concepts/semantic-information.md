@@ -2,7 +2,9 @@
 id: semantic-information
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [dennett-1987-intentional-stance/ch05-beyond-p2, dennett-1987-intentional-stance/ch07-intentional]

@@ -1,13 +1,15 @@
 ---
 id: matrix-as-transformation
 type: concept
-fields: [linear-algebra]
+fields: [linear-algebra, llm]
+fields_strong: [linear-algebra, llm]
 n_sources: 10
+n_works: 5
 tiers: [core, deep]
 grounding: digests
 sources: [axler-2024-ladr/ch03-linear-p2, axler-2024-ladr/ch03-linear-p3, axler-2024-ladr/ch05-eigenvalues-p2, boyd-2018-vmls/ch07-matrix, boyd-2018-vmls/ch08-linear, boyd-2018-vmls/ch09-linear, deisenroth-2020-mml/ch02-linear-p2, mikolov-2013-regularities/main, strang-2023-introduction/app10-computer, strang-2023-introduction/ch08-linear]
 raw_ids: [matrix as transformation]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -28,7 +30,7 @@ generated_by: build_kg.py
 - [[boyd-2018-vmls/ch08-linear]] (p. 148): columns of $A$ are $f(e_1),\dots,f(e_n)$
 - [[boyd-2018-vmls/ch09-linear]] (p. 163): here, $A$ maps today's state to tomorrow's [as `matrix as transformation`]
 - [[deisenroth-2020-mml/ch02-linear-p2]] (p. 51): here the transformation matrix: columns are $C$-coordinates of $\Phi(b_j)$
-- [[mikolov-2013-regularities/main]] (p. 747): $\mathbf U\mathbf w(t)$ selects a column of $\mathbf U$ when $\mathbf w$ is one-hot; the paper does not say this in matrix terms
+- [[mikolov-2013-regularities/main]] (p. 747): $\mathbf U\mathbf w(t)$ selects a column of $\mathbf U$ when $\mathbf w$ is one-hot; the paper does not say this in matrix terms [work fields: linear-algebra, llm]
 - [[strang-2023-introduction/app10-computer]] (pp. 413–416): here T, S, R, P are all 4 by 4 maps [as `matrix as transformation`]
 - [[strang-2023-introduction/ch08-linear]] (p. 320): column j of the matrix is T(v_j) written in the output basis
 

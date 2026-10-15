@@ -2,7 +2,9 @@
 id: saturated-model
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch11-model, hernan-2020-whatif/ch12-ip]

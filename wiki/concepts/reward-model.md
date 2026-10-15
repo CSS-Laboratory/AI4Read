@@ -2,12 +2,14 @@
 id: reward-model
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 6
+n_works: 4
 tiers: [core, deep, reference]
 grounding: digests
 sources: [bai-2022-constitutional/main, ouyang-2022-instructgpt/main-p1, ouyang-2022-instructgpt/main-p2, ouyang-2022-instructgpt/main-p3, prince-2023-udl/ch19-reinforcement, rafailov-2023-dpo/main]
 raw_ids: [reward model]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

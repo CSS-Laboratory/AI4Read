@@ -2,7 +2,9 @@
 id: round-robin-tournament
 type: concept
 fields: [political-science, decision-game-theory]
+fields_strong: [political-science, decision-game-theory]
 n_sources: 3
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [axelrod-1984-cooperation/ch02-success, clark-2017-principles/ch11-problems-p1, shepsle-2010-analyzing/ch03-getting]

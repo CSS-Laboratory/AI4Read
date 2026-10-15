@@ -2,7 +2,9 @@
 id: conceptualization
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch05-democracy, grimmer-2022-textasdata/ch10-principles]

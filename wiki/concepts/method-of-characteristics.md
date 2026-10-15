@@ -2,7 +2,9 @@
 id: method-of-characteristics
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [bellman-1957-dp/ch09-ix, liberzon-2012-calculus/ch07-advanced]

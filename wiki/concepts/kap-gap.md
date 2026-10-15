@@ -2,7 +2,9 @@
 id: kap-gap
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [rogers-2003-diffusion/ch02-history-p2, rogers-2003-diffusion/ch05-innovation-p1]

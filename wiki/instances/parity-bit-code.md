@@ -1,7 +1,7 @@
 ---
 id: parity-bit-code
 type: instance
-fields: [bayesian, linear-algebra]
+fields: [bayesian, information-theory, linear-algebra]
 n_sources: 2
 tiers: [deep, reference]
 grounding: digests
@@ -15,7 +15,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch05-information-p2]] (pp. 251–252): 2 message bits + 1 parity bit, $\alpha=0.2$, $\boldsymbol y=(1,0,0)$; modes 000, 110, 101
+- [[murphy-2023-pml2/ch05-information-p2]] (pp. 251–252): 2 message bits + 1 parity bit, $\alpha=0.2$, $\boldsymbol y=(1,0,0)$; modes 000, 110, 101 [work fields: bayesian, information-theory]
 
 ### linear-algebra
 

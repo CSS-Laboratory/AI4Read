@@ -2,12 +2,14 @@
 id: indeterminacy-of-translation
 type: concept
 fields: [analytic-philosophy, theory-of-mind]
+fields_strong: [analytic-philosophy, theory-of-mind]
 n_sources: 4
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [dennett-1987-intentional-stance/ch02-true, dennett-1987-intentional-stance/ch10-mid, lycan-2019-language/ch08-verificationism, putnam-1975-meaning/main]
 raw_ids: [indeterminacy of translation]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

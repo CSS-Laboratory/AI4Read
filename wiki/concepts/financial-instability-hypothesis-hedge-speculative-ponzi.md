@@ -2,12 +2,14 @@
 id: financial-instability-hypothesis-hedge-speculative-ponzi
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 1
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [minsky-1992-instability/main]
 raw_ids: [financial instability hypothesis (hedge/speculative/Ponzi)]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 

@@ -2,8 +2,10 @@
 id: cauchy-distribution
 type: concept
 fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 2
-tiers: [core, reference]
+n_works: 2
+tiers: [core]
 grounding: digests
 sources: [jaynes-2003-probability/ch07-central-p2, mcelreath-2020-rethinking/ch08-markov]
 generated_by: build_kg.py
@@ -15,11 +17,8 @@ generated_by: build_kg.py
 
 ### bayesian
 
+- [[jaynes-2003-probability/ch07-central-p2]] (p. 224): the one law whose sample mean has the same law as one observation [new; work fields: bayesian, information-theory]
 - [[mcelreath-2020-rethinking/ch08-markov]] (p. 260): thick-tailed density with location and scale, no mean or variance; used as half-Cauchy prior for $\sigma$ [new]
-
-### information-theory
-
-- [[jaynes-2003-probability/ch07-central-p2]] (p. 224): the one law whose sample mean has the same law as one observation [new]
 
 ## Instances that use it
 

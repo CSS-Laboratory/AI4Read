@@ -2,7 +2,9 @@
 id: message-intensity
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [zaller-1992-massopinion/ch08-tests, zaller-1992-massopinion/ch09-two, zaller-1992-massopinion/ch11-evaluating-p2]

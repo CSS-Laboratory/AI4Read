@@ -2,7 +2,9 @@
 id: mixture-model
 type: concept
 fields: [bayesian, linear-algebra, political-science]
+fields_strong: [bayesian, linear-algebra, political-science]
 n_sources: 5
+n_works: 5
 tiers: [core, reference]
 grounding: digests
 sources: [deisenroth-2020-mml/ch11-density, gelman-2013-bda3/ch01-probability, grimmer-2022-textasdata/ch06-multinomial, mcelreath-2020-rethinking/ch11-monsters, murphy-2023-pml2/ch28-latent-p1]
@@ -34,12 +36,12 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] "Many biases, not one" ↔ mixture models: a single model viewed as a mixture of subgroup distributions selected by conditioning (the authors say "combination of many distributions", p. 4) — from [[argyle-2023-silicon/main-p1]] (llm → other)
+- [metaphor] "Many biases, not one" ↔ mixture models: a single model viewed as a mixture of subgroup distributions selected by conditioning (the authors say "combination of many distributions", p. 4) — from [[argyle-2023-silicon/main-p1]] (llm → bayesian)
 - [structural-analogy] Mixture model with observed $\pi_i$ ↔ supervised classification of documents by group (the book defers it to Ch. 19); unobserved $\pi$ ↔ clustering (Ch. 12). — from [[grimmer-2022-textasdata/ch06-multinomial]] (political-science → unspecified)
-- [same-math] Mixture model $uG+(1-u)B$ with latent q_i ↔ bayesian: hierarchical model with exchangeable latent indicators (de Finetti). — from [[jaynes-2003-probability/ch21-outliers]] (information-theory → bayesian)
+- [same-math] Mixture model $uG+(1-u)B$ with latent q_i ↔ bayesian: hierarchical model with exchangeable latent indicators (de Finetti). — from [[jaynes-2003-probability/ch21-outliers]] (bayesian → bayesian)
 - [structural-analogy] K-means two-step loop ↔ bayesian: assigning data to hidden causes, then re-fitting parameters, as in mixture-model inference — the book says it returns to this view later (p. 290) — from [[mackay-2003-information/ch20-example]] (information-theory → bayesian)
 - [structural-analogy] infinite mixture models ↔ bayesian: nonparametric priors (Dirichlet process) letting model size grow with data — from [[mackay-2003-information/ch34-independent]] (information-theory → bayesian)
-- [structural-analogy] LDA vs mixture models ↔ Clustering: mixed vs single-cluster assignment (p. 963). — from [[murphy-2023-pml2/ch28-latent-p2]] (bayesian → other)
-- [structural-analogy] Gaussian HMM ↔ Gaussian mixture model: clusters of observations, but with Markov temporal dependence between cluster labels (p. 982). — from [[murphy-2023-pml2/ch29-state-p1]] (bayesian → other)
-- [structural-analogy] Baum-Welch E/M steps ↔ EM for mixture models: soft responsibilities and normalised expected counts, with $\gamma$ and $\xi$ computed by forwards-backwards. — from [[murphy-2023-pml2/ch29-state-p1]] (bayesian → other)
-- [structural-analogy] SLDS mode explosion ↔ hierarchical/mixture models: growth of mixture components under conditioning, controlled by pruning or merging. — from [[murphy-2023-pml2/ch29-state-p2]] (bayesian → other)
+- [structural-analogy] LDA vs mixture models ↔ Clustering: mixed vs single-cluster assignment (p. 963). — from [[murphy-2023-pml2/ch28-latent-p2]] (bayesian → linear-algebra)
+- [structural-analogy] Gaussian HMM ↔ Gaussian mixture model: clusters of observations, but with Markov temporal dependence between cluster labels (p. 982). — from [[murphy-2023-pml2/ch29-state-p1]] (bayesian → other:gaussian-mixture-model)
+- [structural-analogy] Baum-Welch E/M steps ↔ EM for mixture models: soft responsibilities and normalised expected counts, with $\gamma$ and $\xi$ computed by forwards-backwards. — from [[murphy-2023-pml2/ch29-state-p1]] (bayesian → other:em-for-mixture-models)
+- [structural-analogy] SLDS mode explosion ↔ hierarchical/mixture models: growth of mixture components under conditioning, controlled by pruning or merging. — from [[murphy-2023-pml2/ch29-state-p2]] (bayesian → other:hierarchical-mixture-models)

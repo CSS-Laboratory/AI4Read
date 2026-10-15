@@ -2,7 +2,9 @@
 id: correlation
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [deisenroth-2020-mml/ch06-probability-p1, strang-2023-introduction/ch10-learning]
@@ -55,28 +57,28 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Cauchy–Schwarz on $\mathbf R^n$ and on $\int fg$ ↔ statistics: the same inequality bounds a correlation-like ratio — only the pairing differs. — from [[axler-2024-ladr/ch06-inner-p1]] (linear-algebra → other)
-- [structural-analogy] Cauchy–Schwarz ⇒ cos θ ∈ [−1,1] ↔ statistics: correlation coefficient lies in [−1,1] — the same inequality bounds both. — from [[boyd-2018-vmls/ch03-norm]] (linear-algebra → other)
+- [structural-analogy] Cauchy–Schwarz on $\mathbf R^n$ and on $\int fg$ ↔ statistics: the same inequality bounds a correlation-like ratio — only the pairing differs. — from [[axler-2024-ladr/ch06-inner-p1]] (linear-algebra → other:statistics)
+- [structural-analogy] Cauchy–Schwarz ⇒ cos θ ∈ [−1,1] ↔ statistics: correlation coefficient lies in [−1,1] — the same inequality bounds both. — from [[boyd-2018-vmls/ch03-norm]] (linear-algebra → other:statistics)
 - [same-math] Correlation coefficient ρ = cos∠(ã, b̃) ↔ cosine similarity of centred data vectors — the same formula, applied to mean-removed vectors. — from [[boyd-2018-vmls/ch03-norm]] (linear-algebra → unspecified)
-- [structural-analogy] Carey's critique of "some do, some don't" with correlations below 0.5 ↔ statistics: low explained variance from antecedent variables, as in the toy example. — from [[carey-1989-cultural/ch02-mass]] (communication-theory → other)
+- [structural-analogy] Carey's critique of "some do, some don't" with correlations below 0.5 ↔ statistics: low explained variance from antecedent variables, as in the toy example. — from [[carey-1989-cultural/ch02-mass]] (communication-theory → other:statistics)
 - [structural-analogy] Voter/Glauber correlation equations ↔ statistical physics: same structure as the 1D zero-temperature Glauber Ising equations; in $d=1$ the dynamics coincide (p. 9–10). — from [[castellano-2009-socialdynamics/main-p1]] (complex-systems → complex-systems)
-- [structural-analogy] Constraint as predictability ↔ statistics: correlation between item responses — both measure how much one variable predicts another. — from [[converse-1964-beliefsystems/ch01-introduction]] (political-science → other)
-- [structural-analogy] Constraint matrix suitable for factor analysis ↔ psychometrics/latent-variable modelling: an organizing dimension shows up as shared correlation — the author himself links the two (p. 32) — from [[converse-1964-beliefsystems/ch02-sections]] (political-science → other)
-- [structural-analogy] "Instability sets an upper limit on constraint" (p. 47) ↔ measurement error: unreliability caps the correlation any measure can reach with others. — from [[converse-1964-beliefsystems/ch03-sections]] (political-science → other)
+- [structural-analogy] Constraint as predictability ↔ statistics: correlation between item responses — both measure how much one variable predicts another. — from [[converse-1964-beliefsystems/ch01-introduction]] (political-science → other:statistics)
+- [structural-analogy] Constraint matrix suitable for factor analysis ↔ psychometrics/latent-variable modelling: an organizing dimension shows up as shared correlation — the author himself links the two (p. 32) — from [[converse-1964-beliefsystems/ch02-sections]] (political-science → other:statistics)
+- [structural-analogy] "Instability sets an upper limit on constraint" (p. 47) ↔ measurement error: unreliability caps the correlation any measure can reach with others. — from [[converse-1964-beliefsystems/ch03-sections]] (political-science → other:measurement-error)
 - [same-math] correlation $=\cos\theta$ (6.61) ↔ linear-algebra: cosine similarity — the inner product of normalised (centred) vectors. — from [[deisenroth-2020-mml/ch06-probability-p1]] (linear-algebra → linear-algebra)
-- [structural-analogy] PPCA covariance $BB^\top+\sigma^2I$ ↔ social-science latent factor models: a few shared factors plus noise explain the correlations among many observed variables. — from [[deisenroth-2020-mml/ch10-dimensionality]] (linear-algebra → other)
+- [structural-analogy] PPCA covariance $BB^\top+\sigma^2I$ ↔ social-science latent factor models: a few shared factors plus noise explain the correlations among many observed variables. — from [[deisenroth-2020-mml/ch10-dimensionality]] (linear-algebra → other:social-science-latent-factor)
 - [structural-analogy] Explanatory asymmetry (cause → effect only) ↔ causal inference: correlation or deducibility is symmetric, but causal direction is not. — from [[godfreysmith-2003-theory/ch13-explanation]] (analytic-philosophy → bayesian)
-- [structural-analogy] Detrending in order to estimate $A$ ↔ causal inference: regression adjustment for a confounder vs integrating over it. The spurious growth correlation (p. 535) is a common-cause pattern. — from [[jaynes-2003-probability/ch17-principles-p2]] (information-theory → bayesian)
-- [metaphor] Conservative design under unknown correlations ↔ robust or minimax decision-making (canon link; not stated in this unit). — from [[jaynes-2003-probability/ch22-introduction]] (information-theory → unspecified)
-- [same-math] Move $r$ of the way from average to intuition ↔ statistics: prediction by a regression line with standardized variables — same weighting by correlation (the author calls it only an approximation of statistical analysis, pdf 188) — from [[kahneman-2011-thinking/ch18-taming]] (decision-game-theory → other)
+- [structural-analogy] Detrending in order to estimate $A$ ↔ causal inference: regression adjustment for a confounder vs integrating over it. The spurious growth correlation (p. 535) is a common-cause pattern. — from [[jaynes-2003-probability/ch17-principles-p2]] (bayesian → bayesian)
+- [metaphor] Conservative design under unknown correlations ↔ robust or minimax decision-making (canon link; not stated in this unit). — from [[jaynes-2003-probability/ch22-introduction]] (bayesian → unspecified)
+- [same-math] Move $r$ of the way from average to intuition ↔ statistics: prediction by a regression line with standardized variables — same weighting by correlation (the author calls it only an approximation of statistical analysis, pdf 188) — from [[kahneman-2011-thinking/ch18-taming]] (decision-game-theory → other:statistics)
 - [structural-analogy] *Post hoc* reasoning ↔ causal inference: correlation versus cause — same warning, informal vocabulary. — from [[lippmann-1922-publicopinion/ch10-detection]] (communication-theory → bayesian)
 - [structural-analogy] Hidden units inducing higher-order visible correlations ↔ bayesian: latent-variable and hierarchical models explaining dependence among observables. — from [[mackay-2003-information/ch43-boltzmann]] (information-theory → bayesian)
 - [structural-analogy] Pooling across intercepts and slopes via correlation ↔ regression toward the mean in two dimensions — from [[mcelreath-2020-rethinking/ch13-adventures]] (bayesian → unspecified)
 - [same-math] ICA objective via negentropy / total correlation / InfoMax ↔ Information theory: entropy, KL divergence, mutual information — the text derives the same objective from each (p. 976–977). — from [[murphy-2023-pml2/ch28-latent-p2]] (bayesian → information-theory)
-- [structural-analogy] I(X;Y) = −½ log(1−ρ²) for Gaussians ↔ statistics: correlation coefficient — both measure dependence, but I is bijection-invariant (p. 48). — from [[polyanskiy-2025-information/ch04-mutual]] (information-theory → other)
+- [structural-analogy] I(X;Y) = −½ log(1−ρ²) for Gaussians ↔ statistics: correlation coefficient — both measure dependence, but I is bijection-invariant (p. 48). — from [[polyanskiy-2025-information/ch04-mutual]] (information-theory → other:statistics)
 - [structural-analogy] Cause vs. blame; cross-sectional correlation vs. time order ↔ causal inference: the three conditions for causation (pdf 180). — from [[rogers-2003-diffusion/ch03-contributions]] (communication-theory → bayesian)
-- [structural-analogy] shortcut reliance revealed by adversarial variants ↔ machine-learning evaluation: spurious correlations and shortcut learning — same logic of changing what should not matter. — from [[shapira-2024-clever-hans/main]] (theory-of-mind → other)
-- [structural-analogy] MI's invariance under invertible transformations ↔ statistics: association measures such as correlation, which the author says lack this claim (p. 151). — from [[stone-2022-information/ch06-mutual]] (information-theory → other)
-- [same-math] $\rho=\sqrt{1-2^{-2I}}$ for Gaussians ↔ statistics: correlation coefficient — the same bivariate Gaussian quantity expressed two ways. — from [[stone-2022-information/ch07-channel]] (information-theory → other)
-- [same-math] Regression toward the mean ↔ statistics of correlation: the regression of $Y$ on $X$ when $r<1$ gives the shrinkage the text describes. — from [[tversky-1974-heuristics/main]] (decision-game-theory → other)
-- [structural-analogy] Robustness to trivial alterations ↔ ML evaluation: out-of-distribution/adversarial testing of generalization — both probe whether a model learned the rule or surface correlations. — from [[ullman-2023-trivial-alterations/main]] (theory-of-mind → other)
+- [structural-analogy] shortcut reliance revealed by adversarial variants ↔ machine-learning evaluation: spurious correlations and shortcut learning — same logic of changing what should not matter. — from [[shapira-2024-clever-hans/main]] (theory-of-mind → other:machine-learning-evaluation)
+- [structural-analogy] MI's invariance under invertible transformations ↔ statistics: association measures such as correlation, which the author says lack this claim (p. 151). — from [[stone-2022-information/ch06-mutual]] (information-theory → other:statistics)
+- [same-math] $\rho=\sqrt{1-2^{-2I}}$ for Gaussians ↔ statistics: correlation coefficient — the same bivariate Gaussian quantity expressed two ways. — from [[stone-2022-information/ch07-channel]] (information-theory → other:statistics)
+- [same-math] Regression toward the mean ↔ statistics of correlation: the regression of $Y$ on $X$ when $r<1$ gives the shrinkage the text describes. — from [[tversky-1974-heuristics/main]] (decision-game-theory → other:statistics)
+- [structural-analogy] Robustness to trivial alterations ↔ ML evaluation: out-of-distribution/adversarial testing of generalization — both probe whether a model learned the rule or surface correlations. — from [[ullman-2023-trivial-alterations/main]] (theory-of-mind → llm)

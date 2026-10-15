@@ -2,7 +2,9 @@
 id: deadly-triad
 type: concept
 fields: [control-theory, bayesian]
+fields_strong: [control-theory, bayesian]
 n_sources: 3
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch35-reinforcement, sutton-2018-rl/ch11-off, sutton-2018-rl/ch12-eligibility]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1177): off-policy + bootstrapping + function approximation can diverge [new]
+- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1177): off-policy + bootstrapping + function approximation can diverge [new; work fields: bayesian, control-theory]

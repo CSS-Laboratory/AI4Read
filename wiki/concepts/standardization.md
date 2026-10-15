@@ -2,7 +2,9 @@
 id: standardization
 type: concept
 fields: [bayesian, linear-algebra, llm]
+fields_strong: [bayesian, linear-algebra, llm]
 n_sources: 6
+n_works: 5
 tiers: [core, reference]
 grounding: digests
 sources: [boyd-2018-vmls/ch03-norm, deisenroth-2020-mml/ch10-dimensionality, hernan-2020-whatif/ch02-randomized, hernan-2020-whatif/ch13-standardization, mcelreath-2020-rethinking/ch04-linear-p2, prince-2023-udl/ch23-probability]
@@ -37,8 +39,8 @@ generated_by: build_kg.py
 
 - [structural-analogy] Standardization $\sum_l P(Y\mid L,a)P(L)$ ↔ bayesian: marginalising over a nuisance variable, as in a posterior predictive average — both average a conditional distribution over another variable's distribution. — from [[hernan-2020-whatif/ch02-randomized]] (bayesian → bayesian)
 - [structural-analogy] Standardization $\sum_l \mathrm{E}[Y|A,L=l]\Pr[L=l]$ ↔ Bayesian inference: marginalizing a nuisance variable by averaging over its distribution. — from [[hernan-2020-whatif/ch07-confounding]] (bayesian → bayesian)
-- [same-math] mediation formula as a g-formula ↔ potential outcomes: a standardization (mixing over $\Pr[M|A=0]$) of a conditional mean. — from [[hernan-2020-whatif/ch23-causal]] (bayesian → other)
-- [structural-analogy] Indexing each variable to the group mean = 100 ↔ standardization (z-scores): both make different scales comparable around a centre, but here there is no division by spread, so the math differs. — from [[katz-1955-personalinfluence/appa-choice]] (communication-theory → other)
+- [same-math] mediation formula as a g-formula ↔ potential outcomes: a standardization (mixing over $\Pr[M|A=0]$) of a conditional mean. — from [[hernan-2020-whatif/ch23-causal]] (bayesian → bayesian)
+- [structural-analogy] Indexing each variable to the group mean = 100 ↔ standardization (z-scores): both make different scales comparable around a centre, but here there is no division by spread, so the math differs. — from [[katz-1955-personalinfluence/appa-choice]] (communication-theory → other:standardization-z-scores)
 - [structural-analogy] Adjustment formula (4.16) and weights $P(z\mid x')$ in (4.21) ↔ marginalization over a confounder with different weights (standardization versus within-group weighting). — from [[pearl-2016-primer/ch04-counterfactuals]] (bayesian → unspecified)
-- [same-math] Back-door formula (Eq. 7.2) ↔ standardization over covariate strata in potential-outcomes adjustment: a weighted average of stratum-specific conditional probabilities by the covariate distribution. — from [[pearl-2018-bookofwhy/ch07-beyond]] (bayesian → other)
+- [same-math] Back-door formula (Eq. 7.2) ↔ standardization over covariate strata in potential-outcomes adjustment: a weighted average of stratum-specific conditional probabilities by the covariate distribution. — from [[pearl-2018-bookofwhy/ch07-beyond]] (bayesian → other:standardization-over-covariate-strata)
 - [structural-analogy] Standardization $z=(x-\mu)/\sigma$ ↔ normalization layers in neural networks. — from [[prince-2023-udl/ch23-probability]] (llm → unspecified)

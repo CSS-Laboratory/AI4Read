@@ -2,7 +2,9 @@
 id: gestalt-switch
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch06-kuhn, kuhn-1962-structure/ch08-response, kuhn-1962-structure/ch10-revolutions]
@@ -22,6 +24,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Gestalt switch ↔ perception psychology: Kuhn himself warns the parallel can mislead (p. 85). — from [[kuhn-1962-structure/ch08-response]] (analytic-philosophy → other)
+- [metaphor] Gestalt switch ↔ perception psychology: Kuhn himself warns the parallel can mislead (p. 85). — from [[kuhn-1962-structure/ch08-response]] (analytic-philosophy → other:psychology-cognitive-science)
 - [metaphor] Gestalt switch in paradigm change ↔ philosophy of perception: seeing-as (the same lines seen as duck or rabbit) — both involve the same input organised differently. — from [[kuhn-1962-structure/ch10-revolutions]] (analytic-philosophy → analytic-philosophy)
-- [metaphor] Gestalt switch of paradigm change ↔ psychology of perception: a whole-pattern switch, not a step-by-step change (p. 150) — from [[kuhn-1962-structure/ch12-resolution]] (analytic-philosophy → other)
+- [metaphor] Gestalt switch of paradigm change ↔ psychology of perception: a whole-pattern switch, not a step-by-step change (p. 150) — from [[kuhn-1962-structure/ch12-resolution]] (analytic-philosophy → other:psychology-cognitive-science)

@@ -2,12 +2,14 @@
 id: bayesian-confirmation
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 4
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch14-bayesianism, kuhn-1962-structure/ch12-resolution, popper-1959-logic/appix-untitled, popper-1959-logic/appvii-untitled-2]
 raw_ids: [Bayesian confirmation]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

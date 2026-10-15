@@ -2,7 +2,9 @@
 id: derived-rule
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [magnus-2025-forallx/ch21-derived, magnus-2025-forallx/ch41-proofs]
@@ -24,5 +26,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] derived rule ↔ programming: macro or library function — expands into primitive steps without adding power. — from [[magnus-2025-forallx/ch21-derived]] (analytic-philosophy → other)
+- [structural-analogy] derived rule ↔ programming: macro or library function — expands into primitive steps without adding power. — from [[magnus-2025-forallx/ch21-derived]] (analytic-philosophy → other:computer-science)
 - [structural-analogy] choice of basic vs derived rules ↔ analytic-philosophy: choosing which principles to take as primitive when analysing a concept — the same body of consequences can be organised differently. — from [[magnus-2025-forallx/ch44-b]] (analytic-philosophy → analytic-philosophy)

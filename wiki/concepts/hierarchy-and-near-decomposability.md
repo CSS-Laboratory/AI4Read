@@ -2,12 +2,14 @@
 id: hierarchy-and-near-decomposability
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [mitchell-2009-guidedtour/ch07-defining, simon-1962-architecture/main]
 raw_ids: [hierarchy and near-decomposability]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 

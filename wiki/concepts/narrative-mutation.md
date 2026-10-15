@@ -2,7 +2,9 @@
 id: narrative-mutation
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [shiller-2019-narrative/ch08-seven, shiller-2019-narrative/ch09-recurrence, shiller-2019-narrative/ch14-automation]
@@ -22,5 +24,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Narrative mutation and contagion ↔ epidemiology: rare random mutants become epidemics when conditions favour them. — from [[shiller-2019-narrative/ch07-causality]] (economics-finance → other)
-- [structural-analogy] Narrative mutation overcoming "immunity" ↔ epidemiology: viral mutation escaping acquired immunity — a changed form revives spread among people who were previously protected. — from [[shiller-2019-narrative/ch09-recurrence]] (economics-finance → other)
+- [structural-analogy] Narrative mutation and contagion ↔ epidemiology: rare random mutants become epidemics when conditions favour them. — from [[shiller-2019-narrative/ch07-causality]] (economics-finance → other:epidemiology)
+- [structural-analogy] Narrative mutation overcoming "immunity" ↔ epidemiology: viral mutation escaping acquired immunity — a changed form revives spread among people who were previously protected. — from [[shiller-2019-narrative/ch09-recurrence]] (economics-finance → other:epidemiology)

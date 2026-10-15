@@ -2,7 +2,9 @@
 id: noncircularity-condition
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kripke-1980-naming/addenda, kripke-1980-naming/ch01-lecture-p2, kripke-1980-naming/ch02-lecture]

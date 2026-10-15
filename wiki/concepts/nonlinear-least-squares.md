@@ -2,7 +2,9 @@
 id: nonlinear-least-squares
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [boyd-2018-vmls/app-appendices, boyd-2018-vmls/ch18-nonlinear]
@@ -25,5 +27,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] IEKF update ↔ optimisation: Gauss–Newton for a nonlinear least-squares/MAP cost (the text states this equivalence, p. 121–122). — from [[sarkka-2023-bayesianfiltering/ch07-extended]] (control-theory → other)
-- [same-math] IERTSS iteration ↔ nonlinear least squares: Gauss–Newton on the cost (13.17), solved by Kalman filter and smoother. — from [[sarkka-2023-bayesianfiltering/ch13-extended]] (control-theory → other)
+- [same-math] IEKF update ↔ optimisation: Gauss–Newton for a nonlinear least-squares/MAP cost (the text states this equivalence, p. 121–122). — from [[sarkka-2023-bayesianfiltering/ch07-extended]] (control-theory → other:optimization)
+- [same-math] IERTSS iteration ↔ nonlinear least squares: Gauss–Newton on the cost (13.17), solved by Kalman filter and smoother. — from [[sarkka-2023-bayesianfiltering/ch13-extended]] (control-theory → linear-algebra)

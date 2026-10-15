@@ -2,7 +2,9 @@
 id: weakly-informative-prior
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [gelman-2013-bda3/ch02-single, gelman-2013-bda3/ch05-hierarchical, gelman-2013-bda3/ch16-generalized, mcelreath-2020-rethinking/ch08-markov]
@@ -26,4 +28,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Weakly informative prior as "regularization" ↔ penalized estimation: shared intent of keeping estimates in a sensible range. — from [[gelman-2013-bda3/ch02-single]] (bayesian → other)
+- [metaphor] Weakly informative prior as "regularization" ↔ penalized estimation: shared intent of keeping estimates in a sensible range. — from [[gelman-2013-bda3/ch02-single]] (bayesian → other:penalized-estimation)

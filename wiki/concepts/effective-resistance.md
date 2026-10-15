@@ -2,7 +2,9 @@
 id: effective-resistance
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 6
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [spielman-2025-sagt/ch12-effective, spielman-2025-sagt/ch13-random, spielman-2025-sagt/ch14-approximating, spielman-2025-sagt/ch17-monotonicity, spielman-2025-sagt/ch32-sparsification, spielman-2025-sagt/ch37-augmented]
@@ -30,4 +32,4 @@ generated_by: build_kg.py
 
 - [structural-analogy] Effective resistance as squared distance between $L^{+/2}\delta_a$ points ↔ spectral embedding: vertices as vectors — both use the spectral decomposition of $L$. — from [[spielman-2025-sagt/ch12-effective]] (linear-algebra → linear-algebra)
 - [same-math] effective resistance $i^TL^+i$ ↔ linear algebra: pseudoinverse solving $Lv=b$ — the same quadratic form. — from [[spielman-2025-sagt/ch17-monotonicity]] (linear-algebra → linear-algebra)
-- [same-math] Stretch of an edge ↔ electrical networks: effective resistance in a series path of resistors (p. 291). — from [[spielman-2025-sagt/ch36-preconditioning]] (linear-algebra → other)
+- [same-math] Stretch of an edge ↔ electrical networks: effective resistance in a series path of resistors (p. 291). — from [[spielman-2025-sagt/ch36-preconditioning]] (linear-algebra → other:physics)

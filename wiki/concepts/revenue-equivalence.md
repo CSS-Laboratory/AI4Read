@@ -2,7 +2,9 @@
 id: revenue-equivalence
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch10-auctions, osborne-2004-introduction/ch03-nash-p2, osborne-2004-introduction/ch09-bayesian]
@@ -23,4 +25,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Revenue equivalence ↔ mechanism design: different rules, same outcomes when bidders adapt. — from [[dixit-2008-art-strategy/ch10-auctions]] (decision-game-theory → decision-game-theory)
-- [structural-analogy] Dollars-for-pounds relabeling (No. 7) ↔ revenue-equivalence-style reasoning: show two auction rules give equal expected payments, then convert one into the other. — from [[dixit-2008-art-strategy/ch15-workouts]] (decision-game-theory → other)
+- [structural-analogy] Dollars-for-pounds relabeling (No. 7) ↔ revenue-equivalence-style reasoning: show two auction rules give equal expected payments, then convert one into the other. — from [[dixit-2008-art-strategy/ch15-workouts]] (decision-game-theory → other:revenue-equivalence-style-reasoning)

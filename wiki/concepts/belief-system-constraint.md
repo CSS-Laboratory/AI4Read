@@ -2,12 +2,14 @@
 id: belief-system-constraint
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 8
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [achen-2016-realists/ch01-democratic, achen-2016-realists/ch02-elusive, converse-1964-beliefsystems/ch01-introduction, converse-1964-beliefsystems/ch02-sections, converse-1964-beliefsystems/ch03-sections, zaller-1992-massopinion/ch06-mainstream, zaller-1992-massopinion/ch09-two, zaller-1992-massopinion/ch11-evaluating-p1]
 raw_ids: [belief-system constraint]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 

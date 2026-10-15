@@ -2,12 +2,14 @@
 id: private-language-argument
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [wittgenstein-1953-investigations/ch03-understanding, wittgenstein-1953-investigations/ch04-private, wittgenstein-1953-investigations/ch05-thinking]
 raw_ids: [private language argument]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 
@@ -27,4 +29,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] The "private map" without a rule of interpretation (§653) ↔ the private language argument: reporting an inner state with no public technique. The text says only that the expression is easy to misunderstand. — from [[wittgenstein-1953-investigations/ch07-negation]] (analytic-philosophy → other)
+- [structural-analogy] The "private map" without a rule of interpretation (§653) ↔ the private language argument: reporting an inner state with no public technique. The text says only that the expression is easy to misunderstand. — from [[wittgenstein-1953-investigations/ch07-negation]] (analytic-philosophy → other:the-private-language-argument)

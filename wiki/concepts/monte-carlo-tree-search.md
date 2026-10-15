@@ -2,7 +2,9 @@
 id: monte-carlo-tree-search
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 3
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch02-approximation-p5, sutton-2018-rl/ch08-planning, sutton-2018-rl/ch16-applications]

@@ -1,7 +1,7 @@
 ---
 id: repetition-code
 type: instance
-fields: [information-theory, linear-algebra]
+fields: [information-theory, bayesian, linear-algebra]
 n_sources: 4
 tiers: [core, deep]
 grounding: digests
@@ -22,7 +22,7 @@ generated_by: build_kg.py
 ### information-theory
 
 - [[cover-2006-elements/ch08-channel-p2]] (p. 209): five-fold repetition, majority-vote decoding
-- [[mackay-2003-information/ch49-repeat]] (pp. 582, 585): the starting component of the RA code
+- [[mackay-2003-information/ch49-repeat]] (pp. 582, 585): the starting component of the RA code [work fields: information-theory, bayesian]
 - [[pierce-1980-introduction/ch08-noisy]] (pp. 149–150): sending each digit twice (detect) or three times (correct) costs rate 1/2 or 1/3
 
 ### linear-algebra

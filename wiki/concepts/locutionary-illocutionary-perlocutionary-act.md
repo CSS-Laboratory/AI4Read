@@ -2,12 +2,14 @@
 id: locutionary-illocutionary-perlocutionary-act
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lycan-2019-language/ch12-speech]
 raw_ids: [locutionary / illocutionary / perlocutionary act]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

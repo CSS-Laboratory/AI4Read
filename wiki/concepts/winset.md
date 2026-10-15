@@ -2,7 +2,9 @@
 id: winset
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 5
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch11-problems-p2, clark-2017-principles/ch15-institutional-p3, shepsle-2010-analyzing/ch05-spatial-p1, shepsle-2010-analyzing/ch05-spatial-p2, shepsle-2010-analyzing/ch05-spatial-p3]
@@ -34,4 +36,4 @@ generated_by: build_kg.py
 - [same-math] winset under unanimity ↔ political-science (Chapter 11 spatial model): the same winset/indifference-circle construction, with the voting rule set to unanimity. — from [[clark-2017-principles/ch15-institutional-p3]] (political-science → political-science)
 - [structural-analogy] empty winset ↔ game theory: a Nash equilibrium (no majority coalition has a profitable deviation) — both are points nobody has enough support to leave — from [[shepsle-2010-analyzing/ch05-spatial-p1]] (political-science → decision-game-theory)
 - [structural-analogy] McNollgast's triangle $HSP$ ↔ veto players and the winset of the status quo: points in the triangle that no unanimous coalition of principals can improve on (canon link; not stated in this unit). — from [[shepsle-2010-analyzing/ch13-bureaucracy]] (political-science → political-science)
-- [structural-analogy] Empty-winset government ↔ Condorcet winner: no alternative is preferred by a majority, but only among lattice points. — from [[shepsle-2010-analyzing/ch16-cabinet]] (political-science → other)
+- [structural-analogy] Empty-winset government ↔ Condorcet winner: no alternative is preferred by a majority, but only among lattice points. — from [[shepsle-2010-analyzing/ch16-cabinet]] (political-science → political-science)

@@ -2,7 +2,9 @@
 id: heavy-tailed-prior
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch17-models, murphy-2023-pml2/ch03-statistics-p2]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Heavy-tailed prior on group effects ↔ Hierarchical models: tail shape of the population distribution sets how strongly extreme groups are shrunk — from [[gelman-2013-bda3/ch17-models]] (bayesian → other)
+- [structural-analogy] Heavy-tailed prior on group effects ↔ Hierarchical models: tail shape of the population distribution sets how strongly extreme groups are shrunk — from [[gelman-2013-bda3/ch17-models]] (bayesian → bayesian)

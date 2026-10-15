@@ -2,7 +2,9 @@
 id: permutation-matrix
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 4
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [boyd-2018-vmls/ch07-matrix, spielman-2025-sagt/ch39-testing, strang-2023-introduction/ch02-solving-p1, strang-2023-introduction/ch02-solving-p2]

@@ -2,12 +2,14 @@
 id: narrative-contagion-sir
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 21
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [shiller-2019-narrative/app-applying, shiller-2019-narrative/ch01-bitcoin, shiller-2019-narrative/ch02-adventure, shiller-2019-narrative/ch03-contagion, shiller-2019-narrative/ch04-do, shiller-2019-narrative/ch05-laffer, shiller-2019-narrative/ch06-diverse, shiller-2019-narrative/ch07-causality, shiller-2019-narrative/ch08-seven, shiller-2019-narrative/ch09-recurrence, shiller-2019-narrative/ch10-panic, shiller-2019-narrative/ch11-frugality, shiller-2019-narrative/ch12-gold, shiller-2019-narrative/ch13-labor, shiller-2019-narrative/ch14-automation, shiller-2019-narrative/ch15-real, shiller-2019-narrative/ch16-stock, shiller-2019-narrative/ch17-boycotts, shiller-2019-narrative/ch18-wage, shiller-2019-narrative/ch19-future, shiller-2019-narrative/front-preface]
 raw_ids: [narrative contagion (SIR)]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 
@@ -45,4 +47,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Fields growing from one paper to conferences to a journal ↔ narrative contagion (SIR): ideas spread person to person (the text says only that others "read about it" and join). — from [[thaler-2015-misbehaving/ch19-forming]] (economics-finance → other)
+- [metaphor] Fields growing from one paper to conferences to a journal ↔ narrative contagion (SIR): ideas spread person to person (the text says only that others "read about it" and join). — from [[thaler-2015-misbehaving/ch19-forming]] (economics-finance → economics-finance)

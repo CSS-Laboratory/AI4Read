@@ -2,7 +2,9 @@
 id: essential-property
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kripke-1980-naming/ch01-lecture-p2, kripke-1980-naming/ch03-lecture-p2]

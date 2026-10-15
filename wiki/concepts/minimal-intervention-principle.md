@@ -2,11 +2,13 @@
 id: minimal-intervention-principle
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [bellman-1957-dp/ch09-ix, todorov-2002-ofc/main]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 
@@ -20,7 +22,7 @@ generated_by: build_kg.py
 
 ### control-theory
 
-- [[bellman-1957-dp/ch09-ix]]: not stated in this unit; no link made.
+- [[bellman-1957-dp/ch09-ix]]: not stated in this unit; no link made. [weak: not really used in this unit]
 - [[todorov-2002-ofc/main]] (p. 3): deviations from the average trajectory are corrected only if they interfere with task performance
 
 ## Candidate bridges

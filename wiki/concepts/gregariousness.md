@@ -2,22 +2,34 @@
 id: gregariousness
 type: concept
 fields: [communication-theory]
-n_sources: 3
+fields_strong: [communication-theory]
+n_sources: 6
+n_works: 1
 tiers: [core]
 grounding: digests
-sources: [katz-1955-personalinfluence/appb-guide, katz-1955-personalinfluence/ch10-marketing, katz-1955-personalinfluence/ch12-public]
+sources: [katz-1955-personalinfluence/appb-guide, katz-1955-personalinfluence/ch09-describing, katz-1955-personalinfluence/ch10-marketing, katz-1955-personalinfluence/ch11-fashion, katz-1955-personalinfluence/ch12-public, katz-1955-personalinfluence/ch13-movie]
+aliases: [gregariousness-index]
 generated_by: build_kg.py
 ---
 
 # gregariousness
+
+## Aliases
+
+Variant ids merged into this page (curated in `wiki/kg/aliases.json`):
+
+- `gregariousness-index` — 3 digest(s)
 
 ## Definitions in the sources
 
 ### communication-theory
 
 - [[katz-1955-personalinfluence/appb-guide]] (p. 347, fn. 4): a sociability indicator. Two questions from a larger set formed the index after a latent structure analysis [new]
+- [[katz-1955-personalinfluence/ch09-describing]] (pp. 227–228): high/medium/low score from number of friends outside the neighbourhood and club membership [alias `gregariousness-index`; new]
 - [[katz-1955-personalinfluence/ch10-marketing]] (pp. 242–243): number of friends and organizational memberships; raises leadership chances within every life-cycle type [new]
+- [[katz-1955-personalinfluence/ch11-fashion]] (pp. 259–260): used earlier for marketing leaders (not defined here); the authors read it here as an index of social contacts and, they think, of the character of interests, e.g. pressure to be in style [alias `gregariousness-index`; new; weak: not really used in this unit]
 - [[katz-1955-personalinfluence/ch12-public]] (pp. 288–289): amount of social contact; here more strongly related to public affairs leadership than status is [new]
+- [[katz-1955-personalinfluence/ch13-movie]] (p. 301): organizational contacts plus friends. Here it misses the gregarious nature of movie-going [alias `gregariousness-index`; new]
 
 ## Instances that use it
 

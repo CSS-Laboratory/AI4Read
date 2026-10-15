@@ -2,7 +2,9 @@
 id: enlightenment
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 4
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lupia-1998-dilemma/ch04-people, lupia-1998-dilemma/ch05-delegation, lupia-1998-dilemma/ch07-laboratory-p2, lupia-1998-dilemma/ch08-laboratory]
@@ -17,7 +19,7 @@ generated_by: build_kg.py
 
 - [[lupia-1998-dilemma/ch04-people]] (p. 68, fn. 1): a speaker's words or actions raise the listener's ability to predict accurately; no truth is required [new]
 - [[lupia-1998-dilemma/ch05-delegation]] (p. 88): from Chapters 3–4; here, the conditions under which the speaker signals "better" if and only if the proposal really is better, so the principal can rely on the signal [new]
-- [[lupia-1998-dilemma/ch07-laboratory-p2]] (p. 137): in this unit, the "conditions for enlightenment" are satisfied, for example, when the speaker actually has knowledge and common interests (pp. 122, 132), or when verification occurs regardless of the speaker's interests (p. 137); the term is not defined on these pages (inferred from usage). [new]
+- [[lupia-1998-dilemma/ch07-laboratory-p2]] (p. 137): in this unit, the "conditions for enlightenment" are satisfied, for example, when the speaker actually has knowledge and common interests (pp. 122, 132), or when verification occurs regardless of the speaker's interests (p. 137); the term is not defined on these pages (inferred from usage). [new; weak: not really used in this unit]
 - [[lupia-1998-dilemma/ch08-laboratory]] (p. 155): the principal's learning from the speaker. In the experiments it is expected when the speaker is knowledgeable and either shares her interests or faces sufficient external forces [new]
 
 ## Instances that use it

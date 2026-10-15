@@ -2,7 +2,9 @@
 id: random-search
 type: concept
 fields: [bayesian, control-theory]
+fields_strong: [bayesian, control-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch06-optimization-p2, recht-2019-tour/main]
@@ -30,5 +32,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Pheromone-weighted trail choice ↔ codelet resource allocation by promise: positive feedback plus residual random search. — from [[mitchell-2009-guidedtour/ch13-make]] (complex-systems → other)
-- [structural-analogy] Simulated annealing (varying $T$ in (1)) ↔ optimisation: random search with decreasing randomness; also SAEM, which reduces simulation noise toward EM. — from [[robert-2011-mcmc/main]] (bayesian → other)
+- [structural-analogy] Pheromone-weighted trail choice ↔ codelet resource allocation by promise: positive feedback plus residual random search. — from [[mitchell-2009-guidedtour/ch13-make]] (complex-systems → other:codelet-resource-allocation-by)
+- [structural-analogy] Simulated annealing (varying $T$ in (1)) ↔ optimisation: random search with decreasing randomness; also SAEM, which reduces simulation noise toward EM. — from [[robert-2011-mcmc/main]] (bayesian → other:optimization)

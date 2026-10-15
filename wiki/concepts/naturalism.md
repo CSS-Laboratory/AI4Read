@@ -2,7 +2,9 @@
 id: naturalism
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch10-naturalistic, godfreysmith-2003-theory/ch15-empiricism]

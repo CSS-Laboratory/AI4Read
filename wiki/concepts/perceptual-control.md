@@ -2,12 +2,14 @@
 id: perceptual-control
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [sutton-2018-rl/ch14-psychology]
 raw_ids: [perceptual control]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 

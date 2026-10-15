@@ -2,7 +2,9 @@
 id: borda-count
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch11-problems-p1, clark-2017-principles/ch13-elections-p1, shepsle-2010-analyzing/ch07-voting]

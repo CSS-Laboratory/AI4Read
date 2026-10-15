@@ -2,7 +2,9 @@
 id: preference-reversal
 type: concept
 fields: [decision-game-theory, economics-finance]
+fields_strong: [decision-game-theory, economics-finance]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch33-reversals, thaler-2015-misbehaving/ch06-gauntlet]

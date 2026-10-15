@@ -2,7 +2,9 @@
 id: forced-saving
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [keynes-1936-general/ch07-meaning, keynes-1936-general/ch14-classical]

@@ -1,7 +1,7 @@
 ---
 id: buridans-ass
 type: instance
-fields: [bayesian, theory-of-mind]
+fields: [bayesian, llm, theory-of-mind]
 n_sources: 2
 tiers: [core]
 grounding: digests
@@ -19,4 +19,4 @@ generated_by: build_kg.py
 
 ### theory-of-mind
 
-- [[strachan-2024-llm-humans/main]] (§ "Understanding faux pas"): rational agent between two equal hay bales; used as a hypothesis name
+- [[strachan-2024-llm-humans/main]] (§ "Understanding faux pas"): rational agent between two equal hay bales; used as a hypothesis name [work fields: theory-of-mind, llm]

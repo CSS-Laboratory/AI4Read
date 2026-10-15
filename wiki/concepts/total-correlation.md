@@ -1,8 +1,10 @@
 ---
 id: total-correlation
 type: concept
-fields: [bayesian]
+fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 2
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch05-information-p2, murphy-2023-pml2/ch28-latent-p2]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch05-information-p2]] (p. 241): $D_{KL}(p(\boldsymbol x)\|\prod_dp(x_d))$; non-negative [new]
+- [[murphy-2023-pml2/ch05-information-p2]] (p. 241): $D_{KL}(p(\boldsymbol x)\|\prod_dp(x_d))$; non-negative [new; work fields: bayesian, information-theory]
 - [[murphy-2023-pml2/ch28-latent-p2]] (p. 976): $\sum_j\mathbb H(z_j)-\mathbb H(z)$; KL from joint to product of marginals [new]
 
 ## Instances that use it

@@ -2,7 +2,9 @@
 id: wordscores
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [grimmer-2013-textasdata/main, grimmer-2022-textasdata/ch16-word]
@@ -24,5 +26,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Validating on fresh data ↔ train/test split in machine learning: Wordscores' "virgin" texts are explicitly called the test set (p. 291). — from [[grimmer-2022-textasdata/ch16-word]] (political-science → other)
+- [structural-analogy] Validating on fresh data ↔ train/test split in machine learning: Wordscores' "virgin" texts are explicitly called the test set (p. 291). — from [[grimmer-2022-textasdata/ch16-word]] (political-science → llm)
 - [structural-analogy] Wordscores' dependence on reference texts ↔ confounding of the measured trait with author style in any measure trained on few exemplars. — from [[grimmer-2022-textasdata/ch16-word]] (political-science → unspecified)

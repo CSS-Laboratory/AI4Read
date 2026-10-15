@@ -2,11 +2,13 @@
 id: generative-explanation
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [mitchell-2009-guidedtour/ch14-prospects, schelling-1971-segregation/main-p1]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
@@ -20,7 +22,7 @@ generated_by: build_kg.py
 
 ### complex-systems
 
-- [[mitchell-2009-guidedtour/ch14-prospects]] (p. 85): here, only loosely: simulations show cooperation *can* arise among self-interested agents
+- [[mitchell-2009-guidedtour/ch14-prospects]] (p. 85): here, only loosely: simulations show cooperation *can* arise among self-interested agents [weak: not really used in this unit]
 - [[schelling-1971-segregation/main-p1]] (pp. 150–151, 156): shows by simulation that simple preferences can produce the aggregate pattern
 
 ## Candidate bridges

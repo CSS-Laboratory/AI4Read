@@ -2,7 +2,9 @@
 id: present-bias
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 4
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [thaler-2015-misbehaving/ch11-willpower, thaler-2015-misbehaving/ch12-planner, thaler-2015-misbehaving/ch29-football, thaler-2015-misbehaving/ch31-save]
@@ -28,4 +30,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Present bias and precommitment (cashews, whole life insurance) ↔ self-control problems: dividing planner and doer, with commitment devices (pp. 59, 54). — from [[thaler-2015-misbehaving/ch11-willpower]] (economics-finance → control-theory)
-- [structural-analogy] Present bias ↔ commitment devices: committing now for a later raise resembles pre-commitment against one's future self. — from [[thaler-2015-misbehaving/ch31-save]] (economics-finance → other)
+- [structural-analogy] Present bias ↔ commitment devices: committing now for a later raise resembles pre-commitment against one's future self. — from [[thaler-2015-misbehaving/ch31-save]] (economics-finance → decision-game-theory)

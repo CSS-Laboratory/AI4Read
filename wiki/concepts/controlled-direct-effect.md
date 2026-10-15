@@ -2,7 +2,9 @@
 id: controlled-direct-effect
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 5
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch22-target, pearl-2016-primer/ch03-effects, pearl-2016-primer/ch04-counterfactuals, pearl-2018-bookofwhy/ch09-mediation-p1, pearl-2018-bookofwhy/ch09-mediation-p2]

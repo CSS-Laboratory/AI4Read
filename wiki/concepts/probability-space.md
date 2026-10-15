@@ -2,7 +2,9 @@
 id: probability-space
 type: concept
 fields: [bayesian, linear-algebra]
+fields_strong: [bayesian, linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [deisenroth-2020-mml/ch06-probability-p1, murphy-2023-pml2/ch02-probability-p1]

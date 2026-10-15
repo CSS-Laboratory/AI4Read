@@ -2,7 +2,9 @@
 id: system-2
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch01-characters, kahneman-2011-thinking/ch02-attention]
@@ -30,4 +32,4 @@ generated_by: build_kg.py
 
 - [structural-analogy] System 2 monitoring and overruling System 1 impulses ↔ decision-game-theory: bounded rationality, where limited attention constrains choice — both treat effort and attention as scarce. — from [[kahneman-2011-thinking/ch01-characters]] (decision-game-theory → decision-game-theory)
 - [metaphor] System 2 as a self-controller of System 1 ↔ decision-game-theory: commitment devices that limit one's own options — both concern guarding against one's own impulses. — from [[kahneman-2011-thinking/ch01-characters]] (decision-game-theory → decision-game-theory)
-- [metaphor] planner/doer ↔ psychology: System 2/System 1 — Thaler himself draws this link (p. 75) — from [[thaler-2015-misbehaving/ch12-planner]] (economics-finance → other)
+- [metaphor] planner/doer ↔ psychology: System 2/System 1 — Thaler himself draws this link (p. 75) — from [[thaler-2015-misbehaving/ch12-planner]] (economics-finance → other:psychology)

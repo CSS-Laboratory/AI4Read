@@ -2,12 +2,14 @@
 id: generative-agent
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 1
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [park-2023-agents/main]
 raw_ids: [generative agent]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

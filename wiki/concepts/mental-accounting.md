@@ -2,7 +2,9 @@
 id: mental-accounting
 type: concept
 fields: [economics-finance, decision-game-theory]
+fields_strong: [economics-finance, decision-game-theory]
 n_sources: 7
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/appb-choices, kahneman-2011-thinking/ch34-frames, thaler-2015-misbehaving/ch08-sunk, thaler-2015-misbehaving/ch10-at, thaler-2015-misbehaving/ch12-planner, thaler-2015-misbehaving/ch30-game, thaler-2015-misbehaving/interlude]
@@ -18,7 +20,7 @@ generated_by: build_kg.py
 - [[thaler-2015-misbehaving/ch08-sunk]] (p. 33): tracking purchases in mental books; unused purchases are "recognized" as losses [new]
 - [[thaler-2015-misbehaving/ch10-at]] (p. 46): money is tracked in separate accounts (poker night, racetrack day), and balances there affect choices
 - [[thaler-2015-misbehaving/ch12-planner]] (p. 75): separate money pots (envelopes, mason jars, retirement plans) serve as a control technique; the failure to treat money as fungible makes this feasible
-- [[thaler-2015-misbehaving/ch30-game]] (p. 252): term not defined in this unit; the author says the show is an ideal game to test it and prospect theory
+- [[thaler-2015-misbehaving/ch30-game]] (p. 252): term not defined in this unit; the author says the show is an ideal game to test it and prospect theory [weak: not really used in this unit]
 - [[thaler-2015-misbehaving/interlude]] (pp. 80–82, 84): here: people keep separate mental accounts, so framing the same money differently (rebate vs price cut; ten-pack "investment") changes behavior
 
 ### decision-game-theory

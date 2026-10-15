@@ -2,7 +2,9 @@
 id: equivocation
 type: concept
 fields: [information-theory, control-theory]
+fields_strong: [information-theory, control-theory]
 n_sources: 7
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch09-incessant, pierce-1980-introduction/ch08-noisy, shannon-1948-mathematical/main-p1, stone-2022-information/appa-glossary, stone-2022-information/appb-mathematical, stone-2022-information/ch04-noisy, stone-2022-information/ch08-rate]
@@ -24,7 +26,7 @@ generated_by: build_kg.py
 
 ### control-theory
 
-- [[ashby-1956-cybernetics/ch09-incessant]] (pp. 188–189): $H_1 - H_2$ in Shannon's example; the measure of information destroyed by noise [new]
+- [[ashby-1956-cybernetics/ch09-incessant]] (pp. 188–189): $H_1 - H_2$ in Shannon's example; the measure of information destroyed by noise [new; work fields: control-theory, information-theory]
 
 ## Instances that use it
 

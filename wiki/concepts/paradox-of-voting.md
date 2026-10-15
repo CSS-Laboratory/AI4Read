@@ -2,12 +2,14 @@
 id: paradox-of-voting
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 5
+n_works: 5
 tiers: [core, deep]
 grounding: digests
 sources: [achen-2016-realists/ch02-elusive, arrow-1951-socialchoice/ch05-v, clark-2017-principles/ch14-social-p1, downs-1957-democracy/main, shepsle-2010-analyzing/ch09-collective-p2]
 raw_ids: [paradox of voting]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 

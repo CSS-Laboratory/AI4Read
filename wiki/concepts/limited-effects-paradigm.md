@@ -2,11 +2,13 @@
 id: limited-effects-paradigm
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 4
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [katz-1955-personalinfluence/ch01-between, katz-1955-personalinfluence/ch02-played, lazer-2018-fakenews/main, mccombs-1972-agendasetting/main]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 
@@ -28,5 +30,5 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Carey's "effects tradition" ↔ communication-theory: the limited-effects paradigm and effects research generally — Carey targets the whole research programme, not one model. — from [[carey-1989-cultural/ch04-overcoming]] (communication-theory → communication-theory)
-- [structural-analogy] Authors' unopposed-propaganda argument (p. 71) ↔ limited effects paradigm: effects are larger when counter-influence is absent, smaller when groups intervene. — from [[katz-1955-personalinfluence/ch05-role]] (communication-theory → other)
-- [structural-analogy] Advertising suspected to reinforce more than initiate ↔ Limited effects paradigm: reinforcement over conversion. — from [[katz-1955-personalinfluence/ch08-variations]] (communication-theory → other)
+- [structural-analogy] Authors' unopposed-propaganda argument (p. 71) ↔ limited effects paradigm: effects are larger when counter-influence is absent, smaller when groups intervene. — from [[katz-1955-personalinfluence/ch05-role]] (communication-theory → communication-theory)
+- [structural-analogy] Advertising suspected to reinforce more than initiate ↔ Limited effects paradigm: reinforcement over conversion. — from [[katz-1955-personalinfluence/ch08-variations]] (communication-theory → communication-theory)

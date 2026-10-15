@@ -2,7 +2,9 @@
 id: sampling-theorem
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [pierce-1980-introduction/ch04-encoding, pierce-1980-introduction/ch14-back]

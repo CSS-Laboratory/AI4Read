@@ -2,12 +2,14 @@
 id: causal-dag
 type: concept
 fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 24
+n_works: 7
 tiers: [core, reference, deep]
 grounding: digests
 sources: [hernan-2020-whatif/ch06-graphical, hernan-2020-whatif/ch09-measurement, hernan-2020-whatif/ch18-variable, hernan-2020-whatif/ch19-time, hernan-2020-whatif/ch20-treatment, hernan-2020-whatif/ch21-g, hernan-2020-whatif/ch23-causal, holland-1986-statistics/main, mackay-2003-information/ch35-random, murphy-2023-pml2/ch15-generalized, murphy-2023-pml2/ch19-beyond, murphy-2023-pml2/ch36-causality-p1, pearl-2009-causality/main, pearl-2016-primer/ch01-preliminaries, pearl-2016-primer/ch02-graphical, pearl-2016-primer/ch03-effects, pearl-2018-bookofwhy/ch00-introduction, pearl-2018-bookofwhy/ch01-ladder, pearl-2018-bookofwhy/ch02-buccaneers, pearl-2018-bookofwhy/ch03-evidence, pearl-2018-bookofwhy/ch04-confounding, pearl-2018-bookofwhy/ch06-paradoxes, pearl-2018-bookofwhy/ch07-beyond, pearl-2018-bookofwhy/ch09-mediation-p2]
 raw_ids: [Causal DAG]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
@@ -47,7 +49,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch35-random]] (p. 447): here, arrows read as "is a parent of"
+- [[mackay-2003-information/ch35-random]] (p. 447): here, arrows read as "is a parent of" [work fields: information-theory, bayesian]
 
 ## Candidate bridges
 
@@ -56,8 +58,8 @@ generated_by: build_kg.py
 - [same-math] Conditioning on a collider (p. 243) ↔ Causal DAG: collider path opening — the same phenomenon, discussed under d-separation and fork/chain/collider. — from [[hernan-2020-whatif/ch18-variable]] (bayesian → bayesian)
 - [same-math] conditioning on $S=1$ (being per-protocol) opens $Z\to A\leftarrow L\leftarrow U\to Y$ ↔ causal DAGs: collider conditioning opens a spurious path — the same graph rule. — from [[hernan-2020-whatif/ch22-target]] (bayesian → bayesian)
 - [structural-analogy] Path diagrams (36)–(43) ↔ causal DAG: arrows read as exposure-to-response, but meaningful only for manipulable causes. — from [[holland-1986-statistics/main]] (bayesian → bayesian)
-- [structural-analogy] Logic flow $C\to B\to A$ with no direct $C\to A$ ↔ bayesian: chain in a causal DAG, $A\perp C\mid B$. — from [[jaynes-2003-probability/ch05-queer]] (information-theory → bayesian)
-- [structural-analogy] Fig. 6.2(b), a common source $s$ pointing to every $n_i$ ↔ bayesian: causal DAG fork, where conditioning on the common cause blocks the link between the others — from [[jaynes-2003-probability/ch06-elementary-p2]] (information-theory → bayesian)
+- [structural-analogy] Logic flow $C\to B\to A$ with no direct $C\to A$ ↔ bayesian: chain in a causal DAG, $A\perp C\mid B$. — from [[jaynes-2003-probability/ch05-queer]] (bayesian → bayesian)
+- [structural-analogy] Fig. 6.2(b), a common source $s$ pointing to every $n_i$ ↔ bayesian: causal DAG fork, where conditioning on the common cause blocks the link between the others — from [[jaynes-2003-probability/ch06-elementary-p2]] (bayesian → bayesian)
 - [structural-analogy] $I(X;Y|Z)>0$ while $I(X;Y)=0$ ↔ bayesian (causal DAGs): conditioning on a collider opens a path between independent causes. — from [[mackay-2003-information/ch08-dependent]] (information-theory → bayesian)
 - [structural-analogy] Likelihood-equivalence of $A\to B$ and $B\to A$ ↔ bayesian: causal DAGs, where observational data alone cannot fix arrow direction (canon link; not stated in this unit). — from [[mackay-2003-information/ch35-random]] (information-theory → bayesian)
 - [structural-analogy] $x_{real}\to x_{spur}$ and $x_{real}\to y$ (p. 135) ↔ Causal DAG: a fork, where a common cause creates an association between its two effects — the text does not use DAG language. — from [[mcelreath-2020-rethinking/ch05-multivariate-p1]] (bayesian → bayesian)

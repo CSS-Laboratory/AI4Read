@@ -2,7 +2,9 @@
 id: q-factor
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 6
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch01-exact-p1, bertsekas-2026-rlcourse/ch01-exact-p2, bertsekas-2026-rlcourse/ch02-approximation-p1, bertsekas-2026-rlcourse/ch02-approximation-p4, bertsekas-2026-rlcourse/ch02-approximation-p5, bertsekas-2026-rlcourse/ch03-learning-p2]

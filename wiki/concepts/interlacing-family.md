@@ -2,7 +2,9 @@
 id: interlacing-family
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [spielman-2025-sagt/ch43-ramanujan, spielman-2025-sagt/ch44-bipartite]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Interlacing-family argument ↔ probabilistic method: the average's property gives an element with a no worse property. — from [[spielman-2025-sagt/ch43-ramanujan]] (linear-algebra → other)
+- [structural-analogy] Interlacing-family argument ↔ probabilistic method: the average's property gives an element with a no worse property. — from [[spielman-2025-sagt/ch43-ramanujan]] (linear-algebra → other:mathematics)

@@ -2,11 +2,13 @@
 id: feedforward
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 9
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch12-error, astrom-2021-feedbacksystems/ch01-introduction, astrom-2021-feedbacksystems/ch03-system-p1, astrom-2021-feedbacksystems/ch07-state, astrom-2021-feedbacksystems/ch08-output, astrom-2021-feedbacksystems/ch09-transfer-p1, astrom-2021-feedbacksystems/ch11-pid, astrom-2021-feedbacksystems/ch12-frequency, astrom-2021-feedbacksystems/ch15-architecture-p1]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 
@@ -38,7 +40,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] thermostat as stored design against repeating disturbances ↔ feedforward: fixed design used against recurrent disturbance. — from [[ashby-1956-cybernetics/ch14-amplifying]] (control-theory → other)
+- [structural-analogy] thermostat as stored design against repeating disturbances ↔ feedforward: fixed design used against recurrent disturbance. — from [[ashby-1956-cybernetics/ch14-amplifying]] (control-theory → control-theory)
 - [structural-analogy] Feedback vs feedforward ↔ economics: market-based vs planned economy — the text itself draws the analogy (p. 1-4). — from [[astrom-2021-feedbacksystems/ch01-introduction]] (control-theory → economics-finance)
 - [structural-analogy] Feedforward + feedback split (two degrees of freedom) ↔ motor control: Ito's hypothesis that human motion control combines feedforward and feedback (p. 8-32). — from [[astrom-2021-feedbacksystems/ch08-output]] (control-theory → control-theory)
 - [structural-analogy] Feedforward $F_r=F_m/P$ as model inversion ↔ model-based control in neuroscience: an internal inverse model produces the command. — from [[astrom-2021-feedbacksystems/ch12-frequency]] (control-theory → control-theory)

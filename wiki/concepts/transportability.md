@@ -2,7 +2,9 @@
 id: transportability
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch03-observational, hernan-2020-whatif/ch04-effect, pearl-2018-bookofwhy/ch07-beyond, pearl-2018-bookofwhy/ch10-big]
@@ -27,6 +29,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] sequential refinement of $Y^{a_0,a_1,a_2,a_3}$ (Technical Point 3.2) ↔ hierarchical models: unspecified components $A_j^{a_0=1}$ are random quantities whose population distribution drives transportability. — from [[hernan-2020-whatif/ch03-observational]] (bayesian → other)
+- [structural-analogy] sequential refinement of $Y^{a_0,a_1,a_2,a_3}$ (Technical Point 3.2) ↔ hierarchical models: unspecified components $A_j^{a_0=1}$ are random quantities whose population distribution drives transportability. — from [[hernan-2020-whatif/ch03-observational]] (bayesian → bayesian)
 - [metaphor] "Transportability depends on unmeasured modifiers" ↔ bayesian: prior-sensitivity of out-of-sample prediction. — from [[hernan-2020-whatif/ch04-effect]] (bayesian → bayesian)
 - [structural-analogy] Transportability with $S$ nodes ↔ bayesian: hierarchical models, where populations differ in some parameters and share others — both decide what to borrow across groups. — from [[pearl-2018-bookofwhy/ch10-big]] (bayesian → bayesian)

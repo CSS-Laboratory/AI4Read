@@ -2,11 +2,13 @@
 id: propensity-score
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 11
+n_works: 5
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch08-modeling, hernan-2020-whatif/ch07-confounding, hernan-2020-whatif/ch12-ip, hernan-2020-whatif/ch14-g, hernan-2020-whatif/ch15-outcome, hernan-2020-whatif/ch18-variable, hernan-2020-whatif/ch22-target, murphy-2023-pml2/ch36-causality-p1, murphy-2023-pml2/ch36-causality-p2, pearl-2016-primer/ch03-effects, pearl-2018-bookofwhy/ch00-introduction]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 

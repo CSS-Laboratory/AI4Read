@@ -2,11 +2,13 @@
 id: convention
 type: concept
 fields: [decision-game-theory, analytic-philosophy]
+fields_strong: [decision-game-theory, analytic-philosophy]
 n_sources: 11
+n_works: 5
 tiers: [core]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch04-beautiful, dixit-2008-art-strategy/ch09-cooperation, dixit-2008-art-strategy/ch14-case, lycan-2019-language/ch07-psychological, osborne-2004-introduction/ch02-nash-p1, osborne-2004-introduction/ch03-nash-p2, popper-1959-logic/ch02-problem, schelling-1960-conflict/appa-nuclear, schelling-1960-conflict/appc-re-p1, schelling-1960-conflict/ch03-bargaining, schelling-1960-conflict/ch04-toward]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 
@@ -45,22 +47,22 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Interactive alignment and "path of least resistance" ↔ conventions in communication games: convergence replaces explicit modelling of the partner. — from [[apperly-2011-mindreaders/ch06-cognitive]] (theory-of-mind → communication-theory)
-- [metaphor] Labels sustaining self-confirming stereotypes ↔ convention/focal point: a shared expectation that stays stable because everyone acts on it. — from [[axelrod-1984-cooperation/ch08-social]] (decision-game-theory → other)
-- [structural-analogy] Hidden-price advertising ↔ convention / bad equilibrium: the QWERTY comparison in the text. — from [[dixit-2008-art-strategy/ch14-case]] (decision-game-theory → other)
-- [structural-analogy] Maxims as expectations about a partner ↔ conventions that solve coordination problems: Grice offers analogies from cooperative non-talk tasks (p. 47). — from [[grice-1975-conversation/main]] (analytic-philosophy → other)
-- [metaphor] Convention holding while all rely on it ↔ bank run equilibrium: stability that depends on everyone expecting stability. — from [[keynes-1936-general/ch12-state]] (economics-finance → other)
-- [structural-analogy] Scorekeeping of commitments (Brandom, citing Lewis 1979) ↔ convention: both are shared public record-keeping that sustains coordinated expectations. — from [[lycan-2019-language/ch06-use]] (analytic-philosophy → other)
-- [structural-analogy] Wittgenstein's rule-governed language-games ↔ convention (Lewis): regularities kept up by mutual expectation, though the unit does not make this link. — from [[lycan-2019-language/ch06-use]] (analytic-philosophy → other)
+- [metaphor] Labels sustaining self-confirming stereotypes ↔ convention/focal point: a shared expectation that stays stable because everyone acts on it. — from [[axelrod-1984-cooperation/ch08-social]] (decision-game-theory → analytic-philosophy)
+- [structural-analogy] Hidden-price advertising ↔ convention / bad equilibrium: the QWERTY comparison in the text. — from [[dixit-2008-art-strategy/ch14-case]] (decision-game-theory → analytic-philosophy)
+- [structural-analogy] Maxims as expectations about a partner ↔ conventions that solve coordination problems: Grice offers analogies from cooperative non-talk tasks (p. 47). — from [[grice-1975-conversation/main]] (analytic-philosophy → other:conventions-that-solve-coordination)
+- [metaphor] Convention holding while all rely on it ↔ bank run equilibrium: stability that depends on everyone expecting stability. — from [[keynes-1936-general/ch12-state]] (economics-finance → economics-finance)
+- [structural-analogy] Scorekeeping of commitments (Brandom, citing Lewis 1979) ↔ convention: both are shared public record-keeping that sustains coordinated expectations. — from [[lycan-2019-language/ch06-use]] (analytic-philosophy → decision-game-theory)
+- [structural-analogy] Wittgenstein's rule-governed language-games ↔ convention (Lewis): regularities kept up by mutual expectation, though the unit does not make this link. — from [[lycan-2019-language/ch06-use]] (analytic-philosophy → analytic-philosophy)
 - [structural-analogy] Group-level meaning as a repertoire of procedures kept up by expecting others to keep them ↔ philosophy of language: convention (Lewis; the text mentions Lewis only in n. 9) — both rest meaning on mutual reliance within a community. — from [[lycan-2019-language/ch07-psychological]] (analytic-philosophy → analytic-philosophy)
-- [metaphor] Short-circuited implicature ↔ convention: a pattern becomes automatic through repeated use, as in Millikan's "ossified" meanings. — from [[lycan-2019-language/ch13-implicative]] (analytic-philosophy → other)
-- [structural-analogy] Multiple equilibria and focal points ↔ social conventions and norm selection: an outside cue picks among self-sustaining regularities. — from [[osborne-2004-introduction/ch02-nash-p1]] (decision-game-theory → political-science)
-- [structural-analogy] Symmetric equilibrium as a steady state of a single population ↔ convention: a self-sustaining regularity (pedestrian example, p. 51). — from [[osborne-2004-introduction/ch02-nash-p2]] (decision-game-theory → other)
+- [metaphor] Short-circuited implicature ↔ convention: a pattern becomes automatic through repeated use, as in Millikan's "ossified" meanings. — from [[lycan-2019-language/ch13-implicative]] (analytic-philosophy → decision-game-theory)
+- [structural-analogy] Multiple equilibria and focal points ↔ social conventions and norm selection: an outside cue picks among self-sustaining regularities. — from [[osborne-2004-introduction/ch02-nash-p1]] (decision-game-theory → other:social-conventions-and-norm)
+- [structural-analogy] Symmetric equilibrium as a steady state of a single population ↔ convention: a self-sustaining regularity (pedestrian example, p. 51). — from [[osborne-2004-introduction/ch02-nash-p2]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] War of Attrition equilibria as conventions between owner and challenger (p. 77) ↔ evolutionarily stable strategy / convention as steady state in an asymmetric contest — from [[osborne-2004-introduction/ch03-nash-p2]] (decision-game-theory → unspecified)
-- [metaphor] Bourgeois/paradoxical strategies as conventions ↔ convention: a self-sustaining regularity (the chapter itself uses the word "convention" for peaceful settlement) (p. 295). — from [[osborne-2004-introduction/ch13-evolutionary]] (decision-game-theory → other)
-- [same-math] $1-\mathrm{TV}$ as minimal total testing error (7.19) ↔ statistics: Bayes-optimal binary decision with equal priors, up to the sum-of-errors convention. — from [[polyanskiy-2025-information/ch08-f-p1]] (information-theory → other)
+- [metaphor] Bourgeois/paradoxical strategies as conventions ↔ convention: a self-sustaining regularity (the chapter itself uses the word "convention" for peaceful settlement) (p. 295). — from [[osborne-2004-introduction/ch13-evolutionary]] (decision-game-theory → decision-game-theory)
+- [same-math] $1-\mathrm{TV}$ as minimal total testing error (7.19) ↔ statistics: Bayes-optimal binary decision with equal priors, up to the sum-of-errors convention. — from [[polyanskiy-2025-information/ch08-f-p1]] (information-theory → other:statistics)
 - [structural-analogy] Rules as conventions of a game ↔ analytic-philosophy: Carnap's principle of tolerance — both treat framework questions as matters of decision (named by Popper, p. 31, note 6). — from [[popper-1959-logic/ch02-problem]] (analytic-philosophy → analytic-philosophy)
 - [structural-analogy] Tipping and explosive convergence of expectations ↔ decision-game-theory: convention — a self-sustaining regularity that solves a coordination problem. — from [[schelling-1960-conflict/appc-re-p2]] (decision-game-theory → decision-game-theory)
-- [structural-analogy] Convergent expectations in coordination ↔ Nash equilibrium / convention: an outcome that each expects of the other and that sustains itself. — from [[schelling-1960-conflict/ch04-toward]] (decision-game-theory → other)
+- [structural-analogy] Convergent expectations in coordination ↔ Nash equilibrium / convention: an outcome that each expects of the other and that sustains itself. — from [[schelling-1960-conflict/ch04-toward]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] Joint norm formation under indeterminacy (Sherif) ↔ decision-game-theory: convention — a regularity that settles in to solve a recurring coordination problem. — from [[schelling-1960-conflict/ch06-game]] (decision-game-theory → decision-game-theory)
 - [metaphor] coaches following convention to avoid firing ↔ Keynes's remark, cited by Thaler, that following conventional wisdom keeps you from getting fired (pdf 289). — from [[thaler-2015-misbehaving/ch29-football]] (economics-finance → unspecified)
 - [structural-analogy] The cock-and-hens physical account (§493) ↔ Lewis's signalling systems — signs that move others, described as causes versus as convention. — from [[wittgenstein-1953-investigations/ch06-intentionality]] (analytic-philosophy → unspecified)

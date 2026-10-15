@@ -2,7 +2,9 @@
 id: loewner-order
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 3
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [spielman-2025-sagt/ch06-comparing, spielman-2025-sagt/ch33-linear, spielman-2025-sagt/ch35-conjugate]

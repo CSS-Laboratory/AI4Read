@@ -2,7 +2,9 @@
 id: dual-control
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 3
+n_works: 2
 tiers: [reference, core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch15-architecture-p2, bertsekas-2026-rlcourse/ch01-exact-p6, bertsekas-2026-rlcourse/ch02-approximation-p6]
@@ -21,6 +23,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Dual control ↔ exploration vs exploitation: both trade immediate performance against information gain; the author links dual control to reinforcement learning. — from [[astrom-2021-feedbacksystems/ch15-architecture-p2]] (control-theory → other)
-- [structural-analogy] Dual control (estimation vs control) ↔ RL: exploration–exploitation tradeoff — the author identifies them (p. 147). — from [[bertsekas-2026-rlcourse/ch01-exact-p6]] (control-theory → other)
+- [structural-analogy] Dual control ↔ exploration vs exploitation: both trade immediate performance against information gain; the author links dual control to reinforcement learning. — from [[astrom-2021-feedbacksystems/ch15-architecture-p2]] (control-theory → control-theory)
+- [structural-analogy] Dual control (estimation vs control) ↔ RL: exploration–exploitation tradeoff — the author identifies them (p. 147). — from [[bertsekas-2026-rlcourse/ch01-exact-p6]] (control-theory → control-theory)
 - [structural-analogy] Exploration vs exploitation ↔ control theory: identification (estimation) vs control, "dual control" — the text names this correspondence (p. 44). — from [[sutton-2018-rl/ch02-multi]] (control-theory → control-theory)

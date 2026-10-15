@@ -2,12 +2,14 @@
 id: symbol-grounding
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 4
+n_works: 4
 tiers: [core, deep]
 grounding: digests
 sources: [bender-2020-octopus/main, brown-2020-gpt3/main-p2, mahowald-2024-dissociating/main, piantadosi-2022-meaning/main]
 raw_ids: [symbol grounding]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

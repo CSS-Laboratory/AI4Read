@@ -2,7 +2,9 @@
 id: frame-problem
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [apperly-2011-mindreaders/ch01-introduction, dennett-1987-intentional-stance/ch06-styles]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Frame problem for mindreading ↔ search-space explosion in planning: both need limits on what is searched, but the text discusses it only qualitatively. — from [[apperly-2011-mindreaders/ch06-cognitive]] (theory-of-mind → other)
+- [metaphor] Frame problem for mindreading ↔ search-space explosion in planning: both need limits on what is searched, but the text discusses it only qualitatively. — from [[apperly-2011-mindreaders/ch06-cognitive]] (theory-of-mind → other:search-space-explosion-in)

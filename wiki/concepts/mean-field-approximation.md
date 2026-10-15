@@ -2,12 +2,14 @@
 id: mean-field-approximation
 type: concept
 fields: [complex-systems, bayesian, information-theory]
+fields_strong: [complex-systems, bayesian, information-theory]
 n_sources: 6
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [castellano-2009-socialdynamics/main-p1, castellano-2009-socialdynamics/main-p2, castellano-2009-socialdynamics/main-p3, murphy-2023-pml2/ch07-inference, murphy-2023-pml2/ch10-variational-p2, polyanskiy-2025-information/ch05-variational]
 raw_ids: [mean-field approximation]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 

@@ -2,7 +2,9 @@
 id: reducibility
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch04-machine, ashby-1956-cybernetics/ch13-regulating]

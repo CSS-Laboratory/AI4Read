@@ -2,7 +2,9 @@
 id: sensitivity-function
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch12-frequency, astrom-2021-feedbacksystems/ch13-robust, astrom-2021-feedbacksystems/ch14-fundamental]

@@ -2,7 +2,9 @@
 id: parameter-expansion
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [gelman-2013-bda3/appc-computation, gelman-2013-bda3/ch12-computationally, gelman-2013-bda3/ch15-hierarchical]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Parameter expansion (extra unidentified scale) ↔ hierarchical models: the chapter points to Section 15.5 for the hierarchical use. — from [[gelman-2013-bda3/ch12-computationally]] (bayesian → other)
+- [structural-analogy] Parameter expansion (extra unidentified scale) ↔ hierarchical models: the chapter points to Section 15.5 for the hierarchical use. — from [[gelman-2013-bda3/ch12-computationally]] (bayesian → bayesian)

@@ -2,7 +2,9 @@
 id: approximation-in-value-space
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 8
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch01-exact-p1, bertsekas-2026-rlcourse/ch01-exact-p2, bertsekas-2026-rlcourse/ch01-exact-p3, bertsekas-2026-rlcourse/ch01-exact-p4, bertsekas-2026-rlcourse/ch01-exact-p6, bertsekas-2026-rlcourse/ch02-approximation-p1, bertsekas-2026-rlcourse/ch02-approximation-p4, bertsekas-2026-rlcourse/ch02-approximation-p7]
@@ -27,5 +29,5 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Approximation in value space with a control interval and prediction interval ↔ model predictive control: the book relates the two (pp. 8–9) — from [[bertsekas-2026-rlcourse/ch01-exact-p1]] (control-theory → control-theory)
-- [structural-analogy] MPC "apply the first control, then replan" ↔ rollout/approximation in value space: both are one Newton step on the Bellman equation (pp. 119–122). — from [[bertsekas-2026-rlcourse/ch01-exact-p5]] (control-theory → other)
+- [structural-analogy] MPC "apply the first control, then replan" ↔ rollout/approximation in value space: both are one Newton step on the Bellman equation (pp. 119–122). — from [[bertsekas-2026-rlcourse/ch01-exact-p5]] (control-theory → other:rollout-approximation-in-value)
 - [structural-analogy] MPC (rolling horizon plus terminal cost) ↔ rollout and approximation in value space — author links them (pp. 147–148). — from [[bertsekas-2026-rlcourse/ch01-exact-p6]] (control-theory → unspecified)

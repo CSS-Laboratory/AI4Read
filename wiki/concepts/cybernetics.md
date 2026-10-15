@@ -2,7 +2,9 @@
 id: cybernetics
 type: concept
 fields: [complex-systems, information-theory]
+fields_strong: [complex-systems, information-theory]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [mitchell-2009-guidedtour/ch08-self, mitchell-2009-guidedtour/ch19-past, pierce-1980-introduction/ch11-cybernetics]

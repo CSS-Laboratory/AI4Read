@@ -2,7 +2,9 @@
 id: wage-unit
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 6
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [keynes-1936-general/ch04-choice, keynes-1936-general/ch08-propensity, keynes-1936-general/ch18-general, keynes-1936-general/ch19-changes, keynes-1936-general/ch20-employment, keynes-1936-general/ch21-theory]
@@ -19,7 +21,7 @@ generated_by: build_kg.py
 - [[keynes-1936-general/ch08-propensity]] (§ I): unit of labour cost in which income and consumption are measured [new]
 - [[keynes-1936-general/ch18-general]] (§ I): money-wage per unit of labour; income, employment and money are measured in it [new]
 - [[keynes-1936-general/ch19-changes]] (§ II, "It is, therefore, on the effect"): the money-wage rate used as the measuring unit; the quantity of money measured in wage-units rises when money-wages fall (if the nominal quantity of money is virtually fixed) [new]
-- [[keynes-1936-general/ch20-employment]] (§ I, para. 2): unit in which demand is measured, chosen to avoid units of dubious quantitative character; not defined in this chapter [new]
+- [[keynes-1936-general/ch20-employment]] (§ I, para. 2): unit in which demand is measured, chosen to avoid units of dubious quantitative character; not defined in this chapter [new; weak: not really used in this unit]
 - [[keynes-1936-general/ch21-theory]]: money wage rate used as a standard; the cost-unit generalises it (§§ III, IV(5)) [new]
 
 ## Instances that use it

@@ -2,7 +2,9 @@
 id: third-party-enforcer
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch04-origins-p1, clark-2017-principles/ch04-origins-p2]
@@ -24,5 +26,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Mafia as third-party enforcer ↔ [[selective incentive]]: a private cost on defectors turns a dilemma into cooperation. — from [[clark-2017-principles/ch04-origins-p2]] (political-science → other)
+- [structural-analogy] Mafia as third-party enforcer ↔ [[selective incentive]]: a private cost on defectors turns a dilemma into cooperation. — from [[clark-2017-principles/ch04-origins-p2]] (political-science → political-science)
 - [structural-analogy] Hobbes's Leviathan as third-party enforcer ↔ contract theory in economics: enforced contracts make promises credible (p. 248) — from [[shepsle-2010-analyzing/ch08-cooperation]] (political-science → economics-finance)

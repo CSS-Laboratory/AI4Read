@@ -2,7 +2,9 @@
 id: discount-factor
 type: concept
 fields: [control-theory, decision-game-theory, political-science]
+fields_strong: [control-theory, decision-game-theory, political-science]
 n_sources: 4
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch01-exact-p2, clark-2017-principles/ch04-origins-p2, osborne-2004-introduction/ch14-repeated, recht-2019-tour/main]

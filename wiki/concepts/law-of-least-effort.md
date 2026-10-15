@@ -2,7 +2,9 @@
 id: law-of-least-effort
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch02-attention, kahneman-2011-thinking/ch03-lazy]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Law of least effort ↔ satisficing: stopping at an easier route that works — from [[kahneman-2011-thinking/ch02-attention]] (decision-game-theory → other)
+- [structural-analogy] Law of least effort ↔ satisficing: stopping at an easier route that works — from [[kahneman-2011-thinking/ch02-attention]] (decision-game-theory → decision-game-theory)

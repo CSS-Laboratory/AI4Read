@@ -2,7 +2,9 @@
 id: threat
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch06-strategic, schelling-1960-conflict/ch05-enforcement-p1]
@@ -47,25 +49,25 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] provocability of nice strategies ↔ credible commitment: a threat to retaliate must be real to deter exploitation. — from [[axelrod-1984-cooperation/ch03-chronology]] (decision-game-theory → other)
-- [structural-analogy] Reputation and credible threats ↔ credible commitment (Schelling): a costly response now makes a threat believable later. — from [[axelrod-1984-cooperation/ch08-social]] (decision-game-theory → other)
+- [structural-analogy] provocability of nice strategies ↔ credible commitment: a threat to retaliate must be real to deter exploitation. — from [[axelrod-1984-cooperation/ch03-chronology]] (decision-game-theory → political-science)
+- [structural-analogy] Reputation and credible threats ↔ credible commitment (Schelling): a costly response now makes a threat believable later. — from [[axelrod-1984-cooperation/ch08-social]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] Presidential veto threat (p. 70) ↔ veto player: an actor whose agreement is needed shapes outcomes through anticipation, even if it rarely acts. — from [[clark-2017-principles/ch03-politics]] (political-science → political-science)
 - [structural-analogy] EVL game with exit threats ↔ political-science canon: exit/voice/loyalty — here the leverage of voice comes from a credible exit option, with the Crown as the organization. — from [[clark-2017-principles/ch06-economic-p2]] (political-science → political-science)
-- [structural-analogy] Ultimatum Game rejection of low offers ↔ social-choice/bargaining theory: a credible threat of costly refusal shapes the first mover's offer. — from [[clark-2017-principles/ch07-cultural-p2]] (political-science → other)
+- [structural-analogy] Ultimatum Game rejection of low offers ↔ social-choice/bargaining theory: a credible threat of costly refusal shapes the first mover's offer. — from [[clark-2017-principles/ch07-cultural-p2]] (political-science → decision-game-theory)
 - [structural-analogy] Military exit option and re-intervention threat ↔ political-science: commitment problem — a group that keeps its power can give up office because its future influence is protected. — from [[clark-2017-principles/ch10-varieties-p2]] (political-science → political-science)
-- [structural-analogy] W/S as loyalty norm ↔ exit/voice/loyalty: a credible exit threat weakens loyalty, as the text itself notes (n. 32) — from [[clark-2017-principles/ch10-varieties-p3]] (political-science → other)
+- [structural-analogy] W/S as loyalty norm ↔ exit/voice/loyalty: a credible exit threat weakens loyalty, as the text itself notes (n. 32) — from [[clark-2017-principles/ch10-varieties-p3]] (political-science → political-science)
 - [structural-analogy] Brinkmanship (rising risk of mutual disaster) ↔ the continuous-time game of chicken or a war of attrition — a threat gets its credibility from a risk outside the players' control. — from [[dixit-2008-art-strategy/ch06-strategic]] (decision-game-theory → unspecified)
 - [structural-analogy] Solomon's four-move game ↔ mechanism design: rules make truthful claims the best response, with off-path threats doing the work. — from [[dixit-2008-art-strategy/ch14-case]] (decision-game-theory → decision-game-theory)
-- [metaphor] Verification threat ↔ peer review in science: the possibility of being checked disciplines claims. — from [[lupia-1998-dilemma/ch10-institutions]] (political-science → other)
-- [structural-analogy] Hold-out and credible threats in small-group bargaining ↔ bargaining model of war: costly delay and credibility of threats. — from [[olson-1965-collectiveaction/app-untitled]] (political-science → other)
-- [structural-analogy] Player 2's bid $v_1$ "not credible" in the second-price auction (pp. 82–83) ↔ subgame-perfect equilibrium: ruling out non-credible threats (canon link; not stated in this unit) — from [[osborne-2004-introduction/ch03-nash-p2]] (decision-game-theory → other)
-- [structural-analogy] Non-credible threat ↔ commitment in strategic settings: the incumbent cannot commit to fight, and a commitment would change the outcome (p. 161). — from [[osborne-2004-introduction/ch05-extensive]] (decision-game-theory → other)
-- [metaphor] grim trigger as a "threat" ↔ credible commitment: the unit shows that the threat is not credible without the modification (pp. 404–405). — from [[osborne-2004-introduction/ch14-repeated]] (decision-game-theory → other)
-- [structural-analogy] Entrepreneur or ruler as residual claimant ↔ principal–agent theory: the outsider monitors agents and keeps the surplus, so threats are credible — same incentive logic as delegation. — from [[ostrom-1990-commons/ch02-institutional]] (political-science → other)
-- [structural-analogy] deterrent threat ↔ criminal law and parenting: same credibility problems in different settings (pp. 18–19). — from [[schelling-1960-conflict/ch01-retarded]] (decision-game-theory → other)
+- [metaphor] Verification threat ↔ peer review in science: the possibility of being checked disciplines claims. — from [[lupia-1998-dilemma/ch10-institutions]] (political-science → other:peer-review-in-science)
+- [structural-analogy] Hold-out and credible threats in small-group bargaining ↔ bargaining model of war: costly delay and credibility of threats. — from [[olson-1965-collectiveaction/app-untitled]] (political-science → political-science)
+- [structural-analogy] Player 2's bid $v_1$ "not credible" in the second-price auction (pp. 82–83) ↔ subgame-perfect equilibrium: ruling out non-credible threats (canon link; not stated in this unit) — from [[osborne-2004-introduction/ch03-nash-p2]] (decision-game-theory → decision-game-theory)
+- [structural-analogy] Non-credible threat ↔ commitment in strategic settings: the incumbent cannot commit to fight, and a commitment would change the outcome (p. 161). — from [[osborne-2004-introduction/ch05-extensive]] (decision-game-theory → other:commitment-in-strategic-settings)
+- [metaphor] grim trigger as a "threat" ↔ credible commitment: the unit shows that the threat is not credible without the modification (pp. 404–405). — from [[osborne-2004-introduction/ch14-repeated]] (decision-game-theory → political-science)
+- [structural-analogy] Entrepreneur or ruler as residual claimant ↔ principal–agent theory: the outsider monitors agents and keeps the surplus, so threats are credible — same incentive logic as delegation. — from [[ostrom-1990-commons/ch02-institutional]] (political-science → political-science)
+- [structural-analogy] deterrent threat ↔ criminal law and parenting: same credibility problems in different settings (pp. 18–19). — from [[schelling-1960-conflict/ch01-retarded]] (decision-game-theory → other:law)
 - [structural-analogy] secret ballot ↔ mechanism design: removing verifiability changes what threats can achieve. — from [[schelling-1960-conflict/ch01-retarded]] (decision-game-theory → decision-game-theory)
-- [structural-analogy] Threat that is not in the threatener's later interest ↔ subgame-perfect equilibrium: a non-credible threat is one he would not carry out when the time comes. — from [[schelling-1960-conflict/ch02-essay]] (decision-game-theory → other)
+- [structural-analogy] Threat that is not in the threatener's later interest ↔ subgame-perfect equilibrium: a non-credible threat is one he would not carry out when the time comes. — from [[schelling-1960-conflict/ch02-essay]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] Threat needing commitment ↔ decision-game-theory: subgame-perfect equilibrium excludes non-credible threats; the same worry about credibility. — from [[schelling-1960-conflict/ch05-enforcement-p1]] (decision-game-theory → decision-game-theory)
-- [structural-analogy] fractional threat probability $\pi$ ↔ mixed strategy: both are probability distributions over actions, but here the odds are meant to be learned by the other player. — from [[schelling-1960-conflict/ch07-randomization]] (decision-game-theory → other)
-- [metaphor] randomizing a threat to limit failure cost ↔ bias–variance trade-off: accepting a weaker, more moderate policy to reduce the cost of error. — from [[schelling-1960-conflict/ch07-randomization]] (decision-game-theory → other)
+- [structural-analogy] fractional threat probability $\pi$ ↔ mixed strategy: both are probability distributions over actions, but here the odds are meant to be learned by the other player. — from [[schelling-1960-conflict/ch07-randomization]] (decision-game-theory → decision-game-theory)
+- [metaphor] randomizing a threat to limit failure cost ↔ bias–variance trade-off: accepting a weaker, more moderate policy to reduce the cost of error. — from [[schelling-1960-conflict/ch07-randomization]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] Chance-linked threat ↔ decision-game-theory/subgame-perfect equilibrium: both address non-credible threats, here by removing the threatener's choice at the critical point. — from [[schelling-1960-conflict/ch08-threat]] (decision-game-theory → decision-game-theory)

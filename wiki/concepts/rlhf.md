@@ -2,12 +2,14 @@
 id: rlhf
 type: concept
 fields: [llm, bayesian]
+fields_strong: [llm, bayesian]
 n_sources: 10
+n_works: 7
 tiers: [deep, core, reference]
 grounding: digests
 sources: [bai-2022-constitutional/main, mahowald-2024-dissociating/main, murphy-2023-pml2/ch22-autoregressive, ouyang-2022-instructgpt/main-p1, ouyang-2022-instructgpt/main-p2, ouyang-2022-instructgpt/main-p3, prince-2023-udl/ch19-reinforcement, rafailov-2023-dpo/main, ziems-2024-css/main-p1, ziems-2024-css/main-p2]
 raw_ids: [RLHF]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 
@@ -33,7 +35,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch22-autoregressive]] (p. 825): RL fine-tuning against a ranking model so responses fit human intent [new]
+- [[murphy-2023-pml2/ch22-autoregressive]] (p. 825): RL fine-tuning against a ranking model so responses fit human intent [new; work fields: bayesian, llm]
 
 ## Instances that use it
 

@@ -2,7 +2,9 @@
 id: poles-and-zeros
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch02-feedback, astrom-2021-feedbacksystems/ch09-transfer-p1, astrom-2021-feedbacksystems/ch09-transfer-p2]

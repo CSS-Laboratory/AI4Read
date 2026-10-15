@@ -2,7 +2,9 @@
 id: renyi-entropy
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [cover-2006-elements/ch16-inequalities, polyanskiy-2025-information/ch02-entropy]

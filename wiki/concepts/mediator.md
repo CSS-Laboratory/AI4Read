@@ -2,7 +2,9 @@
 id: mediator
 type: concept
 fields: [bayesian, decision-game-theory]
+fields_strong: [bayesian, decision-game-theory]
 n_sources: 5
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [pearl-2018-bookofwhy/ch04-confounding, pearl-2018-bookofwhy/ch06-paradoxes, pearl-2018-bookofwhy/ch09-mediation-p1, pearl-2018-bookofwhy/ch09-mediation-p2, schelling-1960-conflict/appc-re-p1]
@@ -45,6 +47,6 @@ generated_by: build_kg.py
 - [structural-analogy] Post-treatment variable (fungus) ↔ causal inference: conditioning on a mediator on the path treatment → outcome blocks that path (canon "fork, chain, collider"; not stated in this unit). — from [[mcelreath-2020-rethinking/ch05-multivariate-p2]] (bayesian → bayesian)
 - [structural-analogy] Revelation principle ↔ decision-game-theory: Aumann's correlated equilibrium, where a mediator recommends actions and obeying is optimal — the paper credits Aumann (1974) as a building block (p. 322). — from [[myerson-2008-mechanism/main]] (decision-game-theory → decision-game-theory)
 - [metaphor] Mediator simulating lies ↔ simulation or compilation of a strategy into a program that tells the truth — suggests why truthful direct mechanisms lose no generality. — from [[myerson-2008-mechanism/main]] (decision-game-theory → unspecified)
-- [structural-analogy] conditioning on the mediator in the tourniquet study ↔ Fork, chain, collider: conditioning on the middle of a chain blocks the path — from [[pearl-2018-bookofwhy/ch09-mediation-p2]] (bayesian → other)
-- [structural-analogy] a mediator's suggestions ↔ correlated-equilibrium-style recommendations: the third player's suggestions are non-authoritative (p. 344). — from [[schelling-1960-conflict/appc-re-p1]] (decision-game-theory → other)
+- [structural-analogy] conditioning on the mediator in the tourniquet study ↔ Fork, chain, collider: conditioning on the middle of a chain blocks the path — from [[pearl-2018-bookofwhy/ch09-mediation-p2]] (bayesian → bayesian)
+- [structural-analogy] a mediator's suggestions ↔ correlated-equilibrium-style recommendations: the third player's suggestions are non-authoritative (p. 344). — from [[schelling-1960-conflict/appc-re-p1]] (decision-game-theory → other:correlated-equilibrium-style-recommendat)
 - [structural-analogy] Mediator who compares offers without revealing them ↔ mechanism design: a third party changes what information the players can act on. — from [[schelling-1960-conflict/ch05-enforcement-p2]] (decision-game-theory → decision-game-theory)

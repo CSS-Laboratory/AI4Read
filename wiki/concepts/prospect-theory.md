@@ -2,7 +2,9 @@
 id: prospect-theory
 type: concept
 fields: [economics-finance, decision-game-theory]
+fields_strong: [economics-finance, decision-game-theory]
 n_sources: 7
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch00-introduction, kahneman-2011-thinking/ch26-prospect, kahneman-2011-thinking/ch28-bad, thaler-2015-misbehaving/ch04-value, thaler-2015-misbehaving/ch05-california, thaler-2015-misbehaving/ch30-game, thaler-2015-misbehaving/conclusion-next]
@@ -33,7 +35,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] probability neglect ↔ prospect theory: probability weighting — both involve misweighted small probabilities. — from [[kahneman-2011-thinking/ch13-availability]] (decision-game-theory → other)
+- [structural-analogy] probability neglect ↔ prospect theory: probability weighting — both involve misweighted small probabilities. — from [[kahneman-2011-thinking/ch13-availability]] (decision-game-theory → decision-game-theory)
 - [metaphor] Gain/loss frame reversal ↔ prospect theory's reflection of risk attitude around a reference point. — from [[kahneman-2011-thinking/ch34-frames]] (decision-game-theory → unspecified)
-- [structural-analogy] Time-neglecting remembering self and prospect-theory "transition" coding ↔ reference dependence: both represent a state by a thin slice of time. — from [[kahneman-2011-thinking/ch38-thinking]] (decision-game-theory → other)
-- [structural-analogy] reference price ↔ prospect theory: gains and losses are measured from a reference point — a proposed link only; the chapter uses loss aversion (p. 25) for routine payments but does not link it to the reference price — from [[thaler-2015-misbehaving/ch07-bargains]] (economics-finance → other)
+- [structural-analogy] Time-neglecting remembering self and prospect-theory "transition" coding ↔ reference dependence: both represent a state by a thin slice of time. — from [[kahneman-2011-thinking/ch38-thinking]] (decision-game-theory → decision-game-theory)
+- [structural-analogy] reference price ↔ prospect theory: gains and losses are measured from a reference point — a proposed link only; the chapter uses loss aversion (p. 25) for routine payments but does not link it to the reference price — from [[thaler-2015-misbehaving/ch07-bargains]] (economics-finance → decision-game-theory)

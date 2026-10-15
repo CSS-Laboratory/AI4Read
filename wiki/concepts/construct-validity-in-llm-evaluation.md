@@ -1,13 +1,15 @@
 ---
 id: construct-validity-in-llm-evaluation
 type: concept
-fields: [theory-of-mind]
+fields: [llm, theory-of-mind]
+fields_strong: [llm, theory-of-mind]
 n_sources: 4
+n_works: 4
 tiers: [deep, core]
 grounding: digests
 sources: [kosinski-2024-llm-tom/main, shapira-2024-clever-hans/main, strachan-2024-llm-humans/main, ullman-2023-trivial-alterations/main]
 raw_ids: [construct validity in LLM evaluation]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 
@@ -21,10 +23,10 @@ generated_by: build_kg.py
 
 ### theory-of-mind
 
-- [[kosinski-2024-llm-tom/main]] (§ "Discussion"): whether passing a human-designed test shows the human capacity; the author stresses controls, scoring keys and alternatives [as `construct validity in LLM evaluation`]
-- [[shapira-2024-clever-hans/main]] (p. 2264–2265): human tests are vetted for validity in humans; success by a model does not allow the same conclusions [as `construct validity in LLM evaluation`]
-- [[strachan-2024-llm-humans/main]] (§ "Main"): here: systematic, multi-test, human-benchmarked comparison to make a non-superficial claim [as `construct validity in LLM evaluation`]
-- [[ullman-2023-trivial-alterations/main]] (p. 9): whether passing human ToM tests shows the same capacity in a model; Ullman argues one can in principle trust the tests for people yet doubt ToM in an LLM that passes
+- [[kosinski-2024-llm-tom/main]] (§ "Discussion"): whether passing a human-designed test shows the human capacity; the author stresses controls, scoring keys and alternatives [as `construct validity in LLM evaluation`; work fields: theory-of-mind, llm]
+- [[shapira-2024-clever-hans/main]] (p. 2264–2265): human tests are vetted for validity in humans; success by a model does not allow the same conclusions [as `construct validity in LLM evaluation`; work fields: theory-of-mind, llm]
+- [[strachan-2024-llm-humans/main]] (§ "Main"): here: systematic, multi-test, human-benchmarked comparison to make a non-superficial claim [as `construct validity in LLM evaluation`; work fields: theory-of-mind, llm]
+- [[ullman-2023-trivial-alterations/main]] (p. 9): whether passing human ToM tests shows the same capacity in a model; Ullman argues one can in principle trust the tests for people yet doubt ToM in an LLM that passes [work fields: theory-of-mind, llm]
 
 ## Candidate bridges
 

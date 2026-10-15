@@ -1,0 +1,124 @@
+{
+ "_about": "Field overrides for works that genuinely span fields (KG phase 2, 2026-10-15). `fields` replaces the catalog field list for every unit of the work (first = primary field, used as the bridge source field); `units` adds fields to the matching units only (fnmatch patterns on the unit id). A work listed under several fields in canon/catalog.json gets all of them automatically, even without an entry here. `checked_single_field` records works that were checked and kept in one field. Reasons cite the catalog (`canon/<field>.md`: why / strand / focus) and the digests.",
+ "works": {
+  "mackay-2003-information": {
+   "fields": ["information-theory", "bayesian"],
+   "reason": "Catalog lists it under information-theory (core) and bayesian (deep); its why: 'unites information theory with Bayesian inference and machine learning'. All 49 digests carry fields [information-theory, bayesian].",
+   "units": [
+    {"units": ["ch39-single", "ch40-capacity", "ch41-learning", "ch42-hopfield", "ch43-boltzmann", "ch44-supervised"],
+     "add": ["llm"],
+     "reason": "Part V, neural networks (chs. 38-44): machine learning, which this canon keeps in the llm field (textbook strand, prince-2023-udl)."},
+    {"units": ["ch36-decision"], "add": ["decision-game-theory"],
+     "reason": "Ch. 36 Decision Theory: expected utility, value of information (decision-game-theory spine)."},
+    {"units": ["ch31-ising"], "add": ["complex-systems"],
+     "reason": "Ch. 31 Ising models: statistical physics, phase transitions (complex-systems criticality strand)."}
+   ]
+  },
+  "jaynes-2003-probability": {
+   "fields": ["bayesian", "information-theory"],
+   "reason": "Catalog lists it under bayesian (core: 'probability as extended logic') and information-theory (reference: the entropy principle). Bayesian is primary because it is core there. All 30 digests carry fields [information-theory, bayesian]."
+  },
+  "murphy-2023-pml2": {
+   "fields": ["bayesian"],
+   "reason": "Catalog (bayesian, Computation strand) why: 'connecting Bayesian inference to machine learning'; chapters on other fields' topics get those fields.",
+   "units": [
+    {"units": ["ch05-information-p*"], "add": ["information-theory"],
+     "reason": "Ch. 5 Information theory (KL divergence, entropy, mutual information)."},
+    {"units": ["ch16-deep", "ch17-bayesian", "ch20-generative", "ch21-variational", "ch22-autoregressive", "ch23-normalizing", "ch24-energy", "ch25-diffusion", "ch26-generative", "ch32-representation", "ch33-interpretability"],
+     "add": ["llm"],
+     "reason": "Deep neural networks, deep generative models, representation learning and interpretability: machine learning, kept in the llm field in this canon."},
+    {"units": ["ch08-gaussian-p*", "ch29-state-p*", "ch35-reinforcement"], "add": ["control-theory"],
+     "reason": "Gaussian (Kalman) filtering and smoothing, state-space models, reinforcement learning: control-theory strands (state space & estimation; RL as control)."},
+    {"units": ["ch34-decision"], "add": ["decision-game-theory"],
+     "reason": "Ch. 34 Decision making under uncertainty."}
+   ]
+  },
+  "ashby-1956-cybernetics": {
+   "fields": ["control-theory"],
+   "reason": "Catalog: control-theory (Feedback & cybernetics). Part Two (Variety) measures variety in bits and treats transmission, noise and channel capacity.",
+   "units": [
+    {"units": ["ch07-quantity", "ch08-transmission", "ch09-incessant"], "add": ["information-theory"],
+     "reason": "Chs. 7-9: variety in bits, channel capacity, entropy, equivocation (the digests' concept lists)."}
+   ]
+  },
+  "sarkka-2023-bayesianfiltering": {
+   "fields": ["control-theory", "bayesian"],
+   "reason": "Catalog (control-theory, State space & estimation) why: 'Rebuilds the Kalman filter from Bayes' rule: filtering is just recursive Bayesian updating of a belief about a hidden state'."
+  },
+  "kelly-1956-information": {
+   "fields": ["economics-finance", "information-theory"],
+   "reason": "Catalog (economics-finance, Finance theory) why: the gambler's growth rate 'equal to Shannon's information rate of the channel'. The information-theory canon lists 'Kelly's gambler with a private wire' as a canonical instance (it names the work as kelly-1956-new)."
+  },
+  "rosvall-2008-maps": {
+   "fields": ["information-theory", "complex-systems"],
+   "reason": "Catalog (information-theory, Algorithmic information and MDL) why: the map equation 'finds network communities' by minimising description length; network community structure is in the complex-systems networks strand."
+  },
+  "markowitz-1952-portfolio": {
+   "fields": ["economics-finance", "linear-algebra"],
+   "reason": "Catalog why: 'Diversification falls out of the covariance matrix ... This is the linear-algebra core of all modern portfolio theory'."
+  },
+  "wlezien-1995-thermostat": {
+   "fields": ["control-theory", "political-science"],
+   "reason": "Catalog (control-theory, Control in biology, cognition & society): models public opinion and spending policy as a thermostat; public opinion is a political-science strand."
+  },
+  "taylor-1993-discretion": {
+   "fields": ["control-theory", "economics-finance"],
+   "reason": "Catalog (control-theory, Control in biology, cognition & society): the Taylor rule for the interest rate, i.e. monetary policy."
+  },
+  "simon-1955-behavioral": {
+   "fields": ["decision-game-theory", "economics-finance"],
+   "reason": "Catalog (decision-game-theory, Behavioral decision & bounded rationality); the economics-finance spine has 'bounded rationality / heuristics', the concept this paper introduces."
+  },
+  "kahneman-1979-prospect": {
+   "fields": ["decision-game-theory", "economics-finance"],
+   "reason": "Catalog (decision-game-theory): prospect theory; the economics-finance spine has 'mental accounting, endowment effect, loss aversion' and behavioral economics builds on this paper."
+  },
+  "chong-2007-framing": {
+   "fields": ["political-science", "communication-theory"],
+   "reason": "Catalog (political-science): the standard political-science review of framing effects; framing is a communication-theory media-effects strand (CHARTER §3)."
+  },
+  "gelman-2013-philosophy": {
+   "fields": ["bayesian", "analytic-philosophy"],
+   "reason": "Catalog (bayesian, Debates) why: Bayesian practice is 'hypothetico-deductive' model checking, argued against inductive belief updating: philosophy of science."
+  },
+  "mikolov-2013-regularities": {
+   "fields": ["linear-algebra", "llm"],
+   "reason": "Catalog (linear-algebra): word vectors encode relations as offsets; companion of the llm canon's word2vec papers (mikolov-2013-efficient, mikolov-2013-compositionality; Prehistory strand)."
+  },
+  "deerwester-1990-lsa": {
+   "fields": ["linear-algebra", "llm"],
+   "reason": "Catalog (linear-algebra) why: truncated SVD puts words and documents in one semantic space; this is the prehistory of word embeddings (llm Prehistory strand)."
+  },
+  "kosinski-2024-llm-tom": {
+   "fields": ["theory-of-mind", "llm"],
+   "reason": "Catalog strand 'The LLM theory-of-mind debate' (CHARTER §3, theory of mind (d)): tests GPT models on false-belief tasks."
+  },
+  "shapira-2024-clever-hans": {
+   "fields": ["theory-of-mind", "llm"],
+   "reason": "Catalog strand 'The LLM theory-of-mind debate': stress-tests LLMs on ToM tasks."
+  },
+  "strachan-2024-llm-humans": {
+   "fields": ["theory-of-mind", "llm"],
+   "reason": "Catalog strand 'The LLM theory-of-mind debate': human vs LLM ToM battery."
+  },
+  "ullman-2023-trivial-alterations": {
+   "fields": ["theory-of-mind", "llm"],
+   "reason": "Catalog strand 'The LLM theory-of-mind debate': small vignette changes flip LLM answers."
+  }
+ },
+ "checked_single_field": {
+  "pearl-2009-causality": "bayesian only: causal inference is a strand of the Bayesian field (CHARTER §3).",
+  "pearl-2016-primer": "bayesian only: causal inference strand.",
+  "pearl-2018-bookofwhy": "bayesian only: causal inference strand; its philosophy of causation is popular framing, not a philosophy text.",
+  "hernan-2020-whatif": "bayesian only: causal inference strand.",
+  "sutton-2018-rl": "control-theory only: reinforcement learning as control is a control-theory strand (CHARTER §3); no LLM content in the digested chapters.",
+  "bertsekas-2026-rlcourse": "control-theory only: RL as control strand.",
+  "jaynes-1957-information": "information-theory only: maximum entropy is in the information-theory scope (CHARTER §3).",
+  "prince-2023-udl": "llm only: the llm canon's textbook strand.",
+  "deisenroth-2020-mml": "linear-algebra only: the catalog places it in the numerical/ML strand of linear algebra.",
+  "wiener-1948-cybernetics": "not digested yet; the catalog lists it under control-theory and communication-theory, so it will get both automatically.",
+  "spielman-2025-sagt": "linear-algebra only: spectral graph theory is a linear-algebra application (CHARTER §3).",
+  "frank-2012-rsa": "theory-of-mind only: RSA is named in the computational ToM strand (CHARTER §3).",
+  "argyle-2023-silicon": "llm only: 'LLMs and social science' strand."
+ }
+}

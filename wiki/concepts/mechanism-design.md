@@ -2,12 +2,14 @@
 id: mechanism-design
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 3
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch07-making, dixit-2008-art-strategy/ch10-auctions, myerson-2008-mechanism/main]
 raw_ids: [mechanism design]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 

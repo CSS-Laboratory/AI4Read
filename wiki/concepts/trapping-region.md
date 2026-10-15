@@ -2,7 +2,9 @@
 id: trapping-region
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [strogatz-2024-nonlinear/ch07-limit-p1, strogatz-2024-nonlinear/ch08-bifurcations-p1]
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Trapping region ↔ absorbing sets in a model: the system cannot leave, so its long-run behaviour is limited to what lies inside. — from [[strogatz-2024-nonlinear/ch07-limit-p1]] (complex-systems → other)
+- [metaphor] Trapping region ↔ absorbing sets in a model: the system cannot leave, so its long-run behaviour is limited to what lies inside. — from [[strogatz-2024-nonlinear/ch07-limit-p1]] (complex-systems → other:absorbing-sets-in-a)

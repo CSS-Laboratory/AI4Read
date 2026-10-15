@@ -2,12 +2,14 @@
 id: grossman-stiglitz-paradox
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [grossman-1980-impossibility/main, stiglitz-2002-paradigm/main-p1]
 raw_ids: [Grossman–Stiglitz paradox]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 

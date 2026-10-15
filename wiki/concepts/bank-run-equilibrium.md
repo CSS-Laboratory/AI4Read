@@ -2,12 +2,14 @@
 id: bank-run-equilibrium
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [shiller-2019-narrative/ch10-panic, shiller-2019-narrative/ch12-gold]
 raw_ids: [bank run equilibrium]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 
@@ -26,7 +28,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Convention holding while all rely on it ↔ bank run equilibrium: stability that depends on everyone expecting stability. — from [[keynes-1936-general/ch12-state]] (economics-finance → other)
+- [metaphor] Convention holding while all rely on it ↔ bank run equilibrium: stability that depends on everyone expecting stability. — from [[keynes-1936-general/ch12-state]] (economics-finance → economics-finance)
 - [structural-analogy] Hedge → speculative → Ponzi drift ↔ economics-finance: bank run equilibrium — both treat fragile financing structures as sources of self-reinforcing collapse. — from [[minsky-1992-instability/main]] (economics-finance → economics-finance)
 - [structural-analogy] Moley's bank-run story ↔ economics-finance: bank run equilibrium — panic as a self-fulfilling coordination outcome. — from [[shiller-2019-narrative/ch10-panic]] (economics-finance → economics-finance)
 - [structural-analogy] 1893 bank-run rumor ↔ economics-finance: bank-run equilibrium — fear of withdrawals becomes self-fulfilling. — from [[shiller-2019-narrative/ch12-gold]] (economics-finance → economics-finance)

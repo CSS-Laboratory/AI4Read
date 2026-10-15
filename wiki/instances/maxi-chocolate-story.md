@@ -7,7 +7,7 @@ tiers: [core]
 grounding: digests
 sources: [wimmer-1983-beliefs-about-beliefs/main]
 canon_instance: [maxi-and-the-chocolate]
-canon_match_rule: same-work-tokens
+canon_match_rule: title-key
 generated_by: build_kg.py
 ---
 

@@ -2,7 +2,9 @@
 id: instrumental-variable
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 5
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [hernan-2020-whatif/ch03-observational, hernan-2020-whatif/ch16-instrumental, murphy-2023-pml2/ch36-causality-p2, pearl-2016-primer/ch03-effects, pearl-2018-bookofwhy/ch07-beyond]

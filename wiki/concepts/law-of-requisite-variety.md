@@ -2,12 +2,14 @@
 id: law-of-requisite-variety
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 4
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch11-requisite, ashby-1956-cybernetics/ch12-error, ashby-1956-cybernetics/ch13-regulating, ashby-1956-cybernetics/ch14-amplifying]
 raw_ids: [law of requisite variety]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 

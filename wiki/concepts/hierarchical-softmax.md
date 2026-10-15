@@ -2,7 +2,9 @@
 id: hierarchical-softmax
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 2
+n_works: 2
 tiers: [deep]
 grounding: digests
 sources: [mikolov-2013-compositionality/main, mikolov-2013-efficient/main]

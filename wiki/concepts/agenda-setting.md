@@ -2,11 +2,13 @@
 id: agenda-setting
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 4
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [lazer-2018-fakenews/main, mccombs-1972-agendasetting/main, rogers-2003-diffusion/ch04-generation, rogers-2003-diffusion/ch10-innovation]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 

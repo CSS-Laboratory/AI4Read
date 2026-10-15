@@ -2,7 +2,9 @@
 id: diminishing-sensitivity
 type: concept
 fields: [decision-game-theory, economics-finance]
+fields_strong: [decision-game-theory, economics-finance]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch26-prospect, kahneman-2011-thinking/ch35-two, thaler-2015-misbehaving/ch04-value]

@@ -2,7 +2,9 @@
 id: counterfactual
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [pearl-2016-primer/ch04-counterfactuals, pearl-2018-bookofwhy/ch00-introduction, pearl-2018-bookofwhy/ch01-ladder, pearl-2018-bookofwhy/ch08-counterfactuals]
@@ -38,12 +40,12 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Martians' hypothetical *gavagai?*-experiments to reconstruct a notional world ↔ inverse planning: inferring beliefs and desires by testing how behaviour would respond to counterfactual inputs. — from [[dennett-1987-intentional-stance/ch05-beyond-p2]] (theory-of-mind → other)
+- [structural-analogy] Martians' hypothetical *gavagai?*-experiments to reconstruct a notional world ↔ inverse planning: inferring beliefs and desires by testing how behaviour would respond to counterfactual inputs. — from [[dennett-1987-intentional-stance/ch05-beyond-p2]] (theory-of-mind → theory-of-mind)
 - [metaphor] pure direct effect via $M^{a=0}$ ↔ Bayesian hierarchical modelling: a counterfactual that depends on a latent value from a different "world" is not checkable from observed data alone. — from [[hernan-2020-whatif/ch23-causal]] (bayesian → bayesian)
 - [structural-analogy] Mrs. C's newspaper, with other sources equally accessible ↔ causal inference: counterfactual reasoning about whether the outcome would have occurred anyway. — from [[katz-1955-personalinfluence/ch04-searching]] (communication-theory → bayesian)
 - [structural-analogy] Stalnaker's most-similar-world test ↔ causal inference: counterfactuals as "change one thing, hold the rest fixed". — from [[lycan-2019-language/ch10-truth]] (analytic-philosophy → bayesian)
 - [metaphor] Paradoxes of the material conditional ↔ analytic-philosophy: conditional and counterfactual talk — English "if" may behave unlike a truth function. — from [[magnus-2025-forallx/ch03-truth-p2]] (analytic-philosophy → analytic-philosophy)
-- [metaphor] counterfactual plot (changing one predictor in the model) ↔ do-operator: both set a variable by hand, but the text makes no claim that the plot is an intervention estimate. — from [[mcelreath-2020-rethinking/ch05-multivariate-p1]] (bayesian → other)
-- [structural-analogy] Causal-impact counterfactual forecast ↔ potential outcomes: treated unit's untreated outcome is the missing quantity, here predicted by a model. — from [[murphy-2023-pml2/ch29-state-p3]] (bayesian → other)
-- [structural-analogy] Vaccination counterfactual (everyone unvaccinated vs actual) ↔ potential outcomes: outcomes of the same units under different treatments. — from [[pearl-2018-bookofwhy/ch01-ladder]] (bayesian → other)
+- [metaphor] counterfactual plot (changing one predictor in the model) ↔ do-operator: both set a variable by hand, but the text makes no claim that the plot is an intervention estimate. — from [[mcelreath-2020-rethinking/ch05-multivariate-p1]] (bayesian → bayesian)
+- [structural-analogy] Causal-impact counterfactual forecast ↔ potential outcomes: treated unit's untreated outcome is the missing quantity, here predicted by a model. — from [[murphy-2023-pml2/ch29-state-p3]] (bayesian → bayesian)
+- [structural-analogy] Vaccination counterfactual (everyone unvaccinated vs actual) ↔ potential outcomes: outcomes of the same units under different treatments. — from [[pearl-2018-bookofwhy/ch01-ladder]] (bayesian → bayesian)
 - [structural-analogy] Off-policy learning ↔ counterfactual reasoning in graphical models, which the text links to "interventions" and "counterfactuals" (p. 117) — from [[sutton-2018-rl/ch05-monte]] (control-theory → unspecified)

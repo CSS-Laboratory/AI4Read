@@ -2,11 +2,13 @@
 id: testimony-reductionism-vs-anti-reductionism
 type: concept
 fields: [analytic-philosophy]
+fields_strong: []
 n_sources: 0
+n_works: 0
 tiers: []
 grounding: digests
 sources: []
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

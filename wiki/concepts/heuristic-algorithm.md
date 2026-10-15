@@ -2,7 +2,9 @@
 id: heuristic-algorithm
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [boyd-2018-vmls/ch04-clustering, boyd-2018-vmls/ch18-nonlinear]

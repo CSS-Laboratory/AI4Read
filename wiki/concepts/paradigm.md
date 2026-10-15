@@ -2,7 +2,9 @@
 id: paradigm
 type: concept
 fields: [analytic-philosophy, control-theory]
+fields_strong: [analytic-philosophy, control-theory]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kuhn-1962-structure/ch10-revolutions, meadows-2008-thinking/ch06-leverage]
@@ -57,27 +59,27 @@ generated_by: build_kg.py
 - [structural-analogy] Monopoly of the paradigm ↔ Framing (Entman): selecting what counts as a fact and a cause. — from [[carey-1989-cultural/ch07-history]] (communication-theory → communication-theory)
 - [metaphor] Paradigm as shielded bomb ↔ designed systems that fail only on a specific trigger (p. 83) — from [[godfreysmith-2003-theory/ch05-kuhn]] (analytic-philosophy → unspecified)
 - [structural-analogy] Paradigm-specific standards (toy example) ↔ decision theory: weighted multi-criteria scoring — the same data, different weights, different ranking. — from [[godfreysmith-2003-theory/ch06-kuhn]] (analytic-philosophy → decision-game-theory)
-- [structural-analogy] Authors' unopposed-propaganda argument (p. 71) ↔ limited effects paradigm: effects are larger when counter-influence is absent, smaller when groups intervene. — from [[katz-1955-personalinfluence/ch05-role]] (communication-theory → other)
-- [structural-analogy] Advertising suspected to reinforce more than initiate ↔ Limited effects paradigm: reinforcement over conversion. — from [[katz-1955-personalinfluence/ch08-variations]] (communication-theory → other)
-- [structural-analogy] Sentence-by-sentence probing ↔ violation-of-expectation paradigm: both infer belief tracking from how responses shift when evidence changes. — from [[kosinski-2024-llm-tom/main]] (theory-of-mind → other)
+- [structural-analogy] Authors' unopposed-propaganda argument (p. 71) ↔ limited effects paradigm: effects are larger when counter-influence is absent, smaller when groups intervene. — from [[katz-1955-personalinfluence/ch05-role]] (communication-theory → communication-theory)
+- [structural-analogy] Advertising suspected to reinforce more than initiate ↔ Limited effects paradigm: reinforcement over conversion. — from [[katz-1955-personalinfluence/ch08-variations]] (communication-theory → communication-theory)
+- [structural-analogy] Sentence-by-sentence probing ↔ violation-of-expectation paradigm: both infer belief tracking from how responses shift when evidence changes. — from [[kosinski-2024-llm-tom/main]] (theory-of-mind → theory-of-mind)
 - [structural-analogy] Pre-paradigm schools ↔ analytic-philosophy: rival "schools" in a field that disagree on fundamentals (Kuhn says this pattern persists in some creative fields, p. 13) — only an analogy. — from [[kuhn-1962-structure/ch02-route]] (analytic-philosophy → analytic-philosophy)
-- [metaphor] Paradigm as legal precedent ↔ common-law reasoning: Kuhn's own comparison for something to be extended, not copied. — from [[kuhn-1962-structure/ch03-nature]] (analytic-philosophy → other)
-- [structural-analogy] Paradigm guiding research without explicit rules ↔ rule-following problem: practice not exhausted by statable rules. — from [[kuhn-1962-structure/ch04-normal]] (analytic-philosophy → other)
-- [metaphor] Paradigm selecting assumed-solvable problems ↔ Lakatos's research programme with its protective belt: a framework that decides which problems get worked on. — from [[kuhn-1962-structure/ch04-normal]] (analytic-philosophy → other)
-- [structural-analogy] Ad hoc modifications that protect a paradigm ↔ confirmation holism (Quine–Duhem): a failed prediction does not say which belief to give up. — from [[kuhn-1962-structure/ch08-response]] (analytic-philosophy → other)
+- [metaphor] Paradigm as legal precedent ↔ common-law reasoning: Kuhn's own comparison for something to be extended, not copied. — from [[kuhn-1962-structure/ch03-nature]] (analytic-philosophy → other:law)
+- [structural-analogy] Paradigm guiding research without explicit rules ↔ rule-following problem: practice not exhausted by statable rules. — from [[kuhn-1962-structure/ch04-normal]] (analytic-philosophy → analytic-philosophy)
+- [metaphor] Paradigm selecting assumed-solvable problems ↔ Lakatos's research programme with its protective belt: a framework that decides which problems get worked on. — from [[kuhn-1962-structure/ch04-normal]] (analytic-philosophy → analytic-philosophy)
+- [structural-analogy] Ad hoc modifications that protect a paradigm ↔ confirmation holism (Quine–Duhem): a failed prediction does not say which belief to give up. — from [[kuhn-1962-structure/ch08-response]] (analytic-philosophy → analytic-philosophy)
 - [structural-analogy] Paradigm-bound standards ↔ social choice: rivals judged by different criteria give different winners, as in the toy example above. — from [[kuhn-1962-structure/ch09-nature]] (analytic-philosophy → decision-game-theory)
-- [metaphor] Paradigm as map plus map-making rules ↔ model selection: the criteria for good models are partly set by the modelling tradition itself. — from [[kuhn-1962-structure/ch09-nature]] (analytic-philosophy → political-science)
+- [metaphor] Paradigm as map plus map-making rules ↔ model selection: the criteria for good models are partly set by the modelling tradition itself. — from [[kuhn-1962-structure/ch09-nature]] (analytic-philosophy → other:statistics)
 - [metaphor] Gestalt switch in paradigm change ↔ philosophy of perception: seeing-as (the same lines seen as duck or rabbit) — both involve the same input organised differently. — from [[kuhn-1962-structure/ch10-revolutions]] (analytic-philosophy → analytic-philosophy)
-- [structural-analogy] Interpretation presupposing a paradigm ↔ confirmation holism: hypotheses are tested together with background assumptions — both deny that data speak independently of a framework. — from [[kuhn-1962-structure/ch10-revolutions]] (analytic-philosophy → other)
-- [structural-analogy] Fitting measurements to Dalton's paradigm until the numerical data themselves had changed ↔ underdetermination: evidence alone does not fix the theory. — from [[kuhn-1962-structure/ch10-revolutions]] (analytic-philosophy → other)
-- [metaphor] Different worlds for different paradigms ↔ semantic externalism: the world, partly, fixes what terms like "planet" mean. — from [[kuhn-1962-structure/ch10-revolutions]] (analytic-philosophy → other)
-- [metaphor] Gestalt switch of paradigm change ↔ psychology of perception: a whole-pattern switch, not a step-by-step change (p. 150) — from [[kuhn-1962-structure/ch12-resolution]] (analytic-philosophy → other)
+- [structural-analogy] Interpretation presupposing a paradigm ↔ confirmation holism: hypotheses are tested together with background assumptions — both deny that data speak independently of a framework. — from [[kuhn-1962-structure/ch10-revolutions]] (analytic-philosophy → analytic-philosophy)
+- [structural-analogy] Fitting measurements to Dalton's paradigm until the numerical data themselves had changed ↔ underdetermination: evidence alone does not fix the theory. — from [[kuhn-1962-structure/ch10-revolutions]] (analytic-philosophy → analytic-philosophy)
+- [metaphor] Different worlds for different paradigms ↔ semantic externalism: the world, partly, fixes what terms like "planet" mean. — from [[kuhn-1962-structure/ch10-revolutions]] (analytic-philosophy → analytic-philosophy)
+- [metaphor] Gestalt switch of paradigm change ↔ psychology of perception: a whole-pattern switch, not a step-by-step change (p. 150) — from [[kuhn-1962-structure/ch12-resolution]] (analytic-philosophy → other:psychology-cognitive-science)
 - [structural-analogy] Paradigm as shared model ↔ analytic-philosophy: family resemblance / language-game — a shared practice, not explicit rules, unites a community. This is only a candidate link; the Preface does not make it. — from [[kuhn-1962-structure/front-preface]] (analytic-philosophy → analytic-philosophy)
 - [metaphor] "Born-again" Bayesian conversion ↔ paradigm shifts in science — from [[mcgrayne-2011-theory/app-appendixes]] (bayesian → unspecified)
-- [metaphor] A movement contained by being ignored ↔ sociology of science: marginalised paradigms. — from [[mcgrayne-2011-theory/ch06-arthur]] (bayesian → other)
+- [metaphor] A movement contained by being ignored ↔ sociology of science: marginalised paradigms. — from [[mcgrayne-2011-theory/ch06-arthur]] (bayesian → other:sociology)
 - [metaphor] "paradigm shift" ↔ Kuhn's philosophy of science: here applied to a change in method driven by practice. — from [[mcgrayne-2011-theory/ch16-eureka]] (bayesian → analytic-philosophy)
-- [metaphor] Laws as prohibitions on events ↔ Kuhn-style rules of a paradigm: both constrain what may happen or count. — from [[popper-1959-logic/appx-untitled]] (analytic-philosophy → other)
+- [metaphor] Laws as prohibitions on events ↔ Kuhn-style rules of a paradigm: both constrain what may happen or count. — from [[popper-1959-logic/appx-untitled]] (analytic-philosophy → other:kuhn-style-rules-of)
 - [structural-analogy] Popper's growth-of-knowledge-through-criticism ↔ Kuhn's paradigm/normal-science and anomaly→crisis→revolution cycle — both treat episodes of real science, not word-analysis, as the unit of epistemological study. — from [[popper-1959-logic/front-preface-2]] (analytic-philosophy → unspecified)
 - [metaphor] Paradigm shift (Kuhn) ↔ philosophy of science: the authors' framing of MCMC replacing closed-form solutions. — from [[robert-2011-mcmc/main]] (bayesian → analytic-philosophy)
-- [structural-analogy] gap paradigm (compare group means before and after) ↔ statistics: difference-in-differences logic — a comparison of change across groups; the source gives no formula. — from [[rogers-2003-diffusion/ch11-consequences-p2]] (communication-theory → other)
+- [structural-analogy] gap paradigm (compare group means before and after) ↔ statistics: difference-in-differences logic — a comparison of change across groups; the source gives no formula. — from [[rogers-2003-diffusion/ch11-consequences-p2]] (communication-theory → other:statistics)
 - [metaphor] "Ptolemaic" patches to the old model ↔ philosophy of science: adding epicycles to a failing paradigm. — from [[stiglitz-2002-paradigm/main-p1]] (economics-finance → analytic-philosophy)

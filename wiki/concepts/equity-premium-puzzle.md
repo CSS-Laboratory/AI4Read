@@ -2,7 +2,9 @@
 id: equity-premium-puzzle
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [thaler-2015-misbehaving/ch20-narrow, thaler-2015-misbehaving/ch30-game]

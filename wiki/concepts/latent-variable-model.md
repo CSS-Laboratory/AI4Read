@@ -1,8 +1,10 @@
 ---
 id: latent-variable-model
 type: concept
-fields: [linear-algebra, bayesian, information-theory, llm]
+fields: [bayesian, linear-algebra, information-theory, llm]
+fields_strong: [bayesian, linear-algebra, information-theory, llm]
 n_sources: 5
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [deisenroth-2020-mml/ch08-when, deisenroth-2020-mml/ch11-density, mackay-2003-information/ch34-independent, murphy-2023-pml2/ch28-latent-p1, prince-2023-udl/ch17-variational]
@@ -24,7 +26,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch34-independent]] (p. 437): generative model where hidden variables, with simple distribution, give rise to observables [new]
+- [[mackay-2003-information/ch34-independent]] (p. 437): generative model where hidden variables, with simple distribution, give rise to observables [new; work fields: information-theory, bayesian]
 
 ### llm
 

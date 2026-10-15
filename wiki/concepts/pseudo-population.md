@@ -2,7 +2,9 @@
 id: pseudo-population
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [hernan-2020-whatif/ch02-randomized, hernan-2020-whatif/ch08-selection, hernan-2020-whatif/ch12-ip]
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Stabilized weights with mean 1 ↔ normalizing constant: dividing by $\mathrm E[g(A)I/f]$ keeps pseudo-population size fixed, like normalizing weights. — from [[hernan-2020-whatif/ch12-ip]] (bayesian → other)
+- [structural-analogy] Stabilized weights with mean 1 ↔ normalizing constant: dividing by $\mathrm E[g(A)I/f]$ keeps pseudo-population size fixed, like normalizing weights. — from [[hernan-2020-whatif/ch12-ip]] (bayesian → other:normalizing-constant)

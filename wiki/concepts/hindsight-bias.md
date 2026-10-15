@@ -2,7 +2,9 @@
 id: hindsight-bias
 type: concept
 fields: [decision-game-theory, economics-finance]
+fields_strong: [decision-game-theory, economics-finance]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch19-illusion, thaler-2015-misbehaving/ch03-list]
@@ -23,4 +25,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Hindsight bias in project evaluation ↔ incentives in organisations: managers' fear of blame for good-but-unlucky decisions. — from [[thaler-2015-misbehaving/ch03-list]] (economics-finance → other)
+- [structural-analogy] Hindsight bias in project evaluation ↔ incentives in organisations: managers' fear of blame for good-but-unlucky decisions. — from [[thaler-2015-misbehaving/ch03-list]] (economics-finance → other:incentives-in-organisations)

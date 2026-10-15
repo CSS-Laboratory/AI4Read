@@ -1,9 +1,11 @@
 ---
 id: unbiased-estimator
 type: concept
-fields: [information-theory, bayesian]
+fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 3
-tiers: [core, reference]
+n_works: 3
+tiers: [core]
 grounding: digests
 sources: [cover-2006-elements/ch12-information-p3, gelman-2013-bda3/ch04-asymptotics, jaynes-2003-probability/ch17-principles-p1]
 generated_by: build_kg.py
@@ -13,11 +15,11 @@ generated_by: build_kg.py
 
 ## Definitions in the sources
 
-### information-theory
-
-- [[cover-2006-elements/ch12-information-p3]] (p. 326–327): an estimator with $E_\theta T=\theta$ for all $\theta$ [new]
-- [[jaynes-2003-probability/ch17-principles-p1]] (pp. 511, 515): $\langle\beta\rangle=\alpha$ over the sampling distribution (17.1); not reparametrization-invariant [new]
-
 ### bayesian
 
 - [[gelman-2013-bda3/ch04-asymptotics]] (p. 94): $\mathrm E(\hat\theta|\theta)=\theta$ for all $\theta$; from the Bayesian view reasonable in the limit of large samples but otherwise potentially misleading [new]
+- [[jaynes-2003-probability/ch17-principles-p1]] (pp. 511, 515): $\langle\beta\rangle=\alpha$ over the sampling distribution (17.1); not reparametrization-invariant [new; work fields: bayesian, information-theory]
+
+### information-theory
+
+- [[cover-2006-elements/ch12-information-p3]] (p. 326–327): an estimator with $E_\theta T=\theta$ for all $\theta$ [new]

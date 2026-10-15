@@ -2,7 +2,9 @@
 id: transaction-utility
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [thaler-2015-misbehaving/ch07-bargains, thaler-2015-misbehaving/ch08-sunk, thaler-2015-misbehaving/interlude]
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] transaction utility ↔ marketing: "deal feel" as a product the seller can supply (pp. 28–29) — from [[thaler-2015-misbehaving/ch07-bargains]] (economics-finance → other)
+- [metaphor] transaction utility ↔ marketing: "deal feel" as a product the seller can supply (pp. 28–29) — from [[thaler-2015-misbehaving/ch07-bargains]] (economics-finance → other:marketing)

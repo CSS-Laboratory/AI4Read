@@ -2,7 +2,9 @@
 id: chernoff-information
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 3
+n_works: 3
 tiers: [core, deep, reference]
 grounding: digests
 sources: [cover-2006-elements/ch12-information-p2, nielsen-2020-elementary/main-p2, polyanskiy-2025-information/ch18-hypothesis]
@@ -22,4 +24,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Chernoff information ↔ Bayesian decision theory: priors are "washed out" at large n as data dominate. — from [[cover-2006-elements/ch12-information-p2]] (information-theory → bayesian)
-- [same-math] Chernoff information ↔ hypothesis testing/large deviations: the best error exponent of the MAP rule (p. 37). — from [[nielsen-2020-elementary/main-p2]] (information-theory → other)
+- [same-math] Chernoff information ↔ hypothesis testing/large deviations: the best error exponent of the MAP rule (p. 37). — from [[nielsen-2020-elementary/main-p2]] (information-theory → other:hypothesis-testing-large-deviations)

@@ -2,12 +2,14 @@
 id: paradigm-normal-science
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 18
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch05-kuhn, godfreysmith-2003-theory/ch06-kuhn, godfreysmith-2003-theory/ch07-lakatos, godfreysmith-2003-theory/ch13-explanation, godfreysmith-2003-theory/ch15-empiricism, kuhn-1962-structure/ch02-route, kuhn-1962-structure/ch03-nature, kuhn-1962-structure/ch04-normal, kuhn-1962-structure/ch05-priority, kuhn-1962-structure/ch06-anomaly, kuhn-1962-structure/ch07-crisis, kuhn-1962-structure/ch08-response, kuhn-1962-structure/ch09-nature, kuhn-1962-structure/ch11-invisibility, kuhn-1962-structure/ch12-resolution, kuhn-1962-structure/ch13-progress, kuhn-1962-structure/front-preface, kuhn-1962-structure/postscript-1969]
 raw_ids: [paradigm / normal science]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

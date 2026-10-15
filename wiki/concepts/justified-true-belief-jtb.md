@@ -2,12 +2,14 @@
 id: justified-true-belief-jtb
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [gettier-1963-jtb/main]
 raw_ids: [justified true belief (JTB)]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

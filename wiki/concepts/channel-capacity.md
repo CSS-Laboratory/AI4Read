@@ -1,13 +1,15 @@
 ---
 id: channel-capacity
 type: concept
-fields: [information-theory, control-theory, complex-systems]
+fields: [information-theory, bayesian, control-theory, llm, complex-systems]
+fields_strong: [information-theory, bayesian, control-theory, llm, complex-systems]
 n_sources: 54
+n_works: 9
 tiers: [core, reference]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch08-transmission, ashby-1956-cybernetics/ch09-incessant, cover-2006-elements/ch01-introduction, cover-2006-elements/ch08-channel-p1, cover-2006-elements/ch08-channel-p2, cover-2006-elements/ch10-gaussian, cover-2006-elements/ch13-rate, cover-2006-elements/ch14-network-p1, cover-2006-elements/ch14-network-p4, jaynes-2003-probability/ch22-introduction, mackay-2003-information/ch01-introduction, mackay-2003-information/ch09-communication, mackay-2003-information/ch10-noisy, mackay-2003-information/ch11-error, mackay-2003-information/ch13-binary, mackay-2003-information/ch15-further, mackay-2003-information/ch17-communication, mackay-2003-information/ch40-capacity, mackay-2003-information/ch42-hopfield, mackay-2003-information/ch47-low, mackay-2003-information/ch50-digital, mitchell-2009-guidedtour/ch03-information, pierce-1980-introduction/ch05-entropy, pierce-1980-introduction/ch08-noisy, pierce-1980-introduction/ch09-many, pierce-1980-introduction/ch10-information, pierce-1980-introduction/ch12-information, pierce-1980-introduction/ch14-back, polyanskiy-2025-information/ch04-mutual, polyanskiy-2025-information/ch06-extremization, polyanskiy-2025-information/ch07-tensorization, polyanskiy-2025-information/ch15-universal, polyanskiy-2025-information/ch19-error, polyanskiy-2025-information/ch21-channel, polyanskiy-2025-information/ch22-channels, polyanskiy-2025-information/ch23-capacity, polyanskiy-2025-information/ch24-strong, polyanskiy-2025-information/ch25-channel, polyanskiy-2025-information/ch29-evaluating, polyanskiy-2025-information/ch33-mutual, polyanskiy-2025-information/ch34-lower, polyanskiy-2025-information/ch35-entropic, shannon-1948-mathematical/main-p1, shannon-1948-mathematical/main-p2, stone-2022-information/appa-glossary, stone-2022-information/appb-mathematical, stone-2022-information/appf-rules, stone-2022-information/ch02-entropy, stone-2022-information/ch03-source, stone-2022-information/ch04-noisy, stone-2022-information/ch06-mutual, stone-2022-information/ch07-channel, stone-2022-information/ch08-rate, stone-2022-information/ch11-information]
 raw_ids: [channel capacity]
-canon_spine: information-theory
+canon_spine: [information-theory]
 generated_by: build_kg.py
 ---
 
@@ -28,18 +30,17 @@ generated_by: build_kg.py
 - [[cover-2006-elements/ch13-rate]] (p. 367): dual of $R(D)$; same alternating algorithm computes it
 - [[cover-2006-elements/ch14-network-p1]] (p. 378): here $C=\tfrac12\log(1+P/N)$ for the Gaussian channel
 - [[cover-2006-elements/ch14-network-p4]] (p. 450): here, capacity regions of multi-user channels. Feedback can enlarge them, unlike the single-user memoryless case
-- [[jaynes-2003-probability/ch22-introduction]] (p. 629): here the exponential growth rate $\lim\frac1t\log W(t)$ of distinguishable messages; a property of the channel. Not defined as a maximum of mutual information in this unit
-- [[mackay-2003-information/ch01-introduction]] (pp. 14–15): maximum rate with arbitrarily small p_b; for the BSC, 1 − H₂(f)
-- [[mackay-2003-information/ch09-communication]] (p. 150): C(Q) = max over P_X of I(X;Y) (9.10)
-- [[mackay-2003-information/ch10-noisy]] (p. 162): $C=\max_{P_X}I(X;Y)$ for a discrete memoryless channel
-- [[mackay-2003-information/ch11-error]] (pp. 180–181): maximum mutual information under the input cost constraint; for the Gaussian channel $\tfrac12\log(1+v/\sigma^2)$
-- [[mackay-2003-information/ch13-binary]] (p. 212): used as in the canon; here for the BSC with $C=1-H_2(f)$
-- [[mackay-2003-information/ch15-further]] (pp. 234–236, 239): to be derived for several channels (e.g. 15.11–15.15); $C=5$ bits for 15.12
-- [[mackay-2003-information/ch17-communication]] (p. 251): here $\lim\frac1N\log M_N$, with $M_N$ the number of valid length-$N$ strings
-- [[mackay-2003-information/ch40-capacity]] (p. 484): here, the largest N for which all N target bits are reproduced with very small error through the weights; the author says this departs a little from Chapter 9
-- [[mackay-2003-information/ch42-hopfield]] (p. 512, 515): memory viewed as a channel from memories to weights to stable states; capacity counted in bits
-- [[mackay-2003-information/ch47-low]] (pp. 565, 567): "Shannon limit" used as the benchmark for noise level and signal-to-noise ratio
-- [[mackay-2003-information/ch50-digital]] (p. 589): for this channel (1−f)l bits per use, with or without feedback
+- [[mackay-2003-information/ch01-introduction]] (pp. 14–15): maximum rate with arbitrarily small p_b; for the BSC, 1 − H₂(f) [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch09-communication]] (p. 150): C(Q) = max over P_X of I(X;Y) (9.10) [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch10-noisy]] (p. 162): $C=\max_{P_X}I(X;Y)$ for a discrete memoryless channel [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch11-error]] (pp. 180–181): maximum mutual information under the input cost constraint; for the Gaussian channel $\tfrac12\log(1+v/\sigma^2)$ [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch13-binary]] (p. 212): used as in the canon; here for the BSC with $C=1-H_2(f)$ [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch15-further]] (pp. 234–236, 239): to be derived for several channels (e.g. 15.11–15.15); $C=5$ bits for 15.12 [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch17-communication]] (p. 251): here $\lim\frac1N\log M_N$, with $M_N$ the number of valid length-$N$ strings [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch40-capacity]] (p. 484): here, the largest N for which all N target bits are reproduced with very small error through the weights; the author says this departs a little from Chapter 9 [work fields: information-theory, bayesian, llm]
+- [[mackay-2003-information/ch42-hopfield]] (p. 512, 515): memory viewed as a channel from memories to weights to stable states; capacity counted in bits [work fields: information-theory, bayesian, llm]
+- [[mackay-2003-information/ch47-low]] (pp. 565, 567): "Shannon limit" used as the benchmark for noise level and signal-to-noise ratio [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch50-digital]] (p. 589): for this channel (1−f)l bits per use, with or without feedback [work fields: information-theory, bayesian]
 - [[pierce-1980-introduction/ch05-entropy]] (p. 97): highest entropy (bits/s) that can be sent over a given error-free channel
 - [[pierce-1980-introduction/ch08-noisy]] (pp. 155–156, 164): maximum rate $R$ over message sources, in bits per symbol or per second
 - [[pierce-1980-introduction/ch09-many]] (pp. 175–176): for a Gaussian channel, $C=W\log(1+P/N)$, the highest rate of negligible-error signalling
@@ -75,8 +76,12 @@ generated_by: build_kg.py
 
 ### control-theory
 
-- [[ashby-1956-cybernetics/ch08-transmission]] (p. 154): a transducer with $r$ states transmits at most $\log_2 r$ bits per step [new]
-- [[ashby-1956-cybernetics/ch09-incessant]] (p. 180): rate (bits per unit time) at which a channel can transmit variety; "channel" is defined behaviourally [new]
+- [[ashby-1956-cybernetics/ch08-transmission]] (p. 154): a transducer with $r$ states transmits at most $\log_2 r$ bits per step [new; work fields: control-theory, information-theory]
+- [[ashby-1956-cybernetics/ch09-incessant]] (p. 180): rate (bits per unit time) at which a channel can transmit variety; "channel" is defined behaviourally [new; work fields: control-theory, information-theory]
+
+### bayesian
+
+- [[jaynes-2003-probability/ch22-introduction]] (p. 629): here the exponential growth rate $\lim\frac1t\log W(t)$ of distinguishable messages; a property of the channel. Not defined as a maximum of mutual information in this unit [work fields: bayesian, information-theory]
 
 ### complex-systems
 
@@ -99,15 +104,15 @@ generated_by: build_kg.py
 - [metaphor] channel capacity as a limit on message flow ↔ a limit on how much information an agent can absorb (our suggestion, not in the source) — from [[cover-2006-elements/ch01-introduction]] (information-theory → unspecified)
 - [structural-analogy] rate distortion $\min I(X;\hat X)$ s.t. distortion ↔ information-theory: channel capacity $\max I(X;Y)$ s.t. cost — dual optimizations with a random-coding proof and a shared alternating algorithm. — from [[cover-2006-elements/ch13-rate]] (information-theory → information-theory)
 - [metaphor] The code $z$ as a bottleneck ↔ information theory: lossy compression with limited channel capacity. — from [[deisenroth-2020-mml/ch10-dimensionality]] (linear-algebra → information-theory)
-- [same-math] $Z(\lambda)=\sum e^{-\lambda t_i}=1$ for channel capacity ↔ statistical mechanics: canonical partition function, with $t_i$ playing the role of energy — the same exponential-weights and multiplier calculation (pp. 631–632). — from [[jaynes-2003-probability/ch22-introduction]] (information-theory → complex-systems)
-- [structural-analogy] Flattening by distraction ↔ Noise and channel capacity: disturbance degrades reception. — from [[lippmann-1922-publicopinion/ch05-speed]] (communication-theory → other)
+- [same-math] $Z(\lambda)=\sum e^{-\lambda t_i}=1$ for channel capacity ↔ statistical mechanics: canonical partition function, with $t_i$ playing the role of energy — the same exponential-weights and multiplier calculation (pp. 631–632). — from [[jaynes-2003-probability/ch22-introduction]] (bayesian → complex-systems)
+- [structural-analogy] Flattening by distraction ↔ Noise and channel capacity: disturbance degrades reception. — from [[lippmann-1922-publicopinion/ch05-speed]] (communication-theory → information-theory)
 - [structural-analogy] Maximal tolerable mutation rate (error threshold) ↔ information-theory: noisy-channel capacity limit — mutation corrupts the genome "message", and sex raises the tolerable noise. — from [[mackay-2003-information/ch19-have]] (information-theory → information-theory)
 - [structural-analogy] Capacity in bits per weight ↔ information-theory: channel capacity — memories pass through weights and attractors as through a noisy channel. — from [[mackay-2003-information/ch42-hopfield]] (information-theory → information-theory)
 - [structural-analogy] two-way channel capacity region ↔ multi-user network capacity — trade-off between directions. — from [[pierce-1980-introduction/ch14-back]] (information-theory → unspecified)
-- [same-math] $\mathcal R_n^*=\sup_\pi I(\theta;X^n)$ ↔ channel capacity: the "channel" is $\theta\to X^n$ — Theorem 5.9's minimax = maximin. — from [[polyanskiy-2025-information/ch15-universal]] (information-theory → other)
+- [same-math] $\mathcal R_n^*=\sup_\pi I(\theta;X^n)$ ↔ channel capacity: the "channel" is $\theta\to X^n$ — Theorem 5.9's minimax = maximin. — from [[polyanskiy-2025-information/ch15-universal]] (information-theory → information-theory)
 - [structural-analogy] Capacity under a limit on information flow ↔ rational inattention (canon concept) — agents are limited by a channel capacity (canon link; not stated in this unit). — from [[polyanskiy-2025-information/ch21-channel]] (information-theory → unspecified)
 - [structural-analogy] Single-letterization of $\phi_{S^n}$ ↔ Corollary 20.5 for channel capacity with separable cost — the text says it parallels it (p. 487). — from [[polyanskiy-2025-information/ch27-rate]] (information-theory → unspecified)
-- [same-math] Fano's method with capacity C(T) ↔ channel capacity: C(T) is literally the capacity of the channel θ → X (p. 599). — from [[polyanskiy-2025-information/ch34-lower]] (information-theory → other)
-- [metaphor] distributed bit budget ↔ rational inattention: limited channel capacity per agent restricts aggregate inference. — from [[polyanskiy-2025-information/ch36-strong-p2]] (information-theory → other)
-- [structural-analogy] Channel capacity as a limit on reliable information rate ↔ rational inattention: agents with a bound on absorbed information — from [[shannon-1948-mathematical/main-p1]] (information-theory → other)
-- [metaphor] Channel capacity as a bucket's size ↔ everyday volume: the rate is the amount actually poured (the author's own analogy). — from [[stone-2022-information/ch02-entropy]] (information-theory → other)
+- [same-math] Fano's method with capacity C(T) ↔ channel capacity: C(T) is literally the capacity of the channel θ → X (p. 599). — from [[polyanskiy-2025-information/ch34-lower]] (information-theory → information-theory)
+- [metaphor] distributed bit budget ↔ rational inattention: limited channel capacity per agent restricts aggregate inference. — from [[polyanskiy-2025-information/ch36-strong-p2]] (information-theory → information-theory)
+- [structural-analogy] Channel capacity as a limit on reliable information rate ↔ rational inattention: agents with a bound on absorbed information — from [[shannon-1948-mathematical/main-p1]] (information-theory → information-theory)
+- [metaphor] Channel capacity as a bucket's size ↔ everyday volume: the rate is the amount actually poured (the author's own analogy). — from [[stone-2022-information/ch02-entropy]] (information-theory → other:everyday-volume)

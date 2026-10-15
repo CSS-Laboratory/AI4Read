@@ -2,7 +2,9 @@
 id: total-variation-distance
 type: concept
 fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 2
+n_works: 2
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch02-probability-p3, polyanskiy-2025-information/ch08-f-p2]

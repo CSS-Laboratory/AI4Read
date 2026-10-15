@@ -2,7 +2,9 @@
 id: external-forces
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lupia-1998-dilemma/ch03-people, lupia-1998-dilemma/ch04-people, lupia-1998-dilemma/ch07-laboratory-p1]
@@ -28,5 +30,5 @@ generated_by: build_kg.py
 
 - [metaphor] verification and penalties as "external forces" ↔ institutional design: external rules and monitoring replace trust between parties — from [[lupia-1998-dilemma/app-ch03]] (political-science → political-science)
 - [metaphor] External forces as substitutes for trust ↔ institutions as rules of the game: laws realign incentives among strangers. — from [[lupia-1998-dilemma/ch03-people]] (political-science → political-science)
-- [structural-analogy] Theorems 4.1/4.2 ↔ principal–agent problem/delegation: a principal cannot observe an agent's incentives, and external forces align them. — from [[lupia-1998-dilemma/ch04-people]] (political-science → other)
+- [structural-analogy] Theorems 4.1/4.2 ↔ principal–agent problem/delegation: a principal cannot observe an agent's incentives, and external forces align them. — from [[lupia-1998-dilemma/ch04-people]] (political-science → political-science)
 - [structural-analogy] Verification and penalties for lying as external forces ↔ political-science (principal–agent monitoring and sanctions; Ostrom's monitoring and graduated sanctions): costly detection or punishment disciplines agents. — from [[lupia-1998-dilemma/ch08-laboratory]] (political-science → political-science)

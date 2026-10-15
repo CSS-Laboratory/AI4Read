@@ -2,11 +2,13 @@
 id: fundamental-problem-of-causal-inference
 type: concept
 fields: [bayesian, political-science]
+fields_strong: [bayesian, political-science]
 n_sources: 11
+n_works: 7
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch14-introduction, grimmer-2022-textasdata/ch22-principles, grimmer-2022-textasdata/ch24-causal, hernan-2020-whatif/ch01-definition, hernan-2020-whatif/ch02-randomized, hernan-2020-whatif/ch03-observational, holland-1986-statistics/main, murphy-2023-pml2/ch04-graphical-p3, murphy-2023-pml2/ch36-causality-p1, pearl-2016-primer/ch04-counterfactuals, pearl-2018-bookofwhy/ch08-counterfactuals]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 

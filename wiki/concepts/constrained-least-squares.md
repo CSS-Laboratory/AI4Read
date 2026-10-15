@@ -2,7 +2,9 @@
 id: constrained-least-squares
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [boyd-2018-vmls/ch16-constrained, boyd-2018-vmls/ch17-constrained]
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] KKT conditions ↔ the KKT linear system of constrained least squares — in the linear case, $\nabla h+Dg^T\hat z=0$ and $g=0$ become linear equations (this unit does not state it). — from [[boyd-2018-vmls/app-appendices]] (linear-algebra → unspecified)
-- [structural-analogy] control/estimation duality ↔ optimization: both are the same stacked constrained least squares, with inputs chosen (control) or inputs unknown (estimation) — the text itself calls this duality (p. 373). — from [[boyd-2018-vmls/ch17-constrained]] (linear-algebra → other)
+- [structural-analogy] control/estimation duality ↔ optimization: both are the same stacked constrained least squares, with inputs chosen (control) or inputs unknown (estimation) — the text itself calls this duality (p. 373). — from [[boyd-2018-vmls/ch17-constrained]] (linear-algebra → other:optimization)

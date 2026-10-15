@@ -2,7 +2,9 @@
 id: single-transferable-vote
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch13-elections-p2, shepsle-2010-analyzing/ch07-voting]

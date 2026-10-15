@@ -2,12 +2,14 @@
 id: deductive-nomological-explanation
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch02-logic, godfreysmith-2003-theory/ch13-explanation, popper-1959-logic/ch03-theories, popper-1959-logic/ch08-probability-p3]
 raw_ids: [deductive-nomological explanation]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

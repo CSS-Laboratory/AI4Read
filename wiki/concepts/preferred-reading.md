@@ -2,11 +2,13 @@
 id: preferred-reading
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [entman-1993-framing/main, hall-1973-encoding/main]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 

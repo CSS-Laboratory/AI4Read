@@ -2,7 +2,9 @@
 id: value-of-information
 type: concept
 fields: [bayesian, decision-game-theory, information-theory]
+fields_strong: [bayesian, decision-game-theory, information-theory]
 n_sources: 4
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [axelrod-1984-cooperation/ch08-social, gelman-2013-bda3/ch09-decision, mackay-2003-information/ch36-decision, murphy-2023-pml2/ch34-decision]
@@ -16,7 +18,7 @@ generated_by: build_kg.py
 ### bayesian
 
 - [[gelman-2013-bda3/ch09-decision]] (pp. 238, 246): worth of a test or measurement, found by comparing the expected utility of acting with and without it; pointless if it cannot change the decision [new]
-- [[murphy-2023-pml2/ch34-decision]] (p. 1114): gain in MEU from observing a variable before acting (VPI) [new]
+- [[murphy-2023-pml2/ch34-decision]] (p. 1114): gain in MEU from observing a variable before acting (VPI) [new; work fields: bayesian, decision-game-theory]
 
 ### decision-game-theory
 
@@ -24,7 +26,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch36-decision]] (p. 453): the expected gain from data that may change the action, here compared with the cost $c_n$ [new]
+- [[mackay-2003-information/ch36-decision]] (p. 453): the expected gain from data that may change the action, here compared with the cost $c_n$ [new; work fields: information-theory, bayesian, decision-game-theory]
 
 ## Candidate bridges
 

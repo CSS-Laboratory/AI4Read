@@ -2,7 +2,9 @@
 id: coding-efficiency
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [stone-2022-information/appa-glossary, stone-2022-information/ch03-source]

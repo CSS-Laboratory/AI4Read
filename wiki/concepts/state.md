@@ -1,12 +1,14 @@
 ---
 id: state
 type: concept
-fields: [control-theory, political-science]
+fields: [control-theory, bayesian, information-theory, political-science]
+fields_strong: [control-theory, bayesian, information-theory, political-science]
 n_sources: 29
+n_works: 10
 tiers: [core, deep, reference]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch02-change, ashby-1956-cybernetics/ch03-determinate, ashby-1956-cybernetics/ch04-machine, ashby-1956-cybernetics/ch06-black, ashby-1956-cybernetics/ch07-quantity, ashby-1956-cybernetics/ch09-incessant, astrom-2021-feedbacksystems/ch03-system-p1, astrom-2021-feedbacksystems/ch04-examples, astrom-2021-feedbacksystems/ch07-state, bellman-1957-dp/ch01-i-p1, bellman-1957-dp/ch03-iii, bellman-1957-dp/ch05-v, bellman-1957-dp/ch06-vi, bellman-1957-dp/ch07-vii, bellman-1957-dp/ch09-ix, bertsekas-2026-rlcourse/ch01-exact-p1, bertsekas-2026-rlcourse/ch01-exact-p4, bertsekas-2026-rlcourse/ch03-learning-p1, clark-2017-principles/ch04-origins-p1, kalman-1960-filtering/main, liberzon-2012-calculus/ch01-introduction, sarkka-2023-bayesianfiltering/ch01-are, sarkka-2023-bayesianfiltering/ch01-symbols, sarkka-2023-bayesianfiltering/ch03-batch, sarkka-2023-bayesianfiltering/ch06-bayesian, sutton-2018-rl/ch01-introduction, sutton-2018-rl/ch03-finite, sutton-2018-rl/ch17-frontiers, welch-2004-kalmanintro/main]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 
@@ -24,8 +26,8 @@ generated_by: build_kg.py
 - [[ashby-1956-cybernetics/ch03-determinate]] (p. 25): any well-defined condition that can be recognised if it recurs; here an operand
 - [[ashby-1956-cybernetics/ch04-machine]] (p. 50): here a vector of component values; whole-machine state of coupled parts is a vector of the parts' states
 - [[ashby-1956-cybernetics/ch06-black]] (p. 88): Ashby's input/output state as a snapshot of levers/dials; machines specified by transitions of states
-- [[ashby-1956-cybernetics/ch07-quantity]] (p. 136): used for the machine's condition; a set of states is the operand set for a transformation
-- [[ashby-1956-cybernetics/ch09-incessant]] (p. 172): as used here, the choice of what counts as state decides whether the system is state-determined; "memory" is a hypothesis made when observation is limited
+- [[ashby-1956-cybernetics/ch07-quantity]] (p. 136): used for the machine's condition; a set of states is the operand set for a transformation [work fields: control-theory, information-theory]
+- [[ashby-1956-cybernetics/ch09-incessant]] (p. 172): as used here, the choice of what counts as state decides whether the system is state-determined; "memory" is a hypothesis made when observation is limited [work fields: control-theory, information-theory]
 - [[astrom-2021-feedbacksystems/ch03-system-p1]] (pp. 3-2, 3-10): variables that capture the past for predicting the future; in physical systems they account for storage of mass, momentum, energy
 - [[astrom-2021-feedbacksystems/ch04-examples]] (p. 4-3, p. 4-13, p. 4-23): the quantities whose values determine future behaviour; here $v$ (car), $(\varphi,\dot\varphi)$ (bicycle), $(x_{cpu},x_{mem})$, concentrations, populations
 - [[astrom-2021-feedbacksystems/ch07-state]] (p. 7-9): variables that permit prediction of future evolution given future inputs
@@ -40,10 +42,10 @@ generated_by: build_kg.py
 - [[bertsekas-2026-rlcourse/ch03-learning-p1]] (pp. 356–361): in this unit, board position (tetris, chess), queue lengths, or information-vector summaries; features give a compact description
 - [[kalman-1960-filtering/main]] (p. 39): least data about the past needed to predict the future
 - [[liberzon-2012-calculus/ch01-introduction]] (p. 1): the vector $x\in\mathbb R^n$ in $\dot x=f(t,x,u)$
-- [[sarkka-2023-bayesianfiltering/ch01-are]] (p. 1, p. 9): the dynamic variables that fully describe the system, e.g. $(x_k,\dot x_k)$
-- [[sarkka-2023-bayesianfiltering/ch01-symbols]] (p. xxvi): $\mathbf x_k$ at step $k$, $\mathbf x(t)$ at continuous time
-- [[sarkka-2023-bayesianfiltering/ch03-batch]] (p. 35): here the vector of unknown parameters of the system, not the regressor
-- [[sarkka-2023-bayesianfiltering/ch06-bayesian]] (p. 91): the hidden variable $\mathbf x_k$ whose distribution is estimated
+- [[sarkka-2023-bayesianfiltering/ch01-are]] (p. 1, p. 9): the dynamic variables that fully describe the system, e.g. $(x_k,\dot x_k)$ [work fields: control-theory, bayesian]
+- [[sarkka-2023-bayesianfiltering/ch01-symbols]] (p. xxvi): $\mathbf x_k$ at step $k$, $\mathbf x(t)$ at continuous time [work fields: control-theory, bayesian]
+- [[sarkka-2023-bayesianfiltering/ch03-batch]] (p. 35): here the vector of unknown parameters of the system, not the regressor [work fields: control-theory, bayesian]
+- [[sarkka-2023-bayesianfiltering/ch06-bayesian]] (p. 91): the hidden variable $\mathbf x_k$ whose distribution is estimated [work fields: control-theory, bayesian]
 - [[sutton-2018-rl/ch01-introduction]] (p. 7): informally, whatever information the agent has about its environment
 - [[sutton-2018-rl/ch03-finite]] (pp. 49–50): in this unit, what the agent can know that is useful for choosing; it should carry all past information relevant to the future
 - [[sutton-2018-rl/ch17-frontiers]] (p. 465): here a function of history, not given by the environment
@@ -109,9 +111,9 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Povinelli's behaviour-only reading ↔ Clever Hans effect: apparent mental-state competence that may come from simple cues in the test. — from [[apperly-2011-mindreaders/ch03-evidence]] (theory-of-mind → other)
-- [metaphor] Similarity-to-self narrowing the plausible thoughts of others under uncertainty (p. 70) ↔ Bayesian theory of mind: priors that constrain inference over mental states. — from [[apperly-2011-mindreaders/ch04-evidence]] (theory-of-mind → bayesian)
-- [structural-analogy] relevance problem (what to feed into mindreading) ↔ inverse planning / POMDP: the modeller must specify the state space, priors and goals before inference — the chapter says theories treat this as given. — from [[apperly-2011-mindreaders/ch07-elaborating]] (theory-of-mind → other)
+- [structural-analogy] Povinelli's behaviour-only reading ↔ Clever Hans effect: apparent mental-state competence that may come from simple cues in the test. — from [[apperly-2011-mindreaders/ch03-evidence]] (theory-of-mind → theory-of-mind)
+- [metaphor] Similarity-to-self narrowing the plausible thoughts of others under uncertainty (p. 70) ↔ Bayesian theory of mind: priors that constrain inference over mental states. — from [[apperly-2011-mindreaders/ch04-evidence]] (theory-of-mind → theory-of-mind)
+- [structural-analogy] relevance problem (what to feed into mindreading) ↔ inverse planning / POMDP: the modeller must specify the state space, priors and goals before inference — the chapter says theories treat this as given. — from [[apperly-2011-mindreaders/ch07-elaborating]] (theory-of-mind → theory-of-mind)
 - [structural-analogy] Repeated transformation and trajectory on the kinematic graph ↔ control-theory: state evolution of a discrete-time system, with the initial state set and then left to run without input (the text calls the correspondence "analogous"). — from [[ashby-1956-cybernetics/ch02-change]] (control-theory → control-theory)
 - [same-math] Canonical representation $x'=f(x)$ ↔ control-theory: autonomous discrete-time state-space model $x_{k+1}=f(x_k)$ — same one-step rule, repeated powers. — from [[ashby-1956-cybernetics/ch03-determinate]] (control-theory → control-theory)
 - [structural-analogy] Adding angular velocity to make the pendulum single-valued ↔ control-theory: state must include all variables needed to predict the future (state concept). — from [[ashby-1956-cybernetics/ch03-determinate]] (control-theory → control-theory)
@@ -121,12 +123,12 @@ generated_by: build_kg.py
 - [structural-analogy] $\lim T^nD(a)=a$ ↔ control-theory: asymptotic stability of an equilibrium to a perturbation — Ashby's limit test on arbitrary state sets. — from [[ashby-1956-cybernetics/ch05-stability]] (control-theory → control-theory)
 - [structural-analogy] Observer Two inferring hidden Z from past inputs (p. 115) ↔ control-theory: an observer / state estimator rebuilding hidden state from past inputs and outputs — both replace a hidden variable by a function of observed history. — from [[ashby-1956-cybernetics/ch06-black]] (control-theory → control-theory)
 - [metaphor] Ashby's models as homomorphisms (p. 109) ↔ control-theory: good regulator theorem (a regulator must contain a model of its system) — links "model" to regulation, but this unit does not state that theorem. — from [[ashby-1956-cybernetics/ch06-black]] (control-theory → control-theory)
-- [structural-analogy] law of Experience ↔ state estimation: a system forgets its initial state and the state tracks the input history — from [[ashby-1956-cybernetics/ch07-quantity]] (control-theory → other)
+- [structural-analogy] law of Experience ↔ state estimation: a system forgets its initial state and the state tracks the input history — from [[ashby-1956-cybernetics/ch07-quantity]] (control-theory → other:state-estimation)
 - [structural-analogy] $\log_2 r$ bits per step through an $r$-state channel ↔ information theory: channel capacity — Ashby derives only an upper bound from state count, in a determinate setting — from [[ashby-1956-cybernetics/ch08-transmission]] (control-theory → information-theory)
 - [same-math] Population update $D'=MD$ with a column-stochastic $M$ ↔ control-theory: discrete-time linear state-space model $x_{k+1}=Ax_k$. The equilibrium is a fixed vector of $M$, and the "dying oscillations" are mode behaviour. — from [[ashby-1956-cybernetics/ch09-incessant]] (control-theory → control-theory)
 - [structural-analogy] Re-coding to Markov form ↔ control-theory: state augmentation, adding past values to the state so the dynamics become first-order. — from [[ashby-1956-cybernetics/ch09-incessant]] (control-theory → control-theory)
 - [structural-analogy] "Memory is a hypothesis forced by limited observation" (p. 172) ↔ control-theory: observability, where hidden state is inferred from a sequence of outputs. Ashby himself links this to S.6/21. — from [[ashby-1956-cybernetics/ch09-incessant]] (control-theory → control-theory)
-- [same-math] Markovian machine with absorbing state; mean time to absorption ↔ Markov chains: absorbing-state expected hitting time (p. 230 average equals a geometric-series mean). — from [[ashby-1956-cybernetics/ch12-error]] (control-theory → other)
+- [same-math] Markovian machine with absorbing state; mean time to absorption ↔ Markov chains: absorbing-state expected hitting time (p. 230 average equals a geometric-series mean). — from [[ashby-1956-cybernetics/ch12-error]] (control-theory → other:probability)
 - [structural-analogy] Matching closed-loop characteristic polynomial coefficients (2.26)–(2.28) ↔ control theory: pole placement by state feedback — both choose gains to put closed-loop roots where wanted (the chapter only points to later chapters, p. 2-28). — from [[astrom-2021-feedbacksystems/ch02-feedback]] (control-theory → control-theory)
 - [structural-analogy] Hysteresis from positive feedback with saturation ↔ bistable switches with two stable states — the same equilibrium-and-slope picture (stable where $G'>0$). — from [[astrom-2021-feedbacksystems/ch02-feedback]] (control-theory → unspecified)
 - [structural-analogy] Energy function $V$ with $\dot V\le0$ ↔ control theory (stability): a scalar function of the state that cannot increase proves boundedness without solving the ODE. — from [[astrom-2021-feedbacksystems/ch03-system-p1]] (control-theory → control-theory)
@@ -137,26 +139,26 @@ generated_by: build_kg.py
 - [same-math] Observer design by eigenvalue assignment ↔ state feedback pole placement (ch. 7): the same problem with $A,B,K$ replaced by $A^T,C^T,L^T$ (p. 8-7). — from [[astrom-2021-feedbacksystems/ch08-output]] (control-theory → control-theory)
 - [structural-analogy] PID's linear extrapolation vs observer prediction ↔ state-space control: both predict, one from a model and one from the signal's slope (p. 11-1). — from [[astrom-2021-feedbacksystems/ch11-pid]] (control-theory → control-theory)
 - [structural-analogy] Cascade control with all states measured ↔ state feedback: the text calls state feedback the "ultimate case" of cascade (p. 15-19). — from [[astrom-2021-feedbacksystems/ch15-architecture-p1]] (control-theory → control-theory)
-- [structural-analogy] IMC/Smith predictor internal model ↔ observer (state estimator): a model runs in parallel with the process, and its mismatch with the output is used for correction. — from [[astrom-2021-feedbacksystems/ch15-architecture-p1]] (control-theory → other)
-- [same-math] Recursive least squares (15.19) ↔ Kalman filter: the author states RLS is a special case of the Kalman filter (§8.2). — from [[astrom-2021-feedbacksystems/ch15-architecture-p2]] (control-theory → other)
-- [structural-analogy] polynomial division p = sq + r ↔ number theory: integer division with remainder — the author states the analogy himself (p. 123) — from [[axler-2024-ladr/ch04-polynomials]] (linear-algebra → other)
+- [structural-analogy] IMC/Smith predictor internal model ↔ observer (state estimator): a model runs in parallel with the process, and its mismatch with the output is used for correction. — from [[astrom-2021-feedbacksystems/ch15-architecture-p1]] (control-theory → control-theory)
+- [same-math] Recursive least squares (15.19) ↔ Kalman filter: the author states RLS is a special case of the Kalman filter (§8.2). — from [[astrom-2021-feedbacksystems/ch15-architecture-p2]] (control-theory → control-theory)
+- [structural-analogy] polynomial division p = sq + r ↔ number theory: integer division with remainder — the author states the analogy himself (p. 123) — from [[axler-2024-ladr/ch04-polynomials]] (linear-algebra → other:mathematics)
 - [structural-analogy] $T^kv=\lambda^kv$ for eigenvectors (5.59) ↔ Markov matrices / power iteration: steady-state and long-run behaviour from eigen-decomposition — same mechanism, not developed here. — from [[axler-2024-ladr/ch05-eigenvalues-p2]] (linear-algebra → linear-algebra)
 - [same-math] Gram–Schmidt (6.32) ↔ linear-algebra: QR factorization — orthonormalising the columns of an independent list gives the $Q$ factor (the text itself does not state QR). — from [[axler-2024-ladr/ch06-inner-p2]] (linear-algebra → linear-algebra)
 - [structural-analogy] positive operators ↔ nonnegative real numbers; self-adjoint ↔ real; unitary ↔ unit circle — Axler states this analogy (p. 262). — from [[axler-2024-ladr/ch07-operators-p2]] (linear-algebra → unspecified)
-- [structural-analogy] Quadratic closed forms of §17 ↔ LQR: value function quadratic in the state — here only on a restricted interval with constraint $0\le y\le x$. — from [[bellman-1957-dp/ch01-i-p2]] (control-theory → other)
-- [structural-analogy] Vector-state multi-activity recursion ↔ state-space models: resources as state vector, allocations as inputs. — from [[bellman-1957-dp/ch01-i-p2]] (control-theory → other)
+- [structural-analogy] Quadratic closed forms of §17 ↔ LQR: value function quadratic in the state — here only on a restricted interval with constraint $0\le y\le x$. — from [[bellman-1957-dp/ch01-i-p2]] (control-theory → control-theory)
+- [structural-analogy] Vector-state multi-activity recursion ↔ state-space models: resources as state vector, allocations as inputs. — from [[bellman-1957-dp/ch01-i-p2]] (control-theory → control-theory)
 - [structural-analogy] gain/loss ratio rule ↔ control-theory: an index policy that ranks actions by a single number computed per option — the text proves it for this two-mine process and only states it for the extensions (Theorems 3–4). — from [[bellman-1957-dp/ch02-ii]] (control-theory → control-theory)
-- [structural-analogy] Type Three problem with $p$ a probability vector over states ↔ belief-state formulation of decisions under partial observation: "observe the true state" resets the belief to a vertex. — from [[bellman-1957-dp/ch04-iv]] (control-theory → other)
+- [structural-analogy] Type Three problem with $p$ a probability vector over states ↔ belief-state formulation of decisions under partial observation: "observe the true state" resets the belief to a vertex. — from [[bellman-1957-dp/ch04-iv]] (control-theory → other:belief-state-formulation-of)
 - [same-math] $f_{n+1}(x)=\min_z T(z,x,f_n)$ iterated from $f_0$ ↔ control-theory: value iteration for a discounted MDP with a continuous state — the same successive-approximation scheme. — from [[bellman-1957-dp/ch05-v]] (control-theory → control-theory)
 - [structural-analogy] $f'(x)=-k$ as "price" of stock, with derivatives as Lagrange multipliers (p. 162) ↔ control-theory: costates / shadow prices in the Pontryagin principle — both give the marginal value of the state. — from [[bellman-1957-dp/ch05-v]] (control-theory → control-theory)
 - [metaphor] Supply lag (§14) ↔ control-theory: a longer lag (two periods) forces extra state variables, and the optimal policy is no longer a simple order-up-to rule. — from [[bellman-1957-dp/ch05-v]] (control-theory → control-theory)
 - [structural-analogy] Dual variables $y(t)$, which run backward from terminal conditions ↔ Pontryagin costates (shadow prices along a trajectory) — also evolve backward, price the state. — from [[bellman-1957-dp/ch06-vi]] (control-theory → unspecified)
-- [structural-analogy] impulse at $t=0$ bringing $x_3$ to 0 ↔ impulse control: instantaneous jumps in state when controls are unbounded. — from [[bellman-1957-dp/ch07-vii]] (control-theory → control-theory)
+- [structural-analogy] impulse at $t=0$ bringing $x_3$ to 0 ↔ impulse control: instantaneous jumps in state when controls are unbounded. — from [[bellman-1957-dp/ch07-vii]] (control-theory → other:psychology-cognitive-science)
 - [structural-analogy] Policy $v(c,T)$ as feedback on state ↔ control-theory: state feedback $u=-Kx$ — action as function of the current state (the toy example gives $y=-x$) — from [[bellman-1957-dp/ch09-ix]] (control-theory → control-theory)
 - [structural-analogy] Max-Min functional equation ↔ control-theory: Bellman equation of a one-person problem — replacing $\max$ by $\max\min$ keeps the "payoff plus value of next state" form. — from [[bellman-1957-dp/ch10-x]] (control-theory → control-theory)
-- [same-math] DP backward recursion (1.5) ↔ shortest-path algorithms on staged acyclic graphs: the book states the equivalence of finite-state deterministic problems and shortest paths (p. 12) — from [[bertsekas-2026-rlcourse/ch01-exact-p1]] (control-theory → other)
+- [same-math] DP backward recursion (1.5) ↔ shortest-path algorithms on staged acyclic graphs: the book states the equivalence of finite-state deterministic problems and shortest paths (p. 12) — from [[bertsekas-2026-rlcourse/ch01-exact-p1]] (control-theory → other:computer-science)
 - [structural-analogy] Belief state $b_k$ with update $F_k$ ↔ control-theory state estimation: Kalman filter output used as the state of a perfect-information problem (the text names Kalman filtering as one choice of $F_k$). — from [[bertsekas-2026-rlcourse/ch01-exact-p4]] (control-theory → control-theory)
-- [structural-analogy] State augmentation with $x_{k-1},u_{k-1}$ ↔ state-space modeling: higher-order recursions rewritten as first-order systems. — from [[bertsekas-2026-rlcourse/ch01-exact-p4]] (control-theory → other)
-- [structural-analogy] Finite-history state for POMDP ↔ sequence models: the author states that this is how LLMs such as ChatGPT work. — from [[bertsekas-2026-rlcourse/ch01-exact-p4]] (control-theory → other)
+- [structural-analogy] State augmentation with $x_{k-1},u_{k-1}$ ↔ state-space modeling: higher-order recursions rewritten as first-order systems. — from [[bertsekas-2026-rlcourse/ch01-exact-p4]] (control-theory → control-theory)
+- [structural-analogy] Finite-history state for POMDP ↔ sequence models: the author states that this is how LLMs such as ChatGPT work. — from [[bertsekas-2026-rlcourse/ch01-exact-p4]] (control-theory → other:sequence-models)
 - [structural-analogy] Integral term of PID ↔ control-theory: disturbance observer on an augmented state $(x,w)$ with $w_{k+1}=w_k$ — the author calls the integral term the simplest instance of the idea of inferring a constant disturbance, and calls the MPC version "a similar strategy" (pp. 130–131). — from [[bertsekas-2026-rlcourse/ch01-exact-p5]] (control-theory → control-theory)
 - … 222 more bridge lines mention this id (see wiki/kg/bridges.jsonl)

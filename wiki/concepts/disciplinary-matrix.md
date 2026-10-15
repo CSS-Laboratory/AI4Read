@@ -2,7 +2,9 @@
 id: disciplinary-matrix
 type: concept
 fields: [analytic-philosophy, communication-theory]
+fields_strong: [analytic-philosophy, communication-theory]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [craig-1999-field/main-p1, kuhn-1962-structure/postscript-1969]

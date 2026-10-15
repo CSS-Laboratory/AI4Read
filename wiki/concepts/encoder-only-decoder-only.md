@@ -2,12 +2,14 @@
 id: encoder-only-decoder-only
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 4
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [brown-2020-gpt3/main-p2, devlin-2019-bert/main, kaplan-2020-scaling/main, prince-2023-udl/ch12-transformers]
 raw_ids: [encoder-only / decoder-only]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

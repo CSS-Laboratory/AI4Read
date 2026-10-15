@@ -2,7 +2,9 @@
 id: explanatory-inference
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch03-induction, godfreysmith-2003-theory/ch13-explanation, godfreysmith-2003-theory/ch14-bayesianism]

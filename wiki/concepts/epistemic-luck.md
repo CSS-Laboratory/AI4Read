@@ -2,12 +2,14 @@
 id: epistemic-luck
 type: concept
 fields: [analytic-philosophy]
+fields_strong: []
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [gettier-1963-jtb/main]
 raw_ids: [epistemic luck]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 
 ### analytic-philosophy
 
-- [[gettier-1963-jtb/main]] (p. 123): our label for what the cases share: the belief is true, but not because of S's evidence (Case I, p. 122). Gettier calls the match in Case II a coincidence (p. 123) and does not use the term "luck". [as `epistemic luck`]
+- [[gettier-1963-jtb/main]] (p. 123): our label for what the cases share: the belief is true, but not because of S's evidence (Case I, p. 122). Gettier calls the match in Case II a coincidence (p. 123) and does not use the term "luck". [as `epistemic luck`; weak: not really used in this unit]

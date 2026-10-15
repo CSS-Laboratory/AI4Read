@@ -2,7 +2,9 @@
 id: hypothesis-validity
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch20-checking, grimmer-2022-textasdata/ch21-repurposing]
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Hypothesis validity ↔ observable implications: both test a measure or theory through varied, pre-specified consequences that would be unlikely if it were wrong. — from [[grimmer-2022-textasdata/ch20-checking]] (political-science → other)
+- [structural-analogy] Hypothesis validity ↔ observable implications: both test a measure or theory through varied, pre-specified consequences that would be unlikely if it were wrong. — from [[grimmer-2022-textasdata/ch20-checking]] (political-science → political-science)

@@ -2,7 +2,9 @@
 id: transversality-condition
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 3
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [liberzon-2012-calculus/ch02-calculus, liberzon-2012-calculus/ch04-maximum-p1, liberzon-2012-calculus/ch04-maximum-p2]

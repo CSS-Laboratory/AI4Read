@@ -2,7 +2,9 @@
 id: tetrachoric-correlation
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [argyle-2023-silicon/main-p1, argyle-2023-silicon/main-p2]

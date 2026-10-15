@@ -2,7 +2,9 @@
 id: second-order-dilemma
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [ostrom-1990-commons/ch02-institutional, ostrom-1990-commons/ch03-analyzing-p2]

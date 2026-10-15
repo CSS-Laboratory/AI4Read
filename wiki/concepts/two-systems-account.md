@@ -2,12 +2,14 @@
 id: two-systems-account
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 8
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [apperly-2009-two-systems/main-p1, apperly-2009-two-systems/main-p2, apperly-2009-two-systems/main-p3, apperly-2011-mindreaders/ch01-introduction, apperly-2011-mindreaders/ch06-cognitive, apperly-2011-mindreaders/ch07-elaborating, apperly-2011-mindreaders/coda, heyes-2014-cultural-evolution/main]
 raw_ids: [two-systems account]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 
@@ -32,4 +34,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] the finding that infants' number abilities were limited ↔ two-systems account: an efficient, limited system vs a flexible, costly one — Apperly hints at a similar mindreading story. — from [[apperly-2011-mindreaders/ch03-evidence]] (theory-of-mind → other)
+- [metaphor] the finding that infants' number abilities were limited ↔ two-systems account: an efficient, limited system vs a flexible, costly one — Apperly hints at a similar mindreading story. — from [[apperly-2011-mindreaders/ch03-evidence]] (theory-of-mind → theory-of-mind)

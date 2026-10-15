@@ -2,7 +2,9 @@
 id: natural-kind-term
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kripke-1980-naming/ch03-lecture-p1, kripke-1980-naming/ch03-lecture-p2, lycan-2019-language/ch04-proper]

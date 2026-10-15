@@ -1,15 +1,24 @@
 ---
 id: control-variates
 type: concept
-fields: [bayesian]
-n_sources: 3
-tiers: [reference]
+fields: [bayesian, control-theory]
+fields_strong: [bayesian, control-theory]
+n_sources: 4
+n_works: 2
+tiers: [reference, core]
 grounding: digests
-sources: [murphy-2023-pml2/ch06-optimization-p1, murphy-2023-pml2/ch10-variational-p2, murphy-2023-pml2/ch11-monte]
+sources: [murphy-2023-pml2/ch06-optimization-p1, murphy-2023-pml2/ch10-variational-p2, murphy-2023-pml2/ch11-monte, sutton-2018-rl/ch07-n]
+aliases: [control-variate]
 generated_by: build_kg.py
 ---
 
 # control-variates
+
+## Aliases
+
+Variant ids merged into this page (curated in `wiki/kg/aliases.json`):
+
+- `control-variate` — 1 digest(s)
 
 ## Definitions in the sources
 
@@ -19,6 +28,10 @@ generated_by: build_kg.py
 - [[murphy-2023-pml2/ch10-variational-p2]] (p. 455): subtract a zero-mean correlated baseline to cut gradient variance [new]
 - [[murphy-2023-pml2/ch11-monte]] (p. 495–496): subtract a correlated, known-mean baseline term; variance factor $1-\rho^2$ at the optimal $c$ [new]
 
+### control-theory
+
+- [[sutton-2018-rl/ch07-n]] (p. 150): extra term $(1-\rho_t)V$ that leaves the expected update unchanged and cuts variance [alias `control-variate`; new]
+
 ## Instances that use it
 
 - [[control-variate-1-over-1-plus-x]] — se 0.0037 → 0.0007 — from [[murphy-2023-pml2/ch11-monte]]
@@ -26,8 +39,8 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Pinto–Neal correction using $Q$ ↔ control variates: correct an estimate with a correlated one whose true value is known (p. 420). — from [[mackay-2003-information/ch32-exact]] (information-theory → control-theory)
+- [structural-analogy] Pinto–Neal correction using $Q$ ↔ control variates: correct an estimate with a correlated one whose true value is known (p. 420). — from [[mackay-2003-information/ch32-exact]] (information-theory → bayesian)
 - [structural-analogy] Control variate/baseline ↔ Monte Carlo variance reduction in estimating expectations (p. 275) — from [[murphy-2023-pml2/ch06-optimization-p1]] (bayesian → unspecified)
-- [structural-analogy] Control variate with $c^*$ ↔ regression: $c^*=-\mathrm{Cov}/\mathbb V$ is a regression slope on the baseline. — from [[murphy-2023-pml2/ch11-monte]] (bayesian → other)
-- [same-math] SGLD-CV / SVRG gradient (12.124) ↔ Monte Carlo variance reduction: a control variate subtracts a correlated term of known mean. — from [[murphy-2023-pml2/ch12-markov-p2]] (bayesian → other)
-- [structural-analogy] Control variate in (7.13) ↔ statistics: variance reduction by adding a zero-mean term — the same trick of subtracting a correlated term with known expectation. — from [[sutton-2018-rl/ch07-n]] (control-theory → other)
+- [structural-analogy] Control variate with $c^*$ ↔ regression: $c^*=-\mathrm{Cov}/\mathbb V$ is a regression slope on the baseline. — from [[murphy-2023-pml2/ch11-monte]] (bayesian → other:statistics)
+- [same-math] SGLD-CV / SVRG gradient (12.124) ↔ Monte Carlo variance reduction: a control variate subtracts a correlated term of known mean. — from [[murphy-2023-pml2/ch12-markov-p2]] (bayesian → bayesian)
+- [structural-analogy] Control variate in (7.13) ↔ statistics: variance reduction by adding a zero-mean term — the same trick of subtracting a correlated term with known expectation. — from [[sutton-2018-rl/ch07-n]] (control-theory → other:statistics)

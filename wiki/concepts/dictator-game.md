@@ -2,7 +2,9 @@
 id: dictator-game
 type: concept
 fields: [economics-finance, political-science]
+fields_strong: [economics-finance, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch07-cultural-p2, thaler-2015-misbehaving/ch15-fairness]

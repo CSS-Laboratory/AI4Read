@@ -2,7 +2,9 @@
 id: first-variation
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 2
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [liberzon-2012-calculus/ch01-introduction, liberzon-2012-calculus/ch02-calculus]

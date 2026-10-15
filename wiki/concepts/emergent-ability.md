@@ -2,11 +2,13 @@
 id: emergent-ability
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 3
+n_works: 3
 tiers: [deep, core]
 grounding: digests
 sources: [schaeffer-2023-mirage/main, wei-2022-cot/main-p1, wei-2022-emergent/main]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

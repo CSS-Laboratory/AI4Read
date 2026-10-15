@@ -2,7 +2,9 @@
 id: strict-nash-equilibrium
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [osborne-2004-introduction/ch02-nash-p1, osborne-2004-introduction/ch02-nash-p2, osborne-2004-introduction/ch13-evolutionary]
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] ESS condition $\alpha>\gamma$ ↔ Nash equilibrium: cooperation being a strict best response to itself, so (C,C) is a strict Nash equilibrium of the 2×2 game. — from [[nowak-2006-five-rules/main]] (decision-game-theory → other)
+- [same-math] ESS condition $\alpha>\gamma$ ↔ Nash equilibrium: cooperation being a strict best response to itself, so (C,C) is a strict Nash equilibrium of the 2×2 game. — from [[nowak-2006-five-rules/main]] (decision-game-theory → decision-game-theory)

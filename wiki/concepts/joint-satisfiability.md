@@ -2,7 +2,9 @@
 id: joint-satisfiability
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [magnus-2025-forallx/ch03-truth-p2, magnus-2025-forallx/ch32-semantic, magnus-2025-forallx/ch33-using]

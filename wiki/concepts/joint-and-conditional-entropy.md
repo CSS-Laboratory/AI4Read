@@ -1,13 +1,15 @@
 ---
 id: joint-and-conditional-entropy
 type: concept
-fields: [information-theory]
+fields: [information-theory, bayesian]
+fields_strong: [information-theory, bayesian]
 n_sources: 23
+n_works: 8
 tiers: [core, reference]
 grounding: digests
 sources: [cover-2006-elements/ch01-introduction, cover-2006-elements/ch02-entropy, cover-2006-elements/ch04-entropy, cover-2006-elements/ch14-network-p1, cover-2006-elements/ch16-inequalities, gibson-2019-efficiency/main, mackay-2003-information/ch08-dependent, mackay-2003-information/ch09-communication, pierce-1980-introduction/ch05-entropy, pierce-1980-introduction/ch08-noisy, pierce-1980-introduction/ch14-back, polyanskiy-2025-information/ch02-entropy, polyanskiy-2025-information/ch04-mutual, polyanskiy-2025-information/ch09-entropy, shannon-1948-mathematical/main-p1, shannon-1951-prediction/main, stone-2022-information/appa-glossary, stone-2022-information/appb-mathematical, stone-2022-information/appf-rules, stone-2022-information/ch04-noisy, stone-2022-information/ch06-mutual, stone-2022-information/ch08-rate, stone-2022-information/ch09-transfer]
 raw_ids: [joint and conditional entropy]
-canon_spine: information-theory
+canon_spine: [information-theory]
 generated_by: build_kg.py
 ---
 
@@ -27,8 +29,8 @@ generated_by: build_kg.py
 - [[cover-2006-elements/ch14-network-p1]] (p. 386): used for conditional typical sets
 - [[cover-2006-elements/ch16-inequalities]] (p. 483): conditioning reduces entropy; used in every proof of Sec. 16.5, 16.8–16.9
 - [[gibson-2019-efficiency/main]] (p. 4): $H[X\mid C]$, uncertainty left about $X$ given $C$; between 0 and $H[X]$
-- [[mackay-2003-information/ch08-dependent]] (p. 138): $H(X,Y)$; $H(X|y)$ is entropy of one conditional distribution; $H(X|Y)$ averages over $y$
-- [[mackay-2003-information/ch09-communication]] (p. 147): H(X|Y) averages H(X|y) over y; can exceed H(X) for a particular y
+- [[mackay-2003-information/ch08-dependent]] (p. 138): $H(X,Y)$; $H(X|y)$ is entropy of one conditional distribution; $H(X|Y)$ averages over $y$ [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch09-communication]] (p. 147): H(X|Y) averages H(X|y) over y; can exceed H(X) for a particular y [work fields: information-theory, bayesian]
 - [[pierce-1980-introduction/ch05-entropy]] (pp. 91–93): (5.4) averages the entropy of the next symbol given the preceding block, weighted by block probability
 - [[pierce-1980-introduction/ch08-noisy]] (pp. 153–154): $H(x,y)$, $H_x(y)$, $H_y(x)$: pair uncertainty and uncertainty given the other symbol [as `joint and conditional entropy`]
 - [[pierce-1980-introduction/ch14-back]] (p. 272): here the equivocation $H_y(x)$: uncertainty about the message given the cipher text [as `joint and conditional entropy`]

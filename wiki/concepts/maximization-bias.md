@@ -1,8 +1,10 @@
 ---
 id: maximization-bias
 type: concept
-fields: [bayesian, control-theory]
+fields: [control-theory, bayesian]
+fields_strong: [control-theory, bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch35-reinforcement, sutton-2018-rl/ch06-temporal]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1153): $\mathbb E[\max X_a]\ge\max\mathbb E[X_a]$ makes Q-learning overestimate; double Q-learning fixes it [new]
+- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1153): $\mathbb E[\max X_a]\ge\max\mathbb E[X_a]$ makes Q-learning overestimate; double Q-learning fixes it [new; work fields: bayesian, control-theory]
 
 ### control-theory
 

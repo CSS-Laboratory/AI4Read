@@ -2,7 +2,9 @@
 id: dirichlet-process
 type: concept
 fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [gelman-2013-bda3/ch23-dirichlet, mackay-2003-information/ch18-crosswords]
@@ -19,7 +21,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch18-crosswords]] (p. 263): new symbol with probability $\alpha/(F+\alpha)$, symbol $w$ with $F_w/(F+\alpha)$; exchangeable, unbounded vocabulary [new]
+- [[mackay-2003-information/ch18-crosswords]] (p. 263): new symbol with probability $\alpha/(F+\alpha)$, symbol $w$ with $F_w/(F+\alpha)$; exchangeable, unbounded vocabulary [new; work fields: information-theory, bayesian]
 
 ## Candidate bridges
 

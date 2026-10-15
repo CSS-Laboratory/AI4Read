@@ -2,7 +2,9 @@
 id: effective-number-of-parties
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch14-social-p1, clark-2017-principles/ch14-social-p3]
@@ -27,4 +29,4 @@ generated_by: build_kg.py
 
 - [same-math] Effective number of parties $1/\sum v_i^2$ ↔ economics: inverse of a concentration index (sum of squared market shares) — same formula, shares are of votes or seats instead of sales. — from [[clark-2017-principles/ch14-social-p1]] (political-science → economics-finance)
 - [same-math] effective number of parties $1/\sum v_i^2$ ↔ economics/industrial organisation: inverse of the Herfindahl concentration index — same formula, applied to market shares (our proposal; not stated in this unit). — from [[clark-2017-principles/ch14-social-p3]] (political-science → economics-finance)
-- [structural-analogy] $2^{H}$ as equivalent number of equally probable values ↔ ecology/social science: "effective number" of categories (e.g. effective number of parties) — both turn a diversity index into a count of equal-weight categories. (Not stated in this unit.) — from [[stone-2022-information/ch02-entropy]] (information-theory → other)
+- [structural-analogy] $2^{H}$ as equivalent number of equally probable values ↔ ecology/social science: "effective number" of categories (e.g. effective number of parties) — both turn a diversity index into a count of equal-weight categories. (Not stated in this unit.) — from [[stone-2022-information/ch02-entropy]] (information-theory → other:biology-neuroscience)

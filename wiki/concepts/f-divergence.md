@@ -1,12 +1,14 @@
 ---
 id: f-divergence
 type: concept
-fields: [information-theory, bayesian]
+fields: [information-theory, bayesian, llm]
+fields_strong: [information-theory, bayesian, llm]
 n_sources: 12
+n_works: 3
 tiers: [reference, deep]
 grounding: digests
 sources: [murphy-2023-pml2/ch02-probability-p3, murphy-2023-pml2/ch26-generative, nielsen-2020-elementary/main-p1, nielsen-2020-elementary/main-p2, polyanskiy-2025-information/ch01-introduction, polyanskiy-2025-information/ch03-divergence, polyanskiy-2025-information/ch08-f-p1, polyanskiy-2025-information/ch08-f-p2, polyanskiy-2025-information/ch16-neyman, polyanskiy-2025-information/ch32-classical, polyanskiy-2025-information/ch35-entropic, polyanskiy-2025-information/ch36-strong-p1]
-canon_spine: information-theory
+canon_spine: [information-theory]
 generated_by: build_kg.py
 ---
 
@@ -34,7 +36,7 @@ generated_by: build_kg.py
 ### bayesian
 
 - [[murphy-2023-pml2/ch02-probability-p3]] (p. 55): $\int qf(p/q)$ with convex $f$, $f(1)=0$ [new]
-- [[murphy-2023-pml2/ch26-generative]] (p. 898–899): $\int q f(p/q)$, convex $f$, $f(1)=0$; lower-bounded through convex conjugates [new]
+- [[murphy-2023-pml2/ch26-generative]] (p. 898–899): $\int q f(p/q)$, convex $f$, $f(1)=0$; lower-bounded through convex conjugates [new; work fields: bayesian, llm]
 
 ## Instances that use it
 

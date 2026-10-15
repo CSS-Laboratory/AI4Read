@@ -2,7 +2,9 @@
 id: misinformation
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [lazer-2018-fakenews/main, lewandowsky-2012-misinformation/main]

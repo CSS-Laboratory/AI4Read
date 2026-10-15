@@ -2,7 +2,9 @@
 id: rejection-sampling
 type: concept
 fields: [bayesian, control-theory, information-theory]
+fields_strong: [bayesian, control-theory, information-theory]
 n_sources: 4
+n_works: 4
 tiers: [core, deep, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch10-introduction, mackay-2003-information/ch29-monte, murphy-2023-pml2/ch11-monte, sarkka-2023-bayesianfiltering/ch15-particle]
@@ -20,11 +22,11 @@ generated_by: build_kg.py
 
 ### control-theory
 
-- [[sarkka-2023-bayesianfiltering/ch15-particle]] (p. 313): draw from $p$ using proposals $q$ with $p\le Mq$ [new]
+- [[sarkka-2023-bayesianfiltering/ch15-particle]] (p. 313): draw from $p$ using proposals $q$ with $p\le Mq$ [new; work fields: control-theory, bayesian]
 
 ### information-theory
 
-- [[mackay-2003-information/ch29-monte]] (p. 364–365): accept (x, u) under P* within the envelope cQ*; gives independent samples, acceptance rate 1/c for normalized densities [new]
+- [[mackay-2003-information/ch29-monte]] (p. 364–365): accept (x, u) under P* within the envelope cQ*; gives independent samples, acceptance rate 1/c for normalized densities [new; work fields: information-theory, bayesian]
 
 ## Instances that use it
 
@@ -33,4 +35,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] ABC rejection sampling ↔ prior predictive simulation — both simulate data from prior draws, but ABC keeps draws close to observed data. — from [[gelman-2013-bda3/ch13-modal]] (bayesian → unspecified)
-- [same-math] Rejection sampling with bound $C(\mathbf{x}_k)$ ↔ general Monte Carlo: Algorithm 15.5 applied to a discrete index distribution. — from [[sarkka-2023-bayesianfiltering/ch15-particle]] (control-theory → other)
+- [same-math] Rejection sampling with bound $C(\mathbf{x}_k)$ ↔ general Monte Carlo: Algorithm 15.5 applied to a discrete index distribution. — from [[sarkka-2023-bayesianfiltering/ch15-particle]] (control-theory → other:general-monte-carlo)

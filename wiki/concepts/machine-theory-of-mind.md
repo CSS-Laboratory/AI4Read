@@ -1,13 +1,15 @@
 ---
 id: machine-theory-of-mind
 type: concept
-fields: [theory-of-mind]
+fields: [theory-of-mind, llm]
+fields_strong: [theory-of-mind, llm]
 n_sources: 4
+n_works: 4
 tiers: [deep, core]
 grounding: digests
 sources: [kosinski-2024-llm-tom/main, rabinowitz-2018-machine-tom/main, shapira-2024-clever-hans/main, strachan-2024-llm-humans/main]
 raw_ids: [machine theory of mind]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 
@@ -21,10 +23,10 @@ generated_by: build_kg.py
 
 ### theory-of-mind
 
-- [[kosinski-2024-llm-tom/main]] (§ "Introduction"): AI modelling others' mental states, here claimed possibly emergent, not engineered [as `machine theory of mind`]
+- [[kosinski-2024-llm-tom/main]] (§ "Introduction"): AI modelling others' mental states, here claimed possibly emergent, not engineered [as `machine theory of mind`; work fields: theory-of-mind, llm]
 - [[rabinowitz-2018-machine-tom/main]] (pdf 1): a system that learns to model other agents from limited data, with weak generative assumptions [as `machine theory of mind`; new]
-- [[shapira-2024-clever-hans/main]] (p. 2257, 2265): Neural ToM (N-ToM): ToM-like abilities in neural language models, measured on benchmarks; the authors make no claim about AI cognition [as `machine theory of mind`]
-- [[strachan-2024-llm-humans/main]] (§ "Main"): LLM performance on ToM tasks; the authors speak of an artificial theory of mind [as `machine theory of mind`]
+- [[shapira-2024-clever-hans/main]] (p. 2257, 2265): Neural ToM (N-ToM): ToM-like abilities in neural language models, measured on benchmarks; the authors make no claim about AI cognition [as `machine theory of mind`; work fields: theory-of-mind, llm]
+- [[strachan-2024-llm-humans/main]] (§ "Main"): LLM performance on ToM tasks; the authors speak of an artificial theory of mind [as `machine theory of mind`; work fields: theory-of-mind, llm]
 
 ## Candidate bridges
 

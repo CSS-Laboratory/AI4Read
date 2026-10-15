@@ -2,11 +2,13 @@
 id: constitutional-ai-rlaif
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 1
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [bai-2022-constitutional/main]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

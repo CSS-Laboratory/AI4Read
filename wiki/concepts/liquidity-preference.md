@@ -2,7 +2,9 @@
 id: liquidity-preference
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 10
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [keynes-1936-general/ch13-general, keynes-1936-general/ch14-classical, keynes-1936-general/ch15-psychological, keynes-1936-general/ch16-sundry, keynes-1936-general/ch17-essential, keynes-1936-general/ch18-general, keynes-1936-general/ch19-changes, keynes-1936-general/ch21-theory, keynes-1936-general/ch22-notes, keynes-1936-general/ch23-notes]
@@ -16,7 +18,7 @@ generated_by: build_kg.py
 ### economics-finance
 
 - [[keynes-1936-general/ch13-general]] (§ II, paras. 2, 5): the schedule of resources people wish to hold as money at different rates of interest; function $L(r)$ [new]
-- [[keynes-1936-general/ch14-classical]]: with the quantity of money, it is Keynes's example of what could tell us the rate in his diagram. Not defined in this unit (para. 9). [new]
+- [[keynes-1936-general/ch14-classical]]: with the quantity of money, it is Keynes's example of what could tell us the rate in his diagram. Not defined in this unit (para. 9). [new; weak: not really used in this unit]
 - [[keynes-1936-general/ch15-psychological]] (§ I): the public's choice between holding cash and illiquid assets, out of accumulated savings [new]
 - [[keynes-1936-general/ch16-sundry]] (§I ¶5): the strength of desires to hold wealth in liquid versus illiquid form. Keynes says this, with relative supplies, sets the interest rate [new]
 - [[keynes-1936-general/ch17-essential]]: the public's readiness to hold money for liquidity, which can keep the money-rate from falling when money's quantity rises (§ III(c)) [new]

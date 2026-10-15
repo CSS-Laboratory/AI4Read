@@ -2,7 +2,9 @@
 id: tacit-knowledge
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kuhn-1962-structure/ch05-priority, kuhn-1962-structure/postscript-1969]
@@ -21,5 +23,5 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [metaphor] Tacit knowledge in training ↔ expert skill that cannot be written down as rules. — from [[kuhn-1962-structure/ch05-priority]] (analytic-philosophy → unspecified)
-- [structural-analogy] Narratives unspoken at decision time ↔ dispersed / tacit knowledge: influence without explicit articulation (p. 93). — from [[shiller-2019-narrative/ch08-seven]] (economics-finance → other)
+- [structural-analogy] Narratives unspoken at decision time ↔ dispersed / tacit knowledge: influence without explicit articulation (p. 93). — from [[shiller-2019-narrative/ch08-seven]] (economics-finance → economics-finance)
 - [structural-analogy] Secrecy as artificial scarcity yielding rents ↔ economics-finance: dispersed/tacit knowledge and price as signal — who controls information gets power over outcomes. — from [[stiglitz-2002-paradigm/main-p3]] (economics-finance → economics-finance)

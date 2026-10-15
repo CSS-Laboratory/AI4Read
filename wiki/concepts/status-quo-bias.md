@@ -2,7 +2,9 @@
 id: status-quo-bias
 type: concept
 fields: [decision-game-theory, economics-finance]
+fields_strong: [decision-game-theory, economics-finance]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch27-endowment, thaler-2015-misbehaving/ch16-mugs]
@@ -23,4 +25,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Status quo bias as physical inertia ↔ physics: Thaler compares people sticking with what they have to a physical object at rest that stays that way unless something happens (p. 115) — from [[thaler-2015-misbehaving/ch16-mugs]] (economics-finance → other)
+- [metaphor] Status quo bias as physical inertia ↔ physics: Thaler compares people sticking with what they have to a physical object at rest that stays that way unless something happens (p. 115) — from [[thaler-2015-misbehaving/ch16-mugs]] (economics-finance → other:physics)

@@ -1,8 +1,10 @@
 ---
 id: gaussian-channel
 type: concept
-fields: [information-theory]
+fields: [information-theory, bayesian]
+fields_strong: [information-theory, bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [cover-2006-elements/ch10-gaussian, mackay-2003-information/ch11-error]
@@ -16,7 +18,7 @@ generated_by: build_kg.py
 ### information-theory
 
 - [[cover-2006-elements/ch10-gaussian]] (p. 239): $Y=X+Z$ with i.i.d. $\mathcal N(0,N)$ noise independent of $X$, with average power constraint on the input [new]
-- [[mackay-2003-information/ch11-error]] (p. 177): real input and output, $y=x+$ Normal$(0,\sigma^2)$ noise, discrete in time; also called AWGN [new]
+- [[mackay-2003-information/ch11-error]] (p. 177): real input and output, $y=x+$ Normal$(0,\sigma^2)$ noise, discrete in time; also called AWGN [new; work fields: information-theory, bayesian]
 
 ## Instances that use it
 

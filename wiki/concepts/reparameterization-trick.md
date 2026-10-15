@@ -2,7 +2,9 @@
 id: reparameterization-trick
 type: concept
 fields: [bayesian, llm]
+fields_strong: [bayesian, llm]
 n_sources: 3
+n_works: 2
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch06-optimization-p1, murphy-2023-pml2/ch10-variational-p1, prince-2023-udl/ch17-variational]

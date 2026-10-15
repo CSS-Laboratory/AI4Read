@@ -2,12 +2,14 @@
 id: self-organized-criticality
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [bak-1987-soc/main, mitchell-2009-guidedtour/ch16-applying, mitchell-2009-guidedtour/ch17-mystery, mitchell-2009-guidedtour/ch19-past]
 raw_ids: [self-organized criticality]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 

@@ -2,7 +2,9 @@
 id: expectation-propagation
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch13-modal, murphy-2023-pml2/ch10-variational-p2]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] ADF moment projection ↔ expectation propagation: EP iterates ADF-style projections with past and future factors. — from [[murphy-2023-pml2/ch08-gaussian-p2]] (bayesian → other)
+- [structural-analogy] ADF moment projection ↔ expectation propagation: EP iterates ADF-style projections with past and future factors. — from [[murphy-2023-pml2/ch08-gaussian-p2]] (bayesian → bayesian)

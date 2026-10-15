@@ -2,7 +2,9 @@
 id: folk-theorem-of-statistical-computing
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [gelman-2020-workflow/main-p1, mcelreath-2020-rethinking/ch08-markov]

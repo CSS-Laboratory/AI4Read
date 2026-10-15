@@ -2,7 +2,9 @@
 id: involuntary-unemployment
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [keynes-1936-general/ch02-postulates, keynes-1936-general/ch19-changes]

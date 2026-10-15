@@ -2,7 +2,9 @@
 id: group-cohesiveness
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [katz-1955-personalinfluence/ch05-role, katz-1955-personalinfluence/ch06-interpersonal]

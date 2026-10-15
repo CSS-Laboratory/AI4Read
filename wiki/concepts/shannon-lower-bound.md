@@ -2,7 +2,9 @@
 id: shannon-lower-bound
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [polyanskiy-2025-information/ch29-evaluating, polyanskiy-2025-information/ch33-mutual]
@@ -20,5 +22,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Shannon lower bound for estimation (§30.1 preview) ↔ statistics: lower bounds on estimation error via rate-distortion. — from [[polyanskiy-2025-information/ch29-evaluating]] (information-theory → other)
-- [same-math] SLB for $\phi$ ↔ rate-distortion theory: Shannon lower bound (Section 26.1) — from [[polyanskiy-2025-information/ch33-mutual]] (information-theory → other)
+- [structural-analogy] Shannon lower bound for estimation (§30.1 preview) ↔ statistics: lower bounds on estimation error via rate-distortion. — from [[polyanskiy-2025-information/ch29-evaluating]] (information-theory → other:statistics)
+- [same-math] SLB for $\phi$ ↔ rate-distortion theory: Shannon lower bound (Section 26.1) — from [[polyanskiy-2025-information/ch33-mutual]] (information-theory → information-theory)

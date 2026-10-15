@@ -2,7 +2,9 @@
 id: bootstrap-filter
 type: concept
 fields: [bayesian, control-theory]
+fields_strong: [bayesian, control-theory]
 n_sources: 2
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch13-sequential, sarkka-2023-bayesianfiltering/ch11-particle]
@@ -19,7 +21,7 @@ generated_by: build_kg.py
 
 ### control-theory
 
-- [[sarkka-2023-bayesianfiltering/ch11-particle]] (p. 242): particle filter proposing from the dynamic model [new]
+- [[sarkka-2023-bayesianfiltering/ch11-particle]] (p. 242): particle filter proposing from the dynamic model [new; work fields: control-theory, bayesian]
 
 ## Instances that use it
 

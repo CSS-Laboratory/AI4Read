@@ -2,7 +2,9 @@
 id: companding
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [pierce-1980-introduction/ch07-efficient, polyanskiy-2025-information/ch27-rate]

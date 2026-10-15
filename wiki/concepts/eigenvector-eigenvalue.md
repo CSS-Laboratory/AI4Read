@@ -1,13 +1,15 @@
 ---
 id: eigenvector-eigenvalue
 type: concept
-fields: [linear-algebra, information-theory]
+fields: [linear-algebra, bayesian, information-theory, llm]
+fields_strong: [linear-algebra, bayesian, information-theory, llm]
 n_sources: 31
+n_works: 9
 tiers: [core, deep]
 grounding: digests
 sources: [axler-2024-ladr/ch05-eigenvalues-p1, axler-2024-ladr/ch05-eigenvalues-p2, axler-2024-ladr/ch07-operators-p1, axler-2024-ladr/ch08-operators, axler-2024-ladr/ch09-multilinear-p2, brin-1998-anatomy/main, bryan-2006-eigenvector/main, deerwester-1990-lsa/main, deisenroth-2020-mml/ch04-matrix-p1, deisenroth-2020-mml/ch04-matrix-p2, deisenroth-2020-mml/ch10-dimensionality, mackay-2003-information/ch51-appendices, spielman-2025-sagt/ch01-introduction, spielman-2025-sagt/ch02-eigenvalues, spielman-2025-sagt/ch03-laplacian, spielman-2025-sagt/ch05-fundamental, spielman-2025-sagt/ch07-cayley, spielman-2025-sagt/ch09-strongly, spielman-2025-sagt/ch16-lov, spielman-2025-sagt/ch23-spectral, spielman-2025-sagt/ch26-planar, spielman-2025-sagt/ch31-psrgs, spielman-2025-sagt/ch38-fast, spielman-2025-sagt/ch40-testing, strang-2023-introduction/app10-computer, strang-2023-introduction/ch06-eigenvalues-p1, strang-2023-introduction/ch06-eigenvalues-p2, strang-2023-introduction/ch06-eigenvalues-p3, strang-2023-introduction/ch07-singular, strang-2023-introduction/ch08-linear, vonluxburg-2007-spectralclustering/main]
 raw_ids: [eigenvector / eigenvalue]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -28,7 +30,7 @@ generated_by: build_kg.py
 - [[axler-2024-ladr/ch09-multilinear-p2]] (pp. 358–359): $\lambda$ is an eigenvalue iff $\det(\lambda I-T)=0$. Over $\mathbf C$, $\det T$ is the product of eigenvalues with multiplicity [as `eigenvector / eigenvalue`]
 - [[brin-1998-anatomy/main]] (pdf 4): the paper only states that PageRank "corresponds to the principal eigenvector of the normalized link matrix" and does not derive this [as `eigenvector / eigenvalue`]
 - [[bryan-2006-eigenvector/main]] (p. 3): here, scores solve $Ax=x$, an eigenvector for $\lambda=1$
-- [[deerwester-1990-lsa/main]] (pdf 13): footnote 4: $T_0$ and $D_0$ are eigenvector matrices of $XX'$ and $X'X$, with eigenvalues $S_0^2$
+- [[deerwester-1990-lsa/main]] (pdf 13): footnote 4: $T_0$ and $D_0$ are eigenvector matrices of $XX'$ and $X'X$, with eigenvalues $S_0^2$ [work fields: linear-algebra, llm]
 - [[deisenroth-2020-mml/ch04-matrix-p1]] (pp. 105–106): $Ax=\lambda x$ with $x\neq0$ [as `eigenvector / eigenvalue`]
 - [[deisenroth-2020-mml/ch04-matrix-p2]] (pp. 123–124): right-singular vectors are eigenvectors of $A^\top A$, with $\sigma_i^2=\lambda_i$ [as `eigenvector / eigenvalue`]
 - [[deisenroth-2020-mml/ch10-dimensionality]] (p. 322): principal components are eigenvectors of $S$; the eigenvalue is the variance along them [as `eigenvector / eigenvalue`]
@@ -54,4 +56,4 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch51-appendices]] (pp. 606–607): left/right eigenvectors, degeneracy, principal eigenvector, orthonormal set for symmetric matrices [new]
+- [[mackay-2003-information/ch51-appendices]] (pp. 606–607): left/right eigenvectors, degeneracy, principal eigenvector, orthonormal set for symmetric matrices [new; work fields: information-theory, bayesian]

@@ -1,13 +1,15 @@
 ---
 id: metropolis-hastings
 type: concept
-fields: [bayesian, information-theory, control-theory]
+fields: [bayesian, information-theory, complex-systems, control-theory, llm]
+fields_strong: [bayesian, information-theory, complex-systems, control-theory, llm]
 n_sources: 23
+n_works: 8
 tiers: [core, deep, reference]
 grounding: digests
 sources: [betancourt-2017-hmc/main-p1, betancourt-2017-hmc/main-p2, betancourt-2017-hmc/main-p3, gelman-2013-bda3/appc-computation, gelman-2013-bda3/ch11-basics, gelman-2013-bda3/ch12-computationally, gelman-2013-bda3/ch16-generalized, gelman-2013-bda3/ch17-models, gelman-2013-bda3/ch19-parametric, mackay-2003-information/ch29-monte, mackay-2003-information/ch30-efficient, mackay-2003-information/ch31-ising, mackay-2003-information/ch32-exact, mackay-2003-information/ch41-learning, mcelreath-2020-rethinking/ch08-markov, mcgrayne-2011-theory/ch16-eureka, murphy-2023-pml2/ch06-optimization-p2, murphy-2023-pml2/ch07-inference, murphy-2023-pml2/ch12-markov-p1, murphy-2023-pml2/ch12-markov-p2, murphy-2023-pml2/ch13-sequential, robert-2011-mcmc/main, sarkka-2023-bayesianfiltering/ch16-parameter]
 raw_ids: [Metropolis–Hastings]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
@@ -41,20 +43,20 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch29-monte]] (p. 365–366): propose from Q(x'; x), accept with min(1, a), a from (29.31); a rejection repeats the state
-- [[mackay-2003-information/ch30-efficient]] (pp. 389, 396): accept/reject rule used to correct inexact dynamics and in crossover moves
-- [[mackay-2003-information/ch31-ising]] (p. 402): flip spin, accept with (31.20)
-- [[mackay-2003-information/ch32-exact]] (p. 413): the 21-state Metropolis chain is the toy chain used throughout
-- [[mackay-2003-information/ch41-learning]] (p. 496): accept/reject sampler used for the weights
+- [[mackay-2003-information/ch29-monte]] (p. 365–366): propose from Q(x'; x), accept with min(1, a), a from (29.31); a rejection repeats the state [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch30-efficient]] (pp. 389, 396): accept/reject rule used to correct inexact dynamics and in crossover moves [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch31-ising]] (p. 402): flip spin, accept with (31.20) [work fields: information-theory, bayesian, complex-systems]
+- [[mackay-2003-information/ch32-exact]] (p. 413): the 21-state Metropolis chain is the toy chain used throughout [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch41-learning]] (p. 496): accept/reject sampler used for the weights [work fields: information-theory, bayesian, llm]
 
 ### control-theory
 
-- [[sarkka-2023-bayesianfiltering/ch16-parameter]] (pp. 324–326): MCMC using only energy differences; adaptive (RAM) and Hamiltonian variants [new]
+- [[sarkka-2023-bayesianfiltering/ch16-parameter]] (pp. 324–326): MCMC using only energy differences; adaptive (RAM) and Hamiltonian variants [new; work fields: control-theory, bayesian]
 
 ## Candidate bridges
 
 - [same-math] Acceptance $\min(1,e^{-\Delta H})$ ↔ bayesian: Metropolis–Hastings ratio with a symmetric deterministic proposal. — from [[betancourt-2017-hmc/main-p2]] (bayesian → bayesian)
-- [same-math] Gibbs step ↔ Metropolis-Hastings step: with proposal equal to the full conditional, r ≡ 1, as shown on p. 281. — from [[gelman-2013-bda3/ch11-basics]] (bayesian → other)
-- [same-math] Gibbs/Metropolis–Hastings sampling ↔ the field's MCMC concepts: same algorithms as the Bayesian posterior-sampling toolkit. — from [[mcgrayne-2011-theory/ch16-eureka]] (bayesian → other)
-- [structural-analogy] Simulated annealing ↔ MCMC: Metropolis–Hastings sampling from $\exp(-\mathcal E)$ with decreasing entropy. — from [[murphy-2023-pml2/ch06-optimization-p2]] (bayesian → other)
-- [same-math] Metropolis–Hastings acceptance ↔ Markov-chain reversibility: acceptance probability makes $\pi$ invariant (detailed balance). — from [[robert-2011-mcmc/main]] (bayesian → other)
+- [same-math] Gibbs step ↔ Metropolis-Hastings step: with proposal equal to the full conditional, r ≡ 1, as shown on p. 281. — from [[gelman-2013-bda3/ch11-basics]] (bayesian → other:metropolis-hastings-step)
+- [same-math] Gibbs/Metropolis–Hastings sampling ↔ the field's MCMC concepts: same algorithms as the Bayesian posterior-sampling toolkit. — from [[mcgrayne-2011-theory/ch16-eureka]] (bayesian → bayesian)
+- [structural-analogy] Simulated annealing ↔ MCMC: Metropolis–Hastings sampling from $\exp(-\mathcal E)$ with decreasing entropy. — from [[murphy-2023-pml2/ch06-optimization-p2]] (bayesian → bayesian)
+- [same-math] Metropolis–Hastings acceptance ↔ Markov-chain reversibility: acceptance probability makes $\pi$ invariant (detailed balance). — from [[robert-2011-mcmc/main]] (bayesian → other:markov-chain-reversibility)

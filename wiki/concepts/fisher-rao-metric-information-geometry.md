@@ -2,12 +2,14 @@
 id: fisher-rao-metric-information-geometry
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [nielsen-2020-elementary/main-p1, polyanskiy-2025-information/ch03-divergence]
 raw_ids: [Fisher–Rao metric / information geometry]
-canon_spine: information-theory
+canon_spine: [information-theory]
 generated_by: build_kg.py
 ---
 

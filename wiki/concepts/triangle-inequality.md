@@ -2,7 +2,9 @@
 id: triangle-inequality
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 4
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch04-polynomials, axler-2024-ladr/ch06-inner-p1, boyd-2018-vmls/ch03-norm, strang-2023-introduction/ch01-vectors]
@@ -26,4 +28,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Similarity–dissimilarity map $S=e^{-D}$ ↔ probability/likelihood: additive triangle inequality becomes multiplicative (p. 41). — from [[nielsen-2020-elementary/main-p2]] (information-theory → other)
+- [structural-analogy] Similarity–dissimilarity map $S=e^{-D}$ ↔ probability/likelihood: additive triangle inequality becomes multiplicative (p. 41). — from [[nielsen-2020-elementary/main-p2]] (information-theory → bayesian)

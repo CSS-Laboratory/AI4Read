@@ -2,16 +2,25 @@
 id: gram-schmidt-and-qr
 type: concept
 fields: [linear-algebra]
-n_sources: 17
+fields_strong: [linear-algebra]
+n_sources: 18
+n_works: 4
 tiers: [core]
 grounding: digests
-sources: [axler-2024-ladr/ch06-inner-p2, axler-2024-ladr/ch07-operators-p2, axler-2024-ladr/ch09-multilinear-p2, boyd-2018-vmls/app-appendices, boyd-2018-vmls/ch05-linear, boyd-2018-vmls/ch10-matrix, boyd-2018-vmls/ch11-matrix, boyd-2018-vmls/ch14-least, boyd-2018-vmls/ch16-constrained, boyd-2018-vmls/ch18-nonlinear, deisenroth-2020-mml/ch03-analytic, deisenroth-2020-mml/ch04-matrix-p1, strang-2023-introduction/ch04-orthogonality-p2, strang-2023-introduction/ch05-determinants, strang-2023-introduction/ch06-eigenvalues-p2, strang-2023-introduction/ch06-eigenvalues-p3, strang-2023-introduction/ch08-linear]
+sources: [axler-2024-ladr/ch06-inner-p2, axler-2024-ladr/ch07-operators-p2, axler-2024-ladr/ch09-multilinear-p2, boyd-2018-vmls/app-appendices, boyd-2018-vmls/ch05-linear, boyd-2018-vmls/ch10-matrix, boyd-2018-vmls/ch11-matrix, boyd-2018-vmls/ch12-least, boyd-2018-vmls/ch14-least, boyd-2018-vmls/ch16-constrained, boyd-2018-vmls/ch18-nonlinear, deisenroth-2020-mml/ch03-analytic, deisenroth-2020-mml/ch04-matrix-p1, strang-2023-introduction/ch04-orthogonality-p2, strang-2023-introduction/ch05-determinants, strang-2023-introduction/ch06-eigenvalues-p2, strang-2023-introduction/ch06-eigenvalues-p3, strang-2023-introduction/ch08-linear]
+aliases: [gram-schmidt-qr]
 raw_ids: [Gram–Schmidt and QR]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
 # gram-schmidt-and-qr
+
+## Aliases
+
+Variant ids merged into this page (curated in `wiki/kg/aliases.json`):
+
+- `gram-schmidt-qr` — 1 digest(s)
 
 ## Canon spine entry
 
@@ -28,6 +37,7 @@ generated_by: build_kg.py
 - [[boyd-2018-vmls/ch05-linear]] (p. 97): only the Gram–Schmidt algorithm appears; QR is not mentioned [as `Gram–Schmidt and QR`]
 - [[boyd-2018-vmls/ch10-matrix]] (p. 190): A = QR with $Q^TQ=I$ and R upper triangular with positive diagonal, from Gram–Schmidt [as `Gram–Schmidt and QR`]
 - [[boyd-2018-vmls/ch11-matrix]] (pp. 206, 208–209): $A^{-1}=R^{-1}Q^T$, used to solve systems and compute inverses [as `Gram–Schmidt and QR`]
+- [[boyd-2018-vmls/ch12-least]] (p. 231): QR factorization used to solve least squares: $\hat x=R^{-1}Q^Tb$ [alias `gram-schmidt-qr`]
 - [[boyd-2018-vmls/ch14-least]] (p. 300): one QR factorization reused for all $K$ least squares problems
 - [[boyd-2018-vmls/ch16-constrained]] (p. 348): QR of $[A;C]$ and of $Q_2^T$ yields Algorithm 16.2 [as `Gram–Schmidt and QR`]
 - [[boyd-2018-vmls/ch18-nonlinear]] (p. 393): used to cost an LM step at $2(m+n)n^2$ flops
@@ -41,4 +51,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] QR factorization ↔ Gram–Schmidt and QR (canon): $Q$ is the Gram–Schmidt output and $R_{j,k}=\langle v_k,e_j\rangle$. — from [[axler-2024-ladr/ch07-operators-p2]] (linear-algebra → other)
+- [same-math] QR factorization ↔ Gram–Schmidt and QR (canon): $Q$ is the Gram–Schmidt output and $R_{j,k}=\langle v_k,e_j\rangle$. — from [[axler-2024-ladr/ch07-operators-p2]] (linear-algebra → linear-algebra)

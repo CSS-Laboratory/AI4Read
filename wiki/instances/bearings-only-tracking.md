@@ -15,8 +15,8 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch29-state-p2]] (p. 1020): nonlinear angle observation
+- [[murphy-2023-pml2/ch29-state-p2]] (p. 1020): nonlinear angle observation [work fields: bayesian, control-theory]
 
 ### control-theory
 
-- [[sarkka-2023-bayesianfiltering/ch07-extended]] (p. 128–129): two angle sensors, Exercise 7.2
+- [[sarkka-2023-bayesianfiltering/ch07-extended]] (p. 128–129): two angle sensors, Exercise 7.2 [work fields: control-theory, bayesian]

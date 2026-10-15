@@ -2,7 +2,9 @@
 id: blahut-arimoto-algorithm
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 3
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [cover-2006-elements/ch13-rate, stone-2022-information/ch08-rate, tishby-2000-bottleneck/main]

@@ -1,8 +1,10 @@
 ---
 id: convex-function
 type: concept
-fields: [linear-algebra, information-theory]
+fields: [linear-algebra, bayesian, information-theory]
+fields_strong: [linear-algebra, bayesian, information-theory]
 n_sources: 3
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [mackay-2003-information/ch02-probability, spielman-2025-sagt/ch17-monotonicity, strang-2023-introduction/ch09-linear]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch02-probability]] (p. 35): every chord lies above the function, (2.47) [new]
+- [[mackay-2003-information/ch02-probability]] (p. 35): every chord lies above the function, (2.47) [new; work fields: information-theory, bayesian]

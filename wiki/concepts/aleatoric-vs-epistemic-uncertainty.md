@@ -2,7 +2,9 @@
 id: aleatoric-vs-epistemic-uncertainty
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch02-probability-p1, murphy-2023-pml2/ch03-statistics-p1, murphy-2023-pml2/ch14-predictive]
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Aleatoric vs epistemic uncertainty ↔ hierarchical models: a flat versus peaky prior over the outcome distribution — from [[murphy-2023-pml2/ch02-probability-p1]] (bayesian → other)
+- [structural-analogy] Aleatoric vs epistemic uncertainty ↔ hierarchical models: a flat versus peaky prior over the outcome distribution — from [[murphy-2023-pml2/ch02-probability-p1]] (bayesian → bayesian)

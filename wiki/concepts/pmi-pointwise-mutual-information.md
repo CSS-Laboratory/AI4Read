@@ -2,11 +2,13 @@
 id: pmi-pointwise-mutual-information
 type: concept
 fields: [llm]
+fields_strong: []
 n_sources: 0
+n_works: 0
 tiers: []
 grounding: digests
 sources: []
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

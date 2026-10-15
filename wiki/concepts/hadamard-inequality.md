@@ -2,7 +2,9 @@
 id: hadamard-inequality
 type: concept
 fields: [information-theory, linear-algebra]
+fields_strong: [information-theory, linear-algebra]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch09-multilinear-p2, cover-2006-elements/ch09-differential, cover-2006-elements/ch10-gaussian]

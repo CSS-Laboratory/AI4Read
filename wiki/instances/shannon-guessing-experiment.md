@@ -6,10 +6,16 @@ n_sources: 2
 tiers: [core]
 grounding: digests
 sources: [pierce-1980-introduction/ch05-entropy, pierce-1980-introduction/ch07-efficient]
+canon_instance: [shannons-guessing-game]
+canon_match_rule: title-key
 generated_by: build_kg.py
 ---
 
 # shannon-guessing-experiment
+
+## Canon entry
+
+- **Shannon's guessing game** (information-theory): humans guessing the next letter imply roughly 1 bit per letter for English — shannon-1951-prediction
 
 ## Descriptions in the sources
 

@@ -2,7 +2,9 @@
 id: under-consumption
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [keynes-1936-general/ch22-notes, keynes-1936-general/ch23-notes]

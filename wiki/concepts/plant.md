@@ -2,11 +2,13 @@
 id: plant
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 5
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch11-requisite, ashby-1956-cybernetics/ch12-error, astrom-2021-feedbacksystems/ch01-introduction, astrom-2021-feedbacksystems/ch02-feedback, sutton-2018-rl/ch03-finite]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 

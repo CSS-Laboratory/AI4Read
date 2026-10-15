@@ -2,7 +2,9 @@
 id: randomized-controlled-trial
 type: concept
 fields: [bayesian, communication-theory, economics-finance]
+fields_strong: [bayesian, communication-theory, economics-finance]
 n_sources: 6
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch36-causality-p1, pearl-2018-bookofwhy/ch00-introduction, pearl-2018-bookofwhy/ch04-confounding, pearl-2018-bookofwhy/ch05-smoke, rogers-2003-diffusion/ch08-diffusion-p1, thaler-2015-misbehaving/ch33-nudging]
@@ -30,4 +32,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Randomized controlled trial ↔ medicine: random assignment with a control group — Thaler notes the method comes from medical research. — from [[thaler-2015-misbehaving/ch33-nudging]] (economics-finance → other)
+- [structural-analogy] Randomized controlled trial ↔ medicine: random assignment with a control group — Thaler notes the method comes from medical research. — from [[thaler-2015-misbehaving/ch33-nudging]] (economics-finance → other:medicine-epidemiology)

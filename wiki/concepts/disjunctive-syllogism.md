@@ -2,7 +2,9 @@
 id: disjunctive-syllogism
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [magnus-2025-forallx/ch19-additional, magnus-2025-forallx/ch44-b]

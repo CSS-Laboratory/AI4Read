@@ -21,4 +21,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] secret ballot ↔ mechanism design: removing verifiability changes what threats can achieve. — from [[schelling-1960-conflict/ch01-retarded]] (decision-game-theory → decision-game-theory)
-- [structural-analogy] Secret ballot ↔ incentive compatibility: removing verifiability removes the threatener's ability to condition punishment on behaviour. — from [[schelling-1960-conflict/ch05-enforcement-p2]] (decision-game-theory → other)
+- [structural-analogy] Secret ballot ↔ incentive compatibility: removing verifiability removes the threatener's ability to condition punishment on behaviour. — from [[schelling-1960-conflict/ch05-enforcement-p2]] (decision-game-theory → decision-game-theory)

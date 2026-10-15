@@ -2,7 +2,9 @@
 id: pareto-optimality
 type: concept
 fields: [linear-algebra, political-science]
+fields_strong: [linear-algebra, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [boyd-2018-vmls/ch15-multi, ostrom-1990-commons/ch01-reflections]

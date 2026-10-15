@@ -2,7 +2,9 @@
 id: invariant-subspace
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch05-eigenvalues-p1, axler-2024-ladr/ch05-eigenvalues-p2]

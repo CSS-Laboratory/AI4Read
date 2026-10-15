@@ -2,16 +2,25 @@
 id: simpsons-paradox
 type: concept
 fields: [bayesian]
-n_sources: 11
+fields_strong: [bayesian]
+n_sources: 12
+n_works: 5
 tiers: [core, deep]
 grounding: digests
-sources: [hernan-2020-whatif/ch08-selection, mcelreath-2020-rethinking/ch05-multivariate-p1, mcelreath-2020-rethinking/ch10-counting, pearl-2009-causality/main, pearl-2016-primer/ch01-preliminaries, pearl-2016-primer/ch02-graphical, pearl-2016-primer/ch03-effects, pearl-2018-bookofwhy/ch00-introduction, pearl-2018-bookofwhy/ch02-buccaneers, pearl-2018-bookofwhy/ch06-paradoxes, pearl-2018-bookofwhy/ch09-mediation-p1]
+sources: [hernan-2020-whatif/ch08-selection, mcelreath-2020-rethinking/ch05-multivariate-p1, mcelreath-2020-rethinking/ch10-counting, pearl-2009-causality/main, pearl-2016-primer/ch01-preliminaries, pearl-2016-primer/ch02-graphical, pearl-2016-primer/ch03-effects, pearl-2018-bookofwhy/ch00-introduction, pearl-2018-bookofwhy/ch02-buccaneers, pearl-2018-bookofwhy/ch06-paradoxes, pearl-2018-bookofwhy/ch09-mediation-p1, pearl-2018-bookofwhy/ch09-mediation-p2]
+aliases: [simpson-s-paradox]
 raw_ids: ["Simpson's paradox"]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
 # simpsons-paradox
+
+## Aliases
+
+Variant ids merged into this page (curated in `wiki/kg/aliases.json`):
+
+- `simpson-s-paradox` — 1 digest(s)
 
 ## Canon spine entry
 
@@ -32,6 +41,7 @@ generated_by: build_kg.py
 - [[pearl-2018-bookofwhy/ch02-buccaneers]] (pdf 73): Pearl calls the skull-data aggregation effect a case of it; Chapter 6 treats it
 - [[pearl-2018-bookofwhy/ch06-paradoxes]] (pdf 186–189): a trend in each subgroup that reverses in the pooled data, and so seems to contradict a causal belief; Pearl argues the causal diagram resolves it
 - [[pearl-2018-bookofwhy/ch09-mediation-p1]] (pdf 283): Berkeley data [as `Simpson's paradox`]
+- [[pearl-2018-bookofwhy/ch09-mediation-p2]] (pdf 312): mentioned only to exclude it from the tourniquet data [alias `simpson-s-paradox`]
 
 ## Instances that use it
 
@@ -43,10 +53,10 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Simpson's paradox analogy (p. 5) ↔ statistics: aggregate trends can differ from subgroup trends — from [[argyle-2023-silicon/main-p1]] (llm → other)
-- [structural-analogy] Pooling reversal (8.10) ↔ bayesian: Simpson's paradox and confounding by an unmodelled variable. — from [[jaynes-2003-probability/ch08-sufficiency]] (information-theory → bayesian)
-- [structural-analogy] ruggedness slope reversing between groups (p. 212) ↔ Simpson's paradox: association changes sign when split by a third variable. — from [[mcelreath-2020-rethinking/ch07-interactions]] (bayesian → other)
+- [structural-analogy] Simpson's paradox analogy (p. 5) ↔ statistics: aggregate trends can differ from subgroup trends — from [[argyle-2023-silicon/main-p1]] (llm → other:statistics)
+- [structural-analogy] Pooling reversal (8.10) ↔ bayesian: Simpson's paradox and confounding by an unmodelled variable. — from [[jaynes-2003-probability/ch08-sufficiency]] (bayesian → bayesian)
+- [structural-analogy] ruggedness slope reversing between groups (p. 212) ↔ Simpson's paradox: association changes sign when split by a third variable. — from [[mcelreath-2020-rethinking/ch07-interactions]] (bayesian → bayesian)
 - [structural-analogy] Department intercepts and the within-department comparison ↔ causal inference: adjusting for a confounder that changes the sign of an association (Simpson's paradox; the author points to causal thinking, p. 309) — from [[mcelreath-2020-rethinking/ch10-counting]] (bayesian → bayesian)
-- [structural-analogy] Berkeley admissions ↔ Simpson's paradox / collider bias: the aggregate rate and the within-department rates disagree, and conditioning on $D$ is valid only if no hidden confounder exists. — from [[murphy-2023-pml2/ch15-generalized]] (bayesian → other)
-- [structural-analogy] Pearson's mixed skull populations ↔ Simpson's paradox: aggregation creates or reverses an association. — from [[pearl-2018-bookofwhy/ch02-buccaneers]] (bayesian → other)
-- [structural-analogy] Mediation Fallacy ↔ Simpson's paradox: both show that stratifying can change the sign of an association, and only causal assumptions say which answer to trust. — from [[pearl-2018-bookofwhy/ch09-mediation-p1]] (bayesian → other)
+- [structural-analogy] Berkeley admissions ↔ Simpson's paradox / collider bias: the aggregate rate and the within-department rates disagree, and conditioning on $D$ is valid only if no hidden confounder exists. — from [[murphy-2023-pml2/ch15-generalized]] (bayesian → bayesian)
+- [structural-analogy] Pearson's mixed skull populations ↔ Simpson's paradox: aggregation creates or reverses an association. — from [[pearl-2018-bookofwhy/ch02-buccaneers]] (bayesian → bayesian)
+- [structural-analogy] Mediation Fallacy ↔ Simpson's paradox: both show that stratifying can change the sign of an association, and only causal assumptions say which answer to trust. — from [[pearl-2018-bookofwhy/ch09-mediation-p1]] (bayesian → bayesian)

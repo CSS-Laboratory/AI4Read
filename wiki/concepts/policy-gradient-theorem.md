@@ -1,8 +1,10 @@
 ---
 id: policy-gradient-theorem
 type: concept
-fields: [bayesian, control-theory]
+fields: [control-theory, bayesian]
+fields_strong: [control-theory, bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch35-reinforcement, sutton-2018-rl/ch13-policy]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1157): $\nabla J\propto\mathbb E[\nabla\log\pi\cdot Q]$ under discounted visitation [new]
+- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1157): $\nabla J\propto\mathbb E[\nabla\log\pi\cdot Q]$ under discounted visitation [new; work fields: bayesian, control-theory]
 
 ### control-theory
 

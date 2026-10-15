@@ -2,7 +2,9 @@
 id: normal-science
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kuhn-1962-structure/ch01-introduction, kuhn-1962-structure/ch10-revolutions]
@@ -25,5 +27,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Kuhn's normal science plus revolution ↔ evolutionary biology: punctuated equilibrium — long stability, then rapid change. — from [[godfreysmith-2003-theory/ch06-kuhn]] (analytic-philosophy → other)
+- [structural-analogy] Kuhn's normal science plus revolution ↔ evolutionary biology: punctuated equilibrium — long stability, then rapid change. — from [[godfreysmith-2003-theory/ch06-kuhn]] (analytic-philosophy → other:biology)
 - [structural-analogy] Popper's growth-of-knowledge-through-criticism ↔ Kuhn's paradigm/normal-science and anomaly→crisis→revolution cycle — both treat episodes of real science, not word-analysis, as the unit of epistemological study. — from [[popper-1959-logic/front-preface-2]] (analytic-philosophy → unspecified)

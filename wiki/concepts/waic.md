@@ -2,7 +2,9 @@
 id: waic
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [mcelreath-2020-rethinking/ch06-overfitting-p2, mcelreath-2020-rethinking/ch11-monsters]
@@ -30,5 +32,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] WAIC/LOO penalty $p_{\rm WAIC}$ ↔ machine learning: held-out validation and degrees of freedom of regularised fits — both estimate the optimism of in-sample fit. — from [[gelman-2013-bda3/ch07-evaluating]] (bayesian → other)
+- [structural-analogy] WAIC/LOO penalty $p_{\rm WAIC}$ ↔ machine learning: held-out validation and degrees of freedom of regularised fits — both estimate the optimism of in-sample fit. — from [[gelman-2013-bda3/ch07-evaluating]] (bayesian → llm)
 - [structural-analogy] Overfitting versus predictive accuracy (p. 15) ↔ bayesian: cross-validation/LOO/WAIC — judge on out-of-sample prediction. — from [[mcelreath-2020-rethinking/ch01-golem]] (bayesian → bayesian)

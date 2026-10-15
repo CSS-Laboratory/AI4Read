@@ -2,12 +2,14 @@
 id: source-channel-separation
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 5
+n_works: 2
 tiers: [reference, core]
 grounding: digests
 sources: [cover-2006-elements/ch08-channel-p2, cover-2006-elements/ch14-network-p4, polyanskiy-2025-information/ch21-channel, polyanskiy-2025-information/ch26-rate, polyanskiy-2025-information/ch29-evaluating]
 raw_ids: [source–channel separation]
-canon_spine: information-theory
+canon_spine: [information-theory]
 generated_by: build_kg.py
 ---
 
@@ -29,5 +31,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Source–channel separation ↔ rational inattention: both treat information-rate limits as the binding constraint on what can be passed along. — from [[cover-2006-elements/ch08-channel-p2]] (information-theory → other)
+- [structural-analogy] Source–channel separation ↔ rational inattention: both treat information-rate limits as the binding constraint on what can be passed along. — from [[cover-2006-elements/ch08-channel-p2]] (information-theory → information-theory)
 - [metaphor] Concatenation as a super-channel ↔ information-theory: source–channel separation — build blocks separately and chain them. — from [[mackay-2003-information/ch11-error]] (information-theory → information-theory)

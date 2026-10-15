@@ -1,8 +1,10 @@
 ---
 id: truth-function
 type: concept
-fields: [analytic-philosophy, information-theory]
+fields: [analytic-philosophy, bayesian, information-theory]
+fields_strong: [analytic-philosophy, bayesian, information-theory]
 n_sources: 3
+n_works: 2
 tiers: [deep, core]
 grounding: digests
 sources: [mackay-2003-information/ch51-appendices, wittgenstein-1922-tractatus/ch00-introduction, wittgenstein-1922-tractatus/ch05-proposition]
@@ -20,7 +22,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch51-appendices]] (p. 600): $\mathbb{1}[S]=1$ if $S$ is true, else 0 [new]
+- [[mackay-2003-information/ch51-appendices]] (p. 600): $\mathbb{1}[S]=1$ if $S$ is true, else 0 [new; work fields: information-theory, bayesian]
 
 ## Instances that use it
 

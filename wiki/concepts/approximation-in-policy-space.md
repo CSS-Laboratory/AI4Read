@@ -2,7 +2,9 @@
 id: approximation-in-policy-space
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 7
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [bellman-1957-dp/ch01-i-p1, bellman-1957-dp/ch01-i-p2, bellman-1957-dp/ch02-ii, bellman-1957-dp/ch09-ix, bellman-1957-dp/ch11-xi, bertsekas-2026-rlcourse/ch01-exact-p2, bertsekas-2026-rlcourse/ch03-learning-p3]

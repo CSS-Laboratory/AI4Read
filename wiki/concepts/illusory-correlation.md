@@ -2,7 +2,9 @@
 id: illusory-correlation
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/appa-judgment, tversky-1974-heuristics/main]

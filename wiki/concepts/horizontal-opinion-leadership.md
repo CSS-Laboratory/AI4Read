@@ -2,7 +2,9 @@
 id: horizontal-opinion-leadership
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [katz-1955-personalinfluence/ch00-introduction, katz-1955-personalinfluence/ch15-summary]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Horizontal opinion leadership (like influences like within a stratum) ↔ homophily/heterophily: similarity of communicating persons affects who influences whom — the authors do not use the term here. — from [[katz-1955-personalinfluence/ch00-introduction]] (communication-theory → other)
+- [structural-analogy] Horizontal opinion leadership (like influences like within a stratum) ↔ homophily/heterophily: similarity of communicating persons affects who influences whom — the authors do not use the term here. — from [[katz-1955-personalinfluence/ch00-introduction]] (communication-theory → communication-theory)

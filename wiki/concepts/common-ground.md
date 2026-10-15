@@ -2,7 +2,9 @@
 id: common-ground
 type: concept
 fields: [analytic-philosophy, theory-of-mind]
+fields_strong: [analytic-philosophy, theory-of-mind]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [apperly-2011-mindreaders/ch05-evidence, lycan-2019-language/ch13-implicative]

@@ -2,7 +2,9 @@
 id: minimax-risk
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 3
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [polyanskiy-2025-information/ch31-basics, polyanskiy-2025-information/ch32-classical, polyanskiy-2025-information/ch35-entropic]

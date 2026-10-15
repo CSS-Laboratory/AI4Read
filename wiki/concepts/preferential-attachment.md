@@ -2,12 +2,14 @@
 id: preferential-attachment
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 5
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [barabasi-1999-scaling/main, castellano-2009-socialdynamics/main-p1, castellano-2009-socialdynamics/main-p2, mitchell-2009-guidedtour/ch16-applying, mitchell-2009-guidedtour/ch17-mystery]
 raw_ids: [preferential attachment]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
@@ -33,5 +35,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Preferential attachment in citations ↔ path dependence: early advantages lock in later outcomes. — from [[mitchell-2009-guidedtour/ch16-applying]] (complex-systems → other)
-- [structural-analogy] Simon's reuse-by-current-frequency process ↔ preferential attachment in networks: in both, items that are already common become more likely to be chosen again (p. 146). — from [[mitchell-2009-guidedtour/ch17-mystery]] (complex-systems → other)
+- [structural-analogy] Preferential attachment in citations ↔ path dependence: early advantages lock in later outcomes. — from [[mitchell-2009-guidedtour/ch16-applying]] (complex-systems → complex-systems)
+- [structural-analogy] Simon's reuse-by-current-frequency process ↔ preferential attachment in networks: in both, items that are already common become more likely to be chosen again (p. 146). — from [[mitchell-2009-guidedtour/ch17-mystery]] (complex-systems → other:preferential-attachment-in-networks)

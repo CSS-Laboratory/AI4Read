@@ -2,7 +2,9 @@
 id: feedback-capacity
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [cover-2006-elements/ch08-channel-p2, cover-2006-elements/ch10-gaussian]

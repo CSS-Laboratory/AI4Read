@@ -2,7 +2,9 @@
 id: mean-field-family
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [blei-2017-variational/main-p1, blei-2017-variational/main-p2]

@@ -1,8 +1,10 @@
 ---
 id: scale-invariant-prior
 type: concept
-fields: [information-theory]
+fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [mackay-2003-information/ch23-useful, mackay-2003-information/ch35-random]
@@ -15,5 +17,5 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch23-useful]] (p. 314): the 1/x prior, uniform in $\ln x$ [new]
-- [[mackay-2003-information/ch35-random]] (p. 445): a distribution unchanged when $x$ is multiplied by any number, so uniform on a log scale [new]
+- [[mackay-2003-information/ch23-useful]] (p. 314): the 1/x prior, uniform in $\ln x$ [new; work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch35-random]] (p. 445): a distribution unchanged when $x$ is multiplied by any number, so uniform on a log scale [new; work fields: information-theory, bayesian]

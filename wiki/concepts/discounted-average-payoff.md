@@ -2,7 +2,9 @@
 id: discounted-average-payoff
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [osborne-2004-introduction/ch14-repeated, osborne-2004-introduction/ch15-repeated]

@@ -2,11 +2,13 @@
 id: language-game
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 12
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch08-challenge, lycan-2019-language/ch06-use, wittgenstein-1953-investigations/ch01-augustine, wittgenstein-1953-investigations/ch02-family, wittgenstein-1953-investigations/ch03-understanding, wittgenstein-1953-investigations/ch04-private, wittgenstein-1953-investigations/ch05-thinking, wittgenstein-1953-investigations/ch06-intentionality, wittgenstein-1953-investigations/ch07-negation, wittgenstein-1953-investigations/ch08-ppf, wittgenstein-1953-investigations/ch09-ppf, wittgenstein-1953-investigations/ch10-ppf]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 
@@ -46,7 +48,7 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Paradigm as shared model ↔ analytic-philosophy: family resemblance / language-game — a shared practice, not explicit rules, unites a community. This is only a candidate link; the Preface does not make it. — from [[kuhn-1962-structure/front-preface]] (analytic-philosophy → analytic-philosophy)
-- [structural-analogy] Wittgenstein's rule-governed language-games ↔ convention (Lewis): regularities kept up by mutual expectation, though the unit does not make this link. — from [[lycan-2019-language/ch06-use]] (analytic-philosophy → other)
-- [metaphor] Methodology as "the logic of chess" ↔ language-game: a rule-governed activity. The unit does not link the two. — from [[popper-1959-logic/ch02-problem]] (analytic-philosophy → other)
+- [structural-analogy] Wittgenstein's rule-governed language-games ↔ convention (Lewis): regularities kept up by mutual expectation, though the unit does not make this link. — from [[lycan-2019-language/ch06-use]] (analytic-philosophy → analytic-philosophy)
+- [metaphor] Methodology as "the logic of chess" ↔ language-game: a rule-governed activity. The unit does not link the two. — from [[popper-1959-logic/ch02-problem]] (analytic-philosophy → analytic-philosophy)
 - [metaphor] language-games as objects of comparison, not first approximations ↔ models in science used as yardsticks, not as claims that reality matches. — from [[wittgenstein-1953-investigations/ch02-family]] (analytic-philosophy → unspecified)
 - [structural-analogy] "Look at how the sign is applied, not what accompanies it" (§557) ↔ analytic-philosophy: the idea of meaning as use / language-game (§§559–560). — from [[wittgenstein-1953-investigations/ch07-negation]] (analytic-philosophy → analytic-philosophy)

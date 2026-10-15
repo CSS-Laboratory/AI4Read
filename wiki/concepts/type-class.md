@@ -2,7 +2,9 @@
 id: type-class
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [cover-2006-elements/ch12-information-p1, polyanskiy-2025-information/ch10-random]
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Elias' extractor ↔ source coding: uniform-on-a-set to bits mirrors enumerative coding of a type class, although the author says the variable-length encoders are studied in Chapter 10. — from [[polyanskiy-2025-information/ch10-random]] (information-theory → other)
+- [structural-analogy] Elias' extractor ↔ source coding: uniform-on-a-set to bits mirrors enumerative coding of a type class, although the author says the variable-length encoders are studied in Chapter 10. — from [[polyanskiy-2025-information/ch10-random]] (information-theory → information-theory)

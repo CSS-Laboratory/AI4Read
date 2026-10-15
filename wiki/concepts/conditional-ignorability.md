@@ -2,7 +2,9 @@
 id: conditional-ignorability
 type: concept
 fields: [bayesian, political-science]
+fields_strong: [bayesian, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch27-text, pearl-2016-primer/ch04-counterfactuals]

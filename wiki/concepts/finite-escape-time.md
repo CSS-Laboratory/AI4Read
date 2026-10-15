@@ -2,7 +2,9 @@
 id: finite-escape-time
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch05-dynamic, liberzon-2012-calculus/ch06-linear]

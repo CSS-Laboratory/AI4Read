@@ -1,7 +1,7 @@
 ---
 id: king-man-woman-queen
 type: instance
-fields: [linear-algebra, political-science]
+fields: [linear-algebra, llm, political-science]
 n_sources: 2
 tiers: [core, deep]
 grounding: digests
@@ -21,7 +21,7 @@ generated_by: build_kg.py
 
 ### linear-algebra
 
-- [[mikolov-2013-regularities/main]] (p. 746): "King − Man + Woman" lands very close to "Queen"
+- [[mikolov-2013-regularities/main]] (p. 746): "King − Man + Woman" lands very close to "Queen" [work fields: linear-algebra, llm]
 
 ### political-science
 

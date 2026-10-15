@@ -2,7 +2,9 @@
 id: dialogical-dialectical-coherence
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [craig-1999-field/main-p1, craig-1999-field/main-p2]

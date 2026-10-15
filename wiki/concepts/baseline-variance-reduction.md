@@ -2,7 +2,9 @@
 id: baseline-variance-reduction
 type: concept
 fields: [control-theory, llm]
+fields_strong: [control-theory, llm]
 n_sources: 2
+n_works: 2
 tiers: [reference]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch03-learning-p4, prince-2023-udl/ch19-reinforcement]

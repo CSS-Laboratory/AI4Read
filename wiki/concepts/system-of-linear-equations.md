@@ -2,7 +2,9 @@
 id: system-of-linear-equations
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [boyd-2018-vmls/ch08-linear, deisenroth-2020-mml/ch02-linear-p1]

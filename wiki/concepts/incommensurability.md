@@ -2,11 +2,13 @@
 id: incommensurability
 type: concept
 fields: [analytic-philosophy, communication-theory]
+fields_strong: [analytic-philosophy, communication-theory]
 n_sources: 10
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [craig-1999-field/main-p1, godfreysmith-2003-theory/ch06-kuhn, godfreysmith-2003-theory/ch07-lakatos, godfreysmith-2003-theory/ch08-challenge, kuhn-1962-structure/ch01-introduction, kuhn-1962-structure/ch09-nature, kuhn-1962-structure/ch10-revolutions, kuhn-1962-structure/ch12-resolution, kuhn-1962-structure/ch13-progress, kuhn-1962-structure/postscript-1969]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 
@@ -23,7 +25,7 @@ generated_by: build_kg.py
 - [[godfreysmith-2003-theory/ch06-kuhn]] (p. 91): literally "no common measure", carefully put: rivals are comparable enough to be seen as rivals, but such superiority arguments are compelling only to those inside the paradigm making the claim. It has language and standards aspects
 - [[godfreysmith-2003-theory/ch07-lakatos]] (p. 111): Feyerabend, like Kuhn, held that rival theories are often linguistically incommensurable
 - [[godfreysmith-2003-theory/ch08-challenge]] (p. 125): listed among the "anti-positivist package" ideas
-- [[kuhn-1962-structure/ch01-introduction]] (p. 4): Kuhn says competing early schools differed in what he will come to call their incommensurable ways of seeing the world and practising science; the term is named but not defined here
+- [[kuhn-1962-structure/ch01-introduction]] (p. 4): Kuhn says competing early schools differed in what he will come to call their incommensurable ways of seeing the world and practising science; the term is named but not defined here [weak: not really used in this unit]
 - [[kuhn-1962-structure/ch09-nature]] (p. 103): post-revolution tradition is often "incommensurable" with the earlier one, including different standards of what counts as a problem or solution
 - [[kuhn-1962-structure/ch10-revolutions]] (p. 112): after a revolution the new world will seem, here and there, incommensurable with the old; schools with different paradigms are always slightly at cross-purposes
 - [[kuhn-1962-structure/ch12-resolution]] (pp. 148–150): Kuhn's three aspects: differing standards and problem lists; shifted meanings of shared terms; practicing "in different worlds"

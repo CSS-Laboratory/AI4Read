@@ -2,7 +2,9 @@
 id: selective-perception
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [hall-1973-encoding/main, rogers-2003-diffusion/ch05-innovation-p1]

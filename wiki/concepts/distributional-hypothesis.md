@@ -2,11 +2,13 @@
 id: distributional-hypothesis
 type: concept
 fields: [llm, political-science]
+fields_strong: [llm, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [bender-2020-octopus/main, grimmer-2022-textasdata/ch08-distributed]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 
@@ -29,4 +31,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [metaphor] Distributional hypothesis ↔ political-science: partisan cues and heuristics — judging an item by who is associated with it. — from [[grimmer-2022-textasdata/ch08-distributed]] (political-science → political-science)
-- [structural-analogy] CBOW/Skip-gram context prediction ↔ distributional hypothesis: vectors are shaped by the contexts a word occurs in (canon link; not stated in this unit) — from [[mikolov-2013-efficient/main]] (llm → other)
+- [structural-analogy] CBOW/Skip-gram context prediction ↔ distributional hypothesis: vectors are shaped by the contexts a word occurs in (canon link; not stated in this unit) — from [[mikolov-2013-efficient/main]] (llm → llm)

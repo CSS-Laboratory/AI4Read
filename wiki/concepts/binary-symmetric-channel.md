@@ -1,8 +1,10 @@
 ---
 id: binary-symmetric-channel
 type: concept
-fields: [information-theory]
+fields: [information-theory, bayesian]
+fields_strong: [information-theory, bayesian]
 n_sources: 3
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [mackay-2003-information/ch01-introduction, pierce-1980-introduction/ch08-noisy, stone-2022-information/ch04-noisy]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch01-introduction]] (p. 4): channel flipping each bit independently with probability f [new]
+- [[mackay-2003-information/ch01-introduction]] (p. 4): channel flipping each bit independently with probability f [new; work fields: information-theory, bayesian]
 - [[pierce-1980-introduction/ch08-noisy]] (p. 157): binary channel where each digit is received correctly with probability $p$ [new]
 - [[stone-2022-information/ch04-noisy]] (p. 98): each bit flipped with fixed probability [new]
 

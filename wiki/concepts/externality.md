@@ -2,7 +2,9 @@
 id: externality
 type: concept
 fields: [political-science, decision-game-theory]
+fields_strong: [political-science, decision-game-theory]
 n_sources: 4
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch14-case, olson-1965-collectiveaction/app-untitled, shepsle-2010-analyzing/ch10-public-p2, shepsle-2010-analyzing/ch17-final]
@@ -34,5 +36,5 @@ generated_by: build_kg.py
 - [structural-analogy] Bay Bridge congestion ↔ economics: negative externality fixed by a Pigouvian-style price — the toll equals the harm to others (the term is not used in this unit) — from [[dixit-2008-art-strategy/ch09-cooperation]] (decision-game-theory → economics-finance)
 - [structural-analogy] Network externalities ↔ communication-theory: ritual/shared community — value comes from the size of the shared group. — from [[rogers-2003-diffusion/ch08-diffusion-p3]] (communication-theory → communication-theory)
 - [structural-analogy] External diseconomy of surprise security ↔ economics: externalities in production (n. 122, p. 379) — from [[schelling-1960-conflict/appc-re-p3]] (decision-game-theory → economics-finance)
-- [structural-analogy] "Guard the guardians" in externality control ↔ principal–agent problem: the controllers need incentives too. — from [[shepsle-2010-analyzing/ch10-public-p2]] (political-science → other)
-- [structural-analogy] Moral-hazard externality (each takes less care, the premium rises) ↔ social dilemma: individually rational choices produce a collectively worse outcome (p. 505). — from [[stiglitz-2002-paradigm/main-p2]] (economics-finance → other)
+- [structural-analogy] "Guard the guardians" in externality control ↔ principal–agent problem: the controllers need incentives too. — from [[shepsle-2010-analyzing/ch10-public-p2]] (political-science → political-science)
+- [structural-analogy] Moral-hazard externality (each takes less care, the premium rises) ↔ social dilemma: individually rational choices produce a collectively worse outcome (p. 505). — from [[stiglitz-2002-paradigm/main-p2]] (economics-finance → decision-game-theory)

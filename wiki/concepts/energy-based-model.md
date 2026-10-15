@@ -2,7 +2,9 @@
 id: energy-based-model
 type: concept
 fields: [bayesian, llm]
+fields_strong: [bayesian, llm]
 n_sources: 3
+n_works: 2
 tiers: [reference, deep]
 grounding: digests
 sources: [bengio-2003-nplm/main, murphy-2023-pml2/ch04-graphical-p2, murphy-2023-pml2/ch24-energy]
@@ -16,7 +18,7 @@ generated_by: build_kg.py
 ### bayesian
 
 - [[murphy-2023-pml2/ch04-graphical-p2]] (p. 166): $p\propto\exp(-\mathcal E)$ with low energy meaning high probability; the Gibbs distribution [new]
-- [[murphy-2023-pml2/ch24-energy]] (p. 849): density $\propto\exp(-E_\theta(x))$ with arbitrary energy function [new]
+- [[murphy-2023-pml2/ch24-energy]] (p. 849): density $\propto\exp(-E_\theta(x))$ with arbitrary energy function [new; work fields: bayesian, llm]
 
 ### llm
 

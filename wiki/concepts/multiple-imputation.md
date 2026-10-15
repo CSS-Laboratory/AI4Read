@@ -2,7 +2,9 @@
 id: multiple-imputation
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [gelman-2013-bda3/ch08-modeling, gelman-2013-bda3/ch18-models]

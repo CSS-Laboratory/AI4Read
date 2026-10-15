@@ -2,7 +2,9 @@
 id: variational-em
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch06-optimization-p2, murphy-2023-pml2/ch10-variational-p1]

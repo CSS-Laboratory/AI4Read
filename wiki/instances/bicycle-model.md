@@ -1,7 +1,7 @@
 ---
 id: bicycle-model
 type: instance
-fields: [control-theory]
+fields: [control-theory, bayesian]
 n_sources: 3
 tiers: [deep, core]
 grounding: digests
@@ -22,5 +22,5 @@ generated_by: build_kg.py
 ### control-theory
 
 - [[astrom-2021-feedbacksystems/ch05-dynamic]] (p. 5-32): self-stabilizing for velocities between 6 and 10 m/s (Fig. 5.19a)
-- [[sarkka-2023-bayesianfiltering/ch04-discretization]] (pp. 63–64): vehicle model with closed-form mean
-- [[sarkka-2023-bayesianfiltering/ch19-56ptappendixadditional]] (p. 363): mean ODE (A.34) with closed-form discretization (A.36)
+- [[sarkka-2023-bayesianfiltering/ch04-discretization]] (pp. 63–64): vehicle model with closed-form mean [work fields: control-theory, bayesian]
+- [[sarkka-2023-bayesianfiltering/ch19-56ptappendixadditional]] (p. 363): mean ODE (A.34) with closed-form discretization (A.36) [work fields: control-theory, bayesian]

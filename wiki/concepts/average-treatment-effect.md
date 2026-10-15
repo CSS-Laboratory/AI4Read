@@ -2,7 +2,9 @@
 id: average-treatment-effect
 type: concept
 fields: [bayesian, political-science]
+fields_strong: [bayesian, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch25-text, murphy-2023-pml2/ch36-causality-p1]

@@ -2,7 +2,9 @@
 id: sensitivity-analysis
 type: concept
 fields: [bayesian, political-science]
+fields_strong: [bayesian, political-science]
 n_sources: 8
+n_works: 6
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch06-model, gelman-2013-bda3/ch07-evaluating, gelman-2013-bda3/ch17-models, grimmer-2022-textasdata/ch22-principles, hernan-2020-whatif/ch13-standardization, mcelreath-2020-rethinking/ch09-big, murphy-2023-pml2/ch03-statistics-p2, pearl-2018-bookofwhy/ch05-smoke]
@@ -34,7 +36,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] $dG/G=S\,dP/P$ ↔ sensitivity analysis: the relative-change (logarithmic) derivative of a closed-loop function with respect to a parameter. — from [[astrom-2021-feedbacksystems/ch13-robust]] (control-theory → other)
-- [structural-analogy] Static sensitivity analysis (reweight posterior draws by new-to-old prior ratio) ↔ importance sampling: the same reweighting idea, applied to prior changes (p. 35). — from [[gelman-2020-workflow/main-p2]] (bayesian → other)
-- [metaphor] Sensitivity analysis for unmeasured confounding ↔ prior sensitivity: rerunning an analysis under several assumptions about what cannot be checked. — from [[hernan-2020-whatif/ch07-confounding]] (bayesian → other)
+- [same-math] $dG/G=S\,dP/P$ ↔ sensitivity analysis: the relative-change (logarithmic) derivative of a closed-loop function with respect to a parameter. — from [[astrom-2021-feedbacksystems/ch13-robust]] (control-theory → bayesian)
+- [structural-analogy] Static sensitivity analysis (reweight posterior draws by new-to-old prior ratio) ↔ importance sampling: the same reweighting idea, applied to prior changes (p. 35). — from [[gelman-2020-workflow/main-p2]] (bayesian → bayesian)
+- [metaphor] Sensitivity analysis for unmeasured confounding ↔ prior sensitivity: rerunning an analysis under several assumptions about what cannot be checked. — from [[hernan-2020-whatif/ch07-confounding]] (bayesian → other:prior-sensitivity)
 - [structural-analogy] Testing a known non-zero $\alpha_1$ for sensitivity analysis ↔ Bayesian inference: a prior or fixed value for a bias parameter, with results shown across its range. — from [[hernan-2020-whatif/ch14-g]] (bayesian → bayesian)

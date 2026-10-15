@@ -2,12 +2,14 @@
 id: market-failure-externality
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 5
+n_works: 4
 tiers: [core, deep]
 grounding: digests
 sources: [akerlof-1970-lemons/main, fama-1970-efficient/main, morris-2002-public/main, stiglitz-2002-paradigm/main-p1, stiglitz-2002-paradigm/main-p2]
 raw_ids: [market failure / externality]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 

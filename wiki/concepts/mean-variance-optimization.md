@@ -1,13 +1,15 @@
 ---
 id: mean-variance-optimization
 type: concept
-fields: [economics-finance]
+fields: [economics-finance, linear-algebra]
+fields_strong: [economics-finance, linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [fama-1970-efficient/main, markowitz-1952-portfolio/main]
 raw_ids: [mean-variance optimization]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 
@@ -22,7 +24,7 @@ generated_by: build_kg.py
 ### economics-finance
 
 - [[fama-1970-efficient/main]] (pp. 401–402): in the Sharpe–Lintner model, risk is a security's contribution to the standard deviation of the market portfolio [as `mean-variance optimization`]
-- [[markowitz-1952-portfolio/main]] (p. 82): choosing weights by expected return $E$ and variance $V$ (the "E–V rule")
+- [[markowitz-1952-portfolio/main]] (p. 82): choosing weights by expected return $E$ and variance $V$ (the "E–V rule") [work fields: economics-finance, linear-algebra]
 
 ## Candidate bridges
 

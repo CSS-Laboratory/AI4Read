@@ -2,7 +2,9 @@
 id: zero-error-capacity
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 3
+n_works: 2
 tiers: [reference, core]
 grounding: digests
 sources: [cover-2006-elements/ch08-channel-p2, polyanskiy-2025-information/ch21-channel, polyanskiy-2025-information/ch25-channel]

@@ -1,8 +1,10 @@
 ---
 id: syndrome-decoding
 type: concept
-fields: [information-theory]
+fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [mackay-2003-information/ch01-introduction, mackay-2003-information/ch14-very, mackay-2003-information/ch47-low]
@@ -15,9 +17,9 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch01-introduction]] (pp. 10–12): compute the pattern of violated parity checks, **z** = **H r**, and map it to the most probable noise pattern [new]
-- [[mackay-2003-information/ch14-very]] (p. 229): compute $\mathbf z=\mathbf{Hr}$, which depends only on the noise, and solve $\mathbf{Hx}=\mathbf z$ [new]
-- [[mackay-2003-information/ch47-low]] (p. 558): decode by inferring the noise $\mathbf n$ from the syndrome $\mathbf z=\mathbf H\mathbf r$ [new]
+- [[mackay-2003-information/ch01-introduction]] (pp. 10–12): compute the pattern of violated parity checks, **z** = **H r**, and map it to the most probable noise pattern [new; work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch14-very]] (p. 229): compute $\mathbf z=\mathbf{Hr}$, which depends only on the noise, and solve $\mathbf{Hx}=\mathbf z$ [new; work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch47-low]] (p. 558): decode by inferring the noise $\mathbf n$ from the syndrome $\mathbf z=\mathbf H\mathbf r$ [new; work fields: information-theory, bayesian]
 
 ## Instances that use it
 

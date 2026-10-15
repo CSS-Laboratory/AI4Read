@@ -2,7 +2,9 @@
 id: odds-form-of-bayes
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [gelman-2013-bda3/ch01-probability, mcgrayne-2011-theory/ch12-who]

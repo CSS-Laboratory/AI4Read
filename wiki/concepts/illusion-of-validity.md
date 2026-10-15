@@ -2,7 +2,9 @@
 id: illusion-of-validity
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/appa-judgment, kahneman-2011-thinking/ch20-illusion, kahneman-2011-thinking/ch22-expert, tversky-1974-heuristics/main]

@@ -2,12 +2,14 @@
 id: order-disorder-transition
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [castellano-2009-socialdynamics/main-p1, castellano-2009-socialdynamics/main-p2, castellano-2009-socialdynamics/main-p3]
 raw_ids: [order–disorder transition]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 

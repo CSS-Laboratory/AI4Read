@@ -2,7 +2,9 @@
 id: dirichlet-distribution
 type: concept
 fields: [bayesian, information-theory, political-science]
+fields_strong: [bayesian, information-theory, political-science]
 n_sources: 3
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch06-multinomial, mackay-2003-information/ch23-useful, murphy-2023-pml2/ch02-probability-p1]
@@ -19,7 +21,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch23-useful]] (p. 316–317): density over probability vectors; α = sharpness / prior strength [new]
+- [[mackay-2003-information/ch23-useful]] (p. 316–317): density over probability vectors; α = sharpness / prior strength [new; work fields: information-theory, bayesian]
 
 ### political-science
 

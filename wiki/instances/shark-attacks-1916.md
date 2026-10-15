@@ -7,7 +7,7 @@ tiers: [core]
 grounding: digests
 sources: [achen-2016-realists/ch11-groups]
 canon_instance: [shark-attacks-of-1916]
-canon_match_rule: same-work-tokens
+canon_match_rule: title-key
 generated_by: build_kg.py
 ---
 

@@ -1,9 +1,9 @@
 ---
 id: borel-kolmogorov-paradox
 type: instance
-fields: [information-theory]
+fields: [bayesian, information-theory]
 n_sources: 2
-tiers: [reference]
+tiers: [core]
 grounding: digests
 sources: [jaynes-2003-probability/appa-other, jaynes-2003-probability/ch04-elementary]
 generated_by: build_kg.py
@@ -13,7 +13,7 @@ generated_by: build_kg.py
 
 ## Descriptions in the sources
 
-### information-theory
+### bayesian
 
-- [[jaynes-2003-probability/appa-other]] (p. 654): Jaynes agrees with Kolmogorov's resolution
-- [[jaynes-2003-probability/ch04-elementary]] (p. 110): ambiguity of $df\to0$ limits with an extra parameter
+- [[jaynes-2003-probability/appa-other]] (p. 654): Jaynes agrees with Kolmogorov's resolution [work fields: bayesian, information-theory]
+- [[jaynes-2003-probability/ch04-elementary]] (p. 110): ambiguity of $df\to0$ limits with an extra parameter [work fields: bayesian, information-theory]

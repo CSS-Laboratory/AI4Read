@@ -2,7 +2,9 @@
 id: problem-of-induction
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch03-induction, popper-1959-logic/appi-untitled-2, popper-1959-logic/ch01-survey]

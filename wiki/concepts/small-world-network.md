@@ -2,12 +2,14 @@
 id: small-world-network
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 6
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [barabasi-1999-scaling/main, castellano-2009-socialdynamics/main-p1, castellano-2009-socialdynamics/main-p2, castellano-2009-socialdynamics/main-p3, mitchell-2009-guidedtour/ch15-science, mitchell-2009-guidedtour/ch16-applying]
 raw_ids: [small-world network]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 

@@ -2,12 +2,14 @@
 id: zero-shot-few-shot-prompting
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 17
+n_works: 11
 tiers: [core, deep, reference]
 grounding: digests
 sources: [argyle-2023-silicon/main-p1, bai-2022-constitutional/main, brown-2020-gpt3/main-p1, brown-2020-gpt3/main-p2, brown-2020-gpt3/main-p3, hoffmann-2022-chinchilla/main, ouyang-2022-instructgpt/main-p1, ouyang-2022-instructgpt/main-p2, ouyang-2022-instructgpt/main-p3, prince-2023-udl/ch12-transformers, radford-2019-gpt2/main, wei-2022-cot/main-p1, wei-2022-cot/main-p2, wei-2022-emergent/main, xie-2022-icl/main, ziems-2024-css/main-p1, ziems-2024-css/main-p2]
 raw_ids: [zero-shot / few-shot prompting]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

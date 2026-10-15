@@ -2,7 +2,9 @@
 id: random-surfer
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [brin-1998-anatomy/main, bryan-2006-eigenvector/main]
@@ -26,5 +28,5 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] random surfer with restarts ↔ linear-algebra: Markov chain, steady-state eigenvector — the paper ties PageRank to a principal eigenvector but gives no derivation. — from [[brin-1998-anatomy/main]] (linear-algebra → linear-algebra)
-- [same-math] Random surfer with teleportation ↔ web search: PageRank steady-state distribution. — from [[rosvall-2008-maps/main-p1]] (information-theory → other)
+- [same-math] Random surfer with teleportation ↔ web search: PageRank steady-state distribution. — from [[rosvall-2008-maps/main-p1]] (information-theory → other:computer-science)
 - [metaphor] Random surfer visiting fractions ↔ information-theory: how often a source emits each symbol, which sets ideal code lengths. — from [[rosvall-2008-maps/main-p2]] (information-theory → information-theory)

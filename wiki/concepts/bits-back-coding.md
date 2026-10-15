@@ -2,7 +2,9 @@
 id: bits-back-coding
 type: concept
 fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [mackay-2003-information/ch28-model, murphy-2023-pml2/ch05-information-p2]
@@ -15,11 +17,11 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch05-information-p2]] (p. 250): argument that randomness used to sample the code can be recovered, so the cost is a KL rate [new]
+- [[murphy-2023-pml2/ch05-information-p2]] (p. 250): argument that randomness used to sample the code can be recovered, so the cost is a KL rate [new; work fields: bayesian, information-theory]
 
 ### information-theory
 
-- [[mackay-2003-information/ch28-model]] (p. 353): send a posterior sample, then recover its random bits; net cost $-\log P(D\mid H)$ plus a constant [new]
+- [[mackay-2003-information/ch28-model]] (p. 353): send a posterior sample, then recover its random bits; net cost $-\log P(D\mid H)$ plus a constant [new; work fields: information-theory, bayesian]
 
 ## Candidate bridges
 

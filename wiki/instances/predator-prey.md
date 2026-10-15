@@ -21,6 +21,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Predator–prey difference model (3.13) ↔ social-science dynamics: products of population sizes model pairwise encounters (the $aLH$ and $cLH$ terms). — from [[astrom-2021-feedbacksystems/ch03-system-p1]] (control-theory → other)
+- [structural-analogy] Predator–prey difference model (3.13) ↔ social-science dynamics: products of population sizes model pairwise encounters (the $aLH$ and $cLH$ terms). — from [[astrom-2021-feedbacksystems/ch03-system-p1]] (control-theory → other:social-science-dynamics)
 - [structural-analogy] Predator–prey oscillation ↔ the damped-oscillation modes of spring–mass systems — both give oscillating time responses, but the predator–prey system is nonlinear and the chapter calls its oscillation a limit cycle. — from [[astrom-2021-feedbacksystems/ch04-examples]] (control-theory → unspecified)
 - [structural-analogy] Predator–prey cycle (a stable limit cycle when the equilibrium is unstable) ↔ cyclical dynamics in economics or epidemics. — from [[astrom-2021-feedbacksystems/ch05-dynamic]] (control-theory → unspecified)

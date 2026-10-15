@@ -2,7 +2,9 @@
 id: game-theory
 type: concept
 fields: [decision-game-theory, political-science]
+fields_strong: [decision-game-theory, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch03-politics, dixit-2008-art-strategy/ch01-ten]

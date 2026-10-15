@@ -2,7 +2,9 @@
 id: presupposition-failure
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [lycan-2019-language/ch02-definite, magnus-2025-forallx/ch28-definite]

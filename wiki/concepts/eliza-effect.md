@@ -2,7 +2,9 @@
 id: eliza-effect
 type: concept
 fields: [llm, theory-of-mind]
+fields_strong: [llm, theory-of-mind]
 n_sources: 2
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [prince-2023-udl/ch21-deep, shapira-2024-clever-hans/main]
@@ -20,7 +22,7 @@ generated_by: build_kg.py
 
 ### theory-of-mind
 
-- [[shapira-2024-clever-hans/main]] (p. 2264): humans assuming that computer behaviour is analogous to human behaviour [as `ELIZA-effect`; new]
+- [[shapira-2024-clever-hans/main]] (p. 2264): humans assuming that computer behaviour is analogous to human behaviour [as `ELIZA-effect`; new; work fields: theory-of-mind, llm]
 
 ## Instances that use it
 
@@ -28,4 +30,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] ELIZA effect and confirmation bias ↔ human judgment: observers read competence into fluent output. — from [[shapira-2024-clever-hans/main]] (theory-of-mind → other)
+- [structural-analogy] ELIZA effect and confirmation bias ↔ human judgment: observers read competence into fluent output. — from [[shapira-2024-clever-hans/main]] (theory-of-mind → other:human-judgment)

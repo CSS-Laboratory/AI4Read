@@ -2,7 +2,9 @@
 id: action-profile
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [osborne-2004-introduction/ch02-nash-p1, osborne-2004-introduction/ch17-mathematics]

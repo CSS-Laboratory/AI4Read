@@ -2,7 +2,9 @@
 id: lu-factorization
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [strang-2023-introduction/app1-ranks, strang-2023-introduction/ch02-solving-p1]

@@ -2,7 +2,9 @@
 id: incentive-condition
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lupia-1998-dilemma/ch05-delegation, lupia-1998-dilemma/ch08-laboratory]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Knowledge and incentive conditions for delegation ↔ principal–agent theory: conflicting interests and expertise gaps cause failure (p. 11) — from [[lupia-1998-dilemma/ch01-knowledge]] (political-science → other)
+- [structural-analogy] Knowledge and incentive conditions for delegation ↔ principal–agent theory: conflicting interests and expertise gaps cause failure (p. 11) — from [[lupia-1998-dilemma/ch01-knowledge]] (political-science → political-science)

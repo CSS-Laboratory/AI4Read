@@ -2,12 +2,14 @@
 id: rayleigh-quotient
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 19
+n_works: 3
 tiers: [deep, core]
 grounding: digests
 sources: [spielman-2025-sagt/ch02-eigenvalues, spielman-2025-sagt/ch03-laplacian, spielman-2025-sagt/ch04-adjacency, spielman-2025-sagt/ch05-fundamental, spielman-2025-sagt/ch06-comparing, spielman-2025-sagt/ch08-eigenvalues, spielman-2025-sagt/ch10-random, spielman-2025-sagt/ch19-independent, spielman-2025-sagt/ch20-graph, spielman-2025-sagt/ch21-cheeger, spielman-2025-sagt/ch22-local, spielman-2025-sagt/ch24-nodal, spielman-2025-sagt/ch25-second, spielman-2025-sagt/ch27-properties, spielman-2025-sagt/ch35-conjugate, spielman-2025-sagt/ch36-preconditioning, strang-2023-introduction/ch06-eigenvalues-p3, strang-2023-introduction/ch07-singular, vonluxburg-2007-spectralclustering/main]
 raw_ids: [Rayleigh quotient]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -46,11 +48,11 @@ generated_by: build_kg.py
 - [same-math] PCA's maximize $b^\top Sb$ s.t. $\|b\|=1$ ↔ linear algebra: Rayleigh quotient maximization — the maximum is the top eigenvalue, attained at its eigenvector. — from [[deisenroth-2020-mml/ch10-dimensionality]] (linear-algebra → linear-algebra)
 - [same-math] Rayleigh quotient maximization ↔ PCA: choosing the direction of maximal variance of a covariance matrix. — from [[spielman-2025-sagt/ch02-eigenvalues]] (linear-algebra → linear-algebra)
 - [same-math] $x^TLx=\sum_j\lambda_j(\psi_j^Tx)^2$ minimized over orthonormal frames ↔ linear-algebra: Rayleigh quotient / Courant–Fischer — Theorem 3.2.1 is the multi-vector (trace) version. — from [[spielman-2025-sagt/ch03-laplacian]] (linear-algebra → linear-algebra)
-- [structural-analogy] Rayleigh quotient with test vector $1$ or $1_S$ ↔ lower bounds in optimisation: any feasible test vector bounds the maximum from below. — from [[spielman-2025-sagt/ch04-adjacency]] (linear-algebra → other)
-- [same-math] Lemma 6.2.1 ↔ Courant–Fischer / Rayleigh quotient: $\succcurlyeq$ on matrices passes to ordered eigenvalues. — from [[spielman-2025-sagt/ch06-comparing]] (linear-algebra → other)
+- [structural-analogy] Rayleigh quotient with test vector $1$ or $1_S$ ↔ lower bounds in optimisation: any feasible test vector bounds the maximum from below. — from [[spielman-2025-sagt/ch04-adjacency]] (linear-algebra → other:optimization)
+- [same-math] Lemma 6.2.1 ↔ Courant–Fischer / Rayleigh quotient: $\succcurlyeq$ on matrices passes to ordered eigenvalues. — from [[spielman-2025-sagt/ch06-comparing]] (linear-algebra → linear-algebra)
 - [structural-analogy] ν₂ via Rayleigh quotient ↔ Fiedler value / algebraic connectivity — a similar minimum over y ⊥ d, but with D-weighting, so not identical to λ₂ — from [[spielman-2025-sagt/ch10-random]] (linear-algebra → unspecified)
 - [structural-analogy] Hoffman bound (test vector $\mathbf 1_S-s\mathbf 1$ in the Rayleigh quotient) ↔ spectral partitioning: both use indicator vectors orthogonalized against $\mathbf 1$ and Rayleigh quotients to bound combinatorial quantities. — from [[spielman-2025-sagt/ch19-independent]] (linear-algebra → linear-algebra)
-- [same-math] vector-valued Rayleigh quotient (25.1) ↔ Rayleigh quotient: coordinate-wise application of the λ₂ characterization. — from [[spielman-2025-sagt/ch25-second]] (linear-algebra → other)
+- [same-math] vector-valued Rayleigh quotient (25.1) ↔ Rayleigh quotient: coordinate-wise application of the λ₂ characterization. — from [[spielman-2025-sagt/ch25-second]] (linear-algebra → linear-algebra)
 - [same-math] Test-vector upper bound on λ₂ ↔ linear-algebra: Rayleigh quotient of a trial vector orthogonal to $\mathbf 1$ upper-bounds $\lambda_2$ (the variational idea; not developed on these pages). — from [[spielman-2025-sagt/ch27-properties]] (linear-algebra → linear-algebra)
 - [same-math] $\sigma_1=\max\|Ax\|/\|x\|$ ↔ Rayleigh quotient of $A^TA$ (variational characterization of top eigenvalue). — from [[strang-2023-introduction/ch07-singular]] (linear-algebra → unspecified)
 - [same-math] Trace minimization $\min\mathrm{Tr}(H'LH)$ s.t. $H'H=I$ ↔ linear-algebra spine: Rayleigh quotient / Courant–Fischer extreme eigenvalues — same optimization, bottom-$k$ eigenvectors. — from [[vonluxburg-2007-spectralclustering/main]] (linear-algebra → linear-algebra)

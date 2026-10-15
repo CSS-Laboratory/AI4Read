@@ -2,7 +2,9 @@
 id: effective-number-of-parameters
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [gelman-2013-bda3/ch07-evaluating, mcelreath-2020-rethinking/ch06-overfitting-p2, mcelreath-2020-rethinking/ch12-multilevel]

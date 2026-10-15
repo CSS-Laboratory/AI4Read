@@ -2,7 +2,9 @@
 id: participation-constraint
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 3
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch08-interpreting, dixit-2008-art-strategy/ch13-incentives, myerson-2008-mechanism/main]

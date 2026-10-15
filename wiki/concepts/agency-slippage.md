@@ -2,7 +2,9 @@
 id: agency-slippage
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [shepsle-2010-analyzing/ch13-bureaucracy, shepsle-2010-analyzing/ch14-leadership]

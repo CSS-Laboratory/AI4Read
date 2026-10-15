@@ -2,7 +2,9 @@
 id: link-function
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 4
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch16-generalized, hernan-2020-whatif/ch11-model, mcelreath-2020-rethinking/ch09-big, murphy-2023-pml2/ch15-generalized]

@@ -2,7 +2,9 @@
 id: double-dissociation
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [apperly-2011-mindreaders/ch04-evidence, saxe-2003-tpj/main]

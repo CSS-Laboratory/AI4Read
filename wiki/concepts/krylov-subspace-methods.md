@@ -2,12 +2,14 @@
 id: krylov-subspace-methods
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 4
+n_works: 3
 tiers: [deep, core]
 grounding: digests
 sources: [deisenroth-2020-mml/ch02-linear-p1, spielman-2025-sagt/ch35-conjugate, spielman-2025-sagt/ch36-preconditioning, vonluxburg-2007-spectralclustering/main]
 raw_ids: [Krylov subspace methods]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 

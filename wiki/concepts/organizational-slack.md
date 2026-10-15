@@ -2,7 +2,9 @@
 id: organizational-slack
 type: concept
 fields: [communication-theory, political-science]
+fields_strong: [communication-theory, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [rogers-2003-diffusion/ch10-innovation, shepsle-2010-analyzing/ch13-bureaucracy]

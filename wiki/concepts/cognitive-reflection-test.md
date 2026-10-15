@@ -2,7 +2,9 @@
 id: cognitive-reflection-test
 type: concept
 fields: [decision-game-theory, political-science]
+fields_strong: [decision-game-theory, political-science]
 n_sources: 3
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [kahan-2013-motivatedreasoning/main, kahneman-2011-thinking/ch03-lazy, kahneman-2011-thinking/ch05-cognitive]

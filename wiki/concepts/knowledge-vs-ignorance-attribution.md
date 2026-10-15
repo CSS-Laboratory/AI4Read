@@ -2,11 +2,13 @@
 id: knowledge-vs-ignorance-attribution
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 5
+n_works: 4
 tiers: [core, deep]
 grounding: digests
 sources: [apperly-2011-mindreaders/ch02-evidence, apperly-2011-mindreaders/ch03-evidence, onishi-2005-infant-false-belief/main, premack-1978-chimpanzee/main, wimmer-1983-beliefs-about-beliefs/main]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 

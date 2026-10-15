@@ -1,8 +1,10 @@
 ---
 id: bayes-risk
 type: concept
-fields: [bayesian, information-theory]
+fields: [bayesian, decision-game-theory, information-theory]
+fields_strong: [bayesian, decision-game-theory, information-theory]
 n_sources: 2
+n_works: 2
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch34-decision, polyanskiy-2025-information/ch31-basics]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch34-decision]] (p. 1106): expected frequentist risk averaged over a prior $\pi(h)$; minimiser is a Bayes estimator [new]
+- [[murphy-2023-pml2/ch34-decision]] (p. 1106): expected frequentist risk averaged over a prior $\pi(h)$; minimiser is a Bayes estimator [new; work fields: bayesian, decision-game-theory]
 
 ### information-theory
 
@@ -27,4 +29,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Bayes risk with Gaussian prior and $s\to\infty$ ↔ I-MMSE: Bayes risk under quadratic loss is the MMSE (p. 562). — from [[polyanskiy-2025-information/ch31-basics]] (information-theory → other)
+- [structural-analogy] Bayes risk with Gaussian prior and $s\to\infty$ ↔ I-MMSE: Bayes risk under quadratic loss is the MMSE (p. 562). — from [[polyanskiy-2025-information/ch31-basics]] (information-theory → other:i-mmse)

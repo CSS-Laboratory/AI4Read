@@ -2,7 +2,9 @@
 id: non-centered-parameterization
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 5
+n_works: 3
 tiers: [reference, core]
 grounding: digests
 sources: [gelman-2013-bda3/appc-computation, mcelreath-2020-rethinking/ch13-adventures, murphy-2023-pml2/ch03-statistics-p2, murphy-2023-pml2/ch12-markov-p2, murphy-2023-pml2/ch15-generalized]
@@ -27,4 +29,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Non-centered parameterization ↔ variational inference: reparameterizing a random variable as a deterministic transform of fixed noise (canon link; not stated in this unit). — from [[murphy-2023-pml2/ch12-markov-p2]] (bayesian → other)
+- [structural-analogy] Non-centered parameterization ↔ variational inference: reparameterizing a random variable as a deterministic transform of fixed noise (canon link; not stated in this unit). — from [[murphy-2023-pml2/ch12-markov-p2]] (bayesian → bayesian)

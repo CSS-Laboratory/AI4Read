@@ -1,7 +1,7 @@
 ---
 id: chinese-room
 type: instance
-fields: [theory-of-mind, llm]
+fields: [llm, theory-of-mind]
 n_sources: 3
 tiers: [core, deep]
 grounding: digests
@@ -16,7 +16,7 @@ generated_by: build_kg.py
 ### theory-of-mind
 
 - [[dennett-1987-intentional-stance/ch09-fast]] (p. 323): Searle's thought experiment, treated as an intuition pump
-- [[kosinski-2024-llm-tom/main]] (§ "Can LLMs be Credited with ToM?"): Searle's thought experiment
+- [[kosinski-2024-llm-tom/main]] (§ "Can LLMs be Credited with ToM?"): Searle's thought experiment [work fields: theory-of-mind, llm]
 
 ### llm
 

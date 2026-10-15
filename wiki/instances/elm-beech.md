@@ -7,7 +7,7 @@ tiers: [deep]
 grounding: digests
 sources: [putnam-1975-meaning/main]
 canon_instance: [elm-and-beech]
-canon_match_rule: same-work-tokens
+canon_match_rule: title-key
 generated_by: build_kg.py
 ---
 

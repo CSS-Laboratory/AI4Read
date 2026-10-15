@@ -2,7 +2,9 @@
 id: special-solutions
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [strang-2023-introduction/ch03-four-p1, strang-2023-introduction/ch03-four-p3]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] special solutions, one per free variable ↔ parametrising a solution set: each free variable is a free parameter and the pivot variables follow from it (pp. 93, 97) — from [[strang-2023-introduction/ch03-four-p1]] (linear-algebra → other)
+- [structural-analogy] special solutions, one per free variable ↔ parametrising a solution set: each free variable is a free parameter and the pivot variables follow from it (pp. 93, 97) — from [[strang-2023-introduction/ch03-four-p1]] (linear-algebra → other:parametrising-a-solution-set)

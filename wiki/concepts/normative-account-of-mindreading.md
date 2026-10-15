@@ -2,7 +2,9 @@
 id: normative-account-of-mindreading
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [apperly-2011-mindreaders/ch03-evidence, apperly-2011-mindreaders/ch06-cognitive]

@@ -2,12 +2,14 @@
 id: folk-psychology
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 8
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [apperly-2011-mindreaders/ch01-introduction, apperly-2011-mindreaders/ch05-evidence, dennett-1987-intentional-stance/ch01-setting, dennett-1987-intentional-stance/ch03-three, dennett-1987-intentional-stance/ch04-making, dennett-1987-intentional-stance/ch05-beyond-p1, dennett-1987-intentional-stance/ch06-styles, dennett-1987-intentional-stance/ch07-intentional]
 raw_ids: [folk psychology]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 
@@ -32,6 +34,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Folk psychology as a revisable framework ↔ theory-theory: ToM as a tacit theory open to revision — both treat everyday mind-reading as theory-like, though this unit does not say "theory". — from [[dennett-1987-intentional-stance/ch01-setting]] (theory-of-mind → other)
-- [structural-analogy] Folk physics and folk psychology as expectation-generating systems ↔ predictive models in cognitive science: both are efficient systems that generate expectations. — from [[dennett-1987-intentional-stance/ch01-setting]] (theory-of-mind → other)
-- [structural-analogy] Dennett's "folk psychology vs sub-personal psychology" split ↔ theory-theory and simulation debates: whether mindreading rests on an inner theory or other machinery is a sub-personal question, as distinct from the intentional description of what it achieves. — from [[dennett-1987-intentional-stance/ch03-three]] (theory-of-mind → other)
+- [structural-analogy] Folk psychology as a revisable framework ↔ theory-theory: ToM as a tacit theory open to revision — both treat everyday mind-reading as theory-like, though this unit does not say "theory". — from [[dennett-1987-intentional-stance/ch01-setting]] (theory-of-mind → theory-of-mind)
+- [structural-analogy] Folk physics and folk psychology as expectation-generating systems ↔ predictive models in cognitive science: both are efficient systems that generate expectations. — from [[dennett-1987-intentional-stance/ch01-setting]] (theory-of-mind → other:psychology-cognitive-science)
+- [structural-analogy] Dennett's "folk psychology vs sub-personal psychology" split ↔ theory-theory and simulation debates: whether mindreading rests on an inner theory or other machinery is a sub-personal question, as distinct from the intentional description of what it achieves. — from [[dennett-1987-intentional-stance/ch03-three]] (theory-of-mind → theory-of-mind)

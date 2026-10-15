@@ -2,7 +2,9 @@
 id: reference-fixing-vs-meaning
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kripke-1980-naming/ch02-lecture, lycan-2019-language/ch04-proper]

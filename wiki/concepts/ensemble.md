@@ -1,8 +1,10 @@
 ---
 id: ensemble
 type: concept
-fields: [information-theory]
+fields: [information-theory, bayesian]
+fields_strong: [information-theory, bayesian]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [mackay-2003-information/ch02-probability, mackay-2003-information/ch04-source, stone-2022-information/ch10-thermodynamic]
@@ -15,8 +17,8 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch02-probability]] (p. 22): triple (outcome, alphabet, probabilities); a random variable with its alphabet and probabilities [new]
-- [[mackay-2003-information/ch04-source]] (p. 67): triple (x, A_X, P_X): outcome, alphabet, probabilities (new)
+- [[mackay-2003-information/ch02-probability]] (p. 22): triple (outcome, alphabet, probabilities); a random variable with its alphabet and probabilities [new; work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch04-source]] (p. 67): triple (x, A_X, P_X): outcome, alphabet, probabilities (new) [work fields: information-theory, bayesian]
 - [[stone-2022-information/ch10-thermodynamic]] (p. 208): the set of microstates that yield one macrostate [new]
 
 ## Instances that use it
@@ -38,15 +40,15 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Interpolated trigram with frequency-dependent weights $\alpha_i(q_t)$ ↔ ensemble methods: weights depending on how reliable each component is — from [[bengio-2003-nplm/main]] (llm → other)
-- [structural-analogy] Partial pooling toward a mean ↔ ensemble or regularized estimators: both trade group-specific fit for stability. — from [[gelman-2013-bda3/ch05-hierarchical]] (bayesian → other)
+- [structural-analogy] Interpolated trigram with frequency-dependent weights $\alpha_i(q_t)$ ↔ ensemble methods: weights depending on how reliable each component is — from [[bengio-2003-nplm/main]] (llm → other:ensemble-methods)
+- [structural-analogy] Partial pooling toward a mean ↔ ensemble or regularized estimators: both trade group-specific fit for stability. — from [[gelman-2013-bda3/ch05-hierarchical]] (bayesian → other:ensemble-or-regularized-estimators)
 - [structural-analogy] Stacking of chains/models with cross-validation weights ↔ model averaging in predictive ensembles — weights are chosen by predictive performance, not by posterior probability (p. 25). — from [[gelman-2020-workflow/main-p1]] (bayesian → unspecified)
 - [same-math] Raw bit content H₀ ↔ statistical mechanics: Boltzmann entropy k_B ln Ω for a microcanonical ensemble (p. 87). — from [[mackay-2003-information/ch04-source]] (information-theory → complex-systems)
-- [metaphor] ensemble learning: a point estimate is a delta-function Q ↔ MAP estimation: the spike is the crudest member of the family. — from [[mackay-2003-information/ch33-variational]] (information-theory → other)
-- [structural-analogy] Model averaging ↔ forecasting: ensemble forecasts — predictions are combined by weights to express uncertainty. — from [[mcelreath-2020-rethinking/ch06-overfitting-p2]] (bayesian → other)
+- [metaphor] ensemble learning: a point estimate is a delta-function Q ↔ MAP estimation: the spike is the crudest member of the family. — from [[mackay-2003-information/ch33-variational]] (information-theory → bayesian)
+- [structural-analogy] Model averaging ↔ forecasting: ensemble forecasts — predictions are combined by weights to express uncertainty. — from [[mcelreath-2020-rethinking/ch06-overfitting-p2]] (bayesian → other:statistics)
 - [structural-analogy] dropout ensemble ↔ Bayesian model averaging (Monte Carlo dropout, Ch. 17): both average over many networks; the chapter only points forward — from [[murphy-2023-pml2/ch16-deep]] (bayesian → bayesian)
-- [structural-analogy] Birkhoff time average = ensemble average ↔ statistics: law of large numbers; iid case is the SLLN (p. 235). — from [[polyanskiy-2025-information/ch14-entropy]] (information-theory → other)
-- [structural-analogy] pure selection by one variable ↔ statistics: selecting an ensemble by one variable need not fix the other — similar logic of subsetting a population. — from [[popper-1959-logic/appv-untitled]] (analytic-philosophy → other)
-- [structural-analogy] Dropout / Monte Carlo dropout ↔ ensembling: many sub-networks as an implicit ensemble. — from [[prince-2023-udl/ch09-regularization]] (llm → other)
-- [structural-analogy] Ergodicity (one long sequence represents the ensemble) ↔ social-science time-series estimation: inferring population properties from a single long record — from [[shannon-1948-mathematical/main-p1]] (information-theory → other)
+- [structural-analogy] Birkhoff time average = ensemble average ↔ statistics: law of large numbers; iid case is the SLLN (p. 235). — from [[polyanskiy-2025-information/ch14-entropy]] (information-theory → other:statistics)
+- [structural-analogy] pure selection by one variable ↔ statistics: selecting an ensemble by one variable need not fix the other — similar logic of subsetting a population. — from [[popper-1959-logic/appv-untitled]] (analytic-philosophy → other:statistics)
+- [structural-analogy] Dropout / Monte Carlo dropout ↔ ensembling: many sub-networks as an implicit ensemble. — from [[prince-2023-udl/ch09-regularization]] (llm → llm)
+- [structural-analogy] Ergodicity (one long sequence represents the ensemble) ↔ social-science time-series estimation: inferring population properties from a single long record — from [[shannon-1948-mathematical/main-p1]] (information-theory → other:social-science-time-series)
 - [structural-analogy] Entropy of a source via an ensemble ↔ statistical physics: ensemble of microstates — both average over a set of possible configurations (p. 243). — from [[stone-2022-information/appa-glossary]] (information-theory → complex-systems)

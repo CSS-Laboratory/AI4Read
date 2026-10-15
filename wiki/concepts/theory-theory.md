@@ -2,11 +2,13 @@
 id: theory-theory
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 7
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [apperly-2009-two-systems/main-p1, apperly-2011-mindreaders/ch01-introduction, apperly-2011-mindreaders/ch04-evidence, apperly-2011-mindreaders/ch06-cognitive, apperly-2011-mindreaders/ch07-elaborating, heyes-2014-cultural-evolution/main, saxe-2003-tpj/main]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 
@@ -30,5 +32,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Folk psychology as a revisable framework ↔ theory-theory: ToM as a tacit theory open to revision — both treat everyday mind-reading as theory-like, though this unit does not say "theory". — from [[dennett-1987-intentional-stance/ch01-setting]] (theory-of-mind → other)
-- [structural-analogy] Dennett's "folk psychology vs sub-personal psychology" split ↔ theory-theory and simulation debates: whether mindreading rests on an inner theory or other machinery is a sub-personal question, as distinct from the intentional description of what it achieves. — from [[dennett-1987-intentional-stance/ch03-three]] (theory-of-mind → other)
+- [structural-analogy] Folk psychology as a revisable framework ↔ theory-theory: ToM as a tacit theory open to revision — both treat everyday mind-reading as theory-like, though this unit does not say "theory". — from [[dennett-1987-intentional-stance/ch01-setting]] (theory-of-mind → theory-of-mind)
+- [structural-analogy] Dennett's "folk psychology vs sub-personal psychology" split ↔ theory-theory and simulation debates: whether mindreading rests on an inner theory or other machinery is a sub-personal question, as distinct from the intentional description of what it achieves. — from [[dennett-1987-intentional-stance/ch03-three]] (theory-of-mind → theory-of-mind)

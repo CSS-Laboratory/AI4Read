@@ -2,12 +2,14 @@
 id: confounding-vs-selection-bias
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 26
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [hernan-2020-whatif/ch06-graphical, hernan-2020-whatif/ch07-confounding, hernan-2020-whatif/ch08-selection, hernan-2020-whatif/ch09-measurement, hernan-2020-whatif/ch12-ip, hernan-2020-whatif/ch14-g, hernan-2020-whatif/ch16-instrumental, hernan-2020-whatif/ch17-causal, hernan-2020-whatif/ch18-variable, hernan-2020-whatif/ch19-time, hernan-2020-whatif/ch20-treatment, hernan-2020-whatif/ch21-g, hernan-2020-whatif/ch22-target, murphy-2023-pml2/ch19-beyond, murphy-2023-pml2/ch36-causality-p1, pearl-2016-primer/ch01-preliminaries, pearl-2016-primer/ch02-graphical, pearl-2016-primer/ch04-counterfactuals, pearl-2018-bookofwhy/ch00-introduction, pearl-2018-bookofwhy/ch01-ladder, pearl-2018-bookofwhy/ch02-buccaneers, pearl-2018-bookofwhy/ch05-smoke, pearl-2018-bookofwhy/ch06-paradoxes, pearl-2018-bookofwhy/ch09-mediation-p1, pearl-2018-bookofwhy/ch09-mediation-p2, pearl-2018-bookofwhy/ch10-big]
 raw_ids: [Confounding vs selection bias]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
@@ -50,4 +52,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Selection variable $S$ in Fig. 19.5 ↔ Confounding vs selection bias: conditioning on a common effect of $X$ and $Y$ creates non-causal dependence. — from [[murphy-2023-pml2/ch19-beyond]] (bayesian → political-science)
+- [structural-analogy] Selection variable $S$ in Fig. 19.5 ↔ Confounding vs selection bias: conditioning on a common effect of $X$ and $Y$ creates non-causal dependence. — from [[murphy-2023-pml2/ch19-beyond]] (bayesian → bayesian)

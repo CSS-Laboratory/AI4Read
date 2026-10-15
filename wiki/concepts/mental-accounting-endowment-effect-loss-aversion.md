@@ -2,12 +2,14 @@
 id: mental-accounting-endowment-effect-loss-aversion
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 9
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [thaler-2015-misbehaving/ch04-value, thaler-2015-misbehaving/ch07-bargains, thaler-2015-misbehaving/ch09-buckets, thaler-2015-misbehaving/ch11-willpower, thaler-2015-misbehaving/ch14-seems, thaler-2015-misbehaving/ch17-debate, thaler-2015-misbehaving/ch20-narrow, thaler-2015-misbehaving/ch31-save, thaler-2015-misbehaving/conclusion-next]
 raw_ids: ["mental accounting, endowment effect, loss aversion"]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 

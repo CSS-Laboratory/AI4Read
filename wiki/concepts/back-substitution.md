@@ -2,7 +2,9 @@
 id: back-substitution
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [boyd-2018-vmls/ch11-matrix, strang-2023-introduction/ch02-solving-p1]

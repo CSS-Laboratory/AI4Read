@@ -1,12 +1,14 @@
 ---
 id: efficient-frontier
 type: concept
-fields: [economics-finance]
+fields: [economics-finance, linear-algebra]
+fields_strong: [economics-finance, linear-algebra]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [markowitz-1952-portfolio/main]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 
@@ -20,7 +22,7 @@ generated_by: build_kg.py
 
 ### economics-finance
 
-- [[markowitz-1952-portfolio/main]] (p. 82): the efficient set: minimum $V$ for given $E$ or more, maximum $E$ for given $V$ or less
+- [[markowitz-1952-portfolio/main]] (p. 82): the efficient set: minimum $V$ for given $E$ or more, maximum $E$ for given $V$ or less [work fields: economics-finance, linear-algebra]
 
 ## Candidate bridges
 

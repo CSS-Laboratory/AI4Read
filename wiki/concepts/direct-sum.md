@@ -2,7 +2,9 @@
 id: direct-sum
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch01-vector, axler-2024-ladr/ch03-linear-p3]
@@ -24,5 +26,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Direct sum (unique decomposition) ↔ linear independence (canon link; not stated in this unit): both say that "nothing is redundant", via uniqueness of the representation of $0$. — from [[axler-2024-ladr/ch01-vector]] (linear-algebra → other)
+- [structural-analogy] Direct sum (unique decomposition) ↔ linear independence (canon link; not stated in this unit): both say that "nothing is redundant", via uniqueness of the representation of $0$. — from [[axler-2024-ladr/ch01-vector]] (linear-algebra → linear-algebra)
 - [structural-analogy] Subspace/sum/direct sum ↔ subset/union/disjoint union (the author's own analogy, p. 21, 24). — from [[axler-2024-ladr/ch01-vector]] (linear-algebra → unspecified)

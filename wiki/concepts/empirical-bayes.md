@@ -2,7 +2,9 @@
 id: empirical-bayes
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 6
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch05-hierarchical, mcgrayne-2011-theory/app-appendixes, mcgrayne-2011-theory/ch10-46, mcgrayne-2011-theory/ch13-cold, mcgrayne-2011-theory/ch17-rosetta, murphy-2023-pml2/ch03-statistics-p3]
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Empirical Bayes as keeping the prior from carrying extra information ↔ hierarchical models: priors learned from data. — from [[efron-1986-bayesian/main]] (bayesian → other)
+- [structural-analogy] Empirical Bayes as keeping the prior from carrying extra information ↔ hierarchical models: priors learned from data. — from [[efron-1986-bayesian/main]] (bayesian → bayesian)

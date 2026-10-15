@@ -2,7 +2,9 @@
 id: t-sentence
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lycan-2019-language/ch09-truth, lycan-2019-language/ch11-semantic]
@@ -26,4 +28,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] T-sentence as "one equation with two unknowns" (Horwich) ↔ algebra: underdetermined system (p. 126). — from [[lycan-2019-language/ch09-truth]] (analytic-philosophy → other)
+- [metaphor] T-sentence as "one equation with two unknowns" (Horwich) ↔ algebra: underdetermined system (p. 126). — from [[lycan-2019-language/ch09-truth]] (analytic-philosophy → other:mathematics)

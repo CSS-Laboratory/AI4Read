@@ -2,7 +2,9 @@
 id: latent-group
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 8
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [olson-1965-collectiveaction/app-untitled, olson-1965-collectiveaction/ch01-theory-p2, olson-1965-collectiveaction/ch02-group, olson-1965-collectiveaction/ch03-labor, olson-1965-collectiveaction/ch04-orthodox, olson-1965-collectiveaction/ch05-orthodox, olson-1965-collectiveaction/ch06-by, shepsle-2010-analyzing/ch09-collective-p2]
@@ -31,6 +33,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Scale mixture over $\epsilon$ (28.12) ↔ hierarchical model: a latent group-level variance integrated out gives heavy-tailed marginals — from [[murphy-2023-pml2/ch28-latent-p1]] (bayesian → other)
-- [structural-analogy] stochastic block model's latent community labels ↔ hierarchical models: latent group-level structure explains observed data. — from [[murphy-2023-pml2/ch30-graph]] (bayesian → other)
+- [structural-analogy] Scale mixture over $\epsilon$ (28.12) ↔ hierarchical model: a latent group-level variance integrated out gives heavy-tailed marginals — from [[murphy-2023-pml2/ch28-latent-p1]] (bayesian → bayesian)
+- [structural-analogy] stochastic block model's latent community labels ↔ hierarchical models: latent group-level structure explains observed data. — from [[murphy-2023-pml2/ch30-graph]] (bayesian → bayesian)
 - [structural-analogy] Latent groups needing selective incentives ↔ political science: collective action problems and free riders in large associations. — from [[olson-1965-collectiveaction/ch01-theory-p2]] (political-science → political-science)

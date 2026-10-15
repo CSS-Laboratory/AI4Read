@@ -2,11 +2,13 @@
 id: synchronization
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 8
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [castellano-2009-socialdynamics/main-p2, castellano-2009-socialdynamics/main-p3, mitchell-2009-guidedtour/ch16-applying, scheffer-2009-earlywarning/main, strogatz-2024-nonlinear/ch04-flows, strogatz-2024-nonlinear/ch08-bifurcations-p2, strogatz-2024-nonlinear/ch08-bifurcations-p3, strogatz-2024-nonlinear/ch09-lorenz-p2]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
@@ -38,5 +40,5 @@ generated_by: build_kg.py
 
 - [structural-analogy] Entrainment and drift ↔ Kuramoto-type synchronization of coupled oscillators (canon link; not stated in this unit). — from [[strogatz-2024-nonlinear/ch04-flows]] (complex-systems → unspecified)
 - [structural-analogy] two-oscillator phase locking with compromise frequency ω* ↔ complex-systems: Kuramoto synchronization — sine-coupled phases lock when coupling beats frequency spread. — from [[strogatz-2024-nonlinear/ch08-bifurcations-p2]] (complex-systems → complex-systems)
-- [structural-analogy] tree-frog phase models (8.6.9) ↔ Kuramoto-type synchronization: identical oscillators coupled through a phase-difference function. — from [[strogatz-2024-nonlinear/ch08-bifurcations-p3]] (complex-systems → other)
-- [structural-analogy] Synchronized chaos ↔ synchronization of coupled oscillators: a driven system locks to a driver — from [[strogatz-2024-nonlinear/ch09-lorenz-p2]] (complex-systems → other)
+- [structural-analogy] tree-frog phase models (8.6.9) ↔ Kuramoto-type synchronization: identical oscillators coupled through a phase-difference function. — from [[strogatz-2024-nonlinear/ch08-bifurcations-p3]] (complex-systems → other:kuramoto-type-synchronization)
+- [structural-analogy] Synchronized chaos ↔ synchronization of coupled oscillators: a driven system locks to a driver — from [[strogatz-2024-nonlinear/ch09-lorenz-p2]] (complex-systems → other:synchronization-of-coupled-oscillators)

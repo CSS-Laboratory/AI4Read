@@ -2,7 +2,9 @@
 id: full-employment
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [keynes-1936-general/ch02-postulates, keynes-1936-general/ch03-principle]
@@ -29,4 +31,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Stable equilibrium below full employment ↔ game theory: a stable but inefficient outcome (unlike multiple-equilibrium games, Keynes finds one equilibrium for a given propensity and investment, para. 9). — from [[keynes-1936-general/ch03-principle]] (economics-finance → decision-game-theory)
-- [metaphor] Classical "concealed assumption" of full employment ↔ equilibrium: results depend on which adjustment variable (interest rate or income) is assumed to move. — from [[keynes-1936-general/ch09-propensity]] (economics-finance → other)
+- [metaphor] Classical "concealed assumption" of full employment ↔ equilibrium: results depend on which adjustment variable (interest rate or income) is assumed to move. — from [[keynes-1936-general/ch09-propensity]] (economics-finance → other:unnamed)

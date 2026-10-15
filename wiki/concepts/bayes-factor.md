@@ -2,7 +2,9 @@
 id: bayes-factor
 type: concept
 fields: [bayesian, linear-algebra]
+fields_strong: [bayesian, linear-algebra]
 n_sources: 5
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [deisenroth-2020-mml/ch08-when, gelman-2013-bda3/ch07-evaluating, mcgrayne-2011-theory/ch04-bayes, mcgrayne-2011-theory/ch08-jerome, murphy-2023-pml2/ch03-statistics-p3]

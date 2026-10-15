@@ -2,11 +2,13 @@
 id: eigenvector-centrality
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [bonacich-1987-power/main]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 

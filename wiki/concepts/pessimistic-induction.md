@@ -2,7 +2,9 @@
 id: pessimistic-induction
 type: concept
 fields: [analytic-philosophy, bayesian]
+fields_strong: [analytic-philosophy, bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch12-scientific, mcelreath-2020-rethinking/ch15-horoscopes]

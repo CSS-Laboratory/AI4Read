@@ -2,7 +2,9 @@
 id: libertarian-paternalism
 type: concept
 fields: [economics-finance, decision-game-theory]
+fields_strong: [economics-finance, decision-game-theory]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/conclusions, thaler-2015-misbehaving/ch31-save, thaler-2015-misbehaving/ch32-going]

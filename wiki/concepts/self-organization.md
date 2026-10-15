@@ -2,7 +2,9 @@
 id: self-organization
 type: concept
 fields: [complex-systems, control-theory]
+fields_strong: [complex-systems, control-theory]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [meadows-2008-thinking/ch03-systems, meadows-2008-thinking/ch06-leverage, mitchell-2009-guidedtour/ch01-complexity, mitchell-2009-guidedtour/ch18-evolution]

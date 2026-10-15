@@ -2,7 +2,9 @@
 id: operator-square-root
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch07-operators-p2, axler-2024-ladr/ch08-operators]

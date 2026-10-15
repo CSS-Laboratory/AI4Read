@@ -2,7 +2,9 @@
 id: omnicompetent-citizen
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lippmann-1922-publicopinion/ch17-self, lippmann-1922-publicopinion/ch24-news]

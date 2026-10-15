@@ -2,7 +2,9 @@
 id: matrix-exponential
 type: concept
 fields: [control-theory, linear-algebra]
+fields_strong: [control-theory, linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch06-linear, strang-2023-introduction/ch06-eigenvalues-p3]

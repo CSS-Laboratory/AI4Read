@@ -2,7 +2,9 @@
 id: approximate-bayesian-computation
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch13-modal, murphy-2023-pml2/ch13-sequential]

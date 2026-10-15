@@ -2,7 +2,9 @@
 id: quasi-voluntary-compliance
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch04-origins-p2, clark-2017-principles/ch10-varieties-p2, ostrom-1990-commons/ch03-analyzing-p2]
@@ -21,5 +23,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Quasi-voluntary compliance and limited predation ↔ [[commitment problem]]: limits on future state behaviour as a reason to pay taxes. — from [[clark-2017-principles/ch04-origins-p2]] (political-science → other)
+- [metaphor] Quasi-voluntary compliance and limited predation ↔ [[commitment problem]]: limits on future state behaviour as a reason to pay taxes. — from [[clark-2017-principles/ch04-origins-p2]] (political-science → political-science)
 - [structural-analogy] Quasi-voluntary compliance ↔ political-science work on tax compliance (Levi): conditional cooperation backed by enforcement. — from [[ostrom-1990-commons/ch03-analyzing-p2]] (political-science → political-science)

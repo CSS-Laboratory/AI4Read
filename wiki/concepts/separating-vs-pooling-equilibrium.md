@@ -2,12 +2,14 @@
 id: separating-vs-pooling-equilibrium
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [stiglitz-2002-paradigm/main-p1, stiglitz-2002-paradigm/main-p2]
 raw_ids: [separating vs pooling equilibrium]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 

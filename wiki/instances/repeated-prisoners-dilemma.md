@@ -6,10 +6,16 @@ n_sources: 2
 tiers: [core]
 grounding: digests
 sources: [osborne-2004-introduction/ch14-repeated, osborne-2004-introduction/ch15-repeated]
+canon_instance: [prisoners-dilemma]
+canon_match_rule: same-work-tokens
 generated_by: build_kg.py
 ---
 
 # repeated-prisoners-dilemma
+
+## Canon entry
+
+- **Prisoner's Dilemma** (decision-game-theory): individually dominant defection yields a collectively worse outcome — osborne-2004-introduction (§2.2)
 
 ## Descriptions in the sources
 

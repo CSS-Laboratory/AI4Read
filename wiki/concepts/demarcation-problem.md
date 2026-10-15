@@ -2,12 +2,14 @@
 id: demarcation-problem
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 12
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch01-introduction, godfreysmith-2003-theory/ch04-popper, popper-1959-logic/appi-untitled-2, popper-1959-logic/ch01-survey, popper-1959-logic/ch02-problem, popper-1959-logic/ch03-theories, popper-1959-logic/ch04-falsifiability, popper-1959-logic/ch05-problem, popper-1959-logic/ch06-degrees, popper-1959-logic/ch08-probability-p2, popper-1959-logic/ch08-probability-p3, popper-1959-logic/ch10-corroboration]
 raw_ids: [demarcation problem]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 

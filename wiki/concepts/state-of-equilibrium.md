@@ -2,7 +2,9 @@
 id: state-of-equilibrium
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch05-stability, ashby-1956-cybernetics/ch12-error]

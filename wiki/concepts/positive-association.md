@@ -2,7 +2,9 @@
 id: positive-association
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [arrow-1951-socialchoice/ch03-iii, arrow-1951-socialchoice/ch05-v]
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Condition 2 (positive association) ↔ electoral competition: more support for a party should not lower its result (monotonicity). — from [[arrow-1951-socialchoice/ch03-iii]] (political-science → other)
+- [structural-analogy] Condition 2 (positive association) ↔ electoral competition: more support for a party should not lower its result (monotonicity). — from [[arrow-1951-socialchoice/ch03-iii]] (political-science → political-science)

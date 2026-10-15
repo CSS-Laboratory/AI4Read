@@ -2,11 +2,13 @@
 id: credible-interval
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 15
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch01-probability, gelman-2013-bda3/ch02-single, gelman-2013-bda3/ch04-asymptotics, gelman-2013-bda3/ch10-introduction, hernan-2020-whatif/ch10-random, hernan-2020-whatif/ch11-model, mcelreath-2020-rethinking/ch03-sampling, mcelreath-2020-rethinking/ch04-linear-p1, mcelreath-2020-rethinking/ch04-linear-p2, mcelreath-2020-rethinking/ch05-multivariate-p1, mcelreath-2020-rethinking/ch05-multivariate-p2, murphy-2023-pml2/ch03-statistics-p1, murphy-2023-pml2/ch03-statistics-p2, murphy-2023-pml2/ch03-statistics-p3, murphy-2023-pml2/ch15-generalized]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
@@ -42,4 +44,4 @@ generated_by: build_kg.py
 - [structural-analogy] Credible interval vs confidence interval in Fine Point 11.2 ↔ bayesian: credible intervals (probability as degree of belief) vs confidence intervals (probability as frequency). The definitions of probability differ, and coverage can differ in high dimensions. — from [[hernan-2020-whatif/ch11-model]] (bayesian → bayesian)
 - [metaphor] Bounds from partial identification ↔ Bayesian credible intervals: both express an honest range, but the bounds carry no probability. — from [[hernan-2020-whatif/ch16-instrumental]] (bayesian → bayesian)
 - [structural-analogy] Confidence interval ↔ bayesian: credible interval — both give an interval, but one has coverage over repeated data and the other has posterior probability for this data set. — from [[mackay-2003-information/ch37-bayesian]] (information-theory → bayesian)
-- [structural-analogy] Optimism in the face of uncertainty ($\hat\mu+c\hat\sigma$) ↔ credible intervals: the bonus is a scaled posterior sd, i.e. an upper bound on the interval. — from [[murphy-2023-pml2/ch34-decision]] (bayesian → other)
+- [structural-analogy] Optimism in the face of uncertainty ($\hat\mu+c\hat\sigma$) ↔ credible intervals: the bonus is a scaled posterior sd, i.e. an upper bound on the interval. — from [[murphy-2023-pml2/ch34-decision]] (bayesian → bayesian)

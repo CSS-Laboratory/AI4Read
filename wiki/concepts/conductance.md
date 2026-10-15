@@ -2,7 +2,9 @@
 id: conductance
 type: concept
 fields: [linear-algebra, bayesian]
+fields_strong: [linear-algebra, bayesian]
 n_sources: 5
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch12-markov-p2, spielman-2025-sagt/ch16-lov, spielman-2025-sagt/ch20-graph, spielman-2025-sagt/ch21-cheeger, spielman-2025-sagt/ch22-local]
@@ -32,4 +34,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [metaphor] Rayleigh monotonicity ↔ stiffer springs give a stiffer whole — an intuition for "more edge weight, more conductance". — from [[spielman-2025-sagt/ch12-effective]] (linear-algebra → unspecified)
-- [metaphor] Conductance ↔ random walks: a low-conductance set traps a walker for a long time. The text only says conductance is useful for random walks (p. 173). — from [[spielman-2025-sagt/ch20-graph]] (linear-algebra → other)
+- [metaphor] Conductance ↔ random walks: a low-conductance set traps a walker for a long time. The text only says conductance is useful for random walks (p. 173). — from [[spielman-2025-sagt/ch20-graph]] (linear-algebra → other:random-walks)

@@ -2,7 +2,9 @@
 id: investment-multiplier
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [keynes-1936-general/ch10-marginal, keynes-1936-general/ch18-general]

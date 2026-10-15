@@ -2,7 +2,9 @@
 id: entity-theory-of-meaning
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lycan-2019-language/ch05-traditional, lycan-2019-language/ch06-use]

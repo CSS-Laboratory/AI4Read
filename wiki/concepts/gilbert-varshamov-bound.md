@@ -2,7 +2,9 @@
 id: gilbert-varshamov-bound
 type: concept
 fields: [information-theory, linear-algebra]
+fields_strong: [information-theory, linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [polyanskiy-2025-information/ch30-metric, spielman-2025-sagt/ch28-brief]

@@ -2,12 +2,14 @@
 id: intentional-stance
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 10
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [dennett-1987-intentional-stance/ch01-setting, dennett-1987-intentional-stance/ch02-true, dennett-1987-intentional-stance/ch03-three, dennett-1987-intentional-stance/ch04-making, dennett-1987-intentional-stance/ch05-beyond-p1, dennett-1987-intentional-stance/ch05-beyond-p2, dennett-1987-intentional-stance/ch06-styles, dennett-1987-intentional-stance/ch07-intentional, dennett-1987-intentional-stance/ch08-evolution, dennett-1987-intentional-stance/ch10-mid]
 raw_ids: [intentional stance]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 
@@ -30,7 +32,7 @@ generated_by: build_kg.py
 - [[dennett-1987-intentional-stance/ch06-styles]] (p. 234): Dennett's predictive strategy; its great (if flawed) predictive power is Dennett's tactical reason against eliminativism
 - [[dennett-1987-intentional-stance/ch07-intentional]] (p. 242): deciding to predict and explain a system’s behaviour with intentional idioms like believes and wants, which presupposes its rationality [as `intentional stance`]
 - [[dennett-1987-intentional-stance/ch08-evolution]] (pp. 300, 311, 320): attributing content to a system by assuming optimality, applied here also to evolution
-- [[dennett-1987-intentional-stance/ch10-mid]] (p. 348): not named on these pages; the chapter places Dennett among the interpretation theorists who accept Quinian indeterminacy and principles of charity [as `intentional stance`]
+- [[dennett-1987-intentional-stance/ch10-mid]] (p. 348): not named on these pages; the chapter places Dennett among the interpretation theorists who accept Quinian indeterminacy and principles of charity [as `intentional stance`; weak: not really used in this unit]
 
 ## Candidate bridges
 

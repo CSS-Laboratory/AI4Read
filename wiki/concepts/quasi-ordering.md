@@ -2,7 +2,9 @@
 id: quasi-ordering
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [arrow-1951-socialchoice/ch04-iv, arrow-1951-socialchoice/ch06-vi]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Unanimity quasi-ordering Q ↔ Pareto weak dominance (everyone at least as well off): the relation is "everyone weakly prefers". — from [[arrow-1951-socialchoice/ch04-iv]] (political-science → other)
+- [same-math] Unanimity quasi-ordering Q ↔ Pareto weak dominance (everyone at least as well off): the relation is "everyone weakly prefers". — from [[arrow-1951-socialchoice/ch04-iv]] (political-science → other:pareto-weak-dominance-everyone)

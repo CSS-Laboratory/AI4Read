@@ -2,12 +2,14 @@
 id: inverse-matrix
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 10
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch03-linear-p2, axler-2024-ladr/ch09-multilinear-p2, boyd-2018-vmls/ch11-matrix, deisenroth-2020-mml/ch02-linear-p1, deisenroth-2020-mml/ch02-linear-p2, deisenroth-2020-mml/ch04-matrix-p1, strang-2023-introduction/app10-computer, strang-2023-introduction/ch02-solving-p1, strang-2023-introduction/ch02-solving-p2, strang-2023-introduction/ch05-determinants]
 raw_ids: [inverse matrix]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 

@@ -2,7 +2,9 @@
 id: ancestral-sampling
 type: concept
 fields: [llm, bayesian, linear-algebra]
+fields_strong: [llm, bayesian, linear-algebra]
 n_sources: 4
+n_works: 3
 tiers: [reference, core]
 grounding: digests
 sources: [deisenroth-2020-mml/ch11-density, murphy-2023-pml2/ch04-graphical-p1, prince-2023-udl/ch18-diffusion, prince-2023-udl/ch23-probability]

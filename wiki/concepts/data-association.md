@@ -2,7 +2,9 @@
 id: data-association
 type: concept
 fields: [bayesian, control-theory]
+fields_strong: [bayesian, control-theory]
 n_sources: 2
+n_works: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch29-state-p2, sarkka-2023-bayesianfiltering/ch01-are]
@@ -15,11 +17,11 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch29-state-p2]] (p. 1017): unknown matching of detections to objects [new]
+- [[murphy-2023-pml2/ch29-state-p2]] (p. 1017): unknown matching of detections to objects [new; work fields: bayesian, control-theory]
 
 ### control-theory
 
-- [[sarkka-2023-bayesianfiltering/ch01-are]] (p. 3): deciding which measurement came from which target [new]
+- [[sarkka-2023-bayesianfiltering/ch01-are]] (p. 3): deciding which measurement came from which target [new; work fields: control-theory, bayesian]
 
 ## Instances that use it
 

@@ -2,7 +2,9 @@
 id: symmetry-breaking
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [castellano-2009-socialdynamics/main-p2, strogatz-2024-nonlinear/ch03-bifurcations-p1]
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Naming Game consensus ↔ symmetry breaking in spin systems: one of many equivalent states is selected. — from [[castellano-2009-socialdynamics/main-p2]] (complex-systems → other)
+- [structural-analogy] Naming Game consensus ↔ symmetry breaking in spin systems: one of many equivalent states is selected. — from [[castellano-2009-socialdynamics/main-p2]] (complex-systems → other:symmetry-breaking-in-spin)

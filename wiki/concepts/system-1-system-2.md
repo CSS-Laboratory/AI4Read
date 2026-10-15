@@ -2,19 +2,29 @@
 id: system-1-system-2
 type: concept
 fields: [decision-game-theory]
-n_sources: 9
+fields_strong: [decision-game-theory]
+n_sources: 10
+n_works: 1
 tiers: [core]
 grounding: digests
-sources: [kahneman-2011-thinking/ch03-lazy, kahneman-2011-thinking/ch05-cognitive, kahneman-2011-thinking/ch08-judgments, kahneman-2011-thinking/ch09-answering, kahneman-2011-thinking/ch11-anchors, kahneman-2011-thinking/ch14-tom, kahneman-2011-thinking/ch33-reversals, kahneman-2011-thinking/ch34-frames, kahneman-2011-thinking/conclusions]
+sources: [kahneman-2011-thinking/ch00-introduction, kahneman-2011-thinking/ch03-lazy, kahneman-2011-thinking/ch05-cognitive, kahneman-2011-thinking/ch08-judgments, kahneman-2011-thinking/ch09-answering, kahneman-2011-thinking/ch11-anchors, kahneman-2011-thinking/ch14-tom, kahneman-2011-thinking/ch33-reversals, kahneman-2011-thinking/ch34-frames, kahneman-2011-thinking/conclusions]
+aliases: [system-1-and-system-2]
 generated_by: build_kg.py
 ---
 
 # system-1-system-2
 
+## Aliases
+
+Variant ids merged into this page (curated in `wiki/kg/aliases.json`):
+
+- `system-1-and-system-2` — 1 digest(s)
+
 ## Definitions in the sources
 
 ### decision-game-theory
 
+- [[kahneman-2011-thinking/ch00-introduction]] (pdf 16): metaphor of fast intuitive and slow effortful thinking as two agents [as `system 1 and system 2`; alias `system-1-and-system-2`; new]
 - [[kahneman-2011-thinking/ch03-lazy]] (pdf 45): fast, automatic intuition vs slow, effortful, controlling thought [new]
 - [[kahneman-2011-thinking/ch05-cognitive]] (pdf 61; "lazy" System 2 on pdf 65–66): fast automatic process vs. lazy effortful process, assumed from earlier chapters [new]
 - [[kahneman-2011-thinking/ch08-judgments]] (pdf 89): System 1 (continuous, automatic, little effort) vs. System 2 (directs attention and searches memory to answer questions) [new]

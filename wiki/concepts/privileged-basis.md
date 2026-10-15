@@ -2,7 +2,9 @@
 id: privileged-basis
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 2
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [elhage-2022-superposition/main-p1, elhage-2022-superposition/main-p2]

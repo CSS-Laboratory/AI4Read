@@ -27,7 +27,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Logistic map as an "idea model" ↔ many-model thinking: simple models that isolate fundamental properties of complex systems (pdf 62). — from [[mitchell-2009-guidedtour/ch02-dynamics]] (complex-systems → other)
+- [structural-analogy] Logistic map as an "idea model" ↔ many-model thinking: simple models that isolate fundamental properties of complex systems (pdf 62). — from [[mitchell-2009-guidedtour/ch02-dynamics]] (complex-systems → complex-systems)
 - [structural-analogy] RBN regimes as K rises ↔ dynamical systems: logistic map as R rises — fixed point, oscillation, chaos in both — from [[mitchell-2009-guidedtour/ch18-evolution]] (complex-systems → complex-systems)
-- [structural-analogy] Lorenz map, $|f'|>1$ ⇒ unstable cycles ↔ iterated 1-D maps (logistic map, Ch. 10): same reduction of a flow to a map, and a similar alternation of chaotic and periodic windows — from [[strogatz-2024-nonlinear/ch09-lorenz-p2]] (complex-systems → other)
-- [structural-analogy] logistic map for non-overlapping generations ↔ population dynamics: discrete growth with density limit. — from [[strogatz-2024-nonlinear/ch10-one-p1]] (complex-systems → other)
+- [structural-analogy] Lorenz map, $|f'|>1$ ⇒ unstable cycles ↔ iterated 1-D maps (logistic map, Ch. 10): same reduction of a flow to a map, and a similar alternation of chaotic and periodic windows — from [[strogatz-2024-nonlinear/ch09-lorenz-p2]] (complex-systems → other:iterated-1-d-maps)
+- [structural-analogy] logistic map for non-overlapping generations ↔ population dynamics: discrete growth with density limit. — from [[strogatz-2024-nonlinear/ch10-one-p1]] (complex-systems → other:population-dynamics)

@@ -2,7 +2,9 @@
 id: war-of-attrition
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch10-auctions, osborne-2004-introduction/ch03-nash-p2]

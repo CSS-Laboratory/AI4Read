@@ -2,12 +2,14 @@
 id: cultural-evolution-of-mindreading
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [heyes-2014-cultural-evolution/main]
 raw_ids: [cultural evolution of mindreading]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 

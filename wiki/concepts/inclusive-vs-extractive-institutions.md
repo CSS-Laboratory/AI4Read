@@ -2,11 +2,13 @@
 id: inclusive-vs-extractive-institutions
 type: concept
 fields: [political-science]
+fields_strong: []
 n_sources: 0
+n_works: 0
 tiers: []
 grounding: digests
 sources: []
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 

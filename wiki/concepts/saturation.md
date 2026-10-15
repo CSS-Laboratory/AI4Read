@@ -2,7 +2,9 @@
 id: saturation
 type: concept
 fields: [control-theory, analytic-philosophy]
+fields_strong: [control-theory, analytic-philosophy]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch02-feedback, astrom-2021-feedbacksystems/ch04-examples, lycan-2019-language/ch13-implicative]
@@ -31,7 +33,7 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Hysteresis from positive feedback with saturation ↔ bistable switches with two stable states — the same equilibrium-and-slope picture (stable where $G'>0$). — from [[astrom-2021-feedbacksystems/ch02-feedback]] (control-theory → unspecified)
-- [same-math] Anti-windup circle-criterion test ↔ nonlinear stability: the sector-bounded nonlinearity test (10.17) applied to a saturation (p. 11-17). — from [[astrom-2021-feedbacksystems/ch11-pid]] (control-theory → other)
+- [same-math] Anti-windup circle-criterion test ↔ nonlinear stability: the sector-bounded nonlinearity test (10.17) applied to a saturation (p. 11-17). — from [[astrom-2021-feedbacksystems/ch11-pid]] (control-theory → other:nonlinear-stability)
 - [structural-analogy] Shifting loop dominance through saturation ↔ control-theory: nonlinear controllers or actuators with saturation, where linear analysis holds only near an operating point. — from [[meadows-2008-thinking/ch04-systems]] (control-theory → control-theory)
-- [structural-analogy] S-shaped cumulative adoption ↔ population growth or logistic growth: slow start, rapid middle, saturation at a ceiling. — from [[rogers-2003-diffusion/ch01-elements-p2]] (communication-theory → other)
-- [structural-analogy] Rise and decline of publications on diffusion ↔ the diffusion S-curve: the field's own growth follows a spread-then-saturation shape. — from [[rogers-2003-diffusion/ch02-history-p1]] (communication-theory → other)
+- [structural-analogy] S-shaped cumulative adoption ↔ population growth or logistic growth: slow start, rapid middle, saturation at a ceiling. — from [[rogers-2003-diffusion/ch01-elements-p2]] (communication-theory → other:population-growth-or-logistic)
+- [structural-analogy] Rise and decline of publications on diffusion ↔ the diffusion S-curve: the field's own growth follows a spread-then-saturation shape. — from [[rogers-2003-diffusion/ch02-history-p1]] (communication-theory → other:the-diffusion-s-curve)

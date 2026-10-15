@@ -2,11 +2,13 @@
 id: quantal-response-equilibrium
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch04-beautiful]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Chance moves as mistakes ↔ quantal response equilibrium: noise in action choice selects among equilibria. — from [[osborne-2004-introduction/ch07-extensive]] (decision-game-theory → other)
+- [structural-analogy] Chance moves as mistakes ↔ quantal response equilibrium: noise in action choice selects among equilibria. — from [[osborne-2004-introduction/ch07-extensive]] (decision-game-theory → decision-game-theory)

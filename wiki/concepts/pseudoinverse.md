@@ -2,11 +2,13 @@
 id: pseudoinverse
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 24
+n_works: 6
 tiers: [core, deep]
 grounding: digests
 sources: [axler-2024-ladr/ch06-inner-p2, axler-2024-ladr/ch07-operators-p3, boyd-2018-vmls/app-appendices, boyd-2018-vmls/ch11-matrix, boyd-2018-vmls/ch12-least, boyd-2018-vmls/ch13-least, boyd-2018-vmls/ch15-multi, boyd-2018-vmls/ch16-constrained, deisenroth-2020-mml/ch02-linear-p1, deisenroth-2020-mml/ch03-analytic, deisenroth-2020-mml/ch06-probability-p2, spielman-2025-sagt/ch11-walks, spielman-2025-sagt/ch13-random, spielman-2025-sagt/ch14-approximating, spielman-2025-sagt/ch17-monotonicity, spielman-2025-sagt/ch32-sparsification, spielman-2025-sagt/ch33-linear, spielman-2025-sagt/ch35-conjugate, strang-2023-introduction/app1-ranks, strang-2023-introduction/ch04-orthogonality-p1, strang-2023-introduction/ch04-orthogonality-p2, strang-2023-introduction/ch08-linear, strang-2023-introduction/ch10-learning, vonluxburg-2007-spectralclustering/main]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -53,8 +55,8 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [same-math] Pseudoinverse $T^\dagger$ (6.68) ↔ linear-algebra: $A^+=V\Sigma^+U^\top$ of the concept list — same operator. The SVD formula is not in this unit; the author points to 7.78. — from [[axler-2024-ladr/ch06-inner-p2]] (linear-algebra → linear-algebra)
-- [same-math] Tikhonov limit $\lim_{\lambda\to0}(A^TA+\lambda I)^{-1}A^T$ ↔ pseudoinverse: exercise 15.11 defines $A^\dagger$ this way for any matrix. — from [[boyd-2018-vmls/ch15-multi]] (linear-algebra → other)
+- [same-math] Tikhonov limit $\lim_{\lambda\to0}(A^TA+\lambda I)^{-1}A^T$ ↔ pseudoinverse: exercise 15.11 defines $A^\dagger$ this way for any matrix. — from [[boyd-2018-vmls/ch15-multi]] (linear-algebra → linear-algebra)
 - [same-math] effective resistance $i^TL^+i$ ↔ linear algebra: pseudoinverse solving $Lv=b$ — the same quadratic form. — from [[spielman-2025-sagt/ch17-monotonicity]] (linear-algebra → linear-algebra)
-- [same-math] $A^+=V\Sigma^+U^{\mathsf T}$ ↔ SVD (Ch. 7): the same pseudoinverse (p. 195). — from [[strang-2023-introduction/ch04-orthogonality-p2]] (linear-algebra → other)
+- [same-math] $A^+=V\Sigma^+U^{\mathsf T}$ ↔ SVD (Ch. 7): the same pseudoinverse (p. 195). — from [[strang-2023-introduction/ch04-orthogonality-p2]] (linear-algebra → linear-algebra)
 - [structural-analogy] Double descent's minimum-norm solution ↔ linear algebra: pseudoinverse solution of underdetermined Ax = b — the unit's setting is nonlinear and it does not mention the pseudoinverse — from [[strang-2023-introduction/ch10-learning]] (linear-algebra → linear-algebra)
-- [same-math] $L^\dagger$ and commute distance ↔ pseudoinverse: $A^+=V\Sigma^+U^T$ restricted to non-zero eigenvalues. — from [[vonluxburg-2007-spectralclustering/main]] (linear-algebra → other)
+- [same-math] $L^\dagger$ and commute distance ↔ pseudoinverse: $A^+=V\Sigma^+U^T$ restricted to non-zero eigenvalues. — from [[vonluxburg-2007-spectralclustering/main]] (linear-algebra → linear-algebra)

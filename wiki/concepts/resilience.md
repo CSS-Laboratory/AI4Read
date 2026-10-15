@@ -2,7 +2,9 @@
 id: resilience
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [meadows-2008-thinking/app-untitled, meadows-2008-thinking/ch03-systems]
@@ -28,4 +30,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Resilience from redundant loops on different time scales ↔ control-theory: robustness through multiple feedback paths — both keep performance when one mechanism fails. — from [[meadows-2008-thinking/ch03-systems]] (control-theory → control-theory)
-- [structural-analogy] hub dependence ↔ robustness and fragility: the same structure gives resilience to random loss and vulnerability to targeted loss (p. 114) — from [[mitchell-2009-guidedtour/ch15-science]] (complex-systems → other)
+- [structural-analogy] hub dependence ↔ robustness and fragility: the same structure gives resilience to random loss and vulnerability to targeted loss (p. 114) — from [[mitchell-2009-guidedtour/ch15-science]] (complex-systems → complex-systems)

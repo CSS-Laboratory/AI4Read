@@ -1,8 +1,10 @@
 ---
 id: stirling-approximation
 type: concept
-fields: [information-theory, llm]
+fields: [bayesian, information-theory, llm]
+fields_strong: [bayesian, information-theory, llm]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [mackay-2003-information/ch01-introduction, prince-2023-udl/ch22-mathematics]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch01-introduction]] (p. 2): x! ≃ x^x e^{−x} √(2πx), used to approximate binomial coefficients [new]
+- [[mackay-2003-information/ch01-introduction]] (p. 2): x! ≃ x^x e^{−x} √(2πx), used to approximate binomial coefficients [new; work fields: information-theory, bayesian]
 
 ### llm
 

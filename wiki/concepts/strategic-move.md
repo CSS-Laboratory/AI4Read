@@ -2,7 +2,9 @@
 id: strategic-move
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch06-strategic, schelling-1960-conflict/ch05-enforcement-p1, schelling-1960-conflict/ch05-enforcement-p2]

@@ -2,7 +2,9 @@
 id: design-based-semi-supervised-learning
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 2
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [ziems-2024-css/main-p1, ziems-2024-css/main-p2]

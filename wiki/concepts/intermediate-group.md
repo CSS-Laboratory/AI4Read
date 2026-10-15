@@ -2,7 +2,9 @@
 id: intermediate-group
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [olson-1965-collectiveaction/ch01-theory-p2, olson-1965-collectiveaction/ch02-group]

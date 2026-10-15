@@ -2,7 +2,9 @@
 id: spectral-approximation
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 4
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [spielman-2025-sagt/ch29-expander, spielman-2025-sagt/ch30-simple, spielman-2025-sagt/ch32-sparsification, spielman-2025-sagt/ch38-fast]

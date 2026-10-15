@@ -2,12 +2,14 @@
 id: homophily-and-social-influence
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [castellano-2009-socialdynamics/main-p1, castellano-2009-socialdynamics/main-p2, schelling-1971-segregation/main-p1, schelling-1971-segregation/main-p2]
 raw_ids: [homophily and social influence]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 

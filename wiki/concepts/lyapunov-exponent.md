@@ -2,12 +2,14 @@
 id: lyapunov-exponent
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [strogatz-2024-nonlinear/ch09-lorenz-p1, strogatz-2024-nonlinear/ch10-one-p1, strogatz-2024-nonlinear/ch10-one-p2]
 raw_ids: [Lyapunov exponent]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
@@ -27,5 +29,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Instability of nonperiodic trajectories ↔ Lyapunov exponent: the slope product $\Lambda$ with $|\text{slope}|>1$ is a local growth rate of separation. — from [[lorenz-1963-nonperiodic/main]] (complex-systems → other)
+- [structural-analogy] Instability of nonperiodic trajectories ↔ Lyapunov exponent: the slope product $\Lambda$ with $|\text{slope}|>1$ is a local growth rate of separation. — from [[lorenz-1963-nonperiodic/main]] (complex-systems → complex-systems)
 - [structural-analogy] Lorenz sensitive dependence ↔ complex-systems: Lyapunov exponent — both concern the rapid growth of small differences between trajectories (the text does not name the exponent). — from [[strogatz-2024-nonlinear/ch01-overview]] (complex-systems → complex-systems)

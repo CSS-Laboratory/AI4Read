@@ -2,7 +2,9 @@
 id: fine-structure-of-content
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [popper-1959-logic/appvii-untitled-2, popper-1959-logic/appviii-untitled]

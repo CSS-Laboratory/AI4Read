@@ -6,10 +6,16 @@ n_sources: 2
 tiers: [deep, reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch15-generalized, pearl-2009-causality/main]
+canon_instance: [simpsons-paradox-and-berkeley-admissions]
+canon_match_rule: confirmed
 generated_by: build_kg.py
 ---
 
 # berkeley-admissions
+
+## Canon entry
+
+- **Simpson's paradox and Berkeley admissions** (bayesian): a treatment or admission pattern reverses when stratified; the causal graph decides which table is right — pearl-2016-primer (§1.2)
 
 ## Descriptions in the sources
 
@@ -20,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Berkeley admissions ↔ Simpson's paradox / collider bias: the aggregate rate and the within-department rates disagree, and conditioning on $D$ is valid only if no hidden confounder exists. — from [[murphy-2023-pml2/ch15-generalized]] (bayesian → other)
+- [structural-analogy] Berkeley admissions ↔ Simpson's paradox / collider bias: the aggregate rate and the within-department rates disagree, and conditioning on $D$ is valid only if no hidden confounder exists. — from [[murphy-2023-pml2/ch15-generalized]] (bayesian → bayesian)

@@ -1,9 +1,11 @@
 ---
 id: bias-variance-decomposition
 type: concept
-fields: [information-theory, llm]
+fields: [bayesian, information-theory, llm]
+fields_strong: [bayesian, information-theory, llm]
 n_sources: 2
-tiers: [reference]
+n_works: 2
+tiers: [core, reference]
 grounding: digests
 sources: [jaynes-2003-probability/ch17-principles-p1, prince-2023-udl/ch08-measuring]
 generated_by: build_kg.py
@@ -13,9 +15,9 @@ generated_by: build_kg.py
 
 ## Definitions in the sources
 
-### information-theory
+### bayesian
 
-- [[jaynes-2003-probability/ch17-principles-p1]] (p. 511): (17.2), the two terms are equal partners in squared error [new]
+- [[jaynes-2003-probability/ch17-principles-p1]] (p. 511): (17.2), the two terms are equal partners in squared error [new; work fields: bayesian, information-theory]
 
 ### llm
 
@@ -23,4 +25,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] bias–variance decomposition (eq. 8.7) ↔ estimation theory: mean squared error of an estimator = variance + bias² (here with extra irreducible noise) — same squared-error algebra. — from [[prince-2023-udl/ch08-measuring]] (llm → other)
+- [same-math] bias–variance decomposition (eq. 8.7) ↔ estimation theory: mean squared error of an estimator = variance + bias² (here with extra irreducible noise) — same squared-error algebra. — from [[prince-2023-udl/ch08-measuring]] (llm → other:statistics)

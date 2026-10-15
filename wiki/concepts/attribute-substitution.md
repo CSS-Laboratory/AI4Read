@@ -2,7 +2,9 @@
 id: attribute-substitution
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch00-introduction, kahneman-2011-thinking/ch08-judgments, kahneman-2011-thinking/ch14-tom]

@@ -2,7 +2,9 @@
 id: m-bias
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 4
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [hernan-2020-whatif/ch07-confounding, hernan-2020-whatif/ch08-selection, murphy-2023-pml2/ch36-causality-p1, pearl-2018-bookofwhy/ch04-confounding]

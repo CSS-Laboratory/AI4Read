@@ -2,7 +2,9 @@
 id: positivity
 type: concept
 fields: [bayesian, political-science]
+fields_strong: [bayesian, political-science]
 n_sources: 9
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch24-causal, grimmer-2022-textasdata/ch27-text, hernan-2020-whatif/ch02-randomized, hernan-2020-whatif/ch03-observational, hernan-2020-whatif/ch04-effect, hernan-2020-whatif/ch08-selection, hernan-2020-whatif/ch12-ip, hernan-2020-whatif/ch13-standardization, hernan-2020-whatif/ch21-g]
@@ -34,7 +36,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Aliasing ↔ experimental design: non-positivity in conjoint designs (Hainmueller et al.) (p. 443). — from [[grimmer-2022-textasdata/ch26-text]] (political-science → other)
-- [structural-analogy] positivity and the IP-weighted mean $\mathrm E[I(A=a)Y/f[A\mid L]]$ ↔ Monte Carlo: importance sampling needs the proposal's support to cover the target's. — from [[hernan-2020-whatif/ch03-observational]] (bayesian → other)
+- [structural-analogy] Aliasing ↔ experimental design: non-positivity in conjoint designs (Hainmueller et al.) (p. 443). — from [[grimmer-2022-textasdata/ch26-text]] (political-science → other:statistics)
+- [structural-analogy] positivity and the IP-weighted mean $\mathrm E[I(A=a)Y/f[A\mid L]]$ ↔ Monte Carlo: importance sampling needs the proposal's support to cover the target's. — from [[hernan-2020-whatif/ch03-observational]] (bayesian → other:statistics)
 - [structural-analogy] trial of messy adherence emulating other protocols ↔ causal inference with positivity: a strategy can be emulated only if some people follow it (p. 314). — from [[hernan-2020-whatif/ch22-target]] (bayesian → bayesian)
-- [same-math] Integral in (8.51) ↔ information-theory: minus the KL divergence $D(p_{\theta_0}\|p_\theta)$; non-positivity is Gibbs' inequality. The unit does not name KL. — from [[jaynes-2003-probability/ch08-sufficiency]] (information-theory → information-theory)
+- [same-math] Integral in (8.51) ↔ information-theory: minus the KL divergence $D(p_{\theta_0}\|p_\theta)$; non-positivity is Gibbs' inequality. The unit does not name KL. — from [[jaynes-2003-probability/ch08-sufficiency]] (bayesian → information-theory)

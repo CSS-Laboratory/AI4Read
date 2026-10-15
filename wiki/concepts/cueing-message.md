@@ -2,7 +2,9 @@
 id: cueing-message
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [zaller-1992-massopinion/ch03-citizens, zaller-1992-massopinion/ch11-evaluating-p1]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Cueing messages and awareness ↔ Lupia–McCubbins conditions for persuasion: how listeners judge sources. — from [[zaller-1992-massopinion/ch11-evaluating-p1]] (political-science → communication-theory)
+- [structural-analogy] Cueing messages and awareness ↔ Lupia–McCubbins conditions for persuasion: how listeners judge sources. — from [[zaller-1992-massopinion/ch11-evaluating-p1]] (political-science → political-science)

@@ -2,12 +2,14 @@
 id: do-operator
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 16
+n_works: 4
 tiers: [core, reference, deep]
 grounding: digests
 sources: [murphy-2023-pml2/ch04-graphical-p3, murphy-2023-pml2/ch36-causality-p1, murphy-2023-pml2/ch36-causality-p2, pearl-2009-causality/main, pearl-2016-primer/ch03-effects, pearl-2016-primer/ch04-counterfactuals, pearl-2018-bookofwhy/ch00-introduction, pearl-2018-bookofwhy/ch01-ladder, pearl-2018-bookofwhy/ch03-evidence, pearl-2018-bookofwhy/ch04-confounding, pearl-2018-bookofwhy/ch06-paradoxes, pearl-2018-bookofwhy/ch07-beyond, pearl-2018-bookofwhy/ch08-counterfactuals, pearl-2018-bookofwhy/ch09-mediation-p1, pearl-2018-bookofwhy/ch09-mediation-p2, pearl-2018-bookofwhy/ch10-big]
 raw_ids: [Do-operator]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
@@ -40,8 +42,8 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Choosing the best of decisions with $p(x\mid d)$ ↔ do-operator: both treat the action as fixed rather than random. — from [[gelman-2013-bda3/ch09-decision]] (bayesian → other)
-- [structural-analogy] Logical vs. causal dependence (3.40) ↔ bayesian: association vs. intervention in the ladder of causation / do-operator — conditioning on information is not the same as physical intervention. — from [[jaynes-2003-probability/ch03-elementary]] (information-theory → bayesian)
-- [metaphor] counterfactual plot (changing one predictor in the model) ↔ do-operator: both set a variable by hand, but the text makes no claim that the plot is an intervention estimate. — from [[mcelreath-2020-rethinking/ch05-multivariate-p1]] (bayesian → other)
-- [same-math] $P(Y \mid do(X))$ via graph surgery ↔ do-operator (canon): the chapter pairs the do-notation for interventions with graph surgery as the way to answer them, without a formal statement of the link. — from [[pearl-2018-bookofwhy/ch01-ladder]] (bayesian → other)
-- [structural-analogy] Randomization erases arrows into X ↔ do-operator: the graph surgery in Model 3 mimics the intervention in Model 2 (pdf 141). — from [[pearl-2018-bookofwhy/ch04-confounding]] (bayesian → other)
+- [structural-analogy] Choosing the best of decisions with $p(x\mid d)$ ↔ do-operator: both treat the action as fixed rather than random. — from [[gelman-2013-bda3/ch09-decision]] (bayesian → bayesian)
+- [structural-analogy] Logical vs. causal dependence (3.40) ↔ bayesian: association vs. intervention in the ladder of causation / do-operator — conditioning on information is not the same as physical intervention. — from [[jaynes-2003-probability/ch03-elementary]] (bayesian → bayesian)
+- [metaphor] counterfactual plot (changing one predictor in the model) ↔ do-operator: both set a variable by hand, but the text makes no claim that the plot is an intervention estimate. — from [[mcelreath-2020-rethinking/ch05-multivariate-p1]] (bayesian → bayesian)
+- [same-math] $P(Y \mid do(X))$ via graph surgery ↔ do-operator (canon): the chapter pairs the do-notation for interventions with graph surgery as the way to answer them, without a formal statement of the link. — from [[pearl-2018-bookofwhy/ch01-ladder]] (bayesian → bayesian)
+- [structural-analogy] Randomization erases arrows into X ↔ do-operator: the graph surgery in Model 3 mimics the intervention in Model 2 (pdf 141). — from [[pearl-2018-bookofwhy/ch04-confounding]] (bayesian → bayesian)

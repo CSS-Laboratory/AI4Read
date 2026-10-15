@@ -2,11 +2,13 @@
 id: incompressibility-algorithmic-randomness
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [cover-2006-elements/ch07-kolmogorov]
-canon_spine: information-theory
+canon_spine: [information-theory]
 generated_by: build_kg.py
 ---
 

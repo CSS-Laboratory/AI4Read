@@ -2,7 +2,9 @@
 id: confusion-matrix
 type: concept
 fields: [linear-algebra, political-science]
+fields_strong: [linear-algebra, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [boyd-2018-vmls/ch14-least, grimmer-2022-textasdata/ch20-checking]

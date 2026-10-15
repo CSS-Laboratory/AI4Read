@@ -1,8 +1,10 @@
 ---
 id: bayesian-inference
 type: concept
-fields: [control-theory, decision-game-theory, linear-algebra, llm]
+fields: [bayesian, control-theory, decision-game-theory, linear-algebra, llm]
+fields_strong: [bayesian, control-theory, decision-game-theory, linear-algebra, llm]
 n_sources: 4
+n_works: 4
 tiers: [core, deep, reference]
 grounding: digests
 sources: [deisenroth-2020-mml/ch08-when, kahneman-2011-thinking/ch16-causes, prince-2023-udl/ch09-regularization, sarkka-2023-bayesianfiltering/ch02-bayesian]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### control-theory
 
-- [[sarkka-2023-bayesianfiltering/ch02-bayesian]] (p. 17): parameters are random variables; probability is certainty in a single trial [new]
+- [[sarkka-2023-bayesianfiltering/ch02-bayesian]] (p. 17): parameters are random variables; probability is certainty in a single trial [new; work fields: control-theory, bayesian]
 
 ### decision-game-theory
 
@@ -55,7 +57,7 @@ generated_by: build_kg.py
 - [same-math] Reverse-KL/I-projection ↔ variational inference in Bayesian inference (canon: KL divergence & ELBO; not developed in this unit): the KL being minimized is $D_{KL}(q\|p)$. — from [[murphy-2023-pml2/ch05-information-p1]] (bayesian → bayesian)
 - [structural-analogy] NGD with Fisher preconditioner ↔ Bayesian inference: the text says it is equivalent to EKF sequential inference in the online exponential-family case (p. 281) — from [[murphy-2023-pml2/ch06-optimization-p1]] (bayesian → bayesian)
 - [same-math] EM's ELBO (6.140–6.145) ↔ Bayesian inference: variational ELBO and KL to the posterior — the text itself says this bound is the basis of variational inference. — from [[murphy-2023-pml2/ch06-optimization-p2]] (bayesian → bayesian)
-- [metaphor] Catastrophic forgetting vs regularization to past posterior ↔ Sequential updating: yesterday's posterior as today's prior (the author says online Bayesian inference is of this type, p. 763). — from [[murphy-2023-pml2/ch19-beyond]] (bayesian → other)
+- [metaphor] Catastrophic forgetting vs regularization to past posterior ↔ Sequential updating: yesterday's posterior as today's prior (the author says online Bayesian inference is of this type, p. 763). — from [[murphy-2023-pml2/ch19-beyond]] (bayesian → bayesian)
 - [structural-analogy] Structure discovery $p(\boldsymbol z|\mathcal D)$ over graphs ↔ Bayesian inference over latent structure — a posterior over model structure. — from [[murphy-2023-pml2/ch20-generative]] (bayesian → unspecified)
 - [same-math] Responsibilities $r_{nk}$ (28.8) ↔ Bayesian inference: posterior over a discrete hypothesis from prior × likelihood, normalised — from [[murphy-2023-pml2/ch28-latent-p1]] (bayesian → bayesian)
 - [structural-analogy] Analysis-by-synthesis (posterior $p_\theta(z\mid x)$ as representation) ↔ Bayesian inference: the representation is a posterior summary of latent variables. — from [[murphy-2023-pml2/ch32-representation]] (bayesian → bayesian)

@@ -2,7 +2,9 @@
 id: scale-mixture-of-normals
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [gelman-2013-bda3/ch17-models, gelman-2013-bda3/ch20-basis]

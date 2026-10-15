@@ -7,7 +7,7 @@ tiers: [core]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch10-regulation]
 canon_instance: [the-thermostatic-water-bath]
-canon_match_rule: same-work-tokens
+canon_match_rule: title-key
 generated_by: build_kg.py
 ---
 

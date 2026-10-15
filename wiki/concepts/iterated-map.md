@@ -2,7 +2,9 @@
 id: iterated-map
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [strogatz-2024-nonlinear/ch01-overview, strogatz-2024-nonlinear/ch10-one-p1]

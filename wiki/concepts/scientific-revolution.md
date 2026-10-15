@@ -2,7 +2,9 @@
 id: scientific-revolution
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch01-introduction, kuhn-1962-structure/ch01-introduction, kuhn-1962-structure/ch02-route, kuhn-1962-structure/ch09-nature]

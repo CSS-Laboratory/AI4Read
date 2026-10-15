@@ -2,7 +2,9 @@
 id: policy-iteration
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 5
+n_works: 2
 tiers: [reference, core]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch01-exact-p1, bertsekas-2026-rlcourse/ch01-exact-p2, bertsekas-2026-rlcourse/ch01-exact-p3, bertsekas-2026-rlcourse/ch01-exact-p6, sutton-2018-rl/ch04-dynamic]

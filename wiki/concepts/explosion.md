@@ -2,7 +2,9 @@
 id: explosion
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [magnus-2025-forallx/ch17-basic, magnus-2025-forallx/ch44-b]
@@ -26,6 +28,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Frame problem for mindreading ↔ search-space explosion in planning: both need limits on what is searched, but the text discusses it only qualitatively. — from [[apperly-2011-mindreaders/ch06-cognitive]] (theory-of-mind → other)
+- [metaphor] Frame problem for mindreading ↔ search-space explosion in planning: both need limits on what is searched, but the text discusses it only qualitatively. — from [[apperly-2011-mindreaders/ch06-cognitive]] (theory-of-mind → other:search-space-explosion-in)
 - [metaphor] ⊥ as a wildcard ↔ philosophy of logic: contradiction makes everything derivable — explosion lets ⊥ justify any sentence — from [[magnus-2025-forallx/ch18-constructing]] (analytic-philosophy → analytic-philosophy)
-- [structural-analogy] SLDS mode explosion ↔ hierarchical/mixture models: growth of mixture components under conditioning, controlled by pruning or merging. — from [[murphy-2023-pml2/ch29-state-p2]] (bayesian → other)
+- [structural-analogy] SLDS mode explosion ↔ hierarchical/mixture models: growth of mixture components under conditioning, controlled by pruning or merging. — from [[murphy-2023-pml2/ch29-state-p2]] (bayesian → other:hierarchical-mixture-models)

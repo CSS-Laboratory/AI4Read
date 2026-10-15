@@ -1,8 +1,10 @@
 ---
 id: residual-connection
 type: concept
-fields: [bayesian, llm]
+fields: [llm, bayesian]
+fields_strong: [llm, bayesian]
 n_sources: 2
+n_works: 2
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch16-deep, prince-2023-udl/ch11-residual]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch16-deep]] (p. 635): skip connection $\boldsymbol y=\varphi(\mathrm{conv}(\boldsymbol x))+\boldsymbol x$; layer learns an offset [new]
+- [[murphy-2023-pml2/ch16-deep]] (p. 635): skip connection $\boldsymbol y=\varphi(\mathrm{conv}(\boldsymbol x))+\boldsymbol x$; layer learns an offset [new; work fields: bayesian, llm]
 
 ### llm
 

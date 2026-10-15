@@ -2,7 +2,9 @@
 id: wysiati
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 12
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch07-machine, kahneman-2011-thinking/ch09-answering, kahneman-2011-thinking/ch10-law, kahneman-2011-thinking/ch14-tom, kahneman-2011-thinking/ch18-taming, kahneman-2011-thinking/ch19-illusion, kahneman-2011-thinking/ch20-illusion, kahneman-2011-thinking/ch23-outside, kahneman-2011-thinking/ch24-engine, kahneman-2011-thinking/ch31-risk, kahneman-2011-thinking/ch33-reversals, kahneman-2011-thinking/ch38-thinking]
@@ -32,4 +34,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [metaphor] WYSIATI ↔ game theory: a player who reasons only from activated information resembles limited-depth reasoning about others (canon link; not stated in this unit). — from [[kahneman-2011-thinking/ch07-machine]] (decision-game-theory → decision-game-theory)
-- [metaphor] Focusing illusion ↔ WYSIATI in forecasting: only the attended moments get weight. — from [[kahneman-2011-thinking/ch38-thinking]] (decision-game-theory → other)
+- [metaphor] Focusing illusion ↔ WYSIATI in forecasting: only the attended moments get weight. — from [[kahneman-2011-thinking/ch38-thinking]] (decision-game-theory → other:wysiati-in-forecasting)

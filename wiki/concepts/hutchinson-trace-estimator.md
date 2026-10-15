@@ -1,8 +1,10 @@
 ---
 id: hutchinson-trace-estimator
 type: concept
-fields: [bayesian, llm]
+fields: [llm, bayesian]
+fields_strong: [llm, bayesian]
 n_sources: 2
+n_works: 2
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch23-normalizing, prince-2023-udl/ch16-normalizing]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch23-normalizing]] (p. 843): $\mathrm{tr}(\mathbf M)\approx v^\top\mathbf Mv$, $v$ zero-mean unit-covariance [new]
+- [[murphy-2023-pml2/ch23-normalizing]] (p. 843): $\mathrm{tr}(\mathbf M)\approx v^\top\mathbf Mv$, $v$ zero-mean unit-covariance [new; work fields: bayesian, llm]
 
 ### llm
 

@@ -2,7 +2,9 @@
 id: basic-statement
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [popper-1959-logic/ch01-survey, popper-1959-logic/ch04-falsifiability, popper-1959-logic/ch05-problem]
@@ -29,6 +31,6 @@ generated_by: build_kg.py
 
 - [structural-analogy] theory deciding what is "atomic" ↔ analytic philosophy: theory-laden observation — the vocabulary of basic statements depends on the theory. — from [[popper-1959-logic/appii-following]] (analytic-philosophy → analytic-philosophy)
 - [structural-analogy] Falsifiable theory splits the class of possible basic statements ↔ information theory/classification: a message or classifier that excludes some possibilities carries information, one that excludes none carries none — the text makes the analogy only for consistency. — from [[popper-1959-logic/ch04-falsifiability]] (analytic-philosophy → information-theory)
-- [structural-analogy] Basic statements as accepted-by-decision, re-testable stopping points ↔ law: jury verdicts treated as facts for applying the law but open to challenge on procedure (the text states this analogy) — from [[popper-1959-logic/ch05-problem]] (analytic-philosophy → other)
-- [structural-analogy] Range of permitted basic statements ↔ probability theory: an event as a set of outcomes (a smaller permitted set is like a smaller event). — from [[popper-1959-logic/ch06-degrees]] (analytic-philosophy → other)
-- [structural-analogy] Corroboration indexed to the accepted basic statements ↔ confirmation holism / web of belief: evidence is assessed relative to other statements that are themselves tentative (pp. 275, 280). — from [[popper-1959-logic/ch10-corroboration]] (analytic-philosophy → other)
+- [structural-analogy] Basic statements as accepted-by-decision, re-testable stopping points ↔ law: jury verdicts treated as facts for applying the law but open to challenge on procedure (the text states this analogy) — from [[popper-1959-logic/ch05-problem]] (analytic-philosophy → other:law)
+- [structural-analogy] Range of permitted basic statements ↔ probability theory: an event as a set of outcomes (a smaller permitted set is like a smaller event). — from [[popper-1959-logic/ch06-degrees]] (analytic-philosophy → other:probability)
+- [structural-analogy] Corroboration indexed to the accepted basic statements ↔ confirmation holism / web of belief: evidence is assessed relative to other statements that are themselves tentative (pp. 275, 280). — from [[popper-1959-logic/ch10-corroboration]] (analytic-philosophy → analytic-philosophy)

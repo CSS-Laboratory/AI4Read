@@ -2,8 +2,10 @@
 id: hypothesis-space
 type: concept
 fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 2
-tiers: [core, reference]
+n_works: 2
+tiers: [core]
 grounding: digests
 sources: [jaynes-2003-probability/ch18-p, tenenbaum-2011-grow/main]
 generated_by: build_kg.py
@@ -15,11 +17,8 @@ generated_by: build_kg.py
 
 ### bayesian
 
+- [[jaynes-2003-probability/ch18-p]] (p. 565, p. 566): the explicit list of propositions to be considered. Changing it changes the answer [new; work fields: bayesian, information-theory]
 - [[tenenbaum-2011-grow/main]] (p. 1280): constrained set $H$ of candidate structures; encodes background knowledge [new]
-
-### information-theory
-
-- [[jaynes-2003-probability/ch18-p]] (p. 565, p. 566): the explicit list of propositions to be considered. Changing it changes the answer [new]
 
 ## Instances that use it
 

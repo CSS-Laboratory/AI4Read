@@ -2,12 +2,14 @@
 id: retrospective-voting
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 11
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [achen-2016-realists/app-retrospective, achen-2016-realists/ch01-democratic, achen-2016-realists/ch03-tumbling, achen-2016-realists/ch04-rational, achen-2016-realists/ch05-blind, achen-2016-realists/ch06-musical, achen-2016-realists/ch07-chicken, achen-2016-realists/ch08-very, achen-2016-realists/ch11-groups, clark-2017-principles/ch16-consequences-p1, downs-1957-democracy/main]
 raw_ids: [retrospective voting]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 
@@ -35,7 +37,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Retrospective voting is "driving by the rearview mirror" ↔ principal–agent problem: voters monitor only past outcomes of their agents (p. 4) — from [[achen-2016-realists/ch01-democratic]] (political-science → other)
+- [structural-analogy] Retrospective voting is "driving by the rearview mirror" ↔ principal–agent problem: voters monitor only past outcomes of their agents (p. 4) — from [[achen-2016-realists/ch01-democratic]] (political-science → political-science)
 - [structural-analogy] Blind retrospection (punish when well-being is below a fixed standard) ↔ political-science: retrospective voting as a principal–agent monitoring rule (book chapter 4) — the same voter rule, judged as sensible by one account and as weak accountability by the other. — from [[achen-2016-realists/ch05-blind]] (political-science → political-science)
 - [structural-analogy] Blame shifting in federalism ↔ retrospective voting: voting by outcomes works only if responsibility is identifiable (p. 691). — from [[clark-2017-principles/ch15-institutional-p2]] (political-science → political-science)
 - [structural-analogy] Economic conditions predicting incumbent reelection ↔ political-science: retrospective voting — the forecast feature mirrors the voter behaviour theory. — from [[grimmer-2022-textasdata/ch22-principles]] (political-science → political-science)

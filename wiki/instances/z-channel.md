@@ -1,7 +1,7 @@
 ---
 id: z-channel
 type: instance
-fields: [information-theory]
+fields: [information-theory, bayesian]
 n_sources: 3
 tiers: [core, reference]
 grounding: digests
@@ -16,6 +16,6 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch09-communication]] (pp. 148, 151): asymmetric; optimal p₁* = 0.445, C = 0.685 at f = 0.15
-- [[mackay-2003-information/ch10-noisy]] (p. Ex. 10.12, p. 172): capacity bounded via erasure emulation
+- [[mackay-2003-information/ch09-communication]] (pp. 148, 151): asymmetric; optimal p₁* = 0.445, C = 0.685 at f = 0.15 [work fields: information-theory, bayesian]
+- [[mackay-2003-information/ch10-noisy]] (p. Ex. 10.12, p. 172): capacity bounded via erasure emulation [work fields: information-theory, bayesian]
 - [[polyanskiy-2025-information/ch21-channel]] (p. 380): optimal input $p^*(\delta)\to1/e$ as $\delta\to1$ [as `Z-channel`]

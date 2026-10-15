@@ -2,11 +2,13 @@
 id: self-attention
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 6
+n_works: 4
 tiers: [reference, core, deep]
 grounding: digests
 sources: [devlin-2019-bert/main, piantadosi-2022-meaning/main, prince-2023-udl/ch12-transformers, prince-2023-udl/ch13-graph, prince-2023-udl/ch18-diffusion, vaswani-2017-transformer/main]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 
@@ -29,6 +31,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] self-attention as content-dependent routing ↔ convolution: both share parameters across positions, but attention weights depend on the inputs — from [[prince-2023-udl/ch12-transformers]] (llm → other)
+- [structural-analogy] self-attention as content-dependent routing ↔ convolution: both share parameters across positions, but attention weights depend on the inputs — from [[prince-2023-udl/ch12-transformers]] (llm → other:mathematics)
 - [structural-analogy] Graph attention ↔ transformer self-attention: both give softmax-weighted sums of transformed inputs. The graph version masks to the adjacency pattern. — from [[prince-2023-udl/ch13-graph]] (llm → llm)
 - [structural-analogy] Masked autoregressive flow ↔ llm: causal masking in self-attention, which prunes dependence on later positions (p. 314) — from [[prince-2023-udl/ch16-normalizing]] (llm → llm)

@@ -1,13 +1,15 @@
 ---
 id: entropy-rate
 type: concept
-fields: [information-theory]
+fields: [information-theory, complex-systems]
+fields_strong: [information-theory, complex-systems]
 n_sources: 25
+n_works: 7
 tiers: [core, reference, deep]
 grounding: digests
 sources: [cover-2006-elements/ch04-entropy, cover-2006-elements/ch05-data-p1, cover-2006-elements/ch05-data-p2, cover-2006-elements/ch06-gambling, cover-2006-elements/ch08-channel-p2, cover-2006-elements/ch11-maximum, cover-2006-elements/ch12-information-p3, cover-2006-elements/ch14-network-p2, cover-2006-elements/ch15-information, pierce-1980-introduction/ch05-entropy, pierce-1980-introduction/ch06-language, pierce-1980-introduction/ch07-efficient, pierce-1980-introduction/ch13-information, pierce-1980-introduction/ch14-back, polyanskiy-2025-information/ch07-tensorization, polyanskiy-2025-information/ch11-lossless, polyanskiy-2025-information/ch12-variable, polyanskiy-2025-information/ch14-entropy, polyanskiy-2025-information/ch15-universal, polyanskiy-2025-information/ch16-neyman, polyanskiy-2025-information/ch27-rate, rosvall-2008-maps/main-p1, shannon-1948-mathematical/main-p1, shannon-1951-prediction/main, stone-2022-information/ch03-source]
 raw_ids: [entropy rate]
-canon_spine: information-theory
+canon_spine: [information-theory]
 generated_by: build_kg.py
 ---
 
@@ -42,7 +44,7 @@ generated_by: build_kg.py
 - [[polyanskiy-2025-information/ch15-universal]] (pp. 248, 251, 263): used with the meanings of the canon list
 - [[polyanskiy-2025-information/ch16-neyman]] (p. 288): here the relative entropy rate is the Stein exponent for stationary ergodic data (under both $P$ and $Q$) [as `entropy rate`]
 - [[polyanskiy-2025-information/ch27-rate]] (p. 487): equals $R^{(I)}(D)$ in the discrete case for a stationary ergodic source, under the distortion assumption of Thm 24.4(c) [as `entropy rate`]
-- [[rosvall-2008-maps/main-p1]] (pdf 1–2): rate at which a Markov process can be encoded at best; the authors choose not to use it as the aim
+- [[rosvall-2008-maps/main-p1]] (pdf 1–2): rate at which a Markov process can be encoded at best; the authors choose not to use it as the aim [work fields: information-theory, complex-systems]
 - [[shannon-1948-mathematical/main-p1]] (pp. 13–14): $H$ per symbol and $H'=mH$ per second; $F_N,G_N\to H$
 - [[shannon-1951-prediction/main]] (p. 51): here $H=\lim_{N\to\infty}F_N$, entropy per letter of English with ever longer context
 - [[stone-2022-information/ch03-source]] (pp. 64–68): here the block estimates $G_N$ that converge to H of English at $N_C$
@@ -58,9 +60,9 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Capacity must at least match source entropy rate (p. 183) ↔ control-theory: law of requisite variety (canon link; not stated in this unit). — from [[ashby-1956-cybernetics/ch09-incessant]] (control-theory → control-theory)
-- [structural-analogy] doubling rate $W$ ↔ entropy rate: the authors call $W$ a "dual" of the entropy rate (p. 4) — from [[cover-2006-elements/ch01-introduction]] (information-theory → other)
-- [same-math] Entropy rate ↔ prediction: (11.40) links entropy rate to minimum mean squared prediction error for Gaussian processes. — from [[cover-2006-elements/ch11-maximum]] (information-theory → other)
-- [structural-analogy] Cesàro-mean proof of $W^*_\infty$ ↔ entropy rate of stationary processes: parallel limit structure, since the chain rule for $W$ is formally that of $H$ (p. 470). — from [[cover-2006-elements/ch15-information]] (information-theory → other)
-- [same-math] $H_N$ in (5.4) ↔ conditional entropy / entropy rate: next-symbol entropy given the preceding block, averaged over blocks. — from [[pierce-1980-introduction/ch05-entropy]] (information-theory → other)
+- [structural-analogy] doubling rate $W$ ↔ entropy rate: the authors call $W$ a "dual" of the entropy rate (p. 4) — from [[cover-2006-elements/ch01-introduction]] (information-theory → information-theory)
+- [same-math] Entropy rate ↔ prediction: (11.40) links entropy rate to minimum mean squared prediction error for Gaussian processes. — from [[cover-2006-elements/ch11-maximum]] (information-theory → other:prediction)
+- [structural-analogy] Cesàro-mean proof of $W^*_\infty$ ↔ entropy rate of stationary processes: parallel limit structure, since the chain rule for $W$ is formally that of $H$ (p. 470). — from [[cover-2006-elements/ch15-information]] (information-theory → information-theory)
+- [same-math] $H_N$ in (5.4) ↔ conditional entropy / entropy rate: next-symbol entropy given the preceding block, averaged over blocks. — from [[pierce-1980-introduction/ch05-entropy]] (information-theory → information-theory)
 - [same-math] Szegő limit of $\frac1n\sum\log\sigma_j^2$ to the spectral integral ↔ entropy rate of a Gaussian process (the chapter points to (6.12)). — from [[polyanskiy-2025-information/ch22-channels]] (information-theory → unspecified)
 - [same-math] block estimates $G_N\to H$ ↔ information-theory: entropy rate of a process with memory — per-letter block entropy converging to the limit — from [[stone-2022-information/ch03-source]] (information-theory → information-theory)

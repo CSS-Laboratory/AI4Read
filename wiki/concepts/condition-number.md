@@ -2,12 +2,14 @@
 id: condition-number
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 9
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [deisenroth-2020-mml/ch07-continuous, spielman-2025-sagt/ch34-iterative, spielman-2025-sagt/ch36-preconditioning, spielman-2025-sagt/ch37-augmented, spielman-2025-sagt/ch38-fast, strang-2023-introduction/app1-ranks, strang-2023-introduction/ch07-singular, strang-2023-introduction/ch08-linear, strang-2023-introduction/ch09-linear]
 raw_ids: [condition number]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -37,11 +39,11 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] $\|Sv\|=\|v\|$ and $S^*S=I$ ↔ condition-number intuition: unitary maps have no error amplification (canon link; not stated in this unit). — from [[axler-2024-ladr/ch07-operators-p2]] (linear-algebra → other)
+- [structural-analogy] $\|Sv\|=\|v\|$ and $S^*S=I$ ↔ condition-number intuition: unitary maps have no error amplification (canon link; not stated in this unit). — from [[axler-2024-ladr/ch07-operators-p2]] (linear-algebra → other:condition-number-intuition)
 - [same-math] $\|T\|\,\|T^{-1}\|=s_1/s_n$ (from 7.85 and Exercise 10 of §7E) ↔ condition number — Example 7.90 gives $0.8\times10^6$ for the $1/(j^2+k)$ matrix; the text does not use the term. — from [[axler-2024-ladr/ch07-operators-p3]] (linear-algebra → unspecified)
 - [same-math] condition number $\sigma_{\max}/\sigma_{\min}$ ↔ linear-algebra: condition number from the SVD — same quantity, here controlling gradient-descent speed. — from [[deisenroth-2020-mml/ch07-continuous]] (linear-algebra → linear-algebra)
-- [structural-analogy] Dominating a multiple of $K_n$ ↔ condition numbers: $c$-approximation bounds the ratio of quadratic forms, as relative bounds on a matrix pair. — from [[spielman-2025-sagt/ch06-comparing]] (linear-algebra → other)
-- [same-math] Forming $AA^T$ squares $\sigma_1/\sigma_r$ ↔ numerical analysis: squaring the condition number when solving via normal equations. — from [[strang-2023-introduction/ch07-singular]] (linear-algebra → other)
-- [structural-analogy] Hilbert matrix BᵀB with large condition number ↔ regression: nearly collinear predictors give an ill-conditioned XᵀX — both are bad bases or near-dependent columns. — from [[strang-2023-introduction/ch08-linear]] (linear-algebra → other)
+- [structural-analogy] Dominating a multiple of $K_n$ ↔ condition numbers: $c$-approximation bounds the ratio of quadratic forms, as relative bounds on a matrix pair. — from [[spielman-2025-sagt/ch06-comparing]] (linear-algebra → linear-algebra)
+- [same-math] Forming $AA^T$ squares $\sigma_1/\sigma_r$ ↔ numerical analysis: squaring the condition number when solving via normal equations. — from [[strang-2023-introduction/ch07-singular]] (linear-algebra → other:numerical-analysis)
+- [structural-analogy] Hilbert matrix BᵀB with large condition number ↔ regression: nearly collinear predictors give an ill-conditioned XᵀX — both are bad bases or near-dependent columns. — from [[strang-2023-introduction/ch08-linear]] (linear-algebra → other:statistics)
 - [same-math] Zig-zag rate in 1/b ↔ linear-algebra: condition number λmax/λmin — b = λmin/λmax is exactly the author's setting. — from [[strang-2023-introduction/ch09-linear]] (linear-algebra → linear-algebra)
-- [metaphor] Eigengap as "how well-separated the communities are" ↔ condition number: both measure spectral separation affecting stability. — from [[vonluxburg-2007-spectralclustering/main]] (linear-algebra → other)
+- [metaphor] Eigengap as "how well-separated the communities are" ↔ condition number: both measure spectral separation affecting stability. — from [[vonluxburg-2007-spectralclustering/main]] (linear-algebra → linear-algebra)

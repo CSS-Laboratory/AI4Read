@@ -2,11 +2,13 @@
 id: refeudalization
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [habermas-1989-publicsphere/ch05-social, habermas-1989-publicsphere/ch06-transformation-p1, habermas-1989-publicsphere/ch06-transformation-p2]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 
@@ -26,4 +28,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Habermas's "two tendencies" (too much / too little publicity, p. 140) ↔ refeudalization: staged publicity by organized interests. — from [[habermas-1989-publicsphere/ch04-bourgeois-p2]] (communication-theory → other)
+- [metaphor] Habermas's "two tendencies" (too much / too little publicity, p. 140) ↔ refeudalization: staged publicity by organized interests. — from [[habermas-1989-publicsphere/ch04-bourgeois-p2]] (communication-theory → communication-theory)

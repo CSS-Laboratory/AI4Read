@@ -2,7 +2,9 @@
 id: attention-budget
 type: concept
 fields: [communication-theory, decision-game-theory]
+fields_strong: [communication-theory, decision-game-theory]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch01-characters, lippmann-1922-publicopinion/ch04-time]

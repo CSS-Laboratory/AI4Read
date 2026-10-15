@@ -2,7 +2,9 @@
 id: transaction-costs
 type: concept
 fields: [political-science, economics-finance]
+fields_strong: [political-science, economics-finance]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [shepsle-2010-analyzing/ch11-institutions, shepsle-2010-analyzing/ch15-courts, thaler-2015-misbehaving/ch27-law]

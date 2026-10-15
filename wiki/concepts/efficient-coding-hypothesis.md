@@ -2,7 +2,9 @@
 id: efficient-coding-hypothesis
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [stone-2022-information/ch01-information, stone-2022-information/ch11-information]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] efficient coding hypothesis ↔ neuroscience: neurons as channels with an energy cost per bit — from [[stone-2022-information/ch01-information]] (information-theory → other)
+- [metaphor] efficient coding hypothesis ↔ neuroscience: neurons as channels with an energy cost per bit — from [[stone-2022-information/ch01-information]] (information-theory → other:neuroscience)

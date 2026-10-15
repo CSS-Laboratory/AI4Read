@@ -2,7 +2,9 @@
 id: joint-probability
 type: concept
 fields: [information-theory, linear-algebra]
+fields_strong: [information-theory, linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [pierce-1980-introduction/app-mathematical, strang-2023-introduction/ch10-learning]
@@ -31,5 +33,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Bayes' Rule in the poker example ↔ probability/statistics: posterior = joint probability ÷ marginal — the same formula applied to a bid. — from [[dixit-2008-art-strategy/ch08-interpreting]] (decision-game-theory → other)
+- [same-math] Bayes' Rule in the poker example ↔ probability/statistics: posterior = joint probability ÷ marginal — the same formula applied to a bid. — from [[dixit-2008-art-strategy/ch08-interpreting]] (decision-game-theory → other:statistics)
 - [structural-analogy] evidence as a product of on-line predictions (28.18) ↔ information-theory: chain rule for entropy and cumulative log-loss — a joint probability factorizes step by step — from [[mackay-2003-information/ch28-model]] (information-theory → information-theory)

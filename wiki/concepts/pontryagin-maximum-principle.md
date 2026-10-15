@@ -2,12 +2,14 @@
 id: pontryagin-maximum-principle
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 8
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [liberzon-2012-calculus/ch01-introduction, liberzon-2012-calculus/ch02-calculus, liberzon-2012-calculus/ch03-calculus, liberzon-2012-calculus/ch04-maximum-p1, liberzon-2012-calculus/ch04-maximum-p2, liberzon-2012-calculus/ch05-hamilton, liberzon-2012-calculus/ch06-linear, liberzon-2012-calculus/ch07-advanced]
 raw_ids: [Pontryagin maximum principle, pontryagin maximum principle]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 

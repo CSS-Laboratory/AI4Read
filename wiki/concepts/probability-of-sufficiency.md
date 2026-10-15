@@ -2,7 +2,9 @@
 id: probability-of-sufficiency
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [pearl-2016-primer/ch04-counterfactuals, pearl-2018-bookofwhy/ch08-counterfactuals]

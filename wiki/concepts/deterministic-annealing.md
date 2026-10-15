@@ -1,8 +1,10 @@
 ---
 id: deterministic-annealing
 type: concept
-fields: [information-theory]
+fields: [information-theory, bayesian, llm]
+fields_strong: [information-theory, bayesian, llm]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [mackay-2003-information/ch42-hopfield, tishby-2000-bottleneck/main]
@@ -15,5 +17,5 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch42-hopfield]] (p. 518): raise gain $\beta$ from 0 to $\infty$ to reach a valid TSP tour [new]
+- [[mackay-2003-information/ch42-hopfield]] (p. 518): raise gain $\beta$ from 0 to $\infty$ to reach a valid TSP tour [new; work fields: information-theory, bayesian, llm]
 - [[tishby-2000-bottleneck/main]] (p. 15): raising β to move along information-plane curves [new]

@@ -2,7 +2,9 @@
 id: sunk-cost-fallacy
 type: concept
 fields: [decision-game-theory, economics-finance]
+fields_strong: [decision-game-theory, economics-finance]
 n_sources: 6
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch23-outside, kahneman-2011-thinking/ch32-keeping, kahneman-2011-thinking/ch34-frames, thaler-2015-misbehaving/ch03-list, thaler-2015-misbehaving/ch08-sunk, thaler-2015-misbehaving/ch27-law]
@@ -27,4 +29,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Sunk-cost fallacy ↔ backward induction: both say only future payoffs should guide the current choice, and past costs should be ignored. — from [[kahneman-2011-thinking/ch32-keeping]] (decision-game-theory → other)
+- [structural-analogy] Sunk-cost fallacy ↔ backward induction: both say only future payoffs should guide the current choice, and past costs should be ignored. — from [[kahneman-2011-thinking/ch32-keeping]] (decision-game-theory → decision-game-theory)

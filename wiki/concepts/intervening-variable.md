@@ -2,7 +2,9 @@
 id: intervening-variable
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [katz-1955-personalinfluence/ch02-played, katz-1955-personalinfluence/ch03-essay]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Intervening variables as filters ↔ mediation/moderation in statistics: related idea, but the authors say their usage differs from the survey-analysis "test factor" (fn. 7). — from [[katz-1955-personalinfluence/ch01-between]] (communication-theory → other)
+- [structural-analogy] Intervening variables as filters ↔ mediation/moderation in statistics: related idea, but the authors say their usage differs from the survey-analysis "test factor" (fn. 7). — from [[katz-1955-personalinfluence/ch01-between]] (communication-theory → other:statistics)

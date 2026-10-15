@@ -2,12 +2,14 @@
 id: complexity-measures
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [mitchell-2009-guidedtour/ch01-complexity, mitchell-2009-guidedtour/ch07-defining]
 raw_ids: [complexity measures]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 

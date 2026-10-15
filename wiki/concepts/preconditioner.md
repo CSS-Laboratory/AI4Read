@@ -2,7 +2,9 @@
 id: preconditioner
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [deisenroth-2020-mml/ch07-continuous, spielman-2025-sagt/ch36-preconditioning]

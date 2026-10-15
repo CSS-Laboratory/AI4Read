@@ -2,7 +2,9 @@
 id: equilibrium-point
 type: concept
 fields: [control-theory, political-science]
+fields_strong: [control-theory, political-science]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch04-examples, astrom-2021-feedbacksystems/ch05-dynamic, zaller-1992-massopinion/ch04-coming]
@@ -24,4 +26,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] Loss aversion as "gravitational force" holding life near the reference point ↔ physics: attraction to an equilibrium point. — from [[kahneman-2011-thinking/ch28-bad]] (decision-game-theory → other)
+- [metaphor] Loss aversion as "gravitational force" holding life near the reference point ↔ physics: attraction to an equilibrium point. — from [[kahneman-2011-thinking/ch28-bad]] (decision-game-theory → other:physics)

@@ -2,7 +2,9 @@
 id: effective-demand
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 8
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [keynes-1936-general/ch03-principle, keynes-1936-general/ch06-definition, keynes-1936-general/ch07-meaning, keynes-1936-general/ch16-sundry, keynes-1936-general/ch18-general, keynes-1936-general/ch19-changes, keynes-1936-general/ch20-employment, keynes-1936-general/ch21-theory]

@@ -1,13 +1,15 @@
 ---
 id: disturbance-and-noise
 type: concept
-fields: [control-theory]
+fields: [control-theory, bayesian]
+fields_strong: [control-theory, bayesian]
 n_sources: 20
+n_works: 5
 tiers: [core, deep]
 grounding: digests
 sources: [ashby-1956-cybernetics/ch05-stability, ashby-1956-cybernetics/ch10-regulation, ashby-1956-cybernetics/ch11-requisite, ashby-1956-cybernetics/ch12-error, ashby-1956-cybernetics/ch13-regulating, ashby-1956-cybernetics/ch14-amplifying, astrom-2021-feedbacksystems/ch01-introduction, astrom-2021-feedbacksystems/ch02-feedback, astrom-2021-feedbacksystems/ch03-system-p1, astrom-2021-feedbacksystems/ch04-examples, astrom-2021-feedbacksystems/ch07-state, astrom-2021-feedbacksystems/ch09-transfer-p1, astrom-2021-feedbacksystems/ch12-frequency, maxwell-1868-governors/main, sarkka-2023-bayesianfiltering/ch01-are, sarkka-2023-bayesianfiltering/ch01-symbols, sarkka-2023-bayesianfiltering/ch04-discretization, sarkka-2023-bayesianfiltering/ch05-modeling, sarkka-2023-bayesianfiltering/ch07-extended, welch-2004-kalmanintro/main]
 raw_ids: [disturbance and noise]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 
@@ -35,9 +37,9 @@ generated_by: build_kg.py
 - [[astrom-2021-feedbacksystems/ch09-transfer-p1]] (p. 9-18, 9-19): load disturbance $v$ and measurement noise $w$ as inputs to $e$
 - [[astrom-2021-feedbacksystems/ch12-frequency]] (p. 12-2): load disturbance $v$ at the process input, measurement noise $w$ at the output
 - [[maxwell-1868-governors/main]] (p. 270): variations of driving power $P$ or resistance $R$ [as `disturbance and noise`]
-- [[sarkka-2023-bayesianfiltering/ch01-are]] (p. 1): here process noise (uncertainty in the dynamics) and measurement noise [as `disturbance and noise`]
-- [[sarkka-2023-bayesianfiltering/ch01-symbols]] (pp. xxiv, xxvi): process noise $\mathbf q_k$, measurement noise $\mathbf r_k$, white noise $\mathbf w(t)$
-- [[sarkka-2023-bayesianfiltering/ch04-discretization]] (p. 46): here, process noise as continuous-time white noise $\mathbf w(t)$ with spectral density $\mathbf Q^c$
-- [[sarkka-2023-bayesianfiltering/ch05-modeling]] (p. 74): measurement noise $\mathbf{r}_k$, Gaussian or heavy-tailed, additive or not
-- [[sarkka-2023-bayesianfiltering/ch07-extended]] (p. 113, 115): Gaussian process and measurement noise, additive or non-additive [as `disturbance and noise`]
+- [[sarkka-2023-bayesianfiltering/ch01-are]] (p. 1): here process noise (uncertainty in the dynamics) and measurement noise [as `disturbance and noise`; work fields: control-theory, bayesian]
+- [[sarkka-2023-bayesianfiltering/ch01-symbols]] (pp. xxiv, xxvi): process noise $\mathbf q_k$, measurement noise $\mathbf r_k$, white noise $\mathbf w(t)$ [work fields: control-theory, bayesian]
+- [[sarkka-2023-bayesianfiltering/ch04-discretization]] (p. 46): here, process noise as continuous-time white noise $\mathbf w(t)$ with spectral density $\mathbf Q^c$ [work fields: control-theory, bayesian]
+- [[sarkka-2023-bayesianfiltering/ch05-modeling]] (p. 74): measurement noise $\mathbf{r}_k$, Gaussian or heavy-tailed, additive or not [work fields: control-theory, bayesian]
+- [[sarkka-2023-bayesianfiltering/ch07-extended]] (p. 113, 115): Gaussian process and measurement noise, additive or non-additive [as `disturbance and noise`; work fields: control-theory, bayesian]
 - [[welch-2004-kalmanintro/main]] (p. 2): process noise $w\sim N(0,Q)$ and measurement noise $v\sim N(0,R)$

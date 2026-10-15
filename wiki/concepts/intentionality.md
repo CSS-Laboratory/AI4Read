@@ -2,11 +2,13 @@
 id: intentionality
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 9
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [dennett-1987-intentional-stance/ch02-true, dennett-1987-intentional-stance/ch03-three, dennett-1987-intentional-stance/ch04-making, dennett-1987-intentional-stance/ch05-beyond-p1, dennett-1987-intentional-stance/ch06-styles, dennett-1987-intentional-stance/ch07-intentional, dennett-1987-intentional-stance/ch08-evolution, dennett-1987-intentional-stance/ch09-fast, dennett-1987-intentional-stance/ch10-mid]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 

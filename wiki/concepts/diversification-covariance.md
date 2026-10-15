@@ -1,12 +1,14 @@
 ---
 id: diversification-covariance
 type: concept
-fields: [economics-finance]
+fields: [economics-finance, linear-algebra]
+fields_strong: [economics-finance, linear-algebra]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [markowitz-1952-portfolio/main]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 
@@ -20,8 +22,8 @@ generated_by: build_kg.py
 
 ### economics-finance
 
-- [[markowitz-1952-portfolio/main]] (pp. 80, 89): variance depends on covariances; spread across dissimilar industries
+- [[markowitz-1952-portfolio/main]] (pp. 80, 89): variance depends on covariances; spread across dissimilar industries [work fields: economics-finance, linear-algebra]
 
 ## Candidate bridges
 
-- [structural-analogy] Narrow framing across projects ↔ diversification & covariance: pooling independent positive-value bets cuts the chance of a net loss. — from [[thaler-2015-misbehaving/ch20-narrow]] (economics-finance → other)
+- [structural-analogy] Narrow framing across projects ↔ diversification & covariance: pooling independent positive-value bets cuts the chance of a net loss. — from [[thaler-2015-misbehaving/ch20-narrow]] (economics-finance → economics-finance)

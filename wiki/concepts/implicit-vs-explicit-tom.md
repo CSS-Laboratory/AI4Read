@@ -1,13 +1,15 @@
 ---
 id: implicit-vs-explicit-tom
 type: concept
-fields: [theory-of-mind]
+fields: [theory-of-mind, llm]
+fields_strong: [theory-of-mind, llm]
 n_sources: 11
+n_works: 6
 tiers: [core, deep]
 grounding: digests
 sources: [apperly-2009-two-systems/main-p1, apperly-2009-two-systems/main-p2, apperly-2009-two-systems/main-p3, apperly-2011-mindreaders/ch03-evidence, apperly-2011-mindreaders/ch05-evidence, apperly-2011-mindreaders/ch06-cognitive, apperly-2011-mindreaders/ch07-elaborating, heyes-2014-cultural-evolution/main, onishi-2005-infant-false-belief/main, premack-1978-chimpanzee/main, strachan-2024-llm-humans/main]
 raw_ids: [implicit vs explicit ToM]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 
@@ -30,11 +32,11 @@ generated_by: build_kg.py
 - [[apperly-2011-mindreaders/ch07-elaborating]] (pp. 152–154): implicit measures (gaze, interference) may reveal low-level processing. Explicit judgements are assumed to recruit high-level processing
 - [[heyes-2014-cultural-evolution/main]] (pp. 1, 3): implicit: automatic, accurate behavioural expectations, no executive demands. Explicit: deliberation and talk about mental states, executive-demanding [as `implicit vs explicit ToM`]
 - [[onishi-2005-infant-false-belief/main]]: nonverbal understanding shown by looking, versus verbal answers; the authors suggest infants have a theory of mind "at least in a rudimentary and implicit form" (para. 11)
-- [[premack-1978-chimpanzee/main]] (p. 516): not used by name; the paper uses non-verbal choice tests (canon link; not stated in this unit)
-- [[strachan-2024-llm-humans/main]] (§ "Main"): early, efficient but inflexible implicit processes vs later, flexible, demanding explicit abilities [as `implicit vs explicit ToM`]
+- [[premack-1978-chimpanzee/main]] (p. 516): not used by name; the paper uses non-verbal choice tests (canon link; not stated in this unit) [weak: not really used in this unit]
+- [[strachan-2024-llm-humans/main]] (§ "Main"): early, efficient but inflexible implicit processes vs later, flexible, demanding explicit abilities [as `implicit vs explicit ToM`; work fields: theory-of-mind, llm]
 
 ## Candidate bridges
 
-- [structural-analogy] Infants' success on indirect false-belief measures, with children's failure on explicit judgement ↔ implicit vs explicit ToM: indirect and explicit measures can come apart. — from [[apperly-2011-mindreaders/ch03-evidence]] (theory-of-mind → other)
-- [structural-analogy] anticipatory looking right while explicit answer wrong ↔ implicit vs explicit ToM: dissociation within one person between two readouts. — from [[apperly-2011-mindreaders/ch07-elaborating]] (theory-of-mind → other)
-- [metaphor] Core versus virtual beliefs ↔ implicit vs explicit ToM: both use an implicit/explicit contrast, but Dennett's is about how information is stored, not about whether mindreading is conscious. — from [[dennett-1987-intentional-stance/ch03-three]] (theory-of-mind → other)
+- [structural-analogy] Infants' success on indirect false-belief measures, with children's failure on explicit judgement ↔ implicit vs explicit ToM: indirect and explicit measures can come apart. — from [[apperly-2011-mindreaders/ch03-evidence]] (theory-of-mind → theory-of-mind)
+- [structural-analogy] anticipatory looking right while explicit answer wrong ↔ implicit vs explicit ToM: dissociation within one person between two readouts. — from [[apperly-2011-mindreaders/ch07-elaborating]] (theory-of-mind → theory-of-mind)
+- [metaphor] Core versus virtual beliefs ↔ implicit vs explicit ToM: both use an implicit/explicit contrast, but Dennett's is about how information is stored, not about whether mindreading is conscious. — from [[dennett-1987-intentional-stance/ch03-three]] (theory-of-mind → theory-of-mind)

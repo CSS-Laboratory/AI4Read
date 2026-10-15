@@ -2,7 +2,9 @@
 id: cramers-v
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [argyle-2023-silicon/main-p1, argyle-2023-silicon/main-p2]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Cramér's V ↔ statistics: chi-squared test of independence, rescaled to 0–1; for 2×2 tables it equals |φ|. — from [[argyle-2023-silicon/main-p2]] (llm → other)
+- [same-math] Cramér's V ↔ statistics: chi-squared test of independence, rescaled to 0–1; for 2×2 tables it equals |φ|. — from [[argyle-2023-silicon/main-p2]] (llm → other:statistics)

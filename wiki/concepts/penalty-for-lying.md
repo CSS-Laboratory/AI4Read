@@ -2,15 +2,24 @@
 id: penalty-for-lying
 type: concept
 fields: [political-science]
-n_sources: 3
+fields_strong: [political-science]
+n_sources: 4
+n_works: 1
 tiers: [core]
 grounding: digests
-sources: [lupia-1998-dilemma/app-ch03, lupia-1998-dilemma/ch03-people, lupia-1998-dilemma/ch07-laboratory-p2]
+sources: [lupia-1998-dilemma/app-ch03, lupia-1998-dilemma/ch03-people, lupia-1998-dilemma/ch07-laboratory-p2, lupia-1998-dilemma/ch10-institutions]
+aliases: [penalties-for-lying]
 raw_ids: [penalty for lying]
 generated_by: build_kg.py
 ---
 
 # penalty-for-lying
+
+## Aliases
+
+Variant ids merged into this page (curated in `wiki/kg/aliases.json`):
+
+- `penalties-for-lying` — 1 digest(s)
 
 ## Definitions in the sources
 
@@ -19,6 +28,7 @@ generated_by: build_kg.py
 - [[lupia-1998-dilemma/app-ch03]] (p. 251): a cost $pen$ paid by the speaker for a false signal [as `penalty for lying`; new]
 - [[lupia-1998-dilemma/ch03-people]] (pp. 53–54, 58): a statement-specific cost $pen$ paid by a lying speaker. It lets the principal infer that a statement is either true, or false with a value to the speaker greater than the expected penalty [new]
 - [[lupia-1998-dilemma/ch07-laboratory-p2]] (p. 134): a fee paid by the speaker for a false statement; its effectiveness depends on whether it makes principals believe the speaker will tell the truth [new]
+- [[lupia-1998-dilemma/ch10-institutions]] (pp. 211, 223): sanctions (perjury, expulsion, loss of office) that give speakers an incentive to be truthful, weak if either the penalty or its likelihood of enforcement is small [alias `penalties-for-lying`; new]
 
 ## Instances that use it
 

@@ -2,11 +2,13 @@
 id: d-separation
 type: concept
 fields: [bayesian, linear-algebra]
+fields_strong: [bayesian, linear-algebra]
 n_sources: 18
+n_works: 5
 tiers: [core, reference]
 grounding: digests
 sources: [deisenroth-2020-mml/ch08-when, hernan-2020-whatif/ch06-graphical, hernan-2020-whatif/ch07-confounding, hernan-2020-whatif/ch08-selection, hernan-2020-whatif/ch09-measurement, hernan-2020-whatif/ch19-time, hernan-2020-whatif/ch21-g, murphy-2023-pml2/ch04-graphical-p1, murphy-2023-pml2/ch04-graphical-p2, murphy-2023-pml2/ch04-graphical-p3, murphy-2023-pml2/ch36-causality-p1, murphy-2023-pml2/ch36-causality-p2, pearl-2016-primer/ch02-graphical, pearl-2016-primer/ch03-effects, pearl-2016-primer/ch04-counterfactuals, pearl-2018-bookofwhy/ch03-evidence, pearl-2018-bookofwhy/ch07-beyond, pearl-2018-bookofwhy/ch08-counterfactuals]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
@@ -49,7 +51,7 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [same-math] Conditioning on a collider (p. 243) ↔ Causal DAG: collider path opening — the same phenomenon, discussed under d-separation and fork/chain/collider. — from [[hernan-2020-whatif/ch18-variable]] (bayesian → bayesian)
-- [structural-analogy] Granger and Suppes screening-off ↔ d-separation: both express "no predictive value given $Z$". — from [[holland-1986-statistics/main]] (bayesian → other)
+- [structural-analogy] Granger and Suppes screening-off ↔ d-separation: both express "no predictive value given $Z$". — from [[holland-1986-statistics/main]] (bayesian → bayesian)
 - [structural-analogy] The adjustment steps (Z1, Z2 and "X disconnected from Y") ↔ back-door criterion and d-separation; the exact steps are on slides not in the text. — from [[pearl-2009-causality/main]] (bayesian → unspecified)
-- [same-math] d-separation ↔ conditional independence in probabilistic graphical models: the graph reads off $P(A|B,C)=P(A|C)$ for the product decomposition (cited as (1.29), p. 51). — from [[pearl-2016-primer/ch02-graphical]] (bayesian → other)
+- [same-math] d-separation ↔ conditional independence in probabilistic graphical models: the graph reads off $P(A|B,C)=P(A|C)$ for the product decomposition (cited as (1.29), p. 51). — from [[pearl-2016-primer/ch02-graphical]] (bayesian → other:conditional-independence-in-probabilisti)
 - [same-math] Conditional independence in chains and forks ↔ causal inference: d-separation on paths. — from [[pearl-2018-bookofwhy/ch03-evidence]] (bayesian → bayesian)

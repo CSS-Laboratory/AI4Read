@@ -2,12 +2,14 @@
 id: word-embedding
 type: concept
 fields: [llm, linear-algebra, political-science]
+fields_strong: [llm, linear-algebra, political-science]
 n_sources: 7
+n_works: 7
 tiers: [deep, core, reference]
 grounding: digests
 sources: [bengio-2003-nplm/main, grimmer-2022-textasdata/ch08-distributed, mikolov-2013-compositionality/main, mikolov-2013-efficient/main, mikolov-2013-regularities/main, park-2023-agents/main, prince-2023-udl/ch12-transformers]
 raw_ids: [word embedding]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 
@@ -29,7 +31,7 @@ generated_by: build_kg.py
 
 ### linear-algebra
 
-- [[mikolov-2013-regularities/main]] (p. 747): learned vector representation of a word, here the input-layer weights [new]
+- [[mikolov-2013-regularities/main]] (p. 747): learned vector representation of a word, here the input-layer weights [new; work fields: linear-algebra, llm]
 
 ### political-science
 
@@ -41,5 +43,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Embedding matrix $C$ (look-up of rows) ↔ word embedding: learned token embedding table — from [[bengio-2003-nplm/main]] (llm → other)
+- [same-math] Embedding matrix $C$ (look-up of rows) ↔ word embedding: learned token embedding table — from [[bengio-2003-nplm/main]] (llm → llm)
 - [structural-analogy] Word embeddings from co-occurrence ↔ political-science: the spatial model of voting — both place items in a low-dimensional space where distance means similarity. — from [[grimmer-2022-textasdata/ch08-distributed]] (political-science → political-science)

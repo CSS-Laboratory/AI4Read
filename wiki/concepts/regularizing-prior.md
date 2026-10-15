@@ -2,7 +2,9 @@
 id: regularizing-prior
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [mcelreath-2020-rethinking/ch02-small, mcelreath-2020-rethinking/ch06-overfitting-p1, mcelreath-2020-rethinking/ch06-overfitting-p2]
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Mixture-of-Gaussians resolution as an ill-posed inverse problem ↔ Bayesian: hierarchical models and regularizing priors — prior information selects among many consistent decompositions. — from [[jaynes-2003-probability/ch07-central-p2]] (information-theory → bayesian)
+- [structural-analogy] Mixture-of-Gaussians resolution as an ill-posed inverse problem ↔ Bayesian: hierarchical models and regularizing priors — prior information selects among many consistent decompositions. — from [[jaynes-2003-probability/ch07-central-p2]] (bayesian → bayesian)

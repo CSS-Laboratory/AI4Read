@@ -2,7 +2,9 @@
 id: language-of-thought
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 4
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [dennett-1987-intentional-stance/ch02-true, dennett-1987-intentional-stance/ch04-making, dennett-1987-intentional-stance/ch05-beyond-p1, dennett-1987-intentional-stance/ch06-styles]

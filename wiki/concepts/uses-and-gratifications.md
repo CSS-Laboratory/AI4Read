@@ -2,11 +2,13 @@
 id: uses-and-gratifications
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [katz-1955-personalinfluence/appd-construction, katz-1955-personalinfluence/ch01-between, katz-1955-personalinfluence/ch14-two]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 
@@ -30,7 +32,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Culture consumption without discussion (p. 163) ↔ uses and gratifications: individual consumption for relaxation, though Habermas treats it as the loss of a public, not as an active choice. — from [[habermas-1989-publicsphere/ch05-social]] (communication-theory → other)
-- [structural-analogy] popular fiction as escape ↔ uses-and-gratifications research: media consumption driven by needs — from [[katz-1955-personalinfluence/appd-construction]] (communication-theory → other)
-- [structural-analogy] "People on the lookout" are more persuadable ↔ Uses and gratifications: audiences actively seek media for needs (canon link; not stated in this unit). — from [[katz-1955-personalinfluence/ch08-variations]] (communication-theory → other)
-- [metaphor] leaders' "use" of media ↔ uses and gratifications: media choice by function (p. 320). — from [[katz-1955-personalinfluence/ch14-two]] (communication-theory → other)
+- [structural-analogy] Culture consumption without discussion (p. 163) ↔ uses and gratifications: individual consumption for relaxation, though Habermas treats it as the loss of a public, not as an active choice. — from [[habermas-1989-publicsphere/ch05-social]] (communication-theory → communication-theory)
+- [structural-analogy] popular fiction as escape ↔ uses-and-gratifications research: media consumption driven by needs — from [[katz-1955-personalinfluence/appd-construction]] (communication-theory → other:uses-and-gratifications-research)
+- [structural-analogy] "People on the lookout" are more persuadable ↔ Uses and gratifications: audiences actively seek media for needs (canon link; not stated in this unit). — from [[katz-1955-personalinfluence/ch08-variations]] (communication-theory → communication-theory)
+- [metaphor] leaders' "use" of media ↔ uses and gratifications: media choice by function (p. 320). — from [[katz-1955-personalinfluence/ch14-two]] (communication-theory → communication-theory)

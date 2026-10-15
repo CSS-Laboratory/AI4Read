@@ -2,7 +2,9 @@
 id: culture-industry
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [habermas-1989-publicsphere/ch05-social, habermas-1989-publicsphere/ch07-concept]

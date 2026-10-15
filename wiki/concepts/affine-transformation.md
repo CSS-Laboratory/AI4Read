@@ -2,7 +2,9 @@
 id: affine-transformation
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [strang-2023-introduction/app10-computer, strang-2023-introduction/ch08-linear]

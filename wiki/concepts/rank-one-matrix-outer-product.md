@@ -2,12 +2,14 @@
 id: rank-one-matrix-outer-product
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 18
+n_works: 5
 tiers: [core, deep]
 grounding: digests
 sources: [axler-2024-ladr/ch09-multilinear-p2, boyd-2018-vmls/ch10-matrix, deisenroth-2020-mml/ch04-matrix-p2, deisenroth-2020-mml/ch05-vector, deisenroth-2020-mml/ch10-dimensionality, deisenroth-2020-mml/ch11-density, spielman-2025-sagt/ch03-laplacian, spielman-2025-sagt/ch08-eigenvalues, spielman-2025-sagt/ch33-linear, spielman-2025-sagt/ch41-expected, strang-2023-introduction/ch01-vectors, strang-2023-introduction/ch02-solving-p1, strang-2023-introduction/ch02-solving-p2, strang-2023-introduction/ch03-four-p1, strang-2023-introduction/ch03-four-p3, strang-2023-introduction/ch04-orthogonality-p1, strang-2023-introduction/ch07-singular, strang-2023-introduction/ch10-learning]
 raw_ids: [rank-one matrix / outer product]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 

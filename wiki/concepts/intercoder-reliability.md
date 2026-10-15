@@ -2,7 +2,9 @@
 id: intercoder-reliability
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch17-overview, grimmer-2022-textasdata/ch18-coding]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Intercoder reliability ↔ survey and measurement methods: agreement between independent raters as evidence of a clear concept definition. — from [[grimmer-2022-textasdata/ch17-overview]] (political-science → other)
+- [structural-analogy] Intercoder reliability ↔ survey and measurement methods: agreement between independent raters as evidence of a clear concept definition. — from [[grimmer-2022-textasdata/ch17-overview]] (political-science → other:statistics)

@@ -2,7 +2,9 @@
 id: simulated-tempering
 type: concept
 fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [gelman-2013-bda3/ch12-computationally, mackay-2003-information/ch30-efficient]
@@ -19,4 +21,4 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch30-efficient]] (p. 392): temperature as a random variable updated in Metropolis fashion, correcting annealing bias [new]
+- [[mackay-2003-information/ch30-efficient]] (p. 392): temperature as a random variable updated in Metropolis fashion, correcting annealing bias [new; work fields: information-theory, bayesian]

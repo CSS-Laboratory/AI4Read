@@ -2,7 +2,9 @@
 id: symbolizing-vs-translating
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [magnus-2025-forallx/ch03-truth-p1, magnus-2025-forallx/ch30-extensionality]

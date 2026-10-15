@@ -2,7 +2,9 @@
 id: strict-subproof
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [magnus-2025-forallx/ch43-natural, magnus-2025-forallx/ch44-semantics]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] strict subproof with restricted citations ↔ first-order logic: universal-introduction rules that restrict which earlier lines may be used — both guard a "for any case" conclusion. — from [[magnus-2025-forallx/ch43-natural]] (analytic-philosophy → analytic-philosophy)
-- [metaphor] "alternate possibilities" in strict subproofs ↔ possible-world semantics: the chapter gives only proof rules, so any link to worlds is an interpretation. — from [[magnus-2025-forallx/ch43-natural]] (analytic-philosophy → other)
+- [metaphor] "alternate possibilities" in strict subproofs ↔ possible-world semantics: the chapter gives only proof rules, so any link to worlds is an interpretation. — from [[magnus-2025-forallx/ch43-natural]] (analytic-philosophy → analytic-philosophy)

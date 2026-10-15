@@ -2,7 +2,9 @@
 id: peak-end-rule
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch35-two, kahneman-2011-thinking/ch36-life, kahneman-2011-thinking/conclusions]

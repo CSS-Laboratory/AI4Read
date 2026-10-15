@@ -2,12 +2,14 @@
 id: skip-gram-cbow
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 2
+n_works: 2
 tiers: [deep]
 grounding: digests
 sources: [mikolov-2013-compositionality/main, mikolov-2013-efficient/main]
 raw_ids: [skip-gram / CBOW]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

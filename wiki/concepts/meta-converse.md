@@ -2,7 +2,9 @@
 id: meta-converse
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [polyanskiy-2025-information/ch04-mutual, polyanskiy-2025-information/ch24-strong]

@@ -2,7 +2,9 @@
 id: stacking
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [gelman-2020-workflow/main-p1, gelman-2020-workflow/main-p2, gelman-2020-workflow/main-p3]

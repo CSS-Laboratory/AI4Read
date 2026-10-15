@@ -2,12 +2,14 @@
 id: characteristic-polynomial
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 13
+n_works: 4
 tiers: [deep, core]
 grounding: digests
 sources: [axler-2024-ladr/ch08-operators, axler-2024-ladr/ch09-multilinear-p2, deisenroth-2020-mml/ch04-matrix-p1, spielman-2025-sagt/ch01-introduction, spielman-2025-sagt/ch13-random, spielman-2025-sagt/ch41-expected, spielman-2025-sagt/ch42-quadrature, spielman-2025-sagt/ch43-ramanujan, spielman-2025-sagt/ch44-bipartite, spielman-2025-sagt/ch45-matching, strang-2023-introduction/ch06-eigenvalues-p1, strang-2023-introduction/ch06-eigenvalues-p2, strang-2023-introduction/ch06-eigenvalues-p3]
 raw_ids: [characteristic polynomial]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -47,5 +49,5 @@ generated_by: build_kg.py
 - [structural-analogy] zeros of a polynomial ↔ linear algebra: eigenvalues as zeros of the characteristic polynomial — the unit only says polynomials will be used for maps from a space to itself (p. 119); the link itself is not stated here — from [[axler-2024-ladr/ch04-polynomials]] (linear-algebra → linear-algebra)
 - [structural-analogy] eigenvalues as zeros of the minimal polynomial ↔ linear-algebra canon: roots of the characteristic polynomial $\det(A-\lambda I)$ — both are polynomials annihilating $T$ whose roots are the eigenvalues; the characteristic polynomial is not in this unit. — from [[axler-2024-ladr/ch05-eigenvalues-p1]] (linear-algebra → linear-algebra)
 - [same-math] Over $\mathbf C$, $\det T$ is the product of eigenvalues ↔ characteristic polynomial and the trace as sum of eigenvalues, since the coefficients are $\operatorname{tr}T$ and $\det T$. — from [[axler-2024-ladr/ch09-multilinear-p2]] (linear-algebra → unspecified)
-- [structural-analogy] Haar-averaged characteristic polynomial ↔ free probability: operations independent of eigenvectors, in the finite-$n$ setting — from [[spielman-2025-sagt/ch42-quadrature]] (linear-algebra → other)
+- [structural-analogy] Haar-averaged characteristic polynomial ↔ free probability: operations independent of eigenvectors, in the finite-$n$ setting — from [[spielman-2025-sagt/ch42-quadrature]] (linear-algebra → other:probability)
 - [same-math] det(A − λI) = 0 (p. 205) ↔ linear-algebra: characteristic polynomial, whose roots are eigenvalues. — from [[strang-2023-introduction/ch05-determinants]] (linear-algebra → linear-algebra)

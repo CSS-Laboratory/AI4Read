@@ -2,7 +2,9 @@
 id: party-identification
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 4
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [achen-2016-realists/ch07-chicken, achen-2016-realists/ch10-it, clark-2017-principles/ch14-social-p1, converse-1964-beliefsystems/ch03-sections]

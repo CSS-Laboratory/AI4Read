@@ -2,7 +2,9 @@
 id: anomaly
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [thaler-2015-misbehaving/ch18-anomalies, thaler-2015-misbehaving/ch22-does]
@@ -37,10 +39,10 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Kuhn's critical mass of anomalies ↔ phase transition (melting): sudden change after gradual build-up (p. 82; the author uses the comparison himself) — from [[godfreysmith-2003-theory/ch05-kuhn]] (analytic-philosophy → other)
-- [structural-analogy] Anomaly detected only against a precise expectation ↔ statistics: a deviation is flagged only relative to an expected tolerance. The same reading is "anomalous" under a tight tolerance and not under a loose one. — from [[kuhn-1962-structure/ch06-anomaly]] (analytic-philosophy → other)
-- [structural-analogy] Rejection requires an available alternative ↔ research programmes (Lakatos): theories are appraised comparatively and are not discarded on a single anomaly. — from [[kuhn-1962-structure/ch08-response]] (analytic-philosophy → other)
+- [structural-analogy] Kuhn's critical mass of anomalies ↔ phase transition (melting): sudden change after gradual build-up (p. 82; the author uses the comparison himself) — from [[godfreysmith-2003-theory/ch05-kuhn]] (analytic-philosophy → complex-systems)
+- [structural-analogy] Anomaly detected only against a precise expectation ↔ statistics: a deviation is flagged only relative to an expected tolerance. The same reading is "anomalous" under a tight tolerance and not under a loose one. — from [[kuhn-1962-structure/ch06-anomaly]] (analytic-philosophy → other:statistics)
+- [structural-analogy] Rejection requires an available alternative ↔ research programmes (Lakatos): theories are appraised comparatively and are not discarded on a single anomaly. — from [[kuhn-1962-structure/ch08-response]] (analytic-philosophy → analytic-philosophy)
 - [structural-analogy] Popper's growth-of-knowledge-through-criticism ↔ Kuhn's paradigm/normal-science and anomaly→crisis→revolution cycle — both treat episodes of real science, not word-analysis, as the unit of epistemological study. — from [[popper-1959-logic/front-preface-2]] (analytic-philosophy → unspecified)
 - [structural-analogy] Kuhn's anomaly-accumulation model ↔ philosophy of science: Kleidon and Miller invoked it to suggest the revolution was not yet upon us, and Shiller replied in its terms. — from [[thaler-2015-misbehaving/ch17-debate]] (economics-finance → analytic-philosophy)
-- [structural-analogy] Banz's "pricing model misspecification" ↔ joint-hypothesis problem: a return anomaly can be blamed on the EMH or on the return model. — from [[thaler-2015-misbehaving/ch22-does]] (economics-finance → other)
+- [structural-analogy] Banz's "pricing model misspecification" ↔ joint-hypothesis problem: a return anomaly can be blamed on the EMH or on the return model. — from [[thaler-2015-misbehaving/ch22-does]] (economics-finance → economics-finance)
 - [structural-analogy] "Smoking gun" anomaly in finance ↔ philosophy of science: Kuhn's anomalies — discovery begins where theory fails. — from [[thaler-2015-misbehaving/conclusion-next]] (economics-finance → analytic-philosophy)

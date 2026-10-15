@@ -2,11 +2,13 @@
 id: bayesian-workflow
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 4
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [gelman-2013-bda3/ch01-probability, gelman-2020-workflow/main-p1, gelman-2020-workflow/main-p2, gelman-2020-workflow/main-p3]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
@@ -39,7 +41,7 @@ generated_by: build_kg.py
 - [metaphor] "Validation samples" for error correction ↔ Bayesian workflow: using small high-quality data to calibrate a noisy measurement model. — from [[hernan-2020-whatif/ch09-measurement]] (bayesian → bayesian)
 - [metaphor] Discarding covariates after seeing the data (p. 251) ↔ Bayesian workflow: iterating model changes after looking at the data — both raise the question of what the final inference is conditional on. — from [[hernan-2020-whatif/ch18-variable]] (bayesian → bayesian)
 - [metaphor] The g-null paradox (each model component is fine but together they cannot all be correct) ↔ Bayesian workflow: priors/likelihood that are individually reasonable but jointly incoherent. — from [[hernan-2020-whatif/ch21-g]] (bayesian → bayesian)
-- [structural-analogy] Mr A / Mr B: a persistent mismatch reveals a missing constraint ↔ Bayesian workflow: posterior predictive checks revealing misfit — from [[jaynes-2003-probability/ch11-discrete]] (information-theory → bayesian)
-- [structural-analogy] Missing $I$ in $P(A|B)$ ↔ Bayesian: Bayesian workflow's insistence on stating the model — the same demand that the problem be fully specified. — from [[jaynes-2003-probability/ch15-paradoxes]] (information-theory → bayesian)
+- [structural-analogy] Mr A / Mr B: a persistent mismatch reveals a missing constraint ↔ Bayesian workflow: posterior predictive checks revealing misfit — from [[jaynes-2003-probability/ch11-discrete]] (bayesian → bayesian)
+- [structural-analogy] Missing $I$ in $P(A|B)$ ↔ Bayesian: Bayesian workflow's insistence on stating the model — the same demand that the problem be fully specified. — from [[jaynes-2003-probability/ch15-paradoxes]] (bayesian → bayesian)
 - [structural-analogy] Explanations as partial views that can mislead ↔ Bayesian workflow: model checking can reveal misfit but cannot prove a model correct; passing sanity checks likewise shows no blindspots (pp. 1090–1091). — from [[murphy-2023-pml2/ch33-interpretability]] (bayesian → bayesian)
 - [structural-analogy] Cornfield's inequality ↔ Bayesian workflow: sensitivity checks on assumptions — vary an assumption to see how strong it must be to overturn the result. — from [[pearl-2018-bookofwhy/ch05-smoke]] (bayesian → bayesian)

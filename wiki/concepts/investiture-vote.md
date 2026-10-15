@@ -2,7 +2,9 @@
 id: investiture-vote
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch12-parliamentary-p1, clark-2017-principles/ch12-parliamentary-p2]

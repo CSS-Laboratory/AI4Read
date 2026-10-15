@@ -2,7 +2,9 @@
 id: internal-relation
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [wittgenstein-1922-tractatus/ch05-proposition, wittgenstein-1953-investigations/ch09-ppf]

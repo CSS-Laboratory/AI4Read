@@ -2,12 +2,14 @@
 id: incidence-matrix
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 10
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [boyd-2018-vmls/ch07-matrix, boyd-2018-vmls/ch08-linear, boyd-2018-vmls/ch09-linear, boyd-2018-vmls/ch15-multi, spielman-2025-sagt/ch11-walks, spielman-2025-sagt/ch13-random, spielman-2025-sagt/ch14-approximating, spielman-2025-sagt/ch30-simple, strang-2023-introduction/ch03-four-p3, strang-2023-introduction/ch09-linear]
 raw_ids: [incidence matrix]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -43,9 +45,9 @@ generated_by: build_kg.py
 
 - [structural-analogy] Incidence matrix of a chain graph ↔ difference matrix $D$ ↔ first-order differences as convolution with $(1,-1)$. — from [[boyd-2018-vmls/ch07-matrix]] (linear-algebra → unspecified)
 - [same-math] diffusion system with incidence matrix $A$ ↔ network analysis: flow conservation on a graph uses the incidence matrix — the same $A$ as in §7.3. — from [[boyd-2018-vmls/ch08-linear]] (linear-algebra → complex-systems)
-- [structural-analogy] Supply chain incidence matrix ↔ graph models: $A^{\rm sc}f$ converts edge flows into node changes. — from [[boyd-2018-vmls/ch09-linear]] (linear-algebra → other)
-- [structural-analogy] diffusion on a grid (heat) ↔ graph Laplacian (canon): incidence matrix $A$ and a resistance matrix $R$ appear in the system — from [[boyd-2018-vmls/ch11-matrix]] (linear-algebra → other)
+- [structural-analogy] Supply chain incidence matrix ↔ graph models: $A^{\rm sc}f$ converts edge flows into node changes. — from [[boyd-2018-vmls/ch09-linear]] (linear-algebra → other:graph-models)
+- [structural-analogy] diffusion on a grid (heat) ↔ graph Laplacian (canon): incidence matrix $A$ and a resistance matrix $R$ appear in the system — from [[boyd-2018-vmls/ch11-matrix]] (linear-algebra → linear-algebra)
 - [same-math] Dirichlet energy $\|A^Tx\|^2$ (incidence matrix) ↔ linear-algebra canon: graph Laplacian quadratic form $\sum(x_i-x_j)^2$ — both are $x^T(AA^T)x$ for the incidence matrix $A$. — from [[boyd-2018-vmls/ch15-multi]] (linear-algebra → linear-algebra)
-- [same-math] AᵀA with A a ±1 difference matrix (Example 3, p. 70; B₃ = AᵀA) ↔ graph theory: Laplacian L = BᵀB of an incidence matrix — same product of a ±1 edge-difference matrix with its transpose. — from [[strang-2023-introduction/ch02-solving-p2]] (linear-algebra → other)
+- [same-math] AᵀA with A a ±1 difference matrix (Example 3, p. 70; B₃ = AᵀA) ↔ graph theory: Laplacian L = BᵀB of an incidence matrix — same product of a ±1 edge-difference matrix with its transpose. — from [[strang-2023-introduction/ch02-solving-p2]] (linear-algebra → other:graph-theory)
 - [structural-analogy] Left nullspace of an incidence matrix ↔ network science: loop currents / cycle space — independent loops count m − n + 1. — from [[strang-2023-introduction/ch03-four-p3]] (linear-algebra → complex-systems)
-- [same-math] Incidence matrix constraint Aᵀy = 0 in max flow ↔ graph theory: incidence matrix and conservation of flow at nodes. — from [[strang-2023-introduction/ch09-linear]] (linear-algebra → other)
+- [same-math] Incidence matrix constraint Aᵀy = 0 in max flow ↔ graph theory: incidence matrix and conservation of flow at nodes. — from [[strang-2023-introduction/ch09-linear]] (linear-algebra → other:graph-theory)

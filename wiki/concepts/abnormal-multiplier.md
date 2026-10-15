@@ -2,7 +2,9 @@
 id: abnormal-multiplier
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 3
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [liberzon-2012-calculus/ch02-calculus, liberzon-2012-calculus/ch04-maximum-p1, liberzon-2012-calculus/ch04-maximum-p2]
@@ -21,4 +23,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Costate $p^*$ and abnormal multiplier $p_0^*$ ↔ calculus of variations: Lagrange multipliers and $\lambda_0^*$ (§2.5), which the author points to (p. 82). — from [[liberzon-2012-calculus/ch04-maximum-p1]] (control-theory → other)
+- [structural-analogy] Costate $p^*$ and abnormal multiplier $p_0^*$ ↔ calculus of variations: Lagrange multipliers and $\lambda_0^*$ (§2.5), which the author points to (p. 82). — from [[liberzon-2012-calculus/ch04-maximum-p1]] (control-theory → other:mathematics)

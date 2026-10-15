@@ -2,11 +2,13 @@
 id: agreement-theorem
 type: concept
 fields: [decision-game-theory]
+fields_strong: []
 n_sources: 0
+n_works: 0
 tiers: []
 grounding: digests
 sources: []
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 
@@ -22,4 +24,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Envelope unraveling ↔ agreement theorem / no-trade results: willingness to trade is informative under common knowledge of rationality — the same "trade reveals information" move, though the book states no formal result. — from [[dixit-2008-art-strategy/ch14-case]] (decision-game-theory → other)
+- [structural-analogy] Envelope unraveling ↔ agreement theorem / no-trade results: willingness to trade is informative under common knowledge of rationality — the same "trade reveals information" move, though the book states no formal result. — from [[dixit-2008-art-strategy/ch14-case]] (decision-game-theory → decision-game-theory)

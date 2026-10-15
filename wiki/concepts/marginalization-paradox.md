@@ -1,9 +1,11 @@
 ---
 id: marginalization-paradox
 type: concept
-fields: [information-theory, bayesian]
+fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 3
-tiers: [reference]
+n_works: 2
+tiers: [core, reference]
 grounding: digests
 sources: [jaynes-2003-probability/appb-mathematical, jaynes-2003-probability/ch15-paradoxes, murphy-2023-pml2/ch03-statistics-p3]
 generated_by: build_kg.py
@@ -13,13 +15,10 @@ generated_by: build_kg.py
 
 ## Definitions in the sources
 
-### information-theory
-
-- [[jaynes-2003-probability/appb-mathematical]] (p. 662): confusion arising from one symbol denoting probabilities conditional on different information [new]
-- [[jaynes-2003-probability/ch15-paradoxes]] (p. 472): disagreement of B₁ (full model) and B₂ (reduced model), attributed to different prior information [new]
-
 ### bayesian
 
+- [[jaynes-2003-probability/appb-mathematical]] (p. 662): confusion arising from one symbol denoting probabilities conditional on different information [new; work fields: bayesian, information-theory]
+- [[jaynes-2003-probability/ch15-paradoxes]] (p. 472): disagreement of B₁ (full model) and B₂ (reduced model), attributed to different prior information [new; work fields: bayesian, information-theory]
 - [[murphy-2023-pml2/ch03-statistics-p3]] (p. 133): improper priors make the posterior model probability depend on arbitrary constants [new]
 
 ## Instances that use it
@@ -28,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Capital-P propositions vs functions ↔ bayesian: all probabilities are conditional on background information (the marginalization paradox is a failure to track it). — from [[jaynes-2003-probability/appb-mathematical]] (information-theory → bayesian)
+- [structural-analogy] Capital-P propositions vs functions ↔ bayesian: all probabilities are conditional on background information (the marginalization paradox is a failure to track it). — from [[jaynes-2003-probability/appb-mathematical]] (bayesian → bayesian)

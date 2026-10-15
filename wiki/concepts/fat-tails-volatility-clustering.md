@@ -2,12 +2,14 @@
 id: fat-tails-volatility-clustering
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [fama-1970-efficient/main]
 raw_ids: ["fat tails & volatility clustering"]
-canon_spine: economics-finance
+canon_spine: [economics-finance]
 generated_by: build_kg.py
 ---
 

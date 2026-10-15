@@ -2,12 +2,14 @@
 id: pretraining-fine-tuning
 type: concept
 fields: [llm]
+fields_strong: [llm]
 n_sources: 14
+n_works: 10
 tiers: [core, deep, reference]
 grounding: digests
 sources: [brown-2020-gpt3/main-p1, brown-2020-gpt3/main-p2, devlin-2019-bert/main, hoffmann-2022-chinchilla/main, mahowald-2024-dissociating/main, ouyang-2022-instructgpt/main-p1, ouyang-2022-instructgpt/main-p2, prince-2023-udl/ch09-regularization, prince-2023-udl/ch10-convolutional, prince-2023-udl/ch12-transformers, radford-2019-gpt2/main, wei-2022-cot/main-p1, xie-2022-icl/main, ziems-2024-css/main-p1]
 raw_ids: [pretraining / fine-tuning]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

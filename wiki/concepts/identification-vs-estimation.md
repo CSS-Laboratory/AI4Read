@@ -2,7 +2,9 @@
 id: identification-vs-estimation
 type: concept
 fields: [bayesian, political-science]
+fields_strong: [bayesian, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch22-principles, hernan-2020-whatif/ch10-random]

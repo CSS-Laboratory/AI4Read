@@ -2,12 +2,14 @@
 id: scientific-realism-vs-constructive-empiricism
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [godfreysmith-2003-theory/ch13-explanation, godfreysmith-2003-theory/ch14-bayesianism, godfreysmith-2003-theory/ch15-empiricism]
 raw_ids: [scientific realism vs. constructive empiricism]
-canon_spine: analytic-philosophy
+canon_spine: [analytic-philosophy]
 generated_by: build_kg.py
 ---
 
@@ -28,5 +30,5 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Osiander's instrumentalism vs. Galileo's literal Copernicanism ↔ scientific realism vs. constructive empiricism — both ask whether theories aim at truth about unobservables or only prediction. — from [[godfreysmith-2003-theory/ch01-introduction]] (analytic-philosophy → unspecified)
-- [structural-analogy] "Evolution toward truth" being dropped ↔ scientific realism vs. constructive empiricism: whether science aims at truth about unobservables. — from [[kuhn-1962-structure/ch13-progress]] (analytic-philosophy → other)
-- [structural-analogy] Posits and underdetermination ↔ scientific realism vs. constructive empiricism: entities accepted for simplifying theory. — from [[quine-1951-dogmas/main]] (analytic-philosophy → other)
+- [structural-analogy] "Evolution toward truth" being dropped ↔ scientific realism vs. constructive empiricism: whether science aims at truth about unobservables. — from [[kuhn-1962-structure/ch13-progress]] (analytic-philosophy → analytic-philosophy)
+- [structural-analogy] Posits and underdetermination ↔ scientific realism vs. constructive empiricism: entities accepted for simplifying theory. — from [[quine-1951-dogmas/main]] (analytic-philosophy → analytic-philosophy)

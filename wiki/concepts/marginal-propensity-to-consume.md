@@ -2,7 +2,9 @@
 id: marginal-propensity-to-consume
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [keynes-1936-general/ch10-marginal, thaler-2015-misbehaving/ch11-willpower]

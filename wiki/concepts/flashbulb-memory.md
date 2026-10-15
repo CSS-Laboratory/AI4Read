@@ -2,7 +2,9 @@
 id: flashbulb-memory
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [shiller-2019-narrative/ch07-causality, shiller-2019-narrative/ch16-stock]

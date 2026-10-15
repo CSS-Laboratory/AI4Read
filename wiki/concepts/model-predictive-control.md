@@ -2,12 +2,14 @@
 id: model-predictive-control
 type: concept
 fields: [control-theory, bayesian]
+fields_strong: [control-theory, bayesian]
 n_sources: 13
+n_works: 4
 tiers: [reference, core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch15-architecture-p1, astrom-2021-feedbacksystems/ch15-architecture-p2, bertsekas-2026-rlcourse/ch01-exact-p1, bertsekas-2026-rlcourse/ch01-exact-p2, bertsekas-2026-rlcourse/ch01-exact-p5, bertsekas-2026-rlcourse/ch01-exact-p6, bertsekas-2026-rlcourse/ch02-approximation-p1, bertsekas-2026-rlcourse/ch02-approximation-p2, bertsekas-2026-rlcourse/ch02-approximation-p4, bertsekas-2026-rlcourse/ch02-approximation-p5, bertsekas-2026-rlcourse/ch02-approximation-p7, murphy-2023-pml2/ch35-reinforcement, recht-2019-tour/main]
 raw_ids: [model predictive control]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 
@@ -36,7 +38,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1164): plan $H$ steps with a model, act once, replan [new]
+- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1164): plan $H$ steps with a model, act once, replan [new; work fields: bayesian, control-theory]
 
 ## Candidate bridges
 

@@ -2,7 +2,9 @@
 id: column-row-factorization
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch03-linear-p2, strang-2023-introduction/app1-ranks]

@@ -2,7 +2,9 @@
 id: methodological-solipsism
 type: concept
 fields: [analytic-philosophy, theory-of-mind]
+fields_strong: [analytic-philosophy, theory-of-mind]
 n_sources: 2
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [dennett-1987-intentional-stance/ch05-beyond-p1, putnam-1975-meaning/main]

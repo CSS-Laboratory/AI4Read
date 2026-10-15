@@ -2,7 +2,9 @@
 id: confirmation-bias
 type: concept
 fields: [communication-theory, decision-game-theory, economics-finance]
+fields_strong: [communication-theory, decision-game-theory, economics-finance]
 n_sources: 3
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [kahneman-2011-thinking/ch07-machine, lazer-2018-fakenews/main, thaler-2015-misbehaving/ch18-anomalies]
@@ -31,4 +33,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] ELIZA effect and confirmation bias ↔ human judgment: observers read competence into fluent output. — from [[shapira-2024-clever-hans/main]] (theory-of-mind → other)
+- [structural-analogy] ELIZA effect and confirmation bias ↔ human judgment: observers read competence into fluent output. — from [[shapira-2024-clever-hans/main]] (theory-of-mind → other:human-judgment)

@@ -2,11 +2,13 @@
 id: sure-thing-principle
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [pearl-2018-bookofwhy/ch06-paradoxes]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 

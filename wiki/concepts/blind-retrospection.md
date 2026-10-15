@@ -2,7 +2,9 @@
 id: blind-retrospection
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [achen-2016-realists/ch04-rational, achen-2016-realists/ch05-blind, achen-2016-realists/ch11-groups]

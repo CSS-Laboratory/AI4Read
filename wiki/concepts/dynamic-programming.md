@@ -2,7 +2,9 @@
 id: dynamic-programming
 type: concept
 fields: [control-theory, bayesian]
+fields_strong: [control-theory, bayesian]
 n_sources: 3
+n_works: 3
 tiers: [core, deep, reference]
 grounding: digests
 sources: [liberzon-2012-calculus/ch05-hamilton, murphy-2023-pml2/ch09-message, sutton-2018-rl/ch01-introduction]
@@ -25,7 +27,7 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Backpropagation ↔ principle of optimality / dynamic programming: the author says they are closely related. — from [[astrom-2021-feedbacksystems/ch15-architecture-p2]] (control-theory → control-theory)
-- [metaphor] Ex. 78 (order of activities does not matter) ↔ computer science: reordering subproblems in dynamic programming without changing the optimum. — from [[bellman-1957-dp/ch01-i-p3]] (control-theory → other)
+- [metaphor] Ex. 78 (order of activities does not matter) ↔ computer science: reordering subproblems in dynamic programming without changing the optimum. — from [[bellman-1957-dp/ch01-i-p3]] (control-theory → other:computer-science)
 - [structural-analogy] Principle of optimality (Fig. 4.2) ↔ dynamic programming: the tail of an optimal plan is optimal. — from [[liberzon-2012-calculus/ch04-maximum-p1]] (control-theory → control-theory)
 - [structural-analogy] Switching curve Γ as a state-feedback policy ↔ dynamic programming: optimal policy as a function of state. — from [[liberzon-2012-calculus/ch04-maximum-p2]] (control-theory → control-theory)
 - [structural-analogy] Principle of Optimality / SPE ↔ dynamic programming: the text states the link (p. 165). A plan optimal now stays optimal after any reached history, as in dynamic programming. — from [[osborne-2004-introduction/ch05-extensive]] (decision-game-theory → control-theory)

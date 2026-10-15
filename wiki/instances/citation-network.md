@@ -20,4 +20,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Citation-shift index of revolutions ↔ computational social science: citation-network measures of change in a field — a quantitative proxy for a qualitative shift. — from [[kuhn-1962-structure/front-preface]] (analytic-philosophy → other)
+- [structural-analogy] Citation-shift index of revolutions ↔ computational social science: citation-network measures of change in a field — a quantitative proxy for a qualitative shift. — from [[kuhn-1962-structure/front-preface]] (analytic-philosophy → other:computational-social-science)

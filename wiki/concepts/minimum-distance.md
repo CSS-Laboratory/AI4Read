@@ -1,8 +1,10 @@
 ---
 id: minimum-distance
 type: concept
-fields: [information-theory, linear-algebra]
+fields: [information-theory, bayesian, linear-algebra]
+fields_strong: [information-theory, bayesian, linear-algebra]
 n_sources: 3
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [cover-2006-elements/ch08-channel-p2, mackay-2003-information/ch13-binary, spielman-2025-sagt/ch28-brief]
@@ -16,7 +18,7 @@ generated_by: build_kg.py
 ### information-theory
 
 - [[cover-2006-elements/ch08-channel-p2]] (p. 211): least number of places two codewords differ; equals minimum weight for a linear code [new]
-- [[mackay-2003-information/ch13-binary]] (p. 206): smallest separation between two codewords; a code corrects $\lfloor(d-1)/2\rfloor$ errors [new]
+- [[mackay-2003-information/ch13-binary]] (p. 206): smallest separation between two codewords; a code corrects $\lfloor(d-1)/2\rfloor$ errors [new; work fields: information-theory, bayesian]
 
 ### linear-algebra
 

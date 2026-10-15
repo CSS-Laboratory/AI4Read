@@ -2,7 +2,9 @@
 id: modus-tollens
 type: concept
 fields: [analytic-philosophy]
+fields_strong: [analytic-philosophy]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [magnus-2025-forallx/ch19-additional, popper-1959-logic/ch03-theories]

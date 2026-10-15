@@ -2,7 +2,9 @@
 id: echo-effect
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [axelrod-1984-cooperation/ch02-success, axelrod-1984-cooperation/ch09-robustness]
@@ -20,4 +22,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] The echo effect ↔ arms-race spirals (Richardson's model is cited on p. 28): mutual retaliation raises costs for both. — from [[axelrod-1984-cooperation/ch02-success]] (decision-game-theory → other)
+- [structural-analogy] The echo effect ↔ arms-race spirals (Richardson's model is cited on p. 28): mutual retaliation raises costs for both. — from [[axelrod-1984-cooperation/ch02-success]] (decision-game-theory → other:arms-race-spirals-richardsons)

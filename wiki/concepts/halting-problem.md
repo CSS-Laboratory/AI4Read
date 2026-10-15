@@ -2,7 +2,9 @@
 id: halting-problem
 type: concept
 fields: [complex-systems, information-theory]
+fields_strong: [complex-systems, information-theory]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [cover-2006-elements/ch07-kolmogorov, mitchell-2009-guidedtour/ch04-computation]

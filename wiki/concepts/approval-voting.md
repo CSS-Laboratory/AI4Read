@@ -2,7 +2,9 @@
 id: approval-voting
 type: concept
 fields: [decision-game-theory, political-science]
+fields_strong: [decision-game-theory, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch12-voting, shepsle-2010-analyzing/ch07-voting]

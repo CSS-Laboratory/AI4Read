@@ -2,7 +2,9 @@
 id: exemplar
 type: concept
 fields: [analytic-philosophy, llm]
+fields_strong: [analytic-philosophy, llm]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kuhn-1962-structure/postscript-1969, wei-2022-cot/main-p1]
@@ -31,6 +33,6 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Wordscores' dependence on reference texts ↔ confounding of the measured trait with author style in any measure trained on few exemplars. — from [[grimmer-2022-textasdata/ch16-word]] (political-science → unspecified)
-- [structural-analogy] Family resemblance and modelling on exemplars ↔ machine learning: classifying a new case by similarity to stored examples (nearest neighbour) instead of an explicit rule. — from [[kuhn-1962-structure/ch05-priority]] (analytic-philosophy → other)
+- [structural-analogy] Family resemblance and modelling on exemplars ↔ machine learning: classifying a new case by similarity to stored examples (nearest neighbour) instead of an explicit rule. — from [[kuhn-1962-structure/ch05-priority]] (analytic-philosophy → llm)
 - [structural-analogy] Exemplars teach "seeing as" without explicit criteria ↔ analytic-philosophy: Wittgenstein-style rule-following, where examples fix use and no finite set of criteria does. Both stress learning a practice by cases (the unit itself mentions "family resemblance", p. 189). — from [[kuhn-1962-structure/postscript-1969]] (analytic-philosophy → analytic-philosophy)
-- [structural-analogy] prompt sensitivity across annotators and exemplar order ↔ survey methodology: question-wording and order effects — both are outputs depending on how the instrument is phrased — from [[wei-2022-cot/main-p1]] (llm → other)
+- [structural-analogy] prompt sensitivity across annotators and exemplar order ↔ survey methodology: question-wording and order effects — both are outputs depending on how the instrument is phrased — from [[wei-2022-cot/main-p1]] (llm → other:statistics)

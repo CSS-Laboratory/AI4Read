@@ -2,12 +2,14 @@
 id: representativeness-availability-anchoring
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 12
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/appa-judgment, kahneman-2011-thinking/ch00-introduction, kahneman-2011-thinking/ch08-judgments, kahneman-2011-thinking/ch12-science, kahneman-2011-thinking/ch13-availability, kahneman-2011-thinking/ch14-tom, kahneman-2011-thinking/ch15-linda, kahneman-2011-thinking/ch20-illusion, kahneman-2011-thinking/ch30-rare, kahneman-2011-thinking/ch33-reversals, kahneman-2011-thinking/ch38-thinking, tversky-1974-heuristics/main]
 raw_ids: [representativeness / availability / anchoring]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 

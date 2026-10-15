@@ -2,12 +2,14 @@
 id: linear-independence
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 22
+n_works: 6
 tiers: [core, deep]
 grounding: digests
 sources: [axler-2024-ladr/ch02-finite, axler-2024-ladr/ch03-linear-p1, axler-2024-ladr/ch04-polynomials, axler-2024-ladr/ch05-eigenvalues-p1, axler-2024-ladr/ch09-multilinear-p1, boyd-2018-vmls/ch02-linear, boyd-2018-vmls/ch05-linear, boyd-2018-vmls/ch06-matrices, boyd-2018-vmls/ch11-matrix, boyd-2018-vmls/ch12-least, boyd-2018-vmls/ch13-least, boyd-2018-vmls/ch15-multi, boyd-2018-vmls/ch18-nonlinear, bryan-2006-eigenvector/main, deisenroth-2020-mml/ch02-linear-p1, deisenroth-2020-mml/ch02-linear-p2, spielman-2025-sagt/ch09-strongly, strang-2023-introduction/ch01-vectors, strang-2023-introduction/ch02-solving-p1, strang-2023-introduction/ch03-four-p1, strang-2023-introduction/ch03-four-p2, strang-2023-introduction/ch04-orthogonality-p1]
 raw_ids: [linear independence]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -26,7 +28,7 @@ generated_by: build_kg.py
 - [[axler-2024-ladr/ch04-polynomials]] (p. 124): the list (4.10) is independent because its members have distinct degrees
 - [[axler-2024-ladr/ch05-eigenvalues-p1]] (pp. 136, 144): used to bound the number of eigenvalues and to build the minimal polynomial
 - [[axler-2024-ladr/ch09-multilinear-p1]] (p. 352): the nonzero alternating $n$-linear form detects it when $n=\dim V$
-- [[boyd-2018-vmls/ch02-linear]]: not used in this unit.
+- [[boyd-2018-vmls/ch02-linear]]: not used in this unit. [weak: not really used in this unit]
 - [[boyd-2018-vmls/ch05-linear]] (pp. 89–91): only all-zero coefficients give the zero vector, (5.1); equivalent to unique coefficients [as `linear independence`]
 - [[boyd-2018-vmls/ch06-matrices]] (p. 121): columns of $A$ independent if $Ax=0$ implies $x=0$ [as `linear independence`]
 - [[boyd-2018-vmls/ch11-matrix]] (pp. 200–201): here linked to inverses: independent columns ⟺ left-invertible, independent rows ⟺ right-invertible [as `linear independence`]
@@ -46,5 +48,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Direct sum (unique decomposition) ↔ linear independence (canon link; not stated in this unit): both say that "nothing is redundant", via uniqueness of the representation of $0$. — from [[axler-2024-ladr/ch01-vector]] (linear-algebra → other)
-- [metaphor] linear independence ("no vector is redundant") ↔ statistics/data: redundant, collinear features — an informal way to think about dependent lists. — from [[axler-2024-ladr/ch02-finite]] (linear-algebra → other)
+- [structural-analogy] Direct sum (unique decomposition) ↔ linear independence (canon link; not stated in this unit): both say that "nothing is redundant", via uniqueness of the representation of $0$. — from [[axler-2024-ladr/ch01-vector]] (linear-algebra → linear-algebra)
+- [metaphor] linear independence ("no vector is redundant") ↔ statistics/data: redundant, collinear features — an informal way to think about dependent lists. — from [[axler-2024-ladr/ch02-finite]] (linear-algebra → other:statistics)

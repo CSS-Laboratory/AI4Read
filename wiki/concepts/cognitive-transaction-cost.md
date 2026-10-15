@@ -2,7 +2,9 @@
 id: cognitive-transaction-cost
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lupia-1998-dilemma/app-ch02, lupia-1998-dilemma/ch02-people]

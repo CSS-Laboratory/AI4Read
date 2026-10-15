@@ -2,11 +2,13 @@
 id: superposition
 type: concept
 fields: [linear-algebra, llm]
+fields_strong: [linear-algebra, llm]
 n_sources: 4
+n_works: 2
 tiers: [core, deep]
 grounding: digests
 sources: [boyd-2018-vmls/ch02-linear, boyd-2018-vmls/ch08-linear, elhage-2022-superposition/main-p1, elhage-2022-superposition/main-p2]
-canon_spine: llm
+canon_spine: [llm]
 generated_by: build_kg.py
 ---
 

@@ -2,7 +2,9 @@
 id: average-causal-effect
 type: concept
 fields: [bayesian, political-science]
+fields_strong: [bayesian, political-science]
 n_sources: 4
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [grimmer-2022-textasdata/ch24-causal, hernan-2020-whatif/ch01-definition, holland-1986-statistics/main, pearl-2016-primer/ch03-effects]

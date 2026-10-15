@@ -1,8 +1,10 @@
 ---
 id: associative-memory
 type: concept
-fields: [decision-game-theory, information-theory]
+fields: [bayesian, decision-game-theory, information-theory, llm]
+fields_strong: [bayesian, decision-game-theory, information-theory, llm]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch04-associative, mackay-2003-information/ch42-hopfield]
@@ -19,7 +21,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch42-hopfield]] (p. 505, 507): content-addressable memory that does pattern completion and error correction [new]
+- [[mackay-2003-information/ch42-hopfield]] (p. 505, 507): content-addressable memory that does pattern completion and error correction [new; work fields: information-theory, bayesian, llm]
 
 ## Candidate bridges
 

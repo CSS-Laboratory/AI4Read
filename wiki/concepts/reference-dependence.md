@@ -2,12 +2,14 @@
 id: reference-dependence
 type: concept
 fields: [decision-game-theory, economics-finance]
+fields_strong: [decision-game-theory, economics-finance]
 n_sources: 10
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [kahneman-1979-prospect/main, kahneman-2011-thinking/appb-choices, kahneman-2011-thinking/ch25-bernoulli, kahneman-2011-thinking/ch26-prospect, kahneman-2011-thinking/ch27-endowment, kahneman-2011-thinking/ch28-bad, kahneman-2011-thinking/ch29-fourfold, kahneman-2011-thinking/ch34-frames, kahneman-2011-thinking/ch38-thinking, thaler-2015-misbehaving/ch04-value]
 raw_ids: [reference dependence]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 
@@ -21,7 +23,7 @@ generated_by: build_kg.py
 
 ### decision-game-theory
 
-- [[kahneman-1979-prospect/main]] (pp. 274, 286): outcomes coded as gains or losses against a reference point, usually the status quo, but possibly an expectation or aspiration level [as `reference dependence`]
+- [[kahneman-1979-prospect/main]] (pp. 274, 286): outcomes coded as gains or losses against a reference point, usually the status quo, but possibly an expectation or aspiration level [as `reference dependence`; work fields: decision-game-theory, economics-finance]
 - [[kahneman-2011-thinking/appb-choices]] (pdf 433): value attaches to changes from a reference point, not to total wealth [as `reference dependence`]
 - [[kahneman-2011-thinking/ch25-bernoulli]] (pdf 266): outcomes are judged as changes from a reference point, not as final wealth [as `reference dependence`]
 - [[kahneman-2011-thinking/ch26-prospect]] (pdf 272–274): outcomes are coded as gains or losses from a reference point (status quo, expectation or perhaps entitlement), not as final wealth
@@ -37,5 +39,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Time-neglecting remembering self and prospect-theory "transition" coding ↔ reference dependence: both represent a state by a thin slice of time. — from [[kahneman-2011-thinking/ch38-thinking]] (decision-game-theory → other)
-- [metaphor] Aspiration level that moves with experience ↔ reference dependence: a standard set by recent outcomes. — from [[simon-1955-behavioral/main]] (decision-game-theory → other)
+- [structural-analogy] Time-neglecting remembering self and prospect-theory "transition" coding ↔ reference dependence: both represent a state by a thin slice of time. — from [[kahneman-2011-thinking/ch38-thinking]] (decision-game-theory → decision-game-theory)
+- [metaphor] Aspiration level that moves with experience ↔ reference dependence: a standard set by recent outcomes. — from [[simon-1955-behavioral/main]] (decision-game-theory → decision-game-theory)

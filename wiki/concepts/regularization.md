@@ -1,63 +1,63 @@
 ---
 id: regularization
 type: concept
+curated: 2026-10-15
 fields: [linear-algebra, political-science, bayesian, information-theory, llm]
-n_sources: 11
-tiers: [core, reference]
+level: UG
 grounding: digests
-sources: [boyd-2018-vmls/ch15-multi, boyd-2018-vmls/ch17-constrained, deisenroth-2020-mml/ch08-when, deisenroth-2020-mml/ch09-linear, deisenroth-2020-mml/ch12-classification, gelman-2013-bda3/ch14-introduction, grimmer-2022-textasdata/ch06-multinomial, grimmer-2022-textasdata/ch11-discriminating, grimmer-2022-textasdata/ch19-classifying, mackay-2003-information/ch46-deconvolution, prince-2023-udl/ch08-measuring]
-generated_by: build_kg.py
+aliases: []
+sources: [gelman-2013-bda3/ch14-introduction, gelman-2013-bda3/ch02-single, gelman-2013-bda3/ch16-generalized, mackay-2003-information/ch46-deconvolution, boyd-2018-vmls/ch15-multi, deisenroth-2020-mml/ch08-when, deisenroth-2020-mml/ch09-linear, deisenroth-2020-mml/ch12-classification, prince-2023-udl/ch08-measuring, grimmer-2022-textasdata/ch06-multinomial, grimmer-2022-textasdata/ch11-discriminating, grimmer-2022-textasdata/ch19-classifying, murphy-2023-pml2/ch03-statistics-p2, murphy-2023-pml2/ch03-statistics-p3, jaynes-2003-probability/ch17-principles-p1, vonluxburg-2007-spectralclustering/main]
+links: [overfitting, l2-regularization, implicit-regularization, map-estimate, prior-distribution, partial-pooling, bias-variance-trade-off]
+generated_version: wiki/kg/hub-sources/regularization.md
 ---
 
-# regularization
+# Regularization
 
-## Definitions in the sources
+**Gist.** Regularization adds information that is not in the data (a penalty term or a prior) so that estimates become more stable and less likely to overfit.
 
-### linear-algebra
+11 digests in five fields use the id. The specific squared-size penalty has its own id, [[l2-regularization]] (merged from `tikhonov-regularization`, `ridge-regression`, `weight-decay`).
 
-- [[boyd-2018-vmls/ch15-multi]] (p. 314): secondary terms $\lambda_iJ_i$ added to the primary objective, encoding prior knowledge [new]
-- [[boyd-2018-vmls/ch17-constrained]] (p. 373): here a penalty added to the objective: on risky-asset weights or on turnover $\kappa\|w^{\rm curr}-w\|^2$ (p. 364–365). The estimation term $\lambda J_{\rm proc}$ is a similar penalty, but these pages do not use the word for it [new]
-- [[deisenroth-2020-mml/ch08-when]] (p. 263): penalty (here λ‖θ‖²) trading data fit against parameter size [new]
-- [[deisenroth-2020-mml/ch09-linear]] (pp. 302–303): adding $\lambda\|\theta\|^2$ to the loss. For the Gaussian prior it equals the MAP estimate with $\lambda=\sigma^2/b^2$ [new]
-- [[deisenroth-2020-mml/ch12-classification]] (p. 380, 382): here the margin term $\tfrac12\|\boldsymbol w\|^2$ acts as an $\ell_2$ regularizer; large $C$ means weak regularization [new]
+## How each field uses it
 
-### political-science
+### Linear algebra (data fitting)
+- “secondary terms $\lambda_iJ_i$ added to the primary objective, encoding prior knowledge” — [[boyd-2018-vmls/ch15-multi]] (p. 314)
+- “penalty (here λ‖θ‖²) trading data fit against parameter size” — [[deisenroth-2020-mml/ch08-when]] (p. 263)
+- “adding $\lambda\|\theta\|^2$ to the loss. For the Gaussian prior it equals the MAP estimate with $\lambda=\sigma^2/b^2$” — [[deisenroth-2020-mml/ch09-linear]] (pp. 302–303)
+- “here the margin term $\tfrac12\|\boldsymbol w\|^2$ acts as an $\ell_2$ regularizer; large $C$ means weak regularization” — [[deisenroth-2020-mml/ch12-classification]] (p. 380, 382)
 
-- [[grimmer-2022-textasdata/ch06-multinomial]] (p. 121): non-data information drawing estimates toward a value to curb overfitting [new]
-- [[grimmer-2022-textasdata/ch11-discriminating]] (p. 193): shrinking estimates toward a common value so rare words are not over-read [new]
-- [[grimmer-2022-textasdata/ch19-classifying]] (pp. 318, 326): a penalty $R(\mu,\lambda)$ that limits complexity to make fitting tractable and prevent overfitting (pp. 318, 326) (new)
+### Political science (text as data)
+- “non-data information drawing estimates toward a value to curb overfitting” — [[grimmer-2022-textasdata/ch06-multinomial]] (p. 121)
+- “shrinking estimates toward a common value so rare words are not over-read” — [[grimmer-2022-textasdata/ch11-discriminating]] (p. 193)
+- “a penalty $R(\mu,\lambda)$ that limits complexity to make fitting tractable and prevent overfitting (pp. 318, 326)” — [[grimmer-2022-textasdata/ch19-classifying]]
 
-### bayesian
+### Bayesian theory & modeling
+- “procedures giving more stable estimates; here informative priors” — [[gelman-2013-bda3/ch14-introduction]] (p. 368)
 
-- [[gelman-2013-bda3/ch14-introduction]] (p. 368): procedures giving more stable estimates; here informative priors
+### Information theory (MacKay)
+- “the $\frac{\sigma_\nu^2}{\sigma_f^2}\mathbf C$ term that stabilises the ill-conditioned inverse” — [[mackay-2003-information/ch46-deconvolution]] (p. 550)
 
-### information-theory
+### Large language models / ML
+- “any factor biasing a solution toward a subset of solutions with similar training loss; possibly implicit” — [[prince-2023-udl/ch08-measuring]] (p. 132)
 
-- [[mackay-2003-information/ch46-deconvolution]] (p. 550): the $\frac{\sigma_\nu^2}{\sigma_f^2}\mathbf C$ term that stabilises the ill-conditioned inverse [new]
+## Bridges between fields
 
-### llm
+- **structural-analogy** (Bayesian → linear algebra): “Posterior mean as convex combination of prior mean and MLE ↔ ridge regression: $\tau^2$ vs $\sigma^2$ plays the role of the $\ell_2$ penalty (p. 101) — same shrinkage mechanism in a different guise.” — [[murphy-2023-pml2/ch03-statistics-p2]]. Justification: a Gaussian prior and an $\ell_2$ penalty shrink in the same way (Deisenroth ch09 above states the exact equivalence).
+- **structural-analogy** (Bayesian → ML): “Lasso's exact zeros from prior peak plus mode summary ↔ sparsity-inducing penalties in machine learning: penalty = −log prior.” — [[gelman-2013-bda3/ch14-introduction]]. Justification: a penalty is the negative log of a prior.
+- **structural-analogy** (Bayesian → ML): “Conjugate pseudo-observations (prior = α−1 successes, β−1 failures) ↔ regularization: a prior acts like extra data pulling estimates toward a default.” — [[gelman-2013-bda3/ch02-single]]. Justification: the prior's effect equals adding imaginary data.
+- **structural-analogy** (Bayesian → ML): “weak proper priors preventing numerical crashes ↔ machine learning: regularization.” — [[jaynes-2003-probability/ch17-principles-p1]]. Justification: the same stabilising role.
+- **structural-analogy** (Bayesian → information theory): “BIC/MDL penalty $\tfrac{D_m}2\log N$ ↔ information theory: two-part code length” — [[murphy-2023-pml2/ch03-statistics-p3]]. Justification: a complexity penalty read as the cost of describing the model.
+- **structural-analogy** (linear algebra → complex systems): “Smoothness regularizer $f'Lf$ ↔ network science: signals smooth on a network (neighbours have similar values).” — [[vonluxburg-2007-spectralclustering/main]]. Justification: the graph-Laplacian penalty prefers values that agree across edges.
 
-- [[prince-2023-udl/ch08-measuring]] (p. 132): any factor biasing a solution toward a subset of solutions with similar training loss; possibly implicit [new]
+## Where definitions disagree
 
-## Instances that use it
+- **Penalty or prior?** The linear-algebra and text-as-data digests define it as a penalty term (Boyd, Deisenroth ch08, Grimmer ch19). Gelman defines it as informative priors (quote above). Deisenroth ch09 shows the two coincide for a Gaussian prior (quote above).
+- **Why regularize?** Boyd: to encode prior knowledge; Grimmer ch19: “to make fitting tractable and prevent overfitting” — [[grimmer-2022-textasdata/ch19-classifying]]; MacKay ch46: to stabilise an ill-conditioned inverse (quote above).
+- **Explicit vs. implicit.** Prince's definition is broad: “any factor biasing a solution toward a subset of solutions with similar training loss; possibly implicit” — [[prince-2023-udl/ch08-measuring]], which includes effects of the training procedure, not only added terms. See [[implicit-regularization]].
 
-- [[tomography-reconstruction]] — line-integral model $A_{ij}$, $n=10000$, $m=4000$, Laplacian regularization — from [[boyd-2018-vmls/ch15-multi]]
-- [[train-test-regularization-simulation]] — flat vs Normal(0,1/0.5/0.2) priors at N = 20 and 100 — from [[mcelreath-2020-rethinking/ch06-overfitting-p2]]
+## Digests
 
-## Candidate bridges
-
-- [structural-analogy] $\lambda J_{\rm proc}$, $\rho J_{\rm input}$ and the weighted portfolio penalty ↔ regularization in ch. 13–14 model fitting: each trades fit against a "size" penalty (p. 364). — from [[boyd-2018-vmls/ch17-constrained]] (linear-algebra → other)
-- [structural-analogy] penalty method with growing $\mu$ ↔ regularization/bi-objective least squares: the weighted trade-off $\|f\|^2+\mu\|g\|^2$ (ch. 16 bi-objective view, mentioned on p. 421) — from [[boyd-2018-vmls/ch19-constrained]] (linear-algebra → other)
-- [structural-analogy] Conjugate pseudo-observations (prior = α−1 successes, β−1 failures) ↔ regularization: a prior acts like extra data pulling estimates toward a default. — from [[gelman-2013-bda3/ch02-single]] (bayesian → other)
-- [metaphor] Weakly informative prior as "regularization" ↔ penalized estimation: shared intent of keeping estimates in a sensible range. — from [[gelman-2013-bda3/ch02-single]] (bayesian → other)
-- [structural-analogy] Cauchy(0, 2.5) default prior ↔ regularization in machine learning: shrinking coefficients away from extremes — from [[gelman-2013-bda3/ch16-generalized]] (bayesian → other)
-- [structural-analogy] prior as regularization ↔ penalties in ridge, lasso, splines: all trade sensitivity for stability, as the authors say (p. 13) — from [[gelman-2013-philosophy/main]] (bayesian → other)
-- [structural-analogy] Shrinkage of rare-word scores ↔ statistics: Lasso-type regularization — the chapter links MNIR's Gamma-Laplace prior to Lasso. — from [[grimmer-2022-textasdata/ch11-discriminating]] (political-science → other)
-- [structural-analogy] weak proper priors preventing numerical crashes ↔ machine learning: regularization. — from [[jaynes-2003-probability/ch17-principles-p1]] (information-theory → other)
-- [structural-analogy] Entropic OT regularization with $D_{\mathrm{KL}}(\pi\|\mu\otimes\nu)$ ↔ bayesian: KL divergence as a regularizer or objective in variational inference — both use KL to turn a hard problem into a smooth one. — from [[murphy-2023-pml2/ch06-optimization-p3]] (bayesian → bayesian)
-- [same-math] Spike-and-slab MAP ↔ $\ell_0$ regularization: log prior $=-\lambda\|w\|_0$ + const (15.87). — from [[murphy-2023-pml2/ch15-generalized]] (bayesian → other)
-- [metaphor] Catastrophic forgetting vs regularization to past posterior ↔ Sequential updating: yesterday's posterior as today's prior (the author says online Bayesian inference is of this type, p. 763). — from [[murphy-2023-pml2/ch19-beyond]] (bayesian → other)
-- [structural-analogy] λ controlling graph sparsity in graphical lasso ↔ regularization strength in shrinkage/penalized estimation — a single parameter trades fit against simplicity. — from [[murphy-2023-pml2/ch30-graph]] (bayesian → unspecified)
-- [structural-analogy] Optional $\ell_1$ penalty $\lambda\|R\|_1$ with a sparsity-driven phase transition ↔ statistics: sparsity-promoting regularization; the penalty is used here to pick a simple solution from a set of equally consistent ones. — from [[ng-2000-irl/main]] (control-theory → other)
-- [metaphor] Pretraining gradient mix during PPO ↔ regularization toward a prior distribution; here an extra loss term, not a Bayesian prior. — from [[ouyang-2022-instructgpt/main-p2]] (llm → unspecified)
-- [structural-analogy] KL coefficient β ↔ regularization: a strength knob trading validation reward against staying near a reference. — from [[ouyang-2022-instructgpt/main-p3]] (llm → other)
+Linear algebra: [[boyd-2018-vmls/ch15-multi]], [[deisenroth-2020-mml/ch08-when]], [[deisenroth-2020-mml/ch09-linear]], [[deisenroth-2020-mml/ch12-classification]], [[vonluxburg-2007-spectralclustering/main]] ·
+Political science: [[grimmer-2022-textasdata/ch06-multinomial]], [[grimmer-2022-textasdata/ch11-discriminating]], [[grimmer-2022-textasdata/ch19-classifying]] ·
+Bayesian: [[gelman-2013-bda3/ch14-introduction]], [[gelman-2013-bda3/ch02-single]], [[gelman-2013-bda3/ch16-generalized]], [[murphy-2023-pml2/ch03-statistics-p2]], [[murphy-2023-pml2/ch03-statistics-p3]], [[jaynes-2003-probability/ch17-principles-p1]] ·
+Information theory: [[mackay-2003-information/ch46-deconvolution]] ·
+LLMs / ML: [[prince-2023-udl/ch08-measuring]]

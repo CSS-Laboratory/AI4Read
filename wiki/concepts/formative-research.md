@@ -2,7 +2,9 @@
 id: formative-research
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [rogers-2003-diffusion/ch02-history-p3, rogers-2003-diffusion/ch09-change-p1, rogers-2003-diffusion/ch11-consequences-p2]

@@ -2,7 +2,9 @@
 id: water-filling
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 3
+n_works: 2
 tiers: [reference, core]
 grounding: digests
 sources: [cover-2006-elements/ch10-gaussian, polyanskiy-2025-information/ch07-tensorization, polyanskiy-2025-information/ch22-channels]
@@ -28,6 +30,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Water-filling of power over noise levels ↔ rate–distortion: reverse water-filling — both allocate a budget over independent Gaussian components with a common level. — from [[cover-2006-elements/ch10-gaussian]] (information-theory → other)
+- [structural-analogy] Water-filling of power over noise levels ↔ rate–distortion: reverse water-filling — both allocate a budget over independent Gaussian components with a common level. — from [[cover-2006-elements/ch10-gaussian]] (information-theory → information-theory)
 - [structural-analogy] Reverse water-filling for parallel Gaussians ↔ information-theory: water-filling power allocation for parallel Gaussian channels — only structurally similar here; the text does not state the channel version, so confirm before using. — from [[cover-2006-elements/ch13-rate]] (information-theory → information-theory)
 - [structural-analogy] Water-filling over $\sigma_j^2$ ↔ reverse water-filling in rate–distortion for parallel Gaussians (not in this unit; to be checked by the Knowledge Manager). — from [[polyanskiy-2025-information/ch22-channels]] (information-theory → unspecified)

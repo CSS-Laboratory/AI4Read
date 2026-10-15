@@ -2,11 +2,13 @@
 id: partisan-perceptual-bias
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 6
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [achen-2016-realists/ch01-democratic, achen-2016-realists/ch04-rational, achen-2016-realists/ch10-it, iyengar-2012-affect/main, zaller-1992-massopinion/ch10-information-p2, zaller-1992-massopinion/ch11-evaluating-p2]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 

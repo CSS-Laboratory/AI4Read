@@ -2,12 +2,14 @@
 id: bayesian-game-types
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 3
+n_works: 3
 tiers: [core, deep]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch07-making, myerson-2008-mechanism/main, osborne-2004-introduction/ch09-bayesian]
 raw_ids: [Bayesian game / types]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 

@@ -2,7 +2,9 @@
 id: strong-converse
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [reference]
 grounding: digests
 sources: [polyanskiy-2025-information/ch21-channel, polyanskiy-2025-information/ch24-strong]
@@ -26,6 +28,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Weak vs strong converse (mean of LLR vs full CDF) ↔ channel coding: the same weak/strong converse pattern (p. 283) — from [[polyanskiy-2025-information/ch16-neyman]] (information-theory → other)
-- [same-math] Strong converse proof via $\beta_{1-\epsilon}$ ↔ hypothesis testing: Stein's lemma and Neyman–Pearson — the same $\beta$ exponent gives the code-size bound. — from [[polyanskiy-2025-information/ch24-strong]] (information-theory → other)
-- [structural-analogy] Rényi divergence upgrading weak to strong converse ↔ large-deviation/Rényi methods: the exponent for $R>C$ uses order $1/(1+\rho)$. — from [[polyanskiy-2025-information/ch24-strong]] (information-theory → other)
+- [structural-analogy] Weak vs strong converse (mean of LLR vs full CDF) ↔ channel coding: the same weak/strong converse pattern (p. 283) — from [[polyanskiy-2025-information/ch16-neyman]] (information-theory → information-theory)
+- [same-math] Strong converse proof via $\beta_{1-\epsilon}$ ↔ hypothesis testing: Stein's lemma and Neyman–Pearson — the same $\beta$ exponent gives the code-size bound. — from [[polyanskiy-2025-information/ch24-strong]] (information-theory → other:statistics)
+- [structural-analogy] Rényi divergence upgrading weak to strong converse ↔ large-deviation/Rényi methods: the exponent for $R>C$ uses order $1/(1+\rho)$. — from [[polyanskiy-2025-information/ch24-strong]] (information-theory → other:large-deviation-renyi-methods)

@@ -2,7 +2,9 @@
 id: nudge
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [thaler-2015-misbehaving/ch27-law, thaler-2015-misbehaving/ch32-going, thaler-2015-misbehaving/ch33-nudging]

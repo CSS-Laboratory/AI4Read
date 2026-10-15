@@ -2,7 +2,9 @@
 id: neutral-stability
 type: concept
 fields: [complex-systems, decision-game-theory]
+fields_strong: [complex-systems, decision-game-theory]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [osborne-2004-introduction/ch13-evolutionary, strogatz-2024-nonlinear/ch08-bifurcations-p3]

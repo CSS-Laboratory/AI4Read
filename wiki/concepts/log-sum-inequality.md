@@ -2,7 +2,9 @@
 id: log-sum-inequality
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [cover-2006-elements/ch02-entropy, cover-2006-elements/ch16-inequalities]

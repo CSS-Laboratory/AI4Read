@@ -2,7 +2,9 @@
 id: stationary-process
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 3
+n_works: 2
 tiers: [reference, core]
 grounding: digests
 sources: [cover-2006-elements/ch04-entropy, polyanskiy-2025-information/ch07-tensorization, polyanskiy-2025-information/ch14-entropy]
@@ -25,4 +27,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Cesàro-mean proof of $W^*_\infty$ ↔ entropy rate of stationary processes: parallel limit structure, since the chain rule for $W$ is formally that of $H$ (p. 470). — from [[cover-2006-elements/ch15-information]] (information-theory → other)
+- [structural-analogy] Cesàro-mean proof of $W^*_\infty$ ↔ entropy rate of stationary processes: parallel limit structure, since the chain rule for $W$ is formally that of $H$ (p. 470). — from [[cover-2006-elements/ch15-information]] (information-theory → information-theory)

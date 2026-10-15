@@ -2,11 +2,13 @@
 id: policy
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 46
+n_works: 7
 tiers: [core, reference, deep]
 grounding: digests
 sources: [bellman-1957-dp/ch01-i-p1, bellman-1957-dp/ch01-i-p2, bellman-1957-dp/ch01-i-p3, bellman-1957-dp/ch02-ii, bellman-1957-dp/ch03-iii, bellman-1957-dp/ch04-iv, bellman-1957-dp/ch05-v, bellman-1957-dp/ch08-viii, bellman-1957-dp/ch09-ix, bellman-1957-dp/ch10-x, bellman-1957-dp/ch11-xi, bertsekas-2026-rlcourse/ch01-exact-p1, bertsekas-2026-rlcourse/ch01-exact-p2, bertsekas-2026-rlcourse/ch01-exact-p3, bertsekas-2026-rlcourse/ch01-exact-p4, bertsekas-2026-rlcourse/ch01-exact-p5, bertsekas-2026-rlcourse/ch02-approximation-p1, bertsekas-2026-rlcourse/ch02-approximation-p3, bertsekas-2026-rlcourse/ch02-approximation-p4, bertsekas-2026-rlcourse/ch02-approximation-p5, bertsekas-2026-rlcourse/ch02-approximation-p7, bertsekas-2026-rlcourse/ch03-learning-p1, bertsekas-2026-rlcourse/ch03-learning-p2, bertsekas-2026-rlcourse/ch03-learning-p3, bertsekas-2026-rlcourse/ch03-learning-p4, bertsekas-2026-rlcourse/ch03-learning-p5, liberzon-2012-calculus/ch05-hamilton, ng-2000-irl/main, recht-2019-tour/main, sutton-2018-rl/ch01-introduction, sutton-2018-rl/ch02-multi, sutton-2018-rl/ch03-finite, sutton-2018-rl/ch04-dynamic, sutton-2018-rl/ch05-monte, sutton-2018-rl/ch06-temporal, sutton-2018-rl/ch07-n, sutton-2018-rl/ch08-planning, sutton-2018-rl/ch10-policy, sutton-2018-rl/ch12-eligibility, sutton-2018-rl/ch13-policy, sutton-2018-rl/ch14-psychology, sutton-2018-rl/ch15-neuroscience-p1, sutton-2018-rl/ch15-neuroscience-p2, sutton-2018-rl/ch16-applications, sutton-2018-rl/ch17-frontiers, todorov-2002-ofc/main]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 
@@ -123,7 +125,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] "Antibiotics for every illness" (p. 87) ↔ policy dose-response: an all-purpose remedy applied without checking the diagnosis. — from [[achen-2016-realists/ch03-tumbling]] (political-science → other)
+- [metaphor] "Antibiotics for every illness" (p. 87) ↔ policy dose-response: an all-purpose remedy applied without checking the diagnosis. — from [[achen-2016-realists/ch03-tumbling]] (political-science → other:policy-dose-response)
 - [structural-analogy] Minimal-group favouritism ↔ political-science: partisan identity that persists without policy agreement — both show attachment preceding reasons. — from [[achen-2016-realists/ch08-very]] (political-science → political-science)
 - [metaphor] PID rules explaining monetary policy ↔ economics: noted as an "unconventional application" (p. 11-24). — from [[astrom-2021-feedbacksystems/ch11-pid]] (control-theory → economics-finance)
 - [structural-analogy] Approximation in policy space ↔ policy improvement in reinforcement learning: improve a policy by one-step maximisation against its own return function. — from [[bellman-1957-dp/ch01-i-p1]] (control-theory → control-theory)
@@ -143,34 +145,34 @@ generated_by: build_kg.py
 - [structural-analogy] Leader with nominal follower policies ↔ economics: Stackelberg leaders optimize against a fixed reaction rule of followers (p. 333–334). — from [[bertsekas-2026-rlcourse/ch02-approximation-p7]] (control-theory → economics-finance)
 - [structural-analogy] policy chattering in approximate PI ↔ control theory: limit cycles in a loop with nonlinearity (p. 387) — from [[bertsekas-2026-rlcourse/ch03-learning-p2]] (control-theory → control-theory)
 - [structural-analogy] trust-region/proximal steps ↔ control: small-step policy updates that avoid divergence from large changes. — from [[bertsekas-2026-rlcourse/ch03-learning-p4]] (control-theory → control-theory)
-- [structural-analogy] Biased aggregation ($J^*=\hat J+V$) ↔ cost shaping with a potential: the stage-cost change telescopes along trajectories and keeps optimal policies (the text names "cost shaping" in a footnote) — from [[bertsekas-2026-rlcourse/ch03-learning-p5]] (control-theory → other)
+- [structural-analogy] Biased aggregation ($J^*=\hat J+V$) ↔ cost shaping with a potential: the stage-cost change telescopes along trajectories and keeps optimal policies (the text names "cost shaping" in a footnote) — from [[bertsekas-2026-rlcourse/ch03-learning-p5]] (control-theory → other:cost-shaping-with-a)
 - [structural-analogy] Weights $w_i$ over considerations ↔ spatial model of voting: voter salience on policy dimensions (p. 105 cites Enelow & Hinich) — both let importance vary across dimensions. — from [[chong-2007-framing/main]] (political-science → political-science)
 - [structural-analogy] Capitalists' "veto" through investment (Block) ↔ veto player: an actor whose cooperation limits policy change, though here the veto works by market behaviour, not formal vote. — from [[clark-2017-principles/ch09-democracy]] (political-science → political-science)
 - [structural-analogy] Office vs policy seeking with ideal points on a line ↔ spatial model of voting: parties and coalition policies are located in a one-dimensional policy space. — from [[clark-2017-principles/ch12-parliamentary-p1]] (political-science → political-science)
-- [metaphor] Voters facing postelection coalition bargaining ↔ principal–agent problem: voters pick agents without knowing the eventual policy (p. 492). — from [[clark-2017-principles/ch12-parliamentary-p2]] (political-science → other)
+- [metaphor] Voters facing postelection coalition bargaining ↔ principal–agent problem: voters pick agents without knowing the eventual policy (p. 492). — from [[clark-2017-principles/ch12-parliamentary-p2]] (political-science → political-science)
 - [structural-analogy] stability–responsiveness trade-off ↔ institutions/path dependence: past policy constrains present choices. — from [[clark-2017-principles/ch15-institutional-p3]] (political-science → political-science)
 - [structural-analogy] Meltzer-Richard median voter ↔ median voter theorem: the median voter's preferred tax rate wins when they dictate policy (p. 772). — from [[clark-2017-principles/ch16-consequences-p2]] (political-science → political-science)
-- [structural-analogy] Iversen–Soskice credibility problem ↔ commitment problem in the bargaining model of war: parties cannot credibly promise policies after they are in power (p. 781). — from [[clark-2017-principles/ch16-consequences-p2]] (political-science → other)
+- [structural-analogy] Iversen–Soskice credibility problem ↔ commitment problem in the bargaining model of war: parties cannot credibly promise policies after they are in power (p. 781). — from [[clark-2017-principles/ch16-consequences-p2]] (political-science → decision-game-theory)
 - [structural-analogy] Deadlock without an exit in presidential systems ↔ veto-player theory: more veto players, more policy stability; this chapter links that to deadlock (p. 823). — from [[clark-2017-principles/ch16-consequences-p4]] (political-science → political-science)
 - [structural-analogy] Votes-for-policies exchange ↔ economics: firms seeking sales in oligopoly — same structure of rivals offering differentiated products. — from [[downs-1957-democracy/main]] (political-science → economics-finance)
 - [structural-analogy] Ideological dominance assumption ↔ spatial model of voting: observed behaviour is read as a function of position in policy space. — from [[grimmer-2013-textasdata/main]] (political-science → political-science)
 - [same-math] DW-NOMINATE ideal points ↔ spatial model of voting: ideal points in policy space (p. 182) — the chapter states this link directly. — from [[grimmer-2022-textasdata/ch10-principles]] (political-science → political-science)
-- [structural-analogy] Before/after speech comparison ↔ interrupted time series in policy evaluation: the jump at the event is the effect, if nothing else changes then. — from [[grimmer-2022-textasdata/ch25-text]] (political-science → other)
+- [structural-analogy] Before/after speech comparison ↔ interrupted time series in policy evaluation: the jump at the event is the effect, if nothing else changes then. — from [[grimmer-2022-textasdata/ch25-text]] (political-science → other:interrupted-time-series-in)
 - [structural-analogy] Survey "soundings" fed back to government (p. 243) ↔ cybernetic feedback: steering the population toward policy goals. — from [[habermas-1989-publicsphere/ch07-concept]] (communication-theory → control-theory)
 - [structural-analogy] dynamic treatment strategy ↔ reinforcement learning: a policy mapping history to action — the optimal strategy maximizes expected outcome (p. 257). — from [[hernan-2020-whatif/ch19-time]] (bayesian → control-theory)
 - [structural-analogy] Minimal-group in-group favouritism ↔ political-science: party identity producing out-party hostility without policy disagreement — same group-membership logic applied to a natural group. — from [[iyengar-2012-affect/main]] (political-science → political-science)
 - [structural-analogy] One person's belief cannot change policy (Downs) ↔ paradox of voting / rational ignorance: the same logic of negligible individual influence removes pressure toward accuracy. — from [[kahan-2013-motivatedreasoning/main]] (political-science → political-science)
 - [structural-analogy] Risk policy ↔ decision theory of commitment: a rule fixed in advance constrains later in-the-moment choices. — from [[kahneman-2011-thinking/ch31-risk]] (decision-game-theory → decision-game-theory)
-- [structural-analogy] Outside view and risk policy ↔ forecasting: both replace case-specific detail with reference-class statistics. — from [[kahneman-2011-thinking/ch31-risk]] (decision-game-theory → other)
+- [structural-analogy] Outside view and risk policy ↔ forecasting: both replace case-specific detail with reference-class statistics. — from [[kahneman-2011-thinking/ch31-risk]] (decision-game-theory → other:statistics)
 - [structural-analogy] Switching curve Γ as a state-feedback policy ↔ dynamic programming: optimal policy as a function of state. — from [[liberzon-2012-calculus/ch04-maximum-p2]] (control-theory → control-theory)
 - [structural-analogy] backward elimination of discarded paths ↔ discrete-time optimal control: backward recursion for feedback — both build a state-dependent policy — from [[liberzon-2012-calculus/ch05-hamilton]] (control-theory → control-theory)
-- [structural-analogy] Expert-prepared facts before decision ↔ evidence-based policy: the same sequence of evidence before decision. — from [[lippmann-1922-publicopinion/ch25-entering]] (communication-theory → other)
+- [structural-analogy] Expert-prepared facts before decision ↔ evidence-based policy: the same sequence of evidence before decision. — from [[lippmann-1922-publicopinion/ch25-entering]] (communication-theory → other:evidence-based-policy)
 - [structural-analogy] Meta-feedback loops (policies that revise their own rules) ↔ control-theory: adaptive control, where the controller's parameters are tuned from observed performance. Both adjust the rule, not only the action. — from [[meadows-2008-thinking/ch07-living]] (control-theory → control-theory)
 - [structural-analogy] Static policy versus feedback policy (p. 177) ↔ control-theory: open-loop versus closed-loop control. — from [[meadows-2008-thinking/ch07-living]] (control-theory → control-theory)
 - [structural-analogy] doubly robust off-policy estimator ↔ causal inference: DR estimators for treatment effects (p. 1174). — from [[murphy-2023-pml2/ch35-reinforcement]] (bayesian → bayesian)
 - [structural-analogy] importance-sampling off-policy correction ↔ causal inference / covariate shift: reweighting to remove data–target mismatch (p. 1171). — from [[murphy-2023-pml2/ch35-reinforcement]] (bayesian → bayesian)
 - [structural-analogy] empty core in majority voting ↔ social choice: lack of a Condorcet winner in multidimensional policy space. — from [[osborne-2004-introduction/ch08-coalitional]] (decision-game-theory → decision-game-theory)
-- [metaphor] Canada's single uniform coastal policy versus local rules ↔ nested enterprises: a higher level that fits rules to local information — from [[ostrom-1990-commons/ch05-analyzing]] (political-science → other)
-- [structural-analogy] KL-penalised reward ↔ regularised optimisation: the KL term acts as a regulariser toward a reference policy. — from [[ouyang-2022-instructgpt/main-p1]] (llm → other)
+- [metaphor] Canada's single uniform coastal policy versus local rules ↔ nested enterprises: a higher level that fits rules to local information — from [[ostrom-1990-commons/ch05-analyzing]] (political-science → other:nested-enterprises)
+- [structural-analogy] KL-penalised reward ↔ regularised optimisation: the KL term acts as a regulariser toward a reference policy. — from [[ouyang-2022-instructgpt/main-p1]] (llm → other:optimization)
 - [structural-analogy] Policy network (p. 12–13) ↔ llm: RLHF policy optimized for reward — both map a state/context to actions under a reward signal (canon link; not stated in this unit). — from [[prince-2023-udl/ch01-introduction]] (llm → llm)
 - … 23 more bridge lines mention this id (see wiki/kg/bridges.jsonl)

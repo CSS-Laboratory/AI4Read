@@ -2,7 +2,9 @@
 id: gatekeeping-power
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [shepsle-2010-analyzing/ch05-spatial-p2, shepsle-2010-analyzing/ch12-legislatures]

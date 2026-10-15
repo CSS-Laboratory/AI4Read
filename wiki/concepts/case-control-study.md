@@ -2,7 +2,9 @@
 id: case-control-study
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [mcgrayne-2011-theory/ch08-jerome, pearl-2018-bookofwhy/ch05-smoke]

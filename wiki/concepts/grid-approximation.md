@@ -2,7 +2,9 @@
 id: grid-approximation
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 7
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/appc-computation, gelman-2013-bda3/ch02-single, gelman-2013-bda3/ch03-introduction, mcelreath-2020-rethinking/ch02-small, mcelreath-2020-rethinking/ch03-sampling, mcelreath-2020-rethinking/ch04-linear-p1, murphy-2023-pml2/ch07-inference]
@@ -29,4 +31,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Grid approximation ↔ numerical integration: evaluating a function at grid points and normalising by the sum approximates the integral in $\Pr(w)$ (not stated in this unit). — from [[mcelreath-2020-rethinking/ch02-small]] (bayesian → other)
+- [same-math] Grid approximation ↔ numerical integration: evaluating a function at grid points and normalising by the sum approximates the integral in $\Pr(w)$ (not stated in this unit). — from [[mcelreath-2020-rethinking/ch02-small]] (bayesian → other:numerical-integration)

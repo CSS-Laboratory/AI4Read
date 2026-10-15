@@ -2,7 +2,9 @@
 id: bayesian-optimization
 type: concept
 fields: [bayesian, control-theory]
+fields_strong: [bayesian, control-theory]
 n_sources: 2
+n_works: 2
 tiers: [reference]
 grounding: digests
 sources: [bertsekas-2026-rlcourse/ch02-approximation-p6, murphy-2023-pml2/ch06-optimization-p2]

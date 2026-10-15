@@ -7,7 +7,7 @@ tiers: [core]
 grounding: digests
 sources: [mccombs-1972-agendasetting/main]
 canon_instance: [chapel-hill-study-1968]
-canon_match_rule: same-work-tokens
+canon_match_rule: title-key
 generated_by: build_kg.py
 ---
 

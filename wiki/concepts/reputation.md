@@ -2,7 +2,9 @@
 id: reputation
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 3
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [axelrod-1984-cooperation/ch08-social, dixit-2008-art-strategy/ch07-making, osborne-2004-introduction/ch07-extensive]
@@ -33,11 +35,11 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Quality externality on the group statistic (p. 488) ↔ decision-game-theory: social dilemma / tragedy of the commons — each seller gains by cutting quality, and the group's reputation is the shared resource that is depleted. — from [[akerlof-1970-lemons/main]] (economics-finance → decision-game-theory)
-- [structural-analogy] Reputation and credible threats ↔ credible commitment (Schelling): a costly response now makes a threat believable later. — from [[axelrod-1984-cooperation/ch08-social]] (decision-game-theory → other)
+- [structural-analogy] Reputation and credible threats ↔ credible commitment (Schelling): a costly response now makes a threat believable later. — from [[axelrod-1984-cooperation/ch08-social]] (decision-game-theory → decision-game-theory)
 - [structural-analogy] Locke's Law of Opinion (reputation as informal control) ↔ communication-theory: spiral of silence — both describe opinion as social pressure working through fear of the judgment of others (p. 91). — from [[habermas-1989-publicsphere/ch04-bourgeois-p1]] (communication-theory → communication-theory)
 - [structural-analogy] Ruler's expropriation constraint ↔ repeated games: the shadow of the future (value of keeping a reputation vs one-time gain) — the constraint compares continuing revenue with a one-shot grab (p. 338). — from [[myerson-2008-mechanism/main]] (decision-game-theory → decision-game-theory)
 - [metaphor] Indirect reciprocity as "money" ↔ economics: reputation as a medium of exchange. — from [[nowak-2006-five-rules/main]] (decision-game-theory → economics-finance)
 - [structural-analogy] Chain-store reputation ↔ repeated games and the shadow of the future: a player's present action affects later opponents' beliefs. — from [[osborne-2004-introduction/ch07-extensive]] (decision-game-theory → decision-game-theory)
-- [metaphor] switchblade and teacher ↔ reputation: an act is judged for the role it implies, not only for its local stakes. — from [[schelling-1960-conflict/appa-nuclear]] (decision-game-theory → other)
+- [metaphor] switchblade and teacher ↔ reputation: an act is judged for the role it implies, not only for its local stakes. — from [[schelling-1960-conflict/appa-nuclear]] (decision-game-theory → decision-game-theory)
 - [metaphor] Reputation as a posted bond ↔ commitment by costly signal. — from [[shepsle-2010-analyzing/ch14-leadership]] (political-science → unspecified)
 - [structural-analogy] Reputation for fair dealing ↔ repeated games: loss of future business disciplines short-term opportunism. — from [[thaler-2015-misbehaving/ch14-seems]] (economics-finance → decision-game-theory)

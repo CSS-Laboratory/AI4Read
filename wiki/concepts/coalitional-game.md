@@ -2,7 +2,9 @@
 id: coalitional-game
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [osborne-2004-introduction/ch01-introduction, osborne-2004-introduction/ch08-coalitional]

@@ -2,7 +2,9 @@
 id: mixture-family
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [deep]
 grounding: digests
 sources: [nielsen-2020-elementary/main-p1, nielsen-2020-elementary/main-p2]

@@ -2,12 +2,14 @@
 id: literal-listener-pragmatic-speaker-pragmatic-listener
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 1
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [frank-2012-rsa/main]
 raw_ids: [literal listener / pragmatic speaker / pragmatic listener]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 

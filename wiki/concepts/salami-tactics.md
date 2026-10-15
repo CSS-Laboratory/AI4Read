@@ -2,7 +2,9 @@
 id: salami-tactics
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [dixit-2008-art-strategy/ch06-strategic, dixit-2008-art-strategy/ch07-making]

@@ -2,7 +2,9 @@
 id: score-function
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 2
 tiers: [core, reference]
 grounding: digests
 sources: [cover-2006-elements/ch12-information-p3, polyanskiy-2025-information/ch03-divergence]
@@ -21,6 +23,6 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] likelihood-ratio gradient (3.47) ↔ statistics: score-function estimator, since $E\{\nabla\log p\}=0$ is the same identity. — from [[bertsekas-2026-rlcourse/ch03-learning-p4]] (control-theory → other)
-- [same-math] Evolution-strategies gradient (6.190) ↔ machine learning: score-function (REINFORCE) estimator, cited as Section 6.3.4. — from [[murphy-2023-pml2/ch06-optimization-p2]] (bayesian → other)
+- [same-math] likelihood-ratio gradient (3.47) ↔ statistics: score-function estimator, since $E\{\nabla\log p\}=0$ is the same identity. — from [[bertsekas-2026-rlcourse/ch03-learning-p4]] (control-theory → other:statistics)
+- [same-math] Evolution-strategies gradient (6.190) ↔ machine learning: score-function (REINFORCE) estimator, cited as Section 6.3.4. — from [[murphy-2023-pml2/ch06-optimization-p2]] (bayesian → llm)
 - [structural-analogy] Score-function estimator for text GANs ↔ REINFORCE-style gradient estimators for discrete variables, also relevant to GAIL (p. 923). — from [[murphy-2023-pml2/ch26-generative]] (bayesian → unspecified)

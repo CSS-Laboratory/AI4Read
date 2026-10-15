@@ -2,7 +2,9 @@
 id: substitution
 type: concept
 fields: [decision-game-theory]
+fields_strong: [decision-game-theory]
 n_sources: 5
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [kahneman-2011-thinking/ch09-answering, kahneman-2011-thinking/ch12-science, kahneman-2011-thinking/ch18-taming, kahneman-2011-thinking/ch33-reversals, kahneman-2011-thinking/ch38-thinking]
@@ -39,7 +41,7 @@ generated_by: build_kg.py
 
 - [structural-analogy] Substitution (answer an easier question) ↔ decision-game-theory: bounded rationality / satisficing — both are shortcuts under limited effort, but the chapter does not link them. — from [[kahneman-2011-thinking/ch09-answering]] (decision-game-theory → decision-game-theory)
 - [metaphor] Substitution of similarity for probability ↔ bounded rationality: the mind uses a cheap answerable question instead of the costly one. — from [[kahneman-2011-thinking/ch14-tom]] (decision-game-theory → decision-game-theory)
-- [structural-analogy] Substitution of an easy question ↔ heuristics in judgment: the same replacement of a hard evaluation by a simpler cue. — from [[kahneman-2011-thinking/ch38-thinking]] (decision-game-theory → other)
+- [structural-analogy] Substitution of an easy question ↔ heuristics in judgment: the same replacement of a hard evaluation by a simpler cue. — from [[kahneman-2011-thinking/ch38-thinking]] (decision-game-theory → decision-game-theory)
 - [same-math] Theorem 4 duality (filter ↔ noise-free regulator) ↔ control-theory: the LQR design equations — the paper itself gives the substitution $X\to\hat X'(T-\tau)$ between (28–30) and (35–37). — from [[kalman-1960-filtering/main]] (control-theory → control-theory)
-- [same-math] Substitution $P=-\tfrac12YX^{-1}$ ↔ calculus of variations: second-order sufficient conditions and conjugate points (Section 2.6.2) — author states the correspondence (p. 149, 151). — from [[liberzon-2012-calculus/ch06-linear]] (control-theory → other)
+- [same-math] Substitution $P=-\tfrac12YX^{-1}$ ↔ calculus of variations: second-order sufficient conditions and conjugate points (Section 2.6.2) — author states the correspondence (p. 149, 151). — from [[liberzon-2012-calculus/ch06-linear]] (control-theory → other:mathematics)
 - [structural-analogy] =E (replacing identical names) ↔ analytic-philosophy: the substitution of co-referring names, as in Frege's puzzle — both turn on which substitutions keep truth. — from [[magnus-2025-forallx/ch39-rules]] (analytic-philosophy → analytic-philosophy)

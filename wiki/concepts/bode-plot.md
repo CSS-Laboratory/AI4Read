@@ -2,12 +2,14 @@
 id: bode-plot
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 4
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch06-linear, astrom-2021-feedbacksystems/ch09-transfer-p2, astrom-2021-feedbacksystems/ch10-frequency, astrom-2021-feedbacksystems/ch12-frequency]
 raw_ids: [Bode plot]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 
@@ -32,5 +34,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Bode plot as filter view of a system ↔ signal processing: low-/band-/high-pass filters — the same frequency-selective picture. — from [[astrom-2021-feedbacksystems/ch09-transfer-p2]] (control-theory → other)
+- [structural-analogy] Bode plot as filter view of a system ↔ signal processing: low-/band-/high-pass filters — the same frequency-selective picture. — from [[astrom-2021-feedbacksystems/ch09-transfer-p2]] (control-theory → other:signal-processing)
 - [structural-analogy] Fourier cosine features with per-feature step sizes ↔ control-theory: frequency-domain view (Bode plots) — both organize behavior by frequency. — from [[sutton-2018-rl/ch09-policy-p1]] (control-theory → control-theory)

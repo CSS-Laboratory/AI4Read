@@ -2,7 +2,9 @@
 id: explaining-away
 type: concept
 fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 3
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [mackay-2003-information/ch21-exact, murphy-2023-pml2/ch04-graphical-p1, pearl-2018-bookofwhy/ch05-smoke]
@@ -20,7 +22,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch21-exact]] (p. 295): one cause becomes less probable when an alternative cause of the same data becomes more probable, though the causes were independent a priori [new]
+- [[mackay-2003-information/ch21-exact]] (p. 295): one cause becomes less probable when an alternative cause of the same data becomes more probable, though the causes were independent a priori [new; work fields: information-theory, bayesian]
 
 ## Instances that use it
 

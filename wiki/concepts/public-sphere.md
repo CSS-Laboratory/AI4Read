@@ -2,11 +2,13 @@
 id: public-sphere
 type: concept
 fields: [communication-theory]
+fields_strong: [communication-theory]
 n_sources: 13
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [carey-1989-cultural/ch03-reconceiving, carey-1989-cultural/ch06-space, carey-1989-cultural/ch07-history, habermas-1989-publicsphere/ch00-introduction, habermas-1989-publicsphere/ch01-introduction, habermas-1989-publicsphere/ch02-social, habermas-1989-publicsphere/ch03-political, habermas-1989-publicsphere/ch04-bourgeois-p1, habermas-1989-publicsphere/ch04-bourgeois-p2, habermas-1989-publicsphere/ch05-social, habermas-1989-publicsphere/ch06-transformation-p1, habermas-1989-publicsphere/ch06-transformation-p2, habermas-1989-publicsphere/ch07-concept]
-canon_spine: communication-theory
+canon_spine: [communication-theory]
 generated_by: build_kg.py
 ---
 
@@ -42,7 +44,7 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [structural-analogy] Dewey's "public formed in discussion" ↔ Habermas-style public sphere: both ground opinion in reasoning together, not aggregation (canon link; not stated in this unit) — from [[carey-1989-cultural/ch03-reconceiving]] (communication-theory → other)
+- [structural-analogy] Dewey's "public formed in discussion" ↔ Habermas-style public sphere: both ground opinion in reasoning together, not aggregation (canon link; not stated in this unit) — from [[carey-1989-cultural/ch03-reconceiving]] (communication-theory → communication-theory)
 - [structural-analogy] Innis's monopolies of knowledge and "audience" replacing "public" ↔ communication-theory: public sphere and its decline — both concern a public that is reduced to a consuming audience. — from [[carey-1989-cultural/ch06-space]] (communication-theory → communication-theory)
 - [structural-analogy] Liberal public sphere → welfare-state sphere ↔ communication-theory: public opinion treated as a measured and managed object, as in some effects research; one line: both treat the public as a target. — from [[habermas-1989-publicsphere/ch00-introduction]] (communication-theory → communication-theory)
 - [metaphor] Public sphere as institutional check on power ↔ political theory: accountability of rulers through discussion. — from [[habermas-1989-publicsphere/ch00-introduction]] (communication-theory → political-science)

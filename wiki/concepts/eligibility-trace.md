@@ -2,7 +2,9 @@
 id: eligibility-trace
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [sutton-2018-rl/ch12-eligibility, sutton-2018-rl/ch14-psychology, sutton-2018-rl/ch15-neuroscience-p2]
@@ -22,4 +24,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] eligibility trace ↔ control-theory: fading-memory (exponentially weighted) filter of past inputs — both keep a decaying sum of past signals, with decay set by one parameter. — from [[sutton-2018-rl/ch12-eligibility]] (control-theory → control-theory)
-- [same-math] eligibility trace $z_t=\gamma\lambda z_{t-1}+g_t$ ↔ signal processing: a first-order exponentially decaying (low-pass) sum of past inputs. — from [[sutton-2018-rl/ch15-neuroscience-p2]] (control-theory → other)
+- [same-math] eligibility trace $z_t=\gamma\lambda z_{t-1}+g_t$ ↔ signal processing: a first-order exponentially decaying (low-pass) sum of past inputs. — from [[sutton-2018-rl/ch15-neuroscience-p2]] (control-theory → other:signal-processing)

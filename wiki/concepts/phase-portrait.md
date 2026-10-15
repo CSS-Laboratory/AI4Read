@@ -2,7 +2,9 @@
 id: phase-portrait
 type: concept
 fields: [control-theory, complex-systems]
+fields_strong: [control-theory, complex-systems]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch03-system-p1, astrom-2021-feedbacksystems/ch05-dynamic, strogatz-2024-nonlinear/ch02-flows]

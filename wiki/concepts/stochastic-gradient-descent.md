@@ -2,7 +2,9 @@
 id: stochastic-gradient-descent
 type: concept
 fields: [linear-algebra, bayesian, control-theory, llm]
+fields_strong: [linear-algebra, bayesian, control-theory, llm]
 n_sources: 6
+n_works: 5
 tiers: [core, reference]
 grounding: digests
 sources: [deisenroth-2020-mml/ch07-continuous, murphy-2023-pml2/ch06-optimization-p1, prince-2023-udl/ch07-gradients, strang-2023-introduction/ch09-linear, strang-2023-introduction/ch10-learning, sutton-2018-rl/ch09-policy-p1]
@@ -33,4 +35,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Incremental gradient (3.10) ↔ machine learning: stochastic gradient descent with random index choice (the text itself makes this link, p. 366). — from [[bertsekas-2026-rlcourse/ch03-learning-p1]] (control-theory → other)
+- [same-math] Incremental gradient (3.10) ↔ machine learning: stochastic gradient descent with random index choice (the text itself makes this link, p. 366). — from [[bertsekas-2026-rlcourse/ch03-learning-p1]] (control-theory → llm)

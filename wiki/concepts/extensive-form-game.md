@@ -2,12 +2,14 @@
 id: extensive-form-game
 type: concept
 fields: [decision-game-theory, political-science]
+fields_strong: [decision-game-theory, political-science]
 n_sources: 7
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [clark-2017-principles/ch03-politics, dixit-2008-art-strategy/ch02-games, dixit-2008-art-strategy/ch15-workouts, osborne-2004-introduction/ch01-introduction, osborne-2004-introduction/ch05-extensive, osborne-2004-introduction/ch06-extensive, osborne-2004-introduction/ch07-extensive]
 raw_ids: [extensive-form game]
-canon_spine: decision-game-theory
+canon_spine: [decision-game-theory]
 generated_by: build_kg.py
 ---
 
@@ -35,4 +37,4 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Agenda order reduced by looking ahead ↔ backward induction in extensive-form games — each early vote is replaced by the later outcome it implies. — from [[dixit-2008-art-strategy/ch12-voting]] (decision-game-theory → unspecified)
-- [structural-analogy] Commitment and first-mover advantage ↔ extensive-form games and backward induction: committing first changes the later player's best response. — from [[schelling-1960-conflict/ch02-essay]] (decision-game-theory → other)
+- [structural-analogy] Commitment and first-mover advantage ↔ extensive-form games and backward induction: committing first changes the later player's best response. — from [[schelling-1960-conflict/ch02-essay]] (decision-game-theory → decision-game-theory)

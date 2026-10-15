@@ -1,13 +1,15 @@
 ---
 id: collective-action-problem
 type: concept
-fields: [political-science, decision-game-theory, llm]
+fields: [political-science, communication-theory, decision-game-theory, llm]
+fields_strong: [political-science, communication-theory, decision-game-theory, llm]
 n_sources: 32
+n_works: 9
 tiers: [core, deep, reference]
 grounding: digests
 sources: [chong-2007-framing/main, clark-2017-principles/ch08-democratic-p1, clark-2017-principles/ch08-democratic-p3, clark-2017-principles/ch15-institutional-p1, dixit-2008-art-strategy/ch01-ten, downs-1957-democracy/main, kahan-2013-motivatedreasoning/main, olson-1965-collectiveaction/app-untitled, olson-1965-collectiveaction/ch00-introduction, olson-1965-collectiveaction/ch01-theory-p1, olson-1965-collectiveaction/ch01-theory-p2, olson-1965-collectiveaction/ch02-group, olson-1965-collectiveaction/ch03-labor, olson-1965-collectiveaction/ch04-orthodox, olson-1965-collectiveaction/ch05-orthodox, olson-1965-collectiveaction/ch06-by, ostrom-1990-commons/ch01-reflections, ostrom-1990-commons/ch02-institutional, ostrom-1990-commons/ch04-analyzing, ostrom-1990-commons/ch06-framework, prince-2023-udl/ch21-deep, shepsle-2010-analyzing/ch01-it, shepsle-2010-analyzing/ch04-group, shepsle-2010-analyzing/ch08-cooperation, shepsle-2010-analyzing/ch09-collective-p1, shepsle-2010-analyzing/ch09-collective-p2, shepsle-2010-analyzing/ch10-public-p1, shepsle-2010-analyzing/ch10-public-p2, shepsle-2010-analyzing/ch11-institutions, shepsle-2010-analyzing/ch12-legislatures, shepsle-2010-analyzing/ch14-leadership, shepsle-2010-analyzing/ch17-final]
 raw_ids: [collective action problem]
-canon_spine: political-science
+canon_spine: [political-science]
 generated_by: build_kg.py
 ---
 
@@ -21,7 +23,7 @@ generated_by: build_kg.py
 
 ### political-science
 
-- [[chong-2007-framing/main]] (p. 120): in the social-movement literature, shared frames help people overcome it
+- [[chong-2007-framing/main]] (p. 120): in the social-movement literature, shared frames help people overcome it [work fields: political-science, communication-theory]
 - [[clark-2017-principles/ch08-democratic-p1]] (p. 278): group members often have little incentive to contribute to a good that benefits all
 - [[clark-2017-principles/ch08-democratic-p3]] (p. 305): attempts to produce democracy suffer from free riding [as `collective action problem`]
 - [[clark-2017-principles/ch15-institutional-p1]] (p. 690): critics' claim that federalism worsens it for national public goods
@@ -66,7 +68,7 @@ generated_by: build_kg.py
 - [structural-analogy] Framing as coordination around shared beliefs (p. 120) ↔ collective action problem: shared frames help groups act jointly. — from [[chong-2007-framing/main]] (political-science → political-science)
 - [structural-analogy] Class "for itself" ↔ collective action problem: a shared objective position does not by itself produce coordinated action — from [[clark-2017-principles/ch14-social-p2]] (political-science → political-science)
 - [structural-analogy] Race to the bottom ↔ collective action problem: each region's incentive to cut taxes harms regions collectively (the text does not make this link explicitly). — from [[clark-2017-principles/ch15-institutional-p1]] (political-science → political-science)
-- [structural-analogy] law of 1/n in legislatures ↔ collective-action problem: costs shared, benefits local — one pays 1/n of the cost of what one fully enjoys, as in an N-person Prisoner's Dilemma (p. 784, n. 31). — from [[clark-2017-principles/ch16-consequences-p2]] (political-science → other)
+- [structural-analogy] law of 1/n in legislatures ↔ collective-action problem: costs shared, benefits local — one pays 1/n of the cost of what one fully enjoys, as in an N-person Prisoner's Dilemma (p. 784, n. 31). — from [[clark-2017-principles/ch16-consequences-p2]] (political-science → political-science)
 - [structural-analogy] Individually rational belief-formation, collectively harmful ↔ collective action problem (tragedy of the commons): Kahan makes the analogy explicitly. — from [[kahan-2013-motivatedreasoning/main]] (political-science → political-science)
 - [structural-analogy] Latent groups needing selective incentives ↔ political science: collective action problems and free riders in large associations. — from [[olson-1965-collectiveaction/ch01-theory-p2]] (political-science → political-science)
 - [structural-analogy] Monitoring as a costly public good ↔ the collective action problem: here the cost is offset by private rewards. — from [[ostrom-1990-commons/ch03-analyzing-p2]] (political-science → political-science)

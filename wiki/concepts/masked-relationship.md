@@ -2,7 +2,9 @@
 id: masked-relationship
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [mcelreath-2020-rethinking/ch05-multivariate-p1, mcelreath-2020-rethinking/ch05-multivariate-p2]

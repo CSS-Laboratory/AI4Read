@@ -2,7 +2,9 @@
 id: hyperparameter
 type: concept
 fields: [llm, bayesian, information-theory]
+fields_strong: [llm, bayesian, information-theory]
 n_sources: 5
+n_works: 3
 tiers: [reference, core]
 grounding: digests
 sources: [mackay-2003-information/ch45-gaussian, mcelreath-2020-rethinking/ch12-multilevel, prince-2023-udl/ch04-deep, prince-2023-udl/ch06-fitting, prince-2023-udl/ch08-measuring]
@@ -25,7 +27,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch45-gaussian]] (p. 546): parameter $\boldsymbol\theta$ of covariance or noise model, learned from data [new]
+- [[mackay-2003-information/ch45-gaussian]] (p. 546): parameter $\boldsymbol\theta$ of covariance or noise model, learned from data [new; work fields: information-theory, bayesian]
 
 ## Instances that use it
 
@@ -35,5 +37,5 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Hyperparameter $\alpha$ ↔ Bayesian: parameters of a prior fixed outside the model — it shapes learning but not the activity rule. — from [[mackay-2003-information/ch39-single]] (information-theory → bayesian)
-- [metaphor] hyperparameters as a "family of families" ↔ model selection: choosing K and D picks a function class before fitting. — from [[prince-2023-udl/ch04-deep]] (llm → political-science)
-- [structural-analogy] validation set for hyperparameters ↔ model selection in statistics: choosing among models on data not used for the final evaluation. — from [[prince-2023-udl/ch08-measuring]] (llm → political-science)
+- [metaphor] hyperparameters as a "family of families" ↔ model selection: choosing K and D picks a function class before fitting. — from [[prince-2023-udl/ch04-deep]] (llm → other:statistics)
+- [structural-analogy] validation set for hyperparameters ↔ model selection in statistics: choosing among models on data not used for the final evaluation. — from [[prince-2023-udl/ch08-measuring]] (llm → other:statistics)

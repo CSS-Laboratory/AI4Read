@@ -2,12 +2,14 @@
 id: joint-attention
 type: concept
 fields: [llm, theory-of-mind]
+fields_strong: [llm, theory-of-mind]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [bender-2020-octopus/main, heyes-2014-cultural-evolution/main]
 raw_ids: [joint attention]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 

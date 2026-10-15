@@ -2,7 +2,9 @@
 id: relay-channel
 type: concept
 fields: [information-theory]
+fields_strong: [information-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [cover-2006-elements/ch14-network-p1, cover-2006-elements/ch14-network-p3]

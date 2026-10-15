@@ -2,12 +2,14 @@
 id: linear-combination
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 10
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [axler-2024-ladr/ch02-finite, axler-2024-ladr/ch03-linear-p2, boyd-2018-vmls/ch01-vectors, boyd-2018-vmls/ch05-linear, boyd-2018-vmls/ch06-matrices, boyd-2018-vmls/ch08-linear, deisenroth-2020-mml/ch02-linear-p1, deisenroth-2020-mml/ch12-classification, strang-2023-introduction/ch01-vectors, strang-2023-introduction/ch03-four-p1]
 raw_ids: [linear combination]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 
@@ -34,5 +36,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] Exercise 7.4's weights (7.39)–(7.40) ↔ statistics: minimum-variance linear combination under a known covariance matrix (p. 215) — from [[jaynes-2003-probability/ch07-central-p1]] (information-theory → other)
-- [same-math] Portfolio variance $\sum\sum\sigma_{ij}X_iX_j$ ↔ statistics: variance of a linear combination of random variables — the same formula. — from [[markowitz-1952-portfolio/main]] (economics-finance → other)
+- [same-math] Exercise 7.4's weights (7.39)–(7.40) ↔ statistics: minimum-variance linear combination under a known covariance matrix (p. 215) — from [[jaynes-2003-probability/ch07-central-p1]] (bayesian → other:statistics)
+- [same-math] Portfolio variance $\sum\sum\sigma_{ij}X_iX_j$ ↔ statistics: variance of a linear combination of random variables — the same formula. — from [[markowitz-1952-portfolio/main]] (economics-finance → other:statistics)

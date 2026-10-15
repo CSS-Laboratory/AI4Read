@@ -2,12 +2,14 @@
 id: nyquist-criterion
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 4
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch10-frequency, astrom-2021-feedbacksystems/ch11-pid, astrom-2021-feedbacksystems/ch12-frequency, astrom-2021-feedbacksystems/ch13-robust]
 raw_ids: [Nyquist criterion]
-canon_spine: control-theory
+canon_spine: [control-theory]
 generated_by: build_kg.py
 ---
 

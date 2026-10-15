@@ -2,12 +2,14 @@
 id: spectral-theorem
 type: concept
 fields: [linear-algebra]
+fields_strong: [linear-algebra]
 n_sources: 17
+n_works: 5
 tiers: [core, deep]
 grounding: digests
 sources: [axler-2024-ladr/ch07-operators-p1, axler-2024-ladr/ch07-operators-p2, axler-2024-ladr/ch07-operators-p3, axler-2024-ladr/ch09-multilinear-p1, deisenroth-2020-mml/ch04-matrix-p1, deisenroth-2020-mml/ch04-matrix-p2, deisenroth-2020-mml/ch10-dimensionality, eckart-1936-lowrank/main, spielman-2025-sagt/ch01-introduction, spielman-2025-sagt/ch02-eigenvalues, spielman-2025-sagt/ch04-adjacency, spielman-2025-sagt/ch11-walks, spielman-2025-sagt/ch31-psrgs, strang-2023-introduction/app1-ranks, strang-2023-introduction/ch06-eigenvalues-p2, strang-2023-introduction/ch06-eigenvalues-p3, strang-2023-introduction/ch10-learning]
 raw_ids: [spectral theorem]
-canon_spine: linear-algebra
+canon_spine: [linear-algebra]
 generated_by: build_kg.py
 ---
 

@@ -2,7 +2,9 @@
 id: shrinking-transformation
 type: concept
 fields: [control-theory]
+fields_strong: [control-theory]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [bellman-1957-dp/ch04-iv, bellman-1957-dp/ch10-x]

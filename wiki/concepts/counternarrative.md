@@ -2,7 +2,9 @@
 id: counternarrative
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 3
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [shiller-2019-narrative/ch01-bitcoin, shiller-2019-narrative/ch13-labor, shiller-2019-narrative/ch19-future]

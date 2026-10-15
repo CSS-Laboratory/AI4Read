@@ -2,12 +2,14 @@
 id: back-door-front-door-criterion
 type: concept
 fields: [bayesian]
+fields_strong: [bayesian]
 n_sources: 11
+n_works: 4
 tiers: [core, reference]
 grounding: digests
 sources: [hernan-2020-whatif/ch19-time, hernan-2020-whatif/ch21-g, hernan-2020-whatif/ch23-causal, murphy-2023-pml2/ch36-causality-p1, murphy-2023-pml2/ch36-causality-p2, pearl-2016-primer/ch03-effects, pearl-2016-primer/ch04-counterfactuals, pearl-2018-bookofwhy/ch04-confounding, pearl-2018-bookofwhy/ch06-paradoxes, pearl-2018-bookofwhy/ch07-beyond, pearl-2018-bookofwhy/ch08-counterfactuals]
 raw_ids: [Back-door / front-door criterion]
-canon_spine: bayesian
+canon_spine: [bayesian]
 generated_by: build_kg.py
 ---
 
@@ -35,4 +37,4 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [same-math] front-door formula in Technical Point 23.3 ↔ Back-door / front-door criterion: the same formula under an expanded graph. — from [[hernan-2020-whatif/ch23-causal]] (bayesian → other)
+- [same-math] front-door formula in Technical Point 23.3 ↔ Back-door / front-door criterion: the same formula under an expanded graph. — from [[hernan-2020-whatif/ch23-causal]] (bayesian → bayesian)

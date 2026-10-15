@@ -2,11 +2,13 @@
 id: universality
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 9
+n_works: 4
 tiers: [core]
 grounding: digests
 sources: [bak-1987-soc/main, castellano-2009-socialdynamics/main-p1, castellano-2009-socialdynamics/main-p2, castellano-2009-socialdynamics/main-p3, mitchell-2009-guidedtour/ch02-dynamics, strogatz-2024-nonlinear/ch01-overview, strogatz-2024-nonlinear/ch10-one-p2, strogatz-2024-nonlinear/ch11-fractals, strogatz-2024-nonlinear/ch12-strange]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
@@ -41,9 +43,9 @@ generated_by: build_kg.py
 ## Candidate bridges
 
 - [structural-analogy] Holme–Newman transition at $\phi_c$ ↔ criticality/universality — power-law clusters and critical slowing down, but with exponents different from percolation. — from [[castellano-2009-socialdynamics/main-p3]] (complex-systems → unspecified)
-- [structural-analogy] Lempel–Ziv universality (no source model needed) ↔ Kolmogorov complexity / universal coding: both compress without knowing the source. — from [[cover-2006-elements/ch12-information-p3]] (information-theory → other)
-- [same-math] NAND/NOR universality ↔ digital logic design: all Boolean functions built from one gate type (p. 16) — from [[jaynes-2003-probability/ch01-plausible]] (information-theory → analytic-philosophy)
+- [structural-analogy] Lempel–Ziv universality (no source model needed) ↔ Kolmogorov complexity / universal coding: both compress without knowing the source. — from [[cover-2006-elements/ch12-information-p3]] (information-theory → information-theory)
+- [same-math] NAND/NOR universality ↔ digital logic design: all Boolean functions built from one gate type (p. 16) — from [[jaynes-2003-probability/ch01-plausible]] (bayesian → other:computer-science)
 - [metaphor] Layers of sediment ↔ growth of science through levels of universality (p. 277). — from [[popper-1959-logic/ch10-corroboration]] (analytic-philosophy → unspecified)
 - [structural-analogy] Feigenbaum universality ↔ complex-systems: universality near critical points — the text itself links chaos to phase transitions. — from [[strogatz-2024-nonlinear/ch01-overview]] (complex-systems → complex-systems)
-- [structural-analogy] Universality of δ ↔ universality (grad concept): different systems share macro behaviour near a transition. Here the systems are different unimodal maps. — from [[strogatz-2024-nonlinear/ch10-one-p2]] (complex-systems → other)
+- [structural-analogy] Universality of δ ↔ universality (grad concept): different systems share macro behaviour near a transition. Here the systems are different unimodal maps. — from [[strogatz-2024-nonlinear/ch10-one-p2]] (complex-systems → complex-systems)
 - [structural-analogy] multifractal spectrum $f(\alpha)$ ↔ complex-systems: universality at critical points — a function, not one number, is the universal quantity. — from [[strogatz-2024-nonlinear/ch11-fractals]] (complex-systems → complex-systems)

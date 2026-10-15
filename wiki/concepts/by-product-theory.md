@@ -2,7 +2,9 @@
 id: by-product-theory
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [olson-1965-collectiveaction/ch06-by, shepsle-2010-analyzing/ch09-collective-p2]
@@ -20,5 +22,5 @@ generated_by: build_kg.py
 
 ## Candidate bridges
 
-- [metaphor] "By-product" theory of pressure-group membership ↔ organization theory: membership may follow from other activities rather than from the group's lobbying (the unit states only the by-product claim). — from [[olson-1965-collectiveaction/ch00-introduction]] (political-science → other)
-- [structural-analogy] by-product theory ↔ social capital / civic association: groups built for other reasons later serve collective action — the by-product idea resembles the idea that civic networks lower the cost of cooperation. — from [[olson-1965-collectiveaction/ch06-by]] (political-science → other)
+- [metaphor] "By-product" theory of pressure-group membership ↔ organization theory: membership may follow from other activities rather than from the group's lobbying (the unit states only the by-product claim). — from [[olson-1965-collectiveaction/ch00-introduction]] (political-science → other:sociology)
+- [structural-analogy] by-product theory ↔ social capital / civic association: groups built for other reasons later serve collective action — the by-product idea resembles the idea that civic networks lower the cost of cooperation. — from [[olson-1965-collectiveaction/ch06-by]] (political-science → political-science)

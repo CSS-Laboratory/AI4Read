@@ -2,7 +2,9 @@
 id: basis-function-expansion
 type: concept
 fields: [bayesian, political-science]
+fields_strong: [bayesian, political-science]
 n_sources: 2
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [gelman-2013-bda3/ch20-basis, grimmer-2022-textasdata/ch19-classifying]

@@ -2,12 +2,14 @@
 id: temporo-parietal-junction-tpj
 type: concept
 fields: [theory-of-mind]
+fields_strong: [theory-of-mind]
 n_sources: 5
+n_works: 3
 tiers: [core]
 grounding: digests
 sources: [apperly-2011-mindreaders/ch04-evidence, apperly-2011-mindreaders/ch06-cognitive, apperly-2011-mindreaders/ch07-elaborating, heyes-2014-cultural-evolution/main, saxe-2003-tpj/main]
 raw_ids: [temporo-parietal junction (TPJ)]
-canon_spine: theory-of-mind
+canon_spine: [theory-of-mind]
 generated_by: build_kg.py
 ---
 

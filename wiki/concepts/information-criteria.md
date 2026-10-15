@@ -2,7 +2,9 @@
 id: information-criteria
 type: concept
 fields: [bayesian, linear-algebra]
+fields_strong: [bayesian, linear-algebra]
 n_sources: 3
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [deisenroth-2020-mml/ch08-when, mcelreath-2020-rethinking/ch01-golem, mcelreath-2020-rethinking/ch06-overfitting-p1]

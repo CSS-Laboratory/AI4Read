@@ -1,7 +1,7 @@
 ---
 id: baird-counterexample
 type: instance
-fields: [bayesian, control-theory]
+fields: [control-theory, bayesian]
 n_sources: 2
 tiers: [core, reference]
 grounding: digests
@@ -15,7 +15,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1176): 7-state MDP where off-policy linear TD(0) diverges
+- [[murphy-2023-pml2/ch35-reinforcement]] (p. 1176): 7-state MDP where off-policy linear TD(0) diverges [work fields: bayesian, control-theory]
 
 ### control-theory
 

@@ -2,7 +2,9 @@
 id: parallel-terraced-scan
 type: concept
 fields: [complex-systems]
+fields_strong: [complex-systems]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [mitchell-2009-guidedtour/ch12-information, mitchell-2009-guidedtour/ch13-make]

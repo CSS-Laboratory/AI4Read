@@ -2,7 +2,9 @@
 id: knowledge-condition
 type: concept
 fields: [political-science]
+fields_strong: [political-science]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [lupia-1998-dilemma/ch05-delegation, lupia-1998-dilemma/ch08-laboratory]

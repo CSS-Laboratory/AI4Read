@@ -2,7 +2,9 @@
 id: fungibility-of-money
 type: concept
 fields: [economics-finance]
+fields_strong: [economics-finance]
 n_sources: 2
+n_works: 1
 tiers: [core]
 grounding: digests
 sources: [thaler-2015-misbehaving/ch10-at, thaler-2015-misbehaving/ch17-debate]

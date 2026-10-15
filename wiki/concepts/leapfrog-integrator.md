@@ -2,7 +2,9 @@
 id: leapfrog-integrator
 type: concept
 fields: [bayesian, information-theory]
+fields_strong: [bayesian, information-theory]
 n_sources: 3
+n_works: 3
 tiers: [core, reference]
 grounding: digests
 sources: [gelman-2013-bda3/ch12-computationally, mackay-2003-information/ch30-efficient, murphy-2023-pml2/ch12-markov-p1]
@@ -20,7 +22,7 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[mackay-2003-information/ch30-efficient]] (p. 388): half-step, full-step, half-step scheme to simulate Hamiltonian dynamics [new]
+- [[mackay-2003-information/ch30-efficient]] (p. 388): half-step, full-step, half-step scheme to simulate Hamiltonian dynamics [new; work fields: information-theory, bayesian]
 
 ## Instances that use it
 

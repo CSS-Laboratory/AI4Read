@@ -2,12 +2,14 @@
 id: limit-cycle
 type: concept
 fields: [complex-systems, control-theory]
+fields_strong: [complex-systems, control-theory]
 n_sources: 10
+n_works: 2
 tiers: [core]
 grounding: digests
 sources: [astrom-2021-feedbacksystems/ch04-examples, astrom-2021-feedbacksystems/ch05-dynamic, strogatz-2024-nonlinear/ch01-overview, strogatz-2024-nonlinear/ch07-limit-p1, strogatz-2024-nonlinear/ch07-limit-p2, strogatz-2024-nonlinear/ch08-bifurcations-p1, strogatz-2024-nonlinear/ch08-bifurcations-p2, strogatz-2024-nonlinear/ch08-bifurcations-p3, strogatz-2024-nonlinear/ch09-lorenz-p2, strogatz-2024-nonlinear/ch12-strange]
 raw_ids: [limit cycle]
-canon_spine: complex-systems
+canon_spine: [complex-systems]
 generated_by: build_kg.py
 ---
 
@@ -21,7 +23,7 @@ generated_by: build_kg.py
 
 ### complex-systems
 
-- [[strogatz-2024-nonlinear/ch01-overview]] (p. 10): listed among $n=2$ nonlinear phenomena in Figure 1.3.1; not defined here [as `limit cycle`]
+- [[strogatz-2024-nonlinear/ch01-overview]] (p. 10): listed among $n=2$ nonlinear phenomena in Figure 1.3.1; not defined here [as `limit cycle`; weak: not really used in this unit]
 - [[strogatz-2024-nonlinear/ch07-limit-p1]] (p. 198): isolated closed trajectory; stable if neighbours approach it [as `limit cycle`]
 - [[strogatz-2024-nonlinear/ch07-limit-p2]] (pp. 217, 225): here, a closed trajectory that nearby spiralling trajectories approach: van der Pol's stable cycle of radius $2+O(\varepsilon)$ [as `limit cycle`]
 - [[strogatz-2024-nonlinear/ch08-bifurcations-p1]] (pp. 252, 256): isolated closed orbit; the cycle is born at a Hopf bifurcation

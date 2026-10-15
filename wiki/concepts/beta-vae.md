@@ -1,8 +1,10 @@
 ---
 id: beta-vae
 type: concept
-fields: [bayesian, llm]
+fields: [llm, bayesian]
+fields_strong: [llm, bayesian]
 n_sources: 2
+n_works: 2
 tiers: [reference]
 grounding: digests
 sources: [murphy-2023-pml2/ch21-variational, prince-2023-udl/ch17-variational]
@@ -15,7 +17,7 @@ generated_by: build_kg.py
 
 ### bayesian
 
-- [[murphy-2023-pml2/ch21-variational]] (p. 797–798): ELBO with the KL scaled by $\beta$; $\beta<1$ less blur, $\beta>1$ more compression [new]
+- [[murphy-2023-pml2/ch21-variational]] (p. 797–798): ELBO with the KL scaled by $\beta$; $\beta<1$ less blur, $\beta>1$ more compression [new; work fields: bayesian, llm]
 
 ### llm
 
