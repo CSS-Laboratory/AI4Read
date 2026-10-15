@@ -22,7 +22,7 @@ from .planner import CFG, LIB, UNITS_CSV, catalog, html_clean, H2
 
 SPEC_VERSION = "1.2"
 PROMPT_VERSION = "v2.2"
-MAX_TOKENS = {"p1": 64000, "p2": 128000, "p3": 64000, "p4": 16000}   # P2 v2.2 on image-heavy units: ~50k thinking
+MAX_TOKENS = {"p1": 64000, "p2": 128000, "p3": 64000, "p4": 32000}   # P2 v2.2 on image-heavy units: ~50k thinking; P4: 50-unit maps + thinking
 IMG_CACHE = PIPE / "_work" / "img"
 LONG_SIDE = CFG["image"]["long_side_px"]
 QUALITY = CFG["image"]["jpeg_quality"]
