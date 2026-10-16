@@ -66,7 +66,7 @@ dfn{font-style:normal;font-weight:600}
 .trap-h,.reveal-h{color:var(--stamp)}
 .challenge .trap-h{color:var(--ok)}
 .reveal{border-style:dashed}
-.reveal.locked > :not(.reveal-h){filter:blur(6px);user-select:none}
+.reveal.locked > :not(.reveal-h):not(.reveal-q){filter:blur(6px);user-select:none}
 .reveal.locked{cursor:pointer}
 .reveal.locked .reveal-h::after{content:" · tap to reveal";color:var(--muted);letter-spacing:.04em;text-transform:none;font-weight:500}
 
@@ -283,3 +283,18 @@ svg.fig .bubble{fill:var(--card);stroke:var(--ink);stroke-width:1}
 .loop-para{margin:14px 0;padding:14px 16px;background:var(--card);border-left:3px solid var(--stamp);font:18px/1.75 var(--f-body)}
 .loop-para i{font-style:normal;background:var(--stamp-soft);border-radius:2px;padding:0 2px}
 .loop-steps{font:15.5px/1.55 var(--f-ui);padding-left:22px;display:grid;gap:6px;margin:12px 0 18px}
+details.deep{border:1px solid var(--ink);border-radius:8px;background:var(--card);margin:18px 0;padding:0 14px}
+details.deep>summary{cursor:pointer;font:600 15px/1.4 var(--f-ui);padding:12px 0;list-style-position:outside}
+details.deep[open]>summary{border-bottom:1px solid var(--rule);margin-bottom:10px}
+details.deep h4{font:600 13px/1.3 var(--f-ui);letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin:18px 0 6px}
+details.deep p,details.deep li{font-size:16.5px}
+.reveal-q{font:500 14px/1.45 var(--f-ui);color:var(--muted);margin:0 0 8px;font-style:italic}
+.cite[data-src]{cursor:pointer;text-decoration:underline dotted var(--muted);text-underline-offset:3px}
+.cite[data-src]:hover,.cite[data-src]:focus-visible{color:var(--blue)}
+.citepop{position:absolute;z-index:40;background:var(--card);color:var(--ink);border:1px solid var(--ink);border-radius:8px;padding:10px 12px;box-shadow:0 6px 20px rgba(0,0,0,.18);font:14px/1.45 var(--f-ui)}
+.citepop .cp-ref{margin:0 0 8px;user-select:text}
+.cp-row{display:flex;gap:8px;align-items:center}
+.cp-copy{font:500 13px var(--f-ui);border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:999px;padding:5px 12px;cursor:pointer}
+.cp-all{font:13px var(--f-ui);color:var(--blue)}
+svg.fig .tokc{fill:var(--card);stroke:var(--ink);stroke-width:1.2}
+svg.fig .arw{stroke:var(--stamp);fill:none}

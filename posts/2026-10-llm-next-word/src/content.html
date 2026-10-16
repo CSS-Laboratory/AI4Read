@@ -115,7 +115,7 @@
     <div class="arch" id="arch-svg"></div>
     <p class="readout" id="arch-read"></p>
   </div>
-  <p>The cheap vectors showed a surprise: some relations became directions on the map. The vector for <i>biggest</i> minus <i>big</i> plus <i>small</i> lands near <i>smallest</i> <span class="cite">p. 5</span>. Lens 2 tests how well this works.</p>
+  <p>The cheap vectors showed a surprise: some relations became directions on the map. The vector for <i>biggest</i> minus <i>big</i> plus <i>small</i> lands near <i>smallest</i> <span class="cite">Mikolov et al. 2013a, p. 5</span>. Lens 2 tests how well this works.</p>
 
   <h3>Step 5. Attention (2017)</h3>
   <p>Look again at “Alice was friends with Bob. Alice went to visit her friend ____.” To guess the blank, the word “friend” must collect information from earlier words, and some earlier words matter much more than others: “Bob” matters a lot, “to” hardly at all. The Transformer does exactly this. Every position takes a <dfn>weighted average</dfn> of information from other positions, with large weights for the positions that matter. The weights come from how well a “query” vector at one position matches a “key” vector at another <span class="cite">Vaswani et al. 2017, pp. 3–4</span>. To predict text from left to right, a <dfn>mask</dfn> stops a position from looking at the future <span class="cite">pp. 3, 5</span>. (The 2017 model was built for translation and has two halves, an encoder that reads the source sentence and a decoder that writes the translation. GPT-style models keep only the decoder half <span class="cite">Kaplan et al. 2020, p. 6</span>.)</p>
@@ -126,6 +126,47 @@
     <div class="icl-bars" id="sent-bars"></div>
     <p class="readout" id="sent-read"></p>
   </div>
+  <details class="deep" id="box-attention">
+    <summary>Look inside: attention compared with a perceptron layer, step by step</summary>
+    <p>This box uses one notation throughout and tiny numbers you can check by hand. It needs only multiplication, addition, division, a square root and the exponential function.</p>
+
+    <h4>0. The setting</h4>
+    <p>A sentence has \(n\) tokens. Each token \(j\) has become a vector \(x_j\), a list of \(d\) numbers. In our toy, \(n=3\) and \(d=2\):</p>
+    \[x_1=(1,0),\quad x_2=(0,1),\quad x_3=(1,1)\]
+    <p>We want a new vector \(h_3\) for token 3, the last token so far, that will be used to predict token 4.</p>
+
+    <h4>1. A perceptron layer looks at one token only</h4>
+    <p>A <dfn>perceptron layer</dfn> (also called a dense or feed-forward layer) multiplies the input by a fixed table of weights \(W\), adds a fixed list \(b\), and bends the result with a simple function \(f\):</p>
+    \[h_3=f(W x_3+b)\]
+    <p>Our example: \(W=\begin{pmatrix}1&-1\\0.5&0.5\end{pmatrix}\), \(b=(0,0)\), and \(f\) turns negative numbers into 0. Then \(Wx_3=(1-1,\;0.5+0.5)=(0,1)\), so \(h_3=(0,1)\). (Here nothing is negative, so \(f\) changes nothing; for token 2, \(Wx_2=(-1,\;0.5)\) would become \((0,\;0.5)\).)</p>
+    <p>Two things to notice. First, \(h_3\) depends only on \(x_3\): tokens 1 and 2 are never used. Second, \(W\) is learned during training and then <i>fixed</i>: it is the same for every sentence. The Transformer does contain such layers: a pair of them (the second one without the bend), applied “to each position separately and identically” <span class="cite">Vaswani et al. 2017, p. 5</span>, but by itself it cannot let “friend” look back at “Bob”.</p>
+
+    <h4>2. Could fixed weights mix tokens?</h4>
+    <p>One idea (ours, for comparison): give every pair of positions its own fixed weight, \(h_3=\sum_j w_{3j}\,x_j\). But then the weight from position 1 to position 3 is the same in every sentence, whatever the words are. In one sentence the important word is two steps back, in another it is ten steps back. Fixed position weights cannot follow the meaning.</p>
+
+    <h4>3. Attention computes the weights from the words themselves</h4>
+    <p>Attention keeps the form “weighted sum of the tokens”, but the weights \(a_{3j}\) are computed fresh for each sentence. Each token makes three vectors with three learned tables \(W_Q, W_K, W_V\) <span class="cite">Vaswani et al. 2017, pp. 4–5</span>:</p>
+    \[q_j=W_Q x_j,\qquad k_j=W_K x_j,\qquad v_j=W_V x_j\]
+    <p>In our toy all three tables are the identity (they leave the vector unchanged), so \(q_j=k_j=v_j=x_j\). Now four steps:</p>
+    <ol class="steps">
+      <li><b>Score.</b> Compare token 3’s query with every key it may see (the mask allows \(j\le3\); token 4 does not exist yet, so here the mask hides nothing. It matters in training; see the end of this box): \(s_{3j}=q_3\cdot k_j/\sqrt{d_k}\), where \(d_k\) is the length of the key vector (here \(d_k=d=2\)). Here \(s_{31}=(1\cdot1+1\cdot0)/\sqrt2\) \(=0.707\), \(s_{32}=0.707\), and \(s_{33}=(1+1)/\sqrt2\) \(=1.414\).</li>
+      <li><b>Softmax.</b> Turn scores into weights: \(a_{3j}=e^{s_{3j}}/\sum_{m\le3}e^{s_{3m}}\). Here \(a_{3}=(0.248,\;0.248,\;0.503)\). (Numbers are rounded to 3 decimals; we compute with the unrounded values, so hand sums can differ in the last digit.)</li>
+      <li><b>Mix.</b> Add up the value vectors with these weights: \[h_3=\sum_{j\le3}a_{3j}\,v_j\] \[=0.248\,(1,0)+0.248\,(0,1)+0.503\,(1,1)\] \[=(0.752,\;0.752)\]</li>
+      <li><b>Compare with step 1.</b> The perceptron gave \((0,1)\) from token 3 alone. Attention gives a blend of all three tokens.</li>
+    </ol>
+
+    <h4>4. Why it is a weighted average</h4>
+    <p>Every \(a_{3j}\) is positive (an exponential is always positive), and they add up to 1 (we divided by their sum). A sum of vectors with positive weights that add up to 1 is exactly a <dfn>weighted average</dfn>. So \(h_3\) always lies “between” the value vectors, closer to the ones with larger weights. The learned tables \(W_Q, W_K, W_V\) are fixed after training, like \(W\) in the perceptron; what changes from sentence to sentence is \(a\), because it is computed from the words.</p>
+
+    <h4>5. Predicting the last token, and learning from it</h4>
+    <p>A final layer turns \(h_3\) into a score for every word, and a softmax turns the scores into probabilities (Step 4 of this post). A toy with three words (ours): rows of \(W_{\text{out}}\) are Alice \((1,0)\), Bob \((0,2)\), cat \((-1,-1)\). Then the scores are \(z=W_{\text{out}}h_3\) \(=(0.752,\;1.503,\;-1.503)\) and the probabilities are Alice 0.310, Bob 0.657, cat 0.033.</p>
+    <p>In training, the true next token is known, say “Bob”. The loss for this one prediction is the surprise of the true token, \(-\ln 0.657=0.42\) nats. A nat is a bit measured with the natural logarithm \(\ln\) (base \(e\approx2.718\)) instead of base 2; 1 nat ≈ 1.44 bits, so this is 0.61 bits. Averaged over all positions and texts, this surprise is the cross-entropy of Lens 1. Training then nudges every learned table (in the toy \(W_{\text{out}}, W_Q, W_K, W_V\); in a real model also the perceptron tables and the word vectors) a little in the direction that makes “Bob” more likely next time. One way this can happen (our illustration): a larger attention weight on the positions that point to Bob.</p>
+    <p>One more detail (our summary of standard practice). In training, every position predicts its own next token at the same time: position 1 predicts token 2, position 2 predicts token 3, and so on. The mask is what makes this fair: each position may use its own token and the tokens before it, but never the token it has to predict <span class="cite">Vaswani et al. 2017, p. 5</span>. Predicting the last token, as above, is just one of these predictions.</p>
+    <figure class="illus" id="fig-percatt" aria-label="Left: a perceptron layer, where token 3's new vector comes from token 3 alone. Right: attention, where token 3's new vector is a blend of tokens 1, 2 and 3 with weights 0.25, 0.25 and 0.50."></figure>
+    <p>Real models repeat attention and perceptron layers many times (the original Transformer stacks 6 such layers in its encoder and 6 in its decoder, each with attention followed by a perceptron part <span class="cite">p. 3</span>) and run several attention “heads” side by side <span class="cite">p. 5</span>. The arithmetic of each step is the same as in this box.</p>
+    <p class="small">Further reading suggested by Kunhao: Hussain et al. (2024), a tutorial on open-source LLMs for behavioral scientists, which explains queries, keys and values and warns that the retrieval analogy should not be taken too literally (not yet in our library).</p>
+  </details>
+
 
   <h3>Step 6. Tasks are text too (2019)</h3>
   <p>GPT-2’s authors noticed that a task can be written inside the text. On the internet, “TL;DR:” (“too long; didn’t read”) is often followed by a short summary (our explanation of why the trick works). So put “TL;DR:” after a news article, and the model tends to continue with a summary <span class="cite">Radford et al. 2019, pdf 6</span>. The summaries were weak: they “just barely” beat random sentences from the article <span class="cite">pdf 6</span>. But the authors made a speculation that frames this whole post: a model with enough capacity will begin to infer and perform the tasks shown in text “in order to better predict them” <span class="cite">pdf 3</span>.</p>
@@ -461,7 +502,7 @@
   <div class="cards3">
     <div class="c3"><p class="c3-h">Computation · LLM surrogate labeling</p><p>If few-shot prompting works by selecting a concept (Lens 3), your examples are evidence, not instructions. In Xie’s synthetic tests (which mirror earlier GPT-3 results), example order alone moved accuracy by 10–40% <span class="cite">p. 10</span>. Randomize the order of examples across runs and report the spread, not one number.</p></div>
     <div class="c3"><p class="c3-h">Computation · Cross-lingual LLM safety</p><p>Tokens cover different amounts of text in different languages, so per-token loss or perplexity cannot be compared directly. Use bits per character or per byte (Exercise 3). A model can look “confident” in one language only because its tokens are shorter there.</p></div>
-    <div class="c3"><p class="c3-h">Computation · Explainable representations</p><p>Directions in embedding space are real but rough: exact analogies work about 40–66% of the time in Mikolov’s tests. Before you name a direction (“the misinformation axis”), check how often it gives the exact answer, and against which candidate set.</p></div>
+    <div class="c3"><p class="c3-h">Computation · Explainable representations</p><p>Directions in embedding space are real but rough: exact analogies work about 40–66% of the time in Mikolov’s tests. Before you name a direction (“the misinformation axis”), check how often it gives the exact answer, and against which candidate set. A model study from sociology: Kozlowski, Taddy and Evans (2019) build cultural dimensions such as class by averaging the vector differences of six to ten antonym pairs (rich − poor, affluence − poverty and others), project words onto that dimension (for normalized vectors the projection is the cosine), and check the results against survey ratings. Averaging several pairs gave directions that matched the survey better than any single pair (summary from the arXiv version, pp. 14, 32; not yet in our library).</p></div>
     <div class="c3"><p class="c3-h">Communication · Framing and misinformation</p><p>Surprise is measurable. The average surprise of a post under a model trained on one community’s text is a number in bits. That number measures distance from the community’s usual language. It does not measure whether the post is true; Shannon set meaning aside, and so does the number.</p></div>
     <div class="c3"><p class="c3-h">Collaboration · Social simulation with LLM agents</p><p>Agents that “reason about other agents” may pass standard belief stories and still fail under small changes (Lens 5). Add perturbation tests to your simulation checks: change one physical fact the agent should notice, and see whether its beliefs about others update.</p></div>
   </div>
@@ -568,24 +609,29 @@
   <h2>Sources</h2>
   <p class="small">Every claim was checked by an independent reviewer against the cited page of the source, not only against the AI4Read digest. Page numbers are printed pages; “pdf N” marks sources with no printed numbers; “§” marks web articles cited by section heading.</p>
   <ol class="srcs">
-    <li>Shannon, C. E. (1948). A mathematical theory of communication. <i>Bell System Technical Journal</i>, 27. Part 1, pp. 1–28 of the reprint used.</li>
-    <li>Shannon, C. E. (1951). Prediction and entropy of printed English. <i>Bell System Technical Journal</i>, 30, 50–64.</li>
-    <li>Cover, T. M., &amp; Thomas, J. A. (1991). <i>Elements of Information Theory</i> (1st ed.), ch. 2, pp. 12–49.</li>
-    <li>Bengio, Y., Ducharme, R., Vincent, P., &amp; Jauvin, C. (2003). A neural probabilistic language model. <i>JMLR</i>, 3, 1137–1155.</li>
-    <li>Mikolov, T., Chen, K., Corrado, G., &amp; Dean, J. (2013a). Efficient estimation of word representations in vector space. arXiv:1301.3781.</li>
-    <li>Mikolov, T., Yih, W., &amp; Zweig, G. (2013b). Linguistic regularities in continuous space word representations. <i>NAACL-HLT</i>, 746–751.</li>
-    <li>Vaswani, A., et al. (2017). Attention is all you need. <i>NeurIPS</i>.</li>
-    <li>Radford, A., et al. (2019). Language models are unsupervised multitask learners. OpenAI.</li>
-    <li>Brown, T. B., et al. (2020). Language models are few-shot learners. <i>NeurIPS</i>.</li>
-    <li>Kaplan, J., et al. (2020). Scaling laws for neural language models. arXiv:2001.08361.</li>
-    <li>Xie, S. M., Raghunathan, A., Liang, P., &amp; Ma, T. (2022). An explanation of in-context learning as implicit Bayesian inference. <i>ICLR</i>.</li>
-    <li>Bender, E. M., &amp; Koller, A. (2020). Climbing towards NLU: On meaning, form, and understanding in the age of data. <i>ACL</i>, 5185–5198.</li>
-    <li>Piantadosi, S. T., &amp; Hill, F. (2022). Meaning without reference in large language models. arXiv:2208.02957.</li>
-    <li>Mahowald, K., Ivanova, A. A., Blank, I. A., Kanwisher, N., Tenenbaum, J. B., &amp; Fedorenko, E. (2024). Dissociating language and thought in large language models. <i>Trends in Cognitive Sciences</i>. Pages cited from arXiv:2301.06627v3.</li>
-    <li>Kosinski, M. (2024). Evaluating large language models in theory of mind tasks. <i>PNAS</i>.</li>
-    <li>Ullman, T. (2023). Large language models fail on trivial alterations to theory-of-mind tasks. arXiv:2302.08399.</li>
-    <li>Strachan, J. W. A., et al. (2024). Testing theory of mind in large language models and humans. <i>Nature Human Behaviour</i>.</li>
-    <li>Shapira, N., et al. (2024). Clever Hans or neural theory of mind? Stress testing social reasoning in large language models. <i>EACL</i>, 2257–2273.</li>
+    <li id="src-shannon1948">Shannon, C. E. (1948). A mathematical theory of communication. <i>Bell System Technical Journal</i>, 27. Part 1, pp. 1–28 of the reprint used.</li>
+    <li id="src-shannon1951">Shannon, C. E. (1951). Prediction and entropy of printed English. <i>Bell System Technical Journal</i>, 30, 50–64.</li>
+    <li id="src-cover">Cover, T. M., &amp; Thomas, J. A. (1991). <i>Elements of Information Theory</i> (1st ed.), ch. 2, pp. 12–49.</li>
+    <li id="src-bengio">Bengio, Y., Ducharme, R., Vincent, P., &amp; Jauvin, C. (2003). A neural probabilistic language model. <i>JMLR</i>, 3, 1137–1155.</li>
+    <li id="src-mikolov2013a">Mikolov, T., Chen, K., Corrado, G., &amp; Dean, J. (2013a). Efficient estimation of word representations in vector space. arXiv:1301.3781.</li>
+    <li id="src-mikolov2013b">Mikolov, T., Yih, W., &amp; Zweig, G. (2013b). Linguistic regularities in continuous space word representations. <i>NAACL-HLT</i>, 746–751.</li>
+    <li id="src-vaswani">Vaswani, A., et al. (2017). Attention is all you need. <i>NeurIPS</i>.</li>
+    <li id="src-radford">Radford, A., et al. (2019). Language models are unsupervised multitask learners. OpenAI.</li>
+    <li id="src-brown">Brown, T. B., et al. (2020). Language models are few-shot learners. <i>NeurIPS</i>.</li>
+    <li id="src-kaplan">Kaplan, J., et al. (2020). Scaling laws for neural language models. arXiv:2001.08361.</li>
+    <li id="src-xie">Xie, S. M., Raghunathan, A., Liang, P., &amp; Ma, T. (2022). An explanation of in-context learning as implicit Bayesian inference. <i>ICLR</i>.</li>
+    <li id="src-bender">Bender, E. M., &amp; Koller, A. (2020). Climbing towards NLU: On meaning, form, and understanding in the age of data. <i>ACL</i>, 5185–5198.</li>
+    <li id="src-piantadosi">Piantadosi, S. T., &amp; Hill, F. (2022). Meaning without reference in large language models. arXiv:2208.02957.</li>
+    <li id="src-mahowald">Mahowald, K., Ivanova, A. A., Blank, I. A., Kanwisher, N., Tenenbaum, J. B., &amp; Fedorenko, E. (2024). Dissociating language and thought in large language models. <i>Trends in Cognitive Sciences</i>. Pages cited from arXiv:2301.06627v3.</li>
+    <li id="src-kosinski">Kosinski, M. (2024). Evaluating large language models in theory of mind tasks. <i>PNAS</i>.</li>
+    <li id="src-ullman">Ullman, T. (2023). Large language models fail on trivial alterations to theory-of-mind tasks. arXiv:2302.08399.</li>
+    <li id="src-strachan">Strachan, J. W. A., et al. (2024). Testing theory of mind in large language models and humans. <i>Nature Human Behaviour</i>.</li>
+    <li id="src-shapira">Shapira, N., et al. (2024). Clever Hans or neural theory of mind? Stress testing social reasoning in large language models. <i>EACL</i>, 2257–2273.</li>
+  </ol>
+  <h3>Further reading (not yet in our library)</h3>
+  <ol class="srcs">
+    <li id="src-hussain">Hussain, Z., Binz, M., Mata, R., et al. (2024). A tutorial on open-source large language models for behavioral science. <i>Behavior Research Methods</i>, 56(8), 8214–8237. https://doi.org/10.3758/s13428-024-02455-8</li>
+    <li id="src-kozlowski">Kozlowski, A. C., Taddy, M., &amp; Evans, J. A. (2019). The geometry of culture: Analyzing the meanings of class through word embeddings. <i>American Sociological Review</i>, 84(5), 905–949. https://doi.org/10.1177/0003122419877135. Summary in this post from the preprint, arXiv:1803.09288 (titled “The geometry of culture: Analyzing meaning through word embeddings”).</li>
   </ol>
 </section>
 

@@ -23,12 +23,13 @@ Every new concept or important question climbs the same ladder, in this order:
 Do not start a concept at step 4. (Note: “imagine you are explaining it to high school students … use instances or illustrations … as ladders”, 2026-10-16.)
 
 ## 3. Terms
+- Every citation links to its source entry (hover or tap shows the full reference with a Copy button). (Note, 2026-10-16.)
 - Define every technical term **at first use, in the sentence where it appears**, with an everyday comparison (held-out data = exam questions that were not in the homework).
 - If a term needs more than one sentence, give it a **term box** (`.term`): name, plain definition, one example, why it matters here. (Note on “held-out”, 2026-10-15.)
 - Never use a term in a formula or figure before it is defined in the text (fact-check minor 22, 2026-10-15).
 
 ## 4. Explanations live in the main text
-- An explanation the argument needs goes **into the paragraph itself**, not into a side box. Boxes are only for (a) term definitions, (b) traps (naming conflicts, version conflicts), (c) answers to the guess-first questions, (d) exercises. (Note: “Instead of adding a WHO DOES WHAT inbox … integrate the explanation into the text”, 2026-10-15.)
+- An explanation the argument needs goes **into the paragraph itself**, not into a side box. Boxes are only for (a) term definitions, (b) traps (naming conflicts, version conflicts), (c) answers to the guess-first questions, (d) exercises, (e) optional **deep-dive fold-outs** ("Look inside: …") that go one level deeper while the main text still stands alone; a deep dive uses one notation, worked toy numbers and a small diagram, and the audio only mentions that it exists. (Note on Step 5 attention, 2026-10-16.) (Note: “Instead of adding a WHO DOES WHAT inbox … integrate the explanation into the text”, 2026-10-15.)
 - When an idea has roles (who sends, who receives, who encodes, who decodes), **name the roles explicitly** and walk one tiny example through them. (Comment on Shannon's twin, 2026-10-15.)
 
 ## 5. Illustrations

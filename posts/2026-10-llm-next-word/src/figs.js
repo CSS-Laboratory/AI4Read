@@ -124,3 +124,48 @@ const DEFS=`<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWi
   read.style.whiteSpace="pre-line";upd();
 })();
 })();
+
+/* ---- Citation popovers: tap or hover a citation to see the full reference, with Copy ---- */
+(function(){
+  const pop=document.createElement("div");pop.className="citepop";pop.setAttribute("role","dialog");pop.hidden=true;document.body.append(pop);
+  let cur=null,hideT=null;
+  function refText(key){const li=document.getElementById("src-"+key);return li?li.textContent.replace(/\s+/g," ").trim():""}
+  function show(c){const key=c.dataset.src,t=refText(key);if(!t)return;cur=c;clearTimeout(hideT);
+    pop.innerHTML=`<p class="cp-ref"></p><div class="cp-row"><button type="button" class="cp-copy">Copy</button><a class="cp-all" href="#src-${key}">In Sources</a></div>`;
+    pop.querySelector(".cp-ref").textContent=t;
+    pop.querySelector(".cp-copy").addEventListener("click",e=>{e.stopPropagation();const b=e.currentTarget;
+      const ok=()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1400)};
+      try{navigator.clipboard.writeText(t).then(ok,()=>sel())}catch(err){sel()}
+      function sel(){const r=document.createRange();r.selectNodeContents(pop.querySelector(".cp-ref"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected: copy it"}});
+    pop.querySelector(".cp-all").addEventListener("click",()=>{pop.hidden=true});
+    pop.hidden=false;const r=c.getBoundingClientRect(),W=Math.min(360,window.innerWidth-24);pop.style.width=W+"px";
+    let x=Math.max(12,Math.min(r.left+r.width/2-W/2,window.innerWidth-W-12));let y=r.bottom+8;
+    pop.style.left=x+"px";pop.style.top=(y+window.scrollY)+"px";
+    const ph=pop.getBoundingClientRect().height;if(y+ph>window.innerHeight-80)pop.style.top=(r.top-ph-8+window.scrollY)+"px";}
+  function hide(){pop.hidden=true;cur=null}
+  document.querySelectorAll(".cite[data-src]").forEach(c=>{
+    c.addEventListener("click",e=>{e.stopPropagation();if(cur===c&&!pop.hidden)hide();else show(c)});
+    c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();show(c)}});
+    c.addEventListener("mouseenter",()=>{if(matchMedia("(hover:hover)").matches)show(c)});
+    c.addEventListener("mouseleave",()=>{if(matchMedia("(hover:hover)").matches)hideT=setTimeout(()=>{if(!pop.matches(":hover"))hide()},300)});});
+  pop.addEventListener("mouseleave",()=>{if(matchMedia("(hover:hover)").matches)hideT=setTimeout(hide,300)});
+  document.addEventListener("click",e=>{if(!pop.hidden&&!pop.contains(e.target))hide()});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")hide()});
+  window.addEventListener("scroll",()=>{if(!pop.hidden&&cur&&matchMedia("(hover:none)").matches){}},{passive:true});
+})();
+
+/* ---- Show each guess-first question at the top of its answer box ---- */
+(function(){document.querySelectorAll(".reveal[data-for]").forEach(r=>{const q=document.querySelector(`.quiz[data-q="${r.dataset.for}"] .q`);if(!q)return;
+  const p=document.createElement("p");p.className="reveal-q";p.textContent=q.textContent.replace(/\s+/g," ").trim();
+  const h=r.querySelector(".reveal-h");h.after(p)})})();
+
+/* ---- Attention box: perceptron vs attention picture ---- */
+(function(){const host=document.getElementById("fig-percatt");if(!host)return;
+  const W=360,H=170;let b=`<defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahd"/></marker></defs>`;
+  const t=(x,y,s,c="t")=>`<text x="${x}" y="${y}" text-anchor="middle" class="${c}">${s}</text>`;
+  const tok=(x,y,l)=>`<circle cx="${x}" cy="${y}" r="15" class="tokc"/>`+t(x,y+4,l);
+  b+=t(85,16,"perceptron layer","th")+t(270,16,"attention","th");
+  [40,85,130].forEach((x,i)=>{b+=tok(x,140,"x"+(i+1))});b+=tok(85,50,"h₃");
+  b+=`<line x1="130" y1="125" x2="92" y2="66" class="arw" stroke-width="3" marker-end="url(#ah2)"/>`+t(85,100,"W","ts");
+  const ws=[0.248,0.248,0.503];[225,270,315].forEach((x,i)=>{b+=tok(x,140,"x"+(i+1));b+=`<line x1="${x}" y1="125" x2="${270+(x-270)*0.18}" y2="66" class="arw" stroke-width="${1+ws[i]*9}" marker-end="url(#ah2)"/>`+t(x+(i===1?16:0),108,ws[i].toFixed(2),"tn")});b+=tok(270,50,"h₃");
+  host.innerHTML=`<svg viewBox="0 0 ${W} ${H}" class="fig" role="img" aria-label="Perceptron versus attention">${b}</svg><figcaption>Left: the perceptron makes h₃ from token 3 alone, with the fixed table W. Right: attention makes h₃ as a weighted average of tokens 1–3; the line widths show the weights 0.25, 0.25 and 0.50 from this box.</figcaption>`;})();

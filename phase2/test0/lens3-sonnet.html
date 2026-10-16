@@ -1,0 +1,57 @@
+<h2>Lens 3 · Bayesian inference</h2>
+
+<p><strong>Link type.</strong> Inside the simplified model of Xie et al., the link is <em>same-math</em>: the model's prediction is Bayes' rule written out <span class="cite">(Xie et al. 2022, p. 2)</span>. For a real LLM it is only a <em>structural analogy</em>: the paper proves a result inside a stylized model and tests it on synthetic data. It does not show that real LLMs compute posteriors <span class="cite">(pp. 7, 10)</span>.</p>
+
+<p><strong>An instance first.</strong> Give a model this prompt (the text we feed it):</p>
+<p class="ex">Albert Einstein was German<br>Mahatma Gandhi was Indian<br>Marie Curie was&nbsp;…</p>
+<p>The most likely next word is “Polish” <span class="cite">(Xie et al. 2022, p. 1)</span>. Nobody told the model the task, and no weight changed. This is <em>in-context learning</em> (ICL): learning a task from examples inside the prompt.</p>
+
+<p><strong>What happens, step by step</strong> (the numbers are <em>ours</em>, toy numbers, our world W4). Suppose the model holds two hidden ideas, called <em>concepts</em>, about what such a list could be. A: “the answer is the person's nationality”. B: “the answer is the person's occupation”. Before any example it has no favourite. This starting belief is the <em>prior</em>: 1/2 for A, 1/2 for B.</p>
+<p>Each example is evidence. The <em>likelihood</em> of an example is how probable it is to see an example like this if the concept were true. Say 0.2 under A and 0.05 under B. After one example, we weigh each concept as prior × likelihood: A gets 0.5 × 0.2 = 0.10, B gets 0.5 × 0.05 = 0.025. Divide by the total, 0.125, to get the <em>posterior</em>, the belief after the evidence: A = 0.8, B = 0.2.</p>
+<p>The pattern: every example multiplies A's weight by 0.2 and B's by 0.05, so the odds A : B grow by 4 each time (1 : 1, then 4 : 1, 16 : 1). After <em>n</em> examples, P(A) = 4<sup>n</sup> / (4<sup>n</sup> + 1).</p>
+
+<p>The model does not simply pick the winner. It takes a weighted average, called <em>marginalization</em>. Say the right answer (a nationality) has chance 0.9 under A and 0.1 under B (ours). Then P(right) = 0.9 × P(A) + 0.1 × P(B):</p>
+<table class="mini">
+<thead><tr><th>examples n</th><th>P(A)</th><th>P(right)</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>0.500</td><td>0.500</td></tr>
+<tr><td>1</td><td>0.800</td><td>0.740</td></tr>
+<tr><td>2</td><td>0.941</td><td>0.853</td></tr>
+<tr><td>3</td><td>0.985</td><td>0.888</td></tr>
+<tr><td>4</td><td>0.996</td><td>0.897</td></tr>
+</tbody>
+</table>
+
+<p><strong>The formula, as a short name for this pattern.</strong> Xie et al. write the prediction as</p>
+\[
+p(\text{output}\mid\text{prompt})=\int p(\text{output}\mid\text{concept},\text{prompt})\;p(\text{concept}\mid\text{prompt})\,d(\text{concept})
+\]
+<p class="cite-line"><span class="cite">(Xie et al. 2022, p. 2)</span></p>
+<p>Read aloud: “the chance of an output, given the prompt, is the sum over all concepts of two things multiplied: the chance of that output if that concept is the true one, and the chance that the concept is the true one, given the prompt.” The integral sign is a sum over continuous concepts; with two concepts it is our line above. The second factor comes from Bayes' rule <span class="cite">(Gelman et al. 2013, p. 7)</span>:</p>
+\[
+p(\text{concept}\mid\text{prompt})\;\propto\;p(\text{prompt}\mid\text{concept})\;p(\text{concept})
+\]
+<p>“Posterior is proportional to likelihood times prior”; “proportional” means we divide by one total at the end. Xie et al. show that the weight of a wrong concept θ, compared with the true one θ*, is proportional to e<sup>n·r<sub>n</sub>(θ)</sup> p(θ) <span class="cite">(p. 6)</span>. Here r<sub>n</sub> is the average log of the likelihood ratio per example (“log” turns products into sums). In our toy, r = ln(0.05/0.2) = −1.386 per example, and e<sup>−1.386 n</sup> = 4<sup>−n</sup>.</p>
+<p><strong>Check.</strong> For n = 2: weights 0.5 × 0.04 = 0.02 and 0.5 × 0.0025 = 0.00125. P(A) = 0.02 / 0.02125 = 0.941. Same as the table and as 16/17.</p>
+
+<p><strong>Why a language model would do this.</strong> The authors <em>assume</em> every pretraining document is made by a hidden concept θ that sets the rules of a <em>hidden Markov model</em> (HMM): a text generator whose hidden state changes step by step and writes one word per step. They also assume the LM fits this pretraining distribution exactly <span class="cite">(Xie et al. 2022, pp. 2–3)</span>. To continue a document well, such an LM must infer θ; a prompt of examples with one shared concept lets it do the same thing. If p(concept | prompt) concentrates on that concept, the LM “selects” it <span class="cite">(p. 3)</span>.</p>
+
+<figure class="interactive" data-id="lens3-bayes">
+<figcaption>Interactive (toy numbers): add examples and watch belief move from A to B.</figcaption>
+</figure>
+<!-- DEV SPEC, id lens3-bayes (SVG + 3 controls, works at 375 px, theme tokens).
+Inputs: (1) slider "examples n", integers 0-8, default 2; (2) slider "prior for A", 0 to 1 in steps of 0.01, default 0.5; (3) slider "likelihood ratio L(A)/L(B)", 1 to 10, default 4 (fixed: L(A)=0.2 when ratio 4, L(B)=L(A)/ratio; keep L(A)=0.2).
+Fixed: P(right | A) = 0.9, P(right | B) = 0.1. Label all as "toy numbers".
+Computation: wA = prior * LA^n, wB = (1-prior) * LB^n, pA = wA/(wA+wB) (if both are 0 show 0.5 and a note), pRight = 0.9*pA + 0.1*(1-pA).
+Outputs: (a) two horizontal bars "concept A", "concept B" showing pA and 1-pA with numbers; (b) a large readout "P(right) = ..." ; (c) a line chart of P(right) for n = 0..8 with the current n marked and a dashed line at 0.9 labelled "ceiling set by concept A"; (d) one line of live arithmetic: "0.5 x 0.2^2 = 0.02 ; 0.5 x 0.05^2 = 0.00125 ; P(A) = 0.941".
+What changes: moving n slides the bars and the marker; raising the ratio makes the bars move faster; moving the prior to 0 ("the model never saw concept A in pretraining") freezes P(A) at 0 whatever n is, with caption "no evidence can revive a concept the model gives zero weight (our simplification of Xie et al.'s unseen-concept test, p. 10)"; a prior of 0.01 shows that many more examples are needed.
+-->
+
+<p><strong>Limits and hedges.</strong></p>
+<ul>
+<li>Theorem 1 says: under the assumptions <em>and</em> a <em>distinguishability</em> condition, the error rate approaches the best possible as n grows <span class="cite">(Xie et al. 2022, p. 7)</span>. Distinguishability means the evidence per example must beat a fixed cost, because glued-together examples look odd to the model <span class="cite">(pp. 4, 7)</span>.</li>
+<li>The tests use a small synthetic dataset (GINC) with a 4-layer Transformer in the ablations. If the pretraining data has one concept only, or the prompt concept is unseen, ICL fails <span class="cite">(p. 10)</span>. Larger models may gain beyond pretraining loss <span class="cite">(p. 10)</span>, which a pure posterior story does not explain. The authors call it “a first step” <span class="cite">(p. 12)</span>.</li>
+<li>GPT-3's authors stay agnostic on whether ICL learns a task from scratch or only recognizes a pattern seen in training; they think word scrambling appears to be learned at test time but “cannot confirm” it <span class="cite">(Brown et al. 2020, pp. 4, 24, 34)</span>.</li>
+</ul>
+
+<p><strong>What this lens says the model knows.</strong> Through this lens, the model knows a large menu of concepts learned in pretraining, with a prior weight on each, and a way to score how well a prompt fits each one. A prompt is not new teaching. It is evidence that shifts weight among concepts the model already has, and the answer is the weighted vote of all of them. So ICL can be strong when the right concept is in the menu and the examples tell it apart, and it cannot rise above what that concept itself can answer (the 0.9 ceiling in our toy). Whether real LLMs work this way is not shown.</p>

@@ -43,7 +43,7 @@ Step three, two thousand and three. Give every word a vector, a short list of th
 
 Step four, twenty thirteen. Mikolov and colleagues made word vectors cheap enough to train on billions of words. And they found a surprise. Some relations became directions in space. The vector for "biggest", minus "big", plus "small", lands near "smallest".
 
-Step five, twenty seventeen. Attention. In a Transformer, every position looks at other positions and takes a weighted average of what it finds. To predict text from left to right, a mask stops each position from looking at the future.
+Step five, twenty seventeen. Attention. In a Transformer, every position looks at other positions and takes a weighted average of what it finds. To predict text from left to right, a mask stops each position from looking at the future. On the page, there is a fold-out box that compares attention with a simple perceptron layer, step by step, with small numbers. Open it when you read.
 
 Step six, twenty nineteen. Tasks are text too. Put "T L D R" after a news article, and the model tends to continue with a summary. The summaries were weak. But the GPT-2 authors made a speculation that frames this whole post: a model with enough capacity will begin to infer and perform the tasks shown in text, in order to better predict them.
 

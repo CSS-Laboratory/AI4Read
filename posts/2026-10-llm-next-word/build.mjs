@@ -7,6 +7,27 @@ const hljs = require("highlight.js/lib/core"); hljs.registerLanguage("python", r
 const D = path.dirname(new URL(import.meta.url).pathname);
 const rd = f => fs.readFileSync(path.join(D, f), "utf8");
 let html = rd("src/content.html"); let errors = 0;
+// Link every citation to its source entry (data-src). A cite without an author name inherits the last named source in the same section.
+const KEYS = [[/Shannon 1948/,"shannon1948"],[/Shannon 1951/,"shannon1951"],[/Cover/,"cover"],[/Bengio/,"bengio"],[/Mikolov et al\. 2013a/,"mikolov2013a"],[/Mikolov et al\. 2013b/,"mikolov2013b"],[/Vaswani/,"vaswani"],[/Radford/,"radford"],[/Brown/,"brown"],[/Kaplan/,"kaplan"],[/Xie/,"xie"],[/Bender/,"bender"],[/Piantadosi/,"piantadosi"],[/Mahowald/,"mahowald"],[/Kosinski/,"kosinski"],[/Ullman/,"ullman"],[/Strachan/,"strachan"],[/Shapira/,"shapira"]];
+const NAMES = [[/Shannon 1948|Shannon’s 1948|Shannon \(1948\)/g,"shannon1948"],[/Shannon 1951|Shannon \(1951\)/g,"shannon1951"],[/Cover (and|&amp;) Thomas/g,"cover"],[/Bengio/g,"bengio"],[/Mikolov, Yih|Mikolov et al\. 2013b/g,"mikolov2013b"],[/Mikolov(?!, Yih)/g,"mikolov2013a"],[/Vaswani|Transformer paper/g,"vaswani"],[/GPT-2|Radford/g,"radford"],[/GPT-3’s authors|GPT-3 paper|Brown et al/g,"brown"],[/Kaplan/g,"kaplan"],[/Xie/g,"xie"],[/Bender/g,"bender"],[/Piantadosi/g,"piantadosi"],[/Mahowald/g,"mahowald"],[/Kosinski/g,"kosinski"],[/Ullman/g,"ullman"],[/Strachan/g,"strachan"],[/Shapira/g,"shapira"]];
+const citeLog = []; {
+  const secStarts = [...html.matchAll(/<section id="([^"]+)"/g)].map(m => [m.index, m[1]]);
+  const secAt = i => { let s = ["", 0]; for (const [p, id] of secStarts) if (p <= i) s = [id, p]; return s; };
+  const lastNamed = {}; // section -> last key from a named cite
+  html = html.replace(/<span class="cite">([^<]*)<\/span>/g, (m, txt, off) => {
+    const [sec, sp] = secAt(off); let key = null, how = "named";
+    const hit = KEYS.find(([re]) => re.test(txt));
+    if (hit) key = hit[1];
+    else { // nearest author mention in the prose before this cite, same section
+      const before = html.slice(sp, off); let best = -1;
+      for (const [re, k] of NAMES) { re.lastIndex = 0; let mm; while ((mm = re.exec(before))) if (mm.index > best) { best = mm.index; key = k; } }
+      how = "prose"; if (!key) { key = lastNamed[sec] || null; how = "inherited"; }
+    }
+    if (hit) lastNamed[sec] = key;
+    citeLog.push([sec, txt, key || "", how]);
+    return key ? `<span class="cite" data-src="${key}" tabindex="0" role="button">${txt}</span>` : m; }); }
+fs.writeFileSync(path.join(D, "review", "cite-map.tsv"), citeLog.map(r => r.join("\t")).join("\n"));
+
 const render = (tex, display) => { try { return katex.renderToString(tex, { displayMode: display, output: "mathml", throwOnError: true, strict: "ignore" }); }
   catch (e) { errors++; console.error("KaTeX:", e.message, "\n  in:", tex); return `<code>${tex}</code>`; } };
 html = html.replace(/\\\[([\s\S]+?)\\\]/g, (_, t) => `<div class="mjx">${render(t.trim(), true)}</div>`);

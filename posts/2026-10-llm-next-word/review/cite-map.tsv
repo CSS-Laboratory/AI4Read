@@ -1,0 +1,140 @@
+hook	Shannon 1951, p. 56	shannon1951	named
+hook	p. 56	shannon1951	prose
+hook	pp. 55–56	shannon1951	prose
+hook	Brown et al. 2020, p. 12	brown	named
+guess	Ullman 2023, p. 6	ullman	named
+guess	Shapira et al. 2024, p. 2262	shapira	named
+home	Bengio et al. 2003, p. 1138	bengio	named
+home	Radford et al. 2019, pdf 2	radford	named
+home	p. 1137	bengio	prose
+home	pp. 1139, 1141	bengio	prose
+home	pp. 1139–1140	bengio	prose
+home	p. 1148	bengio	prose
+home	Bengio et al. 2003, pp. 1141–1142; Mikolov et al. 2013a, p. 3	bengio	named
+home	Bengio et al. 2003, p. 1142	bengio	named
+home	Mikolov et al. 2013a, pp. 2–3	mikolov2013a	named
+home	p. 3	mikolov2013a	prose
+home	p. 4	mikolov2013a	prose
+home	p. 4	mikolov2013a	prose
+home	p. 4	mikolov2013a	prose
+home	Mikolov et al. 2013a, p. 5	mikolov2013a	named
+home	Vaswani et al. 2017, pp. 3–4	vaswani	named
+home	pp. 3, 5	vaswani	prose
+home	Kaplan et al. 2020, p. 6	kaplan	named
+home	Vaswani et al. 2017, p. 5	vaswani	named
+home	Vaswani et al. 2017, pp. 4–5	vaswani	named
+home	Vaswani et al. 2017, p. 5	vaswani	named
+home	p. 3	vaswani	prose
+home	p. 5	vaswani	prose
+home	Radford et al. 2019, pdf 6	radford	named
+home	pdf 6	radford	prose
+home	pdf 3	radford	prose
+home	Brown et al. 2020, p. 8	brown	named
+home	Brown et al. 2020, p. 8	brown	named
+home	pp. 3–4	brown	prose
+home	p. 4, footnote 1	brown	prose
+home	Kaplan et al. 2020, p. 4	kaplan	named
+home	p. 4	kaplan	prose
+home	p. 4	kaplan	prose
+home	p. 4	kaplan	prose
+home	p. 5	kaplan	prose
+home	p. 3	kaplan	prose
+home	p. 4	kaplan	prose
+home	p. 3	kaplan	prose
+home	p. 3	kaplan	prose
+home	p. 5	kaplan	prose
+home	p. 19	kaplan	prose
+lens-info	Shannon 1948, p. 1	shannon1948	named
+lens-info	Cover &amp; Thomas, pp. 14–15	cover	named
+lens-info	Cover &amp; Thomas, p. 15	cover	named
+lens-info	Shannon 1948, p. 18	shannon1948	named
+lens-info	Cover &amp; Thomas, p. 18	cover	named
+lens-info	p. 26	cover	prose
+lens-info	p. 49	cover	prose
+lens-info	Shannon 1948, p. 14	shannon1948	named
+lens-info	Shannon 1951, p. 54	shannon1951	named
+lens-info	Shannon 1948, p. 14	shannon1948	named
+lens-info	Cover &amp; Thomas, p. 28	cover	named
+lens-info	Shannon 1951, pp. 50–51	shannon1951	named
+lens-info	p. 64	shannon1951	prose
+lens-info	pp. 56–57	shannon1951	prose
+lens-info	Kaplan et al. 2020, pp. 17–18	kaplan	named
+lens-info	p. 18	kaplan	prose
+lens-info	Brown et al. 2020, p. 24	brown	named
+lens-info	Shannon 1951, p. 53	shannon1951	named
+lens-linalg	Mikolov et al. 2013b, p. 747	mikolov2013b	named
+lens-linalg	p. 746	mikolov2013b	prose
+lens-linalg	p. 748	mikolov2013b	prose
+lens-linalg	pp. 748–749	mikolov2013b	prose
+lens-linalg	p. 750	mikolov2013b	prose
+lens-linalg	Mikolov et al. 2013a, p. 9	mikolov2013a	named
+lens-linalg	Vaswani et al. 2017, pp. 3–4	vaswani	named
+lens-linalg	p. 5	vaswani	prose
+lens-linalg	p. 4, footnote 4	vaswani	prose
+lens-linalg	p. 14	vaswani	prose
+lens-bayes	Xie et al. 2022, p. 1	xie	named
+lens-bayes	p. 2	xie	prose
+lens-bayes	p. 3	xie	prose
+lens-bayes	Theorem 1, p. 7	xie	prose
+lens-bayes	p. 10	xie	prose
+lens-bayes	pp. 10–11	xie	prose
+lens-bayes	p. 12	xie	prose
+lens-meaning	pp. 5185–5187	bender	prose
+lens-meaning	Bender &amp; Koller 2020, p. 5185	bender	named
+lens-meaning	pp. 5188–5189	bender	prose
+lens-meaning	p. 5193	bender	prose
+lens-meaning	Piantadosi &amp; Hill 2022, pdf 1–2	piantadosi	named
+lens-meaning	pdf 2	piantadosi	prose
+lens-meaning	pdf 2	piantadosi	prose
+lens-meaning	pdf 4	piantadosi	prose
+lens-meaning	pdf 5	piantadosi	prose
+lens-meaning	Mahowald et al. 2024, pp. 2–3	mahowald	named
+lens-meaning	p. 5	mahowald	prose
+lens-meaning	p. 2	mahowald	prose
+lens-meaning	pp. 7–8	mahowald	prose
+lens-tom	Kosinski 2024, § Study 1.1	kosinski	named
+lens-tom	§ Study 1.3, § Discussion	kosinski	prose
+lens-tom	§ Abstract, § Study 3	kosinski	prose
+lens-tom	§ Study 3	kosinski	prose
+lens-tom	§ Abstract	kosinski	prose
+lens-tom	§ Discussion	kosinski	prose
+lens-tom	Ullman 2023, p. 3	ullman	named
+lens-tom	p. 2	ullman	prose
+lens-tom	p. 8	ullman	prose
+lens-tom	Shapira et al. 2024, p. 2261	shapira	named
+lens-tom	Ullman 2023, p. 6	ullman	named
+lens-tom	Shapira et al. 2024, pp. 2262–2263	shapira	named
+lens-tom	p. 2262	shapira	prose
+lens-tom	Strachan et al. 2024, § False belief	strachan	named
+lens-tom	§ Irony, § Hinting, § Strange stories	strachan	prose
+lens-tom	§ Understanding faux pas	strachan	prose
+lens-tom	p. 2	ullman	prose
+lens-tom	pp. 2272–2273	shapira	prose
+lens-tom	Kosinski 2024, § Study 3	kosinski	named
+ladder	Shannon 1948, p. 6	shannon1948	named
+ladder	p. 6	shannon1948	prose
+ladder	Bengio et al. 2003, pp. 1138–1139	bengio	named
+ladder	Shannon 1948, p. 18	shannon1948	named
+ladder	pp. 14–15	cover	prose
+ladder	Cover &amp; Thomas, p. 27	cover	named
+ladder	Cover &amp; Thomas, p. 18	cover	named
+ladder	p. 19	cover	prose
+ladder	p. 1141	bengio	prose
+ladder	p. 1149	bengio	prose
+ladder	p. 6	kaplan	prose
+ladder	Shannon 1951, p. 54	shannon1951	named
+ladder	Shannon 1948, pp. 6–7	shannon1948	named
+ladder	p. 1142	bengio	prose
+ladder	p. 5	mikolov2013a	prose
+ladder	p. 6	xie	prose
+ladder	pp. 6–7	xie	prose
+ladder	p. 7	xie	prose
+ladder	p. 4	kaplan	prose
+ladder	p. 5	kaplan	prose
+ladder	pp. 3, 12	kaplan	prose
+ladder	p. 3	kaplan	prose
+ladder	pp. 17–18	kaplan	prose
+ladder	Shannon 1951, p. 61	shannon1951	named
+ladder	pp. 61, 64	shannon1951	prose
+turn	Shannon 1951, p. 54	shannon1951	named
+work	p. 10	xie	prose
