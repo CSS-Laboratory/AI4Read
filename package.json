@@ -1,0 +1,15 @@
+{
+  "name": "ai4read",
+  "private": true,
+  "description": "Build tools for AI4Read posts (math → MathML, code highlighting, site build).",
+  "scripts": {
+    "build:post": "node posts/$npm_config_slug/build.mjs && node posts/$npm_config_slug/build.mjs --site && node site/ai4read/build-index.mjs",
+    "mock": "node site/ai4read/dev/mock-server.mjs"
+  },
+  "devDependencies": {
+    "katex": "0.16.11",
+    "highlight.js": "11.9.0",
+    "marked": "12.0.2",
+    "dompurify": "3.1.6"
+  }
+}

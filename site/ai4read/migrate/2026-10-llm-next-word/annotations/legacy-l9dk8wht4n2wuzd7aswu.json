@@ -1,0 +1,14 @@
+{
+  "createdAt": "2026-10-15T14:25:24.937Z",
+  "deleted": true,
+  "items": [],
+  "legacyFrom": "l9dk8wht4n2wuzd7aswu",
+  "legacyReply": "**Done. Thank you for the puzzle.** Lens 1 now starts with **32 cups and 5 rats** as an interactive (tap a cup to poison it, or tap a rat to see which 16 cups it drinks from). It then climbs: one rat = one yes/no question = 1 bit → surprise $-\\log_2 p$ → a **question tree** for the skewed weather (1.75 questions on average) → the entropy formula. It also notes that the minimum number of questions lies between $H$ and $H+1$ (Cover & Thomas, p. 15).",
+  "prefix": "",
+  "quote": "",
+  "section": "lens-info",
+  "sectionLevel": true,
+  "status": "addressed",
+  "suffix": "",
+  "updatedAt": "2026-10-16T13:27:36.597Z"
+}

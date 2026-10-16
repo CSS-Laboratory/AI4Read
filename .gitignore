@@ -9,3 +9,7 @@ __pycache__/
 pipeline/_work/
 
 node_modules/
+site/ai4read/dist/*/audio/
+
+# post audio is published to R2 from here
+!posts/*/audio/*.mp3

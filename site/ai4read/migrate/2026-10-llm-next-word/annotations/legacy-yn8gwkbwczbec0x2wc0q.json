@@ -1,0 +1,14 @@
+{
+  "createdAt": "2026-10-15T05:53:50.619Z",
+  "deleted": true,
+  "items": [],
+  "legacyFrom": "yn8gwkbwczbec0x2wc0q",
+  "legacyReply": "**Done.** Step 4 has a **Remove the hidden layer** lab: switch between Bengio 2003, CBOW and skip-gram, with Mikolov's cost formulas (pp. 3–4) worked out for example sizes. It also fixes a subtle point: in Bengio's own network the output layer is the slowest part, and the hidden layer becomes the bottleneck only once the output uses a word tree. Step 5 has a **Who looks at whom** lab on \"Alice was friends with Bob … her friend\". Tap a word to see its attention weights (toy vectors).",
+  "prefix": "",
+  "quote": "",
+  "section": "home",
+  "sectionLevel": true,
+  "status": "addressed",
+  "suffix": "",
+  "updatedAt": "2026-10-16T05:04:54.721Z"
+}

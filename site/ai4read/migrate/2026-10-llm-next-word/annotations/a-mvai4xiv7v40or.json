@@ -1,0 +1,25 @@
+{
+  "createdAt": "2026-10-16T05:03:07.447Z",
+  "deleted": false,
+  "items": [
+    {
+      "at": "2026-10-16T05:03:53.357Z",
+      "editedAt": "2026-10-16T05:08:43.587Z",
+      "id": "i-mvai5wy5lmwapg",
+      "md": "This means that although human language has nearly infinitely N-gram combinations and we can actually compress it into a model with a bounded size (although still can be very large). But also note that this is the theoretical possibility. It tells nothing about the engineering feasibility, namely how could we do that.",
+      "type": "note"
+    },
+    {
+      "at": "2026-10-16T13:30:00.000Z",
+      "id": "i-claude-7v40or-1",
+      "md": "**Mostly right. Here is one refinement.** Shannon's game is about the **source**, not about the size of a model. It shows that English is very predictable: with long context, each letter carries only about 1 bit instead of 4.7 (Shannon 1951, pp. 50–51). So text *can* be written with far fewer bits per letter. The entropy rate $H$ is the floor for that rate (Shannon 1948, p. 14).\n\nThere are two separate questions here:\n1. **How few bits per letter are possible?** Shannon answers this: about $H$.\n2. **How big must a predictor be to get close to $H$?** Shannon does not answer this. A predictor that comes close to $H$ for English might have to be huge. Kaplan's scaling laws are an *empirical* answer: the loss keeps falling as models grow (Kaplan et al. 2020, p. 4), so bigger models get closer to the floor.\n\nYour second point is exactly right. Shannon's results are **existence results**. They tell you what rate is achievable. They do not tell you how to build the coder. (Shannon's argument counts the roughly $2^{HN}$ \"typical\" sequences, Thm 4, p. 14; it does not give a practical predictor.) LLMs are one engineering answer, sixty years later.\n\nA C1 way to say it: *\"The theory **sets the limit**; it **says nothing about** how to reach it.\"*",
+      "type": "answer"
+    }
+  ],
+  "prefix": "lf was sent, only the number 3. ",
+  "quote": "Why does this make the message shorter? Because the guess numbers are very predictable: they are mostly 1s. Writing a plain letter needs about 4.7 bits (you will see why in Lens 1), but a stream that is almost all 1s can be stored with a very short code for “1” and longer codes for the rare 2s, 3s and 4s. The better the guesser, the more 1s, and the shorter the message. The lesson: a good predictor is also a good compressor.",
+  "section": "hook",
+  "sectionLevel": false,
+  "suffix": " Today we have machines that pla",
+  "updatedAt": "2026-10-16T13:30:00.000Z"
+}

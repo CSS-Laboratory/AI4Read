@@ -1,0 +1,14 @@
+{
+  "createdAt": "2026-10-15T14:11:27.057Z",
+  "deleted": true,
+  "items": [],
+  "legacyFrom": "0sz98uo0pg9d8biy7wsm",
+  "legacyReply": "**Done (2026-10-16).** Step 8 is rewritten as a ladder: what was measured (the loss on held-out text), the formula read aloud, and what *power law* and *smooth* mean (the same ~5% drop per doubling at every size, a straight line on log–log axes). There is a new **Grow the model** slider, a paragraph on why it matters (you can forecast big models from small ones, *our reading*), and what it does **not** show (\"may hide seemingly qualitative changes\", p. 19).",
+  "prefix": "",
+  "quote": "",
+  "section": "home",
+  "sectionLevel": true,
+  "status": "addressed",
+  "suffix": "",
+  "updatedAt": "2026-10-16T13:26:54.830Z"
+}

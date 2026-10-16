@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-10-16T05:12:19.692Z",
+  "deleted": false,
+  "items": [
+    {
+      "askedAbout": "i-mvaihoapyhbvgp",
+      "at": "2026-10-16T05:13:02.017Z",
+      "id": "i-mvaihoap1mlnla",
+      "md": "# Why the cost is $N\\times D + N\\times D\\times H + H\\times V$\n\nThe idea: **count every number the network must touch to make one prediction**, layer by layer (Mikolov et al. 2013a, pp. 2–3). Each term is one layer.\n\n## A tiny instance first\n\nTake $N=2$ previous words, vectors of size $D=3$, a hidden layer of $H=4$ units, and a vocabulary of $V=5$ words.\n\n1. **Look up the word vectors (projection layer).** Each of the 2 words brings its 3-number vector, giving $2\\times3=6$ numbers. Joined end to end, they form one input list of length 6.\n2. **Hidden layer.** Each of the 4 hidden units mixes *all* 6 inputs, so each unit has 6 weights. That is $4\\times6=24$ weights, or $N\\times D\\times H$.\n3. **Output (softmax) layer.** Every word in the vocabulary gets a score, and each score mixes all 4 hidden values. That is $5\\times4=20$ weights, or $H\\times V$.\n\nTotal: $6+24+20=50$.\n\n## Now generalise\n\n$$\\underbrace{N\\times D}_{\\text{look up vectors}}+\\underbrace{N\\times D\\times H}_{\\text{hidden layer}}+\\underbrace{H\\times V}_{\\text{score every word}}$$\n\nWith the post's example sizes ($N=10$, $D=H=500$, $V=1{,}000{,}000$):\n\n$$5{,}000+2{,}500{,}000+500{,}000{,}000=502{,}505{,}000$$\n\nThe last term dominates. That matches Bengio's diagram, which marks the output layer \"most computation here\" (Bengio et al. 2003, p. 1142), and his estimate that the softmax takes about 99.7% of the compute (p. 1145).\n\n## Why the hidden layer then becomes the bottleneck\n\nA word tree means only about $\\log_2 V\\approx20$ outputs are computed instead of $V$. The last term becomes $H\\times\\log_2 V=500\\times20=10{,}000$:\n\n$$5{,}000+2{,}500{,}000+10{,}000=2{,}515{,}000$$\n\nNow \"most of the complexity is caused by the term $N\\times D\\times H$\" (Mikolov et al. 2013a, p. 3). That is why they removed the hidden layer (p. 4).\n\n**Beyond our sources:** Each weight costs roughly one multiply-and-add, which is why \"numbers touched\" is a fair measure of work. The first term is really just copying, not multiplying. The formula also ignores smaller costs, such as computing tanh and the exponentials in the softmax, because they grow more slowly.",
+      "type": "answer"
+    },
+    {
+      "at": "2026-10-16T05:13:29.064Z",
+      "fromAnswer": "i-mvaihoap1mlnla",
+      "id": "i-mvaii95z7z6jjj",
+      "md": "# Why the cost is $N\\times D + N\\times D\\times H + H\\times V$\n\nThe idea: **count every number the network must touch to make one prediction**, layer by layer (Mikolov et al. 2013a, pp. 2–3). Each term is one layer.\n\n## A tiny instance first\n\nTake $N=2$ previous words, vectors of size $D=3$, a hidden layer of $H=4$ units, and a vocabulary of $V=5$ words.\n\n1. **Look up the word vectors (projection layer).** Each of the 2 words brings its 3-number vector, giving $2\\times3=6$ numbers. Joined end to end, they form one input list of length 6.\n2. **Hidden layer.** Each of the 4 hidden units mixes *all* 6 inputs, so each unit has 6 weights. That is $4\\times6=24$ weights, or $N\\times D\\times H$.\n3. **Output (softmax) layer.** Every word in the vocabulary gets a score, and each score mixes all 4 hidden values. That is $5\\times4=20$ weights, or $H\\times V$.\n\nTotal: $6+24+20=50$.\n\n## Now generalise\n\n$$\\underbrace{N\\times D}_{\\text{look up vectors}}+\\underbrace{N\\times D\\times H}_{\\text{hidden layer}}+\\underbrace{H\\times V}_{\\text{score every word}}$$\n\nWith the post's example sizes ($N=10$, $D=H=500$, $V=1{,}000{,}000$):\n\n$$5{,}000+2{,}500{,}000+500{,}000{,}000=502{,}505{,}000$$\n\nThe last term dominates. That matches Bengio's diagram, which marks the output layer \"most computation here\" (Bengio et al. 2003, p. 1142), and his estimate that the softmax takes about 99.7% of the compute (p. 1145).\n\n## Why the hidden layer then becomes the bottleneck\n\nA word tree means only about $\\log_2 V\\approx20$ outputs are computed instead of $V$. The last term becomes $H\\times\\log_2 V=500\\times20=10{,}000$:\n\n$$5{,}000+2{,}500{,}000+10{,}000=2{,}515{,}000$$\n\nNow \"most of the complexity is caused by the term $N\\times D\\times H$\" (Mikolov et al. 2013a, p. 3). That is why they removed the hidden layer (p. 4).\n\n**Beyond our sources:** Each weight costs roughly one multiply-and-add, which is why \"numbers touched\" is a fair measure of work. The first term is really just copying, not multiplying. The formula also ignores smaller costs, such as computing tanh and the exponentials in the softmax, because they grow more slowly.",
+      "type": "note"
+    },
+    {
+      "at": "2026-10-16T13:30:00.000Z",
+      "id": "i-claude-nx5w1b-1",
+      "md": "**Checked: this answer is correct.** One detail: Mikolov defines the cost as the number of parameters that must be *touched* for one training example (2013a, p. 2). That is why the look-up term $N\\times D$ appears even though it involves no multiplication. The 99.7% figure for the softmax share of the compute is from Bengio et al. 2003, p. 1145.",
+      "type": "answer"
+    }
+  ],
+  "prefix": " work for one training example. ",
+  "quote": "With 10 previous words (N), vectors of size D, a hidden layer of size H and a vocabulary of size V, the cost is about N×D+N×D×H+H×V (Mikolov counts the numbers that must be touched for one example)",
+  "section": "home",
+  "sectionLevel": false,
+  "suffix": " Mikolov et al. 2013a, pp. 2–3. ",
+  "updatedAt": "2026-10-16T13:27:08.166Z"
+}

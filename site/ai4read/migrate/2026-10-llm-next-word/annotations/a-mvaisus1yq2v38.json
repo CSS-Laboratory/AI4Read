@@ -1,0 +1,31 @@
+{
+  "createdAt": "2026-10-16T05:21:43.633Z",
+  "deleted": false,
+  "items": [
+    {
+      "at": "2026-10-16T05:28:29.359Z",
+      "id": "i-mvaj1ju7ovukjt",
+      "md": "See [this paper](https://link.springer.com/article/10.3758/s13428-024-02455-8) for a detailed explanation",
+      "type": "note"
+    },
+    {
+      "at": "2026-10-16T05:55:29.727Z",
+      "editedAt": "2026-10-16T05:56:44.652Z",
+      "id": "i-mvak0a4fo6vk4n",
+      "md": "Can you explain the attention mechanism in details by comparing it with the perceptron layer using the same notation to show why it is a weighted average of other position, specially showing me the case where the last token is being predicted (LLMs training procress). Add the explanation as a foldable box and only mention there is a box to check in the audio. You should not skip any details in the explanation but explain it step by step to a high-school audience.",
+      "type": "note"
+    },
+    {
+      "at": "2026-10-16T13:30:00.000Z",
+      "id": "i-claude-yq2v38-1",
+      "md": "**Done.** Step 5 now has a fold-out box, **Look inside: attention compared with a perceptron layer, step by step**. It uses one notation and the toy vectors $x_1=(1,0)$, $x_2=(0,1)$, $x_3=(1,1)$.\n\nThe box steps through:\n- the perceptron, which uses token 3 only;\n- why fixed weights between positions cannot follow meaning;\n- attention, with scores, softmax and mixing;\n- why the result is a weighted average;\n- predicting the last token, with its loss and how training nudges the weights;\n- why every position is trained in parallel under the mask.\n\nThere is also a small diagram. An independent check found 1 major and 11 minor issues, all fixed. The audio script now only mentions the box. Your suggested paper (Hussain et al. 2024, *Behavior Research Methods*) is cited in the box and under **Further reading**.",
+      "type": "answer"
+    }
+  ],
+  "prefix": " Transformer does exactly this. ",
+  "quote": "Every position takes a weighted average of information from other positions, with large weights for the positions that matter. The weights come from how well a “query” vector at one position matches a “key” vector at another Vaswani et al. 2017, pp. 3–4.",
+  "section": "home",
+  "sectionLevel": false,
+  "suffix": " To predict text from left to ri",
+  "updatedAt": "2026-10-16T13:30:00.000Z"
+}

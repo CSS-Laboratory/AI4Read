@@ -1,7 +1,8 @@
 // Build the post page: KaTeX -> MathML (no fonts/CSS needed), code + brief + chapters inlined.
 // Usage: node build.mjs   (NODE_PATH=/tmp/kt/node_modules)
 import fs from "fs"; import path from "path"; import { createRequire } from "module";
-const require = createRequire("/tmp/kt/");
+const ROOTREQ = path.join(path.dirname(new URL(import.meta.url).pathname), "..", "..", "package.json");
+const require = createRequire(fs.existsSync(path.join(path.dirname(ROOTREQ), "node_modules", "katex")) ? ROOTREQ : "/tmp/kt/");
 const katex = require("katex");
 const hljs = require("highlight.js/lib/core"); hljs.registerLanguage("python", require("highlight.js/lib/languages/python"));
 const D = path.dirname(new URL(import.meta.url).pathname);
@@ -64,3 +65,46 @@ ${rd("src/annotate.js")}
 `;
 fs.writeFileSync(path.join(D, "index.html"), out);
 console.log(`index.html ${(out.length / 1024).toFixed(0)} KB, math errors: ${errors}, chapters: ${chapters.length}`);
+
+// ---------- Website build (khyang-lab.org/ai4read/<slug>/): external files only, strict-CSP friendly ----------
+if (process.argv.includes("--site")) {
+  const SLUG = path.basename(D);
+  const SITE = path.join(D, "..", "..", "site", "ai4read");
+  const OUT = path.join(SITE, "dist", SLUG), SH = path.join(SITE, "dist", "_shared");
+  fs.rmSync(OUT, { recursive: true, force: true });
+  fs.mkdirSync(path.join(OUT, "audio"), { recursive: true }); fs.mkdirSync(path.join(SH, "lib"), { recursive: true });
+  for (const f of fs.readdirSync(path.join(D, "audio"))) if (f.endsWith(".mp3") || f === "chapters.json") fs.copyFileSync(path.join(D, "audio", f), path.join(OUT, "audio", f));
+  fs.writeFileSync(path.join(OUT, "post.css"), rd("src/style.css") + "\n" + rd("src/annotate.css"));
+  fs.writeFileSync(path.join(OUT, "data.js"), `window.CHAPTERS=${JSON.stringify(chapters)};`);
+  for (const f of ["app.js", "figs.js", "annotate.js"]) fs.copyFileSync(path.join(D, "src", f), path.join(OUT, f));
+  fs.copyFileSync(path.join(SITE, "shared", "site-shim.js"), path.join(SH, "site-shim.js"));
+  for (const [src, dst] of [["marked/marked.min.js", "marked.min.js"], ["dompurify/dist/purify.min.js", "purify.min.js"], ["katex/dist/katex.min.js", "katex.min.js"]])
+    fs.copyFileSync(require.resolve(src.replace(/^(\w+)\/(.*)$/, "$1/$2")), path.join(SH, "lib", dst));
+  const page = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="ai4read-post" content="${SLUG}">
+<title>What Does an LLM Know? · AI4Read</title>
+<link rel="stylesheet" href="post.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}img{max-width:100%}</style>
+</head><body>
+${html}
+<script type="application/json" id="brief-data">${JSON.stringify(brief).replace(/</g, "\\u003c")}</script>
+<script src="/ai4read/_shared/site-shim.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="figs.js"></script>
+<script src="/ai4read/_shared/lib/marked.min.js"></script>
+<script src="/ai4read/_shared/lib/purify.min.js"></script>
+<script src="/ai4read/_shared/lib/katex.min.js"></script>
+<script src="annotate.js"></script>
+</body></html>
+`;
+  fs.writeFileSync(path.join(OUT, "index.html"), page);
+  const meta = { slug: SLUG, title: "What does an LLM know when it predicts the next word?", date: "2026-10-15", summary: "Next-word prediction through information theory, linear algebra, Bayesian inference, philosophy of meaning and theory of mind.", chapters: chapters.length, built: new Date().toISOString() };
+  fs.writeFileSync(path.join(OUT, "post.json"), JSON.stringify(meta, null, 1));
+  // context the Worker may use to ground "Ask Claude" server-side
+  fs.writeFileSync(path.join(OUT, "context.json"), JSON.stringify({ slug: SLUG, brief }));
+  console.log("site build →", OUT);
+}

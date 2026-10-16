@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-15T14:11:27.057Z",
+  "kind": "note",
+  "q": "Can you explain step 8 a little bit in more details? So what is the smooth scaling law and what does it mean?",
+  "reply": "**Done (2026-10-16).** Step 8 is rewritten as a ladder: what was measured (the loss on held-out text), the formula read aloud, and what *power law* and *smooth* mean (the same ~5% drop per doubling at every size, a straight line on log–log axes). There is a new **Grow the model** slider, a paragraph on why it matters (you can forecast big models from small ones, *our reading*), and what it does **not** show (\"may hide seemingly qualitative changes\", p. 19).",
+  "section": "home",
+  "status": "addressed",
+  "title": "How a language model is built"
+}

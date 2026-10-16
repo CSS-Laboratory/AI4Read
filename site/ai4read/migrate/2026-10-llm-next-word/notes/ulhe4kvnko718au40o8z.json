@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-15T14:53:06.848Z",
+  "kind": "note",
+  "q": "Please show the formula of cross entropy H(p, q) in the machine learning field and explain why it is = H(p) + D(p||q) <- actually can be set a exercise",
+  "reply": "**Done.** Lens 1 now shows the machine-learning formula $H(p,q)=-\\sum_x p(x)\\log_2 q(x)$, reads it aloud, and starts from a forecaster who wrongly believes the weather is uniform (2 bits instead of 1.75, so she pays 0.25 extra). **Rung 3** has the derivation $H(p,q)=H(p)+D(p\\|q)$ as an exercise, with a hint and a folded solution.",
+  "section": "lens-info",
+  "status": "addressed",
+  "title": "Lens 1 · Information theory"
+}

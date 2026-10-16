@@ -1,0 +1,14 @@
+{
+  "createdAt": "2026-10-15T14:10:19.766Z",
+  "deleted": true,
+  "items": [],
+  "legacyFrom": "2j2z9tnrdfzsm0akz3nu",
+  "legacyReply": "**Done.** The box is gone. The hook's main text now names the two roles (the first person is the **encoder**, the twin is the **decoder**), walks through the \"TH → 3 → I\" example, and explains why mostly-1s numbers make a shorter message. Rule added to WRITING.md §4: explanations go in the text, not in side boxes.",
+  "prefix": "",
+  "quote": "",
+  "section": "hook",
+  "sectionLevel": true,
+  "status": "addressed",
+  "suffix": "",
+  "updatedAt": "2026-10-16T05:04:35.598Z"
+}

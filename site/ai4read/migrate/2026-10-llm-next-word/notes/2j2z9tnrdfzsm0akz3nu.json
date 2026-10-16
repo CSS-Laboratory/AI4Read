@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-15T14:10:19.766Z",
+  "kind": "note",
+  "q": "Instead of adding a WHO DOES WHAT inbox, can you directly integrate the explanation into the text?",
+  "reply": "**Done.** The box is gone. The hook's main text now names the two roles (the first person is the **encoder**, the twin is the **decoder**), walks through the \"TH → 3 → I\" example, and explains why mostly-1s numbers make a shorter message. Rule added to WRITING.md §4: explanations go in the text, not in side boxes.",
+  "section": "hook",
+  "status": "addressed",
+  "title": "The guessing game"
+}

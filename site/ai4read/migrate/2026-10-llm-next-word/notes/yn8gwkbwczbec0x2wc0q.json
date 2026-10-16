@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-15T05:53:50.619Z",
+  "kind": "note",
+  "q": "Can you add interactive illustration of Step 4 embedding to show what is the original embedding model looks like and what is the revised one without the latent layer, and to step 5 attention to show how the attention model use different weight for different token.",
+  "reply": "**Done.** Step 4 has a **Remove the hidden layer** lab: switch between Bengio 2003, CBOW and skip-gram, with Mikolov's cost formulas (pp. 3–4) worked out for example sizes. It also fixes a subtle point: in Bengio's own network the output layer is the slowest part, and the hidden layer becomes the bottleneck only once the output uses a word tree. Step 5 has a **Who looks at whom** lab on \"Alice was friends with Bob … her friend\". Tap a word to see its attention weights (toy vectors).",
+  "section": "home",
+  "status": "addressed",
+  "title": "How a language model is built"
+}
