@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI4Read Widgets</title>
+<link rel="stylesheet" href="../../../posts/2026-10-llm-next-word/src/style.css">
+<link rel="stylesheet" href="widgets.css">
+</head>
+<body>
+<main class="wrap">
+<header class="masthead"><p class="eyebrow">AI4Read · component library v1</p><h1>Widget gallery</h1>
+<p class="lede">Every widget below is drawn from a JSON config. The numbers are the ones <code>check.mjs</code> prints for the same config.</p></header>
+
+<h2>lab: sliders, derived values, bars, table</h2>
+<div class="w" data-widget="lab" id="g-bayes" data-config-ref="cfg-bayes"></div>
+<script type="application/json" id="cfg-bayes">{
+ "title":"Two concepts, n examples (toy, ours)",
+ "params":[{"id":"n","label":"examples n","min":0,"max":6,"step":1,"value":2,"fmt":"d"},
+           {"id":"prior","label":"prior of A","min":0,"max":1,"step":0.01,"value":0.5,"fmt":".2f"}],
+ "constants":{"lA":0.2,"lB":0.05},
+ "derived":{"odds":"prior/(1-prior+1e-12)*(lA/lB)^n","pA":"prior==0?0:odds/(1+odds)","pB":"1-pA"},
+ "bars":{"items":[{"label":"concept A","value":"pA"},{"label":"concept B","value":"pB"}],"max":1,"fmt":".3f","highlight":0},
+ "table":{"head":["n","P(A | n examples)"],"rows":[["0","=prior"],["1","=prior*4/(prior*4+1-prior)"],["2","=prior*16/(prior*16+1-prior)"]],"fmt":".3f"},
+ "readout":"After {n:d} examples the odds for A are ×{(lA/lB)^n:,} the prior odds.\nP(A) = {pA:.3f}.  Check: at n = 2 and prior 0.5, 16/17 = {16/17:.3f}.",
+ "presets":[{"label":"even prior","values":{"prior":0.5}},{"label":"prior 0 (never recovers)","values":{"prior":0}}],
+ "caption":"Edge case: a prior of 0 stays 0, whatever the evidence."
+}</script>
+
+<h2>plot: curves and a moving point</h2>
+<div class="w" data-widget="plot" id="g-kaplan" data-config-ref="cfg-kaplan"></div>
+<script type="application/json" id="cfg-kaplan">{
+ "title":"Kaplan et al. 2020, p. 4: L(N) = (8.8e13 / N)^0.076",
+ "params":[{"id":"lgN","label":"log₁₀ N","min":4,"max":10,"step":0.1,"value":6,"fmt":".1f"}],
+ "derived":{"N":"10^lgN","L":"(8.8e13/N)^0.076"},
+ "x":{"min":1e4,"max":1e10,"log":true,"label":"parameters N","tickFmt":".0e"},
+ "y":{"min":1.5,"max":6,"log":true,"label":"loss (nats/token)","ticks":[2,3,4,5,6]},
+ "curves":[{"expr":"(8.8e13/x)^0.076","label":"fitted line"}],
+ "points":[{"x":"N","y":"L","label":"you are here"}],
+ "readout":"N = {N:.2e} → L = {L:.2f} nats ({L/ln(2):.2f} bits). Doubling N multiplies L by {2^-0.076:.3f}."
+}</script>
+
+<h2>iterate: a dynamical system over time</h2>
+<div class="w" data-widget="iterate" id="g-momentum" data-config-ref="cfg-momentum"></div>
+<script type="application/json" id="cfg-momentum">{
+ "title":"Fundamentalists vs trend-followers (toy, ours)",
+ "params":[{"id":"mom","label":"trend-following","min":0,"max":1.2,"step":0.05,"value":0.6,"fmt":".2f"},
+           {"id":"k","label":"pull to value","min":0,"max":0.5,"step":0.01,"value":0.1,"fmt":".2f"}],
+ "constants":{"F":100},
+ "init":{"P":100,"Q":100},
+ "update":{"P":"P + mom*(P-Q) + k*(F-P)","Q":"P"},
+ "shocks":[{"t":5,"set":{"P":"P*0.9"},"label":"−10% news"}],
+ "steps":40,
+ "series":[{"var":"P","label":"price"}],
+ "y":{"min":80,"max":110,"ticks":[80,90,100,110]},
+ "readout":"Lowest price {min_P:.1f}, highest {max_P:.1f}; after {t:d} steps the price is {P:.1f} (value {F:d}).",
+ "presets":[{"label":"calm","values":{"mom":0.2,"k":0.2}},{"label":"overshoot","values":{"mom":0.9,"k":0.1}}]
+}</script>
+
+<h2>cascade: tap a bank to make it fail</h2>
+<div class="w" data-widget="cascade" id="g-banks" data-config-ref="cfg-banks"></div>
+<script type="application/json" id="cfg-banks">{
+ "title":"Six banks, one shock (toy exposures, ours)",
+ "params":[{"id":"lgd","label":"loss given default","min":0,"max":1,"step":0.05,"value":0.8,"fmt":".2f"},
+           {"id":"capMult","label":"capital ×","min":0.5,"max":2,"step":0.05,"value":1,"fmt":".2f"}],
+ "nodes":[{"id":"A","x":60,"y":60,"capital":2},{"id":"B","x":180,"y":40,"capital":3},{"id":"C","x":300,"y":60,"capital":2},
+          {"id":"D","x":60,"y":180,"capital":3},{"id":"E","x":180,"y":200,"capital":2},{"id":"F","x":300,"y":180,"capital":4}],
+ "edges":[{"from":"A","to":"B","w":4},{"from":"B","to":"C","w":4},{"from":"A","to":"D","w":3},{"from":"D","to":"E","w":4},
+          {"from":"B","to":"E","w":1},{"from":"C","to":"F","w":3},{"from":"E","to":"F","w":3}],
+ "seeds":["A"],
+ "readout":"{failed:d} of {total:d} banks fail in {rounds:d} rounds (loss given default {lgd:.2f}, capital ×{capMult:.2f}).",
+ "caption":"An arrow A → B means B has lent to A: if A fails, B loses that loan × the loss rate. Numbers under a bank: loss so far / capital."
+}</script>
+
+<h2>diagram: boxes and arrows, revealed step by step</h2>
+<div class="w" data-widget="diagram" id="g-loop" data-config-ref="cfg-loop"></div>
+<script type="application/json" id="cfg-loop">{
+ "title":"A feedback loop (illustration)",
+ "height":200,
+ "nodes":[{"id":"news","x":70,"y":40,"label":"news"},{"id":"price","x":290,"y":40,"label":"price"},
+          {"id":"model","x":290,"y":160,"label":"trading\nmodels","kind":"hl"},{"id":"story","x":70,"y":160,"label":"shared\nstory","kind":"soft"}],
+ "edges":[{"id":"e1","from":"news","to":"price","label":"moves"},{"id":"e2","from":"price","to":"model","label":"input"},
+          {"id":"e3","from":"model","to":"story","label":"explains"},{"id":"e4","from":"story","to":"news","label":"selects","dashed":true}],
+ "steps":[{"show":["news","price","e1"],"text":"Step 1. News moves the price."},
+          {"show":["model","e2"],"text":"Step 2. Models read the price."},
+          {"show":["story","e3","e4"],"text":"Step 3. Their output becomes the story that selects the next news: a loop."}]
+}</script>
+
+<h2>stepper: walk through a worked table</h2>
+<div class="w" data-widget="stepper" id="g-steps" data-config='{"title":"Compound interest by hand","head":["year","balance"],"rows":[["0","100.00"],["1","105.00"],["2","110.25"],["3","115.76"]],"notes":["Start with 100.","100 × 1.05 = 105.00","105 × 1.05 = 110.25","110.25 × 1.05 = 115.76 (rounded)"]}'></div>
+
+<h2>switch: panels</h2>
+<div class="w" data-widget="switch">
+  <section data-label="Lens A"><p>Panel A text.</p></section>
+  <section data-label="Lens B"><p>Panel B text.</p></section>
+</div>
+</main>
+<script src="widgets.js"></script>
+</body>
+</html>
