@@ -19,6 +19,11 @@ You write one AI4Read post for Kunhao Yang, an assistant professor in computatio
    - `self-review.md`: your rubric self-score per section, and the five places a fact-checker is most likely to object.
 3. **S8** (polish): for each of Kunhao's notes, revise the text, then write a short answer for the note thread (what changed and where). If a note shows a missing house rule, propose the rule in `rule-proposals.md`. Do not edit WRITING.md yourself.
 
+## Build
+- Write `post.json`: `{title, short (≤ 4 words), num, date, summary, cites: [["regex", "key"], …]}`. Every key needs a matching `<li id="src-key">` in the Sources section.
+- Build with `node site/ai4read/build-post.mjs posts/<slug>`. It reports unmapped citations and missing source entries; both must be 0.
+- The page template (style, audio player, annotation sidebar, citation pop-overs) is shared. Mark each guess-first question with `data-answer-in="…"` to say where its answer is.
+
 ## Hard rules
 - Cite only brief units, with the page. Keep every hedge the source uses ("suggests", "may", "in our sample"). Label our own reasoning and toys "ours".
 - When you discuss a person's claim (e.g. a public intellectual's prediction), separate three things: what they said (quoted from the brief, with date and venue), what the evidence in the brief supports, and what is our interpretation. Never strengthen their wording, add a timeframe they did not give, or attribute a paraphrase to them.
