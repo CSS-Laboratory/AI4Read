@@ -3,7 +3,7 @@
  "short": "AI-made finance",
  "num": 2,
  "date": "2026-10-17",
- "summary": "Harari warns that AI could make financial devices no human understands. We separate what he asserts, imagines and asks from what the evidence supports, then test it through information theory, control, correlation and social reality, with toy models you can break.",
+ "summary": "Harari asserts that AI can understand finance better than us and imagines AI-made devices no human follows. We separate what he asserts, imagines and asks from what the evidence supports, then test it through information theory, control, correlation and social reality, with toy models you can break.",
  "cites": [
   [
    "BIS",
@@ -120,10 +120,6 @@
   [
    "SEP",
    "sep"
-  ],
-  [
-   "Dennett",
-   "dennett"
   ],
   [
    "Lupia",

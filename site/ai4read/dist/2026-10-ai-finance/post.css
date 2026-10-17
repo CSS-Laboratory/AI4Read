@@ -491,3 +491,5 @@ svg.fig .ghost{fill:none;stroke:var(--muted);stroke-dasharray:4 3}
 .w-switch > section{min-width:0}
 
 .lt.metaphor{background:transparent;color:var(--ink);border:1px dashed var(--ink)}
+
+.srcs li{overflow-wrap:anywhere;word-break:break-word}

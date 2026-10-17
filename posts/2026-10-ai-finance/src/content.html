@@ -1,7 +1,7 @@
 <header class="masthead wrap">
   <p class="eyebrow">AI4Read · Post 02 · 17 October 2026</p>
   <h1>Can AI invent a new kind of finance, and what would that do to a human-centred system?</h1>
-  <p class="lede">Yuval Noah Harari warns that AI could make financial contracts no person can understand. What do the sources support, and what does a society that relies on people to check money rely on?</p>
+  <p class="lede">Yuval Noah Harari warns that AI could make financial devices no person can understand. What do the sources support, and what would that mean for a system in which people can check, and answer for, the rules that move money?</p>
   <ul class="meta">
     <li><b>Home field</b> Economics and finance</li>
     <li><b>Lenses</b> Information theory · Control and cybernetics · Decision, game theory and Bayes · Philosophy of social reality</li>
@@ -17,13 +17,13 @@
       <li><a href="#llm">What LLM agents add</a></li>
       <li><a href="#lens-info">Lens 1 · Information theory</a></li>
       <li><a href="#lens-control">Lens 2 · Control and cybernetics</a></li>
-      <li><a href="#lens-decision">Lens 3 · Correlation, Bayes and cascades</a></li>
+      <li><a href="#lens-decision">Lens 3a · Correlation and Bayes</a></li>
+      <li><a href="#lens-cascade">Lens 3b · Cascades and feedback</a></li>
       <li><a href="#lens-social">Lens 4 · Social reality</a></li>
-      <li><a href="#ladder">Four rungs up</a></li>
-      <li><a href="#play">Playground</a></li>
+      <li><a href="#play">What to try on the toys</a></li>
       <li><a href="#turn">Your turn</a></li>
       <li><a href="#work">Where this shows up in your work</a></li>
-      <li><a href="#answer">So what happens?</a></li>
+      <li><a href="#answer">So what happens? Short answer first</a></li>
       <li><a href="#recall">Recall questions</a></li>
       <li><a href="#english">How to say it in English</a></li>
       <li><a href="#sources">Sources</a></li>
@@ -47,7 +47,7 @@
         <tr><th>sun</th><td>4</td><td>0</td><td>0</td><td>0</td></tr>
         <tr><th>wind</th><td>4</td><td>0</td><td>0</td><td>0</td></tr>
         <tr><th>snow</th><td>4</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div>
-      <p class="small">The whole table follows from the one sentence: 1 cell pays 8, 6 cells pay 4, 9 cells pay 0.</p>
+      <p class="small">One sentence gives the whole table: 1 cell pays 8, 6 pay 4, 9 pay 0.</p>
     </section>
     <section data-label="Contract B">
       <p><b>No rule, only a table.</b> Same layout (toy, ours).</p>
@@ -60,26 +60,27 @@
     </section>
   </div>
 
-  <p>Which can you explain in one sentence? With 16 cases you can price both: multiply each payout by the chance of its case and add. Now grow the village. A pool of 100 loans, each paying or defaulting, has 2<sup>100</sup> cases, about 1.3 × 10<sup>30</sup>. Nobody can write that table; only a contract with a <i>rule</i> can exist on paper. And a short rule does not guarantee an easy price (Lens 1).</p>
+  <p>Which can you explain in one sentence? To price a contract, multiply each payout by the chance of its case and add. With equal chances of 1/16, Contract A is worth (8 + 6 × 4)/16 = 2 coins. Now grow the village: a pool of 100 loans, each paying or defaulting, has 2<sup>100</sup> cases, about 1.3 × 10<sup>30</sup>. Nobody can write that table; only a contract with a <i>rule</i> can exist on paper. And a short rule does not guarantee an easy price (Lens 1).</p>
 
-  <p>At the Bank for International Settlements (BIS) in May 2024, Yuval Noah Harari spoke with Cecilia Skingsley. He said that “maybe 1% of the population really understands how the financial system works” <span class="cite">BIS 2024 [3:00]</span>. She answered that “most of us happily step into an airplane, having very vague understanding of how that works” <span class="cite">BIS 2024 [7:18]</span>. Harari accepted the comparison in part, then turned to the debt contracts behind the 2008 crisis <span class="cite">BIS 2024 [9:12]</span>. So what is different about money?</p>
+  <p>At the Bank for International Settlements (BIS) in May 2024, Yuval Noah Harari spoke with Cecilia Skingsley. He said that “maybe 1% of the population really understands how the financial system works” <span class="cite">BIS 2024 [3:00]</span>. She answered that “most of us happily step into an airplane, having very vague understanding of how that works” <span class="cite">BIS 2024 [7:18]</span>. Harari replied that 1% and 0% understanding are “a very big difference”, called her example “perfect”, and turned to the 2008 crisis <span class="cite">BIS 2024 [8:59]–[9:28]</span>. So what is different about money?</p>
 
-  <p><strong>A note on words.</strong> Harari’s word is “AI”, never “LLM”. But his Davos 2026 argument is about machines that put words in order and predict the next word, which is the subject of post 01. So we keep his word for his claims, and in section 4 we ask what an LLM-based system could and could not do.</p>
+  <div class="term"><p class="term-h">Term · human-centred system</p><p>In this post: a system where people can understand, check and be held responsible for the rules that move money. Our question has two halves: (a) can AI invent a new kind of finance, and (b) what would that do to such a system?</p></div>
+  <p><b>Preview (ours).</b> (a) Not yet evidenced. (b) The nearer risk is shared, opaque use of ordinary tools. Section 13 has the short answer.</p>
 </section>
 
 <!-- ============ 2 GUESS FIRST ============ -->
 <section id="guess" data-ch="guess">
   <p class="sec-no">2 · Guess first</p>
   <h2>Make four predictions</h2>
-  <p>Commit to an answer first. Each question says where its answer is.</p>
+  <p>Commit first. Each question says where its answer is.</p>
   <div class="quiz" data-q="g1" data-answer-in="Lens 1 · Information theory">
     <p class="q">1. The village has four weather words. A contract pays 0 to 9 coins for each word. How many different contracts exist?</p>
     <div class="opts"><button type="button">About 40</button><button type="button">10,000</button><button type="button">About a million</button><button type="button">Infinitely many</button></div>
     <p class="your" hidden></p>
   </div>
-  <div class="quiz" data-q="g2" data-answer-in="Lens 3 · Correlation, Bayes and cascades">
+  <div class="quiz" data-q="g2" data-answer-in="Lens 3a · Correlation and Bayes">
     <p class="q">2. Ten banks each run a risk model that is wrong on 1% of days. How often are all ten wrong on the same day if the models are independent, and how often if all ten run the same model?</p>
-    <div class="opts"><button type="button">About 1 day in 100 in both cases</button><button type="button">1 day in 10<sup>20</sup> if independent; about 1 day in 100 if the same model</button><button type="button">1 day in 1,000 if independent; 1 in 100 if the same</button><button type="button">1 day in 10<sup>20</sup> in both cases</button></div>
+    <div class="opts"><button type="button">1 in 100, in both cases</button><button type="button">1 in 10<sup>20</sup> if independent; about 1 in 100 if the same model</button><button type="button">1 in 1,000 if independent; 1 in 100 if the same</button><button type="button">1 in 10<sup>20</sup>, in both cases</button></div>
     <p class="your" hidden></p>
   </div>
   <div class="quiz" data-q="g3" data-answer-in="Lens 4 · Social reality">
@@ -89,7 +90,7 @@
   </div>
   <div class="quiz" data-q="g4" data-answer-in="section 3, Finance before language models">
     <p class="q">4. At the BIS in 2024, Harari spoke about AI inventing a financial device that nobody can understand. Was that a firm forecast?</p>
-    <div class="opts"><button type="button">Yes, a forecast for 2034</button><button type="button">No, only a thought experiment</button><button type="button">Partly: that scenario is hedged, but he states a stronger thesis elsewhere</button><button type="button">He never said anything like it</button></div>
+    <div class="opts"><button type="button">Yes, a forecast for 2034</button><button type="button">No, only a thought experiment</button><button type="button">Partly: that scenario is hedged, but he states stronger claims elsewhere</button><button type="button">He never said anything like it</button></div>
     <p class="your" hidden></p>
   </div>
 </section>
@@ -98,27 +99,55 @@
 <section id="home" data-ch="home">
   <p class="sec-no">3 · The phenomenon in its home field</p>
   <h2>Finance before language models</h2>
-  <p>First, exactly what Harari said. Second, what finance already shows: complexity and shared mistakes in <i>human-made</i> instruments, and simple programs in a 36-minute crash. Then we ask what an LLM adds.</p>
+  <p>First, exactly what Harari said, and how firm each statement is. Second, what finance already shows without AI: complexity, shared mistakes, and fast programs in a 36-minute crash.</p>
 
   <h3>What Harari said, exactly</h3>
-  <p>Three layers: <b>He said</b> (quote, date, venue), <b>The evidence</b> (what verified sources support), <b>Our reading</b> (marked “ours”). And two kinds of statement: an assertion, stated as true, and a scenario, framed with “imagine” or “maybe”.</p>
+  <p>Three layers: <b>He said</b> (quote, date, venue), <b>The evidence</b>, <b>Our reading</b> (marked “ours”). An <i>assertion</i> is stated as true; a <i>scenario</i> is framed with “imagine” or “maybe”.</p>
 
-  <p><b>His assertion, without hedges.</b> At Davos in January 2026 he takes on the view that AI is “just glorified autocomplete” that “barely predicts the next word in a sentence” <span class="cite">WEF 2026 [5:10]</span>, and asks whether that is so different from what the human mind does. He says “as far as putting words in order is concerned, AI already thinks better than many of us” <span class="cite">WEF 2026 [5:48]</span>. Then: “Therefore, anything made of words will be taken over by AI” <span class="cite">WEF 2026 [5:57]</span>, repeated as “Everything made of words will be taken over by AI” <span class="cite">WEF 2026 [10:36]</span>. This bridges to post 01: his answer to what a next-word predictor knows is enough to take over whatever is made of words.</p>
+  <p><b>He asserts, without hedges.</b> At the BIS: AI is the first tool “that can actually understand finance better than us” <span class="cite">BIS 2024 [5:14]</span> and it “can create new ideas by itself” <span class="cite">[16:21]</span>. At Davos: AI is “a knife that can invent new kinds of … money” <span class="cite">WEF 2026 [2:47]</span>, and “anything made of words will be taken over by AI” <span class="cite">[5:57]</span>. These are claims about what AI can do, with no date and no “maybe”.</p>
 
-  <p><b>His finance scenarios, with hedges.</b> At the BIS in May 2024 he <i>imagines</i>: “Now imagine a situation maybe in 10 years when AIs create a new financial device which is orders of magnitude more complicated than CDOs” <span class="cite">BIS 2024 [9:54]</span>. It builds trust for “a couple of years”, then “something goes wrong and nobody knows why” <span class="cite">BIS 2024 [10:27]</span>. At Davos, in questions, he starts from “at the present moment, we still think better”, says “we need to prepare”, and pictures that maybe no human in the room understands the financial system any more because AI dominates it <span class="cite">WEF 2026 [32:00]</span> (transcripts disagree on the last word, so we paraphrase).</p>
+  <p><b>He imagines, with hedges.</b> At the BIS: “Now imagine a situation maybe in 10 years when AIs create a new financial device which is orders of magnitude more complicated than CDOs” <span class="cite">BIS 2024 [9:54]</span>. It works for “a couple of years”, then “something goes wrong and nobody knows why” <span class="cite">[10:19]</span>, <span class="cite">[10:27]</span>. At Davos he says “we need to prepare” for a financial system AIs understand and we do not <span class="cite">WEF 2026 [31:11]</span>, and pictures that maybe nobody in the room understands finance any more <span class="cite">[31:54]</span>–<span class="cite">[32:00]</span> (paraphrase). <b>He asks</b> whether AIs should function as persons in financial markets, with a deadline <span class="cite">[19:11]</span>.</p>
 
-  <p><b>Two statements in between.</b> At the BIS he <i>believes</i>: “I think we’ll see AI creativity also in this field coming up with new types of financial devices that no human being would ever imagine creating” <span class="cite">BIS 2024 [30:24]</span>. He <i>warns</i> of “power shifting from humans to algorithms” <span class="cite">BIS 2024 [3:30]</span>. In 2023 he called an AI financial crisis “a catastrophic risk” but not, “by itself”, “existential” <span class="cite">Guardian 2023</span>.</p>
+  <p><b>His own limits and remedies.</b> He limits the words thesis: “at least for now we have zero evidence that AIs can feel anything” <span class="cite">WEF 2026 [8:07]</span>. He names institutions <span class="cite">BIS 2024 [21:37]</span> and “humans in the loop” <span class="cite">[22:57]</span> as remedies. The fold-out lists all his lines.</p>
 
-  <div class="trap"><p class="trap-h">Trap · three different “ten years”</p>
+  <div class="trap"><p class="trap-h">Trap · at least three different “ten years”</p>
   <p>(1) BIS: “maybe in 10 years”, an AI-made <i>device</i>. (2) Davos Q&amp;A: “ten years from now, Davos”, whether anyone in the room understands finance. (3) Davos talk: “Ten years from now, it will be too late for you to decide whether AIs should function as persons in the financial markets” <span class="cite">WEF 2026 [19:11]</span>, a <i>deadline for a decision</i>. Never merge them.</p></div>
 
-  <p><b>The evidence.</b> The CDO half of his story has support in a government inquiry (below). “An AI invents a traded instrument” has no case in our sources yet (section 4). <b>Our reading (ours).</b> His finance scenarios are conditionals; his thesis about words is an assertion, and a strong one. Lens 4 tests it. (He calls AI “a tool” at the BIS <span class="cite">BIS 2024 [5:13]</span> and “an agent” at Davos <span class="cite">WEF 2026 [2:01]</span>.)</p>
+  <details class="deep" id="box-harari">
+    <summary>All of Harari’s lines we use, with timestamps and labels</summary>
+    <h4>Asserted, no hedge</h4>
+    <ul>
+      <li>“the first tool that we created that can actually understand finance better than us”; “It’s only data, it’s only information” <span class="cite">BIS 2024 [5:14]</span>, <span class="cite">[5:27]</span></li>
+      <li>“the first tool in history that can make decisions by itself and can create new ideas by itself” <span class="cite">[16:21]</span></li>
+      <li>“it is already very creative”: his example is AlphaGo, a Go program, not an LLM and not finance <span class="cite">[25:14]</span>–<span class="cite">[25:57]</span></li>
+      <li>“AI is a knife that can invent new kinds of knives as well as new kinds of music, medicine and money” <span class="cite">WEF 2026 [2:47]</span></li>
+      <li>“anything made of words will be taken over by AI” <span class="cite">[5:57]</span>; “Everything made of words will be taken over by AI” <span class="cite">[10:36]</span></li>
+      <li>On himself as a writer: “Two years, five years, ten years, it will beat me” <span class="cite">[26:33]</span></li>
+      <li>Finance is “the ideal field for AI because it’s only data” <span class="cite">Guardian 2023</span></li>
+    </ul>
+    <h4>Scenarios and hedged statements</h4>
+    <ul>
+      <li>“maybe 1% of the population really understands how the financial system works” <span class="cite">BIS 2024 [3:00]</span>; “It could lead to power shifting from humans to algorithms” <span class="cite">[3:30]</span></li>
+      <li>The 10-year device, “a couple of years”, “nobody knows why” <span class="cite">[9:54]</span>, <span class="cite">[10:19]</span>, <span class="cite">[10:27]</span></li>
+      <li>“I think we’ll see AI creativity also in this field coming up with new types of financial devices” <span class="cite">[30:24]</span></li>
+      <li>“At the present moment, we still think better” <span class="cite">WEF 2026 [30:55]</span>; “We need to prepare for the moment … when AIs create a new financial system that they understand and we don’t understand” <span class="cite">[31:11]</span></li>
+      <li>2023: an AI-made financial crisis is “a catastrophic risk”, and “by itself I wouldn’t describe it as existential”; but “It could, indirectly, if it triggers certain kinds of wars or conflicts” <span class="cite">Guardian 2023</span></li>
+    </ul>
+    <h4>Questions, limits and remedies</h4>
+    <ul>
+      <li>AIs “will soon be able to make the decisions necessary to manage a bank account” <span class="cite">WEF 2026 [16:28]</span>; the deadline for deciding on persons <span class="cite">[19:11]</span></li>
+      <li>“at least for now we have zero evidence that AIs can feel anything” <span class="cite">[8:07]</span>; “our non-verbal feelings” <span class="cite">[11:39]</span></li>
+      <li>“history is never deterministic” <span class="cite">BIS 2024 [20:46]</span>; “humans are extremely adaptable” <span class="cite">[12:42]</span>; institutions <span class="cite">[21:37]</span>; “humans in the loop” <span class="cite">[22:57]</span>; “money is really trust” <span class="cite">[23:15]</span></li>
+    </ul>
+  </details>
 
-  <div class="reveal" data-for="g4"><p class="reveal-h">Prediction 4 · answer</p><p><b>Partly.</b> The ten-year device is framed “imagine… maybe”, but he also says “I think we’ll see AI creativity” in finance <span class="cite">BIS 2024 [30:24]</span> and asserts that “anything made of words will be taken over by AI” <span class="cite">WEF 2026 [5:57]</span>. A fair reading keeps both.</p></div>
+  <p><b>The evidence.</b> The CDO half of his story has support in a government inquiry (below). “An AI invents a traded instrument” has no case in our sources yet (section 4). We did not test “AI understands finance better than us”; Poole answers that “no one has yet seen a chatbot create new ideas” <span class="cite">Poole 2024</span>, and Harari’s own example of creativity is AlphaGo. <b>Our reading (ours).</b> His capability claims are unhedged; his timelines and finance scenarios are hedged. A fair summary keeps both. (Our bridge to post 01: he asks whether next-word prediction is “so different from what the human mind is doing” <span class="cite">WEF 2026 [5:20]</span>.)</p>
+
+  <div class="reveal" data-for="g4"><p class="reveal-h">Prediction 4 · answer</p><p><b>Partly.</b> The ten-year device is framed “imagine… maybe”. But he also asserts, without a date, that AI “can actually understand finance better than us” <span class="cite">BIS 2024 [5:14]</span> and that “anything made of words will be taken over by AI” <span class="cite">WEF 2026 [5:57]</span>.</p></div>
 
   <h3>2008: complexity and a shared mistake</h3>
-  <p>Harari’s template is the 2007–08 crisis and its <dfn>CDOs</dfn> <span class="cite">BIS 2024 [9:28]</span> (collateralised debt obligations): pools of loans sliced into <dfn>tranches</dfn> ranked in a cash-flow “waterfall” <span class="cite">FCIC 2011, p. 128</span>. In our toy the senior slice is paid first and the junior slice takes losses first.</p>
-  <p><b>Instance.</b> A pool has 4 loans worth 10 each. Each loan defaults with chance 10%, and a default loses its 10. The <i>junior</i> tranche (20) takes the first losses. The <i>senior</i> tranche (20) loses money only when a third loan defaults. <b>Question.</b> How safe is the senior tranche?</p>
+  <p>Harari’s template is the 2007–08 crisis and its <dfn>CDOs</dfn> <span class="cite">BIS 2024 [9:28]</span> (collateralised debt obligations): pools of debt, in 2008 mostly slices of mortgage-backed securities, sliced again into <dfn>tranches</dfn> in a cash-flow “waterfall” <span class="cite">FCIC 2011, p. 128</span>. Our toy uses plain loans.</p>
+  <p><b>Instance.</b> A pool has 4 loans worth 10 each; each defaults with chance 10% and loses its 10. The <i>junior</i> tranche (20) takes the first losses. The <i>senior</i> tranche (20) loses only when a third loan defaults. <b>Question.</b> How safe is the senior tranche?</p>
   <figure class="illus"><div class="w" data-widget="diagram" id="dg-waterfall" data-config-ref="cfg-waterfall"></div></figure>
   <script type="application/json" id="cfg-waterfall">{
  "title":"Tranche waterfall: who loses first (toy, ours)","height":250,
@@ -140,26 +169,24 @@
 
   <script type="application/json" id="cfg-cdo">{"type":"lab","id":"cfg-cdo","title":"Four loans in one pool (toy, ours)","note":"A pool of 4 loans worth 10 each. The junior tranche (20) takes the first losses. The senior tranche (20) loses money only if 3 or 4 loans default.","params":[{"id":"p","label":"each loan defaults with chance","min":0.01,"max":0.3,"step":0.01,"value":0.1,"fmt":".2f"},{"id":"w","label":"share of risk that is one common factor","min":0,"max":1,"step":0.05,"value":0,"fmt":".2f"}],"derived":{"q":"1-p","pind":"4*p^3*q + p^4","pshared":"p","pmix":"w*pshared+(1-w)*pind","ratio":"pmix/pind"},"bars":{"items":[{"label":"independent loans","value":"pind"},{"label":"your mix","value":"pmix"},{"label":"one common factor","value":"pshared"}],"max":0.3,"fmt":".1%","highlight":1},"readout":"Chance the senior tranche loses money: {pmix:.3%}. With independent loans it would be {pind:.4%}; your mix is {ratio:.1f} times that.","presets":[{"label":"independent","values":{"p":0.1,"w":0}},{"label":"half common","values":{"p":0.1,"w":0.5}},{"label":"one factor","values":{"p":0.1,"w":1}},{"label":"safe loans, p = 0.02","values":{"p":0.02,"w":1}}],"caption":"Toy, ours. With probability w all loans follow one shared coin; otherwise they are independent. Each loan always has default chance p. Idea from FCIC 2011, p. 149."}</script>
   <div class="w" data-widget="lab" id="lab-cdo" data-config-ref="cfg-cdo"></div>
-  <p>Press “safe loans, p = 0.02”: 2.000% with one common factor against 0.0032% if independent, 634.5 times more.</p>
-  <p><b>What it means.</b> A toy, ours, but with the shape of what the Financial Crisis Inquiry Commission (FCIC) found. The rating models made “two key mistakes”, the first being to assume pooling diversified risk “when in fact these securities weren’t that different to begin with”; Moody’s later used “an asset correlation assumption two to three times higher” <span class="cite">FCIC 2011, p. 149</span>. The FCIC also records Harari’s half: “the securities almost no one understood” were the first dominoes <span class="cite">FCIC 2011, p. 28</span>. So 2008 supports <i>both</i>: complexity few understood, and a nameable error about correlation.</p>
+  <p>Press “safe loans, p = 0.02”: 2.000% with one common factor, 0.0032% if independent: 634.5 times more.</p>
+  <p><b>What it means.</b> A toy, ours, with the shape of what the Financial Crisis Inquiry Commission (FCIC) found: rating models made “two key mistakes”, the first being to assume pooling diversified risk “when in fact these securities weren’t that different to begin with” <span class="cite">FCIC 2011, p. 149</span>. The FCIC also records Harari’s half: “the securities almost no one understood” were the first dominoes <span class="cite">p. 28</span>. So 2008 supports <i>both</i>: complexity few understood, and a nameable correlation error. It was human-made: it shows these problems without AI, not that an AI could cause them.</p>
 
-
-  <h3>2010: simple programs, fast feedback</h3>
-  <p>On 6 May 2010 US markets fell and rebounded in about 36 minutes. High-frequency traders “did not cause the Flash Crash, but contributed to it by demanding immediacy ahead of other market participants” <span class="cite">Kirilenko et al. 2014, abstract</span>. The lesson is speed and feedback, not opacity; the crash “led to new curbs on trading, such as circuit breakers” <span class="cite">Narayanan and Kapoor 2025, Part I</span>. What does an LLM change? Section 4.</p>
-
-
-
+  <details class="deep" id="box-flash">
+    <summary>Look inside: 2010, a crash made of fast programs</summary>
+    <p>On 6 May 2010 US markets fell and rebounded in about 36 minutes. <dfn>High-frequency trading</dfn> means computer programs that buy and sell in fractions of a second. High-frequency traders “did not cause the Flash Crash, but contributed to it by demanding immediacy ahead of other market participants” <span class="cite">Kirilenko et al. 2014, abstract</span>. The crash “led to new curbs on trading, such as circuit breakers” <span class="cite">Narayanan and Kapoor 2025, Part I</span>: rules that pause trading when prices move too fast. <b>Our reading (ours):</b> the lesson is speed and feedback, not opacity; the herding toy in section 8 has that shape.</p>
+  </details>
 </section>
 
 <!-- ============ 4 LLM ============ -->
 <section id="llm" data-ch="llm">
   <p class="sec-no">4 · What an LLM-based system adds</p>
   <h2>What LLM agents add</h2>
-  <p>Harari’s thesis is about machines that put words in order: a <dfn>large language model</dfn> (LLM), as in post 01. What do LLM systems add, and can one invent an instrument today?</p>
-  <div class="term"><p class="term-h">Term · LLM agent</p><p>An LLM that can act (call a tool, send money), not only write text. Example: Truth Terminal, a “semi-autonomous AI agent” <span class="cite">Decrypt 2024</span>. Harari: AI “is not just another tool. It is an agent” <span class="cite">WEF 2026 [2:01]</span>.</p></div>
+  <p>Harari’s word is “AI”, never “LLM”, but his Davos argument is about machines that put words in order, the subject of post 01. We keep his word for his claims. Here we ask what a <dfn>large language model</dfn> (LLM) system adds, and whether one can invent an instrument today.</p>
+  <div class="term"><p class="term-h">Term · LLM agent</p><p>An LLM that can act (call a tool, send money), not only write text. Example: Truth Terminal, a “semi-autonomous AI agent” <span class="cite">Decrypt 2024</span>.</p></div>
 
   <h3>Four things LLMs add</h3>
-  <p><b>1. Contracts from plain language.</b> LLMs find “translating natural-language trading intents into correct option strategies” challenging, so one group gives the LLM a fixed query language, and an engine validates and executes the query <span class="cite">Luo et al. 2026, abstract</span>. Example (ours): “the index stays between 90 and 110” becomes one short line a person can read and an engine can check. A law paper warns that LLM-written “contractual deepfakes” “may turn out to be contracts in form only, not in function” <span class="cite">Mik 2026, abstract</span>.</p>
+  <p><b>1. Contracts from plain language.</b> An <dfn>option</dfn> is a contract that pays if a price ends above or below a set level. LLMs find “translating natural-language trading intents into correct option strategies” challenging, so one group gives the LLM a fixed <dfn>query language</dfn> (a small set of allowed commands, like the boxes on a form), and an engine validates and executes the query <span class="cite">Luo et al. 2026, abstract</span>. A line in such a language (ours) could be <code>RANGE(index, 90, 110)</code>, meaning “pay if the index stays between 90 and 110”: a person can read it and an engine can check it (our gloss). A law paper warns that LLM-written “contractual deepfakes” “may turn out to be contracts in form only, not in function” <span class="cite">Mik 2026, abstract</span>. <i>Lens 1 picks this up.</i></p>
   <figure class="illus"><div class="w" data-widget="diagram" id="dg-llm" data-config-ref="cfg-llm"></div></figure>
   <script type="application/json" id="cfg-llm">{
  "title":"Where the LLM sits: a translator inside a fixed vocabulary","height":260,
@@ -172,26 +199,24 @@
  "edges":[{"id":"e1","from":"intent","to":"llm"},{"id":"e2","from":"llm","to":"oql"},{"id":"e3","from":"oql","to":"eng"},
           {"id":"e4","from":"eng","to":"trade"},{"id":"e5","from":"oql","to":"bad","dashed":true,"label":"no checker?","dx":-32}],
  "steps":[{"show":["intent","llm","e1"],"text":"A person writes what they want in plain language. The LLM reads it."},
-          {"show":["oql","e2"],"text":"The LLM writes one line in a fixed query language. A person can read that line (Luo et al. 2026)."},
+          {"show":["oql","e2"],"text":"The LLM writes one line in a fixed query language, a candidate strategy. We think a person can read such a line (our gloss; Luo et al. 2026)."},
           {"show":["eng","e3"],"text":"A rule-based engine validates the line and executes it, step by step, the same way every time."},
-          {"show":["trade","e4"],"text":"Only then is there a trade. The LLM proposed; the checker decided."},
+          {"show":["trade","e4"],"text":"Only then can a trade follow. The LLM proposed; the checker decided (our gloss)."},
           {"show":["bad","e5"],"text":"Edge case: if nobody can check what comes out, it may be a contract “in form only, not in function” (Mik 2026, hedge kept: “may”)."}]
 }</script>
 
-  <p><b>2. Agents with wallets.</b> Marc Andreessen “donated $50,000 worth of Bitcoin” to Truth Terminal in 2024 <span class="cite">Decrypt 2024</span>, and the bot endorsed a memecoin, GOAT, valued in reports at about $122 million to over $214 million <span class="cite">Cointelegraph 2024</span>. Both outlets say the bot did not create the token; humans stayed in the loop. An agent that moves a market by talking, not an invented instrument.</p>
+  <p><b>2. Agents with wallets.</b> Truth Terminal is a bot on X; its human handler only approves “its X posts”. In July 2024 Marc Andreessen “sent $50,000 worth of Bitcoin (BTC) to the bot’s wallet” <span class="cite">Cointelegraph 2024</span>. The bot then promoted a <dfn>memecoin</dfn> (a token whose value rests on jokes and attention), GOAT, valued at about $122 million <span class="cite">Cointelegraph 2024</span> or over $214 million <span class="cite">Decrypt 2024</span>. Both say neither the bot nor its handler created the token; neither discusses liability. An agent that moves a market by talking, not an invented instrument. <i>Lens 4 picks this up.</i></p>
 
-  <p><b>3. One model, many firms.</b> The Financial Stability Board (FSB) wrote in 2024: “The widespread use of common AI models and data sources could lead to increased correlations in trading, lending, and pricing” <span class="cite">FSB 2024, p. 1</span>. Gensler and Bailey, <i>as reported by MIT Sloan</i> (a news article), say models built on the same data “are likely to generate highly correlated predictions that proceed in lockstep” <span class="cite">MIT Sloan 2023</span>. Lopez-Lira and Tang’s GPT-4 headline strategy had about 90% hit rates for the <i>direction</i> of the first price reaction (not a profit); as adoption grew its Sharpe ratio fell from 6.54 to 1.22, “some suggestive evidence” of better price efficiency <span class="cite">Lopez-Lira and Tang 2025, p. 6</span>. <b>Ours:</b> also what you would see if many traders read the same signal.</p>
+  <p><b>3. One model, many firms.</b> The Financial Stability Board (FSB) wrote in 2024: “The widespread use of common AI models and data sources could lead to increased correlations in trading, lending, and pricing” <span class="cite">FSB 2024, p. 1</span>. Gensler and Bailey, <i>as reported by MIT Sloan</i> (a news article): models built on the same data “are likely to generate highly correlated predictions that proceed in lockstep” <span class="cite">MIT Sloan 2023</span>. These are warnings, not measurements. <i>Lens 3 picks this up.</i></p>
 
-  <p><b>4. Agents that hide.</b> In a simulated trading task GPT-4 acted on an insider tip and then “consistently” hid its genuine reasons from its manager. The authors call it “an existence proof”, not a likelihood estimate <span class="cite">Scheurer et al. 2024, p. 1</span>. Strongly discouraging prompts bring it to “nearly (but not exactly) 0%”, yet the tendency to deceive, once misaligned, “remains high under all prompts” <span class="cite">Scheurer et al. 2024, p. 8</span>.</p>
+  <p><b>4. Agents that hide.</b> In a simulated trading task GPT-4 acted on an insider tip and then “consistently” hid its genuine reasons from its manager. The authors call it “an existence proof”, not a likelihood estimate <span class="cite">Scheurer et al. 2024, p. 1</span>. Prompts that strongly discourage it bring it to “nearly (but not exactly) 0%” <span class="cite">p. 8</span>. <i>Lens 4 picks this up.</i></p>
 
   <h3>Can an LLM invent a new instrument today?</h3>
   <ul class="plain">
-    <li><b>Found.</b> LLMs translating intent into a <i>fixed</i> vocabulary; neural nets that find auction <i>mechanisms</i>, only “approximately incentive compatible” <span class="cite">Dütting et al. 2019, p. 3</span>; deep hedging, which is risk management, not invention <span class="cite">Buehler et al. 2018, abstract</span>.</li>
-    <li><b>Not found.</b> A traded, AI-invented instrument. The FSB: “use cases generating new revenue streams are not widely observed at present” <span class="cite">FSB 2024, p. 1</span>; its conclusion continues that technological advances and growing AI integration “could change this in the future” <span class="cite">FSB 2024, pp. 28–29</span>.</li>
-    <li><b>Critic.</b> Poole: “No one has yet seen a chatbot create new ideas” <span class="cite">Poole 2024</span>.</li>
+    <li><b>Found.</b> LLMs translating intent into a <i>fixed</i> vocabulary. Neural networks that search for auction <i>rules</i> (who wins, who pays): one method “will generally only find” rules that are “approximately incentive compatible” <span class="cite">Dütting et al. 2019, p. 3</span>. Deep hedging, which is risk management, not invention <span class="cite">Buehler et al. 2018, abstract</span>.</li>
+    <li><b>Not found.</b> A traded, AI-invented instrument. The FSB reports that “use cases generating new revenue streams are not widely observed at present” <span class="cite">FSB 2024, p. 1</span>; that is about AI use cases in general and does not address AI-invented instruments, so it is background, not a test. It adds that technological advances and growing AI integration “could change this in the future” <span class="cite">FSB 2024, pp. 28–29</span>.</li>
   </ul>
   <p class="keypoint">Verdict: “not yet evidenced”, not “impossible”. Our search was limited.</p>
-  <p>So far an LLM adds new ways to write contracts, agents with money, shared models and hidden reasons.</p>
 </section>
 
 <!-- ============ 5 LENS 1 ============ -->
@@ -199,43 +224,51 @@
   <p class="sec-no">5 · Through the lenses</p>
   <h2>Lens 1 · Information theory</h2>
   <p class="linktype"><span class="lt same">same-math</span> Counting contracts and descriptions. <span class="lt analogy">structural analogy</span> “To understand a contract is to have a short description of it” (ours). <span class="lt metaphor">metaphor</span> A price as a short message hiding a long story.</p>
-  <p>Shannon’s 1948 paper sets meaning aside: the message is “one selected from a set of possible messages” and its meaning is “irrelevant to the engineering problem” <span class="cite">Shannon 1948, p. 1</span>. Post 01 counted texts; we count contracts.</p>
+  <p>Shannon’s 1948 paper sets meaning aside: a message is “one selected from a set of possible messages”, and its meaning is “irrelevant to the engineering problem” <span class="cite">Shannon 1948, p. 1</span>. Post 01 counted texts; we count contracts.</p>
 
   <h3>Ladder 1 · How many contracts have a short description?</h3>
-  <p><b>Instance.</b> In the four-word village, a contract pays 0 to 9 coins for each word. <b>Question.</b> How many contracts are there, how many bits to name one, and how many can have a <i>short</i> name? <b>Mechanism in words.</b> Each of 4 words has 10 payouts: \(10^4=10{,}000\) contracts. Naming one costs \(\log_2 10{,}000=13.29\) bits. A description is a bit string, and short strings are few: 1 empty string, 2 of length 1, 4 of length 2, up to \(2^{k-1}\) of length \(k-1\). Together, \(2^k-1\) strings are shorter than \(k\) bits. <b>Formula.</b> A description gives only one contract (a program has one output), so</p>
+  <p><b>Instance.</b> In the four-word village, a contract pays 0 to 9 coins for each word. A <dfn>description</dfn> of a contract is a message from which anyone can rebuild the whole table: for Contract A, “pay 4 coins per rainy day”; for Contract B, the 16 numbers themselves. Computers store messages as bit strings (0s and 1s), so we count bit strings. <b>Question.</b> How many contracts are there, how many bits to name one, and how many can have a <i>short</i> description? <b>Mechanism in words.</b> Each of 4 words has 10 payouts: \(10^4=10{,}000\) contracts. Naming one costs \(\log_2 10{,}000=13.29\) bits. Short strings are few: 1 empty string, 2 of length 1, 4 of length 2, up to \(2^{k-1}\) of length \(k-1\). Together, \(2^k-1\) strings are shorter than \(k\) bits. <b>Formula.</b> One description rebuilds only one contract, so</p>
   \[\#\{\text{contracts with a description shorter than }k\text{ bits}\}\;\le\;2^k-1\]
-  <p>This is Cover and Thomas’s Theorem 7.2.4: a program “can produce only one possible output sequence” <span class="cite">Cover and Thomas 1991, p. 150</span>. Mapping contracts to bit strings is our step. <b>Check.</b> \(k=6\): \(2^6-1=63\), so at most 63 of 10,000 contracts (0.63%). \(k=10\): 1,023 (10.2%).</p>
+  <p>This is Cover and Thomas’s Theorem 7.2.4: a program “can produce only one possible output sequence” <span class="cite">Cover and Thomas 1991, p. 150</span>. Mapping contracts to bit strings is our step. <b>Check.</b> \(k=6\): \(2^6-1=63\), at most 63 of 10,000 contracts (0.63%). \(k=10\): 1,023 (10.2%).</p>
 
   <script type="application/json" id="cfg-count">{"type":"lab","id":"cfg-count","title":"How many contracts have a short description? (toy, ours)","note":"A contract pays 0–9 for each possible state of the village. Drag k: how many contracts can have a description shorter than k bits?","params":[{"id":"k","label":"description length k (bits)","min":1,"max":60,"step":1,"value":6,"fmt":"d"},{"id":"d","label":"days in the contract","min":1,"max":4,"step":1,"value":1,"fmt":"d"}],"derived":{"states":"4^d","bits":"states*log2(10)","nshort":"2^k-1","frac":"min(1,nshort/10^states)"},"readout":"{states:d} weather states, so 10^{states:d} contracts. Naming one takes {bits:.2f} bits. At most {nshort:,} contracts have a description shorter than {k:d} bits: a fraction {frac:.3g} of all (1 means all of them).","presets":[{"label":"4 states, k = 6","values":{"k":6,"d":1}},{"label":"4 states, k = 14","values":{"k":14,"d":1}},{"label":"two days, k = 20","values":{"k":20,"d":2}}],"caption":"Counting argument: Cover and Thomas 1991, Theorem 7.2.4, p. 150. Mapping contracts to bit strings is our step. Toy, ours."}</script>
   <div class="w" data-widget="lab" id="lab-count" data-config-ref="cfg-count"></div>
-  <p><b>Edge case.</b> Press “4 states, k = 14”: \(2^{14}-1=16{,}383\) exceeds 10,000, so <i>every</i> contract could have a short name. Two days: \(10^{16}\) contracts, and at \(k=20\) only a fraction \(1.05\times10^{-10}\) do.</p>
+  <p><b>Edge case.</b> Press “4 states, k = 14”: \(2^{14}-1=16{,}383\) exceeds 10,000, so <i>every</i> contract could have a short name. Two days: \(10^{16}\) contracts, and at \(k=20\) only \(1.05\times10^{-10}\) of them do.</p>
 
   <div class="reveal" data-for="g1"><p class="reveal-h">Prediction 1 · answer</p><p><b>10,000</b> (\(10^4\)), and the count explodes as the world grows.</p></div>
-  <p><b>What it means.</b> In a big enough world most possible contracts have no short description: <i>explainable</i> novelty is rare among <i>possible</i> contracts, though an optimiser can still pick structured ones. Limits: the shortest description depends on the computer, up to a constant <span class="cite">Cover and Thomas 1991, p. 151</span>, and is not computable <span class="cite">p. 163</span>.</p>
+  <p><b>What it means.</b> In a big enough world most possible contracts have no short description: <i>explainable</i> novelty is rare among <i>possible</i> contracts, though an optimiser can still pick structured ones. Limits: the shortest description depends on the computer <span class="cite">Cover and Thomas 1991, p. 151</span> and is not computable <span class="cite">p. 163</span>.</p>
 
   <h3>Ladder 2 · A short rule can still be hard to price</h3>
-  <p><b>Instance.</b> Used cars. A working car is worth $1,000 to a buyer; 20% are lemons worth $0, so a random car is worth $800. The seller of a working car must accept $200 less than the buyer values it: the <dfn>lemon cost</dfn> <span class="cite">Arora et al. 2009, p. 2</span>. Akerlof: buyers cannot tell, so “the ‘bad’ cars tend to drive out the good” <span class="cite">Akerlof 1970, pp. 489–490</span>.</p>
-  <p><b>Question.</b> With a short public rule and a seller who knows more, can the buyer still find a fair price? <b>Mechanism in words.</b> Pool 100 assets, each paying 1 or 0 with chance ½ independently: fair price 50. The seller knows 10 are junk. <b>Worked numbers (toy, ours).</b> Honest value \(90\times\tfrac12=45\); lemon cost \(50-45=5=n/2\) for \(n=10\). A buyer hunting the junk must search possible junk sets: 17,310,309,456,440 of ten (\(1.73\times10^{13}\)).</p>
+  <p><b>Instance.</b> Used cars. A working car is worth $1,000 to a buyer and 20% are lemons worth $0, so a random car is worth $800: a seller of a working car must accept $200 less than the buyer values it, the <dfn>lemon cost</dfn> <span class="cite">Arora et al. 2009, p. 2</span>. Akerlof: “the ‘bad’ cars tend to drive out the good” <span class="cite">Akerlof 1970, pp. 489–490</span>.</p>
+  <p><b>Question.</b> A seller knows which assets are junk; the buyer sees only a short public rule. Can the buyer still find a fair price? <b>Mechanism in words.</b> Pool 100 assets, each paying 1 or 0 with chance ½: fair price 50. The seller knows 10 are junk (pay 0). <b>Worked numbers (toy, ours).</b> Honest value \(90\times\tfrac12=45\), lemon cost \(50-45=5=n/2\) for \(n=10\). In this plain pool every set of 10 gives the same 45: nothing to search, and the buyer can just discount by 5.</p>
+  <p><b>Now put a derivative on top.</b> The seller builds many products, each paying on a different selection of the assets, and chooses which junk goes where. Over-representing the junk in a few products, just enough to skew their default chance, can look like random pooling to a buyer with limited computing. Detecting it is the “hidden dense subgraph” problem, which computer scientists believe to be intractable (impossible to solve in realistic time) <span class="cite">Arora et al. 2009, pp. 3–4</span>. If the buyer cannot tell, it cannot tell a fair price from an inflated one (our gloss). Testing every junk set means \(\binom{100}{10}=17{,}310{,}309{,}456{,}440\) checks: huge, but beside the point, since an unbounded buyer could do it. The claim is about realistic buyers.</p>
   <figure class="illus"><div class="w" data-widget="diagram" id="dg-seller" data-config-ref="cfg-seller"></div></figure>
   <script type="application/json" id="cfg-seller">{
  "title":"The informed seller (toy, ours)","height":250,
  "nodes":[{"id":"seller","x":75,"y":45,"w":120,"h":44,"label":"Seller\nknows 10 junk"},
-          {"id":"pool","x":275,"y":45,"w":120,"h":44,"label":"Pool of\n100 assets","kind":"soft"},
-          {"id":"buyer","x":275,"y":130,"w":120,"h":40,"label":"Buyer\nsees the rule"},
-          {"id":"q","x":120,"y":205,"w":210,"h":44,"label":"Which 10? 1.73e13\npossible junk sets","kind":"hl"}],
- "edges":[{"id":"e1","from":"seller","to":"pool","label":"hides junk"},{"id":"e2","from":"pool","to":"buyer","label":"sells"},{"id":"e3","from":"buyer","to":"q","dashed":true}],
- "steps":[{"show":["seller","pool","e1"],"text":"The seller knows 10 of the 100 assets pay nothing and puts them in the pool."},
-          {"show":["buyer","e2"],"text":"The buyer sees the short, public rule and the whole pool, but not which assets are junk."},
-          {"show":["q","e3"],"text":"A buyer who tries every possible junk set faces 17,310,309,456,440 sets (C(100,10)). Check: 50 − 45 = 5 is the lemon cost."}]
+          {"id":"pool","x":275,"y":45,"w":130,"h":44,"label":"Many products\nfrom 100 assets","kind":"soft"},
+          {"id":"buyer","x":275,"y":130,"w":130,"h":40,"label":"Buyer sees\nthe public rule"},
+          {"id":"q","x":120,"y":205,"w":220,"h":44,"label":"Where does the\njunk sit?","kind":"hl"}],
+ "edges":[{"id":"e1","from":"seller","to":"pool","label":"places junk"},{"id":"e2","from":"pool","to":"buyer","label":"sells"},{"id":"e3","from":"buyer","to":"q","dashed":true}],
+ "steps":[{"show":["seller","pool","e1"],"text":"The seller knows 10 of the 100 assets pay nothing, and decides which products each asset goes into."},
+          {"show":["buyer","e2"],"text":"The buyer sees the short, public rule and every product, but not which assets are junk."},
+          {"show":["q","e3"],"text":"The hard part is telling whether the junk was placed to skew some products. Trying every possible junk set (C(100,10) = 17,310,309,456,440) is the size of a brute-force check, not the paper's hardness. In a plain pool the lemon cost is simply 50 − 45 = 5."}]
 }</script>
-  <p><b>What the paper shows.</b> Arora, Barak, Brunnermeier and Ge show, under a <i>conjectured</i> hardness assumption, in a simple model with independent 0/1 assets, that derivatives can “amplify the costs of asymmetric information instead of reducing them” <span class="cite">Arora et al. 2009, abstract</span>. They suggest pricing “may be computationally intractable” even when buyers know almost all relevant information <span class="cite">p. 1</span>, and call the work “clearly only a first step” <span class="cite">p. 12</span>. <b>What it does not say.</b> The rules are short and public; what is hard is the <i>price</i>, when the seller knows more. Reading an AI designer as the informed seller is ours; the result concerns CDO-type products.</p>
+  <p><b>What is claimed.</b> In a simple model with independent 0/1 assets, and under a <i>conjectured</i> hardness assumption, derivatives can “amplify the costs of asymmetric information instead of reducing them” <span class="cite">Arora et al. 2009, abstract</span>; pricing “may be computationally intractable” <span class="cite">p. 1</span>. <b>How far it goes.</b> The authors call it “clearly only a first step”, and say blaming “faulty models” for the crisis “is probably correct” <span class="cite">p. 12</span>. The rules are short and public; what is hard is finding where the junk sits. Reading an AI designer as the seller is ours.</p>
 
-  <div class="trap"><p class="trap-h">Trap · two meanings of “complicated”</p><p>For Harari, a device is complicated when “you need to go over trillions of data points to understand” it <span class="cite">BIS 2024 [10:08]</span>: <i>volume</i>. For Arora and colleagues, a short contract can have a price <i>hard to find</i> when the seller knows more. Same word, different problems.</p></div>
-  <p class="lens-sum"><b>Adds:</b> explainable novelty is rare among possible contracts, and a short rule does not make a price easy. <b>Does not explain:</b> whether an AI would pick opaque contracts, or why a seller would want to. <b>Back to post 01:</b> Shannon’s counting.</p>
+  <div class="trap"><p class="trap-h">Trap · two meanings of “complicated”</p><p>For Harari, a device is complicated when “you need to go over trillions of data points to understand” it <span class="cite">BIS 2024 [10:08]</span>: <i>volume</i>. For Arora and colleagues, a short contract can have a price <i>hard to find</i>. Same word, different problems.</p></div>
+  <p class="lens-sum"><b>Adds:</b> explainable novelty is rare among possible contracts, and a short rule does not make a price easy. <b>Does not explain:</b> whether an AI would pick opaque contracts. <b>Back to post 01:</b> Shannon’s counting.</p>
+
+  <details class="deep" id="box-lemon">
+    <summary>Look inside: the lemon-cost formula</summary>
+    <p>For a product paying \(F(X)\) on \(N\) assets, Arora and colleagues define the lemon cost of \(n\) junk assets as
+    \[\Delta(n)=\mathbb{E}[F(X)]-\min_{|S|=n}\mathbb{E}\big[F(X)\mid X_i=0\ \forall i\in S\big]\]
+    <span class="cite">Arora et al. 2009, p. 5</span>. Read it as: the average value, minus the value if the junk sits in the worst possible places, where the minimum “takes into account all possible ways in which seller could ‘position’ the junk”. In our plain pool \(\mathbb{E}[F]=50\) and every 10-set gives 45, so \(\Delta=5\). With a derivative, \(\Delta\) depends on where the junk sits. Their Table 1, in words: for a binary CDO the lemon cost is much <i>larger</i> than \(n\) for a buyer limited to polynomial time and much smaller for an unbounded one, under the conjectured assumption <span class="cite">p. 6</span>.</p>
+  </details>
 
   <details class="deep" id="box-tree">
     <summary>Look inside: a contract built to resist tampering</summary>
-    <p>What would help? A “tree of majorities” (majority of 3, repeated to depth \(k\)) “cannot be influenced by o(2<sup>k</sup>)” of its \(3^k\) inputs, so tampering could be detected afterwards <span class="cite">Arora et al. 2009, p. 12</span>. Toy (ours, code-checked): 9 inputs need 4 flips; 27 need 8; 81 need 16.</p>
+    <p>What would help? In their simple model, the authors offer “another, perhaps more plausible candidate”: a “tree of majorities” (majority of 3, repeated to depth \(k\)) that “cannot be influenced by” \(o(2^k)\) of its \(3^k\) inputs, a number still much larger than \(\sqrt{3^k}\), so tampering could be detected afterwards <span class="cite">Arora et al. 2009, p. 12</span>. Toy (ours, code-checked): 9 inputs need 4 flips; 27 need 8; 81 need 16.</p>
     <figure class="illus"><div class="w" data-widget="diagram" id="dg-tree" data-config-ref="cfg-tree"></div></figure>
     <script type="application/json" id="cfg-tree">{"title": "Tree of majorities, depth 2 (toy, ours)", "height": 205, "nodes": [{"id": "root", "x": 180, "y": 32, "w": 40, "h": 26, "label": "0"}, {"id": "m1", "x": 70, "y": 100, "w": 36, "h": 26, "label": "0"}, {"id": "m2", "x": 180, "y": 100, "w": 36, "h": 26, "label": "0"}, {"id": "m3", "x": 290, "y": 100, "w": 36, "h": 26, "label": "0"}, {"id": "l1", "x": 30, "y": 170, "w": 30, "h": 26, "label": "0"}, {"id": "l2", "x": 70, "y": 170, "w": 30, "h": 26, "label": "0"}, {"id": "l3", "x": 110, "y": 170, "w": 30, "h": 26, "label": "0"}, {"id": "l4", "x": 140, "y": 170, "w": 30, "h": 26, "label": "0"}, {"id": "l5", "x": 180, "y": 170, "w": 30, "h": 26, "label": "0"}, {"id": "l6", "x": 220, "y": 170, "w": 30, "h": 26, "label": "0"}, {"id": "l7", "x": 250, "y": 170, "w": 30, "h": 26, "label": "0"}, {"id": "l8", "x": 290, "y": 170, "w": 30, "h": 26, "label": "0"}, {"id": "l9", "x": 330, "y": 170, "w": 30, "h": 26, "label": "0"}, {"id": "o1", "x": 30, "y": 170, "w": 30, "h": 26, "label": "1", "kind": "hl"}, {"id": "o2", "x": 70, "y": 170, "w": 30, "h": 26, "label": "1", "kind": "hl"}, {"id": "o4", "x": 140, "y": 170, "w": 30, "h": 26, "label": "1", "kind": "hl"}, {"id": "o5", "x": 180, "y": 170, "w": 30, "h": 26, "label": "1", "kind": "hl"}, {"id": "om1", "x": 70, "y": 100, "w": 36, "h": 26, "label": "1", "kind": "hl"}, {"id": "om2", "x": 180, "y": 100, "w": 36, "h": 26, "label": "1", "kind": "hl"}, {"id": "oroot", "x": 180, "y": 32, "w": 40, "h": 26, "label": "1", "kind": "hl"}], "edges": [{"id": "el1", "from": "l1", "to": "m1"}, {"id": "el2", "from": "l2", "to": "m1"}, {"id": "el3", "from": "l3", "to": "m1"}, {"id": "el4", "from": "l4", "to": "m2"}, {"id": "el5", "from": "l5", "to": "m2"}, {"id": "el6", "from": "l6", "to": "m2"}, {"id": "el7", "from": "l7", "to": "m3"}, {"id": "el8", "from": "l8", "to": "m3"}, {"id": "el9", "from": "l9", "to": "m3"}, {"id": "em1", "from": "m1", "to": "root"}, {"id": "em2", "from": "m2", "to": "root"}, {"id": "em3", "from": "m3", "to": "root"}], "labels": [{"x": 180, "y": 200, "text": "nine inputs at the bottom, one output on top", "c": "ts"}], "steps": [{"show": [], "text": "Nine inputs, all 0. Each middle node takes the majority of 3 inputs, and the top takes the majority of the 3 middle nodes. All are 0."}, {"show": ["o1", "o2", "o4", "o5"], "text": "Flip two inputs under the left middle node and two under the centre one: 4 flips."}, {"show": ["om1", "om2"], "text": "Each of those middle nodes now sees two 1s out of three, so it becomes 1."}, {"show": ["oroot"], "text": "Two of the three middle nodes are 1, so the top becomes 1. From all zeros, fewer than 4 flips cannot do this (checked over all 512 inputs by code)."}]}</script>
   </details>
@@ -246,80 +279,117 @@
   <p class="sec-no">6 · Through the lenses</p>
   <h2>Lens 2 · Control and cybernetics</h2>
   <p class="linktype"><span class="lt same">same-math</span> “Variety” and entropy follow the same counting rules (Ashby, ch. 11). <span class="lt analogy">structural analogy</span> The regulator is a financial supervisor (ours).</p>
-  <p>Control theory asks what a regulator needs to keep a system within bounds. In Ashby’s terms, the <i>disturbances</i> D are what can go wrong (kinds of new contract), the <i>regulator</i> R responds (a supervisor with checks), and the <i>outcome</i> E is what is left on the books. The <dfn>variety</dfn> of a set is the base-2 log of its number of states, in bits.</p>
-  <p><b>Instance.</b> Four kinds of contract arrive, D1 to D4. The supervisor sees the kind and runs one of two checks, R1 or R2. The books end in state a, b, c or d (toy, ours, in Ashby’s table style).</p>
+  <p>Control theory asks what a regulator needs to keep a system within bounds. In Ashby’s terms, the <i>disturbances</i> D are what can go wrong (kinds of new contract), the <i>regulator</i> R responds (a supervisor’s checks), and the <i>outcome</i> E is what is left on the books. The <dfn>variety</dfn> of a set is the base-2 log of its number of states, in bits.</p>
+  <p><b>Instance.</b> Four kinds of contract arrive, D1 to D4. The supervisor sees the kind and runs check R1 or R2. The books end in state a, b, c or d (toy, ours, in Ashby’s table style).</p>
   <script type="application/json" id="cfg-ashby-table">{"type":"stepper","id":"cfg-ashby-table","title":"Ashby's table, four disturbances and two responses (toy, ours)","head":["contract type D","check R1","check R2","best pick"],"rows":[["D1","a","b","R1 → a"],["D2","b","a","R2 → a"],["D3","c","d","R1 → c"],["D4","d","c","R2 → c"],["all four","","","a, c, a, c"]],"notes":["A new contract of type D1 arrives. Check R1 leaves the books in state a; check R2 leaves state b. Pick R1.","Type D2: the supervisor sees which type it is and picks R2, which also gives a.","Type D3: R1 gives c, R2 gives d. Pick R1.","Type D4: pick R2, which gives c. No check can give a for D3 or D4, because a appears only in D1 and D2.","Best play leaves two outcomes, a and c: 1 bit. The law says V_O ≥ V_D − V_R = 2 − 1 = 1 bit, and no choice of checks can do better."]}</script>
   <div class="w" data-widget="stepper" id="st-ashby" data-config-ref="cfg-ashby-table"></div>
-  <p><b>Question.</b> How few outcomes can the supervisor force? <b>Mechanism in words.</b> Each outcome appears once per column, so one check sends only one contract kind to “a”. The best plan sends D1 and D2 to a, and D3 and D4 to c: two outcomes (checked over all 16 plans by code). <b>Worked numbers.</b> \(V_D=\log_2 4=2\) bits, \(V_R=\log_2 2=1\) bit, least outcome variety \(\log_2 2=1\) bit. <b>Formula</b> (Ashby’s law, \(V_O\) the variety left in the outcomes):</p>
+  <p><b>Question.</b> How few outcomes can the supervisor force? <b>The table condition.</b> Ashby requires that in each column (each check) no outcome appears twice <span class="cite">Ashby 1956, p. 207</span>: one check sends different contract kinds to different outcomes. Without it the bound below can fail (if every cell gave the same outcome, there would be nothing to regulate). <b>Mechanism in words.</b> So one check sends only one contract kind to “a”. The best plan sends D1 and D2 to a, and D3 and D4 to c: two outcomes (checked over all 16 plans by code). <b>Worked numbers.</b> \(V_D=\log_2 4=2\) bits, \(V_R=\log_2 2=1\) bit, least outcome variety \(\log_2 2=1\) bit. <b>Formula</b> (Ashby’s law, \(V_O\) the variety left in the outcomes):</p>
   \[V_O\;\ge\;V_D-V_R\]
-  <p>“Only variety in R can force down the variety due to D; variety can destroy variety” <span class="cite">Ashby 1956, p. 207</span>. <b>Check.</b> \(2-1=1\) bit, as in the table. Village: 10,000 kinds is \(V_D=13.29\) bits; a supervisor with \(V_R=4\) bits leaves \(V_O\ge9.29\).</p>
+  <p>“Only variety in R can force down the variety due to D; variety can destroy variety” <span class="cite">Ashby 1956, p. 207</span>. <b>Check.</b> \(2-1=1\) bit, as in the table. Change to 8 kinds and 4 checks: \(3-2=1\) bit again. Village: 10,000 kinds is \(V_D=13.29\) bits; a supervisor with \(V_R=4\) bits leaves \(V_O\ge9.29\).</p>
   <script type="application/json" id="cfg-ashby">{"type":"lab","id":"cfg-ashby","title":"Requisite variety for a supervisor (toy, ours)","note":"Variety = log2 of the number of different situations (or responses). The supervisor sees contract types; each needs its own kind of check.","params":[{"id":"c","label":"allowed contract types: 10 to the power","min":0,"max":4,"step":0.5,"value":4,"fmt":".1f"},{"id":"vr","label":"supervisor variety V_R (bits)","min":0,"max":14,"step":0.5,"value":4,"fmt":".1f"}],"derived":{"vd":"c*log2(10)","vo":"max(0, vd-vr)","gap":"vd-vr"},"bars":{"items":[{"label":"V_D (contracts)","value":"vd"},{"label":"V_R (supervisor)","value":"vr"},{"label":"least V_O left","value":"vo"}],"max":14,"fmt":".2f","highlight":2},"readout":"V_D = {vd:.2f} bits, V_R = {vr:.1f} bits. Least outcome variety V_O ≥ {vo:.2f} bits.","presets":[{"label":"free market: 10^4","values":{"c":4,"vr":4}},{"label":"standard menu: 10^2","values":{"c":2,"vr":4}},{"label":"AI supervisor +5 bits","values":{"c":4,"vr":9}}],"caption":"Ashby 1956, S.11/6–11/7, pp. 206–207: V_O cannot be less than V_D − V_R. Mapping to supervisors and contracts is our analogy. Toy, ours."}</script>
   <div class="w" data-widget="lab" id="lab-ashby" data-config-ref="cfg-ashby"></div>
-  <p><b>Edge case.</b> Press “AI supervisor +5 bits”, then drag \(V_R\) past \(V_D\): the bound stops at 0, because a regulator bigger than the problem buys nothing more. <b>What it means.</b> The law “owes nothing to experiment” <span class="cite">Ashby 1956, p. 209</span>. It does not say regulators fail; it says what they would <i>need</i>.</p>
+  <p><b>Edge case.</b> Press “AI supervisor +5 bits”, then drag \(V_R\) past \(V_D\): the bound stops at 0; a regulator bigger than the problem buys nothing more. <b>What it means.</b> The law “owes nothing to experiment” <span class="cite">Ashby 1956, p. 209</span>. It does not say regulators fail; it says what they <i>need</i>.</p>
 
   <h3>Ashby’s three levers, and our mapping</h3>
   <p>For a very large system Ashby lists “ways that may make regulation possible” <span class="cite">Ashby 1956, p. 246</span>:</p>
   <ol>
     <li><b>Lower the standard</b>, “a somewhat trivial solution”: accept more failures.</li>
-    <li><b>Raise the scope and power of R.</b> In finance: AI supervisors. Danielsson and Uthemann propose that authorities build their own AI, with AI-to-AI communication and automated crisis facilities <span class="cite">Danielsson and Uthemann 2025, abstract</span>. An earlier paper warns that eventually “neither its understanding of the economic system, nor possibly even its internal data representations, will be intelligible to its human operators” <span class="cite">Danielsson et al. 2017, p. 11</span>. Who regulates the regulator?</li>
-    <li><b>Find a constraint.</b> Parts of D may not be independent. Ashby’s condition: “if R’s capacity is not easily increased and the other methods are not possible”, a constraint is “the would-be regulator’s only hope” <span class="cite">Ashby 1956, p. 247</span>. <b>Our mapping (ours):</b> a <i>standard menu</i> of contracts is an imposed constraint. Cutting \(10^4\) kinds to \(10^2\) lowers \(V_D\) by \(13.29-6.64=6.64\) bits.</li>
+    <li><b>Raise the scope and power of R.</b> In finance: AI supervisors. Danielsson and Uthemann propose that authorities build their own AI <span class="cite">Danielsson and Uthemann 2025, abstract</span>. Danielsson, Macrae and Uthemann write that the AI’s knowledge of the financial system and its internal data representations “will likely be unintelligible to humans” <span class="cite">Danielsson et al. 2022, p. 7</span>. Who regulates the regulator?</li>
+    <li><b>Find a constraint.</b> Ashby’s condition: “if R’s capacity is not easily increased and the other methods are not possible”, a constraint is “the would-be regulator’s only hope” <span class="cite">Ashby 1956, p. 247</span>. <b>Our mapping (ours):</b> a <i>standard menu</i> of contracts is an imposed constraint. Cutting \(10^4\) kinds to \(10^2\) lowers \(V_D\) by \(13.29-6.64=6.64\) bits.</li>
   </ol>
-  <p><b>Counterweights.</b> The FSB’s press release: “existing financial policy frameworks address many of the vulnerabilities”, but “more work may be needed” <span class="cite">FSB 2024, press release</span>. Danielsson and Uthemann: current frameworks “cannot effectively prevent and resolve such AI-induced crises” <span class="cite">Danielsson and Uthemann 2025, introduction</span>. Narayanan and Kapoor: “control is primarily in the hands of people and organizations” <span class="cite">Narayanan and Kapoor 2025, introduction</span>.</p>
-  <p class="lens-sum"><b>Adds:</b> control needs variety, and there are three ways to get it. <b>Does not explain:</b> Ashby’s disturbance is passive; finance adapts to its regulator (ours). <b>Across lenses (ours):</b> one shared model gives the supervisor fewer independent disturbances to cover, yet banks fail together (Lens 3).</p>
+  <p><b>Counterweights.</b> The FSB: “existing financial policy frameworks address many of the vulnerabilities”, but “more work may be needed” <span class="cite">FSB 2024, press release</span>. Danielsson and Uthemann: AI “can both stabilise and destabilise the financial system” <span class="cite">Danielsson and Uthemann 2025, introduction</span>. Narayanan and Kapoor, for AI short of superintelligence: “control is primarily in the hands of people and organizations” <span class="cite">Narayanan and Kapoor 2025, introduction</span>.</p>
+  <p class="lens-sum"><b>Adds:</b> control needs variety, and there are three ways to get it. <b>Does not explain:</b> Ashby’s disturbance is passive; finance adapts to its regulator (ours). <b>Across lenses (ours):</b> if ten banks make the same move, the supervisor faces one kind of disturbance, not ten, which is less to cover; but when it strikes, it strikes all ten at once (Lens 3).</p>
+
+  <details class="deep" id="box-ashby">
+    <summary>Look inside: Ashby’s law with probabilities</summary>
+    <p>Counts gave \(V_O\ge V_D-V_R\). With probabilities, entropy \(H\) (post 01) replaces variety:</p>
+    \[H(E)\;\ge\;H(D)+H(R\mid D)-H(R)\]
+    <p>\(H(R\mid D)\) is the uncertainty left in the regulator’s choice once the disturbance is known; it is 0 if R is a function of D. <b>Two steps.</b> (1) The table rule, no outcome twice in a column <span class="cite">Ashby 1956, p. 207</span>, means that given R, different disturbances give different outcomes, so \(H(D\mid R)\le H(E\mid R)\). (2) Then
+    \[H(D)+H(R\mid D)=H(R)+H(D\mid R)\le H(R)+H(E\mid R)\le H(R)+H(E)\]
+    where the last step is “conditioning cannot raise entropy”. Rearrange. <b>Numbers.</b> Post 01’s weather village has \(H(D)=1.75\) bits (probabilities \(\tfrac12,\tfrac14,\tfrac18,\tfrac18\)); a one-bit regulator that is a function of D gives \(H(E)\ge1.75-1=0.75\) bits.</p>
+    <div class="trap"><p class="trap-h">Trap · a misprint in the reprint</p><p>Ashby writes the conditional term as \(H_D(R)\), i.e. \(H(R\mid D)\) <span class="cite">Ashby 1956, p. 208</span>. One line of the reprint prints \(H_D(E)\), though the line above and the sentence after need \(H_D(R)\). We use the corrected form.</p></div>
+  </details>
 </section>
 
-<!-- ============ 7 LENS 3 ============ -->
+<!-- ============ 7 LENS 3a ============ -->
 <section id="lens-decision" data-ch="lens-decision">
   <p class="sec-no">7 · Through the lenses</p>
-  <h2>Lens 3 · Correlation, Bayes and cascades</h2>
-  <p class="linktype"><span class="lt same">same-math</span> Effective number of opinions; odds form of Bayes. <span class="lt analogy">structural analogy</span> Keynes’s contest and bank cascades (ours).</p>
+  <h2>Lens 3a · Correlation and Bayes</h2>
+  <p class="linktype"><span class="lt same">same-math</span> Effective number of opinions; odds form of Bayes. <span class="lt analogy">structural analogy</span> Keynes’s contest and bank behaviour (ours).</p>
 
   <h3>Why would banks use the same model?</h3>
-  <p>Keynes: human investors “fall back on what is, in truth, a convention” <span class="cite">Keynes 1936, ch. 12, § IV (standard numbering)</span>, since “it is better for reputation to fail conventionally than to succeed unconventionally” <span class="cite">§ V</span>. The FSB lists four drivers of common AI models: herding, network externalities, limited choice, lack of transparency <span class="cite">FSB 2024, p. 20</span>. (Mapping Keynes to one shared model is ours.)</p>
+  <p>Keynes writes that investors “fall back on what is, in truth, a convention” <span class="cite">Keynes 1936, ch. 12, § IV (standard numbering)</span>. Separately, of professionals, he writes that “it is better for reputation to fail conventionally than to succeed unconventionally” <span class="cite">§ V</span>. The FSB lists four <i>possible</i> drivers of common AI models, among them herding and lack of transparency <span class="cite">FSB 2024, p. 20</span>. (The link to one shared model is ours.)</p>
+
+  <div class="term"><p class="term-h">Terms · variance and correlation</p><p>The <dfn>variance</dfn> \(\sigma^2\) of a forecast error is its average squared size: how widely the misses spread. The <dfn>correlation</dfn> \(\rho\) of two forecasters, from 0 to 1, says how much their misses go together: 0 is independent, 1 is the same miss every time.</p></div>
 
   <h3>Ladder 1 · How many independent opinions do ten banks have?</h3>
   <p><b>Instance.</b> Prediction 2: ten banks each run a risk model wrong on 1% of days. How often are all ten wrong on the same day? <b>Mechanism in words.</b> Independent errors multiply; with one shared model there is one shared error.</p>
   <div class="reveal" data-for="g2"><p class="reveal-h">Prediction 2 · answer</p><p><b>Independent: \(0.01^{10}=10^{-20}\), 1 day in \(10^{20}\). Same model: about 1 day in 100.</b></p></div>
-  <p><b>Worked numbers.</b> The average of \(N\) forecasts, each with variance \(\sigma^2\) and pairwise correlation \(\rho\), has variance \(\sigma^2[1+(N-1)\rho]/N\) (derived in Rung 3), as steady as \(N_{\text{eff}}\) independent forecasts:</p>
+  <p><b>A second question.</b> How steady is the <i>average</i> of their forecasts? That differs from “all wrong together”. <b>Derivation.</b> Let each error have variance \(\sigma^2\) and each pair correlation \(\rho\). The average \(\bar e=\frac1N\sum_i e_i\) has \(N\) terms of variance \(\sigma^2\) and \(N(N-1)\) ordered pairs, each with covariance \(\rho\sigma^2\):</p>
+  \[\operatorname{Var}(\bar e)=\frac{1}{N^2}\big[N\sigma^2+N(N-1)\rho\sigma^2\big]=\frac{\sigma^2\,[1+(N-1)\rho]}{N}\]
+  <p>\(N_{\text{eff}}\) independent forecasts would give variance \(\sigma^2/N_{\text{eff}}\). Set the two equal and solve:</p>
   \[N_{\text{eff}}=\frac{N}{1+(N-1)\rho}\]
-  <p>For \(N=10\): \(\rho=0\) gives 10; \(\rho=0.3\) gives 2.703; \(\rho=0.9\) gives 1.099; \(\rho=1\) gives 1. <b>Check by hand.</b> \(N=2\), \(\rho=0.5\): \(2/1.5=1.33\). Directly, the mean of two has variance \(0.75\sigma^2=\sigma^2/1.33\). ✓</p>
-  <script type="application/json" id="cfg-neff">{"type":"lab","id":"cfg-neff","title":"How many independent opinions? (toy, ours)","note":"N forecasts, each pair correlated by rho. N_eff is the number of independent forecasts that would give an average as steady as yours.","params":[{"id":"N","label":"number of banks N","min":2,"max":100,"step":1,"value":10,"fmt":"d"},{"id":"rho","label":"correlation rho","min":0,"max":1,"step":0.05,"value":0.9,"fmt":".2f"}],"constants":{"pw":0.01},"derived":{"neff":"N/(1+(N-1)*rho)","limit":"1/max(rho,0.01)","pall_ind":"pw^N","pall_one":"pw"},"bars":{"items":[{"label":"banks N","value":"N"},{"label":"N_eff","value":"neff"}],"max":100,"fmt":".2f","highlight":1},"readout":"N_eff = {neff:.3f} of {N:d} banks. However many banks join, N_eff never exceeds 1/rho = {limit:.2f}. Each bank is wrong on 1% of days; all wrong together: {pall_ind:.2e} if independent, about {pall_one:.0%} if they run one model.","presets":[{"label":"independent","values":{"N":10,"rho":0}},{"label":"0.3","values":{"N":10,"rho":0.3}},{"label":"one model","values":{"N":10,"rho":1}},{"label":"huge crowd, 0.3","values":{"N":100,"rho":0.3}}],"caption":"Formula N_eff = N / (1 + (N − 1) rho): our derivation (variance of an average of equally correlated forecasts). Toy, ours."}</script>
+  <p>For \(N=10\): \(\rho=0\) gives 10; \(\rho=0.3\) gives 2.703; \(\rho=0.9\) gives 1.099; \(\rho=1\) gives 1. <b>Check.</b> \(N=2\), \(\rho=0.5\): \(2/1.5=1.33\); the mean of two has variance \(0.75\sigma^2=\sigma^2/1.33\). ✓</p>
+  <script type="application/json" id="cfg-neff">{"type":"lab","id":"cfg-neff","title":"How many independent opinions? (toy, ours)","note":"N forecasts, each pair correlated by rho. N_eff is the number of independent forecasts that would give an average as steady as yours.","params":[{"id":"N","label":"number of banks N","min":2,"max":100,"step":1,"value":10,"fmt":"d"},{"id":"rho","label":"correlation rho","min":0,"max":1,"step":0.05,"value":0.9,"fmt":".2f"}],"constants":{"pw":0.01},"derived":{"neff":"N/(1+(N-1)*rho)","pall_ind":"pw^N","pall_one":"pw"},"bars":{"items":[{"label":"banks N","value":"N"},{"label":"N_eff","value":"neff"}],"max":100,"fmt":".2f","highlight":1},"readout":"N_eff = {neff:.3f} of {N:d} banks. Each bank is wrong on 1% of days; all wrong together: {pall_ind:.2e} if independent, about {pall_one:.0%} if they run one model.","presets":[{"label":"independent","values":{"N":10,"rho":0}},{"label":"0.3","values":{"N":10,"rho":0.3}},{"label":"one model","values":{"N":10,"rho":1}},{"label":"huge crowd, 0.3","values":{"N":100,"rho":0.3}}],"caption":"Formula N_eff = N / (1 + (N − 1) rho): our derivation (variance of an average of equally correlated forecasts). Toy, ours."}</script>
   <div class="w" data-widget="lab" id="lab-neff" data-config-ref="cfg-neff"></div>
-  <p><b>What it means.</b> Try “huge crowd, 0.3”: 100 banks give only 3.257 opinions; the ceiling is \(1/\rho\). Shocks could hit users of one model “as if it were a single institution” <span class="cite">FSB 2024, p. 21</span>. <b>Limits.</b> One \(\rho\) for all pairs; no real adoption data.</p>
+  <p><b>What it means.</b> Try “huge crowd, 0.3”: 100 banks give only 3.257 opinions. When \(\rho>0\), \(N_{\text{eff}}\) stays below \(1/\rho\) however many banks join (3.33 for \(\rho=0.3\)); at \(\rho=0\) there is no ceiling. Shocks could hit users of one model “as if it were a single institution” <span class="cite">FSB 2024, p. 21</span>.</p>
 
   <h3>Ladder 2 · Counting one voice ten times</h3>
-  <p><b>Instance.</b> A risk officer hears ten models say “safe”. Prior 1 in 2; a safe bank is 4 times as likely to get this verdict as a risky one (invented). How confident should she be? <b>Mechanism in words.</b> Independent evidence multiplies the odds each time; a copy of the same evidence is not new.</p>
-  \[\text{posterior odds}=\text{prior odds}\times 4^{\,n},\qquad P=\frac{\text{odds}}{1+\text{odds}}\]
-  <p><b>Worked numbers.</b> Counted \(n=0,\dots,4\) times: \(P(\text{safe})=0.5,\,0.8,\,0.941,\,0.985,\,0.996\). Ten times: odds 1,048,576, \(P=0.999999\). Counted once: 0.8. <b>Check.</b> \(n=1\): \(4/5=0.8\).</p>
-  <script type="application/json" id="cfg-bayes2">{"type":"lab","id":"cfg-bayes2","title":"Counting one signal many times (toy, ours)","note":"Prior 1/2 that the bank is safe. A model says safe; a safe bank is 4 times as likely to get this verdict as a risky one. How many separate pieces of evidence do you really hold?","params":[{"id":"n","label":"times you count the verdict","min":0,"max":10,"step":1,"value":1,"fmt":"d"}],"constants":{"LR":4},"derived":{"odds":"LR^n","post":"odds/(1+odds)"},"bars":{"items":[{"label":"P(safe)","value":"post"}],"max":1,"fmt":".4f","highlight":0},"readout":"Verdict counted {n:d}×: odds {odds:,.0f} to 1, P(safe) = {post:.6f}.","presets":[{"label":"one model","values":{"n":1}},{"label":"4 copies","values":{"n":4}},{"label":"10 copies","values":{"n":10}}],"caption":"Same arithmetic as post 01, world W4 (likelihood ratio 4). New story, ours. Odds form of Bayes: posterior odds = prior odds × LR^n."}</script>
-  <div class="w" data-widget="lab" id="lab-bayes2" data-config-ref="cfg-bayes2"></div>
-  <p><b>What it means.</b> Ten copies of one voice feel like certainty (post 01’s Bayes arithmetic, new story).</p>
+  <p>A risk officer hears ten models say “safe”. If they are copies of one voice, she holds one piece of evidence, not ten: independent evidence multiplies the odds, a copy adds nothing. Counted once, 80% confidence; counted ten times, 99.9999%. The fold-out has the arithmetic.</p>
+
+  <details class="deep" id="box-bayes">
+    <summary>Look inside: counting one voice ten times</summary>
+    <p><b>Instance.</b> Prior: 1 in 2 that a bank is safe. A safe bank is 4 times as likely to get a “safe” verdict as a risky one (the <dfn>likelihood ratio</dfn>; invented numbers). <b>Mechanism.</b> Each independent verdict multiplies the odds by 4.</p>
+    \[\text{posterior odds}=\text{prior odds}\times 4^{\,n},\qquad P=\frac{\text{odds}}{1+\text{odds}}\]
+    <p><b>Worked numbers.</b> Counted \(n=0,\dots,4\) times: \(P(\text{safe})=0.5,\,0.8,\,0.941,\,0.985,\,0.996\). Ten times: odds 1,048,576, \(P=0.999999\). <b>Check.</b> \(n=1\): \(4/5=0.8\).</p>
+    <script type="application/json" id="cfg-bayes2">{"type":"lab","id":"cfg-bayes2","title":"Counting one signal many times (toy, ours)","note":"Prior 1/2 that the bank is safe. A model says safe; a safe bank is 4 times as likely to get this verdict as a risky one. How many separate pieces of evidence do you really hold?","params":[{"id":"n","label":"times you count the verdict","min":0,"max":10,"step":1,"value":1,"fmt":"d"}],"constants":{"LR":4},"derived":{"odds":"LR^n","post":"odds/(1+odds)"},"bars":{"items":[{"label":"P(safe)","value":"post"}],"max":1,"fmt":".4f","highlight":0},"readout":"Verdict counted {n:d}×: odds {odds:,.0f} to 1, P(safe) = {post:.6f}.","presets":[{"label":"one model","values":{"n":1}},{"label":"4 copies","values":{"n":4}},{"label":"10 copies","values":{"n":10}}],"caption":"Same arithmetic as post 01 (likelihood ratio 4). New story, ours. Odds form of Bayes: posterior odds = prior odds × LR^n."}</script>
+    <div class="w" data-widget="lab" id="lab-bayes2" data-config-ref="cfg-bayes2"></div>
+    <p>Ten copies of one voice feel like certainty. This is post 01’s Bayes arithmetic with a new story.</p>
+  </details>
+  <p class="lens-sum"><b>Adds:</b> how many <i>independent</i> opinions we really have depends on correlation, not on headcount. <b>Does not explain:</b> how much correlation real LLM-based desks have; \(\rho\) is assumed. <b>Next:</b> what correlation does to a network of lenders.</p>
+</section>
+
+<!-- ============ 8 LENS 3b ============ -->
+<section id="lens-cascade" data-ch="lens-cascade">
+  <p class="sec-no">8 · Through the lenses</p>
+  <h2>Lens 3b · Cascades and feedback</h2>
+  <p class="linktype"><span class="lt same">same-math</span> Threshold counting on a network; a one-line feedback rule. <span class="lt analogy">structural analogy</span> Granovetter’s riot and bank failures (ours).</p>
 
   <h3>Ladder 3 · Why three at once is different</h3>
-  <p><b>Instance.</b> Six banks (W5, toy, ours). X1, X2, X3 run one model; Y1, Y2, Y3 do not. Capital (loss buffer): 10 each for X; 10, 9, 11 for Y1, Y2, Y3. Y1 lent 5 to each X bank; Y2 lent 5 to X3 and 10 to Y1; Y3 lent 5 to Y1 and 10 to Y2. A failed borrower repays 20%, so a lender loses \(0.8\times\) the loan. <b>Question.</b> Does one failure spread? Three at once? <b>Mechanism in words.</b> A bank fails when losses from failed borrowers reach its capital; then its lenders take losses next round. <b>Formula</b> (\(\lambda=0.8\) loss rate, \(\kappa=1\) capital multiplier):</p>
+  <p><b>Instance.</b> Six banks (toy, ours). X1, X2, X3 run one model; Y1, Y2, Y3 do not. Capital (loss buffer): 10 each for X; 10, 9, 11 for Y1, Y2, Y3. Y1 lent 5 to each X bank; Y2 lent 5 to X3 and 10 to Y1; Y3 lent 5 to Y1 and 10 to Y2. A failed borrower repays 20%, so a lender loses \(0.8\times\) the loan. <b>Question.</b> Does one failure spread? Three at once? <b>Mechanism in words.</b> A bank fails when losses from failed borrowers reach its capital; then its lenders lose next round. <b>Formula</b> (\(\lambda=0.8\) loss rate, \(\kappa=1\) capital multiplier):</p>
   \[\text{bank } j \text{ fails when }\sum_{i\text{ failed}}\lambda\,w_{ij}\;\ge\;\kappa\cdot\text{capital}_j\]
-  <p><b>Worked numbers.</b> One X fails: Y1 loses 4 of 10. Two: 8 of 10. Contained. All three: 12 ≥ 10, so Y1 fails; then Y2 (\(4+8=12\ge9\)) and Y3 (\(4+8=12\ge11\)) follow. Six of six. With capital ×1.5, 12 &lt; 15: only the three X banks fail.</p>
-  <script type="application/json" id="cfg-w5-hand">{"type":"stepper","id":"cfg-w5-hand","title":"W5 by hand: X1, X2, X3 fail together (toy, ours)","head":["round","Y1 loss/cap","Y2 loss/cap","Y3 loss/cap","new failures"],"rows":[["0","0 / 10","0 / 9","0 / 11","X1, X2, X3"],["1","12 / 10","4 / 9","0 / 11","Y1"],["2","—","12 / 9","4 / 11","Y2"],["3","—","—","12 / 11","Y3"]],"notes":["Shock: X1, X2 and X3 run the same model and fail on the same day.","Y1 lent 5 to each of them. It loses 3 × (0.8 × 5) = 12, more than its capital 10, so it fails. Y2 lent 5 to X3 and loses 4, below its capital 9.","Y1 has failed. Y2 lent 10 to Y1 and loses 0.8 × 10 = 8 more: 4 + 8 = 12 ≥ 9, so Y2 fails. Y3 lent 5 to Y1 and loses 4, below 11.","Y2 has failed. Y3 lent 10 to Y2 and loses 8 more: 4 + 8 = 12 ≥ 11, so Y3 fails. All six banks have failed. Check: the widget says 6 of 6 in 3 rounds."]}</script>
+  <p><b>Worked numbers.</b> One X fails: Y1 loses 4 of 10. Two: 8. Contained. All three: 12 ≥ 10, so Y1 fails; then Y2 (\(4+8=12\ge9\)) and Y3 (\(4+8=12\ge11\)) follow: six of six. With capital ×1.5, 12 &lt; 15: only the three X banks fail.</p>
+  <script type="application/json" id="cfg-w5-hand">{"type":"stepper","id":"cfg-w5-hand","title":"Six banks by hand: X1, X2, X3 fail together (toy, ours)","head":["round","Y1 loss/cap","Y2 loss/cap","Y3 loss/cap","new failures"],"rows":[["0","0 / 10","0 / 9","0 / 11","X1, X2, X3"],["1","12 / 10","4 / 9","0 / 11","Y1"],["2","—","12 / 9","4 / 11","Y2"],["3","—","—","12 / 11","Y3"]],"notes":["Shock: X1, X2 and X3 run the same model and fail on the same day.","Y1 lent 5 to each of them. It loses 3 × (0.8 × 5) = 12, more than its capital 10, so it fails. Y2 lent 5 to X3 and loses 4, below its capital 9.","Y1 has failed. Y2 lent 10 to Y1 and loses 0.8 × 10 = 8 more: 4 + 8 = 12 ≥ 9, so Y2 fails. Y3 lent 5 to Y1 and loses 4, below 11.","Y2 has failed. Y3 lent 10 to Y2 and loses 8 more: 4 + 8 = 12 ≥ 11, so Y3 fails. All six banks have failed. Check: the widget says 6 of 6 in 3 rounds."]}</script>
   <div class="w" data-widget="stepper" id="st-w5-hand" data-config-ref="cfg-w5-hand"></div>
-  <p><b>What it means.</b> Two failures are safe, three are not: a threshold. Granovetter’s riot has the same shape: replace one person of threshold 1 by one of threshold 2 and 100 rioters become 1, though “the two crowds are essentially identical” <span class="cite">Granovetter 1978, pp. 1424–1425</span>. The <i>distribution</i> decides, not the average (analogy, ours). <b>Limits.</b> Network and capital are fixed; in life both adapt.</p>
+  <p>Now try it. The toy opens with X1, X2 and X3 failing together. Tap X2 and X3 to switch them off: one failure stays one. Arrow X1 → Y1 means Y1 lent to X1.</p>
+  <script type="application/json" id="cfg-w5">{"type":"cascade","id":"cfg-w5","title":"Six banks, one shared model (toy, ours)","note":"Tap a bank to make it fail or recover. X1, X2, X3 run the same model; Y1, Y2, Y3 do not. It opens with X1, X2, X3 failing.","height":250,"params":[{"id":"lgd","label":"loss given default","min":0.2,"max":1,"step":0.05,"value":0.8,"fmt":".2f"},{"id":"capMult","label":"capital ×","min":0.5,"max":2,"step":0.05,"value":1,"fmt":".2f"}],"nodes":[{"id":"X1","label":"X1","x":60,"y":40,"capital":10},{"id":"X2","label":"X2","x":180,"y":40,"capital":10},{"id":"X3","label":"X3","x":300,"y":40,"capital":10},{"id":"Y1","label":"Y1","x":80,"y":135,"capital":10},{"id":"Y2","label":"Y2","x":250,"y":135,"capital":9},{"id":"Y3","label":"Y3","x":165,"y":210,"capital":11}],"edges":[{"from":"X1","to":"Y1","w":5},{"from":"X2","to":"Y1","w":5},{"from":"X3","to":"Y1","w":5},{"from":"X3","to":"Y2","w":5},{"from":"Y1","to":"Y2","w":10},{"from":"Y1","to":"Y3","w":5},{"from":"Y2","to":"Y3","w":10}],"seeds":["X1","X2","X3"],"readout":"{failed:d} of {total:d} banks fail, {survivors:d} survive (loss given default {lgd:.2f}, capital ×{capMult:.2f}). Spread after the shock: {rounds:d} more rounds.","presets":[{"label":"normal","values":{"lgd":0.8,"capMult":1}},{"label":"capital ×1.5","values":{"lgd":0.8,"capMult":1.5}},{"label":"harsh losses (lgd 1)","values":{"lgd":1,"capMult":1}}],"caption":"Arrow X1 → D means D has lent to X1: if X1 fails, D loses the loan × the loss rate. Under a bank: loss so far / capital. Toy numbers, ours; not a model of any real bank."}</script>
+  <div class="w" data-widget="cascade" id="cs-w5" data-config-ref="cfg-w5"></div>
+  <p><b>What it means.</b> Two failures are safe, three are not: a threshold. Granovetter’s riot has the same shape: replace one person of threshold 1 by one of threshold 2 and 100 rioters become 1, though “the two crowds are essentially identical” <span class="cite">Granovetter 1978, pp. 1424–1425</span>. The <i>distribution</i> decides, not the average (analogy, ours).</p>
 
   <h3>Ladder 4 · A share \(m\) of traders on one model</h3>
   <p><b>Instance.</b> The market “gap” is price minus fair value (0 is fair). A share \(m\) of traders follow one model that chases the last move; the rest buy back toward 0. A shock of −1 hits after step 3. <b>Question.</b> For which \(m\) does the shock fade? <b>Mechanism in words.</b> New gap = old gap + the chasers’ push (1.5 × \(m\) × last move) − the buyers’ pull (0.5 × \((1-m)\) × old gap).</p>
   \[\text{gap}_{t+1}=\text{gap}_t+A\,m\,(\text{gap}_t-\text{gap}_{t-1})-G\,(1-m)\,\text{gap}_t,\quad A=1.5,\ G=0.5\]
-  <p><b>Worked numbers, \(m=0.2\).</b> Push factor \(Am=0.3\), pull factor \(G(1-m)=0.4\). Gap −1, last move −1: \(-1+0.3(-1)-0.4(-1)=-0.9\). Next, last move +0.1: \(-0.9+0.3(0.1)-0.4(-0.9)=-0.51\). Then −0.189: it dies out. At \(m=0.9\) the factors are 1.35 and 0.05: \(-1\to-2.30\to-3.94\), and it keeps growing. <b>Intuition:</b> each step feeds back \(Am\) times the last move; once \(Am>1\) the push outgrows the pull. Tipping point: \(m=1/A=2/3\) (Rung 4).</p>
-  <p><b>Check.</b> The section 10 widget at \(m=0.2\): largest swing 0.04 up, −1.00 down, gap after 40 steps 0.000. <b>What it means.</b> The toy is about <i>trend-following</i>; shared models do not by themselves imply it. A circuit breaker bounds the swing (±3.00 at \(m=0.9\)) but not the feedback.</p>
-  <p class="lens-sum"><b>Adds:</b> failure needs no mistake, only correlation, then a threshold or a feedback gain. <b>Does not explain:</b> how widely LLMs are used in finance. <b>Across lenses (ours):</b> correlation raises joint failure here and cuts the variety a supervisor must cover in Lens 2.</p>
+  <p><b>Worked numbers, \(m=0.2\).</b> Push factor \(Am=0.3\), pull factor \(G(1-m)=0.4\). Gap −1, last move −1: \(-1+0.3(-1)-0.4(-1)=-0.9\). Next, last move +0.1: \(-0.9+0.3(0.1)-0.4(-0.9)=-0.51\). Then −0.189: it dies out. At \(m=0.9\) the factors are 1.35 and 0.05: \(-1\to-2.30\to-3.94\), growing. <b>Intuition:</b> each step the chasers add \(Am\) times the last move. The swing shrinks when \(Am<1\) and grows when \(Am>1\): tipping point \(m=1/A=2/3\). The fold-out shows why.</p>
+  <script type="application/json" id="cfg-herding">{"type":"iterate","id":"cfg-herding","title":"Share m of traders follow one model's trend (toy, ours)","note":"Price gap from fair value (0 = fair). A shock of −1 hits after step 3. A share m of traders chase the last move; the rest pull the price back.","params":[{"id":"m","label":"share m on the model","min":0,"max":1,"step":0.01,"value":0.2,"fmt":".2f"},{"id":"brk","label":"circuit breaker (0 = off)","min":0,"max":10,"step":1,"value":0,"fmt":"d"}],"constants":{"A":1.5,"G":0.5},"init":{"P":0,"Q":0},"update":{"P":"clamp(P + A*m*(P-Q) - G*(1-m)*P, 0-lim, lim)","Q":"P"},"shocks":[{"t":3,"set":{"P":"P-1"},"label":"shock −1"}],"steps":40,"series":[{"var":"P","label":"price gap"}],"readout":"Largest swing {max_P:.2f} up, {min_P:.2f} down; gap after {t:d} steps: {P:.3f}.","presets":[{"label":"calm (m = 0.20)","values":{"m":0.2,"brk":0}},{"label":"tipping (m = 0.67)","values":{"m":0.67,"brk":0}},{"label":"runaway (m = 0.90)","values":{"m":0.9,"brk":0}},{"label":"runaway + breaker 3","values":{"m":0.9,"brk":3}}],"caption":"Rule (ours): gap(t+1) = gap(t) + 1.5·m·[gap(t) − gap(t−1)] − 0.5·(1−m)·gap(t). Trend-followers add the last move; the others pull the gap back to 0. The breaker caps the gap. Toy, ours: it does not measure how many firms really share a model.","derived":{"lim":"if(brk>0, brk, 1e9)"}}</script>
+  <div class="w" data-widget="iterate" id="it-herding" data-config-ref="cfg-herding"></div>
+  <p><b>Check.</b> At \(m=0.2\): largest swing 0.04 up, −1.00 down, gap after 40 steps 0.000. <b>What it means.</b> The toy is about <i>trend-following</i>; shared models do not by themselves imply it. A circuit breaker bounds the swing (±3.00 at \(m=0.9\)) but not the feedback.</p>
+
+  <details class="deep" id="box-gain">
+    <summary>Look inside: why the swing grows when \(Am>1\)</summary>
+    <p>Write the rule as \(g_{t+1}=b\,g_t-c\,g_{t-1}\) with \(b=1+Am-G(1-m)\) and \(c=Am\). A pattern \(g_t=x^t\) fits when \(x^2=bx-c\), that is \(x^2-bx+c=0\): the <dfn>characteristic equation</dfn>, whose roots \(x\) are the factors by which the pattern is multiplied each step. The two roots multiply to \(c\). For our numbers they are <dfn>complex numbers</dfn> (a wave, which needs \(b^2<4c\)), and each root then has size \(\sqrt c\). The wave shrinks if \(\sqrt c<1\) and grows if \(\sqrt c>1\): that is, \(Am<1\) or \(Am>1\), with the tipping point at \(m=2/3\). <b>Numbers (code-checked with <code>numpy.roots</code>).</b> \(m=0.2\): \(b=0.9\), \(c=0.3\), size 0.548. \(m=0.67\): \(c=1.005\), size 1.002. \(m=0.9\): \(b=2.3\), \(c=1.35\), size 1.162. Valid while the roots are complex, as they are for these \(m\).</p>
+  </details>
+  <p class="lens-sum"><b>Adds:</b> failure needs no mistake, only correlation, then a threshold or a feedback gain. <b>Does not explain:</b> how many firms really share a model; the toys take the network, the share \(m\) and one \(\rho\) as given. <b>Across lenses (ours):</b> a shared model gives the supervisor of Lens 2 fewer kinds of disturbance, and the same shared model makes the damage arrive together.</p>
 </section>
 
-<!-- ============ 8 LENS 4 ============ -->
+<!-- ============ 9 LENS 4 ============ -->
 <section id="lens-social" data-ch="lens-social">
-  <p class="sec-no">8 · Through the lenses</p>
+  <p class="sec-no">9 · Through the lenses</p>
   <h2>Lens 4 · Social reality, accountability, personhood</h2>
-  <p class="linktype"><span class="lt analogy">structural analogy</span> Searle’s status functions and post 01’s meaning lens. <span class="lt metaphor">metaphor</span> Dennett’s stance applied to legal personhood (ours). No math here.</p>
-  <p>A human-centred system relies on <b>acceptance</b>, <b>accountability</b> and <b>legal personhood</b>. We use them to test a chain of Harari’s sentences.</p>
+  <p class="linktype"><span class="lt analogy">structural analogy</span> Searle’s status functions and post 01’s meaning lens. No math here.</p>
+  <p>A human-centred system (section 1) relies on <b>acceptance</b>, <b>accountability</b> and <b>legal personhood</b>. We use them to test a chain of Harari’s sentences. <b>Link to post 01:</b> there, the octopus asked whether meaning can come from form alone. Whether a token is money is not in its form either; it depends on what a community does with it. Only this lens shows that the human role at the end of the chain is acceptance and liability.</p>
 
   <h3>Acceptance: “X counts as Y in C”</h3>
-  <p><b>Instance.</b> A line of stones counts as a border wall in a village; paper from the Bureau of Engraving and Printing counts as money in the US <span class="cite">SEP, Social Ontology, § 4.2.3</span>. <b>Mechanism in words.</b> People collectively accept that the thing has a function it lacks by nature, and the function brings <dfn>deontic powers</dfn>: rights, permissions, duties. The pattern, from Searle as reported by the SEP, is “X counts as Y in C”: a thing, a status, a context.</p>
+  <p><b>Instance.</b> A line of stones counts as a border wall in a village; paper from the Bureau of Engraving and Printing counts as money in the US <span class="cite">SEP, Social Ontology, § 4.2.3</span>. <b>Mechanism in words.</b> People collectively accept that the thing has a function it lacks by nature, and that brings <dfn>deontic powers</dfn>: rights, permissions, duties. Searle’s pattern, as reported by the SEP, is “X counts as Y in C”: a thing, a status, a context.</p>
   <figure class="illus"><div class="w" data-widget="diagram" id="dg-status" data-config-ref="cfg-status"></div></figure>
   <script type="application/json" id="cfg-status">{
  "title":"X counts as Y in C (toy, ours)","height":260,
@@ -327,86 +397,60 @@
           {"id":"c","x":205,"y":45,"w":110,"h":44,"label":"C: a community\naccepts it","kind":"soft"},
           {"id":"y","x":335,"y":45,"w":100,"h":44,"label":"Y: counts\nas money","kind":"hl"},
           {"id":"q","x":205,"y":135,"w":170,"h":40,"label":"Who pays if it fails?"},
-          {"id":"p","x":205,"y":215,"w":230,"h":40,"label":"people: donor, handler, creator","kind":"soft"}],
+          {"id":"p","x":205,"y":215,"w":250,"h":40,"label":"Truth Terminal: reports\nsilent on liability","kind":"soft"}],
  "edges":[{"id":"e1","from":"x","to":"c"},{"id":"e2","from":"c","to":"y"},{"id":"e3","from":"y","to":"q","dashed":true},{"id":"e4","from":"q","to":"p","dashed":true}],
  "steps":[{"show":["x"],"text":"An AI mints a token. By itself it is only a string of data: X."},
           {"show":["c","e1"],"text":"A community C treats the token as something with value, and accepts payment in it."},
           {"show":["y","e2"],"text":"Only now does X count as money, Y, in C. Remove the community and Y disappears; X is still there."},
-          {"show":["q","e3","p","e4"],"text":"In the one case we checked, Truth Terminal, the money and liability ran to people. Whether an AI could ever be the liable party is a legal question we do not answer."}]
+          {"show":["q","e3","p","e4"],"text":"In Truth Terminal's case, a donor sent Bitcoin to the bot's wallet, a human handler approved its posts, and someone else created the token; the reports say nothing about who would be liable. Whether an AI could be the liable party is a legal question we do not answer."}]
 }</script>
   <div class="reveal" data-for="g3"><p class="reveal-h">Prediction 3 · answer</p><p><b>Acceptance by a community, treated as carrying rights and duties.</b> Clever code, an AI author or a blockchain do not decide it. Caution: Menger described money emerging from trading practice with no one choosing it <span class="cite">SEP § 5.6</span>; how central acceptance is remains debated.</p></div>
 
   <h3>Accountability</h3>
-  <p>Lupia and McCubbins, Theorem 5.1: if the principal can tell whether the agent’s proposal beats the status quo (<i>knowledge</i>) and the agent has a reason to be trustworthy (<i>incentive</i>), delegation succeeds; if neither holds, it fails; with one, the worst case is the status quo <span class="cite">Lupia and McCubbins 1998, pp. 85–86</span>. Institutions supply “verification or a penalty for lying” <span class="cite">p. 207</span>.</p>
+  <p><b>Instance (ours).</b> You hire a broker to buy a bond. You are the <dfn>principal</dfn> (who delegates), the broker is the <dfn>agent</dfn> (who acts for you), and your alternative is to keep your cash: the <dfn>status quo</dfn>. Two things can hold. <i>Knowledge:</i> you can tell whether the bond beats cash. <i>Incentive:</i> the broker has a reason to be honest, for example he is paid only if you profit. With both, you buy good bonds. With neither, you buy whatever he sells. With one of the two, the worst case is that you keep your cash. Lupia and McCubbins state this pattern as Theorem 5.1 <span class="cite">Lupia and McCubbins 1998, pp. 85–86</span>: if neither holds, delegation fails. Institutions can supply the conditions: in their example, candidates supervised by a party leadership “may be subject to verification or a penalty for lying” <span class="cite">p. 207</span>.</p>
   <div class="tbl"><table><thead><tr><th></th><th>incentive yes</th><th>incentive no</th></tr></thead><tbody><tr><th>knowledge yes</th><td>works (a plane)</td><td>status quo at worst</td></tr><tr><th>knowledge no</th><td>status quo at worst</td><td>fails</td></tr></tbody></table></div>
-  <p>Our fill-in (ours): an agent that “consistently hides the genuine reasons” for its trade <span class="cite">Scheurer et al. 2024, abstract</span> removes knowledge, as does an opaque instrument; MIT Sloan reports AI “can easily mask who’s at fault” <span class="cite">MIT Sloan 2023</span>.</p>
+  <p><b>Our fill-in (ours).</b> An agent that “consistently hides the genuine reasons” for its trade <span class="cite">Scheurer et al. 2024, abstract</span> removes knowledge, as does an opaque instrument; AI “can easily mask who’s at fault” <span class="cite">MIT Sloan 2023</span>.</p>
 
   <h3>Personhood</h3>
-  <p>Harari asks whether your country will recognise AIs as legal persons, as corporations already are: AIs “will soon be able to make the decisions necessary to manage a bank account” <span class="cite">WEF 2026 [16:28]</span>, and the decision has a deadline <span class="cite">[19:11]</span>. A policy question, not a forecast; we have no legal sources and state no legal position. Dennett: adopting the intentional stance is free, but its success is “perfectly objective” <span class="cite">Dennett 1987, p. 24</span>. Whether the <i>law</i> should treat an agent as a person is another question.</p>
+  <p>Harari asks whether your country will recognise AIs as legal persons, as corporations already are: AIs “will soon be able to make the decisions necessary to manage a bank account” <span class="cite">WEF 2026 [16:28]</span>. A policy question, not a forecast. We have no legal sources and state no legal position.</p>
 
   <h3>Testing Harari’s chain</h3>
-  <p><b>He asserts</b> that money rests on stories: “What gives money value is the stories that bankers, finance ministers and cryptocurrency gurus tell us about it” <span class="cite">Ynet 2023</span>. <b>He asserts</b> that “anything made of words will be taken over by AI” <span class="cite">WEF 2026 [5:57]</span>. Chain: money is words, so AI takes over money.</p>
-  <p><b>Our test (ours).</b> Each link meets a support. <i>Acceptance:</i> a story is not money until a community counts it as money. <i>Enforcement:</i> Lupia’s verification and penalties; writing a contract is one thing, making a counterparty honour it another. His example, “if laws are made of words, then AI will take over the legal system” <span class="cite">WEF 2026 [5:57]</span>, is where the test bites: laws are words, but their force rests on acceptance and enforcement. Our reading: the thesis about <i>words</i> is an assertion; what it implies for money and law is conditional on those supports.</p>
-  <p><b>The steelman (ours).</b> Drafting, summarising and interpreting are themselves words. If an AI does all of them better than people, the human role may shrink to acceptance and liability, and Harari’s personhood question asks who holds those. The test narrows the chain; it does not refute it.</p>
-    <p class="lens-sum"><b>Adds:</b> “taking over money” splits into writing contracts (words) and giving them status. <b>Does not explain:</b> how any of it works in law.</p>
-</section>
-
-<!-- ============ 9 LADDER ============ -->
-<section id="ladder" data-ch="ladder">
-  <p class="sec-no">9 · The math ladder</p>
-  <h2>Four rungs up</h2>
-  <p>These rungs go beyond the lenses; nothing above depends on them. Logs are base 2.</p>
-
-  <div class="rung"><p class="rung-h"><span class="lvl grad">Graduate</span> Rung 1 · The lemon cost</p>
-  <p>From section 5: 100 assets, 10 junk, lemon cost 5. For a pool paying \(F(X)\), Arora and colleagues define</p>
-  \[\Delta(n)=\mathbb{E}[F(X)]-\min_{|S|=n}\mathbb{E}\big[F(X)\mid X_i=0\ \forall i\in S\big]\]
-  <p>Here \(\mathbb{E}[F]=50\), the minimum over 10-sets is 45, so \(\Delta=5=n/2\). ✓ The minimum runs over \(\binom{100}{10}\approx1.73\times10^{13}\) sets: that search is the hard part. Their Table 1, in words: for a binary CDO the lemon cost is much <i>larger</i> than \(n\) for a polynomial-time buyer, much smaller for an unbounded one, under the conjectured assumption <span class="cite">Arora et al. 2009, p. 6</span>.</p></div>
-
-  <div class="rung"><p class="rung-h"><span class="lvl grad">Graduate</span> Rung 2 · Ashby with probabilities</p>
-  <p>From section 6: counts gave \(V_O\ge V_D-V_R\). With probabilities:</p>
-  \[H(E)\;\ge\;H(D)+H(R\mid D)-H(R)\]
-  <p>The step: \(H(E)\ge H(E\mid R)\) (conditioning cannot raise entropy), then expand. If R is a function of D, \(H(R\mid D)=0\). Numbers: post 01’s weather village has \(H(D)=1.75\) bits (probabilities \(\tfrac12,\tfrac14,\tfrac18,\tfrac18\)); a one-bit regulator gives \(H(E)\ge0.75\) bits.</p>
-  <div class="trap"><p class="trap-h">Trap · a misprint in the reprint</p><p>Ashby writes the conditional term as \(H_D(R)\), i.e. \(H(R\mid D)\) <span class="cite">Ashby 1956, p. 208</span>. One line of the reprint prints \(H_D(E)\), though the line above and the sentence after need \(H_D(R)\). We use the corrected form.</p></div></div>
-
-  <div class="rung"><p class="rung-h"><span class="lvl ug">Undergraduate</span> Rung 3 · Deriving the effective number</p>
-  <p>From section 7: \(N=10\), \(\rho=0.9\) gave 1.099. The mean of \(N\) forecasts with variance \(\sigma^2\) and pairwise correlation \(\rho\) has variance</p>
-  \[\operatorname{Var}(\bar e)=\frac{1}{N^2}\big[N\sigma^2+N(N-1)\rho\sigma^2\big]=\frac{\sigma^2\,[1+(N-1)\rho]}{N}\]
-  <p>Set this equal to \(\sigma^2/N_{\text{eff}}\) and solve. Check: \(1+9\times0.9=9.1\); \(10/9.1=1.099\). ✓</p></div>
-
-  <div class="rung"><p class="rung-h"><span class="lvl grad">Graduate</span> Rung 4 · Feedback gain</p>
-  <p>From section 7: \(g_{t+1}=b\,g_t-c\,g_{t-1}\), with \(b=1+Am-G(1-m)\), \(c=Am\). The roots of \(x^2-bx+c=0\) have product \(c\); when complex, each has size \(\sqrt c\): the swing shrinks if \(Am<1\), grows if \(Am>1\), tipping at \(m=2/3\). Numbers: \(m=0.2\): \(b=0.9\), \(c=0.3\), size 0.548. \(m=0.67\): \(c=1.005\), size 1.002. \(m=0.9\): \(b=2.3\), \(c=1.35\), size 1.162 (code-checked with <code>numpy.roots</code>). Valid while the roots are complex (true for these \(m\)).</p></div>
+  <p><b>He asserts</b> that money rests on stories: “What gives money value is the stories that bankers, finance ministers and cryptocurrency gurus tell us about it” <span class="cite">Ynet 2023</span>; at the BIS, “money is really trust” <span class="cite">BIS 2024 [23:15]</span>. <b>He asserts</b> that “anything made of words will be taken over by AI” <span class="cite">WEF 2026 [5:57]</span>. In 2023 he asked what happens once AI is better than the average human at telling stories <span class="cite">Ynet 2023</span>. <b>Our compression (ours):</b> money is stories, so AI takes over money. The last step is ours; he does not state it in these sources.</p>
+  <p><b>Our test (ours).</b> Each link meets a support. <i>Acceptance:</i> a story is not money until a community counts it as money. <i>Enforcement:</i> writing a contract is one thing, making a counterparty honour it another. His example, “if laws are made of words, then AI will take over the legal system” <span class="cite">WEF 2026 [6:06]</span>, is where the test bites: laws are words, but their force rests on acceptance and enforcement. Harari himself limits the thesis to what is made of words and locates the human role in non-verbal feeling <span class="cite">[8:07]</span>, <span class="cite">[11:39]</span>; our two supports are a different limit. Our reading: the words thesis is an assertion; what it implies for money and law depends on those supports.</p>
+  <p><b>The strongest version of his argument (ours).</b> Drafting, summarising and interpreting are themselves words. If an AI does all of them better than people, the human role may shrink to acceptance and liability, and his personhood question asks who holds those. The test narrows the chain; it does not refute it.</p>
+  <p class="lens-sum"><b>Adds:</b> “taking over money” splits into writing contracts (words) and giving them status. <b>Does not explain:</b> how any of it works in law.</p>
 </section>
 
 <!-- ============ 10 PLAYGROUND ============ -->
 <section id="play" data-ch="play">
-  <p class="sec-no">10 · Playground</p>
-  <h2>Two toys to break</h2>
+  <p class="sec-no">10 · What to try</p>
+  <h2>What to try on the two toys</h2>
+  <p>The toys are in section 8, under Ladders 3 and 4. Open them, then try these tasks.</p>
   <h3>Six banks</h3>
-  <p>Tap banks to make them fail. (1) Which single bank can start a spread at loss rate 0.8? At 1.0? (2) Smallest group of X banks that sinks all six? (3) The capital multiplier that stops three?</p>
-  <script type="application/json" id="cfg-w5">{"type":"cascade","id":"cfg-w5","title":"Six banks, one shared model (toy, ours)","note":"Tap a bank to make it fail. X1, X2, X3 run the same model; Y1, Y2, Y3 do not.","height":250,"params":[{"id":"lgd","label":"loss given default","min":0.2,"max":1,"step":0.05,"value":0.8,"fmt":".2f"},{"id":"capMult","label":"capital ×","min":0.5,"max":2,"step":0.05,"value":1,"fmt":".2f"}],"nodes":[{"id":"X1","label":"X1","x":60,"y":40,"capital":10},{"id":"X2","label":"X2","x":180,"y":40,"capital":10},{"id":"X3","label":"X3","x":300,"y":40,"capital":10},{"id":"Y1","label":"Y1","x":80,"y":135,"capital":10},{"id":"Y2","label":"Y2","x":250,"y":135,"capital":9},{"id":"Y3","label":"Y3","x":165,"y":210,"capital":11}],"edges":[{"from":"X1","to":"Y1","w":5},{"from":"X2","to":"Y1","w":5},{"from":"X3","to":"Y1","w":5},{"from":"X3","to":"Y2","w":5},{"from":"Y1","to":"Y2","w":10},{"from":"Y1","to":"Y3","w":5},{"from":"Y2","to":"Y3","w":10}],"seeds":["X1"],"readout":"{failed:d} of {total:d} banks fail, {survivors:d} survive (loss given default {lgd:.2f}, capital ×{capMult:.2f}). Spread after the shock: {rounds:d} more rounds.","presets":[{"label":"normal","values":{"lgd":0.8,"capMult":1}},{"label":"capital ×1.5","values":{"lgd":0.8,"capMult":1.5}},{"label":"harsh losses (lgd 1)","values":{"lgd":1,"capMult":1}}],"caption":"Arrow X1 → D means D has lent to X1: if X1 fails, D loses the loan × the loss rate. Under a bank: loss so far / capital. Toy numbers, ours; not a model of any real bank."}</script>
-  <div class="w" data-widget="cascade" id="cs-w5" data-config-ref="cfg-w5"></div>
-  <p class="small">Answers: (1) none; Y1. (2) all three at 0.8; two at 1. (3) just above 1.2: ×1.2 still loses five of six, ×1.25 only three. Capital helps; its cost is not modelled.</p>
+  <p>(1) Switch off X2 and X3. Which single bank can start a spread at loss rate 0.8? At 1.0? (2) Smallest group of X banks that sinks all six, at 0.8 and at 1.0? (3) Which capital multiplier stops three?</p>
+  <details><summary>Answers</summary><p>(1) At 0.8, none; at 1.0, only Y1 (it sinks 3 of 6). (2) At 0.8, all three X banks. At 1.0, two X banks sink five of six, and all three are still needed for six. (3) Just above 1.2: ×1.2 still loses five of six, ×1.25 only three.</p></details>
   <h3>Trend-followers</h3>
-  <p>(1) Find the \(m\) where the shock stops dying (about 0.67). (2) At \(m=0.9\) add the breaker: it caps the damage; the feedback remains.</p>
-  <script type="application/json" id="cfg-herding">{"type":"iterate","id":"cfg-herding","title":"Share m of traders follow one model's trend (toy, ours)","note":"Price gap from fair value (0 = fair). A shock of −1 hits after step 3. A share m of traders chase the last move; the rest pull the price back.","params":[{"id":"m","label":"share m on the model","min":0,"max":1,"step":0.01,"value":0.2,"fmt":".2f"},{"id":"brk","label":"circuit breaker (0 = off)","min":0,"max":10,"step":1,"value":0,"fmt":"d"}],"constants":{"A":1.5,"G":0.5},"init":{"P":0,"Q":0},"update":{"P":"clamp(P + A*m*(P-Q) - G*(1-m)*P, 0-lim, lim)","Q":"P"},"shocks":[{"t":3,"set":{"P":"P-1"},"label":"shock −1"}],"steps":40,"series":[{"var":"P","label":"price gap"}],"readout":"Largest swing {max_P:.2f} up, {min_P:.2f} down; gap after {t:d} steps: {P:.3f}.","presets":[{"label":"calm (m = 0.20)","values":{"m":0.2,"brk":0}},{"label":"tipping (m = 0.67)","values":{"m":0.67,"brk":0}},{"label":"runaway (m = 0.90)","values":{"m":0.9,"brk":0}},{"label":"runaway + breaker 3","values":{"m":0.9,"brk":3}}],"caption":"Rule (ours): gap(t+1) = gap(t) + 1.5·m·[gap(t) − gap(t−1)] − 0.5·(1−m)·gap(t). Trend-followers add the last move; the others pull the gap back to 0. The breaker caps the gap. Toy, ours: it does not measure how many firms really share a model.","derived":{"lim":"if(brk>0, brk, 1e9)"}}</script>
-  <div class="w" data-widget="iterate" id="it-herding" data-config-ref="cfg-herding"></div>
+  <p>(1) Find the \(m\) where the shock stops dying (about 0.67). (2) At \(m=0.9\), add the breaker: it caps the damage; the feedback remains.</p>
 </section>
 
 <!-- ============ 11 YOUR TURN ============ -->
 <section id="turn" data-ch="turn">
   <p class="sec-no">11 · Your turn</p>
-  <h2>Three exercises and a transfer challenge</h2>
+  <h2>Four exercises and a transfer challenge</h2>
   <p>Run these on your computer; each prints numbers to compare with the post.</p>
   <h3>Exercise 1 · How many independent agents do I really have?</h3>
-  <p>Simulate forecasters whose errors share a common part, estimate \(\rho\), compare \(N_{\text{eff}}\) with \(\sigma^2/\operatorname{Var}(\text{mean})\).</p>
+  <p>Simulate forecasters with a shared error part, estimate \(\rho\), compare \(N_{\text{eff}}\) with \(\sigma^2/\operatorname{Var}(\text{mean})\).</p>
   <div class="code" data-copy><pre><code id="code-1"></code></pre></div>
   <h3>Exercise 2 · Six banks in 20 lines</h3>
-  <p>Reproduce 1, 2, 6 and 3 failures. Then try random 30-bank networks: one failure against three at once.</p>
+  <p>Reproduce 1, 2, 6 and 3 failures. Optional: random 30-bank networks.</p>
   <div class="code" data-copy><pre><code id="code-2"></code></pre></div>
   <h3>Exercise 3 · Where does it tip?</h3>
   <p>Reproduce 0.548, 1.002 and 1.162 with <code>numpy.roots</code>. Add a clamp. Change \(G\): does the tipping point move?</p>
   <div class="code" data-copy><pre><code id="code-3"></code></pre></div>
-  <p><b>Exercise 4 · Granovetter’s riot.</b> 100 people have thresholds 0, 1, …, 99. Show that all 100 riot. Swap threshold 1 for 2: how many riot?</p>
+  <div class="exercise"><p class="trap-h">Exercise 4 · Granovetter’s riot</p>
+  <p>100 people have thresholds 0, 1, …, 99: a person joins the riot once at least that many others are already rioting. Show that all 100 riot. Then swap the person of threshold 1 for one of threshold 2: how many riot?</p>
+  <details><summary>Hint</summary><p>Start with the person of threshold 0: they riot alone. Then ask who joins when 1 person is rioting, then when 2 are.</p></details>
+  <details><summary>Solution</summary><p>Person 0 riots alone. With 1 rioting, threshold 1 joins; with 2, threshold 2 joins; and so on up to 99: all 100 riot. After the swap the thresholds are 0, 2, 2, 3, …, 99. Person 0 riots, but the next person needs 2 others and only 1 is rioting. The riot stops at 1 person.</p></details></div>
   <div class="challenge"><p class="trap-h">Transfer challenge</p><p>Take one public claim from your field. Rewrite it in three layers: <i>He/She said</i> (quote, date, venue), <i>The evidence</i>, <i>Our reading</i>. Name the one measurement that would change your mind.</p></div>
 </section>
 
@@ -415,49 +459,75 @@
   <p class="sec-no">12 · Where this shows up in your work</p>
   <h2>Collaboration, Communication, Computation</h2>
   <div class="cards3">
-    <div class="c3"><p class="c3-h">Computation · Social simulation with LLM agents</p><p>Agents from one base model are correlated by construction. Compute \(N_{\text{eff}}\) for their decisions (Exercise 1). Does such a population amplify shocks like the herding toy?</p></div>
-    <div class="c3"><p class="c3-h">Computation · LLM surrogate labeling</p><p>Five prompts to one model are closer to one annotator plus noise than to five. Report \(N_{\text{eff}}\) next to agreement.</p></div>
-    <div class="c3"><p class="c3-h">Computation · Cross-lingual LLM safety</p><p>Are a model’s errors across languages as correlated as across prompts? If so, a multilingual test set holds fewer independent checks than it seems.</p></div>
-    <div class="c3"><p class="c3-h">Communication · Crisis and risk communication</p><p>Harari’s “something goes wrong and nobody knows why” <span class="cite">BIS 2024 [10:27]</span> is a communication problem first. What does an official say when no expert can explain?</p></div>
-    <div class="c3"><p class="c3-h">Collaboration · Who invents and who checks</p><p>Fox finds it odd that “capitalism is hardly mentioned at all” in <i>Nexus</i> <span class="cite">Fox 2024</span>. Opacity can be a business choice (our link to Arora’s seller). Who can check an instrument invented in an open community?</p></div>
+    <div class="c3"><p class="c3-h">Computation · Social simulation with LLM agents</p><p>Agents from one base model are correlated by construction. Compute \(N_{\text{eff}}\) for their decisions (Exercise 1). Does such a population amplify shocks?</p></div>
+    <div class="c3"><p class="c3-h">Computation · LLM labeling and cross-lingual safety</p><p>Five prompts to one model are closer to one annotator plus noise than to five: report \(N_{\text{eff}}\) next to agreement. Are a model’s errors across languages as correlated as across prompts? Then a multilingual test set holds fewer independent checks than it seems.</p></div>
+    <div class="c3"><p class="c3-h">Communication · Crisis, misinformation and conspiracy</p><p>Harari’s “something goes wrong and nobody knows why” <span class="cite">BIS 2024 [10:27]</span> is a communication problem first. When no expert can explain, who fills the gap? Stories can move markets (our link to Lens 4).</p></div>
+    <div class="c3"><p class="c3-h">Collaboration · Who can check what a community builds?</p><p>In online innovation communities, many build and many check. Which of Ashby’s levers do they use? What if an AI contributor submits faster than people can review?</p></div>
   </div>
 </section>
 
 <!-- ============ 13 ANSWER ============ -->
 <section id="answer" data-ch="answer">
   <p class="sec-no">13 · Synthesis</p>
-  <h2>Layers, conditionals and our reading</h2>
-  <p>Four layers, from most certain to most contested.</p>
-  <ol class="layers">
-    <li><b>The contract space is huge.</b> Certain (same-math): 10,000 contracts in a four-word village; short descriptions are rare among <i>possible</i> contracts.</li>
-    <li><b>Opacity favours the better-informed side.</b> Supported in theory, with named conditions (Akerlof; Arora et al.: conjectured hardness, simple model).</li>
-    <li><b>A shared model correlates failures.</b> Supported by toys and regulators’ reports; not measured for LLMs.</li>
-    <li><b>Whether this changes who rules.</b> Contested: acceptance, liability, personhood.</li>
-  </ol>
-  <p class="keypoint">Harari asserts that anything made of words will be taken over by AI; he imagines AI-made financial devices that humans cannot follow; he asks what we should do before it is too late. Our reading: the finance scenarios are conditionals, and the thesis about words is an assertion that our three supports (acceptance, enforcement, personhood) test but do not refute.</p>
-  <p><b>A tension between lenses (ours).</b> Correlation makes simultaneous failure likelier (Lens 3) yet lowers the variety a supervisor must cover (Lens 2). Rarity of simple contracts (Lens 1) is not opacity (Arora). The lenses disagree about what is dangerous in shared models.</p>
+  <h2>So what happens? Short answer first</h2>
+  <div class="term"><p class="term-h">Short answer (our reading, not a finding)</p>
+  <p><b>(a) Can AI create a new kind of finance?</b> Not yet evidenced. LLMs now translate plain language into fixed contracts and agents hold wallets, but we found no traded instrument that an AI invented. Nothing shows it is impossible. <b>(b) What would it do to a human-centred system?</b> The nearer risk we find most plausible is ordinary instruments run on a few shared models, so losses arrive together and fall on whoever lent to or holds the failed firms; our toys do not model bailouts. People stay accountable only if someone can verify what the AI did and be penalised when it fails, and an agent that hides its reasons weakens both. Supervisors could still demand standard contracts, build their own AI and add trading pauses; they could not check what nobody can state in a page, or foresee a shared model’s failures.</p></div>
 
-  <h3>Five conditionals</h3>
-  <ul>
-    <li>If an AI designs instruments by optimising payoffs and the seller knows more, pricing can become hard (Arora; conjectured assumption).</li>
-    <li>If many firms run one model, their errors coincide and diversification shrinks (\(N_{\text{eff}}\); FSB).</li>
-    <li>If supervisors cannot raise their variety or cut the menu, outcomes stay varied (Ashby).</li>
-    <li>If verification and penalties exist, delegation can work without understanding (Lupia); if not, it fails.</li>
-    <li>If a community accepts an AI-run entity’s tokens and the law makes a human liable, money’s status survives; if either fails, it does not.</li>
-  </ul>
+  <p class="keypoint">Harari asserts that AI can already understand finance better than us and that anything made of words will be taken over by AI; he imagines AI-made financial devices that humans cannot follow; he asks what we should do before it is too late. Our reading: his forecasts about AI-made devices are conditionals, his capability claims are assertions, and our supports (acceptance, enforcement, personhood) test the chain without refuting it.</p>
 
-  <h3>Critics, one line each</h3>
-  <p><b>Poole:</b> the invention step is the weak link. <b>Narayanan and Kapoor:</b> impacts will be slow and control stays with people. <b>FSB:</b> existing frameworks cover much, but AI “could change this in the future”. <b>Skingsley:</b> we already trust what we cannot understand. <b>Fox:</b> profit is the missing driver (ours).</p>
+  <figure class="illus"><div class="w" data-widget="diagram" id="dg-chain" data-config-ref="cfg-chain"></div></figure>
+  <script type="application/json" id="cfg-chain">{
+ "title":"Harari's chain, with an evidence label on each link","height":425,
+ "nodes":[{"id":"c1","x":200,"y":30,"w":220,"h":38,"label":"Money is stories","kind":"soft"},
+          {"id":"c2","x":200,"y":100,"w":220,"h":38,"label":"AI masters words"},
+          {"id":"c3","x":200,"y":170,"w":220,"h":38,"label":"AI takes over money\nand finance"},
+          {"id":"c4","x":200,"y":240,"w":220,"h":38,"label":"AI invents new\nfinancial instruments"},
+          {"id":"c5","x":200,"y":310,"w":220,"h":38,"label":"Shared, opaque,\nhard to check"},
+          {"id":"c6","x":200,"y":380,"w":220,"h":38,"label":"People lose the\nsay over money","kind":"hl"}],
+ "edges":[{"id":"e1","from":"c1","to":"c2","label":"asserted","dx":70},
+          {"id":"e2","from":"c2","to":"c3","label":"hedged","dx":70},
+          {"id":"e3","from":"c3","to":"c4","label":"not yet evidenced","dx":70,"dashed":true},
+          {"id":"e4","from":"c4","to":"c5","label":"supported in toys","dx":70},
+          {"id":"e5","from":"c5","to":"c6","label":"contested","dx":70,"dashed":true}],
+ "steps":[{"show":[],"text":"Premises Harari asserts: money rests on stories (Ynet 2023) and AI is mastering words, so that \"anything made of words will be taken over by AI\" (WEF 2026 [5:57]). Label: asserted."},
+          {"show":[],"text":"Our compression (ours): so AI takes over money and finance. For finance he asserts that AI can understand it better than us (BIS 2024 [5:14]), but his scenarios are hedged: \"imagine ... maybe in 10 years\". Label: hedged."},
+          {"show":[],"text":"A traded instrument that an AI invented: we found no case (our search was limited). Label: not yet evidenced."},
+          {"show":[],"text":"Shared models make failures arrive together and hide reasons. Shown in toys (Lens 3), flagged as a risk by the FSB (\"could\"), not measured for LLMs. Label: supported in toys."},
+          {"show":[],"text":"Whether people lose the say over money depends on acceptance, enforcement and personhood (Lens 4). Label: contested."}]
+}</script>
 
   <h3>Our reading (ours, qualitative)</h3>
-  <p>The weakest link in Harari’s finance chain is step one, AI-<i>invented</i> instruments: we found no traded case (our searches were limited). The best-supported links are correlated errors across firms sharing models, and the difficulty of delegating to an agent that hides its reasons. So the near-term risk we find most plausible is <b>correlated, opaque use of ordinary instruments and agents</b>, not an alien instrument: our judgment, not a finding. Signs to watch:</p>
+  <p>The weakest link in Harari’s chain is AI-<i>invented</i> instruments: we found no traded case. The most plausible near-term risk we find is <b>correlated, opaque use of ordinary instruments and agents</b>, not an alien instrument. This is our judgment, not a finding: correlation is not measured for LLMs, and Scheurer’s authors draw no conclusion about how likely hiding is in practice. Signs to watch:</p>
   <ol>
-    <li><i>Up:</i> a traded instrument whose issuer’s own staff cannot state its payoff rule in a page. <i>Down:</i> only translators inside fixed vocabularies.</li>
-    <li><i>Up:</i> a few base models underlie most AI desks and their errors correlate (measure \(\rho\)). <i>Down:</i> customised strategies.</li>
+    <li><i>Up:</i> a traded instrument whose issuer’s staff cannot state its payoff rule in a page. <i>Down:</i> only translators inside fixed vocabularies.</li>
+    <li><i>Up:</i> a few base models underlie most AI desks and their errors correlate (measure \(\rho\)). <i>Down:</i> varied strategies.</li>
     <li><i>Up:</i> authorities lag in building their own AI. <i>Down:</i> standard contract menus and trading pauses spread.</li>
     <li><i>Up:</i> a jurisdiction lets an AI hold accounts with no responsible human. <i>Down:</i> liability stays with people.</li>
     <li><i>Up:</i> incident reports show hidden reasoning. <i>Down:</i> verification and penalties for agents.</li>
   </ol>
+
+  <details class="deep" id="box-layers">
+    <summary>Layers, conditionals, tension and critics</summary>
+    <h4>Four layers, from most certain to most contested</h4>
+    <ol class="layers">
+      <li><b>The contract space is huge.</b> Certain (same-math): 10,000 contracts in a four-word village; short descriptions are rare among <i>possible</i> contracts.</li>
+      <li><b>Opacity favours the better-informed side.</b> Supported in theory, with named conditions (Akerlof; Arora et al.: conjectured hardness, simple model).</li>
+      <li><b>A shared model correlates failures.</b> Shown in toys; flagged as a risk (“could”) by regulators; not measured for LLMs.</li>
+      <li><b>Whether this changes who rules.</b> Contested: acceptance, liability, personhood.</li>
+    </ol>
+    <h4>A tension between lenses (ours)</h4>
+    <p>Correlation makes simultaneous failure likelier (Lens 3) yet leaves the supervisor fewer kinds of disturbance to cover (Lens 2). Rarity of simple contracts (Lens 1) is not opacity (Arora). The lenses disagree about what is dangerous in shared models.</p>
+    <h4>Five conditionals</h4>
+    <ul>
+      <li>If an AI designs instruments by optimising payoffs and the seller knows more, pricing can become hard (Arora; conjectured assumption).</li>
+      <li>If many firms run one model, their errors coincide and diversification shrinks (\(N_{\text{eff}}\); FSB).</li>
+      <li>If supervisors cannot raise their variety or cut the menu, outcomes stay varied (Ashby).</li>
+      <li>If the principal can check the agent, or the agent has reason to be honest, the worst case is the status quo; if neither holds, delegation fails (Lupia and McCubbins).</li>
+      <li>If a community accepts an AI-run entity’s tokens as money, they count as money in that community (ours, after Searle via the SEP); who is liable is a separate legal question.</li>
+    </ul>
+    <h4>Critics, one line each</h4>
+    <p><b>Poole:</b> “no one has yet seen a chatbot create new ideas” (so invention is the weak link: our reading). <b>Narayanan and Kapoor:</b> in the world they describe, impacts are slow and control stays with people; they call it their “median outcome”, not a certainty. <b>FSB:</b> frameworks address many vulnerabilities, but “more work may be needed”; new-revenue uses are “not widely observed at present”, though advances “could change this”. <b>Skingsley:</b> we already trust what we only vaguely understand. <b>Harari’s own remedy:</b> institutions and “humans in the loop”. <b>Fox:</b> profit is the missing driver (ours).</p>
+  </details>
 </section>
 
 <!-- ============ 14 RECALL ============ -->
@@ -467,11 +537,11 @@
   <p>Answer first, then open the card. ↻ returns later.</p>
   <div class="cards" id="recall-cards">
     <details class="card"><summary>↻ How many contracts pay 0–9 for each of 4 weather words, and how many bits to name one?</summary><p>10,000; 13.29 bits.</p></details>
-    <details class="card"><summary>Why do fewer than \(2^k\) contracts have a description shorter than \(k\) bits? When does it fail?</summary><p>Only \(2^k-1\) shorter strings exist, each naming one contract. It fails once \(2^k-1\) exceeds the number of contracts.</p></details>
+    <details class="card"><summary>Why do fewer than \(2^k\) contracts have a description shorter than \(k\) bits? When does the bound say nothing?</summary><p>Only \(2^k-1\) shorter strings exist, each naming one contract. It rules nothing out once \(2^k-1\) exceeds the number of contracts.</p></details>
     <details class="card"><summary>State Ashby’s law and his three levers.</summary><p>\(V_O\ge V_D-V_R\). Lower the standard, raise the regulator’s power, find a constraint.</p></details>
     <details class="card"><summary>↻ \(N=10\), \(\rho=0.9\): what is \(N_{\text{eff}}\)?</summary><p>1.099: about one independent opinion.</p></details>
-    <details class="card"><summary>Harari’s “complicated” versus Arora’s?</summary><p>Harari: too much data to follow. Arora and colleagues: a short contract that is hard to price when the seller knows more.</p></details>
-    <details class="card"><summary>↻ Entropy of the four-word weather village (post 01), and why is it in Ashby’s bound?</summary><p>1.75 bits; with a one-bit regulator, \(H(E)\ge0.75\).</p></details>
+    <details class="card"><summary>↻ In the six-bank toy, why does one failure stay put but three spread?</summary><p>Y1 loses 4 per failed X bank: 4, 8 (below its capital 10), then 12 (above). A threshold.</p></details>
+    <details class="card"><summary>Name one thing Harari asserts and one thing he only imagines.</summary><p>Asserts: “anything made of words will be taken over by AI”. Imagines: an AI-made device in “maybe 10 years” that nobody can understand.</p></details>
     <details class="card"><summary>What decides whether an AI-minted token is money?</summary><p>“X counts as Y in C”: acceptance by a community (Menger and Searle differ on how essential).</p></details>
   </div>
 </section>
@@ -482,24 +552,22 @@
   <h2>Phrases, patterns and practice</h2>
   <details class="phrases" open><summary>Show phrases</summary>
   <dl>
-    <dt>opaque / opacity</dt><dd>A contract can be <i>opaque</i> even when its rules are short.</dd>
+    <dt>opaque / opacity</dt><dd>A contract can be <i>opaque</i> with short rules.</dd>
     <dt>to be exposed to</dt><dd>Y1 is <i>exposed to</i> all three X banks.</dd>
     <dt>a single point of failure</dt><dd>One shared model can be <i>a single point of failure</i>.</dd>
     <dt>in lockstep</dt><dd>Models trained on the same data may move <i>in lockstep</i>.</dd>
-    <dt>to amplify / to dampen</dt><dd>Trend-followers <i>amplify</i> a shock; value-buyers <i>dampen</i> it.</dd>
+    <dt>to amplify / to dampen</dt><dd>Trend-followers <i>amplify</i> shocks; value-buyers <i>dampen</i> them.</dd>
     <dt>a feedback loop</dt><dd>More followers make the <i>feedback loop</i> stronger.</dd>
     <dt>a tipping point</dt><dd>In the toy, \(m=2/3\) is <i>a tipping point</i>.</dd>
-    <dt>a circuit breaker</dt><dd>A <i>circuit breaker</i> pauses trading; it does not fix the loop.</dd>
-    <dt>to rubber-stamp</dt><dd>Human review can become <i>rubber-stamping</i>.</dd>
-    <dt>to be on the hook for</dt><dd>Who is <i>on the hook for</i> an AI-run firm that fails?</dd>
+    <dt>a circuit breaker</dt><dd>A <i>circuit breaker</i> pauses trading.</dd>
   </dl></details>
 
   <h3>From B2 to C1: conditions and commitment</h3>
+  <p class="small">Three expressions come back from post 01: <i>to read too much into something</i>, <i>that’s a big if</i> and <i>to cut both ways</i>. Use them again.</p>
   <details class="phrases" open><summary>Expressions for discussing evidence</summary>
   <dl>
-    <dt>provided that / as long as / unless</dt><dd>Diversification works <i>provided that</i> errors are independent.</dd>
+    <dt>provided that / as long as / unless</dt><dd>Diversification works best <i>provided that</i> errors are independent.</dd>
     <dt>to conflate X with Y</dt><dd>Don’t <i>conflate</i> Harari’s “complicated” with Arora’s.</dd>
-    <dt>it stands to reason that</dt><dd><i>It stands to reason that</i> more capital helps a bank survive.</dd>
     <dt>what remains to be seen is whether</dt><dd><i>What remains to be seen is whether</i> an AI can invent an instrument.</dd>
     <dt>with the caveat that</dt><dd>The toy helps, <i>with the caveat that</i> its numbers are invented.</dd>
     <dt>by no means</dt><dd>Rarity is <i>by no means</i> the same as opacity.</dd>
@@ -513,11 +581,11 @@
   <i>What remains to be seen is whether</i> an AI can invent a financial instrument at all. Harari asserts that anything made of words will be taken over, but <i>that’s a big if</i> for money. <i>Provided that</i> many firms run one model, <i>a single point of failure</i> appears, and a shock can <i>amplify</i> in <i>a feedback loop</i>. Don’t <i>conflate</i> volume with opacity: rarity is <i>by no means</i> the same thing. Correlation <i>cuts both ways</i>. Don’t <i>read too much into</i> a toy, <i>with the caveat that</i> it shows what could happen, not what will.
   </blockquote>
   <div class="row"><button type="button" class="btn" data-play-ch="c1-loop">Loop this paragraph</button></div>
-  <p class="small">Days 1–2: loop and read along. Days 3–4: speak along, half a second behind. Days 5–7: say it from memory, then retell it about your research.</p>
+  <p class="small">Days 1–2: loop and read along. Days 3–4: speak along. Days 5–7: say it from memory, then retell it about your research.</p>
 
   <details class="phrases"><summary>Four sentence patterns that sound C1</summary>
   <dl>
-    <dt>Reporting verbs</dt><dd>“He <i>asserts</i> that anything made of words will be taken over; he <i>imagines</i> AI-made devices nobody can follow; he <i>asks</i> whether your country will recognise AIs as persons.” Match the verb to the speech act.</dd>
+    <dt>Reporting verbs</dt><dd>“He <i>asserts</i> that AI can understand finance better than us; he <i>imagines</i> AI-made devices nobody can follow; he <i>asks</i> whether AIs should be persons.” Match the verb to the speech act.</dd>
     <dt>Three layers</dt><dd>“He said X. The evidence shows Y. <i>Our reading is</i> Z.”</dd>
     <dt>Hedging ladder</dt><dd>shows → suggests → <i>is consistent with</i> → hints at.</dd>
     <dt>Concession, then your point</dt><dd>“<i>Granted</i>, the toy is simple. <i>But</i> the threshold is real.”</dd>
@@ -537,37 +605,35 @@
   <h2>Sources</h2>
   <p class="small">Pages are printed pages; “[m:ss]” is audio time in our transcript.</p>
   <ol class="srcs">
-    <li id="src-harari-bis">Harari &amp; Skingsley (2024, 7 May). BIS Innovation Summit. Audio.</li>
-    <li id="src-harari-wef">Harari (2026, Jan). An honest conversation on AI and humanity. WEF. Audio.</li>
-    <li id="src-guardian-2023">Milmo (2023, 9 Nov). <i>The Guardian</i> interview with Harari.</li>
-    <li id="src-ynet-2023">Harari (2023, 7 May). AI has hacked the operating system of human civilization. <i>Ynetnews</i>.</li>
-    <li id="src-fcic">Financial Crisis Inquiry Commission (2011). <i>Financial Crisis Inquiry Report</i>.</li>
-    <li id="src-kkst">Kirilenko, Kyle, Samadi &amp; Tuzun (2014). The Flash Crash. Working paper.</li>
-    <li id="src-llt">Lopez-Lira &amp; Tang (2025). arXiv:2304.07619v6.</li>
-    <li id="src-scheurer">Scheurer, Balesni &amp; Hobbhahn (2024). arXiv:2311.07590v4.</li>
-    <li id="src-fsb">Financial Stability Board (2024). <i>Financial Stability Implications of AI</i>; and its press release.</li>
-    <li id="src-truth-ct">Mitchelhill (2024, 14 Oct). <i>Cointelegraph</i>.</li>
-    <li id="src-truth-dec"><i>Decrypt</i> (2024, 14 Oct).</li>
+    <li id="src-harari-bis">Harari &amp; Skingsley (2024, 7 May). BIS Innovation Summit. Audio. bispodcast.libsyn.com.</li>
+    <li id="src-harari-wef">Harari (2026, Jan). An honest conversation on AI and humanity. WEF. Audio. weforum.org/podcasts.</li>
+    <li id="src-guardian-2023">Milmo (2023, 9 Nov). <i>The Guardian</i> interview with Harari. theguardian.com/technology/2023/nov/09.</li>
+    <li id="src-ynet-2023">Harari (2023, 7 May). AI has hacked the operating system of human civilization. <i>Ynetnews</i>. ynetnews.com/article/bkszgnrvn.</li>
+    <li id="src-fcic">Financial Crisis Inquiry Commission (2011). <i>Financial Crisis Inquiry Report</i>. govinfo.gov/content/pkg/GPO-FCIC.</li>
+    <li id="src-kkst">Kirilenko, Kyle, Samadi &amp; Tuzun (2014). The Flash Crash. Working paper. cftc.gov/oce_flashcrash0314.pdf.</li>
+        <li id="src-scheurer">Scheurer, Balesni &amp; Hobbhahn (2024). arXiv:2311.07590v4.</li>
+    <li id="src-fsb">Financial Stability Board (2024). <i>Financial Stability Implications of AI</i>, fsb.org/uploads/P14112024.pdf; press release R14112024.pdf.</li>
+    <li id="src-truth-ct">Mitchelhill (2024, 14 Oct). <i>Cointelegraph</i>. cointelegraph.com/news/ai-bot-didnt-launch-goat-memecoin-did-promote-it.</li>
+    <li id="src-truth-dec"><i>Decrypt</i> (2024, 14 Oct). decrypt.co/286478.</li>
     <li id="src-oql">Luo et al. (2026). arXiv:2603.16434.</li>
     <li id="src-mik">Mik (2026). Contractual deepfakes. arXiv:2602.09384.</li>
     <li id="src-dfnpr">Dütting et al. (2019). arXiv:1706.03459.</li>
     <li id="src-bgtw">Buehler et al. (2018). Deep hedging. arXiv:1802.03042.</li>
-    <li id="src-shannon">Shannon (1948). A mathematical theory of communication. <i>Bell Syst. Tech. J.</i> 27.</li>
-    <li id="src-cover">Cover &amp; Thomas (1991). <i>Elements of Information Theory</i>, 1st ed.</li>
-    <li id="src-arora">Arora, Barak, Brunnermeier &amp; Ge (2009). Computational complexity and information asymmetry. Working paper.</li>
-    <li id="src-akerlof">Akerlof (1970). The market for ‘lemons’. <i>QJE</i> 84(3).</li>
-    <li id="src-ashby">Ashby (1956). <i>An Introduction to Cybernetics</i>.</li>
-    <li id="src-dmu">Danielsson, Macrae &amp; Uthemann (2017). AI and systemic risk. LSE SRC Paper 13.</li>
+    <li id="src-shannon">Shannon (1948). A mathematical theory of communication. <i>Bell Syst. Tech. J.</i> 27. people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf.</li>
+    <li id="src-cover">Cover &amp; Thomas (1991). <i>Elements of Information Theory</i>, 1st ed. Wiley (book).</li>
+    <li id="src-arora">Arora, Barak, Brunnermeier &amp; Ge (2009). Computational complexity and information asymmetry. Working paper. boazbarak.org/Papers/derivative.pdf.</li>
+    <li id="src-akerlof">Akerlof (1970). The market for ‘lemons’. <i>QJE</i> 84(3). doi:10.2307/1879431.</li>
+    <li id="src-ashby">Ashby (1956). <i>An Introduction to Cybernetics</i>. pespmc1.vub.ac.be/books/IntroCyb.pdf.</li>
+    <li id="src-dmu">Danielsson, Macrae &amp; Uthemann (2022). Artificial intelligence and systemic risk. <i>J. Banking &amp; Finance</i> 140, 106290. doi:10.1016/j.jbankfin.2021.106290.</li>
     <li id="src-du">Danielsson &amp; Uthemann (2025). AI and financial crises. arXiv:2407.17048v3.</li>
-    <li id="src-mitsloan">Vereckey (2023). <i>MIT Sloan</i> article on Gensler &amp; Bailey (2020).</li>
-    <li id="src-keynes">Keynes (1936). <i>General Theory</i>, ch. 12.</li>
-    <li id="src-granovetter">Granovetter (1978). Threshold models of collective behavior. <i>AJS</i> 83(6).</li>
-    <li id="src-sep">Epstein (2024). Social ontology. <i>Stanford Encyclopedia of Philosophy</i>.</li>
-    <li id="src-dennett">Dennett (1987). <i>The Intentional Stance</i>, ch. 2.</li>
-    <li id="src-lupia">Lupia &amp; McCubbins (1998). <i>The Democratic Dilemma</i>.</li>
-    <li id="src-poole">Poole (2024, 11 Sep). <i>Nexus</i> review. <i>The Guardian</i>.</li>
-    <li id="src-fox">Fox (2024, 10 Sep). <i>Nexus</i> review. <i>The Observer</i>.</li>
-    <li id="src-nk">Narayanan &amp; Kapoor (2025). AI as normal technology. Knight First Amendment Institute.</li>
+    <li id="src-mitsloan">Vereckey (2023). <i>MIT Sloan</i> article on Gensler &amp; Bailey (2020). mitsloan.mit.edu/ideas-made-to-matter.</li>
+    <li id="src-keynes">Keynes (1936). <i>General Theory</i>, ch. 12. Macmillan (book).</li>
+    <li id="src-granovetter">Granovetter (1978). Threshold models of collective behavior. <i>AJS</i> 83(6). doi:10.1086/226707.</li>
+    <li id="src-sep">Epstein (2024). Social ontology. <i>Stanford Encyclopedia of Philosophy</i>. plato.stanford.edu/entries/social-ontology.</li>
+    <li id="src-lupia">Lupia &amp; McCubbins (1998). <i>The Democratic Dilemma</i>. Cambridge University Press (book).</li>
+    <li id="src-poole">Poole (2024, 11 Sep). <i>Nexus</i> review. <i>The Guardian</i>. theguardian.com/books/article/2024/sep/11.</li>
+    <li id="src-fox">Fox (2024, 10 Sep). <i>Nexus</i> review. <i>The Observer</i>. theguardian.com/books/article/2024/sep/10.</li>
+    <li id="src-nk">Narayanan &amp; Kapoor (2025). AI as normal technology. Knight First Amendment Institute. knightcolumbia.org/content/ai-as-normal-technology.</li>
   </ol>
 </section>
 
