@@ -1,0 +1,136 @@
+{
+ "type": "cascade",
+ "id": "cfg-w5",
+ "title": "Six banks, one shared model (toy, ours)",
+ "note": "Tap a bank to make it fail. X1, X2, X3 run the same model; Y1, Y2, Y3 do not.",
+ "height": 250,
+ "params": [
+  {
+   "id": "lgd",
+   "label": "loss given default",
+   "min": 0.2,
+   "max": 1,
+   "step": 0.05,
+   "value": 0.8,
+   "fmt": ".2f"
+  },
+  {
+   "id": "capMult",
+   "label": "capital ×",
+   "min": 0.5,
+   "max": 2,
+   "step": 0.05,
+   "value": 1,
+   "fmt": ".2f"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "X1",
+   "label": "X1",
+   "x": 60,
+   "y": 40,
+   "capital": 10
+  },
+  {
+   "id": "X2",
+   "label": "X2",
+   "x": 180,
+   "y": 40,
+   "capital": 10
+  },
+  {
+   "id": "X3",
+   "label": "X3",
+   "x": 300,
+   "y": 40,
+   "capital": 10
+  },
+  {
+   "id": "Y1",
+   "label": "Y1",
+   "x": 80,
+   "y": 135,
+   "capital": 10
+  },
+  {
+   "id": "Y2",
+   "label": "Y2",
+   "x": 250,
+   "y": 135,
+   "capital": 9
+  },
+  {
+   "id": "Y3",
+   "label": "Y3",
+   "x": 165,
+   "y": 210,
+   "capital": 11
+  }
+ ],
+ "edges": [
+  {
+   "from": "X1",
+   "to": "Y1",
+   "w": 5
+  },
+  {
+   "from": "X2",
+   "to": "Y1",
+   "w": 5
+  },
+  {
+   "from": "X3",
+   "to": "Y1",
+   "w": 5
+  },
+  {
+   "from": "X3",
+   "to": "Y2",
+   "w": 5
+  },
+  {
+   "from": "Y1",
+   "to": "Y2",
+   "w": 10
+  },
+  {
+   "from": "Y1",
+   "to": "Y3",
+   "w": 5
+  },
+  {
+   "from": "Y2",
+   "to": "Y3",
+   "w": 10
+  }
+ ],
+ "seeds": [
+  "X1"
+ ],
+ "readout": "{failed:d} of {total:d} banks fail, {survivors:d} survive (loss given default {lgd:.2f}, capital ×{capMult:.2f}). Spread after the shock: {rounds:d} more rounds.",
+ "presets": [
+  {
+   "label": "normal",
+   "values": {
+    "lgd": 0.8,
+    "capMult": 1
+   }
+  },
+  {
+   "label": "capital ×1.5",
+   "values": {
+    "lgd": 0.8,
+    "capMult": 1.5
+   }
+  },
+  {
+   "label": "harsh losses (lgd 1)",
+   "values": {
+    "lgd": 1,
+    "capMult": 1
+   }
+  }
+ ],
+ "caption": "Arrow X1 → D means D has lent to X1: if X1 fails, D loses the loan × the loss rate. Under a bank: loss so far / capital. Toy numbers, ours; not a model of any real bank."
+}

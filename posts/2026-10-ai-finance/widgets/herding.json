@@ -1,0 +1,89 @@
+{
+ "type": "iterate",
+ "id": "cfg-herding",
+ "title": "Share m of traders follow one model's trend (toy, ours)",
+ "note": "Price gap from fair value (0 = fair). A shock of −1 hits after step 3. A share m of traders chase the last move; the rest pull the price back.",
+ "params": [
+  {
+   "id": "m",
+   "label": "share m on the model",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "value": 0.2,
+   "fmt": ".2f"
+  },
+  {
+   "id": "brk",
+   "label": "circuit breaker (0 = off)",
+   "min": 0,
+   "max": 10,
+   "step": 1,
+   "value": 0,
+   "fmt": "d"
+  }
+ ],
+ "constants": {
+  "A": 1.5,
+  "G": 0.5
+ },
+ "init": {
+  "P": 0,
+  "Q": 0
+ },
+ "update": {
+  "P": "clamp(P + A*m*(P-Q) - G*(1-m)*P, 0-lim, lim)",
+  "Q": "P"
+ },
+ "shocks": [
+  {
+   "t": 3,
+   "set": {
+    "P": "P-1"
+   },
+   "label": "shock −1"
+  }
+ ],
+ "steps": 40,
+ "series": [
+  {
+   "var": "P",
+   "label": "price gap"
+  }
+ ],
+ "readout": "Largest swing {max_P:.2f} up, {min_P:.2f} down; gap after {t:d} steps: {P:.3f}.",
+ "presets": [
+  {
+   "label": "calm (m = 0.20)",
+   "values": {
+    "m": 0.2,
+    "brk": 0
+   }
+  },
+  {
+   "label": "tipping (m = 0.67)",
+   "values": {
+    "m": 0.67,
+    "brk": 0
+   }
+  },
+  {
+   "label": "runaway (m = 0.90)",
+   "values": {
+    "m": 0.9,
+    "brk": 0
+   }
+  },
+  {
+   "label": "runaway + breaker 3",
+   "values": {
+    "m": 0.9,
+    "brk": 3
+   }
+  }
+ ],
+ "caption": "Rule (ours): gap(t+1) = gap(t) + 1.5·m·[gap(t) − gap(t−1)] − 0.5·(1−m)·gap(t). Trend-followers add the last move; the others pull the gap back to 0. The breaker caps the gap. Toy, ours: it does not measure how many firms really share a model.",
+ "derived": {
+  "lim": "if(brk>0, brk, 1e9)"
+ }
+}

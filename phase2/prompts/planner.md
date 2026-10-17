@@ -22,4 +22,4 @@ Use the same format as post 01's `source-brief.md`. Write at least 8 units. Each
 - tensions with other sources;
 - a toy idea.
 
-Work from the sources themselves (PDF pages or saved web copies), not from digests. Mark anything you could not see yourself as `UNSEEN`; the fact-checker will verify or drop it.
+Work from the sources themselves (PDF pages or saved web copies), not from digests. Mark anything you could not see yourself as `UNSEEN`; the fact-checker will verify or drop it. For a person's claim, read the whole talk or essay and record both their strongest unhedged statement and their hedged scenarios.

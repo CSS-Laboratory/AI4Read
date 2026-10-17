@@ -1,0 +1,18 @@
+{
+ "type": "stepper",
+ "id": "cfg-w5-hand",
+ "title": "W5 by hand: X1, X2, X3 fail together (toy, ours)",
+ "head": ["round", "Y1 loss/cap", "Y2 loss/cap", "Y3 loss/cap", "new failures"],
+ "rows": [
+  ["0", "0 / 10", "0 / 9", "0 / 11", "X1, X2, X3"],
+  ["1", "12 / 10", "4 / 9", "0 / 11", "Y1"],
+  ["2", "—", "12 / 9", "4 / 11", "Y2"],
+  ["3", "—", "—", "12 / 11", "Y3"]
+ ],
+ "notes": [
+  "Shock: X1, X2 and X3 run the same model and fail on the same day.",
+  "Y1 lent 5 to each of them. It loses 3 × (0.8 × 5) = 12, more than its capital 10, so it fails. Y2 lent 5 to X3 and loses 4, below its capital 9.",
+  "Y1 has failed. Y2 lent 10 to Y1 and loses 0.8 × 10 = 8 more: 4 + 8 = 12 ≥ 9, so Y2 fails. Y3 lent 5 to Y1 and loses 4, below 11.",
+  "Y2 has failed. Y3 lent 10 to Y2 and loses 8 more: 4 + 8 = 12 ≥ 11, so Y3 fails. All six banks have failed. Check: the widget says 6 of 6 in 3 rounds."
+ ]
+}

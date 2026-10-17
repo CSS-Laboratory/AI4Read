@@ -1,0 +1,50 @@
+{
+ "type": "stepper",
+ "id": "cfg-ashby-table",
+ "title": "Ashby's table, four disturbances and two responses (toy, ours)",
+ "head": [
+  "contract type D",
+  "check R1",
+  "check R2",
+  "best pick"
+ ],
+ "rows": [
+  [
+   "D1",
+   "a",
+   "b",
+   "R1 → a"
+  ],
+  [
+   "D2",
+   "b",
+   "a",
+   "R2 → a"
+  ],
+  [
+   "D3",
+   "c",
+   "d",
+   "R1 → c"
+  ],
+  [
+   "D4",
+   "d",
+   "c",
+   "R2 → c"
+  ],
+  [
+   "all four",
+   "",
+   "",
+   "a, c, a, c"
+  ]
+ ],
+ "notes": [
+  "A new contract of type D1 arrives. Check R1 leaves the books in state a; check R2 leaves state b. Pick R1.",
+  "Type D2: the supervisor sees which type it is and picks R2, which also gives a.",
+  "Type D3: R1 gives c, R2 gives d. Pick R1.",
+  "Type D4: pick R2, which gives c. No check can give a for D3 or D4, because a appears only in D1 and D2.",
+  "Best play leaves two outcomes, a and c: 1 bit. The law says V_O ≥ V_D − V_R = 2 − 1 = 1 bit, and no choice of checks can do better."
+ ]
+}

@@ -176,7 +176,7 @@ The post must say "not yet evidenced", not "impossible".
 - "Suppose" and "maybe" are hedges.
 - The knife line is the only unhedged statement about AI inventing "money", and even it says AI *can*.
 - The Q&A money lines are framed as something to "prepare for", after "at the present moment, we still think better".
-- Kunhao's "LLMs will replace our human-centred society" is stronger than any line in this talk.
+- Kunhao's "LLMs will replace our human-centred society" is stronger than any **finance** line in this talk; it is close to the unhedged "anything made of words will be taken over by AI" (A3b).
 
 **S2 changes.**
 - "USAI" → "U.S. AI".
@@ -186,6 +186,25 @@ The post must say "not yet evidenced", not "impossible".
 - The talk's start corrected to ~[1:40].
 
 **Toy idea.** Lens 4: a table of who can open a bank account (a human, a corporation, an AI?) and who is liable.
+
+### A3b. Harari at Davos 2026: the unhedged core claim, "anything made of words" [ADDED by meta-manager, 2026-10-17]
+**Source.** `harari-wef-2026-01.mp3`; meta-manager re-transcription with faster-whisper small.en, segments 4:50–6:15 and 10:10–10:50.
+
+**Claims (unhedged assertions, not thought experiments)**
+- [5:10–5:20] He takes on the view that AI is "just glorified autocomplete" that "barely predicts the next word in a sentence", and asks: "But is that so different from what the human mind is doing?" **This is a direct link to post 01.** The Davos argument is explicitly about language machines (next-word predictors), so "he says AI, not LLMs" is true of his wording but not of his topic.
+- [5:48–5:52] "As far as putting words in order is concerned, AI already thinks better than many of us."
+- [5:57–6:09] "Therefore, anything made of words will be taken over by AI. If laws are made of words, then AI will take over the legal system."
+- [10:32–10:36] AIs as "the new masters of words". "Everything made of words will be taken over by AI."
+
+**Quotes (≤25 words)**
+- [5:57] "Therefore, anything made of words will be taken over by AI." (11 words)
+- [10:36] "Everything made of words will be taken over by AI." (9 words)
+- [5:10–5:15] "Some people argue that AI is just glorified autocomplete. It barely predicts the next word in a sentence." (18 words)
+
+**Careful!**
+- These lines carry **no hedge**. Together with A5 ("What gives money value is the stories … tell us about it") they make a chain: money is made of stories/words, and anything made of words will be taken over by AI. Kunhao's paraphrase ("LLMs will replace our human-centred society") is close to this chain. Its stronger part is only the **finance timeline**, which Harari frames as "imagine… maybe" and "prepare for".
+- Correct the earlier line in A3 ("Kunhao's … is stronger than any line in this talk"): it holds for the finance passages only.
+- Representing Harari fairly means printing both his unhedged thesis (this unit) and his hedged scenarios (A1, A3). Printing only the hedged ones would understate him.
 
 ### A4. *Nexus* (2024), Prologue, and the Guardian extract of 24 Aug 2024 [FIXED]
 **Source.**

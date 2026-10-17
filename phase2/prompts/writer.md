@@ -26,7 +26,7 @@ You write one AI4Read post for Kunhao Yang, an assistant professor in computatio
 
 ## Hard rules
 - Cite only brief units, with the page. Keep every hedge the source uses ("suggests", "may", "in our sample"). Label our own reasoning and toys "ours".
-- When you discuss a person's claim (e.g. a public intellectual's prediction), separate three things: what they said (quoted from the brief, with date and venue), what the evidence in the brief supports, and what is our interpretation. Never strengthen their wording, add a timeframe they did not give, or attribute a paraphrase to them.
+- When you discuss a person's claim (e.g. a public intellectual's prediction), separate three things: what they said (quoted from the brief, with date and venue), what the evidence in the brief supports, and what is our interpretation. Never strengthen their wording, add a timeframe they did not give, or attribute a paraphrase to them. Never weaken them either: include their strongest unhedged statement on the topic next to their hedged scenarios. Choose reporting verbs that match each statement (asserts / imagines / asks / warns).
 - Every number a widget shows comes from `node site/ai4read/components/check.mjs`. Paste its readout numbers exactly. Other numbers come from code you ran; record them in `numbers.md`.
 - No custom JavaScript. If no widget fits, write `<!-- WIDGET-REQUEST: … -->` and use a static figure or a table instead.
 - Explanations go in the main text (WRITING §4). Boxes are only for terms, traps, answers, exercises and deep-dive fold-outs.

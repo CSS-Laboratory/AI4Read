@@ -1,0 +1,357 @@
+[
+ {
+  "type": "lab",
+  "id": "cfg-cdo",
+  "title": "Four loans in one pool (toy, ours)",
+  "note": "A pool of 4 loans worth 10 each. The junior tranche (20) takes the first losses. The senior tranche (20) loses money only if 3 or 4 loans default.",
+  "params": [
+   {
+    "id": "p",
+    "label": "each loan defaults with chance",
+    "min": 0.01,
+    "max": 0.3,
+    "step": 0.01,
+    "value": 0.1,
+    "fmt": ".2f"
+   },
+   {
+    "id": "w",
+    "label": "share of risk that is one common factor",
+    "min": 0,
+    "max": 1,
+    "step": 0.05,
+    "value": 0,
+    "fmt": ".2f"
+   }
+  ],
+  "derived": {
+   "q": "1-p",
+   "pind": "4*p^3*q + p^4",
+   "pshared": "p",
+   "pmix": "w*pshared+(1-w)*pind",
+   "ratio": "pmix/pind"
+  },
+  "bars": {
+   "items": [
+    {
+     "label": "independent loans",
+     "value": "pind"
+    },
+    {
+     "label": "your mix",
+     "value": "pmix"
+    },
+    {
+     "label": "one common factor",
+     "value": "pshared"
+    }
+   ],
+   "max": 0.3,
+   "fmt": ".1%",
+   "highlight": 1
+  },
+  "readout": "Chance the senior tranche loses money: {pmix:.3%}. With independent loans it would be {pind:.4%}; your mix is {ratio:.1f} times that.",
+  "presets": [
+   {
+    "label": "independent",
+    "values": {
+     "p": 0.1,
+     "w": 0
+    }
+   },
+   {
+    "label": "half common",
+    "values": {
+     "p": 0.1,
+     "w": 0.5
+    }
+   },
+   {
+    "label": "one factor",
+    "values": {
+     "p": 0.1,
+     "w": 1
+    }
+   },
+   {
+    "label": "safe loans, p = 0.02",
+    "values": {
+     "p": 0.02,
+     "w": 1
+    }
+   }
+  ],
+  "caption": "Toy, ours. With probability w all loans follow one shared coin; otherwise they are independent. Each loan always has default chance p. Idea from FCIC p. 149 (pooling assumed to diversify)."
+ },
+ {
+  "type": "lab",
+  "id": "cfg-count",
+  "title": "How many contracts have a short description? (toy, ours)",
+  "note": "A contract pays 0–9 for each possible state of the village. Drag k: how many contracts can have a description shorter than k bits?",
+  "params": [
+   {
+    "id": "k",
+    "label": "description length k (bits)",
+    "min": 1,
+    "max": 60,
+    "step": 1,
+    "value": 6,
+    "fmt": "d"
+   },
+   {
+    "id": "d",
+    "label": "days in the contract",
+    "min": 1,
+    "max": 4,
+    "step": 1,
+    "value": 1,
+    "fmt": "d"
+   }
+  ],
+  "derived": {
+   "states": "4^d",
+   "bits": "states*log2(10)",
+   "nshort": "2^k-1",
+   "frac": "min(1,nshort/10^states)"
+  },
+  "readout": "{states:d} weather states, so 10^{states:d} contracts. Naming one takes {bits:.2f} bits. At most {nshort:,} contracts have a description shorter than {k:d} bits: a fraction {frac:.3g} of all (1 means all of them).",
+  "presets": [
+   {
+    "label": "4 states, k = 6",
+    "values": {
+     "k": 6,
+     "d": 1
+    }
+   },
+   {
+    "label": "4 states, k = 14",
+    "values": {
+     "k": 14,
+     "d": 1
+    }
+   },
+   {
+    "label": "two days, k = 20",
+    "values": {
+     "k": 20,
+     "d": 2
+    }
+   }
+  ],
+  "caption": "Counting argument: Cover and Thomas 1991, Theorem 7.2.4, p. 150. Mapping contracts to bit strings is our step. Toy, ours."
+ },
+ {
+  "type": "lab",
+  "id": "cfg-ashby",
+  "title": "Requisite variety for a supervisor (toy, ours)",
+  "note": "Variety = log2 of the number of different situations (or responses). The supervisor sees contract types; each needs its own kind of check.",
+  "params": [
+   {
+    "id": "c",
+    "label": "allowed contract types: 10 to the power",
+    "min": 0,
+    "max": 4,
+    "step": 0.5,
+    "value": 4,
+    "fmt": ".1f"
+   },
+   {
+    "id": "vr",
+    "label": "supervisor variety V_R (bits)",
+    "min": 0,
+    "max": 14,
+    "step": 0.5,
+    "value": 4,
+    "fmt": ".1f"
+   }
+  ],
+  "derived": {
+   "vd": "c*log2(10)",
+   "vo": "max(0, vd-vr)",
+   "gap": "vd-vr"
+  },
+  "bars": {
+   "items": [
+    {
+     "label": "V_D (contracts)",
+     "value": "vd"
+    },
+    {
+     "label": "V_R (supervisor)",
+     "value": "vr"
+    },
+    {
+     "label": "least V_O left",
+     "value": "vo"
+    }
+   ],
+   "max": 14,
+   "fmt": ".2f",
+   "highlight": 2
+  },
+  "readout": "V_D = {vd:.2f} bits, V_R = {vr:.1f} bits. Least outcome variety V_O ≥ {vo:.2f} bits.",
+  "presets": [
+   {
+    "label": "free market: 10^4",
+    "values": {
+     "c": 4,
+     "vr": 4
+    }
+   },
+   {
+    "label": "standard menu: 10^2",
+    "values": {
+     "c": 2,
+     "vr": 4
+    }
+   },
+   {
+    "label": "AI supervisor +5 bits",
+    "values": {
+     "c": 4,
+     "vr": 9
+    }
+   }
+  ],
+  "caption": "Ashby 1956, S.11/6–11/7, pp. 206–207: V_O cannot be less than V_D − V_R. Mapping to supervisors and contracts is our analogy. Toy, ours."
+ },
+ {
+  "type": "lab",
+  "id": "cfg-neff",
+  "title": "How many independent opinions? (toy, ours)",
+  "note": "N forecasts, each pair correlated by rho. N_eff is the number of independent forecasts that would give an average as steady as yours.",
+  "params": [
+   {
+    "id": "N",
+    "label": "number of banks N",
+    "min": 2,
+    "max": 100,
+    "step": 1,
+    "value": 10,
+    "fmt": "d"
+   },
+   {
+    "id": "rho",
+    "label": "correlation rho",
+    "min": 0,
+    "max": 1,
+    "step": 0.05,
+    "value": 0.9,
+    "fmt": ".2f"
+   }
+  ],
+  "constants": {
+   "pw": 0.01
+  },
+  "derived": {
+   "neff": "N/(1+(N-1)*rho)",
+   "limit": "1/max(rho,0.01)",
+   "pall_ind": "pw^N",
+   "pall_one": "pw"
+  },
+  "bars": {
+   "items": [
+    {
+     "label": "banks N",
+     "value": "N"
+    },
+    {
+     "label": "N_eff",
+     "value": "neff"
+    }
+   ],
+   "max": 100,
+   "fmt": ".2f",
+   "highlight": 1
+  },
+  "readout": "N_eff = {neff:.3f} of {N:d} banks. However many banks join, N_eff never exceeds 1/rho = {limit:.2f}. Each bank is wrong on 1% of days; all wrong together: {pall_ind:.2e} if independent, about {pall_one:.0%} if they run one model.",
+  "presets": [
+   {
+    "label": "independent",
+    "values": {
+     "N": 10,
+     "rho": 0
+    }
+   },
+   {
+    "label": "0.3",
+    "values": {
+     "N": 10,
+     "rho": 0.3
+    }
+   },
+   {
+    "label": "one model",
+    "values": {
+     "N": 10,
+     "rho": 1
+    }
+   },
+   {
+    "label": "huge crowd, 0.3",
+    "values": {
+     "N": 100,
+     "rho": 0.3
+    }
+   }
+  ],
+  "caption": "Formula N_eff = N / (1 + (N − 1) rho): our derivation (variance of an average of equally correlated forecasts). Toy, ours."
+ },
+ {
+  "type": "lab",
+  "id": "cfg-bayes2",
+  "title": "Counting one signal many times (toy, ours)",
+  "note": "Prior 1/2 that the bank is safe. A model says safe; a safe bank is 4 times as likely to get this verdict as a risky one. How many separate pieces of evidence do you really hold?",
+  "params": [
+   {
+    "id": "n",
+    "label": "times you count the verdict",
+    "min": 0,
+    "max": 10,
+    "step": 1,
+    "value": 1,
+    "fmt": "d"
+   }
+  ],
+  "constants": {
+   "LR": 4
+  },
+  "derived": {
+   "odds": "LR^n",
+   "post": "odds/(1+odds)"
+  },
+  "bars": {
+   "items": [
+    {
+     "label": "P(safe)",
+     "value": "post"
+    }
+   ],
+   "max": 1,
+   "fmt": ".4f",
+   "highlight": 0
+  },
+  "readout": "Verdict counted {n:d}×: odds {odds:,.0f} to 1, P(safe) = {post:.6f}.",
+  "presets": [
+   {
+    "label": "one model",
+    "values": {
+     "n": 1
+    }
+   },
+   {
+    "label": "4 copies",
+    "values": {
+     "n": 4
+    }
+   },
+   {
+    "label": "10 copies",
+    "values": {
+     "n": 10
+    }
+   }
+  ],
+  "caption": "Same arithmetic as post 01, world W4 (likelihood ratio 4). New story, ours. Odds form of Bayes: posterior odds = prior odds × LR^n."
+ }
+]
