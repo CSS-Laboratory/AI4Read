@@ -36,7 +36,8 @@ for cid, title, body in chapters:
     meta_p.write_text(json.dumps(meta + [c for c in old.values() if c["id"] not in {m["id"] for m in meta}], indent=1))
 meta_p.write_text(json.dumps(meta, indent=1))
 lst = out / "concat.txt"; lst.write_text("".join(f"file '{c['id']}.mp3'\n" for c in meta))
-subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(out / "all.mp3")], check=True)
+# all.mp3 is re-encoded at 48 kb/s so a 35-minute post stays under the 16 MB per-file artifact limit
+subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-ac", "1", "-b:a", "48k", str(out / "all.mp3")], check=True)
 lst.unlink()
 print("total min", round(sum(c["dur"] for c in meta) / 60, 1))
 sys.path.insert(0, str(pathlib.Path(__file__).parent))

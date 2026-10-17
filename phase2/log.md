@@ -22,3 +22,19 @@ One block per stage. Token counts come from the agent results (all subagent toke
 | S5 round 2 | critic (Sonnet) | 173,682 | 4.5 min | 3/3/4/4/3 |
 | — | meta-manager | — | — | Harari classification oscillated between rounds, so a binding four-group table was written for round 3. New standard word counter `scripts/wordcount.py` (main text 6,548). |
 | S5→S4 round 3 | writer (Sonnet 5.5, resumed) | 370,599 | 15.7 min | All majors and minors answered; Harari four-group table and summary sentence in place; chain diagram rebuilt; Lens 1 toy (6 assets, 3 products); main text 6,942 words plus 1,853 in fold-outs; 130 citations; 15/15 widgets; render PASS; 5 clipped formulas fixed. |
+| S5 round 3 | checker A (Opus) | 304,977 | 16.7 min | 0 / 1 / 10 (Guardian 2024 quote cut before "humanity has never been united") |
+| S5 round 3 | checker B (Sonnet) | 82,964 | 22.6 min | 0 / 2 / 15 (same Guardian major; Harari's "AI can lie" missing; "we'll need" mis-transcription) |
+| S5 round 3 | critic (Sonnet) | 197,722 | 4.0 min | 4/3/4/4/3 |
+| meta fix | meta-manager (Opus) | — | — | Fixed all 3 majors and the minors from both checkers, plus the critic's top changes: Lens 1 toy direction (OR-tranche: 7/4 vs 3/2), chain labels ("our order"; status in nodes), tables in Lens 3b, the variance rule, a plain CDO definition, short-answer restructure, a diagram `preview` option. Build, 15/15 widgets and render PASS; main text 7,123 words. Rule proposals in phase2/post02/rule-proposals.md. |
+| S6 audio | Kokoro (local) | — | about 25 min | 16 chapters, 35.7 min; tagged "AI4Read from CSS Lab"; all.mp3 at 48 kb/s (16 MB artifact limit) |
+| S7 draft publish | meta-manager | — | — | claude.ai artifact (db/sample/downloads), site dist and shelf rebuilt; English pack for Margin |
+
+### T2 post 02: summary for the 2b decision
+- **Agent calls:** 1 research, 1 survey, planner ×2 (S0, S1), Opus brief check, writer ×4 (S3, S4, two revisions + final), 3 rounds × (Opus checker + Sonnet checker + critic). About 5.0 M subagent tokens in total (sum of the reported counts, cache reads included).
+- **Gate history:** checkers' major findings by round: 11 (S2 brief) → 7+4 → 3+2 → 1+2 → 0 after the meta fix. Critic minimum score by round: 2 → 3 → 3 → (meta fix).
+- **Lessons:**
+  1. An independent Opus check of the brief before drafting is essential.
+  2. Balance errors (a person made to look more cautious or more extreme) are the most frequent kind of major finding, so the balance check is now in the prompts.
+  3. The writer's self-scores were 1–2 points above the critic's every round, so self-scores must never count toward the gate.
+  4. Opus and Sonnet checkers each find majors the other misses, so use both.
+  5. The meta-manager still had to step in after round 3, so 2b needs the same final human-level audit, or a fourth round.

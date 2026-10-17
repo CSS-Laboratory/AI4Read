@@ -34,5 +34,65 @@
   "title": "Lens two: control",
   "hash": "d2ff5bf6bd9b",
   "dur": 184.6
+ },
+ {
+  "id": "lens-decision",
+  "title": "Lens three, part one: correlation and Bayes",
+  "hash": "71af42da0499",
+  "dur": 147.8
+ },
+ {
+  "id": "lens-cascade",
+  "title": "Lens three, part two: cascades and feedback",
+  "hash": "8a71fe10dffd",
+  "dur": 102.0
+ },
+ {
+  "id": "lens-social",
+  "title": "Lens four: social reality",
+  "hash": "70279492a78d",
+  "dur": 206.6
+ },
+ {
+  "id": "play",
+  "title": "What to try when you open the page",
+  "hash": "dfbfacec2be6",
+  "dur": 47.4
+ },
+ {
+  "id": "turn",
+  "title": "Your turn",
+  "hash": "d0ebffd95fcf",
+  "dur": 37.0
+ },
+ {
+  "id": "work",
+  "title": "Where this shows up in your work",
+  "hash": "c8624617eb32",
+  "dur": 45.4
+ },
+ {
+  "id": "answer",
+  "title": "So what happens? Short answer first",
+  "hash": "3448c7c238a0",
+  "dur": 204.7
+ },
+ {
+  "id": "recall",
+  "title": "Recall questions",
+  "hash": "17611b844d7e",
+  "dur": 90.9
+ },
+ {
+  "id": "english",
+  "title": "How to say it in English",
+  "hash": "41b707fa67cc",
+  "dur": 85.8
+ },
+ {
+  "id": "c1-loop",
+  "title": "C1 paragraph to loop",
+  "hash": "6c2632123d2b",
+  "dur": 31.2
  }
 ]
