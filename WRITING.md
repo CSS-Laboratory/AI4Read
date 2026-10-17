@@ -49,6 +49,9 @@ Do not start a concept at step 4. (Note: “imagine you are explaining it to hig
 - Two layers: (a) 8–10 phrases from the post's own topic (B2–C1), (b) a **B2 → C1 toolkit**: native expressions for discussing evidence (hedging, concession, emphasis), one or two sentence patterns, small error fixes typical for Chinese/Japanese speakers, and a short practice routine. Every example sentence uses an idea from the same post. (Request, 2026-10-16.)
 - Rotate the toolkit: each post adds new expressions and repeats 2–3 from earlier posts for spaced review.
 
+## 8b. Audio
+- Every audio file names its source as **“AI4Read from CSS Lab”**: spoken in the first chapter (“Welcome to AI4Read from CSS Lab.”) and written into each MP3's metadata (artist, album artist, publisher, copyright, comment with the post link; album = post title; title and track = chapter). `scripts/tts_post.py` tags automatically through `scripts/tag_audio.py`. (Request, 2026-10-17.)
+
 ## 9. Sources and honesty (from the charter, kept here so it is never forgotten)
 - Every claim is checked against the cited page by an independent reviewer before publishing; digests are maps, not truth.
 - Keep the authors' hedges (may, suggest, appears). Our own examples and reasoning are labelled “ours”.
@@ -58,3 +61,4 @@ Do not start a concept at step 4. (Note: “imagine you are explaining it to hig
 - 0.1 (2026-10-15): charter style guide only.
 - 0.3 (2026-10-16): §8 English section with a B2 → C1 toolkit.
 - 0.2 (2026-10-16): §2 ladder, §3 term boxes, §4 explanations in text, §5 illustrations for mechanisms, §6 field formulas + exercises, §7 “what it means”. From Kunhao's first review of post 01.
+- 0.4 (2026-10-17): §8b audio files carry the source mark “AI4Read from CSS Lab”.

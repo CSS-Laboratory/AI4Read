@@ -78,6 +78,7 @@ Paper cards: claim → method → key figure → lenses (1–2) → what to doub
 - Each post has an **audio script** written *for the ear* (not a reading of the page): formulas spoken in words, figures described, recaps at section ends.
 - Audio is split into **chapters** matching post sections, so a single section can be looped.
 - Player: loop post / loop section, speed 0.75–1.5×, lock-screen controls, offline.
+- Source mark: every audio file says and carries “AI4Read from CSS Lab” (spoken intro + MP3 metadata; see WRITING.md §8b).
 
 ## 8. Wiki schema
 

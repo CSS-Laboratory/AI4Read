@@ -5,7 +5,7 @@ note: Written for the ear. Formulas are spoken in words. Each chapter ends with 
 ---
 
 ## hook | The guessing game
-Welcome to AI4Read. This is post one: what does a language model know when it predicts the next word?
+Welcome to AI4Read from CSS Lab. This is post one: what does a language model know when it predicts the next word?
 
 Let's start with a game. Take a book you have never read. Cover the page, and uncover it one letter at a time. Before each letter, guess what it will be. If you are wrong, guess again, until you are right. Then write down how many guesses you needed.
 
