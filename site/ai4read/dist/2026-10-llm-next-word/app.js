@@ -214,7 +214,7 @@ function play(){if(!P.engine){msg("Checking how this device can play audio… ta
   cacheOne(P.i+1)}
 function pause(){if(P.engine==="wa"){waStop(true);paint()}else audio.pause()}
 function load(i,go){if(P.engine==="wa")waStop(false);offset=0;P.i=idx(i);LS.set("ch",P.i);audio.removeAttribute("data-id");paint();
-  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:CH[P.i].title,artist:"AI4Read",album:"Post 01 · What does an LLM know?"})}catch(e){}}
+  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:CH[P.i].title,artist:"AI4Read from CSS Lab",album:"Post 01 · What does an LLM know?"})}catch(e){}}
   if(go)play();else cacheOne(P.i)}
 function ended(){if(P.mode==="one"){offset=0;if(P.engine!=="wa")audio.currentTime=0;play()}else if(P.i<CH.length-1)load(P.i+1,true);else if(P.mode==="all")load(0,true);else paint()}
 function paint(){$("#p-title").textContent=`${P.i+1}/${CH.length} · ${CH[P.i].title}`;const on=isPlaying()||(P.engine!=="wa"&&!audio.paused);$("#p-play").innerHTML=on?ICON.pause:ICON.play;$("#p-play").setAttribute("aria-label",on?"Pause":"Play");

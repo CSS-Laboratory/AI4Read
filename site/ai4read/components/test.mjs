@@ -16,7 +16,10 @@ for (const p of ["playwright", "/opt/node-tools/node_modules/playwright", "/opt/
 if (!chromium) { console.error("playwright not found"); process.exit(2); }
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
-const PAGE = process.argv[2] || "site/ai4read/components/gallery.html";
+const BASE = (() => { const i = process.argv.indexOf("--base"); return i > 0 ? process.argv[i + 1] : null; })();
+const PAGE = process.argv.slice(2).find((a, i, A) => !a.startsWith("--") && A[i - 1] !== "--base") || "site/ai4read/components/gallery.html";
+// With --base http://127.0.0.1:8799 the page is loaded from a running server (e.g. dev/mock-server.mjs for a site build:
+//   node site/ai4read/dev/mock-server.mjs 8799 &  node site/ai4read/components/test.mjs /ai4read/<slug>/ --base http://127.0.0.1:8799)
 const CSP = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: data:; connect-src 'self'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'";
 const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".mp3": "audio/mpeg", ".svg": "image/svg+xml" };
 const srv = http.createServer((req, res) => {
@@ -34,9 +37,10 @@ const browser = await chromium.launch(existsSync("/opt/pw-browsers/chromium") ? 
 try {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   const errs = [];
-  page.on("console", (m) => { if (m.type() === "error") errs.push(m.text()); });
+  page.on("console", (m) => { if (m.type() === "error" && !(m.location().url || "").endsWith("favicon.ico")) errs.push(m.text() + (m.location().url ? " @ " + m.location().url : "")); });
   page.on("pageerror", (e) => errs.push(String(e)));
-  await page.goto(`http://127.0.0.1:${port}/${PAGE}`, { waitUntil: "load" });
+  page.on("response", (r) => { if (r.status() >= 400 && !r.url().endsWith("favicon.ico")) missing.push(r.status() + " " + r.url()); });
+  await page.goto(BASE ? BASE + PAGE : `http://127.0.0.1:${port}/${PAGE}`, { waitUntil: "load" });
   await page.waitForTimeout(300);
 
   const info = await page.evaluate(() => ({
@@ -44,7 +48,7 @@ try {
     widgets: [...document.querySelectorAll("[data-widget]")].map((h) => ({ id: h.id, type: h.dataset.widget, err: h.querySelector(".w-err")?.textContent || null, readout: h.querySelector(".readout")?.textContent || null, ref: h.dataset.configRef || null, inline: h.dataset.config || null })),
   }));
   if (info.overflow > 1) fails.push(`horizontal overflow ${info.overflow}px at 390 px`);
-  const html = readFileSync(join(ROOT, PAGE), "utf8");
+  const html = BASE ? await (await fetch(BASE + PAGE)).text() : readFileSync(join(ROOT, PAGE), "utf8");
   for (const w of info.widgets) {
     if (w.err) { fails.push(`${w.id || w.type}: ${w.err}`); continue; }
     const fn = W.compute[w.type]; if (!fn || !w.readout) continue;
@@ -57,8 +61,9 @@ try {
   // interactions
   const first = await page.$("[data-widget=lab] input[type=range]");
   if (first) { const before = await page.$eval("[data-widget=lab] .readout", (e) => e.textContent);
-    await first.evaluate((e) => { e.value = e.max; e.dispatchEvent(new Event("input")); });
-    const after = await page.$eval("[data-widget=lab] .readout", (e) => e.textContent);
+    let after = before;
+    for (const end of ["max", "min"]) { await first.evaluate((e, k) => { e.value = e[k]; e.dispatchEvent(new Event("input")); }, end);
+      after = await page.$eval("[data-widget=lab] .readout", (e) => e.textContent); if (after !== before) break; }
     if (before === after) fails.push("lab slider did not change the readout"); else console.log("ok  lab slider changes the readout"); }
   const node = await page.$("[data-widget=cascade] .w-node:not(.seed)");
   if (node) { const before = await page.$eval("[data-widget=cascade] .readout", (e) => e.textContent);

@@ -22,11 +22,11 @@ date: 2026-10-17
 | S8 | writer (Sonnet) | Kunhao's notes | revisions, note answers, `rule-proposals.md` | each note closed |
 | S9 | meta-manager | everything | WRITING / rubric updates (with Kunhao's OK), `learner/state.md`, `phase2/log.md` | — |
 
-**Post folder:** `posts/<yyyy-mm-slug>/`. Copy `build.mjs` from post 01 and add the component library (`widgets.js`, `widgets.css`). Web sources the writer relies on are saved as text in `posts/<slug>/sources/` with their URL and access date, so the checker can verify them without the network.
+**Post folder:** `posts/<yyyy-mm-slug>/` with `post.json` (title, short, num, date, summary, cite regex → key). Build with `node site/ai4read/build-post.mjs posts/<slug> [--site]`. It combines the shared template (`site/ai4read/template/`: style, annotation sidebar, audio player, guesses, citation pop-overs) with the component library. Web sources the writer relies on are saved as text in `posts/<slug>/sources/` with their URL and access date, so the checker can verify them without the network.
 
 **Commands**
 - Widget numbers: `node site/ai4read/components/check.mjs posts/<slug>/src/content.html`.
-- Render: `node posts/<slug>/build.mjs --site`, then `node site/ai4read/components/test.mjs site/ai4read/dist/<slug>/index.html`.
+- Render: `node site/ai4read/build-post.mjs posts/<slug> --site`, then `node site/ai4read/dev/mock-server.mjs 8799 &` and `node site/ai4read/components/test.mjs /ai4read/<slug>/ --base http://127.0.0.1:8799`.
 - Audio: `/tmp/ttsenv/bin/python scripts/tts_post.py posts/<slug>`. This tags the MP3s automatically.
 
 **Log** (`phase2/log.md`, one block per stage): the agent and model, its tokens and duration (from the agent result), the gate result, and the number of findings. These numbers set the 2b cost estimate.
