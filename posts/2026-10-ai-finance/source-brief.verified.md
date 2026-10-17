@@ -1117,7 +1117,7 @@ The writer must rerun the toy in `check.mjs`.
 
 **Numbers.** None.
 
-**Instance.** Corporations as legal persons. In Truth Terminal's case (B8), the money and the liability ran to people: the donor, the handler and the token's creator.
+**Instance.** Corporations as legal persons. Truth Terminal (B8): people donated to it (Cointelegraph: the Bitcoin was sent "to the bot's wallet"), built it and promoted its token. **Neither source discusses liability.** [Corrected by meta-manager after S5 round 1; the earlier text inferred that "money and liability ran to people".]
 
 **Careful!** Harari's personhood claim is a *policy question*. We have no law or court sources on AI legal personhood, so the post must not state the legal position.
 
