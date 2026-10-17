@@ -10,3 +10,10 @@ description: One notation for all AI4Read posts. Extend it when a post introduce
 - F_N (Shannon): uncertainty of the next symbol given the N−1 previous symbols; F_0 = log of alphabet size.
 - Attention: Q, K, V matrices; d_k key dimension; softmax(s)_i = e^{s_i} / Σ_j e^{s_j}.
 - θ: hidden concept / parameter; θ* the true one.
+
+## Added for post 02 (2026-10)
+- V_D, V_R, V_O: variety (log₂ of the number of states) of disturbances, regulator, outcomes (Ashby). H(R|D) is the conditional entropy Ashby writes H_D(R).
+- ρ: pairwise correlation of errors; N_eff = N/(1 + (N−1)ρ): effective number of independent opinions.
+- λ: loss given default; κ: capital multiplier (cascade toy).
+- m: share of traders following one model; A, G: chase gain and pull-back gain (herding toy).
+- Link types used in the lens lines: same-math, structural analogy, metaphor.
