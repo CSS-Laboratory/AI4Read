@@ -15,3 +15,5 @@ site/ai4read/dist/*/audio/
 !posts/*/audio/*.mp3
 .wrangler/
 phase2/prompts/build/
+posts/*/sources/*
+!posts/*/sources/MANIFEST.md
