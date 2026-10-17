@@ -73,3 +73,7 @@ accessed: 2026-10-17
 | Harari claims 16–19 (Big Think, OfficeChai, FT op-ed via Infobae/Buenos Aires Times, IMF F&D Café) and claim 20 | Not fetched. Claims 17–19 stay secondary; claim 20 stays "do not use". |
 | WEF podcast page (16 Mar 2026), Smith-Ruiu review, Konch (2026) | Not fetched. |
 | AI agents with wallets in 2025–26 beyond Truth Terminal (Coinbase agentic wallets, x402, stablecoin rails) | Leads only (search results listed Decrypt, Yahoo Finance, JD Supra/Fenwick, an arXiv paper 2605.00071). Fenwick and an HSBC "AI structured product" page were blocked (403). Not used. |
+
+## Added by meta-manager, 2026-10-17
+- **danielsson-2022-jbf-published.pdf/.txt**: Danielsson, J., Macrae, R., & Uthemann, A. (2022). Artificial intelligence and systemic risk. *Journal of Banking & Finance*, 140, 106290. https://doi.org/10.1016/j.jbankfin.2021.106290. Open access (CC BY 4.0) from LSE Research Online, https://researchonline.lse.ac.uk/id/eprint/111601/4/Danielsson_artificial_intelligence_and_systemic_risk_published.pdf. Accessed 2026-10-17. Journal page numbers.
+- **danielsson-2019-wp.pdf**: the June 2019 working-paper version (riskresearch.org, authors' site). Use it only to cross-check.

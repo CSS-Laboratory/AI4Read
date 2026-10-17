@@ -1,0 +1,1 @@
+window.POST={"slug":"2026-10-ai-finance","title":"Can AI invent a new kind of finance, and what would that do to a human-centred system?","album":"Post 02 · AI-made finance","prefix":"ai4read-p02","mp3Name":"AI4Read-02-2026-10-ai-finance.mp3","audioMB":0};window.CHAPTERS=[];

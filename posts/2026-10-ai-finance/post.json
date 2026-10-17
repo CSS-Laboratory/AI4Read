@@ -1,0 +1,150 @@
+{
+ "title": "Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+ "short": "AI-made finance",
+ "num": 2,
+ "date": "2026-10-17",
+ "summary": "Harari warns that AI could make financial devices no human understands. We separate what he asserts, imagines and asks from what the evidence supports, then test it through information theory, control, correlation and social reality, with toy models you can break.",
+ "cites": [
+  [
+   "BIS",
+   "harari-bis"
+  ],
+  [
+   "WEF",
+   "harari-wef"
+  ],
+  [
+   "Guardian 2023",
+   "guardian-2023"
+  ],
+  [
+   "Nexus",
+   "nexus"
+  ],
+  [
+   "Ynet",
+   "ynet-2023"
+  ],
+  [
+   "FCIC",
+   "fcic"
+  ],
+  [
+   "Kirilenko",
+   "kkst"
+  ],
+  [
+   "Calvano",
+   "calvano"
+  ],
+  [
+   "Lopez-Lira",
+   "llt"
+  ],
+  [
+   "Scheurer",
+   "scheurer"
+  ],
+  [
+   "FSB",
+   "fsb"
+  ],
+  [
+   "Cointelegraph",
+   "truth-ct"
+  ],
+  [
+   "Decrypt",
+   "truth-dec"
+  ],
+  [
+   "Luo et al",
+   "oql"
+  ],
+  [
+   "Mridul",
+   "ai4c"
+  ],
+  [
+   "Mik 2026",
+   "mik"
+  ],
+  [
+   "Dütting",
+   "dfnpr"
+  ],
+  [
+   "Buehler",
+   "bgtw"
+  ],
+  [
+   "Shannon",
+   "shannon"
+  ],
+  [
+   "Cover and Thomas",
+   "cover"
+  ],
+  [
+   "Arora",
+   "arora"
+  ],
+  [
+   "Akerlof",
+   "akerlof"
+  ],
+  [
+   "Ashby",
+   "ashby"
+  ],
+  [
+   "Danielsson and Uthemann",
+   "du"
+  ],
+  [
+   "Danielsson et al",
+   "dmu"
+  ],
+  [
+   "MIT Sloan",
+   "mitsloan"
+  ],
+  [
+   "Keynes",
+   "keynes"
+  ],
+  [
+   "Granovetter",
+   "granovetter"
+  ],
+  [
+   "SEP",
+   "sep"
+  ],
+  [
+   "Dennett",
+   "dennett"
+  ],
+  [
+   "Lupia",
+   "lupia"
+  ],
+  [
+   "Poole",
+   "poole"
+  ],
+  [
+   "Fox",
+   "fox"
+  ],
+  [
+   "Narayanan",
+   "nk"
+  ]
+ ],
+ "code": {
+  "code-1": "notebook/ex1_neff.py",
+  "code-2": "notebook/ex2_cascade.py",
+  "code-3": "notebook/ex3_herding.py"
+ }
+}
