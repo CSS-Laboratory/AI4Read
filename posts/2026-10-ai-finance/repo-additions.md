@@ -22,7 +22,7 @@ description: Proposed additions to toyworlds.md and notation.md for post 02, to 
 - Four loans of 10; junior tranche 20, senior tranche 20; default chance p. Senior loses with chance 4p³(1−p) + p⁴ (independent) or p (one common factor). p = 0.1: 0.370% vs 10% (27×); p = 0.02: 0.0032% vs 2% (634.5×).
 
 ### W8 · Contract village (post 02, extends W1)
-- Four weather words; a contract pays 0–9 for each: 10⁴ contracts, 13.29 bits; at most 2^k − 1 have a description shorter than k bits (63 at k = 6). Informed-seller pool: 100 assets, 10 junk; plain pool every 10-set = 45, lemon cost 5. C(100,10) = 17,310,309,456,440 is beside the point: with a derivative on top, hardness lies in detecting where the seller put the junk (Arora et al. pp. 3-5, under a conjecture).
+- Four weather words; a contract pays 0–9 for each: 10⁴ contracts, 13.29 bits; at most 2^k − 1 have a description shorter than k bits (63 at k = 6). Informed-seller pool: 100 assets, 10 junk; plain pool every 10-set = 45, lemon cost 5. The page no longer quotes C(100,10) (brute force is beside the point): with a derivative on top, hardness lies in detecting where the seller put the junk (Arora et al. pp. 3-5, under a conjecture). Tiny toy: 6 assets, 3 products of 2 (pays 1 iff both pay), 2 junk assets: junk spread over two products gives total 1/4; both in one product gives 1/2; Δ(2) = 3/4 − 1/4 = 1/2.
 
 ## notation.md
 - V_D, V_R, V_O: variety (log₂ of the number of states) of disturbances, regulator, outcomes (Ashby). H(R|D) is the conditional entropy Ashby writes H_D(R); the reprint's H_D(E) is a misprint.

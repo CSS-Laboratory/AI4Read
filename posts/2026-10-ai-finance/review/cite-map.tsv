@@ -2,52 +2,60 @@ hook	BIS 2024 [3:00]	harari-bis	named
 hook	BIS 2024 [7:18]	harari-bis	named
 hook	BIS 2024 [8:59]–[9:28]	harari-bis	named
 home	BIS 2024 [5:14]	harari-bis	named
-home	[16:21]	harari-bis	prose
-home	WEF 2026 [2:47]	harari-wef	named
-home	[5:57]	harari-wef	prose
+home	WEF 2026 [5:48]–[5:57]	harari-wef	named
+home	WEF 2026 [16:28]	harari-wef	named
+home	BIS 2024 [30:24]	harari-bis	named
 home	BIS 2024 [9:54]	harari-bis	named
 home	[10:19]	harari-bis	prose
 home	[10:27]	harari-bis	prose
-home	WEF 2026 [31:11]	harari-wef	named
-home	[31:54]	harari-wef	prose
-home	[32:00]	harari-wef	prose
-home	[19:11]	harari-wef	prose
 home	WEF 2026 [8:07]	harari-wef	named
 home	BIS 2024 [21:37]	harari-bis	named
 home	[22:57]	harari-bis	prose
-home	WEF 2026 [19:11]	harari-wef	named
+home	Poole 2024	poole	named
+home	BIS 2024 [27:04]	harari-bis	named
+home	[30:07]	harari-bis	prose
+home	WEF 2026 [2:00]	harari-wef	named
+home	[2:47]	harari-wef	prose
+home	WEF 2026 [5:48]	harari-wef	named
+home	[5:57]	harari-wef	prose
+home	[10:36]	harari-wef	prose
 home	BIS 2024 [5:14]	harari-bis	named
 home	[5:27]	harari-bis	prose
 home	[16:21]	harari-bis	prose
 home	[25:14]	harari-bis	prose
 home	[25:57]	harari-bis	prose
-home	WEF 2026 [2:47]	harari-wef	named
-home	[5:57]	harari-wef	prose
-home	[10:36]	harari-wef	prose
-home	[26:33]	harari-wef	prose
+home	[27:04]	harari-bis	prose
+home	[30:07]	harari-bis	prose
 home	Guardian 2023	guardian-2023	named
-home	BIS 2024 [3:00]	harari-bis	named
-home	[3:30]	harari-bis	prose
-home	[9:54]	harari-bis	prose
+home	Ynet 2023	ynet-2023	named
+home	BIS 2024 [23:15]	harari-bis	named
+home	BIS 2024 [30:24]	harari-bis	named
+home	WEF 2026 [31:11]	harari-wef	named
+home	WEF 2026 [16:28]	harari-wef	named
+home	[16:36]	harari-wef	prose
+home	[16:47]	harari-wef	prose
+home	[19:11]	harari-wef	prose
+home	[19:23]	harari-wef	prose
+home	[26:29]	harari-wef	prose
+home	[26:35]	harari-wef	prose
+home	BIS 2024 [9:54]	harari-bis	named
 home	[10:19]	harari-bis	prose
 home	[10:27]	harari-bis	prose
-home	[30:24]	harari-bis	prose
-home	WEF 2026 [30:55]	harari-wef	named
-home	[31:11]	harari-wef	prose
+home	WEF 2026 [17:29]	harari-wef	named
+home	[31:59]	harari-wef	prose
+home	[31:54]	harari-wef	prose
+home	BIS 2024 [3:00]	harari-bis	named
+home	[3:30]	harari-bis	prose
 home	Guardian 2023	guardian-2023	named
-home	WEF 2026 [16:28]	harari-wef	named
-home	[19:11]	harari-wef	prose
-home	[8:07]	harari-wef	prose
+home	Guardian 2024	guardian-2024	named
+home	WEF 2026 [8:07]	harari-wef	named
 home	[11:39]	harari-wef	prose
 home	BIS 2024 [20:46]	harari-bis	named
 home	[12:42]	harari-bis	prose
 home	[21:37]	harari-bis	prose
 home	[22:57]	harari-bis	prose
-home	[23:15]	harari-bis	prose
-home	Poole 2024	poole	named
-home	WEF 2026 [5:20]	harari-wef	named
-home	BIS 2024 [5:14]	harari-bis	named
-home	WEF 2026 [5:57]	harari-wef	named
+home	Guardian 2023	guardian-2023	named
+home	Guardian 2024	guardian-2024	named
 home	BIS 2024 [9:28]	harari-bis	named
 home	FCIC 2011, p. 128	fcic	named
 home	FCIC 2011, p. 149	fcic	named
@@ -56,8 +64,10 @@ home	Kirilenko et al. 2014, abstract	kkst	named
 home	Narayanan and Kapoor 2025, Part I	nk	named
 llm	Decrypt 2024	truth-dec	named
 llm	Luo et al. 2026, abstract	oql	named
-llm	Mik 2026, abstract	mik	named
+llm	Mik 2026, introduction	mik	named
 llm	Cointelegraph 2024	truth-ct	named
+llm	Cointelegraph 2024	truth-ct	named
+llm	Decrypt 2024	truth-dec	named
 llm	Cointelegraph 2024	truth-ct	named
 llm	Decrypt 2024	truth-dec	named
 llm	FSB 2024, p. 1	fsb	named
@@ -87,10 +97,11 @@ lens-control	Ashby 1956, p. 207	ashby	named
 lens-control	Ashby 1956, p. 209	ashby	named
 lens-control	Ashby 1956, p. 246	ashby	named
 lens-control	Danielsson and Uthemann 2025, abstract	du	named
+lens-control	introduction	du	prose
+lens-control	abstract	du	prose
 lens-control	Danielsson et al. 2022, p. 7	dmu	named
 lens-control	Ashby 1956, p. 247	ashby	named
 lens-control	FSB 2024, press release	fsb	named
-lens-control	Danielsson and Uthemann 2025, introduction	du	named
 lens-control	Narayanan and Kapoor 2025, introduction	nk	named
 lens-control	Ashby 1956, p. 207	ashby	named
 lens-control	Ashby 1956, p. 208	ashby	named
@@ -106,9 +117,12 @@ lens-social	p. 207	lupia	prose
 lens-social	Scheurer et al. 2024, abstract	scheurer	named
 lens-social	MIT Sloan 2023	mitsloan	named
 lens-social	WEF 2026 [16:28]	harari-wef	named
+lens-social	[16:47]	harari-wef	prose
+lens-social	[19:11]	harari-wef	prose
 lens-social	Ynet 2023	ynet-2023	named
 lens-social	BIS 2024 [23:15]	harari-bis	named
 lens-social	WEF 2026 [5:57]	harari-wef	named
+lens-social	[5:48]	harari-wef	prose
 lens-social	Ynet 2023	ynet-2023	named
 lens-social	WEF 2026 [6:06]	harari-wef	named
 lens-social	[8:07]	harari-wef	prose

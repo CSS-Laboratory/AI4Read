@@ -1,3 +1,2 @@
-.lt.metaphor{background:transparent;color:var(--ink);border:1px dashed var(--ink)}
-
 .srcs li{overflow-wrap:anywhere;word-break:break-word}
+.tbl.txt td,.tbl.txt th{text-align:left}

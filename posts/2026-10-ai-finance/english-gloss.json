@@ -98,7 +98,7 @@
  "Reporting verbs": {
   "partOfSpeech": "pattern",
   "level": "C1",
-  "definition": "choose the verb by how strongly the speaker committed: asserts = states as true; imagines = pictures a scenario; asks = poses a question; warns = cautions",
+  "definition": "choose the verb by how strongly the speaker committed: asserts = states as true; predicts = says what will happen; imagines = pictures a scenario; asks = poses a question; warns = cautions",
   "register": "academic"
  },
  "Three layers": {
