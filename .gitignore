@@ -14,3 +14,4 @@ site/ai4read/dist/*/audio/
 # post audio is published to R2 from here
 !posts/*/audio/*.mp3
 .wrangler/
+phase2/prompts/build/
