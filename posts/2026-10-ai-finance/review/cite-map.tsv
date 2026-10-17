@@ -20,11 +20,8 @@ home	BIS 2024 [9:28]	harari-bis	named
 home	FCIC 2011, p. 128	fcic	named
 home	FCIC 2011, p. 149	fcic	named
 home	FCIC 2011, p. 28	fcic	named
-home	FCIC 2011, p. 45	fcic	named
 home	Kirilenko et al. 2014, abstract	kkst	named
 home	Narayanan and Kapoor 2025, Part I	nk	named
-home	Calvano et al. 2020, p. 3267	calvano	named
-home	p. 3294	calvano	prose
 llm	Decrypt 2024	truth-dec	named
 llm	WEF 2026 [2:01]	harari-wef	named
 llm	Luo et al. 2026, abstract	oql	named
@@ -36,7 +33,6 @@ llm	MIT Sloan 2023	mitsloan	named
 llm	Lopez-Lira and Tang 2025, p. 6	llt	named
 llm	Scheurer et al. 2024, p. 1	scheurer	named
 llm	Scheurer et al. 2024, p. 8	scheurer	named
-llm	BIS 2024 [30:24]	harari-bis	named
 llm	Dütting et al. 2019, p. 3	dfnpr	named
 llm	Buehler et al. 2018, abstract	bgtw	named
 llm	FSB 2024, p. 1	fsb	named
@@ -48,14 +44,11 @@ lens-info	Cover and Thomas 1991, p. 151	cover	named
 lens-info	p. 163	cover	prose
 lens-info	Arora et al. 2009, p. 2	arora	named
 lens-info	Akerlof 1970, pp. 489–490	akerlof	named
-lens-info	Arora et al. 2009, p. 2	arora	named
 lens-info	Arora et al. 2009, abstract	arora	named
 lens-info	p. 1	arora	prose
-lens-info	p. 3	arora	prose
 lens-info	p. 12	arora	prose
 lens-info	BIS 2024 [10:08]	harari-bis	named
 lens-info	Arora et al. 2009, p. 12	arora	named
-lens-info	p. 11	arora	prose
 lens-control	Ashby 1956, p. 207	ashby	named
 lens-control	Ashby 1956, p. 209	ashby	named
 lens-control	Ashby 1956, p. 246	ashby	named
@@ -65,13 +58,10 @@ lens-control	Ashby 1956, p. 247	ashby	named
 lens-control	FSB 2024, press release	fsb	named
 lens-control	Danielsson and Uthemann 2025, introduction	du	named
 lens-control	Narayanan and Kapoor 2025, introduction	nk	named
-lens-control	Narayanan and Kapoor 2025, Part II	nk	named
 lens-decision	Keynes 1936, ch. 12, § IV (standard numbering)	keynes	named
 lens-decision	§ V	keynes	prose
 lens-decision	FSB 2024, p. 20	fsb	named
 lens-decision	FSB 2024, p. 21	fsb	named
-lens-decision	FSB 2024, p. 21	fsb	named
-lens-decision	Danielsson et al. 2017, p. 10	dmu	named
 lens-decision	Granovetter 1978, pp. 1424–1425	granovetter	named
 lens-social	SEP, Social Ontology, § 4.2.3	sep	named
 lens-social	SEP § 5.6	sep	named

@@ -1,0 +1,164 @@
+{
+ "opaque / opacity": {
+  "partOfSpeech": "adjective / noun",
+  "level": "B2",
+  "definition": "hard to see through or understand; opacity is the quality of being hard to understand",
+  "register": "neutral/academic"
+ },
+ "to be exposed to": {
+  "partOfSpeech": "verb phrase",
+  "level": "B2",
+  "definition": "to be at risk of being affected by something, for example a loss",
+  "register": "neutral/finance"
+ },
+ "a single point of failure": {
+  "partOfSpeech": "noun phrase",
+  "level": "C1",
+  "definition": "one part of a system whose failure stops or harms the whole system",
+  "register": "technical"
+ },
+ "in lockstep": {
+  "partOfSpeech": "adverbial phrase",
+  "level": "C1",
+  "definition": "moving or changing together, exactly at the same time",
+  "register": "neutral/journalistic"
+ },
+ "to amplify / to dampen": {
+  "partOfSpeech": "verbs",
+  "level": "B2",
+  "definition": "amplify = to make stronger or larger; dampen = to make weaker or smaller",
+  "register": "neutral/technical"
+ },
+ "a feedback loop": {
+  "partOfSpeech": "noun phrase",
+  "level": "B2",
+  "definition": "a process in which a result feeds back into the cause and changes it again",
+  "register": "technical"
+ },
+ "a tipping point": {
+  "partOfSpeech": "noun phrase",
+  "level": "B2",
+  "definition": "the moment when a small change makes a large and often irreversible change happen",
+  "register": "neutral"
+ },
+ "a circuit breaker": {
+  "partOfSpeech": "noun phrase",
+  "level": "B2",
+  "definition": "a rule or device that pauses a system, for example trading, when things move too fast",
+  "register": "technical/finance"
+ },
+ "to rubber-stamp": {
+  "partOfSpeech": "verb",
+  "level": "C1",
+  "definition": "to approve something automatically without really checking it",
+  "register": "informal/critical"
+ },
+ "to be on the hook for": {
+  "partOfSpeech": "verb phrase",
+  "level": "C1",
+  "definition": "to be responsible, especially for paying for something",
+  "register": "informal"
+ },
+ "provided that / as long as / unless": {
+  "partOfSpeech": "conjunctions",
+  "level": "B2",
+  "definition": "provided that and as long as introduce a condition that must be true; unless means 'if not'",
+  "register": "neutral"
+ },
+ "to conflate X with Y": {
+  "partOfSpeech": "verb phrase",
+  "level": "C1",
+  "definition": "to treat two different things as if they were the same",
+  "register": "academic"
+ },
+ "it stands to reason that": {
+  "partOfSpeech": "phrase",
+  "level": "C1",
+  "definition": "it is logical or obvious that",
+  "register": "neutral"
+ },
+ "what remains to be seen is whether": {
+  "partOfSpeech": "phrase",
+  "level": "C1",
+  "definition": "we do not yet know whether; the answer is still open",
+  "register": "neutral/academic"
+ },
+ "with the caveat that": {
+  "partOfSpeech": "phrase",
+  "level": "C1",
+  "definition": "adding a warning or condition to what you just said",
+  "register": "academic"
+ },
+ "by no means": {
+  "partOfSpeech": "adverbial phrase",
+  "level": "B2",
+  "definition": "not at all; certainly not",
+  "register": "neutral/formal"
+ },
+ "that’s a big if": {
+  "partOfSpeech": "phrase",
+  "level": "C1",
+  "definition": "the condition is very uncertain, so the conclusion is doubtful",
+  "register": "informal"
+ },
+ "to cut both ways": {
+  "partOfSpeech": "verb phrase",
+  "level": "C1",
+  "definition": "to have both good and bad effects, or to support both sides of an argument",
+  "register": "neutral"
+ },
+ "to read too much into something": {
+  "partOfSpeech": "verb phrase",
+  "level": "C1",
+  "definition": "to find more meaning in something than is really there",
+  "register": "neutral"
+ },
+ "Reporting verbs": {
+  "partOfSpeech": "pattern",
+  "level": "C1",
+  "definition": "choose the verb by how strongly the speaker committed: asserts = states as true; imagines = pictures a scenario; asks = poses a question; warns = cautions",
+  "register": "academic"
+ },
+ "Three layers": {
+  "partOfSpeech": "pattern",
+  "level": "C1",
+  "definition": "separate what was said, what the evidence shows, and your own interpretation",
+  "register": "academic"
+ },
+ "Hedging ladder": {
+  "partOfSpeech": "pattern",
+  "level": "C1",
+  "definition": "verbs ordered from strong to weak commitment: shows, suggests, is consistent with, hints at",
+  "register": "academic"
+ },
+ "Concession, then your point": {
+  "partOfSpeech": "pattern",
+  "level": "C1",
+  "definition": "admit a point with 'Granted' or 'While it is true that', then give your own point with 'But'",
+  "register": "academic"
+ },
+ "if-clause without will": {
+  "partOfSpeech": "fix",
+  "level": "B2",
+  "definition": "after if, use the present tense for a future condition",
+  "register": "grammar",
+  "wrong": "If the models will fail, …",
+  "right": "If the models fail, …"
+ },
+ "evidence (uncountable)": {
+  "partOfSpeech": "fix",
+  "level": "B2",
+  "definition": "evidence, information and advice have no plural; count them with 'a piece of'",
+  "register": "grammar",
+  "wrong": "The paper gives many evidences.",
+  "right": "The paper gives some evidence."
+ },
+ "general nouns, no article": {
+  "partOfSpeech": "fix",
+  "level": "B2",
+  "definition": "abstract or general nouns take no article in general statements; use 'the' for something specific",
+  "register": "grammar",
+  "wrong": "The finance is complicated.",
+  "right": "Finance is complicated. / The financial system is complicated."
+ }
+}
