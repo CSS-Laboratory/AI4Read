@@ -1,0 +1,38 @@
+[
+ {
+  "id": "hook",
+  "title": "Two contracts",
+  "hash": "0611400764a8",
+  "dur": 154.1
+ },
+ {
+  "id": "guess",
+  "title": "Guess first",
+  "hash": "fdd7152582ec",
+  "dur": 56.5
+ },
+ {
+  "id": "home",
+  "title": "Finance before language models",
+  "hash": "dd1099396701",
+  "dur": 272.1
+ },
+ {
+  "id": "llm",
+  "title": "What LLM agents add",
+  "hash": "86ff5034ae64",
+  "dur": 215.8
+ },
+ {
+  "id": "lens-info",
+  "title": "Lens one: information theory",
+  "hash": "59c4208c6d74",
+  "dur": 258.2
+ },
+ {
+  "id": "lens-control",
+  "title": "Lens two: control",
+  "hash": "d2ff5bf6bd9b",
+  "dur": 184.6
+ }
+]
