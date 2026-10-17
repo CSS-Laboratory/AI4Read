@@ -21,3 +21,4 @@ One block per stage. Token counts come from the agent results (all subagent toke
 | S5 round 2 | checker B (Sonnet) | 354,160 | 19.0 min | 0 / 2 / 17; caught the "undated forecasts filed as hedged" major |
 | S5 round 2 | critic (Sonnet) | 173,682 | 4.5 min | 3/3/4/4/3 |
 | — | meta-manager | — | — | Harari classification oscillated between rounds, so a binding four-group table was written for round 3. New standard word counter `scripts/wordcount.py` (main text 6,548). |
+| S5→S4 round 3 | writer (Sonnet 5.5, resumed) | 370,599 | 15.7 min | All majors and minors answered; Harari four-group table and summary sentence in place; chain diagram rebuilt; Lens 1 toy (6 assets, 3 products); main text 6,942 words plus 1,853 in fold-outs; 130 citations; 15/15 widgets; render PASS; 5 clipped formulas fixed. |
