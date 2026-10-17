@@ -116,3 +116,9 @@ Optional `lab`: N_eff versus ρ.
 3. **Lens 1:** AI-made instruments are optimised, not random, so the counting argument shows only that explainable novelty is *rare among possible* contracts. The step from rarity to opacity is Arora's (computational hardness plus information asymmetry), and it must be cited from the paper itself.
 4. **Lens 4** should carry Kunhao's actual question: what "human-centred" institutions rely on. That means acceptance (money as a status function), accountability (delegation, Lupia) and legal personhood (Harari, WEF 2026; Milei/FT is secondary only).
 5. Add W5 (six banks) to `toyworlds.md` when the writer fixes its numbers.
+
+## Kunhao's decisions (2026-10-17) — S0 GO
+1. Keep Harari's "AI" and add one section on what LLM agents add (natural-language contracts, agents with wallets, shared foundation models).
+2. All four lenses; Lens 4 compact; collusion as an optional fold-out.
+3. End with conditionals plus a short reading labelled "ours", with signs to watch that would change it.
+4. Kunhao will add *Nexus* (2024), Searle's *The Construction of Social Reality*, and Haldane & May 2011 to the library. Their units are added in an S1b pass.
