@@ -74,7 +74,7 @@ Use `\n` in a readout for a new line.
 - `nodes`: `[{id, x, y, w=90, h=34, label (\n for a new line), kind: bx|hl|soft|leaf|emb|ghost, round}]`.
 - `edges`: `[{id, from, to, label, dashed, dx, dy}]`.
 - `labels`: `[{x, y, text, a, c}]`. `width`, `height`.
-- `steps`: `[{show:[ids], text}]`. Items named in no step are always shown; items in a step appear from that step on.
+- `steps`: `[{show:[ids], text}]`. Items named in no step are always shown; items in a step appear from that step on. With `"preview": true`, items of later steps are drawn faded from the start, so a tall diagram is never mostly blank on a phone.
 
 ### `stepper`: walk through a worked table row by row
 `head`, `rows` (strings; compute them with `check.mjs` or code first), `notes` (one per row).

@@ -10,7 +10,8 @@ home	[10:19]	harari-bis	prose
 home	[10:27]	harari-bis	prose
 home	WEF 2026 [8:07]	harari-wef	named
 home	BIS 2024 [21:37]	harari-bis	named
-home	[22:57]	harari-bis	prose
+home	[22:56]	harari-bis	prose
+home	Guardian 2024	guardian-2024	named
 home	Poole 2024	poole	named
 home	BIS 2024 [27:04]	harari-bis	named
 home	[30:07]	harari-bis	prose
@@ -26,6 +27,9 @@ home	[25:14]	harari-bis	prose
 home	[25:57]	harari-bis	prose
 home	[27:04]	harari-bis	prose
 home	[30:07]	harari-bis	prose
+home	Guardian 2023	guardian-2023	named
+home	WEF 2026 [2:58]	harari-wef	named
+home	[3:26]	harari-wef	prose
 home	Guardian 2023	guardian-2023	named
 home	Ynet 2023	ynet-2023	named
 home	BIS 2024 [23:15]	harari-bis	named
@@ -45,15 +49,17 @@ home	WEF 2026 [17:29]	harari-wef	named
 home	[31:59]	harari-wef	prose
 home	[31:54]	harari-wef	prose
 home	BIS 2024 [3:00]	harari-bis	named
+home	[3:09]	harari-bis	prose
 home	[3:30]	harari-bis	prose
 home	Guardian 2023	guardian-2023	named
 home	Guardian 2024	guardian-2024	named
 home	WEF 2026 [8:07]	harari-wef	named
 home	[11:39]	harari-wef	prose
+home	BIS 2024 [9:21]	harari-bis	named
 home	BIS 2024 [20:46]	harari-bis	named
 home	[12:42]	harari-bis	prose
 home	[21:37]	harari-bis	prose
-home	[22:57]	harari-bis	prose
+home	[22:56]	harari-bis	prose
 home	Guardian 2023	guardian-2023	named
 home	Guardian 2024	guardian-2024	named
 home	BIS 2024 [9:28]	harari-bis	named
@@ -97,6 +103,7 @@ lens-control	Ashby 1956, p. 207	ashby	named
 lens-control	Ashby 1956, p. 209	ashby	named
 lens-control	Ashby 1956, p. 246	ashby	named
 lens-control	Danielsson and Uthemann 2025, abstract	du	named
+lens-control	abstract	du	prose
 lens-control	introduction	du	prose
 lens-control	abstract	du	prose
 lens-control	Danielsson et al. 2022, p. 7	dmu	named
@@ -104,6 +111,7 @@ lens-control	Ashby 1956, p. 247	ashby	named
 lens-control	FSB 2024, press release	fsb	named
 lens-control	Narayanan and Kapoor 2025, introduction	nk	named
 lens-control	Ashby 1956, p. 207	ashby	named
+lens-control	Cover and Thomas 1991	cover	named
 lens-control	Ashby 1956, p. 208	ashby	named
 lens-decision	Keynes 1936, ch. 12, § IV (standard numbering)	keynes	named
 lens-decision	§ V	keynes	prose
@@ -117,13 +125,12 @@ lens-social	p. 207	lupia	prose
 lens-social	Scheurer et al. 2024, abstract	scheurer	named
 lens-social	MIT Sloan 2023	mitsloan	named
 lens-social	WEF 2026 [16:28]	harari-wef	named
+lens-social	[14:38]	harari-wef	prose
+lens-social	[15:14]	harari-wef	prose
 lens-social	[16:47]	harari-wef	prose
 lens-social	[19:11]	harari-wef	prose
 lens-social	Ynet 2023	ynet-2023	named
-lens-social	BIS 2024 [23:15]	harari-bis	named
 lens-social	WEF 2026 [5:57]	harari-wef	named
-lens-social	[5:48]	harari-wef	prose
-lens-social	Ynet 2023	ynet-2023	named
 lens-social	WEF 2026 [6:06]	harari-wef	named
 lens-social	[8:07]	harari-wef	prose
 lens-social	[11:39]	harari-wef	prose

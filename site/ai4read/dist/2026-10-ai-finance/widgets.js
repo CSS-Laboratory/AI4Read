@@ -332,14 +332,19 @@
     const edgePt = (n, tx, ty) => { const w = (n.w || 90) / 2, h = (n.h || 34) / 2, dx = tx - n.x, dy = ty - n.y; const s = Math.min(w / Math.abs(dx || 1e-9), h / Math.abs(dy || 1e-9)); return [n.x + dx * Math.min(1, s), n.y + dy * Math.min(1, s)]; };
     const draw = () => {
       const on = steps ? new Set(steps.slice(0, step + 1).flatMap((s) => s.show || [])) : null;
-      const vis = (id) => !on || on.has(id) || !(steps.some((s) => (s.show || []).includes(id)));
+      const vis0 = (id) => !on || on.has(id) || !(steps.some((s) => (s.show || []).includes(id)));
+      // preview: items of later steps are drawn faded instead of hidden, so the frame is never mostly blank
+      const vis = (id) => vis0(id) || !!cfg.preview;
+      const fade = (id) => (cfg.preview && !vis0(id) ? ' opacity="0.22"' : "");
       let b = `<defs><marker id="dah${host.dataset.wid}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahd"/></marker></defs>`;
       (cfg.edges || []).forEach((e, i) => { const id = e.id || `e${i}`; if (!vis(id)) return; const a = pos[e.from], c = pos[e.to]; const [x1, y1] = edgePt(a, c.x, c.y), [x2, y2] = edgePt(c, a.x, a.y);
-        b += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" class="ar${e.dashed ? " dash" : ""}" marker-end="url(#dah${host.dataset.wid})"/>`;
-        if (e.label) b += `<text x="${(x1 + x2) / 2 + (e.dx || 0)}" y="${(y1 + y2) / 2 - 4 + (e.dy || 0)}" text-anchor="middle" class="ts">${esc(e.label)}</text>`; });
+        b += `<g${fade(id)}><line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" class="ar${e.dashed ? " dash" : ""}" marker-end="url(#dah${host.dataset.wid})"/>`;
+        if (e.label) b += `<text x="${(x1 + x2) / 2 + (e.dx || 0)}" y="${(y1 + y2) / 2 - 4 + (e.dy || 0)}" text-anchor="middle" class="ts">${esc(e.label)}</text>`;
+        b += `</g>`; });
       cfg.nodes.forEach((n) => { if (!vis(n.id)) return; const w = n.w || 90, h = n.h || 34, lines = String(n.label).split("\n");
-        b += `<rect x="${n.x - w / 2}" y="${n.y - h / 2}" width="${w}" height="${h}" rx="${n.round ? h / 2 : 5}" class="${n.kind || "bx"}"/>`;
-        lines.forEach((l, i) => { b += `<text x="${n.x}" y="${n.y + 4 + (i - (lines.length - 1) / 2) * 13}" text-anchor="middle" class="t"${n.size ? ` font-size="${n.size}"` : ""}>${esc(l)}</text>`; }); });
+        b += `<g${fade(n.id)}><rect x="${n.x - w / 2}" y="${n.y - h / 2}" width="${w}" height="${h}" rx="${n.round ? h / 2 : 5}" class="${n.kind || "bx"}"/>`;
+        lines.forEach((l, i) => { b += `<text x="${n.x}" y="${n.y + 4 + (i - (lines.length - 1) / 2) * 13}" text-anchor="middle" class="t"${n.size ? ` font-size="${n.size}"` : ""}>${esc(l)}</text>`; });
+        b += `</g>`; });
       (cfg.labels || []).forEach((l) => { b += `<text x="${l.x}" y="${l.y}" text-anchor="${l.a || "middle"}" class="${l.c || "ts"}">${esc(l.text)}</text>`; });
       fig.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="fig" role="img" aria-label="${esc(cfg.title || "diagram")}">${b}</svg>`;
       if (ro) ro.textContent = steps[step].text || "";

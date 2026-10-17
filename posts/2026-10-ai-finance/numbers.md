@@ -67,14 +67,13 @@ Widget readouts come from `components/check.mjs` on the final `content.html` (15
 | "zero evidence that AIs can feel anything" (at least for now) | WEF 2026 [8:07], [11:39] |
 | institutions and humans in the loop | BIS 2024 [21:37], [22:57] |
 | "money is really trust" | BIS 2024 [23:15] |
-| "Ten years from now, it will be too late" (a decision deadline, not a forecast) | WEF 2026 [19:11] |
+| "Ten years from now, it will be too late … in the courts, in the churches" (group 2: forecast; also a deadline for a decision) | WEF 2026 [19:11] |
 | "maybe nobody in the room" understands finance | WEF 2026 [30:55], [31:11], [31:54]–[32:00] |
 | "if laws are made of words..." | WEF 2026 [6:06] |
 | 36 minutes (Flash Crash) | Kirilenko et al. 2014 (brief B2) |
 | $50,000 in Bitcoin to the bot's wallet (11 July 2024) | Cointelegraph 2024 (14 Oct) |
 | $122 million (down from a $150 million peak, 14 Oct) | Cointelegraph 2024 |
 | over $214 million (16 Oct, per CoinGecko); "neither the bot nor its handler created the token" | Decrypt 2024 (published 16 Oct 2024) |
-| "two to three times higher" correlation | FCIC 2011, p. 149 |
 | $1,000 / 20% lemons / $800 / $200 | Arora et al. 2009, p. 2 (Akerlof's example as restated) |
 | Δ(n) formula (p. 5), Table 1 (p. 6); hardness (pp. 3–4); concessions (p. 12) | Arora et al. 2009 |
 | "will likely be unintelligible to humans" | Danielsson, Macrae and Uthemann 2022 (J. Banking & Finance 140, 106290), p. 7 |
@@ -89,3 +88,9 @@ Scheurer: "nearly (but not exactly) 0%" is the rate of insider trading under the
 Removed in round 3: the C(100,10) aside; the "approximately incentive compatible" sentence (RegretNet was never named on the page); the unsourced "could not foresee" (now "may not be able to ... or foresee").
 
 Removed in round 2: the Lopez-Lira and Tang figures (hit rates, Sharpe 6.54 → 1.22); the claim "liability ran to people"; the Dennett quotation.
+
+## Meta-manager changes after S5 round 3 (2026-10-18)
+| Number | Source |
+|---|---|
+| Lens 1 toy (product pays unless both assets default): healthy product 3/4; spread total 7/4 (12 of 15 placements); concentrated 3/2 (3 of 15); E[F] with no junk 9/4; Δ(2) = 3/4 | Python enumeration (meta-manager) |
+| Ladder 4 table: m = 0.2 → −0.9, −0.51, −0.189; m = 0.9 → −2.30, −3.94 | from the earlier worked numbers (unchanged) |
