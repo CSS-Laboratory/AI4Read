@@ -1,0 +1,609 @@
+{
+ "schema": "ai4read.english-pack/1",
+ "post": {
+  "slug": "2026-10-ai-finance",
+  "title": "Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+  "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+ },
+ "items": [
+  {
+   "externalId": "ai4read:2026-10-ai-finance:opaque-opacity",
+   "kind": "expression",
+   "group": "topic-phrases",
+   "headword": "opaque / opacity",
+   "sentence": "A contract can be opaque with short rules.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "topic-phrases"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "opaque",
+    "start": 18,
+    "end": 24
+   },
+   "partOfSpeech": "adjective / noun",
+   "level": "B2",
+   "definition": "hard to see through or understand; opacity is the quality of being hard to understand",
+   "register": "neutral/academic"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:to-be-exposed-to",
+   "kind": "expression",
+   "group": "topic-phrases",
+   "headword": "to be exposed to",
+   "sentence": "Y1 is exposed to all three X banks.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "topic-phrases"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "exposed to",
+    "start": 6,
+    "end": 16
+   },
+   "partOfSpeech": "verb phrase",
+   "level": "B2",
+   "definition": "to be at risk of being affected by something, for example a loss",
+   "register": "neutral/finance"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:a-single-point-of-failure",
+   "kind": "expression",
+   "group": "topic-phrases",
+   "headword": "a single point of failure",
+   "sentence": "One shared model can be a single point of failure.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "topic-phrases"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "a single point of failure",
+    "start": 24,
+    "end": 49
+   },
+   "partOfSpeech": "noun phrase",
+   "level": "C1",
+   "definition": "one part of a system whose failure stops or harms the whole system",
+   "register": "technical"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:in-lockstep",
+   "kind": "expression",
+   "group": "topic-phrases",
+   "headword": "in lockstep",
+   "sentence": "Models trained on the same data may move in lockstep.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "topic-phrases"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "in lockstep",
+    "start": 41,
+    "end": 52
+   },
+   "partOfSpeech": "adverbial phrase",
+   "level": "C1",
+   "definition": "moving or changing together, exactly at the same time",
+   "register": "neutral/journalistic"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:to-amplify-to-dampen",
+   "kind": "expression",
+   "group": "topic-phrases",
+   "headword": "to amplify / to dampen",
+   "sentence": "Trend-followers amplify shocks; value-buyers dampen them.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "topic-phrases"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "amplify",
+    "start": 16,
+    "end": 23
+   },
+   "partOfSpeech": "verbs",
+   "level": "B2",
+   "definition": "amplify = to make stronger or larger; dampen = to make weaker or smaller",
+   "register": "neutral/technical"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:a-feedback-loop",
+   "kind": "expression",
+   "group": "topic-phrases",
+   "headword": "a feedback loop",
+   "sentence": "More followers make the feedback loop stronger.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "topic-phrases"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "feedback loop",
+    "start": 24,
+    "end": 37
+   },
+   "partOfSpeech": "noun phrase",
+   "level": "B2",
+   "definition": "a process in which a result feeds back into the cause and changes it again",
+   "register": "technical"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:a-tipping-point",
+   "kind": "expression",
+   "group": "topic-phrases",
+   "headword": "a tipping point",
+   "sentence": "In the toy, \\(m=2/3\\) is a tipping point.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "topic-phrases"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "a tipping point",
+    "start": 25,
+    "end": 40
+   },
+   "partOfSpeech": "noun phrase",
+   "level": "B2",
+   "definition": "the moment when a small change makes a large and often irreversible change happen",
+   "register": "neutral"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:a-circuit-breaker",
+   "kind": "expression",
+   "group": "topic-phrases",
+   "headword": "a circuit breaker",
+   "sentence": "A circuit breaker pauses trading.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "topic-phrases"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "circuit breaker",
+    "start": 2,
+    "end": 17
+   },
+   "partOfSpeech": "noun phrase",
+   "level": "B2",
+   "definition": "a rule or device that pauses a system, for example trading, when things move too fast",
+   "register": "technical/finance"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:provided-that-as-long-as-unless",
+   "kind": "expression",
+   "group": "evidence-talk",
+   "headword": "provided that / as long as / unless",
+   "sentence": "Diversification works best provided that errors are independent.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "evidence-talk"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "provided that",
+    "start": 27,
+    "end": 40
+   },
+   "partOfSpeech": "conjunctions",
+   "level": "B2",
+   "definition": "provided that and as long as introduce a condition that must be true; unless means 'if not'",
+   "register": "neutral"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:to-conflate-x-with-y",
+   "kind": "expression",
+   "group": "evidence-talk",
+   "headword": "to conflate X with Y",
+   "sentence": "Don’t conflate Harari’s “complicated” with Arora’s.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "evidence-talk"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "conflate",
+    "start": 6,
+    "end": 14
+   },
+   "partOfSpeech": "verb phrase",
+   "level": "C1",
+   "definition": "to treat two different things as if they were the same",
+   "register": "academic"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:what-remains-to-be-seen-is-whether",
+   "kind": "expression",
+   "group": "evidence-talk",
+   "headword": "what remains to be seen is whether",
+   "sentence": "What remains to be seen is whether an AI can invent an instrument.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "evidence-talk"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "What remains to be seen is whether",
+    "start": 0,
+    "end": 34
+   },
+   "partOfSpeech": "phrase",
+   "level": "C1",
+   "definition": "we do not yet know whether; the answer is still open",
+   "register": "neutral/academic"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:with-the-caveat-that",
+   "kind": "expression",
+   "group": "evidence-talk",
+   "headword": "with the caveat that",
+   "sentence": "The toy helps, with the caveat that its numbers are invented.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "evidence-talk"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "with the caveat that",
+    "start": 15,
+    "end": 35
+   },
+   "partOfSpeech": "phrase",
+   "level": "C1",
+   "definition": "adding a warning or condition to what you just said",
+   "register": "academic"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:by-no-means",
+   "kind": "expression",
+   "group": "evidence-talk",
+   "headword": "by no means",
+   "sentence": "Rarity is by no means the same as opacity.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "evidence-talk"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "by no means",
+    "start": 10,
+    "end": 21
+   },
+   "partOfSpeech": "adverbial phrase",
+   "level": "B2",
+   "definition": "not at all; certainly not",
+   "register": "neutral/formal"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:that-s-a-big-if",
+   "kind": "expression",
+   "group": "evidence-talk",
+   "headword": "that’s a big if",
+   "sentence": "Everyone on one model? That’s a big if.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "evidence-talk"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "That’s a big if.",
+    "start": 23,
+    "end": 39
+   },
+   "partOfSpeech": "phrase",
+   "level": "C1",
+   "definition": "the condition is very uncertain, so the conclusion is doubtful",
+   "register": "informal"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:to-cut-both-ways",
+   "kind": "expression",
+   "group": "evidence-talk",
+   "headword": "to cut both ways",
+   "sentence": "Correlation cuts both ways.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "evidence-talk"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "cuts both ways",
+    "start": 12,
+    "end": 26
+   },
+   "partOfSpeech": "verb phrase",
+   "level": "C1",
+   "definition": "to have both good and bad effects, or to support both sides of an argument",
+   "register": "neutral"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:to-read-too-much-into-something",
+   "kind": "expression",
+   "group": "evidence-talk",
+   "headword": "to read too much into something",
+   "sentence": "Don’t read too much into a thought experiment.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "evidence-talk"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "read too much into",
+    "start": 6,
+    "end": 24
+   },
+   "partOfSpeech": "verb phrase",
+   "level": "C1",
+   "definition": "to find more meaning in something than is really there",
+   "register": "neutral"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:reporting-verbs",
+   "kind": "pattern",
+   "group": "c1-patterns",
+   "headword": "Reporting verbs",
+   "sentence": "“He asserts that AI can understand finance better than us; he predicts that AIs will soon manage bank accounts; he imagines a device nobody can follow; he asks whether AIs should be persons.” Match the verb to the speech act.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "c1-patterns"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "asserts",
+    "start": 4,
+    "end": 11
+   },
+   "partOfSpeech": "pattern",
+   "level": "C1",
+   "definition": "choose the verb by how strongly the speaker committed: asserts = states as true; predicts = says what will happen; imagines = pictures a scenario; asks = poses a question; warns = cautions",
+   "register": "academic"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:three-layers",
+   "kind": "pattern",
+   "group": "c1-patterns",
+   "headword": "Three layers",
+   "sentence": "“He said X. The evidence shows Y. Our reading is Z.”",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "c1-patterns"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "Our reading is",
+    "start": 34,
+    "end": 48
+   },
+   "partOfSpeech": "pattern",
+   "level": "C1",
+   "definition": "separate what was said, what the evidence shows, and your own interpretation",
+   "register": "academic"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:hedging-ladder",
+   "kind": "pattern",
+   "group": "c1-patterns",
+   "headword": "Hedging ladder",
+   "sentence": "shows → suggests → is consistent with → hints at.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "c1-patterns"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "is consistent with",
+    "start": 19,
+    "end": 37
+   },
+   "partOfSpeech": "pattern",
+   "level": "C1",
+   "definition": "verbs ordered from strong to weak commitment: shows, suggests, is consistent with, hints at",
+   "register": "academic"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:concession-then-your-point",
+   "kind": "pattern",
+   "group": "c1-patterns",
+   "headword": "Concession, then your point",
+   "sentence": "“Granted, the toy is simple. But the threshold is real.”",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "c1-patterns"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "target": {
+    "text": "Granted",
+    "start": 1,
+    "end": 8
+   },
+   "partOfSpeech": "pattern",
+   "level": "C1",
+   "definition": "admit a point with 'Granted' or 'While it is true that', then give your own point with 'But'",
+   "register": "academic"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:if-clause-without-will",
+   "kind": "fix",
+   "group": "error-fixes",
+   "headword": "if-clause without will",
+   "sentence": "“If the models fail, …”, not “will fail”.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "error-fixes"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "partOfSpeech": "fix",
+   "level": "B2",
+   "definition": "after if, use the present tense for a future condition",
+   "register": "grammar",
+   "wrong": "If the models will fail, …",
+   "right": "If the models fail, …"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:evidence-uncountable",
+   "kind": "fix",
+   "group": "error-fixes",
+   "headword": "evidence (uncountable)",
+   "sentence": "“some evidence”, not “evidences”.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "error-fixes"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "partOfSpeech": "fix",
+   "level": "B2",
+   "definition": "evidence, information and advice have no plural; count them with 'a piece of'",
+   "register": "grammar",
+   "wrong": "The paper gives many evidences.",
+   "right": "The paper gives some evidence."
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:general-nouns-no-article",
+   "kind": "fix",
+   "group": "error-fixes",
+   "headword": "general nouns, no article",
+   "sentence": "“finance”, but “the financial system”.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "error-fixes"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   },
+   "partOfSpeech": "fix",
+   "level": "B2",
+   "definition": "abstract or general nouns take no article in general statements; use 'the' for something specific",
+   "register": "grammar",
+   "wrong": "The finance is complicated.",
+   "right": "Finance is complicated. / The financial system is complicated."
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:loop-paragraph",
+   "kind": "shadowing",
+   "group": "loop",
+   "headword": "A paragraph to loop",
+   "sentence": "What remains to be seen is whether an AI can invent a financial instrument at all. Harari asserts that anything made of words will be taken over, but that’s a big if for money. Provided that many firms run one model, a single point of failure appears, and a shock can amplify in a feedback loop. Don’t conflate volume with opacity: rarity is by no means the same thing. Correlation cuts both ways. Don’t read too much into a toy, with the caveat that it shows what could happen, not what will.",
+   "targets": [
+    "What remains to be seen is whether",
+    "that’s a big if",
+    "Provided that",
+    "a single point of failure",
+    "amplify",
+    "a feedback loop",
+    "conflate",
+    "by no means",
+    "cuts both ways",
+    "read too much into",
+    "with the caveat that"
+   ],
+   "audio": {
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/audio/c1-loop.mp3",
+    "voice": "Kokoro af_heart (US English)"
+   },
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "loop"
+   ],
+   "source": {
+    "label": "AI4Read · Can AI invent a new kind of finance, and what would that do to a human-centred system?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+   }
+  }
+ ]
+}
