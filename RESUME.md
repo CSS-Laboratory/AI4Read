@@ -66,7 +66,7 @@ updated: 2026-10-18
   1. `git push` (GitHub).
   2. On the Mac, run `git bundle create "<Drive>/backup/repo/ai4read-<date>.bundle" --all` from `~/code/AI4Read`.
   3. `bash scripts/backup_drive.sh` packs the post sources into 24 MB parts under `/mnt/user-data/outputs/ai4read-backup/`; copy them to `<Drive>/backup/sources/`.
-- **Last full backup: 2026-10-18** (repo a81e8d0, post 02 sources including the seven PDFs added that day).
+- **Last full backup: 2026-10-18 evening** (repo d7d2793, bundle verified "complete history"; post 02 sources incl. the real CACM PDF; SHA256SUMS on Drive match the container).
 
 ## 4. Current state (2026-10-18, evening)
 - **Post 01** "What does an LLM know when it predicts the next word?": reviewed and final.

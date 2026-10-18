@@ -51,3 +51,9 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - Writer: Claude (revised phase 2). Built from `src/content-v2.tpl.html` + v1 blocks (`src/fill_v2.py`, overrides in `src/v2-blocks/`). Main text 6,584 words, fold-outs 2,186.
 - New: five-jobs frame, Kirilenko 2017 hook, IMF job table, Haldane–May homogeneity lab (`fact()`), May ecology fold-out lab, Searle lens (book), Lupia lens 4, short answer + verdict table + signs to watch. Dropped: info-theory lens, contracts switch, count lab, chain diagram, box-flash, Dütting, Buehler, Shannon, Akerlof, Keynes, SEP, MIT Sloan, Fox, Arora 2009 WP.
 - check.mjs 15/15; render test PASS. S5 round 1 launched: Opus + Sonnet fact-checks, Sonnet critic (`review/v2-*-1*.md`).
+
+## 2026-10-18 · Post 02 v2 · S5 rounds 1–3, audit, release
+- Round 1: Opus 0/1/21, Sonnet 0/2/32, critic 3/3/3/4/3. Round 2: Opus 0/2/17, Sonnet 0/2/22, critic 4/3/4/4/3. Round 3: Opus 0/0/12, Sonnet 0/1/16, critic 4/3/4/4/3 (Lens 2b only). All fixed; post-round-3 narrow audit: Lens 2b and §13 at 4/4.
+- Found and fixed a builder bug: the artifact (standalone) page lost its widgets because widgets.js contained `</script>` in a comment. test.mjs `--inline` added.
+- Main text 7,468 words; audio 37.0 min re-recorded and tagged; artifact republished (version 2); site dist, shelf and English pack rebuilt; Drive backup refreshed (sources parts, bundle d7d2793 from the Mac, SHA256SUMS).
+- WRITING 0.6 and 0.7.
