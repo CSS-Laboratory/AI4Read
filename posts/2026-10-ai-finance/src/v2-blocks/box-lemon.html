@@ -1,6 +1,15 @@
   <details class="deep" id="box-lemon">
-    <summary>Look inside: the lemon-cost formula</summary>
-    <p>For a product paying \(F(X)\) on \(N\) assets, Arora and colleagues define the lemon cost of \(n\) junk assets as
+    <summary>Look inside: lemons, and a six-asset toy</summary>
+    <p><b>Lemons.</b> A working used car is worth $1,000 to a buyer, and 20% of cars are “lemons” worth $0, so a random car is worth $800 to the buyer. Trade happens only if the seller values a good car at $200 less than the buyer does: that gap is the <dfn>lemon cost</dfn> <span class="cite">Arora et al. 2010, pp. 50–51</span>. Now a <dfn>derivative</dfn>, a product whose payout depends on other assets. A seller who knows which assets are junk chooses where the junk goes.</p>
+    <p><b>Tiny toy (ours).</b> Six assets in three products of two assets each. Like a senior tranche, a product pays 1 unless <i>both</i> its assets default. A healthy asset pays with chance ½, so a healthy product fails with chance \(\tfrac12\times\tfrac12=\tfrac14\) and is worth \(\tfrac34\). Two assets are junk (they always pay 0).</p>
+    <ul>
+      <li><b>Junk spread</b> over two products: each pays only if its healthy asset pays, worth \(\tfrac12\). Total \(\tfrac12+\tfrac12+\tfrac34=\tfrac74\).</li>
+      <li><b>Junk concentrated</b> in one product: it is worth 0, the other two \(\tfrac34\) each. Total \(\tfrac32\).</li>
+    </ul>
+    <p>Concentrating the junk does the most damage, and the public rule (“three products of two”) is the same either way. <b>Check</b> (code, all 15 ways to place 2 junk assets): 12 give \(\tfrac74\), 3 give \(\tfrac32\).</p>
+    <figure class="illus"><div class="w" data-widget="diagram" id="dg-seller" data-config-ref="cfg-seller"></div></figure>
+<!--CFG:cfg-seller-->
+    <p><b>The formula.</b> For a product paying \(F(X)\) on \(N\) assets, the lemon cost of \(n\) junk assets is
     \[\begin{aligned}\Delta(n)&=\mathbb{E}[F(X)]-\min_{|S|=n}\\&\qquad\mathbb{E}\big[F(X)\mid X_i=0\ \forall i\in S\big]\end{aligned}\]
-    <span class="cite">Arora et al. 2010, p. 52</span>. Read it as: the average value, minus the value if the junk sits in the worst possible places, where the minimum “takes into account all possible ways in which seller could ‘position’ the junk assets” <span class="cite">p. 52</span>. <b>In the tiny toy:</b> with no junk, \(\mathbb{E}[F]=3\times\tfrac34=\tfrac94\); the worst placement of 2 junk assets (concentrated) leaves \(\tfrac32\), so \(\Delta(2)=\tfrac34\) (a spread placement would cost only \(\tfrac12\)). Their bottom line for large pools: “under computational assumptions, the lemon cost for polynomial time buyers can be much larger than \(n\)” <span class="cite">p. 55</span>.</p>
+    <span class="cite">Arora et al. 2010, p. 52</span>: the average value, minus the value if the junk sits in the worst places, where the minimum “takes into account all possible ways in which seller could ‘position’ the junk assets” <span class="cite">p. 52</span>. In the toy, \(\mathbb{E}[F]=3\times\tfrac34=\tfrac94\) and the worst placement leaves \(\tfrac32\), so \(\Delta(2)=\tfrac34\). Random pooling would lower the cost; when the seller chooses the pooling, “under computational assumptions, the lemon cost for polynomial time buyers can be much larger than \(n\)” <span class="cite">p. 55</span>.</p>
   </details>

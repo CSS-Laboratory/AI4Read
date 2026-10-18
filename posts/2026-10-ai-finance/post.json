@@ -118,5 +118,9 @@
   "code-1": "notebook/ex1_neff.py",
   "code-2": "notebook/ex2_cascade.py",
   "code-3": "notebook/ex3_herding.py"
- }
+ },
+ "brief": [
+  "source-brief-v2.verified.md",
+  "source-brief.verified.md"
+ ]
 }

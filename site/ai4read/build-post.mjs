@@ -50,8 +50,13 @@ for (const [id, f] of Object.entries(cfg.code || {})) html = html.replace(`<code
 let chapters = [];
 try { chapters = JSON.parse(rd("audio/chapters.json")).map((c) => ({ id: c.id, title: c.title, dur: c.dur, src: `audio/${c.id}.mp3` })); } catch { console.error("no chapters yet"); }
 const audioMB = has("audio/all.mp3") ? Math.round(fs.statSync(path.join(D, "audio/all.mp3")).size / 1e6) : 0;
-const briefFile = has("source-brief.verified.md") ? "source-brief.verified.md" : "source-brief.md";
-const brief = rd(briefFile).split("\n---\n").slice(1).join("\n---\n");
+// post.json "brief": list of brief files, most authoritative first (default: the single verified brief).
+const briefFiles = cfg.brief || [has("source-brief.verified.md") ? "source-brief.verified.md" : "source-brief.md"];
+const stripBody = (t) => t.split("\n---\n").slice(1).join("\n---\n") || t;
+// Posts stand alone: drop brief lines that mention other posts, so the page tutor never cites them.
+const noCross = (t) => t.split("\n").filter((l) => !/\bpost (0?\d+|one|two|three)\b/i.test(l)).join("\n");
+const brief = (briefFiles.length > 1 ? `Several source briefs follow, most authoritative first. Where they differ, follow the earlier one and the post itself.\n\n` : "") +
+  briefFiles.map((f) => `# ${f}\n\n` + noCross(stripBody(rd(f)))).join("\n\n");
 const POST = { slug: SLUG, title: cfg.title, album: `Post ${String(cfg.num).padStart(2, "0")} · ${cfg.short}`, prefix: `ai4read-p${String(cfg.num).padStart(2, "0")}`,
   mp3Name: `AI4Read-${String(cfg.num).padStart(2, "0")}-${SLUG}.mp3`, audioMB };
 const css = [rd("style.css", TPL), rd("annotate.css", TPL), rd("widgets.css", CMP), has("src/extra.css") ? rd("src/extra.css") : ""].join("\n");

@@ -1,0 +1,17 @@
+  <script type="application/json" id="cfg-seller">{
+ "title":"Where the junk sits changes the price (toy, ours)","width":390,"height":235,"preview":true,
+ "nodes":[{"id":"ra","x":55,"y":45,"w":92,"h":44,"label":"Spread\ntotal 7/4","kind":"soft"},
+          {"id":"a1","x":152,"y":45,"w":80,"h":44,"label":"P1: 1 junk\nworth 1/2","kind":"soft"},
+          {"id":"a2","x":240,"y":45,"w":80,"h":44,"label":"P2: 1 junk\nworth 1/2","kind":"soft"},
+          {"id":"a3","x":328,"y":45,"w":80,"h":44,"label":"P3: none\nworth 3/4","kind":"soft"},
+          {"id":"rb","x":55,"y":120,"w":92,"h":44,"label":"Concentrated\ntotal 3/2","kind":"soft"},
+          {"id":"b1","x":152,"y":120,"w":80,"h":44,"label":"P1: 2 junk\nworth 0","kind":"hl"},
+          {"id":"b2","x":240,"y":120,"w":80,"h":44,"label":"P2: none\nworth 3/4","kind":"soft"},
+          {"id":"b3","x":328,"y":120,"w":80,"h":44,"label":"P3: none\nworth 3/4","kind":"soft"},
+          {"id":"s","x":195,"y":197,"w":350,"h":40,"label":"Same public rule, different price.\nOnly the seller knows which design is used."}],
+ "edges":[],
+ "steps":[{"show":["ra","a1","a2","a3"],"text":"Six assets, three products of two. A product pays unless both its assets default, so a healthy product is worth 3/4. Two assets are junk. Spread: P1 and P2 each hold one junk asset and pay only if the other asset pays (1/2 each); P3 is healthy (3/4). Total 7/4."},
+          {"show":["rb","b1","b2","b3"],"text":"Concentrated: both junk assets sit in P1, which is now worth 0; P2 and P3 are worth 3/4 each. Total 3/2: the most damage, with the same public rule."},
+          {"show":["s"],"text":"The buyer sees the same public rule either way. With thousands of products, finding the few where junk was concentrated is the hard part (a conjecture; Arora et al. 2011, p. 101)."}]
+}</script>
+  <p><b>Scale it up.</b> With 100 assets and thousands of products, a seller can hide a few products full of junk among many fair-looking ones. Draw each asset and each product as a dot, and draw a line when a product holds an asset: that drawing is a <dfn>graph</dfn>. The junk-filled products and their junk assets form a small, unusually crowded patch of it, and spotting that patch is the “hidden dense subgraph” problem. Computer scientists believe it is <dfn>intractable</dfn>: no fast method is known, and none is expected (a conjecture) <span class="cite">Arora et al. 2009, pp. 3–4</span>. A buyer with limited computing then cannot tell a fair price from an inflated one (our gloss). An unbounded buyer could simply check every possibility; the claim is about realistic buyers.</p>
