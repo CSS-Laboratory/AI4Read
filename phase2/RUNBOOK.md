@@ -35,3 +35,5 @@ date: 2026-10-17
 - The checker never sees the writer's self-review before its own pass.
 - The critic never sees the writer's self-score.
 - The meta-manager audits the post in full once every three posts, and always for the first post of the pipeline (post 02).
+
+**Review hygiene (2026-10-18).** Do not regenerate `src/content.html` while checkers are reading it: edit the template, and regenerate only after every agent of the round has reported. Otherwise findings point at two versions.

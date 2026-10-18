@@ -1,7 +1,7 @@
 ---
 name: writing-principles
 description: How AI4Read posts are written. Read before drafting or revising any post. Claude updates it whenever a review round or a note from Kunhao shows a missing rule (add the rule, the note or finding that caused it, and the date); Kunhao asked for this on 2026-10-18.
-version: 0.6 (2026-10-18)
+version: 0.7 (2026-10-18)
 ---
 
 # AI4Read writing principles
@@ -77,6 +77,9 @@ Do not start a concept at step 4.
 - **Purpose is not effect.** “A rule triggered in order to prevent a cascade” states a purpose; never report it as “the rule prevented a cascade”, even attributed. (Post 02 v2 round 1, major.)
 - **A quote must be about the thing it supports.** Check the referent of “it” or “this” in the source: a line about a contrived example (the “factoring derivative”) does not support a claim about realistic products. (Post 02 v2 round 1, major.)
 - **One source per cited sentence.** A remedy from one talk and a doubt from a book extract three months later get two citations and two sentences, never one. Attribute surveys to whoever ran them (“a Mercer survey reproduced by the IMF”). (Post 02 v2 round 1.)
+- **New glosses are new claims.** A parenthetical added to explain a term (“liquidity shocks (banks unable to borrow)”) must be checked against the source page like any quote; in post 02 v2 such glosses caused new errors in rounds 2 and 3.
+- **Search before saying “never”.** Before writing that an author never discusses X, search the whole text (Searle mentions computers on pp. 14, 34, 56, 140–141); state the narrower true claim instead.
+- **Keep the source's population and scope.** “Participants in the IMF's outreach” are not “firms” or “the market”; “more frequently” is not “mostly”; a survey of one market is not all markets.
 
 ## 10. Change log
 - 0.1 (2026-10-15): charter style guide only.
@@ -85,3 +88,4 @@ Do not start a concept at step 4.
 - 0.4 (2026-10-17): §8b audio files carry the source mark “AI4Read from CSS Lab”.
 - 0.5 (2026-10-18): §0 standalone posts, the question over the person, the short answer; §2 toys point the same way as the source; §5 diagram preview and the five-number rule; §8a one length counter; §9 balance (four groups of firmness), quote boundaries, whole-source reading. From Kunhao's note on post 02 and the post 02 review rounds.
 - 0.6 (2026-10-18): §0 threshold words, verdict in the short answer, one point one ladder; §2 quoted formulas still climb; §5 guess options; §9 purpose ≠ effect, quote referent, one source per cited sentence. From the post 02 v2 S5 round 1.
+- 0.7 (2026-10-18): §9 new glosses are new claims, search before saying “never”, keep the source's population and scope. From post 02 v2 S5 rounds 2–3.
