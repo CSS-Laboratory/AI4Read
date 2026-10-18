@@ -1,98 +1,98 @@
 [
  {
   "id": "hook",
-  "title": "Two contracts",
-  "hash": "0611400764a8",
-  "dur": 154.1
+  "title": "Five seconds in 2010",
+  "hash": "0e13a73f7134",
+  "dur": 191.2
  },
  {
   "id": "guess",
   "title": "Guess first",
-  "hash": "fdd7152582ec",
-  "dur": 56.5
+  "hash": "4d546eb0ee01",
+  "dur": 61.9
  },
  {
   "id": "home",
-  "title": "Finance before language models",
-  "hash": "dd1099396701",
-  "dur": 272.1
+  "title": "The five jobs of a society",
+  "hash": "75f2bde977d7",
+  "dur": 264.9
  },
  {
   "id": "llm",
-  "title": "What LLM agents add",
-  "hash": "86ff5034ae64",
-  "dur": 215.8
- },
- {
-  "id": "lens-info",
-  "title": "Lens one: information theory",
-  "hash": "59c4208c6d74",
-  "dur": 258.2
+  "title": "What AI agents add",
+  "hash": "bda5587af275",
+  "dur": 137.3
  },
  {
   "id": "lens-control",
-  "title": "Lens two: control",
-  "hash": "d2ff5bf6bd9b",
-  "dur": 184.6
+  "title": "Lens one: can checking keep up?",
+  "hash": "05171753bef7",
+  "dur": 244.0
  },
  {
   "id": "lens-decision",
-  "title": "Lens three, part one: correlation and Bayes",
-  "hash": "71af42da0499",
-  "dur": 147.8
+  "title": "Lens two, part one: one model, many firms",
+  "hash": "0eb95a3da129",
+  "dur": 134.6
  },
  {
   "id": "lens-cascade",
-  "title": "Lens three, part two: cascades and feedback",
-  "hash": "8a71fe10dffd",
-  "dur": 102.0
+  "title": "Lens two, part two: cascades, sameness, feedback",
+  "hash": "c917f3d352d0",
+  "dur": 251.1
  },
  {
   "id": "lens-social",
-  "title": "Lens four: social reality",
-  "hash": "70279492a78d",
-  "dur": 206.6
+  "title": "Lens three: who declares what counts?",
+  "hash": "81cb1ff3298d",
+  "dur": 195.4
+ },
+ {
+  "id": "lens-answer",
+  "title": "Lens four: who answers?",
+  "hash": "489c3b2a681b",
+  "dur": 192.8
  },
  {
   "id": "play",
   "title": "What to try when you open the page",
-  "hash": "dfbfacec2be6",
-  "dur": 47.4
+  "hash": "32ce47c25e6e",
+  "dur": 31.5
  },
  {
   "id": "turn",
   "title": "Your turn",
-  "hash": "d0ebffd95fcf",
-  "dur": 37.0
+  "hash": "18392502460f",
+  "dur": 52.9
  },
  {
   "id": "work",
   "title": "Where this shows up in your work",
-  "hash": "c8624617eb32",
-  "dur": 45.4
+  "hash": "b02f21741aba",
+  "dur": 50.1
  },
  {
   "id": "answer",
   "title": "So what happens? Short answer first",
-  "hash": "3448c7c238a0",
-  "dur": 204.7
+  "hash": "b901ac94ca34",
+  "dur": 223.5
  },
  {
   "id": "recall",
   "title": "Recall questions",
-  "hash": "17611b844d7e",
-  "dur": 90.9
+  "hash": "1186c7dced08",
+  "dur": 67.8
  },
  {
   "id": "english",
   "title": "How to say it in English",
-  "hash": "41b707fa67cc",
-  "dur": 85.8
+  "hash": "caf13a8407ff",
+  "dur": 74.2
  },
  {
   "id": "c1-loop",
   "title": "C1 paragraph to loop",
-  "hash": "6c2632123d2b",
-  "dur": 31.2
+  "hash": "2ecec331e3d8",
+  "dur": 38.2
  }
 ]
