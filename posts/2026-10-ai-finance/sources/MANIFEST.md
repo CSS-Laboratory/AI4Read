@@ -86,3 +86,5 @@ accessed: 2026-10-17
 - imf-2024-gfsr-ch3.pdf: IMF GFSR Oct 2024, ch. 3. Printed page = PDF page + 76.
 - haldane-may-2011-nature.pdf: *Nature* 469, 351–355. Printed page = PDF page + 350.
 - harari-2024-nexus.pdf: **removed**, because it carried OceanofPDF marks (a pirate e-book site). Not used. Ask Kunhao for a legitimate copy.
+
+- arora-2011-cacm-published.pdf (+ .txt): the real *Communications of the ACM* 54(5): 101–107 (2011) text, doi:10.1145/1941487.1941511, supplied by Kunhao on 2026-10-18. Printed page = PDF page + 100. It lacks the ICS wording "amplify", "first step", "faulty models" and the tree of majorities: cite ICS 2010 for those, and CACM for the main result ("the pricing problem can be as difficult as solving the planted dense subgraph problem", p. 101; "would have no idea what to pay for it", p. 102).

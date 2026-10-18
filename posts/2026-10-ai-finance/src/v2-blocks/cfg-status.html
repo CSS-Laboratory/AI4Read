@@ -1,0 +1,15 @@
+<script type="application/json" id="cfg-status">{
+ "title":"X counts as Y in C (Searle’s formula; the AI case is ours)","height":220,"preview":true,
+ "nodes":[{"id":"x","x":58,"y":45,"w":100,"h":44,"label":"X: a printed\npiece of paper"},
+          {"id":"c","x":183,"y":45,"w":112,"h":44,"label":"C: people who\nkeep accepting it","kind":"soft"},
+          {"id":"y","x":308,"y":45,"w":90,"h":44,"label":"Y: counts\nas money","kind":"hl"},
+          {"id":"x2","x":58,"y":160,"w":100,"h":44,"label":"X: a token\nan AI minted"},
+          {"id":"c2","x":183,"y":160,"w":112,"h":44,"label":"C: a network\nof AIs?","kind":"ghost"},
+          {"id":"y2","x":308,"y":160,"w":90,"h":44,"label":"Y: money?","kind":"ghost"}],
+ "edges":[{"id":"e1","from":"x","to":"c"},{"id":"e2","from":"c","to":"y"},{"id":"e3","from":"x2","to":"c2","dashed":true},{"id":"e4","from":"c2","to":"y2","dashed":true}],
+ "steps":[{"show":["x"],"text":"A piece of paper with a certain pattern. Its physics cannot buy anything: it is only X."},
+          {"show":["c","e1"],"text":"A community, C, collectively accepts this kind of paper as money and keeps accepting it."},
+          {"show":["y","e2"],"text":"Only now does X count as money, Y, in C. If the acceptance stops, Y disappears; the paper is still there."},
+          {"show":["x2","c2","e3"],"text":"Now replace the paper by a token an AI minted, and the people by AIs that pay each other in it (our case, not Searle’s)."},
+          {"show":["y2","e4"],"text":"Does the token count as money? Only if AIs can be the C that accepts. Searle requires belief in the status; whether machines can have it is the open question."}]
+}</script>

@@ -1,9 +1,9 @@
 {
- "title": "Can AI invent a new kind of finance, and what would that do to a human-centred system?",
- "short": "AI-made finance",
+ "title": "Could a society run itself on AI?",
+ "short": "AI-automated society",
  "num": 2,
- "date": "2026-10-17",
- "summary": "Harari asserts what AI can do, predicts without dates that AIs will soon run accounts and create new financial devices, and imagines his concrete finance disasters as thought experiments. We separate these from what the evidence supports, then test the chain through information theory, control, correlation and social reality, with toy models you can break.",
+ "date": "2026-10-18",
+ "summary": "A society that runs on AI with no human stepping in: is it possible, what would it do, and what would it mean? We split the question into five jobs (run, decide, check, declare, answer) and test each in finance, the most automated corner of society, through control theory, complex systems, Searle's social ontology and political science, with toy models you can break.",
  "cites": [
   [
    "BIS",
@@ -31,7 +31,11 @@
   ],
   [
    "Kirilenko",
-   "kkst"
+   "kkst17"
+  ],
+  [
+   "IMF",
+   "imf"
   ],
   [
    "Scheurer",
@@ -40,6 +44,10 @@
   [
    "FSB",
    "fsb"
+  ],
+  [
+   "Gensler",
+   "gb"
   ],
   [
    "Cointelegraph",
@@ -58,28 +66,16 @@
    "mik"
   ],
   [
-   "Dütting",
-   "dfnpr"
-  ],
-  [
-   "Buehler",
-   "bgtw"
-  ],
-  [
-   "Shannon",
-   "shannon"
-  ],
-  [
    "Cover and Thomas",
    "cover"
   ],
   [
-   "Arora",
-   "arora"
+   "Arora et al\\. 2011",
+   "arora-cacm"
   ],
   [
-   "Akerlof",
-   "akerlof"
+   "Arora",
+   "arora-ics"
   ],
   [
    "Ashby",
@@ -94,20 +90,16 @@
    "dmu"
   ],
   [
-   "MIT Sloan",
-   "mitsloan"
-  ],
-  [
-   "Keynes",
-   "keynes"
+   "Haldane",
+   "hm"
   ],
   [
    "Granovetter",
    "granovetter"
   ],
   [
-   "SEP",
-   "sep"
+   "Searle",
+   "searle"
   ],
   [
    "Lupia",
@@ -116,10 +108,6 @@
   [
    "Poole",
    "poole"
-  ],
-  [
-   "Fox",
-   "fox"
   ],
   [
    "Narayanan",

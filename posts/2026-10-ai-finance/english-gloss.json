@@ -1,16 +1,4 @@
 {
- "opaque / opacity": {
-  "partOfSpeech": "adjective / noun",
-  "level": "B2",
-  "definition": "hard to see through or understand; opacity is the quality of being hard to understand",
-  "register": "neutral/academic"
- },
- "to be exposed to": {
-  "partOfSpeech": "verb phrase",
-  "level": "B2",
-  "definition": "to be at risk of being affected by something, for example a loss",
-  "register": "neutral/finance"
- },
  "a single point of failure": {
   "partOfSpeech": "noun phrase",
   "level": "C1",
@@ -22,18 +10,6 @@
   "level": "C1",
   "definition": "moving or changing together, exactly at the same time",
   "register": "neutral/journalistic"
- },
- "to amplify / to dampen": {
-  "partOfSpeech": "verbs",
-  "level": "B2",
-  "definition": "amplify = to make stronger or larger; dampen = to make weaker or smaller",
-  "register": "neutral/technical"
- },
- "a feedback loop": {
-  "partOfSpeech": "noun phrase",
-  "level": "B2",
-  "definition": "a process in which a result feeds back into the cause and changes it again",
-  "register": "technical"
  },
  "a tipping point": {
   "partOfSpeech": "noun phrase",
@@ -142,5 +118,29 @@
   "register": "grammar",
   "wrong": "The finance is complicated.",
   "right": "Finance is complicated. / The financial system is complicated."
+ },
+ "a human in the loop": {
+  "partOfSpeech": "noun phrase",
+  "level": "C1",
+  "definition": "a person who must check or approve what an automated system does before it takes effect",
+  "register": "technical"
+ },
+ "to hand over (to)": {
+  "partOfSpeech": "phrasal verb",
+  "level": "B2",
+  "definition": "to give control of or responsibility for something to another person or system",
+  "register": "neutral"
+ },
+ "to be held accountable (for)": {
+  "partOfSpeech": "verb phrase",
+  "level": "C1",
+  "definition": "to be made responsible for something and required to explain it or bear its consequences",
+  "register": "formal"
+ },
+ "to count as": {
+  "partOfSpeech": "phrasal verb",
+  "level": "B2",
+  "definition": "to be considered or accepted as a particular kind of thing",
+  "register": "neutral/academic"
  }
 }

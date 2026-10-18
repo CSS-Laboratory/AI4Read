@@ -21,7 +21,7 @@ Label every toy in the title or caption: "(toy, ours)", or the source and page w
 
 - Numbers: `0.5`, `1e-3`.
 - Operators: `+ - * / % ^` (`^` is power, right-associative), comparisons `< > <= >= == !=`, `&& || !`, and `c ? a : b`.
-- Functions: `exp ln log(=ln) log2 log10 sqrt abs min max pow floor ceil round sign sin cos tanh sigmoid clamp(x,a,b) if(c,a,b)`.
+- Functions: `exp ln log(=ln) log2 log10 sqrt abs min max pow floor ceil round sign sin cos tanh sigmoid clamp(x,a,b) if(c,a,b) fact(n) comb(n,k)`.
 - Constants: `pi`, `e`.
 - Variables: parameter ids, `constants`, earlier `derived` names, and the widget-specific names listed below.
 

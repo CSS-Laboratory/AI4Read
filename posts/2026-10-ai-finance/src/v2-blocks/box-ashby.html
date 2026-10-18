@@ -1,0 +1,9 @@
+  <details class="deep" id="box-ashby">
+    <summary>Look inside: Ashby’s law with probabilities</summary>
+    <p>Counting states treats every disturbance as equally likely. With probabilities, <dfn>entropy</dfn> replaces variety: \(H(D)=-\sum_d P(d)\log_2 P(d)\), the average number of yes-or-no questions needed to name the disturbance. For equally likely states it equals the variety. The law becomes</p>
+    \[H(E)\;\ge\;H(D)+H(R\mid D)-H(R)\]
+    <p>\(H(R\mid D)\) is the uncertainty left in the regulator’s choice once the disturbance is known; it is 0 if R is a function of D. <b>Two steps.</b> (1) The table rule, no outcome twice in a column <span class="cite">Ashby 1956, p. 207</span>, means that given R, different disturbances give different outcomes, so \(H(D\mid R)\le H(E\mid R)\). (2) Then
+    \[\begin{aligned}&H(D)+H(R\mid D)\\&=H(R)+H(D\mid R)\\&\le H(R)+H(E\mid R)\\&\le H(R)+H(E)\end{aligned}\]
+    where the last step uses the fact that, on average, conditioning reduces entropy (\(H(E\mid R)\le H(E)\)) <span class="cite">Cover and Thomas 1991</span>. Rearrange. <b>Numbers (toy, ours).</b> Four kinds of contract arrive with chances \(\tfrac12,\tfrac14,\tfrac18,\tfrac18\): \(H(D)=\tfrac12\cdot1+\tfrac14\cdot2+\tfrac18\cdot3+\tfrac18\cdot3=1.75\) bits. A one-bit regulator that is a function of D gives \(H(E)\ge1.75-1=0.75\) bits.</p>
+    <div class="trap"><p class="trap-h">Trap · a misprint in the reprint</p><p>Ashby writes the conditional term as \(H_D(R)\), i.e. \(H(R\mid D)\) <span class="cite">Ashby 1956, p. 208</span>. One line of the reprint prints \(H_D(E)\), though the line above and the sentence after need \(H_D(R)\). We use the corrected form.</p></div>
+  </details>

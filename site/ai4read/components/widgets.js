@@ -17,6 +17,8 @@
     round: Math.round, sign: Math.sign, sin: Math.sin, cos: Math.cos, tanh: Math.tanh,
     clamp: (x, a, b) => Math.min(b, Math.max(a, x)),
     sigmoid: (x) => 1 / (1 + Math.exp(-x)),
+    fact: (n) => { let r = 1; for (let i = 2; i <= Math.round(n); i++) r *= i; return r; },
+    comb: (n, k) => { let r = 1; for (let i = 1; i <= Math.round(k); i++) r = r * (n - k + i) / i; return r; },
   };
   const CONST = { pi: Math.PI, e: Math.E };
 

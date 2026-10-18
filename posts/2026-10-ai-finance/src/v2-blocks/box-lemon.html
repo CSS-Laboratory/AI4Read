@@ -1,0 +1,6 @@
+  <details class="deep" id="box-lemon">
+    <summary>Look inside: the lemon-cost formula</summary>
+    <p>For a product paying \(F(X)\) on \(N\) assets, Arora and colleagues define the lemon cost of \(n\) junk assets as
+    \[\begin{aligned}\Delta(n)&=\mathbb{E}[F(X)]-\min_{|S|=n}\\&\qquad\mathbb{E}\big[F(X)\mid X_i=0\ \forall i\in S\big]\end{aligned}\]
+    <span class="cite">Arora et al. 2010, p. 52</span>. Read it as: the average value, minus the value if the junk sits in the worst possible places, where the minimum “takes into account all possible ways in which seller could ‘position’ the junk assets” <span class="cite">p. 52</span>. <b>In the tiny toy:</b> with no junk, \(\mathbb{E}[F]=3\times\tfrac34=\tfrac94\); the worst placement of 2 junk assets (concentrated) leaves \(\tfrac32\), so \(\Delta(2)=\tfrac34\) (a spread placement would cost only \(\tfrac12\)). Their bottom line for large pools: “under computational assumptions, the lemon cost for polynomial time buyers can be much larger than \(n\)” <span class="cite">p. 55</span>.</p>
+  </details>

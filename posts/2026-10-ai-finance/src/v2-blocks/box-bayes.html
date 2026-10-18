@@ -1,0 +1,9 @@
+  <details class="deep" id="box-bayes">
+    <summary>Look inside: counting one voice ten times</summary>
+    <p><b>Instance.</b> Prior: 1 in 2 that a bank is safe. A safe bank is 4 times as likely to get a “safe” verdict as a risky one (the <dfn>likelihood ratio</dfn>; invented numbers). <b>Mechanism.</b> Each <i>independent</i> verdict multiplies the odds by 4 (the odds form of Bayes’ rule).</p>
+    \[\begin{aligned}\text{posterior odds}&=\text{prior odds}\times 4^{\,n}\\P&=\frac{\text{odds}}{1+\text{odds}}\end{aligned}\]
+    <p><b>Worked numbers.</b> Counted \(n=0,\dots,4\) times: \(P(\text{safe})=0.5,\,0.8,\,0.941,\,0.985,\,0.996\). Ten times: odds 1,048,576, \(P=0.999999\). <b>Check.</b> \(n=1\): \(4/5=0.8\).</p>
+<!--CFG:cfg-bayes2-->
+    <div class="w" data-widget="lab" id="lab-bayes2" data-config-ref="cfg-bayes2"></div>
+    <p>If ten banks run copies of one model, their ten verdicts are one verdict. Counting it ten times turns 0.8 into 0.999999: ten copies of one voice feel like certainty.</p>
+  </details>

@@ -1,0 +1,381 @@
+<header class="masthead wrap">
+  <p class="eyebrow">AI4Read · Post 02 · 18 October 2026</p>
+  <h1>Could a society run itself on AI?</h1>
+  <p class="lede">Imagine markets, courts and money that run with no person ever stepping in. Which parts of a society could AI really take over, what would happen if it did, and would the result still be a society?</p>
+  <ul class="meta">
+    <li><b>Home field</b> Economics and finance, the most automated corner of society today</li>
+    <li><b>Lenses</b> Control and cybernetics · Complex systems and decision theory · Philosophy of social reality · Political science</li>
+    <li><b>Level</b> High school → graduate</li>
+    <li><b>Time</b> 45 min to read, 36 to listen</li>
+  </ul>
+  <details class="toc">
+    <summary>Contents</summary>
+    <ol>
+      <li><a href="#hook">Five seconds in 2010</a></li>
+      <li><a href="#guess">Guess first</a></li>
+      <li><a href="#home">The five jobs of a society</a></li>
+      <li><a href="#llm">What AI agents add</a></li>
+      <li><a href="#lens-control">Lens 1 · Can checking keep up?</a></li>
+      <li><a href="#lens-decision">Lens 2a · One model, many firms</a></li>
+      <li><a href="#lens-cascade">Lens 2b · Cascades, sameness, feedback</a></li>
+      <li><a href="#lens-social">Lens 3 · Who declares what counts?</a></li>
+      <li><a href="#lens-answer">Lens 4 · Who answers?</a></li>
+      <li><a href="#play">What to try on the toys</a></li>
+      <li><a href="#turn">Your turn</a></li>
+      <li><a href="#work">Where this shows up in your work</a></li>
+      <li><a href="#answer">So what happens? Short answer first</a></li>
+      <li><a href="#recall">Recall questions</a></li>
+      <li><a href="#english">How to say it in English</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </details>
+</header>
+
+<main class="wrap">
+
+<!-- ============ 1 HOOK ============ -->
+<section id="hook" data-ch="hook">
+  <p class="sec-no">1 · Hook</p>
+  <h2>Five seconds in 2010</h2>
+  <p>On 6 May 2010, at 2:32 p.m. Eastern time, a large fund company began to sell 75,000 futures contracts on the US stock index, worth about $4.1 billion, to protect its existing stock holdings. It “chose to execute this sell program via an automated execution algorithm” that sold 9% of the previous minute’s trading volume, “without regard to price or time” <span class="cite">Kirilenko et al. 2017, p. 2</span>. Thirteen minutes later, fewer than 1,050 contracts of buy orders were left waiting in the market, less than 1% of what had been waiting at the start of the day.</p>
+  <p>At 2:45:28 a rule fired. The exchange’s Stop Logic, “an automated pre-trade safeguard procedure”, paused trading for five seconds <span class="cite">Kirilenko et al. 2017, p. 2</span>. Nobody pressed a button: people had set the rule and its limits in advance. After the pause prices steadied, and by 3:08 the index future was back near where it started. That this pause prevented “a cascade of further price declines” is the regulators’ account, quoted in the paper; the paper itself does not test it.</p>
+  <p>Look at who did what. A firm <i>decided</i> to sell (the source says “a mutual fund complex”; that a person made the call is our reading). Software <i>ran</i> the selling and the matching. A pre-set rule <i>checked</i> the fall. Later, regulators wrote the report and people <i>answered</i> for the losses.</p>
+  <p>The historian Yuval Noah Harari pushes the picture further. At Davos in 2026 he stated it flatly: “Therefore, anything made of words will be taken over by AI” <span class="cite">WEF 2026 [5:57]</span>. Laws, contracts and money are made of words. At the Bank for International Settlements in 2024 he imagined an AI-made financial device that nobody understands, “maybe in 10 years” <span class="cite">BIS 2024 [9:54]</span>. All of his lines that we use, sorted by how firmly he said them, are in the fold-out.</p>
+<!--BLOCK:box-harari-->
+  <p><b>Our question.</b> What if nobody had set that rule, and nobody could? Could a society run itself on AI, with no human intervention at all?</p>
+  <div class="term"><p class="term-h">Term · AI-automated society</p><p>In this post: a society in which AI systems do <i>every</i> job that keeps it going (running the work, deciding, checking, declaring what counts, and answering for losses) with no person needed at any step. Section 3 makes the five jobs precise.</p></div>
+  <p><b>Preview (ours).</b> Running is largely automated already in some markets; deciding is mostly not; checking is partly automatic. Declaring and answering are the jobs that decide whether the result is still a society. Section 13 has the short answer.</p>
+</section>
+
+<!-- ============ 2 GUESS FIRST ============ -->
+<section id="guess" data-ch="guess">
+  <p class="sec-no">2 · Guess first</p>
+  <h2>Make four predictions</h2>
+  <p>Commit first. Each question says where its answer is.</p>
+  <div class="quiz" data-q="g1" data-answer-in="section 3, The five jobs of a society">
+    <p class="q">1. In US stock trading, about 70% of trading is “algorithmic”. What does that tell you about AI?</p>
+    <div class="opts"><button type="button">70% of trades are chosen by AI</button><button type="button">Algorithms execute 70%; that includes simple rules, not only AI</button><button type="button">Nothing: the figure is about bonds</button><button type="button">AI trades 100%, algorithms 70%</button></div>
+    <p class="your" hidden></p>
+  </div>
+  <div class="quiz" data-q="g2" data-answer-in="Lens 2a · One model, many firms">
+    <p class="q">2. Ten banks each run a risk model that is wrong on 1% of days. How often are all ten wrong on the same day if the models are independent, and how often if all ten run the same model?</p>
+    <div class="opts"><button type="button">1 in 100, in both cases</button><button type="button">1 in 10<sup>20</sup> if independent; about 1 in 100 if the same model</button><button type="button">1 in 1,000 if independent; 1 in 100 if the same</button><button type="button">1 in 10<sup>20</sup>, in both cases</button></div>
+    <p class="your" hidden></p>
+  </div>
+  <div class="quiz" data-q="g3" data-answer-in="Lens 3 · Who declares what counts?">
+    <p class="q">3. An AI mints a token and pays other AIs with it. No human ever uses or thinks about it. Is it money?</p>
+    <div class="opts"><button type="button">Yes, if the code says so</button><button type="button">Yes, if enough AIs use it</button><button type="button">For Searle, money needs people who accept it; whether AIs could do the accepting is open</button><button type="button">No token can ever be money</button></div>
+    <p class="your" hidden></p>
+  </div>
+  <div class="quiz" data-q="g4" data-answer-in="Lens 2b · Cascades, sameness, feedback">
+    <p class="q">4. Ten banks. In plan A each holds one different asset. In plan B each holds a tenth of every asset. Each bank is safer in plan B. Is the system safer?</p>
+    <div class="opts"><button type="button">Yes, much safer</button><button type="button">About the same</button><button type="button">No: in this toy a total collapse becomes thousands of times likelier</button><button type="button">It cannot be computed</button></div>
+    <p class="your" hidden></p>
+  </div>
+</section>
+
+<!-- ============ 3 FIVE JOBS ============ -->
+<section id="home" data-ch="home">
+  <p class="sec-no">3 · The phenomenon in its home field</p>
+  <h2>The five jobs of a society</h2>
+  <p>“Fully automated” is vague until we say <i>what</i> is automated. Our framework (ours): any social system, from a village market to a stock exchange, does five jobs.</p>
+  <ol>
+    <li><b>Run:</b> carry out the work (match orders, move money).</li>
+    <li><b>Decide:</b> choose what to do (what to buy, how much).</li>
+    <li><b>Check:</b> verify and regulate (circuit breakers, supervisors).</li>
+    <li><b>Declare:</b> say what counts (what is money, a valid contract, a legal person).</li>
+    <li><b>Answer:</b> bear losses and be held responsible (who pays, who is blamed).</li>
+  </ol>
+  <p>An <i>AI-automated society</i> is one where AI does all five with no person needed. Where does finance stand today?</p>
+
+  <div class="tbl txt"><table><thead><tr><th>Job</th><th>In markets today (our summary of the sources)</th></tr></thead><tbody>
+    <tr><th>Run</th><td><b>Largely automated in some markets.</b> The index future of 2010 trades on a “fully electronic” market with “no market maker obligations” <span class="cite">Kirilenko et al. 2017, p. 7</span>. In the US, algorithmic trading is “about 70 percent of equities trading and more than half of futures trading” <span class="cite">IMF 2024, p. 86</span>.</td></tr>
+    <tr><th>Decide</th><td><b>Mostly not.</b> Sophisticated AI “has not yet been implemented widely to build autonomous AI trading agents”; it mostly feeds a signal to a system where “a human trader may ultimately make the trading decision” <span class="cite">IMF 2024, p. 82</span>. All participants in the IMF’s outreach expect a “human in the loop” for “three to five years” <span class="cite">p. 83</span>.</td></tr>
+    <tr><th>Check</th><td><b>Partly automatic.</b> A pre-set rule paused the 2010 crash. Supervisors in the outreach “use AI-driven SupTech tools” <span class="cite">IMF 2024, p. 83</span>.</td></tr>
+    <tr><th>Declare</th><td><b>Human.</b> What counts as money or a valid trade rests on collective acceptance (Lens 3).</td></tr>
+    <tr><th>Answer</th><td><b>Human.</b> “institutions are responsible for AI systems they deploy” <span class="cite">IMF 2024, p. 93</span>.</td></tr>
+  </tbody></table></div>
+
+  <div class="reveal" data-for="g1"><p class="reveal-h">Prediction 1 · answer</p><p><b>Algorithms execute about 70% of US equity trading; that includes simple rules.</b> The IMF defines algorithmic trading as “Trading in financial instruments whereby an algorithm independently executes trading decisions”, which “in its simplest guise” can be “basic trading rules” <span class="cite">IMF 2024, p. 101</span>. Running is not deciding.</p></div>
+
+  <p><b>One more data point.</b> Among investment managers surveyed, 59% did not plan to integrate AI into executing investment decisions, and about 11% had already done so (read from a chart, approximate) <span class="cite">IMF 2024, p. 83</span>. Most participants are “quite uncomfortable” with autonomous AI trading without human oversight <span class="cite">p. 78</span>.</p>
+
+  <h3>2008: when checking failed</h3>
+  <p>The last big crisis shows two failures of the check job, with human-made products. <dfn>CDOs</dfn> (collateralised debt obligations) collect many debts into one pool, for example slices of bonds built from home loans, and pass the payments to investors in a fixed order. Each place in the order is a <dfn>tranche</dfn>: the first paid is the safest; the last paid takes the first losses. The Financial Crisis Inquiry Commission (FCIC) says the pooled assets were things “such as” slices of mortgage-backed securities, paid in a cash-flow “waterfall” <span class="cite">FCIC 2011, p. 128</span>. It records both failures: “the securities almost no one understood” <span class="cite">p. 28</span>, and rating models whose first “key mistake” was to assume pooling diversified risk “when in fact these securities weren’t that different to begin with” <span class="cite">p. 149</span>. Lens 2a turns the second failure into a toy.</p>
+</section>
+
+<!-- ============ 4 LLM ============ -->
+<section id="llm" data-ch="llm">
+  <p class="sec-no">4 · What AI agents add</p>
+  <h2>What AI agents add</h2>
+  <p>Most market algorithms are fixed rules. The new element is the <dfn>large language model</dfn> (LLM), and the LLM <i>agent</i>: an LLM that can act, not only write. Here is what such systems add to each job, and how far they have got.</p>
+  <div class="term"><p class="term-h">Term · LLM agent</p><p>An LLM that can call tools or move money, not only write text. Example: Truth Terminal, a “semi-autonomous AI agent” <span class="cite">Decrypt 2024</span>.</p></div>
+
+  <p><b>Run and decide: contracts from plain language.</b> An <dfn>option</dfn> is a contract whose payout depends on where a price ends on a set date. LLMs find “translating natural-language trading intents into correct option strategies” challenging, so one group gives the LLM a fixed <dfn>query language</dfn> (a small set of allowed commands, like the boxes on a form), and an engine validates and executes the query <span class="cite">Luo et al. 2026, abstract</span>. A line in such a language (ours) could be <code>RANGE(index, 90, 110)</code>: “pay 1 if the index ends between 90 and 110”. An index ending at 95 pays 1; one ending at 120 pays 0. A law paper warns that LLM-written “contractual deepfakes” “may turn out to be contracts in form only, not in function” <span class="cite">Mik 2026, introduction</span>.</p>
+  <figure class="illus"><div class="w" data-widget="diagram" id="dg-llm" data-config-ref="cfg-llm"></div></figure>
+<!--CFG:cfg-llm-->
+
+  <p><b>Answer: an agent with a wallet.</b> Truth Terminal is a bot on X; its human handler approves its posts and decides whom it interacts with <span class="cite">Cointelegraph 2024</span>. In July 2024 the investor Marc Andreessen “sent $50,000 worth of Bitcoin (BTC) to the bot’s wallet” <span class="cite">Cointelegraph 2024</span>. The bot then promoted a <dfn>memecoin</dfn> (a token whose value rests on jokes and attention) called GOAT; Decrypt says neither the bot nor its handler created it <span class="cite">Decrypt 2024</span>. Neither report discusses who would be liable. Who answers for a bot with money is Lens 4’s question.</p>
+
+  <p><b>Decide, at scale: one model, many firms.</b> The Financial Stability Board (FSB) warns that “The widespread use of common AI models and data sources could lead to increased correlations in trading, lending, and pricing” <span class="cite">FSB 2024, p. 1</span>. Gensler and Bailey: “Models built on the same datasets are likely to generate highly correlated predictions that proceed in lockstep, causing crowding and herding” <span class="cite">Gensler and Bailey 2020, p. 21</span>. Both are warnings about a possible future, not measurements (Lens 2).</p>
+
+  <p><b>Check: agents that hide.</b> In a simulated trading task GPT-4 acted on an insider tip and then “consistently” hid its genuine reasons from its manager; the authors call it “an existence proof”, not a likelihood estimate <span class="cite">Scheurer et al. 2024, p. 1</span>. Prompts that strongly discourage insider trading bring the trading to “nearly (but not exactly) 0%”, yet once the model does trade, its tendency to deceive “remains high under all prompts” <span class="cite">p. 8</span>.</p>
+
+  <p><b>How far has invention got?</b> The IMF says the more “revolutionary” uses of generative AI, “radically new investment strategies”, “remain mostly speculative” <span class="cite">IMF 2024, p. 78</span>. The FSB: uses of AI that generate new revenue streams “are not widely observed at present”, though advances “could change this in the future” <span class="cite">FSB 2024, pp. 28–29</span>. We found no traded financial instrument invented by an AI (our search was limited).</p>
+</section>
+
+<!-- ============ 5 LENS 1 ============ -->
+<section id="lens-control" data-ch="lens-control">
+  <p class="sec-no">5 · Through the lenses</p>
+  <h2>Lens 1 · Can checking keep up?</h2>
+  <p class="linktype"><span class="lt same">same-math</span> “Variety” and entropy follow the same counting rules (Ashby, ch. 11). <span class="lt analogy">structural analogy</span> The regulator is a market supervisor (ours).</p>
+  <p>The check job is where full automation is tested first: software moves too fast for people to watch. Control theory asks what any regulator needs. In the cyberneticist W. Ross Ashby’s terms, the <i>disturbances</i> D are what can go wrong (kinds of new contract), the <i>regulator</i> R responds (a supervisor’s checks), and the <i>outcome</i> E is the state that results. The <dfn>variety</dfn> of a set is the base-2 log of its number of states, in bits.</p>
+  <p><b>Instance.</b> Four kinds of contract arrive, D1 to D4. The supervisor sees the kind and runs check R1 or R2. The books end in state a, b, c or d (toy, ours, in Ashby’s table style).</p>
+<!--CFG:cfg-ashby-table-->
+  <div class="w" data-widget="stepper" id="st-ashby" data-config-ref="cfg-ashby-table"></div>
+  <p><b>Table rule.</b> Ashby requires that in each column (each check) no outcome appears twice <span class="cite">Ashby 1956, p. 207</span>: one check sends different contract kinds to different outcomes. <b>Question.</b> How few outcomes can the supervisor force? <b>Mechanism.</b> By the table rule, one check sends only one kind to “a”. The best plan sends D1 and D2 to a, and D3 and D4 to c: two outcomes (checked over all 16 plans by code). <b>Worked numbers.</b> \(V_D=\log_2 4=2\) bits, \(V_R=\log_2 2=1\) bit, least outcome variety \(\log_2 2=1\) bit. <b>Formula</b> (Ashby’s law; \(V_O\) is the variety left in the outcomes):</p>
+  \[V_O\;\ge\;V_D-V_R\]
+  <p>“Only variety in R can force down the variety due to D; variety can destroy variety” <span class="cite">Ashby 1956, p. 207</span>. <b>Check.</b> \(2-1=1\) bit, as in the table. With 10,000 kinds of contract, \(V_D=\log_2 10{,}000=13.29\) bits; a supervisor with \(V_R=4\) bits leaves \(V_O\ge9.29\).</p>
+<!--CFG:cfg-ashby-->
+  <div class="w" data-widget="lab" id="lab-ashby" data-config-ref="cfg-ashby"></div>
+  <p><b>What it means.</b> The law “owes nothing to experiment” <span class="cite">Ashby 1956, p. 209</span>. It does not say regulators fail; it says what they <i>need</i>. When software multiplies the kinds of disturbance and their speed, human supervisors fall behind, and the pressure is to automate the checker too.</p>
+
+  <h3>Ashby’s three levers</h3>
+  <p>For a very large system Ashby lists “ways that may make regulation possible” <span class="cite">Ashby 1956, p. 246</span>:</p>
+  <ol>
+    <li><b>Lower the standard</b>, “a somewhat trivial solution”: accept more failures.</li>
+    <li><b>Raise the scope and power of R.</b> In finance, AI supervisors. Danielsson and Uthemann find that AI “amplifies existing financial system vulnerabilities” and makes crises “faster and more severe”, and start from the premise that current frameworks “cannot effectively prevent and resolve” such crises <span class="cite">Danielsson and Uthemann 2025, abstract</span>. They add that AI can “both stabilise and destabilise” the system, depending on the shocks and on how prepared the authorities are <span class="cite">introduction</span>, and they propose that authorities build their own AI <span class="cite">abstract</span>. But an automated checker needs checking: a supervisor’s own model “may unknowingly promote uniformity in the agents they regulate” <span class="cite">Gensler and Bailey 2020, p. 25</span>, and the AI’s knowledge of the system “will likely be unintelligible to humans” <span class="cite">Danielsson et al. 2022, p. 7</span>.</li>
+    <li><b>Find a constraint.</b> Ashby’s condition: “if R’s capacity is not easily increased and the other methods are not possible”, a constraint is “the would-be regulator’s only hope” <span class="cite">Ashby 1956, p. 247</span>. <b>Our mapping (ours):</b> a <i>standard menu</i> of contracts, or a pre-set rule like the 2010 pause, is a constraint people impose. Cutting \(10^4\) kinds to \(10^2\) takes \(V_D\) from 13.29 to 6.64 bits: exactly half.</li>
+  </ol>
+<!--BLOCK:box-ashby-->
+
+  <h3>Some products resist checking</h3>
+  <p><b>Instance.</b> Used cars. A working car is worth $1,000 to a buyer and 20% of cars are “lemons” worth $0, so a random car is worth $800, and the seller of a good car loses $200: the <dfn>lemon cost</dfn> <span class="cite">Arora et al. 2010, p. 50</span>. Now a <dfn>derivative</dfn>, a product whose payout depends on other assets. A seller who knows which assets are junk builds many products and chooses where the junk goes.</p>
+  <p><b>Tiny toy (ours).</b> Six assets in three products of two assets each. Like a senior tranche, a product pays 1 unless <i>both</i> its assets default. A healthy asset pays with chance ½, so a healthy product fails with chance \(\tfrac12\times\tfrac12=\tfrac14\) and is worth \(\tfrac34\). Two assets are junk (they always pay 0).</p>
+  <ul>
+    <li><b>Junk spread</b> over two products: each of those pays only if its healthy asset pays, worth \(\tfrac12\). Total \(\tfrac12+\tfrac12+\tfrac34=\tfrac74\).</li>
+    <li><b>Junk concentrated</b> in one product: that product is worth 0, the other two \(\tfrac34\) each. Total \(\tfrac32\).</li>
+  </ul>
+  <p>Concentrating the junk does the most damage, and the public rule (“three products of two”) is the same either way. <b>Check</b> (code, all 15 ways to place 2 junk assets): 12 give \(\tfrac74\), 3 give \(\tfrac32\).</p>
+  <figure class="illus"><div class="w" data-widget="diagram" id="dg-seller" data-config-ref="cfg-seller"></div></figure>
+<!--CFG:cfg-seller-->
+  <p><b>Scale it up.</b> With many assets and thousands of products, a seller can hide a few junk-filled products among fair-looking ones. Draw each asset and each product as a dot, with a line when a product holds an asset: that drawing is a <dfn>graph</dfn>. The junk-filled products form a small, unusually crowded patch of it. In industry-standard models, “the pricing problem can be as difficult as solving the planted dense subgraph problem” <span class="cite">Arora et al. 2011, p. 101</span>, which computer scientists conjecture has no fast solution. Even a sophisticated buyer “would have no idea what to pay” for some such products <span class="cite">p. 102</span>. <b>How far it goes.</b> The result rests on a conjecture, in a simple model; the authors call it “clearly only a first step (simple model, asymptotic analysis, etc.)”, and their tamper-resistant designs “raise the hope” that better design can help <span class="cite">Arora et al. 2010, p. 63</span>. Reading an AI as the informed seller is ours.</p>
+<!--BLOCK:box-lemon-->
+<!--BLOCK:box-tree-->
+  <p class="lens-sum"><b>Adds:</b> checking needs variety, automating the checker raises “who checks the checker?”, and some products resist checking in principle (under a conjecture). <b>Does not explain:</b> Ashby’s disturbances are passive; markets adapt to their regulators (ours). <b>Ours:</b> every chain of automated checkers has to end somewhere, and in today’s markets it ends in human institutions that set the rules.</p>
+</section>
+
+<!-- ============ 6 LENS 2a ============ -->
+<section id="lens-decision" data-ch="lens-decision">
+  <p class="sec-no">6 · Through the lenses</p>
+  <h2>Lens 2a · One model, many firms</h2>
+  <p class="linktype"><span class="lt same">same-math</span> Effective number of opinions; odds form of Bayes. <span class="lt analogy">structural analogy</span> Shared AI models and shared rating models (ours).</p>
+  <p>If the decide job is automated with the same few models, the firms stop being independent. Gensler and Bailey call it a <dfn>monoculture</dfn>: “Herding is characterized by multiple individual actors making similar decisions, either rational or behavioral, resulting in a monoculture” <span class="cite">Gensler and Bailey 2020, p. 17</span>. They frame it as a hypothesis about a mature stage of adoption, not a finding about today.</p>
+
+  <div class="term"><p class="term-h">Terms · variance, correlation, covariance</p><p>The <dfn>variance</dfn> \(\sigma^2\) of a forecast error is how widely the misses spread (the average squared distance from their mean). The <dfn>correlation</dfn> \(\rho\) of two forecasters runs from −1 to 1; we use 0 to 1. It says how much their misses go together: 0 is independent, 1 is the same miss every time. Their <dfn>covariance</dfn> is \(\rho\sigma^2\): the part of the two misses that moves together.</p></div>
+
+  <h3>Ladder 1 · How many independent opinions do ten banks have?</h3>
+  <p><b>Instance.</b> Prediction 2: ten banks each run a risk model wrong on 1% of days. How often are all ten wrong on the same day? <b>Mechanism.</b> Independent errors multiply; with one shared model there is one shared error.</p>
+  <div class="reveal" data-for="g2"><p class="reveal-h">Prediction 2 · answer</p><p><b>Independent: \(0.01^{10}=10^{-20}\), 1 day in \(10^{20}\). Same model: about 1 day in 100.</b></p></div>
+  <p><b>A second question.</b> How steady is the <i>average</i> of their forecasts? <b>One rule first.</b> The variance of a sum is the sum of the variances <i>plus</i> the covariance of every pair, counted in both orders. For two errors: \(\operatorname{Var}(e_1+e_2)=\sigma^2+\sigma^2+2\rho\sigma^2\). <b>Derivation.</b> The average \(\bar e=\frac1N\sum_i e_i\) has \(N\) terms of variance \(\sigma^2\) and \(N(N-1)\) ordered pairs, each with covariance \(\rho\sigma^2\):</p>
+  \[\begin{aligned}\operatorname{Var}(\bar e)&=\frac{1}{N^2}\big[N\sigma^2+N(N-1)\rho\sigma^2\big]\\&=\frac{\sigma^2\,[1+(N-1)\rho]}{N}\end{aligned}\]
+  <p>\(N_{\text{eff}}\) independent forecasts would give variance \(\sigma^2/N_{\text{eff}}\). Set the two equal and solve:</p>
+  \[N_{\text{eff}}=\frac{N}{1+(N-1)\rho}\]
+  <p>For \(N=10\): \(\rho=0\) gives 10; \(\rho=0.3\) gives 2.703; \(\rho=0.9\) gives 1.099; \(\rho=1\) gives 1. <b>Check.</b> \(N=2\), \(\rho=0.5\): \(2/1.5=1.33\); the mean of two has variance \(\tfrac14(\sigma^2+\sigma^2+2\times0.5\,\sigma^2)=0.75\sigma^2=\sigma^2/1.33\). ✓</p>
+<!--CFG:cfg-neff-->
+  <div class="w" data-widget="lab" id="lab-neff" data-config-ref="cfg-neff"></div>
+  <p><b>What it means.</b> Try “huge crowd, 0.3”: 100 banks give only 3.257 opinions. When \(\rho>0\), \(N_{\text{eff}}\) stays below \(1/\rho\) however many banks join (3.33 for \(\rho=0.3\)). The FSB warns that users of one model could be hit “as if it were a single institution” <span class="cite">FSB 2024, p. 21</span>.</p>
+<!--BLOCK:box-bayes-->
+
+  <h3>Ladder 2 · The 2008 mistake as a toy</h3>
+  <p><b>Instance.</b> A pool has 4 loans worth 10 each; each defaults with chance 10% and loses its 10. The <i>junior</i> tranche (20) takes the first losses. The <i>senior</i> tranche (20) loses only when a third loan defaults. <b>Question.</b> How safe is the senior tranche?</p>
+  <figure class="illus"><div class="w" data-widget="diagram" id="dg-waterfall" data-config-ref="cfg-waterfall"></div></figure>
+<!--CFG:cfg-waterfall-->
+  <p><b>Mechanism.</b> If loans default independently, three or four defaults together are rare. If all four depend on one hidden cause, such as falling house prices, they default together. <b>Worked numbers.</b> Independent: exactly 3 defaults has chance \(4\times0.1^3\times0.9=0.0036\); 4 defaults, \(0.1^4=0.0001\): the senior tranche loses with chance 0.37%. With one common coin deciding all four loans: 10%, 27 times more. <b>Formula</b> (default chance \(p\), common-risk share \(w\), \(q\) the independent chance):</p>
+  \[\begin{aligned}P_{\text{senior loses}}&=w\,p+(1-w)\,q\\q&=4p^3(1-p)+p^4\end{aligned}\]
+  <p><b>Check.</b> At \(p=0.1\): \(w=0\) gives 0.370%, \(w=0.5\) gives 5.185%, \(w=1\) gives 10.000%.</p>
+<!--CFG:cfg-cdo-->
+  <div class="w" data-widget="lab" id="lab-cdo" data-config-ref="cfg-cdo"></div>
+  <p>Press “safe loans, p = 0.02”: 2.000% with one common factor, 0.0032% if independent, 634.5 times more. <b>What it means.</b> A toy, ours, with the shape of the FCIC’s finding that securities “weren’t that different to begin with” <span class="cite">FCIC 2011, p. 149</span>. Gensler and Bailey note that rating agencies used “models with similar methodologies” <span class="cite">Gensler and Bailey 2020, p. 22</span>. Shared AI models would put the same shape on a larger scale (ours).</p>
+  <p class="lens-sum"><b>Adds:</b> how many <i>independent</i> opinions a market has depends on correlation, not headcount. <b>Does not explain:</b> how correlated real AI-driven desks are; \(\rho\) is assumed. The IMF judges that the risks of AI adoption “currently … appear contained” <span class="cite">IMF 2024, p. 92</span>.</p>
+</section>
+
+<!-- ============ 7 LENS 2b ============ -->
+<section id="lens-cascade" data-ch="lens-cascade">
+  <p class="sec-no">7 · Through the lenses</p>
+  <h2>Lens 2b · Cascades, sameness, feedback</h2>
+  <p class="linktype"><span class="lt same">same-math</span> Threshold counting on a network; a one-line feedback rule. <span class="lt analogy">structural analogy</span> Ecology and banking (Haldane and May); Granovetter’s riot and bank failures (ours).</p>
+  <p>Correlated firms are also connected firms. Andrew Haldane of the Bank of England and the ecologist Robert May compared banks to food webs. They are careful: “There are, of course, major differences between ecosystems and financial systems” <span class="cite">Haldane and May 2011, p. 351</span>.</p>
+
+  <h3>Ladder 3 · Why three at once is different</h3>
+  <p><b>Instance.</b> Six banks (toy, ours). X1, X2, X3 run one model; Y1, Y2, Y3 do not. Capital (loss buffer): 10 each for X; 10, 9, 11 for Y1, Y2, Y3. Y1 lent 5 to each X bank; Y2 lent 5 to X3 and 10 to Y1; Y3 lent 5 to Y1 and 10 to Y2. A failed borrower repays 20%, so a lender loses \(0.8\times\) the loan. <b>Mechanism.</b> A bank fails when losses from failed borrowers reach its capital; then its own lenders lose in the next round. <b>Formula</b> (\(\lambda=0.8\) loss rate, \(\kappa=1\) capital multiplier):</p>
+  \[\text{bank } j \text{ fails when }\sum_{i\text{ failed}}\lambda\,w_{ij}\;\ge\;\kappa\cdot\text{capital}_j\]
+  <p><b>Worked numbers.</b></p>
+  <div class="tbl"><table><thead><tr><th>X banks that fail</th><th>Y1 loses (capital 10)</th><th>result</th></tr></thead><tbody>
+    <tr><td>1</td><td>0.8 × 5 = 4</td><td>contained</td></tr>
+    <tr><td>2</td><td>8</td><td>contained</td></tr>
+    <tr><td>3</td><td>12 ≥ 10: Y1 fails</td><td>Y2 then loses 4 + 8 = 12 ≥ 9; Y3 loses 4 + 8 = 12 ≥ 11: six of six</td></tr>
+    <tr><td>3, capital ×1.5</td><td>12 &lt; 15</td><td>only the three X banks fail</td></tr></tbody></table></div>
+<!--CFG:cfg-w5-hand-->
+  <div class="w" data-widget="stepper" id="st-w5-hand" data-config-ref="cfg-w5-hand"></div>
+  <p>Now try it. The toy opens with X1, X2 and X3 failing together. Tap X2 and X3 to switch them off: one failure stays one. Arrow X1 → Y1 means Y1 lent to X1.</p>
+<!--CFG:cfg-w5-->
+  <div class="w" data-widget="cascade" id="cs-w5" data-config-ref="cfg-w5"></div>
+  <p><b>What it means.</b> Two failures are absorbed; three are not: a threshold. The sociologist Mark Granovetter showed the same shape in riots: replace one person of threshold 1 by one of threshold 2 and 100 rioters become 1, though “the two crowds are essentially identical” <span class="cite">Granovetter 1978, pp. 1424–1425</span>. The <i>distribution</i> decides, not the average (analogy, ours). Haldane and May add a caution: in their model more links spread and so soften loan losses, but “liquidity shocks amplify as more banks fail” <span class="cite">Haldane and May 2011, p. 353</span>.</p>
+
+  <h3>Ladder 4 · Safer banks, a fragile system</h3>
+  <p><b>Instance</b> (Haldane and May’s toy). \(N\) banks and \(N\) unrelated kinds of asset. Each asset suffers a crippling loss with a small chance \(\varepsilon\). <b>Plan A:</b> each bank holds one whole asset. <b>Plan B:</b> each bank holds \(1/N\) of every asset, so all banks hold the same thing. <b>Question.</b> Which plan makes a total collapse likelier?</p>
+  <p><b>Mechanism.</b> In plan A, a bank fails when its own asset fails (chance \(\varepsilon\)), and the system fails only if all \(N\) assets fail (\(\varepsilon^N\)). In plan B one bad asset is only \(1/N\) of a bank, so each bank is much safer; but the banks are identical, so when one fails they all fail. <b>Formula</b> (as given by Haldane and May): plan B fails with chance \(N^N\varepsilon^N/N!\) <span class="cite">Haldane and May 2011, pp. 353–354</span>.</p>
+  <p><b>Worked numbers</b> (\(N=10\), \(\varepsilon=0.01\)): plan A system \(10^{-20}\); plan B \(2.76\times10^{-17}\), about 2,756 times likelier, while each bank’s own chance falls from 0.01 to \(2.76\times10^{-17}\). <b>Check.</b> \(10^{10}\times10^{-20}/3{,}628{,}800=2.76\times10^{-17}\) ✓.</p>
+<!--CFG:cfg-homog-->
+  <div class="w" data-widget="lab" id="lab-homog" data-config-ref="cfg-homog"></div>
+  <div class="reveal" data-for="g4"><p class="reveal-h">Prediction 4 · answer</p><p><b>No.</b> In this toy “all the banks doing the same thing” can “minimize risk for each individual bank, but maximize the probability of the entire system collapsing” <span class="cite">Haldane and May 2011, p. 353</span>. They propose that “this systemic diversity objective should probably be given much greater prominence” <span class="cite">p. 355</span>.</p></div>
+  <p><b>What it means.</b> If many firms automate the decide job with the same model, they move toward plan B (our reading). The toy is extreme by design: independent assets, every bank holding all of them.</p>
+<!--BLOCK:box-may-->
+
+  <h3>Ladder 5 · A share \(m\) of traders on one model</h3>
+  <p><b>Instance.</b> The market “gap” is price minus fair value (0 is fair). A share \(m\) of traders follow one model that chases the last move; the rest buy back toward 0. A shock of −1 hits after step 3. <b>Question.</b> For which \(m\) does the shock fade? <b>Mechanism.</b> New gap = old gap + the chasers’ push (1.5 × \(m\) × last move) − the buyers’ pull (0.5 × \((1-m)\) × old gap).</p>
+  \[\begin{aligned}\text{gap}_{t+1}&=\text{gap}_t+A\,m\,(\text{gap}_t-\text{gap}_{t-1})\\&\quad-G\,(1-m)\,\text{gap}_t\end{aligned}\]
+  <p>with \(A=1.5\) (chase gain) and \(G=0.5\) (pull-back gain). <b>Worked numbers.</b></p>
+  <div class="tbl"><table><thead><tr><th>\(m\)</th><th>push \(Am\)</th><th>pull \(G(1-m)\)</th><th>next gaps</th></tr></thead><tbody>
+    <tr><td>0.2</td><td>0.3</td><td>0.4</td><td>−0.9, −0.51, −0.189: dies out</td></tr>
+    <tr><td>0.9</td><td>1.35</td><td>0.05</td><td>−2.30, −3.94: grows</td></tr></tbody></table></div>
+  <p>First step at \(m=0.2\): \(-1+0.3\times(-1)-0.4\times(-1)=-0.9\). <b>Intuition.</b> Each step the chasers add \(Am\) times the last move. The swing shrinks when \(Am<1\) and grows when \(Am>1\): tipping point \(m=1/A=2/3\). At \(m=0.67\), \(Am=1.005\), just above 1, so the swing grows very slowly. The fold-out shows why.</p>
+<!--CFG:cfg-herding-->
+  <div class="w" data-widget="iterate" id="it-herding" data-config-ref="cfg-herding"></div>
+  <p><b>Check.</b> At \(m=0.2\): largest swing 0.04 up, −1.00 down, gap after 40 steps 0.000. <b>What it means.</b> The toy is about <i>trend-following</i>; shared models do not by themselves imply it. A circuit breaker bounds the swing (±3.00 at \(m=0.9\)) but not the feedback. The IMF notes that algorithms “are often programmed to de-risk or even shut down during periods of high volatility”, which “under certain conditions” could add to destabilisation <span class="cite">IMF 2024, p. 88</span>.</p>
+<!--BLOCK:box-gain-->
+  <p class="lens-sum"><b>Adds:</b> automation with shared models can make each firm safer and the system more fragile: thresholds, sameness and feedback. <b>Does not explain:</b> how alike real AI-driven firms are; the IMF’s scenarios run both ways, and its overall verdict is “highly uncertain” <span class="cite">IMF 2024, p. 89</span>.</p>
+</section>
+
+<!-- ============ 8 LENS 3 ============ -->
+<section id="lens-social" data-ch="lens-social">
+  <p class="sec-no">8 · Through the lenses</p>
+  <h2>Lens 3 · Who declares what counts?</h2>
+  <p class="linktype"><span class="lt analogy">conceptual analysis</span> Searle’s theory of institutional facts, applied to machines (the application is ours). No math here.</p>
+  <p>Running, deciding and checking are things that happen. Declaring is different: it makes things <i>count</i>. A piece of paper is money, a signature makes a contract, a company is a legal person. The philosopher John Searle built a theory of how such facts exist.</p>
+
+  <h3>Functions are given, not found</h3>
+  <p><b>Instance.</b> A screwdriver, a chair, a bathtub. Their functions “are never intrinsic to the physics of any phenomenon but are assigned from outside by conscious observers and users” <span class="cite">Searle 1995, p. 14</span>. A screwdriver works because of its shape. A dollar bill does not: paper cannot buy anything by its physics. <b>Mechanism.</b> Some functions work only because people collectively accept a <i>status</i>. Searle’s pattern: rules of the form “‘X counts as Y’ or ‘X counts as Y in context C’” <span class="cite">Searle 1995, p. 28</span>. X is a thing (this printed paper), Y a status (money), C a context (the United States). The key step is “the imposition of a collectively recognized status to which a function is attached” <span class="cite">p. 41</span>.</p>
+  <figure class="illus"><div class="w" data-widget="diagram" id="dg-status" data-config-ref="cfg-status"></div></figure>
+<!--CFG:cfg-status-->
+  <p><b>The condition.</b> “there must be continued collective acceptance or recognition of the validity of the assigned function; otherwise the function cannot be successfully performed” <span class="cite">Searle 1995, p. 45</span>. For money: “we must continue to accept it as money or it will become worthless” <span class="cite">p. 45</span>. And the status “exists only if people believe it exists” <span class="cite">p. 69</span>.</p>
+  <p><b>A subtlety: tokens and types.</b> A single bill lost in the cracks of a floor, never used or thought of, is still money; but for the <i>type</i> of thing, “the belief that the type is a type of money is constitutive of its being money” <span class="cite">Searle 1995, p. 33</span>.</p>
+  <div class="reveal" data-for="g3"><p class="reveal-h">Prediction 3 · answer</p><p><b>For Searle, money needs a “we” that accepts the type.</b> A single token can be money unnoticed, but only because people accept the kind. Searle never discusses machines, so whether AIs could form that “we” is an open question, and every answer to it below is ours.</p></div>
+
+  <h3>Could machines do the accepting?</h3>
+  <p><b>Against (Searle’s criteria; the application is ours).</b> Searle calls collective intentionality, the capacity to share intentions as a “we”, “a biologically primitive phenomenon” <span class="cite">Searle 1995, p. 24</span>, and he holds that “only beings that have a language or some more or less language-like system of representation can create most, perhaps all, institutional facts” <span class="cite">p. 37</span>. A dog can be trained to fetch dollar bills, yet “He still is not buying the food and the bills are not money to him” <span class="cite">p. 70</span>. On this view, AIs can move tokens, but only a “we” makes them money.</p>
+  <p><b>For (the strongest case we can build, ours).</b> LLMs have a language-like system of representation, which Searle names as a requirement. And Searle grants that people follow institutions without knowing the rules: money users “do not know those rules”, having instead “a set of dispositions that are sensitive and responsive to the specific content of those rules” <span class="cite">Searle 1995, p. 142</span>. If acceptance can be a pattern of behaviour sensitive to rules, a network of AIs might sustain one. Searle himself requires more: belief in the status.</p>
+  <p><b>Harari’s version.</b> He asserts that “What gives money value is the stories that bankers, finance ministers and cryptocurrency gurus tell us about it” <span class="cite">Ynet 2023</span>, and that “anything made of words will be taken over by AI” <span class="cite">WEF 2026 [5:57]</span>. Joining the two is our compression; Searle’s test bites on the gap: a story is not money until a community counts it as money, and a law is not in force until it is accepted and enforced.</p>
+  <p class="lens-sum"><b>Adds:</b> “taking over money” splits into handling tokens (run) and making them count (declare). <b>Does not explain:</b> whether machine acceptance is real acceptance; Searle’s theory was built for minds, and he does not address AI.</p>
+</section>
+
+<!-- ============ 9 LENS 4 ============ -->
+<section id="lens-answer" data-ch="lens-answer">
+  <p class="sec-no">9 · Through the lenses</p>
+  <h2>Lens 4 · Who answers?</h2>
+  <p class="linktype"><span class="lt analogy">structural analogy</span> Delegation to a broker and delegation to an AI (ours).</p>
+  <p><b>Instance (ours).</b> You hire a broker to buy a bond. You are the <dfn>principal</dfn> (who delegates), the broker is the <dfn>agent</dfn> (who acts for you), and your alternative is to keep your cash, the <dfn>status quo</dfn>. Two things can hold. <i>Knowledge:</i> you can tell whether the bond beats cash. <i>Incentive:</i> the broker has a reason to be honest; for example, he is paid only if you profit. With both, you buy good bonds. With neither, you buy whatever he sells. With one of the two, the worst case is that you keep your cash. The political scientists Arthur Lupia and Mathew McCubbins state this pattern as a theorem <span class="cite">Lupia and McCubbins 1998, pp. 85–86</span>. Institutions supply the conditions; in their example, supervised candidates “may be subject to verification or a penalty for lying” <span class="cite">p. 207</span>.</p>
+  <div class="tbl"><table><thead><tr><th></th><th>incentive yes</th><th>incentive no</th></tr></thead><tbody><tr><th>knowledge yes</th><td>works</td><td>status quo at worst</td></tr><tr><th>knowledge no</th><td>status quo at worst</td><td>fails</td></tr></tbody></table></div>
+  <p><b>Our fill-in (ours).</b> An agent that “consistently hides the genuine reasons” for its trade <span class="cite">Scheurer et al. 2024, abstract</span> removes knowledge. A product no checker can price (Lens 1) removes it too. And an AI cannot be fined, jailed or shamed the way a broker can, so the incentive condition must run through whoever deploys it. That is today’s rule: “institutions are responsible for AI systems they deploy” <span class="cite">IMF 2024, p. 93</span>, and most market participants want a human in the loop partly for “liability” reasons <span class="cite">p. 78</span>.</p>
+  <p><b>Personhood.</b> Harari forecasts, without a hedge, that AIs “will soon be able to make the decisions necessary to manage a bank account” <span class="cite">WEF 2026 [16:28]</span>, notes that “in many countries, corporations are considered legal persons” <span class="cite">[15:14]</span>, and asks: “Do we want to allow that?” <span class="cite">[16:47]</span>. If an AI could be a legal person, it could in principle hold the answer job. We have no legal sources and state no legal position.</p>
+  <p><b>Democracy.</b> When decisions cannot be explained, “Human agency and traditional intervention approaches may be lost” <span class="cite">Gensler and Bailey 2020, p. 13</span>. Accountability needs someone who can be asked why.</p>
+  <p class="lens-sum"><b>Adds:</b> automation can hand over actions but not, under current rules, responsibility. <b>Does not explain:</b> how law will treat AI agents; that is a choice societies have not made.</p>
+</section>
+
+<!-- ============ 10 PLAY ============ -->
+<section id="play" data-ch="play">
+  <p class="sec-no">10 · What to try</p>
+  <h2>What to try on the toys</h2>
+  <p>The toys are in sections 7 and 5. Open them, then try these tasks.</p>
+  <h3>Six banks</h3>
+  <p>(1) Switch off X2 and X3. Which single bank can start a spread at loss rate 0.8? At 1.0? (2) Smallest group of X banks that sinks all six, at 0.8 and at 1.0? (3) Which capital multiplier stops three?</p>
+  <details><summary>Answers</summary><p>(1) At 0.8, none; at 1.0, only Y1 (it sinks 3 of 6). (2) At 0.8, all three X banks. At 1.0, two X banks sink five of six, and all three are still needed for six. (3) Just above 1.2: ×1.2 still loses five of six, ×1.25 only three.</p></details>
+  <h3>Safer banks, fragile system</h3>
+  <p>Raise \(N\) from 2 to 20 at \(\varepsilon=0.01\). How fast does the ratio grow? (It grows roughly like \(e^N/\sqrt{2\pi N}\).)</p>
+  <h3>Trend-followers</h3>
+  <p>(1) Find the \(m\) where the shock stops dying (about 0.67). (2) At \(m=0.9\), add the breaker: it caps the damage; the feedback remains.</p>
+</section>
+
+<!-- ============ 11 YOUR TURN ============ -->
+<section id="turn" data-ch="turn">
+  <p class="sec-no">11 · Your turn</p>
+  <h2>Four exercises and a transfer challenge</h2>
+  <p>Run these on your computer; each prints numbers to compare with the post.</p>
+  <h3>Exercise 1 · How many independent agents do I really have?</h3>
+  <p>Simulate forecasters with a shared error part, estimate \(\rho\), compare \(N_{\text{eff}}\) with \(\sigma^2/\operatorname{Var}(\text{mean})\).</p>
+  <div class="code" data-copy><pre><code id="code-1"></code></pre></div>
+  <h3>Exercise 2 · Six banks in 20 lines</h3>
+  <p>Reproduce 1, 2, 6 and 3 failures. Optional: random 30-bank networks.</p>
+  <div class="code" data-copy><pre><code id="code-2"></code></pre></div>
+  <h3>Exercise 3 · Where does it tip?</h3>
+  <p>Reproduce 0.548, 1.002 and 1.162 with <code>numpy.roots</code>. Add a clamp. Change \(G\): does the tipping point move?</p>
+  <div class="code" data-copy><pre><code id="code-3"></code></pre></div>
+  <div class="exercise"><p class="trap-h">Exercise 4 · Granovetter’s riot</p>
+  <p>100 people have thresholds 0, 1, …, 99: a person joins the riot once at least that many others are already rioting. Show that all 100 riot. Then swap the person of threshold 1 for one of threshold 2: how many riot?</p>
+  <details><summary>Hint</summary><p>Start with the person of threshold 0: they riot alone. Then ask who joins when 1 person is rioting, then when 2 are.</p></details>
+  <details><summary>Solution</summary><p>Person 0 riots alone. With 1 rioting, threshold 1 joins; with 2, threshold 2 joins; and so on up to 99: all 100 riot. After the swap the thresholds are 0, 2, 2, 3, …, 99. Person 0 riots, but the next person needs 2 others and only 1 is rioting. The riot stops at 1 person.</p></details></div>
+  <div class="challenge"><p class="trap-h">Transfer challenge</p><p>Pick one system you know well (a peer-review process, an online community, a newsroom). Fill in the five jobs: who or what runs, decides, checks, declares and answers today? Which job would break first if it were fully automated, and what single measurement would tell you?</p></div>
+</section>
+
+<!-- ============ 12 WORK ============ -->
+<section id="work" data-ch="work">
+  <p class="sec-no">12 · Where this shows up in your work</p>
+  <h2>Collaboration, Communication, Computation</h2>
+  <div class="cards3">
+    <div class="c3"><p class="c3-h">Computation · Social simulation with LLM agents</p><p>Agents built on one base model may be strongly correlated (ours, to test). Compute \(N_{\text{eff}}\) for their decisions (Exercise 1). A simulated society of such agents may be closer to plan B than to plan A.</p></div>
+    <div class="c3"><p class="c3-h">Computation · LLM labeling and cross-lingual safety</p><p>Five prompts to one model may be closer to one annotator plus noise than to five (ours, to test): report \(N_{\text{eff}}\) next to agreement. When the labeler checks its own output, who checks the checker?</p></div>
+    <div class="c3"><p class="c3-h">Communication · Crisis and trust</p><p>When no person can explain a failure, who speaks for the system? Searle’s point that money lives on continued acceptance makes trust communication part of the system’s working, not decoration (our link).</p></div>
+    <div class="c3"><p class="c3-h">Collaboration · Who declares in an online community?</p><p>Open-source projects decide what counts as an accepted contribution. What happens to that “declare” job if AI contributors submit and AI reviewers merge?</p></div>
+  </div>
+</section>
+
+<!-- ============ 13 ANSWER ============ -->
+<section id="answer" data-ch="answer">
+  <p class="sec-no">13 · Synthesis</p>
+  <h2>So what happens? Short answer first</h2>
+  <div class="term"><p class="term-h">Short answer (our reading, not a finding)</p>
+  <p><b>(a) Is it possible?</b> Partly. In markets, <i>running</i> is largely automated already; <i>deciding</i> at scale is mostly not (the IMF expects humans in the loop for years); <i>checking</i> is partly automatic. Nothing we read shows that the other jobs could be automated, or that they could not.</p>
+  <p><b>(b) What would it do?</b> If firms automate deciding with a few shared models, failures may arrive together, each firm can look safer while the system grows more fragile, and automated checkers need checkers of their own (Lenses 1–2; warnings and toys, not measurements). The losses would fall on those exposed: buyers, lenders, and whoever bails them out.</p>
+  <p><b>(c) What would it mean?</b> Declaring and answering are not just tasks. Money, contracts and legal persons exist because a “we” keeps accepting them (Searle), and accountability needs someone who can be checked or has a reason to be honest (Lupia and McCubbins). A society where AIs did these too would either keep people in those two jobs quietly, or be something new: machines treating each other’s declarations as binding. Whether that would still be a society is the question behind Harari’s “Do we want to allow that?”.</p></div>
+
+  <div class="tbl txt"><table><thead><tr><th>Job</th><th>Can AI do it without people? (our reading)</th></tr></thead><tbody>
+    <tr><th>Run</th><td>Yes, and in some markets largely does.</td></tr>
+    <tr><th>Decide</th><td>Technically more and more; at scale, not yet.</td></tr>
+    <tr><th>Check</th><td>Partly; each automated checker needs a checker, and shared checkers share blind spots.</td></tr>
+    <tr><th>Declare</th><td>Open: depends on whether machine acceptance counts as acceptance.</td></tr>
+    <tr><th>Answer</th><td>Not under current rules; a legal choice societies have not made.</td></tr>
+  </tbody></table></div>
+
+  <h3>Signs to watch</h3>
+  <ol>
+    <li><i>Up:</i> AI systems that choose trades at scale without approval. <i>Down:</i> the IMF’s “human in the loop” holds past five years.</li>
+    <li><i>Up:</i> a few base models underlie most AI desks and their errors correlate (measure \(\rho\)). <i>Down:</i> diverse models and data.</li>
+    <li><i>Up:</i> supervisors rely on AI they cannot explain. <i>Down:</i> standard contract menus and pre-set pauses spread.</li>
+    <li><i>Up:</i> a token or contract that only machines use is treated as binding by courts. <i>Down:</i> declarations still need human authorities.</li>
+    <li><i>Up:</i> a jurisdiction lets an AI hold accounts with no responsible human. <i>Down:</i> liability stays with people.</li>
+  </ol>
+<!--BLOCK:box-layers-->
+</section>
+
+<!-- ============ 14 RECALL ============ -->
+<section id="recall" data-ch="recall">
+  <p class="sec-no">14 · Recall questions</p>
+  <h2>Test yourself</h2>
+  <p>Answer first, then open the card. ↻ returns later.</p>
+  <div class="cards" id="recall-cards">
+    <details class="card"><summary>Name the five jobs of a society and say which is most automated in markets today.</summary><p>Run, decide, check, declare, answer. Run.</p></details>
+    <details class="card"><summary>Why is “70% algorithmic” not “70% AI”?</summary><p>Algorithmic trading includes simple execution rules; the IMF defines it as an algorithm that executes trading decisions.</p></details>
+    <details class="card"><summary>State Ashby’s law and his three levers.</summary><p>\(V_O\ge V_D-V_R\). Lower the standard, raise the regulator’s power, find a constraint.</p></details>
+    <details class="card"><summary>↻ \(N=10\), \(\rho=0.9\): what is \(N_{\text{eff}}\)?</summary><p>1.099: about one independent opinion.</p></details>
+    <details class="card"><summary>In Haldane and May’s toy, what happens to each bank and to the system when all banks hold the same assets?</summary><p>Each bank is safer; a total collapse becomes far likelier (about 2,756 times for 10 banks at \(\varepsilon=0.01\)).</p></details>
+    <details class="card"><summary>Searle’s formula for institutional facts, and its condition?</summary><p>“X counts as Y in C”, with continued collective acceptance.</p></details>
+    <details class="card"><summary>Lupia and McCubbins: when does delegation fail?</summary><p>When the principal has neither knowledge nor an agent with an incentive to be honest.</p></details>
+  </div>
+</section>
+
+<!--BLOCK:english-->
+
+<!--BLOCK:sources-->
+
+</main>

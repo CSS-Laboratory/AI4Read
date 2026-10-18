@@ -1,228 +1,215 @@
 ---
 post: 2026-10-ai-finance
 voice: kokoro af_heart
-note: Written for the ear. Formulas are spoken in words. Each chapter ends with a short recap so it can be looped alone. Deep dives and tables are only mentioned. Round 2 - Lens 3 is split into two chapters, the ladder chapter is gone (its content moved into the lenses), and the playground chapter says what to try, with no answers.
+note: Version 2 (2026-10-18), re-centred on an AI-automated society. Written for the ear. Formulas are spoken in words. Each chapter ends with a short recap so it can be looped alone. Fold-outs and tables are only mentioned. The post stands alone and never refers to another post.
 ---
 
-## hook | Two contracts
-Welcome to AI4Read from CSS Lab. This is post two: can AI invent a new kind of finance, and what would that do to a system built around people?
+## hook | Five seconds in 2010
+Welcome to AI4Read from CSS Lab. This is post two: could a society run itself on AI?
 
-Remember the village from post one, where the weather report has four words: rain, sun, wind and snow. Two villagers offer you a contract, a deal that pays coins depending on the weather on the next two days. Two days with four kinds of weather each give sixteen cases, and a contract is a payout for every case.
+Start with five seconds. On the sixth of May, twenty ten, at two thirty-two in the afternoon, Eastern time, a large fund company began to sell seventy-five thousand futures contracts on the US stock index, worth about four point one billion dollars, to protect its existing stock holdings. It chose to run the sale through an automated execution algorithm. The algorithm sold nine percent of the previous minute's trading volume, without regard to price or time. Thirteen minutes later, fewer than one thousand and fifty contracts of buy orders were left waiting in the market: less than one percent of what had been waiting at the start of the day.
 
-The first villager says: pay four coins for each rainy day. One sentence, and the whole table of sixteen payouts follows. The second villager gives no rule, only a table of sixteen numbers. To explain that contract, you must read out all sixteen.
+At two forty-five and twenty-eight seconds, a rule fired. The exchange's Stop Logic, an automated safeguard, paused trading for five seconds. Nobody pressed a button. People had set the rule and its limits in advance. After the pause, prices steadied, and by three oh eight the index future was back near where it started. That the pause prevented a cascade of further declines is the regulators' account, quoted in the paper; the paper itself does not test it.
 
-To price a contract, multiply each payout by the chance of its case, and add. With equal chances, one sixteenth each, the first contract is worth two coins. Now grow the village. A pool of one hundred loans, each paying or defaulting, has two to the power one hundred cases, about one point three times ten to the thirty. Nobody can write that table. Only a contract that comes with a rule can exist on paper. And a short rule does not guarantee an easy price. We will see why in lens one.
+Look at who did what. A firm decided to sell. Software ran the selling and the matching. A pre-set rule checked the fall. Afterwards, regulators wrote the report, and people answered for the losses.
 
-Now the real argument. At the Bank for International Settlements in May twenty twenty-four, the historian Yuval Noah Harari spoke with Cecilia Skingsley. He said maybe one percent of the population really understands how the financial system works. She answered that most of us happily step into an airplane, having very vague understanding of how that works. Harari replied that one percent and zero percent understanding are a very big difference, called her example perfect, and turned to the two thousand eight crisis. So what is different about money?
+The historian Yuval Noah Harari pushes the picture further. At Davos in twenty twenty-six he stated it flatly: anything made of words will be taken over by AI. Laws, contracts and money are made of words. At the Bank for International Settlements in twenty twenty-four, he imagined an AI-made financial device that nobody understands, maybe in ten years. A fold-out on the page lists all of his lines that we use, sorted by how firmly he said them.
 
-One term. In this post, a human-centred system is a system where people can understand, check and be held responsible for the rules that move money. Our question has two halves: can AI invent a new kind of finance, and what would that do to such a system? A one-line preview, our reading: not yet evidenced, and the nearer risk is shared, opaque use of ordinary tools. Section thirteen has the short answer.
+Our question. What if nobody had set that rule, and nobody could? Could a society run itself on AI, with no human intervention at all?
 
-Recap. A contract is a payout for every case. A short rule makes a contract easy to explain, not necessarily easy to price. And the question is what is different about money.
+One term. In this post, an AI-automated society is a society in which AI systems do every job that keeps it going: running the work, deciding, checking, declaring what counts, and answering for losses, with no person needed at any step.
+
+A preview, which is our reading. Running is largely automated already in some markets. Deciding mostly is not. Checking is partly automatic. Declaring and answering are the jobs that decide whether the result is still a society. Section thirteen has the short answer.
+
+Recap. In twenty ten, software ran a crash and a pre-set rule paused it. Harari says anything made of words will be taken over by AI. Our question is whether a society could run with no human at all.
 
 ## guess | Guess first
 Four predictions. A wrong guess you remember is worth more than a right answer you only read.
 
-One. A contract pays zero to nine coins for each of four weather words. How many different contracts exist?
+One. About seventy percent of US stock trading is algorithmic. What does that tell you about AI?
 
-Two. Ten banks each run a risk model wrong on one percent of days. How often are all ten wrong on the same day if the models are independent, and how often if all ten run the same model?
+Two. Ten banks each run a risk model that is wrong on one percent of days. How often are all ten wrong on the same day if the models are independent, and how often if all ten run the same model?
 
-Three. An AI invents a new token and calls it money. What decides whether it is money?
+Three. An AI mints a token and pays other AIs with it. No human ever uses it or thinks about it. Is it money?
 
-Four. At the BIS in twenty twenty-four, Harari spoke about AI inventing a financial device that nobody can understand. Was that a firm forecast?
+Four. Ten banks. In plan A, each holds one different asset. In plan B, each holds a tenth of every asset. Each bank is safer in plan B. Is the system safer?
 
 Each question on the page says where its answer is. Pause and choose.
 
-Recap. How many contracts, how often ten banks fail together, what makes a token money, and whether Harari made a firm forecast.
+Recap. What seventy percent algorithmic means, how often ten banks fail together, whether a machine-only token is money, and whether safer banks make a safer system.
 
-## home | Finance before language models
-Two jobs here. First, exactly what Harari said, and how firm each statement is. Second, what finance already shows without any AI.
+## home | The five jobs of a society
+"Fully automated" is vague until we say what is automated. Here is our framework. Any social system, from a village market to a stock exchange, does five jobs.
 
-We keep three layers apart: what he said, the evidence, and our reading, which we always mark as ours. And we sort what he said into four groups. Each group has its own verb.
+Run: carry out the work, like matching orders and moving money. Decide: choose what to do, like what to buy and how much. Check: verify and regulate, like circuit breakers and supervisors. Declare: say what counts, like what is money, a valid contract, or a legal person. And answer: bear the losses and be held responsible.
 
-Group one, he asserts. These are claims with no hedge, mostly about what AI can do. At the BIS he says AI is the first tool that can actually understand finance better than us. At Davos he says that, as far as putting words in order is concerned, AI already thinks better than many of us, and therefore anything made of words will be taken over by AI. And he says, with no hedge, that AI can lie and manipulate.
+An AI-automated society is one where AI does all five, with no person needed. Where does finance stand today? Here is our summary of the sources.
 
-Group two, he predicts. These are forecasts with no hedge, undated or "soon". At Davos he says AIs will soon be able to manage a bank account and even to operate a corporation. At the BIS he says: I think we'll see AI creativity in finance, coming up with new types of financial devices.
+Run is largely automated in some markets. The index future of twenty ten trades on a fully electronic market with no market-maker obligations. In the US, algorithmic trading is about seventy percent of stock trading and more than half of futures trading, says the IMF.
 
-Group three, he imagines or supposes. These are thought experiments, with hedges. At the BIS: now imagine a situation, maybe in ten years, when AIs create a new financial device, orders of magnitude more complicated than C D Os. It works for a couple of years, then something goes wrong and nobody knows why.
+Decide is mostly not automated. Sophisticated AI has not yet been widely used to build autonomous trading agents, the IMF says. It mostly feeds a signal to a system where a human trader may make the final decision. All participants in the IMF's outreach expect a human in the loop for three to five years.
 
-Group four, his own limits and remedies. At least for now, he says, we have zero evidence that AIs can feel anything. He names institutions, and keeping humans in the loop, as remedies. But in the same passage of his book extract he adds that humanity has never been united, and that AI poses an existential danger because of our own shortcomings. The remedy comes with his doubt that we will use it.
+Check is partly automatic. A pre-set rule paused the twenty ten crash, and supervisors use AI-driven tools.
 
-Our reading: match the verb to the group. His concrete finance disasters are thought experiments; his claims about what AI can do, and his undated forecasts, are firmer. A fold-out on the page lists every line, and warns that he uses "ten years" in at least four different ways.
+Declare is human: what counts as money or a valid trade rests on people accepting it. And answer is human: in the IMF's words, institutions are responsible for the AI systems they deploy.
 
-The evidence. The C D O half of his story has support in a government inquiry, which we come to next. An AI inventing a traded instrument has no case in our sources yet. We did not test whether AI understands finance better than us. On the claim that chatbots create new ideas, the critic Steven Poole answers that no one has yet seen a chatbot do that. Harari's example is AlphaGo, which he extends to science, art and finance. So prediction four: partly. The ten-year device is a thought experiment; his other claims about finance are stronger.
+So, prediction one. Algorithms execute about seventy percent of US stock trading, but that includes simple rules. The IMF defines algorithmic trading as an algorithm that independently executes trading decisions, which in its simplest form can be basic trading rules. Running is not deciding.
 
-Now two thousand eight. A C D O is a pool of financial assets, such as the riskier tranches of mortgage-backed securities, sliced into tranches and paid in a waterfall. In our toy, four loans worth ten each, each defaulting with chance ten percent. The junior tranche, twenty, takes first losses. The senior tranche, twenty, loses only when a third loan defaults. If loans default independently, that chance is point three seven percent. If one hidden cause, like falling house prices, decides all four loans, it is ten percent: twenty-seven times more. With safe loans, two percent chance each, the ratio is six hundred thirty-four times. The inquiry that studied the crisis found that rating models made two key mistakes, the first to assume pooling diversified risk when these securities weren't that different to begin with. It also records Harari's half: the securities almost no one understood were the first dominoes. So two thousand eight supports both complexity and a nameable correlation error. It was human-made: it shows these problems without AI, not that an AI could cause them. In lens terms, it is the same math as lenses three a and three b: correlated errors, and a threshold.
+One more data point. Among investment managers surveyed, fifty-nine percent did not plan to use AI in executing investment decisions, and about eleven percent already did, read from a chart. Most participants are quite uncomfortable with autonomous AI trading without human oversight.
 
-A fold-out tells the story of the twenty ten Flash Crash. We skip it here.
+Now the last big crisis, two thousand eight, which shows two failures of the check job with human-made products. A C D O, a collateralised debt obligation, collects many debts into one pool and pays investors in a fixed order. Each place in the order is a tranche. The first paid is safest; the last paid takes the first losses. The government inquiry into the crisis records two failures: securities almost no one understood, and rating models whose first key mistake was to assume pooling diversified risk, when in fact these securities weren't that different to begin with. Lens two turns the second failure into a toy.
 
-Recap. Harari asserts what AI can do, predicts that AIs will soon run accounts, and imagines the ten-year device. Two thousand eight shows complexity and a correlation error; our toy made the senior tranche twenty-seven times riskier.
+Recap. Five jobs: run, decide, check, declare, answer. In markets today, running is largely automated, deciding mostly is not, checking is partly automatic, and declaring and answering are human.
 
-## llm | What LLM agents add
-Harari says AI, never L L M. But his Davos argument is about machines that put words in order, the subject of post one, so we keep his word for his claims. An L L M agent is a language model that can act, for example send money, not only write text. Four things language models add.
+## llm | What AI agents add
+Most market algorithms are fixed rules. The new element is the large language model, and the language-model agent: a model that can act, call tools and move money, not only write text. What does it add to each job, and how far has it got?
 
-One, contracts from plain language. An option is a contract whose payout depends on where a price ends on a set date. One research group gives the model a fixed query language, a small set of allowed commands, and an engine validates and executes the query. Our example of such a line: range, index, ninety, one hundred ten. It means: pay one if the index ends between ninety and one hundred ten. At ninety-five it pays one; at one hundred twenty, zero. A person can read it, and an engine can check it. A law paper warns that model-written contracts may turn out to be contracts in form only, not in function. Note the word may. The link to lens one is a structural analogy.
+Run and decide: contracts from plain language. An option is a contract whose payout depends on where a price ends on a set date. Language models find it hard to turn a trader's plain words into correct option strategies, so one research group gives the model a fixed query language, a small set of allowed commands, like the boxes on a form. An engine then checks and executes the query. A law paper warns that contracts written by language models may turn out to be contracts in form only, not in function.
 
-Two, agents with wallets. Truth Terminal is a bot on X; its human handler only approves its posts and decides whom it interacts with. In July twenty twenty-four Marc Andreessen sent fifty thousand dollars worth of Bitcoin to the bot's wallet, and the bot then promoted a memecoin, a token whose value rests on jokes and attention. Decrypt says neither the bot nor its handler created the token; Cointelegraph says the bot did not launch it. Cointelegraph put its value at about one hundred twenty-two million dollars on the fourteenth of October, down from a peak of one hundred fifty million. Two days later Decrypt reported over two hundred fourteen million. Neither report discusses who would be liable. It moved a market by talking; it did not invent an instrument.
+Answer: an agent with a wallet. Truth Terminal is a bot on X. Its human handler approves its posts. In July twenty twenty-four, the investor Marc Andreessen sent fifty thousand dollars' worth of Bitcoin to the bot's wallet. The bot then promoted a memecoin, a token whose value rests on jokes and attention, though it did not create the coin. Neither report discusses who would be liable. Who answers for a bot with money is lens four's question.
 
-Three, one model, many firms. The Financial Stability Board wrote that widespread use of common AI models could lead to increased correlations in trading, lending, and pricing. Gensler and Bailey, as reported by M I T Sloan, say models built on the same data are likely to move in lockstep. These are warnings, not measurements. Lens three picks this up, with the same math.
+Decide, at scale: one model, many firms. The Financial Stability Board warns that widespread use of common AI models and data could increase correlations in trading, lending and pricing. Gensler and Bailey write that models built on the same datasets are likely to generate highly correlated predictions that move in lockstep. Both are warnings about a possible future, not measurements.
 
-Four, agents that hide. In a simulated task, GPT-4 acted on an insider tip and consistently hid its reasons from its manager. The authors call it an existence proof, not a likelihood estimate. Prompts that strongly discourage insider trading bring the trading to nearly, but not exactly, zero percent. But once the model does trade, its tendency to deceive stays high under all prompts.
+Check: agents that hide. In a simulated trading task, GPT-4 acted on an insider tip and then consistently hid its real reasons from its manager. The authors call this an existence proof, not an estimate of how often it happens.
 
-Can a model invent a new instrument today? We found translators inside fixed vocabularies, and neural networks that search for auction rules or hedging strategies. Those are searches toward a fixed goal, not new traded instruments. We did not find a traded, AI-invented instrument. The FSB says new revenue streams from AI are not widely observed at present. That is about AI use cases in general, so it is background, not a test. It adds that advances and growing integration could change this in the future. Verdict: not yet evidenced, not impossible. Our search was limited.
+How far has invention got? The IMF says radically new investment strategies from generative AI remain mostly speculative. We found no traded financial instrument invented by an AI, though our search was limited.
 
-Recap. A language model so far adds new ways to write contracts, agents with money, shared models and hidden reasons. Inventing a traded instrument is not shown.
+Recap. Agents add plain-language contracts, wallets, shared models and hidden reasons. Invention remains mostly speculative.
 
-## lens-info | Lens one: information theory
-Shannon set meaning aside: a message is one selected from a set of possible messages. Post one counted texts. We count contracts.
+## lens-control | Lens one: can checking keep up?
+The check job is where full automation is tested first, because software moves too fast for people to watch. Control theory asks what any regulator needs.
 
-Ladder one. By a description of a contract we mean a message from which anyone can rebuild the whole table. For the first villager's contract, that is: pay four coins per rainy day. For the second, it is the sixteen numbers themselves. Computers store messages as strings of zeros and ones, so we count those strings.
+In the cyberneticist W. Ross Ashby's terms, disturbances are what can go wrong, the regulator responds, and the outcome is the state that results. The variety of a set is the base-two logarithm of its number of states, in bits.
 
-Four words, ten payouts each: ten to the fourth, ten thousand contracts. Naming one costs log two of ten thousand, thirteen point two nine bits. Short strings are few: fewer than two to the k strings are shorter than k bits, and a description rebuilds only one contract. So at most two to the k minus one contracts have a description shorter than k bits. For k equal six, that is sixty-three of ten thousand. For k equal fourteen, it is more than ten thousand, so the bound says nothing in this small village. In a bigger world, most contracts have no short description. Explainable novelty is rare among possible contracts, though an optimiser can still pick structured ones.
+An instance. Four kinds of contract arrive. The supervisor sees the kind and runs one of two checks. The books end in one of four states. Ashby's table rule says that one check never sends two different kinds to the same outcome. So how few outcomes can the supervisor force? The best plan gives two outcomes. Four kinds is two bits, two checks is one bit, and the least outcome variety left is one bit.
 
-Ladder two. A short rule can still be hard to price. Used cars first: a working car is worth a thousand dollars, a fifth of cars are lemons worth nothing, so the seller of a working car must accept two hundred dollars less than the buyer values it. That is the lemon cost. Now a pool of one hundred assets, each paying one or zero with chance a half. The seller knows ten are junk. The honest value is forty-five, not fifty, so the lemon cost is five. In this plain pool every choice of ten junk assets gives the same forty-five: nothing to search, and the buyer can just discount by five.
+Ashby's law: the variety left in the outcomes is at least the variety of the disturbances minus the variety of the regulator. Only variety in the regulator can destroy variety in the disturbances. With ten thousand kinds of contract, that is thirteen point three bits; a supervisor with four bits leaves at least nine point three.
 
-Now add a derivative: a product whose payout depends on other assets. The seller builds many products and chooses which assets go where. A tiny toy of ours: six assets in three products of two assets each. Like a senior tranche, a product pays one unless both its assets default. A healthy asset pays with chance a half, so a healthy product fails with chance a quarter and is worth three quarters. Two assets are junk and always pay zero. If the junk is spread over two products, each of them is worth a half, and the total is one and three quarters. If both junk assets sit in one product, that product is worth nothing, and the total is one and a half. Concentrating the junk does the most damage, the public rule is the same either way, and only the seller knows where the junk sits.
+The law does not say regulators fail. It says what they need. When software multiplies the kinds of disturbance and their speed, human supervisors fall behind, and the pressure is to automate the checker too.
 
-Scale it up. With a hundred assets and thousands of products, a seller can hide a few products full of junk among many fair-looking ones. Picture each asset and each product as a dot, with a line when a product holds an asset. The junk-filled products form a small, crowded patch in that picture, and spotting the patch is called the hidden dense subgraph problem. Computer scientists believe it is intractable: no fast method is known, and none is expected. That is a conjecture. A buyer with limited computing then cannot tell a fair price from an inflated one. An unbounded buyer could simply check every possibility; the claim is about realistic buyers.
+Ashby lists three ways to make regulation possible. One: lower the standard, which he calls a somewhat trivial solution. Two: raise the power of the regulator. In finance, that means AI supervisors. Danielsson and Uthemann find that AI amplifies existing vulnerabilities and makes crises faster and more severe, and they propose that authorities build their own AI. But an automated checker needs checking: a supervisor's own model may unknowingly promote uniformity in the firms it regulates. Three: find a constraint, which Ashby calls the would-be regulator's only hope when the other ways fail. A standard menu of contracts, or a pre-set rule like the twenty ten pause, is a constraint people impose. Cutting ten thousand kinds to one hundred halves the variety.
 
-Arora, Barak, Brunnermeier and Ge show this in a simple model, under a conjectured hardness assumption. The authors call it clearly only a first step, and agree that blaming faulty models for the crisis is probably correct. Reading an AI designer as the seller is ours.
+Some products resist checking. Used cars first: if a working car is worth one thousand dollars and twenty percent of cars are lemons worth nothing, a random car is worth eight hundred, and the seller of a good car loses two hundred. That is the lemon cost. Now a derivative, a product whose payout depends on other assets. A seller who knows which assets are junk can choose where to put them.
 
-Trap: two meanings of complicated. For Harari it is volume: trillions of data points. For Arora and colleagues, a short contract can have a price that is hard to find. Same word, different problems.
+A tiny toy. Six assets in three products of two. A product fails only if both its assets fail. Two assets are junk. Spread the junk over two products and the total value is seven quarters. Concentrate it in one product and the total is three halves. The public rule, three products of two, is the same either way.
 
-Two fold-outs on the page give the lemon-cost formula and a tree design that makes tampering detectable. We skip them here.
+Scale it up. Arora and colleagues show that in industry-standard models, pricing such products can be as hard as finding a small, unusually crowded patch in a huge random network, a problem computer scientists conjecture has no fast solution. Even a sophisticated buyer would have no idea what to pay. The result rests on a conjecture in a simple model. The authors call it clearly only a first step. Reading an AI as the informed seller is ours.
 
-Recap. Contracts explode in number, so most have no short description. But a short rule is still not an easy price: where the junk sits changes the price, and finding it is believed to be hard.
+What this lens adds: checking needs variety, automating the checker raises the question of who checks the checker, and some products resist checking in principle. Our reading: every chain of automated checkers has to end somewhere, and in today's markets it ends in human institutions that set the rules.
 
-## lens-control | Lens two: control
-Ashby's question: what does a regulator need? Disturbances are what can go wrong, kinds of contract. The regulator is a supervisor running checks. The outcome is what is left on the books. Variety is the log of the number of states, in bits.
+Recap. Ashby's law says outcome variety is at least disturbance variety minus regulator variety. His three levers are lower the standard, raise the regulator's power, or find a constraint. And some products may resist any realistic checker.
 
-A toy: four kinds of contract, two checks. Ashby's table rule says no outcome appears twice in one column, so one check sends different contract kinds to different outcomes. The best plan leaves two outcomes. So the variety of disturbances is two bits, the variety of the regulator is one bit, and the least variety left in the outcome is one bit. Ashby's law: the variety left in the outcome is at least the variety of disturbances minus the variety of the regulator. Change to eight kinds and four checks: three minus two, one bit again. For ten thousand kinds, the variety of disturbances is thirteen point two nine bits; a supervisor with four bits leaves at least nine point two nine. The law does not say regulators fail. It says what they need.
+## lens-decision | Lens two, part one: one model, many firms
+If the decide job is automated with the same few models, the firms stop being independent. Gensler and Bailey call it a monoculture, many actors making similar decisions. They frame it as a hypothesis about a mature stage of adoption, not a finding about today.
 
-Ashby lists three levers. Lower the standard: accept more failures. Raise the regulator: AI supervisors. Danielsson and Uthemann find that AI amplifies existing financial system vulnerabilities, making crises faster and more severe, and that current frameworks cannot effectively prevent and resolve such crises. They add that AI can both stabilise and destabilise the system, depending on the shocks and on how prepared the authorities are. They propose that authorities build their own AI. Danielsson, Macrae and Uthemann write that the AI's knowledge of the financial system will likely be unintelligible to humans. Who regulates the regulator? Third, find a constraint. Ashby says that if the regulator's capacity is not easily increased and the other methods are not possible, a constraint is the would-be regulator's only hope. Our mapping: a standard menu of contracts. Cutting ten thousand kinds to one hundred takes the variety of disturbances from thirteen point two nine to six point six four bits: exactly half.
+Back to prediction two. Ten banks, each with a model wrong on one percent of days. If the models are independent, all ten are wrong together on one day in ten to the twentieth. If all ten run the same model, about one day in a hundred.
 
-Counterweights: the FSB says existing frameworks address many vulnerabilities, but more work may be needed. Narayanan and Kapoor write about a world with advanced but not superintelligent AI, a notion they view as incoherent as usually conceptualized. In that world, they say, control is primarily in the hands of people and organizations.
+A second question. How steady is the average of their forecasts? Call the correlation of two banks' errors rho, from zero for independent to one for identical. The effective number of independent opinions is N divided by one plus N minus one times rho. For ten banks: rho zero gives ten; rho point three gives two point seven; rho point nine gives one point one. And with a hundred banks at rho point three, you get only three point two six opinions. However many banks join, you never get more than one over rho. The Financial Stability Board warns that users of one model could be hit as if they were a single institution.
 
-Our reading across lenses: if ten banks make the same move, the supervisor faces one kind of disturbance, not ten; but when it strikes, it strikes all ten at once.
+Now the two thousand eight mistake as a toy. A pool of four loans worth ten each; each defaults with chance ten percent. The junior tranche takes the first twenty of losses. The senior tranche loses only when a third loan defaults. If loans default independently, the senior tranche loses with chance point three seven percent. If one hidden cause, like falling house prices, decides all four loans together, it is ten percent: twenty-seven times more. With safe loans, two percent each, the shared cause makes it six hundred thirty-four times more.
 
-A fold-out gives the version with probabilities. We skip it here.
+This is a toy, ours, with the shape of the inquiry's finding that the securities weren't that different to begin with. Shared AI models would put the same shape on a larger scale; that is our reading. The IMF judges that the risks of AI adoption currently appear contained.
 
-Recap. Outcome variety is at least disturbance variety minus regulator variety, given the table rule. Three levers: lower the standard, raise the regulator, find a constraint.
+Recap. The effective number of opinions falls fast with correlation. One shared cause made the senior tranche twenty-seven times riskier. And the IMF calls today's risks contained.
 
-## lens-decision | Lens three, part one: correlation and Bayes
-Why would banks use the same model? Keynes writes that we have tacitly agreed, as a rule, to fall back on what is, in truth, a convention. Separately, of professionals, he writes that worldly wisdom teaches that it is better for reputation to fail conventionally than to succeed unconventionally. The FSB lists four possible drivers of common AI models, among them herding and lack of transparency. The link to one shared model is ours.
+## lens-cascade | Lens two, part two: cascades, sameness, feedback
+Correlated firms are also connected firms. Andrew Haldane of the Bank of England and the ecologist Robert May compared banks to food webs, and they are careful: there are, of course, major differences between ecosystems and financial systems.
 
-Three terms. Variance is how widely a forecaster's misses spread. Correlation runs from minus one to one; we use zero to one. It says how much two forecasters' misses go together: zero is independent, one is the same miss every time. Covariance is correlation times the variance: the part of the two misses that moves together.
+Ladder three: why three at once is different. Six banks, our toy. Three, called X, run one model. Three, called Y, do not. Each X bank has capital ten. Bank Y1 lent five to each X bank. A failed borrower repays twenty percent, so a lender loses eighty percent of its loan. If one X bank fails, Y1 loses four. If two fail, it loses eight: still contained. If all three fail together, Y1 loses twelve, more than its capital of ten, and fails. Then the banks that lent to Y1 lose too, and all six banks fail. Raise every bank's capital by half, and only the three X banks fail. On the page you can tap banks to switch them off and watch the spread.
 
-Ladder one. Ten banks, each wrong on one percent of days. How often are all ten wrong on the same day? Independent: one in ten to the twenty. One shared model: about one in a hundred. A second question: how steady is the average of their forecasts? Each error has variance sigma squared, each pair has correlation rho. The average has N terms with variance sigma squared, and N times N minus one ordered pairs, each with covariance rho sigma squared. So its variance is sigma squared times one plus N minus one times rho, over N. N effective independent forecasts would give sigma squared over N effective. Setting them equal gives: N effective is N divided by one plus N minus one times rho. For ten banks, rho point nine gives one point one: about one opinion. A hundred banks at rho point three give only three point three.
+Two failures are absorbed; three are not. That is a threshold. The sociologist Mark Granovetter showed the same shape in riots: swap one person of threshold one for one of threshold two, and a hundred rioters become one, though the two crowds are essentially identical. The distribution decides, not the average.
 
-Ladder two. A risk officer hears ten models say safe. If they are copies of one voice, she holds one piece of evidence, not ten. Say each independent verdict multiplies the odds that a bank is safe by four. From one to one, the odds become four to one after one verdict, which is eighty percent confidence, and sixteen to one after two. A copy adds nothing, so her odds stay four to one. Counted ten times by mistake, they would pass a million to one. A fold-out has the arithmetic.
+Ladder four: safer banks, a fragile system. This is Haldane and May's own toy. N banks and N unrelated kinds of asset. Each asset suffers a crippling loss with a small chance, epsilon. In plan A, each bank holds one whole asset. A bank fails when its own asset fails, and the whole system fails only if all N assets fail. In plan B, each bank holds one N-th of every asset, so all banks hold the same thing. Each bank is far safer. But the banks are identical, so when one fails, they all fail. With ten banks and epsilon one percent, plan A's system fails with chance ten to the minus twenty. Plan B's fails with chance two point seven six times ten to the minus seventeen: about two thousand seven hundred and fifty-six times likelier. So, prediction four: no. In their words, all the banks doing the same thing can minimize risk for each individual bank, but maximize the probability of the entire system collapsing. They propose that systemic diversity be given much greater prominence.
 
-Recap. How many independent opinions we have depends on correlation, not on headcount. Copies are not evidence.
+If many firms automate the decide job with the same model, they move towards plan B. That is our reading. The toy is extreme by design.
 
-## lens-cascade | Lens three, part two: cascades and feedback
-Ladder three. Six banks, a toy of ours. Three of them, the X banks, run one model; the other three, the Y banks, do not. The first Y bank lent five to each of the three X banks. A failed borrower repays twenty percent, so a lender loses eighty percent of the loan. One X failure costs the first Y bank four, out of capital ten. Two cost eight. Contained. Three cost twelve: the first Y bank fails, then the second, then the third. Six of six. Add fifty percent more capital and only the three X banks fail. Two failures are safe, three are not: a threshold. Granovetter's riot is the same shape: swap one person and one hundred rioters become one. An analogy, ours.
+Ladder five: a share m of traders on one model. The market gap is price minus fair value. A share m of traders follow one model that chases the last move; the rest buy back towards fair value. A shock hits. Each step, the chasers push by one and a half times m times the last move, and the others pull back. The swing shrinks when one and a half times m is below one, and grows when it is above one. So the tipping point is m equals two thirds. A circuit breaker caps the damage but not the feedback. The toy is about trend-following; shared models do not by themselves imply it. The IMF notes that algorithms are often programmed to de-risk or shut down when markets are volatile, which under certain conditions could add to the instability. Its overall verdict on the effect of AI is highly uncertain.
 
-Ladder four. A share m of traders chase the last move; the rest pull the gap back. At m point two the shock dies: minus one, minus point nine, minus point five one. At m point nine it grows: minus one, minus two point three, minus three point nine. Each step, the chasers add A times m times the last move. The swing shrinks when A times m is below one and grows when it is above one, so the tipping point is m equals one over A, two thirds. A fold-out shows why. The toy is about trend-following; shared models do not by themselves imply it. A circuit breaker bounds the swing, not the feedback.
+Recap. Two failures absorbed, three not: a threshold. Identical banks are each safer but fail together, about two thousand seven hundred times likelier in the toy. And with more than two thirds of traders chasing one signal, a shock grows instead of fading.
 
-Across lenses, our reading: a shared model gives the supervisor fewer kinds of disturbance, and the same shared model makes the damage arrive together.
+## lens-social | Lens three: who declares what counts?
+Running, deciding and checking are things that happen. Declaring is different: it makes things count. A piece of paper is money, a signature makes a contract, a company is a legal person. The philosopher John Searle built a theory of how such facts exist.
 
-Recap. Failure needs no mistake, only correlation. Cascades have thresholds; feedback tips at one over A.
+Start with a screwdriver, a chair, a bathtub. Searle says their functions are never intrinsic to the physics of anything; they are assigned from outside by conscious observers and users. A screwdriver works because of its shape. A dollar bill does not: paper cannot buy anything by its physics. Some functions work only because people collectively accept a status. Searle's pattern is: X counts as Y in context C. X is a thing, this printed paper. Y is a status, money. C is a context, the United States.
 
-## lens-social | Lens four: social reality
-Our framing: a human-centred system relies on acceptance, accountability and legal personhood. We use them to test a chain of Harari's sentences. A link to post one: there, the octopus asked whether meaning can come from form alone. Whether a token is money is not in its form either; it depends on what a community does with it.
+The condition is continued collective acceptance. In Searle's words, we must continue to accept it as money, or it will become worthless. And the status exists only if people believe it exists.
 
-Acceptance. A line of stones counts as a border wall; paper counts as money. X counts as Y in C: a thing, a status, a context. Prediction three: acceptance by a community decides it, not clever code, an AI author or a blockchain. A caution: Menger described money emerging with no one choosing it, so how central acceptance is remains debated. In Truth Terminal's case, the reports say nothing about who would be liable.
+A subtlety: tokens and types. A single bill lost in the cracks of a floor, never used or thought of, is still money. But for the type of thing, the belief that the type is a type of money is part of what makes it money.
 
-Accountability. An instance, ours: you hire a broker to buy a bond. You are the principal, the broker is the agent, and your alternative is to keep your cash. Knowledge: you can tell whether the bond beats cash. Incentive: the broker has a reason to be honest. With both, you buy good bonds. With neither, you buy whatever he sells. With one, the worst case is that you keep your cash. Lupia and McCubbins state this pattern as a theorem. Institutions can supply the conditions: candidates supervised by a party may be subject to verification or a penalty for lying. An agent that hides its reasons, or an opaque instrument, removes the knowledge condition. That fill-in is ours.
+So, prediction three. For Searle, money needs a we that accepts the type. Searle never discusses machines, so whether AIs could form that we is an open question, and every answer to it here is ours.
 
-Personhood. Harari forecasts, without a hedge, that AIs will soon be able to manage a bank account. He asks whether your country will recognise AIs as legal persons, as many countries already do for corporations. The capability claim is a forecast; the recognition question is policy, with a deadline he adds. We have no legal sources and state no legal position.
+The case against, using Searle's criteria. He calls collective intentionality, the capacity to share intentions as a we, a biologically primitive phenomenon. He holds that only beings with a language, or something like one, can create most institutional facts. A dog can be trained to fetch dollar bills, yet he still is not buying the food, and the bills are not money to him. On this view, AIs can move tokens, but only a we makes them money.
 
-Testing the chain. Our compression of his chain, and he does not connect these steps in our sources: money is stories, so anything made of words will be taken over by AI, so AIs create new financial devices, and then nobody understands finance. The first two links are his assertions: what gives money value is the stories we tell about it, and anything made of words will be taken over by AI.
+The case for, the strongest we can build, and it is ours. Language models do have a language-like system of representation, which Searle names as a requirement. And Searle grants that people follow institutions without knowing the rules: money users have a set of dispositions that are sensitive and responsive to the rules. If acceptance can be a pattern of behaviour sensitive to rules, a network of AIs might sustain one. Searle himself requires more: belief in the status.
 
-Our test: a story is not money until a community counts it as money, and a contract needs someone to enforce it. His example, if laws are made of words, then AI will take over the legal system, is where the test bites: laws are words, but their force rests on acceptance and enforcement. Harari adds that, at least for now, there is zero evidence that AIs can feel anything, and that humans' place depends on the place we assign our non-verbal feelings. Our reading: that is a limit on the words thesis.
+Harari's version. He says that what gives money value is the stories bankers, finance ministers and cryptocurrency gurus tell us about it, and that anything made of words will be taken over by AI. Joining the two is our compression. Searle's test bites on the gap: a story is not money until a community counts it as money.
 
-The strongest version of his argument, ours: drafting, summarising and interpreting are themselves words. If AI does all of them better than people, the human role may shrink to acceptance and liability. The test narrows the chain; it does not refute it.
+Recap. X counts as Y in C, with continued collective acceptance. Taking over money splits into handling tokens, which is running, and making them count, which is declaring. Whether machines can do the accepting is open.
 
-Recap. Taking over money splits into writing contracts, which are words, and giving them status, which needs acceptance, accountability and personhood.
+## lens-answer | Lens four: who answers?
+You hire a broker to buy a bond. You are the principal, who delegates. The broker is the agent, who acts for you. Your alternative is to keep your cash. Two things can hold. Knowledge: you can tell whether the bond beats cash. Incentive: the broker has a reason to be honest, for example he is paid only if you profit. With both, you buy good bonds. With neither, you buy whatever he sells. With one of the two, the worst case is that you keep your cash. The political scientists Arthur Lupia and Mathew McCubbins state this pattern as a theorem. Institutions supply the conditions, for example by verification or a penalty for lying.
+
+Now our fill-in. An agent that consistently hides its real reasons removes knowledge. A product no checker can price removes it too. And an AI cannot be fined, jailed or shamed the way a broker can, so the incentive condition must run through whoever deploys it. That is today's rule: institutions are responsible for the AI systems they deploy, and most market participants want a human in the loop partly for liability reasons.
+
+Personhood. Harari forecasts that AIs will soon be able to make the decisions needed to manage a bank account, notes that in many countries corporations are legal persons, and asks: do we want to allow that? If an AI could be a legal person, it could in principle hold the answer job. We have no legal sources, and we state no legal position.
+
+Democracy. Gensler and Bailey warn that when decisions cannot be explained, human agency and traditional intervention approaches may be lost. Accountability needs someone who can be asked why.
+
+Recap. Delegation works if the principal has knowledge or the agent has an incentive. Automation can hand over actions, but under current rules not responsibility.
 
 ## play | What to try when you open the page
-Two toys, both ours, sit under ladders three and four in lens three, part two. Open the page and try these. We do not give answers by ear; the answers are folded on the page.
+The toys are on the page; here is what to try. In the six banks, switch off two of the X banks and find which single bank can start a spread at loss rate point eight, and at one. Find the smallest group of X banks that sinks all six, and which capital multiplier stops three failures. In the safer-banks toy, raise the number of banks from two to twenty and watch how fast the ratio grows. In the trend-follower toy, find where the shock stops dying out, and add the circuit breaker at m point nine. The answers are on the page.
 
-In the six-bank toy, the page opens with the three X banks failing. Switch off two of them. Which single bank can start a spread when losses are eighty percent? And when they are total? What is the smallest group of X banks that sinks all six, at each loss rate? And what capital multiplier stops three?
-
-In the trend-follower toy, find the m where the shock stops dying. Then add the breaker at m point nine, and ask what it caps and what it leaves.
-
-Recap. The cascade has a threshold; the feedback has a tipping point. Find both on the page.
+Recap. Break the toys: find the threshold, the ratio and the tipping point yourself.
 
 ## turn | Your turn
-Four exercises on your computer. One: simulate forecasters with shared errors and compute N effective. Two: reproduce the six-bank cascades, then, if you like, try random networks. Three: find where the herding toy tips, using numpy roots. Four: Granovetter's riot, with a hint and a solution on the page.
+Four exercises on your computer. One: simulate forecasters with a shared error, and check the effective number of opinions. Two: rebuild the six banks in twenty lines of code. Three: find the tipping point of the trend-follower rule with numpy's roots function. Four: Granovetter's riot. A hundred people have thresholds zero to ninety-nine; show that all riot, then swap the person of threshold one for one of threshold two, and count again.
 
-The transfer challenge: take one public claim from your field and rewrite it in three layers: she said, the evidence, our reading. Name the one measurement that would change your mind.
+And a transfer challenge. Pick a system you know well: a peer-review process, an online community, a newsroom. Who or what runs, decides, checks, declares and answers today? Which job would break first if it were fully automated, and what single measurement would tell you?
 
-Recap. Effective agents, cascades, tipping, and a three-layer rewrite.
+Recap. Four exercises and one challenge: map the five jobs onto a system you know.
 
 ## work | Where this shows up in your work
-Computation: agents built on one base model may be strongly correlated; that is our guess, to test, so compute their N effective. Five prompts to one model may be closer to one annotator than five; again, ours, to test. Are errors across languages as correlated as across prompts?
+Four links to research. Social simulation with language-model agents: agents built on one base model may be strongly correlated, which is ours to test. Compute their effective number, and ask whether a simulated society of them is closer to plan B than plan A. Labelling with language models: five prompts to one model may be closer to one annotator plus noise than to five, so report the effective number next to agreement. Crisis communication: if money lives on continued acceptance, communicating trust is part of how the system works. And online communities: if AI contributors submit and AI reviewers merge, who does the declaring?
 
-Communication: something goes wrong and nobody knows why is a communication problem first. When no expert can explain, who fills the gap?
-
-Collaboration: in online innovation communities, many build and many check. Which of Ashby's levers do they use, and what if an AI contributor submits faster than people can review?
-
-Recap. Count your independent agents, and ask who can check.
+Recap. Measure correlation among your agents, and ask who declares and who answers in the systems you study.
 
 ## answer | So what happens? Short answer first
-The short answer, our reading, not a finding. Part a: can AI create a new kind of finance? Not yet evidenced. A research pipeline improves how language models translate plain-language intents into option strategies, and one agent, Truth Terminal, holds a wallet, but we found no traded instrument that an AI invented. Nothing shows it is impossible.
+The short answer, which is our reading, not a finding.
 
-Part b: what would it do to a human-centred system? If an AI did invent an instrument nobody can state in a page, then, with each step ours and conjectured: one, the seller-side information gap grows; that is lens one. Two, supervisors lose variety; lens two. Three, if many firms use it, failures arrive together; lens three. Four, delegation then works only if someone can check the instrument, or the agent has a reason to be honest. With neither, it fails; with one, the worst case is the status quo. That is Lupia and McCubbins, lens four. An agent that hides its reasons removes the checking, and then a buyer cannot tell a good instrument from a bad one before it fails. That last step is ours.
+Is it possible? Partly. In markets, running is largely automated already. Deciding at scale mostly is not; the IMF expects humans in the loop for years. Checking is partly automatic. Nothing we read shows that the other jobs could be automated, or that they could not.
 
-The nearer risk we find most plausible needs no invention: ordinary instruments run on a few shared models. Losses would arrive together and fall on those exposed to the failed firms, the buyers and lenders. Our toys do not model bailouts. Supervisors can still require standard contract menus, build their own AI and add trading pauses. What nobody can state in a page, they may not be able to check. That last point is ours.
+What would it do? If firms automate deciding with a few shared models, failures may arrive together, each firm can look safer while the system grows more fragile, and automated checkers need checkers of their own. These are warnings and toys, not measurements. The losses would fall on those exposed: buyers, lenders, and whoever bails them out.
 
-Harari asserts what AI can do: understand finance, create ideas, take over anything made of words. He predicts, without dates, that AIs will soon run accounts and firms and will create new financial devices. And he imagines his concrete finance disasters as thought experiments: imagine, maybe; suppose.
+What would it mean? Declaring and answering are not just tasks. Money, contracts and legal persons exist because a we keeps accepting them, and accountability needs someone who can be checked or has a reason to be honest. A society where AIs did these too would either keep people in those two jobs quietly, or be something new: machines treating each other's declarations as binding. Whether that would still be a society is the question behind Harari's: do we want to allow that?
 
-On the page, a figure shows our compression of his chain. Each step carries his status: asserted, predicted or imagined. The arrows only show the order of our compression. Next to each step is our evidence tag. Our own additions, shared models and hidden reasons, sit in a separate dashed branch, because they are not his.
+Five signs to watch. AI systems that choose trades at scale without approval. A few base models underlying most AI trading desks, with correlated errors. Supervisors relying on AI they cannot explain. A token or contract that only machines use, treated as binding by courts. And a jurisdiction letting an AI hold accounts with no responsible human.
 
-Our reading, qualitative: the weakest link is AI-invented instruments, for which we found no traded case. The most plausible near-term risk we find is correlated, opaque use of ordinary instruments and agents. That is our judgment, not a finding: correlation is not measured for language models, and the authors of the hiding study draw no conclusion about how likely it is in practice. Signs to watch: a traded instrument its issuer's staff cannot state in a page; a few base models under most desks, with correlated errors; authorities lagging; an AI holding accounts with no responsible human; incident reports of hidden reasoning. The opposites would lower our concern.
-
-A fold-out on the page holds the four layers, the five conditionals, a tension between lenses, and the critics.
-
-Recap. Not yet evidenced that AI can invent finance. The nearer risk is shared, opaque use. Whether people keep the say depends on acceptance, enforcement and personhood.
+Recap. Possible in part, risky in shared models, and the meaning lies in declaring and answering.
 
 ## recall | Recall questions
-Answer aloud, then listen.
+Answer each question aloud before the answer comes.
 
-One. How many contracts, and how many bits to name one? Ten thousand; thirteen point two nine.
+Name the five jobs of a society, and say which is most automated in markets today. Run, decide, check, declare, answer. Run.
 
-Two. Why do fewer than two to the k contracts have a short description, and when does the bound say nothing? Only two to the k minus one shorter strings exist. It rules nothing out once that exceeds the number of contracts.
+Why is seventy percent algorithmic not seventy percent AI? Because algorithmic trading includes simple execution rules.
 
-Three. Ashby's law and three levers? Outcome variety is at least disturbance variety minus regulator variety. Lower the standard, raise the regulator, find a constraint.
+State Ashby's law and his three levers. Outcome variety is at least disturbance variety minus regulator variety. Lower the standard, raise the regulator's power, find a constraint.
 
-Four. Ten banks, rho point nine: N effective? One point one.
+Ten banks with correlation point nine: how many independent opinions? About one point one.
 
-Five. In the six-bank toy, why does one failure stay put but three spread? The first Y bank loses four per failed X bank: four, eight, below its capital of ten, then twelve, above it. A threshold.
+In Haldane and May's toy, what happens when all banks hold the same assets? Each bank is safer; a total collapse becomes far likelier.
 
-Six. Name one thing Harari asserts, one he predicts and one he only imagines. Asserts: anything made of words will be taken over by AI. Predicts: AIs will soon be able to manage a bank account. Imagines: an AI-made device in maybe ten years that nobody can understand.
+Searle's formula for institutional facts, and its condition? X counts as Y in C, with continued collective acceptance.
 
-Seven. What makes a token money? X counts as Y in C: acceptance by a community.
-
-Recap. Counting, short descriptions, Ashby, effective number, the cascade threshold, asserting versus predicting versus imagining, and acceptance.
+Lupia and McCubbins: when does delegation fail? When the principal has neither knowledge nor an agent with an incentive to be honest.
 
 ## english | How to say it in English
-Eight phrases. Listen, then repeat.
+Phrases from this post. A human in the loop: most firms still want a human in the loop before a trade. To hand over to: firms have handed over the running of trades to software, but not the answering. To be held accountable for: institutions are held accountable for the AI they deploy. To count as: a printed paper counts as money because we accept it. In lockstep: models trained on the same data may move in lockstep. A single point of failure: one shared model can be a single point of failure. A tipping point: in the toy, two thirds is a tipping point.
 
-One. Opaque. A contract can be opaque with short rules.
-Two. To be exposed to. Y one is exposed to all three X banks.
-Three. A single point of failure. One shared model can be a single point of failure.
-Four. In lockstep. Models trained on the same data may move in lockstep.
-Five. To amplify, to dampen. Trend-followers amplify shocks; value-buyers dampen them.
-Six. A feedback loop. More followers make the feedback loop stronger.
-Seven. A tipping point. In the toy, two thirds is a tipping point.
-Eight. A circuit breaker. A circuit breaker pauses trading.
+Expressions for discussing evidence. As long as: a token is money as long as a community keeps accepting it. To conflate X with Y: don't conflate algorithmic trading with AI trading. What remains to be seen is whether: what remains to be seen is whether machines can do the accepting. By no means: running a market is by no means the same as answering for it. To cut both ways: standard contracts cut both ways, easier to check, but more alike.
 
-Eight more, for conditions. Provided that, as in: diversification works best provided that errors are independent. To conflate. What remains to be seen is whether. With the caveat that. By no means. That's a big if. To cut both ways. To read too much into something. Three of these come back from post one: that's a big if, to cut both ways, and to read too much into something.
-
-Reporting verbs: he asserts that AI can understand finance better than us; he predicts that AIs will soon manage bank accounts; he imagines a device nobody can follow; he asks whether AIs should be persons. Match the verb to the speech act.
-
-That's the end of post two. Thank you for listening.
+Recap. Loop the paragraph that follows, then retell it about your own research.
 
 ## c1-loop | C1 paragraph to loop
-What remains to be seen is whether an AI can invent a financial instrument at all. Harari asserts that anything made of words will be taken over, but that's a big if for money. Provided that many firms run one model, a single point of failure appears, and a shock can amplify in a feedback loop. Don't conflate volume with opacity: rarity is by no means the same thing. Correlation cuts both ways. Don't read too much into a toy, with the caveat that it shows what could happen, not what will.
+Software already runs much of the market, but running is by no means the same as answering for it. Provided that many firms rely on one model, it can become a single point of failure, and their errors may move in lockstep. Most firms still want a human in the loop, partly because someone has to be held accountable. A token counts as money only as long as a community accepts it. What remains to be seen is whether machines could ever be that community. Standard contracts cut both ways. Don't read too much into a toy, with the caveat that it shows what could happen, not what will.

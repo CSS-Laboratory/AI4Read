@@ -1,0 +1,6 @@
+  <details class="deep" id="box-tree">
+    <summary>Look inside: a contract built to resist tampering</summary>
+    <p>What would help? In their simple model the authors propose a “tree of majorities”: take the majority of 3 inputs, then the majority of 3 such majorities, and so on to depth \(k\), over \(3^k\) assets. Their Theorem 9: fixing any \(t\) inputs to 0 raises the chance that the tree outputs 0 to at most \((1+t/2^k)/2\) <span class="cite">Arora et al. 2010, p. 61</span>. A seller must plant junk in a number of inputs comparable to \(2^k\) to move the price much, and that is large enough to be detected afterwards. Toy (ours, code-checked): to force the output, 9 inputs need 4 junk; 27 need 8; 81 need 16.</p>
+    <figure class="illus"><div class="w" data-widget="diagram" id="dg-tree" data-config-ref="cfg-tree"></div></figure>
+<!--CFG:cfg-tree-->
+  </details>
