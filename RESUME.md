@@ -33,7 +33,7 @@ updated: 2026-10-18
    cat "<Drive>/backup/sources/<slug>-sources.tar.gz.part-"* | tar xzf -
    shasum -a 256 -c "<Drive>/backup/SHA256SUMS"   # optional check
    ```
-   If the repo itself is lost: `cat "<Drive>/backup/repo/ai4read-<date>.bundle.part-"* > ai4read.bundle && git clone ai4read.bundle ai4read`.
+   If the repo itself is lost: `git clone "<Drive>/backup/repo/ai4read-<date>.bundle" ai4read` (if the bundle was split into parts, first run `cat ai4read-<date>.bundle.part-* > ai4read.bundle`). Restore tested on 2026-10-18: checksums OK, 88 source files extracted, bundle cloned.
 5. Tools:
    - `npm install` (KaTeX, highlight.js, marked, DOMPurify)
    - Playwright with Chromium for the render test
@@ -61,7 +61,11 @@ updated: 2026-10-18
   - a Sonnet pedagogy critic, scoring blind against `phase2/rubric.md`.
 - Gate: 0 critical, 0 major, and every criterion ≥ 4. After 3 rounds, Claude fixes the rest and audits the post in full.
 - Kunhao reviews on his phone and leaves notes (annotations in the artifact db). Claude answers each note, revises, re-records only the changed audio chapters, and updates `WRITING.md` with any new rule.
-- Back up after each milestone: `bash scripts/backup_drive.sh` packs the sources into `/mnt/user-data/outputs/ai4read-backup/` for copying to Drive; `git push` covers the rest.
+- Back up after each milestone:
+  1. `git push` (GitHub).
+  2. On the Mac, run `git bundle create "<Drive>/backup/repo/ai4read-<date>.bundle" --all` from `~/code/AI4Read`.
+  3. `bash scripts/backup_drive.sh` packs the post sources into 24 MB parts under `/mnt/user-data/outputs/ai4read-backup/`; copy them to `<Drive>/backup/sources/`.
+- **Last full backup: 2026-10-18** (repo a81e8d0, post 02 sources including the seven PDFs added that day).
 
 ## 4. Current state (2026-10-18)
 - **Post 01** "What does an LLM know when it predicts the next word?": reviewed and final.
