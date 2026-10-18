@@ -45,4 +45,4 @@ One block per stage. Token counts come from the agent results (all subagent toke
 | S0 v2 | Claude (writer, Opus) | — | — | topic card v2: five jobs (run, decide, check, declare, answer) |
 | S1b | planner (Sonnet) | 117,035 | 30.3 min | V1–V8 from 7 new sources; 10 challenges to the thesis; flagged the Nexus file (OceanofPDF) and the mislabelled Arora file |
 | — | meta-manager | — | — | Nexus file deleted and withdrawn (shadow-library policy); Drive backup rebuilt and re-verified |
-| S2b | fact-checker (Opus) | — | — | 1 critical (withdrawn Nexus still cited in V8 and the traps), 2 major (IMF quote subject; Searle's "belief" bar), 20 minor; all fixed in source-brief-v2.verified.md |
+| S2b | fact-checker (Opus) | 342,046 | 22.8 min | 1 critical (withdrawn Nexus still cited in V8 and the traps), 2 major (IMF quote subject; Searle's "belief" bar), 20 minor; all fixed in source-brief-v2.verified.md |
