@@ -20,7 +20,11 @@ const BASE = (() => { const i = process.argv.indexOf("--base"); return i > 0 ? p
 const PAGE = process.argv.slice(2).find((a, i, A) => !a.startsWith("--") && A[i - 1] !== "--base") || "site/ai4read/components/gallery.html";
 // With --base http://127.0.0.1:8799 the page is loaded from a running server (e.g. dev/mock-server.mjs for a site build:
 //   node site/ai4read/dev/mock-server.mjs 8799 &  node site/ai4read/components/test.mjs /ai4read/<slug>/ --base http://127.0.0.1:8799)
-const CSP = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: data:; connect-src 'self'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'";
+// --inline: test a standalone (artifact) build, whose scripts are inline.
+const INLINE = process.argv.includes("--inline");
+const CSP = INLINE
+  ? "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' data: blob:; media-src 'self' blob: data:; connect-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; base-uri 'self'"
+  : "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: data:; connect-src 'self'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'";
 const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".mp3": "audio/mpeg", ".svg": "image/svg+xml" };
 const srv = http.createServer((req, res) => {
   if (req.url === "/favicon.ico") { res.writeHead(204); return res.end(); }

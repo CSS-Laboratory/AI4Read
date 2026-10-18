@@ -1408,7 +1408,7 @@ document.addEventListener("caps",()=>{});
  * The writer agent composes widgets with JSON configs; it never writes JavaScript.
  * Usage in a post:  <div class="w" data-widget="lab" data-config='{...}'></div>
  *   or              <div class="w" data-widget="lab" data-config-ref="cfg-id"></div>
- *                   <script type="application/json" id="cfg-id">{...}</script>
+ *                   <script type="application/json" id="cfg-id">{...}<\/script>
  * Strict-CSP safe: no eval / new Function. Formulas use a small safe expression language (see README).
  * The pure functions (expr, compute*) also run in Node (check.mjs), so every number in the text
  * can be produced by the same code that drives the widget.

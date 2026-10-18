@@ -56,6 +56,8 @@ const POST = { slug: SLUG, title: cfg.title, album: `Post ${String(cfg.num).padS
   mp3Name: `AI4Read-${String(cfg.num).padStart(2, "0")}-${SLUG}.mp3`, audioMB };
 const css = [rd("style.css", TPL), rd("annotate.css", TPL), rd("widgets.css", CMP), has("src/extra.css") ? rd("src/extra.css") : ""].join("\n");
 const js = { core: rd("core.js", TPL), common: rd("common.js", TPL), widgets: rd("widgets.js", CMP), annotate: rd("annotate.js", TPL), extra: has("src/extra.js") ? rd("src/extra.js") : "" };
+// Inlined scripts must not contain "</script" (it would end the <script> element early).
+const inl = (t) => t.replace(/<\/script/gi, "<\\/script");
 const dataJS = `window.POST=${JSON.stringify(POST)};window.CHAPTERS=${JSON.stringify(chapters)};`;
 const briefTag = `<script type="application/json" id="brief-data">${JSON.stringify(brief).replace(/</g, "\\u003c")}</script>`;
 
@@ -70,20 +72,20 @@ ${html}
 ${briefTag}
 <script>${dataJS}</script>
 <script>
-${js.core}
+${inl(js.core)}
 </script>
 <script>
-${js.widgets}
+${inl(js.widgets)}
 </script>
 <script>
-${js.common}
-${js.extra}
+${inl(js.common)}
+${inl(js.extra)}
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
 <script>
-${js.annotate}
+${inl(js.annotate)}
 </script>
 `;
 fs.writeFileSync(path.join(D, "index.html"), out);
