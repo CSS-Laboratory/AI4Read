@@ -26,7 +26,7 @@ date: 2026-10-17
 
 **Commands**
 - Widget numbers: `node site/ai4read/components/check.mjs posts/<slug>/src/content.html`.
-- Render: `node site/ai4read/build-post.mjs posts/<slug> --site`, then `node site/ai4read/dev/mock-server.mjs 8799 &` and `node site/ai4read/components/test.mjs /ai4read/<slug>/ --base http://127.0.0.1:8799`.
+- Render: `node site/ai4read/build-post.mjs posts/<slug> --site`, then `node site/ai4read/dev/mock-server.mjs 8799 &` and `node site/ai4read/components/test.mjs /ai4read/<slug>/ --base http://127.0.0.1:8799`. Also test the standalone (artifact) page, whose scripts are inline: `node site/ai4read/components/test.mjs posts/<slug>/index.html --inline`. Both must PASS before publishing (2026-10-18: the artifact page had silently lost its widgets because an inlined script contained `</script>`).
 - Audio: `/tmp/ttsenv/bin/python scripts/tts_post.py posts/<slug>`. This tags the MP3s automatically.
 
 **Log** (`phase2/log.md`, one block per stage): the agent and model, its tokens and duration (from the agent result), the gate result, and the number of findings. These numbers set the 2b cost estimate.

@@ -45,6 +45,7 @@ updated: 2026-10-18
    node site/ai4read/components/check.mjs posts/<slug>/src/content.html
    node site/ai4read/dev/mock-server.mjs 8799 &
    node site/ai4read/components/test.mjs /ai4read/<slug>/ --base http://127.0.0.1:8799
+   node site/ai4read/components/test.mjs posts/<slug>/index.html --inline   # the artifact page
    python3 scripts/wordcount.py posts/<slug>/src/content.html
    /tmp/ttsenv/bin/python scripts/tts_post.py posts/<slug>     # audio, tagged "AI4Read from CSS Lab"
    ```

@@ -108,7 +108,7 @@ grounding: Every unit marked SEEN was read at the source page. Quotes were match
 - Traps 32 to 35 and 40.
 - The paper does not say that HFTs caused, or did not cause, the crash. Its statement is about their inventory behaviour. The "did not cause ... but contributed" sentence belongs to the 2014 working paper only.
 - The paper does not show that shared models or herding drove 6 May 2010.
-- The 5-second pause is a pre-set rule, not a human decision. The causal claim that it "helped stop the fall" is the CFTC-SEC report's, quoted by the paper; the JF paper does not test it.
+- The 5-second pause is a pre-set rule, not a human decision. The CFTC-SEC text quoted by the paper gives only the rule's purpose ("in order to prevent a cascade of further price declines") and reports that prices stabilised afterwards; neither it nor the JF paper claims or tests that the pause caused the recovery. (Corrected after S5 v2 round 1, Opus M1.)
 - The nearest the JF comes to "HFTs contributed" is p. 19 (the 2,000-contract liquidation "coincided with" further declines). It is a coincidence in time, not a causal claim.
 
 **Differences from the 2014 working paper (S2 unit B2)**

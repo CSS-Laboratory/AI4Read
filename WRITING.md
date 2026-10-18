@@ -1,7 +1,7 @@
 ---
 name: writing-principles
 description: How AI4Read posts are written. Read before drafting or revising any post. Claude updates it whenever a review round or a note from Kunhao shows a missing rule (add the rule, the note or finding that caused it, and the date); Kunhao asked for this on 2026-10-18.
-version: 0.5 (2026-10-18)
+version: 0.6 (2026-10-18)
 ---
 
 # AI4Read writing principles
@@ -12,6 +12,9 @@ The charter (§5–7) fixes the post template, style and audio. This file says *
 - A reader may open any post first. **Never cite or rely on another post** (“as in post 01”, “remember the village”). Re-introduce every toy world, term and result the post needs, from scratch. Spaced review still happens: recall questions and English expressions may repeat earlier material, without saying so. (Note, 2026-10-18.)
 - A person's idea can be the **starting hint**, but the post is about the **question**, not about the person. Keep the account of what someone said short in the main text, and put the full list of their lines in a fold-out. (Note on post 02: “the introduction focused a little too much on what Harari said … it is an idea, a hint for us to explore”, 2026-10-18.)
 - **Answer the question where the reader looks.** Give a one-line preview after the hook. Open the synthesis with a boxed **Short answer**, with one paragraph for each part of the question. Define any key term from the question at first use. (Post 02 critic round 1, 2026-10-17.)
+- **Pin down the question's threshold words.** Words like *fully*, *without any*, *possible* or *society* decide the answer. Say which sense the post tests (post 02: intervention at run time vs at design time; capable vs stable vs accepted), define the key noun (“society”), and carry the same senses through to the short answer. (Post 02 v2 critic round 1, 2026-10-18.)
+- **The short answer gives a verdict.** Do not hand the question back to a source (“the question behind Harari's …”). State our verdict, label it ours, and say what evidence would change it. Give each part of the question an argument, not only a status report; if one part has only one channel (e.g. impact = correlated failure), say who gains and who bears as well. (Post 02 v2 critic round 1.)
+- **One point, one ladder.** If several toys teach the same idea, keep the clearest in the main text and move the others to fold-outs; spend the words on the parts of the question that carry its meaning. (Post 02 v2: four ladders all taught “sameness makes failure joint”.)
 
 ## 1. The reader
 - Write for a **curious high-school student who will not accept hand-waving**. Kunhao is a professor, but in every field outside his own he wants the explanation a strong 17-year-old could follow, without missing any step a graduate would need.
@@ -26,6 +29,7 @@ Every new concept or important question climbs the same ladder, in this order:
 5. **A check**: plug the instance back into the formula and get the same number.
 6. **Where it breaks or what it does not say**: limits, conditions, hedges from the source.
 Do not start a concept at step 4.
+- **A quoted formula still needs its climb.** If the source gives a result without derivation, derive a small case ourselves (labelled ours, with its assumption stated) or say plainly that we quote it; never let “as given by” replace the ladder. (Post 02 v2: Haldane and May's \(N^N\varepsilon^N/N!\), derived for two banks.)
 - A toy that illustrates a source's mechanism must **move in the same direction as the source's result**, not only have correct arithmetic. (Post 02, round 3: the first junk-placement toy showed concentration *raising* value, the opposite of Arora et al.) (Note: “imagine you are explaining it to high school students … use instances or illustrations … as ladders”, 2026-10-16.)
 
 ## 3. Terms
@@ -39,6 +43,7 @@ Do not start a concept at step 4.
 - When an idea has roles (who sends, who receives, who encodes, who decodes), **name the roles explicitly** and walk one tiny example through them. (Comment on Shannon's twin, 2026-10-15.)
 
 ## 5. Illustrations
+- Guess-first options: the right answer must not be the longest, most hedged or most specific option. Make the distractors serious and similar in length. (Post 02 v2 critic.)
 - Every **mechanism** (an architecture, a procedure, an experiment's setup) gets a picture: an inline SVG diagram or a small interactive. Words alone are not enough for “the hidden layer was removed” or “the object is *on* the box instead of *in* it”. (Notes on Step 4, Step 5, prediction 3, 2026-10-15.)
 - Interactives must let the reader **change one thing and see the effect** (a slider, a tap on a word). Label invented numbers as “toy numbers”.
 - Diagrams follow the theme tokens and are readable at 375 px. A diagram revealed in steps shows later steps faded from the start (`"preview": true`), so the frame is never mostly blank on a phone.
@@ -69,6 +74,9 @@ Do not start a concept at step 4.
 - **Represent a person at full strength, in both directions.** Quote their strongest unhedged statement on the topic next to their hedged scenarios. Sort their lines by firmness and use the matching reporting verb: *asserts* (no hedge), *predicts* (a forecast with no hedge), *imagines / supposes / asks* (hedged), *concedes / proposes* (their own limits and remedies). (Post 02: the first brief kept only Harari's hedged scenarios and left out “anything made of words will be taken over by AI”; later rounds swung the other way. 2026-10-17.)
 - **Never cut a quote before the turn.** Do not end a quotation just before a sentence in the same passage that reverses or qualifies it (“Unfortunately, humanity has never been united”). Never join two separate passages with “since” or “but”. (Post 02, S5 rounds 1 and 3.)
 - Read the **whole** talk or essay for a person's claim, not only the passage someone else quoted. Check quotes from audio with a strong transcription model, not only a fast one. (Post 02: “we'll need”, not “we need”.)
+- **Purpose is not effect.** “A rule triggered in order to prevent a cascade” states a purpose; never report it as “the rule prevented a cascade”, even attributed. (Post 02 v2 round 1, major.)
+- **A quote must be about the thing it supports.** Check the referent of “it” or “this” in the source: a line about a contrived example (the “factoring derivative”) does not support a claim about realistic products. (Post 02 v2 round 1, major.)
+- **One source per cited sentence.** A remedy from one talk and a doubt from a book extract three months later get two citations and two sentences, never one. Attribute surveys to whoever ran them (“a Mercer survey reproduced by the IMF”). (Post 02 v2 round 1.)
 
 ## 10. Change log
 - 0.1 (2026-10-15): charter style guide only.
@@ -76,3 +84,4 @@ Do not start a concept at step 4.
 - 0.2 (2026-10-16): §2 ladder, §3 term boxes, §4 explanations in text, §5 illustrations for mechanisms, §6 field formulas + exercises, §7 “what it means”. From Kunhao's first review of post 01.
 - 0.4 (2026-10-17): §8b audio files carry the source mark “AI4Read from CSS Lab”.
 - 0.5 (2026-10-18): §0 standalone posts, the question over the person, the short answer; §2 toys point the same way as the source; §5 diagram preview and the five-number rule; §8a one length counter; §9 balance (four groups of firmness), quote boundaries, whole-source reading. From Kunhao's note on post 02 and the post 02 review rounds.
+- 0.6 (2026-10-18): §0 threshold words, verdict in the short answer, one point one ladder; §2 quoted formulas still climb; §5 guess options; §9 purpose ≠ effect, quote referent, one source per cited sentence. From the post 02 v2 S5 round 1.
