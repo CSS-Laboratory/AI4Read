@@ -47,6 +47,8 @@ hook	WEF 2026 [30:55]	harari-wef	named
 hook	[31:11]	harari-wef	prose
 hook	WEF 2026 [8:07]	harari-wef	named
 hook	[11:39]	harari-wef	prose
+hook	BIS 2024 [8:41]	harari-bis	named
+hook	[8:53]	harari-bis	prose
 hook	BIS 2024 [9:21]	harari-bis	named
 hook	BIS 2024 [20:46]	harari-bis	named
 hook	[12:42]	harari-bis	prose
@@ -86,21 +88,23 @@ lens-control	Gensler and Bailey 2020, p. 25	gb	named
 lens-control	Danielsson et al. 2022, p. 7	dmu	named
 lens-control	Ashby 1956, p. 247	ashby	named
 lens-control	Ashby 1956, p. 207	ashby	named
-lens-control	Cover and Thomas 1991	cover	named
+lens-control	Cover and Thomas 1991, Thm 2.6.5, p. 27	cover	named
 lens-control	Ashby 1956, p. 208	ashby	named
 lens-control	Arora et al. 2011, p. 101	arora-cacm	named
 lens-control	Arora et al. 2010, p. 63	arora-ics	named
 lens-control	Arora et al. 2010, pp. 50–51	arora-ics	named
-lens-control	Arora et al. 2009, pp. 3–4	arora-ics	named
 lens-control	Arora et al. 2010, p. 52	arora-ics	named
 lens-control	p. 52	arora-ics	prose
 lens-control	p. 55	arora-ics	prose
 lens-control	Arora et al. 2010, p. 61	arora-ics	named
+lens-control	pp. 61–62	arora-ics	prose
 lens-decision	Gensler and Bailey 2020, p. 17	gb	named
+lens-decision	p. 2	gb	prose
 lens-decision	FSB 2024, p. 21	fsb	named
 lens-decision	FCIC 2011, p. 149	fcic	named
 lens-decision	Gensler and Bailey 2020, p. 22	gb	named
 lens-decision	IMF 2024, p. 92	imf	named
+lens-decision	p. 93	imf	prose
 lens-cascade	Haldane and May 2011, p. 351	hm	named
 lens-cascade	Granovetter 1978, pp. 1424–1425	granovetter	named
 lens-cascade	Haldane and May 2011, p. 353	hm	named
@@ -142,4 +146,7 @@ answer	Poole 2024	poole	named
 answer	Narayanan and Kapoor 2025	nk	named
 answer	FSB 2024, p. 2	fsb	named
 answer	BIS 2024 [7:18]	harari-bis	named
+answer	[7:35]	harari-bis	prose
+answer	BIS 2024 [21:37]	harari-bis	named
+answer	[22:56]	harari-bis	prose
 answer	Guardian 2024	guardian-2024	named
