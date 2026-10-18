@@ -1,4 +1,4 @@
-# Exercise 1: How many independent agents do I really have?  (post 02, Lens 3)
+# Exercise 1: How many independent agents do I really have?  (Lens 2a)
 # Model (ours): forecaster i makes error e_i = sqrt(rho) * z + sqrt(1 - rho) * u_i,
 # where z is a shared error (the common model) and u_i is each forecaster's own noise.
 # Then every pair of errors has correlation rho and every error has variance 1.

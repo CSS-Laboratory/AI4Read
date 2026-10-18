@@ -60,11 +60,10 @@ home	Kirilenko et al. 2017, p. 7	kkst17	named
 home	IMF 2024, p. 86	imf	named
 home	IMF 2024, p. 82	imf	named
 home	p. 83	imf	prose
+home	p. 82	imf	prose
 home	IMF 2024, p. 83	imf	named
 home	IMF 2024, p. 93	imf	named
 home	IMF 2024, p. 101	imf	named
-home	IMF 2024, p. 83	imf	named
-home	p. 78	imf	prose
 home	p. 28	fcic	prose
 home	p. 149	fcic	prose
 llm	Decrypt 2024	truth-dec	named
@@ -73,17 +72,16 @@ llm	Mik 2026, introduction	mik	named
 llm	Cointelegraph 2024	truth-ct	named
 llm	Cointelegraph 2024	truth-ct	named
 llm	Decrypt 2024	truth-dec	named
-llm	FSB 2024, p. 1	fsb	named
 llm	Gensler and Bailey 2020, p. 21	gb	named
 llm	Scheurer et al. 2024, p. 1	scheurer	named
 llm	IMF 2024, p. 78	imf	named
 lens-control	Ashby 1956, p. 207	ashby	named
 lens-control	Ashby 1956, p. 207	ashby	named
 lens-control	Ashby 1956, p. 209	ashby	named
-lens-control	Danielsson and Uthemann 2025, introduction	du	named
+lens-control	Danielsson and Uthemann 2025, §3, p. 10	du	named
 lens-control	Ashby 1956, p. 246	ashby	named
 lens-control	Danielsson and Uthemann 2025, abstract	du	named
-lens-control	introduction	du	prose
+lens-control	abstract	du	prose
 lens-control	Gensler and Bailey 2020, p. 25	gb	named
 lens-control	Danielsson et al. 2022, p. 7	dmu	named
 lens-control	Ashby 1956, p. 247	ashby	named
@@ -91,6 +89,7 @@ lens-control	Ashby 1956, p. 207	ashby	named
 lens-control	Cover and Thomas 1991, Thm 2.6.5, p. 27	cover	named
 lens-control	Ashby 1956, p. 208	ashby	named
 lens-control	Arora et al. 2011, p. 101	arora-cacm	named
+lens-control	p. 102	arora-cacm	prose
 lens-control	Arora et al. 2010, p. 63	arora-ics	named
 lens-control	Arora et al. 2010, pp. 50–51	arora-ics	named
 lens-control	Arora et al. 2010, p. 52	arora-ics	named
@@ -106,7 +105,6 @@ lens-decision	Gensler and Bailey 2020, p. 22	gb	named
 lens-decision	IMF 2024, p. 92	imf	named
 lens-decision	p. 93	imf	prose
 lens-cascade	Haldane and May 2011, p. 351	hm	named
-lens-cascade	Granovetter 1978, pp. 1424–1425	granovetter	named
 lens-cascade	Haldane and May 2011, p. 353	hm	named
 lens-cascade	Haldane and May 2011, pp. 353–354	hm	named
 lens-cascade	Haldane and May 2011, p. 353	hm	named
@@ -129,11 +127,11 @@ lens-social	p. 37	searle	prose
 lens-social	p. 70	searle	prose
 lens-social	Searle 1995, p. 142	searle	named
 lens-social	Ynet 2023	ynet-2023	named
-lens-social	WEF 2026 [5:57]	harari-wef	named
 lens-answer	Lupia and McCubbins 1998, pp. 85–86	lupia	named
 lens-answer	p. 92	lupia	prose
-lens-answer	p. 207	lupia	prose
 lens-answer	Scheurer et al. 2024, abstract	scheurer	named
+lens-answer	Lupia and McCubbins 1998, p. 85	lupia	named
+lens-answer	Danielsson and Uthemann 2025, §3, p. 10	du	named
 lens-answer	IMF 2024, p. 93	imf	named
 lens-answer	p. 78	imf	prose
 lens-answer	WEF 2026 [16:28]	harari-wef	named
@@ -141,7 +139,8 @@ lens-answer	[15:14]	harari-wef	prose
 lens-answer	[16:47]	harari-wef	prose
 lens-answer	Gensler and Bailey 2020, p. 13	gb	named
 answer	IMF 2024, pp. 89, 92	imf	named
-answer	BIS 2024 [3:30]	harari-bis	named
+answer	IMF 2024, p. 89	imf	named
+answer	BIS 2024 [3:09], [3:30]	harari-bis	named
 answer	Poole 2024	poole	named
 answer	Narayanan and Kapoor 2025	nk	named
 answer	FSB 2024, p. 2	fsb	named

@@ -1,4 +1,4 @@
-# Exercise 2: The six-bank network (W5) in 20 lines, then a random experiment (ours).
+# Exercise 2: The six-bank network in 20 lines, then a random experiment (ours).
 import numpy as np
 
 def cascade(capital, edges, seeds, lgd=0.8, kappa=1.0):
@@ -19,7 +19,7 @@ def cascade(capital, edges, seeds, lgd=0.8, kappa=1.0):
             failed[b] = r
     return failed
 
-# W5 as in the post: (exposed bank, failing bank): size
+# The six banks as in the post: (exposed bank, failing bank): size
 cap = {"X1": 10, "X2": 10, "X3": 10, "Y1": 10, "Y2": 9, "Y3": 11}
 edg = {("Y1", "X1"): 5, ("Y1", "X2"): 5, ("Y1", "X3"): 5, ("Y2", "X3"): 5,
        ("Y2", "Y1"): 10, ("Y3", "Y1"): 5, ("Y3", "Y2"): 10}

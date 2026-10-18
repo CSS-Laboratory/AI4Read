@@ -1,4 +1,4 @@
-# Exercise 3: Where does the share-m toy tip?  (post 02, Rung 5)
+# Exercise 3: Where does the share-m toy tip?  (Lens 2b, Ladder 5)
 # gap(t+1) = gap(t) + A*m*(gap(t) - gap(t-1)) - G*(1-m)*gap(t), shock -1 after step 3.
 import numpy as np
 
