@@ -64,7 +64,7 @@ home	p. 82	imf	prose
 home	IMF 2024, p. 83	imf	named
 home	IMF 2024, p. 93	imf	named
 home	IMF 2024, p. 101	imf	named
-home	p. 28	fcic	prose
+home	FCIC 2011, p. 28	fcic	named
 home	p. 149	fcic	prose
 llm	Decrypt 2024	truth-dec	named
 llm	Luo et al. 2026, abstract	oql	named
@@ -108,12 +108,11 @@ lens-cascade	Haldane and May 2011, p. 351	hm	named
 lens-cascade	Haldane and May 2011, p. 353	hm	named
 lens-cascade	Haldane and May 2011, pp. 353–354	hm	named
 lens-cascade	Haldane and May 2011, p. 353	hm	named
-lens-cascade	p. 355	hm	prose
+lens-cascade	Haldane and May 2011, p. 355	hm	named
 lens-cascade	Haldane and May 2011, p. 351	hm	named
 lens-cascade	p. 351	hm	prose
 lens-cascade	p. 353	hm	prose
 lens-cascade	p. 355	hm	prose
-lens-cascade	IMF 2024, p. 88	imf	named
 lens-cascade	IMF 2024, p. 89	imf	named
 lens-social	Searle 1995, p. 14	searle	named
 lens-social	Searle 1995, p. 28	searle	named
@@ -139,7 +138,6 @@ lens-answer	[15:14]	harari-wef	prose
 lens-answer	[16:47]	harari-wef	prose
 lens-answer	Gensler and Bailey 2020, p. 13	gb	named
 answer	IMF 2024, pp. 89, 92	imf	named
-answer	IMF 2024, p. 89	imf	named
 answer	BIS 2024 [3:09], [3:30]	harari-bis	named
 answer	Poole 2024	poole	named
 answer	Narayanan and Kapoor 2025	nk	named
