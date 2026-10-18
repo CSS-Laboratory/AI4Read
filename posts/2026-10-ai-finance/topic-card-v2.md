@@ -2,7 +2,7 @@
 name: post02-topic-card-v2
 description: Topic card v2 for post 02, re-centred on an AI-automated society after Kunhao's note of 2026-10-18. Written by Claude (the writer, under the revised phase 2). Replaces topic-card.md for the rewrite.
 date: 2026-10-18
-status: proposed to Kunhao
+status: proposed to Kunhao; revised after S1b and S2b (see §9)
 ---
 
 # Post 02, v2: Could a society run itself on AI?
@@ -99,3 +99,19 @@ These go through S1b (brief units) and an independent Opus check before writing.
 ## 8. Length and audio
 - Main text ≤ 7,500 words; fold-outs carry Harari's lines and the derivations.
 - Audio about 35 minutes. Changed chapters are re-recorded.
+
+## 9. Revisions after the source check (S1b + S2b, 2026-10-18)
+- **Decide is mostly human today.**
+  - The 2010 sale was started by a mutual fund complex. That a person decided is our reading.
+  - Market participants are "quite uncomfortable" with autonomous AI trading (IMF, ch. 3). The "mostly speculative" line refers to radically new GenAI investment strategies.
+  - The IMF's roughly 70% figure is *algorithmic* trading, which includes simple execution rules.
+  - So the table reads: run = largely automated; decide = partly, mostly simple rules.
+- **The IMF judges current risks "contained".** Correlated failure is one of its two scenarios, not a finding. The thesis is reworded to "a risk that grows with shared models (FSB, IMF scenario; G&B hypothesis)".
+- **Check is already partly automatic.** The CME Stop Logic pause is a pre-set rule that people designed. The claim that a human institution ends the regress of checkers is ours. Harari's line is quoted with its turn: "As long as humanity stands united … Unfortunately, humanity has never been united".
+- **Declare.**
+  - Searle: "The status exists only if people believe it exists" (p. 69), and belief about the *type* is constitutive (p. 33).
+  - Counterweights: money users "do not know those rules" (p. 142), but some participants "must understand" what money is for (p. 22).
+  - Searle never discusses machines, so the claim that machines cannot join the "we" is **ours**.
+- **Haldane & May.** m·a² > 1 is an ecology result; in their bank model, homogeneity matters most. The widget is shown as an analogy.
+- **Hook.** The 5-second automatic pause is supported. "About 36 minutes" is not in the JF text: use the pause and the drop, sourced, or the CFTC–SEC wording as quoted.
+- **Nexus** is cited only from the Penguin sample and the Guardian extract until a legitimate copy is available. The "inter-computer realities" idea waits for that copy; until then, Harari's personhood question (WEF 2026, already verified) carries the debate in Lens 3.

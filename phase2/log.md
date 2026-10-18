@@ -38,3 +38,11 @@ One block per stage. Token counts come from the agent results (all subagent toke
   3. The writer's self-scores were 1–2 points above the critic's every round, so self-scores must never count toward the gate.
   4. Opus and Sonnet checkers each find majors the other misses, so use both.
   5. The meta-manager still had to step in after round 3, so 2b needs the same final human-level audit, or a fourth round.
+
+## Post 02 v2 · AI-automated society (after Kunhao's note, 2026-10-18)
+| Stage | Agent (model) | Tokens | Time | Result |
+|---|---|---|---|---|
+| S0 v2 | Claude (writer, Opus) | — | — | topic card v2: five jobs (run, decide, check, declare, answer) |
+| S1b | planner (Sonnet) | 117,035 | 30.3 min | V1–V8 from 7 new sources; 10 challenges to the thesis; flagged the Nexus file (OceanofPDF) and the mislabelled Arora file |
+| — | meta-manager | — | — | Nexus file deleted and withdrawn (shadow-library policy); Drive backup rebuilt and re-verified |
+| S2b | fact-checker (Opus) | — | — | 1 critical (withdrawn Nexus still cited in V8 and the traps), 2 major (IMF quote subject; Searle's "belief" bar), 20 minor; all fixed in source-brief-v2.verified.md |
