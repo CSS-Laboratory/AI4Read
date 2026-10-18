@@ -1,0 +1,83 @@
+---
+name: ai4read-resume
+description: How to resume the AI4Read project from scratch, in a new Claude session or on a new computer. Where everything lives, how to restore what is not on GitHub, current state and open tasks. Keep this file current; a copy lives in Google Drive (backup/) and in the claude.ai Project docs.
+updated: 2026-10-18
+---
+
+# Resume AI4Read
+
+## 1. Where everything lives
+| What | Where |
+|---|---|
+| **Repo** (code, posts, audio, wiki/knowledge graph, digests, pipeline, prompts) | GitHub `CSS-Laboratory/AI4Read` (private). Mac working copy: `~/code/AI4Read`. **Never put a git repo inside Google Drive.** |
+| **Library** (book and paper PDFs, read-only input) | Google Drive `My Drive/Book/AI4Read/library/<field>/` |
+| **Backup of what is not on GitHub** | Google Drive `My Drive/Book/AI4Read/backup/`. It holds post sources (copyrighted PDFs, saved web pages, talk audio) as split `.tar.gz` parts, a `git bundle` of the repo, this guide, and `SHA256SUMS` |
+| **Project docs** (seen by every claude.ai session in the Project) | claude.ai Project "AI4Read": charter, writing principles, phase 2 plan, digestion report, this guide |
+| **Published pages** | claude.ai artifacts. Post 01: https://claude.ai/artifact/NLzvyjQQRxppys5yME6KU3 · Post 02 (draft v1, being reworked): https://claude.ai/artifact/W2MqKGeotV685SzSdeE3ti · Library page: https://claude.ai/artifact/Q2Dg4ffVMAjkg54QDa8rE2 |
+| **Website** | khyang-lab.org/ai4read behind Cloudflare Access. Kunhao's website agent deploys from `site/ai4read/` (HANDOFF-website.md); files are built into `site/ai4read/dist/`. |
+| **English app** | Margin (MeWiki). Packs are in `site/mewiki/packs/`; the agent imports them (HANDOFF-margin.md). |
+
+## 2. Start a new session
+1. Open the claude.ai Project "AI4Read" and start a session. Link it to the Mac in the desktop app if local files are needed.
+2. Get the repo: `git clone https://github.com/CSS-Laboratory/AI4Read.git ai4read` (or use `~/code/AI4Read`).
+3. Read in this order:
+   1. `CLAUDE.md`
+   2. `CHARTER.md` (mission, fields, template, policies)
+   3. `WRITING.md` (how to explain; update it when a review shows a missing rule)
+   4. `learner/state.md`
+   5. `phase2/RUNBOOK.md`, `phase2/rubric.md` and `phase2/log.md`
+   6. the newest post folder in `posts/`
+4. Restore the post sources from Drive (they are gitignored on purpose):
+   ```bash
+   cd ai4read/posts/<slug>/sources
+   cat "<Drive>/backup/sources/<slug>-sources.tar.gz.part-"* | tar xzf -
+   shasum -a 256 -c "<Drive>/backup/SHA256SUMS"   # optional check
+   ```
+   If the repo itself is lost: `cat "<Drive>/backup/repo/ai4read-<date>.bundle.part-"* > ai4read.bundle && git clone ai4read.bundle ai4read`.
+5. Tools:
+   - `npm install` (KaTeX, highlight.js, marked, DOMPurify)
+   - Playwright with Chromium for the render test
+   - ffmpeg and pdftotext (poppler)
+   - `bash scripts/setup_tts.sh` (Kokoro TTS: `/tmp/ttsenv` and `/tmp/kmodel`)
+6. Build and test a post:
+   ```bash
+   node site/ai4read/build-post.mjs posts/<slug> --site
+   node site/ai4read/components/check.mjs posts/<slug>/src/content.html
+   node site/ai4read/dev/mock-server.mjs 8799 &
+   node site/ai4read/components/test.mjs /ai4read/<slug>/ --base http://127.0.0.1:8799
+   python3 scripts/wordcount.py posts/<slug>/src/content.html
+   /tmp/ttsenv/bin/python scripts/tts_post.py posts/<slug>     # audio, tagged "AI4Read from CSS Lab"
+   ```
+7. Publish the draft as a claude.ai artifact. Upload the page `posts/<slug>/index.html` with the files `audio/*.mp3` and these capabilities:
+   - db, with rules for annotations, notes, guesses and diag (read and write: admin);
+   - sample;
+   - downloads.
+
+   Keep each file under 16 MB (all.mp3 is encoded at 48 kb/s).
+
+## 3. How a post is made (phase 2, as revised 2026-10-18)
+- Claude writes. Independent agents check:
+  - an Opus fact-checker and a Sonnet fact-checker, merged by union;
+  - a Sonnet pedagogy critic, scoring blind against `phase2/rubric.md`.
+- Gate: 0 critical, 0 major, and every criterion ≥ 4. After 3 rounds, Claude fixes the rest and audits the post in full.
+- Kunhao reviews on his phone and leaves notes (annotations in the artifact db). Claude answers each note, revises, re-records only the changed audio chapters, and updates `WRITING.md` with any new rule.
+- Back up after each milestone: `bash scripts/backup_drive.sh` packs the sources into `/mnt/user-data/outputs/ai4read-backup/` for copying to Drive; `git push` covers the rest.
+
+## 4. Current state (2026-10-18)
+- **Post 01** "What does an LLM know when it predicts the next word?": reviewed and final.
+  - Open: re-record the audio for the changed chapters, including the new intro "Welcome to AI4Read from CSS Lab".
+- **Post 02**: being reworked, following Kunhao's note of 2026-10-18.
+  - The v1 draft (`posts/2026-10-ai-finance`) centred on Harari and AI-made finance.
+  - v2 centres on an **AI-automated society** (a society that runs on AI with no human intervention), with Harari as a short opening hint and finance as the worked case.
+  - It is organised around five jobs: run, decide, check, declare, answer.
+  - New sources: Searle 1995 (OCR text), *Nexus* 2024, Kirilenko et al. 2017 (JF), Arora et al. 2011 (CACM), Gensler & Bailey 2020, IMF GFSR Oct 2024 ch. 3, Haldane & May 2011.
+- **Website and Margin:** handoff packages delivered; Kunhao's agents deploy. "Ask Claude" uses his Vertex key.
+- **Rules:** WRITING.md v0.5 (standalone posts, balance, quote boundaries, short answer, five-number rule, length counter).
+
+## 5. Standing constraints (from Kunhao)
+- Never handle passwords, tokens or keys, and never create service-account keys. Kunhao logs in himself.
+- Ask before any action that creates, changes or deletes cloud resources or costs money.
+- The library folder is read-only input. Never use shadow libraries.
+- Never put a git repo inside Google Drive.
+- Never overwrite digests marked `audited:` with pipeline output.
+- Every audio file carries the source mark "AI4Read from CSS Lab".

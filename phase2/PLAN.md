@@ -2,10 +2,21 @@
 name: phase2-plan
 description: AI4Read phase 2. A writer-agent system that turns a topic, a research idea or a PDF into a post of post-01 quality, with Claude as meta-manager. Plan, tests, gates and budget.
 date: 2026-10-16
-status: proposal (waiting for Kunhao's decisions in §9)
+status: active, revised 2026-10-18 (see §0)
 ---
 
 # Phase 2: the AI4Read writer system
+
+## 0. Revision, 2026-10-18 (Kunhao's decision)
+- **Writer:** Claude writes posts directly, in Claude (the "Claude Work" setup), following CHARTER, WRITING and the rubric.
+- **Independent checking stays.** Each post goes to an Opus fact-checker and a Sonnet fact-checker (merged by union) plus a pedagogy critic, as fresh agents that did not write the text. In post 02 they found over 30 errors the writer had missed.
+- **Phase 2b (a headless writer on Vertex) is dropped.** The Vertex key is used only for "Ask Claude" on khyang-lab.org, as set up by the website agent. The $200 cap now covers that route.
+- **Backups**, so a lost session or a new computer can resume (see `RESUME.md`):
+  - GitHub `CSS-Laboratory/AI4Read`: code, text, audio.
+  - Google Drive `My Drive/Book/AI4Read/backup/`: sources that cannot go on GitHub, a repo bundle and the resume guide.
+  - The claude.ai Project "AI4Read": the plan, writing principles and resume guide as Project docs.
+- **Every post stands alone** (WRITING §0).
+- Sections 1–9 below are kept as the history of the original plan.
 
 ## 1. Goal
 Kunhao gives a **topic**, a **research idea**, or a **PDF**. The system writes a post at the quality of post 01 (after its review rounds), publishes it privately on khyang-lab.org, and keeps improving it from his notes.

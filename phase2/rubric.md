@@ -43,7 +43,7 @@ Each new concept follows the ladder: instance → question → mechanism in word
 - **2–1:** Hard to follow for the target reader.
 
 ### 4. Insight and connections (the lenses)
-- **5:** Each lens says what it *adds* that the others cannot. It names a link type to other fields (analogy, shared mathematics, mechanism, tension) and states what the lens does **not** explain. The post connects to Kunhao's research (the 3C angle) and to earlier posts.
+- **5:** Each lens says what it *adds* that the others cannot. It names a link type to other fields (analogy, shared mathematics, mechanism, tension) and states what the lens does **not** explain. The post connects to Kunhao's research (the 3C angle). It stands alone: any reference to another post counts as a minor finding (WRITING §0).
 - **4:** Clear lens contributions; one link or one limit is missing.
 - **3:** The lenses are parallel summaries with no comparison.
 - **2–1:** A list of facts.

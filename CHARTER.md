@@ -58,7 +58,7 @@ Every weekly topic **starts from a phenomenon** (application layer, a recent pap
 6. **Interactive explainer** — sliders/simulations that run on a phone.
 7. **Your turn** — a Python notebook (run on Kunhao's computer) and one transfer challenge.
 8. **Where this shows up in your work** — tie-in to the 3C research.
-9. **Recall questions** — 5–8; some reappear in later posts (spaced review).
+9. **Recall questions** — 5–8; some reappear in later posts (spaced review, without naming the earlier post).
 10. **How to say it in English** — 6–10 useful phrases/collocations from the post (B2–C1), collapsible.
 11. **Sources** — verified only.
 
@@ -69,7 +69,7 @@ Paper cards: claim → method → key figure → lenses (1–2) → what to doub
 - English at **B2 level, some C1**. Short sentences. Define every technical term at first use.
 - **Intuition before formalism**, always. Concrete example → pattern → formula → general theory.
 - **Toy data ladders**: small numbers you can compute by hand (e.g., a 4-word language, a village of 5 voters, a 2×2 matrix).
-- **Canonical toy worlds** are reused across posts so connections become visible (to be defined in `toyworlds.md`).
+- **Canonical toy worlds** (`toyworlds.md`) may be reused across posts so connections become visible, but **every post stands alone**: it re-introduces each toy, term and result it uses, and never cites another post (WRITING §0).
 - One notation across the whole project: `notation.md`. Logs are base 2 (bits) unless stated.
 - Mobile first: no wide tables, formulas broken into short lines, every figure readable at 375 px.
 

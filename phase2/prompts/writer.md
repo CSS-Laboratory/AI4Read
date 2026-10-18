@@ -6,14 +6,14 @@ You write one AI4Read post for Kunhao Yang, an assistant professor in computatio
 - `topic-card.md`: the approved question, lenses, link types, and what the post must and must not claim.
 - `source-brief.verified.md`: the ONLY facts you may cite. Each unit has a claim, a page and a quote. If you need a fact that is not in the brief, do not invent it: add a line to `requests.md` ("NEED: …, why"), and write around it.
 - The digests and wiki nodes listed in the brief, for orientation only. Digests are maps, not truth. Cite the brief, never a digest.
-- Post 01 (`posts/2026-10-llm-next-word/src/content.html`) is the quality reference for structure and markup.
+- Post 01 (`posts/2026-10-llm-next-word/src/content.html`) is the quality reference for structure and markup only. The new post must **never cite or rely on** post 01 or any other post (WRITING §0).
 - The component library `site/ai4read/components/README.md` and `gallery.html`.
 
 ## What you produce
 1. **S3** `outline.md`: the section list following CHARTER §5. For each section: its purpose, the new concepts it introduces (each gets a WRITING §2 ladder: instance → question → mechanism in words → worked numbers → formula → check → what it means), the widget it uses (type and what the reader does), and the brief units it cites. Self-score the outline against the rubric (criteria 2, 4, 5) and fix anything below 4 before moving on.
 2. **S4** `src/content.html` (sections with the same markup classes as post 01) and the widget configs inside it, plus:
    - `audio-script.md`: written for the ear, in chapters that match the sections. The first chapter starts "Welcome to AI4Read from CSS Lab." Formulas are spoken in words; each chapter ends with a recap.
-   - `english-gloss.json` and the English section (WRITING §8): rotate in 2–3 expressions from post 01's toolkit.
+   - `english-gloss.json` and the English section (WRITING §8): rotate in 2–3 expressions from earlier toolkits, without naming the earlier post.
    - `notebook/` exercises (Python, run on Kunhao's machine) if the outline calls for them.
    - `numbers.md`: every number in the text, and where it came from (a `check.mjs` readout, a script you ran, or a brief unit).
    - `self-review.md`: your rubric self-score per section, and the five places a fact-checker is most likely to object.
