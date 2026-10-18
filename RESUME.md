@@ -13,7 +13,7 @@ updated: 2026-10-18
 | **Library** (book and paper PDFs, read-only input) | Google Drive `My Drive/Book/AI4Read/library/<field>/` |
 | **Backup of what is not on GitHub** | Google Drive `My Drive/Book/AI4Read/backup/`. It holds post sources (copyrighted PDFs, saved web pages, talk audio) as split `.tar.gz` parts, a `git bundle` of the repo, this guide, and `SHA256SUMS` |
 | **Project docs** (seen by every claude.ai session in the Project) | claude.ai Project "AI4Read": charter, writing principles, phase 2 plan, digestion report, this guide |
-| **Published pages** | claude.ai artifacts. Post 01: https://claude.ai/artifact/NLzvyjQQRxppys5yME6KU3 · Post 02 (draft v1, being reworked): https://claude.ai/artifact/W2MqKGeotV685SzSdeE3ti · Library page: https://claude.ai/artifact/Q2Dg4ffVMAjkg54QDa8rE2 |
+| **Published pages** | claude.ai artifacts. Post 01: https://claude.ai/artifact/NLzvyjQQRxppys5yME6KU3 · Post 02 (v2, 2026-10-18): https://claude.ai/artifact/W2MqKGeotV685SzSdeE3ti · Library page: https://claude.ai/artifact/Q2Dg4ffVMAjkg54QDa8rE2 |
 | **Website** | khyang-lab.org/ai4read behind Cloudflare Access. Kunhao's website agent deploys from `site/ai4read/` (HANDOFF-website.md); files are built into `site/ai4read/dist/`. |
 | **English app** | Margin (MeWiki). Packs are in `site/mewiki/packs/`; the agent imports them (HANDOFF-margin.md). |
 
@@ -68,16 +68,18 @@ updated: 2026-10-18
   3. `bash scripts/backup_drive.sh` packs the post sources into 24 MB parts under `/mnt/user-data/outputs/ai4read-backup/`; copy them to `<Drive>/backup/sources/`.
 - **Last full backup: 2026-10-18** (repo a81e8d0, post 02 sources including the seven PDFs added that day).
 
-## 4. Current state (2026-10-18)
+## 4. Current state (2026-10-18, evening)
 - **Post 01** "What does an LLM know when it predicts the next word?": reviewed and final.
   - Open: re-record the audio for the changed chapters, including the new intro "Welcome to AI4Read from CSS Lab".
-- **Post 02**: being reworked, following Kunhao's note of 2026-10-18.
-  - The v1 draft (`posts/2026-10-ai-finance`) centred on Harari and AI-made finance.
-  - v2 centres on an **AI-automated society** (a society that runs on AI with no human intervention), with Harari as a short opening hint and finance as the worked case.
-  - It is organised around five jobs: run, decide, check, declare, answer.
-  - New sources: Searle 1995 (OCR text), *Nexus* 2024, Kirilenko et al. 2017 (JF), Arora et al. 2011 (CACM), Gensler & Bailey 2020, IMF GFSR Oct 2024 ch. 3, Haldane & May 2011.
+- **Post 02** "Could a society run itself on AI?" (v2, published 2026-10-18 to the same artifact URL).
+  - Centred on an AI-automated society; Harari is a short hint with his lines in a fold-out; finance is the worked case. Five jobs: run, decide, check, declare, answer. Lenses: Ashby/Arora (check), N_eff and Haldane–May (decide), Searle (declare), Lupia–McCubbins (answer). Short answer with a verdict (ours, definition-dependent).
+  - S5: three rounds (Opus + Sonnet fact-checks, Sonnet critic) plus a post-round-3 audit; reviews and responses in `posts/2026-10-ai-finance/review/v2-*`. Final: round 3 Opus 0 major, Sonnet 1 major (fixed); critic audit Lens 2b and §13 at 4.
+  - Source: `src/content-v2.tpl.html` + `src/v2-blocks/` + v1 blocks, filled by `src/fill_v2.py` into `src/content.html`. Edit the template or a block, then run the fill script; never edit content.html by hand.
+  - Audio 37 min re-recorded. English pack rebuilt. Waiting for Kunhao's notes (S8).
+  - *Nexus*: only the Penguin sample and the Guardian extract are used; the re-attached PDF was the pirate copy and was deleted.
 - **Website and Margin:** handoff packages delivered; Kunhao's agents deploy. "Ask Claude" uses his Vertex key.
-- **Rules:** WRITING.md v0.5 (standalone posts, balance, quote boundaries, short answer, five-number rule, length counter).
+- **Rules:** WRITING.md v0.7 (adds: threshold words, verdict in the short answer, one point one ladder, quoted formulas still climb, purpose ≠ effect, quote referent, one source per sentence, glosses are claims, search before "never", keep the source's scope).
+- **Tooling:** test both builds: the site build (`--base` with the mock server) and the artifact build (`test.mjs posts/<slug>/index.html --inline`). The artifact build had silently lost its widgets until 2026-10-18 (fixed in build-post.mjs).
 
 ## 5. Standing constraints (from Kunhao)
 - Never handle passwords, tokens or keys, and never create service-account keys. Kunhao logs in himself.
