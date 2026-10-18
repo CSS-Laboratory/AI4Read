@@ -66,6 +66,7 @@ home	IMF 2024, p. 93	imf	named
 home	IMF 2024, p. 101	imf	named
 home	FCIC 2011, p. 28	fcic	named
 home	p. 149	fcic	prose
+llm	IMF 2024, p. 82	imf	named
 llm	Decrypt 2024	truth-dec	named
 llm	Luo et al. 2026, abstract	oql	named
 llm	Mik 2026, introduction	mik	named
@@ -75,12 +76,13 @@ llm	Decrypt 2024	truth-dec	named
 llm	Gensler and Bailey 2020, p. 21	gb	named
 llm	Scheurer et al. 2024, p. 1	scheurer	named
 llm	IMF 2024, p. 78	imf	named
-lens-control	Ashby 1956, p. 207	ashby	named
+lens-control	Ashby 1956, pp. 205, 207	ashby	named
 lens-control	Ashby 1956, p. 207	ashby	named
 lens-control	Ashby 1956, p. 209	ashby	named
 lens-control	Danielsson and Uthemann 2025, §3, p. 10	du	named
 lens-control	Ashby 1956, p. 246	ashby	named
 lens-control	Danielsson and Uthemann 2025, abstract	du	named
+lens-control	introduction	du	prose
 lens-control	abstract	du	prose
 lens-control	Gensler and Bailey 2020, p. 25	gb	named
 lens-control	Danielsson et al. 2022, p. 7	dmu	named
@@ -126,6 +128,7 @@ lens-social	p. 37	searle	prose
 lens-social	p. 70	searle	prose
 lens-social	Searle 1995, p. 142	searle	named
 lens-social	Ynet 2023	ynet-2023	named
+lens-answer	Lupia and McCubbins 1998, p. 79	lupia	named
 lens-answer	Lupia and McCubbins 1998, pp. 85–86	lupia	named
 lens-answer	p. 92	lupia	prose
 lens-answer	Scheurer et al. 2024, abstract	scheurer	named
@@ -137,6 +140,7 @@ lens-answer	WEF 2026 [16:28]	harari-wef	named
 lens-answer	[15:14]	harari-wef	prose
 lens-answer	[16:47]	harari-wef	prose
 lens-answer	Gensler and Bailey 2020, p. 13	gb	named
+turn	Granovetter 1978, pp. 1424–1425	granovetter	named
 answer	IMF 2024, pp. 89, 92	imf	named
 answer	BIS 2024 [3:09], [3:30]	harari-bis	named
 answer	Poole 2024	poole	named
