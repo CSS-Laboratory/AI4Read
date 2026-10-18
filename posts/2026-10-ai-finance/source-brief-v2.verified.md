@@ -10,6 +10,8 @@ companion: source-brief.verified.md (S2). This file ADDS units; it does not repl
 grounding: Every unit marked SEEN was read at the source page. Quotes were matched against the text layer by script (letters and digits only) and are at most 25 words. Quotes whose text layer is lossy, and all Searle quotes (OCR), were also checked against the rendered page image; those are marked [img].
 ---
 
+**Updates after S5 (2026-10-18), read these first.** (1) The real CACM text is now SEEN (`sources/arora-2011-cacm-published.pdf`, printed = PDF + 100); cite it for the planted-dense-subgraph result (p. 101). (2) These units in the companion v1 brief are superseded: B7 IMF (now used, see V2), E3 Gensler and Bailey (paper read, see V3), the Kirilenko 2014 working paper (cite the JF 2017 text, V1). (3) V1: the CFTC-SEC passage gives the pause's purpose, not its effect.
+
 > **S2b status key.** Each unit header carries [OK] (checked, no change), [FIXED] (checked; corrections are written in and marked "S2b:"), [DROP] (the source does not support it) or [WITHDRAWN]. Counts: 1 critical, 2 major, 20 minor (see review/s2b-check.md). The **writer-must-not-use list** is in review/s2b-check.md and repeated at the end of this file.
 
 > **Meta-manager notice (2026-10-18): units V6a–V6e are WITHDRAWN.** The *Nexus* PDF they were drawn from carries OceanofPDF marks (a pirate e-book site). Under the project's source policy (no shadow libraries), the file was deleted and nothing from it may be cited. Re-verify these units from a legitimate copy (Kunhao's own purchased copy, the publisher's sample, or the Guardian extract) before use. Until then, *Nexus* is cited only from the Penguin sample (Prologue) and the Guardian extract already in the verified brief.
