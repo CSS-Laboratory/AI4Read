@@ -207,7 +207,7 @@
     <tr><td>Y1</td><td>X1, X2, X3: 5 each</td></tr>
     <tr><td>Y2</td><td>X3: 5; Y1: 10</td></tr>
     <tr><td>Y3</td><td>Y1: 5; Y2: 10</td></tr></tbody></table></div>
-  <p>A failed borrower repays 20%, so a lender loses 80% of the loan. <b>Mechanism.</b> A bank fails when losses from failed borrowers reach its capital; then its own lenders lose in the next round. <b>Formula</b> (\(\lambda=0.8\) loss rate, \(\kappa=1\) capital multiplier):</p>
+  <p>A failed borrower repays 20%, so a lender loses 80% of the loan. <b>Mechanism.</b> A bank fails when losses from failed borrowers reach its capital; then its own lenders lose in the next round. <b>Formula</b> (\(w_{ij}\) is what bank \(j\) lent to bank \(i\); \(\lambda=0.8\) is the loss rate, “loss given default” in the toy; \(\kappa=1\) multiplies capital):</p>
   \[\text{bank } j \text{ fails when }\sum_{i\text{ failed}}\lambda\,w_{ij}\;\ge\;\kappa\cdot\text{capital}_j\]
   <p><b>Worked numbers.</b> One or two X failures cost Y1 4 or 8, below its capital of 10. Three cost 12: Y1 fails, and the losses spread round by round until all six have failed (the table below steps through it). With every capital raised by half, only the three X banks fail.</p>
 <!--CFG:cfg-w5-hand-->
@@ -215,7 +215,7 @@
   <p>Now try it. The toy opens with X1, X2 and X3 failing together. Tap X2 and X3 to switch them off: one failure stays one. Arrow X1 → Y1 means Y1 lent to X1.</p>
 <!--CFG:cfg-w5-->
   <div class="w" data-widget="cascade" id="cs-w5" data-config-ref="cfg-w5"></div>
-  <p><b>What it means.</b> Two failures are absorbed; three are not: a threshold. The toy starts <i>after</i> the shared failure; Lens 2a showed in a toy, with \(\rho\) assumed, how a shared model makes that likelier. Haldane and May add that market “liquidity shocks” (falls in the market value of banks’ assets, for example from fire sales) “amplify as more banks fail” <span class="cite">Haldane and May 2011, p. 353</span>.</p>
+  <p><b>What it means.</b> Two failures are absorbed; three are not: a threshold. The toy starts <i>after</i> the shared failure; Lens 2a showed in a toy, with \(\rho\) assumed, how a shared model makes that likelier.</p>
 
   <h3>Ladder 4 · Safer banks, a fragile system</h3>
   <p><b>Instance</b> (Haldane and May’s toy). \(N\) banks and \(N\) unrelated kinds of asset. Each asset suffers a crippling loss with a small chance \(\varepsilon\). <b>Plan A:</b> each bank holds one whole asset. <b>Plan B:</b> each bank holds \(1/N\) of every asset, so all banks hold the same thing. <b>Question.</b> Which plan makes a total collapse likelier?</p>

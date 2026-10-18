@@ -2,9 +2,6 @@
     <summary>Look inside: the trend-follower rule, and why it tips at \(m=2/3\)</summary>
     <p><b>The rule</b>, with \(A=1.5\) (chase gain) and \(G=0.5\) (pull-back gain):</p>
     \[\begin{aligned}\text{gap}_{t+1}&=\text{gap}_t+A\,m\,(\text{gap}_t-\text{gap}_{t-1})\\&\quad-G\,(1-m)\,\text{gap}_t\end{aligned}\]
-    <div class="tbl"><table><thead><tr><th>\(m\)</th><th>push \(Am\)</th><th>pull \(G(1-m)\)</th><th>next gaps</th></tr></thead><tbody>
-      <tr><td>0.2</td><td>0.3</td><td>0.4</td><td>−0.9, −0.51, −0.189: dies out</td></tr>
-      <tr><td>0.9</td><td>1.35</td><td>0.05</td><td>−2.30, −3.94: grows</td></tr></tbody></table></div>
     <p>First step at \(m=0.2\), from a gap of 0 then −1: \(-1+0.3\times(-1)-0.4\times(-1)=-0.9\). <b>Check.</b> At \(m=0.2\) the toy reports a largest swing of 0.04 up and −1.00 down, and a gap of 0.000 after 40 steps.</p>
     <p><b>A rough reason.</b> Each step the chasers repeat \(Am\) times the last move, so a swing keeps its size when \(Am=1\), at \(m=1/A=2/3\).</p>
     <p><b>The exact argument.</b> Write the rule as \(g_{t+1}=b\,g_t-c\,g_{t-1}\) with \(b=1+Am-G(1-m)\) and \(c=Am\). A pattern \(g_t=x^t\) fits when \(x^2-bx+c=0\): the <dfn>characteristic equation</dfn>, whose roots are the factors by which the pattern is multiplied each step. The two roots multiply to \(c\). When they are <dfn>complex numbers</dfn> (a wave, which needs \(b^2\lt 4c\)), each has size \(\sqrt c\), so the wave shrinks if \(Am\lt 1\) and grows if \(Am\gt 1\). <b>Numbers (code-checked with <code>numpy.roots</code>).</b> \(m=0.2\): \(b=0.9\), \(c=0.3\), size 0.548. \(m=0.67\): \(c=1.005\), size 1.002, just above 1, so the swing grows very slowly. \(m=0.9\): \(b=2.3\), \(c=1.35\), size 1.162. For very small \(m\) (below about 0.07) the roots are real and both below 1. Near \(m=1\) the roots become real again, but by then \(Am\gt 1\) and the larger root already exceeds 1.</p>
