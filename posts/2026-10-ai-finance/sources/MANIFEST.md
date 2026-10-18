@@ -77,3 +77,12 @@ accessed: 2026-10-17
 ## Added by meta-manager, 2026-10-17
 - **danielsson-2022-jbf-published.pdf/.txt**: Danielsson, J., Macrae, R., & Uthemann, A. (2022). Artificial intelligence and systemic risk. *Journal of Banking & Finance*, 140, 106290. https://doi.org/10.1016/j.jbankfin.2021.106290. Open access (CC BY 4.0) from LSE Research Online, https://researchonline.lse.ac.uk/id/eprint/111601/4/Danielsson_artificial_intelligence_and_systemic_risk_published.pdf. Accessed 2026-10-17. Journal page numbers.
 - **danielsson-2019-wp.pdf**: the June 2019 working-paper version (riskresearch.org, authors' site). Use it only to cross-check.
+
+## Added 2026-10-18 (from Kunhao)
+- searle-1995-construction.pdf: Searle (1995), *The Construction of Social Reality*. A scan, OCR text in searle-1995-construction.txt. Printed page = OCR page − 9 up to p. 57, then − 8.
+- kirilenko-2017-flashcrash-jf.pdf: the Kirilenko et al. (2017) JF manuscript. The pages are the manuscript's own numbering, not JF pages.
+- arora-2011-cacm.pdf: **actually the ICS 2010 extended abstract** (same md5 as arora-ics2010.pdf), not the CACM 2011 text.
+- gensler-bailey-2020-deeplearning.pdf: SSRN working paper (2020).
+- imf-2024-gfsr-ch3.pdf: IMF GFSR Oct 2024, ch. 3. Printed page = PDF page + 76.
+- haldane-may-2011-nature.pdf: *Nature* 469, 351–355. Printed page = PDF page + 350.
+- harari-2024-nexus.pdf: **removed**, because it carried OceanofPDF marks (a pirate e-book site). Not used. Ask Kunhao for a legitimate copy.
