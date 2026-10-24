@@ -350,7 +350,7 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "the burden of proof lies with",
-   "sentence": "Ullman argues for a sceptical default: the burden of proof lies with those who claim the ability has emerged.",
+   "sentence": "On a sceptical default, the burden of proof lies with those who claim the ability has emerged.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -367,8 +367,8 @@
    "register": "academic",
    "target": {
     "text": "the burden of proof lies with",
-    "start": 39,
-    "end": 68
+    "start": 24,
+    "end": 53
    }
   },
   {
@@ -640,7 +640,7 @@
    "kind": "shadowing",
    "group": "loop",
    "headword": "A paragraph to loop",
-   "sentence": "What Shannon showed was that predicting text and compressing it are, in effect, the same problem. It is tempting to conclude that a model which predicts well must understand what it reads, but a low loss is not tantamount to understanding. Xie's account of in-context learning is predicated on the model fitting its training distribution exactly, an assumption that real models may not meet. Attention maps are suggestive, yet a map is not, in and of itself, an explanation. The theory-of-mind results should give us pause: accuracy collapses after small changes to the story. Yet people stumble on many of those changes too, and if a collapse counts against the model, then by the same token it should count against us. Even so, the burden of proof lies with those who claim the ability has emerged. Piantadosi and Hill stop short of saying that models understand as we do, and for now the jury is still out.",
+   "sentence": "What Shannon showed was that predicting text and compressing it are, in effect, the same problem. It is tempting to conclude that a model which predicts well must understand what it reads, but a low loss is not tantamount to understanding. Xie's account of in-context learning is predicated on the model fitting its training distribution exactly, an assumption that real models may not meet. Attention maps are suggestive, yet a map is not, in and of itself, an explanation. The theory-of-mind results should give us pause: accuracy collapses after small changes to the story. Yet people stumble on many of those changes too, and if a collapse counts against the model, then by the same token our own failures should count against us. Even so, the burden of proof lies with those who claim the ability has emerged. Piantadosi and Hill stop short of saying that models understand as we do, and for now the jury is still out.",
    "targets": [
     "tantamount to",
     "predicated on",

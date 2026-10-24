@@ -138,7 +138,7 @@
    "level": "C1",
    "partOfSpeech": "fixed phrase",
    "register": "academic",
-   "sentence": "Ullman argues for a sceptical default: the burden of proof lies with those who claim the ability has emerged.",
+   "sentence": "On a sceptical default, the burden of proof lies with those who claim the ability has emerged.",
    "target": "the burden of proof lies with",
    "definition": "the person or side that must provide evidence for a claim is the one making it"
   },
@@ -244,7 +244,7 @@
  "loop": {
   "headword": "A paragraph to loop",
   "level": "C2",
-  "text": "What Shannon showed was that predicting text and compressing it are, in effect, the same problem. It is tempting to conclude that a model which predicts well must understand what it reads, but a low loss is not tantamount to understanding. Xie's account of in-context learning is predicated on the model fitting its training distribution exactly, an assumption that real models may not meet. Attention maps are suggestive, yet a map is not, in and of itself, an explanation. The theory-of-mind results should give us pause: accuracy collapses after small changes to the story. Yet people stumble on many of those changes too, and if a collapse counts against the model, then by the same token it should count against us. Even so, the burden of proof lies with those who claim the ability has emerged. Piantadosi and Hill stop short of saying that models understand as we do, and for now the jury is still out.",
+  "text": "What Shannon showed was that predicting text and compressing it are, in effect, the same problem. It is tempting to conclude that a model which predicts well must understand what it reads, but a low loss is not tantamount to understanding. Xie's account of in-context learning is predicated on the model fitting its training distribution exactly, an assumption that real models may not meet. Attention maps are suggestive, yet a map is not, in and of itself, an explanation. The theory-of-mind results should give us pause: accuracy collapses after small changes to the story. Yet people stumble on many of those changes too, and if a collapse counts against the model, then by the same token our own failures should count against us. Even so, the burden of proof lies with those who claim the ability has emerged. Piantadosi and Hill stop short of saying that models understand as we do, and for now the jury is still out.",
   "targets": [
    "tantamount to",
    "predicated on",

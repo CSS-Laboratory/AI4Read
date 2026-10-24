@@ -68,7 +68,7 @@ updated: 2026-10-18
   3. `bash scripts/backup_drive.sh` packs the post sources into 24 MB parts under `/mnt/user-data/outputs/ai4read-backup/`; copy them to `<Drive>/backup/sources/`.
 - **Last full backup: 2026-10-18 evening** (repo d7d2793, bundle verified "complete history"; post 02 sources incl. the real CACM PDF; SHA256SUMS on Drive match the container).
 
-## 4. Current state (2026-10-18, evening)
+## 4. Current state (2026-10-25)
 - **Post 01** "What does an LLM know when it predicts the next word?": reviewed and final.
   - Open: re-record the audio for the changed chapters, including the new intro "Welcome to AI4Read from CSS Lab".
 - **Post 02** "Could a society run itself on AI?" (v2, published 2026-10-18 to the same artifact URL).
@@ -77,8 +77,10 @@ updated: 2026-10-18
   - Source: `src/content-v2.tpl.html` + `src/v2-blocks/` + v1 blocks, filled by `src/fill_v2.py` into `src/content.html`. Edit the template or a block, then run the fill script; never edit content.html by hand.
   - Audio 37 min re-recorded. English pack rebuilt. Waiting for Kunhao's notes (S8).
   - *Nexus*: only the Penguin sample and the Guardian extract are used; the re-attached PDF was the pirate copy and was deleted.
+- **English separated (2026-10-25).** Kunhao publishes the blogs without the English section. Both posts now end at Recall and Sources (no English audio chapters; post 01 about 25 min, post 02 about 35 min; both artifacts republished). English is a separate **C1–C2 pack** per post: source `posts/<slug>/english/english.json`, build `python3 scripts/english_pack.py posts/<slug>` → `site/mewiki/packs/<slug>.json` + `.md`, loop audio `scripts/tts_english_loop.py <slug>` → `site/mewiki/packs/audio/`. Old material archived in `posts/<slug>/english/*-v1.*`. Independent check: `posts/2026-10-ai-finance/review/english-packs-check.md` (two rounds, all critical and major fixed).
+- **Waiting on Kunhao's agents:** `site/ai4read/PROMPT-website-2026-10-25.md` (publish post 02, update post 01, delete 5 stale R2 objects) and `site/mewiki/PROMPT-margin-2026-10-25.md` (import the C1–C2 packs; ask before suspending the 45 retired items).
 - **Website and Margin:** handoff packages delivered; Kunhao's agents deploy. "Ask Claude" uses his Vertex key.
-- **Rules:** WRITING.md v0.7 (adds: threshold words, verdict in the short answer, one point one ladder, quoted formulas still climb, purpose ≠ effect, quote referent, one source per sentence, glosses are claims, search before "never", keep the source's scope).
+- **Rules:** WRITING.md v0.8 (§8: English is a separate C1–C2 pack, not part of the post); earlier v0.7 (adds: threshold words, verdict in the short answer, one point one ladder, quoted formulas still climb, purpose ≠ effect, quote referent, one source per sentence, glosses are claims, search before "never", keep the source's scope).
 - **Tooling:** test both builds: the site build (`--base` with the mock server) and the artifact build (`test.mjs posts/<slug>/index.html --inline`). The artifact build had silently lost its widgets until 2026-10-18 (fixed in build-post.mjs).
 
 ## 5. Standing constraints (from Kunhao)

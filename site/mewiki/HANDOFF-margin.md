@@ -9,7 +9,7 @@ From: AI4Read quality lead (Claude). Date: 2026-10-16. Owner: Kunhao Yang. **Ask
   - the shadowing item has `audio.file` = `audio/<slug>-loop.mp3` (shipped in `site/mewiki/packs/audio/`) and `audio.url` = `null`;
   - `source.url` is the post page (`https://khyang-lab.org/ai4read/<slug>/`), no `#english` anchor;
   - items dropped from the earlier packs are listed in `packs/retired-2026-10-25.json` (suspend only if Kunhao agrees; never delete history).
-- Current packs: post 01, 27 items (16 expressions, 4 patterns, 4 fixes, 2 tips, 1 loop); post 02, 29 items (18, 4, 4, 2, 1). Each has a readable `.md` preview.
+- Current packs: post 01, 27 items (16 expressions, 4 patterns, 4 fixes, 2 tips, 1 loop); post 02, 28 items (17, 4, 4, 2, 1). Each has a readable `.md` preview.
 - Step-by-step instructions for this release: `site/mewiki/PROMPT-margin-2026-10-25.md`.
 
 ## 0. First

@@ -25,16 +25,16 @@ C1/C2 only · 28 items · source post: https://khyang-lab.org/ai4read/2026-10-ai
 ## Sentence patterns
 
 - **Reporting verbs calibrated to strength** (C1): Choose the reporting verb to match how firm the source is: judge, warn, hypothesise, argue, concede. *The IMF judges that the risks currently appear contained; the FSB warns that common models could increase correlations in trading; Gensler and Bailey hypothesise that broad adoption could produce a monoculture.*
-- **It is not until … that (cleft)** (C1): 'It is not until X that Y' stresses that Y happens only once X does. More emphatic than 'Y happens only when X'. *On our reading, it is not until people declare and answer that a group becomes a society.*
+- **It is only when … that (cleft)** (C1): 'It is only when X that Y' stresses that Y depends on X. More emphatic than 'Y happens only when X'. *On our reading, it is only when people can declare and answer that a group becomes a society.*
 - **Inversion with 'were … to'** (C2): A formal way to state an unlikely condition: 'Were X to do Y, …' instead of 'If X did Y, …'. *Were every firm to rely on one model, their errors would tend to coincide.*
 - **Inversion after a negative adverbial** (C2): After 'rarely', 'seldom' or 'little' at the start of a clause, put the auxiliary before the subject. Formal writing and talks. *Rarely does a single toy settle a question about real markets.*
 
 ## Fixes
 
-- **imply vs infer** (C1): ~~From the survey we imply that deciding is still mostly human.~~ → From the survey we infer that deciding is still mostly human. Evidence or a speaker implies (suggests); a reader or listener infers (concludes).
-- **principal vs principle** (C1): ~~In Lupia and McCubbins's model, the principle delegates and the agent acts.~~ → In Lupia and McCubbins's model, the principal delegates and the agent acts. A 'principal' is a person (the one who delegates) or the main thing; a 'principle' is a rule or idea. 'Principal–agent problem' uses -al.
+- **imply vs infer** (C1): ~~From the IMF's finding we imply that deciding is still largely human.~~ → From the IMF's finding we infer that deciding is still largely human. Evidence or a speaker implies (suggests); a reader or listener infers (concludes).
+- **criterion / criteria** (C1): ~~Knowledge is one criteria for successful delegation.~~ → Knowledge is one criterion for successful delegation; an incentive is the other. 'Criterion' is singular and 'criteria' plural (likewise phenomenon/phenomena).
 - **raise the question (not 'beg')** (C2): ~~Automating the checker begs the question of who checks the checker.~~ → Automating the checker raises the question of who checks the checker. In careful academic English, 'beg the question' means assuming what you are trying to prove; to mean 'prompt a question', say 'raise the question'.
-- **the reason is that (not 'because')** (C1): ~~The reason most participants want a human in the loop is because someone must bear liability.~~ → The reason most participants want a human in the loop is partly that someone must bear liability. After 'the reason is', use a that-clause; 'the reason is because' repeats the idea of reason and is avoided in formal writing.
+- **the reason is that (not 'because')** (C1): ~~Part of the reason most participants want a human in the loop is because someone must bear liability.~~ → Part of the reason most participants want a human in the loop is that someone must bear liability. After 'the reason is', use a that-clause; 'the reason is because' repeats the idea of reason and is avoided in formal writing.
 
 ## Practice
 
@@ -43,6 +43,6 @@ C1/C2 only · 28 items · source post: https://khyang-lab.org/ai4read/2026-10-ai
 
 ## Paragraph to loop
 
-Software already runs much of the market, but running a market is a far cry from answering for it. Were many firms to rely on one model, their errors would tend to move in lockstep, and that model could become the system's Achilles' heel. Most participants in the IMF's outreach want a human in the loop, partly for reasons of liability; on our reading, accountability presupposes someone who can be asked why. A token counts as money only while a community keeps accepting it, so whether a machine-only token is money hinges on the accepting. What remains to be seen is whether machines could ever do it. Standard contracts cut both ways: they make checking easier, yet they can make firms more alike. A toy with ten banks is useful, with the caveat that it shows what could happen, not what will, so we should not read too much into it.
+Software already runs much of the market, but running a market is a far cry from answering for it. Were many firms to rely on one model, their errors would tend to move in lockstep, and that model could become the system's Achilles' heel. Most participants in the IMF's outreach want a human in the loop, partly for reasons of liability; on our reading, accountability presupposes someone who can be asked why. A token counts as money only while a community keeps accepting it, so whether a machine-only token is money hinges on who does the accepting. What remains to be seen is whether machines could ever do it. Standard contracts cut both ways: they make checking easier, yet they can make firms more alike. A toy with ten banks is useful, with the caveat that it shows what could happen, not what will, so we should not read too much into it.
 
 Targets: a far cry from, Were many firms to rely on, in lockstep, Achilles' heel, presupposes, hinges on, What remains to be seen is whether, cut both ways, with the caveat that, read too much into

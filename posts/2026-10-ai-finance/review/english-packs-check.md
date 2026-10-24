@@ -207,3 +207,72 @@ The note says "claims that are our reading say so", but only one sentence does (
 - *Fix.* Add short labels where a sentence goes beyond the post, or reword the note to "example sentences may state our reading".
 
 **Blog separation (checked, no finding).** When I started, `posts/2026-10-ai-finance/src/content.html` still contained §15 "How to say it in English", and the built `index.html`/dist of post 01 still had its old English section. A rebuild at 02:10 removed both. I re-extracted both posts and diffed them: the only changes are the removed English section, the TOC entry, the renumbered "15 · Sources" and the audio time (37 → 35 min). No leftover references were found.
+
+---
+
+## Round 2 (re-check of the changes only)
+
+Scope: both loops, and every item that was edited or added, in both `english.json` files as they stood at 02:19. Unchanged items were not re-reviewed. `english_pack.py` passes for both packs: 27 and 28 items, exit 0. The ".." in the Markdown previews is gone.
+
+**Counts (round 2): 0 critical, 2 major, 9 minor.**
+
+All round-1 critical and major findings are resolved. The resolved points are:
+- P01 loop: "training distribution" is restored, "by the same token" now introduces a real parallel, and the burden-of-proof sentence stands on its own.
+- New C1+ patterns: the all-cleft, "Smooth as …", and "it is not until … that".
+- The "respectively" fix now teaches a real error.
+- P02 loop: "with the caveat that" is used correctly, and the IMF's liability reason is now separated from our gloss.
+- The imply/infer example sentence now matches the post.
+- "by no means", "a human in the loop" and "a single point of failure" are dropped. Their replacements, "a far cry from" and "an Achilles' heel", are plausible C2 items.
+- Round-1 minor items are applied. The remaining exceptions are listed below.
+
+### Major
+
+**R2-1. The loop audio is stale** (major, mechanics)
+- *Problem.* `site/mewiki/packs/audio/2026-10-llm-next-word-loop.mp3` (02:06) and `…ai-finance-loop.mp3` (02:07) were recorded before both loops were rewritten. The packs (02:19) still point to them. Kunhao would shadow the old text, including the two round-1 critical errors.
+- *Fix.* Run `tts_english_loop.py 2026-10-llm-next-word` and `tts_english_loop.py 2026-10-ai-finance` now, since the packs are already rebuilt. Check that each mp3's mtime is later than its pack JSON.
+
+**R2-2. P02 fix "principal vs principle" (C1)** (major, level)
+- *Problem.* As a spelling confusion this is B2: both words are B2-band in the English Vocabulary Profile, and it is the same kind of item that was dropped in round 1. Only the agency-theory sense of "principal" is above B2, and the item does not test that sense.
+- *Fix.* Replace it with a C1 fix grounded in the post. Wrong: "Knowledge is one criteria for successful delegation." Right: "Knowledge is one criterion for successful delegation; an incentive is the other." Definition: "criterion" is singular, "criteria" plural (likewise phenomenon/phenomena).
+
+### Minor
+
+**R2-3. P01 loop: "…then by the same token it should count against us."** (minor)
+- *Problem.* "It" grammatically points back to the model's collapse.
+- *Fix.* "…then by the same token our own failures should count against us."
+
+**R2-4. P01 "the burden of proof lies with": "Ullman argues for a sceptical default: …"** (minor, carried over)
+- *Problem.* This is accurate to Ullman p. 8 (wiki digest), but the post still does not say it. The pack's new note promises sentences "never" state a source's claim beyond the post.
+- *Fix.* Add one clause to Lens 5 of the post. Or drop the attribution: "On a sceptical default, the burden of proof lies with those who claim the ability has emerged."
+
+**R2-5. P02 "a far cry from": "Running a market is a far cry from answering for it."** (minor, optional)
+- *Problem.* The idiom most often contrasts a reality with an ideal or an earlier state. Here it compares two activities. It is acceptable, but it is not the prototypical use.
+- *Fix (optional).* Add a second sentence showing the prototypical use: "Today's markets are a far cry from a society that runs itself."
+
+**R2-6. P02 pattern "It is not until … that": "On our reading, it is not until people declare and answer that a group becomes a society."** (minor)
+- *Problem.* "Not until" reads as a time sequence, but the claim is a condition. (This was my own round-1 suggestion.)
+- *Fix.* Keep the item, but use a temporal claim from the post: "It was not until a pre-set rule paused trading that prices stabilised." Faithfulness caution: the post says the pause was not shown to cause the stabilisation, and "not until … that" only orders the events, so it is acceptable. Or keep the society sentence as an "it is only when … that" cleft.
+
+**R2-7. P02 fix "imply vs infer": the wrong/right pair still says "From the survey…"** (minor)
+- *Problem.* The example sentence was fixed, but the pair still refers to "the survey" without saying which one.
+- *Fix.* Wrong: "From the IMF's finding we imply that deciding is still largely human." Right: "From the IMF's finding we infer that deciding is still largely human."
+
+**R2-8. P02 fix "the reason is that"** (minor)
+- *Problem.* The right version adds "partly", so the pair differs by more than the error being taught. "The reason … is partly that" is also a little stiff.
+- *Fix.* Wrong: "Part of the reason most participants want a human in the loop is because someone must bear liability." Right: "Part of the reason most participants want a human in the loop is that someone must bear liability."
+
+**R2-9. P02 loop: "…hinges on the accepting."** (minor)
+- *Problem.* The phrase is elliptical; it leaves out who does the accepting.
+- *Fix.* "…hinges on who does the accepting. What remains to be seen is whether machines could ever do it."
+
+**R2-10. P02 pattern "Reporting verbs": the target is still only "judges"** (minor, carried over)
+- *Problem.* The item teaches a choice among three verbs, but only one is highlighted.
+- *Fix.* Highlight the full verb sequence, or rewrite the item as three sentences.
+
+**R2-11. Retired list misses round-1 IDs** (minor, mechanics)
+- *Problem.* `retired-2026-10-25.json` (02:19) records the dropped "by no means", "a human in the loop", "a single point of failure" and P01's "Cleft sentence for focus". It does not record these externalIds, which were in the round-1 packs and are now gone or renamed:
+  - P01: "Concessive clause before the claim".
+  - P02: "Cleft sentence for focus", "comprise (no 'of')", "stacked hedges", "dangling modifier", "Production drill", "to devolve onto".
+- *Fix.* If the round-1 packs were ever imported into Margin, add these IDs so their review history is kept. If they were never imported, add a note saying so.
+
+No finding on these new items: all-cleft (C1), "Smooth as …" (C2), the inversion definition, "comprise", stacked hedges, "respectively", the dangling modifier (P01), "an Achilles' heel", "devolve upon", "held accountable", "presuppose", "in lockstep", "cut both ways", the reporting-verb wording, "raise the question (not 'beg')" (the definition rightly limits the rule to careful academic English), and the "Shadow, then summarise" tip. The P01 loop still opens with a basic wh-cleft, but it is not a target, so this is no finding.

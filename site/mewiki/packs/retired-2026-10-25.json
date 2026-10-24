@@ -1,6 +1,6 @@
 {
  "date": "2026-10-25",
- "note": "externalIds that were in the earlier English packs (B2-C1, built from the posts' English sections) and are not in the new C1/C2 packs. Margin keeps them unless Kunhao asks to suspend them; never delete review history.",
+ "note": "externalIds that were in the earlier English packs (B2-C1, built from the posts' English sections) and are not in the new C1/C2 packs. Margin keeps them unless Kunhao asks to suspend them; never delete review history. Compared with the packs built before 2026-10-25 (the only versions that could have been imported). Intermediate drafts made on 2026-10-25 were never shipped, so their IDs are not listed.",
  "retired": {
   "2026-10-llm-next-word": [
    {

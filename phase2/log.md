@@ -57,3 +57,8 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - Found and fixed a builder bug: the artifact (standalone) page lost its widgets because widgets.js contained `</script>` in a comment. test.mjs `--inline` added.
 - Main text 7,468 words; audio 37.0 min re-recorded and tagged; artifact republished (version 2); site dist, shelf and English pack rebuilt; Drive backup refreshed (sources parts, bundle d7d2793 from the Mac, SHA256SUMS).
 - WRITING 0.6 and 0.7.
+
+## 2026-10-25 · English separated from posts 01 and 02
+- Kunhao: publish the blog without the English part; English must be C1 or C2. Both posts now end at Recall/Sources; English audio chapters removed; post 01 hook/home re-recorded with the "AI4Read from CSS Lab" intro. Artifacts republished (post 01 v10, post 02 v3).
+- New C1–C2 packs (post 01: 27 items; post 02: 28 items) from `posts/<slug>/english/english.json`; `english_pack.py` rewritten with level/offset validation; loop audio for Margin. Independent check: round 1 2/11/27, round 2 0/2/9, all fixed.
+- Prompts for the website and Margin agents; handoffs updated; WRITING 0.8; CHARTER and writer prompt updated.

@@ -182,11 +182,11 @@
   },
   {
    "kind": "pattern",
-   "headword": "It is not until … that (cleft)",
+   "headword": "It is only when … that (cleft)",
    "level": "C1",
-   "sentence": "On our reading, it is not until people declare and answer that a group becomes a society.",
-   "target": "it is not until",
-   "definition": "'It is not until X that Y' stresses that Y happens only once X does. More emphatic than 'Y happens only when X'."
+   "sentence": "On our reading, it is only when people can declare and answer that a group becomes a society.",
+   "target": "it is only when",
+   "definition": "'It is only when X that Y' stresses that Y depends on X. More emphatic than 'Y happens only when X'."
   },
   {
    "kind": "pattern",
@@ -209,18 +209,18 @@
    "headword": "imply vs infer",
    "level": "C1",
    "sentence": "The IMF's finding that a human trader may ultimately make the trading decision implies that deciding is still largely human; from it we infer that full automation is not imminent.",
-   "wrong": "From the survey we imply that deciding is still mostly human.",
-   "right": "From the survey we infer that deciding is still mostly human.",
+   "wrong": "From the IMF's finding we imply that deciding is still largely human.",
+   "right": "From the IMF's finding we infer that deciding is still largely human.",
    "definition": "Evidence or a speaker implies (suggests); a reader or listener infers (concludes)."
   },
   {
    "kind": "fix",
-   "headword": "principal vs principle",
+   "headword": "criterion / criteria",
    "level": "C1",
-   "sentence": "In Lupia and McCubbins's model, the principal delegates and the agent acts.",
-   "wrong": "In Lupia and McCubbins's model, the principle delegates and the agent acts.",
-   "right": "In Lupia and McCubbins's model, the principal delegates and the agent acts.",
-   "definition": "A 'principal' is a person (the one who delegates) or the main thing; a 'principle' is a rule or idea. 'Principal–agent problem' uses -al."
+   "sentence": "Knowledge is one criterion for successful delegation; an incentive is the other.",
+   "wrong": "Knowledge is one criteria for successful delegation.",
+   "right": "Knowledge is one criterion for successful delegation; an incentive is the other.",
+   "definition": "'Criterion' is singular and 'criteria' plural (likewise phenomenon/phenomena)."
   },
   {
    "kind": "fix",
@@ -235,9 +235,9 @@
    "kind": "fix",
    "headword": "the reason is that (not 'because')",
    "level": "C1",
-   "sentence": "The reason most participants want a human in the loop is partly that someone must bear liability.",
-   "wrong": "The reason most participants want a human in the loop is because someone must bear liability.",
-   "right": "The reason most participants want a human in the loop is partly that someone must bear liability.",
+   "sentence": "Part of the reason most participants want a human in the loop is that someone must bear liability.",
+   "wrong": "Part of the reason most participants want a human in the loop is because someone must bear liability.",
+   "right": "Part of the reason most participants want a human in the loop is that someone must bear liability.",
    "definition": "After 'the reason is', use a that-clause; 'the reason is because' repeats the idea of reason and is avoided in formal writing."
   },
   {
@@ -254,7 +254,7 @@
  "loop": {
   "headword": "A paragraph to loop",
   "level": "C2",
-  "text": "Software already runs much of the market, but running a market is a far cry from answering for it. Were many firms to rely on one model, their errors would tend to move in lockstep, and that model could become the system's Achilles' heel. Most participants in the IMF's outreach want a human in the loop, partly for reasons of liability; on our reading, accountability presupposes someone who can be asked why. A token counts as money only while a community keeps accepting it, so whether a machine-only token is money hinges on the accepting. What remains to be seen is whether machines could ever do it. Standard contracts cut both ways: they make checking easier, yet they can make firms more alike. A toy with ten banks is useful, with the caveat that it shows what could happen, not what will, so we should not read too much into it.",
+  "text": "Software already runs much of the market, but running a market is a far cry from answering for it. Were many firms to rely on one model, their errors would tend to move in lockstep, and that model could become the system's Achilles' heel. Most participants in the IMF's outreach want a human in the loop, partly for reasons of liability; on our reading, accountability presupposes someone who can be asked why. A token counts as money only while a community keeps accepting it, so whether a machine-only token is money hinges on who does the accepting. What remains to be seen is whether machines could ever do it. Standard contracts cut both ways: they make checking easier, yet they can make firms more alike. A toy with ten banks is useful, with the caveat that it shows what could happen, not what will, so we should not read too much into it.",
   "targets": [
    "a far cry from",
    "Were many firms to rely on",

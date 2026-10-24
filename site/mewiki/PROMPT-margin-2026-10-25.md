@@ -31,10 +31,10 @@ Read `site/mewiki/HANDOFF-margin.md`, including its §0 update dated 2026-10-25.
 | File | What it is |
 |---|---|
 | `site/mewiki/packs/2026-10-llm-next-word.json` | post 01 pack: 16 expressions, 4 patterns, 4 fixes, 2 tips, 1 loop paragraph |
-| `site/mewiki/packs/2026-10-ai-finance.json` | post 02 pack: 18 expressions, 4 patterns, 4 fixes, 2 tips, 1 loop paragraph |
+| `site/mewiki/packs/2026-10-ai-finance.json` | post 02 pack: 17 expressions, 4 patterns, 4 fixes, 2 tips, 1 loop paragraph |
 | `site/mewiki/packs/<slug>.md` | readable previews of the same items |
-| `site/mewiki/packs/audio/<slug>-loop.mp3` | the recorded loop paragraphs (about 55 s and 49 s), tagged "AI4Read from CSS Lab" |
-| `site/mewiki/packs/retired-2026-10-25.json` | externalIds from the earlier packs that are no longer included (28 for post 01, 13 for post 02) |
+| `site/mewiki/packs/audio/<slug>-loop.mp3` | the recorded loop paragraphs (about 59 s and 53 s), tagged "AI4Read from CSS Lab" |
+| `site/mewiki/packs/retired-2026-10-25.json` | externalIds from the earlier packs that are no longer included (29 for post 01, 16 for post 02) |
 
 ## Step 1 · Importer
 - **If `import:ai4read` exists** (HANDOFF-margin.md §4), extend it:
@@ -59,8 +59,8 @@ npm run import:ai4read -- ~/code/AI4Read/site/mewiki/packs/2026-10-llm-next-word
 npm run import:ai4read -- ~/code/AI4Read/site/mewiki/packs/2026-10-ai-finance.json --dry-run
 ```
 - **Expected for post 01:** 25 cards (16 expressions, 4 patterns, 4 fixes, 1 shadowing) and 2 tips skipped.
-- **Expected for post 02:** 27 cards (18 expressions, 4 patterns, 4 fixes, 1 shadowing) and 2 tips skipped.
-- If the earlier packs were imported before, some cards already exist: 10 for post 01 and 11 for post 02. They report as "updated" (new definition, level or tags) or "unchanged". Their FSRS state must not change.
+- **Expected for post 02:** 26 cards (17 expressions, 4 patterns, 4 fixes, 1 shadowing) and 2 tips skipped.
+- If the earlier packs were imported before, some cards already exist: 9 for post 01 and 8 for post 02. They report as "updated" (new definition, level or tags) or "unchanged". Their FSRS state must not change.
 
 Show Kunhao the dry-run output, then run the same two commands without `--dry-run`.
 
@@ -73,7 +73,7 @@ Kunhao asked for C1/C2 only, so (a) is the likely answer. Wait for his reply.
 
 ## Step 5 · Acceptance tests
 1. Filtering the review queue by tag `ai4read` and `C2` shows only C2 items; filtering by `C1` shows only C1 items. No card from these packs is tagged B2.
-2. Highlight offsets are right: check 5 cards at random, including `that’s a big if` (curly apostrophe) and `throw something into sharp relief` (long target).
+2. Highlight offsets are right: check 5 cards at random, including `that’s a big if` (curly apostrophe), `an Achilles' heel` (straight apostrophe) and `to throw something into sharp relief` (long target).
 3. Fix cards show the wrong → right pair.
 4. The shadowing card loops, and the post voice plays if Step 2 was possible.
 5. Re-import both packs. The result is 0 created, 0 updated and all unchanged, and the FSRS state of a card you reviewed is unchanged.
