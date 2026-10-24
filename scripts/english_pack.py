@@ -85,7 +85,7 @@ for kind, head in (("expression", "Expressions"), ("pattern", "Sentence patterns
         if kind == "fix": md.append(f"- **{x['headword']}**{lvl}: ~~{x['wrong']}~~ → {x['right']} {x['definition']}")
         elif kind == "shadowing": md.append(f"{x['sentence']}\n\nTargets: {', '.join(x['targets'])}")
         elif kind == "tip": md.append(f"- **{x['headword']}**: {x['sentence']}")
-        else: md.append(f"- **{x['headword']}**{lvl}: {x.get('definition', '')}. *{x['sentence']}*")
+        else: md.append(f"- **{x['headword']}**{lvl}: {x.get('definition', '').rstrip('.')}. *{x['sentence']}*")
     md.append("")
 (out / f"{slug}.md").write_text("\n".join(md), encoding="utf-8")
 c = {k: sum(1 for x in items if x["kind"] == k) for k in ("expression", "pattern", "fix", "tip", "shadowing")}

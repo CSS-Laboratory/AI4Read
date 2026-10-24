@@ -25,7 +25,7 @@
    },
    "level": "C2",
    "definition": "to have the same effect or meaning as something else, usually something stronger or worse",
-   "partOfSpeech": "verb phrase",
+   "partOfSpeech": "adjective + preposition (with be)",
    "register": "formal/academic",
    "target": {
     "text": "tantamount to",
@@ -51,7 +51,7 @@
    },
    "level": "C2",
    "definition": "to be based on an assumption or condition, so that it fails if the assumption fails",
-   "partOfSpeech": "verb phrase",
+   "partOfSpeech": "adjective + preposition (with be)",
    "register": "formal/academic",
    "target": {
     "text": "predicated on",
@@ -64,7 +64,7 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "to be contingent on",
-   "sentence": "Whether prompting resembles Bayesian inference is contingent on strong assumptions about the training data.",
+   "sentence": "Xie's result that prompting amounts to Bayesian inference is contingent on strong assumptions about the data, the model and the prompt.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -77,12 +77,12 @@
    },
    "level": "C2",
    "definition": "depending on something else in order to be true or to happen",
-   "partOfSpeech": "adjective phrase",
+   "partOfSpeech": "adjective + preposition (with be)",
    "register": "formal/academic",
    "target": {
     "text": "contingent on",
-    "start": 50,
-    "end": 63
+    "start": 61,
+    "end": 74
    }
   },
   {
@@ -116,7 +116,7 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "to throw something into sharp relief",
-   "sentence": "Comparing bits per token with bits per character throws the tokenizer's bias into sharp relief.",
+   "sentence": "Comparing bits per token with bits per character throws into sharp relief how misleading per-token loss can be.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -132,9 +132,9 @@
    "partOfSpeech": "verb phrase",
    "register": "formal/written",
    "target": {
-    "text": "throws the tokenizer's bias into sharp relief",
+    "text": "throws into sharp relief",
     "start": 49,
-    "end": 94
+    "end": 73
    }
   },
   {
@@ -173,13 +173,13 @@
     "ai4read",
     "ai4read-2026-10",
     "expressions",
-    "C1"
+    "C2"
    ],
    "source": {
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
-   "level": "C1",
+   "level": "C2",
    "definition": "to treat something important as if it were minor, or to avoid discussing it properly",
    "partOfSpeech": "phrasal verb",
    "register": "neutral",
@@ -194,25 +194,25 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "by the same token",
-   "sentence": "If a collapse after one small change counts against the model, then by the same token human failures on such changes count against people.",
+   "sentence": "If a collapse after one small change counts against the model's theory of mind, then by the same token human failures on such changes count against people's.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
     "expressions",
-    "C1"
+    "C2"
    ],
    "source": {
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
-   "level": "C1",
+   "level": "C2",
    "definition": "for the same reason; following the same logic",
    "partOfSpeech": "linking phrase",
    "register": "neutral/academic",
    "target": {
     "text": "by the same token",
-    "start": 68,
-    "end": 85
+    "start": 85,
+    "end": 102
    }
   },
   {
@@ -220,7 +220,7 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "to be agnostic about",
-   "sentence": "The GPT-3 authors are agnostic about whether the model learns tasks from scratch.",
+   "sentence": "The GPT-3 authors keep their terms agnostic about whether the model learns tasks from scratch or recognises patterns from training.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -233,12 +233,12 @@
    },
    "level": "C1",
    "definition": "to take no position on a question because the evidence does not settle it",
-   "partOfSpeech": "adjective phrase",
+   "partOfSpeech": "adjective + preposition (with be)",
    "register": "academic",
    "target": {
     "text": "agnostic about",
-    "start": 22,
-    "end": 36
+    "start": 35,
+    "end": 49
    }
   },
   {
@@ -285,7 +285,7 @@
    },
    "level": "C1",
    "definition": "to come close to doing or saying something, but deliberately not do it",
-   "partOfSpeech": "phrasal verb",
+   "partOfSpeech": "idiom",
    "register": "neutral/academic",
    "target": {
     "text": "stop short of",
@@ -303,13 +303,13 @@
     "ai4read",
     "ai4read-2026-10",
     "expressions",
-    "C1"
+    "C2"
    ],
    "source": {
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
-   "level": "C1",
+   "level": "C2",
    "definition": "to make an idea or argument more convincing",
    "partOfSpeech": "verb phrase",
    "register": "academic",
@@ -329,13 +329,13 @@
     "ai4read",
     "ai4read-2026-10",
     "expressions",
-    "C1"
+    "C2"
    ],
    "source": {
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
-   "level": "C1",
+   "level": "C2",
    "definition": "to make someone stop and think carefully, often with doubt",
    "partOfSpeech": "verb phrase",
    "register": "formal",
@@ -350,7 +350,7 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "the burden of proof lies with",
-   "sentence": "Ullman thinks the burden of proof lies with those who claim the ability has emerged.",
+   "sentence": "Ullman argues for a sceptical default: the burden of proof lies with those who claim the ability has emerged.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -367,8 +367,8 @@
    "register": "academic",
    "target": {
     "text": "the burden of proof lies with",
-    "start": 14,
-    "end": 43
+    "start": 39,
+    "end": 68
    }
   },
   {
@@ -381,13 +381,13 @@
     "ai4read",
     "ai4read-2026-10",
     "expressions",
-    "C1"
+    "C2"
    ],
    "source": {
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
-   "level": "C1",
+   "level": "C2",
    "definition": "people have not yet reached a decision or agreement about something",
    "partOfSpeech": "idiom",
    "register": "neutral",
@@ -402,33 +402,33 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "to sidestep a question",
-   "sentence": "Shannon deliberately sidesteps the question of meaning.",
+   "sentence": "Shannon openly sidesteps the question of meaning: he calls it irrelevant to the engineering problem.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
     "expressions",
-    "C1"
+    "C2"
    ],
    "source": {
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
-   "level": "C1",
+   "level": "C2",
    "definition": "to avoid dealing with a question or problem directly",
    "partOfSpeech": "verb phrase",
    "register": "neutral",
    "target": {
     "text": "sidesteps",
-    "start": 21,
-    "end": 30
+    "start": 15,
+    "end": 24
    }
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:cleft-sentence-for-focus",
+   "externalId": "ai4read:2026-10-llm-next-word:all-cleft-for-a-limited-claim",
    "kind": "pattern",
    "group": "c1-c2-patterns",
-   "headword": "Cleft sentence for focus",
-   "sentence": "What Shannon showed was that prediction and compression are the same problem.",
+   "headword": "All-cleft for a limited claim",
+   "sentence": "All that a low loss tells us is how many bits the model saves.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -440,11 +440,11 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C1",
-   "definition": "Put the new or important information after 'What … was' or 'It is … that' to control where the listener's attention falls.",
+   "definition": "Start with 'All (that) … is/was …' to say that something tells us only this much and no more.",
    "target": {
-    "text": "What",
+    "text": "All that",
     "start": 0,
-    "end": 4
+    "end": 8
    }
   },
   {
@@ -464,7 +464,7 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C2",
-   "definition": "After 'only when', 'not until', 'rarely' or 'not only' at the start of a clause, put the auxiliary before the subject. Formal writing and talks.",
+   "definition": "After 'only when', 'not until' or 'little' at the start of a clause, put the auxiliary before the subject ('Little did they expect …'). Formal writing and talks.",
    "target": {
     "text": "Only when",
     "start": 0,
@@ -472,27 +472,27 @@
    }
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:concessive-clause-before-the-claim",
+   "externalId": "ai4read:2026-10-llm-next-word:concession-with-adjective-as",
    "kind": "pattern",
    "group": "c1-c2-patterns",
-   "headword": "Concessive clause before the claim",
-   "sentence": "While it is true that the loss falls smoothly with scale, it tells us little about when a particular skill appears.",
+   "headword": "Concession with 'adjective + as'",
+   "sentence": "Smooth as the loss curve is, it tells us little about when a particular skill appears.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
     "c1-c2-patterns",
-    "C1"
+    "C2"
    ],
    "source": {
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
-   "level": "C1",
-   "definition": "Grant the opposing point first in a subordinate clause, then make your point in the main clause.",
+   "level": "C2",
+   "definition": "Front an adjective before 'as' (or 'though') to concede a point before the main claim: 'Smooth as it is, …' means 'Although it is smooth, …'. Formal.",
    "target": {
-    "text": "While it is true that",
+    "text": "Smooth as",
     "start": 0,
-    "end": 21
+    "end": 9
    }
   },
   {
@@ -536,7 +536,7 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C1",
-   "definition": "'Comprise' takes a direct object; use 'consist of' or 'is composed of' if you want 'of'.",
+   "definition": "'Comprise' takes a direct object; use 'consist of' or 'is composed of' if you want 'of'. 'Is comprised of' is common in print but criticised by careful editors; avoid it in submissions.",
    "wrong": "A transformer block comprises of an attention layer and a feed-forward layer.",
    "right": "A transformer block comprises an attention layer and a feed-forward layer."
   },
@@ -545,7 +545,7 @@
    "kind": "fix",
    "group": "error-fixes",
    "headword": "stacked hedges",
-   "sentence": "These results suggest that the model selects a latent concept.",
+   "sentence": "These results suggest that the model, in effect, selects a latent concept.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -559,35 +559,35 @@
    "level": "C1",
    "definition": "One well-chosen hedge is enough; piling up 'may', 'possibly' and 'might' sounds unsure rather than careful.",
    "wrong": "These results may possibly suggest that the model might select a latent concept.",
-   "right": "These results suggest that the model selects a latent concept."
+   "right": "These results suggest that the model, in effect, selects a latent concept."
   },
   {
    "externalId": "ai4read:2026-10-llm-next-word:respectively",
    "kind": "fix",
    "group": "error-fixes",
    "headword": "respectively",
-   "sentence": "GPT-2 cost 5.6 and 4.8 bits per token on the English and Japanese sentences, respectively.",
+   "sentence": "Shannon and Kaplan measured uncertainty in letters and in tokens, respectively.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
     "error-fixes",
-    "C2"
+    "C1"
    ],
    "source": {
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
-   "level": "C2",
-   "definition": "Put 'respectively' at the end, after two parallel lists in the same order.",
-   "wrong": "GPT-2 cost respectively 5.6 and 4.8 bits per token on the English and Japanese sentences.",
-   "right": "GPT-2 cost 5.6 and 4.8 bits per token on the English and Japanese sentences, respectively."
+   "level": "C1",
+   "definition": "'Respectively' pairs two lists item by item in the same order; it needs a second list to pair with.",
+   "wrong": "Shannon and Kaplan respectively measured uncertainty.",
+   "right": "Shannon and Kaplan measured uncertainty in letters and in tokens, respectively."
   },
   {
    "externalId": "ai4read:2026-10-llm-next-word:dangling-modifier",
    "kind": "fix",
    "group": "error-fixes",
    "headword": "dangling modifier",
-   "sentence": "Because GPT-2 was trained on English web text, Japanese costs it far more bits per character.",
+   "sentence": "Trained on English web text, GPT-2 needs far more bits per character for our Japanese sentence.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -599,9 +599,9 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C2",
-   "definition": "An opening participle phrase must describe the subject that follows; here it was Japanese, not GPT-2, that seemed to be 'trained'.",
-   "wrong": "Trained on English web text, Japanese costs GPT-2 far more bits per character.",
-   "right": "Because GPT-2 was trained on English web text, Japanese costs it far more bits per character."
+   "definition": "An opening participle phrase must describe the subject that follows. Either make the subject the thing that was trained ('…, GPT-2 needs …') or use a full clause ('Because GPT-2 was trained on English web text, …').",
+   "wrong": "Trained on English web text, our Japanese sentence costs far more bits per character.",
+   "right": "Trained on English web text, GPT-2 needs far more bits per character for our Japanese sentence."
   },
   {
    "externalId": "ai4read:2026-10-llm-next-word:production-drill",
@@ -640,15 +640,13 @@
    "kind": "shadowing",
    "group": "loop",
    "headword": "A paragraph to loop",
-   "sentence": "What Shannon showed was that predicting text and compressing it are, in effect, the same problem. It is tempting to conclude that a model which predicts well must understand what it reads, but a low loss is not tantamount to understanding. Xie's account of in-context learning is predicated on the model fitting its training data exactly, so whether prompting resembles Bayesian inference is contingent on assumptions that real models may not meet. Attention maps are suggestive, yet a map is not, in and of itself, an explanation. The theory-of-mind results should give us pause: accuracy collapses after small changes to the story. By the same token, people stumble on some of those changes too, so the burden of proof lies with whoever claims more. Piantadosi and Hill stop short of saying that models understand as we do, and for now the jury is still out.",
+   "sentence": "What Shannon showed was that predicting text and compressing it are, in effect, the same problem. It is tempting to conclude that a model which predicts well must understand what it reads, but a low loss is not tantamount to understanding. Xie's account of in-context learning is predicated on the model fitting its training distribution exactly, an assumption that real models may not meet. Attention maps are suggestive, yet a map is not, in and of itself, an explanation. The theory-of-mind results should give us pause: accuracy collapses after small changes to the story. Yet people stumble on many of those changes too, and if a collapse counts against the model, then by the same token it should count against us. Even so, the burden of proof lies with those who claim the ability has emerged. Piantadosi and Hill stop short of saying that models understand as we do, and for now the jury is still out.",
    "targets": [
-    "What Shannon showed was",
     "tantamount to",
     "predicated on",
-    "contingent on",
     "in and of itself",
     "give us pause",
-    "By the same token",
+    "by the same token",
     "the burden of proof lies with",
     "stop short of",
     "the jury is still out"

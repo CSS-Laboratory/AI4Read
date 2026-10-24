@@ -1,6 +1,6 @@
 {
  "date": "2026-10-25",
- "note": "externalIds that were in the earlier English packs (B2-C1, built from the posts' English sections) and are not in the new C1/C2 packs. Margin keeps them unless Kunhao asks to suspend or archive them; never delete review history.",
+ "note": "externalIds that were in the earlier English packs (B2-C1, built from the posts' English sections) and are not in the new C1/C2 packs. Margin keeps them unless Kunhao asks to suspend them; never delete review history.",
  "retired": {
   "2026-10-llm-next-word": [
    {
@@ -118,6 +118,12 @@
     "level": "C1"
    },
    {
+    "externalId": "ai4read:2026-10-llm-next-word:cleft-sentence-for-focus",
+    "kind": "pattern",
+    "headword": "Cleft sentence for focus",
+    "level": "C1"
+   },
+   {
     "externalId": "ai4read:2026-10-llm-next-word:inversion-for-emphasis-writing-formal-talks",
     "kind": "pattern",
     "headword": "Inversion for emphasis (writing, formal talks)",
@@ -174,6 +180,12 @@
   ],
   "2026-10-ai-finance": [
    {
+    "externalId": "ai4read:2026-10-ai-finance:a-human-in-the-loop",
+    "kind": "expression",
+    "headword": "a human in the loop",
+    "level": "C1"
+   },
+   {
     "externalId": "ai4read:2026-10-ai-finance:to-hand-over-to",
     "kind": "expression",
     "headword": "to hand over (to)",
@@ -184,6 +196,12 @@
     "kind": "expression",
     "headword": "to count as",
     "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:a-single-point-of-failure",
+    "kind": "expression",
+    "headword": "a single point of failure",
+    "level": "C1"
    },
    {
     "externalId": "ai4read:2026-10-ai-finance:a-tipping-point",
@@ -201,6 +219,12 @@
     "externalId": "ai4read:2026-10-ai-finance:provided-that-as-long-as-unless",
     "kind": "expression",
     "headword": "provided that / as long as / unless",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:by-no-means",
+    "kind": "expression",
+    "headword": "by no means",
     "level": "B2"
    },
    {

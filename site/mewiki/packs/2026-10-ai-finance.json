@@ -38,7 +38,7 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "in lockstep",
-   "sentence": "Models trained on the same data may move in lockstep.",
+   "sentence": "Models trained on the same data may make predictions that move in lockstep.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -55,34 +55,8 @@
    "register": "neutral/journalistic",
    "target": {
     "text": "in lockstep",
-    "start": 41,
-    "end": 52
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-ai-finance:a-single-point-of-failure",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "a single point of failure",
-   "sentence": "One shared model can become a single point of failure.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C1"
-   ],
-   "source": {
-    "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
-   },
-   "level": "C1",
-   "definition": "one part of a system whose failure stops or harms the whole system",
-   "partOfSpeech": "noun phrase",
-   "register": "technical",
-   "target": {
-    "text": "a single point of failure",
-    "start": 28,
-    "end": 53
+    "start": 63,
+    "end": 74
    }
   },
   {
@@ -90,7 +64,7 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "to be held accountable (for)",
-   "sentence": "Institutions are held accountable for the AI systems they deploy.",
+   "sentence": "Under the IMF's reading of current rules, institutions can be held accountable for the AI systems they deploy.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -107,34 +81,8 @@
    "register": "formal",
    "target": {
     "text": "held accountable for",
-    "start": 17,
-    "end": 37
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-ai-finance:a-human-in-the-loop",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "a human in the loop",
-   "sentence": "Most participants in the IMF's outreach want a human in the loop in any AI-based strategy.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C1"
-   ],
-   "source": {
-    "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
-   },
-   "level": "C1",
-   "definition": "a person who must check or approve what an automated system does before it takes effect",
-   "partOfSpeech": "noun phrase",
-   "register": "technical",
-   "target": {
-    "text": "a human in the loop",
-    "start": 45,
-    "end": 64
+    "start": 62,
+    "end": 82
    }
   },
   {
@@ -194,7 +142,7 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "to presuppose",
-   "sentence": "Accountability presupposes someone who can be asked why.",
+   "sentence": "Accountability, on our reading, presupposes someone who can be asked why.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -211,16 +159,16 @@
    "register": "formal/academic",
    "target": {
     "text": "presupposes",
-    "start": 15,
-    "end": 26
+    "start": 32,
+    "end": 43
    }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:to-devolve-onto",
+   "externalId": "ai4read:2026-10-ai-finance:to-devolve-on-upon",
    "kind": "expression",
    "group": "expressions",
-   "headword": "to devolve onto",
-   "sentence": "Responsibility cannot simply devolve onto a system that cannot be punished, so it falls on whoever deploys it.",
+   "headword": "to devolve on/upon",
+   "sentence": "Under current rules, responsibility does not devolve upon the AI system; it stays with the institution that deploys it.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -233,12 +181,12 @@
    },
    "level": "C2",
    "definition": "(of a duty or responsibility) to pass to someone else",
-   "partOfSpeech": "phrasal verb",
+   "partOfSpeech": "prepositional verb",
    "register": "formal",
    "target": {
-    "text": "devolve onto",
-    "start": 29,
-    "end": 41
+    "text": "devolve upon",
+    "start": 45,
+    "end": 57
    }
   },
   {
@@ -285,7 +233,7 @@
    },
    "level": "C1",
    "definition": "to disagree with or not match something",
-   "partOfSpeech": "adjective phrase",
+   "partOfSpeech": "idiom",
    "register": "neutral/formal",
    "target": {
     "text": "at odds with",
@@ -324,7 +272,7 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "to cut both ways",
-   "sentence": "Standard contracts cut both ways: they make checking easier, but they make firms more alike.",
+   "sentence": "Standard contracts cut both ways: they make checking easier, but they can make firms more alike.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -450,29 +398,55 @@
    }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:by-no-means",
+   "externalId": "ai4read:2026-10-ai-finance:a-far-cry-from",
    "kind": "expression",
    "group": "expressions",
-   "headword": "by no means",
-   "sentence": "Running a market is by no means the same as answering for it.",
+   "headword": "a far cry from",
+   "sentence": "Running a market is a far cry from answering for it.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
     "expressions",
-    "C1"
+    "C2"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
     "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
-   "level": "C1",
-   "definition": "not at all; certainly not",
-   "partOfSpeech": "adverbial phrase",
-   "register": "neutral/formal",
+   "level": "C2",
+   "definition": "very different from, and usually much less than",
+   "partOfSpeech": "idiom",
+   "register": "neutral",
    "target": {
-    "text": "by no means",
+    "text": "a far cry from",
     "start": 20,
-    "end": 31
+    "end": 34
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:an-achilles-heel",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "an Achilles' heel",
+   "sentence": "One shared model could become the system's Achilles' heel.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   },
+   "level": "C2",
+   "definition": "a weak point that can cause the failure of something otherwise strong",
+   "partOfSpeech": "noun phrase (idiom)",
+   "register": "neutral",
+   "target": {
+    "text": "Achilles' heel",
+    "start": 43,
+    "end": 57
    }
   },
   {
@@ -480,7 +454,7 @@
    "kind": "pattern",
    "group": "c1-c2-patterns",
    "headword": "Reporting verbs calibrated to strength",
-   "sentence": "The IMF judges that the risks currently appear contained; the FSB warns that common models could correlate trading; Gensler and Bailey hypothesise a monoculture.",
+   "sentence": "The IMF judges that the risks currently appear contained; the FSB warns that common models could increase correlations in trading; Gensler and Bailey hypothesise that broad adoption could produce a monoculture.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -500,11 +474,11 @@
    }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:cleft-sentence-for-focus",
+   "externalId": "ai4read:2026-10-ai-finance:it-is-not-until-that-cleft",
    "kind": "pattern",
    "group": "c1-c2-patterns",
-   "headword": "Cleft sentence for focus",
-   "sentence": "It is declaring and answering, not running, that make a group of people a society, on our reading.",
+   "headword": "It is not until … that (cleft)",
+   "sentence": "On our reading, it is not until people declare and answer that a group becomes a society.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -516,11 +490,11 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
    "level": "C1",
-   "definition": "Put the new or important information between 'It is … that' to control where the listener's attention falls.",
+   "definition": "'It is not until X that Y' stresses that Y happens only once X does. More emphatic than 'Y happens only when X'.",
    "target": {
-    "text": "It is",
-    "start": 0,
-    "end": 5
+    "text": "it is not until",
+    "start": 16,
+    "end": 31
    }
   },
   {
@@ -528,7 +502,7 @@
    "kind": "pattern",
    "group": "c1-c2-patterns",
    "headword": "Inversion with 'were … to'",
-   "sentence": "Were every firm to rely on one model, their errors would be likely to coincide.",
+   "sentence": "Were every firm to rely on one model, their errors would tend to coincide.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -564,7 +538,7 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
    "level": "C2",
-   "definition": "After 'rarely', 'seldom', 'not until' or 'only when' at the start of a clause, put the auxiliary before the subject. Formal writing and talks.",
+   "definition": "After 'rarely', 'seldom' or 'little' at the start of a clause, put the auxiliary before the subject. Formal writing and talks.",
    "target": {
     "text": "Rarely does",
     "start": 0,
@@ -572,53 +546,11 @@
    }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:comprise-no-of",
-   "kind": "fix",
-   "group": "error-fixes",
-   "headword": "comprise (no 'of')",
-   "sentence": "The five jobs comprise running, deciding, checking, declaring and answering.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "error-fixes",
-    "C1"
-   ],
-   "source": {
-    "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
-   },
-   "level": "C1",
-   "definition": "'Comprise' takes a direct object; use 'consist of' if you want 'of'.",
-   "wrong": "The five jobs comprise of running, deciding, checking, declaring and answering.",
-   "right": "The five jobs comprise running, deciding, checking, declaring and answering."
-  },
-  {
-   "externalId": "ai4read:2026-10-ai-finance:stacked-hedges",
-   "kind": "fix",
-   "group": "error-fixes",
-   "headword": "stacked hedges",
-   "sentence": "Shared models could make failures coincide.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "error-fixes",
-    "C1"
-   ],
-   "source": {
-    "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
-   },
-   "level": "C1",
-   "definition": "One well-chosen hedge is enough; piling up 'could', 'possibly' and 'perhaps' sounds unsure rather than careful.",
-   "wrong": "Shared models could possibly perhaps make failures coincide.",
-   "right": "Shared models could make failures coincide."
-  },
-  {
    "externalId": "ai4read:2026-10-ai-finance:imply-vs-infer",
    "kind": "fix",
    "group": "error-fixes",
    "headword": "imply vs infer",
-   "sentence": "The survey implies that most managers are cautious; from it we infer that deciding is still mostly human.",
+   "sentence": "The IMF's finding that a human trader may ultimately make the trading decision implies that deciding is still largely human; from it we infer that full automation is not imminent.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -635,11 +567,32 @@
    "right": "From the survey we infer that deciding is still mostly human."
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:dangling-modifier",
+   "externalId": "ai4read:2026-10-ai-finance:principal-vs-principle",
    "kind": "fix",
    "group": "error-fixes",
-   "headword": "dangling modifier",
-   "sentence": "Having automated the checker, we face a new question: who checks it?",
+   "headword": "principal vs principle",
+   "sentence": "In Lupia and McCubbins's model, the principal delegates and the agent acts.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "error-fixes",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   },
+   "level": "C1",
+   "definition": "A 'principal' is a person (the one who delegates) or the main thing; a 'principle' is a rule or idea. 'Principal–agent problem' uses -al.",
+   "wrong": "In Lupia and McCubbins's model, the principle delegates and the agent acts.",
+   "right": "In Lupia and McCubbins's model, the principal delegates and the agent acts."
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:raise-the-question-not-beg",
+   "kind": "fix",
+   "group": "error-fixes",
+   "headword": "raise the question (not 'beg')",
+   "sentence": "Automating the checker raises the question of who checks the checker.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -651,25 +604,30 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
    "level": "C2",
-   "definition": "An opening participle phrase must describe the subject that follows; a question cannot automate a checker.",
-   "wrong": "Having automated the checker, a new question arises: who checks it?",
-   "right": "Having automated the checker, we face a new question: who checks it?"
+   "definition": "In careful academic English, 'beg the question' means assuming what you are trying to prove; to mean 'prompt a question', say 'raise the question'.",
+   "wrong": "Automating the checker begs the question of who checks the checker.",
+   "right": "Automating the checker raises the question of who checks the checker."
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:production-drill",
-   "kind": "tip",
-   "group": "practice",
-   "headword": "Production drill",
-   "sentence": "Cover the expression, read the definition and the sentence with a gap, and say the expression aloud before you check. Recognising an expression is not the same as being able to use it.",
+   "externalId": "ai4read:2026-10-ai-finance:the-reason-is-that-not-because",
+   "kind": "fix",
+   "group": "error-fixes",
+   "headword": "the reason is that (not 'because')",
+   "sentence": "The reason most participants want a human in the loop is partly that someone must bear liability.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "practice"
+    "error-fixes",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
     "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
-   }
+   },
+   "level": "C1",
+   "definition": "After 'the reason is', use a that-clause; 'the reason is because' repeats the idea of reason and is avoided in formal writing.",
+   "wrong": "The reason most participants want a human in the loop is because someone must bear liability.",
+   "right": "The reason most participants want a human in the loop is partly that someone must bear liability."
   },
   {
    "externalId": "ai4read:2026-10-ai-finance:five-jobs-retell",
@@ -688,23 +646,38 @@
    }
   },
   {
+   "externalId": "ai4read:2026-10-ai-finance:shadow-then-summarise",
+   "kind": "tip",
+   "group": "practice",
+   "headword": "Shadow, then summarise",
+   "sentence": "Shadow the loop paragraph twice, then close it and summarise the post's answer in three sentences, one for possibility, one for impact and one for meaning.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "practice"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   }
+  },
+  {
    "externalId": "ai4read:2026-10-ai-finance:loop-paragraph-c1c2",
    "kind": "shadowing",
    "group": "loop",
    "headword": "A paragraph to loop",
-   "sentence": "Software already runs much of the market, but running is by no means the same as answering for it. Were many firms to rely on one model, their errors would be likely to move in lockstep, and that model could become a single point of failure. Most participants in the IMF's outreach want a human in the loop, partly because accountability presupposes someone who can be asked why. A token counts as money only while a community keeps accepting it, so whether a machine-only token is money hinges on whether machines can do the accepting, and what remains to be seen is whether they ever could. Standard contracts cut both ways: they make checking easier, yet they make firms more alike. We should not read too much into a toy with ten banks, with the caveat that it shows what could happen, not what will.",
+   "sentence": "Software already runs much of the market, but running a market is a far cry from answering for it. Were many firms to rely on one model, their errors would tend to move in lockstep, and that model could become the system's Achilles' heel. Most participants in the IMF's outreach want a human in the loop, partly for reasons of liability; on our reading, accountability presupposes someone who can be asked why. A token counts as money only while a community keeps accepting it, so whether a machine-only token is money hinges on the accepting. What remains to be seen is whether machines could ever do it. Standard contracts cut both ways: they make checking easier, yet they can make firms more alike. A toy with ten banks is useful, with the caveat that it shows what could happen, not what will, so we should not read too much into it.",
    "targets": [
-    "by no means",
+    "a far cry from",
     "Were many firms to rely on",
     "in lockstep",
-    "a single point of failure",
-    "a human in the loop",
+    "Achilles' heel",
     "presupposes",
     "hinges on",
-    "what remains to be seen is whether",
+    "What remains to be seen is whether",
     "cut both ways",
-    "read too much into",
-    "with the caveat that"
+    "with the caveat that",
+    "read too much into"
    ],
    "level": "C2",
    "audio": {
