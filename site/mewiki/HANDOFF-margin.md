@@ -3,6 +3,15 @@
 For: the agent that maintains MeWiki / Margin (`MeWiki/web`, Next.js 16, Firestore, Cloud Run `mewiki-web`, project `toolbox-437319`).
 From: AI4Read quality lead (Claude). Date: 2026-10-16. Owner: Kunhao Yang. **Ask before deploying or changing IAM, rules or secrets.**
 
+## 0. Update, 2026-10-25 (read first)
+- The English material is **no longer part of the blog posts**. Each post has a separate pack built from `posts/<slug>/english/english.json` by `scripts/english_pack.py`, **C1–C2 only**. §1 below still describes the old in-post section; the item kinds and the import rules (§2–§5) are unchanged except:
+  - every non-tip item has `level` (`C1`/`C2`), also in `tags`; the pack has `"levels": "C1-C2"`;
+  - the shadowing item has `audio.file` = `audio/<slug>-loop.mp3` (shipped in `site/mewiki/packs/audio/`) and `audio.url` = `null`;
+  - `source.url` is the post page (`https://khyang-lab.org/ai4read/<slug>/`), no `#english` anchor;
+  - items dropped from the earlier packs are listed in `packs/retired-2026-10-25.json` (suspend only if Kunhao agrees; never delete history).
+- Current packs: post 01, 27 items (16 expressions, 4 patterns, 4 fixes, 2 tips, 1 loop); post 02, 29 items (18, 4, 4, 2, 1). Each has a readable `.md` preview.
+- Step-by-step instructions for this release: `site/mewiki/PROMPT-margin-2026-10-25.md`.
+
 ## 0. First
 The whole Margin app is still **uncommitted** on top of the pre-pivot commit `ca1d354` (43 changed or untracked paths). Commit it, as Kunhao prefers, before starting this work.
 

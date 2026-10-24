@@ -3,6 +3,12 @@
 For: the agent that maintains khyang-lab.org (repo `MI&ME Unit`, `web/`). From: AI4Read quality lead (Claude). Date: 2026-10-16.
 Owner: Kunhao Yang. **Ask Kunhao before any step that creates GCP or Cloudflare resources, changes IAM, or costs money.** The steps marked 🔑 are his to run or approve.
 
+## 0. Update, 2026-10-25
+- Posts no longer contain an English-learning section or English audio chapters (Kunhao's decision); English goes to Margin as separate C1–C2 packs (`site/mewiki/`).
+- `dist/` now holds two posts: `2026-10-llm-next-word` (12 audio chapters, about 25 min) and `2026-10-ai-finance` (post 02 v2, "Could a society run itself on AI?", 14 chapters, about 35 min).
+- Stale R2 objects to remove after upload: `<slug>/audio/english.mp3` and `<slug>/audio/c1-loop.mp3` for both posts, and `2026-10-ai-finance/audio/lens-info.mp3`.
+- Step-by-step instructions for this release: `site/ai4read/PROMPT-website-2026-10-25.md`.
+
 ## 1. Goal
 Serve AI4Read study posts (interactive HTML + audio) at `https://khyang-lab.org/ai4read/`, visible **only to Kunhao and the students he invites**. Notes and annotations are saved per person. "Ask Claude" is answered by **Claude Sonnet 5.5 on Vertex AI** (project `playground-491901`). This also fixes the audio problem in the claude.ai viewer: R2 media with `Range` support works on iPhone.
 
