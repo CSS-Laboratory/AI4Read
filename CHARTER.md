@@ -59,7 +59,7 @@ Every weekly topic **starts from a phenomenon** (application layer, a recent pap
 7. **Your turn** — a Python notebook (run on Kunhao's computer) and one transfer challenge.
 8. **Where this shows up in your work** — tie-in to the 3C research.
 9. **Recall questions** — 5–8; some reappear in later posts (spaced review, without naming the earlier post).
-10. **How to say it in English** — 6–10 useful phrases/collocations from the post (B2–C1), collapsible.
+10. **English study pack — not part of the post** (since 2026-10-25). The blog ends with Recall and Sources. The English material for each post is a separate pack for Margin, **C1–C2 only**, written in `posts/<slug>/english/english.json` and built with `scripts/english_pack.py` (see WRITING §8).
 11. **Sources** — verified only.
 
 Paper cards: claim → method → key figure → lenses (1–2) → what to doubt → one question for Kunhao. ~10-minute read.

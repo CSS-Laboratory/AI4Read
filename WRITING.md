@@ -1,7 +1,7 @@
 ---
 name: writing-principles
 description: How AI4Read posts are written. Read before drafting or revising any post. Claude updates it whenever a review round or a note from Kunhao shows a missing rule (add the rule, the note or finding that caused it, and the date); Kunhao asked for this on 2026-10-18.
-version: 0.7 (2026-10-18)
+version: 0.8 (2026-10-25)
 ---
 
 # AI4Read writing principles
@@ -57,9 +57,12 @@ Do not start a concept at step 4.
 ## 7. Big claims need “what it means”
 - After any headline result (a scaling law, a theorem, a test score), answer three questions in plain words: **what was measured, on what, and what it lets you predict** — then what it does *not* show. (Note on Step 8, 2026-10-15.)
 
-## 8. The English section
-- Two layers: (a) 8–10 phrases from the post's own topic (B2–C1), (b) a **B2 → C1 toolkit**: native expressions for discussing evidence (hedging, concession, emphasis), one or two sentence patterns, small error fixes typical for Chinese/Japanese speakers, and a short practice routine. Every example sentence uses an idea from the same post. (Request, 2026-10-16.)
-- Rotate the toolkit: each post adds new expressions and repeats 2–3 from earlier posts for spaced review (without naming the earlier post).
+## 8. English study packs (separate from the post)
+- **The blog contains no English-learning section** and no English audio chapter. Kunhao publishes the posts without it (note, 2026-10-25). Each post's English material is a separate **pack** for Margin, written in `posts/<slug>/english/english.json` and built with `python3 scripts/english_pack.py posts/<slug>` (pack JSON plus a readable `.md`). The loop paragraph is recorded with `scripts/tts_english_loop.py <slug>` and tagged “AI4Read from CSS Lab”.
+- **C1 and C2 only.** Every expression, pattern, fix and the loop paragraph carries a level, and the builder refuses anything else. Levels are our estimate in the style of the English Vocabulary Profile; an independent reviewer checks them.
+- Contents: about 15–18 expressions from the post's ideas, 4 sentence patterns (cleft, inversion, concession, nominalisation, calibrated reporting verbs), 4 fixes of the kind advanced writers still make (comprise of, stacked hedges, dangling modifiers, imply/infer, respectively), 2 practice tips, and one loop paragraph of about 150 words that uses 8–11 of the expressions.
+- Every example sentence uses an idea from the same post and must not misreport a source (the fact-check rules of §9 apply). Keep an item's headword unchanged when it is reused, so its `externalId` and Margin review history survive; you may repeat 2–3 expressions from earlier packs for spaced review.
+- The post's own prose stays plain (§1): the C1–C2 level is for the study pack, not for the explanations.
 
 ## 8a. Length
 - Main text ≤ **7,500 words**, measured with `python3 scripts/wordcount.py posts/<slug>/src/content.html`. Fold-outs, Sources, English and contents are not counted. Clarity beats brevity: a definition the reader needs is never cut. (Post 02, 2026-10-17.)
@@ -89,3 +92,4 @@ Do not start a concept at step 4.
 - 0.5 (2026-10-18): §0 standalone posts, the question over the person, the short answer; §2 toys point the same way as the source; §5 diagram preview and the five-number rule; §8a one length counter; §9 balance (four groups of firmness), quote boundaries, whole-source reading. From Kunhao's note on post 02 and the post 02 review rounds.
 - 0.6 (2026-10-18): §0 threshold words, verdict in the short answer, one point one ladder; §2 quoted formulas still climb; §5 guess options; §9 purpose ≠ effect, quote referent, one source per cited sentence. From the post 02 v2 S5 round 1.
 - 0.7 (2026-10-18): §9 new glosses are new claims, search before saying “never”, keep the source's population and scope. From post 02 v2 S5 rounds 2–3.
+- 0.8 (2026-10-25): §8 the English material leaves the post and becomes a separate C1–C2 pack for Margin. From Kunhao's note on posts 01 and 02.

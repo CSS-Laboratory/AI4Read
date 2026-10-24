@@ -1,0 +1,256 @@
+{
+ "date": "2026-10-25",
+ "note": "externalIds that were in the earlier English packs (B2-C1, built from the posts' English sections) and are not in the new C1/C2 packs. Margin keeps them unless Kunhao asks to suspend or archive them; never delete review history.",
+ "retired": {
+  "2026-10-llm-next-word": [
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-set-something-aside",
+    "kind": "expression",
+    "headword": "to set something aside",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:a-by-product-of",
+    "kind": "expression",
+    "headword": "a by-product of",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:in-principle-in-practice",
+    "kind": "expression",
+    "headword": "in principle / in practice",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-hold-up-under",
+    "kind": "expression",
+    "headword": "to hold up under",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-over-generalize-from",
+    "kind": "expression",
+    "headword": "to over-generalize from",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:an-upper-lower-bound-on",
+    "kind": "expression",
+    "headword": "an upper / lower bound on",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-be-at-ceiling",
+    "kind": "expression",
+    "headword": "to be at ceiling",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:a-talking-point-not-a-result",
+    "kind": "expression",
+    "headword": "a talking point, not a result",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-read-too-much-into-something",
+    "kind": "expression",
+    "headword": "to read too much into something",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:on-the-face-of-it",
+    "kind": "expression",
+    "headword": "on the face of it",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:that-s-a-big-if",
+    "kind": "expression",
+    "headword": "that’s a big if",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-boil-down-to-to-hinge-on",
+    "kind": "expression",
+    "headword": "to boil down to / to hinge on",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-cut-both-ways",
+    "kind": "expression",
+    "headword": "to cut both ways",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:a-far-cry-from",
+    "kind": "expression",
+    "headword": "a far cry from",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:a-bit-of-a-stretch",
+    "kind": "expression",
+    "headword": "a bit of a stretch",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-take-something-with-a-grain-of-salt",
+    "kind": "expression",
+    "headword": "to take something with a grain of salt",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:as-a-rule-of-thumb",
+    "kind": "expression",
+    "headword": "as a rule of thumb",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:hedging-ladder",
+    "kind": "pattern",
+    "headword": "Hedging ladder",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:concession-then-your-point",
+    "kind": "pattern",
+    "headword": "Concession, then your point",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:inversion-for-emphasis-writing-formal-talks",
+    "kind": "pattern",
+    "headword": "Inversion for emphasis (writing, formal talks)",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:research-uncountable",
+    "kind": "fix",
+    "headword": "research (uncountable)",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:discuss-explain",
+    "kind": "fix",
+    "headword": "discuss / explain",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:in-my-view",
+    "kind": "fix",
+    "headword": "in my view",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:a-the",
+    "kind": "fix",
+    "headword": "a / the",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:shadowing",
+    "kind": "tip",
+    "headword": "Shadowing",
+    "level": null
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:upgrade-drill",
+    "kind": "tip",
+    "headword": "Upgrade drill",
+    "level": null
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:collocation-notebook",
+    "kind": "tip",
+    "headword": "Collocation notebook",
+    "level": null
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:loop-paragraph",
+    "kind": "shadowing",
+    "headword": "A paragraph to loop",
+    "level": null
+   }
+  ],
+  "2026-10-ai-finance": [
+   {
+    "externalId": "ai4read:2026-10-ai-finance:to-hand-over-to",
+    "kind": "expression",
+    "headword": "to hand over (to)",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:to-count-as",
+    "kind": "expression",
+    "headword": "to count as",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:a-tipping-point",
+    "kind": "expression",
+    "headword": "a tipping point",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:a-circuit-breaker",
+    "kind": "expression",
+    "headword": "a circuit breaker",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:provided-that-as-long-as-unless",
+    "kind": "expression",
+    "headword": "provided that / as long as / unless",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:reporting-verbs",
+    "kind": "pattern",
+    "headword": "Reporting verbs",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:three-layers",
+    "kind": "pattern",
+    "headword": "Three layers",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:hedging-ladder",
+    "kind": "pattern",
+    "headword": "Hedging ladder",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:concession-then-your-point",
+    "kind": "pattern",
+    "headword": "Concession, then your point",
+    "level": "C1"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:if-clause-without-will",
+    "kind": "fix",
+    "headword": "if-clause without will",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:evidence-uncountable",
+    "kind": "fix",
+    "headword": "evidence (uncountable)",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:general-nouns-no-article",
+    "kind": "fix",
+    "headword": "general nouns, no article",
+    "level": "B2"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:loop-paragraph",
+    "kind": "shadowing",
+    "headword": "A paragraph to loop",
+    "level": null
+   }
+  ]
+ }
+}

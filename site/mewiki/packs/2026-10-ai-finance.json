@@ -1,609 +1,727 @@
 {
  "schema": "ai4read.english-pack/1",
+ "levels": "C1-C2",
  "post": {
   "slug": "2026-10-ai-finance",
   "title": "Could a society run itself on AI?",
-  "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+  "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
  },
  "items": [
   {
-   "externalId": "ai4read:2026-10-ai-finance:a-human-in-the-loop",
+   "externalId": "ai4read:2026-10-ai-finance:to-conflate-x-with-y",
    "kind": "expression",
-   "group": "topic-phrases",
-   "headword": "a human in the loop",
-   "sentence": "Most participants in the IMF’s outreach want a human in the loop in any AI-based strategy.",
+   "group": "expressions",
+   "headword": "to conflate X with Y",
+   "sentence": "Don't conflate algorithmic trading with AI trading: many algorithms follow simple rules.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "topic-phrases"
+    "expressions",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
-   "target": {
-    "text": "a human in the loop",
-    "start": 45,
-    "end": 64
-   },
-   "partOfSpeech": "noun phrase",
    "level": "C1",
-   "definition": "a person who must check or approve what an automated system does before it takes effect",
-   "register": "technical"
-  },
-  {
-   "externalId": "ai4read:2026-10-ai-finance:to-hand-over-to",
-   "kind": "expression",
-   "group": "topic-phrases",
-   "headword": "to hand over (to)",
-   "sentence": "Firms have handed over the running of trades to software, but not the answering.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "topic-phrases"
-   ],
-   "source": {
-    "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
-   },
-   "target": {
-    "text": "handed over",
-    "start": 11,
-    "end": 22
-   },
-   "partOfSpeech": "phrasal verb",
-   "level": "B2",
-   "definition": "to give control of or responsibility for something to another person or system",
-   "register": "neutral"
-  },
-  {
-   "externalId": "ai4read:2026-10-ai-finance:to-be-held-accountable-for",
-   "kind": "expression",
-   "group": "topic-phrases",
-   "headword": "to be held accountable (for)",
-   "sentence": "Institutions are held accountable for the AI they deploy.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "topic-phrases"
-   ],
-   "source": {
-    "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
-   },
-   "target": {
-    "text": "are held accountable for",
-    "start": 13,
-    "end": 37
-   },
+   "definition": "to treat two different things as if they were the same",
    "partOfSpeech": "verb phrase",
-   "level": "C1",
-   "definition": "to be made responsible for something and required to explain it or bear its consequences",
-   "register": "formal"
-  },
-  {
-   "externalId": "ai4read:2026-10-ai-finance:to-count-as",
-   "kind": "expression",
-   "group": "topic-phrases",
-   "headword": "to count as",
-   "sentence": "A printed paper counts as money because we accept it.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "topic-phrases"
-   ],
-   "source": {
-    "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
-   },
+   "register": "academic",
    "target": {
-    "text": "counts as",
-    "start": 16,
-    "end": 25
-   },
-   "partOfSpeech": "phrasal verb",
-   "level": "B2",
-   "definition": "to be considered or accepted as a particular kind of thing",
-   "register": "neutral/academic"
+    "text": "conflate",
+    "start": 6,
+    "end": 14
+   }
   },
   {
    "externalId": "ai4read:2026-10-ai-finance:in-lockstep",
    "kind": "expression",
-   "group": "topic-phrases",
+   "group": "expressions",
    "headword": "in lockstep",
    "sentence": "Models trained on the same data may move in lockstep.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "topic-phrases"
+    "expressions",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
+   "level": "C1",
+   "definition": "moving or changing together, at exactly the same time and in the same way",
+   "partOfSpeech": "adverbial phrase",
+   "register": "neutral/journalistic",
    "target": {
     "text": "in lockstep",
     "start": 41,
     "end": 52
-   },
-   "partOfSpeech": "adverbial phrase",
-   "level": "C1",
-   "definition": "moving or changing together, exactly at the same time",
-   "register": "neutral/journalistic"
+   }
   },
   {
    "externalId": "ai4read:2026-10-ai-finance:a-single-point-of-failure",
    "kind": "expression",
-   "group": "topic-phrases",
+   "group": "expressions",
    "headword": "a single point of failure",
-   "sentence": "One shared model can be a single point of failure.",
+   "sentence": "One shared model can become a single point of failure.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "topic-phrases"
+    "expressions",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
-   "target": {
-    "text": "a single point of failure",
-    "start": 24,
-    "end": 49
-   },
-   "partOfSpeech": "noun phrase",
    "level": "C1",
    "definition": "one part of a system whose failure stops or harms the whole system",
-   "register": "technical"
-  },
-  {
-   "externalId": "ai4read:2026-10-ai-finance:a-tipping-point",
-   "kind": "expression",
-   "group": "topic-phrases",
-   "headword": "a tipping point",
-   "sentence": "In the toy, \\(m=2/3\\) is a tipping point.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "topic-phrases"
-   ],
-   "source": {
-    "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
-   },
-   "target": {
-    "text": "a tipping point",
-    "start": 25,
-    "end": 40
-   },
    "partOfSpeech": "noun phrase",
-   "level": "B2",
-   "definition": "the moment when a small change makes a large and often irreversible change happen",
-   "register": "neutral"
+   "register": "technical",
+   "target": {
+    "text": "a single point of failure",
+    "start": 28,
+    "end": 53
+   }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:a-circuit-breaker",
+   "externalId": "ai4read:2026-10-ai-finance:to-be-held-accountable-for",
    "kind": "expression",
-   "group": "topic-phrases",
-   "headword": "a circuit breaker",
-   "sentence": "A circuit breaker pauses trading when prices move too fast.",
+   "group": "expressions",
+   "headword": "to be held accountable (for)",
+   "sentence": "Institutions are held accountable for the AI systems they deploy.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "topic-phrases"
+    "expressions",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
-   "target": {
-    "text": "circuit breaker",
-    "start": 2,
-    "end": 17
-   },
-   "partOfSpeech": "noun phrase",
-   "level": "B2",
-   "definition": "a rule or device that pauses a system, for example trading, when things move too fast",
-   "register": "technical/finance"
-  },
-  {
-   "externalId": "ai4read:2026-10-ai-finance:provided-that-as-long-as-unless",
-   "kind": "expression",
-   "group": "evidence-talk",
-   "headword": "provided that / as long as / unless",
-   "sentence": "A token is money as long as a community keeps accepting it.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "evidence-talk"
-   ],
-   "source": {
-    "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
-   },
-   "target": {
-    "text": "as long as",
-    "start": 17,
-    "end": 27
-   },
-   "partOfSpeech": "conjunctions",
-   "level": "B2",
-   "definition": "provided that and as long as introduce a condition that must be true; unless means 'if not'",
-   "register": "neutral"
-  },
-  {
-   "externalId": "ai4read:2026-10-ai-finance:to-conflate-x-with-y",
-   "kind": "expression",
-   "group": "evidence-talk",
-   "headword": "to conflate X with Y",
-   "sentence": "Don’t conflate algorithmic trading with AI trading.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "evidence-talk"
-   ],
-   "source": {
-    "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
-   },
-   "target": {
-    "text": "conflate",
-    "start": 6,
-    "end": 14
-   },
+   "level": "C1",
+   "definition": "to be made responsible for something and required to explain it or bear its consequences",
    "partOfSpeech": "verb phrase",
-   "level": "C1",
-   "definition": "to treat two different things as if they were the same",
-   "register": "academic"
+   "register": "formal",
+   "target": {
+    "text": "held accountable for",
+    "start": 17,
+    "end": 37
+   }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:what-remains-to-be-seen-is-whether",
+   "externalId": "ai4read:2026-10-ai-finance:a-human-in-the-loop",
    "kind": "expression",
-   "group": "evidence-talk",
-   "headword": "what remains to be seen is whether",
-   "sentence": "What remains to be seen is whether machines can do the accepting.",
+   "group": "expressions",
+   "headword": "a human in the loop",
+   "sentence": "Most participants in the IMF's outreach want a human in the loop in any AI-based strategy.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "evidence-talk"
+    "expressions",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
-   "target": {
-    "text": "What remains to be seen is whether",
-    "start": 0,
-    "end": 34
-   },
-   "partOfSpeech": "phrase",
    "level": "C1",
-   "definition": "we do not yet know whether; the answer is still open",
-   "register": "neutral/academic"
+   "definition": "a person who must check or approve what an automated system does before it takes effect",
+   "partOfSpeech": "noun phrase",
+   "register": "technical",
+   "target": {
+    "text": "a human in the loop",
+    "start": 45,
+    "end": 64
+   }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:with-the-caveat-that",
+   "externalId": "ai4read:2026-10-ai-finance:to-confer-a-status-on",
    "kind": "expression",
-   "group": "evidence-talk",
-   "headword": "with the caveat that",
-   "sentence": "The toy helps, with the caveat that its numbers are invented.",
+   "group": "expressions",
+   "headword": "to confer a status on",
+   "sentence": "For Searle, collective acceptance confers on a printed piece of paper the status of money.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "evidence-talk"
+    "expressions",
+    "C2"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
+   "level": "C2",
+   "definition": "to give someone or something an official status, right or quality",
+   "partOfSpeech": "verb phrase",
+   "register": "formal/academic",
    "target": {
-    "text": "with the caveat that",
+    "text": "confers on",
+    "start": 34,
+    "end": 44
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:to-be-underpinned-by",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to be underpinned by",
+   "sentence": "On Searle's account, money is underpinned by continued collective acceptance.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   },
+   "level": "C1",
+   "definition": "to be supported or made possible by something that lies beneath it",
+   "partOfSpeech": "verb phrase",
+   "register": "formal/academic",
+   "target": {
+    "text": "underpinned by",
+    "start": 30,
+    "end": 44
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:to-presuppose",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to presuppose",
+   "sentence": "Accountability presupposes someone who can be asked why.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   },
+   "level": "C1",
+   "definition": "to need something to be true or to exist already in order to work or make sense",
+   "partOfSpeech": "verb",
+   "register": "formal/academic",
+   "target": {
+    "text": "presupposes",
     "start": 15,
-    "end": 35
-   },
-   "partOfSpeech": "phrase",
-   "level": "C1",
-   "definition": "adding a warning or condition to what you just said",
-   "register": "academic"
+    "end": 26
+   }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:by-no-means",
+   "externalId": "ai4read:2026-10-ai-finance:to-devolve-onto",
    "kind": "expression",
-   "group": "evidence-talk",
-   "headword": "by no means",
-   "sentence": "Running a market is by no means the same as answering for it.",
+   "group": "expressions",
+   "headword": "to devolve onto",
+   "sentence": "Responsibility cannot simply devolve onto a system that cannot be punished, so it falls on whoever deploys it.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "evidence-talk"
+    "expressions",
+    "C2"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
+   "level": "C2",
+   "definition": "(of a duty or responsibility) to pass to someone else",
+   "partOfSpeech": "phrasal verb",
+   "register": "formal",
    "target": {
-    "text": "by no means",
-    "start": 20,
-    "end": 31
+    "text": "devolve onto",
+    "start": 29,
+    "end": 41
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:to-compound",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to compound",
+   "sentence": "If many firms chase the same signal, their trades may compound a shock rather than absorb it.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
-   "partOfSpeech": "adverbial phrase",
-   "level": "B2",
-   "definition": "not at all; certainly not",
-   "register": "neutral/formal"
+   "level": "C1",
+   "definition": "to make a problem or difficulty worse by adding to it",
+   "partOfSpeech": "verb",
+   "register": "formal",
+   "target": {
+    "text": "compound",
+    "start": 54,
+    "end": 62
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:to-be-at-odds-with",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to be at odds with",
+   "sentence": "Imposing one standard menu of contracts can be at odds with Haldane and May's call for diversity.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   },
+   "level": "C1",
+   "definition": "to disagree with or not match something",
+   "partOfSpeech": "adjective phrase",
+   "register": "neutral/formal",
+   "target": {
+    "text": "at odds with",
+    "start": 47,
+    "end": 59
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:to-hinge-on",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to hinge on",
+   "sentence": "Whether a machine-only token is money hinges on whether machines can do the accepting.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   },
+   "level": "C1",
+   "definition": "to depend completely on one particular thing",
+   "partOfSpeech": "phrasal verb",
+   "register": "neutral",
+   "target": {
+    "text": "hinges on",
+    "start": 38,
+    "end": 47
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:to-cut-both-ways",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to cut both ways",
+   "sentence": "Standard contracts cut both ways: they make checking easier, but they make firms more alike.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   },
+   "level": "C1",
+   "definition": "to have both good and bad effects, or to support both sides of an argument",
+   "partOfSpeech": "idiom",
+   "register": "neutral",
+   "target": {
+    "text": "cut both ways",
+    "start": 19,
+    "end": 32
+   }
   },
   {
    "externalId": "ai4read:2026-10-ai-finance:that-s-a-big-if",
    "kind": "expression",
-   "group": "evidence-talk",
+   "group": "expressions",
    "headword": "that’s a big if",
    "sentence": "Every firm on one model? That’s a big if.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "evidence-talk"
+    "expressions",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
+   "level": "C1",
+   "definition": "used to say that a condition is very uncertain",
+   "partOfSpeech": "idiom",
+   "register": "informal/spoken",
    "target": {
-    "text": "That’s a big if.",
+    "text": "That’s a big if",
     "start": 25,
-    "end": 41
-   },
-   "partOfSpeech": "phrase",
-   "level": "C1",
-   "definition": "the condition is very uncertain, so the conclusion is doubtful",
-   "register": "informal"
-  },
-  {
-   "externalId": "ai4read:2026-10-ai-finance:to-cut-both-ways",
-   "kind": "expression",
-   "group": "evidence-talk",
-   "headword": "to cut both ways",
-   "sentence": "Standard contracts cut both ways: easier to check, but more alike.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "evidence-talk"
-   ],
-   "source": {
-    "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
-   },
-   "target": {
-    "text": "cut both ways",
-    "start": 19,
-    "end": 32
-   },
-   "partOfSpeech": "verb phrase",
-   "level": "C1",
-   "definition": "to have both good and bad effects, or to support both sides of an argument",
-   "register": "neutral"
+    "end": 40
+   }
   },
   {
    "externalId": "ai4read:2026-10-ai-finance:to-read-too-much-into-something",
    "kind": "expression",
-   "group": "evidence-talk",
+   "group": "expressions",
    "headword": "to read too much into something",
    "sentence": "Don’t read too much into a toy with ten banks.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "evidence-talk"
+    "expressions",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
+   "level": "C1",
+   "definition": "to think something has more meaning or importance than it really has",
+   "partOfSpeech": "verb phrase",
+   "register": "neutral",
    "target": {
     "text": "read too much into",
     "start": 6,
     "end": 24
-   },
-   "partOfSpeech": "verb phrase",
-   "level": "C1",
-   "definition": "to find more meaning in something than is really there",
-   "register": "neutral"
+   }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:reporting-verbs",
-   "kind": "pattern",
-   "group": "c1-patterns",
-   "headword": "Reporting verbs",
-   "sentence": "“The IMF judges that the risks currently appear contained; the FSB warns that common models could correlate trading; Gensler and Bailey hypothesise a monoculture; Searle argues that status needs acceptance.” Match the verb to how firm the claim is.",
+   "externalId": "ai4read:2026-10-ai-finance:with-the-caveat-that",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "with the caveat that",
+   "sentence": "The toy helps, with the caveat that its numbers are invented.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "c1-patterns"
+    "expressions",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
+   "level": "C1",
+   "definition": "with the warning or limitation that",
+   "partOfSpeech": "linking phrase",
+   "register": "formal",
+   "target": {
+    "text": "with the caveat that",
+    "start": 15,
+    "end": 35
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:what-remains-to-be-seen-is-whether",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "what remains to be seen is whether",
+   "sentence": "What remains to be seen is whether machines can do the accepting.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   },
+   "level": "C1",
+   "definition": "used to introduce a question that has not been answered yet",
+   "partOfSpeech": "sentence frame",
+   "register": "formal",
+   "target": {
+    "text": "What remains to be seen is whether",
+    "start": 0,
+    "end": 34
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:by-no-means",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "by no means",
+   "sentence": "Running a market is by no means the same as answering for it.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   },
+   "level": "C1",
+   "definition": "not at all; certainly not",
+   "partOfSpeech": "adverbial phrase",
+   "register": "neutral/formal",
+   "target": {
+    "text": "by no means",
+    "start": 20,
+    "end": 31
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:reporting-verbs-calibrated-to-strength",
+   "kind": "pattern",
+   "group": "c1-c2-patterns",
+   "headword": "Reporting verbs calibrated to strength",
+   "sentence": "The IMF judges that the risks currently appear contained; the FSB warns that common models could correlate trading; Gensler and Bailey hypothesise a monoculture.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "c1-c2-patterns",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   },
+   "level": "C1",
+   "definition": "Choose the reporting verb to match how firm the source is: judge, warn, hypothesise, argue, concede.",
    "target": {
     "text": "judges",
-    "start": 9,
-    "end": 15
-   },
-   "partOfSpeech": "pattern",
-   "level": "C1",
-   "definition": "choose the verb by how strongly the speaker committed: asserts = states as true; predicts = says what will happen; imagines = pictures a scenario; asks = poses a question; warns = cautions",
-   "register": "academic"
+    "start": 8,
+    "end": 14
+   }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:three-layers",
+   "externalId": "ai4read:2026-10-ai-finance:cleft-sentence-for-focus",
    "kind": "pattern",
-   "group": "c1-patterns",
-   "headword": "Three layers",
-   "sentence": "“The source says X. The evidence shows Y. Our reading is Z.”",
+   "group": "c1-c2-patterns",
+   "headword": "Cleft sentence for focus",
+   "sentence": "It is declaring and answering, not running, that make a group of people a society, on our reading.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "c1-patterns"
+    "c1-c2-patterns",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
-   "target": {
-    "text": "Our reading is",
-    "start": 42,
-    "end": 56
-   },
-   "partOfSpeech": "pattern",
    "level": "C1",
-   "definition": "separate what was said, what the evidence shows, and your own interpretation",
-   "register": "academic"
+   "definition": "Put the new or important information between 'It is … that' to control where the listener's attention falls.",
+   "target": {
+    "text": "It is",
+    "start": 0,
+    "end": 5
+   }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:hedging-ladder",
+   "externalId": "ai4read:2026-10-ai-finance:inversion-with-were-to",
    "kind": "pattern",
-   "group": "c1-patterns",
-   "headword": "Hedging ladder",
-   "sentence": "shows → suggests → is consistent with → hints at.",
+   "group": "c1-c2-patterns",
+   "headword": "Inversion with 'were … to'",
+   "sentence": "Were every firm to rely on one model, their errors would be likely to coincide.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "c1-patterns"
+    "c1-c2-patterns",
+    "C2"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
+   "level": "C2",
+   "definition": "A formal way to state an unlikely condition: 'Were X to do Y, …' instead of 'If X did Y, …'.",
    "target": {
-    "text": "is consistent with",
-    "start": 19,
-    "end": 37
-   },
-   "partOfSpeech": "pattern",
-   "level": "C1",
-   "definition": "verbs ordered from strong to weak commitment: shows, suggests, is consistent with, hints at",
-   "register": "academic"
+    "text": "Were",
+    "start": 0,
+    "end": 4
+   }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:concession-then-your-point",
+   "externalId": "ai4read:2026-10-ai-finance:inversion-after-a-negative-adverbial",
    "kind": "pattern",
-   "group": "c1-patterns",
-   "headword": "Concession, then your point",
-   "sentence": "“Granted, the toy is simple. But the threshold is real.”",
+   "group": "c1-c2-patterns",
+   "headword": "Inversion after a negative adverbial",
+   "sentence": "Rarely does a single toy settle a question about real markets.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "c1-patterns"
+    "c1-c2-patterns",
+    "C2"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
+   "level": "C2",
+   "definition": "After 'rarely', 'seldom', 'not until' or 'only when' at the start of a clause, put the auxiliary before the subject. Formal writing and talks.",
    "target": {
-    "text": "Granted",
-    "start": 1,
-    "end": 8
-   },
-   "partOfSpeech": "pattern",
-   "level": "C1",
-   "definition": "admit a point with 'Granted' or 'While it is true that', then give your own point with 'But'",
-   "register": "academic"
+    "text": "Rarely does",
+    "start": 0,
+    "end": 11
+   }
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:if-clause-without-will",
+   "externalId": "ai4read:2026-10-ai-finance:comprise-no-of",
    "kind": "fix",
    "group": "error-fixes",
-   "headword": "if-clause without will",
-   "sentence": "“If the models fail, …”, not “will fail”.",
+   "headword": "comprise (no 'of')",
+   "sentence": "The five jobs comprise running, deciding, checking, declaring and answering.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "error-fixes"
+    "error-fixes",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
-   "partOfSpeech": "fix",
-   "level": "B2",
-   "definition": "after if, use the present tense for a future condition",
-   "register": "grammar",
-   "wrong": "If the models will fail, …",
-   "right": "If the models fail, …"
+   "level": "C1",
+   "definition": "'Comprise' takes a direct object; use 'consist of' if you want 'of'.",
+   "wrong": "The five jobs comprise of running, deciding, checking, declaring and answering.",
+   "right": "The five jobs comprise running, deciding, checking, declaring and answering."
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:evidence-uncountable",
+   "externalId": "ai4read:2026-10-ai-finance:stacked-hedges",
    "kind": "fix",
    "group": "error-fixes",
-   "headword": "evidence (uncountable)",
-   "sentence": "“some evidence”, not “evidences”.",
+   "headword": "stacked hedges",
+   "sentence": "Shared models could make failures coincide.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "error-fixes"
+    "error-fixes",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
-   "partOfSpeech": "fix",
-   "level": "B2",
-   "definition": "evidence, information and advice have no plural; count them with 'a piece of'",
-   "register": "grammar",
-   "wrong": "The paper gives many evidences.",
-   "right": "The paper gives some evidence."
+   "level": "C1",
+   "definition": "One well-chosen hedge is enough; piling up 'could', 'possibly' and 'perhaps' sounds unsure rather than careful.",
+   "wrong": "Shared models could possibly perhaps make failures coincide.",
+   "right": "Shared models could make failures coincide."
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:general-nouns-no-article",
+   "externalId": "ai4read:2026-10-ai-finance:imply-vs-infer",
    "kind": "fix",
    "group": "error-fixes",
-   "headword": "general nouns, no article",
-   "sentence": "“society”, “finance”, but “the financial system”.",
+   "headword": "imply vs infer",
+   "sentence": "The survey implies that most managers are cautious; from it we infer that deciding is still mostly human.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "error-fixes"
+    "error-fixes",
+    "C1"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    },
-   "partOfSpeech": "fix",
-   "level": "B2",
-   "definition": "abstract or general nouns take no article in general statements; use 'the' for something specific",
-   "register": "grammar",
-   "wrong": "The finance is complicated.",
-   "right": "Finance is complicated. / The financial system is complicated."
+   "level": "C1",
+   "definition": "Evidence or a speaker implies (suggests); a reader or listener infers (concludes).",
+   "wrong": "From the survey we imply that deciding is still mostly human.",
+   "right": "From the survey we infer that deciding is still mostly human."
   },
   {
-   "externalId": "ai4read:2026-10-ai-finance:loop-paragraph",
+   "externalId": "ai4read:2026-10-ai-finance:dangling-modifier",
+   "kind": "fix",
+   "group": "error-fixes",
+   "headword": "dangling modifier",
+   "sentence": "Having automated the checker, we face a new question: who checks it?",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "error-fixes",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   },
+   "level": "C2",
+   "definition": "An opening participle phrase must describe the subject that follows; a question cannot automate a checker.",
+   "wrong": "Having automated the checker, a new question arises: who checks it?",
+   "right": "Having automated the checker, we face a new question: who checks it?"
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:production-drill",
+   "kind": "tip",
+   "group": "practice",
+   "headword": "Production drill",
+   "sentence": "Cover the expression, read the definition and the sentence with a gap, and say the expression aloud before you check. Recognising an expression is not the same as being able to use it.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "practice"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:five-jobs-retell",
+   "kind": "tip",
+   "group": "practice",
+   "headword": "Five-jobs retell",
+   "sentence": "Pick a system you know (a journal, a lab, an online community) and describe in two minutes who runs, decides, checks, declares and answers, using three expressions from this pack.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "practice"
+   ],
+   "source": {
+    "label": "AI4Read · Could a society run itself on AI?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-ai-finance:loop-paragraph-c1c2",
    "kind": "shadowing",
    "group": "loop",
    "headword": "A paragraph to loop",
-   "sentence": "Software already runs much of the market, but running is by no means the same as answering for it. Provided that many firms rely on one model, it can become a single point of failure, and their errors may move in lockstep. Most participants the IMF asked want a human in the loop, partly because someone has to be held accountable. A token counts as money only as long as a community accepts it. What remains to be seen is whether machines could ever be that community. Standard contracts cut both ways. Don’t read too much into a toy, with the caveat that it shows what could happen, not what will.",
+   "sentence": "Software already runs much of the market, but running is by no means the same as answering for it. Were many firms to rely on one model, their errors would be likely to move in lockstep, and that model could become a single point of failure. Most participants in the IMF's outreach want a human in the loop, partly because accountability presupposes someone who can be asked why. A token counts as money only while a community keeps accepting it, so whether a machine-only token is money hinges on whether machines can do the accepting, and what remains to be seen is whether they ever could. Standard contracts cut both ways: they make checking easier, yet they make firms more alike. We should not read too much into a toy with ten banks, with the caveat that it shows what could happen, not what will.",
    "targets": [
     "by no means",
-    "Provided that",
-    "a single point of failure",
+    "Were many firms to rely on",
     "in lockstep",
+    "a single point of failure",
     "a human in the loop",
-    "be held accountable",
-    "counts as",
-    "as long as",
-    "What remains to be seen is whether",
+    "presupposes",
+    "hinges on",
+    "what remains to be seen is whether",
     "cut both ways",
     "read too much into",
     "with the caveat that"
    ],
+   "level": "C2",
    "audio": {
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/audio/c1-loop.mp3",
-    "voice": "Kokoro af_heart (US English)"
+    "file": "audio/2026-10-ai-finance-loop.mp3",
+    "url": null,
+    "voice": "Kokoro af_heart (US English)",
+    "note": "Recorded by AI4Read and tagged 'AI4Read from CSS Lab'. Host it in Margin, or use Margin's own TTS."
    },
    "tags": [
     "ai4read",
     "ai4read-2026-10",
-    "loop"
+    "loop",
+    "C2"
    ],
    "source": {
     "label": "AI4Read · Could a society run itself on AI?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/#english"
+    "url": "https://khyang-lab.org/ai4read/2026-10-ai-finance/"
    }
   }
  ]

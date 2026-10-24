@@ -2,8 +2,8 @@
  {
   "id": "hook",
   "title": "The guessing game",
-  "hash": "5fd176077431",
-  "dur": 140.0
+  "hash": "802a3223b221",
+  "dur": 141.5
  },
  {
   "id": "guess",
@@ -14,8 +14,8 @@
  {
   "id": "home",
   "title": "How a language model is built",
-  "hash": "9bba1ef39cda",
-  "dur": 192.9
+  "hash": "14d72e359d8f",
+  "dur": 201.9
  },
  {
   "id": "lens-info",
@@ -70,17 +70,5 @@
   "title": "Recall questions",
   "hash": "53881d510474",
   "dur": 84.2
- },
- {
-  "id": "english",
-  "title": "How to say it in English",
-  "hash": "89ad31ade6f4",
-  "dur": 77.8
- },
- {
-  "id": "c1-loop",
-  "title": "C1 paragraph to loop",
-  "hash": "84328f074bbd",
-  "dur": 57.9
  }
 ]
