@@ -89,3 +89,7 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - writer (Sonnet, fresh agent): `outline.md`, 12 sections, 6,630 words planned, 7 widgets (incl. vec2d); self-scores 4/4/4 on criteria 2, 4, 5 (gate PASS); 240k tokens, 8.9 min. Bets placed before reads/writes as in Kunhao's spec.
 - Request Q1 (multiple-access channel): meta-manager fetched MacKay 2003 (free author PDF); fact-checker (Opus, fresh) added unit 15 (p. 237, fig. 15.3); 148k tokens, 4.8 min. Q2 (Shannon "bandwidth") not sourced: contrast banned.
 - Meta-manager: W9 re-run in numpy; the outline's margin at phi = 0 was wrong (-4, not 0); corrected in toyworlds.md and passed to S4.
+
+## Post 03 · S4 draft and S5 round 1
+- writer (Sonnet, fresh): draft 7,358 words main text, 7 widgets; check.mjs 7/7, build 0 unmapped, test.mjs --inline PASS; site render test PASS (meta-manager); 317k tokens, 32.3 min.
+- S5 r1: fact-checker Opus (verify-1: 0 crit, 4 major, 17 minor; 292k, 10.2 min), fact-checker Sonnet (verify-1b: 0/3/22; 280k, 9.7 min), critic Sonnet (critic-1: 0/9/18; C2 3, C3 3, C4 4, C5 3, C6 3; 206k, 7.6 min). Gate: FAIL → S5→S4 revision.
