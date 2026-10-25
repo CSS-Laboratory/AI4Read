@@ -30,7 +30,7 @@ Widget readouts: `node site/ai4read/components/check.mjs posts/2026-10-residual-
 | Open question | section 10 | M = [[2,1],[1,2]], each output coordinate = one row dotted with the vector: (1,0) -> (2,1); (1,1) -> (3,3); (1,-1) -> (1,-1) | numpy |
 | Norm sketch | section 3 | (4,2): mean 3, centred (1,-1), sd 1 -> (1,-1); (8,4): mean 6, centred (2,-2), sd 2 -> (1,-1); a list and its double give the same result | numpy |
 | 90-degree dot-product check | section 6 | Rr = (-r2, r1), Rx = (-x2, x1): (-r2)(-x2) + r1 x1 = r.x | algebra |
-| Stream-relative range 4e-8 to 7e-7 | section 3 | see the notebook rows above | results.md correction note |
+| Stream-relative range 4e-8 to 7e-7 | fold-out `box-numbers`, table row 3 | see the notebook rows above | results.md correction note |
 | Unit-length check | section 6 | u = (0.6, 0.8) has length 1; x = (5, 0): score 3; foot 3u = (1.8, 2.4); x - foot = (3.2, -2.4); dot with u = 1.92 - 1.92 = 0 | arithmetic (python rerun, round 2) |
 | Read-split answer | section 5, folded answer | r = (2, -1): 2*1 + (-1)*2 = 0 (reader cannot hear the embedding) | arithmetic |
 | Silence answer | section 9, folded answer | strengths (0.5, 0.5, 0.5): 0.5 - 1/2 (0.5 + 0.5) = 0 for each reader | arithmetic; check.mjs `three-features` with c = 0.5 each |
@@ -47,7 +47,7 @@ Widget readouts: `node site/ai4read/components/check.mjs posts/2026-10-residual-
 | Additivity in the model's own order | section 3 | 0.0 (max abs and max rel); repeats the model's own additions | 2-6, 8 |
 | Same writes in another order | fold-out `box-numbers` (table, row 2) | max abs 4.27e-4; max rel 1.03e-6 (float32 epsilon 1.19e-7), notebook 01. No longer in the main text or the recall card (round 2); the rounding explanation in the main text rests on row 43 and on the toy | 7 |
 | Consecutive Hugging Face entries vs the block's two writes | section 3 main text (the one informative number), recall card 1, fold-out table row 3 | max rel 6.2e-6 for blocks 1 to 11, i.e. l = 0..10 (the twelfth step, l = 11, is 2.04 because of the final norm). **Denominator: the norm of the block's own two writes (attention output + MLP output), not the stream** (results.md correction note, 2026-10-25; V3B-01) | 43 |
-| Same differences, relative to the stream | section 3 main text, fold-out table row 3 | about 4e-8 to 7e-7 (4e-8 to 6e-8 against the stream after the block, blocks 1 to 11; at most 6.95e-7 against the stream before the block, block 1). Source: the S5 checker's rerun quoted in results.md's correction note; not a row of results.md | correction note |
+| Same differences, relative to the stream | fold-out `box-numbers`, table row 3 | about 4e-8 to 7e-7 (4e-8 to 6e-8 against the stream after the block, blocks 1 to 11; at most 6.95e-7 against the stream before the block, block 1). Source: the S5 checker's rerun quoted in results.md's correction note; not a row of results.md | correction note |
 | TransformerLens (raw weights) vs Hugging Face, k = 0..11 | fold-out table row 4 | max abs 4.88e-4; max rel 7.8e-7 | 23 |
 | Last entry | section 3 (verdict), fold-out | hidden_states[-1] = ln_f(output of last block), difference 0.0; vs raw stream relative 0.986 (fold-out only) | 44, 45 |
 | Entry 0 in GPT-2 | section 3, fold-out | hidden_states[0] = wte(ids) + wpe(positions), difference 0.0; wte(ids) alone differs by 3.63, relative to the size of the table rows (fold-out only; denominator is wte(ids), not the stream) | 36, 37 |

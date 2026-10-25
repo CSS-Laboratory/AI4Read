@@ -96,3 +96,33 @@ Checked against the current files, not against response-3.md.
 - **check.mjs**: 8/8 widget configs OK. No widget config changed in the diff.
 - **Text against audio** for every changed passage: A:40, 46, 50, 56, 83, 85, 125, 127, 138, 140, 149, 179, 212 and 234 against C:72, 90/122, 134, 156, 200, 197, 338, 355–356, 393, 394, 404, 460, 511 and 517. All match in substance. The one mismatch is the wording of recall card 1 (V3C-01).
 - **Notebook docstring.** The notebook 02 `err` docstring is corrected (commit 5af4e65). No number changed.
+
+## Polish-pass check (diff 364524c..HEAD, content.html and audio-script.md)
+
+Scope: every changed or new sentence in the page and audio, against source-brief.verified.md, sources/*.txt and notebook/results.md. Line numbers are as of HEAD (C = src/content.html, A = audio-script.md).
+
+### Findings
+
+| ID | Sev. | Location | Evidence | Fix |
+|---|---|---|---|---|
+| P-01 | minor | C:461 "(it rewrites the weights when it loads them)"; A:180 "which rewrites the weights when it loads them" | Compatibility mode does not act at load time. results.md L1: "`boot_transformers` returns **raw HF weights by default** ... `enable_compatibility_mode()` gives HookedTransformer-equivalent numerics"; T6: "the default loader does *not* rewrite weights; only `enable_compatibility_mode()` does". Load-time processing was the older `HookedTransformer` loader (L3), which C:167 already says correctly. The gloss came from critic-3c n5's suggested wording. | "(it rewrites the weights after they are loaded)" on the page; "which rewrites the weights after they are loaded" in the audio. |
+| P-02 | minor | A:128 | The audio says "in the standard basis a ReLU acts on each coordinate independently" and only then "One common choice, the ReLU, ...", so the term is used before it is glossed, and "one common choice" no longer follows "activation function". It also drops the page's gloss of the activation function ("a curve applied to each number on its own", C:357). Same meaning as the page; order and one gloss differ. | Audio: "after the activation function, a curve applied to each number on its own. One common choice, the ReLU, turns every negative number into zero and keeps positive numbers as they are. In the standard basis a ReLU acts on each coordinate independently." |
+| P-03 | minor | numbers.md row "Stream-relative range 4e-8 to 7e-7 \| section 3" (ledger, not published) | The polish pass cut this range from section 3 (C:157, A:57). It now appears only in the fold-out table, C:171. | Change the location to "fold-out `box-numbers`, table row 3". |
+
+### Checked and found correct
+
+- **n1, attention and MLP glosses** (C:72, A:40). "Brings in information from other positions" is supported by Nanda L601 ("the only layers that can move information between token positions"), L712 and L743. "A small network" is supported by L405 ("the classic neural network architecture"). "12 blocks" is still in this sentence.
+- **n2, norm example** (C:135, A:50–51). Recomputed: (4, 2) has mean 3 and population SD 1, giving (1, −1). (8, 4) has mean 6 and SD 2, giving (2, −2)/2 = (1, −1). This matches numbers.md (norm toy) and brief unit 9. The page and the audio match.
+- **n3, identity paragraph** (C:157, A:57). The cut leaves 6.2e−6 and its denominator (the block's two writes) unchanged, as in results.md rows 43 and 62. The stream-relative range survives at C:171. No remaining sentence refers to the cut one ("against the stream" and "same differences": 0 hits in either file). "Twelve blocks" is still at C:72 and A:40.
+- **n4, "Relative" note** (C:167). "In the index note below, the table rows (3.63)" matches C:175 and results.md row 36 ("relative to the norm of the reference, here the table rows").
+- **n5, the rest of the sentence** (C:461). The cite (transformer_bridge.py 548–560) and the "minus its mean coordinate" claim are unchanged and supported by results.md L2, row 27 and L7. Only the gloss is wrong (P-01).
+- **n6, TCAV** (C:405, A:150). "It also lists TCAV" is right: it is an entry under Nanda § Non-MI Techniques (L1530, L1593). "Gradient-based test and not an intervention" is supported by L1597: the method takes the derivative and its cosine with the CAV, and no activation is changed. This is our label for the method, and the source's mechanism supports it. "Intuitively" (L1597) is kept. "Nanda also cautions" fixes the referent of "He", and "arguably" (L1365) is kept.
+- **V3C-01, recall card 1** (C:512, A:213). "Differed by the block's two writes, up to an error of at most 6.2e−6, relative to the size of those writes" uses the right denominator (row 43). Resolved.
+- **V3C-02, ReLU gloss** (C:357). "One common choice" no longer implies that GPT-2 uses a ReLU (GPT-2 applies a GELU, Nanda L732). The ReLU definition is common knowledge and correct. The quote "in the standard basis a ReLU acts on each coordinate independently" is unchanged. Resolved on the page; the audio order is P-02.
+- **Hedges and numbers.** No hedge or number changed meaning. "Assert" (Elhage), "intuitively", "arguably" and "slightly privileged" are all intact.
+- **Text against audio.** Every changed passage matches in substance. Exceptions: P-02 (order and one gloss) and the shared P-01 wording.
+- **check.mjs** `posts/2026-10-residual-stream/src/content.html`: 8/8 widget configs OK.
+
+Counts: 0 critical, 0 major, 3 minor (P-01, P-02, P-03).
+
+**Verdict: 0 critical and 0 major. The polish pass passes. P-01 and P-02 are one-line fixes, recommended before release.**
