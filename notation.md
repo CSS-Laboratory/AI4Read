@@ -17,3 +17,4 @@ description: One notation for all AI4Read posts. Extend it when a post introduce
 - λ: loss given default; κ: capital multiplier (cascade toy).
 - m: share of traders following one model; A, G: chase gain and pull-back gain (herding toy).
 - Link types used in the lens lines: same-math, structural analogy, metaphor.
+- (post 03, residual stream) x_k: stream after k blocks (x₀ = the starting vector, "the embedding"); a_k, f_k: attention and MLP writes of block k; r: a reader's input vector; u: unit probe direction at angle φ; s = u·x: score; v: steering vector (angle ψ, length α); ω: rotation angle (θ is taken); d: stream width; g_j, c_j: feature directions and strengths (interference toy); M: the open-question matrix. "Block" = one attention sub-layer plus one MLP sub-layer.

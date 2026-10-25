@@ -40,3 +40,21 @@ description: Canonical toy worlds reused across AI4Read posts, so connections be
 
 ## W8 · Contract village (post 02, extends W1)
 - Four weather words; a contract pays 0–9 for each: 10⁴ contracts, 13.29 bits; at most 2^k − 1 have a description shorter than k bits (63 at k = 6). Informed-seller pool: 100 assets, 10 junk, lemon cost 5, C(100,10) = 17,310,309,456,440.
+
+## W9 · The two-dimensional bus (post 03)
+- A stream of width 2 ("toy numbers, ours"). One position, two blocks. Order inside a block: attention, then MLP.
+- W9-A, the sum: embedding x0 = (1, 2). Block 1 writes a1 = (2, -1) (attention) and f1 = (-1, 1) (MLP). Block 2 writes a2 = (3, -2) and f2 = (-1, 2).
+  Running stream: (1, 2) -> (3, 1) -> x1 = (2, 2) -> (5, 0) -> x2 = (4, 2). Norms 2.236, 2.828, 4.472 (descriptive only). x2 = x0 + a1 + f1 + a2 + f2.
+  Cancellation: f2 puts +2 in y and undoes the -2 that a2 put there (f2 is not -a2 = (-3, 2); only the y part cancels).
+- W9-B, who hears whom (the additive split of a read; not a "virtual weight", which is a weight-matrix product): reader input vector r = (1, 2) reads the stream after a2, (5, 0): r.x0 = 5, r.a1 = 0, r.f1 = 1, r.a2 = -1; total 5 = r.(5, 0). Reader (0, 1): 2, -1, 1, -2; total 0. a1 is in the stream but r hears none of it (a1.r = 0).
+- W9-C, the cloud: six streams at one depth. "Calm" (3,1), (4,2), (5,3); "urgent" (1,3), (2,4), (3,5). Probe u = (cos phi, sin phi); score s = u.x.
+  Along x: calm 3, 4, 5; urgent 1, 2, 3. Along y: calm 1, 2, 3; urgent 3, 4, 5. Both overlap at 3.
+  phi = 135 deg: calm -1.414 (all three), urgent +1.414; margin 2.828. phi = 45 deg: both groups 2.828, 4.243, 5.657 (blind). Margin (lowest urgent score minus highest calm score) by phi: -4 at 0 (calm sits above urgent along x), 0 at 90 and 180; 0.695 at 100 and 170; 2.000 at 120 and 150; 2.828 at 135; -2.828 at 45.
+  Steering: add v to every point; every score changes by u.v. With phi = 135, v = 2u: u.v = 2.000, calm -1.414 -> 0.586, urgent 1.414 -> 3.414. With v = 2(1,1)/sqrt2 (psi = 45): u.v = 0.
+- W9-D, rotation (no privileged basis): rotate every vector by 90 deg, (x, y) -> (-y, x), including r. x2 = (4, 2) -> (-2, 4); r = (1, 2) -> (-2, 1). The four read shares stay 5, 0, 1, -1.
+- W9-E, three features in two dimensions: feature directions g1 = (1, 0), g2 = (-0.5, 0.866), g3 = (-0.5, -0.866) (0, 120, 240 deg). Strengths (1, 0, 0): stream (1, 0); reads 1.000, -0.500, -0.500. (1, 1, 0): reads 0.5, 0.5, -1.0. (1, 1, 1): stream (0, 0), reads 0, 0, 0.
+- W9-F, a toy unembedding: three rows at 0, 120, 240 deg (no norm). Logits at x0 (1.000, 1.232, -2.232); at x1 (2.000, 0.732, -2.732); at x2 (4.000, -0.268, -3.732). The leading token changes after block 1 and stays.
+- W9-G, a norm on the read (toy): subtract the mean, divide by the (population) standard deviation: (4, 2) -> (1, -1); (8, 4) -> (1, -1).
+- Open-question map (not a toy of the post): M = [[2, 1], [1, 2]]: (1,0) -> (2,1); (1,1) -> (3,3); (1,-1) -> (1,-1).
+- Reuse for: dot products and projections, probing, steering, change of basis, interference/superposition, eigen-decomposition, circuits (weighted edges), control (additive input on a state).
+- Meta-manager check (2026-10-25, numpy): all W9 numbers re-run; the outline's "margin 0 at phi = 0" was wrong (it is -4) and is corrected above.
