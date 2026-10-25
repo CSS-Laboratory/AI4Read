@@ -76,3 +76,7 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - UNSEEN list: original logit-lens post, Nanda logit-lens body (corrupted), some missing math lines, RMSNorm formula, steering, "hidden state", model families, base vs instruct, figures.
 - 9 notes on the topic card (e.g. T2: Nanda does have an RMSNorm entry; W9-B is not a virtual weight; "unit vector" is ours). Passed to S2.
 - Notebooks: a fresh agent (Opus) builds and runs `01_bus_gpt2.ipynb` and `02_bus_my_model.ipynb` in parallel (results.md for the writer).
+
+## Post 03 · S2 fact-check
+- fact-checker (Opus, fresh agent): `source-brief.verified.md`, `review/s2-check.md`; 319k tokens, 14.6 min. 1 critical (three Olah quotes from text commented out of the published HTML), 9 major (cut Nanda quote, misread Nanda L216, "unit vector" in no source, an invented tension, a dropped Elhage hedge, four uses of Elhage material outside Kunhao's scope), 24 minor. All fixed in the verified brief; 164 quotes verbatim. Gate (0 unchecked units): PASS.
+- Topic card T2 corrected (Nanda has an RMSNorm entry).
