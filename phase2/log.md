@@ -84,3 +84,8 @@ One block per stage. Token counts come from the agent results (all subagent toke
 ## Post 03 · notebooks
 - notebook builder (Opus, fresh agent): `01_bus_gpt2.ipynb` (TransformerLens 4.3.0, also tested on 3.9), `02_bus_my_model.ipynb` (HF hooks; GPT-2 full run, tiny random Qwen3 from its config, tiny Gemma 3), executed offline; `results.md` (67 results, 19 library-source citations); 289k tokens, 27.5 min.
 - Key: in-model additivity bit-exact (same float32 adds; reordering gives 1.03e-6 rel); HF `hidden_states[k]` = TL raw stream (k = 0..11, rel 7.8e-7); the last HF entry is final-normed; logit lens with ln_final reproduces logits exactly. TL 4 removed HookedTransformer (card T6 sharpened); Gemma 3 norms sit on sub-layer outputs before the add (T2 confirmed). Meta-manager spot-checked the transformers source lines for hidden_states.
+
+## Post 03 · S3 outline (+ S2 addendum)
+- writer (Sonnet, fresh agent): `outline.md`, 12 sections, 6,630 words planned, 7 widgets (incl. vec2d); self-scores 4/4/4 on criteria 2, 4, 5 (gate PASS); 240k tokens, 8.9 min. Bets placed before reads/writes as in Kunhao's spec.
+- Request Q1 (multiple-access channel): meta-manager fetched MacKay 2003 (free author PDF); fact-checker (Opus, fresh) added unit 15 (p. 237, fig. 15.3); 148k tokens, 4.8 min. Q2 (Shannon "bandwidth") not sourced: contrast banned.
+- Meta-manager: W9 re-run in numpy; the outline's margin at phi = 0 was wrong (-4, not 0); corrected in toyworlds.md and passed to S4.

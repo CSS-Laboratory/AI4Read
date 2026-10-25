@@ -151,3 +151,20 @@ No note was found where the card is right and the brief wrong.
 
 ## Gate
 0 unchecked units. **S2 gate: PASS.** All critical and major findings are corrected in `source-brief.verified.md`, which ends with a writer-must-not-use list. The Elhage scope items (M6-M9 dropped; m23 held for Kunhao) need Kunhao's decision only if he wants that material back.
+
+## S2 addendum (2026-10-25): unit 15, MacKay on the multiple-access channel (request Q1); Q2 closed
+Checker: independent fact-checker (fresh agent). Source: `sources/mackay-2003-itila.pdf` (author's on-screen PDF, fourth printing), read in `pdftotext` per page and as rendered images (PDF p. 250 at 200 and 400 dpi for figure 15.3); extract `sources/mackay-2003-mac.txt`. Printed = PDF - 12 confirmed on all three pages (236/248, 237/249, 238/250).
+
+| Unit | Tag | Findings | Main evidence |
+|---|---|---|---|
+| 15 MacKay multiple-access channel | FIXED (new unit) | a1, a2, a3 | Ex. 15.18, p. 237; Fig. 15.3 and caption, p. 238; Ex. 15.19, p. 237 |
+
+- **Quotes (script).** 15 quotes, each matched against the `pdftotext` text of its own PDF page: 13/15 exact after whitespace collapse, 15/15 letters-and-digits only (the 2 misses are R_A, R_B set as subscripts); word counts recomputed, all at most 25. Q12-Q15 (Ex. 15.19 line and caption) are split by the two-column `-layout` extract but are verbatim in the raw page text and visible in the image.
+- **Figure 15.3 (read from the image).** (a) box P(y|x(A), x(B)), two inputs, one output; (b) table 0 1 / 1 2; (c) shaded "Achievable" pentagon with corners (0,0), (1,0), (1,1/2), (1/2,1), (0,1), dashed diagonal R_A + R_B = 1, dashed lines at 1/2. No units, no word "capacity". The sum 3/2 on the sloped edge is our reading (checked with exact fractions); the text states only "cannot be two bits" and "easy ... one bit", and asks whether R_A + R_B > 1.
+- **a1 (request framing; major if it reached the post: scope).** Q1 says the set-up is senders "whose output is the sum of the inputs". MacKay's general channel is any P(y | x(A), x(B)) (caption 15.3a); only the "simple model system" adds. Fix: in unit 15, "MacKay's simplest example is an adder".
+- **a2 (request framing; major if it reached the post: unsupported term).** Q1 asks for "one line that the topic is studied through a capacity region". On these pages "capacity region" is used only for the broadcast channel (Ex. 15.19, p. 237; p. 238); the multiple-access figure is "The achievable region". Fix: unit 15 says "achievable region" and forbids any capacity result.
+- **a3 (minor).** Q1 cites p. 237 for the whole unit; the figure is on p. 238. Fix: both pages given; cite by exercise number (preface p. xi: exercise numbers unchanged across printings).
+- **Traps recorded in unit 15.** Exercise in a "Further Exercises" chapter, rated [3] with no solution page; no theorem, no proof, "The answer is indicated in figure 15.3". "There is no noise." The users "cannot hear the output" (a disanalogy with layers that read the stream: ours). No neural networks on pp. 236-238, but the book has Part V "Neural networks" (p. 467), so "MacKay never mentions neural networks" would be false. Ratzer and MacKay (2003) is UNSEEN.
+- **Link.** Structural analogy (ours): several writers, one additive medium, a reader who sees only the sum (output 1 = (0,1) or (1,0)). Not same-math; no rate or capacity transfers to the stream (unit 7).
+- **Q2 closed.** No Shannon text on "bandwidth" is saved. Writer-must-not-use item 15 added: no contrast between Elhage's "bandwidth" and Shannon's. Note for the orchestrator: unit 7's trap line "it is not a rate in Hertz" is itself an unsourced gloss and is now covered by item 15. MacKay does define bandwidth "(measured in Hertz)" in ch. 11 (p. 178 by the index; PDF text checked), but that is MacKay, not Shannon, and was not checked as a unit; do not use it without a new S2 unit.
+- **Counts for this addendum:** critical 0, major 0 in the brief (2 major-if-used in the request framing, both blocked in unit 15), minor 1. **Gate still PASS:** 15/15 units checked.

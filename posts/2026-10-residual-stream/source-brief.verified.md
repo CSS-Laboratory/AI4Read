@@ -595,6 +595,74 @@ This unit is a map of a gap, because clauses 1, 6, 9 of the lens sentence (topic
 
 **Toy idea.** No new toy for post-training (keep it out). For steering reuse W9-C unit 11. For "intervention changes more than the edited part", W9 has no feedback; do not invent one.
 
+## E. MacKay (2003), *Information Theory, Inference, and Learning Algorithms* (Cambridge University Press) [SEEN, S2 addendum 2026-10-25]
+
+### 15. [FIXED] MacKay: the multiple-access channel
+**Added after S2** for S3 request Q1 (`requests.md`). **FIXED** because the request's framing is off in three places: (a) MacKay's *general* multiple-access channel is any P(y | x(A), x(B)); only his "simple model system" adds the inputs; (b) on these pages MacKay calls the figure an "achievable region", and uses "capacity region" only for the *broadcast* channel (Exercise 15.19); (c) the figure is on p. 238, not p. 237.
+
+**Where.** Chapter 15, "Further Exercises on Information Theory", Exercise 15.18 "Multiple access channels", printed **p. 237** (PDF p. 249); Figure 15.3 and its caption, printed **p. 238** (PDF p. 250); the section lead-in "Further tales from information theory", printed p. 236 (PDF p. 248). Printed = PDF - 12. Saved copy: `sources/mackay-2003-itila.pdf` (author's free on-screen PDF, https://www.inference.org.uk/itprnn/book.pdf, accessed 2026-10-25) and the extract `sources/mackay-2003-mac.txt`. Cite as "MacKay (2003), Exercise 15.18, p. 237". The saved PDF is the fourth printing; its preface (p. xi) says page numbering "generally remained unchanged" across printings (except chapters 1, 6 and 28) and exercise numbers were unchanged, so the exercise number is the safe anchor.
+
+**Claim, sorted by firmness.**
+- *Sets up (asserts, as an exercise set-up):* a channel "with two sets of inputs and one output", e.g. a shared telephone line; the simple model has two binary inputs and a ternary output equal to their arithmetic sum, 0, 1 or 2. "There is no noise." The two users cannot communicate with each other and cannot hear the output.
+- *Asserts (worked observations):* output 0 means both inputs were 0; output 2 means both were 1; output 1 could be (0, 1) or (1, 0). A total rate of two bits is "clearly" impossible; a total rate R_A + R_B of one bit is "easy".
+- *Asks (open question to the reader):* how A and B should use the channel, how fast they can communicate, and whether R_A + R_B > 1 is achievable.
+- *Points to the answer without proof:* "The answer is indicated in figure 15.3." No derivation, no theorem name, no worked code. The exercise is rated [3] (difficulty, 1 to 5) and carries no solution page; per the preface (p. xi), a page number beside the rating marks a provided solution.
+- *Frames the section:* these exercises let the reader "discover" the answers to "more surprising results" (p. 236).
+
+**Quotes** (all checked by script on 2026-10-25 against `pdftotext` of each PDF page: whitespace-collapsed substring and letters-and-digits only; Q9 and Q10 match only letters-and-digits because the PDF sets R_A, R_B as subscripts; Q12-Q15 are in the raw page text and the rendered image, but split by the two-column `-layout` extract).
+- Q[mackay:p.236, 21w]: "The following exercises give you the chance to discover for yourself the answers to some more surprising results of information theory."
+- Q[mackay:p.237, 20w]: "Consider a channel with two sets of inputs and one output – for example, a shared telephone line (figure 15.3a)."
+- Q[mackay:p.237, 18w]: "a ternary output y equal to the arithmetic sum of the two inputs, that’s 0, 1 or 2."
+- Q[mackay:p.237, 4w]: "There is no noise."
+- Q[mackay:p.237, 18w]: "Users A and B cannot communicate with each other, and they cannot hear the output of the channel."
+- Q[mackay:p.237, 20w]: "But if the output is 1, then it could be that the input state was (0, 1) or (1, 0)."
+- Q[mackay:p.237, 20w]: "How should users A and B use this channel so that their messages can be deduced from the received signals?"
+- Q[mackay:p.237, 16w]: "Clearly the total information rate from A and B to the receiver cannot be two bits."
+- Q[mackay:p.237, 15w]: "it is easy to achieve a total information rate RA + RB of one bit."
+- Q[mackay:p.237, 16w]: "Can reliable communication be achieved at rates (RA, RB) such that RA + RB > 1?"
+- Q[mackay:p.237, 7w]: "The answer is indicated in figure 15.3."
+- Q[mackay:p.237, 18w] (Exercise 15.19, the *broadcast* channel; for the trap only): "The capacity region of the broadcast channel is the convex hull of the set of achievable rate triplets"
+- Q[mackay:p.238, 12w] (caption): "(a) A general multiple access channel with two transmitters and one receiver."
+- Q[mackay:p.238, 15w] (caption): "(b) A binary multiple access channel with output equal to the sum of two inputs."
+- Q[mackay:p.238, 4w] (caption): "(c) The achievable region."
+
+**Numbers and equations.**
+- The binary adder: inputs x(A), x(B) in {0, 1}; output y = x(A) + x(B) in {0, 1, 2} (ordinary sum, not mod 2). Table 15.3(b): (0,0) -> 0, (1,0) -> 1, (0,1) -> 1, (1,1) -> 2.
+- Rates: R_A, R_B (information rates of A and B). Stated by MacKay: R_A + R_B = 2 bits is impossible; R_A + R_B = 1 bit is easy. Asked, not answered in words: R_A + R_B > 1?
+- Read from the figure, **not stated in the text (our reading):** the shaded region's outer corners are (1, 1/2) and (1/2, 1), so on its sloped edge R_A + R_B = 3/2 (checked with exact fractions). MacKay writes no number for the maximum sum and gives no formula for the region.
+
+**Figure 15.3 (p. 238), read from the page rendered at 200 and 400 dpi; only what is visible.**
+- (a) A box labelled P(y|x(A), x(B)) with two input arrows, x(A) and x(B), and one output arrow, y.
+- (b) A 2-by-2 table headed "y:", columns x(A) = 0, 1, rows x(B) = 0, 1, entries 0 1 / 1 2.
+- (c) Axes R_A (horizontal) and R_B (vertical), ticks 1/2 and 1 on each. A grey shaded five-sided region labelled "Achievable", with corners at (0,0), (1,0), (1, 1/2), (1/2, 1), (0, 1): flat top at R_B = 1 from R_A = 0 to 1/2, a straight sloped edge from (1/2, 1) to (1, 1/2), and a vertical right side at R_A = 1 down to 0. Dashed lines: a diagonal from (0, 1) to (1, 0) (the line R_A + R_B = 1), a vertical at R_A = 1/2 and a horizontal at R_B = 1/2.
+- Caption: "Multiple access channels. (a) A general multiple access channel with two transmitters and one receiver. (b) A binary multiple access channel with output equal to the sum of two inputs. (c) The achievable region."
+- Not in the figure: no axis units (bits per use is not written), no numbers for the corners other than the tick labels, no codes, no time-sharing line labelled as such, no word "capacity".
+
+**Traps.**
+- **An exercise in a "further exercises" chapter, not a theorem statement.** MacKay poses questions and "indicates" an answer in a figure; he does not state or prove a capacity theorem here. Report it as "MacKay sets this up as an exercise" or "MacKay's figure shows", never "MacKay proves" or "MacKay's theorem".
+- **No noise in this model** ("There is no noise"). Any claim about noisy multiple-access channels, or about noise in the stream, is not from this page.
+- **Only the simple model adds.** The general channel in 15.3(a) is any P(y | x(A), x(B)); "output = sum of inputs" is the binary example 15.3(b). Say "MacKay's simplest example is an adder", not "a multiple-access channel adds its inputs".
+- **"Capacity region" is the broadcast channel's term on these pages** (Exercise 15.19, p. 237; also p. 238). For the multiple-access channel MacKay says "achievable region" (caption 15.3c). The request's line "the topic is studied through a capacity region" is therefore not supported by this source; say "MacKay draws the region of rate pairs that can be achieved".
+- **The users cannot hear the output.** This condition is part of MacKay's set-up. In a transformer, later layers *do* read the stream that earlier layers wrote into (unit 6); that is a disanalogy (ours) and must be said if the analogy is used.
+- **The 3/2 is our reading of the figure,** not MacKay's sentence. If used, label it "read from MacKay's figure".
+- **MacKay does not mention neural networks on these pages** (pp. 236-238: no "neural", no transformer, no residual stream). Do **not** write "MacKay never mentions neural networks": the same book has a whole part on neural networks (Part V "Neural networks", p. 467 in the contents; the phrase occurs over 100 times in the PDF text). The link to the stream is entirely ours.
+- **Binary versus real vectors.** MacKay's inputs are bits and the output is one integer; the residual stream adds real-valued vectors of width d_model (units 5, 10). The analogy is about the *shape* (many writers, one sum, readers see only the sum), not about the arithmetic.
+- **"Ratzer and MacKay (2003)"** (practical codes for multi-user channels) is a pointer only; the paper is UNSEEN.
+
+**Link to the post (ours; link type: structural analogy).** In the residual stream, each block writes by *adding* its output into one shared vector, and a later reader sees only the running sum (units 5, 6). In MacKay's binary adder, two senders' signals are *added* by the channel and the receiver sees only y. Same shape: several writers, one additive medium, a reader who cannot tell from the sum alone who wrote what (MacKay's output 1 = (0,1) or (1,0); in the stream, a direction's read value is the sum of all writers' contributions along it, unit 6). This is a **structural analogy, ours**, not same-math: MacKay's question is how fast senders can communicate reliably with agreed coding; nobody in the sources computes a rate for the stream (unit 7 trap). The outline's wording "many writers add into one shared vector and one reader sees only the sum" (outline §9) is consistent with this unit if it is labelled ours.
+
+**Tensions.** MacKay's senders cannot hear the channel; transformer layers read the stream before writing (Elhage's read-then-write picture, unit 6). MacKay's channel has two senders and one receiver; the stream has many writers and many readers (every later block and the unembedding). Both differences limit the analogy and belong in the "what it does not say" step.
+
+**Toy idea (ours).** Reuse MacKay's own table 15.3(b) as the toy: four input pairs, three outputs, one collision at y = 1. Spoken: "if the reader sees 1, it cannot tell whether A or B sent the 1." Then the stream version from W9: writers (3, 0) and (0, -2) in separate axes are recoverable; a third writer along (1,1)/sqrt2 is not, from one read (unit 7 toy). Do not compute any capacity or rate for the stream.
+
+**What the post must NOT claim from this unit.**
+- Any capacity result: no "the capacity region is ...", no "the maximum total rate is 1.5 bits" or "log2 3 bits" as MacKay's statement, no corner points as MacKay's words, no formula for the region. (Only "MacKay's figure shows a shaded achievable region whose sloped edge lies above the line R_A + R_B = 1", if needed, labelled as a reading of the figure.)
+- That MacKay proves, derives or names a theorem for the multiple-access channel on these pages.
+- That a multiple-access channel *in general* adds its inputs.
+- That MacKay discusses noise, neural networks, transformers, the residual stream, or "bandwidth" on these pages.
+- That the residual stream *is* a multiple-access channel, or that any rate, capacity or interference result transfers to it (unit 7: no source computes one).
+- That the users in MacKay's model can coordinate or hear the output (the page says the opposite).
+
 ---
 
 ## Not in the sources, to be shown by the notebooks [UNSEEN — re-searched by S2]
@@ -660,3 +728,4 @@ The writer must not use any of the following in the post, the audio script, the 
 12. **Firmness upgrades:** "Elhage proves/shows" or "exactly" for no privileged basis (say "asserts, for the idealised linear stream", L158); Olah's three claims as findings (they are "deliberately speculative", L220); Olah L242 without "have led us to believe"; Nanda L282 without "Intuitively"; Nanda L309 as Nanda's own result (it summarises Anthropic's Toy Model paper, L301).
 13. **Our glosses as source claims:** "unit vector up to sign" as Olah's or Nanda's definition; "a polysemantic neuron is defined relative to the neuron basis" as Olah's words; "post-LN: what is added has passed through the norm" as Nanda's; "makes a naive edit-prediction wrong" as Nanda's; W9-B as "an Olah edge" or, unlabelled, as "a virtual weight"; L803 as an Elhage "virtual weight".
 14. **Anything from the UNSEEN block as a source fact:** hidden state = residual stream; `output_hidden_states` indexing; steering or activation addition changing behaviour; what fine-tuning or RLHF change inside a model; facts about Qwen3, Llama 3, Gemma 3, Mistral models, base versus instruct; the RMSNorm formula; the standard-deviation convention; the contents of the logit-lens post, Elhage's forthcoming paper, or the papers Olah cites. "Mistral" at Nanda L1676 is a training library, not the model family.
+15. **A contrast between Elhage's "bandwidth" and Shannon's** (S3 request Q2, not available; added 2026-10-25). Do not write "not Shannon's bandwidth", "bandwidth in Shannon's sense is a rate in hertz", or any other claim about what Shannon meant: no Shannon text is saved. Say only what Elhage's word counts (dimensions, in scare quotes, unit 7). Unit 15 (MacKay) does not mention bandwidth either.
