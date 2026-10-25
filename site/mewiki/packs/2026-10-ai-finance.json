@@ -53,60 +53,7 @@
    5,
    6
   ],
-  "audio": {
-   "file": "audio/2026-10-ai-finance-passage.mp3",
-   "voice": "Kokoro bm_george (en-GB)",
-   "durationMs": 80736,
-   "wpm": 153,
-   "segments": [
-    {
-     "sentence": 0,
-     "startMs": 250,
-     "endMs": 3130
-    },
-    {
-     "sentence": 1,
-     "startMs": 3830,
-     "endMs": 9590
-    },
-    {
-     "sentence": 2,
-     "startMs": 10290,
-     "endMs": 21703
-    },
-    {
-     "sentence": 3,
-     "startMs": 22403,
-     "endMs": 30553
-    },
-    {
-     "sentence": 4,
-     "startMs": 31253,
-     "endMs": 40938
-    },
-    {
-     "sentence": 5,
-     "startMs": 41638,
-     "endMs": 51665
-    },
-    {
-     "sentence": 6,
-     "startMs": 52365,
-     "endMs": 62647
-    },
-    {
-     "sentence": 7,
-     "startMs": 63347,
-     "endMs": 70622
-    },
-    {
-     "sentence": 8,
-     "startMs": 71322,
-     "endMs": 79983
-    }
-   ],
-   "note": "Recorded by AI4Read sentence by sentence (en-GB) and tagged 'AI4Read from CSS Lab'."
-  },
+  "audio": null,
   "gist": [
    {
     "question": "The speaker says that running is largely automated in some financial markets. What does the speaker warn us not to conflate, and why?",

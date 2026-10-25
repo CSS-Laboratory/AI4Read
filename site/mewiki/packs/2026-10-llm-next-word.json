@@ -66,75 +66,7 @@
    9,
    10
   ],
-  "audio": {
-   "file": "audio/2026-10-llm-next-word-passage.mp3",
-   "voice": "Kokoro bm_george (en-GB)",
-   "durationMs": 79464,
-   "wpm": 157,
-   "segments": [
-    {
-     "sentence": 0,
-     "startMs": 250,
-     "endMs": 5498
-    },
-    {
-     "sentence": 1,
-     "startMs": 6198,
-     "endMs": 12107
-    },
-    {
-     "sentence": 2,
-     "startMs": 12807,
-     "endMs": 18141
-    },
-    {
-     "sentence": 3,
-     "startMs": 18841,
-     "endMs": 22190
-    },
-    {
-     "sentence": 4,
-     "startMs": 22890,
-     "endMs": 28842
-    },
-    {
-     "sentence": 5,
-     "startMs": 29542,
-     "endMs": 33787
-    },
-    {
-     "sentence": 6,
-     "startMs": 34487,
-     "endMs": 39970
-    },
-    {
-     "sentence": 7,
-     "startMs": 40670,
-     "endMs": 46067
-    },
-    {
-     "sentence": 8,
-     "startMs": 46767,
-     "endMs": 53381
-    },
-    {
-     "sentence": 9,
-     "startMs": 54081,
-     "endMs": 62315
-    },
-    {
-     "sentence": 10,
-     "startMs": 63015,
-     "endMs": 71869
-    },
-    {
-     "sentence": 11,
-     "startMs": 72569,
-     "endMs": 78713
-    }
-   ],
-   "note": "Recorded by AI4Read sentence by sentence (en-GB) and tagged 'AI4Read from CSS Lab'."
-  },
+  "audio": null,
   "gist": [
    {
     "question": "What four layers of knowledge does the speaker describe, and which is the most contested?",

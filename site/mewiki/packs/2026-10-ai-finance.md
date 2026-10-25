@@ -14,7 +14,7 @@ Schema /2 (passage-centred) · C1/C2 only · source post: https://khyang-lab.org
 7. By our definition, a society lets members rely on shared rules, contest them and find someone answerable.
 8. So, with no person left to declare or answer, the result would be a machine system people live next to, a far cry from a society.
 
-189 words · core (bold) 79 words · audio 80.7 s, Kokoro bm_george (en-GB), 153 wpm
+189 words · core (bold) 79 words · audio: recorded by Margin's own TTS
 
 ### Gist
 

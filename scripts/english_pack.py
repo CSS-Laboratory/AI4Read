@@ -5,19 +5,21 @@ pack is built around one passage (140-190 words) that Kunhao shadows, notices, r
 expression and pattern is anchored inside it (request from the Margin agent, docs/PROMPT-ai4read-passage-pack.md).
 
 Usage:
-  python3 scripts/english_pack.py posts/<slug>            build site/mewiki/packs/<slug>.json (+ .md); needs the passage audio
-  python3 scripts/english_pack.py posts/<slug> --check    validate the source only (no audio needed); writes nothing
+  python3 scripts/english_pack.py posts/<slug>            build site/mewiki/packs/<slug>.json (+ .md); audio = null (Margin records it)
+  python3 scripts/english_pack.py posts/<slug> --audio    build with our own recording (fallback; see tts_english_passage.py)
+  python3 scripts/english_pack.py posts/<slug> --check    validate the source only; writes nothing
 
 Source: posts/<slug>/english/english.json (schema ai4read.english-source/2). Offsets are computed here, never typed.
-Audio:  posts/<slug>/english/passage-audio.json + site/mewiki/packs/audio/<slug>-passage.mp3, written by
-        scripts/tts_english_passage.py; a text hash ties the audio to the exact passage text.
+Audio:  by default the pack ships no audio: Margin records the passage with its own TTS pipeline, one segment per
+        sentence (Kunhao, 2026-10-26). Fallback with --audio: posts/<slug>/english/passage-audio.json +
+        site/mewiki/packs/audio/<slug>-passage.mp3 from scripts/tts_english_passage.py, tied to the text by a hash.
 The script refuses to write a pack that fails any check."""
 import re, html, json, sys, pathlib, subprocess
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from passage_util import u16, split_sentences, text_hash, words, ABBREV
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-post = pathlib.Path(sys.argv[1]); slug = post.name; CHECK = "--check" in sys.argv
+post = pathlib.Path(sys.argv[1]); slug = post.name; CHECK = "--check" in sys.argv; OWN_AUDIO = "--audio" in sys.argv
 src = json.loads((post / "english" / "english.json").read_text(encoding="utf-8"))
 content = (post / "src" / "content.html").read_text(encoding="utf-8")
 title = html.unescape(re.sub(r"<.*?>", "", re.search(r"<h1>(.*?)</h1>", content, re.S).group(1))).strip()
@@ -125,7 +127,7 @@ if not R.get("instruction") or not R.get("modelAnswer"): err("retell: needs an i
 
 # ---------- audio ----------
 audio = None
-if not CHECK:
+if not CHECK and OWN_AUDIO:
     meta_f = post / "english" / "passage-audio.json"; mp3 = ROOT / "site/mewiki/packs/audio" / f"{slug}-passage.mp3"
     if not meta_f.exists() or not mp3.exists(): err("audio: missing; run scripts/tts_english_passage.py first (or use --check)")
     else:
@@ -159,7 +161,8 @@ out = ROOT / "site" / "mewiki" / "packs"; out.mkdir(parents=True, exist_ok=True)
 md = [f"# English pack · {title}", "", f"Schema /2 (passage-centred) · C1/C2 only · source post: {url}", "", "## Passage", ""]
 for i, (s, e, t) in enumerate(sents):
     md.append(f"{i}. {'**' if i in core else ''}{t}{'**' if i in core else ''}")
-md += ["", f"{nw} words · core (bold) {sum(words(sents[c][2]) for c in core)} words · audio {round(audio['durationMs']/1000, 1)} s, {audio['voice']}, {audio.get('wpm')} wpm", "", "### Gist", ""]
+aud = f"audio {round(audio['durationMs']/1000, 1)} s, {audio['voice']}, {audio.get('wpm')} wpm" if audio else "audio: recorded by Margin's own TTS"
+md += ["", f"{nw} words · core (bold) {sum(words(sents[c][2]) for c in core)} words · {aud}", "", "### Gist", ""]
 md += [f"- {g['question']} → {g['answer']}" for g in gist]
 md += ["", "### Retell", "", R["instruction"], "", f"Must use: {', '.join(R['mustUse'])}", "", f"Model answer: {R['modelAnswer']}", ""]
 for kind, head in (("expression", "Expressions"), ("pattern", "Patterns"), ("fix", "Fixes"), ("tip", "Practice")):
@@ -175,4 +178,4 @@ for kind, head in (("expression", "Expressions"), ("pattern", "Patterns"), ("fix
             md.append(f"- **{x['headword']}**{lvl}: {x.get('definition', '').rstrip('.')}. In the passage: “{x['anchor']['text']}”.{second}")
     md.append("")
 (out / f"{slug}.md").write_text("\n".join(md), encoding="utf-8")
-print(f"{len(items)} items {counts} · passage {nw} words · audio {round(audio['durationMs']/1000, 1)} s → {out}/{slug}.json (+ .md)")
+print(f"{len(items)} items {counts} · passage {nw} words · {'audio ' + str(round(audio['durationMs']/1000, 1)) + ' s' if audio else 'audio: Margin TTS'} → {out}/{slug}.json (+ .md)")

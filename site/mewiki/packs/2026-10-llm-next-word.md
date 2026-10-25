@@ -17,7 +17,7 @@ Schema /2 (passage-centred) · C1/C2 only · source post: https://khyang-lab.org
 10. **A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge the model has.**
 11. You can tease apart the kinds by changing the test in small ways and seeing what breaks.
 
-185 words · core (bold) 75 words · audio 79.5 s, Kokoro bm_george (en-GB), 157 wpm
+185 words · core (bold) 75 words · audio: recorded by Margin's own TTS
 
 ### Gist
 

@@ -14,7 +14,7 @@ Schema /2 (passage-centred) · C1/C2 only · source post: https://khyang-lab.org
 7. **What a score means, or whether a push changes behaviour, the algebra does not say.**
 8. Whether concepts are directions in a trained language model's stream hinges on tests that our three sources do not give, so we are on firm ground with the arithmetic, not the interpretation.
 
-190 words · core (bold) 86 words · audio 80.2 s, Kokoro bm_george (en-GB), 155 wpm
+190 words · core (bold) 86 words · audio: recorded by Margin's own TTS
 
 ### Gist
 
