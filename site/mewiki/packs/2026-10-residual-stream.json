@@ -1,0 +1,700 @@
+{
+ "schema": "ai4read.english-pack/1",
+ "levels": "C1-C2",
+ "post": {
+  "slug": "2026-10-residual-stream",
+  "title": "What Is a Hidden State? The Residual Stream, Read and Written",
+  "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+ },
+ "items": [
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-bear-out",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to bear out",
+   "sentence": "The notebook bears out the claim that the writes add up to the stream, up to rounding, for entries 0 to 11 of GPT-2 small.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C2",
+   "definition": "to show that something said or believed is true",
+   "partOfSpeech": "phrasal verb",
+   "register": "formal/academic",
+   "target": {
+    "text": "bears out",
+    "start": 13,
+    "end": 22
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-square-with",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to square with",
+   "sentence": "The idea that a reader sees only the sum squares with the toy, where the four shares of a read add up to the direct read, 5.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C2",
+   "definition": "to be consistent with something; to fit with it",
+   "partOfSpeech": "phrasal verb",
+   "register": "formal",
+   "target": {
+    "text": "squares with",
+    "start": 41,
+    "end": 53
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-a-first-approximation",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to a first approximation",
+   "sentence": "To a first approximation, a read is a dot product with the stream, once the norm in front of it is set aside; the norm adds a division, which is not linear.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "as a rough first description that ignores smaller details",
+   "partOfSpeech": "adverbial phrase",
+   "register": "academic",
+   "target": {
+    "text": "To a first approximation",
+    "start": 0,
+    "end": 24
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:by-construction",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "by construction",
+   "sentence": "In the toy, the two groups separate along the 135° direction by construction, because we chose the numbers.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "because of the way something was built or chosen, not because of a discovery",
+   "partOfSpeech": "adverbial phrase",
+   "register": "academic",
+   "target": {
+    "text": "by construction",
+    "start": 61,
+    "end": 76
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-carry-over-to",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to carry over (to)",
+   "sentence": "Whether a result on GPT-2 small carries over to a trained Qwen3 model is untested here.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "to continue to apply in a new situation",
+   "partOfSpeech": "phrasal verb",
+   "register": "neutral/academic",
+   "target": {
+    "text": "carries over to",
+    "start": 32,
+    "end": 47
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-pin-down",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to pin down",
+   "sentence": "It is hard to pin down what a library's hidden state is until you say which entry you mean: entries 0 to 11 are stream vectors in GPT-2 small, up to rounding, and the last is not.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "to identify or define something exactly",
+   "partOfSpeech": "phrasal verb",
+   "register": "neutral",
+   "target": {
+    "text": "pin down",
+    "start": 14,
+    "end": 22
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-take-something-at-face-value",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to take something at face value",
+   "sentence": "We should not take a high probe score at face value: it shows information along a direction, not that the model uses it.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "to accept something as it appears, without asking whether it is more complicated",
+   "partOfSpeech": "idiom",
+   "register": "neutral",
+   "target": {
+    "text": "take a high probe score at face value",
+    "start": 14,
+    "end": 51
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:a-case-in-point",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "a case in point",
+   "sentence": "Library names can mislead, and the last entry of a library's list is a case in point: it has been through the final norm, so it is not a stream vector.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "a good example of what has just been said",
+   "partOfSpeech": "noun phrase",
+   "register": "neutral/formal",
+   "target": {
+    "text": "a case in point",
+    "start": 69,
+    "end": 84
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-hold-up",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to hold up",
+   "sentence": "The additivity check holds up for GPT-2 small, entries 0 to 11, but we did not run it on a trained Qwen3, Llama, Gemma or Mistral model.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "to remain true or valid when tested",
+   "partOfSpeech": "phrasal verb",
+   "register": "neutral",
+   "target": {
+    "text": "holds up",
+    "start": 21,
+    "end": 29
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-be-premised-on",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to be premised on",
+   "sentence": "Comparing two models through each one's own dot products is premised on the stream having no privileged basis, which Elhage and colleagues assert for an idealised stream.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C2",
+   "definition": "to be based on something taken as true at the start",
+   "partOfSpeech": "adjective + preposition (with be)",
+   "register": "formal/academic",
+   "target": {
+    "text": "is premised on",
+    "start": 57,
+    "end": 71
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-be-at-pains-to",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to be at pains to",
+   "sentence": "Olah and colleagues are at pains to say that their evidence for universality is, so far, anecdotal.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C2",
+   "definition": "to make a special effort to do something, often to be clear or careful",
+   "partOfSpeech": "verb phrase",
+   "register": "formal",
+   "target": {
+    "text": "are at pains to",
+    "start": 20,
+    "end": 35
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-fall-out-of",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to fall out of",
+   "sentence": "Steering as a translation falls out of the algebra: every score shifts by the same amount, u dot v.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C2",
+   "definition": "to follow naturally as a result of something",
+   "partOfSpeech": "phrasal verb",
+   "register": "academic/mathematical",
+   "target": {
+    "text": "falls out of",
+    "start": 26,
+    "end": 38
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:a-matter-of-convention",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "a matter of convention",
+   "sentence": "Giving a direction length one is a matter of convention in this post, chosen so that scores from different arrows can be compared.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "something decided by agreement, not by necessity",
+   "partOfSpeech": "noun phrase",
+   "register": "academic",
+   "target": {
+    "text": "a matter of convention",
+    "start": 33,
+    "end": 55
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-be-on-firm-ground",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to be on firm ground",
+   "sentence": "With the arithmetic of a sum we are on firm ground; with the claim that concepts are directions in a language model’s stream, we are not.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "in a safe position, with good evidence to support what you say",
+   "partOfSpeech": "idiom",
+   "register": "neutral",
+   "target": {
+    "text": "on firm ground",
+    "start": 36,
+    "end": 50
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:in-lockstep",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "in lockstep",
+   "sentence": "A steering push shifts every score in lockstep: each one moves by the same amount, u dot v.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "moving or changing together, at exactly the same time and in the same way",
+   "partOfSpeech": "adverbial phrase",
+   "register": "neutral/journalistic",
+   "target": {
+    "text": "in lockstep",
+    "start": 35,
+    "end": 46
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-hinge-on",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to hinge on",
+   "sentence": "Whether a steering push changes behaviour as intended hinges on how a real model responds, which the algebra does not say.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "to depend completely on one particular thing",
+   "partOfSpeech": "phrasal verb",
+   "register": "neutral",
+   "target": {
+    "text": "hinges on",
+    "start": 54,
+    "end": 63
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:to-be-tantamount-to",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to be tantamount to",
+   "sentence": "To say that a high probe score proves the model uses a direction would be tantamount to confusing seeing with doing.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C2",
+   "definition": "to have the same effect or meaning as something else, usually something stronger or worse",
+   "partOfSpeech": "adjective + preposition (with be)",
+   "register": "formal/academic",
+   "target": {
+    "text": "tantamount to",
+    "start": 74,
+    "end": 87
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:fronted-wh-clause-object-contrast",
+   "kind": "pattern",
+   "group": "c1-c2-patterns",
+   "headword": "Fronted wh-clause object (contrast)",
+   "sentence": "What a score means, or whether a push changes behaviour, the algebra does not say.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "c1-c2-patterns",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C2",
+   "definition": "Put a 'what' clause first, as the object of a verb that comes later, to make it the topic: 'What a score means, the algebra does not say.' The rest keeps normal subject-verb order, and no pronoun is added. It sets what is settled against what is not.",
+   "target": {
+    "text": "What a score means",
+    "start": 0,
+    "end": 18
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:perfect-participle-clause",
+   "kind": "pattern",
+   "group": "c1-c2-patterns",
+   "headword": "Perfect participle clause",
+   "sentence": "Having added the four writes to the embedding, we get the stream after two blocks, (4, 2).",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "c1-c2-patterns",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "'Having + past participle' shows that one action was finished before the next. The subject of the main clause must be the one who did the first action.",
+   "target": {
+    "text": "Having added",
+    "start": 0,
+    "end": 12
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:mandative-subjunctive",
+   "kind": "pattern",
+   "group": "c1-c2-patterns",
+   "headword": "Mandative subjunctive",
+   "sentence": "The post recommends that the additivity check be run on any model before its additivity is trusted.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "c1-c2-patterns",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C2",
+   "definition": "After words like essential, important, insist or recommend, formal English uses the bare base form: 'that the check be run'. British English also allows 'should be run'; 'is run' is the informal option.",
+   "target": {
+    "text": "that the additivity check be run",
+    "start": 20,
+    "end": 52
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:inversion-with-should-formal-conditional",
+   "kind": "pattern",
+   "group": "c1-c2-patterns",
+   "headword": "Inversion with 'Should' (formal conditional)",
+   "sentence": "Should the additivity check fail with the hooks placed correctly, the identity does not hold for that model.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "c1-c2-patterns",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C2",
+   "definition": "'Should + subject + verb' replaces 'If the check should fail' in a formal, slightly unlikely condition. Do not add 'if'.",
+   "target": {
+    "text": "Should the additivity check fail",
+    "start": 0,
+    "end": 32
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:whether-not-if",
+   "kind": "fix",
+   "group": "error-fixes",
+   "headword": "whether (not 'if')",
+   "sentence": "The toy shows that cancellation is possible; it leaves open the question of whether real models cancel writes.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "error-fixes",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "After a noun ('the question of') or a preposition ('depends on'), and when the clause is the subject, use 'whether', not 'if'. 'If' belongs to conditions and to casual speech after verbs such as ask or wonder.",
+   "wrong": "The toy shows that cancellation is possible; it leaves open the question of if real models cancel writes.",
+   "right": "The toy shows that cancellation is possible; it leaves open the question of whether real models cancel writes."
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:however-not-a-conjunction",
+   "kind": "fix",
+   "group": "error-fixes",
+   "headword": "however (not a conjunction)",
+   "sentence": "The sum is exact in the account Elhage and colleagues give, which ignores layer normalisation; however, a real model adds a norm.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "error-fixes",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "'However', 'therefore' and 'moreover' are adverbs. A comma alone cannot join two main clauses with them (a comma splice). Use a full stop or a semicolon before the adverb and a comma after it, or use a real conjunction such as 'but' or 'although'.",
+   "wrong": "The sum is exact in the account Elhage and colleagues give, which ignores layer normalisation, however a real model adds a norm.",
+   "right": "The sum is exact in the account Elhage and colleagues give, which ignores layer normalisation; however, a real model adds a norm."
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:compare-like-with-like-those-in",
+   "kind": "fix",
+   "group": "error-fixes",
+   "headword": "compare like with like ('those in')",
+   "sentence": "Every coordinate differs, but the dot products in model B are the same as those in model A.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "error-fixes",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "Both sides of a comparison must be the same kind of thing. Dot products are compared with dot products, not with a model. 'Those in', 'those of', 'that of' and 'the one in' stand in for the repeated noun.",
+   "wrong": "Every coordinate differs, but the dot products in model B are the same as model A.",
+   "right": "Every coordinate differs, but the dot products in model B are the same as those in model A."
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:imply-vs-infer",
+   "kind": "fix",
+   "group": "error-fixes",
+   "headword": "imply vs infer",
+   "sentence": "A high probe score implies nothing about use; from it we can only infer that information is present along a direction.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "error-fixes",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   },
+   "level": "C1",
+   "definition": "Evidence or a statement implies something (it suggests it); a person infers it (draws the conclusion). Data cannot infer, and a reader does not imply a conclusion by reading.",
+   "wrong": "A high probe score infers nothing about use; from it we can only imply that information is present along a direction.",
+   "right": "A high probe score implies nothing about use; from it we can only infer that information is present along a direction."
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:three-step-retell",
+   "kind": "tip",
+   "group": "practice",
+   "headword": "Three-step retell",
+   "sentence": "Without looking, explain in two minutes how a hidden state is built, using three expressions from this pack: start from the embedding, add each write, then say what a reader can and cannot hear.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "practice"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:shadow-then-test-yourself",
+   "kind": "tip",
+   "group": "practice",
+   "headword": "Shadow, then test yourself",
+   "sentence": "Shadow the loop paragraph twice, then close it and say in three sentences what the notebook bears out and what it leaves untested.",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "practice"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-residual-stream:loop-paragraph-c1c2",
+   "kind": "shadowing",
+   "group": "loop",
+   "headword": "A paragraph to loop",
+   "sentence": "Every attention and MLP part adds its write to one shared list, so the stream is a running sum. In the toy this is true by construction, and the notebook bears it out on GPT-2 small, up to rounding. To a first approximation, a read is a dot product with that sum, setting aside the norm in front of it, whose division is not linear. Names can mislead: the last entry of a library's list is a case in point, because it has been through the final norm, so it should not be taken at face value. The claim that concepts are directions in a model's stream hinges on tests that none of the three sources runs, so we are on firmer ground with the arithmetic than with the interpretation. A push moves every score in lockstep, but to say that a high score shows the model uses the direction would be tantamount to confusing seeing with doing.",
+   "targets": [
+    "To a first approximation",
+    "by construction",
+    "bears it out",
+    "a case in point",
+    "at face value",
+    "hinges on",
+    "on firmer ground",
+    "in lockstep",
+    "tantamount to"
+   ],
+   "level": "C2",
+   "audio": {
+    "file": "audio/2026-10-residual-stream-loop.mp3",
+    "url": null,
+    "voice": "Kokoro af_heart (US English)",
+    "note": "Recorded by AI4Read and tagged 'AI4Read from CSS Lab'. Host it in Margin, or use Margin's own TTS."
+   },
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "loop",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What Is a Hidden State? The Residual Stream, Read and Written",
+    "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
+   }
+  }
+ ]
+}

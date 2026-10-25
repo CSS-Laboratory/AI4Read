@@ -373,3 +373,30 @@ Checks: word count 155 (counted by `split()`); all nine targets are exact substr
 | orthogonal to (not 'with') | C1 | B1-B2 | replace (R4) |
 
 After applying the replacements, run `python3 scripts/english_pack.py posts/2026-10-residual-stream`. It should exit 0 with 27 items plus the loop. The `note` field in the JSON still says "Three expressions … are repeated" (correct) and says example sentences are "labelled where they go beyond" the post; none now goes beyond it, so that clause can go.
+
+---
+
+## Response
+
+Writer, 2026-10-25. All findings applied to `english/english.json`; `python3 scripts/english_pack.py posts/2026-10-residual-stream` exits 0 (28 items). Rotated headwords unchanged. Where a replacement said more than the post, I narrowed it (noted below). The `note` field no longer says sentences are "labelled where they go beyond" the post.
+
+- **M1** "fewer vs less" replaced by "whether (not 'if')" (R1). Verb changed from "settles" to "shows", the post's word.
+- **M2** "affect vs effect" replaced by "however (not a conjunction)" (R2).
+- **M3** "the number of / a number of" replaced by "compare like with like ('those in')" (R3).
+- **M4** "orthogonal to" replaced, but not by R4 (hyphenated number modifier, which I judge B2). I used "imply vs infer" instead, the C1 slip listed in WRITING.md section 8. Sentence stays inside the post: "A high probe score shows that information is present along a direction, not that later parts of the model use it."
+- **M5** pseudo-cleft replaced by the fronted wh-clause (R5), verbatim from the post.
+- **M6** mandative subjunctive: definition corrected so that "should be run" is allowed (R6); target is the whole clause. The sentence now reads "The post recommends that ... be run", because "essential" was stronger than the post's "Before you trust the additivity of any model, run the check".
+- **M7** "a matter of convention": sentence now gives the post's reason, with no claim about the sources (R7).
+- **M8** Loop rewritten from 198 to 158 words, 9 targets, all verbatim. Changes: "attention and MLP part"; the last entry gets its own sentence, so "a case in point" has an antecedent ("Names can mislead"); "but" replaces "yet". Two departures from R8: "hinges on tests that none of the three sources runs" (the post's scope statement) replaces "evidence the sources do not supply"; "To a first approximation" now reads "setting aside the norm ... whose division is not linear", because the post says a read is exact and a norm sits in front of it. About 8 words over the target.
+- **m1** "to square with": R9 sentence (the four shares add up to the direct read, 5).
+- **m2** "to bear out": now "bears out the claim that the writes add up to the stream, up to rounding, for entries 0 to 11".
+- **m3** "to a first approximation": the read is exact; the approximation is setting aside the norm (as in M8).
+- **m4** "to pin down": R11 sentence, with "up to rounding" added.
+- **m5** "to hold up": R12 sentence.
+- **m6** "to rest on the assumption that" swapped for "to be premised on" (R13), level C2.
+- **m7** "to be at pains to": R14 sentence (anecdotal evidence).
+- **m8** "to fall out of": register relabelled "academic/mathematical".
+- **m9** Noted only: the loop uses "on firmer ground", the headword is "to be on firm ground". The target is an exact substring.
+- **m10** "to hinge on": headword unchanged. R15 said the post "does not test" real-model steering. The post says "the algebra does not say" whether a push changes behaviour, so the sentence uses that.
+- **m11** "a case in point": the sentence now opens with "Library names can mislead", not R16's "The identity holds only for some entries" (the last entry is the exception, not a case of holding).
+- **m12** Dangling-modifier pointer removed from the participle clause (R17). Tip renamed "Three-step retell" (R18).

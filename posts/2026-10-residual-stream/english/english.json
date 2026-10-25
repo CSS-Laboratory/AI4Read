@@ -1,6 +1,6 @@
 {
  "post": "2026-10-residual-stream",
- "note": "English study material for post 03, kept OUT of the blog. C1 and C2 only. Levels are AI4Read estimates in the style of the English Vocabulary Profile and English Grammar Profile, not an official grading; an independent reviewer should check them. Example sentences restate ideas from the post or state our reading, labelled where they go beyond it. Three expressions (in lockstep, to hinge on, to be tantamount to) are repeated from earlier packs for spaced review, with their headwords unchanged.",
+ "note": "English study material for post 03, kept OUT of the blog. C1 and C2 only. Levels are AI4Read estimates in the style of the English Vocabulary Profile and English Grammar Profile, not an official grading; an independent reviewer should check them. Example sentences restate ideas from the post and claim no more than it does. Three expressions (in lockstep, to hinge on, to be tantamount to) are repeated from earlier packs for spaced review, with their headwords unchanged.",
  "items": [
   {
    "kind": "expression",
@@ -8,7 +8,7 @@
    "level": "C2",
    "partOfSpeech": "phrasal verb",
    "register": "formal/academic",
-   "sentence": "The notebook bears out the identity in GPT-2 small for entries 0 to 11: the writes add up to the stream within rounding error.",
+   "sentence": "The notebook bears out the claim that the writes add up to the stream, up to rounding, for entries 0 to 11 of GPT-2 small.",
    "target": "bears out",
    "definition": "to show that something said or believed is true"
   },
@@ -18,7 +18,7 @@
    "level": "C2",
    "partOfSpeech": "phrasal verb",
    "register": "formal",
-   "sentence": "The idea that a reader hears only the sum squares with the toy, where attention 1 is silent to the reader (1, 2).",
+   "sentence": "The idea that a reader sees only the sum squares with the toy, where the four shares of a read add up to the direct read, 5.",
    "target": "squares with",
    "definition": "to be consistent with something; to fit with it"
   },
@@ -28,7 +28,7 @@
    "level": "C1",
    "partOfSpeech": "adverbial phrase",
    "register": "academic",
-   "sentence": "To a first approximation, a read is a dot product with the stream; the division inside the norm is the part that is not linear.",
+   "sentence": "To a first approximation, a read is a dot product with the stream, once the norm in front of it is set aside; the norm adds a division, which is not linear.",
    "target": "To a first approximation",
    "definition": "as a rough first description that ignores smaller details"
   },
@@ -58,7 +58,7 @@
    "level": "C1",
    "partOfSpeech": "phrasal verb",
    "register": "neutral",
-   "sentence": "It is hard to pin down what a hidden state is until you say where in the model it was read.",
+   "sentence": "It is hard to pin down what a library's hidden state is until you say which entry you mean: entries 0 to 11 are stream vectors in GPT-2 small, up to rounding, and the last is not.",
    "target": "pin down",
    "definition": "to identify or define something exactly"
   },
@@ -78,7 +78,7 @@
    "level": "C1",
    "partOfSpeech": "noun phrase",
    "register": "neutral/formal",
-   "sentence": "The last entry of a library's list is a case in point: it has been through the final norm, so it is not a stream vector.",
+   "sentence": "Library names can mislead, and the last entry of a library's list is a case in point: it has been through the final norm, so it is not a stream vector.",
    "target": "a case in point",
    "definition": "a good example of what has just been said"
   },
@@ -88,19 +88,19 @@
    "level": "C1",
    "partOfSpeech": "phrasal verb",
    "register": "neutral",
-   "sentence": "The additivity check holds up for GPT-2 small, but we did not run it on trained Qwen3, Llama, Gemma or Mistral models.",
+   "sentence": "The additivity check holds up for GPT-2 small, entries 0 to 11, but we did not run it on a trained Qwen3, Llama, Gemma or Mistral model.",
    "target": "holds up",
    "definition": "to remain true or valid when tested"
   },
   {
    "kind": "expression",
-   "headword": "to rest on the assumption that",
-   "level": "C1",
-   "partOfSpeech": "verb phrase",
-   "register": "academic",
-   "sentence": "Comparing two models through each one's own dot products rests on the assumption that the stream has no privileged basis, which Elhage and colleagues assert for an idealised stream.",
-   "target": "rests on the assumption that",
-   "definition": "to depend on something being true, without having shown it"
+   "headword": "to be premised on",
+   "level": "C2",
+   "partOfSpeech": "adjective + preposition (with be)",
+   "register": "formal/academic",
+   "sentence": "Comparing two models through each one's own dot products is premised on the stream having no privileged basis, which Elhage and colleagues assert for an idealised stream.",
+   "target": "is premised on",
+   "definition": "to be based on something taken as true at the start"
   },
   {
    "kind": "expression",
@@ -108,7 +108,7 @@
    "level": "C2",
    "partOfSpeech": "verb phrase",
    "register": "formal",
-   "sentence": "Olah and colleagues are at pains to call their three claims speculative.",
+   "sentence": "Olah and colleagues are at pains to say that their evidence for universality is, so far, anecdotal.",
    "target": "are at pains to",
    "definition": "to make a special effort to do something, often to be clear or careful"
   },
@@ -117,7 +117,7 @@
    "headword": "to fall out of",
    "level": "C2",
    "partOfSpeech": "phrasal verb",
-   "register": "academic",
+   "register": "academic/mathematical",
    "sentence": "Steering as a translation falls out of the algebra: every score shifts by the same amount, u dot v.",
    "target": "falls out of",
    "definition": "to follow naturally as a result of something"
@@ -128,7 +128,7 @@
    "level": "C1",
    "partOfSpeech": "noun phrase",
    "register": "academic",
-   "sentence": "Giving a direction length one is a matter of convention in this post, since the sources give none.",
+   "sentence": "Giving a direction length one is a matter of convention in this post, chosen so that scores from different arrows can be compared.",
    "target": "a matter of convention",
    "definition": "something decided by agreement, not by necessity"
   },
@@ -158,7 +158,7 @@
    "level": "C1",
    "partOfSpeech": "phrasal verb",
    "register": "neutral",
-   "sentence": "Whether a probe's direction is used by the model hinges on tests that this post does not run.",
+   "sentence": "Whether a steering push changes behaviour as intended hinges on how a real model responds, which the algebra does not say.",
    "target": "hinges on",
    "definition": "to depend completely on one particular thing"
   },
@@ -174,27 +174,27 @@
   },
   {
    "kind": "pattern",
-   "headword": "What matters is … (pseudo-cleft)",
-   "level": "C1",
-   "sentence": "What matters for a read is not the coordinates but the dot product.",
-   "target": "What matters",
-   "definition": "A 'what' clause as the subject puts one idea in focus: 'What matters is …'. It works in speech and in academic writing."
+   "headword": "Fronted wh-clause object (contrast)",
+   "level": "C2",
+   "sentence": "What a score means, or whether a push changes behaviour, the algebra does not say.",
+   "target": "What a score means",
+   "definition": "Put a 'what' clause first, as the object of a verb that comes later, to make it the topic: 'What a score means, the algebra does not say.' The rest keeps normal subject-verb order, and no pronoun is added. It sets what is settled against what is not."
   },
   {
    "kind": "pattern",
    "headword": "Perfect participle clause",
    "level": "C1",
-   "sentence": "Having added the four writes to the embedding, we get the stream (4, 2).",
+   "sentence": "Having added the four writes to the embedding, we get the stream after two blocks, (4, 2).",
    "target": "Having added",
-   "definition": "'Having + past participle' shows that one action was finished before the next. The subject of the main clause must be the one who did the first action (see dangling modifiers)."
+   "definition": "'Having + past participle' shows that one action was finished before the next. The subject of the main clause must be the one who did the first action."
   },
   {
    "kind": "pattern",
    "headword": "Mandative subjunctive",
    "level": "C2",
-   "sentence": "It is essential that the additivity check be run on the model you actually use.",
-   "target": "be run",
-   "definition": "After words like essential, important, insist or recommend, formal English uses the base verb ('that the check be run'), not 'is run' or 'should be run'."
+   "sentence": "The post recommends that the additivity check be run on any model before its additivity is trusted.",
+   "target": "that the additivity check be run",
+   "definition": "After words like essential, important, insist or recommend, formal English uses the bare base form: 'that the check be run'. British English also allows 'should be run'; 'is run' is the informal option."
   },
   {
    "kind": "pattern",
@@ -206,43 +206,43 @@
   },
   {
    "kind": "fix",
-   "headword": "fewer vs less",
+   "headword": "whether (not 'if')",
    "level": "C1",
-   "sentence": "A stream with fewer dimensions than features cannot give every feature its own perpendicular direction.",
-   "wrong": "A stream with less dimensions than features cannot give every feature its own perpendicular direction.",
-   "right": "A stream with fewer dimensions than features cannot give every feature its own perpendicular direction.",
-   "definition": "Use 'fewer' with countable plural nouns (dimensions, features) and 'less' with uncountable ones (less noise)."
+   "sentence": "The toy shows that cancellation is possible; it leaves open the question of whether real models cancel writes.",
+   "wrong": "The toy shows that cancellation is possible; it leaves open the question of if real models cancel writes.",
+   "right": "The toy shows that cancellation is possible; it leaves open the question of whether real models cancel writes.",
+   "definition": "After a noun ('the question of') or a preposition ('depends on'), and when the clause is the subject, use 'whether', not 'if'. 'If' belongs to conditions and to casual speech after verbs such as ask or wonder."
   },
   {
    "kind": "fix",
-   "headword": "affect vs effect",
+   "headword": "however (not a conjunction)",
    "level": "C1",
-   "sentence": "Adding a vector v affects every score unless it is at right angles to u; the effect is the same shift, u dot v, for each point.",
-   "wrong": "Adding a vector v effects every score unless it is at right angles to u; the affect is the same shift, u dot v, for each point.",
-   "right": "Adding a vector v affects every score unless it is at right angles to u; the effect is the same shift, u dot v, for each point.",
-   "definition": "'Affect' is usually a verb (to change); 'effect' is usually a noun (the result). 'To effect' means to bring about, as in 'to effect a change'."
+   "sentence": "The sum is exact in the account Elhage and colleagues give, which ignores layer normalisation; however, a real model adds a norm.",
+   "wrong": "The sum is exact in the account Elhage and colleagues give, which ignores layer normalisation, however a real model adds a norm.",
+   "right": "The sum is exact in the account Elhage and colleagues give, which ignores layer normalisation; however, a real model adds a norm.",
+   "definition": "'However', 'therefore' and 'moreover' are adverbs. A comma alone cannot join two main clauses with them (a comma splice). Use a full stop or a semicolon before the adverb and a comma after it, or use a real conjunction such as 'but' or 'although'."
   },
   {
    "kind": "fix",
-   "headword": "the number of / a number of",
+   "headword": "compare like with like ('those in')",
    "level": "C1",
-   "sentence": "The number of dimensions in GPT-2 small is 768.",
-   "wrong": "The number of dimensions in GPT-2 small are 768.",
-   "right": "The number of dimensions in GPT-2 small is 768.",
-   "definition": "'The number of …' takes a singular verb (it is about the count). 'A number of …' means 'several' and takes a plural verb."
+   "sentence": "Every coordinate differs, but the dot products in model B are the same as those in model A.",
+   "wrong": "Every coordinate differs, but the dot products in model B are the same as model A.",
+   "right": "Every coordinate differs, but the dot products in model B are the same as those in model A.",
+   "definition": "Both sides of a comparison must be the same kind of thing. Dot products are compared with dot products, not with a model. 'Those in', 'those of', 'that of' and 'the one in' stand in for the repeated noun."
   },
   {
    "kind": "fix",
-   "headword": "orthogonal to (not 'with')",
+   "headword": "imply vs infer",
    "level": "C1",
-   "sentence": "Attention 1 is orthogonal to the reader (1, 2).",
-   "wrong": "Attention 1 is orthogonal with the reader (1, 2).",
-   "right": "Attention 1 is orthogonal to the reader (1, 2).",
-   "definition": "Some adjectives fix their preposition: orthogonal to, independent of, equal to, similar to. 'Orthogonal with' is not used."
+   "sentence": "A high probe score implies nothing about use; from it we can only infer that information is present along a direction.",
+   "wrong": "A high probe score infers nothing about use; from it we can only imply that information is present along a direction.",
+   "right": "A high probe score implies nothing about use; from it we can only infer that information is present along a direction.",
+   "definition": "Evidence or a statement implies something (it suggests it); a person infers it (draws the conclusion). Data cannot infer, and a reader does not imply a conclusion by reading."
   },
   {
    "kind": "tip",
-   "headword": "Four-step retell",
+   "headword": "Three-step retell",
    "sentence": "Without looking, explain in two minutes how a hidden state is built, using three expressions from this pack: start from the embedding, add each write, then say what a reader can and cannot hear."
   },
   {
@@ -254,13 +254,11 @@
  "loop": {
   "headword": "A paragraph to loop",
   "level": "C2",
-  "text": "Every part of the model adds its write to one shared list, so the residual stream is a running sum. To a first approximation, a read is then a dot product with that sum, and the division inside the norm in front of it is the part that is not linear. That much is true by construction in the toy, and the notebook bears it out on GPT-2 small, where the writes add up to the stream within rounding error. Whether the identity will hold up for other models is another matter, and results may not simply carry over to a trained Qwen3 or Llama, which we did not run. The last entry of a library's list is a case in point: it has been normalised, so to take it at face value would be a mistake. The claim that concepts are directions in a language model’s stream hinges on evidence the sources do not supply, so we are on firmer ground with the arithmetic than with the interpretation. A steering push moves every score in lockstep, yet to say that a high score shows the model uses the direction would be tantamount to confusing seeing with doing.",
+  "text": "Every attention and MLP part adds its write to one shared list, so the stream is a running sum. In the toy this is true by construction, and the notebook bears it out on GPT-2 small, up to rounding. To a first approximation, a read is a dot product with that sum, setting aside the norm in front of it, whose division is not linear. Names can mislead: the last entry of a library's list is a case in point, because it has been through the final norm, so it should not be taken at face value. The claim that concepts are directions in a model's stream hinges on tests that none of the three sources runs, so we are on firmer ground with the arithmetic than with the interpretation. A push moves every score in lockstep, but to say that a high score shows the model uses the direction would be tantamount to confusing seeing with doing.",
   "targets": [
    "To a first approximation",
    "by construction",
    "bears it out",
-   "hold up",
-   "carry over",
    "a case in point",
    "at face value",
    "hinges on",
