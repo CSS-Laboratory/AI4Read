@@ -1,0 +1,502 @@
+<header class="masthead wrap">
+  <p class="eyebrow">AI4Read · Post 03 · 25 October 2026</p>
+  <h1>What Is a Hidden State? The Residual Stream, Read and Written</h1>
+  <p class="lede">A language model turns every word into a list of numbers and keeps editing that list as it reads. If you stop the model halfway and copy the list, what have you copied, and what can you do with it? This post answers with arithmetic you can do on paper, then checks it on a real model.</p>
+  <ul class="meta">
+    <li><b>Home field</b> Large language models</li>
+    <li><b>Lenses</b> Linear algebra · Information theory</li>
+    <li><b>Level</b> High school → graduate (vectors, sums and dot products)</li>
+    <li><b>Time</b> About 45 min to read, 35 min to listen</li>
+  </ul>
+  <details class="toc">
+    <summary>Contents</summary>
+    <ol>
+      <li><a href="#hook">The list in the middle</a></li>
+      <li><a href="#guess">Guess first</a></li>
+      <li><a href="#sum">The stream is a running sum</a></li>
+      <li><a href="#bets">Three bets, held lightly</a></li>
+      <li><a href="#rw">Reads and writes</a></li>
+      <li><a href="#dir">Probe and push: directions</a></li>
+      <li><a href="#answer">Short answer</a></li>
+      <li><a href="#lens-linalg">Lens 1 · Linear algebra</a></li>
+      <li><a href="#lens-info">Lens 2 · Information theory</a></li>
+      <li><a href="#turn">Your turn</a></li>
+      <li><a href="#work">Where this shows up in your work</a></li>
+      <li><a href="#recall">Recall questions</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </details>
+</header>
+
+<main class="wrap">
+
+<!-- ============ 1 HOOK ============ -->
+<section id="hook" data-ch="hook">
+  <p class="sec-no">1 · Hook</p>
+  <h2>The list in the middle</h2>
+  <p>Stop a language model halfway through its work and copy out the list of numbers it holds for one word. The list is long: GPT-2 small has 768 numbers in it <span class="cite">Nanda 2022, § Transformer Basics</span>, and Qwen3-1.7B-Base, whose configuration file we read for the notebooks, has 2,048 <span class="cite">Notebook 02, reference run</span>. A list of numbers is called a <dfn>vector</dfn>, and the number of entries in it is its <dfn>dimension</dfn>.</p>
+  <p>People do three things with such lists (our summary of common practice): they train a small classifier on them, to see whether a property of the text can be read off; they compare the lists from two models; and they add one list to another, to push the model somewhere. All three treat the list as a definite object. So what is it?</p>
+  <p>Keep one everyday picture, as a picture only (ours). A bank balance on the 20th of the month is the opening balance plus every deposit and withdrawal since then, and a later withdrawal can cancel an earlier deposit. Now imagine thousands of accounts at once, with each part of the model depositing or withdrawing in every account and none overwriting what is there. The post tests how far this holds.</p>
+  <p class="keypoint">Short version (ours). The list is a running sum of what the earlier parts of the model wrote. Reading it along a direction is a dot product. Pushing it is adding a vector. Whether a concept <i>is</i> a direction is a bet, not a fact.</p>
+  <p>We check the first claim on a real model in the two notebooks that come with this post. The vocabulary and the bets come from three published sources, none of them about today’s model families; the post says so where each first appears.</p>
+</section>
+
+<!-- ============ 2 GUESS FIRST ============ -->
+<section id="guess" data-ch="guess">
+  <p class="sec-no">2 · Guess first</p>
+  <h2>Make three predictions</h2>
+  <p>Commit to an answer before you read on: a wrong guess you remember is worth more than a right answer you only read. Each answer appears in the section named under its question.</p>
+  <div class="quiz" data-q="g1" data-answer-in="section 3, The stream is a running sum">
+    <p class="q">1. A model is a stack of rounds of work called <dfn>blocks</dfn>. You stop it after block 6 and copy the list it holds for one word. What is that list?</p>
+    <div class="opts"><button type="button">The model’s best guess so far, written as a list of numbers</button><button type="button">A running total: the word’s starting list plus every addition made so far</button><button type="button">The newest block’s output alone, with nothing kept from before</button><button type="button">A summary of the whole sentence, shared by all of its words</button></div>
+    <p class="your" hidden></p>
+  </div>
+  <div class="quiz" data-q="g2" data-answer-in="section 5, Reads and writes">
+    <p class="q">2. A shared list already holds (2, 2). Block 3 now writes (−2, −2) into it. What can a later block read from the list?</p>
+    <div class="opts"><button type="button">Both vectors, kept as two separate items in order of arrival</button><button type="button">Only (−2, −2), because the newest write replaces the old one</button><button type="button">Only the sum, (0, 0): neither vector can be read back on its own</button><button type="button">Only (2, 2), because the first write is kept for good</button></div>
+    <p class="your" hidden></p>
+  </div>
+  <div class="quiz" data-q="g3" data-answer-in="section 6, Probe and push">
+    <p class="q">3. A probe gives each point in a cloud a score: multiply its two coordinates by two fixed numbers and add the results. Now add the same vector to every point of the cloud. By how much does each score change?</p>
+    <div class="opts"><button type="button">By the same amount for every point</button><button type="button">By more for points far from the origin</button><button type="button">Only for points that lie near the probe’s line</button><button type="button">By an amount that depends on each point’s length</button></div>
+    <p class="your" hidden></p>
+  </div>
+</section>
+
+<!-- ============ 3 THE STREAM IS A SUM ============ -->
+<section id="sum" data-ch="sum">
+  <p class="sec-no">3 · Home field</p>
+  <h2>The stream is a running sum</h2>
+
+  <h3>From words to lists</h3>
+  <p>A language model reads text as <dfn>tokens</dfn>: whole words or pieces of words. Its first step is a lookup: a table holds one list of numbers for each token, and the model copies out the list for the token it is reading <span class="cite">Nanda 2022, § Transformer Components, Embedding</span>. We call this starting list the <dfn>embedding</dfn> and write it \(x_0\). (The sources use “embedding” in four ways, so we keep the word for this one list.) GPT-2 also adds a learned list for the token’s position: at the start the stream holds “the embedded tokens plus the positional embedding” <span class="cite">Nanda 2022, § Transformer Basics</span>.</p>
+  <p>From that start, the model keeps one working list for the token, and every part of the model changes it by adding to it. We call it the <dfn>residual stream</dfn>, or the stream. GPT-2 small has 768 numbers in it and 12 blocks <span class="cite">Nanda 2022, § Transformer Basics</span>. Our toy uses two, so that every list can be drawn on paper.</p>
+
+  <h3>Add two vectors by hand</h3>
+  <p>Before any diagram, do one sum on paper. A part of the model adds the vector (2, −1) to a stream that holds (1, 2). What does the stream hold afterwards? Add the first numbers, then the second numbers, and only then read on.</p>
+  <p>First numbers: 1 + 2 = 3. Second numbers: 2 + (−1) = 1. The answer is (3, 1), and adding in the other order gives (3, 1) again. As a rule:</p>
+  \[(a,b)+(c,d)=(a+c,\;b+d)\]
+  <p>Read it aloud as “first plus first, second plus second”. The same rule holds for 768 numbers, if both lists have the same length.</p>
+
+  <h3>A block writes by adding</h3>
+  <p>Between the starting list and the answer, a model has a stack of <dfn>blocks</dfn>. Each block has two parts in a fixed order: first an <dfn>attention</dfn> part, then an <dfn>MLP</dfn> part (short for multi-layer perceptron, a small network). We say <i>block</i> for the pair and <i>sub-layer</i> for each part, because the word “layer” is confusing: Nanda notes that a transformer layer “actually contains two layers” <span class="cite">Nanda 2022, § Transformer Basics</span>.</p>
+  <p>Each sub-layer looks at the stream, computes a vector, and adds it to the stream. It never overwrites it: Elhage and colleagues say that layers “write” their result to the stream “by adding a linear projection back in” <span class="cite">Elhage 2021, § High-Level Architecture</span> (section 5 explains “linear projection”). Attention is the part that can bring in information from other positions; Nanda calls attention layers “the only layers that can move information between token positions” <span class="cite">Nanda 2022, § Transformer Basics</span>. We call the vector a sub-layer adds its <dfn>write</dfn>: \(a_k\) for the attention in block \(k\), \(f_k\) for the MLP.</p>
+  <p>Now a toy (toy numbers, ours). The embedding is \(x_0=(1,2)\). Block 1 writes \(a_1=(2,-1)\) and then \(f_1=(-1,1)\). Block 2 writes \(a_2=(3,-2)\) and then \(f_2=(-1,2)\). Add the writes to the stream one at a time, on paper first. Then tap Next to check each row, and watch the same sums in the diagram below the table.</p>
+  <div class="w" data-widget="stepper" id="sum-table" data-config-ref="cfg-sum-table"></div>
+  <script type="application/json" id="cfg-sum-table">{
+ "title":"The running sum, one write at a time (toy numbers, ours)",
+ "note":"Add each row by hand first, then tap Next to check.",
+ "head":["after","adds","stream"],
+ "rows":[["start (embedding)","","(1, 2)"],["attention 1","(2, −1)","(3, 1)"],["MLP 1","(−1, 1)","(2, 2)"],["attention 2","(3, −2)","(5, 0)"],["MLP 2","(−1, 2)","(4, 2)"]],
+ "notes":["The embedding x₀ is the starting list: (1, 2).","(1, 2) + (2, −1) = (1 + 2, 2 − 1) = (3, 1).","(3, 1) + (−1, 1) = (2, 2). This is x₁, the stream after block 1.","(2, 2) + (3, −2) = (5, 0).","(5, 0) + (−1, 2) = (4, 2). This is x₂. The second number of this write, +2, undoes the −2 that attention 2 wrote."],
+ "caption":"x₂ = x₀ + a₁ + f₁ + a₂ + f₂ = (4, 2)."
+}</script>
+  <figure class="illus"><div class="w" data-widget="diagram" id="bus" data-config-ref="cfg-bus"></div></figure>
+  <script type="application/json" id="cfg-bus">{
+ "title":"One shared stream, five writers, one reader (toy, ours)",
+ "preview":true,"width":360,"height":310,
+ "nodes":[
+  {"id":"emb","x":58,"y":28,"w":84,"label":"Embed","kind":"emb"},
+  {"id":"a1","x":58,"y":90,"w":84,"label":"Attn 1"},
+  {"id":"f1","x":58,"y":152,"w":84,"label":"MLP 1"},
+  {"id":"a2","x":58,"y":214,"w":84,"label":"Attn 2"},
+  {"id":"f2","x":58,"y":276,"w":84,"label":"MLP 2"},
+  {"id":"st","x":200,"y":152,"w":56,"h":290,"label":"Stream","kind":"hl"},
+  {"id":"un","x":318,"y":152,"w":70,"label":"Unembed","kind":"soft"}],
+ "edges":[
+  {"id":"w0","from":"emb","to":"st","label":"(1, 2)"},
+  {"id":"w1","from":"a1","to":"st","label":"+(2, −1)"},
+  {"id":"w2","from":"f1","to":"st","label":"+(−1, 1)"},
+  {"id":"w3","from":"a2","to":"st","label":"+(3, −2)"},
+  {"id":"w4","from":"f2","to":"st","label":"+(−1, 2)"},
+  {"id":"r","from":"st","to":"un","dashed":true,"label":"looks"}],
+ "steps":[
+  {"show":["emb","w0"],"text":"Step 1. The embedding writes its list into the stream. Stream: (1, 2)."},
+  {"show":["a1","w1"],"text":"Step 2. Attention 1 adds (2, −1). Stream: (3, 1)."},
+  {"show":["f1","w2"],"text":"Step 3. MLP 1 adds (−1, 1). Stream: (2, 2)."},
+  {"show":["a2","w3"],"text":"Step 4. Attention 2 adds (3, −2). Stream: (5, 0)."},
+  {"show":["f2","w4"],"text":"Step 5. MLP 2 adds (−1, 2). Stream: (4, 2). Its +2 in the second place undoes the −2 that attention 2 put there: writes add, so they can cancel."},
+  {"show":["un","r"],"text":"Step 6. The last box only looks. It reads the stream (4, 2) and turns it into one score for each possible next word."}],
+ "caption":"Solid arrows write (add) into the stream. The dashed arrow only looks. Every box also looks at the stream before it writes; that is not drawn here."
+}</script>
+
+  <h3>The pattern and the formula</h3>
+  <p>The stepper shows the pattern: start with the embedding and add the writes in the order they happen. With \(x_k\) for the stream after \(k\) blocks:</p>
+  \[x_k=x_0+(a_1+f_1)+(a_2+f_2)+\dots+(a_k+f_k)\]
+  <p>Read it aloud: “the stream after \(k\) blocks is the embedding plus every write up to block \(k\).” Elhage and colleagues put it this way: “The residual stream is simply the sum of the output of all the previous layers and the original embedding.” <span class="cite">Elhage 2021, § Communication Channel</span> Check with the toy:</p>
+  \[x_2=(1+2-1+3-1,\;2-1+1-2+2)=(4,2)\]
+  <p>The stepper’s last row says (4, 2) too.</p>
+  
+  <p>The sum is bookkeeping: it tells you what is in the stream, not what any writer meant. In the last row, the +2 from the MLP cancels the −2 that attention wrote in the same place. The exact sum is also the picture of Elhage and colleagues’ toy models, which “ignore layer normalization” <span class="cite">Elhage 2021, § Model Simplifications</span>; real models differ, as the end of this section shows.</p>
+
+  <h3>One stream per position</h3>
+  <p>Take the two-word input “red car”. The model keeps one stream for each word, at every depth: “Importantly, there is a separate residual stream for each position in the sequence.” <span class="cite">Nanda 2022, § Transformer Basics</span> Only attention carries information between positions, and in a decoder-only model, which predicts text from left to right, only from earlier ones <span class="cite">Nanda 2022, § Decoder-only</span>.</p>
+  <figure class="illus"><div class="w" data-widget="diagram" id="positions" data-config-ref="cfg-positions"></div></figure>
+  <script type="application/json" id="cfg-positions">{
+ "title":"One stream per position (illustration)",
+ "width":360,"height":190,
+ "nodes":[
+  {"id":"w1","x":90,"y":28,"w":100,"label":"“red”","kind":"emb"},
+  {"id":"w2","x":270,"y":28,"w":100,"label":"“car”","kind":"emb"},
+  {"id":"s1","x":90,"y":110,"w":100,"h":50,"label":"Stream 1","kind":"hl"},
+  {"id":"s2","x":270,"y":110,"w":100,"h":50,"label":"Stream 2","kind":"hl"}],
+ "edges":[
+  {"id":"e1","from":"w1","to":"s1"},{"id":"e2","from":"w2","to":"s2"},
+  {"id":"e3","from":"s1","to":"s2","dashed":true,"label":"attention","dy":-6}],
+ "labels":[{"x":180,"y":178,"text":"Only attention crosses between columns, and only forwards.","c":"ts"}]
+}</script>
+  <p>So there is no “hidden state of a sentence”; a summary of a sentence is a further step that someone must choose (ours).</p>
+
+  <h3>Is the hidden state the stream?</h3>
+  <p>Libraries do not say “residual stream”. They return lists they call <dfn>hidden states</dfn>, and none of the three sources uses that phrase, so we have to test the identity (ours). Copy the list the library returns after \(k\) blocks. Separately, record the starting list and every write made inside the blocks, and add them. If the sum equals the copied list up to rounding, the two are the same vector.</p>
+  <p>We ran this in the two notebooks that come with this post: GPT-2 small (12 blocks), the prompt “The cat sat on the mat because”, 32-bit numbers on a CPU <span class="cite">Notebook 01 and 02, reference run</span>. The largest differences found:</p>
+  <div class="tbl"><table><thead><tr><th>What was compared</th><th>Largest difference</th></tr></thead><tbody>
+    <tr><td>Writes added in the model’s own order, against the stream after \(k\) blocks, \(k=1\) to 12</td><td>0.0, exactly</td></tr>
+    <tr><td>The same writes added in another order, against the stream after 12 blocks</td><td>4.27e−4 absolute; 1.03e−6 relative</td></tr>
+    <tr><td>TransformerLens’s stream against the Hugging Face list, \(k=0\) to 11</td><td>4.88e−4 absolute; 7.8e−7 relative</td></tr>
+  </tbody></table></div>
+  <p>The first line is exactly 0.0 because that check adds the same numbers in the same order as the model’s own code: it repeats the model’s additions and proves little. The other lines are informative. A relative difference near 10⁻⁶ is what 32-bit rounding gives (the machine epsilon of 32-bit numbers is 1.19e−7) <span class="cite">Notebook 01, reference run</span>.</p>
+  <p>The index convention matters. In every model we ran, entry \(l\) of the library’s list is exactly the input of block \(l\), for \(l\) up to one less than the number of blocks. So entry \(l\) is the stream after \(l\) blocks, and entry 0 is the embedding. The <i>last</i> entry is different: the library overwrites it with the model’s final output, which has been through the final norm <span class="cite">HF output_capturing.py, lines 243–246</span>. In GPT-2 it matches the normalised output of the last block (0.0), not the raw stream (relative difference 0.986) <span class="cite">Notebook 02, reference run</span>. So the “hidden state at the last layer” is not a stream vector.</p>
+  <p>What we did not run: any trained Qwen3, Llama, Gemma or Mistral model. For Qwen3 and Gemma 3 we ran tiny random models, which test indexing and hooks and say nothing about a trained stream; for Llama and Mistral we only read code. In Qwen3 the norm sits in front of each sub-layer, so a sub-layer’s output is added as it comes <span class="cite">HF modeling_qwen3.py, lines 296–314</span>; Llama and Mistral have the same pattern (read, not run) <span class="cite">HF modeling_llama.py, modeling_mistral.py</span>. In Gemma 3 the code scales the embedding by the square root of the width and norms each sub-layer’s output before adding it <span class="cite">HF modeling_gemma3.py, lines 105–116, 397–416, 485</span>. In the tiny Gemma 3, hooks on the attention and MLP modules failed the additivity check (relative error 9.7); hooks on the two norm layers passed (0.0) <span class="cite">Notebook 02, reference run</span>.</p>
+  
+
+  <div class="term"><p class="term-h">Term · Residual stream (also called hidden state, embedding)</p>
+  <p>The residual stream is the working list a model keeps for each word. Libraries call it a hidden state; Elhage and colleagues note that its vectors are often called the embedding. Here <i>embedding</i> means only \(x_0\), <i>stream</i> the running list, and <i>hidden state</i> what a library returns; the test above lets us treat the last two as equal in GPT-2 small.</p></div>
+  <div class="trap"><p class="trap-h">Trap · where the bus picture misleads (ours)</p>
+  <p>A computer bus has one writer at a time, and each message has an address. In the stream every sub-layer adds to the same list in turn, with no addresses, and a reader sees only the sum. Elhage and colleagues call it “a communication channel” <span class="cite">Elhage 2021, § Communication Channel</span>.</p></div>
+  <div class="reveal" data-for="g1"><p class="reveal-h">Prediction 1 · answer</p><p><b>A running total.</b> In GPT-2 small, the list after block \(k\) is the embedding plus every write so far, up to rounding. Limits: one list per word; the library’s last list is normalised; no trained Qwen3, Llama, Gemma or Mistral model was run. The first option fails because the list holds no answer, only a sum; the third because earlier writes stay in the sum; the fourth because each word has its own list.</p></div>
+</section>
+
+<!-- ============ 4 BETS ============ -->
+<section id="bets" data-ch="bets">
+  <p class="sec-no">4 · Three bets</p>
+  <h2>Three bets, held lightly</h2>
+  <p>The lens we want to end with has three parts: concepts live as directions, behaviours are circuits, and the same things recur in different models. We cannot prove any of them here. Olah and colleagues, writing in 2020 about an image-recognition network, offered them as three claims and said: “These claims are deliberately speculative.” <span class="cite">Olah 2020, § Three Speculative Claims</span> We treat each as a bet and say how firmly its authors held it.</p>
+
+  <h3>Bet 1 · Features are directions</h3>
+  <p>The claim: “Features are the fundamental unit of neural networks. They correspond to directions.” <span class="cite">Olah 2020, § Three Speculative Claims</span> A <dfn>feature</dfn> is a property of the input that a model can compute; Nanda calls it “a property of an input to the model, or some subset of that input” <span class="cite">Nanda 2022, § General</span>. A <i>concept</i>, in this post, is our human label for a feature, such as “calm”. By “direction”, Olah and colleagues mean “a linear combination of neurons in a layer” <span class="cite">Olah 2020, § Three Speculative Claims</span>: a weighted mix of the units (neurons) of a layer. The stream has no neurons: Nanda writes that “there’s no such thing as a residual stream neuron, head neuron, key neuron, query neuron, value neuron, etc.” <span class="cite">Nanda 2022, § Transformer Components</span> So for the stream, “direction” means a weighted mix of its coordinates, drawn as an arrow (ours). Section 6 makes this exact.</p>
+  
+  <p>How firmly? Olah and colleagues write that “thousands of hours of studying individual neurons have led us to believe the typical case is that neurons … are understandable”, and concede: “The community is divided on whether this is true.” <span class="cite">Olah 2020, § Claim 1: Features</span> Nanda backs “features as directions” with an intuition, not evidence: “the main thing a model is capable of doing is linear algebra” <span class="cite">Nanda 2022, § Representations of Features</span>. On the neuron version he writes that there is “a decent amount of empirical evidence that this is mostly true of Inceptionv1, but this seems at best only slightly true for transformers” <span class="cite">Nanda 2022, § Representations of Features</span>. For the stream of a language model, none of the three sources tests whether concepts are directions. If they were, a concept’s strength would be a dot product (section 6).</p>
+
+  <h3>Bet 2 · Features are connected by weights, forming circuits</h3>
+  <p>The claim: “Features are connected by weights, forming circuits.” <span class="cite">Olah 2020, § Three Speculative Claims</span> A <dfn>circuit</dfn> is, in their words, “a computational subgraph of a neural network” <span class="cite">Olah 2020, § Three Speculative Claims</span>: some features and the weighted connections between them (it has nothing to do with electricity). Their strong lines are about small circuits: “statements about their behavior become questions of mathematical reasoning” <span class="cite">Olah 2020, § Interpretability as a Natural Science</span>. The step to whole behaviours is hedged: “it seems like, with sufficient effort, statements about model behavior could be broken down into statements about circuits” <span class="cite">Olah 2020, § Interpretability as a Natural Science</span>. The evidence is two circuits in a vision network, and the test they propose, predicting what an edit to the weights will change, is a plan: they plan to return to it, “including testing our theory of the circuit by editing the weights” <span class="cite">Olah 2020, § Circuit 2</span>. They give no example of a behaviour such as refusal or trust. Elhage and colleagues limit their circuit results to transformers “with two layers or less which have only attention blocks” <span class="cite">Elhage 2021, Introduction</span>.</p>
+  
+
+  <h3>Bet 3 · The same features and circuits recur across models</h3>
+  <p>The claim: “Analogous features and circuits form across models and tasks.” <span class="cite">Olah 2020, § Three Speculative Claims</span> The authors suspect it is “likely true”, but “the only evidence we can offer today is anecdotal” <span class="cite">Olah 2020, § Claim 3: Universality</span>. It is the only one of the three that, in their words, “wouldn’t be completely fatal to circuits research” if false <span class="cite">Olah 2020, § Claim 3: Universality</span>. The claim is about different models or tasks; nothing in the page is about one model before and after fine-tuning.</p>
+
+  <div class="trap"><p class="trap-h">Trap · three sources, three vintages</p>
+  <p>Olah and colleagues (2020) use a vision network: “We will take our examples from InceptionV1 for now, but believe these claims hold generally.” <span class="cite">Olah 2020, § Claim 1: Features</span> Elhage and colleagues (2021) study attention-only transformers with two layers or fewer, leaving out biases and layer normalization, and write: “We don’t attempt to apply to our insights to larger models in this first paper.” <span class="cite">Elhage 2021, Introduction</span> Nanda (2022) writes a glossary that is “mostly a description of how GPT-2 works” <span class="cite">Nanda 2022, § Transformer Basics</span>. None of the three says anything about Qwen3, Llama 3, Gemma 3 or Mistral, base versus instruct models, or post-training.</p></div>
+  <p>Sections 5 and 6 are algebra, exact in a small toy: they say what each bet would claim, not whether it is true. Each ends by cashing in one bet.</p>
+
+  <details class="deep" id="box-firmness">
+    <summary>Look inside: Olah’s three claims, sorted by firmness</summary>
+    <p>The verbs follow the sources’ own firmness. All quotes are from the saved pages (Olah et al. 2020; Nanda 2022). The words in the claim boxes carry no hedge inside the box; the hedges sit around them.</p>
+    <h4>Claim 1 · features are directions</h4>
+    <ul>
+      <li><i>Asserts:</i> “These features can be rigorously studied and understood.” <span class="cite">Olah 2020, § Three Speculative Claims</span> And: “Curve detecting neurons can be found in every non-trivial vision model we’ve carefully examined.” <span class="cite">Olah 2020, § Claim 1: Features</span></li>
+      <li><i>Believes:</i> “thousands of hours of studying individual neurons have led us to believe the typical case is that neurons … are understandable” <span class="cite">Olah 2020, § Claim 1: Features</span>. And: “believe these claims hold generally”.</li>
+      <li><i>Concedes:</i> “The community is divided on whether this is true.” Also, the claims are “deliberately speculative”, and “if true, they could form the basis of a new “zoomed in” field of interpretability” <span class="cite">Olah 2020, § Three Speculative Claims</span>.</li>
+    </ul>
+    <h4>Claim 2 · circuits</h4>
+    <ul>
+      <li><i>Asserts:</i> “Features are connected by weights, forming circuits.” “These circuits can also be rigorously studied and understood.” “You can literally read meaningful algorithms off of the weights.” <span class="cite">Olah 2020, § Claim 2: Circuits</span> “In fact, for small enough circuits, statements about their behavior become questions of mathematical reasoning.” <span class="cite">Olah 2020, § Interpretability as a Natural Science</span></li>
+      <li><i>Supposes:</i> “it seems like, with sufficient effort, statements about model behavior could be broken down into statements about circuits”, then “perhaps circuits could act as a kind of epistemic foundation for interpretability”.</li>
+      <li><i>Proposes and plans:</i> “if you understand a circuit, you should be able to predict what will change if you edit the weights”; the test itself is future work.</li>
+      <li><i>Concedes:</i> “although there are many smaller weights we don’t understand the role of” <span class="cite">Olah 2020, § Claim 1, Argument 5</span>.</li>
+    </ul>
+    <h4>Claim 3 · universality</h4>
+    <ul>
+      <li><i>Asserts</i> (the claim box): “Analogous features and circuits form across models and tasks.”</li>
+      <li><i>Suspects:</i> “likely true”. <i>Concedes:</i> “the only evidence we can offer today is anecdotal”. <i>Imagines:</i> “If it was true in the strongest sense, one could imagine a kind of “periodic table of visual features”” <span class="cite">Olah 2020, § Claim 3: Universality</span>.</li>
+    </ul>
+    <h4>Nanda’s flat statements</h4>
+    <p>Nanda defines “features as directions” as a hypothesis, but elsewhere writes without a hedge: “Features are the fundamental building block of models” <span class="cite">Nanda 2022, § General</span>, and “‘What token is this’ and ‘what position is this in’ are represented as separate directions in the residual stream” <span class="cite">Nanda 2022, § Induction Circuits</span>. The glossary gives no evidence next to either line.</p>
+  </details>
+</section>
+
+<!-- ============ 5 READS AND WRITES ============ -->
+<section id="rw" data-ch="rw">
+  <p class="sec-no">5 · Reads and writes</p>
+  <h2>Reads and writes</h2>
+
+  <h3>A read is a weighted look</h3>
+  <p>Every part of the model also <i>reads</i> the stream before it writes. Take one small reader inside block 2’s MLP: a neuron with an input vector \(r=(1,2)\). It looks at the stream after attention 2, which holds \((5,0)\). What single number does it get?</p>
+  <p>Multiply matching numbers and add: \(1\cdot5+2\cdot0=5\). The vector \(r\) says how much to care about each place. With \(r=(1,0)\) the reader would take only the first number; with \(r=(0,1)\), only the second. As a formula:</p>
+  \[r\cdot x=r_1x_1+r_2x_2\]
+  <p>Read it aloud as “first times first plus second times second”. This is the <dfn>dot product</dfn>, and the rule is the same for 768 numbers. Check: \(r=(1,0)\) returns the first number of the stream, 5.</p>
+  <p>Nanda says: “Reading is a projection, the residual stream is dotted with each input vector of the relevant matrix.” <span class="cite">Nanda 2022, § Mathematical Framework, Composition</span> Elhage and colleagues say that layers read “by performing a linear projection” <span class="cite">Elhage 2021, § High-Level Architecture</span>. In our terms (ours), a linear projection is a set of dot products, one for each number the reader produces.</p>
+  <p>We call the number \(r\cdot x\) a <dfn>score</dfn>. (“Projection” also names the point on a line closest to \(x\); Nanda’s default is the number, and he says “projecting” is sometimes used specifically when the vector has length one <span class="cite">Nanda 2022, § Direct Logit Attribution</span>.) Inside the model a component <i>reads</i> the stream; when we copy a list out for our own analysis, we say <i>read out</i>.</p>
+
+  <h3>Who hears whom</h3>
+  <p>The stream is a sum, and the dot product of a sum is the sum of the dot products. So a read splits into one share for each writer. The stream after attention 2 is \(x_0+a_1+f_1+a_2=(5,0)\), so</p>
+  \[r\cdot x=r\cdot x_0+r\cdot a_1+r\cdot f_1+r\cdot a_2\]
+  <p>With \(r=(1,2)\) the shares are \(1\cdot1+2\cdot2=5\) for the embedding, \(1\cdot2+2\cdot(-1)=0\) for attention 1, \(1\cdot(-1)+2\cdot1=1\) for MLP 1, and \(1\cdot3+2\cdot(-2)=-1\) for attention 2. They add up to \(5+0+1-1=5\), the same as the direct read \(r\cdot(5,0)=5\). Now change \(r\) in the widget. Can you find a reader that cannot hear attention 1?</p>
+  <div class="w" data-widget="lab" id="read-split" data-config-ref="cfg-read-split"></div>
+  <script type="application/json" id="cfg-read-split">{
+ "title":"Who does a reader hear? (toy numbers, ours)",
+ "note":"Set the reader's input vector r. The table splits the read r · (5, 0) over the four writers.",
+ "params":[{"id":"r1","label":"r, first number","min":-3,"max":3,"step":1,"value":1,"fmt":"d"},
+           {"id":"r2","label":"r, second number","min":-3,"max":3,"step":1,"value":2,"fmt":"d"}],
+ "derived":{"d0":"r1*1+r2*2","d1":"r1*2+r2*(-1)","d2":"r1*(-1)+r2*1","d3":"r1*3+r2*(-2)","total":"d0+d1+d2+d3","direct":"r1*5+r2*0"},
+ "bars":{"items":[{"label":"embedding","value":"d0"},{"label":"attention 1","value":"d1"},{"label":"MLP 1","value":"d2"},{"label":"attention 2","value":"d3"}],"max":9,"fmt":"d"},
+ "table":{"head":["writer","vector","r · writer"],"rows":[["embedding x₀","(1, 2)","=d0"],["attention 1, a₁","(2, −1)","=d1"],["MLP 1, f₁","(−1, 1)","=d2"],["attention 2, a₂","(3, −2)","=d3"],["total","","=total"]],"fmt":"d"},
+ "readout":"total of the four shares = {total:d}\ndirect read of the stream (5, 0) = {direct:d}",
+ "presets":[{"label":"r = (1, 2)","values":{"r1":1,"r2":2}},{"label":"first only","values":{"r1":1,"r2":0}},{"label":"second only","values":{"r1":0,"r2":1}},{"label":"along a₂","values":{"r1":3,"r2":-2}}],
+ "caption":"Edge case: with r = (0, 1) the parts are 2, −1, 1, −2 and the total is 0. Each writer is heard clearly, and the stream is silent."
+}</script>
+  <p>Two things to notice. First, attention 1 wrote \((2,-1)\) and it sits in the stream, yet this reader hears none of it. Two vectors whose dot product is zero are called <dfn>orthogonal</dfn>: they are at right angles. Nanda writes that “every vector in the residual stream contributes (unless it’s orthogonal), though some contribute much more than others” <span class="cite">Nanda 2022, § Mathematical Framework, Composition</span>. Second, reading is not the opposite of writing. Nanda: “Note that these operations are not opposites!” <span class="cite">Nanda 2022, § Mathematical Framework, Composition</span> A reader along \(r\) does not get back what a writer put along \(r\), unless the other writers are orthogonal to \(r\).</p>
+  
+  <p>Does the split work on a real stream? In notebook 02, GPT-2 small’s stream at the last position after 6 blocks, read by a random unit vector (seed 0), gives 7.211561, and the sum of its 13 shares gives 7.211561 too <span class="cite">Notebook 02, reference run</span>. The difference is exactly 0.0 because the shares are added in the model’s own order: the toy’s arithmetic, nothing more.</p>
+  <p>The split needs nothing nonlinear between the writes and the read, but a real model puts a norm in front of every read: it is used “whenever the residual stream is input into a layer (ie before the attention, MLP and unembedding layers)” <span class="cite">Nanda 2022, § Transformer Components, LayerNorm</span>. The fold-out at the end of section 6 shows what a norm does to the arithmetic.</p>
+
+  <h3>A write adds, and writes can cancel</h3>
+  <p>Now the other direction. MLP 2 writes \(f_2=(-1,2)\) into a stream that holds \((5,0)\). Nothing is replaced: \((5,0)+(-1,2)=(4,2)\). The second number of \(a_2\) was \(-2\) and that of \(f_2\) is \(+2\); they sum to zero, so the \(-2\) is no longer visible, while the \(+3\) remains.</p>
+  <p>The extreme case is the second guess-first question. The list holds \((2,2)\) and block 3 writes \((-2,-2)\): the sum is \((0,0)\), and every reader gets 0 whatever its input vector. Does this happen in real models? Elhage and colleagues offer only a hint: “we’ve seen hints that some MLP neurons and attention heads may perform a kind of “memory management” role” <span class="cite">Elhage 2021, § Residual Stream Bandwidth</span>. Our toy shows that cancellation is possible by arithmetic, not that models do it.</p>
+  <div class="reveal" data-for="g2"><p class="reveal-h">Prediction 2 · answer</p><p><b>Only the sum, (0, 0).</b> A write adds; it does not replace (so the second option is wrong), and it is not kept as a separate item (so the first and fourth are wrong). Whether real models cancel writes is, in the sources, only a hint.</p></div>
+
+  <h3>Cashing in bet 2, and what “linear” covers</h3>
+  <p>The widget’s table gives one number for every pair of writer and reader. That is the shape of a weighted edge in a circuit, so it is “like an edge weight” (ours). It is not one of Olah’s edges, which join features in adjacent layers <span class="cite">Olah 2020, Glossary</span>. Whether real behaviours are circuits stays a bet.</p>
+  <p>The word <i>linear</i> has three uses here, and only two are settled: (i) the stream is a <i>sum</i> of writes; (ii) a read is linear in the stream, so it splits over the writers; (iii) “a concept can be read linearly” is a bet (section 6). The layers’ own computations are not linear: Nanda says the “divide by the standard deviation” step of the norm is non-linear <span class="cite">Nanda 2022, § Transformer Components, LayerNorm</span>.</p>
+</section>
+
+<!-- ============ 6 DIRECTIONS ============ -->
+<section id="dir" data-ch="dir">
+  <p class="sec-no">6 · Probe and push</p>
+  <h2>Probe and push: directions in a toy cloud</h2>
+
+  <h3>A cloud of streams</h3>
+  <p>Now we need many streams at once. Take six streams at one depth, for six short prompts (toy numbers, ours): three labelled “calm” and three “urgent”. The calm point \((4,2)\) is the \(x_2\) of section 3. Can one number per point tell the groups apart?</p>
+  <div class="tbl"><table><thead><tr><th>group</th><th>first number</th><th>second number</th></tr></thead><tbody>
+    <tr><td>calm</td><td>3, 4, 5</td><td>1, 2, 3</td></tr>
+    <tr><td>urgent</td><td>1, 2, 3</td><td>3, 4, 5</td></tr>
+  </tbody></table></div>
+  <p>Try the coordinates first. Along the first axis the two groups overlap at 3, and along the second axis they overlap at 3 as well. So no single coordinate separates them.</p>
+
+  <h3>A score along a direction</h3>
+  <p>Now turn a reading arrow instead of using the axes. A <dfn>direction</dfn> is an arrow, and we use the convention (ours; the sources give none) that its length is 1. The length of \((a,b)\) is \(\sqrt{a^2+b^2}\), by Pythagoras; \((-1,1)\) has length \(\sqrt2=1.414\). Divide by it and you get \(u=(-0.707,\,0.707)\), which reads “second minus first, scaled”. The <dfn>score</dfn> of a point is \(s=u\cdot x\). For the calm point \((4,2)\): \(-0.707\cdot4+0.707\cdot2=-1.414\). Every calm point scores \(-1.414\) and every urgent point \(+1.414\), so one number now separates the groups. The gap between them, the <dfn>margin</dfn> (lowest urgent score minus highest calm score), is 2.828.</p>
+  <p>Write \(\varphi\) for the angle of the arrow, measured from the first axis. A unit arrow at that angle is \(u=(\cos\varphi,\sin\varphi)\), so</p>
+  \[s=u\cdot x=x_1\cos\varphi+x_2\sin\varphi\]
+  <p>Check at \(\varphi=135^\circ\): \(x=(4,2)\) scores \(-0.707\cdot4+0.707\cdot2=-1.414\), as above.</p>
+  <p>Drag the blue arrow in the widget and watch the margin. Some angles help and some do not:</p>
+  <div class="tbl"><table><thead><tr><th>\(\varphi\)</th><th>0°</th><th>45°</th><th>90°</th><th>120°</th><th>135°</th></tr></thead><tbody>
+    <tr><td>margin</td><td>−4.000</td><td>−2.828</td><td>0.000</td><td>2.000</td><td>2.828</td></tr>
+  </tbody></table></div>
+  <p>At 45° both groups get the same three scores, 2.828, 4.243 and 5.657: that probe is blind.</p>
+  <div class="w" data-widget="vec2d" id="probe-push" data-config-ref="cfg-vec2d"></div>
+  <script type="application/json" id="cfg-vec2d">{
+ "title":"Six streams, one probe direction u, one push v (toy, ours)",
+ "note":"Drag the blue arrow to turn the probe. Drag the red arrow to push every point. The sliders do the same.",
+ "x":{"min":-3,"max":7},"y":{"min":-2,"max":7},
+ "params":[{"id":"phi","label":"probe angle φ","min":0,"max":180,"step":1,"value":0,"display":"{phi:d}°"},
+           {"id":"psi","label":"push angle ψ","min":0,"max":180,"step":1,"value":135,"display":"{psi:d}°"},
+           {"id":"alpha","label":"push length α","min":0,"max":3,"step":0.1,"value":0,"fmt":".1f"}],
+ "probe":{"x":"cos(phi*pi/180)","y":"sin(phi*pi/180)","feet":true},
+ "shift":{"x":"alpha*cos(psi*pi/180)","y":"alpha*sin(psi*pi/180)","trail":true},
+ "points":[{"x":3,"y":1},{"x":4,"y":2},{"x":5,"y":3},{"x":1,"y":3,"group":1},{"x":2,"y":4,"group":1},{"x":3,"y":5,"group":1}],
+ "vectors":[{"x":"ux","y":"uy","scale":3,"cls":"c0","label":"u","drag":{"angle":"phi","label":"probe direction"}},
+            {"x":"vx","y":"vy","cls":"c1","label":"v","drag":{"angle":"psi","length":"alpha","label":"push"}}],
+ "derived":{"m0":"min(s4,min(s5,s6))-max(s1,max(s2,s3))","margin":"if(abs(m0)<1e-9,0,m0)"},
+ "readout":"scores, calm (blue): {s1:.2f}, {s2:.2f}, {s3:.2f}\nscores, urgent (red): {s4:.2f}, {s5:.2f}, {s6:.2f}\nmargin (lowest urgent − highest calm) = {margin:.3f}\nu·v = {uv:.3f}",
+ "presets":[{"label":"axis only","values":{"phi":0,"alpha":0}},{"label":"best probe","values":{"phi":135,"alpha":0}},{"label":"blind probe","values":{"phi":45,"alpha":0}},
+            {"label":"push along","values":{"phi":135,"psi":135,"alpha":2}},{"label":"push sideways","values":{"phi":135,"psi":45,"alpha":2}}],
+ "caption":"The blue arrow is drawn three times longer than u, to make it easy to grab. Edge case: at φ = 45° both groups get the same three scores, so that probe cannot tell them apart."
+}</script>
+  <p>A <dfn>probe</dfn> is a read whose direction was fitted on labelled examples. Nanda defines probing as “A technique for identifying directions in network activation space that correspond to a concept/feature”, and a probe as “giving a 1D linear map (a probe), corresponding to a direction in activation space, which likely corresponds to that feature” <span class="cite">Nanda 2022, § Non-MI Techniques, Probing</span>. Keep the word “likely”. Our toy direction came from turning an arrow, with labels of our own. A high score shows that information is present along the direction, not that the model uses it (ours; section 8).</p>
+  <p><b>Cashing in bet 1.</b> If concepts were directions, this is what it would look like: one turn of an arrow separates the groups. Nothing here shows that a language model stores “calm” this way.</p>
+
+  <h3>Steering is a translation</h3>
+  <p>Now push. Add the same vector \(v\) to every point; this is what people call <dfn>steering</dfn>. Take \(v=2u=(-1.414,\,1.414)\). The dot product of a sum is the sum of the dot products, so every score moves by the same amount, \(u\cdot v\), here 2 (because \(u\cdot u=1\)). Calm scores go from \(-1.414\) to \(0.586\), and urgent scores from \(1.414\) to \(3.414\). Now push sideways, with \(v=2(1,1)/\sqrt2\): then \(u\cdot v=0\) and no score moves, although every point moved. As a formula:</p>
+  \[s(x+v)=s(x)+u\cdot v\]
+  <p>Try the buttons “push along” and “push sideways” in the widget. A push is a <dfn>translation</dfn>: every point slides by the same vector. It is not <i>linear</i>, because a linear map sends the zero vector to zero, and adding \(v\) sends it to \(v\). A linear step plus a constant is called <i>affine</i>.</p>
+  <p>What this does not say. “Steering” and “activation addition” do not occur in any of the three sources, so nothing here says that adding a vector changes a model’s behaviour as intended. Nanda describes editing an activation: run the network and “stop it once it’s computed an activation, edit or replace that activation, and then resume running the model” <span class="cite">Nanda 2022, § General, Intervening</span>. On a real stream the arithmetic holds: in notebook 02, for GPT-2 small’s last position after 6 blocks and a random unit direction \(u\), \(u\cdot(h+\alpha u)-u\cdot h-\alpha\) was 0 for \(\alpha=0.5,1,2,5\) and \(-3\) <span class="cite">Notebook 02, reference run</span>. That is arithmetic, not behaviour.</p>
+  <div class="reveal" data-for="g3"><p class="reveal-h">Prediction 3 · answer</p><p><b>By the same amount for every point.</b> Each score moves by \(u\cdot v\), whatever the point. It is the same for near and far points, and for points on or off the probe’s line.</p></div>
+
+  <h3>Turn everything</h3>
+  <p>One more property, about coordinates. Turn the whole toy by 90°: each \((x,y)\) becomes \((-y,x)\), and so does \(r\). The stream \(x_2=(4,2)\) becomes \((-2,4)\), and \(r=(1,2)\) becomes \((-2,1)\). Every coordinate changed, but lengths and angles did not, so no dot product changed: the four shares of section 5 are 5, 0, 1 and −1 before and after. (The embedding \((1,2)\) becomes \((-2,1)\), and its share is \((-2,1)\cdot(-2,1)=5\).) In symbols, for a rotation \(R\):</p>
+  \[(Rr)\cdot(Rx)=r\cdot x\]
+  <p>This is textbook arithmetic (ours). Nanda gives the principle: “Operations like addition, matrix multiplication, dot products, etc are unchanged under any change of basis.” <span class="cite">Nanda 2022, § Representations of Features</span> The slider shows the shares staying put at every angle, while the second coordinate of \(x_2\) moves.</p>
+  <div class="w" data-widget="lab" id="rotate" data-config-ref="cfg-rotate"></div>
+  <script type="application/json" id="cfg-rotate">{
+ "title":"Turn the whole toy: coordinates change, reads do not (toy, ours)",
+ "note":"Every vector, including the reader r = (1, 2), is turned by the angle ω.",
+ "params":[{"id":"rot","label":"turn ω","min":0,"max":360,"step":5,"value":0,"display":"{rot:d}°"}],
+ "derived":{"c":"cos(rot*pi/180)","s":"sin(rot*pi/180)",
+  "x2x":"if(abs(4*c-2*s)<1e-9,0,4*c-2*s)","x2y":"if(abs(4*s+2*c)<1e-9,0,4*s+2*c)",
+  "rx":"c-2*s","ry":"s+2*c",
+  "p0":"rx*(c-2*s)+ry*(s+2*c)","p1":"rx*(2*c+s)+ry*(2*s-c)","p2":"rx*(-c-s)+ry*(-s+c)","p3":"rx*(3*c+2*s)+ry*(3*s-2*c)",
+  "q0":"if(abs(p0)<1e-9,0,p0)","q1":"if(abs(p1)<1e-9,0,p1)","q2":"if(abs(p2)<1e-9,0,p2)","q3":"if(abs(p3)<1e-9,0,p3)","tot":"q0+q1+q2+q3"},
+ "readout":"the stream x₂ = (4, 2) is now ({x2x:.2f}, {x2y:.2f})\nshares of the read: {q0:.2f}, {q1:.2f}, {q2:.2f}, {q3:.2f}\ntotal = {tot:.2f}",
+ "presets":[{"label":"0°","values":{"rot":0}},{"label":"45°","values":{"rot":45}},{"label":"90°","values":{"rot":90}},{"label":"180°","values":{"rot":180}}],
+ "caption":"Edge case: the second coordinate of x₂ changes with every turn, and the shares stay put."
+}</script>
+  <p>A <dfn>basis</dfn> is the set of axes we write coordinates in. Nanda: “A privileged basis is a meaningful basis for a vector space.” <span class="cite">Nanda 2022, § Representations of Features</span> Elhage and colleagues assert, for their idealised linear stream, that it “doesn't have a "privileged basis"” <span class="cite">Elhage 2021, § Communication Channel</span>. Nanda adds that “the standard basis is always slightly privileged” <span class="cite">Nanda 2022, § Representations of Features</span>. The neurons of an MLP are different, because the MLP’s curve acts on each coordinate separately <span class="cite">Elhage 2021, § Activation Properties</span>. So never read “dimension 17” as a feature; compare vectors by dot products.</p>
+  
+  <p><b>Cashing in bet 3.</b> Let “model B” be model A with everything rotated. The coordinates differ and every dot product is the same, so “analogous” can only mean “the same up to a rotation of the stream”, never “the same coordinates”. This is ours: a reason to compare by dot products, not a result about real models.</p>
+
+  <details class="deep" id="box-norm">
+    <summary>Look inside: a norm before every read</summary>
+    <p>Nanda says a normalisation step is used “whenever the residual stream is input into a layer (ie before the attention, MLP and unembedding layers)”. It has four steps: subtract the mean, divide by the standard deviation, scale, translate. Of these, “the “divide by the standard deviation” step is non-linear (but the other 3 are linear)” <span class="cite">Nanda 2022, § Transformer Components, LayerNorm</span>. For their idealised model, Elhage and colleagues write that “up to a constant scalar, the layer normalization is a constant affine transformation” <span class="cite">Elhage 2021, § Communication Channel</span>.</p>
+    <p>A toy (ours). We subtract the mean, divide by the population standard deviation (the sources do not say which convention models use), and leave scale and translate at identity. Double the stream, and the normalised list does not change:</p>
+    <div class="tbl"><table><thead><tr><th>step</th><th>stream (4, 2)</th><th>stream (8, 4)</th></tr></thead><tbody>
+      <tr><td>mean</td><td>3</td><td>6</td></tr>
+      <tr><td>after subtracting</td><td>(1, −1)</td><td>(2, −2)</td></tr>
+      <tr><td>standard deviation</td><td>1</td><td>2</td></tr>
+      <tr><td>after dividing</td><td>(1, −1)</td><td>(1, −1)</td></tr>
+      <tr><td>\(r\cdot\) normalised, \(r=(1,2)\)</td><td>−1</td><td>−1</td></tr>
+      <tr><td>\(r\cdot\) stream</td><td>8</td><td>16</td></tr>
+    </tbody></table></div>
+    <p>So a read that sits behind the norm cannot see the size of the stream, while a plain dot product doubles. The additive split of section 5 still applies to the centred writes, with every share divided by the standard deviation of the whole stream (ours). Which design a model uses decides what a “write” is: in post-norm models, Nanda says, the norm is applied “when writing to the residual stream (ie at layer output)” <span class="cite">Nanda 2022, § Post-LayerNorm</span>. The notebooks print the code of each model you load.</p>
+  </details>
+  <details class="deep" id="box-lens">
+    <summary>Look inside: the logit lens is one more read</summary>
+    <p>The last step of a model, the <dfn>unembedding</dfn>, turns the final stream into one score for each possible next token. Each score is a dot product with one row of a table. The <dfn>logit lens</dfn> applies that last step to earlier streams. As Nanda describes it (the original post is not among our sources), it applies “the final layer norm, and unembed, and log_softmax”. His summary of the finding: “often, the model has become confident in the correct next token before the final layer, and each layer incrementally improves and refines that confidence” <span class="cite">Nanda 2022, § Logit lens</span>. He reads this as “evidence for thinking about transformers as having the central object of the residual stream, that each layer incrementally updates”.</p>
+    <p>A toy (ours; invented rows; no norm). Let three tokens have unembedding rows at 0°, 120° and 240°. Applied to the running stream of section 3, they give these scores:</p>
+    <div class="tbl"><table><thead><tr><th>stream</th><th>token 1</th><th>token 2</th><th>token 3</th></tr></thead><tbody>
+      <tr><td>\(x_0=(1,2)\)</td><td>1.000</td><td>1.232</td><td>−2.232</td></tr>
+      <tr><td>\(x_1=(2,2)\)</td><td>2.000</td><td>0.732</td><td>−2.732</td></tr>
+      <tr><td>\(x_2=(4,2)\)</td><td>4.000</td><td>−0.268</td><td>−3.732</td></tr>
+    </tbody></table></div>
+    <p>The leading token changes from token 2 to token 1 after block 1 and stays. The point: the last step of a model is a set of reads, one dot product per token. No claim is made that a real lens is faithful.</p>
+    <p>On GPT-2 small, notebook 01 shows why the norm matters. The final norm plus the unembedding, applied to the stream after block 12, reproduces the model’s logits (largest difference 0.0). The unembedding alone is off by up to 834.6. With the norm, the lens puts the model’s final top token, “ it”, at the top (rank 0) after 8 blocks, at rank 1 after 9, and at the top again after 10, 11 and 12 blocks. Without the norm, the rank of “ it” after block 12 is 12 <span class="cite">Notebook 01, reference run</span>.</p>
+  </details>
+</section>
+
+<!-- ============ 7 SHORT ANSWER ============ -->
+<section id="answer" data-ch="answer">
+  <p class="sec-no">7 · Synthesis</p>
+  <h2>Short answer</h2>
+  <div class="term"><p class="term-h">Short answer (our reading, not a finding)</p>
+  <p><b>(a) What is the list?</b> In GPT-2 small, the list a library returns after \(k\) blocks, for \(k=0\) to 11, is the embedding plus every earlier write, up to rounding, at one position. The largest relative differences were 7.8e−7 against an independent record of the stream and 1.03e−6 with the writes added in another order. The library’s last entry is final-normed, so it is the exception. For a trained Qwen3, Llama, Gemma or Mistral model we have no measurement; in code and tiny random models we found that Gemma 3 scales its embedding and norms each sub-layer’s output before adding it. What would change our mind: an additivity error above rounding with the hooks placed correctly. None of the three sources uses the words “hidden state”.</p>
+  <p><b>(b) What can you do with it?</b> A probe is a dot product. Steering is a translation: it moves every score by the same amount, \(u\cdot v\). Compare lists from two models by dot products, not coordinates, because the stream has no privileged basis (asserted for an idealised stream). All this is exact arithmetic. What a score means, or whether a push changes behaviour, the algebra does not say, and the sources never mention steering.</p>
+  <p><b>(c) How firm is the lens?</b> All three of Olah and colleagues’ claims are “deliberately speculative”, and their evidence is a vision network. For language models the three sources give no test, so we hold all three as bets. The toys say what each bet would mean, not whether it is true.</p></div>
+</section>
+
+<!-- ============ 8 LENS 1 ============ -->
+<section id="lens-linalg" data-ch="lens-linalg">
+  <p class="sec-no">8 · Lens 1</p>
+  <h2>Lens 1 · Linear algebra</h2>
+  <p class="linktype"><span class="lt same">same-math</span> Stream = a sum of vectors. Write = vector addition. Read = dot product. Steering = translation. No privileged basis = rotation leaves dot products unchanged. Only this bookkeeping is the same mathematics; the sub-layers themselves are not linear.</p>
+  
+  <p>Seeing is not doing (ours). A probe observes: it reads the stream. Steering intervenes: it writes into it. A high probe score shows that information is present along a direction, not that later parts of the model use it. That needs tests this post does not run, and none of the three sources addresses it directly. Nanda’s caution about ablation (removing a part) is a reminder that edits can mislead: zero ablation “is arguably unprincipled, because the model may be using that part as a bias term” <span class="cite">Nanda 2022, § Ablation</span>.</p>
+  <p>The sources differ in method. Elhage and colleagues pull apart the streams of communication “in terms of virtual weights, rather than studying it directly” <span class="cite">Elhage 2021, § Residual Stream Bandwidth</span>. Nanda writes: “The central object of a transformer is the residual stream.” <span class="cite">Nanda 2022, § Direct Logit Attribution</span> This is a difference of method, not of fact (ours); our reads in sections 5 and 6 sit on Nanda’s side.</p>
+  <p>One more limit. Cosine similarity divides by two lengths, so it is not additive. In notebook 02, with \(v=3u\), the cosine of \(h+v\) with \(u\) was 0.1318, while the cosine of \(h\) with \(u\) plus the cosine of \(v\) with \(u\) was 1.0935 <span class="cite">Notebook 02, reference run</span>. A dot product splits over writers; a cosine does not.</p>
+  <p><b>Connection to your research (3C).</b> <i>Computation.</i> Probing, similarity analysis and steering are three statements about one vector. This lens fixes what the vector is and which operations on it are exact.</p>
+  <p class="lens-sum"><b>Adds:</b> exactness for the bookkeeping: a sum to check (section 3), a read that splits over writers (section 5), a coordinate to distrust and a push to measure (section 6). <b>Does not explain:</b> why concepts would be directions at all (bet 1), anything nonlinear (the MLP’s curve, attention weights, the norm’s division), and whether a probe’s direction is used by the model.</p>
+</section>
+
+<!-- ============ 9 LENS 2 ============ -->
+<section id="lens-info" data-ch="lens-info">
+  <p class="sec-no">9 · Lens 2</p>
+  <h2>Lens 2 · Information theory</h2>
+  <p class="linktype"><span class="lt analogy">structural analogy</span> Many writers add into one shared vector, and a reader sees only the sum, as in MacKay’s adder channel (the link is ours). <span class="lt analogy">metaphor</span> “Bus” and “bandwidth”. No theorem or number transfers.</p>
+  <p>This lens asks a question and does not answer it. A stream has \(d\) numbers, and a model may have more things to say than \(d\). How many separate messages can one reader recover, if some interference is tolerated? The sources give no capacity number.</p>
+  <p>Elhage and colleagues note that a single MLP layer “typically has four times more neurons than the residual stream has dimensions”, and picture the neurons “somehow communicating in superposition!” <span class="cite">Elhage 2021, § Residual Stream Bandwidth</span> They call the stream’s dimensions “something like "memory" or "bandwidth"”: the words count dimensions. Nanda defines <dfn>superposition</dfn> as the case when a model “represents more than n features in an n dimensional activation space” and argues that with 50,000 tokens and 768 dimensions “there almost has to be more features than dimensions, and thus superposition” <span class="cite">Nanda 2022, § Toy Model of Superposition</span>. “Almost” matters: it is an argument, not a measurement. Olah and colleagues say that cars and dogs can share a neuron “As long as cars and dogs don’t co-occur” <span class="cite">Olah 2020, § Cars in Superposition</span>. Here writes <i>add</i>; <i>superposition</i> means only the model-side sense.</p>
+  <p>Several writers and one sum are familiar from information theory. MacKay sets an exercise on a channel “with two sets of inputs and one output”. In a simple case the output is “equal to the arithmetic sum of the two inputs, that’s 0, 1 or 2”, with no noise. If the output is 1, “it could be that the input state was (0, 1) or (1, 0)”: the receiver cannot tell who sent the 1 <span class="cite">MacKay 2003, Exercise 15.18, p. 237</span>. We use no result from the exercise.</p>
+  <p><b>A toy (ours).</b> The stream has two numbers. Three features are written along directions at 0°, 120° and 240°: \(g_1=(1,0)\), \(g_2=(-0.5,\,0.866)\), \(g_3=(-0.5,\,-0.866)\). Feature \(j\) has strength \(c_j\), and the stream is \(c_1g_1+c_2g_2+c_3g_3\). Three readers read along \(g_1\), \(g_2\), \(g_3\). Write only feature 1: the stream is \((1,0)\) and the readers hear 1.000, −0.500 and −0.500, so readers 2 and 3 hear something nobody wrote for them. Write all three: the stream is \((0,0)\), and the readers hear 0, 0 and 0, as if nothing were written. The pattern: \(g_j\cdot g_j=1\) and \(g_j\cdot g_k=-\tfrac12\) for \(j\neq k\) (the cosine of 120°), so</p>
+  \[\text{read}_j=c_j-\tfrac12\,(\text{the other two strengths, added})\]
+  <p>Check: for strengths \((1,0,0)\), reader 2 hears \(0-\tfrac12(1+0)=-0.5\). Find a setting that looks exactly like silence.</p>
+  <div class="w" data-widget="lab" id="three-features" data-config-ref="cfg-three-features"></div>
+  <script type="application/json" id="cfg-three-features">{
+ "title":"Three features, two dimensions (toy, ours)",
+ "note":"Feature j is written along direction g_j at 0°, 120° or 240°. Reader j reads along the same direction.",
+ "params":[{"id":"c1","label":"strength c₁","min":0,"max":1,"step":0.5,"value":1,"fmt":".1f"},
+           {"id":"c2","label":"strength c₂","min":0,"max":1,"step":0.5,"value":0,"fmt":".1f"},
+           {"id":"c3","label":"strength c₃","min":0,"max":1,"step":0.5,"value":0,"fmt":".1f"}],
+ "derived":{"h":"sqrt(3)/2","sx":"c1-0.5*c2-0.5*c3","sy":"h*(c2-c3)",
+  "a":"sx","b":"-0.5*sx+h*sy","d":"-0.5*sx-h*sy",
+  "t1":"if(abs(a)<1e-9,0,a)","t2":"if(abs(b)<1e-9,0,b)","t3":"if(abs(d)<1e-9,0,d)","ux":"if(abs(sx)<1e-9,0,sx)","uy":"if(abs(sy)<1e-9,0,sy)"},
+ "table":{"head":["reader","hears","written"],"rows":[["reader 1","=t1","=c1"],["reader 2","=t2","=c2"],["reader 3","=t3","=c3"]],"fmt":".3f"},
+ "readout":"stream = ({ux:.3f}, {uy:.3f})\nreads = {t1:.3f}, {t2:.3f}, {t3:.3f}",
+ "presets":[{"label":"feature 1 only","values":{"c1":1,"c2":0,"c3":0}},{"label":"features 1 and 2","values":{"c1":1,"c2":1,"c3":0}},{"label":"all three","values":{"c1":1,"c2":1,"c3":1}},{"label":"nothing","values":{"c1":0,"c2":0,"c3":0}}],
+ "caption":"Edge case: with all three on, the stream is (0, 0). The readers cannot tell it from silence."
+}</script>
+  <p>Where the analogy breaks (ours). MacKay’s users “cannot hear the output of the channel”, while later parts of a transformer read the stream before they write. His channel has two senders and one receiver; the stream has many writers and many readers. The sources give no rate, capacity or interference bound for the stream, so we do not claim that it <i>is</i> a multiple-access channel.</p>
+  <p><b>Connection to your research (3C).</b> <i>Computation.</i> If features share a stream, one probe direction may pick up several at once. Nanda writes, as an intuition, that for a bottleneck such as the stream “the only interference to care about is when projecting onto a feature direction is other features with non-zero dot product with that direction”, and whether the other kind (in neurons) is harder in practice he calls “a pretty open question” <span class="cite">Nanda 2022, § Toy Model of Superposition</span>. So any claim that a probe isolates a concept should say what else lies on the same line.</p>
+  <p class="lens-sum"><b>Adds:</b> the question of limits: \(d\) dimensions, many messages, interference when directions are not orthogonal, and a case (all three on) that looks like silence. <b>Does not explain:</b> how much a real model packs in, or whether any rate or capacity result transfers. <b>Ours:</b> the link to MacKay’s adder is a structural analogy about the shape (several writers, one sum), nothing more.</p>
+</section>
+
+<!-- ============ 10 YOUR TURN ============ -->
+<section id="turn" data-ch="turn">
+  <p class="sec-no">10 · Your turn</p>
+  <h2>Two notebooks, five exercises, one open question</h2>
+  <p>Run the two notebooks that come with this post on your own computer; they work offline once the models are cached. Notebook 01 uses GPT-2 small through TransformerLens: it checks the sum block by block, plots the stream’s norm by depth, and runs the logit lens. Notebook 02 uses plain Hugging Face with hooks: set <code>MODEL_PATH</code> to a model you have, and it finds which modules write and tests additivity and the score-shift arithmetic. Each ends with blank exercise cells.</p>
+  <p class="small"><b>What to look for</b> (reference run: float32, CPU, prompt “The cat sat on the mat because”). (1) The stream’s norm grows with depth: the median over ordinary positions is 5.3 before block 1, 58.0 after one block and 472.4 after twelve. Position 0, the start token, is far larger: 10.3, then 3155.5 after 11 blocks, then 417.4 after 12. We describe this and do not explain it. (2) The final norm plus the unembedding reproduces the model’s logits (difference 0.0); the unembedding alone is off by up to 834.6. (3) With <code>enable_compatibility_mode</code>, TransformerLens’s stream equals the Hugging Face stream minus its mean coordinate (maximum relative difference 1.09e−6) <span class="cite">TransformerLens, transformer_bridge.py, 548–560</span>. (4) In a tiny random Gemma 3, the guessed hooks fail additivity (relative error 9.7) and the hooks on the two norms pass: a code-path test only <span class="cite">Notebook 02, reference run</span>.</p>
+
+  <div class="exercise"><p class="trap-h">E1 · Add</p>
+  <p>With the toy of section 3, compute \(x_1\) and \(x_2\), then find the \(f_2\) that makes block 2 leave the stream unchanged.</p>
+  <details><summary>Hint</summary><p>\(a_2+f_2\) must be \((0,0)\).</p></details>
+  <details><summary>Solution</summary><p>\(x_1=(2,2)\), \(x_2=(4,2)\); \(f_2=-a_2=(-3,2)\) gives \(x_2=x_1\).</p></details></div>
+
+  <div class="exercise"><p class="trap-h">E2 · Who hears whom</p>
+  <p>For \(r=(1,2)\), compute the four shares of section 5. Which writer is inaudible, and why?</p>
+  <details><summary>Hint</summary><p>Dot \(r\) with each write in turn.</p></details>
+  <details><summary>Solution</summary><p>5, 0, 1, −1, summing to 5. Attention 1 is silent: \((1,2)\cdot(2,-1)=0\), so \(a_1\) is orthogonal to \(r\).</p></details></div>
+
+  <div class="exercise"><p class="trap-h">E3 · Project</p>
+  <p>Score the six points of section 6 on \((1,0)\), \((0,1)\) and \((-1,1)/\sqrt2\). Which gives a gap? Which direction gives both groups the same scores?</p>
+  <details><summary>Hint</summary><p>Compare the largest calm score with the smallest urgent one.</p></details>
+  <details><summary>Solution</summary><p>The first two touch at 3. The third gives \(\mp1.414\), a margin of 2.828. The direction \((1,1)/\sqrt2\) gives 2.828, 4.243 and 5.657 for both groups.</p></details></div>
+
+  <div class="exercise"><p class="trap-h">E4 · Steer</p>
+  <p>Add \(v=(-2,2)\) to every point and show that every score on \(u=(-1,1)/\sqrt2\) rises by \(u\cdot v\). Then add \(v=(2,2)\): what changes, and which probe angle would see it?</p>
+  <details><summary>Hint</summary><p>Use \(s(x+v)=s(x)+u\cdot v\).</p></details>
+  <details><summary>Solution</summary><p>\(u\cdot(-2,2)=2.828\). \(u\cdot(2,2)=0\): no change. A probe at 45°, \((1,1)/\sqrt2\), sees a change of 2.828.</p></details></div>
+
+  <div class="exercise"><p class="trap-h">E5 · Rotate</p>
+  <p>Turn everything by 90°, including \(r\). Show that the four shares of E2 do not change. What does that say about “coordinate 2 of the stream”?</p>
+  <details><summary>Hint</summary><p>Rotate each vector, then repeat E2.</p></details>
+  <details><summary>Solution</summary><p>\(r\to(-2,1)\), \(x_2\to(-2,4)\); the shares are still 5, 0, 1, −1. Coordinate 2 of \(x_2\) went from 2 to 4 while no dot product moved: it has no meaning of its own.</p></details></div>
+
+  <div class="challenge"><p class="trap-h">Transfer challenge</p><p>Take a direction you have used, for example a trained probe’s weight vector. Write one sentence each: at which depth and position it was read; whether a norm stood between the stream and the probe; what a shift of length \(\alpha\) along it adds to every score; and which of these arithmetic settles and which needs a behavioural test.</p></div>
+
+  <p><b>One open question.</b> Suppose, as a toy assumption (ours; real blocks are not linear), that a block acts on the stream as \(M=\begin{pmatrix}2&1\\1&2\end{pmatrix}\). It turns \((1,0)\) into \((2,1)\), a new direction. But it sends \((1,1)\) to \((3,3)\) and \((1,-1)\) to \((1,-1)\): only stretched, by 3 and by 1. Are there always such directions? And if the stream has no privileged basis, could they be the natural axes that coordinates do not give us? Left open.</p>
+</section>
+
+<!-- ============ 11 YOUR WORK ============ -->
+<section id="work" data-ch="work">
+  <p class="sec-no">11 · Your work</p>
+  <h2>Where this shows up in your work</h2>
+  <div class="cards3">
+    <div class="c3"><p class="c3-h">Computation · Reading: probing</p><p>A probe score shows that information is present along a direction, not that the model uses it (section 8). Nanda writes that a probe “likely corresponds” to the feature. With every probe result, state the depth, the position, and whether a norm stood between the stream and the probe. Run notebook 02 on your own model, and claim the identity of section 3 only where its additivity check passes.</p></div>
+    <div class="c3"><p class="c3-h">Computation · Comparing and steering</p><p>Compare lists by dot products, not by coordinates: a rotation changes every coordinate and no dot product (section 6). A steering vector is a translation, and the score shift is \(u\cdot v\) whatever the data. What it does to behaviour is an empirical question that none of the three sources addresses.</p></div>
+    <div class="c3"><p class="c3-h">Communication · Framing and priming (candidate bridge)</p><p>In the algebra, a prime or a frame added to a model is one more write along a direction. Whether a frame behaves like a direction is a bet of the same kind as bet 1. This link is a candidate, not a finding.</p></div>
+    <div class="c3"><p class="c3-h">Collaboration</p><p>No link in this post.</p></div>
+  </div>
+  <p><b>A working assumption, untested here.</b> It is tempting to assume that a base model and its instruction-tuned version share the same stream space and directions. The sources define fine-tuning and RLHF only as training procedures and say nothing about what they change inside a model <span class="cite">Nanda 2022, § General</span>. Testing it is later work.</p>
+</section>
+
+<!-- ============ 12 RECALL ============ -->
+<section id="recall" data-ch="recall">
+  <p class="sec-no">12 · Recall questions</p>
+  <h2>Test yourself</h2>
+  <p>Answer aloud, then open the card. Questions marked ↻ will come back in later posts.</p>
+  <div class="cards" id="recall-cards">
+    <details class="card"><summary>What is the list that a library returns at index k, and what did the notebook check?</summary><p>For GPT-2 small and k = 0 to 11, the stream after k blocks. Writes added in another order differed by at most 1.03e−6 relative; the in-model checks give 0.0 only because they repeat the model’s additions. The last entry is final-normed.</p></details>
+    <details class="card"><summary>What must MLP 2 write to undo attention 2, which wrote (3, −2)?</summary><p>\(f_2=(-3,2)\). Writes add, so they can cancel.</p></details>
+    <details class="card"><summary>Why does a read split over the writers, and when does a writer go unheard?</summary><p>The dot product of a sum is the sum of the dot products: one share per writer. A writer is unheard when its vector is orthogonal to the reader, as \((2,-1)\) is to \(r=(1,2)\).</p></details>
+    <details class="card"><summary>Why does no coordinate separate calm from urgent in the toy cloud, and what does the blind probe show?</summary><p>Both groups reach 3 on each axis. At 45° both groups score 2.828, 4.243 and 5.657.</p></details>
+    <details class="card"><summary>A push v moves every score by what? Why is it affine, not linear?</summary><p>By \(u\cdot v\). A linear map sends zero to zero; adding \(v\) sends zero to \(v\). A linear step plus a constant is affine.</p></details>
+    <details class="card"><summary>↻ What does “no privileged basis” let you do, and what does it not cover?</summary><p>Turn the stream and every reader together without changing any dot product, so compare by dot products, not coordinates. It does not cover MLP neurons, which have a privileged basis.</p></details>
+    <details class="card"><summary>Which of Olah’s three claims would not be fatal to circuits research if false?</summary><p>Universality. All three are “deliberately speculative”.</p></details>
+    <details class="card"><summary>In attention, why divide the scores by \(\sqrt{d_k}\)?</summary><p>If the parts of \(q\) and \(k\) are independent with mean 0 and variance 1, \(q\cdot k\) has variance \(d_k\). Large scores push the softmax into regions with tiny gradients, the authors suspect; scaling keeps them moderate.</p></details>
+  </div>
+</section>
+
+<!-- ============ 13 SOURCES ============ -->
+<section id="sources">
+  <p class="sec-no">13 · Sources</p>
+  <h2>Sources</h2>
+  <p class="small">Web articles are cited by section heading (“§”). MacKay is cited by page. Notebook numbers come from one reference run, listed below; we did not run full-size Qwen3, Llama, Gemma or Mistral models.</p>
+  <ol class="srcs">
+    <li id="src-olah">Olah, C., Cammarata, N., Schubert, L., Goh, G., Petrov, M., &amp; Carter, S. (2020). Zoom in: An introduction to circuits. <i>Distill</i>. https://doi.org/10.23915/distill.00024.001 (https://distill.pub/2020/circuits/zoom-in/).</li>
+    <li id="src-elhage">Elhage, N., Nanda, N., Olsson, C., et al. (2021). A mathematical framework for transformer circuits. <i>Transformer Circuits Thread</i>, Anthropic, 22 December 2021.</li>
+    <li id="src-nanda">Nanda, N. (2022). A comprehensive mechanistic interpretability explainer &amp; glossary. https://www.neelnanda.io/mechanistic-interpretability/glossary (page text saved 2026-10-25).</li>
+    <li id="src-mackay">MacKay, D. J. C. (2003). <i>Information Theory, Inference, and Learning Algorithms</i>. Cambridge University Press. Exercise 15.18, p. 237, and Figure 15.3, p. 238.</li>
+    <li id="src-nb">Notebooks 01 and 02 of this post, reference run of 25 October 2026: Python 3.13.16, torch 2.14.1, transformers 5.19.0, transformer_lens 4.3.0, numpy 2.5.3; float32, CPU, eager attention; prompt “The cat sat on the mat because”; models GPT-2 small, plus a tiny random Qwen3 (from the Qwen3-1.7B-Base config) and a tiny random Gemma 3 for code-path checks only.</li>
+    <li id="src-hf">Hugging Face transformers 5.19.0, source files <code>utils/output_capturing.py</code>, <code>models/qwen3/modeling_qwen3.py</code>, <code>models/gemma3/modeling_gemma3.py</code>, <code>models/llama/modeling_llama.py</code> and <code>models/mistral/modeling_mistral.py</code>, read at the line numbers given in the text (Llama 294–312, 330, 402; Mistral 220–238, 256, 375).</li>
+    <li id="src-tl">TransformerLens 4.3.0, source file <code>model_bridge/transformer_bridge.py</code>, read at the line numbers given in the text.</li>
+  </ol>
+</section>
+
+</main>

@@ -1,0 +1,40 @@
+{
+ "title": "What Is a Hidden State? The Residual Stream, Read and Written",
+ "short": "The Residual Stream",
+ "num": 3,
+ "date": "2026-10-25",
+ "summary": "When you copy a hidden state out of a language model, what have you copied? We build the answer from vector addition: a running sum that every part of the model writes into and reads from. Then we turn it into a probe, a push and a rotation with toy numbers, hold Olah's three claims as bets, and read the picture through linear algebra and information theory. Two notebooks check the sum on GPT-2 small and say what was not run.",
+ "cites": [
+  [
+   "Olah",
+   "olah"
+  ],
+  [
+   "Elhage",
+   "elhage"
+  ],
+  [
+   "Nanda",
+   "nanda"
+  ],
+  [
+   "MacKay",
+   "mackay"
+  ],
+  [
+   "Notebook",
+   "nb"
+  ],
+  [
+   "HF",
+   "hf"
+  ],
+  [
+   "TransformerLens",
+   "tl"
+  ]
+ ],
+ "brief": [
+  "source-brief.verified.md"
+ ]
+}
