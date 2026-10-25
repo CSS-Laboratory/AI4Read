@@ -10,5 +10,17 @@
   "title": "Three predictions",
   "hash": "33e759e82ed1",
   "dur": 115.6
+ },
+ {
+  "id": "sum",
+  "title": "The stream is a running sum",
+  "hash": "c3c283c10f79",
+  "dur": 425.5
+ },
+ {
+  "id": "bets",
+  "title": "Three bets",
+  "hash": "6f8b5f7afff4",
+  "dur": 283.0
  }
 ]
