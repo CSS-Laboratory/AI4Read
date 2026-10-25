@@ -76,6 +76,21 @@ Use `\n` in a readout for a new line.
 - `labels`: `[{x, y, text, a, c}]`. `width`, `height`.
 - `steps`: `[{show:[ids], text}]`. Items named in no step are always shown; items in a step appear from that step on. With `"preview": true`, items of later steps are drawn faded from the start, so a tall diagram is never mostly blank on a phone.
 
+### `vec2d`: vectors in the plane, a draggable probe direction, a draggable push (added 2026-10-25, post 03)
+The reader drags arrows on a square grid (equal scale on both axes, so angles look right). Every drag moves the matching slider, and the sliders stay under the canvas for keyboard and screen-reader use. A focused arrow handle also moves with the arrow keys.
+| key | meaning |
+|---|---|
+| `x`, `y` | `{min, max}` view ranges (default −6 to 6). `grid` (default 1) sets the grid step; `tickEvery` (default 2 × grid) the labels. |
+| `params`, `constants`, `presets`, `readout`, `caption` | as in `lab`. |
+| `pre` | `{name: "expr"}` evaluated **before** the geometry (for values the points or arrows use). |
+| `probe` | `{x:"expr", y:"expr"}` the probe direction u (normalised unless `"normalize": false`). Options: `"line": false` hides the dashed line through the origin; `"feet": true` draws each point's foot on the line; `"boundary": true` (or an expr c) draws the line u·p = c. |
+| `shift` | `{x:"expr", y:"expr", trail:true}` a vector v added to every point (steering). `trail` shows where each point came from. A point with `"fixed": true` is not shifted. |
+| `points` | `[{x, y, label, group: 0/1/2}]`. Group 0 is blue, 1 red, 2 green. |
+| `vectors` | `[{x, y, from:{x,y}, label, cls: c0–c4, scale, drag}]`. `scale` multiplies the drawn length only (say so in the caption). `drag`: `{angle:"paramId"}` turns the arrow (the angle is put into the slider's range; outside it, the nearer end is used); add `length:"paramId"` (with `lengthUnit`) to stretch it; or `{x:"paramId", y:"paramId"}` to move its tip freely. `drag.label` names the handle for screen readers. |
+| `derived` | evaluated **after** the geometry and may use the variables below. |
+
+Variables after the geometry: `ux, uy` (unit probe), `vx, vy` (shift), `uv` = u·v, and for point i (1-based) `x_i`, `y_i` (after the shift; written `x1`, `y1`, …) and `s_i` = u·(x_i, y_i) (written `s1`, `s2`, …); `n` is the number of points. Example: `"margin": "min(s4,min(s5,s6))-max(s1,max(s2,s3))"`. Copy the working example in `gallery.html` (`cfg-vec2d`).
+
 ### `stepper`: walk through a worked table row by row
 `head`, `rows` (strings; compute them with `check.mjs` or code first), `notes` (one per row).
 

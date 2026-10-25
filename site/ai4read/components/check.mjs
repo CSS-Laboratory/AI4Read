@@ -47,7 +47,7 @@ for (const it of items) {
     // validate every expression string in the config
     const exprs = [];
     (function walk(o, path) { if (o && typeof o === "object") for (const [k, v] of Object.entries(o)) walk(v, path + "." + k);
-      else if (typeof o === "string" && /(\.(derived|update|init)\.|\.(value|expr|x|y|w|capital|steps|t)$)/.test(path) && !/^(label|title|caption|note)/.test(path)) exprs.push([path, o]); })(cfg, "");
+      else if (typeof o === "string" && /(\.(derived|update|init|pre)\.|\.(value|expr|x|y|w|capital|steps|t)$)/.test(path) && !/^(label|title|caption|note)/.test(path)) exprs.push([path, o]); })(cfg, "");
     exprs.forEach(([p, e]) => { try { W.parse(e); } catch (er) { throw new Error(`${p}: ${er.message}`); } });
     const fn = W.compute[type];
     console.log(`\n■ ${it.name} (${type})`);

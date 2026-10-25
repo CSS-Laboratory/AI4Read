@@ -89,6 +89,27 @@
 <h2>stepper: walk through a worked table</h2>
 <div class="w" data-widget="stepper" id="g-steps" data-config='{"title":"Compound interest by hand","head":["year","balance"],"rows":[["0","100.00"],["1","105.00"],["2","110.25"],["3","115.76"]],"notes":["Start with 100.","100 × 1.05 = 105.00","105 × 1.05 = 110.25","110.25 × 1.05 = 115.76 (rounded)"]}'></div>
 
+<h2>vec2d: drag a direction, read the projections</h2>
+<div class="w" data-widget="vec2d" id="g-vec2d" data-config-ref="cfg-vec2d"></div>
+<script type="application/json" id="cfg-vec2d">{
+ "title":"Six points, one probe direction u, one push v (toy, ours)",
+ "note":"Drag the blue arrow to turn the probe; drag the red arrow to push every point.",
+ "x":{"min":-3,"max":7},"y":{"min":-2,"max":7},
+ "params":[{"id":"phi","label":"probe angle φ","min":0,"max":180,"step":1,"value":0,"display":"{phi:d}°"},
+           {"id":"psi","label":"push angle ψ","min":0,"max":180,"step":1,"value":135,"display":"{psi:d}°"},
+           {"id":"alpha","label":"push length α","min":0,"max":3,"step":0.1,"value":0,"fmt":".1f"}],
+ "probe":{"x":"cos(phi*pi/180)","y":"sin(phi*pi/180)","feet":true},
+ "shift":{"x":"alpha*cos(psi*pi/180)","y":"alpha*sin(psi*pi/180)","trail":true},
+ "points":[{"x":3,"y":1},{"x":4,"y":2},{"x":5,"y":3},{"x":1,"y":3,"group":1},{"x":2,"y":4,"group":1},{"x":3,"y":5,"group":1}],
+ "vectors":[{"x":"ux","y":"uy","scale":3,"cls":"c0","label":"u","drag":{"angle":"phi","label":"probe direction"}},
+            {"x":"vx","y":"vy","cls":"c1","label":"v","drag":{"angle":"psi","length":"alpha","label":"push"}}],
+ "derived":{"margin":"min(s4,min(s5,s6))-max(s1,max(s2,s3))"},
+ "readout":"scores, blue: {s1:.2f}, {s2:.2f}, {s3:.2f}   red: {s4:.2f}, {s5:.2f}, {s6:.2f}\nmargin (lowest red − highest blue) = {margin:.3f}\nu·v = {uv:.3f}",
+ "presets":[{"label":"axis only","values":{"phi":0,"alpha":0}},{"label":"best probe","values":{"phi":135,"alpha":0}},{"label":"blind probe","values":{"phi":45,"alpha":0}},
+            {"label":"push along","values":{"phi":135,"psi":135,"alpha":2}},{"label":"push sideways","values":{"phi":135,"psi":45,"alpha":2}}],
+ "caption":"Edge case: at φ = 45° both groups get the same three scores, so the probe cannot tell them apart."
+}</script>
+
 <h2>switch: panels</h2>
 <div class="w" data-widget="switch">
   <section data-label="Lens A"><p>Panel A text.</p></section>

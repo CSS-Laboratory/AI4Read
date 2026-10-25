@@ -50,3 +50,21 @@ svg.fig .ghost{fill:none;stroke:var(--muted);stroke-dasharray:4 3}
 .w-pos{color:var(--muted);font-variant-numeric:tabular-nums}
 .w-err{color:var(--stamp);font:13px var(--f-mono)}
 .w-switch > section{min-width:0}
+/* vec2d */
+svg.fig .mk.c0{fill:var(--blue)} svg.fig .mk.c1{fill:var(--stamp)} svg.fig .mk.c2{fill:var(--ok)} svg.fig .mk.c3{fill:var(--ink)} svg.fig .mk.c4{fill:var(--muted)}
+svg.fig .w-vec{stroke-width:2.6;fill:none}
+svg.fig .w-probe{stroke:var(--blue);stroke-width:1.2;stroke-dasharray:6 4;opacity:.8}
+svg.fig .w-bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 3}
+svg.fig .w-foot{stroke:var(--muted);stroke-width:.9;stroke-dasharray:2 2}
+svg.fig .w-vpt.g0,svg.fig .w-footpt.g0{fill:var(--blue);stroke:var(--card);stroke-width:1.5}
+svg.fig .w-vpt.g1,svg.fig .w-footpt.g1{fill:var(--stamp);stroke:var(--card);stroke-width:1.5}
+svg.fig .w-vpt.g2,svg.fig .w-footpt.g2{fill:var(--ok);stroke:var(--card);stroke-width:1.5}
+svg.fig .w-ghost{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:2 2}
+svg.fig .w-trail{stroke:var(--muted);stroke-width:.8;opacity:.7}
+svg.fig .w-handle{fill:transparent;stroke:currentColor;stroke-width:1.5;stroke-dasharray:3 3;cursor:grab;touch-action:none}
+svg.fig .w-handle.c0{color:var(--blue)} svg.fig .w-handle.c1{color:var(--stamp)} svg.fig .w-handle.c2{color:var(--ok)} svg.fig .w-handle.c3{color:var(--ink)}
+svg.fig .w-handle:hover,svg.fig .w-handle:focus{fill:color-mix(in srgb,currentColor 14%,transparent);outline:none;stroke-width:2.4}
+.w-vec2d.dragging svg.fig .w-handle{cursor:grabbing}
+.w-vec2d .w-fig{touch-action:pan-y}
+svg.fig .w-vlab{font:700 13px var(--f-ui);paint-order:stroke;stroke:var(--card);stroke-width:3px}
+svg.fig .w-vlab.c0{fill:var(--blue)} svg.fig .w-vlab.c1{fill:var(--stamp)} svg.fig .w-vlab.c2{fill:var(--ok)} svg.fig .w-vlab.c3{fill:var(--ink)}

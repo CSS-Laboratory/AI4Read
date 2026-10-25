@@ -182,7 +182,29 @@
     const out = { ...env, failed, survivors: nodes.length - failed, rounds: Math.max(0, ...Object.values(round)), total: nodes.length };
     return { env: out, round, loss, cap, readout: cfg.readout ? fill(cfg.readout, out) : "" };
   }
-  const COMPUTE = { lab: computeLab, plot: computePlot, iterate: computeIterate, cascade: computeCascade };
+  /* vec2d: vectors in the plane, a probe direction u, an optional shift (steering) of every point.
+   * Env after compute: params, constants, `pre` (evaluated first), then for point i (1-based):
+   * x_i, y_i (after the shift), s_i = u·(x_i, y_i); ux, uy (unit), vx, vy (shift), uv = u·v; then `derived`. */
+  function computeVec2d(cfg, values) {
+    const env = paramEnv(cfg, values);
+    for (const [k, src] of Object.entries(cfg.pre || {})) env[k] = evalExpr(src, env);
+    let ux = 1, uy = 0;
+    if (cfg.probe) { ux = evalExpr(cfg.probe.x, env); uy = evalExpr(cfg.probe.y, env); const n = Math.hypot(ux, uy) || 1; if (cfg.probe.normalize !== false) { ux /= n; uy /= n; } }
+    const vx = cfg.shift ? evalExpr(cfg.shift.x, env) : 0, vy = cfg.shift ? evalExpr(cfg.shift.y, env) : 0;
+    Object.assign(env, { ux, uy, vx, vy, uv: ux * vx + uy * vy });
+    const points = (cfg.points || []).map((pt, i) => {
+      const x0 = evalExpr(pt.x, env), y0 = evalExpr(pt.y, env), sh = pt.fixed ? 0 : 1;
+      const x = x0 + sh * vx, y = y0 + sh * vy, s = ux * x + uy * y;
+      env["x" + (i + 1)] = x; env["y" + (i + 1)] = y; env["s" + (i + 1)] = s;
+      return { x0, y0, x, y, s, label: fill(pt.label || "", env), group: pt.group || 0 };
+    });
+    env.n = points.length;
+    for (const [k, src] of Object.entries(cfg.derived || {})) env[k] = evalExpr(src, env);
+    const vectors = (cfg.vectors || []).map((v) => ({ x: evalExpr(v.x, env), y: evalExpr(v.y, env), fx: v.from ? evalExpr(v.from.x, env) : 0, fy: v.from ? evalExpr(v.from.y, env) : 0,
+      label: fill(v.label || "", env), cls: v.cls || "c3", drag: v.drag || null, scale: v.scale || 1 }));
+    return { env, points, vectors, readout: cfg.readout ? fill(cfg.readout, env) : "" };
+  }
+  const COMPUTE = { lab: computeLab, plot: computePlot, iterate: computeIterate, cascade: computeCascade, vec2d: computeVec2d };
 
   const API = { parse, evalExpr, fmt, fill, compute: COMPUTE, version: "1.0" };
   if (typeof module !== "undefined" && module.exports) { module.exports = API; return; }
@@ -375,6 +397,76 @@
     caption(host, cfg); draw();
   }
 
+  /* ---- vec2d: draggable arrows over points; sliders stay for keyboard use and move with the drag ---- */
+  function renderVec2d(host, cfg) {
+    frame(host, cfg);
+    const X = cfg.x || { min: -6, max: 6 }, Y = cfg.y || X, W = 360, M = 16;
+    const k = (W - 2 * M) / (X.max - X.min), H = Math.round((Y.max - Y.min) * k + 2 * M);  // equal scale on both axes
+    const sx = (v) => M + (v - X.min) * k, sy = (v) => H - M - (v - Y.min) * k;
+    const fig = el("div", "w-fig"); let ro; host.dataset.wid = ++uid; const wid = host.dataset.wid;
+    const grid = cfg.grid || 1, deg = Math.PI / 180;
+    const pidx = (id) => (cfg.params || []).findIndex((q) => q.id === id);
+    const setParam = (id, v) => { const i = pidx(id); if (i < 0) return; const p = cfg.params[i]; const st = +p.step || (p.max - p.min) / 100;
+      v = Math.min(p.max, Math.max(p.min, Math.round((v - p.min) / st) * st + +p.min)); const inp = host.querySelectorAll(".w-sliders input")[i];
+      if (inp && +inp.value !== v) { inp.value = v; inp.dispatchEvent(new Event("input")); } };
+    const angleInto = (a, p) => { // put angle a (deg) into [p.min, p.max], choosing the nearer end on the circle when outside
+      let x = ((a - p.min) % 360 + 360) % 360 + +p.min; if (x <= p.max) return x;
+      const dMax = x - p.max, dMin = +p.min + 360 - x; return dMax < dMin ? +p.max : +p.min; };
+    const upd = () => {
+      const r = computeVec2d(cfg, vals);
+      let b = `<defs>${CLS.map((c) => `<marker id="v${wid}${c}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="mk ${c}"/></marker>`).join("")}<clipPath id="vc${wid}"><rect x="${M}" y="${M}" width="${W - 2 * M}" height="${H - 2 * M}"/></clipPath></defs><g clip-path="url(#vc${wid})">`;
+      for (let g = Math.ceil(X.min / grid) * grid; g <= X.max + 1e-9; g += grid) b += `<line x1="${sx(g)}" y1="${sy(Y.min)}" x2="${sx(g)}" y2="${sy(Y.max)}" class="${Math.abs(g) < 1e-9 ? "ax" : "grid"}"/>`;
+      for (let g = Math.ceil(Y.min / grid) * grid; g <= Y.max + 1e-9; g += grid) b += `<line x1="${sx(X.min)}" y1="${sy(g)}" x2="${sx(X.max)}" y2="${sy(g)}" class="${Math.abs(g) < 1e-9 ? "ax" : "grid"}"/>`;
+      if (cfg.tickLabels !== false) { const lab = (v) => String(+v.toFixed(3));
+        for (let g = Math.ceil(X.min / grid) * grid; g <= X.max; g += grid) if (Math.abs(g) > 1e-9 && g > X.min + 1e-9 && g < X.max - 1e-9 && Math.abs(g % (cfg.tickEvery || 2 * grid)) < 1e-9) b += `<text x="${sx(g)}" y="${sy(0) + 13}" text-anchor="middle" class="ts">${lab(g)}</text>`;
+        for (let g = Math.ceil(Y.min / grid) * grid; g <= Y.max; g += grid) if (Math.abs(g) > 1e-9 && g > Y.min + 1e-9 && g < Y.max - 1e-9 && Math.abs(g % (cfg.tickEvery || 2 * grid)) < 1e-9) b += `<text x="${sx(0) - 5}" y="${sy(g) + 4}" text-anchor="end" class="ts">${lab(g)}</text>`; }
+      const L = (X.max - X.min) + (Y.max - Y.min), ux = r.env.ux, uy = r.env.uy;
+      if (cfg.probe && cfg.probe.line !== false) b += `<line x1="${sx(-L * ux)}" y1="${sy(-L * uy)}" x2="${sx(L * ux)}" y2="${sy(L * uy)}" class="w-probe"/>`;
+      if (cfg.probe && cfg.probe.boundary) { const c = typeof cfg.probe.boundary === "string" ? evalExpr(cfg.probe.boundary, r.env) : 0;
+        b += `<line x1="${sx(c * ux - L * uy)}" y1="${sy(c * uy + L * ux)}" x2="${sx(c * ux + L * uy)}" y2="${sy(c * uy - L * ux)}" class="w-bound"/>`; }
+      r.points.forEach((p) => {
+        if (cfg.shift && cfg.shift.trail && (p.x !== p.x0 || p.y !== p.y0)) b += `<circle cx="${sx(p.x0)}" cy="${sy(p.y0)}" r="4" class="w-ghost g${p.group}"/><line x1="${sx(p.x0)}" y1="${sy(p.y0)}" x2="${sx(p.x)}" y2="${sy(p.y)}" class="w-trail"/>`;
+        if (cfg.probe && cfg.probe.feet) b += `<line x1="${sx(p.x)}" y1="${sy(p.y)}" x2="${sx(p.s * ux)}" y2="${sy(p.s * uy)}" class="w-foot"/><circle cx="${sx(p.s * ux)}" cy="${sy(p.s * uy)}" r="2.5" class="w-footpt g${p.group}"/>`;
+      });
+      b += `</g>`;
+      r.points.forEach((p) => { b += `<circle cx="${sx(p.x)}" cy="${sy(p.y)}" r="5" class="w-vpt g${p.group}"/>` + (p.label ? `<text x="${sx(p.x) + 7}" y="${sy(p.y) - 7}" class="tn">${esc(p.label)}</text>` : ""); });
+      r.vectors.forEach((v, i) => { const tx = v.fx + v.scale * v.x, ty = v.fy + v.scale * v.y;
+        if (Math.hypot(v.x, v.y) > 1e-9) b += `<line x1="${sx(v.fx)}" y1="${sy(v.fy)}" x2="${sx(tx)}" y2="${sy(ty)}" class="w-vec ${v.cls}" marker-end="url(#v${wid}${v.cls})"/>`;
+        if (v.label) { const n = Math.hypot(v.x, v.y) || 1, ox = (v.x / n) * 14, oy = -(v.y / n) * 14;
+          b += `<text x="${sx(tx) + ox}" y="${sy(ty) + oy + 4}" text-anchor="middle" class="w-vlab ${v.cls}">${esc(v.label)}</text>`; }
+        if (v.drag) { const pa = v.drag.angle && cfg.params[pidx(v.drag.angle)], val = pa ? vals[pa.id] : null;
+          b += `<circle cx="${sx(tx)}" cy="${sy(ty)}" r="16" class="w-handle ${v.cls}" data-vi="${i}" tabindex="0" role="slider" aria-label="${esc(v.drag.label || v.label || "drag")}"` +
+            (pa ? ` aria-valuemin="${pa.min}" aria-valuemax="${pa.max}" aria-valuenow="${val}"` : "") + `/>`; } });
+      rendering = true;
+      fig.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="fig w-vec2d-svg" role="group" aria-label="${esc(cfg.title || "vectors")}">${b}</svg>`;
+      if (focusVi != null) { const h = fig.querySelector(`.w-handle[data-vi="${focusVi}"]`); if (h) h.focus({ preventScroll: true }); }
+      rendering = false;
+      if (ro) ro.textContent = r.readout;
+    };
+    let dragVi = null, focusVi = null, rendering = false;
+    const toData = (e) => { const svg = fig.querySelector("svg"), m = svg.getScreenCTM(); if (!m) return null;
+      const pt = new DOMPoint(e.clientX, e.clientY).matrixTransform(m.inverse()); return [X.min + (pt.x - M) / k, Y.min + (H - M - pt.y) / k]; };
+    const dragTo = (vi, d) => { const v = cfg.vectors[vi], dr = v.drag, sc = v.scale || 1; if (!d) return;
+      const fx = v.from ? evalExpr(v.from.x, computeVec2d(cfg, vals).env) : 0, fy = v.from ? evalExpr(v.from.y, computeVec2d(cfg, vals).env) : 0;
+      const dx = (d[0] - fx) / sc, dy = (d[1] - fy) / sc;
+      if (dr.angle) { const p = cfg.params[pidx(dr.angle)]; setParam(dr.angle, angleInto(Math.atan2(dy, dx) / deg, p)); }
+      if (dr.length) setParam(dr.length, Math.hypot(dx, dy) / (dr.lengthUnit || 1));
+      if (dr.x) setParam(dr.x, dx); if (dr.y) setParam(dr.y, dy); };
+    fig.addEventListener("pointerdown", (e) => { const h = e.target.closest && e.target.closest(".w-handle"); if (!h) return;
+      e.preventDefault(); dragVi = +h.dataset.vi; focusVi = dragVi; fig.setPointerCapture(e.pointerId); host.classList.add("dragging"); dragTo(dragVi, toData(e)); });
+    fig.addEventListener("pointermove", (e) => { if (dragVi == null) return; e.preventDefault(); dragTo(dragVi, toData(e)); });
+    const end = (e) => { if (dragVi == null) return; dragVi = null; host.classList.remove("dragging"); try { fig.releasePointerCapture(e.pointerId); } catch (_) {} };
+    fig.addEventListener("pointerup", end); fig.addEventListener("pointercancel", end);
+    fig.addEventListener("keydown", (e) => { const h = e.target.closest && e.target.closest(".w-handle"); if (!h) return;
+      const v = cfg.vectors[+h.dataset.vi], id = v.drag.angle || v.drag.x; if (!id) return; const p = cfg.params[pidx(id)], st = +p.step || 1;
+      const dir = { ArrowRight: 1, ArrowUp: 1, ArrowLeft: -1, ArrowDown: -1 }[e.key]; if (!dir) return;
+      e.preventDefault(); focusVi = +h.dataset.vi; setParam(id, vals[id] + dir * st); });
+    fig.addEventListener("focusout", (e) => { if (!rendering && !fig.contains(e.relatedTarget)) focusVi = null; });
+    host.append(fig); if (cfg.readout) ro = readout(host);
+    const vals = sliders(host, cfg, upd); presets(host, cfg, vals, upd);
+    caption(host, cfg); upd();
+  }
+
   /* ---- switch: segmented buttons over child <section data-label="..."> panels ---- */
   function renderSwitch(host) {
     const panels = [...host.querySelectorAll(":scope > section[data-label]")]; if (!panels.length) return;
@@ -385,7 +477,7 @@
     show(0);
   }
 
-  const RENDER = { lab: renderLab, plot: renderPlot, iterate: renderIterate, cascade: renderCascade, diagram: renderDiagram, stepper: renderStepper, switch: renderSwitch };
+  const RENDER = { lab: renderLab, plot: renderPlot, iterate: renderIterate, cascade: renderCascade, diagram: renderDiagram, stepper: renderStepper, switch: renderSwitch, vec2d: renderVec2d };
   function config(host) {
     if (host.dataset.configRef) { const s = doc.getElementById(host.dataset.configRef); return s ? JSON.parse(s.textContent) : {}; }
     return host.dataset.config ? JSON.parse(host.dataset.config) : {};

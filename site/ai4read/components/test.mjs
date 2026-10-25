@@ -76,6 +76,19 @@ try {
   for (const t of ["diagram", "stepper"]) { const nx = await page.$(`[data-widget=${t}] .w-next`);
     if (nx) { const b = await page.$eval(`[data-widget=${t}] .readout`, (e) => e.textContent); await nx.click();
       const a = await page.$eval(`[data-widget=${t}] .readout`, (e) => e.textContent); if (a === b) fails.push(`${t} Next did not change the text`); else console.log(`ok  ${t} Next works`); } }
+  for (const host of await page.$$("[data-widget=vec2d]")) {
+    const id = await host.evaluate((h) => h.id), ro = async () => host.$eval(".readout", (e) => e.textContent);
+    const h = await host.$(".w-handle"); if (!h) continue; await h.scrollIntoViewIfNeeded();
+    const before = await ro(), bb = await h.boundingBox();
+    await page.mouse.move(bb.x + bb.width / 2, bb.y + bb.height / 2); await page.mouse.down();
+    await page.mouse.move(bb.x + bb.width / 2 - 60, bb.y + bb.height / 2 - 70, { steps: 6 }); await page.mouse.up();
+    const afterDrag = await ro(), slid = await host.$eval(".w-sliders input", (e) => e.value);
+    if (afterDrag === before) fails.push(`${id}: dragging the handle did not change the readout`); else console.log(`ok  ${id}: drag changes the readout (slider now ${slid})`);
+    const h2 = await host.$(".w-handle"); await h2.focus(); await page.keyboard.press("ArrowRight");
+    const afterKey = await ro(), still = await host.evaluate((x) => x.contains(document.activeElement) && document.activeElement.classList.contains("w-handle"));
+    if (afterKey === afterDrag) fails.push(`${id}: arrow key on the handle did not change the readout`); else console.log(`ok  ${id}: arrow key moves the handle${still ? " (focus kept)" : ""}`);
+    if (!still) fails.push(`${id}: handle lost keyboard focus after an arrow key`);
+  }
   const sw = await page.$$("[data-widget=switch] .seg button");
   if (sw.length > 1) { await sw[1].click(); const vis = await page.$$eval("[data-widget=switch] > section", (s) => s.map((x) => !x.hidden));
     if (!(vis[1] && !vis[0])) fails.push("switch did not change panel"); else console.log("ok  switch changes panel"); }
