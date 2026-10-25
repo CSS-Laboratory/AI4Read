@@ -80,3 +80,7 @@ One block per stage. Token counts come from the agent results (all subagent toke
 ## Post 03 · S2 fact-check
 - fact-checker (Opus, fresh agent): `source-brief.verified.md`, `review/s2-check.md`; 319k tokens, 14.6 min. 1 critical (three Olah quotes from text commented out of the published HTML), 9 major (cut Nanda quote, misread Nanda L216, "unit vector" in no source, an invented tension, a dropped Elhage hedge, four uses of Elhage material outside Kunhao's scope), 24 minor. All fixed in the verified brief; 164 quotes verbatim. Gate (0 unchecked units): PASS.
 - Topic card T2 corrected (Nanda has an RMSNorm entry).
+
+## Post 03 · notebooks
+- notebook builder (Opus, fresh agent): `01_bus_gpt2.ipynb` (TransformerLens 4.3.0, also tested on 3.9), `02_bus_my_model.ipynb` (HF hooks; GPT-2 full run, tiny random Qwen3 from its config, tiny Gemma 3), executed offline; `results.md` (67 results, 19 library-source citations); 289k tokens, 27.5 min.
+- Key: in-model additivity bit-exact (same float32 adds; reordering gives 1.03e-6 rel); HF `hidden_states[k]` = TL raw stream (k = 0..11, rel 7.8e-7); the last HF entry is final-normed; logit lens with ln_final reproduces logits exactly. TL 4 removed HookedTransformer (card T6 sharpened); Gemma 3 norms sit on sub-layer outputs before the add (T2 confirmed). Meta-manager spot-checked the transformers source lines for hidden_states.
