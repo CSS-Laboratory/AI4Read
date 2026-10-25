@@ -73,14 +73,14 @@ context 1024, `gelu_new`, LayerNorm, learned position embedding.
 | # | Quantity | Value | Cell |
 |---|---|---|---|
 | 35 | Found by inspection | blocks `transformer.h` (12); block children `ln_1, attn, ln_2, mlp`; final norm `ln_f` (LayerNorm, eps 1e−5); position embedding `wpe` added to the stream; no rotary module; `tie_word_embeddings` True and `lm_head` shares storage with `wte` | [4] |
-| 36 | `hidden_states[0]` vs embedding module `wte(ids)` | rel 3.63 (no match) | [7] |
+| 36 | `hidden_states[0]` vs embedding module `wte(ids)` | rel 3.63 (relative to the norm of the reference, here the table rows; no match) | [7] |
 | 37 | `hidden_states[0]` vs `wte(ids) + wpe(positions)` | 0.0 | [7] |
 | 38 | Pair search, block 0: the two children whose outputs sum to (block output − block input) | `attn` + `mlp`, error 0.0 (next best pair: rel 0.90) | [8] |
 | 39 | Child that receives (block input + attention write) as its input | `ln_2`, error 0.0 | [8] |
 | 40 | (a) block output − (block input + attn + mlp), all 12 blocks | max rel **0.0** | [9] |
 | 41 | (b) `hidden_states[l]` vs input of block l, l = 0..11 | 0.0 for every l | [9] |
 | 42 | (c) `hidden_states[l+1]` vs output of block l | 0.0 for l = 0..10; **0.986 at l = 11** | [9] |
-| 43 | (d) `hidden_states[l+1] − hidden_states[l]` vs attn + mlp writes | max rel 6.2e−6 for l = 0..10 (max abs 1.75e−4); **rel 2.04 (abs 370) at l = 11** | [9] |
+| 43 | (d) `hidden_states[l+1] − hidden_states[l]` vs attn + mlp writes | max rel 6.2e−6 (relative to the norm of the block's own two writes, not the stream; S5 r3 V3B-01) for l = 0..10 (max abs 1.75e−4); **rel 2.04 (abs 370) at l = 11** | [9] |
 | 44 | `hidden_states[-1]` vs output of the last block | max abs 370, rel 0.986 | [10] |
 | 45 | `hidden_states[-1]` vs `ln_f(output of the last block)` | 0.0 | [10] |
 | 46 | `lm_head(hidden_states[-1])` vs model logits | 0.0 | [10] |
@@ -203,3 +203,6 @@ Notebook 01 was also executed (outputs not saved) under transformer_lens 3.9.0 w
   show up to 6.2e−6 relative (row 43).
 * **W9 margin.** The card's margin values (0 at 0°, −2.828 at 45°) hold with margin defined as the larger of the two
   orientations, max(min urgent − max calm, min calm − max urgent). The post should state that definition.
+
+
+**Correction (2026-10-25, meta-manager, after S5 r3 V3B-01).** "rel" everywhere in notebook 02 is ‖a − b‖ / ‖b‖ with b the second argument of `err` (the reference). For row 43/62 the reference is the block's two writes, not the stream; relative to the stream the same differences are about 4e−8 to 7e−7 (the S5 checker's rerun). The helper's docstring said "the stream's norm"; it is corrected (no number changes).
