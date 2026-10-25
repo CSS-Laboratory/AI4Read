@@ -1,96 +1,176 @@
 {
- "schema": "ai4read.english-pack/1",
- "levels": "C1-C2",
+ "schema": "ai4read.english-pack/2",
  "post": {
   "slug": "2026-10-llm-next-word",
   "title": "What does an LLM know when it predicts the next word?",
   "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
  },
+ "levels": "C1-C2",
+ "passage": {
+  "externalId": "ai4read:2026-10-llm-next-word:passage",
+  "level": "C2",
+  "text": "A language model is trained to do one job: guess the next piece of text. It is scored by its loss, which measures how closely those guesses match real text. What it knows comes in four layers, from the most certain to the most contested. First come bits about text, which are measurable. That is knowledge in Shannon's sense, and his theory sidesteps the question of meaning. Next is structure, such as grammar, and that is well supported. Whether the model grasps meaning stands or falls on what you take meaning to be. As for minds, the jury is still out. Many tests are passed, but small changes often break the result, which should give us pause. Yet people fail some of those changes too, so if a failure counts against the model, then by the same token it counts against us. A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge the model has. To tease apart the kinds, you have to change the test in small ways and see what breaks.",
+  "sentences": [
+   {
+    "start": 0,
+    "end": 72
+   },
+   {
+    "start": 73,
+    "end": 156
+   },
+   {
+    "start": 157,
+    "end": 237
+   },
+   {
+    "start": 238,
+    "end": 287
+   },
+   {
+    "start": 288,
+    "end": 375
+   },
+   {
+    "start": 376,
+    "end": 439
+   },
+   {
+    "start": 440,
+    "end": 520
+   },
+   {
+    "start": 521,
+    "end": 557
+   },
+   {
+    "start": 558,
+    "end": 650
+   },
+   {
+    "start": 651,
+    "end": 780
+   },
+   {
+    "start": 781,
+    "end": 905
+   },
+   {
+    "start": 906,
+    "end": 994
+   }
+  ],
+  "core": [
+   7,
+   8,
+   9,
+   10
+  ],
+  "audio": {
+   "file": "audio/2026-10-llm-next-word-passage.mp3",
+   "voice": "Kokoro bm_george (en-GB)",
+   "durationMs": 80040,
+   "wpm": 155,
+   "segments": [
+    {
+     "sentence": 0,
+     "startMs": 250,
+     "endMs": 5797
+    },
+    {
+     "sentence": 1,
+     "startMs": 6497,
+     "endMs": 12705
+    },
+    {
+     "sentence": 2,
+     "startMs": 13405,
+     "endMs": 18909
+    },
+    {
+     "sentence": 3,
+     "startMs": 19609,
+     "endMs": 23129
+    },
+    {
+     "sentence": 4,
+     "startMs": 23829,
+     "endMs": 29759
+    },
+    {
+     "sentence": 5,
+     "startMs": 30459,
+     "endMs": 35131
+    },
+    {
+     "sentence": 6,
+     "startMs": 35831,
+     "endMs": 41527
+    },
+    {
+     "sentence": 7,
+     "startMs": 42227,
+     "endMs": 45321
+    },
+    {
+     "sentence": 8,
+     "startMs": 46021,
+     "endMs": 52591
+    },
+    {
+     "sentence": 9,
+     "startMs": 53291,
+     "endMs": 62486
+    },
+    {
+     "sentence": 10,
+     "startMs": 63186,
+     "endMs": 72338
+    },
+    {
+     "sentence": 11,
+     "startMs": 73038,
+     "endMs": 79289
+    }
+   ],
+   "note": "Recorded by AI4Read sentence by sentence (en-GB) and tagged 'AI4Read from CSS Lab'."
+  },
+  "gist": [
+   {
+    "question": "What four layers of knowledge does the speaker describe, and which is the most contested?",
+    "answer": "Bits about text, structure such as grammar, meaning, and minds. The question of minds is the most contested."
+   },
+   {
+    "question": "What does a low loss not tell you, and how can you find out more?",
+    "answer": "It does not tell you what kind of knowledge the model has. To find out, you change the test in small ways and see what breaks."
+   }
+  ],
+  "retell": {
+   "instruction": "In 2-3 sentences, explain to a colleague why a low loss does not settle what an LLM knows.",
+   "mustUse": [
+    "ai4read:2026-10-llm-next-word:to-tease-apart",
+    "ai4read:2026-10-llm-next-word:in-and-of-itself",
+    "ai4read:2026-10-llm-next-word:the-jury-is-still-out-on"
+   ],
+   "modelAnswer": "A low loss, in and of itself, only tells you how much a model knows about text, not what kind of knowledge it is. To tease apart the kinds, you change the test in small ways and see what breaks. On whether models have anything like a mind, the jury is still out."
+  },
+  "tags": [
+   "ai4read",
+   "ai4read-2026-10",
+   "passage",
+   "C2"
+  ],
+  "source": {
+   "label": "AI4Read · What does an LLM know when it predicts the next word?",
+   "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
+  }
+ },
  "items": [
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:to-be-tantamount-to",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "to be tantamount to",
-   "sentence": "A low loss on held-out text is not tantamount to understanding what the text means.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C2"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C2",
-   "definition": "to have the same effect or meaning as something else, usually something stronger or worse",
-   "partOfSpeech": "adjective + preposition (with be)",
-   "register": "formal/academic",
-   "target": {
-    "text": "tantamount to",
-    "start": 35,
-    "end": 48
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:to-be-predicated-on",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "to be predicated on",
-   "sentence": "Xie's account of in-context learning is predicated on the model fitting its training distribution exactly.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C2"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C2",
-   "definition": "to be based on an assumption or condition, so that it fails if the assumption fails",
-   "partOfSpeech": "adjective + preposition (with be)",
-   "register": "formal/academic",
-   "target": {
-    "text": "predicated on",
-    "start": 40,
-    "end": 53
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:to-be-contingent-on",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "to be contingent on",
-   "sentence": "Xie's result that prompting amounts to Bayesian inference is contingent on strong assumptions about the data, the model and the prompt.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C2"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C2",
-   "definition": "depending on something else in order to be true or to happen",
-   "partOfSpeech": "adjective + preposition (with be)",
-   "register": "formal/academic",
-   "target": {
-    "text": "contingent on",
-    "start": 61,
-    "end": 74
-   }
-  },
   {
    "externalId": "ai4read:2026-10-llm-next-word:to-stand-or-fall-on",
    "kind": "expression",
    "group": "expressions",
    "headword": "to stand or fall on",
-   "sentence": "The octopus argument stands or falls on what one takes meaning to be.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -105,270 +185,16 @@
    "definition": "to succeed or fail completely depending on one particular thing",
    "partOfSpeech": "verb phrase",
    "register": "formal",
+   "anchor": {
+    "start": 473,
+    "end": 491,
+    "text": "stands or falls on"
+   },
+   "sentence": "The validity of a surrogate-labelling study stands or falls on the quality of the human-coded sample it is checked against.",
    "target": {
     "text": "stands or falls on",
-    "start": 21,
-    "end": 39
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:to-throw-something-into-sharp-relief",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "to throw something into sharp relief",
-   "sentence": "Comparing bits per token with bits per character throws into sharp relief how misleading per-token loss can be.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C2"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C2",
-   "definition": "to make a difference or problem very easy to see by contrast",
-   "partOfSpeech": "verb phrase",
-   "register": "formal/written",
-   "target": {
-    "text": "throws into sharp relief",
-    "start": 49,
-    "end": 73
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:in-and-of-itself",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "in and of itself",
-   "sentence": "An attention map is not, in and of itself, an explanation of what the model computes.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C1"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C1",
-   "definition": "considered alone, without other evidence or factors",
-   "partOfSpeech": "adverbial phrase",
-   "register": "neutral/academic",
-   "target": {
-    "text": "in and of itself",
-    "start": 25,
-    "end": 41
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:to-gloss-over",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "to gloss over",
-   "sentence": "A single accuracy figure can gloss over how fragile a result is to small changes in the story.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C2"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C2",
-   "definition": "to treat something important as if it were minor, or to avoid discussing it properly",
-   "partOfSpeech": "phrasal verb",
-   "register": "neutral",
-   "target": {
-    "text": "gloss over",
-    "start": 29,
-    "end": 39
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:by-the-same-token",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "by the same token",
-   "sentence": "If a collapse after one small change counts against the model's theory of mind, then by the same token human failures on such changes count against people's.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C2"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C2",
-   "definition": "for the same reason; following the same logic",
-   "partOfSpeech": "linking phrase",
-   "register": "neutral/academic",
-   "target": {
-    "text": "by the same token",
-    "start": 85,
-    "end": 102
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:to-be-agnostic-about",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "to be agnostic about",
-   "sentence": "The GPT-3 authors keep their terms agnostic about whether the model learns tasks from scratch or recognises patterns from training.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C1"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C1",
-   "definition": "to take no position on a question because the evidence does not settle it",
-   "partOfSpeech": "adjective + preposition (with be)",
-   "register": "academic",
-   "target": {
-    "text": "agnostic about",
-    "start": 35,
-    "end": 49
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:to-tease-apart",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "to tease apart",
-   "sentence": "Mahowald and colleagues try to tease apart formal and functional competence.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C1"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C1",
-   "definition": "to separate two things that are closely mixed so that each can be examined",
-   "partOfSpeech": "phrasal verb",
-   "register": "academic",
-   "target": {
-    "text": "tease apart",
-    "start": 31,
-    "end": 42
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:to-stop-short-of",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "to stop short of",
-   "sentence": "Piantadosi and Hill stop short of saying that LLMs understand language as we do.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C1"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C1",
-   "definition": "to come close to doing or saying something, but deliberately not do it",
-   "partOfSpeech": "idiom",
-   "register": "neutral/academic",
-   "target": {
-    "text": "stop short of",
-    "start": 20,
-    "end": 33
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:to-lend-weight-to",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "to lend weight to",
-   "sentence": "Strachan's human data lend weight to the idea that some perturbations are simply hard.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C2"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C2",
-   "definition": "to make an idea or argument more convincing",
-   "partOfSpeech": "verb phrase",
-   "register": "academic",
-   "target": {
-    "text": "lend weight to",
-    "start": 22,
-    "end": 36
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:to-give-someone-pause",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "to give someone pause",
-   "sentence": "A drop from 97.5% to 0% after one small change should give us pause.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C2"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C2",
-   "definition": "to make someone stop and think carefully, often with doubt",
-   "partOfSpeech": "verb phrase",
-   "register": "formal",
-   "target": {
-    "text": "give us pause",
-    "start": 54,
-    "end": 67
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:the-burden-of-proof-lies-with",
-   "kind": "expression",
-   "group": "expressions",
-   "headword": "the burden of proof lies with",
-   "sentence": "On a sceptical default, the burden of proof lies with those who claim the ability has emerged.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "expressions",
-    "C1"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C1",
-   "definition": "the person or side that must provide evidence for a claim is the one making it",
-   "partOfSpeech": "fixed phrase",
-   "register": "academic",
-   "target": {
-    "text": "the burden of proof lies with",
-    "start": 24,
-    "end": 53
+    "start": 44,
+    "end": 62
    }
   },
   {
@@ -376,7 +202,6 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "the jury is still out (on)",
-   "sentence": "The jury is still out on whether machines have theory of mind.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -391,10 +216,171 @@
    "definition": "people have not yet reached a decision or agreement about something",
    "partOfSpeech": "idiom",
    "register": "neutral",
+   "anchor": {
+    "start": 535,
+    "end": 556,
+    "text": "the jury is still out"
+   },
+   "sentence": "On whether these labels transfer to other platforms, the jury is still out.",
    "target": {
-    "text": "The jury is still out",
-    "start": 0,
-    "end": 21
+    "text": "the jury is still out",
+    "start": 53,
+    "end": 74
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-llm-next-word:to-give-someone-pause",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to give someone pause",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What does an LLM know when it predicts the next word?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
+   },
+   "level": "C2",
+   "definition": "to make someone stop and think carefully, often with doubt",
+   "partOfSpeech": "verb phrase",
+   "register": "formal",
+   "anchor": {
+    "start": 636,
+    "end": 649,
+    "text": "give us pause"
+   },
+   "sentence": "An agreement score that drops sharply on a second platform should give us pause.",
+   "target": {
+    "text": "give us pause",
+    "start": 66,
+    "end": 79
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-llm-next-word:by-the-same-token",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "by the same token",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What does an LLM know when it predicts the next word?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
+   },
+   "level": "C2",
+   "definition": "for the same reason; following the same logic",
+   "partOfSpeech": "linking phrase",
+   "register": "neutral/academic",
+   "anchor": {
+    "start": 741,
+    "end": 758,
+    "text": "by the same token"
+   },
+   "sentence": "If we discount a classifier because it was tuned on its test set, then by the same token we should discount a hand-tuned dictionary.",
+   "target": {
+    "text": "by the same token",
+    "start": 71,
+    "end": 88
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-llm-next-word:to-be-tantamount-to",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to be tantamount to",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C2"
+   ],
+   "source": {
+    "label": "AI4Read · What does an LLM know when it predicts the next word?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
+   },
+   "level": "C2",
+   "definition": "to have the same effect or meaning as something else, usually something stronger or worse",
+   "partOfSpeech": "adjective + preposition (with be)",
+   "register": "formal/academic",
+   "anchor": {
+    "start": 799,
+    "end": 812,
+    "text": "tantamount to"
+   },
+   "sentence": "Publishing only the runs that worked would be tantamount to hiding the ones that failed.",
+   "target": {
+    "text": "tantamount to",
+    "start": 46,
+    "end": 59
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-llm-next-word:in-and-of-itself",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "in and of itself",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What does an LLM know when it predicts the next word?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
+   },
+   "level": "C1",
+   "definition": "considered alone, without other evidence or factors",
+   "partOfSpeech": "adverbial phrase",
+   "register": "neutral/academic",
+   "anchor": {
+    "start": 832,
+    "end": 848,
+    "text": "in and of itself"
+   },
+   "sentence": "A high agreement score is not, in and of itself, evidence that the codebook is valid.",
+   "target": {
+    "text": "in and of itself",
+    "start": 31,
+    "end": 47
+   }
+  },
+  {
+   "externalId": "ai4read:2026-10-llm-next-word:to-tease-apart",
+   "kind": "expression",
+   "group": "expressions",
+   "headword": "to tease apart",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "expressions",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What does an LLM know when it predicts the next word?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
+   },
+   "level": "C1",
+   "definition": "to separate two things that are closely mixed so that each can be examined",
+   "partOfSpeech": "phrasal verb",
+   "register": "academic",
+   "anchor": {
+    "start": 909,
+    "end": 920,
+    "text": "tease apart"
+   },
+   "sentence": "It is hard to tease apart the effect of the platform from the effect of the topic.",
+   "target": {
+    "text": "tease apart",
+    "start": 14,
+    "end": 25
    }
   },
   {
@@ -402,7 +388,6 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "to sidestep a question",
-   "sentence": "Shannon openly sidesteps the question of meaning: he calls it irrelevant to the engineering problem.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -417,18 +402,23 @@
    "definition": "to avoid dealing with a question or problem directly",
    "partOfSpeech": "verb phrase",
    "register": "neutral",
+   "anchor": {
+    "start": 341,
+    "end": 363,
+    "text": "sidesteps the question"
+   },
+   "sentence": "The report sidesteps the question of causation by describing associations only.",
    "target": {
-    "text": "sidesteps",
-    "start": 15,
-    "end": 24
+    "text": "sidesteps the question",
+    "start": 11,
+    "end": 33
    }
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:all-cleft-for-a-limited-claim",
+   "externalId": "ai4read:2026-10-llm-next-word:double-superlative-range-from-the-most-x-to-the-most-y",
    "kind": "pattern",
    "group": "c1-c2-patterns",
-   "headword": "All-cleft for a limited claim",
-   "sentence": "All that a low loss tells us is how many bits the model saves.",
+   "headword": "Double superlative range (from the most X to the most Y)",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -440,91 +430,82 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C1",
-   "definition": "Start with 'All (that) … is/was …' to say that something tells us only this much and no more.",
+   "definition": "Mark the two ends of a scale with parallel superlatives: 'from the most certain to the most contested'. It lets you list items in order in a single phrase.",
+   "anchor": {
+    "start": 193,
+    "end": 236,
+    "text": "from the most certain to the most contested"
+   },
+   "sentence": "The studies range from the most carefully controlled to the most loosely designed.",
    "target": {
-    "text": "All that",
-    "start": 0,
-    "end": 8
+    "text": "from the most carefully controlled to the most loosely designed",
+    "start": 18,
+    "end": 81
    }
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:inversion-after-a-restrictive-adverbial",
+   "externalId": "ai4read:2026-10-llm-next-word:as-for-topic",
    "kind": "pattern",
    "group": "c1-c2-patterns",
-   "headword": "Inversion after a restrictive adverbial",
-   "sentence": "Only when the output layer is made cheap does the hidden layer become the bottleneck.",
+   "headword": "As for + topic",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
     "c1-c2-patterns",
-    "C2"
+    "C1"
    ],
    "source": {
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
-   "level": "C2",
-   "definition": "After 'only when', 'not until' or 'little' at the start of a clause, put the auxiliary before the subject ('Little did they expect …'). Formal writing and talks.",
+   "level": "C1",
+   "definition": "'As for X, ...' moves to a new topic in the middle of a talk and signals that what follows is about X alone. Spoken and written, neutral.",
+   "anchor": {
+    "start": 521,
+    "end": 533,
+    "text": "As for minds"
+   },
+   "sentence": "As for the second dataset, we have not yet checked its labels.",
    "target": {
-    "text": "Only when",
+    "text": "As for the second dataset",
     "start": 0,
-    "end": 9
+    "end": 25
    }
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:concession-with-adjective-as",
+   "externalId": "ai4read:2026-10-llm-next-word:sentential-relative-clause-which",
    "kind": "pattern",
    "group": "c1-c2-patterns",
-   "headword": "Concession with 'adjective + as'",
-   "sentence": "Smooth as the loss curve is, it tells us little about when a particular skill appears.",
+   "headword": "Sentential relative clause (, which ...)",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
     "c1-c2-patterns",
-    "C2"
+    "C1"
    ],
    "source": {
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
-   "level": "C2",
-   "definition": "Front an adjective before 'as' (or 'though') to concede a point before the main claim: 'Smooth as it is, …' means 'Although it is smooth, …'. Formal.",
-   "target": {
-    "text": "Smooth as",
-    "start": 0,
-    "end": 9
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:nominalisation-for-academic-register",
-   "kind": "pattern",
-   "group": "c1-c2-patterns",
-   "headword": "Nominalisation for academic register",
-   "sentence": "The sharp decline in accuracy under minor perturbations casts doubt on claims of robust theory of mind.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "c1-c2-patterns",
-    "C2"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
+   "level": "C1",
+   "definition": "After a comma, 'which' can refer to a whole preceding clause, not just one noun: 'small changes often break the result, which should give us pause'. 'That' cannot be used this way.",
+   "anchor": {
+    "start": 623,
+    "end": 649,
+    "text": "which should give us pause"
    },
-   "level": "C2",
-   "definition": "Turn an event ('accuracy declines sharply') into a noun phrase so that it can be the subject of an evaluative verb ('casts doubt on').",
+   "sentence": "Agreement dropped on the new sample, which suggests that the codebook is too loose.",
    "target": {
-    "text": "The sharp decline in accuracy",
-    "start": 0,
-    "end": 29
+    "text": "which suggests that the codebook is too loose",
+    "start": 37,
+    "end": 82
    }
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:comprise-no-of",
+   "externalId": "ai4read:2026-10-llm-next-word:no-article-with-uncountable-abstract-noun",
    "kind": "fix",
    "group": "error-fixes",
-   "headword": "comprise (no 'of')",
-   "sentence": "A transformer block comprises an attention layer and a feed-forward layer.",
+   "headword": "no article with uncountable abstract noun",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -536,16 +517,16 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C1",
-   "definition": "'Comprise' takes a direct object; use 'consist of' or 'is composed of' if you want 'of'. 'Is comprised of' is common in print but criticised by careful editors; avoid it in submissions.",
-   "wrong": "A transformer block comprises of an attention layer and a feed-forward layer.",
-   "right": "A transformer block comprises an attention layer and a feed-forward layer."
+   "definition": "'Knowledge' is uncountable: no 'a' and no plural. Say 'knowledge' or 'a piece of knowledge'.",
+   "anchorSentence": 4,
+   "wrong": "That is a knowledge in Shannon's sense, and his theory sidesteps the question of meaning.",
+   "right": "That is knowledge in Shannon's sense, and his theory sidesteps the question of meaning."
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:stacked-hedges",
+   "externalId": "ai4read:2026-10-llm-next-word:whether-not-if-in-a-subject-clause",
    "kind": "fix",
    "group": "error-fixes",
-   "headword": "stacked hedges",
-   "sentence": "These results suggest that the model, in effect, selects a latent concept.",
+   "headword": "whether, not if, in a subject clause",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -557,16 +538,16 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C1",
-   "definition": "One well-chosen hedge is enough; piling up 'may', 'possibly' and 'might' sounds unsure rather than careful.",
-   "wrong": "These results may possibly suggest that the model might select a latent concept.",
-   "right": "These results suggest that the model, in effect, selects a latent concept."
+   "definition": "A clause that is the subject of a sentence and expresses a yes/no question starts with 'whether', not 'if'.",
+   "anchorSentence": 6,
+   "wrong": "If the model grasps meaning stands or falls on what you take meaning to be.",
+   "right": "Whether the model grasps meaning stands or falls on what you take meaning to be."
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:respectively",
+   "externalId": "ai4read:2026-10-llm-next-word:which-not-that-after-a-comma",
    "kind": "fix",
    "group": "error-fixes",
-   "headword": "respectively",
-   "sentence": "Shannon and Kaplan measured uncertainty in letters and in tokens, respectively.",
+   "headword": "which, not that, after a comma",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -578,37 +559,37 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C1",
-   "definition": "'Respectively' pairs two lists item by item in the same order; it needs a second list to pair with.",
-   "wrong": "Shannon and Kaplan respectively measured uncertainty.",
-   "right": "Shannon and Kaplan measured uncertainty in letters and in tokens, respectively."
+   "definition": "A comment on a whole clause needs ', which'. 'That' only starts a defining relative clause, with no comma.",
+   "anchorSentence": 8,
+   "wrong": "Many tests are passed, but small changes often break the result, that should give us pause.",
+   "right": "Many tests are passed, but small changes often break the result, which should give us pause."
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:dangling-modifier",
+   "externalId": "ai4read:2026-10-llm-next-word:no-inversion-in-an-embedded-question",
    "kind": "fix",
    "group": "error-fixes",
-   "headword": "dangling modifier",
-   "sentence": "Trained on English web text, GPT-2 needs far more bits per character for our Japanese sentence.",
+   "headword": "no inversion in an embedded question",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
     "error-fixes",
-    "C2"
+    "C1"
    ],
    "source": {
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
-   "level": "C2",
-   "definition": "An opening participle phrase must describe the subject that follows. Either make the subject the thing that was trained ('…, GPT-2 needs …') or use a full clause ('Because GPT-2 was trained on English web text, …').",
-   "wrong": "Trained on English web text, our Japanese sentence costs far more bits per character.",
-   "right": "Trained on English web text, GPT-2 needs far more bits per character for our Japanese sentence."
+   "level": "C1",
+   "definition": "After 'what kind of ...' inside a statement, keep statement order (subject then verb): 'what kind of knowledge the model has'.",
+   "anchorSentence": 10,
+   "wrong": "A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge has the model.",
+   "right": "A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge the model has."
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:production-drill",
+   "externalId": "ai4read:2026-10-llm-next-word:shadow-the-core-first",
    "kind": "tip",
    "group": "practice",
-   "headword": "Production drill",
-   "sentence": "Cover the expression, read the definition and the sentence with a gap, and say the expression aloud before you check. Recognising an expression is not the same as being able to use it.",
+   "headword": "Shadow the core first",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -617,57 +598,8 @@
    "source": {
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:90-second-retell",
-   "kind": "tip",
-   "group": "practice",
-   "headword": "90-second retell",
-   "sentence": "Explain one idea from the post aloud in 90 seconds, as if to a colleague, using one hedge, one concession and two expressions from this pack. Record it once a week.",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "practice"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:loop-paragraph-c1c2",
-   "kind": "shadowing",
-   "group": "loop",
-   "headword": "A paragraph to loop",
-   "sentence": "What Shannon showed was that predicting text and compressing it are, in effect, the same problem. It is tempting to conclude that a model which predicts well must understand what it reads, but a low loss is not tantamount to understanding. Xie's account of in-context learning is predicated on the model fitting its training distribution exactly, an assumption that real models may not meet. Attention maps are suggestive, yet a map is not, in and of itself, an explanation. The theory-of-mind results should give us pause: accuracy collapses after small changes to the story. Yet people stumble on many of those changes too, and if a collapse counts against the model, then by the same token our own failures should count against us. Even so, the burden of proof lies with those who claim the ability has emerged. Piantadosi and Hill stop short of saying that models understand as we do, and for now the jury is still out.",
-   "targets": [
-    "tantamount to",
-    "predicated on",
-    "in and of itself",
-    "give us pause",
-    "by the same token",
-    "the burden of proof lies with",
-    "stop short of",
-    "the jury is still out"
-   ],
-   "level": "C2",
-   "audio": {
-    "file": "audio/2026-10-llm-next-word-loop.mp3",
-    "url": null,
-    "voice": "Kokoro af_heart (US English)",
-    "note": "Recorded by AI4Read and tagged 'AI4Read from CSS Lab'. Host it in Margin, or use Margin's own TTS."
    },
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "loop",
-    "C2"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   }
+   "sentence": "Loop the four core sentences until you can say them without the text; the expressions will come with them, already in a natural rhythm."
   }
  ]
 }
