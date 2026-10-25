@@ -1,0 +1,54 @@
+{
+ "textHash": "44c51d72ecded958",
+ "voice": "Kokoro bm_george (en-GB)",
+ "speed": 1.018,
+ "wpm": 153,
+ "pauseMs": 700,
+ "segments": [
+  {
+   "sentence": 0,
+   "startMs": 250,
+   "endMs": 3130
+  },
+  {
+   "sentence": 1,
+   "startMs": 3830,
+   "endMs": 9590
+  },
+  {
+   "sentence": 2,
+   "startMs": 10290,
+   "endMs": 21703
+  },
+  {
+   "sentence": 3,
+   "startMs": 22403,
+   "endMs": 30553
+  },
+  {
+   "sentence": 4,
+   "startMs": 31253,
+   "endMs": 40938
+  },
+  {
+   "sentence": 5,
+   "startMs": 41638,
+   "endMs": 51665
+  },
+  {
+   "sentence": 6,
+   "startMs": 52365,
+   "endMs": 62647
+  },
+  {
+   "sentence": 7,
+   "startMs": 63347,
+   "endMs": 70622
+  },
+  {
+   "sentence": 8,
+   "startMs": 71322,
+   "endMs": 79983
+  }
+ ]
+}

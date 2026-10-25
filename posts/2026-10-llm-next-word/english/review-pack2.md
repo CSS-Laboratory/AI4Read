@@ -276,3 +276,46 @@ Applied to `english.json`. `--check`: source OK, passage 190 words, 12 sentences
 | T1 | Tip now says "six of the pack's nine expressions", because the core sentences (7 to 10) hold jury, pause, same token, count against, tantamount and in and of itself. |
 
 Headwords kept unchanged: all eight original expressions and F2's and F1's headwords. Headwords dropped (for the retired list, which I was not asked to edit): the three removed patterns, "which, not that, after a comma" and "no inversion in an embedded question".
+
+---
+
+## Round 2 (independent reviewer, 2026-10-26)
+
+Fresh reviewer; did not write the pack or the round-1 review. Checked `english.json` against `src/content.html` ("So what does it know?", Lens 1, Lens 4, Lens 5), WRITING.md §8 and §9 and the Margin request. Levels are estimates in EVP/EGP style. Only this file was edited.
+
+`python3 scripts/english_pack.py posts/2026-10-llm-next-word --check`: source OK · passage 190 words, 12 sentences, core 80 words · 9 expressions, 2 patterns, 4 fixes, 1 tip. With both replacements below applied to a scratch copy: source OK · passage 185 words, 12 sentences, core 75 words · 8 expressions, 2 patterns, 4 fixes, 1 tip. The sentence count and fix indexes do not change.
+
+### Counts
+
+| critical | major | minor |
+|---|---|---|
+| 0 | 1 | 1 |
+
+### Findings
+
+**R2-1 (major). Sentence 9 (core) adds an argument the post does not make.**
+- Passage: "Yet people get some of those altered tests wrong too, so if a failure counts against the model, by the same token it counts against us."
+- Post: "Minds. Contested. Many tests are passed, but small changes often break the result. Humans fail some of those changes too." Lens 5 leaves the question of evidence open: "The two sides also disagree about evidence: does one failure decide (Ullman, Shapira), or can a failure have other causes, so that it does not necessarily show inability (Kosinski)?"
+- Problem. The parity argument (if a failure counts against the model, it counts against people too) is not in the post and is not labelled as ours. It also quietly settles the dispute for Kosinski's side, when the post reports it as unsettled. Round 1 (P3, problem 2) rated this minor because it is phrased as a conditional. But §8 says the passage says "only what the post says", and this is a core sentence Kunhao will learn word for word, so I am raising it to major.
+- Replacement sentence 9: `Yet people get some of those altered tests wrong too, and researchers disagree on whether one failure counts against the model.`
+- This keeps "counts against" (same sense) and drops the anchor of `by the same token`. Remove that expression item (8 expressions remain, the minimum). Add `ai4read:2026-10-llm-next-word:by-the-same-token` to the next `site/mewiki/packs/retired-<date>.json`; it is in the published pack, so Margin has review history for it.
+- Replacement tip sentence (the core now holds jury, pause, count against, tantamount, in and of itself): `Loop the four core sentences until you can say them without the text; five of the pack's eight expressions will come with them, already in a natural rhythm.`
+
+**R2-2 (minor). Retell model answer: "A low loss ... tells you how much a model knows about text."**
+- Post: "The loss tells you how much a model knows about text." The size of the loss is what tells you; "a low loss tells you how much" is a slightly confused subject.
+- Replacement first sentence of `modelAnswer`: `The loss, in and of itself, tells you how much a model knows about text, but not what kind of knowledge it is.`
+
+### Checked with no finding
+
+- Faithfulness of the other sentences. S0 "trained to do one job" ("trained on one job"); S2 "from the most certain to the most contested" (verbatim); S3 "measurable" ("Certain and measurable"); S4 "Claude Shannon's sense" and "sidesteps" (the post: "setting meaning aside"; round 1 P4 declined, which is reasonable); S5 "well supported" (verbatim); S6 "stands or falls on what you take meaning to be" ("Depends on your theory"; "more data alone cannot settle this debate"); S7 "tracking what people believe" (Lens 5: "think about what other people believe"); S8 "Models pass many tests, but small changes often break the result" (the post's words); S10 and S11 match "It cannot tell you what kind of knowledge that is" and now leave room for the post's alternative ("or look inside"). Gist 1 and gist 2 are answerable from the passage and faithful.
+- Levels. All expressions are C1 or C2 in my estimate (`to count against` at C2 is plausible; C1 would also pass). Fronted-ordinal inversion (C1) and "what you take X to be" (C1) are acceptable. No item is B2 or below.
+- Fixes. Each `wrong` has exactly one error. All four are realistic C1 errors (agreement after inversion, "a knowledge", "if" for a subject clause, "give us a pause").
+- Usage. All anchors are natural in the passage and the second contexts keep the same sense, are natural and name no source. Spelling is British ("labelling", "unfavourably"); no US forms found.
+
+### Round 1 status
+
+Resolved: P1, P2, P5, P6, P8, E1, E2, PT1 to PT3, F1 to F4, G1, G2, T1. Reasonably declined or no change needed: P4, P7. P3 is resolved on wording (problems 1 and 3), but problem 2 is reopened as R2-1.
+
+### Verdict
+
+Not ready to record: apply R2-1 (sentence 9 changes the audio), then record.

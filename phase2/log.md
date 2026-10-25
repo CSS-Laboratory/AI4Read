@@ -108,3 +108,9 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - Builds: check.mjs 8/8; artifact page and site page render tests PASS (390 px, strict CSP, drag + keyboard on vec2d); 375 px no overflow. Notebook download links added; site build copies notebooks.
 - Published draft artifact https://claude.ai/artifact/HET5R8dYrWAVrLoAVSVT38 (db rules: annotations/notes/guesses/diag admin; sample; downloads; audio and notebooks as files). db check: empty, hidden at view level.
 - Backup: GitHub; Drive bundle ai4read-20261025.bundle (made on the Mac) and sources parts (sha256 df35e373…, verified on the Mac); RESUME and Project docs updated.
+
+## English packs /2 (2026-10-26)
+- Margin agent's request (passage-centred packs, British voice). Decision (Claude, Kunhao asked to decide): adopt `/2` for posts 01–03, with adjustments (C1-accuracy fixes only, second contexts may leave the post, British spelling, computed offsets, sentence-by-sentence recording, same review).
+- Tooling: `scripts/english_pack.py` rewritten for /2 with Margin's 7 checks; `scripts/passage_util.py`; `scripts/tts_english_passage.py` (bm_george, calibrated to ~155 wpm, exact segments, text hash); `scripts/retired_ids.py`. WRITING v0.10 §8, CHARTER 10, writer prompt.
+- Writers (3 × Sonnet, fresh) → reviewers (3 × Sonnet, fresh; 7/8/6 major) → reviser (Sonnet, fresh) → round 2 (Opus, fresh; 1 major in post 01, applied verbatim with all minors).
+- Final: 01 185 words, 8/2/4/1, 79.5 s; 02 189 words, 8/2/3/1, 80.7 s; 03 190 words, 10/4/3/0, 80.2 s. Retired IDs: 18, 19, 15 (retired-2026-10-26.json). HANDOFF-margin §0 updated; the 2026-10-25 Margin prompt marked superseded.

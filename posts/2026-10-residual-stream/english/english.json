@@ -1,7 +1,7 @@
 {
  "schema": "ai4read.english-source/2",
  "post": "2026-10-residual-stream",
- "note": "Passage-centred pack, C1-C2, British English: a spoken mini-talk on post 03's main answer (the stream as a running sum, reads as dot products, the last library entry, probe versus push, and the limits). Levels are AI4Read estimates in the style of the English Vocabulary Profile and English Grammar Profile. Ten headwords are reused from pack 1 or earlier packs where they fit naturally.",
+ "note": "Passage-centred pack, C1-C2, British English: a spoken mini-talk on post 03's main answer (the stream as a running sum, reads as dot products, the last library entry, probe versus push, and the limits). Levels are AI4Read estimates in the style of the English Vocabulary Profile and English Grammar Profile. Nine headwords are reused from this post's pack 1; 'to go unheard' is new.",
  "passage": {
   "level": "C2",
   "text": "On our reading, every attention and MLP part adds its write to one shared list, so a language model's hidden state is a running sum. In our toy that is true by construction, and a notebook on GPT-2 small bears it out, up to rounding. Names can mislead: the library's last entry, having been through the final norm, is a case in point, and is not to be taken at face value. To a first approximation, norm aside, a read is a dot product with that sum, so it splits into one share per writer, and a writer at right angles goes unheard. A linear probe is such a read, and a high score shows only that information is present. To say the model therefore uses it would be tantamount to confusing seeing with doing. A steering push shifts every score in lockstep. What a score means, or whether a push changes behaviour, the algebra does not say. Whether concepts are directions in a trained language model's stream hinges on tests that our three sources do not give, so we are on firm ground with the arithmetic, not the interpretation.",
@@ -14,7 +14,7 @@
   "gist": [
    {
     "question": "Why is a model's hidden state described as a running sum?",
-    "answer": "Because every attention and MLP part adds its write to one shared list, so the state at any point is the sum of the writes made so far."
+    "answer": "Because every attention and MLP part adds its write to one shared list, so the state at any point is the starting list plus every write made so far."
    },
    {
     "question": "What does a high probe score show, and what does it not show?",
@@ -40,7 +40,7 @@
    "register": "academic",
    "definition": "because of the way something was built or chosen, not because of a discovery",
    "anchor": "by construction",
-   "sentence": "In a simulated network the two communities are denser inside than between by construction, because we wrote the generating rule that way.",
+   "sentence": "In a simulated network, ties are denser within the two communities than between them by construction, because we wrote the generating rule that way.",
    "target": "by construction"
   },
   {
@@ -115,7 +115,7 @@
    "level": "C2",
    "partOfSpeech": "adjective + preposition (with be)",
    "register": "formal/academic",
-   "definition": "to have the same effect or meaning as something else, usually something stronger or worse",
+   "definition": "to be virtually the same as something else, in effect; the second thing is usually more serious or negative",
    "anchor": "tantamount to",
    "sentence": "Treating a correlation as a mechanism would be tantamount to reporting an experiment we never ran.",
    "target": "tantamount to"
@@ -173,7 +173,7 @@
    "kind": "pattern",
    "headword": "Noun + aside (absolute phrase)",
    "level": "C1",
-   "definition": "A noun followed by 'aside' (or 'apart') opens a sentence as a short phrase meaning 'if we set that to one side': 'Norm aside, a read is a dot product'. It is formal, takes no verb, and the noun names the thing being set aside.",
+   "definition": "A noun followed by 'aside' (or 'apart') makes a short verbless phrase, usually at the front of a clause, meaning 'if we set that to one side': 'Norm aside, a read is a dot product'. It is formal, and the noun names the thing being set aside.",
    "anchor": "norm aside",
    "sentence": "Sampling error aside, the two surveys tell much the same story.",
    "target": "Sampling error aside"

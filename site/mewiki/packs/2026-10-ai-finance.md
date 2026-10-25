@@ -1,48 +1,56 @@
 # English pack · Could a society run itself on AI?
 
-C1/C2 only · 28 items · source post: https://khyang-lab.org/ai4read/2026-10-ai-finance/
+Schema /2 (passage-centred) · C1/C2 only · source post: https://khyang-lab.org/ai4read/2026-10-ai-finance/
+
+## Passage
+
+0. Could a society run itself on AI?
+1. We can split a society into five jobs: run, decide, check, declare and answer.
+2. In some financial markets, running is largely automated, but much of that is rule-based software, not AI, so we should not conflate algorithmic trading with AI trading.
+3. Deciding is mostly human: market participants the IMF consulted expect a human in the loop in the near term.
+4. **Checking is automatic at run time, yet every automated checker needs a checker, so the chain must end somewhere: today, in rules people wrote.**
+5. **Were firms to automate deciding with a few shared models, they might fail in lockstep, with the caveat that this rests on warnings and toy models, not measurements.**
+6. **Declaring is saying what counts: money is underpinned by people continuing to accept it, and what remains to be seen is whether machines could do that accepting.**
+7. By our definition, a society lets members rely on shared rules, contest them and find someone answerable.
+8. So, with no person left to declare or answer, the result would be a machine system people live next to, a far cry from a society.
+
+189 words · core (bold) 79 words · audio 80.7 s, Kokoro bm_george (en-GB), 153 wpm
+
+### Gist
+
+- The speaker says that running is largely automated in some financial markets. What does the speaker warn us not to conflate, and why? → Algorithmic trading with AI trading, because much of that automated running is rule-based software, not AI.
+- What is the speaker's verdict about a system in which no person is left to declare or answer? → By the speaker's definition it would be a machine system that people live next to, not a society.
+
+### Retell
+
+In 2-3 sentences, explain to a colleague why a fully automated financial system would not count as a society by the speaker's definition, and what is still open.
+
+Must use: to conflate X with Y, to be underpinned by, a far cry from
+
+Model answer: In some financial markets, running is largely automated, but we should not conflate rule-based software with AI, and the market participants the IMF consulted expect a human to stay in the loop in the near term. Money is underpinned by people accepting it, and it remains to be seen whether machines could do that accepting. By our definition, with nobody left to declare or answer, the result would be a far cry from a society: a machine system people live next to.
 
 ## Expressions
 
-- **to conflate X with Y** (C1): to treat two different things as if they were the same. *Don't conflate algorithmic trading with AI trading: many algorithms follow simple rules.*
-- **in lockstep** (C1): moving or changing together, at exactly the same time and in the same way. *Models trained on the same data may make predictions that move in lockstep.*
-- **to be held accountable (for)** (C1): to be made responsible for something and required to explain it or bear its consequences. *Under the IMF's reading of current rules, institutions can be held accountable for the AI systems they deploy.*
-- **to confer a status on** (C2): to give someone or something an official status, right or quality. *For Searle, collective acceptance confers on a printed piece of paper the status of money.*
-- **to be underpinned by** (C1): to be supported or made possible by something that lies beneath it. *On Searle's account, money is underpinned by continued collective acceptance.*
-- **to presuppose** (C1): to need something to be true or to exist already in order to work or make sense. *Accountability, on our reading, presupposes someone who can be asked why.*
-- **to devolve on/upon** (C2): (of a duty or responsibility) to pass to someone else. *Under current rules, responsibility does not devolve upon the AI system; it stays with the institution that deploys it.*
-- **to compound** (C1): to make a problem or difficulty worse by adding to it. *If many firms chase the same signal, their trades may compound a shock rather than absorb it.*
-- **to be at odds with** (C1): to disagree with or not match something. *Imposing one standard menu of contracts can be at odds with Haldane and May's call for diversity.*
-- **to hinge on** (C1): to depend completely on one particular thing. *Whether a machine-only token is money hinges on whether machines can do the accepting.*
-- **to cut both ways** (C1): to have both good and bad effects, or to support both sides of an argument. *Standard contracts cut both ways: they make checking easier, but they can make firms more alike.*
-- **that’s a big if** (C1): used to say that a condition is very uncertain. *Every firm on one model? That’s a big if.*
-- **to read too much into something** (C1): to think something has more meaning or importance than it really has. *Don’t read too much into a toy with ten banks.*
-- **with the caveat that** (C1): with the warning or limitation that. *The toy helps, with the caveat that its numbers are invented.*
-- **what remains to be seen is whether** (C1): used to introduce a question that has not been answered yet. *What remains to be seen is whether machines can do the accepting.*
-- **a far cry from** (C2): very different from, and usually much less than. *Running a market is a far cry from answering for it.*
-- **an Achilles' heel** (C2): a weak point that can cause the failure of something otherwise strong. *One shared model could become the system's Achilles' heel.*
+- **to conflate X with Y** (C1): to treat two different things as if they were the same. In the passage: “conflate algorithmic trading with AI trading”. Second context: *A common mistake in text analysis is to conflate how often a topic is mentioned with how much people care about it.*
+- **in lockstep** (C1): moving or changing together, at exactly the same time and in the same way. In the passage: “in lockstep”. Second context: *Posting rates on the two forums rose and fell in lockstep, which made us suspect a common cause.*
+- **with the caveat that** (C1): with the warning or limitation that. In the passage: “with the caveat that”. Second context: *The classifier performs well, with the caveat that we have tested it only on posts written in English.*
+- **to be underpinned by** (C1): to be supported by, or to depend on, something that forms its basis. In the passage: “underpinned by”. Second context: *Any network analysis of trust is underpinned by assumptions about what a tie really means.*
+- **what remains to be seen is whether** (C1): used to introduce a question that has not been answered yet. In the passage: “what remains to be seen is whether”. Second context: *What remains to be seen is whether the effect survives in a larger and more varied sample.*
+- **a far cry from** (C2): very different from something, often because the real thing falls short of what you might expect. In the passage: “a far cry from”. Second context: *Labelling a thousand posts by hand is a far cry from labelling a million.*
+- **to contest** (C1): to formally challenge a decision or claim because you think it is wrong. In the passage: “contest them”. Second context: *Users should be able to contest a moderation decision that they believe is mistaken.*
+- **answerable (to/for)** (C2): required to explain or justify your actions to someone, or to accept the blame for them. In the passage: “answerable”. Second context: *Reviewers should be answerable to the editor for the quality of their reports.*
 
-## Sentence patterns
+## Patterns
 
-- **Reporting verbs calibrated to strength** (C1): Choose the reporting verb to match how firm the source is: judge, warn, hypothesise, argue, concede. *The IMF judges that the risks currently appear contained; the FSB warns that common models could increase correlations in trading; Gensler and Bailey hypothesise that broad adoption could produce a monoculture.*
-- **It is only when … that (cleft)** (C1): 'It is only when X that Y' stresses that Y depends on X. More emphatic than 'Y happens only when X'. *On our reading, it is only when people can declare and answer that a group becomes a society.*
-- **Inversion with 'were … to'** (C2): A formal way to state an unlikely condition: 'Were X to do Y, …' instead of 'If X did Y, …'. *Were every firm to rely on one model, their errors would tend to coincide.*
-- **Inversion after a negative adverbial** (C2): After 'rarely', 'seldom' or 'little' at the start of a clause, put the auxiliary before the subject. Formal writing and talks. *Rarely does a single toy settle a question about real markets.*
+- **Inversion with 'were ... to'** (C2): A formal way to state an unlikely or hypothetical condition: 'Were X to do Y, ...' instead of 'If X did Y, ...'. In the passage: “Were firms to automate deciding with a few shared models, they might fail in lockstep”. Second context: *Were the two coders to disagree, a third would decide.*
+- **Absolute 'with' + noun phrase + participle** (C1): 'With' plus a noun phrase and a participle, adjective or phrase gives the circumstances in which the main clause holds: 'With X left to do Y, ...'. In the passage: “with no person left to declare or answer”. Second context: *With the data still unlabelled, we could not train the model.*
 
 ## Fixes
 
-- **imply vs infer** (C1): ~~From the IMF's finding we imply that deciding is still largely human.~~ → From the IMF's finding we infer that deciding is still largely human. Evidence or a speaker implies (suggests); a reader or listener infers (concludes).
-- **criterion / criteria** (C1): ~~Knowledge is one criteria for successful delegation.~~ → Knowledge is one criterion for successful delegation; an incentive is the other. 'Criterion' is singular and 'criteria' plural (likewise phenomenon/phenomena).
-- **raise the question (not 'beg')** (C2): ~~Automating the checker begs the question of who checks the checker.~~ → Automating the checker raises the question of who checks the checker. In careful academic English, 'beg the question' means assuming what you are trying to prove; to mean 'prompt a question', say 'raise the question'.
-- **the reason is that (not 'because')** (C1): ~~Part of the reason most participants want a human in the loop is because someone must bear liability.~~ → Part of the reason most participants want a human in the loop is that someone must bear liability. After 'the reason is', use a that-clause; 'the reason is because' repeats the idea of reason and is avoided in formal writing.
+- **uncountable noun: software** (C1), sentence 2: ~~In some financial markets, running is largely automated, but much of that is a rule-based software, not AI, so we should not conflate algorithmic trading with AI trading.~~ → In some financial markets, running is largely automated, but much of that is rule-based software, not AI, so we should not conflate algorithmic trading with AI trading. 'Software' is uncountable: say 'some software' or 'a piece of software', never 'a software' or 'softwares'.
+- **article: in the near term** (C1), sentence 3: ~~Deciding is mostly human: market participants the IMF consulted expect a human in the loop in near term.~~ → Deciding is mostly human: market participants the IMF consulted expect a human in the loop in the near term. 'Near term', 'short term' and 'long term' take 'the' after 'in': 'in the near term', 'in the long term'. A few time phrases take none ('in future', 'at present'), so learn each as a unit.
+- **contest (no preposition)** (C1), sentence 7: ~~By our definition, a society lets members rely on shared rules, contest against them and find someone answerable.~~ → By our definition, a society lets members rely on shared rules, contest them and find someone answerable. In the sense 'challenge', 'contest' takes a direct object: contest a rule, not 'contest against a rule' (compare discuss a plan, not 'discuss about a plan').
 
 ## Practice
 
-- **Five-jobs retell**: Pick a system you know (a journal, a lab, an online community) and describe in two minutes who runs, decides, checks, declares and answers, using three expressions from this pack.
-- **Shadow, then summarise**: Shadow the loop paragraph twice, then close it and summarise the post's answer in three sentences, one for possibility, one for impact and one for meaning.
-
-## Paragraph to loop
-
-Software already runs much of the market, but running a market is a far cry from answering for it. Were many firms to rely on one model, their errors would tend to move in lockstep, and that model could become the system's Achilles' heel. Most participants in the IMF's outreach want a human in the loop, partly for reasons of liability; on our reading, accountability presupposes someone who can be asked why. A token counts as money only while a community keeps accepting it, so whether a machine-only token is money hinges on who does the accepting. What remains to be seen is whether machines could ever do it. Standard contracts cut both ways: they make checking easier, yet they can make firms more alike. A toy with ten banks is useful, with the caveat that it shows what could happen, not what will, so we should not read too much into it.
-
-Targets: a far cry from, Were many firms to rely on, in lockstep, Achilles' heel, presupposes, hinges on, What remains to be seen is whether, cut both ways, with the caveat that, read too much into
+- **Five-jobs retell**: Pick a system you know, such as a journal, a lab or an online community, and describe in two minutes who runs, decides, checks, declares and answers, using three expressions from this pack.

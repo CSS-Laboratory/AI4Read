@@ -9,7 +9,7 @@
  "passage": {
   "externalId": "ai4read:2026-10-llm-next-word:passage",
   "level": "C2",
-  "text": "A language model is trained to do one job: guess the next piece of text. It is scored by its loss, which measures how closely those guesses match real text. What it knows comes in four layers, from the most certain to the most contested. First come bits about text, which are measurable. That is knowledge in Shannon's sense, and his theory sidesteps the question of meaning. Next is structure, such as grammar, and that is well supported. Whether the model grasps meaning stands or falls on what you take meaning to be. As for minds, the jury is still out. Many tests are passed, but small changes often break the result, which should give us pause. Yet people fail some of those changes too, so if a failure counts against the model, then by the same token it counts against us. A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge the model has. To tease apart the kinds, you have to change the test in small ways and see what breaks.",
+  "text": "A language model is trained to do one job: guess the next piece of text. It is scored by its loss, which measures how closely those guesses match real text. What it knows comes in four layers, from the most certain to the most contested. First come bits about text, which are measurable. That is knowledge in Claude Shannon's sense, and his theory sidesteps the question of meaning. Next is structure, such as grammar, which is well supported. Whether the model grasps meaning stands or falls on what you take meaning to be. As for minds, that is, tracking what people believe, the jury is still out. Models pass many tests, but small changes often break the result, which should give us pause. Yet people get some of those altered tests wrong too, and researchers disagree on whether one failure counts against the model. A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge the model has. You can tease apart the kinds by changing the test in small ways and seeing what breaks.",
   "sentences": [
    {
     "start": 0,
@@ -29,35 +29,35 @@
    },
    {
     "start": 288,
-    "end": 375
+    "end": 382
    },
    {
-    "start": 376,
-    "end": 439
+    "start": 383,
+    "end": 443
    },
    {
-    "start": 440,
-    "end": 520
+    "start": 444,
+    "end": 524
    },
    {
-    "start": 521,
-    "end": 557
+    "start": 525,
+    "end": 600
    },
    {
-    "start": 558,
-    "end": 650
+    "start": 601,
+    "end": 694
    },
    {
-    "start": 651,
-    "end": 780
+    "start": 695,
+    "end": 822
    },
    {
-    "start": 781,
-    "end": 905
+    "start": 823,
+    "end": 947
    },
    {
-    "start": 906,
-    "end": 994
+    "start": 948,
+    "end": 1036
    }
   ],
   "core": [
@@ -69,68 +69,68 @@
   "audio": {
    "file": "audio/2026-10-llm-next-word-passage.mp3",
    "voice": "Kokoro bm_george (en-GB)",
-   "durationMs": 80040,
-   "wpm": 155,
+   "durationMs": 79464,
+   "wpm": 157,
    "segments": [
     {
      "sentence": 0,
      "startMs": 250,
-     "endMs": 5797
+     "endMs": 5498
     },
     {
      "sentence": 1,
-     "startMs": 6497,
-     "endMs": 12705
+     "startMs": 6198,
+     "endMs": 12107
     },
     {
      "sentence": 2,
-     "startMs": 13405,
-     "endMs": 18909
+     "startMs": 12807,
+     "endMs": 18141
     },
     {
      "sentence": 3,
-     "startMs": 19609,
-     "endMs": 23129
+     "startMs": 18841,
+     "endMs": 22190
     },
     {
      "sentence": 4,
-     "startMs": 23829,
-     "endMs": 29759
+     "startMs": 22890,
+     "endMs": 28842
     },
     {
      "sentence": 5,
-     "startMs": 30459,
-     "endMs": 35131
+     "startMs": 29542,
+     "endMs": 33787
     },
     {
      "sentence": 6,
-     "startMs": 35831,
-     "endMs": 41527
+     "startMs": 34487,
+     "endMs": 39970
     },
     {
      "sentence": 7,
-     "startMs": 42227,
-     "endMs": 45321
+     "startMs": 40670,
+     "endMs": 46067
     },
     {
      "sentence": 8,
-     "startMs": 46021,
-     "endMs": 52591
+     "startMs": 46767,
+     "endMs": 53381
     },
     {
      "sentence": 9,
-     "startMs": 53291,
-     "endMs": 62486
+     "startMs": 54081,
+     "endMs": 62315
     },
     {
      "sentence": 10,
-     "startMs": 63186,
-     "endMs": 72338
+     "startMs": 63015,
+     "endMs": 71869
     },
     {
      "sentence": 11,
-     "startMs": 73038,
-     "endMs": 79289
+     "startMs": 72569,
+     "endMs": 78713
     }
    ],
    "note": "Recorded by AI4Read sentence by sentence (en-GB) and tagged 'AI4Read from CSS Lab'."
@@ -142,7 +142,7 @@
    },
    {
     "question": "What does a low loss not tell you, and how can you find out more?",
-    "answer": "It does not tell you what kind of knowledge the model has. To find out, you change the test in small ways and see what breaks."
+    "answer": "It does not tell you what kind of knowledge the model has. One way to find out is to change the test in small ways and see what breaks."
    }
   ],
   "retell": {
@@ -152,7 +152,7 @@
     "ai4read:2026-10-llm-next-word:in-and-of-itself",
     "ai4read:2026-10-llm-next-word:the-jury-is-still-out-on"
    ],
-   "modelAnswer": "A low loss, in and of itself, only tells you how much a model knows about text, not what kind of knowledge it is. To tease apart the kinds, you change the test in small ways and see what breaks. On whether models have anything like a mind, the jury is still out."
+   "modelAnswer": "The loss, in and of itself, tells you how much a model knows about text, but not what kind of knowledge it is. One way to tease apart the kinds is to change the test in small ways and see what breaks. On whether models can track what people believe, the jury is still out."
   },
   "tags": [
    "ai4read",
@@ -186,8 +186,8 @@
    "partOfSpeech": "verb phrase",
    "register": "formal",
    "anchor": {
-    "start": 473,
-    "end": 491,
+    "start": 477,
+    "end": 495,
     "text": "stands or falls on"
    },
    "sentence": "The validity of a surrogate-labelling study stands or falls on the quality of the human-coded sample it is checked against.",
@@ -217,8 +217,8 @@
    "partOfSpeech": "idiom",
    "register": "neutral",
    "anchor": {
-    "start": 535,
-    "end": 556,
+    "start": 578,
+    "end": 599,
     "text": "the jury is still out"
    },
    "sentence": "On whether these labels transfer to other platforms, the jury is still out.",
@@ -248,8 +248,8 @@
    "partOfSpeech": "verb phrase",
    "register": "formal",
    "anchor": {
-    "start": 636,
-    "end": 649,
+    "start": 680,
+    "end": 693,
     "text": "give us pause"
    },
    "sentence": "An agreement score that drops sharply on a second platform should give us pause.",
@@ -260,10 +260,10 @@
    }
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:by-the-same-token",
+   "externalId": "ai4read:2026-10-llm-next-word:to-count-against",
    "kind": "expression",
    "group": "expressions",
-   "headword": "by the same token",
+   "headword": "to count against",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -275,19 +275,19 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C2",
-   "definition": "for the same reason; following the same logic",
-   "partOfSpeech": "linking phrase",
-   "register": "neutral/academic",
+   "definition": "to be a reason for judging someone or something unfavourably",
+   "partOfSpeech": "phrasal verb",
+   "register": "neutral/formal",
    "anchor": {
-    "start": 741,
-    "end": 758,
-    "text": "by the same token"
+    "start": 797,
+    "end": 811,
+    "text": "counts against"
    },
-   "sentence": "If we discount a classifier because it was tuned on its test set, then by the same token we should discount a hand-tuned dictionary.",
+   "sentence": "A single failed replication may count against a finding, but it rarely settles the matter.",
    "target": {
-    "text": "by the same token",
-    "start": 71,
-    "end": 88
+    "text": "count against",
+    "start": 32,
+    "end": 45
    }
   },
   {
@@ -306,12 +306,12 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C2",
-   "definition": "to have the same effect or meaning as something else, usually something stronger or worse",
+   "definition": "to be virtually the same as something else, in effect; the second thing is usually more serious or negative",
    "partOfSpeech": "adjective + preposition (with be)",
    "register": "formal/academic",
    "anchor": {
-    "start": 799,
-    "end": 812,
+    "start": 841,
+    "end": 854,
     "text": "tantamount to"
    },
    "sentence": "Publishing only the runs that worked would be tantamount to hiding the ones that failed.",
@@ -341,8 +341,8 @@
    "partOfSpeech": "adverbial phrase",
    "register": "neutral/academic",
    "anchor": {
-    "start": 832,
-    "end": 848,
+    "start": 874,
+    "end": 890,
     "text": "in and of itself"
    },
    "sentence": "A high agreement score is not, in and of itself, evidence that the codebook is valid.",
@@ -372,8 +372,8 @@
    "partOfSpeech": "phrasal verb",
    "register": "academic",
    "anchor": {
-    "start": 909,
-    "end": 920,
+    "start": 956,
+    "end": 967,
     "text": "tease apart"
    },
    "sentence": "It is hard to tease apart the effect of the platform from the effect of the topic.",
@@ -403,8 +403,8 @@
    "partOfSpeech": "verb phrase",
    "register": "neutral",
    "anchor": {
-    "start": 341,
-    "end": 363,
+    "start": 348,
+    "end": 370,
     "text": "sidesteps the question"
    },
    "sentence": "The report sidesteps the question of causation by describing associations only.",
@@ -415,10 +415,10 @@
    }
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:double-superlative-range-from-the-most-x-to-the-most-y",
+   "externalId": "ai4read:2026-10-llm-next-word:inversion-after-a-fronted-ordinal-first-come-x-next-comes-y",
    "kind": "pattern",
    "group": "c1-c2-patterns",
-   "headword": "Double superlative range (from the most X to the most Y)",
+   "headword": "Inversion after a fronted ordinal (First come X, next comes Y)",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -430,53 +430,24 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C1",
-   "definition": "Mark the two ends of a scale with parallel superlatives: 'from the most certain to the most contested'. It lets you list items in order in a single phrase.",
+   "definition": "Put an ordinal or sequencing word first and the verb before its subject, so the list reads as a sequence: 'First come bits about text'. The verb agrees with the subject that follows, not with the fronted word.",
    "anchor": {
-    "start": 193,
-    "end": 236,
-    "text": "from the most certain to the most contested"
+    "start": 238,
+    "end": 264,
+    "text": "First come bits about text"
    },
-   "sentence": "The studies range from the most carefully controlled to the most loosely designed.",
+   "sentence": "First come the interviews; next comes the coding, and only then the analysis.",
    "target": {
-    "text": "from the most carefully controlled to the most loosely designed",
-    "start": 18,
-    "end": 81
-   }
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:as-for-topic",
-   "kind": "pattern",
-   "group": "c1-c2-patterns",
-   "headword": "As for + topic",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "c1-c2-patterns",
-    "C1"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C1",
-   "definition": "'As for X, ...' moves to a new topic in the middle of a talk and signals that what follows is about X alone. Spoken and written, neutral.",
-   "anchor": {
-    "start": 521,
-    "end": 533,
-    "text": "As for minds"
-   },
-   "sentence": "As for the second dataset, we have not yet checked its labels.",
-   "target": {
-    "text": "As for the second dataset",
+    "text": "First come the interviews; next comes the coding",
     "start": 0,
-    "end": 25
+    "end": 48
    }
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:sentential-relative-clause-which",
+   "externalId": "ai4read:2026-10-llm-next-word:nominal-clause-what-you-take-x-to-be",
    "kind": "pattern",
    "group": "c1-c2-patterns",
-   "headword": "Sentential relative clause (, which ...)",
+   "headword": "Nominal clause 'what you take X to be'",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -488,18 +459,39 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C1",
-   "definition": "After a comma, 'which' can refer to a whole preceding clause, not just one noun: 'small changes often break the result, which should give us pause'. 'That' cannot be used this way.",
+   "definition": "'What you take X to be' asks for the speaker's view of X's nature and fits after 'depends on' or 'stands or falls on': 'Whether A is true stands or falls on what you take B to be'.",
    "anchor": {
-    "start": 623,
-    "end": 649,
-    "text": "which should give us pause"
+    "start": 496,
+    "end": 523,
+    "text": "what you take meaning to be"
    },
-   "sentence": "Agreement dropped on the new sample, which suggests that the codebook is too loose.",
+   "sentence": "Whether the corpus is representative depends on what you take the target population to be.",
    "target": {
-    "text": "which suggests that the codebook is too loose",
-    "start": 37,
-    "end": 82
+    "text": "what you take the target population to be",
+    "start": 48,
+    "end": 89
    }
+  },
+  {
+   "externalId": "ai4read:2026-10-llm-next-word:verb-agrees-with-the-subject-after-inversion",
+   "kind": "fix",
+   "group": "error-fixes",
+   "headword": "verb agrees with the subject after inversion",
+   "tags": [
+    "ai4read",
+    "ai4read-2026-10",
+    "error-fixes",
+    "C1"
+   ],
+   "source": {
+    "label": "AI4Read · What does an LLM know when it predicts the next word?",
+    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
+   },
+   "level": "C1",
+   "definition": "After a fronted 'First' or 'Next', the verb still agrees with the subject that follows: 'First come bits' (plural), but 'First comes grammar' (singular).",
+   "anchorSentence": 3,
+   "wrong": "First comes bits about text, which are measurable.",
+   "right": "First come bits about text, which are measurable."
   },
   {
    "externalId": "ai4read:2026-10-llm-next-word:no-article-with-uncountable-abstract-noun",
@@ -517,10 +509,10 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C1",
-   "definition": "'Knowledge' is uncountable: no 'a' and no plural. Say 'knowledge' or 'a piece of knowledge'.",
+   "definition": "'Knowledge' is uncountable and takes no 'a' or plural in general use. 'A knowledge of X' is possible only with a modifier ('a working knowledge of X'). Say 'knowledge' or 'a piece of knowledge'.",
    "anchorSentence": 4,
-   "wrong": "That is a knowledge in Shannon's sense, and his theory sidesteps the question of meaning.",
-   "right": "That is knowledge in Shannon's sense, and his theory sidesteps the question of meaning."
+   "wrong": "That is a knowledge in Claude Shannon's sense, and his theory sidesteps the question of meaning.",
+   "right": "That is knowledge in Claude Shannon's sense, and his theory sidesteps the question of meaning."
   },
   {
    "externalId": "ai4read:2026-10-llm-next-word:whether-not-if-in-a-subject-clause",
@@ -544,10 +536,10 @@
    "right": "Whether the model grasps meaning stands or falls on what you take meaning to be."
   },
   {
-   "externalId": "ai4read:2026-10-llm-next-word:which-not-that-after-a-comma",
+   "externalId": "ai4read:2026-10-llm-next-word:no-article-in-give-someone-pause",
    "kind": "fix",
    "group": "error-fixes",
-   "headword": "which, not that, after a comma",
+   "headword": "no article in 'give someone pause'",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -559,31 +551,10 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
    "level": "C1",
-   "definition": "A comment on a whole clause needs ', which'. 'That' only starts a defining relative clause, with no comma.",
+   "definition": "In the idiom 'give someone pause', 'pause' takes no article; 'a pause' means a short break in time or speech.",
    "anchorSentence": 8,
-   "wrong": "Many tests are passed, but small changes often break the result, that should give us pause.",
-   "right": "Many tests are passed, but small changes often break the result, which should give us pause."
-  },
-  {
-   "externalId": "ai4read:2026-10-llm-next-word:no-inversion-in-an-embedded-question",
-   "kind": "fix",
-   "group": "error-fixes",
-   "headword": "no inversion in an embedded question",
-   "tags": [
-    "ai4read",
-    "ai4read-2026-10",
-    "error-fixes",
-    "C1"
-   ],
-   "source": {
-    "label": "AI4Read · What does an LLM know when it predicts the next word?",
-    "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
-   },
-   "level": "C1",
-   "definition": "After 'what kind of ...' inside a statement, keep statement order (subject then verb): 'what kind of knowledge the model has'.",
-   "anchorSentence": 10,
-   "wrong": "A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge has the model.",
-   "right": "A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge the model has."
+   "wrong": "Models pass many tests, but small changes often break the result, which should give us a pause.",
+   "right": "Models pass many tests, but small changes often break the result, which should give us pause."
   },
   {
    "externalId": "ai4read:2026-10-llm-next-word:shadow-the-core-first",
@@ -599,7 +570,7 @@
     "label": "AI4Read · What does an LLM know when it predicts the next word?",
     "url": "https://khyang-lab.org/ai4read/2026-10-llm-next-word/"
    },
-   "sentence": "Loop the four core sentences until you can say them without the text; the expressions will come with them, already in a natural rhythm."
+   "sentence": "Loop the four core sentences until you can say them without the text; five of the pack's eight expressions will come with them, already in a natural rhythm."
   }
  ]
 }

@@ -4,7 +4,7 @@
  "note": "Passage-centred pack, C1-C2, British English; a short talk on the post's synthesis: four layers of what a next-word predictor knows (text, structure, meaning, minds) and why the loss cannot tell you the kind of knowledge.",
  "passage": {
   "level": "C2",
-  "text": "A language model is trained to do one job: guess the next piece of text. It is scored by its loss, which measures how closely those guesses match real text. What it knows comes in four layers, from the most certain to the most contested. First come bits about text, which are measurable. That is knowledge in Claude Shannon's sense, and his theory sidesteps the question of meaning. Next is structure, such as grammar, which is well supported. Whether the model grasps meaning stands or falls on what you take meaning to be. As for minds, that is, tracking what people believe, the jury is still out. Models pass many tests, but small changes often break the result, which should give us pause. Yet people get some of those altered tests wrong too, so if a failure counts against the model, by the same token it counts against us. A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge the model has. You can tease apart the kinds by changing the test in small ways and seeing what breaks.",
+  "text": "A language model is trained to do one job: guess the next piece of text. It is scored by its loss, which measures how closely those guesses match real text. What it knows comes in four layers, from the most certain to the most contested. First come bits about text, which are measurable. That is knowledge in Claude Shannon's sense, and his theory sidesteps the question of meaning. Next is structure, such as grammar, which is well supported. Whether the model grasps meaning stands or falls on what you take meaning to be. As for minds, that is, tracking what people believe, the jury is still out. Models pass many tests, but small changes often break the result, which should give us pause. Yet people get some of those altered tests wrong too, and researchers disagree on whether one failure counts against the model. A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge the model has. You can tease apart the kinds by changing the test in small ways and seeing what breaks.",
   "core": [
    7,
    8,
@@ -28,7 +28,7 @@
     "in and of itself",
     "the jury is still out (on)"
    ],
-   "modelAnswer": "A low loss, in and of itself, tells you how much a model knows about text, but not what kind of knowledge it is. One way to tease apart the kinds is to change the test in small ways and see what breaks. On whether models can track what people believe, the jury is still out."
+   "modelAnswer": "The loss, in and of itself, tells you how much a model knows about text, but not what kind of knowledge it is. One way to tease apart the kinds is to change the test in small ways and see what breaks. On whether models can track what people believe, the jury is still out."
   }
  },
  "items": [
@@ -64,17 +64,6 @@
    "anchor": "give us pause",
    "sentence": "An agreement score that drops sharply on a second platform should give us pause.",
    "target": "give us pause"
-  },
-  {
-   "kind": "expression",
-   "headword": "by the same token",
-   "level": "C2",
-   "partOfSpeech": "linking phrase",
-   "register": "neutral/academic",
-   "definition": "for the same reason; following the same logic",
-   "anchor": "by the same token",
-   "sentence": "If we discount a classifier because it was tuned on its test set, then by the same token we should discount a hand-tuned dictionary.",
-   "target": "by the same token"
   },
   {
    "kind": "expression",
@@ -184,7 +173,7 @@
   {
    "kind": "tip",
    "headword": "Shadow the core first",
-   "sentence": "Loop the four core sentences until you can say them without the text; six of the pack's nine expressions will come with them, already in a natural rhythm."
+   "sentence": "Loop the four core sentences until you can say them without the text; five of the pack's eight expressions will come with them, already in a natural rhythm."
   }
  ]
 }

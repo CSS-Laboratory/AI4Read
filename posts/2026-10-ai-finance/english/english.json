@@ -4,7 +4,7 @@
  "note": "Passage-centred pack, C1-C2, British English; a spoken mini-talk on post 02's answer: the five jobs of a society, what is automated in finance now, shared-model risk, who declares and answers, and the verdict.",
  "passage": {
   "level": "C2",
-  "text": "Could a society run itself on AI? We can split a society into five jobs: run, decide, check, declare and answer. In some financial markets, running is largely automated, but much of that is rule-based software, not AI, so we should not conflate algorithmic trading with AI trading. Deciding is mostly human: market participants the IMF consulted expect a human in the loop in the near term. Checking is automatic at run time, yet every automated checker needs a checker, so the chain must end somewhere: today, in rules people wrote. Were firms to automate deciding with a few shared models, their failures might move in lockstep, with the caveat that this rests on warnings and toy models, not measurements. Declaring is saying what counts: money is underpinned by people continuing to accept it, and what remains to be seen is whether machines could do that accepting. By our definition, a society lets members rely on shared rules, contest them and find someone answerable. So, with no person left to declare or answer, the result would be a machine system people live next to, a far cry from a society.",
+  "text": "Could a society run itself on AI? We can split a society into five jobs: run, decide, check, declare and answer. In some financial markets, running is largely automated, but much of that is rule-based software, not AI, so we should not conflate algorithmic trading with AI trading. Deciding is mostly human: market participants the IMF consulted expect a human in the loop in the near term. Checking is automatic at run time, yet every automated checker needs a checker, so the chain must end somewhere: today, in rules people wrote. Were firms to automate deciding with a few shared models, they might fail in lockstep, with the caveat that this rests on warnings and toy models, not measurements. Declaring is saying what counts: money is underpinned by people continuing to accept it, and what remains to be seen is whether machines could do that accepting. By our definition, a society lets members rely on shared rules, contest them and find someone answerable. So, with no person left to declare or answer, the result would be a machine system people live next to, a far cry from a society.",
   "core": [
    4,
    5,
@@ -124,7 +124,7 @@
    "headword": "Inversion with 'were ... to'",
    "level": "C2",
    "definition": "A formal way to state an unlikely or hypothetical condition: 'Were X to do Y, ...' instead of 'If X did Y, ...'.",
-   "anchor": "Were firms to automate deciding with a few shared models, their failures might move in lockstep",
+   "anchor": "Were firms to automate deciding with a few shared models, they might fail in lockstep",
    "sentence": "Were the two coders to disagree, a third would decide.",
    "target": "Were the two coders to disagree"
   },
@@ -151,7 +151,7 @@
    "level": "C1",
    "anchorSentence": 3,
    "wrong": "Deciding is mostly human: market participants the IMF consulted expect a human in the loop in near term.",
-   "definition": "'Near term', 'short term' and 'long term' take 'the' after 'in': 'in the near term', 'in the long run'. A few time phrases take none ('in future', 'at present'), so learn each as a unit."
+   "definition": "'Near term', 'short term' and 'long term' take 'the' after 'in': 'in the near term', 'in the long term'. A few time phrases take none ('in future', 'at present'), so learn each as a unit."
   },
   {
    "kind": "fix",

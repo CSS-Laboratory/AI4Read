@@ -1,0 +1,272 @@
+{
+ "date": "2026-10-26",
+ "note": "externalIds in the /1 packs of 2026-10-25 (posts 01 and 02 as handed to Margin; post 03 as built that day) that are not in the passage-centred /2 packs. Includes each old loop paragraph (loop-paragraph-c1c2), which Margin said it retires itself. Tips are omitted (Margin makes no cards from them). Suspend only if Kunhao agrees; never delete review history.",
+ "retired": {
+  "2026-10-llm-next-word": [
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-be-predicated-on",
+    "kind": "expression",
+    "headword": "to be predicated on"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-be-contingent-on",
+    "kind": "expression",
+    "headword": "to be contingent on"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-throw-something-into-sharp-relief",
+    "kind": "expression",
+    "headword": "to throw something into sharp relief"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-gloss-over",
+    "kind": "expression",
+    "headword": "to gloss over"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:by-the-same-token",
+    "kind": "expression",
+    "headword": "by the same token"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-be-agnostic-about",
+    "kind": "expression",
+    "headword": "to be agnostic about"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-stop-short-of",
+    "kind": "expression",
+    "headword": "to stop short of"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:to-lend-weight-to",
+    "kind": "expression",
+    "headword": "to lend weight to"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:the-burden-of-proof-lies-with",
+    "kind": "expression",
+    "headword": "the burden of proof lies with"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:all-cleft-for-a-limited-claim",
+    "kind": "pattern",
+    "headword": "All-cleft for a limited claim"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:inversion-after-a-restrictive-adverbial",
+    "kind": "pattern",
+    "headword": "Inversion after a restrictive adverbial"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:concession-with-adjective-as",
+    "kind": "pattern",
+    "headword": "Concession with 'adjective + as'"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:nominalisation-for-academic-register",
+    "kind": "pattern",
+    "headword": "Nominalisation for academic register"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:comprise-no-of",
+    "kind": "fix",
+    "headword": "comprise (no 'of')"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:stacked-hedges",
+    "kind": "fix",
+    "headword": "stacked hedges"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:respectively",
+    "kind": "fix",
+    "headword": "respectively"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:dangling-modifier",
+    "kind": "fix",
+    "headword": "dangling modifier"
+   },
+   {
+    "externalId": "ai4read:2026-10-llm-next-word:loop-paragraph-c1c2",
+    "kind": "shadowing",
+    "headword": "A paragraph to loop"
+   }
+  ],
+  "2026-10-ai-finance": [
+   {
+    "externalId": "ai4read:2026-10-ai-finance:to-be-held-accountable-for",
+    "kind": "expression",
+    "headword": "to be held accountable (for)"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:to-confer-a-status-on",
+    "kind": "expression",
+    "headword": "to confer a status on"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:to-presuppose",
+    "kind": "expression",
+    "headword": "to presuppose"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:to-devolve-on-upon",
+    "kind": "expression",
+    "headword": "to devolve on/upon"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:to-compound",
+    "kind": "expression",
+    "headword": "to compound"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:to-be-at-odds-with",
+    "kind": "expression",
+    "headword": "to be at odds with"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:to-hinge-on",
+    "kind": "expression",
+    "headword": "to hinge on"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:to-cut-both-ways",
+    "kind": "expression",
+    "headword": "to cut both ways"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:that-s-a-big-if",
+    "kind": "expression",
+    "headword": "that’s a big if"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:to-read-too-much-into-something",
+    "kind": "expression",
+    "headword": "to read too much into something"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:an-achilles-heel",
+    "kind": "expression",
+    "headword": "an Achilles' heel"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:reporting-verbs-calibrated-to-strength",
+    "kind": "pattern",
+    "headword": "Reporting verbs calibrated to strength"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:it-is-only-when-that-cleft",
+    "kind": "pattern",
+    "headword": "It is only when … that (cleft)"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:inversion-after-a-negative-adverbial",
+    "kind": "pattern",
+    "headword": "Inversion after a negative adverbial"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:imply-vs-infer",
+    "kind": "fix",
+    "headword": "imply vs infer"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:criterion-criteria",
+    "kind": "fix",
+    "headword": "criterion / criteria"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:raise-the-question-not-beg",
+    "kind": "fix",
+    "headword": "raise the question (not 'beg')"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:the-reason-is-that-not-because",
+    "kind": "fix",
+    "headword": "the reason is that (not 'because')"
+   },
+   {
+    "externalId": "ai4read:2026-10-ai-finance:loop-paragraph-c1c2",
+    "kind": "shadowing",
+    "headword": "A paragraph to loop"
+   }
+  ],
+  "2026-10-residual-stream": [
+   {
+    "externalId": "ai4read:2026-10-residual-stream:to-square-with",
+    "kind": "expression",
+    "headword": "to square with"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:to-carry-over-to",
+    "kind": "expression",
+    "headword": "to carry over (to)"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:to-pin-down",
+    "kind": "expression",
+    "headword": "to pin down"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:to-hold-up",
+    "kind": "expression",
+    "headword": "to hold up"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:to-be-premised-on",
+    "kind": "expression",
+    "headword": "to be premised on"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:to-be-at-pains-to",
+    "kind": "expression",
+    "headword": "to be at pains to"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:to-fall-out-of",
+    "kind": "expression",
+    "headword": "to fall out of"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:a-matter-of-convention",
+    "kind": "expression",
+    "headword": "a matter of convention"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:mandative-subjunctive",
+    "kind": "pattern",
+    "headword": "Mandative subjunctive"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:inversion-with-should-formal-conditional",
+    "kind": "pattern",
+    "headword": "Inversion with 'Should' (formal conditional)"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:comprise-not-comprised-of",
+    "kind": "fix",
+    "headword": "comprise (not 'comprised of')"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:however-not-a-conjunction",
+    "kind": "fix",
+    "headword": "however (not a conjunction)"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:compare-like-with-like-those-in",
+    "kind": "fix",
+    "headword": "compare like with like ('those in')"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:imply-vs-infer",
+    "kind": "fix",
+    "headword": "imply vs infer"
+   },
+   {
+    "externalId": "ai4read:2026-10-residual-stream:loop-paragraph-c1c2",
+    "kind": "shadowing",
+    "headword": "A paragraph to loop"
+   }
+  ]
+ }
+}

@@ -238,3 +238,53 @@ Applied to `english.json`. `--check`: source OK, passage 190 words, 9 sentences,
 | m12 | Gist 2 answer replaced. |
 
 Headwords kept unchanged: nine of the ten expressions, the four patterns that existed or were added, and fixes 1 and 3. Headwords dropped (for the retired list, which I was not asked to edit): `up to (rounding)` and `no pronoun after a fronted object`, both new in this pack.
+
+---
+
+## Round 2 (independent reviewer, 2026-10-26)
+
+Fresh reviewer; did not write the pack or the round-1 review. Checked `english.json` against `src/content.html` (sections 3 to 7, the short answer (a) to (c), Lens 1 "Seeing is not doing"), WRITING.md §8 and §9 and the Margin request. Levels are estimates in EVP/EGP style. Only this file was edited.
+
+`python3 scripts/english_pack.py posts/2026-10-residual-stream --check`: source OK · passage 190 words, 9 sentences, core 86 words · 10 expressions, 4 patterns, 3 fixes, 0 tips. With R2-1 applied to a scratch copy, the result is the same. None of the findings touches the passage text, so they can be applied after recording.
+
+### Counts
+
+| critical | major | minor |
+|---|---|---|
+| 0 | 0 | 5 |
+
+### Findings
+
+**R2-1 (minor, faithfulness). Gist 1 answer leaves out the starting list.**
+- Answer: "... so the state at any point is the sum of the writes made so far." The post says the list is "the embedding ... plus every earlier write", and the embedding is not a write: the model "keeps one working list for the token, and every attention part ... and every MLP part ... changes it by adding to it". The passage's "adds its write to one shared list" also implies a list that is already there.
+- Replacement `answer`: `Because every attention and MLP part adds its write to one shared list, so the state at any point is the starting list plus every write made so far.`
+
+**R2-2 (minor). `to be tantamount to`: definition differs from the same headword in pack 01.**
+- In post 01, round 1 (E1) replaced "usually something stronger or worse" as awkward. The same headword should carry the same definition in both packs.
+- Replacement `definition`: `to be virtually the same as something else, in effect; the second thing is usually more serious or negative`
+
+**R2-3 (minor). `Noun + aside`: the definition says the phrase "opens a sentence", but the anchor does not.**
+- In the passage, "norm aside" comes after "To a first approximation,".
+- Replacement `definition`: `A noun followed by 'aside' (or 'apart') makes a short verbless phrase, usually at the front of a clause, meaning 'if we set that to one side': 'Norm aside, a read is a dot product'. It is formal, and the noun names the thing being set aside.`
+
+**R2-4 (minor, usage). `by construction`: the second context is awkward ("denser inside than between").**
+- Replacement `sentence`: `In a simulated network, ties are denser within the two communities than between them by construction, because we wrote the generating rule that way.` (the `target` "by construction" is unchanged)
+
+**R2-5 (minor). `note` is out of date.**
+- It says "Ten headwords are reused from pack 1 or earlier packs", but `to go unheard` is new (it replaced "up to (rounding)" in round 1). Nine are reused from this post's pack 1.
+- Replacement `note`: `Passage-centred pack, C1-C2, British English: a spoken mini-talk on post 03's main answer (the stream as a running sum, reads as dot products, the last library entry, probe versus push, and the limits). Levels are AI4Read estimates in the style of the English Vocabulary Profile and English Grammar Profile. Nine headwords are reused from this post's pack 1; 'to go unheard' is new.`
+
+### Checked with no finding
+
+- Faithfulness. S0 is labelled "On our reading" (the post: "Short answer (our reading, not a finding)"). S1 and S2 keep the GPT-2 small scope and the last-entry exception ("has been through the final norm, so it is the exception"). S3 matches "A part reads the list by dot products, which split into one share per writer (a writer at right angles to the reader goes unheard)". "Norm aside" names the departure ("a rescaling step applied to the stream before each read"). S4 and S5: "A high probe score shows that information is present along a direction, not that later parts of the model use it", under the post's "Seeing is not doing". S6: "every score moves by the same amount". S7 is the post's sentence verbatim. S8 keeps the scope: "For the trained language models people use now, the three sources give no test ... none of the three tests concepts as directions". It does not overreach to "none of the sources" on anything wider. Gist 2 and the retell model answer are faithful.
+- Levels. All ten expressions are C1 or C2. The patterns (fronted wh-object C2; whether-clause subject, perfect participle and noun + aside C1) are acceptable; whether-clause and perfect participle are the closest to B2, so verify them if a live EGP check is possible. No item is clearly B2 or below.
+- Fixes. Each `wrong` has exactly one error ("tantamount to confuse", "If ... hinges on", "on a firm ground"); all are real C1 errors.
+- Usage and spelling. All anchors are natural in the passage. The other second contexts keep the same sense and name no source. Spelling is British ("behaviour"). Cross-post repeats (`to be tantamount to` from post 01, `in lockstep` from post 02) are within the 1 to 2 allowed for spaced review, and both also come from this post's pack 1.
+
+### Round 1 status
+
+Resolved: M1 to M6, m1, m6, m8, m10, m11, m12. Reasonably declined or no change needed: m2, m3, m4, m5, m7, m9.
+
+### Verdict
+
+Ready to record (all five findings are minor and outside the passage text).

@@ -185,3 +185,44 @@ Applied to `english.json`. `--check`: source OK, passage 190 words, 9 sentences,
 | R2 | Retell instruction replaced. |
 
 Headwords kept unchanged: all eight remaining expressions, the inversion pattern, and the three fix headwords. Headwords dropped (for the retired list, which I was not asked to edit): `human in the loop`, `What-clause as subject`, `Non-defining relative clause inside the sentence`.
+
+---
+
+## Round 2 (independent reviewer, 2026-10-26)
+
+Fresh reviewer; did not write the pack or the round-1 review. Checked `english.json` against `src/content.html` ("The five jobs of a society", the jobs table, Lens 2, Lens 3, the verdict in section 13 (a) to (c)), WRITING.md §8 and §9 and the Margin request. Levels are estimates in EVP/EGP style. Only this file was edited.
+
+`python3 scripts/english_pack.py posts/2026-10-ai-finance --check`: source OK · passage 190 words, 9 sentences, core 80 words · 8 expressions, 2 patterns, 3 fixes, 1 tip. With R2-1 applied to a scratch copy (passage and pattern anchor): source OK · passage 189 words, 9 sentences, core 79 words · same item counts.
+
+### Counts
+
+| critical | major | minor |
+|---|---|---|
+| 0 | 0 | 2 |
+
+### Findings
+
+**R2-1 (minor, usage). Sentence 5: "their failures might move in lockstep".**
+- *In lockstep* describes things that change together over time (prices, rates, predictions "that proceed in lockstep", as Gensler and Bailey put it). Failures are events: they "arrive together" (the post's words) rather than "move". "Fail in lockstep" is the natural collocation and matches the post's "when shared models fail together".
+- Replacement sentence 5: `Were firms to automate deciding with a few shared models, they might fail in lockstep, with the caveat that this rests on warnings and toy models, not measurements.`
+- Replacement anchor for the pattern "Inversion with 'were ... to'": `Were firms to automate deciding with a few shared models, they might fail in lockstep`
+- The `in lockstep` anchor and its second context are unchanged. Optional: the current wording is not wrong, only less idiomatic, so recording without this change is acceptable.
+
+**R2-2 (minor). Fix 2 rule: the example does not match the rule.**
+- The rule names "near term", "short term" and "long term", then gives "in the long run" as its second example; that is a different phrase.
+- Replacement `definition`: `'Near term', 'short term' and 'long term' take 'the' after 'in': 'in the near term', 'in the long term'. A few time phrases take none ('in future', 'at present'), so learn each as a unit.`
+
+### Checked with no finding
+
+- Faithfulness. S1 is the post's own framework ("Our framework (ours)"). S2 keeps the scope ("Largely automated at run time in some markets"; "much of the work is done by rule-based software rather than AI"). S3: "Decide: Mostly not" and "All participants in the IMF's outreach expected a 'human in the loop' approach to persist 'in the near term'". "Consulted" is fair for "surveyed and interviewed". S4: "Automatic at run time"; "Every automated checker needs a checker, so the chain must end somewhere; in today's markets it ends in rules people wrote". S5 keeps the hedge ("may", "warnings and toys, not measurements"). S6: Searle's "we must continue to accept it as money"; "Whether machines could do the accepting that declaring needs is open". S7 is labelled "By our definition". S8 matches "by our definition it is not a society but a machine system that people live next to". "A far cry from" fits that sense. Both gist answers and the retell model answer are faithful and keep the survey population.
+- Levels. All eight expressions are C1 or C2 (`answerable` C2; `conflate`, `in lockstep`, `with the caveat that` could be C2, but C1 is safe). "Were ... to" inversion (C2) and the absolute "with" + noun phrase + participle (C1) are acceptable. No item is B2 or below.
+- Fixes. Each `wrong` has exactly one error ("a rule-based software", "in near term", "contest against"). All are plausible C1 slips; "contest against" is the weakest but is defensible, as round 1 said.
+- Usage and spelling. The other anchors are natural. The second contexts keep the same sense and name no source. Spelling is British ("Labelling", "unlabelled").
+
+### Round 1 status
+
+Resolved: P1 to P4 (P2 and P4 with better wording than proposed), E1, E2, S2, S3, F1 to F3, G1, R1, R2. Reasonably declined or no change needed: P5 to P8.
+
+### Verdict
+
+Ready to record (R2-1 and R2-2 are minor; if R2-1 is applied, apply it before recording because it changes sentence 5).

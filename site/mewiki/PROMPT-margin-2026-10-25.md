@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-10-26** by the passage-centred `/2` packs (see `HANDOFF-margin.md` §0, update 2026-10-26). Do not import the `/1` packs.
+
 # Prompt for the Margin (MeWiki) agent · 2026-10-25
 
 Copy everything below the line into the agent that maintains Margin (`MeWiki/web`, Next.js, Firestore, Cloud Run `mewiki-web`, project `toolbox-437319`).
