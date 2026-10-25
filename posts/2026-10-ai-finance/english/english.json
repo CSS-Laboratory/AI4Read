@@ -1,6 +1,35 @@
 {
+ "schema": "ai4read.english-source/2",
  "post": "2026-10-ai-finance",
- "note": "English study material for post 02, kept OUT of the blog (Kunhao, 2026-10-25). C1 and C2 only. Levels are AI4Read estimates in the style of the English Vocabulary Profile and English Grammar Profile, not an official grading; an independent reviewer checked them (review/english-packs-check.md). Example sentences restate ideas from the post or state our reading, labelled where they go beyond it.",
+ "note": "Passage-centred pack, C1-C2, British English; a spoken mini-talk on post 02's answer: the five jobs of a society, what is automated in finance now, shared-model risk, who declares and answers, and the verdict.",
+ "passage": {
+  "level": "C2",
+  "text": "Could a society run itself on AI? We can split a society into five jobs: run, decide, check, declare and answer. In finance, running is largely automated, but much of that is rule-based software, not AI, so we should not conflate algorithmic trading with AI trading. Deciding is mostly human: participants in the IMF's outreach expect a human in the loop in the near term. Checking is automatic, yet every automated checker needs a checker, so the chain must end somewhere: today, in rules people wrote. Were firms to automate deciding with a few shared models, their failures might move in lockstep, with the caveat that this rests on warnings and toy models, not measurements. What counts as money is underpinned by people continuing to accept it, and what remains to be seen is whether machines could do that accepting. Our verdict, which rests on our definition, is that a society lets members rely on shared rules, contest them and find someone answerable. With no person left to declare or answer, the result would be a machine system that people live next to, a far cry from a society.",
+  "core": [
+   4,
+   5,
+   6
+  ],
+  "gist": [
+   {
+    "question": "Which of the five jobs does the speaker say is already largely automated in finance, and is all of that automation AI?",
+    "answer": "Running the work is largely automated, but much of it is rule-based software rather than AI, so algorithmic trading should not be conflated with AI trading."
+   },
+   {
+    "question": "What is the speaker's verdict about a system in which no person is left to declare or answer?",
+    "answer": "By the speaker's definition it would be a machine system that people live next to, not a society."
+   }
+  ],
+  "retell": {
+   "instruction": "In 2-3 sentences, explain to a colleague why a fully automated finance system would not count as a society, and what the evidence does not yet show.",
+   "mustUse": [
+    "to conflate X with Y",
+    "to be underpinned by",
+    "a far cry from"
+   ],
+   "modelAnswer": "In finance, running and checking are largely automated, but we should not conflate rule-based algorithms with AI, and people still write the rules and expect to stay in the loop. What counts as money is underpinned by people accepting it, and it remains to be seen whether machines could do that accepting. With nobody left to declare or answer, the result would be a far cry from a society: by our definition, a machine system that people live next to."
+  }
+ },
  "items": [
   {
    "kind": "expression",
@@ -8,9 +37,10 @@
    "level": "C1",
    "partOfSpeech": "verb phrase",
    "register": "academic",
-   "sentence": "Don't conflate algorithmic trading with AI trading: many algorithms follow simple rules.",
-   "target": "conflate",
-   "definition": "to treat two different things as if they were the same"
+   "definition": "to treat two different things as if they were the same",
+   "anchor": "conflate algorithmic trading with AI trading",
+   "sentence": "A common mistake in text analysis is to conflate how often a topic is mentioned with how much people care about it.",
+   "target": "conflate how often a topic is mentioned with how much people care about it"
   },
   {
    "kind": "expression",
@@ -18,119 +48,10 @@
    "level": "C1",
    "partOfSpeech": "adverbial phrase",
    "register": "neutral/journalistic",
-   "sentence": "Models trained on the same data may make predictions that move in lockstep.",
-   "target": "in lockstep",
-   "definition": "moving or changing together, at exactly the same time and in the same way"
-  },
-  {
-   "kind": "expression",
-   "headword": "to be held accountable (for)",
-   "level": "C1",
-   "partOfSpeech": "verb phrase",
-   "register": "formal",
-   "sentence": "Under the IMF's reading of current rules, institutions can be held accountable for the AI systems they deploy.",
-   "target": "held accountable for",
-   "definition": "to be made responsible for something and required to explain it or bear its consequences"
-  },
-  {
-   "kind": "expression",
-   "headword": "to confer a status on",
-   "level": "C2",
-   "partOfSpeech": "verb phrase",
-   "register": "formal/academic",
-   "sentence": "For Searle, collective acceptance confers on a printed piece of paper the status of money.",
-   "target": "confers on",
-   "definition": "to give someone or something an official status, right or quality"
-  },
-  {
-   "kind": "expression",
-   "headword": "to be underpinned by",
-   "level": "C1",
-   "partOfSpeech": "verb phrase",
-   "register": "formal/academic",
-   "sentence": "On Searle's account, money is underpinned by continued collective acceptance.",
-   "target": "underpinned by",
-   "definition": "to be supported or made possible by something that lies beneath it"
-  },
-  {
-   "kind": "expression",
-   "headword": "to presuppose",
-   "level": "C1",
-   "partOfSpeech": "verb",
-   "register": "formal/academic",
-   "sentence": "Accountability, on our reading, presupposes someone who can be asked why.",
-   "target": "presupposes",
-   "definition": "to need something to be true or to exist already in order to work or make sense"
-  },
-  {
-   "kind": "expression",
-   "headword": "to devolve on/upon",
-   "level": "C2",
-   "partOfSpeech": "prepositional verb",
-   "register": "formal",
-   "sentence": "Under current rules, responsibility does not devolve upon the AI system; it stays with the institution that deploys it.",
-   "target": "devolve upon",
-   "definition": "(of a duty or responsibility) to pass to someone else"
-  },
-  {
-   "kind": "expression",
-   "headword": "to compound",
-   "level": "C1",
-   "partOfSpeech": "verb",
-   "register": "formal",
-   "sentence": "If many firms chase the same signal, their trades may compound a shock rather than absorb it.",
-   "target": "compound",
-   "definition": "to make a problem or difficulty worse by adding to it"
-  },
-  {
-   "kind": "expression",
-   "headword": "to be at odds with",
-   "level": "C1",
-   "partOfSpeech": "idiom",
-   "register": "neutral/formal",
-   "sentence": "Imposing one standard menu of contracts can be at odds with Haldane and May's call for diversity.",
-   "target": "at odds with",
-   "definition": "to disagree with or not match something"
-  },
-  {
-   "kind": "expression",
-   "headword": "to hinge on",
-   "level": "C1",
-   "partOfSpeech": "phrasal verb",
-   "register": "neutral",
-   "sentence": "Whether a machine-only token is money hinges on whether machines can do the accepting.",
-   "target": "hinges on",
-   "definition": "to depend completely on one particular thing"
-  },
-  {
-   "kind": "expression",
-   "headword": "to cut both ways",
-   "level": "C1",
-   "partOfSpeech": "idiom",
-   "register": "neutral",
-   "sentence": "Standard contracts cut both ways: they make checking easier, but they can make firms more alike.",
-   "target": "cut both ways",
-   "definition": "to have both good and bad effects, or to support both sides of an argument"
-  },
-  {
-   "kind": "expression",
-   "headword": "that’s a big if",
-   "level": "C1",
-   "partOfSpeech": "idiom",
-   "register": "informal/spoken",
-   "sentence": "Every firm on one model? That’s a big if.",
-   "target": "That’s a big if",
-   "definition": "used to say that a condition is very uncertain"
-  },
-  {
-   "kind": "expression",
-   "headword": "to read too much into something",
-   "level": "C1",
-   "partOfSpeech": "verb phrase",
-   "register": "neutral",
-   "sentence": "Don’t read too much into a toy with ten banks.",
-   "target": "read too much into",
-   "definition": "to think something has more meaning or importance than it really has"
+   "definition": "moving or changing together, at exactly the same time and in the same way",
+   "anchor": "in lockstep",
+   "sentence": "Posting rates on the two forums rose and fell in lockstep, which made us suspect a common cause.",
+   "target": "in lockstep"
   },
   {
    "kind": "expression",
@@ -138,9 +59,21 @@
    "level": "C1",
    "partOfSpeech": "linking phrase",
    "register": "formal",
-   "sentence": "The toy helps, with the caveat that its numbers are invented.",
-   "target": "with the caveat that",
-   "definition": "with the warning or limitation that"
+   "definition": "with the warning or limitation that",
+   "anchor": "with the caveat that",
+   "sentence": "The classifier performs well, with the caveat that we have tested it only on posts written in English.",
+   "target": "with the caveat that"
+  },
+  {
+   "kind": "expression",
+   "headword": "to be underpinned by",
+   "level": "C1",
+   "partOfSpeech": "verb phrase",
+   "register": "formal/academic",
+   "definition": "to be supported or made possible by something that lies beneath it",
+   "anchor": "underpinned by",
+   "sentence": "Any network analysis of trust is underpinned by assumptions about what a tie really means.",
+   "target": "underpinned by"
   },
   {
    "kind": "expression",
@@ -148,9 +81,10 @@
    "level": "C1",
    "partOfSpeech": "sentence frame",
    "register": "formal",
-   "sentence": "What remains to be seen is whether machines can do the accepting.",
-   "target": "What remains to be seen is whether",
-   "definition": "used to introduce a question that has not been answered yet"
+   "definition": "used to introduce a question that has not been answered yet",
+   "anchor": "what remains to be seen is whether",
+   "sentence": "What remains to be seen is whether the effect survives in a larger and more varied sample.",
+   "target": "What remains to be seen is whether"
   },
   {
    "kind": "expression",
@@ -158,114 +92,99 @@
    "level": "C2",
    "partOfSpeech": "idiom",
    "register": "neutral",
-   "sentence": "Running a market is a far cry from answering for it.",
-   "target": "a far cry from",
-   "definition": "very different from, and usually much less than"
+   "definition": "very different from, and usually much less than",
+   "anchor": "a far cry from",
+   "sentence": "Labelling a thousand posts by hand is a far cry from labelling a million.",
+   "target": "a far cry from"
   },
   {
    "kind": "expression",
-   "headword": "an Achilles' heel",
-   "level": "C2",
-   "partOfSpeech": "noun phrase (idiom)",
-   "register": "neutral",
-   "sentence": "One shared model could become the system's Achilles' heel.",
-   "target": "Achilles' heel",
-   "definition": "a weak point that can cause the failure of something otherwise strong"
+   "headword": "human in the loop",
+   "level": "C1",
+   "partOfSpeech": "noun phrase",
+   "register": "technical",
+   "definition": "a person who checks or approves the decisions of an automated system",
+   "anchor": "a human in the loop",
+   "sentence": "We kept a human in the loop for every label that the model was unsure about.",
+   "target": "a human in the loop"
+  },
+  {
+   "kind": "expression",
+   "headword": "to contest",
+   "level": "C1",
+   "partOfSpeech": "verb",
+   "register": "formal",
+   "definition": "to formally challenge a decision or claim because you think it is wrong",
+   "anchor": "contest them",
+   "sentence": "Users should be able to contest a moderation decision that they believe is mistaken.",
+   "target": "contest"
+  },
+  {
+   "kind": "expression",
+   "headword": "answerable (to/for)",
+   "level": "C1",
+   "partOfSpeech": "adjective",
+   "register": "formal",
+   "definition": "required to explain or justify your actions to someone, or to accept the blame for them",
+   "anchor": "answerable",
+   "sentence": "Editors remain answerable to their readers for every correction they publish.",
+   "target": "answerable to their readers"
   },
   {
    "kind": "pattern",
-   "headword": "Reporting verbs calibrated to strength",
-   "level": "C1",
-   "sentence": "The IMF judges that the risks currently appear contained; the FSB warns that common models could increase correlations in trading; Gensler and Bailey hypothesise that broad adoption could produce a monoculture.",
-   "target": "judges",
-   "definition": "Choose the reporting verb to match how firm the source is: judge, warn, hypothesise, argue, concede."
+   "headword": "Inversion with 'were ... to'",
+   "level": "C2",
+   "definition": "A formal way to state an unlikely or hypothetical condition: 'Were X to do Y, ...' instead of 'If X did Y, ...'.",
+   "anchor": "Were firms to automate deciding with a few shared models, their failures might move in lockstep",
+   "sentence": "Were the two coders to disagree, a third would decide.",
+   "target": "Were the two coders to disagree"
   },
   {
    "kind": "pattern",
-   "headword": "It is only when … that (cleft)",
+   "headword": "What-clause as subject",
    "level": "C1",
-   "sentence": "On our reading, it is only when people can declare and answer that a group becomes a society.",
-   "target": "it is only when",
-   "definition": "'It is only when X that Y' stresses that Y depends on X. More emphatic than 'Y happens only when X'."
+   "definition": "A 'what' clause can be the subject of a sentence to name a thing in general terms before you comment on it: 'What counts as X is Y'.",
+   "anchor": "What counts as money is underpinned by people continuing to accept it",
+   "sentence": "What matters most in a survey is who chooses to answer.",
+   "target": "What matters most in a survey is who chooses to answer"
   },
   {
    "kind": "pattern",
-   "headword": "Inversion with 'were … to'",
-   "level": "C2",
-   "sentence": "Were every firm to rely on one model, their errors would tend to coincide.",
-   "target": "Were",
-   "definition": "A formal way to state an unlikely condition: 'Were X to do Y, …' instead of 'If X did Y, …'."
-  },
-  {
-   "kind": "pattern",
-   "headword": "Inversion after a negative adverbial",
-   "level": "C2",
-   "sentence": "Rarely does a single toy settle a question about real markets.",
-   "target": "Rarely does",
-   "definition": "After 'rarely', 'seldom' or 'little' at the start of a clause, put the auxiliary before the subject. Formal writing and talks."
-  },
-  {
-   "kind": "fix",
-   "headword": "imply vs infer",
+   "headword": "Non-defining relative clause inside the sentence",
    "level": "C1",
-   "sentence": "The IMF's finding that a human trader may ultimately make the trading decision implies that deciding is still largely human; from it we infer that full automation is not imminent.",
-   "wrong": "From the IMF's finding we imply that deciding is still largely human.",
-   "right": "From the IMF's finding we infer that deciding is still largely human.",
-   "definition": "Evidence or a speaker implies (suggests); a reader or listener infers (concludes)."
+   "definition": "A 'which' clause between commas after the subject adds a comment without breaking the main statement: 'Our verdict, which rests on X, is that ...'.",
+   "anchor": "Our verdict, which rests on our definition, is that",
+   "sentence": "The first model, which we trained on older posts, is the one we kept.",
+   "target": "The first model, which we trained on older posts, is"
   },
   {
    "kind": "fix",
-   "headword": "criterion / criteria",
+   "headword": "uncountable noun: software",
    "level": "C1",
-   "sentence": "Knowledge is one criterion for successful delegation; an incentive is the other.",
-   "wrong": "Knowledge is one criteria for successful delegation.",
-   "right": "Knowledge is one criterion for successful delegation; an incentive is the other.",
-   "definition": "'Criterion' is singular and 'criteria' plural (likewise phenomenon/phenomena)."
+   "anchorSentence": 2,
+   "wrong": "In finance, running is largely automated, but much of that is a rule-based software, not AI, so we should not conflate algorithmic trading with AI trading.",
+   "definition": "'Software' is uncountable: say 'some software' or 'a piece of software', never 'a software' or 'softwares'."
   },
   {
    "kind": "fix",
-   "headword": "raise the question (not 'beg')",
-   "level": "C2",
-   "sentence": "Automating the checker raises the question of who checks the checker.",
-   "wrong": "Automating the checker begs the question of who checks the checker.",
-   "right": "Automating the checker raises the question of who checks the checker.",
-   "definition": "In careful academic English, 'beg the question' means assuming what you are trying to prove; to mean 'prompt a question', say 'raise the question'."
-  },
-  {
-   "kind": "fix",
-   "headword": "the reason is that (not 'because')",
+   "headword": "article: in the near term",
    "level": "C1",
-   "sentence": "Part of the reason most participants want a human in the loop is that someone must bear liability.",
-   "wrong": "Part of the reason most participants want a human in the loop is because someone must bear liability.",
-   "right": "Part of the reason most participants want a human in the loop is that someone must bear liability.",
-   "definition": "After 'the reason is', use a that-clause; 'the reason is because' repeats the idea of reason and is avoided in formal writing."
+   "anchorSentence": 3,
+   "wrong": "Deciding is mostly human: participants in the IMF's outreach expect a human in the loop in near term.",
+   "definition": "Fixed time phrases keep their article: 'in the near term', 'in the long run', 'in the short term'."
+  },
+  {
+   "kind": "fix",
+   "headword": "contest (no preposition)",
+   "level": "C1",
+   "anchorSentence": 7,
+   "wrong": "Our verdict, which rests on our definition, is that a society lets members rely on shared rules, contest against them and find someone answerable.",
+   "definition": "'Contest' is a transitive verb: contest a rule, not 'contest against a rule' (compare discuss a plan, not 'discuss about a plan')."
   },
   {
    "kind": "tip",
    "headword": "Five-jobs retell",
-   "sentence": "Pick a system you know (a journal, a lab, an online community) and describe in two minutes who runs, decides, checks, declares and answers, using three expressions from this pack."
-  },
-  {
-   "kind": "tip",
-   "headword": "Shadow, then summarise",
-   "sentence": "Shadow the loop paragraph twice, then close it and summarise the post's answer in three sentences, one for possibility, one for impact and one for meaning."
+   "sentence": "Pick a system you know, such as a journal, a lab or an online community, and describe in two minutes who runs, decides, checks, declares and answers, using three expressions from this pack."
   }
- ],
- "loop": {
-  "headword": "A paragraph to loop",
-  "level": "C2",
-  "text": "Software already runs much of the market, but running a market is a far cry from answering for it. Were many firms to rely on one model, their errors would tend to move in lockstep, and that model could become the system's Achilles' heel. Most participants in the IMF's outreach want a human in the loop, partly for reasons of liability; on our reading, accountability presupposes someone who can be asked why. A token counts as money only while a community keeps accepting it, so whether a machine-only token is money hinges on who does the accepting. What remains to be seen is whether machines could ever do it. Standard contracts cut both ways: they make checking easier, yet they can make firms more alike. A toy with ten banks is useful, with the caveat that it shows what could happen, not what will, so we should not read too much into it.",
-  "targets": [
-   "a far cry from",
-   "Were many firms to rely on",
-   "in lockstep",
-   "Achilles' heel",
-   "presupposes",
-   "hinges on",
-   "What remains to be seen is whether",
-   "cut both ways",
-   "with the caveat that",
-   "read too much into"
-  ]
- }
+ ]
 }
