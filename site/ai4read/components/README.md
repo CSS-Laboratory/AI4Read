@@ -47,7 +47,7 @@ Use `\n` in a readout for a new line.
 | `params` | `[{id, label, min, max, step, value, fmt}]`, one slider each. `fmt` sets how the slider value is shown. |
 | `constants` | `{name: number}` |
 | `derived` | `{name: "expr"}`, evaluated in order; later entries may use earlier ones |
-| `bars` | `{items:[{label, value:"expr"}], max, fmt, highlight: index}` |
+| `bars` | `{items:[{label, value:"expr"}], max, fmt, highlight: index, signed}`. With `"signed": true`, bars grow right for positive and left for negative values from a centre line (use it when a value can be negative). |
 | `table` | `{head:[...], rows:[[cells]], fmt}`. A cell starting with `=` is an expression. |
 | `presets` | `[{label, values:{paramId: value}}]`, buttons that set sliders. Use them for the edge case that teaches something. |
 | `readout` | template |

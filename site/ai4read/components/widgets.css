@@ -61,10 +61,14 @@ svg.fig .w-vpt.g1,svg.fig .w-footpt.g1{fill:var(--stamp);stroke:var(--card);stro
 svg.fig .w-vpt.g2,svg.fig .w-footpt.g2{fill:var(--ok);stroke:var(--card);stroke-width:1.5}
 svg.fig .w-ghost{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:2 2}
 svg.fig .w-trail{stroke:var(--muted);stroke-width:.8;opacity:.7}
-svg.fig .w-handle{fill:transparent;stroke:currentColor;stroke-width:1.5;stroke-dasharray:3 3;cursor:grab;touch-action:none}
+svg.fig .w-ring{fill:none;stroke:currentColor;stroke-width:1.5;stroke-dasharray:3 3;pointer-events:none}
+svg.fig .w-ring.c0{color:var(--blue)} svg.fig .w-ring.c1{color:var(--stamp)} svg.fig .w-ring.c2{color:var(--ok)} svg.fig .w-ring.c3{color:var(--ink)}
+svg.fig .w-handle{fill:transparent;stroke:none;cursor:grab;touch-action:none}
 svg.fig .w-handle.c0{color:var(--blue)} svg.fig .w-handle.c1{color:var(--stamp)} svg.fig .w-handle.c2{color:var(--ok)} svg.fig .w-handle.c3{color:var(--ink)}
-svg.fig .w-handle:hover,svg.fig .w-handle:focus{fill:color-mix(in srgb,currentColor 14%,transparent);outline:none;stroke-width:2.4}
+svg.fig .w-handle:hover,svg.fig .w-handle:focus{fill:color-mix(in srgb,currentColor 12%,transparent);outline:none}
+svg.fig .w-handle:focus-visible{stroke:currentColor;stroke-width:2}
 .w-vec2d.dragging svg.fig .w-handle{cursor:grabbing}
 .w-vec2d .w-fig{touch-action:pan-y}
 svg.fig .w-vlab{font:700 13px var(--f-ui);paint-order:stroke;stroke:var(--card);stroke-width:3px}
 svg.fig .w-vlab.c0{fill:var(--blue)} svg.fig .w-vlab.c1{fill:var(--stamp)} svg.fig .w-vlab.c2{fill:var(--ok)} svg.fig .w-vlab.c3{fill:var(--ink)}
+.w-bar.sg{position:relative}

@@ -28,7 +28,7 @@
    "level": "C1",
    "partOfSpeech": "adverbial phrase",
    "register": "academic",
-   "sentence": "To a first approximation, a block adds two vectors to the stream, one from attention and one from the MLP.",
+   "sentence": "To a first approximation, a read is a dot product with the stream; the division inside the norm is the part that is not linear.",
    "target": "To a first approximation",
    "definition": "as a rough first description that ignores smaller details"
   },
@@ -98,7 +98,7 @@
    "level": "C1",
    "partOfSpeech": "verb phrase",
    "register": "academic",
-   "sentence": "Comparing two models by dot products rests on the assumption that the stream has no privileged basis, which Elhage and colleagues assert for an idealised stream.",
+   "sentence": "Comparing two models through each one's own dot products rests on the assumption that the stream has no privileged basis, which Elhage and colleagues assert for an idealised stream.",
    "target": "rests on the assumption that",
    "definition": "to depend on something being true, without having shown it"
   },
@@ -200,7 +200,7 @@
    "kind": "pattern",
    "headword": "Inversion with 'Should' (formal conditional)",
    "level": "C2",
-   "sentence": "Should the additivity check fail, the identity does not hold for that model.",
+   "sentence": "Should the additivity check fail with the hooks placed correctly, the identity does not hold for that model.",
    "target": "Should the additivity check fail",
    "definition": "'Should + subject + verb' replaces 'If the check should fail' in a formal, slightly unlikely condition. Do not add 'if'."
   },
@@ -254,7 +254,7 @@
  "loop": {
   "headword": "A paragraph to loop",
   "level": "C2",
-  "text": "To a first approximation, the residual stream is a running sum: every part of the model adds its write to one shared list. That much is true by construction in the toy, and the notebook bears it out on GPT-2 small, where the writes add up to the stream within rounding error. Whether the identity will hold up for other models is another matter, and results do not simply carry over to a trained Qwen3 or Llama. The last entry of a library's list is a case in point: it has been normalised, so to take it at face value would be a mistake. The claim that concepts are directions hinges on evidence the sources do not supply, so we are on firmer ground with the arithmetic than with the interpretation. A steering push moves every score in lockstep, yet to say that a high score shows the model uses the direction would be tantamount to confusing seeing with doing.",
+  "text": "Every part of the model adds its write to one shared list, so the residual stream is a running sum. To a first approximation, a read is then a dot product with that sum, and the norm in front of it is the part that is not linear. That much is true by construction in the toy, and the notebook bears it out on GPT-2 small, where the writes add up to the stream within rounding error. Whether the identity will hold up for other models is another matter, and results may not simply carry over to a trained Qwen3 or Llama, which we did not run. The last entry of a library's list is a case in point: it has been normalised, so to take it at face value would be a mistake. The claim that concepts are directions hinges on evidence the sources do not supply, so we are on firmer ground with the arithmetic than with the interpretation. A steering push moves every score in lockstep, yet to say that a high score shows the model uses the direction would be tantamount to confusing seeing with doing.",
   "targets": [
    "To a first approximation",
    "by construction",

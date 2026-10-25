@@ -5,31 +5,32 @@ sum	Nanda 2022, § Transformer Basics	nanda	named
 sum	Nanda 2022, § Transformer Basics	nanda	named
 sum	Nanda 2022, § Transformer Basics	nanda	named
 sum	Elhage 2021, § High-Level Architecture	elhage	named
-sum	Nanda 2022, § Transformer Basics	nanda	named
 sum	Elhage 2021, § Communication Channel	elhage	named
 sum	Elhage 2021, § Model Simplifications	elhage	named
+sum	Nanda 2022, § Transformer Components, LayerNorm	nanda	named
 sum	Nanda 2022, § Transformer Basics	nanda	named
 sum	Nanda 2022, § Decoder-only	nanda	named
 sum	Notebook 01 and 02, reference run	nb	named
 sum	Notebook 01, reference run	nb	named
+sum	Notebook 02, reference run	nb	named
 sum	HF output_capturing.py, lines 243–246	hf	named
 sum	Notebook 02, reference run	nb	named
+sum	HF modeling_gemma3.py, lines 397–416	hf	named
+sum	Notebook 02, reference run	nb	named
+sum	Elhage 2021, § Communication Channel	elhage	named
 sum	HF modeling_qwen3.py, lines 296–314	hf	named
+sum	HF modeling_qwen3.py, lines 49, 62–63	hf	named
 sum	HF modeling_llama.py, modeling_mistral.py	hf	named
 sum	HF modeling_gemma3.py, lines 105–116, 397–416, 485	hf	named
 sum	Notebook 02, reference run	nb	named
-sum	Elhage 2021, § Communication Channel	elhage	named
 bets	Olah 2020, § Three Speculative Claims	olah	named
 bets	Olah 2020, § Three Speculative Claims	olah	named
 bets	Nanda 2022, § General	nanda	named
 bets	Olah 2020, § Three Speculative Claims	olah	named
 bets	Nanda 2022, § Transformer Components	nanda	named
 bets	Olah 2020, § Claim 1: Features	olah	named
-bets	Nanda 2022, § Representations of Features	nanda	named
-bets	Nanda 2022, § Representations of Features	nanda	named
 bets	Olah 2020, § Three Speculative Claims	olah	named
 bets	Olah 2020, § Three Speculative Claims	olah	named
-bets	Olah 2020, § Interpretability as a Natural Science	olah	named
 bets	Olah 2020, § Interpretability as a Natural Science	olah	named
 bets	Olah 2020, § Circuit 2	olah	named
 bets	Elhage 2021, Introduction	elhage	named
@@ -40,10 +41,15 @@ bets	Olah 2020, § Claim 1: Features	olah	named
 bets	Elhage 2021, Introduction	elhage	named
 bets	Nanda 2022, § Transformer Basics	nanda	named
 bets	Olah 2020, § Three Speculative Claims	olah	named
+bets	Olah 2020, § Example 1: Curve Detectors	olah	named
 bets	Olah 2020, § Claim 1: Features	olah	named
 bets	Olah 2020, § Claim 1: Features	olah	named
 bets	Olah 2020, § Three Speculative Claims	olah	named
+bets	Nanda 2022, § Representations of Features	nanda	named
+bets	Nanda 2022, § Representations of Features	nanda	named
 bets	Olah 2020, § Claim 2: Circuits	olah	named
+bets	Olah 2020, § Interpretability as a Natural Science	olah	named
+bets	Olah 2020, § Interpretability as a Natural Science	olah	named
 bets	Olah 2020, § Interpretability as a Natural Science	olah	named
 bets	Olah 2020, § Claim 1, Argument 5	olah	named
 bets	Olah 2020, § Claim 3: Universality	olah	named
@@ -53,20 +59,17 @@ rw	Nanda 2022, § Mathematical Framework, Composition	nanda	named
 rw	Elhage 2021, § High-Level Architecture	elhage	named
 rw	Nanda 2022, § Direct Logit Attribution	nanda	named
 rw	Nanda 2022, § Mathematical Framework, Composition	nanda	named
-rw	Nanda 2022, § Mathematical Framework, Composition	nanda	named
 rw	Notebook 02, reference run	nb	named
 rw	Nanda 2022, § Transformer Components, LayerNorm	nanda	named
 rw	Elhage 2021, § Residual Stream Bandwidth	elhage	named
 rw	Olah 2020, Glossary	olah	named
 rw	Nanda 2022, § Transformer Components, LayerNorm	nanda	named
 dir	Nanda 2022, § Non-MI Techniques, Probing	nanda	named
-dir	Nanda 2022, § General, Intervening	nanda	named
 dir	Notebook 02, reference run	nb	named
 dir	Nanda 2022, § Representations of Features	nanda	named
 dir	Nanda 2022, § Representations of Features	nanda	named
 dir	Elhage 2021, § Communication Channel	elhage	named
 dir	Nanda 2022, § Representations of Features	nanda	named
-dir	Elhage 2021, § Activation Properties	elhage	named
 dir	Nanda 2022, § Transformer Components, LayerNorm	nanda	named
 dir	Elhage 2021, § Communication Channel	elhage	named
 dir	Nanda 2022, § Post-LayerNorm	nanda	named
@@ -82,5 +85,5 @@ lens-info	Olah 2020, § Cars in Superposition	olah	named
 lens-info	MacKay 2003, Exercise 15.18, p. 237	mackay	named
 lens-info	Nanda 2022, § Toy Model of Superposition	nanda	named
 turn	TransformerLens, transformer_bridge.py, 548–560	tl	named
-turn	Notebook 02, reference run	nb	named
-work	Nanda 2022, § General	nanda	named
+turn	Notebook 01, reference run	nb	named
+work	Nanda 2022, § Training	nanda	named

@@ -254,7 +254,10 @@
 
   function barsHTML(items, cfg) {
     const mx = cfg.max != null ? cfg.max : Math.max(1e-12, ...items.map((b) => Math.abs(b.value)));
-    return items.map((b, i) => `<div class="w-bar${cfg.highlight === i ? " hi" : ""}"><span class="w-bl">${esc(b.label)}</span><i style="width:${Math.max(0, Math.min(100, (b.value / mx) * 100))}%"></i><span class="w-bv">${fmt(b.value, cfg.fmt || ".2f")}</span></div>`).join("");
+    const signed = !!cfg.signed;  // opt-in: negative values grow left from a centre line
+    const bar = (v) => { if (!signed) return `width:${Math.max(0, Math.min(100, (v / mx) * 100))}%`;
+      const w = Math.min(50, (Math.abs(v) / mx) * 50); return `width:${w}%;margin-left:${v < 0 ? 50 - w : 50}%`; };
+    return items.map((b, i) => `<div class="w-bar${cfg.highlight === i ? " hi" : ""}${signed ? " sg" : ""}"><span class="w-bl">${esc(b.label)}</span><i style="${bar(b.value)}"></i><span class="w-bv">${fmt(b.value, cfg.fmt || ".2f")}</span></div>`).join("");
   }
 
   /* ---- lab: sliders + derived values + readout (+ bars, + table) ---- */
@@ -435,7 +438,7 @@
         if (v.label) { const n = Math.hypot(v.x, v.y) || 1, ox = (v.x / n) * 14, oy = -(v.y / n) * 14;
           b += `<text x="${sx(tx) + ox}" y="${sy(ty) + oy + 4}" text-anchor="middle" class="w-vlab ${v.cls}">${esc(v.label)}</text>`; }
         if (v.drag) { const pa = v.drag.angle && cfg.params[pidx(v.drag.angle)], val = pa ? vals[pa.id] : null;
-          b += `<circle cx="${sx(tx)}" cy="${sy(ty)}" r="16" class="w-handle ${v.cls}" data-vi="${i}" tabindex="0" role="slider" aria-label="${esc(v.drag.label || v.label || "drag")}"` +
+          b += `<circle cx="${sx(tx)}" cy="${sy(ty)}" r="14" class="w-ring ${v.cls}"/><circle cx="${sx(tx)}" cy="${sy(ty)}" r="23" class="w-handle ${v.cls}" data-vi="${i}" tabindex="0" role="slider" aria-label="${esc(v.drag.label || v.label || "drag")}"` +
             (pa ? ` aria-valuemin="${pa.min}" aria-valuemax="${pa.max}" aria-valuenow="${val}"` : "") + `/>`; } });
       rendering = true;
       fig.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="fig w-vec2d-svg" role="group" aria-label="${esc(cfg.title || "vectors")}">${b}</svg>`;
