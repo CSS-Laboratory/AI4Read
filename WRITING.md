@@ -1,7 +1,7 @@
 ---
 name: writing-principles
 description: How AI4Read posts are written. Read before drafting or revising any post. Claude updates it whenever a review round or a note from Kunhao shows a missing rule (add the rule, the note or finding that caused it, and the date); Kunhao asked for this on 2026-10-18.
-version: 0.9 (2026-10-25)
+version: 0.10 (2026-10-26)
 ---
 
 # AI4Read writing principles
@@ -64,10 +64,16 @@ Do not start a concept at step 4.
 - **Measured numbers carry their frame.** For every number from code we ran, say what was run (model, library and version, precision, device), what a *relative* error is relative to, and what was not run. A check that repeats the model's own computation (bit-exact additivity inside one library) is a consistency check, not evidence; say so and lean on the independent comparison. (Post 03 S5: a relative error was described against the stream when the code divided by the block's writes; the notebook's own docstring was wrong.)
 
 ## 8. English study packs (separate from the post)
-- **The blog contains no English-learning section** and no English audio chapter. Kunhao publishes the posts without it (note, 2026-10-25). Each post's English material is a separate **pack** for Margin, written in `posts/<slug>/english/english.json` and built with `python3 scripts/english_pack.py posts/<slug>` (pack JSON plus a readable `.md`). The loop paragraph is recorded with `scripts/tts_english_loop.py <slug>` and tagged “AI4Read from CSS Lab”.
-- **C1 and C2 only.** Every expression, pattern, fix and the loop paragraph carries a level, and the builder refuses anything else. Levels are our estimate in the style of the English Vocabulary Profile; an independent reviewer checks them.
-- Contents: about 15–18 expressions from the post's ideas, 4 sentence patterns (cleft, inversion, concession, nominalisation, calibrated reporting verbs), 4 fixes of the kind advanced writers still make (comprise of, stacked hedges, dangling modifiers, imply/infer, respectively), 2 practice tips, and one loop paragraph of about 150 words that uses 8–11 of the expressions.
-- Every example sentence uses an idea from the same post and must not misreport a source (the fact-check rules of §9 apply). Keep an item's headword unchanged when it is reused, so its `externalId` and Margin review history survive; you may repeat 2–3 expressions from earlier packs for spaced review.
+- **The blog contains no English-learning section** and no English audio chapter. Kunhao publishes the posts without it (note, 2026-10-25). Each post's English material is a separate **pack** for Margin.
+- **C1 and C2 only.** Every expression, pattern and fix carries a level, and the builder refuses anything else. Levels are our estimate in the style of the English Vocabulary Profile and English Grammar Profile; an independent reviewer checks them.
+- **The passage is the centre (schema `/2`, 2026-10-26, at the Margin agent's request).** Kunhao loops the recording and shadows it, notices the language inside it, rebuilds it from memory gap by gap, then uses its language in new sentences. So:
+  - **Write the passage first:** 140–190 words, natural spoken **British** English and British spelling, saying only what the post says (§9 applies). Mark 3–4 **core** sentences (60–90 words together) worth memorising word for word. No abbreviations with full stops (they break sentence splitting). Use straight apostrophes.
+  - **Then choose 8–12 expressions and 2–4 patterns that occur in it naturally.** Never force an expression into a sentence where a native writer would not use it. Each expression keeps a headword, definition, part of speech, register and level, plus a **second context**: a different, natural sentence using it in the same sense, for transfer. Second contexts may come from Kunhao's own field (computational social science research practice) but make no factual claim about a named source or study, and must not copy a passage sentence.
+  - **Fixes (3–4)** are built on passage sentences: `wrong` is that sentence with exactly one error, `right` is the sentence itself. Use errors that persist in C1 writing (articles with abstract or generic nouns, verb complementation such as *discuss about*, uncountable nouns, tense in reported findings, *comprise of*), labelled C1 for accuracy; never simple B1–B2 contrasts (fewer/less, affect/effect).
+  - **Gist and retell:** two gist questions answerable from the passage alone, and one retell task (2–3 sentences to a colleague) naming 3 of the pack's expressions, with a model answer that is as faithful as the passage.
+  - Tips are optional (at most 2).
+- **Build and record.** Source `posts/<slug>/english/english.json` (`ai4read.english-source/2`); the writer gives anchor *text*, never offsets. Check with `python3 scripts/english_pack.py posts/<slug> --check`; record with `/tmp/ttsenv/bin/python scripts/tts_english_passage.py posts/<slug>` (British voice, default `bm_george`, sentence by sentence with 0.7 s pauses, calibrated to about 155 words per minute, tagged “AI4Read from CSS Lab”); then build with `python3 scripts/english_pack.py posts/<slug>` (pack JSON plus a readable `.md`). The builder refuses a pack that fails any of Margin's seven checks, and a text hash catches audio recorded for an older passage.
+- Keep an expression's headword unchanged when it is reused, so its `externalId` and Margin review history survive; you may repeat 1–2 expressions from earlier packs for spaced review if they occur naturally. List dropped IDs in `site/mewiki/packs/retired-<date>.json`.
 - The post's own prose stays plain (§1): the C1–C2 level is for the study pack, not for the explanations.
 
 ## 8a. Length
@@ -102,3 +108,4 @@ Do not start a concept at step 4.
 - 0.7 (2026-10-18): §9 new glosses are new claims, search before saying “never”, keep the source's population and scope. From post 02 v2 S5 rounds 2–3.
 - 0.8 (2026-10-25): §8 the English material leaves the post and becomes a separate C1–C2 pack for Margin. From Kunhao's note on posts 01 and 02.
 - 0.9 (2026-10-25): §0 recall tests only this post; §2 checks must work on the page, define at first use in the main text; §7 measured numbers carry their frame; §9 "none of the sources" needs a search of all, commented-out HTML is not published text. From the post 03 S2–S5 rounds.
+- 0.10 (2026-10-26): §8 English packs become passage-centred (schema `/2`): passage first, British voice and spelling, expressions and patterns anchored in it, second contexts for transfer, fixes built on passage sentences, gist and retell. From the Margin agent's request (`mewiki-web/docs/PROMPT-ai4read-passage-pack.md`), adopted by Claude with Kunhao's go-ahead to decide.
