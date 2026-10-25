@@ -61,3 +61,21 @@ The 6.2e−6 is relative to the norm of the block's own two writes. Stream-relat
 - `test.mjs --inline`: PASS, 0 console errors, no overflow at 390 px, readouts reproducible.
 - Playwright at 375 px: scrollWidth = 375.
 - Wordcount: 7,295 main words.
+
+
+## Polish pass (minor findings of verify-3c and critic-3c)
+
+Only the listed passages changed. Every number, hedge and cite is as before; "12 blocks" and the stream-relative range were dropped from the identity paragraph because the same facts stand in section 3 and in the fold-out table.
+
+| ID | New text (page) | New audio line |
+|---|---|---|
+| V3C-01 | C:511: "Neighbouring entries differed by the block’s two writes, up to an error of at most 6.2e−6, relative to the size of those writes (rounding)." | A:212: "Neighbouring entries differed by the block's two writes, up to an error of at most six point two times ten to the minus six, relative to the size of those writes, which is rounding." |
+| V3C-02 | C:356: "(a curve applied to each number on its own; one common choice, the ReLU, turns every negative number into 0 and keeps positive numbers as they are)" | A:127: "One common choice, the ReLU, turns every negative number into zero and keeps positive numbers as they are, one number at a time." |
+| n1 | C:72: "every attention part (it brings in information from other positions) and every MLP part (a small network) changes it by adding to it." | A:40: "...every attention part, which brings in information from other positions, and every MLP part, a small network, changes it by adding to it." |
+| n2 | C:134 split in two. First: the norm in one sentence chain. Second: "Before that last step, a list and its double give the same result. The list (4, 2) has average 3 and standard deviation 1: centred it is (1, −1), and dividing by 1 changes nothing. The list (8, 4) has average 6 and standard deviation 2: centred it is (2, −2), and dividing by 2 gives (1, −1) again. GPT-2 uses this version." | A:50, same two paragraphs: "...The list four, two has average three and standard deviation one: centred it is one, minus one, and dividing by one changes nothing. The list eight, four has average six and standard deviation two: centred it is two, minus two, and dividing by two gives one, minus one again." |
+| n3 | C:156: "We ran this on GPT-2 small with the sentence ... Over the first eleven blocks they differed by at most 6.2e−6, relative to the size of the block’s own two writes at that position." The sentence with 4e−8 to 7e−7 is cut; it remains in the fold-out table (C:170). | A:56: same cut ("...at that position. That is rounding."); "with twelve blocks" removed. |
+| n4 | C:166: "...the block’s two writes in row 3, and, in the index note below, the table rows (3.63);" | none (fold-out only) |
+| n5 | C:460: "For GPT-2, in its compatibility mode (it rewrites the weights when it loads them), TransformerLens gives the Hugging Face stream minus its mean coordinate" | A:179: "For GPT-2, in its compatibility mode, which rewrites the weights when it loads them, TransformerLens gives the Hugging Face stream minus its mean coordinate." |
+| n6 | C:405 split: "...activation patching (swapping in the activation from another input) [cite]. It also lists TCAV, a gradient-based test and not an intervention: it compares a probe-like direction with the direction that, intuitively, would most raise an output (its example is a zebra in an image) [cite]. Nanda also cautions that zero ablation ..." | A:149: "...activation patching, which swaps in the activation from another input. It also lists TCAV, a gradient-based test and not an intervention: it compares a probe-like direction with the direction that, intuitively, would most raise an output. Its example is a zebra in an image. Nanda also cautions that zero ablation..." |
+
+Checks after the pass: build-post 0 unmapped, 0 missing, math errors 0; check.mjs 8/8 widget configs OK; test.mjs --inline PASS; main text 7,317 words (cap 7,500).
