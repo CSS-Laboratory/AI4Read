@@ -1,7 +1,7 @@
 ---
 name: ai4read-resume
 description: How to resume the AI4Read project from scratch, in a new Claude session or on a new computer. Where everything lives, how to restore what is not on GitHub, current state and open tasks. Keep this file current; a copy lives in Google Drive (backup/) and in the claude.ai Project docs.
-updated: 2026-10-25
+updated: 2026-10-26
 ---
 
 # Resume AI4Read
@@ -84,6 +84,7 @@ updated: 2026-10-25
   - Notebooks `notebook/01_bus_gpt2.ipynb` (TransformerLens 4.3) and `02_bus_my_model.ipynb` (HF hooks; default Qwen3-1.7B-Base, run here with GPT-2 and tiny random Qwen3/Gemma 3), executed; numbers in `notebook/results.md`. Full-size Qwen3 run is for Kunhao's Mac.
   - New component: `vec2d` (draggable arrows, synced sliders, keyboard; 46 px hit area) and opt-in signed bars. W9 added to toyworlds.md. Wiki: `wiki-candidates.md` (candidates only).
   - Site dist and shelf rebuilt (`site/ai4read/dist/2026-10-residual-stream/`, with notebooks); deploy is Kunhao's website agent's step when he approves.
+- **English packs are passage-centred (`/2`, 2026-10-26)**, at the Margin agent's request: one 140–190-word British-English passage per post (recorded with Kokoro `bm_george`, sentence segments), 8–12 expressions and 2–4 patterns anchored in it, fixes built on its sentences, gist and retell. Tools: `scripts/english_pack.py` (7 checks), `scripts/tts_english_passage.py`, `scripts/retired_ids.py`. Packs for posts 01–03 reviewed in two rounds; `retired-2026-10-26.json`; HANDOFF-margin §0. The /1 sources are archived as `english/english-pack1.json`.
 - **English separated (2026-10-25).** Kunhao publishes the blogs without the English section. Both posts now end at Recall and Sources (no English audio chapters; post 01 about 25 min, post 02 about 35 min; both artifacts republished). English is a separate **C1–C2 pack** per post: source `posts/<slug>/english/english.json`, build `python3 scripts/english_pack.py posts/<slug>` → `site/mewiki/packs/<slug>.json` + `.md`, loop audio `scripts/tts_english_loop.py <slug>` → `site/mewiki/packs/audio/`. Old material archived in `posts/<slug>/english/*-v1.*`. Independent check: `posts/2026-10-ai-finance/review/english-packs-check.md` (two rounds, all critical and major fixed).
 - **Waiting on Kunhao's agents:** `site/ai4read/PROMPT-website-2026-10-25.md` (publish post 02, update post 01, delete 5 stale R2 objects) and `site/mewiki/PROMPT-margin-2026-10-25.md` (import the C1–C2 packs; ask before suspending the 45 retired items).
 - **Website and Margin:** handoff packages delivered; Kunhao's agents deploy. "Ask Claude" uses his Vertex key.
