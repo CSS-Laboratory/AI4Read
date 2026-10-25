@@ -1,7 +1,7 @@
 ---
 name: ai4read-resume
 description: How to resume the AI4Read project from scratch, in a new Claude session or on a new computer. Where everything lives, how to restore what is not on GitHub, current state and open tasks. Keep this file current; a copy lives in Google Drive (backup/) and in the claude.ai Project docs.
-updated: 2026-10-18
+updated: 2026-10-25
 ---
 
 # Resume AI4Read
@@ -13,7 +13,7 @@ updated: 2026-10-18
 | **Library** (book and paper PDFs, read-only input) | Google Drive `My Drive/Book/AI4Read/library/<field>/` |
 | **Backup of what is not on GitHub** | Google Drive `My Drive/Book/AI4Read/backup/`. It holds post sources (copyrighted PDFs, saved web pages, talk audio) as split `.tar.gz` parts, a `git bundle` of the repo, this guide, and `SHA256SUMS` |
 | **Project docs** (seen by every claude.ai session in the Project) | claude.ai Project "AI4Read": charter, writing principles, phase 2 plan, digestion report, this guide |
-| **Published pages** | claude.ai artifacts. Post 01: https://claude.ai/artifact/NLzvyjQQRxppys5yME6KU3 · Post 02 (v2, 2026-10-18): https://claude.ai/artifact/W2MqKGeotV685SzSdeE3ti · Library page: https://claude.ai/artifact/Q2Dg4ffVMAjkg54QDa8rE2 |
+| **Published pages** | claude.ai artifacts. Post 01: https://claude.ai/artifact/NLzvyjQQRxppys5yME6KU3 · Post 02 (v2, 2026-10-18): https://claude.ai/artifact/W2MqKGeotV685SzSdeE3ti · Post 03 (draft, 2026-10-25): https://claude.ai/artifact/HET5R8dYrWAVrLoAVSVT38 · Library page: https://claude.ai/artifact/Q2Dg4ffVMAjkg54QDa8rE2 |
 | **Website** | khyang-lab.org/ai4read behind Cloudflare Access. Kunhao's website agent deploys from `site/ai4read/` (HANDOFF-website.md); files are built into `site/ai4read/dist/`. |
 | **English app** | Margin (MeWiki). Packs are in `site/mewiki/packs/`; the agent imports them (HANDOFF-margin.md). |
 
@@ -77,10 +77,17 @@ updated: 2026-10-18
   - Source: `src/content-v2.tpl.html` + `src/v2-blocks/` + v1 blocks, filled by `src/fill_v2.py` into `src/content.html`. Edit the template or a block, then run the fill script; never edit content.html by hand.
   - Audio 37 min re-recorded. English pack rebuilt. Waiting for Kunhao's notes (S8).
   - *Nexus*: only the Penguin sample and the Guardian extract are used; the re-attached PDF was the pirate copy and was deleted.
+- **Post 03** "What Is a Hidden State? The Residual Stream, Read and Written" (interpretability strand 1, draft published 2026-10-25; awaiting Kunhao's notes, S8).
+  - Kunhao's S0 decisions: next post (04) is **eigen-decomposition** (canon reading path item 1b, before *Directions*); post-training clause kept out of the lens; two lenses (linear algebra, information theory); draggable widget.
+  - Sources (gitignored; Drive `backup/sources/2026-10-residual-stream-sources.tar.gz.part-*`): Olah 2020, Elhage 2021 (residual stream, virtual weights, no privileged basis only), Nanda glossary (new URL), MacKay 2003 p. 237 (multiple-access channel, free author PDF).
+  - Pipeline: S1 14 units → S2 (1 critical, 9 major fixed) → S3/S4 → S5 three rounds, gate missed by one major after round 3 → meta-manager step-in (results.md denominator fixed; targeted fix pass; verify-3c and critic-3c PASS) → polish. Final: 7,324 words, 8 widgets, audio 43.4 min (12 chapters), English C1–C2 pack (two review rounds) and loop audio.
+  - Notebooks `notebook/01_bus_gpt2.ipynb` (TransformerLens 4.3) and `02_bus_my_model.ipynb` (HF hooks; default Qwen3-1.7B-Base, run here with GPT-2 and tiny random Qwen3/Gemma 3), executed; numbers in `notebook/results.md`. Full-size Qwen3 run is for Kunhao's Mac.
+  - New component: `vec2d` (draggable arrows, synced sliders, keyboard; 46 px hit area) and opt-in signed bars. W9 added to toyworlds.md. Wiki: `wiki-candidates.md` (candidates only).
+  - Site dist and shelf rebuilt (`site/ai4read/dist/2026-10-residual-stream/`, with notebooks); deploy is Kunhao's website agent's step when he approves.
 - **English separated (2026-10-25).** Kunhao publishes the blogs without the English section. Both posts now end at Recall and Sources (no English audio chapters; post 01 about 25 min, post 02 about 35 min; both artifacts republished). English is a separate **C1–C2 pack** per post: source `posts/<slug>/english/english.json`, build `python3 scripts/english_pack.py posts/<slug>` → `site/mewiki/packs/<slug>.json` + `.md`, loop audio `scripts/tts_english_loop.py <slug>` → `site/mewiki/packs/audio/`. Old material archived in `posts/<slug>/english/*-v1.*`. Independent check: `posts/2026-10-ai-finance/review/english-packs-check.md` (two rounds, all critical and major fixed).
 - **Waiting on Kunhao's agents:** `site/ai4read/PROMPT-website-2026-10-25.md` (publish post 02, update post 01, delete 5 stale R2 objects) and `site/mewiki/PROMPT-margin-2026-10-25.md` (import the C1–C2 packs; ask before suspending the 45 retired items).
 - **Website and Margin:** handoff packages delivered; Kunhao's agents deploy. "Ask Claude" uses his Vertex key.
-- **Rules:** WRITING.md v0.8 (§8: English is a separate C1–C2 pack, not part of the post); earlier v0.7 (adds: threshold words, verdict in the short answer, one point one ladder, quoted formulas still climb, purpose ≠ effect, quote referent, one source per sentence, glosses are claims, search before "never", keep the source's scope).
+- **Rules:** WRITING.md v0.9 (recall tests only this post, checks must work on the page, define at first use, measured numbers carry their frame, "none of the sources" needs a search, commented-out HTML is not published text); v0.8 (§8: English is a separate C1–C2 pack, not part of the post); earlier v0.7 (adds: threshold words, verdict in the short answer, one point one ladder, quoted formulas still climb, purpose ≠ effect, quote referent, one source per sentence, glosses are claims, search before "never", keep the source's scope).
 - **Tooling:** test both builds: the site build (`--base` with the mock server) and the artifact build (`test.mjs posts/<slug>/index.html --inline`). The artifact build had silently lost its widgets until 2026-10-18 (fixed in build-post.mjs).
 
 ## 5. Standing constraints (from Kunhao)

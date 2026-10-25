@@ -100,3 +100,11 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - S5 r3: verify-3 (Opus) 0/0/3, 294k, 7.2 min; verify-3b (Sonnet) 0/1/11 (V3B-01: 6.2e-6 is relative to the block's writes, not the stream; the notebook helper's docstring was wrong), 310k, 9.2 min; critic-3 (Sonnet) 0/0/14, C2 4, C3 4, C4 5, C5 4, C6 4, 229k, 7.9 min. Gate after 3 rounds: FAIL by one major → meta-manager steps in (runbook): corrected results.md and the notebook docstring; a fresh writer makes a targeted fix pass; then a fresh targeted re-check.
 - Step-in: writer fix pass (Sonnet, fresh; 7,295 words; 165k, 2.7 min); verify-3c (Opus, fresh) 0/0/2 — V3B-01 resolved in 7 places, rerun reproduces 6.219e-6; critic-3c (Sonnet, fresh) 0/0/6, scores unchanged (C2 4, C3 4, C4 5, C5 4, C6 4). **S5 gate: PASS** (0 critical, 0 major, every criterion ≥ 4). A last polish pass on the 8 minors runs before audio; a light check of its diff follows.
 - WRITING v0.9 (5 rules), RUNBOOK lessons, writer prompt hard rule (never edit the brief/results; quote audio fixes).
+- Polish pass (Sonnet, fresh; 125k, 1.3 min) + light check (Opus, fresh; 0/0/3; fixes applied verbatim by the meta-manager).
+- English pack: review (Sonnet, fresh) 0/8/12 → writer applied (111k) → round 2 (Sonnet, fresh) 0/0/6 → applied by the meta-manager (loop narrowed to "a language model's stream").
+
+## Post 03 · S6–S7
+- Audio: 12 chapters, 43.4 min, all.mp3 15.6 MB, tagged "AI4Read from CSS Lab" (Kokoro, about 25 min wall). English loop 55.2 s.
+- Builds: check.mjs 8/8; artifact page and site page render tests PASS (390 px, strict CSP, drag + keyboard on vec2d); 375 px no overflow. Notebook download links added; site build copies notebooks.
+- Published draft artifact https://claude.ai/artifact/HET5R8dYrWAVrLoAVSVT38 (db rules: annotations/notes/guesses/diag admin; sample; downloads; audio and notebooks as files). db check: empty, hidden at view level.
+- Backup: GitHub; Drive bundle ai4read-20261025.bundle (made on the Mac) and sources parts (sha256 df35e373…, verified on the Mac); RESUME and Project docs updated.
