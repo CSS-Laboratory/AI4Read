@@ -102,6 +102,8 @@ if (process.argv.includes("--site")) {
   fs.rmSync(OUT, { recursive: true, force: true });
   fs.mkdirSync(path.join(OUT, "audio"), { recursive: true }); fs.mkdirSync(path.join(SH, "lib"), { recursive: true });
   if (has("audio")) for (const f of fs.readdirSync(path.join(D, "audio"))) if (f.endsWith(".mp3") || f === "chapters.json") fs.copyFileSync(path.join(D, "audio", f), path.join(OUT, "audio", f));
+  if (has("notebook")) { const nb = fs.readdirSync(path.join(D, "notebook")).filter((f) => f.endsWith(".ipynb") || f === "README.md");
+    if (nb.length) { fs.mkdirSync(path.join(OUT, "notebook"), { recursive: true }); for (const f of nb) fs.copyFileSync(path.join(D, "notebook", f), path.join(OUT, "notebook", f)); } }
   fs.writeFileSync(path.join(OUT, "post.css"), css);
   fs.writeFileSync(path.join(OUT, "data.js"), dataJS);
   fs.writeFileSync(path.join(OUT, "app.js"), js.core);
