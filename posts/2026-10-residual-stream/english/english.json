@@ -8,7 +8,7 @@
    "level": "C2",
    "partOfSpeech": "phrasal verb",
    "register": "formal/academic",
-   "sentence": "The notebook bears out the identity in GPT-2 small: the writes add up to the stream within rounding error.",
+   "sentence": "The notebook bears out the identity in GPT-2 small for entries 0 to 11: the writes add up to the stream within rounding error.",
    "target": "bears out",
    "definition": "to show that something said or believed is true"
   },
@@ -138,7 +138,7 @@
    "level": "C1",
    "partOfSpeech": "idiom",
    "register": "neutral",
-   "sentence": "With the arithmetic of a sum we are on firm ground; with the claim that concepts are directions, we are not.",
+   "sentence": "With the arithmetic of a sum we are on firm ground; with the claim that concepts are directions in a language model’s stream, we are not.",
    "target": "on firm ground",
    "definition": "in a safe position, with good evidence to support what you say"
   },
@@ -184,7 +184,7 @@
    "kind": "pattern",
    "headword": "Perfect participle clause",
    "level": "C1",
-   "sentence": "Having added the four writes, we get the stream (4, 2).",
+   "sentence": "Having added the four writes to the embedding, we get the stream (4, 2).",
    "target": "Having added",
    "definition": "'Having + past participle' shows that one action was finished before the next. The subject of the main clause must be the one who did the first action (see dangling modifiers)."
   },
@@ -217,9 +217,9 @@
    "kind": "fix",
    "headword": "affect vs effect",
    "level": "C1",
-   "sentence": "Adding a vector affects every score; the effect is the same shift, u dot v, for each point.",
-   "wrong": "Adding a vector effects every score; the affect is the same shift.",
-   "right": "Adding a vector affects every score; the effect is the same shift.",
+   "sentence": "Adding a vector v affects every score unless it is at right angles to u; the effect is the same shift, u dot v, for each point.",
+   "wrong": "Adding a vector v effects every score unless it is at right angles to u; the affect is the same shift, u dot v, for each point.",
+   "right": "Adding a vector v affects every score unless it is at right angles to u; the effect is the same shift, u dot v, for each point.",
    "definition": "'Affect' is usually a verb (to change); 'effect' is usually a noun (the result). 'To effect' means to bring about, as in 'to effect a change'."
   },
   {
@@ -254,7 +254,7 @@
  "loop": {
   "headword": "A paragraph to loop",
   "level": "C2",
-  "text": "Every part of the model adds its write to one shared list, so the residual stream is a running sum. To a first approximation, a read is then a dot product with that sum, and the norm in front of it is the part that is not linear. That much is true by construction in the toy, and the notebook bears it out on GPT-2 small, where the writes add up to the stream within rounding error. Whether the identity will hold up for other models is another matter, and results may not simply carry over to a trained Qwen3 or Llama, which we did not run. The last entry of a library's list is a case in point: it has been normalised, so to take it at face value would be a mistake. The claim that concepts are directions hinges on evidence the sources do not supply, so we are on firmer ground with the arithmetic than with the interpretation. A steering push moves every score in lockstep, yet to say that a high score shows the model uses the direction would be tantamount to confusing seeing with doing.",
+  "text": "Every part of the model adds its write to one shared list, so the residual stream is a running sum. To a first approximation, a read is then a dot product with that sum, and the division inside the norm in front of it is the part that is not linear. That much is true by construction in the toy, and the notebook bears it out on GPT-2 small, where the writes add up to the stream within rounding error. Whether the identity will hold up for other models is another matter, and results may not simply carry over to a trained Qwen3 or Llama, which we did not run. The last entry of a library's list is a case in point: it has been normalised, so to take it at face value would be a mistake. The claim that concepts are directions in a language model’s stream hinges on evidence the sources do not supply, so we are on firmer ground with the arithmetic than with the interpretation. A steering push moves every score in lockstep, yet to say that a high score shows the model uses the direction would be tantamount to confusing seeing with doing.",
   "targets": [
    "To a first approximation",
    "by construction",

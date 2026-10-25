@@ -45,3 +45,12 @@ Weaker points: section 3 is the longest section and carries the whole identity t
 - Notebook numbers were taken from `notebook/results.md` and not re-run here.
 - No trained Qwen3, Llama, Gemma or Mistral model was run, and no full-size Qwen3 config model was loaded (1,720,574,976 parameters, 6.9 GB in float32).
 - The English pack levels are our estimates and have not been checked by an independent reviewer.
+
+---
+# Round 2 update (S5 to S4, 2026-10-25)
+
+This section replaces the stale figures above. Main text is 7,143 words by `scripts/wordcount.py` (cap 7,500; target about 7,100). Fold-outs hold about 1,660 words in 4 boxes (the identity table and the code reading are now one box, `box-numbers`). Build: 0 unmapped citations, 0 missing source entries, 0 math errors. `check.mjs`: 8/8. `test.mjs --inline`: PASS. A quote script matched every curly-quoted string against `sources/*.txt`; the unmatched ones are our own labels.
+
+Self-scores after round 2: sum 4 to 5 (the identity block is now five sentences plus a fold-out), bets 4 (one instance, one claim, one hedge each), the lenses 4 to 5 (the contrast paragraph names what each adds), widgets 4 to 5 (signed bars, separated handles, labels inside the bus boxes).
+
+Where a fact-checker should look first now: (1) the TCAV, ablation and activation-patching sentence in Lens 1 (glossary L1361-1375, L1442, L1593-1598); (2) the new norm sentence in section 3 (learned scale and shift; GPT-2 version cited to Notebook 02); (3) "entry 0 is the embedding" with the position list (results rows 36 and 37); (4) the Nanda "always slightly privileged" caveat (L245) and our "habit, not a law"; (5) the single informative number, 6.2e-6 (results row 43, blocks 1 to 11).

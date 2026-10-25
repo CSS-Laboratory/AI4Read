@@ -508,7 +508,7 @@ A personal, opinionated explainer ("I frequently go on long tangents", L79). Sav
 **Traps.**
 - Two sentences are cut off in the text layer (L207 "That is, it matters whether the feature" and L257 "The only reason this is even somewhat plausible is that neuron activations."). Do not quote around or complete them.
 - The intuition for directions is an argument from what models do (matrix multiplication), not a measurement (L200). Say "Nanda's intuition".
-- A probe returns a direction that separates the labelled sets; the source says it "likely corresponds" to the feature (L1587). Whether the *model uses* that direction is not addressed here (the see-versus-do point is ours; strands 2-3).
+- A probe returns a direction that separates the labelled sets; the source says it "likely corresponds" to the feature (L1587). Whether the *model uses* that direction is not addressed in the entry on probing itself (the see-versus-do point is ours; strands 2-3). **Round 2 (V2B-01, writer note — UNVERIFIED: written by the writer, not the checker; S5 r3 must verify):** the glossary does list use-tests: ablation (L1361-1375), activation patching (L1442) and TCAV (L1593-1598, a probe-like Concept Activation Vector compared with the derivative of an output; its example is a zebra in an image). None of them is applied to a probe direction in a language model in the saved text (TCAV appears only at L1593-1598). Never write "none of the sources addresses it".
 - Nanda's firmness varies (trap 8): quote L199 for "hypothesis", and L135 and L1096 only with a note that they are stated without a hedge.
 - "Feature" has three definitions across the sources (Olah L694, Nanda L104, Elhage uses none). **S2:** two definitions; Elhage gives none.
 

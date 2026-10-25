@@ -4,7 +4,7 @@ description: Every computed or notebook number in post 03 and where it comes fro
 ---
 # Numbers, post 03
 
-Widget readouts: `node site/ai4read/components/check.mjs posts/2026-10-residual-stream/src/content.html` (8/8 OK, re-run 2026-10-25 after revision round 1). Toy numbers were rerun in numpy (`nums.py`, scratchpad) and agree with `toyworlds.md` W9 (the margin is -4 at 0 degrees, as corrected). Notebook numbers are copied from `notebook/results.md` (float32, CPU, transformers 5.19.0, TransformerLens 4.3.0, torch 2.14.1, prompt "The cat sat on the mat because"); they were not re-run for this file.
+Widget readouts: `node site/ai4read/components/check.mjs posts/2026-10-residual-stream/src/content.html` (8/8 OK, re-run 2026-10-25 after revision round 2). Toy numbers were rerun in numpy (`nums.py`, scratchpad) and agree with `toyworlds.md` W9 (the margin is -4 at 0 degrees, as corrected). Notebook numbers are copied from `notebook/results.md` (float32, CPU, transformers 5.19.0, TransformerLens 4.3.0, torch 2.14.1, prompt "The cat sat on the mat because"); they were not re-run for this file.
 
 ## Toy numbers (ours)
 
@@ -29,6 +29,10 @@ Widget readouts: `node site/ai4read/components/check.mjs posts/2026-10-residual-
 | E1 | exercise | x1 = (2,2); x2 = (4,2); f2 = -a2 = (-3,2) gives x2 = x1 | numpy |
 | Open question | section 10 | M = [[2,1],[1,2]], each output coordinate = one row dotted with the vector: (1,0) -> (2,1); (1,1) -> (3,3); (1,-1) -> (1,-1) | numpy |
 | Norm sketch | section 3 | (4,2) and (8,4) both -> (1,-1) (mean removed, divided by the standard deviation) | numpy |
+| Unit-length check | section 6 | u = (0.6, 0.8) has length 1; x = (5, 0): score 3; foot 3u = (1.8, 2.4); x - foot = (3.2, -2.4); dot with u = 1.92 - 1.92 = 0 | arithmetic (python rerun, round 2) |
+| Read-split answer | section 5, folded answer | r = (2, -1): 2*1 + (-1)*2 = 0 (reader cannot hear the embedding) | arithmetic |
+| Silence answer | section 9, folded answer | strengths (0.5, 0.5, 0.5): 0.5 - 1/2 (0.5 + 0.5) = 0 for each reader | arithmetic; check.mjs `three-features` with c = 0.5 each |
+| probe-push drawing | section 6 | probe arrow drawn at scale 5 (tip at 5 units); view x -6..8, y -5..9; "push along" tips are 5 and 2.83 units from the origin on one line | config; screenshot at 390 px |
 | Norm toy (fold-out) | box-norm | (4,2): mean 3, centred (1,-1), sd 1; (8,4): mean 6, centred (2,-2), sd 2; both -> (1,-1); r.LN = -1 for both; r.x = 8 and 16 | numpy |
 | Logit-lens toy (fold-out) | box-lens | rows at 0, 120, 240 degrees: x0 (1.000, 1.232, -2.232); x1 (2.000, 0.732, -2.732); x2 (4.000, -0.268, -3.732) | numpy |
 
@@ -39,12 +43,15 @@ Widget readouts: `node site/ai4read/components/check.mjs posts/2026-10-residual-
 | GPT-2 small | sections 1, 3 | 768 numbers, 12 blocks (Nanda says the same; the config was also printed) | config printed in notebook 01, cell [4] |
 | Qwen3-1.7B-Base | section 1 | hidden size 2,048 (config only, not run in full) | full-size config line below row 67 (cell [13]) |
 | Additivity in the model's own order | section 3 | 0.0 (max abs and max rel); repeats the model's own additions | 2-6, 8 |
-| Same writes in another order | sections 3, 7, recall | max abs 4.27e-4; max rel 1.03e-6 (float32 epsilon 1.19e-7); the post explains that the cause is rounding (a different order rounds in other places) and says nothing about why the model-order check is 0.0 beyond "it repeats the model's own additions" (rows 2-6, 8) | 7 |
-| Consecutive Hugging Face entries vs the block's two writes | section 3 table | max rel 6.2e-6 for blocks 1 to 11 (the last step differs because of the final norm) | 43 |
-| TransformerLens (raw) vs Hugging Face, k = 0..11 | sections 3, 7 | max abs 4.88e-4; max rel 7.8e-7 | 23 |
-| Last entry | section 3 | hidden_states[-1] = ln_f(output of last block), difference 0.0; vs raw stream relative 0.986 | 44, 45 |
+| Same writes in another order | fold-out `box-numbers` (table, row 2) | max abs 4.27e-4; max rel 1.03e-6 (float32 epsilon 1.19e-7), notebook 01. No longer in the main text or the recall card (round 2); the rounding explanation in the main text rests on row 43 and on the toy | 7 |
+| Consecutive Hugging Face entries vs the block's two writes | section 3 main text (the one informative number), recall card 1, fold-out table row 3 | max rel 6.2e-6 for blocks 1 to 11, i.e. l = 0..10 (the twelfth step, l = 11, is 2.04 because of the final norm) | 43 |
+| TransformerLens (raw weights) vs Hugging Face, k = 0..11 | fold-out table row 4 | max abs 4.88e-4; max rel 7.8e-7 | 23 |
+| Last entry | section 3 (verdict), fold-out | hidden_states[-1] = ln_f(output of last block), difference 0.0; vs raw stream relative 0.986 (fold-out only) | 44, 45 |
+| Entry 0 in GPT-2 | section 3, fold-out | hidden_states[0] = wte(ids) + wpe(positions), difference 0.0; wte(ids) alone differs by 3.63 relative (fold-out only) | 36, 37 |
+| Entry l is the input of block l | fold-out | 0.0 for l = 0..11 | 41 |
+| Tiny random Qwen3 and Gemma 3 | fold-out | 4 blocks, 64 numbers, random weights; consecutive entries differ by the writes to about 1e-7 except the last step | 62 and 02-B header |
 | Processed TL vs Hugging Face | section 10 | equals the Hugging Face stream minus its mean coordinate; max rel 1.09e-6 | 27 |
-| Norm profile | section 10 | median ordinary positions 5.3 (0 blocks), 58.0 (1), 472.4 (12); position 0: 10.3, 3155.5 (11), 417.4 (12) | 9, 10 |
+| Norm profile | section 10 | median length at ordinary positions 5.3 (0 blocks) and 472.4 (12). Position 0 (start token) is described in words only (much larger in the middle layers, smaller after 12; ratio 0.88 at 12); the figures 3155.5 and 417.4 left the text in round 2 | 9, 10, 11 |
 | Final norm and unembedding | section 10, box-lens | reproduces logits (max abs 0.0); unembedding alone off by up to 834.6 | 13, 14 |
 | Lens ranks of " it" | box-lens | with norm: rank 0 after 8 blocks, 1 after 9, 0 after 10, 11, 12; without norm: 12 after block 12 | 17, 20 |
 | Real-stream read split | section 5 | random unit vector (seed 0): u.h = 7.211561 = sum of 13 shares; difference 0.0 in this run (the post gives no reason for the 0.0, because row 49 records none; row 51 shows -5.72e-6 for a different read-linearity check and is not used) | 49 |
