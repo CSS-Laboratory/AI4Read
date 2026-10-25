@@ -1,7 +1,7 @@
 ---
 name: writing-principles
 description: How AI4Read posts are written. Read before drafting or revising any post. Claude updates it whenever a review round or a note from Kunhao shows a missing rule (add the rule, the note or finding that caused it, and the date); Kunhao asked for this on 2026-10-18.
-version: 0.8 (2026-10-25)
+version: 0.9 (2026-10-25)
 ---
 
 # AI4Read writing principles
@@ -14,6 +14,7 @@ The charter (§5–7) fixes the post template, style and audio. This file says *
 - **Answer the question where the reader looks.** Give a one-line preview after the hook. Open the synthesis with a boxed **Short answer**, with one paragraph for each part of the question. Define any key term from the question at first use. (Post 02 critic round 1, 2026-10-17.)
 - **Pin down the question's threshold words.** Words like *fully*, *without any*, *possible* or *society* decide the answer. Say which sense the post tests (post 02: intervention at run time vs at design time; capable vs stable vs accepted), define the key noun (“society”), and carry the same senses through to the short answer. (Post 02 v2 critic round 1, 2026-10-18.)
 - **The short answer gives a verdict.** Do not hand the question back to a source (“the question behind Harari's …”). State our verdict, label it ours, and say what evidence would change it. Give each part of the question an argument, not only a status report; if one part has only one channel (e.g. impact = correlated failure), say who gains and who bears as well. (Post 02 v2 critic round 1.)
+- **Recall tests only this post.** A recall or exercise question may use only what this post itself teaches and cites; a question that needs an outside idea (post 03 draft: an attention √d_k card) is a hidden cross-reference. (Post 03 S5 round 1.)
 - **One point, one ladder.** If several toys teach the same idea, keep the clearest in the main text and move the others to fold-outs; spend the words on the parts of the question that carry its meaning. (Post 02 v2: four ladders all taught “sameness makes failure joint”.)
 
 ## 1. The reader
@@ -49,6 +50,9 @@ Do not start a concept at step 4.
 - Diagrams follow the theme tokens and are readable at 375 px. A diagram revealed in steps shows later steps faded from the start (`"preview": true`), so the frame is never mostly blank on a phone.
 - A paragraph carries **at most about five numbers**. A worked example with more numbers goes in a small table. (Post 02 critic rounds 2–3.)
 
+- **Checks must work on the page.** Any check the reader is invited to do (“add the shares: you get 5”) must come out with the numbers actually shown in the same passage, the widget and the exercise; use one vector throughout. (Post 03 S5 round 1: the rotation passage read x₂ but gave the shares of (5, 0), so the reader's check gave 8.)
+- **Define at first use, in the main text.** If a term (*norm*) is used before the fold-out that explains it, give a one-line definition in the text at first use; the fold-out keeps the details. (Post 03 S5 round 1.)
+
 ## 6. Formulas
 - Show the formula the reader will meet in the field (e.g. the machine-learning cross-entropy $H(p,q)=-\sum_x p(x)\log q(x)$), even when the source writes it differently, and connect the two. (Note on cross-entropy, 2026-10-15.)
 - Derivations that a reader can do in five minutes become **exercises** with a hint and a folded solution, not finished text.
@@ -56,6 +60,8 @@ Do not start a concept at step 4.
 
 ## 7. Big claims need “what it means”
 - After any headline result (a scaling law, a theorem, a test score), answer three questions in plain words: **what was measured, on what, and what it lets you predict** — then what it does *not* show. (Note on Step 8, 2026-10-15.)
+
+- **Measured numbers carry their frame.** For every number from code we ran, say what was run (model, library and version, precision, device), what a *relative* error is relative to, and what was not run. A check that repeats the model's own computation (bit-exact additivity inside one library) is a consistency check, not evidence; say so and lean on the independent comparison. (Post 03 S5: a relative error was described against the stream when the code divided by the block's writes; the notebook's own docstring was wrong.)
 
 ## 8. English study packs (separate from the post)
 - **The blog contains no English-learning section** and no English audio chapter. Kunhao publishes the posts without it (note, 2026-10-25). Each post's English material is a separate **pack** for Margin, written in `posts/<slug>/english/english.json` and built with `python3 scripts/english_pack.py posts/<slug>` (pack JSON plus a readable `.md`). The loop paragraph is recorded with `scripts/tts_english_loop.py <slug>` and tagged “AI4Read from CSS Lab”.
@@ -82,6 +88,8 @@ Do not start a concept at step 4.
 - **One source per cited sentence.** A remedy from one talk and a doubt from a book extract three months later get two citations and two sentences, never one. Attribute surveys to whoever ran them (“a Mercer survey reproduced by the IMF”). (Post 02 v2 round 1.)
 - **New glosses are new claims.** A parenthetical added to explain a term (“liquidity shocks (banks unable to borrow)”) must be checked against the source page like any quote; in post 02 v2 such glosses caused new errors in rounds 2 and 3.
 - **Search before saying “never”.** Before writing that an author never discusses X, search the whole text (Searle mentions computers on pp. 14, 34, 56, 140–141); state the narrower true claim instead.
+- **"None of the sources" is a claim about every source.** Search all of them before writing it, and prefer the narrow true statement (“Elhage reports circuits only in attention-only models of at most two layers”). In post 03 this error recurred three times (tests for language models, tests of whether a direction is used, post-training). (Post 03 S5 rounds 1–3.)
+- **Commented-out text is not published text.** When a web page is saved as text, HTML comments must be stripped; a quote from inside `<!-- -->` is a quote the author never published. (Post 03 S2, critical.)
 - **Keep the source's population and scope.** “Participants in the IMF's outreach” are not “firms” or “the market”; “more frequently” is not “mostly”; a survey of one market is not all markets.
 
 ## 10. Change log
@@ -93,3 +101,4 @@ Do not start a concept at step 4.
 - 0.6 (2026-10-18): §0 threshold words, verdict in the short answer, one point one ladder; §2 quoted formulas still climb; §5 guess options; §9 purpose ≠ effect, quote referent, one source per cited sentence. From the post 02 v2 S5 round 1.
 - 0.7 (2026-10-18): §9 new glosses are new claims, search before saying “never”, keep the source's population and scope. From post 02 v2 S5 rounds 2–3.
 - 0.8 (2026-10-25): §8 the English material leaves the post and becomes a separate C1–C2 pack for Margin. From Kunhao's note on posts 01 and 02.
+- 0.9 (2026-10-25): §0 recall tests only this post; §2 checks must work on the page, define at first use in the main text; §7 measured numbers carry their frame; §9 "none of the sources" needs a search of all, commented-out HTML is not published text. From the post 03 S2–S5 rounds.

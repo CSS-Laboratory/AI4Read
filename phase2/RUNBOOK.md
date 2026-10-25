@@ -37,3 +37,10 @@ date: 2026-10-17
 - The meta-manager audits the post in full once every three posts, and always for the first post of the pipeline (post 02).
 
 **Review hygiene (2026-10-18).** Do not regenerate `src/content.html` while checkers are reading it: edit the template, and regenerate only after every agent of the round has reported. Otherwise findings point at two versions.
+
+**Lessons from post 03 (2026-10-25).**
+- Saving web sources: strip HTML comments (and scripts) before writing the `.txt`; the S1 planner quoted text that was commented out of the published page.
+- The writer never edits `source-brief.verified.md` or `notebook/results.md`; facts it needs go to `requests.md`. If it does, the meta-manager marks the edit UNVERIFIED and the next checker verifies or strikes it.
+- `response-N.md` must quote the new audio line for every audio fix; checkers compare the claim with `audio-script.md` (a round-1 response claimed audio fixes that were not made).
+- Notebook builders state the denominator of every relative error in `results.md`.
+- A gate missed after round 3 by a single, local finding: the meta-manager corrects any pipeline file at fault (here `results.md`), a fresh writer makes a targeted fix pass, and fresh checkers (facts and pedagogy) re-check the diff (`verify-3c.md`, `critic-3c.md`).
