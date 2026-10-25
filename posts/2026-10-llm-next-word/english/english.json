@@ -4,7 +4,7 @@
  "note": "Passage-centred pack, C1-C2, British English; a short talk on the post's synthesis: four layers of what a next-word predictor knows (text, structure, meaning, minds) and why the loss cannot tell you the kind of knowledge.",
  "passage": {
   "level": "C2",
-  "text": "A language model is trained to do one job: guess the next piece of text. It is scored by its loss, which measures how closely those guesses match real text. What it knows comes in four layers, from the most certain to the most contested. First come bits about text, which are measurable. That is knowledge in Shannon's sense, and his theory sidesteps the question of meaning. Next is structure, such as grammar, and that is well supported. Whether the model grasps meaning stands or falls on what you take meaning to be. As for minds, the jury is still out. Many tests are passed, but small changes often break the result, which should give us pause. Yet people fail some of those changes too, so if a failure counts against the model, then by the same token it counts against us. A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge the model has. To tease apart the kinds, you have to change the test in small ways and see what breaks.",
+  "text": "A language model is trained to do one job: guess the next piece of text. It is scored by its loss, which measures how closely those guesses match real text. What it knows comes in four layers, from the most certain to the most contested. First come bits about text, which are measurable. That is knowledge in Claude Shannon's sense, and his theory sidesteps the question of meaning. Next is structure, such as grammar, which is well supported. Whether the model grasps meaning stands or falls on what you take meaning to be. As for minds, that is, tracking what people believe, the jury is still out. Models pass many tests, but small changes often break the result, which should give us pause. Yet people get some of those altered tests wrong too, so if a failure counts against the model, by the same token it counts against us. A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge the model has. You can tease apart the kinds by changing the test in small ways and seeing what breaks.",
   "core": [
    7,
    8,
@@ -18,7 +18,7 @@
    },
    {
     "question": "What does a low loss not tell you, and how can you find out more?",
-    "answer": "It does not tell you what kind of knowledge the model has. To find out, you change the test in small ways and see what breaks."
+    "answer": "It does not tell you what kind of knowledge the model has. One way to find out is to change the test in small ways and see what breaks."
    }
   ],
   "retell": {
@@ -28,7 +28,7 @@
     "in and of itself",
     "the jury is still out (on)"
    ],
-   "modelAnswer": "A low loss, in and of itself, only tells you how much a model knows about text, not what kind of knowledge it is. To tease apart the kinds, you change the test in small ways and see what breaks. On whether models have anything like a mind, the jury is still out."
+   "modelAnswer": "A low loss, in and of itself, tells you how much a model knows about text, but not what kind of knowledge it is. One way to tease apart the kinds is to change the test in small ways and see what breaks. On whether models can track what people believe, the jury is still out."
   }
  },
  "items": [
@@ -78,11 +78,22 @@
   },
   {
    "kind": "expression",
+   "headword": "to count against",
+   "level": "C2",
+   "partOfSpeech": "phrasal verb",
+   "register": "neutral/formal",
+   "definition": "to be a reason for judging someone or something unfavourably",
+   "anchor": "counts against",
+   "sentence": "A single failed replication may count against a finding, but it rarely settles the matter.",
+   "target": "count against"
+  },
+  {
+   "kind": "expression",
    "headword": "to be tantamount to",
    "level": "C2",
    "partOfSpeech": "adjective + preposition (with be)",
    "register": "formal/academic",
-   "definition": "to have the same effect or meaning as something else, usually something stronger or worse",
+   "definition": "to be virtually the same as something else, in effect; the second thing is usually more serious or negative",
    "anchor": "tantamount to",
    "sentence": "Publishing only the runs that worked would be tantamount to hiding the ones that failed.",
    "target": "tantamount to"
@@ -122,38 +133,37 @@
   },
   {
    "kind": "pattern",
-   "headword": "Double superlative range (from the most X to the most Y)",
+   "headword": "Inversion after a fronted ordinal (First come X, next comes Y)",
    "level": "C1",
-   "definition": "Mark the two ends of a scale with parallel superlatives: 'from the most certain to the most contested'. It lets you list items in order in a single phrase.",
-   "anchor": "from the most certain to the most contested",
-   "sentence": "The studies range from the most carefully controlled to the most loosely designed.",
-   "target": "from the most carefully controlled to the most loosely designed"
+   "definition": "Put an ordinal or sequencing word first and the verb before its subject, so the list reads as a sequence: 'First come bits about text'. The verb agrees with the subject that follows, not with the fronted word.",
+   "anchor": "First come bits about text",
+   "sentence": "First come the interviews; next comes the coding, and only then the analysis.",
+   "target": "First come the interviews; next comes the coding"
   },
   {
    "kind": "pattern",
-   "headword": "As for + topic",
+   "headword": "Nominal clause 'what you take X to be'",
    "level": "C1",
-   "definition": "'As for X, ...' moves to a new topic in the middle of a talk and signals that what follows is about X alone. Spoken and written, neutral.",
-   "anchor": "As for minds",
-   "sentence": "As for the second dataset, we have not yet checked its labels.",
-   "target": "As for the second dataset"
+   "definition": "'What you take X to be' asks for the speaker's view of X's nature and fits after 'depends on' or 'stands or falls on': 'Whether A is true stands or falls on what you take B to be'.",
+   "anchor": "what you take meaning to be",
+   "sentence": "Whether the corpus is representative depends on what you take the target population to be.",
+   "target": "what you take the target population to be"
   },
   {
-   "kind": "pattern",
-   "headword": "Sentential relative clause (, which ...)",
+   "kind": "fix",
+   "headword": "verb agrees with the subject after inversion",
    "level": "C1",
-   "definition": "After a comma, 'which' can refer to a whole preceding clause, not just one noun: 'small changes often break the result, which should give us pause'. 'That' cannot be used this way.",
-   "anchor": "which should give us pause",
-   "sentence": "Agreement dropped on the new sample, which suggests that the codebook is too loose.",
-   "target": "which suggests that the codebook is too loose"
+   "anchorSentence": 3,
+   "wrong": "First comes bits about text, which are measurable.",
+   "definition": "After a fronted 'First' or 'Next', the verb still agrees with the subject that follows: 'First come bits' (plural), but 'First comes grammar' (singular)."
   },
   {
    "kind": "fix",
    "headword": "no article with uncountable abstract noun",
    "level": "C1",
    "anchorSentence": 4,
-   "wrong": "That is a knowledge in Shannon's sense, and his theory sidesteps the question of meaning.",
-   "definition": "'Knowledge' is uncountable: no 'a' and no plural. Say 'knowledge' or 'a piece of knowledge'."
+   "wrong": "That is a knowledge in Claude Shannon's sense, and his theory sidesteps the question of meaning.",
+   "definition": "'Knowledge' is uncountable and takes no 'a' or plural in general use. 'A knowledge of X' is possible only with a modifier ('a working knowledge of X'). Say 'knowledge' or 'a piece of knowledge'."
   },
   {
    "kind": "fix",
@@ -165,24 +175,16 @@
   },
   {
    "kind": "fix",
-   "headword": "which, not that, after a comma",
+   "headword": "no article in 'give someone pause'",
    "level": "C1",
    "anchorSentence": 8,
-   "wrong": "Many tests are passed, but small changes often break the result, that should give us pause.",
-   "definition": "A comment on a whole clause needs ', which'. 'That' only starts a defining relative clause, with no comma."
-  },
-  {
-   "kind": "fix",
-   "headword": "no inversion in an embedded question",
-   "level": "C1",
-   "anchorSentence": 10,
-   "wrong": "A low loss is not tantamount to understanding, and in and of itself it cannot tell you what kind of knowledge has the model.",
-   "definition": "After 'what kind of ...' inside a statement, keep statement order (subject then verb): 'what kind of knowledge the model has'."
+   "wrong": "Models pass many tests, but small changes often break the result, which should give us a pause.",
+   "definition": "In the idiom 'give someone pause', 'pause' takes no article; 'a pause' means a short break in time or speech."
   },
   {
    "kind": "tip",
    "headword": "Shadow the core first",
-   "sentence": "Loop the four core sentences until you can say them without the text; the expressions will come with them, already in a natural rhythm."
+   "sentence": "Loop the four core sentences until you can say them without the text; six of the pack's nine expressions will come with them, already in a natural rhythm."
   }
  ]
 }

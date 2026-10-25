@@ -210,3 +210,31 @@ Housekeeping if the replacements are accepted: the headword "up to (rounding)" (
 6. Optional new pattern "Noun + aside" (m8).
 7. `retell.instruction` and `modelAnswer` (M6); gist 2 answer (m12).
 8. Re-record the audio.
+
+
+---
+
+## Response (2026-10-26)
+
+Applied to `english.json`. `--check`: source OK, passage 190 words, 9 sentences, core 86 words; 10 expressions, 4 patterns, 3 fixes. Passage text changed, so the audio must be re-recorded.
+
+| ID | What changed |
+|---|---|
+| M1 | Sentence 0 now opens "On our reading,". |
+| M2 | Sentence 3 now reads "To a first approximation, norm aside, a read is a dot product ...". |
+| M3 | Expression `up to (rounding)` replaced by `to go unheard` (C2, my estimate; check it). "Up to rounding" stays in the passage unannotated. I did not add the optional tip. |
+| M4 | Fix `no pronoun after a fronted object` replaced by `whether (not 'if') for a subject clause`, anchored on sentence 8, labelled C1. Per the "whether, not if" caution, it is the subject-clause form only: the definition does not mention indirect questions, and says "if" opens a condition, never a subject clause. The pattern "Whether-clause as subject" (C1) is unchanged. |
+| M5 | `to be tantamount to` second context now "reporting an experiment we never ran". |
+| M6 | Retell instruction and model answer replaced; the instruction now asks what the open question about concepts depends on, which elicits `to hinge on`. |
+| m1 | Sentence 4 now "A linear probe is such a read". Nanda's glossary, quoted in the post, calls a probe a "1D linear map", so "linear" is the post's. "By the same amount" was cut from sentence 6, as the review did. |
+| m2 | Not applied (optional; no word budget). |
+| m3, m4 | No change (as the review says). Core stays [0, 3, 5, 7]. |
+| m5, m9 | No change (as the review says). |
+| m6 | `to bear out` second context now "original finding". |
+| m7 | Kept `Whether-clause as subject` at C1 (subject-clause form only). |
+| m8 | Pattern `Noun + aside (absolute phrase)` added (C1), anchored on "norm aside" in sentence 3. |
+| m10 | Fix 1 rule replaced. |
+| m11 | Fix 3 rule replaced. |
+| m12 | Gist 2 answer replaced. |
+
+Headwords kept unchanged: nine of the ten expressions, the four patterns that existed or were added, and fixes 1 and 3. Headwords dropped (for the retired list, which I was not asked to edit): `up to (rounding)` and `no pronoun after a fronted object`, both new in this pack.

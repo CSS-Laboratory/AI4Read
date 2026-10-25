@@ -157,3 +157,31 @@ Still 9 sentences; `core` stays `[4, 5, 6]`; fix `anchorSentence` values stay 2,
 I built a scratch copy outside the repo with every change above (passage, gist 1, model answer, the three dropped items, the new pattern, the "answerable" level and second context, and the three fix strings) and ran the checker on it: `source OK · passage 189 words, 9 sentences, core 78 words · {'expression': 8, 'pattern': 2, 'fix': 3, 'tip': 1}`, exit 0. The tip is untouched ("Five-jobs retell"); it is faithful and fine, and it only asks for "three expressions from this pack".
 
 After the edits, re-record the passage audio (the text hash will otherwise flag it) and list the three dropped ids in `site/mewiki/packs/retired-<date>.json`.
+
+
+---
+
+## Response (2026-10-26)
+
+Applied to `english.json`. `--check`: source OK, passage 190 words, 9 sentences, core 80 words; 8 expressions, 2 patterns, 3 fixes, 1 tip. Passage text changed, so the audio must be re-recorded.
+
+| ID | What changed |
+|---|---|
+| P1 | Sentence 7 is now the definition ("By our definition, a society lets members rely on shared rules, contest them and find someone answerable.") and sentence 8 carries the verdict ("So, with no person left to declare or answer, the result would be a machine system people live next to, a far cry from a society."). "That" after "system" is dropped to stay inside 190 words. |
+| P2 | Sentence 2 now opens "In some financial markets,". Sentence 4 I changed from the review's "largely automatic" to "Checking is automatic at run time": the post says "Automatic at run time", and "largely" is not in the post. |
+| P3 | Sentence 6 is now "Declaring is saying what counts: money is underpinned by people continuing to accept it, and what remains to be seen is whether machines could do that accepting." |
+| P4 | Applied with different wording: "market participants the IMF consulted expect a human in the loop in the near term". The post says the IMF "surveyed and interviewed" participants, so "an IMF survey" would narrow it; "consulted" covers both. |
+| P5 | Not applied. Splitting sentence 5 adds a sentence, shifts the core and fix indexes, and breaks the 190-word cap. It stays one sentence. |
+| P6, P7, P8 | No change (as the review says). Core stays [4, 5, 6] (80 words). |
+| E1 | Expression `human in the loop` removed (id `ai4read:2026-10-ai-finance:human-in-the-loop`). The phrase stays in the passage. |
+| S2 | Pattern `What-clause as subject` removed. |
+| S3 | Pattern `Non-defining relative clause inside the sentence` removed; pattern `Absolute 'with' + noun phrase + participle` added, anchored on "with no person left to declare or answer" in sentence 8. |
+| E2 | `answerable (to/for)` relabelled C2 with the new second context; `a far cry from` and `to be underpinned by` have the new definitions. Other items unchanged, as the review says. |
+| F1 | `wrong` rebuilt for the new sentence 2. |
+| F2 | `wrong` rebuilt for the new sentence 3 (with "in near term"); rule replaced. |
+| F3 | `wrong` rebuilt for the new sentence 7; rule replaced. |
+| G1 | Gist 1 replaced. Gist 2 kept. |
+| R1 | Retell model answer rewritten with the review's scope fixes, adjusted to the new passage ("the market participants the IMF consulted", "in the near term", "running is largely automated" with no claim about checking). The three `mustUse` headwords are unchanged. |
+| R2 | Retell instruction replaced. |
+
+Headwords kept unchanged: all eight remaining expressions, the inversion pattern, and the three fix headwords. Headwords dropped (for the retired list, which I was not asked to edit): `human in the loop`, `What-clause as subject`, `Non-defining relative clause inside the sentence`.

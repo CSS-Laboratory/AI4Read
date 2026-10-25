@@ -4,8 +4,13 @@
  "note": "Passage-centred pack, C1-C2, British English: a spoken mini-talk on post 03's main answer (the stream as a running sum, reads as dot products, the last library entry, probe versus push, and the limits). Levels are AI4Read estimates in the style of the English Vocabulary Profile and English Grammar Profile. Ten headwords are reused from pack 1 or earlier packs where they fit naturally.",
  "passage": {
   "level": "C2",
-  "text": "Every attention and MLP part adds its write to one shared list, so a language model's hidden state is a running sum. In our toy that is true by construction, and a notebook on GPT-2 small bears it out, up to rounding. Names can mislead: the last entry a library returns, having been through the final norm, is a case in point, and is not to be taken at face value. To a first approximation, a read is a dot product with that sum, so it splits into one share per writer, and a writer at right angles goes unheard. A probe is such a read, and a high score shows only that information is present. To say the model therefore uses it would be tantamount to confusing seeing with doing. A steering push shifts every score in lockstep, by the same amount. What a score means, or whether a push changes behaviour, the algebra does not say. Whether concepts are directions in a trained language model's stream hinges on tests that our three sources do not give, so we are on firm ground with the arithmetic, not the interpretation.",
-  "core": [0, 3, 5, 7],
+  "text": "On our reading, every attention and MLP part adds its write to one shared list, so a language model's hidden state is a running sum. In our toy that is true by construction, and a notebook on GPT-2 small bears it out, up to rounding. Names can mislead: the library's last entry, having been through the final norm, is a case in point, and is not to be taken at face value. To a first approximation, norm aside, a read is a dot product with that sum, so it splits into one share per writer, and a writer at right angles goes unheard. A linear probe is such a read, and a high score shows only that information is present. To say the model therefore uses it would be tantamount to confusing seeing with doing. A steering push shifts every score in lockstep. What a score means, or whether a push changes behaviour, the algebra does not say. Whether concepts are directions in a trained language model's stream hinges on tests that our three sources do not give, so we are on firm ground with the arithmetic, not the interpretation.",
+  "core": [
+   0,
+   3,
+   5,
+   7
+  ],
   "gist": [
    {
     "question": "Why is a model's hidden state described as a running sum?",
@@ -13,13 +18,17 @@
    },
    {
     "question": "What does a high probe score show, and what does it not show?",
-    "answer": "It shows only that information is present along that direction; it does not show that the model uses that information."
+    "answer": "It shows only that the information is present; it does not show that the model uses it."
    }
   ],
   "retell": {
-   "instruction": "In 2-3 sentences, explain to a colleague what a hidden state is and what a probe score does and does not show.",
-   "mustUse": ["by construction", "to be tantamount to", "to hinge on"],
-   "modelAnswer": "A hidden state is a running sum: every attention and MLP part adds its write, which is true by construction in our toy and holds up to rounding in GPT-2 small, apart from the last library entry. A probe score shows only that information is present along a direction, and to say the model uses it would be tantamount to confusing seeing with doing. Whether concepts are directions in a trained language model's stream hinges on tests that our three sources do not give."
+   "instruction": "In 2-3 sentences, explain to a colleague what a hidden state is, what a probe score does and does not show, and what the open question about concepts depends on.",
+   "mustUse": [
+    "by construction",
+    "to be tantamount to",
+    "to hinge on"
+   ],
+   "modelAnswer": "On our reading, a hidden state is a running sum: every attention and MLP part adds its write, which is true by construction in our toy and holds up to rounding in GPT-2 small, apart from the last library entry. A probe score shows only that information is present, and to say the model uses it would be tantamount to confusing seeing with doing. Whether concepts are directions in a trained language model's stream hinges on tests that our three sources do not give."
   }
  },
  "items": [
@@ -42,19 +51,19 @@
    "register": "formal/academic",
    "definition": "to show that something said or believed is true",
    "anchor": "bears it out",
-   "sentence": "If the replication bears out the original estimate, we can report the effect with more confidence.",
+   "sentence": "If the replication bears out the original finding, we can report the effect with more confidence.",
    "target": "bears out"
   },
   {
    "kind": "expression",
-   "headword": "up to (rounding)",
+   "headword": "to go unheard",
    "level": "C2",
-   "partOfSpeech": "preposition phrase",
-   "register": "academic/mathematical",
-   "definition": "apart from a named small difference or choice, which is ignored; used to say two things are the same except for that",
-   "anchor": "up to rounding",
-   "sentence": "The two annotators agree up to a relabelling of the categories.",
-   "target": "up to a relabelling"
+   "partOfSpeech": "verb phrase",
+   "register": "neutral/formal",
+   "definition": "to exist or be said without being noticed, taken into account or dealt with",
+   "anchor": "goes unheard",
+   "sentence": "If we only report the majority label, the minority view among the coders goes unheard.",
+   "target": "goes unheard"
   },
   {
    "kind": "expression",
@@ -108,7 +117,7 @@
    "register": "formal/academic",
    "definition": "to have the same effect or meaning as something else, usually something stronger or worse",
    "anchor": "tantamount to",
-   "sentence": "Treating a correlation as a mechanism would be tantamount to claiming an experiment we never ran.",
+   "sentence": "Treating a correlation as a mechanism would be tantamount to reporting an experiment we never ran.",
    "target": "tantamount to"
   },
   {
@@ -161,20 +170,29 @@
    "target": "Having coded every post twice"
   },
   {
+   "kind": "pattern",
+   "headword": "Noun + aside (absolute phrase)",
+   "level": "C1",
+   "definition": "A noun followed by 'aside' (or 'apart') opens a sentence as a short phrase meaning 'if we set that to one side': 'Norm aside, a read is a dot product'. It is formal, takes no verb, and the noun names the thing being set aside.",
+   "anchor": "norm aside",
+   "sentence": "Sampling error aside, the two surveys tell much the same story.",
+   "target": "Sampling error aside"
+  },
+  {
    "kind": "fix",
    "headword": "tantamount to + -ing (not 'to' + infinitive)",
    "level": "C1",
    "anchorSentence": 5,
    "wrong": "To say the model therefore uses it would be tantamount to confuse seeing with doing.",
-   "definition": "In 'tantamount to', 'to' is a preposition, so a verb after it takes the -ing form: tantamount to confusing, not tantamount to confuse."
+   "definition": "Here 'to' is a preposition, not part of an infinitive, so a verb after it takes -ing: tantamount to confusing, not tantamount to confuse. The same holds for amount to, committed to, object to and in addition to."
   },
   {
    "kind": "fix",
-   "headword": "no pronoun after a fronted object",
+   "headword": "whether (not 'if') for a subject clause",
    "level": "C1",
-   "anchorSentence": 7,
-   "wrong": "What a score means, or whether a push changes behaviour, the algebra does not say it.",
-   "definition": "When an object is moved to the front, the verb that follows has no object of its own: do not add 'it' or 'that' to repeat it."
+   "anchorSentence": 8,
+   "wrong": "If concepts are directions in a trained language model's stream hinges on tests that our three sources do not give, so we are on firm ground with the arithmetic, not the interpretation.",
+   "definition": "A clause that is the subject of a sentence begins with 'whether', not 'if': 'Whether it works hinges on ...'. 'If' opens a condition ('if it works, ...'), never a subject clause."
   },
   {
    "kind": "fix",
@@ -182,7 +200,7 @@
    "level": "C1",
    "anchorSentence": 8,
    "wrong": "Whether concepts are directions in a trained language model's stream hinges on tests that our three sources do not give, so we are on a firm ground with the arithmetic, not the interpretation.",
-   "definition": "In the idiom 'on firm ground', 'ground' is uncountable and takes no article: 'on firm ground', not 'on a firm ground'."
+   "definition": "In the idiom 'on firm ground' (also 'on solid ground') there is no article: 'on firm ground', not 'on a firm ground'. Adding 'a' is a common slip."
   }
  ]
 }

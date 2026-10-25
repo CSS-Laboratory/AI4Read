@@ -244,3 +244,35 @@ Faithfulness against the post's synthesis, sentence by sentence: layers in the p
 | G1 | Gist 2 | minor | New answer |
 | G2 | Retell model answer | minor | New answer |
 | T1 | Tip | minor | New sentence |
+
+
+---
+
+## Response (2026-10-26)
+
+Applied to `english.json`. `--check`: source OK, passage 190 words, 12 sentences, core 80 words; 9 expressions, 2 patterns, 4 fixes, 1 tip. Passage text changed, so the audio must be re-recorded.
+
+| ID | What changed |
+|---|---|
+| P1 | Sentence 7 now reads "As for minds, that is, tracking what people believe, the jury is still out." The post defines theory of mind as thinking about what other people believe (Lens 5). |
+| P2 | Sentence 11 now reads "You can tease apart the kinds by changing the test in small ways and seeing what breaks." The post's alternative (look inside) is no longer ruled out. |
+| P3 | Sentence 9 now reads "Yet people get some of those altered tests wrong too, so if a failure counts against the model, by the same token it counts against us." "Then" dropped. The conditional is the speaker's inference, as the review notes; it asserts no new fact. |
+| P4 | No change (as the review says). |
+| P5 | Applied: "Claude Shannon's sense" (the post names him once as Claude Shannon). Paid for with P6 below. |
+| P6 | Budget kept at 190: "and that is well supported" became "which is well supported". |
+| P7 | No change needed (as the review says). The retell model answer now carries the "how much" half. |
+| P8 | Applied: "Models pass many tests, but ..." (same word count). The new `give someone pause` fix (F3) was built on this wording. |
+| E1 | `to be tantamount to` definition replaced with the reviewer's text. |
+| E2 | Ninth expression added so the pack is not at the floor: `to count against` (C2, my estimate; check it), anchored on "counts against" in sentence 9, with a new second context. It occurs naturally; it is not forced. |
+| PT1 | Pattern "Double superlative range" removed. Replaced by "Inversion after a fronted ordinal". |
+| PT2 | Pattern "As for + topic" removed. Replaced by "Nominal clause 'what you take X to be'" (the weaker level call, as the review says). |
+| PT3 | Pattern "Sentential relative clause" removed. Two patterns remain, the minimum. |
+| F1 | Definition replaced with the reviewer's wording; `wrong` rebuilt for "Claude Shannon's". |
+| F2 | No finding. Kept unchanged. It is the subject-clause use of whether, which is the only form I treat as C1. |
+| F3 | Replaced with the "give someone pause" article fix, anchored on sentence 8. |
+| F4 | Replaced with the agreement-after-inversion fix, anchored on sentence 3. The definition uses "First comes grammar" as the singular example, so it does not suggest that the passage's "Next is structure" is wrong. Fix order is now by sentence: 3, 4, 6, 8. |
+| G1 | Gist 2 answer replaced. |
+| G2 | Retell model answer replaced; the three `mustUse` headwords are unchanged. |
+| T1 | Tip now says "six of the pack's nine expressions", because the core sentences (7 to 10) hold jury, pause, same token, count against, tantamount and in and of itself. |
+
+Headwords kept unchanged: all eight original expressions and F2's and F1's headwords. Headwords dropped (for the retired list, which I was not asked to edit): the three removed patterns, "which, not that, after a comma" and "no inversion in an embedded question".

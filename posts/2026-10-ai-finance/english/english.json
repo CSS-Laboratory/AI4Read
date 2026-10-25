@@ -4,7 +4,7 @@
  "note": "Passage-centred pack, C1-C2, British English; a spoken mini-talk on post 02's answer: the five jobs of a society, what is automated in finance now, shared-model risk, who declares and answers, and the verdict.",
  "passage": {
   "level": "C2",
-  "text": "Could a society run itself on AI? We can split a society into five jobs: run, decide, check, declare and answer. In finance, running is largely automated, but much of that is rule-based software, not AI, so we should not conflate algorithmic trading with AI trading. Deciding is mostly human: participants in the IMF's outreach expect a human in the loop in the near term. Checking is automatic, yet every automated checker needs a checker, so the chain must end somewhere: today, in rules people wrote. Were firms to automate deciding with a few shared models, their failures might move in lockstep, with the caveat that this rests on warnings and toy models, not measurements. What counts as money is underpinned by people continuing to accept it, and what remains to be seen is whether machines could do that accepting. Our verdict, which rests on our definition, is that a society lets members rely on shared rules, contest them and find someone answerable. With no person left to declare or answer, the result would be a machine system that people live next to, a far cry from a society.",
+  "text": "Could a society run itself on AI? We can split a society into five jobs: run, decide, check, declare and answer. In some financial markets, running is largely automated, but much of that is rule-based software, not AI, so we should not conflate algorithmic trading with AI trading. Deciding is mostly human: market participants the IMF consulted expect a human in the loop in the near term. Checking is automatic at run time, yet every automated checker needs a checker, so the chain must end somewhere: today, in rules people wrote. Were firms to automate deciding with a few shared models, their failures might move in lockstep, with the caveat that this rests on warnings and toy models, not measurements. Declaring is saying what counts: money is underpinned by people continuing to accept it, and what remains to be seen is whether machines could do that accepting. By our definition, a society lets members rely on shared rules, contest them and find someone answerable. So, with no person left to declare or answer, the result would be a machine system people live next to, a far cry from a society.",
   "core": [
    4,
    5,
@@ -12,8 +12,8 @@
   ],
   "gist": [
    {
-    "question": "Which of the five jobs does the speaker say is already largely automated in finance, and is all of that automation AI?",
-    "answer": "Running the work is largely automated, but much of it is rule-based software rather than AI, so algorithmic trading should not be conflated with AI trading."
+    "question": "The speaker says that running is largely automated in some financial markets. What does the speaker warn us not to conflate, and why?",
+    "answer": "Algorithmic trading with AI trading, because much of that automated running is rule-based software, not AI."
    },
    {
     "question": "What is the speaker's verdict about a system in which no person is left to declare or answer?",
@@ -21,13 +21,13 @@
    }
   ],
   "retell": {
-   "instruction": "In 2-3 sentences, explain to a colleague why a fully automated finance system would not count as a society, and what the evidence does not yet show.",
+   "instruction": "In 2-3 sentences, explain to a colleague why a fully automated financial system would not count as a society by the speaker's definition, and what is still open.",
    "mustUse": [
     "to conflate X with Y",
     "to be underpinned by",
     "a far cry from"
    ],
-   "modelAnswer": "In finance, running and checking are largely automated, but we should not conflate rule-based algorithms with AI, and people still write the rules and expect to stay in the loop. What counts as money is underpinned by people accepting it, and it remains to be seen whether machines could do that accepting. With nobody left to declare or answer, the result would be a far cry from a society: by our definition, a machine system that people live next to."
+   "modelAnswer": "In some financial markets, running is largely automated, but we should not conflate rule-based software with AI, and the market participants the IMF consulted expect a human to stay in the loop in the near term. Money is underpinned by people accepting it, and it remains to be seen whether machines could do that accepting. By our definition, with nobody left to declare or answer, the result would be a far cry from a society: a machine system people live next to."
   }
  },
  "items": [
@@ -70,7 +70,7 @@
    "level": "C1",
    "partOfSpeech": "verb phrase",
    "register": "formal/academic",
-   "definition": "to be supported or made possible by something that lies beneath it",
+   "definition": "to be supported by, or to depend on, something that forms its basis",
    "anchor": "underpinned by",
    "sentence": "Any network analysis of trust is underpinned by assumptions about what a tie really means.",
    "target": "underpinned by"
@@ -92,21 +92,10 @@
    "level": "C2",
    "partOfSpeech": "idiom",
    "register": "neutral",
-   "definition": "very different from, and usually much less than",
+   "definition": "very different from something, often because the real thing falls short of what you might expect",
    "anchor": "a far cry from",
    "sentence": "Labelling a thousand posts by hand is a far cry from labelling a million.",
    "target": "a far cry from"
-  },
-  {
-   "kind": "expression",
-   "headword": "human in the loop",
-   "level": "C1",
-   "partOfSpeech": "noun phrase",
-   "register": "technical",
-   "definition": "a person who checks or approves the decisions of an automated system",
-   "anchor": "a human in the loop",
-   "sentence": "We kept a human in the loop for every label that the model was unsure about.",
-   "target": "a human in the loop"
   },
   {
    "kind": "expression",
@@ -122,13 +111,13 @@
   {
    "kind": "expression",
    "headword": "answerable (to/for)",
-   "level": "C1",
+   "level": "C2",
    "partOfSpeech": "adjective",
    "register": "formal",
    "definition": "required to explain or justify your actions to someone, or to accept the blame for them",
    "anchor": "answerable",
-   "sentence": "Editors remain answerable to their readers for every correction they publish.",
-   "target": "answerable to their readers"
+   "sentence": "Reviewers should be answerable to the editor for the quality of their reports.",
+   "target": "answerable to the editor"
   },
   {
    "kind": "pattern",
@@ -141,28 +130,19 @@
   },
   {
    "kind": "pattern",
-   "headword": "What-clause as subject",
+   "headword": "Absolute 'with' + noun phrase + participle",
    "level": "C1",
-   "definition": "A 'what' clause can be the subject of a sentence to name a thing in general terms before you comment on it: 'What counts as X is Y'.",
-   "anchor": "What counts as money is underpinned by people continuing to accept it",
-   "sentence": "What matters most in a survey is who chooses to answer.",
-   "target": "What matters most in a survey is who chooses to answer"
-  },
-  {
-   "kind": "pattern",
-   "headword": "Non-defining relative clause inside the sentence",
-   "level": "C1",
-   "definition": "A 'which' clause between commas after the subject adds a comment without breaking the main statement: 'Our verdict, which rests on X, is that ...'.",
-   "anchor": "Our verdict, which rests on our definition, is that",
-   "sentence": "The first model, which we trained on older posts, is the one we kept.",
-   "target": "The first model, which we trained on older posts, is"
+   "definition": "'With' plus a noun phrase and a participle, adjective or phrase gives the circumstances in which the main clause holds: 'With X left to do Y, ...'.",
+   "anchor": "with no person left to declare or answer",
+   "sentence": "With the data still unlabelled, we could not train the model.",
+   "target": "With the data still unlabelled"
   },
   {
    "kind": "fix",
    "headword": "uncountable noun: software",
    "level": "C1",
    "anchorSentence": 2,
-   "wrong": "In finance, running is largely automated, but much of that is a rule-based software, not AI, so we should not conflate algorithmic trading with AI trading.",
+   "wrong": "In some financial markets, running is largely automated, but much of that is a rule-based software, not AI, so we should not conflate algorithmic trading with AI trading.",
    "definition": "'Software' is uncountable: say 'some software' or 'a piece of software', never 'a software' or 'softwares'."
   },
   {
@@ -170,16 +150,16 @@
    "headword": "article: in the near term",
    "level": "C1",
    "anchorSentence": 3,
-   "wrong": "Deciding is mostly human: participants in the IMF's outreach expect a human in the loop in near term.",
-   "definition": "Fixed time phrases keep their article: 'in the near term', 'in the long run', 'in the short term'."
+   "wrong": "Deciding is mostly human: market participants the IMF consulted expect a human in the loop in near term.",
+   "definition": "'Near term', 'short term' and 'long term' take 'the' after 'in': 'in the near term', 'in the long run'. A few time phrases take none ('in future', 'at present'), so learn each as a unit."
   },
   {
    "kind": "fix",
    "headword": "contest (no preposition)",
    "level": "C1",
    "anchorSentence": 7,
-   "wrong": "Our verdict, which rests on our definition, is that a society lets members rely on shared rules, contest against them and find someone answerable.",
-   "definition": "'Contest' is a transitive verb: contest a rule, not 'contest against a rule' (compare discuss a plan, not 'discuss about a plan')."
+   "wrong": "By our definition, a society lets members rely on shared rules, contest against them and find someone answerable.",
+   "definition": "In the sense 'challenge', 'contest' takes a direct object: contest a rule, not 'contest against a rule' (compare discuss a plan, not 'discuss about a plan')."
   },
   {
    "kind": "tip",
