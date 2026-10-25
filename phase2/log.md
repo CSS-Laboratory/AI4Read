@@ -67,3 +67,12 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - Canon committed: interpretability field (34 items, 7 strands), 971703a. Sources saved with URL and access date (Olah 2020, Elhage 2021, Nanda glossary; glossary moved to neelnanda.io/mechanistic-interpretability/glossary; its logit-lens entry is corrupted in the saved copy).
 - S0 planner (Sonnet, fresh agent): topic card written; 319k tokens, 12.4 min. GAPs: post-training clause unsupported; "behaviours are circuits" partial; "concepts are directions" a hypothesis (vision evidence only); hidden state = residual stream in no source (notebook evidence); steering not in the three sources. 14 technical flags (HF hidden_states, norms, embedding scaling, positions, TransformerLens weight processing, tolerance, logit lens).
 - Gate: waiting for Kunhao.
+
+## Post 03 · S0 gate passed (2026-10-25 16:36 JST)
+- Kunhao's decisions: strand 2 = eigen-decomposition post (04, before *Directions*; canon reading path updated), post-training clause out of the lens, two lenses, draggable widget preferred → meta-manager built `vec2d` (component library; gallery render test PASS), title approved.
+
+## Post 03 · S1 source brief
+- planner (Sonnet, fresh agent): `source-brief.md`, 14 units, 161 quotes machine-checked verbatim (≤ 25 words); 114k tokens, 14.9 min. Gate: ≥ 8 units with location and quote: PASS.
+- UNSEEN list: original logit-lens post, Nanda logit-lens body (corrupted), some missing math lines, RMSNorm formula, steering, "hidden state", model families, base vs instruct, figures.
+- 9 notes on the topic card (e.g. T2: Nanda does have an RMSNorm entry; W9-B is not a virtual weight; "unit vector" is ours). Passed to S2.
+- Notebooks: a fresh agent (Opus) builds and runs `01_bus_gpt2.ipynb` and `02_bus_my_model.ipynb` in parallel (results.md for the writer).
