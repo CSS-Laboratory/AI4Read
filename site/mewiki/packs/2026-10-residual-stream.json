@@ -220,7 +220,7 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "to hold up",
-   "sentence": "The additivity check holds up for GPT-2 small, entries 0 to 11, but we did not run it on a trained Qwen3, Llama, Gemma or Mistral model.",
+   "sentence": "The additivity identity holds up for GPT-2 small, entries 0 to 11, but we did not run it on a trained Qwen3, Llama, Gemma or Mistral model.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -237,8 +237,8 @@
    "register": "neutral",
    "target": {
     "text": "holds up",
-    "start": 21,
-    "end": 29
+    "start": 24,
+    "end": 32
    }
   },
   {
@@ -272,7 +272,7 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "to be at pains to",
-   "sentence": "Olah and colleagues are at pains to say that their evidence for universality is, so far, anecdotal.",
+   "sentence": "Olah and colleagues are at pains to point out that the only evidence they can offer for universality today is anecdotal.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -350,7 +350,7 @@
    "kind": "expression",
    "group": "expressions",
    "headword": "to be on firm ground",
-   "sentence": "With the arithmetic of a sum we are on firm ground; with the claim that concepts are directions in a language model’s stream, we are not.",
+   "sentence": "With the arithmetic of a sum we are on firm ground; with the claim that concepts are directions in a language model's stream, we are not.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -514,7 +514,7 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
    },
    "level": "C2",
-   "definition": "After words like essential, important, insist or recommend, formal English uses the bare base form: 'that the check be run'. British English also allows 'should be run'; 'is run' is the informal option.",
+   "definition": "After words like essential, important, insist or recommend, formal English uses the bare base form: 'that the check be run'. British English also allows 'should be run', and the plain indicative 'is run' is common in everyday writing.",
    "target": {
     "text": "that the additivity check be run",
     "start": 20,
@@ -546,11 +546,11 @@
    }
   },
   {
-   "externalId": "ai4read:2026-10-residual-stream:whether-not-if",
+   "externalId": "ai4read:2026-10-residual-stream:comprise-not-comprised-of",
    "kind": "fix",
    "group": "error-fixes",
-   "headword": "whether (not 'if')",
-   "sentence": "The toy shows that cancellation is possible; it leaves open the question of whether real models cancel writes.",
+   "headword": "comprise (not 'comprised of')",
+   "sentence": "The stream after one block comprises the embedding and the block's two writes.",
    "tags": [
     "ai4read",
     "ai4read-2026-10",
@@ -562,9 +562,9 @@
     "url": "https://khyang-lab.org/ai4read/2026-10-residual-stream/"
    },
    "level": "C1",
-   "definition": "After a noun ('the question of') or a preposition ('depends on'), and when the clause is the subject, use 'whether', not 'if'. 'If' belongs to conditions and to casual speech after verbs such as ask or wonder.",
-   "wrong": "The toy shows that cancellation is possible; it leaves open the question of if real models cancel writes.",
-   "right": "The toy shows that cancellation is possible; it leaves open the question of whether real models cancel writes."
+   "definition": "'Comprise' means 'consist of' and is followed directly by its parts: the whole comprises the parts. 'Comprised of' is common but still marked as an error by many editors; 'is composed of' or 'consists of' are always safe.",
+   "wrong": "The stream after one block is comprised of the embedding and the block's two writes.",
+   "right": "The stream after one block comprises the embedding and the block's two writes."
   },
   {
    "externalId": "ai4read:2026-10-residual-stream:however-not-a-conjunction",
@@ -666,7 +666,7 @@
    "kind": "shadowing",
    "group": "loop",
    "headword": "A paragraph to loop",
-   "sentence": "Every attention and MLP part adds its write to one shared list, so the stream is a running sum. In the toy this is true by construction, and the notebook bears it out on GPT-2 small, up to rounding. To a first approximation, a read is a dot product with that sum, setting aside the norm in front of it, whose division is not linear. Names can mislead: the last entry of a library's list is a case in point, because it has been through the final norm, so it should not be taken at face value. The claim that concepts are directions in a model's stream hinges on tests that none of the three sources runs, so we are on firmer ground with the arithmetic than with the interpretation. A push moves every score in lockstep, but to say that a high score shows the model uses the direction would be tantamount to confusing seeing with doing.",
+   "sentence": "Every attention and MLP part adds its write to one shared list, so the stream is a running sum. In the toy this is true by construction, and a notebook run on GPT-2 small bears it out, up to rounding. To a first approximation, a read is a dot product with that sum, setting aside the norm, which divides and so is not linear. Names can mislead: the last entry of a library's list is a case in point, because it has been through the final norm, so it should not be taken at face value. Whether concepts are directions in a language model's stream hinges on tests that none of the three sources runs, so we are on firmer ground with the arithmetic than with the interpretation. A steering push moves every score in lockstep, and a high probe score shows only that information is present; to say the model uses it would be tantamount to confusing seeing with doing.",
    "targets": [
     "To a first approximation",
     "by construction",

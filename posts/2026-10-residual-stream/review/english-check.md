@@ -400,3 +400,84 @@ Writer, 2026-10-25. All findings applied to `english/english.json`; `python3 scr
 - **m10** "to hinge on": headword unchanged. R15 said the post "does not test" real-model steering. The post says "the algebra does not say" whether a push changes behaviour, so the sentence uses that.
 - **m11** "a case in point": the sentence now opens with "Library names can mislead", not R16's "The identity holds only for some entries" (the last entry is the exception, not a case of holding).
 - **m12** Dangling-modifier pointer removed from the participle clause (R17). Tip renamed "Three-step retell" (R18).
+
+---
+
+## Round 2
+
+Reviewer: independent, fresh agent, 2026-10-25. Read: WRITING.md section 8, `english/english.json`, built `site/mewiki/packs/2026-10-residual-stream.md`, the round-1 review with Response, and `src/content.html`. Only this section was added. I have no live EVP/EGP access, so level calls are estimates in their style, and the two I cannot settle are named below.
+
+### Counts
+
+| critical | major | minor |
+|---|---|---|
+| 0 | 0 | 6 |
+
+Shape is right: 17 expressions, 4 patterns, 4 fixes, 2 tips, one loop (158 words, 9 targets, all verbatim substrings; I asserted this). Every example sentence was checked against the post (6.2e-6, entries 0 to 11, last entry normed, "we ran no trained Qwen3, Llama, Gemma or Mistral model", x_2 = (4, 2) from the embedding plus four writes, the four shares adding to 5, "anecdotal", "our convention" with "So scores from different arrows can be compared", "What a score means ... the algebra does not say", "Before you trust the additivity of any model, run the check"). None says more than the post. No item is at B2 or below on my reading.
+
+### Round-1 findings: all resolved
+
+- M1 to M3: replaced. `whether`, `however` and `compare like with like` are real slips of advanced writers; M1's level is borderline (see n1 below).
+- M4: replaced by `imply vs infer`, which is on the WRITING.md list and faithful. Accepted instead of R4.
+- M5: fronted wh-clause is verbatim from Short answer (b). Resolved.
+- M6: mandative definition no longer bans "should be run". Resolved (one polish, n6).
+- M7: matter-of-convention sentence now gives the post's own reason. Resolved.
+- M8: loop 198 to 158 words, 9 targets, "attention and MLP", last entry has its own sentence, "but" for "yet", "up to rounding". Resolved (clarity points in n4).
+- m1 to m12: all applied or answered. The writer's narrowing of R15 and R16 is correct (the post says "the algebra does not say", and the last entry is an exception, not a case of the identity holding). m9 is noted only, as agreed.
+
+### Minor findings
+
+**n1. Fix "whether (not 'if')": definition slightly wrong; level borderline.** (a) "'If' belongs to conditions and to casual speech after verbs such as ask or wonder" is inaccurate: "ask if" and "wonder if" are standard in formal writing too. The firm rules are: use *whether* after a noun or preposition, before *or not*, before *to*, and as a subject. (b) *if/whether* in indirect questions is B1-B2 in EGP style; only the noun-plus-whether point ("the question of whether") is plausibly C1. Keep the item only if EGP puts that point at C1; otherwise swap for the WRITING.md fix below. Replacement definition (keep the item):
+```json
+"definition": "After a noun ('the question of'), after a preposition ('depends on'), before 'or not' or 'to', and when the clause is the subject, use 'whether'. 'If' is fine after 'ask' or 'wonder', but in careful writing 'whether' is safer after nouns."
+```
+Optional swap (a WRITING.md fix, faithful to the post's "the stream is the embedding plus every write"):
+```json
+{
+ "kind": "fix",
+ "headword": "comprise (not 'comprised of')",
+ "level": "C1",
+ "sentence": "The stream after one block comprises the embedding and the block's two writes.",
+ "wrong": "The stream after one block is comprised of the embedding and the block's two writes.",
+ "right": "The stream after one block comprises the embedding and the block's two writes.",
+ "definition": "'Comprise' means 'consist of' and is followed directly by its parts: the whole comprises the parts. 'Comprised of' is common but still marked as an error by many editors; 'is composed of' or 'consists of' are always safe."
+}
+```
+
+**n2. "to hold up": odd subject.** A check does not "hold up"; a result or identity does. Replacement sentence (headword and target unchanged):
+```json
+"sentence": "The additivity identity holds up for GPT-2 small, entries 0 to 11, but we did not run it on a trained Qwen3, Llama, Gemma or Mistral model."
+```
+
+**n3. "to be at pains to": still a little stronger than the post.** The post's wording is the plain concession "the only evidence we can offer today is anecdotal". "At pains to say" implies effort that the post does not show. Closer sentence:
+```json
+"sentence": "Olah and colleagues are at pains to point out that the only evidence they can offer for universality today is anecdotal."
+```
+
+**n4. Loop: three small clarity slips for a listener who has not read the post.** (a) "A push moves every score ..., but to say that a high score shows ..." has no antecedent for "push", and "but" sets steering against probing, which are parallel points, not opposed ones. (b) "the notebook" and "the three sources" are undefined in audio. (c) "whose division is not linear" is awkward. The facts are all faithful. Replacement (160 words, same 9 targets, all verbatim, asserted):
+```json
+{
+ "headword": "A paragraph to loop",
+ "level": "C2",
+ "text": "Every attention and MLP part adds its write to one shared list, so the stream is a running sum. In the toy this is true by construction, and a notebook run on GPT-2 small bears it out, up to rounding. To a first approximation, a read is a dot product with that sum, setting aside the norm, which divides and so is not linear. Names can mislead: the last entry of a library's list is a case in point, because it has been through the final norm, so it should not be taken at face value. Whether concepts are directions in a model's stream hinges on tests that none of the three sources runs, so we are on firmer ground with the arithmetic than with the interpretation. A steering push moves every score in lockstep, and a high probe score shows only that information is present; to say the model uses it would be tantamount to confusing seeing with doing.",
+ "targets": ["To a first approximation", "by construction", "bears it out", "a case in point", "at face value", "hinges on", "on firmer ground", "in lockstep", "tantamount to"]
+}
+```
+If the writer keeps the current loop, change at least "A push" to "A steering push" and "but" to "and". Re-record the audio after any change.
+
+**n5. Typography.** One example uses a curly apostrophe ("language model’s stream", "to be on firm ground") where the rest of the pack uses straight ones. Harmless, but make it consistent before the TTS and Margin import so the target matching never depends on the apostrophe.
+
+**n6. Mandative subjunctive definition.** "'is run' is the informal option" is too strong: the indicative after *recommend* is normal in British writing. Replacement:
+```json
+"definition": "After words like essential, important, insist or recommend, formal English uses the bare base form: 'that the check be run'. British English also allows 'should be run', and the plain indicative 'is run' is common in everyday writing."
+```
+
+### Not changed, for the record
+
+- `a matter of convention` is a transparent collocation and is C1 only because *convention* is; keep.
+- `Inversion with 'Should'` is C2 on my reading; I cannot confirm the EGP band, so check it with the other flagged levels.
+- `to fall out of` (sense: to emerge as a by-product of a calculation) is a mathematical-register idiom; C2 is fair.
+- All 9 loop targets are headwords; "bears it out" and "on firmer ground" are inflected forms of "to bear out" and "to be on firm ground", as in round 1.
+
+### Round 2 response (meta-manager, 2026-10-25)
+Applied n1 (swapped to comprise), n2, n3, n4 (new loop; "a model's stream" narrowed to "a language model's stream", as S5 V2-01 required), n5 (straight apostrophes), n6.
