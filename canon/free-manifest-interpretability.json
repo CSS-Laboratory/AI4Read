@@ -1,0 +1,206 @@
+[
+ {
+  "id": "olah-2020-zoom-in",
+  "slug": "interpretability",
+  "type": "article",
+  "url": "https://distill.pub/2020/circuits/zoom-in/"
+ },
+ {
+  "id": "nanda-2022-glossary",
+  "slug": "interpretability",
+  "type": "website",
+  "url": "https://neelnanda.io/glossary"
+ },
+ {
+  "id": "arena-chapter1-transformer-interp",
+  "slug": "interpretability",
+  "type": "course",
+  "url": "https://arena3-chapter1-transformer-interp.streamlit.app/"
+ },
+ {
+  "id": "sharkey-2025-open-problems",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2501.16496"
+ },
+ {
+  "id": "park-2024-linear-representation",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2311.03658"
+ },
+ {
+  "id": "marks-2024-geometry-of-truth",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2310.06824"
+ },
+ {
+  "id": "hewitt-2019-control-tasks",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/1909.03368"
+ },
+ {
+  "id": "belinkov-2022-probing",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2102.12452"
+ },
+ {
+  "id": "turner-2024-activation-addition",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2308.10248"
+ },
+ {
+  "id": "panickssery-2024-caa",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2312.06681"
+ },
+ {
+  "id": "zou-2023-representation-engineering",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2310.01405"
+ },
+ {
+  "id": "li-2023-iti",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2306.03341"
+ },
+ {
+  "id": "geiger-2025-causal-abstraction",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://www.jmlr.org/papers/volume26/23-0058/23-0058.pdf"
+ },
+ {
+  "id": "geiger-2024-das",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2303.02536"
+ },
+ {
+  "id": "arditi-2024-refusal-direction",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2406.11717"
+ },
+ {
+  "id": "vig-2020-causal-mediation",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2004.12265"
+ },
+ {
+  "id": "wang-2023-ioi",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2211.00593"
+ },
+ {
+  "id": "meng-2022-rome",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2202.05262"
+ },
+ {
+  "id": "conmy-2023-acdc",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2304.14997"
+ },
+ {
+  "id": "heimersheim-2024-activation-patching",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2404.15255"
+ },
+ {
+  "id": "ameisen-2025-circuit-tracing",
+  "slug": "interpretability",
+  "type": "article",
+  "url": "https://transformer-circuits.pub/2025/attribution-graphs/methods.html"
+ },
+ {
+  "id": "lindsey-2025-biology",
+  "slug": "interpretability",
+  "type": "article",
+  "url": "https://transformer-circuits.pub/2025/attribution-graphs/biology.html"
+ },
+ {
+  "id": "bricken-2023-monosemanticity",
+  "slug": "interpretability",
+  "type": "article",
+  "url": "https://transformer-circuits.pub/2023/monosemantic-features/index.html"
+ },
+ {
+  "id": "cunningham-2024-sae",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2309.08600"
+ },
+ {
+  "id": "lieberum-2024-gemma-scope",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2408.05147"
+ },
+ {
+  "id": "kantamneni-2025-are-saes-useful",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2502.16681"
+ },
+ {
+  "id": "leask-2025-canonical-units",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2502.04878"
+ },
+ {
+  "id": "lindsey-2024-crosscoders",
+  "slug": "interpretability",
+  "type": "article",
+  "url": "https://transformer-circuits.pub/2024/crosscoders/index.html"
+ },
+ {
+  "id": "minder-2025-chat-crosscoders",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2504.02922"
+ },
+ {
+  "id": "jain-2024-safety-finetuning",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2407.10264"
+ },
+ {
+  "id": "betley-2025-emergent-misalignment",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2502.17424"
+ },
+ {
+  "id": "mazeika-2025-utility-engineering",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2502.08640"
+ },
+ {
+  "id": "huang-2025-values-in-the-wild",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2504.15236"
+ },
+ {
+  "id": "chen-2025-persona-vectors",
+  "slug": "interpretability",
+  "type": "paper",
+  "url": "https://arxiv.org/pdf/2507.21509"
+ }
+]
