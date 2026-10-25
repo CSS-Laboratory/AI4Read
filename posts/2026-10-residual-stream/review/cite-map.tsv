@@ -1,7 +1,7 @@
 hook	Nanda 2022, § Transformer Basics	nanda	named
 hook	Notebook 02, reference run	nb	named
 sum	Nanda 2022, § Transformer Components, Embedding	nanda	named
-sum	Nanda 2022, § Transformer Components, Positional information	nanda	named
+sum	Nanda 2022, § Positional information	nanda	named
 sum	Nanda 2022, § Transformer Basics	nanda	named
 sum	Nanda 2022, § Transformer Basics	nanda	named
 sum	Elhage 2021, § High-Level Architecture	elhage	named
@@ -48,6 +48,7 @@ bets	Olah 2020, § Three Speculative Claims	olah	named
 bets	Nanda 2022, § Representations of Features	nanda	named
 bets	Nanda 2022, § Representations of Features	nanda	named
 bets	Olah 2020, § Claim 2: Circuits	olah	named
+bets	Olah 2020, § Interpretability as a Natural Science	olah	named
 bets	Olah 2020, § Interpretability as a Natural Science	olah	named
 bets	Olah 2020, § Interpretability as a Natural Science	olah	named
 bets	Olah 2020, § Circuit 2	olah	named
