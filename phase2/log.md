@@ -93,3 +93,5 @@ One block per stage. Token counts come from the agent results (all subagent toke
 ## Post 03 · S4 draft and S5 round 1
 - writer (Sonnet, fresh): draft 7,358 words main text, 7 widgets; check.mjs 7/7, build 0 unmapped, test.mjs --inline PASS; site render test PASS (meta-manager); 317k tokens, 32.3 min.
 - S5 r1: fact-checker Opus (verify-1: 0 crit, 4 major, 17 minor; 292k, 10.2 min), fact-checker Sonnet (verify-1b: 0/3/22; 280k, 9.7 min), critic Sonnet (critic-1: 0/9/18; C2 3, C3 3, C4 4, C5 3, C6 3; 206k, 7.6 min). Gate: FAIL → S5→S4 revision.
+- S5→S4 r1 (writer, Sonnet, fresh): 73 findings answered (70 changed, 1 partial, 2 outside the post folder); 7,498 words; 178k tokens, 22.2 min. Meta-manager: vec2d hit area 46 px (critic m18), opt-in signed bars (critic m4).
+- S5 round 2 launched (Opus + Sonnet checkers, Sonnet critic, all fresh).
