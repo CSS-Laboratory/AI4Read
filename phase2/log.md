@@ -62,3 +62,8 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - Kunhao: publish the blog without the English part; English must be C1 or C2. Both posts now end at Recall/Sources; English audio chapters removed; post 01 hook/home re-recorded with the "AI4Read from CSS Lab" intro. Artifacts republished (post 01 v10, post 02 v3).
 - New C1–C2 packs (post 01: 27 items; post 02: 28 items) from `posts/<slug>/english/english.json`; `english_pack.py` rewritten with level/offset validation; loop audio for Margin. Independent check: round 1 2/11/27, round 2 0/2/9, all fixed.
 - Prompts for the website and Margin agents; handoffs updated; WRITING 0.8; CHARTER and writer prompt updated.
+
+## 2026-10-25 · Post 03 (interpretability strand 1, "the lens") · S0
+- Canon committed: interpretability field (34 items, 7 strands), 971703a. Sources saved with URL and access date (Olah 2020, Elhage 2021, Nanda glossary; glossary moved to neelnanda.io/mechanistic-interpretability/glossary; its logit-lens entry is corrupted in the saved copy).
+- S0 planner (Sonnet, fresh agent): topic card written; 319k tokens, 12.4 min. GAPs: post-training clause unsupported; "behaviours are circuits" partial; "concepts are directions" a hypothesis (vision evidence only); hidden state = residual stream in no source (notebook evidence); steering not in the three sources. 14 technical flags (HF hidden_states, norms, embedding scaling, positions, TransformerLens weight processing, tolerance, logit lens).
+- Gate: waiting for Kunhao.
