@@ -22,5 +22,53 @@
   "title": "Three bets",
   "hash": "6f8b5f7afff4",
   "dur": 283.0
+ },
+ {
+  "id": "rw",
+  "title": "Reads and writes",
+  "hash": "b3d3b2e42e76",
+  "dur": 256.1
+ },
+ {
+  "id": "dir",
+  "title": "Probe and push",
+  "hash": "4536beed80c4",
+  "dur": 458.2
+ },
+ {
+  "id": "answer",
+  "title": "Short answer",
+  "hash": "cd2ac5b7efc2",
+  "dur": 133.4
+ },
+ {
+  "id": "lens-linalg",
+  "title": "Lens one: linear algebra",
+  "hash": "20e00240682b",
+  "dur": 136.6
+ },
+ {
+  "id": "lens-info",
+  "title": "Lens two: information theory",
+  "hash": "e6366a11ff35",
+  "dur": 226.3
+ },
+ {
+  "id": "turn",
+  "title": "Your turn",
+  "hash": "540d858a71b7",
+  "dur": 207.8
+ },
+ {
+  "id": "work",
+  "title": "In your work",
+  "hash": "c4ec4ae0a8c9",
+  "dur": 112.7
+ },
+ {
+  "id": "recall",
+  "title": "Test yourself",
+  "hash": "41adc7404588",
+  "dur": 148.1
  }
 ]
