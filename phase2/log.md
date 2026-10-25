@@ -95,3 +95,4 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - S5 r1: fact-checker Opus (verify-1: 0 crit, 4 major, 17 minor; 292k, 10.2 min), fact-checker Sonnet (verify-1b: 0/3/22; 280k, 9.7 min), critic Sonnet (critic-1: 0/9/18; C2 3, C3 3, C4 4, C5 3, C6 3; 206k, 7.6 min). Gate: FAIL → S5→S4 revision.
 - S5→S4 r1 (writer, Sonnet, fresh): 73 findings answered (70 changed, 1 partial, 2 outside the post folder); 7,498 words; 178k tokens, 22.2 min. Meta-manager: vec2d hit area 46 px (critic m18), opt-in signed bars (critic m4).
 - S5 round 2 launched (Opus + Sonnet checkers, Sonnet critic, all fresh).
+- S5 r2: verify-2 (Opus) 0/1/16, 293k, 9.7 min; verify-2b (Sonnet) 0/1/16; critic-2 (Sonnet) 0/3/16, C2 4, C3 3, C4 4, C5 4, C6 3, 275k, 9.1 min. Gate: FAIL. Note: response-1 claimed audio changes that were not made (V1B-m14) — the r2 reviser must diff the audio.
