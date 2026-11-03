@@ -115,3 +115,12 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - Writers (3 × Sonnet, fresh) → reviewers (3 × Sonnet, fresh; 7/8/6 major) → reviser (Sonnet, fresh) → round 2 (Opus, fresh; 1 major in post 01, applied verbatim with all minors).
 - Final: 01 185 words, 8/2/4/1, 79.5 s; 02 189 words, 8/2/3/1, 80.7 s; 03 190 words, 10/4/3/0, 80.2 s. Retired IDs: 18, 19, 15 (retired-2026-10-26.json). HANDOFF-margin §0 updated; the 2026-10-25 Margin prompt marked superseded.
 - Kunhao (01:47): Margin has its own TTS with a good voice; leave audio to his agent. Packs rebuilt with `audio: null`; our passage MP3s removed; fallback kept (`--audio`). HANDOFF §0, WRITING §8, RESUME updated. (Female British samples from Kokoro and Piper were made but not needed.)
+
+## Chinese reference audio, owner only (2026-11-04)
+- Kunhao: reading is slower than expected; wants Chinese audio per post, calm female voice, audible only to his account on the website.
+- Translation: 3 × Sonnet (fresh) → 3 × Opus bilingual checks (01: 1 critical/3 major/17 minor; 02: 1/4/22; 03: 0/3/22) → 3 × Sonnet revisers (all findings applied).
+- Voice: Kokoro-82M-v1.1-zh `zf_003` (Kunhao offered samples; default kept), Python 3.12 env /tmp/zh312. Speech-recognition round trip used to check clarity and pronunciation; fixes: GPT-2 (hyphen read as minus), AI4Read → "AI for Read", Qwen3 → 千问3.
+- Memory: Kokoro zh leaks about 1.5 GB per few minutes; the session cgroup limit is 6.3 GB, so long chapters were OOM-killed (exit 137, 5 kills). Fixed by rendering batches of 12 sentences in fresh worker processes.
+- Result: 01 39.8 min (12 ch), 02 54.4 min (14), 03 66.7 min (12); all.mp3 bitrate adaptive (40/32/24 kb/s) to stay under 16 MB.
+- Lock: player shows 中 only if `user.isOwner()` and audio-zh/chapters.json loads; site shim gains `user`; Worker/mock serve `/ai4read/<slug>/audio-zh/*` from R2 `_owner/` to owners only (404 otherwise; `_owner/` always 404); publish-r2.sh uploads to `_owner/`. Tested: owner sees and plays, student sees nothing and makes no request (dev/zh-owner-test.mjs) on all three posts.
+- Artifacts republished with `user` capability and audio-zh files (01 v12, 02 v4, 03 v2). Website prompt: site/ai4read/PROMPT-website-2026-11-04.md.
