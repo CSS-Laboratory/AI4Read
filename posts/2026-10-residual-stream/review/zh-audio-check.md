@@ -231,3 +231,33 @@ None.
 - Critical: 0
 - Major: 3 (M1 the voice reads GPT-2 as "GPT 负二"; M2 dir "这不能说明什么"; M3 turn, the scope of the open question's supposition)
 - Minor: 22
+
+## Response
+
+Applied to `audio-script-zh.md` on 2026-11-04. Each replacement was checked against `audio-script.md`. Chapter ids, order, the opening line, number words and the "lens" term were kept consistent (视角 everywhere).
+
+- **M1**: not changed here. Fixed in scripts/tts_post_zh.py (the recorder turns a letter-digit hyphen into a space). "GPT-2" and "GPT-3" stay as written.
+- **M2**: changed with a shorter wording: "这里没有说明的内容。" The reviewer's "是下面这些" points ahead and is not in the English.
+- **M3**: applied as suggested (toy assumption and "real blocks not linear" are now the stated reason; the supposition is the matrix).
+- **m1**: applied (到底 removed).
+- **m2**: applied (gloss moved after the sentence).
+- **m3**: applied (听 changed to 读, 听过 to 读到).
+- **m4**: applied.
+- **m5**: applied (只 removed).
+- **m6**: applied in sum and bets (简短 added, 页面上 removed).
+- **m7**: applied.
+- **m8**: applied.
+- **m9**: changed. Reviewer's 真的 dropped in bets because the English has no "really". Bets: "那么概念的强度就会是一个点积". Work: "被作为一个向量加到流里，那它就会是……".
+- **m10**: applied.
+- **m11**: applied.
+- **m12**: applied in rw and dir (回到押注二, 一, 三).
+- **m13**: applied.
+- **m14**: applied.
+- **m15**: applied with 视角: "这个视角是三个押注，我们只是姑且持有。"
+- **m16**: applied.
+- **m17**: applied in lens-linalg and lens-info.
+- **m18**: applied.
+- **m19**: applied. First use in bets: "这个视角，英文叫 lens". All other 透镜 became 视角, including the chapter titles. dir and turn now say "logit lens" in English.
+- **m20**: applied in bets, dir, lens-info and recall.
+- **m21**: applied to the three listed places. Also applied to the same lone "a" in dir ("诶，b 的长度，是诶的平方"), which has the same problem.
+- **m22**: applied.
