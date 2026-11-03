@@ -1,7 +1,7 @@
 ---
 name: writing-principles
 description: How AI4Read posts are written. Read before drafting or revising any post. Claude updates it whenever a review round or a note from Kunhao shows a missing rule (add the rule, the note or finding that caused it, and the date); Kunhao asked for this on 2026-10-18.
-version: 0.10 (2026-10-26)
+version: 0.11 (2026-11-04)
 ---
 
 # AI4Read writing principles
@@ -82,6 +82,8 @@ Do not start a concept at step 4.
 ## 8b. Audio
 - Every audio file names its source as **“AI4Read from CSS Lab”**: spoken in the first chapter (“Welcome to AI4Read from CSS Lab.”) and written into each MP3's metadata (artist, album artist, publisher, copyright, comment with the post link; album = post title; title and track = chapter). `scripts/tts_post.py` tags automatically through `scripts/tag_audio.py`. (Request, 2026-10-17.)
 
+- **Chinese reference audio (owner only, 2026-11-04).** Kunhao asked for a Chinese version of each post's audio as a reading aid, audible only to his account. Source: `posts/<slug>/audio-script-zh.md`, a faithful spoken-Mandarin translation of `audio-script.md` (same chapter ids and order; nothing added or dropped; hedges, scope and measured-number frames kept; quotes are our translations and the first chapter says so; numbers as Chinese words; opening “欢迎收听 AI4Read，来自 CSS Lab。”). An independent bilingual check (`review/zh-audio-check.md`) precedes recording. Record with `/tmp/zh312/bin/python scripts/tts_post_zh.py posts/<slug>` (Kokoro zh, calm female voice, tagged “AI4Read from CSS Lab”) into `posts/<slug>/audio-zh/`. These files never go into the public site build; see `site/ai4read/API.md` for the owner-only route.
+
 ## 9. Sources and honesty (from the charter, kept here so it is never forgotten)
 - Every claim is checked against the cited page by an independent reviewer before publishing; digests are maps, not truth.
 - Keep the authors' hedges (may, suggest, appears). Our own examples and reasoning are labelled “ours”.
@@ -109,3 +111,4 @@ Do not start a concept at step 4.
 - 0.8 (2026-10-25): §8 the English material leaves the post and becomes a separate C1–C2 pack for Margin. From Kunhao's note on posts 01 and 02.
 - 0.9 (2026-10-25): §0 recall tests only this post; §2 checks must work on the page, define at first use in the main text; §7 measured numbers carry their frame; §9 "none of the sources" needs a search of all, commented-out HTML is not published text. From the post 03 S2–S5 rounds.
 - 0.10 (2026-10-26): §8 English packs become passage-centred (schema `/2`): passage first, British voice and spelling, expressions and patterns anchored in it, second contexts for transfer, fixes built on passage sentences, gist and retell. From the Margin agent's request (`mewiki-web/docs/PROMPT-ai4read-passage-pack.md`), adopted by Claude with Kunhao's go-ahead to decide.
+- 0.11 (2026-11-04): §8b Chinese reference audio, owner only (Kunhao's request).

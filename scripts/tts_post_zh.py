@@ -29,16 +29,23 @@ def en_callable(t):
     return next(en_g2p(t)).phonemes
 pipe = KPipeline(lang_code="z", repo_id=REPO, model=model, en_callable=en_callable)
 SR = 24000
+NORM_VERSION = "n1"  # bump when speakable() changes, so every chapter is re-rendered
+
+
+def speakable(text):
+    """Fix what the Chinese G2P misreads. A hyphen before a digit is read as 'minus' (GPT-2 -> 'GPT fu er'), so a hyphen
+    between a letter and a digit becomes a space (GPT-2 -> GPT 2). Found by the bilingual check of post 03."""
+    return re.sub(r"(?<=[A-Za-z])-(?=\d)", " ", text)
 meta_p = out / "chapters.json"
 old = {c["id"]: c for c in json.loads(meta_p.read_text())} if meta_p.exists() else {}
 meta = []
 for cid, title, body in zh:
-    h = hashlib.sha1(f"{VOICE}|{SPEED}|{body}".encode()).hexdigest()[:12]
+    h = hashlib.sha1(f"{VOICE}|{SPEED}|{NORM_VERSION}|{body}".encode()).hexdigest()[:12]
     mp3 = out / f"{cid}.mp3"
     if cid in old and old[cid]["hash"] == h and mp3.exists():
         meta.append(old[cid]); print("skip", cid, flush=True); continue
     pieces = []
-    for para in [p.strip() for p in body.split("\n\n") if p.strip()]:
+    for para in [p.strip() for p in speakable(body).split("\n\n") if p.strip()]:
         for sent in [s for s in re.split(r"(?<=[。！？])", para) if s.strip()]:
             for r in pipe(sent.strip(), voice=VOICE, speed=SPEED):
                 if r.audio is not None: pieces.append(r.audio.numpy().astype(np.float32))
