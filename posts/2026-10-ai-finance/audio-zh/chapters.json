@@ -1,0 +1,50 @@
+[
+ {
+  "id": "hook",
+  "title": "二零一零年的五秒钟",
+  "hash": "78e4008e498a",
+  "dur": 305.3
+ },
+ {
+  "id": "guess",
+  "title": "先猜一猜",
+  "hash": "65e6247a83ee",
+  "dur": 121.7
+ },
+ {
+  "id": "home",
+  "title": "社会的五项工作",
+  "hash": "be17d7bd8d63",
+  "dur": 387.6
+ },
+ {
+  "id": "llm",
+  "title": "AI 智能体带来了什么",
+  "hash": "838d0e650ce0",
+  "dur": 214.1
+ },
+ {
+  "id": "lens-control",
+  "title": "透镜一：检查跟得上吗？",
+  "hash": "d55479f5a492",
+  "dur": 379.7
+ },
+ {
+  "id": "lens-decision",
+  "title": "透镜二，上半：一个模型，许多公司",
+  "hash": "4e3040330401",
+  "dur": 208.5
+ },
+ {
+  "id": "lens-cascade",
+  "title": "透镜二，下半：连锁、雷同、反馈",
+  "hash": "e118a5395262",
+  "dur": 404.6
+ },
+ {
+  "id": "lens-social",
+  "title": "透镜三：谁来宣告什么算数？",
+  "hash": "26a850497a81",
+  "dur": 303.9
+ }
+]
