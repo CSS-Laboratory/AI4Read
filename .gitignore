@@ -19,3 +19,5 @@ site/ai4read/dist/*/audio/
 phase2/prompts/build/
 posts/*/sources/*
 !posts/*/sources/MANIFEST.md
+# Chinese reference audio (owner only; published to the private R2 prefix _owner/, never to dist/)
+!posts/*/audio-zh/*.mp3

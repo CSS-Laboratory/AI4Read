@@ -1,0 +1,44 @@
+[
+ {
+  "id": "hook",
+  "title": "猜字游戏",
+  "hash": "bad81faf4502",
+  "dur": 250.7
+ },
+ {
+  "id": "guess",
+  "title": "先猜一猜",
+  "hash": "ce07bbcb9c40",
+  "dur": 115.8
+ },
+ {
+  "id": "home",
+  "title": "语言模型是怎么搭起来的",
+  "hash": "55426d313239",
+  "dur": 321.0
+ },
+ {
+  "id": "lens-info",
+  "title": "视角一：信息论",
+  "hash": "f06099250c8b",
+  "dur": 292.2
+ },
+ {
+  "id": "lens-linalg",
+  "title": "视角二：线性代数",
+  "hash": "d8d1b58dad1b",
+  "dur": 179.1
+ },
+ {
+  "id": "lens-bayes",
+  "title": "视角三：贝叶斯推断",
+  "hash": "c3b7059b40c9",
+  "dur": 171.4
+ },
+ {
+  "id": "lens-meaning",
+  "title": "视角四：意义哲学",
+  "hash": "2325b5ef6390",
+  "dur": 197.0
+ }
+]
