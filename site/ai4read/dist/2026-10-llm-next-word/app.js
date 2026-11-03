@@ -162,12 +162,13 @@ function sel(box){const r=document.createRange();r.selectNodeContents($("code",b
    direct file URL, blob URL, data URL (all in an <audio> element), and Web Audio decoding.
    The first method that works becomes the engine. Results are saved to the page db ("diag")
    so problems on a phone can be diagnosed. */
-const CH=window.CHAPTERS||[];
-const P={i:Math.min(LS.get("ch",0),Math.max(0,CH.length-1)),mode:LS.get("mode","off"),rate:LS.get("rate",1),engine:null};
+/* Chinese reference audio (Kunhao, 2026-11-04): owner only; see site/ai4read/template/core.js. */
+const CH_EN=(window.CHAPTERS||[]).map(c=>({...c,base:c.id}));let CH_ZH=null;let CH=CH_EN;
+const P={i:Math.min(LS.get("ch",0),Math.max(0,CH.length-1)),mode:LS.get("mode","off"),rate:LS.get("rate",1),engine:null,lang:"en"};
 const bar=el("div",{class:"player",role:"region","aria-label":"Audio player"});
 bar.innerHTML=`<div class="player-in"><button type="button" class="pbtn" id="p-play" aria-label="Play"></button>
 <button type="button" class="pinfo" id="p-info" aria-label="Show chapters"><b id="p-title"></b><span class="prog"><i id="p-prog"></i></span><small id="p-msg" class="pmsg" hidden></small></button>
-<div class="pctl"><button type="button" id="p-loop" title="Loop">Loop</button><button type="button" id="p-rate" title="Speed">1×</button></div></div>`;
+<div class="pctl"><button type="button" id="p-lang" title="中文参考音频" aria-label="Chinese audio" aria-pressed="false" hidden>中</button><button type="button" id="p-loop" title="Loop">Loop</button><button type="button" id="p-rate" title="Speed">1×</button></div></div>`;
 document.body.append(bar);
 const ICON={play:'<svg viewBox="0 0 16 16"><path d="M4 2l10 6-10 6z"/></svg>',pause:'<svg viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg>'};
 const fmtT=s=>{s=Math.round(s||0);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
@@ -214,12 +215,17 @@ function play(){if(!P.engine){msg("Checking how this device can play audio… ta
   cacheOne(P.i+1)}
 function pause(){if(P.engine==="wa"){waStop(true);paint()}else audio.pause()}
 function load(i,go){if(P.engine==="wa")waStop(false);offset=0;P.i=idx(i);LS.set("ch",P.i);audio.removeAttribute("data-id");paint();
-  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:CH[P.i].title,artist:"AI4Read from CSS Lab",album:"Post 01 · What does an LLM know?"})}catch(e){}}
+  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:CH[P.i].title,artist:"AI4Read from CSS Lab",album:"Post 01 · What does an LLM know?"+(P.lang==="zh"?" (中文)":"")})}catch(e){}}
   if(go)play();else cacheOne(P.i)}
 function ended(){if(P.mode==="one"){offset=0;if(P.engine!=="wa")audio.currentTime=0;play()}else if(P.i<CH.length-1)load(P.i+1,true);else if(P.mode==="all")load(0,true);else paint()}
 function paint(){$("#p-title").textContent=`${P.i+1}/${CH.length} · ${CH[P.i].title}`;const on=isPlaying()||(P.engine!=="wa"&&!audio.paused);$("#p-play").innerHTML=on?ICON.pause:ICON.play;$("#p-play").setAttribute("aria-label",on?"Pause":"Play");
   const L={off:"Loop off",one:"Loop 1",all:"Loop all"}[P.mode];const lb=$("#p-loop");lb.textContent={off:"Loop",one:"Loop 1",all:"All"}[P.mode];lb.setAttribute("aria-label",L);lb.setAttribute("aria-pressed",String(P.mode!=="off"));
-  $("#p-rate").textContent=P.rate+"×";}
+  $("#p-rate").textContent=P.rate+"×";const lg=$("#p-lang");if(lg){lg.setAttribute("aria-pressed",String(P.lang==="zh"));lg.classList.toggle("on",P.lang==="zh")}}
+function setLang(l){if(l===P.lang||(l==="zh"&&!CH_ZH))return;const was=isPlaying()||(P.engine!=="wa"&&!audio.paused);pause();P.lang=l;CH=l==="zh"?CH_ZH:CH_EN;LS.set("lang",l);load(P.i,was)}
+(async()=>{if(!CH_EN.length)return;try{if(!(window.claude&&window.claude.use))return;const U=await window.claude.use("user");if(!U||!(await U.isOwner()))return;
+  const r=await fetch("audio-zh/chapters.json",{credentials:"same-origin"});if(!r.ok)return;const z=await r.json();const m=new Map(z.map(c=>[c.id,c]));
+  if(!CH_EN.every(c=>m.has(c.id)))return;CH_ZH=CH_EN.map(c=>({id:"zh-"+c.id,base:c.id,title:m.get(c.id).title,dur:m.get(c.id).dur,src:"audio-zh/"+c.id+".mp3"}));
+  const lg=$("#p-lang");lg.hidden=false;lg.addEventListener("click",()=>setLang(P.lang==="zh"?"en":"zh"));if(LS.get("lang","en")==="zh")setLang("zh");paint()}catch(e){}})();
 if(CH.length){
   $("#p-play").addEventListener("click",()=>{if(P.engine==="wa")ac();(isPlaying()||(P.engine!=="wa"&&!audio.paused))?pause():play()});
   ["play","pause","playing","waiting"].forEach(ev=>audio.addEventListener(ev,paint));audio.addEventListener("ended",ended);
@@ -235,7 +241,7 @@ if(CH.length){
   paint();
   probe().then(r=>{P.engine=r.engine;if(r.engine==="none")msg("This view cannot play audio here. Use “Save as one MP3” in the chapter list.");cacheOne(P.i)});
 } else bar.hidden=true;
-$$("[data-play-ch]").forEach(b=>b.addEventListener("click",()=>{const i=CH.findIndex(c=>c.id===b.dataset.playCh);if(i<0)return;P.mode="one";LS.set("mode","one");if(P.engine==="wa")ac();load(i,true)}));
+$$("[data-play-ch]").forEach(b=>b.addEventListener("click",()=>{const i=CH.findIndex(c=>c.base===b.dataset.playCh);if(i<0)return;P.mode="one";LS.set("mode","one");if(P.engine==="wa")ac();load(i,true)}));
 
 /* ---------- Sheets ---------- */
 let scrim=null,sheet=null;
@@ -256,7 +262,7 @@ function openChapters(){openSheet(inn=>{inn.innerHTML=`<div class="sheet-h"><b>C
   bAll.addEventListener("click",async()=>{bAll.disabled=true;let ok=0;for(let i=0;i<CH.length;i++){st.textContent=`Loading chapter ${i+1} of ${CH.length}…`;if(await cacheOne(i))ok++}
     st.textContent=ok===CH.length?"All chapters are loaded. They keep playing without signal while this page stays open.":`Loaded ${ok} of ${CH.length} chapters. Try again when the signal is better.`;bAll.disabled=false});
   bSave.addEventListener("click",async()=>{bSave.disabled=true;st.textContent="Preparing the MP3…";
-    try{const r=await fetch("audio/all.mp3");if(!r.ok)throw new Error("fetch");const b=await r.blob();const res=await DL.save({filename:"AI4Read-01-what-does-an-LLM-know.mp3",data:b});st.textContent=res&&res.status==="saved"?"Saved. Play it from your Files or music app, even offline.":"Sent to your device."}
+    try{const zh=P.lang==="zh";const r=await fetch(zh?"audio-zh/all.mp3":"audio/all.mp3");if(!r.ok)throw new Error("fetch");const b=await r.blob();const res=await DL.save({filename:zh?"AI4Read-01-what-does-an-LLM-know-zh.mp3":"AI4Read-01-what-does-an-LLM-know.mp3",data:b});st.textContent=res&&res.status==="saved"?"Saved. Play it from your Files or music app, even offline.":"Sent to your device."}
     catch(e){st.textContent=(e&&e.code==="declined")?"Not saved.":(e&&e.code==="too_large")?"The file is too large to save from here.":"Could not save the file ("+((e&&(e.code||e.message))||"error")+")."}
     bSave.disabled=false});
   const list=el("div",{class:"chlist"});
