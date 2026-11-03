@@ -2,8 +2,8 @@
  {
   "id": "hook",
   "title": "二零一零年的五秒钟",
-  "hash": "78e4008e498a",
-  "dur": 305.3
+  "hash": "78d5cc06aa00",
+  "dur": 305.4
  },
  {
   "id": "guess",
@@ -46,5 +46,41 @@
   "title": "透镜三：谁来宣告什么算数？",
   "hash": "26a850497a81",
   "dur": 303.9
+ },
+ {
+  "id": "lens-answer",
+  "title": "透镜四：谁来负责？",
+  "hash": "6f3bd1552ca2",
+  "dur": 287.0
+ },
+ {
+  "id": "play",
+  "title": "打开页面时可以试什么",
+  "hash": "33530ac6fa21",
+  "dur": 56.0
+ },
+ {
+  "id": "turn",
+  "title": "轮到你了",
+  "hash": "452313e3e9e4",
+  "dur": 82.4
+ },
+ {
+  "id": "work",
+  "title": "这和你的工作有什么关系",
+  "hash": "851b7ee2e8a2",
+  "dur": 75.3
+ },
+ {
+  "id": "answer",
+  "title": "那会怎样？先给简短的回答",
+  "hash": "27a3fadbc60a",
+  "dur": 328.4
+ },
+ {
+  "id": "recall",
+  "title": "回忆问题",
+  "hash": "3e5800009230",
+  "dur": 108.9
  }
 ]

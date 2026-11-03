@@ -42,7 +42,6 @@ post = pathlib.Path(sys.argv[1]); out = post / "audio-zh"; out.mkdir(exist_ok=Tr
 opt = lambda k, d: sys.argv[sys.argv.index(k) + 1] if k in sys.argv else d
 VOICE, SPEED = opt("--voice", "zf_003"), float(opt("--speed", "0.9"))
 CH_RE = r"^## ([\w-]+) \| (.+?)\n(.*?)(?=^## |\Z)"
-NORM_VERSION = "n1"  # bump when speakable() changes, so every chapter is re-rendered
 
 
 def chapters(p):
@@ -50,10 +49,19 @@ def chapters(p):
     return [(m.group(1).strip(), m.group(2).strip(), m.group(3).strip()) for m in re.finditer(CH_RE, src, re.S | re.M)]
 
 
-def speakable(text):
-    """Fix what the Chinese G2P misreads. A hyphen before a digit is read as 'minus' (GPT-2 -> 'GPT fu er'), so a hyphen
-    between a letter and a digit becomes a space (GPT-2 -> GPT 2). Found by the bilingual check of post 03."""
+def speakable_n1(text):
+    """A hyphen before a digit is read as 'minus' (GPT-2 -> 'GPT fu er'), so a hyphen between a letter and a digit
+    becomes a space (GPT-2 -> GPT 2). Found by the bilingual check of post 03."""
     return re.sub(r"(?<=[A-Za-z])-(?=\d)", " ", text)
+
+
+# n2 (checked by speech recognition, 2026-11-04): "AI4Read" came out as "AI-3" and "Qwen3" as "QN3".
+N2 = [("AI4Read", "AI for Read"), ("Qwen3", "千问3")]
+
+
+def speakable(text):
+    for a, b in N2: text = text.replace(a, b)
+    return speakable_n1(text)
 
 
 def items_for(body):
@@ -91,7 +99,9 @@ meta_p = out / "chapters.json"
 old = {c["id"]: c for c in json.loads(meta_p.read_text())} if meta_p.exists() else {}
 meta = []
 for cid, title, body in zh:
-    h = hashlib.sha1(f"{VOICE}|{SPEED}|{NORM_VERSION}|{body}".encode()).hexdigest()[:12]
+    # chapters that the n2 fixes do not touch keep their n1 hash, so they are not re-rendered
+    tag = "n1" if speakable(body) == speakable_n1(body) else "n2"
+    h = hashlib.sha1(f"{VOICE}|{SPEED}|{tag}|{body}".encode()).hexdigest()[:12]
     mp3 = out / f"{cid}.mp3"
     if cid in old and old[cid]["hash"] == h and mp3.exists():
         meta.append(old[cid]); print("skip", cid, flush=True); continue
@@ -103,9 +113,12 @@ for cid, title, body in zh:
     keep = {m["id"] for m in meta}
     meta_p.write_text(json.dumps(meta + [c for c in old.values() if c["id"] not in keep], ensure_ascii=False, indent=1))
 meta_p.write_text(json.dumps(meta, ensure_ascii=False, indent=1))
-# all.mp3 at 40 kb/s: the Chinese audio runs longer than the English, and each artifact file must stay under 16 MB
+# all.mp3: the Chinese audio runs longer than the English, and each artifact file must stay under 16 MB, so take the
+# highest of 40/32/24 kb/s that keeps it under 15 MB (66 minutes need 24 kb/s). The chapter files stay at 64 kb/s.
+total_s = sum(c["dur"] for c in meta)
+kbps = next((k for k in (40, 32, 24) if total_s * k * 1000 / 8 < 15e6), 24)
 lst = out / "concat.txt"; lst.write_text("".join(f"file '{c['id']}.mp3'\n" for c in meta))
-subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-ac", "1", "-b:a", "40k", str(out / "all.mp3")], check=True)
+subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-ac", "1", "-b:a", f"{kbps}k", str(out / "all.mp3")], check=True)
 lst.unlink()
 print("total min", round(sum(c["dur"] for c in meta) / 60, 1))
 sys.path.insert(0, str(pathlib.Path(__file__).parent))

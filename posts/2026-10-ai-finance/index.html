@@ -494,6 +494,28 @@ svg.fig .ghost{fill:none;stroke:var(--muted);stroke-dasharray:4 3}
 .w-pos{color:var(--muted);font-variant-numeric:tabular-nums}
 .w-err{color:var(--stamp);font:13px var(--f-mono)}
 .w-switch > section{min-width:0}
+/* vec2d */
+svg.fig .mk.c0{fill:var(--blue)} svg.fig .mk.c1{fill:var(--stamp)} svg.fig .mk.c2{fill:var(--ok)} svg.fig .mk.c3{fill:var(--ink)} svg.fig .mk.c4{fill:var(--muted)}
+svg.fig .w-vec{stroke-width:2.6;fill:none}
+svg.fig .w-probe{stroke:var(--blue);stroke-width:1.2;stroke-dasharray:6 4;opacity:.8}
+svg.fig .w-bound{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 3}
+svg.fig .w-foot{stroke:var(--muted);stroke-width:.9;stroke-dasharray:2 2}
+svg.fig .w-vpt.g0,svg.fig .w-footpt.g0{fill:var(--blue);stroke:var(--card);stroke-width:1.5}
+svg.fig .w-vpt.g1,svg.fig .w-footpt.g1{fill:var(--stamp);stroke:var(--card);stroke-width:1.5}
+svg.fig .w-vpt.g2,svg.fig .w-footpt.g2{fill:var(--ok);stroke:var(--card);stroke-width:1.5}
+svg.fig .w-ghost{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:2 2}
+svg.fig .w-trail{stroke:var(--muted);stroke-width:.8;opacity:.7}
+svg.fig .w-ring{fill:none;stroke:currentColor;stroke-width:1.5;stroke-dasharray:3 3;pointer-events:none}
+svg.fig .w-ring.c0{color:var(--blue)} svg.fig .w-ring.c1{color:var(--stamp)} svg.fig .w-ring.c2{color:var(--ok)} svg.fig .w-ring.c3{color:var(--ink)}
+svg.fig .w-handle{fill:transparent;stroke:none;cursor:grab;touch-action:none}
+svg.fig .w-handle.c0{color:var(--blue)} svg.fig .w-handle.c1{color:var(--stamp)} svg.fig .w-handle.c2{color:var(--ok)} svg.fig .w-handle.c3{color:var(--ink)}
+svg.fig .w-handle:hover,svg.fig .w-handle:focus{fill:color-mix(in srgb,currentColor 12%,transparent);outline:none}
+svg.fig .w-handle:focus-visible{stroke:currentColor;stroke-width:2}
+.w-vec2d.dragging svg.fig .w-handle{cursor:grabbing}
+.w-vec2d .w-fig{touch-action:pan-y}
+svg.fig .w-vlab{font:700 13px var(--f-ui);paint-order:stroke;stroke:var(--card);stroke-width:3px}
+svg.fig .w-vlab.c0{fill:var(--blue)} svg.fig .w-vlab.c1{fill:var(--stamp)} svg.fig .w-vlab.c2{fill:var(--ok)} svg.fig .w-vlab.c3{fill:var(--ink)}
+.w-bar.sg{position:relative}
 
 .srcs li{overflow-wrap:anywhere;word-break:break-word}
 .tbl.txt td,.tbl.txt th{text-align:left}
@@ -1273,12 +1295,15 @@ function sel(box){const r=document.createRange();r.selectNodeContents($("code",b
    direct file URL, blob URL, data URL (all in an <audio> element), and Web Audio decoding.
    The first method that works becomes the engine. Results are saved to the page db ("diag")
    so problems on a phone can be diagnosed. */
-const CH=window.CHAPTERS||[];
-const P={i:Math.min(LS.get("ch",0),Math.max(0,CH.length-1)),mode:LS.get("mode","off"),rate:LS.get("rate",1),engine:null};
+/* Chinese reference audio (Kunhao, 2026-11-04): owner only. The English chapters are public to the page's
+   viewers; the Chinese ones (audio-zh/) are fetched only after the viewer is confirmed as the owner, and on the
+   website the Worker also refuses audio-zh/ to anyone else. Same chapter ids, so switching keeps your place. */
+const CH_EN=(window.CHAPTERS||[]).map(c=>({...c,base:c.id}));let CH_ZH=null;let CH=CH_EN;
+const P={i:Math.min(LS.get("ch",0),Math.max(0,CH.length-1)),mode:LS.get("mode","off"),rate:LS.get("rate",1),engine:null,lang:"en"};
 const bar=el("div",{class:"player",role:"region","aria-label":"Audio player"});
 bar.innerHTML=`<div class="player-in"><button type="button" class="pbtn" id="p-play" aria-label="Play"></button>
 <button type="button" class="pinfo" id="p-info" aria-label="Show chapters"><b id="p-title"></b><span class="prog"><i id="p-prog"></i></span><small id="p-msg" class="pmsg" hidden></small></button>
-<div class="pctl"><button type="button" id="p-loop" title="Loop">Loop</button><button type="button" id="p-rate" title="Speed">1×</button></div></div>`;
+<div class="pctl"><button type="button" id="p-lang" title="中文参考音频" aria-label="Chinese audio" aria-pressed="false" hidden>中</button><button type="button" id="p-loop" title="Loop">Loop</button><button type="button" id="p-rate" title="Speed">1×</button></div></div>`;
 document.body.append(bar);
 const ICON={play:'<svg viewBox="0 0 16 16"><path d="M4 2l10 6-10 6z"/></svg>',pause:'<svg viewBox="0 0 16 16"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg>'};
 const fmtT=s=>{s=Math.round(s||0);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
@@ -1325,12 +1350,18 @@ function play(){if(!P.engine){msg("Checking how this device can play audio… ta
   cacheOne(P.i+1)}
 function pause(){if(P.engine==="wa"){waStop(true);paint()}else audio.pause()}
 function load(i,go){if(P.engine==="wa")waStop(false);offset=0;P.i=idx(i);LS.set("ch",P.i);audio.removeAttribute("data-id");paint();
-  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:CH[P.i].title,artist:"AI4Read from CSS Lab",album:(window.POST?POST.album:"AI4Read")})}catch(e){}}
+  if("mediaSession" in navigator){try{navigator.mediaSession.metadata=new MediaMetadata({title:CH[P.i].title,artist:"AI4Read from CSS Lab",album:(window.POST?POST.album:"AI4Read")+(P.lang==="zh"?" (中文)":"")})}catch(e){}}
   if(go)play();else cacheOne(P.i)}
 function ended(){if(P.mode==="one"){offset=0;if(P.engine!=="wa")audio.currentTime=0;play()}else if(P.i<CH.length-1)load(P.i+1,true);else if(P.mode==="all")load(0,true);else paint()}
 function paint(){$("#p-title").textContent=`${P.i+1}/${CH.length} · ${CH[P.i].title}`;const on=isPlaying()||(P.engine!=="wa"&&!audio.paused);$("#p-play").innerHTML=on?ICON.pause:ICON.play;$("#p-play").setAttribute("aria-label",on?"Pause":"Play");
   const L={off:"Loop off",one:"Loop 1",all:"Loop all"}[P.mode];const lb=$("#p-loop");lb.textContent={off:"Loop",one:"Loop 1",all:"All"}[P.mode];lb.setAttribute("aria-label",L);lb.setAttribute("aria-pressed",String(P.mode!=="off"));
-  $("#p-rate").textContent=P.rate+"×";}
+  $("#p-rate").textContent=P.rate+"×";const lg=$("#p-lang");if(lg){lg.setAttribute("aria-pressed",String(P.lang==="zh"));lg.classList.toggle("on",P.lang==="zh")}}
+function setLang(l){if(l===P.lang||(l==="zh"&&!CH_ZH))return;const was=isPlaying()||(P.engine!=="wa"&&!audio.paused);pause();P.lang=l;CH=l==="zh"?CH_ZH:CH_EN;LS.set("lang",l);load(P.i,was)}
+/* Owner check: claude.ai gives user.isOwner(); on the website the shim answers from /api/ai4read/me. Nothing is fetched otherwise. */
+(async()=>{if(!CH_EN.length)return;try{if(!(window.claude&&window.claude.use))return;const U=await window.claude.use("user");if(!U||!(await U.isOwner()))return;
+  const r=await fetch("audio-zh/chapters.json",{credentials:"same-origin"});if(!r.ok)return;const z=await r.json();const m=new Map(z.map(c=>[c.id,c]));
+  if(!CH_EN.every(c=>m.has(c.id)))return;CH_ZH=CH_EN.map(c=>({id:"zh-"+c.id,base:c.id,title:m.get(c.id).title,dur:m.get(c.id).dur,src:"audio-zh/"+c.id+".mp3"}));
+  const lg=$("#p-lang");lg.hidden=false;lg.addEventListener("click",()=>setLang(P.lang==="zh"?"en":"zh"));if(LS.get("lang","en")==="zh")setLang("zh");paint()}catch(e){}})();
 if(CH.length){
   $("#p-play").addEventListener("click",()=>{if(P.engine==="wa")ac();(isPlaying()||(P.engine!=="wa"&&!audio.paused))?pause():play()});
   ["play","pause","playing","waiting"].forEach(ev=>audio.addEventListener(ev,paint));audio.addEventListener("ended",ended);
@@ -1346,7 +1377,7 @@ if(CH.length){
   paint();
   probe().then(r=>{P.engine=r.engine;if(r.engine==="none")msg("This view cannot play audio here. Use “Save as one MP3” in the chapter list.");cacheOne(P.i)});
 } else bar.hidden=true;
-$$("[data-play-ch]").forEach(b=>b.addEventListener("click",()=>{const i=CH.findIndex(c=>c.id===b.dataset.playCh);if(i<0)return;P.mode="one";LS.set("mode","one");if(P.engine==="wa")ac();load(i,true)}));
+$$("[data-play-ch]").forEach(b=>b.addEventListener("click",()=>{const i=CH.findIndex(c=>c.base===b.dataset.playCh);if(i<0)return;P.mode="one";LS.set("mode","one");if(P.engine==="wa")ac();load(i,true)}));
 
 /* ---------- Sheets ---------- */
 let scrim=null,sheet=null;
@@ -1367,7 +1398,7 @@ function openChapters(){openSheet(inn=>{inn.innerHTML=`<div class="sheet-h"><b>C
   bAll.addEventListener("click",async()=>{bAll.disabled=true;let ok=0;for(let i=0;i<CH.length;i++){st.textContent=`Loading chapter ${i+1} of ${CH.length}…`;if(await cacheOne(i))ok++}
     st.textContent=ok===CH.length?"All chapters are loaded. They keep playing without signal while this page stays open.":`Loaded ${ok} of ${CH.length} chapters. Try again when the signal is better.`;bAll.disabled=false});
   bSave.addEventListener("click",async()=>{bSave.disabled=true;st.textContent="Preparing the MP3…";
-    try{const r=await fetch("audio/all.mp3");if(!r.ok)throw new Error("fetch");const b=await r.blob();const res=await DL.save({filename:(window.POST?POST.mp3Name:"AI4Read.mp3"),data:b});st.textContent=res&&res.status==="saved"?"Saved. Play it from your Files or music app, even offline.":"Sent to your device."}
+    try{const zh=P.lang==="zh";const r=await fetch(zh?"audio-zh/all.mp3":"audio/all.mp3");if(!r.ok)throw new Error("fetch");const b=await r.blob();const nm=window.POST?POST.mp3Name:"AI4Read.mp3";const res=await DL.save({filename:zh?nm.replace(/\.mp3$/,"-zh.mp3"):nm,data:b});st.textContent=res&&res.status==="saved"?"Saved. Play it from your Files or music app, even offline.":"Sent to your device."}
     catch(e){st.textContent=(e&&e.code==="declined")?"Not saved.":(e&&e.code==="too_large")?"The file is too large to save from here.":"Could not save the file ("+((e&&(e.code||e.message))||"error")+")."}
     bSave.disabled=false});
   const list=el("div",{class:"chlist"});
@@ -1568,7 +1599,29 @@ document.addEventListener("caps",()=>{});
     const out = { ...env, failed, survivors: nodes.length - failed, rounds: Math.max(0, ...Object.values(round)), total: nodes.length };
     return { env: out, round, loss, cap, readout: cfg.readout ? fill(cfg.readout, out) : "" };
   }
-  const COMPUTE = { lab: computeLab, plot: computePlot, iterate: computeIterate, cascade: computeCascade };
+  /* vec2d: vectors in the plane, a probe direction u, an optional shift (steering) of every point.
+   * Env after compute: params, constants, `pre` (evaluated first), then for point i (1-based):
+   * x_i, y_i (after the shift), s_i = u·(x_i, y_i); ux, uy (unit), vx, vy (shift), uv = u·v; then `derived`. */
+  function computeVec2d(cfg, values) {
+    const env = paramEnv(cfg, values);
+    for (const [k, src] of Object.entries(cfg.pre || {})) env[k] = evalExpr(src, env);
+    let ux = 1, uy = 0;
+    if (cfg.probe) { ux = evalExpr(cfg.probe.x, env); uy = evalExpr(cfg.probe.y, env); const n = Math.hypot(ux, uy) || 1; if (cfg.probe.normalize !== false) { ux /= n; uy /= n; } }
+    const vx = cfg.shift ? evalExpr(cfg.shift.x, env) : 0, vy = cfg.shift ? evalExpr(cfg.shift.y, env) : 0;
+    Object.assign(env, { ux, uy, vx, vy, uv: ux * vx + uy * vy });
+    const points = (cfg.points || []).map((pt, i) => {
+      const x0 = evalExpr(pt.x, env), y0 = evalExpr(pt.y, env), sh = pt.fixed ? 0 : 1;
+      const x = x0 + sh * vx, y = y0 + sh * vy, s = ux * x + uy * y;
+      env["x" + (i + 1)] = x; env["y" + (i + 1)] = y; env["s" + (i + 1)] = s;
+      return { x0, y0, x, y, s, label: fill(pt.label || "", env), group: pt.group || 0 };
+    });
+    env.n = points.length;
+    for (const [k, src] of Object.entries(cfg.derived || {})) env[k] = evalExpr(src, env);
+    const vectors = (cfg.vectors || []).map((v) => ({ x: evalExpr(v.x, env), y: evalExpr(v.y, env), fx: v.from ? evalExpr(v.from.x, env) : 0, fy: v.from ? evalExpr(v.from.y, env) : 0,
+      label: fill(v.label || "", env), cls: v.cls || "c3", drag: v.drag || null, scale: v.scale || 1 }));
+    return { env, points, vectors, readout: cfg.readout ? fill(cfg.readout, env) : "" };
+  }
+  const COMPUTE = { lab: computeLab, plot: computePlot, iterate: computeIterate, cascade: computeCascade, vec2d: computeVec2d };
 
   const API = { parse, evalExpr, fmt, fill, compute: COMPUTE, version: "1.0" };
   if (typeof module !== "undefined" && module.exports) { module.exports = API; return; }
@@ -1618,7 +1671,10 @@ document.addEventListener("caps",()=>{});
 
   function barsHTML(items, cfg) {
     const mx = cfg.max != null ? cfg.max : Math.max(1e-12, ...items.map((b) => Math.abs(b.value)));
-    return items.map((b, i) => `<div class="w-bar${cfg.highlight === i ? " hi" : ""}"><span class="w-bl">${esc(b.label)}</span><i style="width:${Math.max(0, Math.min(100, (b.value / mx) * 100))}%"></i><span class="w-bv">${fmt(b.value, cfg.fmt || ".2f")}</span></div>`).join("");
+    const signed = !!cfg.signed;  // opt-in: negative values grow left from a centre line
+    const bar = (v) => { if (!signed) return `width:${Math.max(0, Math.min(100, (v / mx) * 100))}%`;
+      const w = Math.min(50, (Math.abs(v) / mx) * 50); return `width:${w}%;margin-left:${v < 0 ? 50 - w : 50}%`; };
+    return items.map((b, i) => `<div class="w-bar${cfg.highlight === i ? " hi" : ""}${signed ? " sg" : ""}"><span class="w-bl">${esc(b.label)}</span><i style="${bar(b.value)}"></i><span class="w-bv">${fmt(b.value, cfg.fmt || ".2f")}</span></div>`).join("");
   }
 
   /* ---- lab: sliders + derived values + readout (+ bars, + table) ---- */
@@ -1761,6 +1817,76 @@ document.addEventListener("caps",()=>{});
     caption(host, cfg); draw();
   }
 
+  /* ---- vec2d: draggable arrows over points; sliders stay for keyboard use and move with the drag ---- */
+  function renderVec2d(host, cfg) {
+    frame(host, cfg);
+    const X = cfg.x || { min: -6, max: 6 }, Y = cfg.y || X, W = 360, M = 16;
+    const k = (W - 2 * M) / (X.max - X.min), H = Math.round((Y.max - Y.min) * k + 2 * M);  // equal scale on both axes
+    const sx = (v) => M + (v - X.min) * k, sy = (v) => H - M - (v - Y.min) * k;
+    const fig = el("div", "w-fig"); let ro; host.dataset.wid = ++uid; const wid = host.dataset.wid;
+    const grid = cfg.grid || 1, deg = Math.PI / 180;
+    const pidx = (id) => (cfg.params || []).findIndex((q) => q.id === id);
+    const setParam = (id, v) => { const i = pidx(id); if (i < 0) return; const p = cfg.params[i]; const st = +p.step || (p.max - p.min) / 100;
+      v = Math.min(p.max, Math.max(p.min, Math.round((v - p.min) / st) * st + +p.min)); const inp = host.querySelectorAll(".w-sliders input")[i];
+      if (inp && +inp.value !== v) { inp.value = v; inp.dispatchEvent(new Event("input")); } };
+    const angleInto = (a, p) => { // put angle a (deg) into [p.min, p.max], choosing the nearer end on the circle when outside
+      let x = ((a - p.min) % 360 + 360) % 360 + +p.min; if (x <= p.max) return x;
+      const dMax = x - p.max, dMin = +p.min + 360 - x; return dMax < dMin ? +p.max : +p.min; };
+    const upd = () => {
+      const r = computeVec2d(cfg, vals);
+      let b = `<defs>${CLS.map((c) => `<marker id="v${wid}${c}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="mk ${c}"/></marker>`).join("")}<clipPath id="vc${wid}"><rect x="${M}" y="${M}" width="${W - 2 * M}" height="${H - 2 * M}"/></clipPath></defs><g clip-path="url(#vc${wid})">`;
+      for (let g = Math.ceil(X.min / grid) * grid; g <= X.max + 1e-9; g += grid) b += `<line x1="${sx(g)}" y1="${sy(Y.min)}" x2="${sx(g)}" y2="${sy(Y.max)}" class="${Math.abs(g) < 1e-9 ? "ax" : "grid"}"/>`;
+      for (let g = Math.ceil(Y.min / grid) * grid; g <= Y.max + 1e-9; g += grid) b += `<line x1="${sx(X.min)}" y1="${sy(g)}" x2="${sx(X.max)}" y2="${sy(g)}" class="${Math.abs(g) < 1e-9 ? "ax" : "grid"}"/>`;
+      if (cfg.tickLabels !== false) { const lab = (v) => String(+v.toFixed(3));
+        for (let g = Math.ceil(X.min / grid) * grid; g <= X.max; g += grid) if (Math.abs(g) > 1e-9 && g > X.min + 1e-9 && g < X.max - 1e-9 && Math.abs(g % (cfg.tickEvery || 2 * grid)) < 1e-9) b += `<text x="${sx(g)}" y="${sy(0) + 13}" text-anchor="middle" class="ts">${lab(g)}</text>`;
+        for (let g = Math.ceil(Y.min / grid) * grid; g <= Y.max; g += grid) if (Math.abs(g) > 1e-9 && g > Y.min + 1e-9 && g < Y.max - 1e-9 && Math.abs(g % (cfg.tickEvery || 2 * grid)) < 1e-9) b += `<text x="${sx(0) - 5}" y="${sy(g) + 4}" text-anchor="end" class="ts">${lab(g)}</text>`; }
+      const L = (X.max - X.min) + (Y.max - Y.min), ux = r.env.ux, uy = r.env.uy;
+      if (cfg.probe && cfg.probe.line !== false) b += `<line x1="${sx(-L * ux)}" y1="${sy(-L * uy)}" x2="${sx(L * ux)}" y2="${sy(L * uy)}" class="w-probe"/>`;
+      if (cfg.probe && cfg.probe.boundary) { const c = typeof cfg.probe.boundary === "string" ? evalExpr(cfg.probe.boundary, r.env) : 0;
+        b += `<line x1="${sx(c * ux - L * uy)}" y1="${sy(c * uy + L * ux)}" x2="${sx(c * ux + L * uy)}" y2="${sy(c * uy - L * ux)}" class="w-bound"/>`; }
+      r.points.forEach((p) => {
+        if (cfg.shift && cfg.shift.trail && (p.x !== p.x0 || p.y !== p.y0)) b += `<circle cx="${sx(p.x0)}" cy="${sy(p.y0)}" r="4" class="w-ghost g${p.group}"/><line x1="${sx(p.x0)}" y1="${sy(p.y0)}" x2="${sx(p.x)}" y2="${sy(p.y)}" class="w-trail"/>`;
+        if (cfg.probe && cfg.probe.feet) b += `<line x1="${sx(p.x)}" y1="${sy(p.y)}" x2="${sx(p.s * ux)}" y2="${sy(p.s * uy)}" class="w-foot"/><circle cx="${sx(p.s * ux)}" cy="${sy(p.s * uy)}" r="2.5" class="w-footpt g${p.group}"/>`;
+      });
+      b += `</g>`;
+      r.points.forEach((p) => { b += `<circle cx="${sx(p.x)}" cy="${sy(p.y)}" r="5" class="w-vpt g${p.group}"/>` + (p.label ? `<text x="${sx(p.x) + 7}" y="${sy(p.y) - 7}" class="tn">${esc(p.label)}</text>` : ""); });
+      r.vectors.forEach((v, i) => { const tx = v.fx + v.scale * v.x, ty = v.fy + v.scale * v.y;
+        if (Math.hypot(v.x, v.y) > 1e-9) b += `<line x1="${sx(v.fx)}" y1="${sy(v.fy)}" x2="${sx(tx)}" y2="${sy(ty)}" class="w-vec ${v.cls}" marker-end="url(#v${wid}${v.cls})"/>`;
+        if (v.label) { const n = Math.hypot(v.x, v.y) || 1, ox = (v.x / n) * 14, oy = -(v.y / n) * 14;
+          b += `<text x="${sx(tx) + ox}" y="${sy(ty) + oy + 4}" text-anchor="middle" class="w-vlab ${v.cls}">${esc(v.label)}</text>`; }
+        if (v.drag) { const pa = v.drag.angle && cfg.params[pidx(v.drag.angle)], val = pa ? vals[pa.id] : null;
+          b += `<circle cx="${sx(tx)}" cy="${sy(ty)}" r="14" class="w-ring ${v.cls}"/><circle cx="${sx(tx)}" cy="${sy(ty)}" r="23" class="w-handle ${v.cls}" data-vi="${i}" tabindex="0" role="slider" aria-label="${esc(v.drag.label || v.label || "drag")}"` +
+            (pa ? ` aria-valuemin="${pa.min}" aria-valuemax="${pa.max}" aria-valuenow="${val}"` : "") + `/>`; } });
+      rendering = true;
+      fig.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="fig w-vec2d-svg" role="group" aria-label="${esc(cfg.title || "vectors")}">${b}</svg>`;
+      if (focusVi != null) { const h = fig.querySelector(`.w-handle[data-vi="${focusVi}"]`); if (h) h.focus({ preventScroll: true }); }
+      rendering = false;
+      if (ro) ro.textContent = r.readout;
+    };
+    let dragVi = null, focusVi = null, rendering = false;
+    const toData = (e) => { const svg = fig.querySelector("svg"), m = svg.getScreenCTM(); if (!m) return null;
+      const pt = new DOMPoint(e.clientX, e.clientY).matrixTransform(m.inverse()); return [X.min + (pt.x - M) / k, Y.min + (H - M - pt.y) / k]; };
+    const dragTo = (vi, d) => { const v = cfg.vectors[vi], dr = v.drag, sc = v.scale || 1; if (!d) return;
+      const fx = v.from ? evalExpr(v.from.x, computeVec2d(cfg, vals).env) : 0, fy = v.from ? evalExpr(v.from.y, computeVec2d(cfg, vals).env) : 0;
+      const dx = (d[0] - fx) / sc, dy = (d[1] - fy) / sc;
+      if (dr.angle) { const p = cfg.params[pidx(dr.angle)]; setParam(dr.angle, angleInto(Math.atan2(dy, dx) / deg, p)); }
+      if (dr.length) setParam(dr.length, Math.hypot(dx, dy) / (dr.lengthUnit || 1));
+      if (dr.x) setParam(dr.x, dx); if (dr.y) setParam(dr.y, dy); };
+    fig.addEventListener("pointerdown", (e) => { const h = e.target.closest && e.target.closest(".w-handle"); if (!h) return;
+      e.preventDefault(); dragVi = +h.dataset.vi; focusVi = dragVi; fig.setPointerCapture(e.pointerId); host.classList.add("dragging"); dragTo(dragVi, toData(e)); });
+    fig.addEventListener("pointermove", (e) => { if (dragVi == null) return; e.preventDefault(); dragTo(dragVi, toData(e)); });
+    const end = (e) => { if (dragVi == null) return; dragVi = null; host.classList.remove("dragging"); try { fig.releasePointerCapture(e.pointerId); } catch (_) {} };
+    fig.addEventListener("pointerup", end); fig.addEventListener("pointercancel", end);
+    fig.addEventListener("keydown", (e) => { const h = e.target.closest && e.target.closest(".w-handle"); if (!h) return;
+      const v = cfg.vectors[+h.dataset.vi], id = v.drag.angle || v.drag.x; if (!id) return; const p = cfg.params[pidx(id)], st = +p.step || 1;
+      const dir = { ArrowRight: 1, ArrowUp: 1, ArrowLeft: -1, ArrowDown: -1 }[e.key]; if (!dir) return;
+      e.preventDefault(); focusVi = +h.dataset.vi; setParam(id, vals[id] + dir * st); });
+    fig.addEventListener("focusout", (e) => { if (!rendering && !fig.contains(e.relatedTarget)) focusVi = null; });
+    host.append(fig); if (cfg.readout) ro = readout(host);
+    const vals = sliders(host, cfg, upd); presets(host, cfg, vals, upd);
+    caption(host, cfg); upd();
+  }
+
   /* ---- switch: segmented buttons over child <section data-label="..."> panels ---- */
   function renderSwitch(host) {
     const panels = [...host.querySelectorAll(":scope > section[data-label]")]; if (!panels.length) return;
@@ -1771,7 +1897,7 @@ document.addEventListener("caps",()=>{});
     show(0);
   }
 
-  const RENDER = { lab: renderLab, plot: renderPlot, iterate: renderIterate, cascade: renderCascade, diagram: renderDiagram, stepper: renderStepper, switch: renderSwitch };
+  const RENDER = { lab: renderLab, plot: renderPlot, iterate: renderIterate, cascade: renderCascade, diagram: renderDiagram, stepper: renderStepper, switch: renderSwitch, vec2d: renderVec2d };
   function config(host) {
     if (host.dataset.configRef) { const s = doc.getElementById(host.dataset.configRef); return s ? JSON.parse(s.textContent) : {}; }
     return host.dataset.config ? JSON.parse(host.dataset.config) : {};

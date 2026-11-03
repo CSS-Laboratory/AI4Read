@@ -28,5 +28,47 @@
   "title": "读与写",
   "hash": "fbd28140d53f",
   "dur": 389.6
+ },
+ {
+  "id": "dir",
+  "title": "探测与推动",
+  "hash": "4362b87b2e55",
+  "dur": 657.5
+ },
+ {
+  "id": "answer",
+  "title": "简短回答",
+  "hash": "f991b1c76e71",
+  "dur": 206.0
+ },
+ {
+  "id": "lens-linalg",
+  "title": "视角一：线性代数",
+  "hash": "c838aeeec4ef",
+  "dur": 203.8
+ },
+ {
+  "id": "lens-info",
+  "title": "视角二：信息论",
+  "hash": "924bcdcb7d5d",
+  "dur": 327.5
+ },
+ {
+  "id": "turn",
+  "title": "轮到你了",
+  "hash": "ebc67d9fafc4",
+  "dur": 311.0
+ },
+ {
+  "id": "work",
+  "title": "在你的工作中",
+  "hash": "5c4bdded36f1",
+  "dur": 175.4
+ },
+ {
+  "id": "recall",
+  "title": "自测",
+  "hash": "2243a711aa78",
+  "dur": 249.2
  }
 ]
