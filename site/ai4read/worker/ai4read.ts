@@ -45,7 +45,7 @@ export async function handleAI4Read(req: Request, env: Env, ctx: ExecutionContex
   if (!user) return isApi ? json({ error: "not_signed_in" }, 401) : new Response("Sign-in required", { status: 401 });
   const role = env.AI4READ_OWNERS.split(",").map(s => s.trim().toLowerCase()).includes(user) ? "owner" : "student";
 
-  if (isPage) return servePage(req, url, env);
+  if (isPage) return servePage(req, url, env, role);
   const parts = url.pathname.split("/").filter(Boolean); // ["api","ai4read",...]
   if (parts[2] === "me" && req.method === "GET") return json({ email: user, role });
   if (parts[2] === "db") return dbRoute(req, url, parts.slice(3), user, role, env);
@@ -54,19 +54,24 @@ export async function handleAI4Read(req: Request, env: Env, ctx: ExecutionContex
 }
 
 /* ---------------- pages and media from R2 (with Range for iOS audio) ---------------- */
-async function servePage(req: Request, url: URL, env: Env): Promise<Response> {
+async function servePage(req: Request, url: URL, env: Env, role: string): Promise<Response> {
   let key = url.pathname.replace(/^\/ai4read\/?/, "");
   if (key === "" ) key = "index.html";
   else if (key.endsWith("/")) key += "index.html";
   else if (!/\.[a-z0-9]+$/i.test(key)) return Response.redirect(url.origin + url.pathname + "/", 301);
   if (key.includes("..")) return new Response("Bad path", { status: 400 });
+  // Owner-only material lives under the R2 prefix "_owner/". It is never served by its own path, only through the
+  // owner-checked route below, and a non-owner gets the same 404 as for a missing file (no hint that it exists).
+  if (key.startsWith("_owner/")) return new Response("Not found", { status: 404 });
+  const zh = /^([\w.-]+)\/audio-zh\/([\w.-]+\.(?:mp3|json))$/.exec(key);  // Chinese reference audio (Kunhao, 2026-11-04)
+  if (zh) { if (role !== "owner") return new Response("Not found", { status: 404 }); key = `_owner/${zh[1]}/audio-zh/${zh[2]}`; }
   const range = parseRange(req.headers.get("range"));
   const obj = await env.AI4READ_BUCKET.get(key, range ? { range } : undefined);
   if (!obj) return new Response("Not found", { status: 404 });
   const h = new Headers();
   obj.writeHttpMetadata(h);
   h.set("etag", obj.httpEtag);
-  h.set("cache-control", "private, max-age=300");
+  h.set("cache-control", key.startsWith("_owner/") ? "private, no-store" : "private, max-age=300");
   h.set("accept-ranges", "bytes");
   h.set("x-robots-tag", "noindex, nofollow");
   if (key.endsWith(".html")) h.set("content-security-policy", CSP);

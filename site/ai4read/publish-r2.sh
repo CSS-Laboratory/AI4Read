@@ -20,4 +20,9 @@ REPO="$(cd "$DIST/../../.." && pwd)"
 for d in */; do slug="${d%/}"; [[ "$slug" == _shared ]] && continue; [[ -n "$ONLY" && "$slug" != "$ONLY" ]] && continue
   for f in "$REPO/posts/$slug/audio/"*.mp3; do [[ -e "$f" ]] || continue; echo "put $slug/audio/$(basename "$f")"
     (cd "$WEB" && npx wrangler r2 object put "ai4read/$slug/audio/$(basename "$f")" --file "$f" --content-type "audio/mpeg" $REMOTE >/dev/null); done; done
+# Chinese reference audio (owner only): posts/<slug>/audio-zh/ → R2 "_owner/<slug>/audio-zh/". The Worker serves it at
+# /ai4read/<slug>/audio-zh/... to owners only and refuses "_owner/..." paths (API.md). It is never copied into dist/.
+for d in */; do slug="${d%/}"; [[ "$slug" == _shared ]] && continue; [[ -n "$ONLY" && "$slug" != "$ONLY" ]] && continue
+  for f in "$REPO/posts/$slug/audio-zh/"*.mp3 "$REPO/posts/$slug/audio-zh/chapters.json"; do [[ -e "$f" ]] || continue; echo "put _owner/$slug/audio-zh/$(basename "$f")"
+    (cd "$WEB" && npx wrangler r2 object put "ai4read/_owner/$slug/audio-zh/$(basename "$f")" --file "$f" --content-type "$(type_of "$f")" $REMOTE >/dev/null); done; done
 echo "done"

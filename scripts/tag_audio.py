@@ -1,5 +1,5 @@
 """Write source metadata (ID3) into a post's MP3s without re-encoding.
-Usage: python3 scripts/tag_audio.py posts/<slug>
+Usage: python3 scripts/tag_audio.py posts/<slug> [audio|audio-zh]
 Every file is marked with the source "AI4Read from CSS Lab" (artist, album artist,
 publisher, copyright, comment), the post title as album, and the chapter title and
 track number. Called automatically at the end of tts_post.py; safe to re-run."""
@@ -30,10 +30,10 @@ def tag(mp3: pathlib.Path, title: str, album: str, track: str, url: str, year: s
     tmp.replace(mp3)
 
 
-def main(post: pathlib.Path):
-    out = post / "audio"
+def main(post: pathlib.Path, sub: str = "audio", album_suffix: str = ""):
+    out = post / sub
     chapters = json.loads((out / "chapters.json").read_text())
-    album, year = post_title(post), str(datetime.date.today().year)
+    album, year = post_title(post) + album_suffix, str(datetime.date.today().year)
     url = SITE + post.name + "/"
     n = len(chapters)
     for i, c in enumerate(chapters, 1):
@@ -44,4 +44,4 @@ def main(post: pathlib.Path):
 
 
 if __name__ == "__main__":
-    main(pathlib.Path(sys.argv[1]))
+    main(pathlib.Path(sys.argv[1]), *(sys.argv[2:3]))

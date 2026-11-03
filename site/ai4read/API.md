@@ -10,6 +10,8 @@ The post pages are written once and run in two places: as a claude.ai artifact, 
 | `GET /ai4read/<slug>/<file>` | `<slug>/<file>` | `post.css`, `app.js`, `figs.js`, `annotate.js`, `data.js`, `post.json`, `context.json` |
 | `GET /ai4read/<slug>/audio/<id>.mp3` | same | **must honour `Range` (206)**: iPhone audio needs it |
 | `GET /ai4read/_shared/...` | same | `site-shim.js`, `lib/{marked,purify,katex}.min.js`, `shelf.css` |
+| `GET /ai4read/<slug>/audio-zh/<id>.mp3`, `.../audio-zh/chapters.json` | `_owner/<slug>/audio-zh/...` | **Owner only** (Chinese reference audio, 2026-11-04). Anyone else gets 404, the same as a missing file. Honour `Range`. `cache-control: private, no-store`. |
+| `GET /ai4read/_owner/...` | — | always 404 (the private prefix is reachable only through the owner-checked route above) |
 
 Headers on every response: `cache-control: private, max-age=300`, `x-robots-tag: noindex, nofollow`, `accept-ranges: bytes`. HTML responses also get:
 `default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: data:; connect-src 'self'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'`
@@ -17,6 +19,7 @@ Headers on every response: `cache-control: private, max-age=300`, `x-robots-tag:
 
 ## Identity
 - `GET /api/ai4read/me` returns `{email, role}`. `role` is `"owner"` for emails in `AI4READ_OWNERS`, otherwise `"student"`.
+- The shim exposes it as `claude.use("user")` with `isOwner()` (like claude.ai). The page shows the 中 (Chinese audio) button only when `isOwner()` is true **and** `audio-zh/chapters.json` loads; the Worker's 404 for non-owners is the real lock.
 
 ## Per-user documents (D1 table `docs`; schema in `schema.sql`)
 Collections: `annotations`, `notes`, `guesses`, `game`, `diag`. Every document belongs to the signed-in user. Owners can list everyone's documents with `?scope=all`.

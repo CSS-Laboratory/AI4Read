@@ -1,5 +1,5 @@
 /* AI4Read site shim.
-   On claude.ai the viewer provides window.claude.use("db" | "sample" | "downloads").
+   On claude.ai the viewer provides window.claude.use("db" | "sample" | "downloads" | "user").
    On khyang-lab.org this file provides the same small API, backed by the Worker routes under /api/ai4read/.
    Contract: see site/ai4read/API.md. Load this file BEFORE the post's own scripts. */
 (function () {
@@ -97,6 +97,13 @@
       return { status: "saved" };
     }
   };
-  var caps = { db: db, sample: sample, downloads: downloads };
+  /* ---------------- user: who is viewing (owner = an email in AI4READ_OWNERS) ---------------- */
+  var mePromise = null;
+  function me() { if (!mePromise) mePromise = call("GET", API + "/me").catch(function () { return null; }); return mePromise; }
+  var user = {
+    isOwner: async function () { var m = await me(); return !!(m && m.role === "owner"); },
+    canEdit: async function () { var m = await me(); return !!(m && m.role === "owner"); }
+  };
+  var caps = { db: db, sample: sample, downloads: downloads, user: user };
   window.claude = { use: async function (name) { return caps[name] || null; } };
 })();
