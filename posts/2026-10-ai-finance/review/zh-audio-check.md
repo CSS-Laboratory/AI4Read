@@ -183,3 +183,37 @@ Checked on 2026-11-04 by an independent bilingual reviewer. Sources: `audio-scri
 - Major: 4
 - Minor: 22
 - Total: 27
+
+## Response
+
+All 27 findings applied to `audio-script-zh.md` on 2026-11-04. Chapter ids and order, the opening line, number words and the "ours" labels are unchanged. Where the reviewer's replacement was adjusted after checking it against the English, the change is marked.
+
+- 1 (critical): preview sentence now reads 很多执行工作是自动化的，规则不是自动化的。 Adjusted: the reviewer's 已经 and 规则没有 were replaced, because 已经 adds "already" and 规则没有 is ambiguous.
+- 2: removed the descriptor; now 根斯勒和贝利写道.
+- 3: 已经上市交易 changed to 实际交易过.
+- 4: 不会感到羞耻 changed to 不能被羞辱. Adjusted: the reviewer's 当众 was dropped, because "publicly" is not in the English.
+- 5: 大部分 changed to 很多 in both places in the answer chapter (work done by rule-based software; algorithms run trading).
+- 6: given names added at first mention (尤瓦尔·赫拉利, 安德鲁·霍尔丹, 马克·格兰诺维特, 约翰·塞尔). Adjusted: Ashby is 控制论学者 W 罗斯·阿什比, with the W spaced and no middle dot after it, so the voice reads the letter. 哈拉瑞 changed to 赫拉利 at all four later occurrences.
+- 7: 詹斯勒 changed to 根斯勒 in all three places (llm via finding 2, lens-decision, lens-answer).
+- 8: 也许是十年以后.
+- 9: 一场崩盘由软件执行，又被一条预先设定的规则暂停.
+- 10: 从来没有人使用它，也从来没有人想到它.
+- 11: 强制实施规则.
+- 12: 证据不一 in both places (home, llm).
+- 13: 先进的 AI.
+- 14: removed 仍.
+- 15: 控制理论.
+- 16: 有点平凡的解法.
+- 17: removed 的类型.
+- 18: 单一化，英文叫 monoculture.
+- 19: Adjusted: 关于采用的成熟阶段的一个假说. The reviewer's 采用进入成熟阶段 adds "entering", which is not in the English.
+- 20: 优先级.
+- 21: 不会更安全.
+- 22: Adjusted: 把系统多样性放到突出得多的位置. This keeps "prominence" and "much" and sounds natural. The reviewer's 大得多的重视 turns prominence into attention.
+- 23: accepted as given (乘以一点五再乘以 m；所以这个乘数等于一时).
+- 24: 身份 changed to 地位 at all six occurrences in lens-social.
+- 25: 有可能实现.
+- 26: Adjusted: 用合同押下的赌注. The reviewer's 人们 adds an agent that is not in the English; 押下 already removes the "under the contract" reading.
+- 27: GPT 四; Y 一 (three occurrences).
+
+None declined. Findings 1, 4, 6, 19, 22 and 26 were adjusted as noted.
