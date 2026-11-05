@@ -10,8 +10,8 @@ One-time setup (Kunhao, in Terminal):
 Steps:
   python3 scripts/tts_zh_google.py --voices                   # list the Mandarin (cmn-CN) voices (free)
   python3 scripts/tts_zh_google.py --samples                  # a dozen 15-second samples → audio-zh-samples/ (a few cents)
-  python3 scripts/tts_zh_google.py posts/<slug> --engine gemini --voice Kore            # dry run: shows the estimate
-  python3 scripts/tts_zh_google.py posts/<slug> --engine gemini --voice Kore --yes      # records posts/<slug>/audio-zh/
+  python3 scripts/tts_zh_google.py posts/<slug>              # dry run: shows the estimate (default: gemini, Sulafat)
+  python3 scripts/tts_zh_google.py posts/<slug> --yes        # records posts/<slug>/audio-zh/
 
 Engines (Cloud Text-to-Speech API, https://texttospeech.googleapis.com/v1/text:synthesize):
   gemini  Gemini-TTS, model gemini-2.5-flash-tts by default (--model to change), steered by a style prompt
@@ -59,13 +59,35 @@ def call(method, path, body=None, tries=6):
                 time.sleep(min(60, 4 * 2 ** k)); continue
             if e.code == 403 and "SERVICE_DISABLED" in msg:
                 sys.exit(f"The Text-to-Speech API is off in {PROJECT}. Run:\n  gcloud services enable texttospeech.googleapis.com --project={PROJECT}")
+            if e.code == 400 and "too long" in msg: raise TooLong(msg)
             sys.exit(f"HTTP {e.code} from Google: {msg}")
         except urllib.error.URLError as e:
             if k < tries - 1: time.sleep(4 * 2 ** k); continue
             sys.exit(f"Network error: {e}")
 
 
-def synth(text, engine, voice, model, rate):
+class TooLong(Exception):
+    """Google refused a sentence as too long (seen with Chirp on long Chinese sentences, 2026-11-05)."""
+
+
+def split_long(text):
+    """Split a sentence in two at the comma or semicolon nearest its middle."""
+    cuts = [m.end() for m in re.finditer(r"[，；：、,;]", text)]
+    if not cuts: k = len(text) // 2
+    else: k = min(cuts, key=lambda c: abs(c - len(text) / 2))
+    return text[:k], text[k:]
+
+
+def synth(text, engine, voice, model, rate, depth=0):
+    try:
+        return pcm(_synth(text, engine, voice, model, rate))
+    except TooLong:
+        if depth > 4 or len(text) < 8: raise
+        a, b = split_long(text)
+        return synth(a, engine, voice, model, rate, depth + 1) + silence(0.15) + synth(b, engine, voice, model, rate, depth + 1)
+
+
+def _synth(text, engine, voice, model, rate):
     if engine == "gemini":
         body = {"input": {"prompt": PROMPT, "text": text}, "voice": {"languageCode": "cmn-CN", "name": voice, "model_name": model},
                 "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": 24000}}
@@ -124,14 +146,15 @@ if "--samples" in args:
         for v in voices:
             f = out / f"{engine}-{v}.mp3"
             if f.exists(): print("exists", f.name); continue
-            to_mp3(pcm(synth(text, engine, v, opt("--model", "gemini-2.5-flash-tts"), 1.0)), f)
+            try: to_mp3(synth(text, engine, v, opt("--model", "gemini-2.5-flash-tts"), 1.0), f)
+            except TooLong as e: print("skipped", f.name, "(Google: sentence too long)"); continue
             print("wrote", f.relative_to(ROOT))
     print(f"Listen to the files in {out}, then tell Claude which engine and voice you prefer.")
     sys.exit(0)
 
 if not args or args[0].startswith("--"): sys.exit(__doc__)
 post = (ROOT / args[0]) if not pathlib.Path(args[0]).is_absolute() else pathlib.Path(args[0])
-ENGINE, VOICE = opt("--engine", "gemini"), opt("--voice", "Kore")
+ENGINE, VOICE = opt("--engine", "gemini"), opt("--voice", "Sulafat")  # Kunhao chose Sulafat (Gemini) on 2026-11-05
 MODEL, RATE = opt("--model", "gemini-2.5-flash-tts"), float(opt("--rate", "0.95"))
 if ENGINE not in ("gemini", "chirp"): sys.exit("--engine must be gemini or chirp")
 zh, en = chapters(post / "audio-script-zh.md"), chapters(post / "audio-script.md")
@@ -155,7 +178,8 @@ for cid, title, body in zh:
         meta.append(old[cid]); print("skip", cid); continue
     raw = b""
     for text, para_end in chunks(body):
-        raw += pcm(synth(text, ENGINE, VOICE, MODEL, RATE)) + silence(0.7 if para_end else 0.3)
+        try: raw += synth(text, ENGINE, VOICE, MODEL, RATE) + silence(0.7 if para_end else 0.3)
+        except TooLong: sys.exit(f"Google says a sentence in chapter {cid} is too long even after splitting it. Try --engine gemini, or tell Claude the chapter.")
     to_mp3(raw, out / f"{cid}.mp3")
     meta.append({"id": cid, "title": title, "hash": key(body), "dur": round(len(raw) / 2 / 24000, 1),
                  "engine": f"google-{ENGINE}", "voice": VOICE})
