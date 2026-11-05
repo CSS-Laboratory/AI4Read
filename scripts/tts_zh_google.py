@@ -12,6 +12,7 @@ Steps:
   python3 scripts/tts_zh_google.py --samples                  # a dozen 15-second samples → audio-zh-samples/ (a few cents)
   python3 scripts/tts_zh_google.py posts/<slug>              # dry run: shows the estimate (default: gemini, Sulafat)
   python3 scripts/tts_zh_google.py posts/<slug> --yes        # records posts/<slug>/audio-zh/
+  python3 scripts/tts_zh_google.py posts/<slug> --redo hook,work --yes   # re-record only these chapters
 
 Engines (Cloud Text-to-Speech API, https://texttospeech.googleapis.com/v1/text:synthesize):
   gemini  Gemini-TTS, model gemini-2.5-flash-tts by default (--model to change), steered by a style prompt
@@ -28,9 +29,14 @@ import sys, os, re, json, time, base64, hashlib, pathlib, subprocess, urllib.req
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PROJECT = os.environ.get("AI4READ_TTS_PROJECT", "playground-491901")
 API = os.environ.get("AI4READ_TTS_API", "https://texttospeech.googleapis.com/v1")  # override only for offline tests
-PROMPT = ("Read the following aloud in natural Mandarin Chinese, in a calm, warm and measured voice, like a patient "
+HASH_PROMPT = ("Read the following aloud in natural Mandarin Chinese, in a calm, warm and measured voice, like a patient "
           "teacher explaining an idea to a colleague. Keep a steady, unhurried pace, articulate clearly, and pause "
           "briefly between sentences. Read English names and terms in English.")
+# The 2026-11-05 run showed Gemini-TTS inventing speech after a very short standalone line (post 03: a made-up passage
+# about grocery shopping after "分三部分。"). New recordings use a stricter prompt; HASH_PROMPT keeps the cache key of
+# the chapters that were already recorded and checked.
+PROMPT = (HASH_PROMPT + " Read exactly the text given, word for word, and nothing else: never add, continue, explain or "
+          "repeat anything, even when a line is short or seems to announce a list.")
 MAX_BYTES = 3000  # per request text; the API allows 4,000 bytes of text (Gemini: 8,000 with the prompt)
 args = sys.argv[1:]
 opt = lambda k, d=None: args[args.index(k) + 1] if k in args else d
@@ -78,9 +84,23 @@ def split_long(text):
     return text[:k], text[k:]
 
 
+def guarded(text, engine, voice, model, rate):
+    """Retry a clip whose length is far from what the text needs (invented or dropped speech). Typical speech is about
+    4 characters per second; a clip longer than 2x + 2 s or shorter than 0.35x of that is redone, up to 3 times."""
+    n = len(re.sub(r"[^\w]", "", text)); want = n / 4.0
+    best = None
+    for k in range(4):
+        audio = pcm(_synth(text, engine, voice, model, rate)); sec = len(audio) / 2 / 24000
+        if 0.35 * want <= sec <= 2.0 * want + 2.0: return audio
+        print(f"  retry {k + 1}: {sec:.1f} s of audio for {n} characters (expected about {want:.1f} s)", flush=True)
+        if best is None or abs(len(audio) / 48000 - want) < abs(len(best) / 48000 - want): best = audio
+    print("  WARNING: kept the closest take; listen to this chapter", flush=True)
+    return best
+
+
 def synth(text, engine, voice, model, rate, depth=0):
     try:
-        return pcm(_synth(text, engine, voice, model, rate))
+        return guarded(text, engine, voice, model, rate)
     except TooLong:
         if depth > 4 or len(text) < 8: raise
         a, b = split_long(text)
@@ -105,10 +125,23 @@ def pcm(wav_bytes):
     return wav_bytes
 
 
+SHORT = 40  # characters: a paragraph shorter than this is never sent alone (it invites the model to continue it)
+
+
+def paragraphs(body):
+    paras, carry = [], ""
+    for p in [p.strip() for p in body.split("\n\n") if p.strip()]:
+        p = carry + p; carry = ""
+        if len(re.sub(r"[^\w]", "", p)) < SHORT: carry = p; continue
+        paras.append(p)
+    if carry: paras.append(carry) if not paras else paras.__setitem__(-1, paras[-1] + carry)
+    return paras
+
+
 def chunks(body):
-    """Paragraphs, split further at sentence ends so each request stays under MAX_BYTES."""
+    """Paragraphs (short ones merged into the next), split at sentence ends so each request stays under MAX_BYTES."""
     out = []
-    for para in [p.strip() for p in body.split("\n\n") if p.strip()]:
+    for para in paragraphs(body):
         cur = ""
         for s in [x for x in re.split(r"(?<=[。！？])", para) if x.strip()]:
             if cur and len((cur + s).encode()) > MAX_BYTES: out.append((cur, False)); cur = ""
@@ -162,8 +195,10 @@ if [c[0] for c in zh] != [c[0] for c in en]: sys.exit("chapter ids differ from t
 out = post / "audio-zh"; out.mkdir(exist_ok=True)
 meta_p = out / "chapters.json"
 old = {c["id"]: c for c in json.loads(meta_p.read_text())} if meta_p.exists() else {}
-key = lambda body: hashlib.sha1(f"google|{ENGINE}|{MODEL if ENGINE == 'gemini' else RATE}|{VOICE}|{PROMPT if ENGINE == 'gemini' else ''}|{body}".encode()).hexdigest()[:12]
-todo = [(cid, t, b) for cid, t, b in zh if not (cid in old and old[cid].get("hash") == key(b) and (out / f"{cid}.mp3").exists())]
+key = lambda body: hashlib.sha1(f"google|{ENGINE}|{MODEL if ENGINE == 'gemini' else RATE}|{VOICE}|{HASH_PROMPT if ENGINE == 'gemini' else ''}|{body}".encode()).hexdigest()[:12]
+REDO = set((opt("--redo") or "").split(",")) - {""}
+cached = lambda cid, b: cid not in REDO and cid in old and old[cid].get("hash") == key(b) and (out / f"{cid}.mp3").exists()
+todo = [(cid, t, b) for cid, t, b in zh if not cached(cid, b)]
 chars = sum(len(b) for _, _, b in todo)
 est_sec = chars / 4.0  # about 240 Chinese characters per minute
 cost = est_sec * 25 / 1e6 * 10 if ENGINE == "gemini" else 0.0
@@ -174,7 +209,7 @@ if "--yes" not in args:
     print("Dry run only. Add --yes to record."); sys.exit(0)
 meta = []
 for cid, title, body in zh:
-    if cid in old and old[cid].get("hash") == key(body) and (out / f"{cid}.mp3").exists():
+    if cached(cid, body):
         meta.append(old[cid]); print("skip", cid); continue
     raw = b""
     for text, para_end in chunks(body):
