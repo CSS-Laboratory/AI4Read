@@ -2,85 +2,113 @@
  {
   "id": "hook",
   "title": "二零一零年的五秒钟",
-  "hash": "78d5cc06aa00",
-  "dur": 305.4
+  "hash": "8cc15e4a9937",
+  "dur": 293.0,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "guess",
   "title": "先猜一猜",
-  "hash": "65e6247a83ee",
-  "dur": 121.7
+  "hash": "6b90bd46bd5d",
+  "dur": 115.5,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "home",
   "title": "社会的五项工作",
-  "hash": "be17d7bd8d63",
-  "dur": 387.6
+  "hash": "ed34dc12de3e",
+  "dur": 412.2,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "llm",
   "title": "AI 智能体带来了什么",
-  "hash": "838d0e650ce0",
-  "dur": 214.1
+  "hash": "b6d939243fdb",
+  "dur": 203.3,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "lens-control",
   "title": "透镜一：检查跟得上吗？",
-  "hash": "d55479f5a492",
-  "dur": 379.7
+  "hash": "9e66bff257c7",
+  "dur": 346.1,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "lens-decision",
   "title": "透镜二，上半：一个模型，许多公司",
-  "hash": "4e3040330401",
-  "dur": 208.5
+  "hash": "c229f2c644e0",
+  "dur": 198.3,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "lens-cascade",
   "title": "透镜二，下半：连锁、雷同、反馈",
-  "hash": "e118a5395262",
-  "dur": 404.6
+  "hash": "0f9dc1448943",
+  "dur": 381.1,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "lens-social",
   "title": "透镜三：谁来宣告什么算数？",
-  "hash": "26a850497a81",
-  "dur": 303.9
+  "hash": "3f4a987a8a9c",
+  "dur": 293.0,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "lens-answer",
   "title": "透镜四：谁来负责？",
-  "hash": "6f3bd1552ca2",
-  "dur": 287.0
+  "hash": "eba7e665c161",
+  "dur": 267.0,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "play",
   "title": "打开页面时可以试什么",
-  "hash": "33530ac6fa21",
-  "dur": 56.0
+  "hash": "b2e591fcde75",
+  "dur": 58.5,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "turn",
   "title": "轮到你了",
-  "hash": "452313e3e9e4",
-  "dur": 82.4
+  "hash": "c44a4d8f9114",
+  "dur": 77.3,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "work",
   "title": "这和你的工作有什么关系",
-  "hash": "851b7ee2e8a2",
-  "dur": 75.3
+  "hash": "3924f770801e",
+  "dur": 69.1,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "answer",
   "title": "那会怎样？先给简短的回答",
-  "hash": "27a3fadbc60a",
-  "dur": 328.4
+  "hash": "2e41991b5710",
+  "dur": 325.4,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "recall",
   "title": "回忆问题",
-  "hash": "3e5800009230",
-  "dur": 108.9
+  "hash": "1ae6da86ff35",
+  "dur": 121.2,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  }
 ]

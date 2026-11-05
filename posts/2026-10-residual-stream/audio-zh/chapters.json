@@ -2,73 +2,97 @@
  {
   "id": "hook",
   "title": "中间的那串数字",
-  "hash": "453db7106cd7",
-  "dur": 192.7
+  "hash": "6d7816f85e78",
+  "dur": 188.0,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "guess",
   "title": "三个预测",
-  "hash": "d4b8e2137b3c",
-  "dur": 195.4
+  "hash": "df6a32d5889b",
+  "dur": 184.0,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "sum",
   "title": "残差流是一个不断累加的和",
-  "hash": "4c6b998f7e60",
-  "dur": 673.8
+  "hash": "8251e8b77fb5",
+  "dur": 652.4,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "bets",
   "title": "三个押注",
-  "hash": "4a48a79b8dec",
-  "dur": 422.8
+  "hash": "2d856682d065",
+  "dur": 408.0,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "rw",
   "title": "读与写",
-  "hash": "fbd28140d53f",
-  "dur": 389.6
+  "hash": "6c445c51039f",
+  "dur": 372.6,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "dir",
   "title": "探测与推动",
-  "hash": "4362b87b2e55",
-  "dur": 657.5
+  "hash": "652229bd5482",
+  "dur": 638.9,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "answer",
   "title": "简短回答",
-  "hash": "825f511f62e8",
-  "dur": 206.0
+  "hash": "c56eb16e1bf3",
+  "dur": 195.4,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "lens-linalg",
   "title": "视角一：线性代数",
-  "hash": "c838aeeec4ef",
-  "dur": 203.8
+  "hash": "d49f3a38f7b8",
+  "dur": 190.6,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "lens-info",
   "title": "视角二：信息论",
-  "hash": "924bcdcb7d5d",
-  "dur": 327.5
+  "hash": "ca085517b750",
+  "dur": 317.1,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "turn",
   "title": "轮到你了",
-  "hash": "ebc67d9fafc4",
-  "dur": 311.0
+  "hash": "c9bf0158c32f",
+  "dur": 299.4,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "work",
   "title": "在你的工作中",
-  "hash": "5c4bdded36f1",
-  "dur": 175.4
+  "hash": "53e1bc26d45c",
+  "dur": 196.4,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "recall",
   "title": "自测",
-  "hash": "2243a711aa78",
-  "dur": 249.2
+  "hash": "ce9a67c08b9f",
+  "dur": 243.6,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  }
 ]

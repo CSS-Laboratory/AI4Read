@@ -2,73 +2,97 @@
  {
   "id": "hook",
   "title": "猜字游戏",
-  "hash": "249c1f1e2677",
-  "dur": 250.8
+  "hash": "d0c058703307",
+  "dur": 220.6,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "guess",
   "title": "先猜一猜",
-  "hash": "ce07bbcb9c40",
-  "dur": 115.8
+  "hash": "dbcfa5e62648",
+  "dur": 109.9,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "home",
   "title": "语言模型是怎么搭起来的",
-  "hash": "55426d313239",
-  "dur": 321.0
+  "hash": "4eb8a8869696",
+  "dur": 310.8,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "lens-info",
   "title": "视角一：信息论",
-  "hash": "f06099250c8b",
-  "dur": 292.2
+  "hash": "ab3f3355b2bb",
+  "dur": 268.2,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "lens-linalg",
   "title": "视角二：线性代数",
-  "hash": "d8d1b58dad1b",
-  "dur": 179.1
+  "hash": "fc897ceb3a23",
+  "dur": 170.5,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "lens-bayes",
   "title": "视角三：贝叶斯推断",
-  "hash": "c3b7059b40c9",
-  "dur": 171.4
+  "hash": "73e0c417ba74",
+  "dur": 154.1,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "lens-meaning",
   "title": "视角四：意义哲学",
-  "hash": "2325b5ef6390",
-  "dur": 197.0
+  "hash": "5b07fb514cad",
+  "dur": 184.9,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "lens-tom",
   "title": "视角五：心智理论",
-  "hash": "efe267eca918",
-  "dur": 227.8
+  "hash": "86ae5b349bfa",
+  "dur": 222.7,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "ladder",
   "title": "数学阶梯，用嘴说出来",
-  "hash": "875fafe95ead",
-  "dur": 247.4
+  "hash": "2311a8bc5d33",
+  "dur": 256.8,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "answer",
   "title": "所以它到底知道什么？",
-  "hash": "7aacc555f875",
-  "dur": 123.3
+  "hash": "a83044047e0c",
+  "dur": 119.7,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "work",
   "title": "这些如何出现在你的工作里",
-  "hash": "c8364b3d15ce",
-  "dur": 117.3
+  "hash": "8797b88a2cdb",
+  "dur": 117.1,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  },
  {
   "id": "recall",
   "title": "回忆问题",
-  "hash": "36b70f83aea6",
-  "dur": 146.2
+  "hash": "b63e9f6a124c",
+  "dur": 136.4,
+  "engine": "google-gemini",
+  "voice": "Sulafat"
  }
 ]
