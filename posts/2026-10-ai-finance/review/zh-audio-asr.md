@@ -20,3 +20,5 @@ faster-whisper `small`, int8, CPU. Similarity on characters only; ≥ 0.85 is no
 | recall | 0.924 | 301 | 294 | — | — |
 
 Flagged for listening: hook.
+
+Verified 2026-11-05 with the medium model: `hook` 18–22 s says “English names and terms in English” (part of the style instruction, read aloud after the short line 文中引用的原话都是我们的中文翻译。). Re-record `hook`.

@@ -18,3 +18,5 @@ faster-whisper `small`, int8, CPU. Similarity on characters only; ≥ 0.85 is no
 | recall | 0.957 | 358 | 359 | — | — |
 
 Flagged for listening: guess, home.
+
+Verified 2026-11-05: `guess` (digits for 百分之… in the transcript) and `home` (a recogniser hallucination that a second pass did not reproduce) are false alarms. The post is clean.
