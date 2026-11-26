@@ -10,8 +10,8 @@
  *   ACCESS_TEAM      var, e.g. "khyang-lab" (→ https://khyang-lab.cloudflareaccess.com)
  *   ACCESS_AUD       var, the Access application AUD tag for /ai4read*
  *   VERTEX_PROJECT   var "playground-491901";  CLAUDE_MODEL var "claude-sonnet-5-5"
- *   Either  VERTEX_API_KEY (secret; only if the key test in HANDOFF §4 passes)
- *   or      CLAUDE_PROXY_URL (var) + CLAUDE_PROXY_SECRET (secret)  → Cloud Run proxy in ../proxy/
+ *   CLAUDE_PROXY_URL (var) + CLAUDE_PROXY_SECRET (secret)  → Cloud Run proxy in ../proxy/ (keyless; HANDOFF §4)
+ *   VERTEX_API_KEY   legacy, do not set: the "AI4Read" key was deleted 2026-11-26 (security review)
  *   ASK_PER_USER_DAY (var, default 40), ASK_SITE_DAY (var, default 300)
  */
 

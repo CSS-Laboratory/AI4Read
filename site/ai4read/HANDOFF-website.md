@@ -44,11 +44,9 @@ Posts are **not** part of the Astro build and **not** in git. They live in R2, s
    - (Check the current Zero Trust free-plan seat limit. It has been 50 users.)
    - Fallback only if Kunhao rejects Access: extend the existing `/ideas/` key system (hashed keys in KV, TTL). Issue each key with `scripts/idea_keys.py`, set an HttpOnly, Secure, SameSite=Strict signed session cookie, and use the key label as the user id. Keep the same API.
 3. **Storage** 🔑: create R2 bucket `ai4read` (private, no public URL) and D1 database `ai4read`. Apply `schema.sql`. Add bindings `AI4READ_BUCKET` and `AI4READ_DB`, and the var `AI4READ_OWNERS` (Kunhao's Access email).
-4. **Claude on Vertex.** Test before choosing how to authenticate.
-   - **Test A (no new resources):** from a terminal, call the global `streamRawPredict` URL in `API.md` with the existing Worker Vertex key in the `x-goog-api-key` header (value read by Kunhao, never printed). Send a minimal body: `{"anthropic_version":"vertex-2023-10-16","max_tokens":20,"messages":[{"role":"user","content":"Say hi"}]}`.
-     - If it returns 200, set the secret `VERTEX_API_KEY`, then **restrict that key or create a dedicated one** for the AI4Read route, with its own quota and budget alert.
-     - If it returns 401 or 403 (Vertex API keys may not cover partner models), go to Test B.
-   - **Test B** 🔑: deploy `proxy/` to Cloud Run with its own service account (`roles/aiplatform.user`). The commands are in `proxy/server.mjs`. Put the shared secret in Secret Manager. Set `CLAUDE_PROXY_URL` (var) and `CLAUDE_PROXY_SECRET` (Worker secret).
+4. **Claude on Vertex — keyless only** (security review, 2026-11-26: the Vertex API key "AI4Read" was deleted after a Gemini key-abuse incident; no API keys for this route).
+   - Use the Cloud Run proxy (`proxy/`, service `ai4read-claude`) with its own service account (`roles/aiplatform.user`). The commands are in `proxy/server.mjs`. The shared secret stays in Secret Manager (`ai4read-proxy-secret`). Set `CLAUDE_PROXY_URL` (var) and `CLAUDE_PROXY_SECRET` (Worker secret).
+   - Do not set `VERTEX_API_KEY`; if it is set on the Worker, it holds the deleted key — remove it. If a key ever becomes unavoidable: ask Kunhao first; restrict it to `aiplatform.googleapis.com`; keep it only in Secret Manager or Worker/CI secrets; never paste or commit it; delete the old key the same day.
    - Keep the caps in `worker/ai4read.ts` (1,500 output tokens; 40 asks per student per day, 120 per owner, 300 site-wide). One ask costs roughly **$0.03–0.12** at Sonnet prices, depending on how much of the post is sent. Consider prompt caching for the post context.
    - Add a GCP budget alert for this route.
 5. **Worker.** Merge `handleAI4Read()` into `web/worker/index.ts` before the existing routes.
