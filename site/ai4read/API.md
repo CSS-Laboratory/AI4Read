@@ -46,4 +46,4 @@ Server side, the Worker:
 - sends the request to Claude Sonnet 5.5 on Vertex AI (`publishers/anthropic/models/claude-sonnet-5-5:streamRawPredict`, project `playground-491901`, location `global`) with `max_tokens` 1500;
 - enforces daily quotas: 40 per student, 120 per owner, 300 site-wide (JST day).
 
-Errors: 429 `rate_limited`, 502 `upstream_error`, 400 `invalid_request`. The shim maps 401/403 to `not_granted`, so the page hides "Ask Claude".
+Errors: 429 `rate_limited`, 502 `upstream_error`, 400 `invalid_request`, 503 `ask_not_configured` (no keyless proxy set; there is no API-key fallback). The shim maps 401/403 to `not_granted`, so the page hides "Ask Claude".

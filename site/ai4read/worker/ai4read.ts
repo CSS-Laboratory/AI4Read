@@ -11,7 +11,7 @@
  *   ACCESS_AUD       var, the Access application AUD tag for /ai4read*
  *   VERTEX_PROJECT   var "playground-491901";  CLAUDE_MODEL var "claude-sonnet-5-5"
  *   CLAUDE_PROXY_URL (var) + CLAUDE_PROXY_SECRET (secret)  → Cloud Run proxy in ../proxy/ (keyless; HANDOFF §4)
- *   VERTEX_API_KEY   legacy, do not set: the "AI4Read" key was deleted 2026-11-26 (security review)
+ *   (VERTEX_API_KEY is no longer read: the "AI4Read" key was deleted 2026-11-26; remove the secret if set)
  *   ASK_PER_USER_DAY (var, default 40), ASK_SITE_DAY (var, default 300)
  */
 
@@ -19,7 +19,7 @@ export interface Env {
   AI4READ_BUCKET: R2Bucket; AI4READ_DB: D1Database;
   AI4READ_OWNERS: string; ACCESS_TEAM: string; ACCESS_AUD: string;
   VERTEX_PROJECT: string; CLAUDE_MODEL: string;
-  VERTEX_API_KEY?: string; CLAUDE_PROXY_URL?: string; CLAUDE_PROXY_SECRET?: string;
+  CLAUDE_PROXY_URL?: string; CLAUDE_PROXY_SECRET?: string;
   ASK_PER_USER_DAY?: string; ASK_SITE_DAY?: string;
 }
 
@@ -160,13 +160,9 @@ async function ask(req: Request, user: string, role: string, env: Env, ctx: Exec
     system: [{ type: "text", text: SYSTEM, cache_control: { type: "ephemeral" } }],
     messages: clean,
   };
-  let upstream: Response;
-  if (env.CLAUDE_PROXY_URL) {
-    upstream = await fetch(env.CLAUDE_PROXY_URL, { method: "POST", headers: { "content-type": "application/json", "x-proxy-secret": env.CLAUDE_PROXY_SECRET || "" }, body: JSON.stringify(payload) });
-  } else {
-    const endpoint = `https://aiplatform.googleapis.com/v1/projects/${env.VERTEX_PROJECT}/locations/global/publishers/anthropic/models/${env.CLAUDE_MODEL}:streamRawPredict`;
-    upstream = await fetch(endpoint, { method: "POST", headers: { "content-type": "application/json", "x-goog-api-key": env.VERTEX_API_KEY || "" }, body: JSON.stringify(payload) });
-  }
+  // Keyless only (2026-11-26): the Cloud Run proxy calls Vertex with its own service account; no API-key path.
+  if (!env.CLAUDE_PROXY_URL || !env.CLAUDE_PROXY_SECRET) return json({ error: "ask_not_configured" }, 503);
+  const upstream = await fetch(env.CLAUDE_PROXY_URL, { method: "POST", headers: { "content-type": "application/json", "x-proxy-secret": env.CLAUDE_PROXY_SECRET }, body: JSON.stringify(payload) });
   if (!upstream.ok || !upstream.body) {
     return json({ error: upstream.status === 429 ? "rate_limited" : "upstream_error" }, upstream.status === 429 ? 429 : 502);
   }
