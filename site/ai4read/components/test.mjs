@@ -89,6 +89,14 @@ try {
     if (afterKey === afterDrag) fails.push(`${id}: arrow key on the handle did not change the readout`); else console.log(`ok  ${id}: arrow key moves the handle${still ? " (focus kept)" : ""}`);
     if (!still) fails.push(`${id}: handle lost keyboard focus after an arrow key`);
   }
+  for (const host of await page.$$("[data-widget=cardlab]")) {   // tap two groups, then finish with the rule
+    const id = await host.evaluate((h) => h.id), ro = async () => host.$eval(".readout", (e) => e.textContent);
+    const before = await ro(), chips = await host.$$(".w-chip"); if (chips.length < 2) continue;
+    await chips[0].scrollIntoViewIfNeeded(); await chips[0].click(); await (await host.$$(".w-chip"))[1].click();
+    const afterJoin = await ro(); if (afterJoin === before) fails.push(`${id}: joining two groups did not change the readout`); else console.log(`ok  ${id}: tapping two groups joins them`);
+    const rule = await host.$(".w-ctl button"); for (let k = 0; k < 12 && !(await rule.isDisabled()); k++) await rule.click();
+    const done = await ro(); if (done === afterJoin) fails.push(`${id}: the rule did not complete the card`); else console.log(`ok  ${id}: the rule completes the card`);
+  }
   const sw = await page.$$("[data-widget=switch] .seg button");
   if (sw.length > 1) { await sw[1].click(); const vis = await page.$$eval("[data-widget=switch] > section", (s) => s.map((x) => !x.hidden));
     if (!(vis[1] && !vis[0])) fails.push("switch did not change panel"); else console.log("ok  switch changes panel"); }

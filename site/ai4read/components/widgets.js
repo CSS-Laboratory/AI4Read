@@ -204,7 +204,41 @@
       label: fill(v.label || "", env), cls: v.cls || "c3", drag: v.drag || null, scale: v.scale || 1 }));
     return { env, points, vectors, readout: cfg.readout ? fill(cfg.readout, env) : "" };
   }
-  const COMPUTE = { lab: computeLab, plot: computePlot, iterate: computeIterate, cascade: computeCascade, vec2d: computeVec2d };
+  /* cardlab: build a yes/no question card bottom-up (added 2026-11-28, post 04).
+   * Items with shares; the reader joins two groups at a time; every item in the two joined groups gets one more
+   * question on its ticket. When one group is left the card is complete. "Join the two rarest" is Huffman's rule.
+   * values: {preset: k, joins: [[a, b], …] (indexes into the current group list), auto: true (finish with the rule)}.
+   * Env: n, groups, done, H (entropy), avg (average ticket length, when done), best (the rule's average), gap = avg - H,
+   * and len_i, p_i for item i (1-based). */
+  function cardShares(cfg, values) {
+    const pr = values && values.preset != null && cfg.presets ? cfg.presets[values.preset] : null;
+    const raw = (pr ? pr.shares : cfg.items.map((it) => it.share)).map((v) => evalExpr(v, {}));
+    const tot = raw.reduce((a, b) => a + b, 0) || 1; return raw.map((v) => v / tot);
+  }
+  function cardRun(p, joins, auto) {
+    let groups = p.map((q, i) => ({ m: [i], p: q })); const len = p.map(() => 0); const log = [];
+    const join = (a, b) => { if (a === b || !groups[a] || !groups[b]) return false; const [x, y] = a < b ? [a, b] : [b, a];
+      const g = { m: groups[x].m.concat(groups[y].m), p: groups[x].p + groups[y].p }; g.m.forEach((i) => len[i]++);
+      groups = groups.filter((_, k) => k !== x && k !== y); groups.splice(x, 0, g); log.push([x, y]); return true; };
+    const rarest = () => { const o = groups.map((g, k) => [g.p, k]).sort((u, v) => u[0] - v[0] || u[1] - v[1]); return [o[0][1], o[1][1]]; };
+    (joins || []).forEach(([a, b]) => join(a, b));
+    if (auto) while (groups.length > 1) join(...rarest());
+    return { groups, len, log, rarest: groups.length > 1 ? rarest() : null };
+  }
+  function computeCardlab(cfg, values) {
+    const p = cardShares(cfg, values), r = cardRun(p, values && values.joins, values && values.auto);
+    const best = cardRun(p, [], true), H = p.reduce((a, q) => a + (q > 0 ? -q * Math.log2(q) : 0), 0);
+    const done = r.groups.length === 1 ? 1 : 0, avg = p.reduce((a, q, i) => a + q * r.len[i], 0);
+    const bavg = p.reduce((a, q, i) => a + q * best.len[i], 0);
+    const env = { n: p.length, groups: r.groups.length, done, H, avg, best: bavg, gap: avg - H };
+    p.forEach((q, i) => { env["p" + (i + 1)] = q; env["len" + (i + 1)] = r.len[i]; env["worth" + (i + 1)] = q > 0 ? -Math.log2(q) : 0; });
+    const labels = cfg.items.map((it) => it.label);
+    const def = done ? "Card complete. Average ticket length: {avg:.3f} questions. Best possible card: {best:.3f}. Entropy: {H:.3f}."
+      : "{groups:d} groups left. Tap two groups to join them under one question.";
+    return { env, groups: r.groups.map((g) => ({ label: g.m.map((i) => labels[i]).join(" + "), p: g.p })), len: r.len, p, labels,
+      rarest: r.rarest, readout: fill(done ? (cfg.readoutDone || def) : (cfg.readout || def), env) };
+  }
+  const COMPUTE = { lab: computeLab, plot: computePlot, iterate: computeIterate, cascade: computeCascade, vec2d: computeVec2d, cardlab: computeCardlab };
 
   const API = { parse, evalExpr, fmt, fill, compute: COMPUTE, version: "1.0" };
   if (typeof module !== "undefined" && module.exports) { module.exports = API; return; }
@@ -481,7 +515,39 @@
     show(0);
   }
 
-  const RENDER = { lab: renderLab, plot: renderPlot, iterate: renderIterate, cascade: renderCascade, diagram: renderDiagram, stepper: renderStepper, switch: renderSwitch, vec2d: renderVec2d };
+  /* ---- cardlab: tap two groups to join them; table of ticket lengths; the rarest-pair rule as a button ---- */
+  function renderCardlab(host, cfg) {
+    frame(host, cfg);
+    const st = { preset: cfg.presets ? 0 : null, joins: [], sel: null };
+    if (cfg.presets) { const seg = el("div", "seg");
+      cfg.presets.forEach((pr, i) => { const b = el("button", "", esc(pr.label)); b.type = "button"; b.setAttribute("aria-pressed", String(i === 0));
+        b.addEventListener("click", () => { st.preset = i; st.joins = []; st.sel = null; seg.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); upd(); }); seg.append(b); });
+      host.append(seg); }
+    const chips = el("div", "w-chips"); chips.setAttribute("role", "group"); chips.setAttribute("aria-label", "groups to join"); host.append(chips);
+    const ctl = el("div", "w-ctl");
+    const mk = (t, f) => { const b = el("button", "", esc(t)); b.type = "button"; b.addEventListener("click", f); ctl.append(b); return b; };
+    const bRule = mk(cfg.ruleLabel || "Join the two rarest", () => { const r = computeCardlab(cfg, st); if (r.rarest) { st.joins.push(r.rarest); st.sel = null; upd(); } });
+    const bUndo = mk("Undo", () => { st.joins.pop(); st.sel = null; upd(); });
+    mk("Start again", () => { st.joins = []; st.sel = null; upd(); });
+    host.append(ctl);
+    const tbl = el("table", "w-table"); const hd = cfg.heads || [cfg.itemHead || "item", "share", "ticket", "worth"];   // ticket = questions on its ticket; worth = -log2 share
+    tbl.innerHTML = `<thead><tr>${hd.map((h) => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody></tbody>`;
+    const tw = el("div", "w-tablewrap"); tw.append(tbl); host.append(tw);
+    const ro = readout(host); caption(host, cfg);
+    function upd() {
+      const r = computeCardlab(cfg, st);
+      chips.innerHTML = "";
+      r.groups.forEach((g, k) => { const b = el("button", "w-chip" + (st.sel === k ? " on" : ""), `${esc(g.label)} <small>${fmt(g.p, ".3f")}</small>`);
+        b.type = "button"; b.setAttribute("aria-pressed", String(st.sel === k)); b.disabled = r.groups.length < 2;
+        b.addEventListener("click", () => { if (st.sel == null) st.sel = k; else if (st.sel === k) st.sel = null; else { st.joins.push([st.sel, k]); st.sel = null; } upd(); });
+        chips.append(b); });
+      tbl.querySelector("tbody").innerHTML = r.labels.map((l, i) => `<tr><td>${esc(l)}</td><td>${fmt(r.p[i], ".3f")}</td><td>${r.len[i]}</td><td>${fmt(r.env["worth" + (i + 1)], ".2f")}</td></tr>`).join("");
+      bRule.disabled = !r.rarest; bUndo.disabled = !st.joins.length;
+      ro.textContent = r.readout;
+    }
+    upd();
+  }
+  const RENDER = { lab: renderLab, plot: renderPlot, iterate: renderIterate, cascade: renderCascade, diagram: renderDiagram, stepper: renderStepper, switch: renderSwitch, vec2d: renderVec2d, cardlab: renderCardlab };
   function config(host) {
     if (host.dataset.configRef) { const s = doc.getElementById(host.dataset.configRef); return s ? JSON.parse(s.textContent) : {}; }
     return host.dataset.config ? JSON.parse(host.dataset.config) : {};

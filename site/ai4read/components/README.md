@@ -91,6 +91,16 @@ The reader drags arrows on a square grid (equal scale on both axes, so angles lo
 
 Variables after the geometry: `ux, uy` (unit probe), `vx, vy` (shift), `uv` = u·v, and for point i (1-based) `x_i`, `y_i` (after the shift; written `x1`, `y1`, …) and `s_i` = u·(x_i, y_i) (written `s1`, `s2`, …); `n` is the number of points. Example: `"margin": "min(s4,min(s5,s6))-max(s1,max(s2,s3))"`. Copy the working example in `gallery.html` (`cfg-vec2d`).
 
+### `cardlab`: build a yes/no question card by joining groups (added 2026-11-28, post 04)
+The reader taps two groups to join them under one question; every item in the two joined groups gets one more question on its ticket. When one group is left, the card is complete. A button applies "join the two rarest" (Huffman's rule) one step at a time; Undo and Start again are always there. A table shows each item's share, its ticket length and its worth (minus log base 2 of the share, in questions). Column heads default to item / share / ticket / worth; set `heads` (four strings) or `itemHead` to rename them, and explain "ticket" and "worth" in the caption or the text.
+```json
+{"type": "cardlab", "title": "Build the card", "itemHead": "drink",
+ "items": [{"label": "flat white", "share": "1/2"}, {"label": "latte", "share": "1/4"}, {"label": "mocha", "share": "1/8"}, {"label": "matcha", "share": "1/8"}],
+ "presets": [{"label": "cafe", "shares": ["1/2", "1/4", "1/8", "1/8"]}, {"label": "0.7 day", "shares": [0.7, 0.1, 0.1, 0.1]}],
+ "readout": "{groups:d} groups left. Tap two to join them.", "readoutDone": "Average ticket {avg:.3f}; best {best:.3f}; entropy {H:.3f}"}
+```
+Env: `n`, `groups`, `done`, `H`, `avg` (average ticket length), `best` (the rarest-pair rule's average), `gap` (avg minus H), and `p1...`, `len1...`, `worth1...` per item. Shares are normalised. `check.mjs` reports the start state; check finished cards with `--values '{"auto":true}'`, `'{"preset":1,"auto":true}'` or explicit joins `'{"joins":[[0,1],[0,1],[0,1]]}'`.
+
 ### `stepper`: walk through a worked table row by row
 `head`, `rows` (strings; compute them with `check.mjs` or code first), `notes` (one per row).
 
