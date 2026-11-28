@@ -1,11 +1,11 @@
 ---
 name: phase2-rubric
 description: Scoring rubric and error-severity scale used by the pedagogy critic, the fact-checker and the meta-manager for every AI4Read post. Version 1.0, derived from the Test 0 blind judgement and WRITING.md v0.4.
-version: 1.0
-date: 2026-10-17
+version: 1.1
+date: 2026-11-28
 ---
 
-# AI4Read post rubric (v1.0)
+# AI4Read post rubric (v1.1)
 
 The release gate is: **0 critical errors, 0 major errors, and a score of at least 4 on every criterion.** Each section is scored on its own, and the post score for a criterion is the **minimum** over its sections, not the mean. One weak lens is enough to fail the gate.
 
@@ -19,7 +19,7 @@ The release gate is: **0 critical errors, 0 major errors, and a score of at leas
 
 Every finding gives: the quoted text from the post, the source and page, what the source actually says (quoted, at most 25 words), the severity, and a fix in one sentence.
 
-## B. Six criteria (pedagogy critic and judge), each scored 1–5
+## B. Seven criteria (pedagogy critic and judge), each scored 1–5
 
 ### 1. Factual accuracy and hedges
 - **5:** Every claim is traceable to a page in the verified brief. The authors' hedges are kept, and our own reasoning is labelled "ours". Numbers are rerun in code and match.
@@ -28,9 +28,14 @@ Every finding gives: the quoted text from the post, the source and page, what th
 - **2:** Several major findings.
 - **1:** Any critical finding.
 
-### 2. The ladder for a high-school reader (WRITING §2)
-Each new concept follows the ladder: instance → question → mechanism in words → worked numbers → formula → check → what it means.
-- **5:** Every new concept has the full ladder. The worked numbers are small enough to do by hand, and there is an explicit check, e.g. "at n = 2 the formula gives 0.941; the table says 0.941". No step needs a later section.
+### 2. The Four Layers and the ladder (WRITING §1a, §2)
+The post runs motivation → intuition → concrete → abstract without skipping a layer. Inside layer 3, each new concept follows the ladder: instance → question → mechanism in words → worked numbers → formula → check → what it means.
+- **Layer checks (each failure caps this criterion at 3):**
+  - layer 1 introduces no new concept;
+  - layer 2 contains **no formula, symbol, abbreviation or unexplained term** (each one is also a major finding);
+  - every layer-3 equation has its "in the café" mapping to the layer-2 scene;
+  - layer 4 has all three parts, including the failure boundaries and the point where the analogy breaks.
+- **5:** All layers present and connected, and every new concept has the full ladder. The worked numbers are small enough to do by hand, and there is an explicit check, e.g. "at n = 2 the formula gives 0.941; the table says 0.941". No step needs a later section.
 - **4:** Full ladders for the central concepts; a small concept skips the check.
 - **3:** Instances and words are there, but the numbers or the check are missing, or the section sends the reader elsewhere for them (Test 0 A: "see rung 8").
 - **2:** Abstract definitions first, with the instance last or missing.
@@ -42,8 +47,8 @@ Each new concept follows the ladder: instance → question → mechanism in word
 - **3:** Dense paragraphs that need rereading, or undefined terms.
 - **2–1:** Hard to follow for the target reader.
 
-### 4. Insight and connections (the lenses)
-- **5:** Each lens says what it *adds* that the others cannot. It names a link type to other fields (analogy, shared mathematics, mechanism, tension) and states what the lens does **not** explain. The post connects to Kunhao's research (the 3C angle). It stands alone: any reference to another post counts as a minor finding (WRITING §0).
+### 4. Insight and connections (layer 4: the lenses and the limits)
+- **5:** Layer 4 grows out of the layer-3 mechanism. Each lens says what it *adds* that the others cannot. It names a link type to other fields (analogy, shared mathematics, mechanism, tension) and states what the lens does **not** explain. The post connects to Kunhao's research (the 3C angle). It stands alone: any reference to another post counts as a minor finding (WRITING §0).
 - **4:** Clear lens contributions; one link or one limit is missing.
 - **3:** The lenses are parallel summaries with no comparison.
 - **2–1:** A list of facts.
@@ -63,6 +68,12 @@ Each new concept follows the ladder: instance → question → mechanism in word
 
 Concision never outranks criteria 1–2: a missing ladder step is worse than 10% extra length.
 
+### 7. The CSS imagination (layer 5, WRITING §1b)
+- **5:** The post uses at least two of Mills' moves (trouble ↔ issue, another discipline's eyes, extremes and inverted scale, comparison) as real reasoning on this idea. It ends with 1–2 open research questions, each with the data or method it would need, labelled ours. Every claim about society is sourced or labelled conjecture.
+- **4:** Two moves, but one is thin; or the research questions lack a method.
+- **3:** One move only, or generic "this matters for society" statements.
+- **2–1:** Missing, or buzzwords without reasoning.
+
 ## C. Render test (automatic, must all pass)
 - The site build (`--site`) runs under the strict CSP with **0 console errors**.
 - No horizontal page scroll at 390 px. Long math is in `.mjx` scroll containers.
@@ -77,3 +88,4 @@ Concision never outranks criteria 1–2: a missing ladder step is worse than 10%
 
 ## Change log
 - 1.0 (2026-10-17): from the Test 0 judgement (6 criteria), the post 01 fact-check rounds (severity scale) and WRITING.md v0.4.
+- 1.1 (2026-11-28): criterion 2 checks the Four Layers (a formula or symbol in layer 2 is a major finding); criterion 4 is layer 4 with its failure boundaries; new criterion 7, the CSS imagination (WRITING §1a, §1b; Kunhao's prompt and Mills).

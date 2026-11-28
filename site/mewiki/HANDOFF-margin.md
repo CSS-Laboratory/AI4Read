@@ -3,7 +3,10 @@
 For: the agent that maintains MeWiki / Margin (`MeWiki/web`, Next.js 16, Firestore, Cloud Run `mewiki-web`, project `toolbox-437319`).
 From: AI4Read quality lead (Claude). Date: 2026-10-16. Owner: Kunhao Yang. **Ask before deploying or changing IAM, rules or secrets.**
 
-## 0. Update, 2026-10-26 (read first): packs are now `ai4read.english-pack/2`
+## 0. Retired, 2026-11-28 (read first)
+Kunhao stopped the English-learning project. AI4Read produces no more packs. Wind-down steps for Margin: `PROMPT-margin-2026-11-28-winddown.md`. Everything below is history.
+
+## 0. Update, 2026-10-26: packs are now `ai4read.english-pack/2`
 Built in answer to `mewiki-web/docs/PROMPT-ai4read-passage-pack.md` (copy: `site/mewiki/REQUEST-passage-pack-2026-10-26.md`). The format is exactly as requested, with these notes:
 - **Passage first.** `passage` has `externalId` `ai4read:<slug>:passage`, `level`, `text` (140–190 words, British English), `sentences` (UTF-16 offsets, single spaces between), `core` (3–4 sentence indexes, 60–90 words), `audio` (`file`, `voice`, `durationMs`, `wpm`, `segments` with `sentence`/`startMs`/`endMs`), `gist` (2) and `retell` (`instruction`, `mustUse` = 3 expression externalIds, `modelAnswer`). It also carries `tags` and `source`, like the items.
 - **Items.** Expressions and patterns have `anchor {start, end, text}` into `passage.text`; expressions keep `sentence` + `target` as a second context (for transfer; it may come from social-science research practice and never copies the passage). Fixes have `anchorSentence`, `wrong` (one error) and `right` (= that passage sentence exactly). Tips are optional. There is no `shadowing` item any more.

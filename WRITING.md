@@ -1,7 +1,7 @@
 ---
 name: writing-principles
 description: How AI4Read posts are written. Read before drafting or revising any post. Claude updates it whenever a review round or a note from Kunhao shows a missing rule (add the rule, the note or finding that caused it, and the date); Kunhao asked for this on 2026-10-18.
-version: 0.11 (2026-11-04)
+version: 0.12 (2026-11-28)
 ---
 
 # AI4Read writing principles
@@ -20,6 +20,42 @@ The charter (§5–7) fixes the post template, style and audio. This file says *
 ## 1. The reader
 - Write for a **curious high-school student who will not accept hand-waving**. Kunhao is a professor, but in every field outside his own he wants the explanation a strong 17-year-old could follow, without missing any step a graduate would need.
 - Simple words, **complete content**. Simplify the language, never the substance: no skipped steps, no dropped conditions, no "it can be shown".
+
+## 1a. The Four Layers (CHARTER §5; Kunhao's prompt, 2026-11-28)
+The post moves through four layers in order and never skips one. Each layer goes one step deeper than the last.
+- **Layer 1, Motivation.** No new concepts. In a few short paragraphs: how people handled this problem before the idea; the concrete pain (cost, speed, what could not be measured) or the strange phenomenon; and the urgent problem the idea solves. Name real practice and real numbers from the brief. Never use "researchers have long struggled" as filler.
+- **Layer 2, Intuition (the café version).** Hard rule: **no formula, no symbol, no abbreviation, no term that is not explained in the same sentence.** The critic counts any of these as a major finding. Choose **one** scene from daily life or engineering whose structure matches the mechanism part for part. Do not use a decorative metaphor. Tell it in full, like a conversation over coffee:
+  - what the old way does;
+  - where exactly it goes wrong;
+  - which one or two rules the idea changes, and why that fixes it.
+  - List the parts of the scene (who, what moves, what is counted). Layer 3 will map each of them.
+- **Layer 3, Concrete.** Leave the analogy and return to the field's real setting. Use **the smallest real example** that still shows the mechanism: a few symbols, a 2×2 table, five voters. Then:
+  - give only the essential equations or algorithm steps, with no abstract derivation;
+  - after each equation, add a short **"In the café"** line that maps every term to a part of the layer-2 scene;
+  - say what data goes in and what comes out;
+  - compute the key number **before and after** the crucial change.
+  - The ladder (§2) applies to every new concept inside this layer. The widget and the notebook let the reader change one input and watch the number move.
+- **Layer 4, Abstract.** It must grow out of the layer-3 mechanism, not start fresh. Write three named parts:
+  - **What it really is**: the method stated without the task, in mathematics, information or system terms.
+  - **The same idea elsewhere**: 2–4 cross-field connections, each with its link type, what it adds, and what it does not explain (the old "Through the lenses").
+  - **Where it fails** (required): the hidden assumptions; the cases where the method fails, gives biased answers or cannot replace the old approach; and **where the layer-2 analogy breaks**.
+- **Connections between layers.** A reader should be able to point at any symbol in layer 3 and say which part of the café scene it is. Each failure boundary in layer 4 should be visible as an assumption somewhere in layer 3.
+- **Honesty.** Where the source is unpublished, a result is disputed or the evidence is thin, say so in the layer where it matters. Do not smooth it over.
+- The old template's parts move as follows:
+  - hook → layer 1;
+  - phenomenon in its home field → layers 1 and 3;
+  - math ladder and interactive → layer 3;
+  - lenses → layer 4(b);
+  - "where this shows up in your work" → layer 5.
+
+## 1b. The CSS imagination (layer 5; after Mills, *The Sociological Imagination*, 1959)
+Mills describes the sociological imagination as the ability to shift from one perspective to another, and to connect personal troubles to public issues (ch. 1, pp. 5–9). His appendix lists habits that stimulate it (pp. 211–216). Layer 5 uses four of them, chosen to fit the idea. Use at least two in each post:
+- **Trouble ↔ issue.** Name a private experience the idea explains (one person's confusion, one team's failure). Then name the public issue it becomes at scale. Mills' example (p. 9): one man unemployed in a city of 100,000 is a trouble; 15 million unemployed in a nation of 50 million employees is an issue.
+- **Another discipline's eyes.** How would a political scientist, a psychologist, an engineer or a historian use this idea, and what would each one notice that the others miss?
+- **Extremes and inverted scale.** Push a parameter to zero and to infinity, or imagine the small thing enormous and the enormous thing small. Then ask what changes.
+- **Comparison.** Find a comparable case in another society, period or platform, and say what the comparison reveals.
+- End with **1–2 open research questions** a computational social scientist could start on. For each, give the data or method it would need, and connect it to Kunhao's 3C research. Label these questions as ours: they are invitations, not findings.
+- Write layer 5 as reasoning, not as a list of buzzwords. It is held to §9 like every other part: a claim about society needs a verified source, or it is labelled as our conjecture.
 
 ## 2. The ladder for every new idea
 Every new concept or important question climbs the same ladder, in this order:
@@ -63,7 +99,8 @@ Do not start a concept at step 4.
 
 - **Measured numbers carry their frame.** For every number from code we ran, say what was run (model, library and version, precision, device), what a *relative* error is relative to, and what was not run. A check that repeats the model's own computation (bit-exact additivity inside one library) is a consistency check, not evidence; say so and lean on the independent comparison. (Post 03 S5: a relative error was described against the stream when the code divided by the block's writes; the notebook's own docstring was wrong.)
 
-## 8. English study packs (separate from the post)
+## 8. English study packs (retired 2026-11-28; kept as history)
+- **Stopped.** Kunhao ended the English-learning project on 2026-11-28. Do not write `english/english.json` or build packs for new posts. The rules below describe the packs for posts 01–03.
 - **The blog contains no English-learning section** and no English audio chapter. Kunhao publishes the posts without it (note, 2026-10-25). Each post's English material is a separate **pack** for Margin.
 - **C1 and C2 only.** Every expression, pattern and fix carries a level, and the builder refuses anything else. Levels are our estimate in the style of the English Vocabulary Profile and English Grammar Profile; an independent reviewer checks them.
 - **The passage is the centre (schema `/2`, 2026-10-26, at the Margin agent's request).** Kunhao loops the recording and shadows it, notices the language inside it, rebuilds it from memory gap by gap, then uses its language in new sentences. So:
@@ -83,6 +120,11 @@ Do not start a concept at step 4.
 - Every audio file names its source as **“AI4Read from CSS Lab”**: spoken in the first chapter (“Welcome to AI4Read from CSS Lab.”) and written into each MP3's metadata (artist, album artist, publisher, copyright, comment with the post link; album = post title; title and track = chapter). `scripts/tts_post.py` tags automatically through `scripts/tag_audio.py`. (Request, 2026-10-17.)
 
 - **Chinese reference audio (owner only, 2026-11-04).** Kunhao asked for a Chinese version of each post's audio as a reading aid, audible only to his account. Source: `posts/<slug>/audio-script-zh.md`, a faithful spoken-Mandarin translation of `audio-script.md` (same chapter ids and order; nothing added or dropped; hedges, scope and measured-number frames kept; quotes are our translations and the first chapter says so; numbers as Chinese words; opening “欢迎收听 AI4Read，来自 CSS Lab。”). An independent bilingual check (`review/zh-audio-check.md`) precedes recording. Record with Google Cloud Text-to-Speech, Gemini-TTS voice **Sulafat** (Kunhao's choice, 2026-11-05; the local Kokoro voice was too unnatural): Kunhao runs `python3 scripts/tts_zh_google.py posts/<slug> --yes` on his Mac under his own Google sign-in (project `playground-491901`, about $1 per post), then Claude checks every chapter by speech recognition (`scripts/check_zh_audio.py`), because an LLM voice can skip or reword text. Output goes to `posts/<slug>/audio-zh/`, tagged “AI4Read from CSS Lab”. `scripts/tts_post_zh.py` (Kokoro) stays as an offline fallback. These files never go into the public site build; see `site/ai4read/API.md` for the owner-only route.
+
+- **Chinese text version (owner only, 2026-11-28).** Each post also gets a faithful Simplified-Chinese translation of the page text, readable only by Kunhao on the website.
+  - Rules: same sections, widgets and numbers; nothing added or dropped; hedges, scope and measured-number frames kept; quotes are our translations (said once at the top); technical terms carry the English term in brackets at first use.
+  - Process: a translator agent, then an independent bilingual check (`review/zh-text-check.md`), then fixes.
+  - The Chinese audio script is translated from the English audio script as before. The two Chinese versions must agree with each other.
 
 ## 9. Sources and honesty (from the charter, kept here so it is never forgotten)
 - Every claim is checked against the cited page by an independent reviewer before publishing; digests are maps, not truth.
@@ -112,3 +154,4 @@ Do not start a concept at step 4.
 - 0.9 (2026-10-25): §0 recall tests only this post; §2 checks must work on the page, define at first use in the main text; §7 measured numbers carry their frame; §9 "none of the sources" needs a search of all, commented-out HTML is not published text. From the post 03 S2–S5 rounds.
 - 0.10 (2026-10-26): §8 English packs become passage-centred (schema `/2`): passage first, British voice and spelling, expressions and patterns anchored in it, second contexts for transfer, fixes built on passage sentences, gist and retell. From the Margin agent's request (`mewiki-web/docs/PROMPT-ai4read-passage-pack.md`), adopted by Claude with Kunhao's go-ahead to decide.
 - 0.11 (2026-11-04): §8b Chinese reference audio, owner only (Kunhao's request).
+- 0.12 (2026-11-28): §1a the Four Layers (Kunhao's prompt: motivation → intuition with no formulas → concrete with each term mapped to the intuition → abstract with failure boundaries); §1b the CSS imagination (Mills); §8 English packs retired; §8b Chinese text version, owner only. Posts become public blogs, written in Claude Code.

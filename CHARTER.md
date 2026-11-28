@@ -1,7 +1,7 @@
 ---
 name: ai4read-charter
 description: Operating charter for AI4Read — read at the start of every session that touches this project.
-updated: 2026-10-11
+updated: 2026-11-28 (Four Layers template, weekly field series, website blogs, English packs retired)
 ---
 
 # AI4Read — Project Charter
@@ -9,6 +9,8 @@ updated: 2026-10-11
 ## 1. Mission
 
 Build **intuition and sense** — not just knowledge — for Kunhao Yang's work as a computational social scientist and for his life as a foreign resident in Japan. Facts are cheap in the GenAI era; the ability to *see a problem from the right angle*, transfer classic instances to new situations, and ask insightful questions is not. That ability comes from deep, systematic, cross-disciplinary reading **plus active practice**.
+
+Since 2026-11-28 the posts are also **public blogs** on khyang-lab.org, for Kunhao and for other readers. Their shared aim is a **computational-social-science imagination**, in the sense of C. Wright Mills' *The Sociological Imagination* (1959): the quality of mind that moves between a personal trouble and a public issue, between one perspective and another, and between the smallest mechanism and the structure of a whole society. Each post builds intuition for one important idea of a field, and then turns it into questions about society.
 
 ## 2. Learner profile (calibrate every output to this)
 
@@ -35,7 +37,7 @@ Build **intuition and sense** — not just knowledge — for Kunhao Yang's work 
 ### Application layer (the phenomena)
 Complex systems · Large language models · Economics & finance · Political science.
 
-Every weekly topic **starts from a phenomenon** (application layer, a recent paper, or Kunhao's own question) and **ends by re-reading it through foundational lenses**.
+**Weekly series, one field at a time (since 2026-11-28).** The posts walk through the fields one by one: a series of about 4–7 weekly posts climbs one field's concept spine (`canon/<field>.md`), then the next field starts. The plan lives in `series/` (`series/README.md` gives the field order; `series/<field>.md` gives the posts). Kunhao may add an extra post on his own topic in any week. Every post still **starts from a phenomenon** and **ends by re-reading it through other fields** (Four Layers, §5).
 
 ## 4. Workflow
 
@@ -43,24 +45,31 @@ Every weekly topic **starts from a phenomenon** (application layer, a recent pap
 2. **Library** (Google Drive `AI4Read/library/<field>/`): source PDFs. Free legal copies fetched by Claude; others supplied by Kunhao.
 3. **Just-in-time digests**: a work is digested chapter-by-chapter *when a topic needs it*, from the actual text, into `wiki/works/`. No mass pre-digestion.
 4. **Knowledge graph** (`wiki/`): concept, instance, person, phenomenon, question nodes, linked with typed edges.
-5. **Topic post** (every 1–2 weeks): blog with interactive explainer + audio + exercises.
+5. **Series post** (weekly): blog with interactive explainer, audio, exercises. Written and checked in Claude Code (`phase2/RUNBOOK.md`).
 6. **Discussion** on the phone → **notes** (`notes/`) → learner state update → new links in the graph.
-7. **Public post** (optional): polished version on khyang-lab.org.
+7. **Publish** on khyang-lab.org as a blog post: English text and English audio public; Chinese text and Chinese audio for Kunhao only (§7).
 8. **Paper card** (weekly): one recent paper from top CSS venues, short format, expandable into a full post.
 
-## 5. Post template (topic posts)
+## 5. Post template: the Four Layers (since 2026-11-28)
 
-1. **Hook** — a story, puzzle, or everyday phenomenon. Build the intuitive picture first.
-2. **Guess first** — a prediction prompt before any answer.
-3. **The phenomenon in its home field** — application-layer details.
-4. **Through the lenses** — re-read the premise/mechanism from 2–4 foundational fields. State the link type (same-math / structural analogy / metaphor).
-5. **The math ladder** — from high-school level to graduate level, step by step, with toy data at each rung. No skipped steps.
-6. **Interactive explainer** — sliders/simulations that run on a phone.
-7. **Your turn** — a Python notebook (run on Kunhao's computer) and one transfer challenge.
-8. **Where this shows up in your work** — tie-in to the 3C research.
-9. **Recall questions** — 5–8; some reappear in later posts (spaced review, without naming the earlier post).
-10. **English study pack — not part of the post** (since 2026-10-25). The blog ends with Recall and Sources. The English material for each post is a separate pack for Margin, **C1–C2 only**, written in `posts/<slug>/english/english.json` and built with `scripts/english_pack.py` (see WRITING §8). Since 2026-10-26 the pack is passage-centred (schema `/2`): one 140–190-word passage in British English, recorded sentence by sentence, with the expressions, patterns and fixes anchored in it.
-11. **Sources** — verified only.
+Every post explains **one core idea** in four layers, in order, never skipping one, each going one level deeper (Jakob Schwichtenberg's "four layers of understanding", *A Physics Travel Guide*). Most readers find technical material hard because they skip the early layers and land in formulas and jargon. Then the post turns the idea toward society. WRITING §1a gives the rules for each layer.
+
+0. **Title as a question, and a one-line preview** of the answer (WRITING §0).
+1. **Motivation: why should we care?** No new concepts yet. Before this idea, how did people handle this kind of problem, and what hurt: too expensive, too slow, impossible to measure, or a strange, counterintuitive phenomenon? What urgent problem does the idea solve? The layer ends with **Guess first**, a prediction prompt.
+2. **Intuition: the café version.** **No formulas, symbols, abbreviations or unexplained jargon.** One everyday or engineering scene that is *structurally isomorphic* to the core mechanism, told in full: why the old way goes wrong, and which rule the idea changes to fix it. The reader leaves with a complete mental map.
+3. **Concrete: the smallest real example.** Drop the analogy and return to the field's own setting. Work one tiny input → output example with numbers you can do by hand. Show only the essential equations, rules or algorithm steps, and map **every term** to a part of the layer-2 scene: what it does and which data it turns into what. Give the key numbers before and after the crucial change. Each new concept climbs the ladder (WRITING §2). The interactive explainer and the Python notebook live here.
+4. **Abstract: the principle, its relatives and its limits.**
+   - (a) **What it really is**: once the task is stripped away, what the method does mathematically, in information terms, or as a system mechanism.
+   - (b) **The same idea elsewhere**: classic ideas in other fields that say the same thing. These are the lenses; each states its link type (same-math / structural analogy / metaphor) and what it adds.
+   - (c) **Failure boundaries (required)**: the hidden assumptions, and when the idea fails, gives biased results or cannot replace the old approach. Say where the layer-2 analogy breaks.
+5. **The CSS imagination.** Turn the idea into questions about society, with Mills' moves (WRITING §1b). Link a personal trouble to a public issue; look through another discipline's eyes; push to the extremes and invert the scale; compare cases and periods. End with 1–2 open research questions and the tie-in to Kunhao's 3C research.
+6. **Your turn**: a Python notebook (run on Kunhao's computer) and one transfer challenge.
+7. **Recall questions**: 5–8. Some reappear in later posts as spaced review, without naming the earlier post.
+8. **Sources**: verified only.
+
+**The layers connect.** Layer 3's equations echo layer 2's scene; layer 4 grows out of layer 3's mechanism; layer 5 starts from layer 4's limits. Plain, restrained language: no praise, no boilerplate. Where the source is unpublished or the evidence is thin, say so.
+
+*Retired:* the "How to say it in English" section (left the post on 2026-10-25), and the separate C1–C2 English packs for Margin (stopped on 2026-11-28, when Kunhao ended the English-learning project). Old packs stay in `site/mewiki/packs/` as history.
 
 Paper cards: claim → method → key figure → lenses (1–2) → what to doubt → one question for Kunhao. ~10-minute read.
 
@@ -73,12 +82,13 @@ Paper cards: claim → method → key figure → lenses (1–2) → what to doub
 - One notation across the whole project: `notation.md`. Logs are base 2 (bits) unless stated.
 - Mobile first: no wide tables, formulas broken into short lines, every figure readable at 375 px.
 
-## 7. Audio
+## 7. Audio and languages
 
-- Each post has an **audio script** written *for the ear* (not a reading of the page): formulas spoken in words, figures described, recaps at section ends.
+- Each post has an **English audio script** written *for the ear* (not a reading of the page): formulas spoken in words, figures described, recaps at section ends.
 - Audio is split into **chapters** matching post sections, so a single section can be looped.
 - Player: loop post / loop section, speed 0.75–1.5×, lock-screen controls, offline.
 - Source mark: every audio file says and carries “AI4Read from CSS Lab” (spoken intro + MP3 metadata; see WRITING.md §8b).
+- **Who sees what (2026-11-28).** Public readers get the English text and the English audio. **Only Kunhao** (signed in) gets the **Chinese text** (a faithful translation of the post) and the **Chinese audio**. Ask-Claude, notes and annotations are owner-only too, so public readers cannot run up Vertex costs.
 
 ## 8. Wiki schema
 
@@ -122,7 +132,7 @@ Wikilinks `[[id]]` throughout (Obsidian-compatible).
 
 ## 12. Cadence & venues
 
-- Topic post: every 1–2 weeks. Paper card: weekly (scheduled scan, Monday morning JST).
+- Series post: **weekly** (series plan in `series/`), plus an occasional extra post on Kunhao's topic. Paper card: weekly (scheduled scan, Monday morning JST).
 - Venues (editable): Nature Human Behaviour, PNAS, PNAS Nexus, Science Advances, Nature Computational Science, EPJ Data Science, Journal of Computational Social Science, Journal of Communication, Political Analysis, APSR; ICWSM, CSCW, WWW, IC2S2, ACL/EMNLP (CSS & society tracks).
 
 ## 13. Infrastructure map
@@ -131,8 +141,9 @@ Wikilinks `[[id]]` throughout (Obsidian-compatible).
 |---|---|
 | Canonical knowledge base (wiki, canon, posts, notes) | GitHub private repo `CSS-Laboratory/ai4read` |
 | Source library (PDFs) | Google Drive `My Drive/Book/AI4Read/library/` (no git inside Drive) |
-| Private reader (posts + audio) | Phone-first installable web app (PWA) on Cloudflare Pages, built from this repo, behind Cloudflare Access email login (planned; first posts as private Claude artifacts) |
-| Audio synthesis | Kokoro-82M open-source TTS (ONNX), run in Claude's workspace; MP3 per section; no cloud credentials needed |
+| Blog (posts + audio) | khyang-lab.org blog, built from this repo (`site/ai4read/`) and deployed by Kunhao's website agent. English public; Chinese text and audio, notes and Ask-Claude owner-only behind Cloudflare Access (since 2026-11-28; the separate /ai4read page is retired) |
+| Writing and checking | Claude Code on Kunhao's Mac (`~/code/AI4Read`), with fresh subagents as independent checkers (`phase2/RUNBOOK.md`); before 2026-11-28, the claude.ai "Claude Work" setup |
+| Audio synthesis | English: Kokoro-82M open-source TTS (ONNX), run locally; MP3 per section; no cloud credentials. Chinese: Google Gemini-TTS, run by Kunhao under his own sign-in (WRITING §8b) |
 | Discussion | Claude app on the phone, AI4Read project; each post section has a "Discuss" button that copies a ready prompt (post id + section) |
 | Canon data | `canon/<field>.md` (human-readable) → `canon/catalog.json` via `scripts/parse_canon.py` |
-| Public posts | khyang-lab.org |
+| Public posts | khyang-lab.org blog (tags, keyword and tag search, sorting) |

@@ -1,0 +1,40 @@
+{
+  "schema": "ai4read.posts-meta/1",
+  "note": "Blog metadata for khyang-lab.org (2026-11-28). New posts carry the same fields in posts/<slug>/post.json. Tags: field names as in CHARTER §3, plus topic tags. Languages: 'en' public; 'zh' owner only.",
+  "tag_vocabulary": {
+    "fields": ["Information theory", "Bayesian & causal inference", "Analytic philosophy", "Communication theory", "Linear algebra", "Theory of mind", "Decision & game theory", "Control theory & cybernetics", "Complex systems", "Large language models", "Economics & finance", "Political science"],
+    "topics": ["AI & society", "Interpretability", "AI agents"]
+  },
+  "posts": [
+    {
+      "slug": "2026-10-llm-next-word",
+      "title": "What does an LLM know when it predicts the next word?",
+      "date": "2026-10-15",
+      "series": null,
+      "field": "Large language models",
+      "tags": ["Large language models", "Information theory", "Linear algebra", "Bayesian & causal inference", "Analytic philosophy", "Theory of mind"],
+      "languages": {"en": "public", "zh": "owner (audio only so far)"},
+      "audio": {"en": true, "zh": true}
+    },
+    {
+      "slug": "2026-10-ai-finance",
+      "title": "Could a society run itself on AI?",
+      "date": "2026-10-18",
+      "series": null,
+      "field": "Economics & finance",
+      "tags": ["AI & society", "AI agents", "Economics & finance", "Complex systems", "Control theory & cybernetics", "Analytic philosophy", "Political science"],
+      "languages": {"en": "public", "zh": "owner (audio only so far)"},
+      "audio": {"en": true, "zh": true}
+    },
+    {
+      "slug": "2026-10-residual-stream",
+      "title": "What Is a Hidden State? The Residual Stream, Read and Written",
+      "date": "2026-10-25",
+      "series": null,
+      "field": "Large language models",
+      "tags": ["Large language models", "Interpretability", "Linear algebra", "Information theory"],
+      "languages": {"en": "public", "zh": "owner (audio only so far)"},
+      "audio": {"en": true, "zh": true}
+    }
+  ]
+}

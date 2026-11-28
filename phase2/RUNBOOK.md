@@ -1,7 +1,7 @@
 ---
 name: phase2-runbook
 description: How the meta-manager runs one post through the phase-2 pipeline (2a: subagents on the subscription). Stages, who runs them, inputs, outputs, gates, and what to log.
-date: 2026-10-17
+date: 2026-10-17 (Claude Code section 2026-11-28)
 ---
 
 # Phase 2 runbook (2a)
@@ -44,3 +44,24 @@ date: 2026-10-17
 - `response-N.md` must quote the new audio line for every audio fix; checkers compare the claim with `audio-script.md` (a round-1 response claimed audio fixes that were not made).
 - Notebook builders state the denominator of every relative error in `results.md`.
 - A gate missed after round 3 by a single, local finding: the meta-manager corrects any pipeline file at fault (here `results.md`), a fresh writer makes a targeted fix pass, and fresh checkers (facts and pedagogy) re-check the diff (`verify-3c.md`, `critic-3c.md`).
+
+## Running in Claude Code (since 2026-11-28)
+Kunhao moved the writing from the claude.ai "Claude Work" setup to Claude Code on his Mac (`~/code/AI4Read`). The pipeline, gates and independence rules above do not change. How each piece maps:
+- **Meta-manager:** the main Claude Code session (Opus). It runs the stages, never writes post text, and logs every stage in `log.md`.
+- **Fresh agents:** each role runs through the Agent tool as a new subagent with no shared context. Set the model per role:
+  - planner and writer: `sonnet`;
+  - fact-checker: `opus` and `sonnet`, merged by union;
+  - critic: `sonnet`;
+  - bilingual checks: `opus`.
+  - The task message holds the built role prompt (`python3 phase2/assemble.py`, then `phase2/prompts/build/<role>.md`) and the paths the agent may read. Agents run in the background, and the meta-manager waits for every agent of a round before regenerating anything (review hygiene).
+- **New stages:**
+  - **S6b, Chinese:**
+    - a translator agent (Sonnet) writes `zh/content.html`, the owner-only page text, and `audio-script-zh.md`;
+    - an Opus bilingual check writes `review/zh-text-check.md` and `review/zh-audio-check.md`;
+    - fixes follow;
+    - Kunhao records the Chinese audio (`scripts/tts_zh_google.py`) and Claude checks it (`scripts/check_zh_audio.py`).
+  - **S7, publish:** no claude.ai artifacts any more. The draft goes to the website's owner-only draft route, and after S8 to the public blog. Kunhao's website agent deploys.
+- **Kunhao's notes:** left on the website (owner-only notes). Until the notes export is wired up, he can also paste them here.
+- **Local tools:** Node (`npm install`), Playwright with Chromium, ffmpeg, poppler. English TTS: `bash scripts/setup_tts.sh` sets up Kokoro under `/tmp` (rebuild after a reboot). Chinese audio uses Google TTS under Kunhao's own sign-in (WRITING §8b).
+- **Weekly topic:** S0 reads the current field's file in `series/` (`series/README.md`).
+- **English packs: none** (retired 2026-11-28).
