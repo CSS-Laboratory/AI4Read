@@ -1,6 +1,6 @@
 # Notebook 01 (surprise and entropy): results for citation
 
-Produced by running the saved notebook `01_surprise_entropy.ipynb` from top to bottom with nbclient, on 28 November 2026. Every number below is printed by the cell named in its row (the execution count [n] shown in Jupyter). Re-running gives the same numbers on the same versions: every random draw uses the fixed seed 20261207 (offsets +6 and +8 in exercises 6 and 8).
+Produced by running the saved notebook `01_surprise_entropy.ipynb` from top to bottom with nbclient, on 28 November 2026 (second run, after the round-1 revision: exercises reordered, the conditional-information part of the weighing removed, a ladder added to the last exercise). Every number below is printed by the cell named in its row (the execution count [n] shown in Jupyter). This is the output of one run on the versions below. Other Python or numpy versions may differ in the last digits, because numpy does not promise identical random streams across versions. Every random draw uses the fixed seed 20261207 (offsets +6 and +8 in exercises 6 and 8).
 
 ## What was run
 
@@ -10,7 +10,7 @@ Produced by running the saved notebook `01_surprise_entropy.ipynb` from top to b
 | Platform | macOS (Darwin), CPU only; no GPU, no network |
 | Seed | 20261207 |
 | Libraries | standard library (`math`, `heapq`, `itertools`, `collections`), numpy, matplotlib |
-| Not run | no language model, no real text corpus; the sample text in exercise 5 is a paragraph we wrote |
+| Not run | no language model, no real text corpus; the sample text in exercise 5 is a paragraph we wrote; other Python versions (the notebook says 3.9 or later should work, untested) |
 
 The stub cells ("your attempt") produce no output. The solution cells are saved with their source and outputs collapsed (`jupyter.source_hidden`, `outputs_hidden`).
 
@@ -82,24 +82,14 @@ a hit on shot 1 is worth 6.0 ; a hit on shot 64 is worth 0.0 (the last square is
 
 Frame: Exact sums, rounded to 4 decimals. MacKay (2003, p. 71) prints 0.0230 for shot 2 because he cuts digits off; we round, so 0.0231.
 
-### Exercise 4. The weighing (solution cell)  [cell 10]
+### Exercise 4. Whose model? (solution cell)  [cell 10]
 
-What was run: All 24 hypotheses (ball, heavy or light) enumerated; outcome chances and entropy for k against k, k = 1 to 6; information about the ball (outcome entropy minus the average conditional outcome entropy over balls) and about ball and direction (outcome entropy, since the outcome is then certain).
+What was run: Surprisal of the same event under two beliefs; p = 0 handled as infinity.
 
 ```text
-k  chances (left down, right down, balance)   outcome entropy
-1  0.083 0.083 0.833                         0.817
-2  0.167 0.167 0.667                         1.252
-3  0.250 0.250 0.500                         1.500
-4  0.333 0.333 0.333                         1.585
-5  0.417 0.417 0.167                         1.483
-6  0.500 0.500 0.000                         1.000
-all 24 hypotheses: log2(24) = 4.585 bits
-4 against 4: about which ball 0.918 bits; about which ball and heavy-or-light 1.585 bits
-6 against 6: about which ball 0.000 bits; about which ball and heavy-or-light 1.000 bits
+Ana 3.000  Ben 1.000  gap 2.000
+a forecaster who said 0 and sees snow: inf
 ```
-
-Frame: Exact. Our computation: MacKay prints no solution to his Exercise 4.9.
 
 ### Exercise 5. A sample text (solution cell)  [cell 12]
 
@@ -131,20 +121,38 @@ true entropy 1.7500; 2000 repeats per n
 
 Frame: Gaps are absolute, in bits, against the true entropy 1.75. They are not relative numbers.
 
-### Exercise 7. Whose model? (solution cell)  [cell 16]
+### Exercise 7 (extension). The weighing (solution cell)  [cell 16]
 
-What was run: Surprisal of the same event under two beliefs; p = 0 handled as infinity.
+What was run: All 24 hypotheses (ball, heavy or light) enumerated; outcome chances and entropy for k against k, k = 1 to 6; the number of hypotheses left after each outcome for 4 against 4 and 6 against 6.
 
 ```text
-Ana 3.000  Ben 1.000  gap 2.000
-a forecaster who said 0 and sees snow: inf
+k  chances (left down, right down, balance)   outcome entropy
+1  0.083 0.083 0.833                         0.817
+2  0.167 0.167 0.667                         1.252
+3  0.250 0.250 0.500                         1.500
+4  0.333 0.333 0.333                         1.585
+5  0.417 0.417 0.167                         1.483
+6  0.500 0.500 0.000                         1.000
+all 24 hypotheses: log2(24) = 4.585 bits
+4 against 4: hypotheses left after left down / right down / balance: 8, 8, 8 of 24
+6 against 6: hypotheses left after left down / right down / balance: 12, 12, 0 of 24
 ```
 
-### Exercise 8. The bound (solution cell)  [cell 18]
+Frame: Exact counts and entropies. The 12 : 12 : 0 split for 6 against 6 is our count; MacKay (2003, p. 68) says only that those pans can never balance.
 
-What was run: Huffman lengths with `heapq`; the 0.7 village; the weather village; `numpy.random.default_rng(SEED + 8)`, 150 Dirichlet(1,...,1) share vectors for each of 4 to 10 outcomes (1,050 in all); the stall of the transfer challenge.
+### Exercise 8. The best script and the bound (solution cell)  [cell 18]
+
+What was run: Huffman joins with `heapq` (a trace for three outcomes and for the 0.7 village); the weather village; `numpy.random.default_rng(SEED + 8)`, 150 Dirichlet(1,...,1) share vectors for each of 4 to 10 outcomes (1,050 in all); the stall of the transfer challenge.
 
 ```text
+three outcomes (1/2, 1/4, 1/4):
+  join 0.25 and 0.25 into 0.50; outcomes [1, 2] get one more question
+  join 0.50 and 0.50 into 1.00; outcomes [0, 1, 2] get one more question
+  lengths [1, 2, 2], EQ = 1.500, H = 1.500
+0.7 village:
+  join 0.10 and 0.10 into 0.20; outcomes [1, 2] get one more question
+  join 0.10 and 0.20 into 0.30; outcomes [1, 2, 3] get one more question
+  join 0.30 and 0.70 into 1.00; outcomes [0, 1, 2, 3] get one more question
 0.7 village: H = 1.357, lengths [1, 2, 3, 3], EQ = 1.500, H + 1 = 2.357
 weather village: H = 1.750, EQ = 1.750
 1050 random share vectors on 4 to 10 outcomes: H <= EQ < H + 1 holds for all: True
@@ -164,12 +172,12 @@ Frame: Gaps EQ - H are absolute, in bits.
 | Village script on a uniform village, 100,000 days | 2.2470 (expected value 2.25) | 6 |
 | First miss, second miss (rounded) | 0.0227, 0.0231 | 8 |
 | 32 misses; 48 misses; hit on shot 49; total | 1.0000; 2.0000; 4.0000; 6.0000 | 8 |
-| Weighing, k against k, k = 1 to 6 | 0.817, 1.252, 1.500, 1.585, 1.483, 1.000 | 10 |
-| 6 against 6: about which ball; about ball and direction | 0.000 bits; 1.000 bit | 10 |
+| Ana and Ben on the same snow | 3.000, 1.000, gap 2.000 | 10 |
 | Plug-in entropy of the sample text | 4.012 bits per symbol | 12 |
 | Estimation: mean estimate for n = 10, 30, 100, 1,000 | 1.5036, 1.6753, 1.7253, 1.7469 | 14 |
 | Estimation: gap from 1.75 | -0.2464, -0.0747, -0.0247, -0.0031 | 14 |
-| Ana and Ben on the same snow | 3.000, 1.000, gap 2.000 | 16 |
+| Weighing, k against k, k = 1 to 6 | 0.817, 1.252, 1.500, 1.585, 1.483, 1.000 | 16 |
+| Weighing: hypotheses left, 4 v 4 and 6 v 6 | 8, 8, 8; 12, 12, 0 | 16 |
 | 0.7 village: H, EQ | 1.357, 1.500 | 18 |
 | Bound H <= EQ < H + 1 on 1,050 random share vectors | holds for all; gap EQ - H from 0.0019 to 0.6301 | 18 |
 | Market stall: EQ, H; after the change: old script, best script, H | 1.875, 1.875; 2.5, 2.25, 2.25 | 18 |

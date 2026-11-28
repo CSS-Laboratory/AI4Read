@@ -1,57 +1,61 @@
 ---
 name: post04-self-review
-description: Writer self-review of the S4 draft of post 04 ("How much is a surprise worth?") against rubric v1.1, with the places a fact-checker is most likely to object, deviations from the outline, and what was not run.
+description: Writer self-review of the S5-to-S4 revision (round 1) of post 04 ("How much is a surprise worth?") against rubric v1.1, with the places a fact-checker is most likely to object, deviations from the outline, and what was not run.
 ---
-# Self-review, S4 draft (2026-11-28)
+# Self-review, S4 revision after S5 round 1 (28 November 2026)
 
-**Length.** Main text 7,459 words by `python3 scripts/wordcount.py posts/2026-12-surprise/src/content.html` (cap 7,500). Fold-outs hold about 1,030 words in 7 boxes. The first full draft was about 10,000 words; the cuts are listed under "Deviations from the outline".
+**Length.** Main text 6,844 words by `python3 scripts/wordcount.py posts/2026-12-surprise/src/content.html` (cap 7,500; it was 7,459). Fold-outs hold about 1,740 words in 10 boxes: the weighing (about 500 words, with its widget), the twin game and the grouping rule moved there. The critic suggested 6,200–6,800 words; we are 44 words above that range because we added about 300 words that the reviews asked for (the repaired café, the E5 and E8 steps, a guess about a village the reader has not seen, the live-versus-fixed boundary, the roles check, the submarine slider).
+
+**What changed (the three big moves).**
+1. **The café has a hatch.** The customer fills in a paper ticket against a card on the wall; the barista in the back room has never seen the customer and holds the same card. Now the shared script is necessary (without it, "no, no, yes" means nothing), the customer encodes and the barista decodes, and no one asks anything live. Step 5 is rebuilt on it; Shannon's twin game is a fold-out; boundary 6 says where the café breaks (a real barista can ask live and adapt; a transmitter cannot hear the receiver).
+2. **Gibson's scope.** Nowhere does the post say or imply that reading effort follows surprisal. Gibson's sentence is quoted as a premise, "language processing effort is associated with predictability", with the hedge, with the note that his word is predictability and that the two cited studies are unseen. Hale (2001) and Levy (2008) are no longer named in the text.
+3. **Cuts and steps.** The weighing (step 4), the twin game, the binary-digit recipe for the rats, the 64-object paragraph, Move 4 of layer 5 (folded into research question 2) and several source-process asides left the main text. E5 became a laddered fold-out, E8 got its factors named, g2 became a question not answered earlier, and the surprisal plot lost its undefined second curve.
 
 **Checks run.**
-- `check.mjs`: 8 of 8 widget configs OK (the `switch` is skipped by the checker).
-- `build-post.mjs --public --owner`: 0 math errors, 0 unmapped cites, no missing source entries, no owner-reference error (118 cites).
-- `test.mjs --inline`: PASS (0 console errors, no overflow at 390 px, readouts reproducible, interactions work). The `switch` with two nested `diagram` widgets was also opened by hand in Chromium at 390 px: both panels draw, the second panel shows after the tap, and the page is 390 px wide. The fallback of two stacked diagrams was not needed.
-- Layer 2 grep: no hit for bit, entropy, probability, code, model, encode, decode, log, surprisal, formula, symbol, equation, in the text or in the diagram labels; no symbol, abbreviation or digit-with-operator formula.
-- A quote script compared all 139 quoted strings with `sources/*.txt` after normalising quotation marks, dashes and hyphenation. 119 match, and the flagged ones are our own labels, read-aloud lines and the answer options, plus eight source quotes that the script cannot match for layout reasons (two-column Gibson pages, OCR in Pierce, a quotation mark nested inside Mills' quote); those were verified by the S2 and S2b fact-checkers on the page images and are quoted exactly as the brief prints them. No quotation is longer than 25 words.
-- Notebook: executed top to bottom with nbclient (Python 3.12.12, numpy 2.5.5, matplotlib 3.11.2, seed 20261207); 18 code cells (8 of them empty "your attempt" stubs), 0 errors; every number is in `notebook/results.md` with its cell and frame.
+- `check.mjs`: 8 of 8 widget configs OK (the `switch` is skipped by the checker and is covered by `test.mjs`).
+- `build-post.mjs --public --owner`: 0 math errors, 0 unmapped cites, no missing source entries, no owner-reference error (112 cites).
+- `test.mjs --inline`: PASS (0 console errors, no overflow at 390 px, readouts equal the Node computation, interactions work). The weighing widget now sits inside a closed fold-out, and still passes.
+- Layer 2 grep: no whole-word hit for bit, entropy, probability, code, model, encode, decode, log, surprisal, formula, symbol, equation, information in the café section (text, diagram labels, check-yourself); no symbol or abbreviation.
+- Notebook: rebuilt in the new order, executed top to bottom with nbclient (Python 3.12.12, numpy 2.5.5, matplotlib 3.11.2, seed 20261207), 0 errors; all numbers equal the first run; `results.md` was generated from the new run only.
 
 ## Scores (1-5), by section and criterion
-Criterion 1 accuracy and hedges; 2 Four Layers and ladder; 3 clarity and English; 4 insight and connections (layer 4); 5 illustrations; 6 concision; 7 CSS imagination. A dash means the criterion does not apply to that section.
+Criterion 1 accuracy and hedges; 2 Four Layers and ladder; 3 clarity and English; 4 insight and connections (layer 4); 5 illustrations; 6 concision; 7 CSS imagination. A dash means the criterion does not apply.
 
 | Section | 1 | 2 | 3 | 4 | 5 | 6 | 7 | Note |
 |---|---|---|---|---|---|---|---|---|
-| hook (layer 1) | 4 | 5 | 4 | - | 4 | 4 | - | No logarithm, bit, entropy or probability; "model" appears once and is defined in the same sentence. Old practice from Pierce only; Nyquist, Hartley and Morse are "as Pierce reports". G1 has no figure; the submarine figure is in step 5. |
-| cafe (layer 2) | 5 | 5 | 5 | - | 5 | 4 | - | Grep clean. Ten numbered parts; the two-script switch widget; two check-yourself questions. |
-| village, surprisal, entropy | 4 | 5 | 4 | - | 5 | 4 | - | Each concept has instance, question, words, numbers, formula, check, limits. Every equation (E1 to E5, E9) has an "In the café" line. Dense where citations sit inside sentences. |
-| weighing, submarine | 4 | 5 | 4 | - | 5 | 4 | - | Ex. 4.9 answer labelled ours (MacKay prints none). Table rounds where MacKay truncates and says so. |
-| roles | 4 | 4 | 4 | - | 4 | 4 | - | The 1951 roles use the corrected reading; the toy predictor is ours. The Figure 2 detail was cut for length, so the diagram widget carries only the café roles. |
-| nothalves | 4 | 4 | 4 | - | 3 | 5 | - | The bound is quoted from Cover and Thomas, not derived: our small case is in a fold-out. No widget for the bound (the notebook has it). Caps criterion 2 at 4 for this concept. |
-| answer, lenses | 4 | 5 | 4 | 4 | 4 | 4 | - | Five lenses with link type, adds, does-not-explain, and a "how they differ" line. Lens 3 stays thin because Weaver is unseen. Lens detail partly moved to a fold-out. |
-| fails | 4 | 5 | 4 | 5 | 5 | 4 | - | Six boundaries, each tied to a layer-3 assumption, each with "the café breaks"; W7 widget; the estimation table is from the notebook. |
-| imagination (layer 5) | 4 | - | 4 | - | - | 4 | 4 | Four moves as reasoning on whose model prices a surprise; two open questions with data and method, labelled ours. Only 4: every claim about society is our conjecture or hypothetical (Mills' numbers are his own illustration), and the sourced anchor is one sentence of Pierce. |
-| turn, recall | 4 | 4 | 5 | - | 4 | 4 | - | Transfer challenge with hint and folded solution; eight recall cards using only this post. |
+| hook (layer 1) | 4 | 4 | 4 | - | 4 | 4 | - | Opens with the pain; no term box, no new concept. "Worth" is defined in one clause inside the guess. The history is two sentences. |
+| cafe (layer 2) | 5 | 5 | 5 | - | 5 | 4 | - | The hatch makes the script necessary. Grep clean. Parts named in words. Two check-yourself questions; the 2.25 is computed in the answer, without a forward pointer. |
+| village, surprisal | 4 | 5 | 4 | - | 4 | 4 | - | Term box moved here. Binary recipe gone. E1 states the power-of-two condition. The plot has one curve and the sure-thing edge case. |
+| entropy | 4 | 4 | 4 | - | 5 | 4 | - | E5 is a short fold-out ladder (grouping rule). Bars show share times surprisal, so a share of 0 shows 0 correctly. Widget has a 0.7 preset. |
+| submarine | 4 | 5 | 4 | - | 5 | 4 | - | E8's two kinds of factor are named; the slider lets the reader choose when the hit comes. |
+| roles | 4 | 5 | 4 | - | 4 | 4 | - | Built on the ticket café: customer encodes, barista decodes. Twin game is a fold-out. |
+| nothalves | 4 | 4 | 4 | - | 3 | 4 | - | The bound is quoted, not derived (said so). The 0.7 village is worked in the text, with the join rule labelled ours. Section's mechanism has no widget of its own, but the village widget has the 0.7 preset. |
+| answer, lenses | 4 | 5 | 4 | 4 | 4 | 4 | - | Link types limited to same-math, structural analogy; lens 2 has a concrete example and the scope note. |
+| fails | 4 | 5 | 4 | 5 | 5 | 4 | - | Six boundaries; boundary 6 adds live asking versus a fixed script. |
+| imagination (layer 5) | 4 | - | 4 | - | - | 4 | 4 | Three moves as reasoning, the scale move now has a mechanism (correlated surprise); research question 1 says how a post-level number is made. |
+| turn, recall | 4 | 4 | 5 | - | 4 | 4 | - | Notebook reordered; eight recall cards; the Gibson card is scoped. |
 
-**Post score per criterion (the minimum over sections).** 1: 4. 2: 4 (the bound in step 7). 3: 4. 4: 4. 5: 4 (the bound has no widget; the 3 above is for that one section, whose mechanism is a short quoted result). 6: 4. 7: 4.
+**Post score per criterion (the minimum over sections).** 1: 4. 2: 4. 3: 4. 4: 4. 5: 4 (the 3 for step 6 is a short quoted result; the village widget with the 0.7 preset covers its numbers). 6: 4. 7: 4.
 
 ## The five places a fact-checker is most likely to object
-1. **Layer 5, Move 1: our test for "issue" and the reading of Mills.** The "test" (if changing the ranking changes what many readers miss at once, it is an issue) is ours and is labelled "Our case (ours)", but it follows Mills' phrases "unlike even widespread trouble" and "a crisis in institutional arrangements" (pp. 8-9, quoted across a page break). A reviewer may say we put our test next to his quotes too closely. The paraphrase "a quality of mind that shows how a life and its time fit together" stands for his "interplay of man and society, of biography and history" (p. 4) and may be judged loose. Mills' unemployment numbers are labelled hypothetical, and no rate is stated (brief unit 18).
-2. **Lens 2 (Gibson et al. 2019).** The sentence "Since language processing effort is associated with predictability [104,105]" (p. 11) is quoted with its hedge, and the references are named Hale (2001) and Levy (2008) from the reference list on p. 18 (titles only, unseen). Gibson's abstract sentence ("show how a pervasive pressure ...") sits in a fold-out next to the p. 14-15 limits. Pre-proof pages, not the published pagination (stated in Sources).
-3. **Step 4, the 6 against 6 answer (MacKay Exercise 4.9).** "0 bits about which ball, 1 bit about ball and direction" is ours; MacKay prints no solution. It was checked by hand and by the notebook (0.000 and 1.000), but the claim "after left heavier every ball is still possible" is a reading of the problem, not a source statement. Also the page for "3^2 = 9, 3^3 = 27" is p. 68 (checked against the page footers of the text copy).
-4. **Step 6, Shannon 1951.** The roles follow the S2-corrected unit 14 (the guesser has not seen the passage; Fig. 2: original text plus predictor is the encoding side). The Figure 2 sentence was cut for length, so the roles claim rests on "the reduced text can be considered to be an encoded form of the original" (p. 55) and on the p. 54 quote. The toy predictor (ranked list, "2 1 3") is ours. The 69 and 77 per cent figures are not used.
-5. **Editions and bibliography.** Cover and Thomas pages are from the 1991 first edition; Pierce pages are from the 1961 first edition (a library scan; the provenance decision from S2 is still open, see `requests.md`); Gibson pages are pre-proof; Mills pages are the 2000 Oxford printing; the Sources entries for Gibson (vol. 23, pp. 389-407) and Shannon 1951 (vol. 30, pp. 50-64) carry volume and page data that are not in the brief. Also a likely query: "Hartley, in 1928" and the sender's-side wording are paraphrases of Pierce pp. 39-40 and Shannon p. 1, since Hartley's own paper is unseen.
+1. **Step 6: "repeatedly join the two rarest outcomes" is ours, not from the sources.** It is the Huffman rule; the notebook runs it and the bound holds on 1,050 random share vectors, but no brief unit states it. The page labels it "ours and not from our sources" (see `requests.md` item 5).
+2. **Lens 2 and the Gibson sentence.** The post says the sentence is a premise in an argument about grammatical gender (p. 11), that the two cited studies are unseen, and that his word is predictability. A reviewer may still read our "Surprisal is built from a share" in the link line as asserting a tie between predictability and surprisal; the page says the sentence does not claim it.
+3. **The café's "stops at the first yes" and "fixed in advance".** The card is a decision tree written down before the day, so each next question depends on the earlier answers. Boundary 6 says so, and says a real barista can adapt live; a reviewer may ask whether "a transmitter that sends a ticket cannot hear the receiver" is a claim about Shannon's diagram (it is our gloss, marked ours).
+4. **Layer 5, Move 1.** The test for an issue is ours, labelled so; the Mills quotes are cut at the sentence ends, with "The very structure of opportunities has collapsed" added on p. 9. The link from Pierce p. 267 (art) to model-priced surprisal is labelled our metaphor.
+5. **Editions and bibliography.** Cover and Thomas pages are the 1991 first edition; Pierce pages the 1961 first edition (provenance decision still open, `requests.md`); Gibson pages are those of a corrected proof, and the volume and page range were dropped because our copy says "Vol. xx"; Mills pages are the 2000 Oxford printing.
 
-Also worth a second look: the claim "Shannon's 1948 paper uses neither word for one outcome (our search of the whole text)" rests on the S2 search; and "a share of 0.3 would cost 1.74" is our log, not a source figure.
+Also worth a second look: "a share of 0.3 would cost 1.74" and "powers of one half cost whole numbers" are our arithmetic; the 12 : 12 : 0 split is our count; the weighing check "never balance" cites MacKay p. 68.
 
 ## Deviations from the outline
-- **Length cuts to reach 7,459 words.** Pierce's "ten versus a million" sentence (unit 22) was dropped from layer 1; the "four times" trap box moved into the Nyquist fold-out; the Wenglish, Nyquist, 0.7-village, Shannon-properties, names, Mills-on-counting and lens-limits material sits in fold-outs; two check-yourself blocks (surprisal of snow, "why is EQ exactly H") were cut as duplicates of the text just above them; the estimation table is kept but the notebook's sample-text number was dropped from the page.
-- **Layer 3 is seven sections, not one**, so that each step is its own audio chapter and can be looped. Section ids: village (with step 1), surprisal, entropy, weighing, submarine, roles, nothalves. Layer 4 is three sections: answer (with 4a), lenses (4b), fails (4c). The audio script has 15 chapters with the same ids.
-- **E9 (script average) moved into step 3** so that the widget's "script" line and the 2.25 are defined where the reader meets them. E6 stays in step 7.
-- **W3 (the surprisal curve) sits in step 2**, after the check that uses MacKay's table.
-- **Collaboration tie** uses no named index ("Shannon diversity index" is not in the brief): the same sum applies to shares of topics or ties, labelled a connection.
-- **Mills.** All four moves are used, with Mills' own terms and pages from units 16-21; the "balance" lines (ch. 3, p. 73) are in a fold-out with the p. 215 order-of-work sentence.
-- **No `english/english.json`**, as instructed; the audio script has no English-pack material.
+- **Step numbering.** The weighing is no longer a step, so layer 3 has six steps (equal chances, surprisal, entropy, submarine, roles, not halves); audio chapters: hook, cafe, village, surprisal, entropy, submarine, roles, nothalves, answer, lenses, fails, imagination, turn, recall.
+- **Layer 5 has three moves in the text** (trouble and issue; extremes and scale; another discipline's eyes). Move 4, comparison, is named in research question 2.
+- **The guess g2 sits in step 6**, about a village the reader has not seen (0.7, 0.1, 0.1, 0.1); the other two guesses are as before. g1 says "(answered in step 4)".
+- **The step 2 plot lost its second curve**; the two-outcome curve is not shown anywhere in the post.
+- **The stepper table of the submarine became a slider** (`lab`), the same numbers as rows.
+- Outline.md was not updated for the new step numbering; it is an S3 document.
 
 ## What was not run or not checked
-- No audio was recorded (Kunhao reviews first).
+- No audio was recorded (Kunhao reviews first). The audio script is about 7,500 words including headings (the first draft was about 8,400), roughly 45 minutes: shorter than before, longer than the critic's 35–40.
 - No language model, no real corpus. The notebook's sample text is a paragraph we wrote.
-- The estimation table is from one seeded run of 2,000 repeats per n; the standard errors are in `results.md` (0.0071, 0.0037, 0.0019, 0.0006).
+- Python versions other than 3.12.12 were not tried.
 - The Chinese text and audio script were not produced at this stage.
