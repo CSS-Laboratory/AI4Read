@@ -5,12 +5,11 @@ village	Shannon 1948, p. 18	shannon1948	named
 village	Cover &amp; Thomas 1991, pp. 14–15	cover1991	named
 village	Shannon 1948, p. 18	shannon1948	named
 village	Shannon 1948, p. 1	shannon1948	named
-village	Pierce 1961, p. 24	pierce1961	named
 village	MacKay 2003, p. 70	mackay2003	named
 village	Shannon 1948, p. 1	shannon1948	named
 village	MacKay 2003, p. 74	mackay2003	named
 village	Cover &amp; Thomas 1991, p. 5	cover1991	named
-village	Pierce 1961, p. 36	pierce1961	named
+village	Pierce 1961, pp. 35–36	pierce1961	named
 village	Pierce 1961, p. 38	pierce1961	named
 village	Pierce 1961, p. 38	pierce1961	named
 village	Pierce 1961, p. 40	pierce1961	named
@@ -22,15 +21,12 @@ surprisal	Cover &amp; Thomas 1991, p. 15	cover1991	named
 surprisal	MacKay 2003, p. 32	mackay2003	named
 surprisal	Gibson et al. 2019, p. 4	gibson2019	named
 surprisal	MacKay 2003, p. 67	mackay2003	named
-surprisal	MacKay 2003, p. 68	mackay2003	named
-surprisal	Gibson et al. 2019, p. 4	gibson2019	named
 entropy	MacKay 2003, p. 32	mackay2003	named
 entropy	Cover &amp; Thomas 1991, p. 15	cover1991	named
 entropy	MacKay 2003, p. 33	mackay2003	named
 entropy	Shannon 1948, p. 11	shannon1948	named
 entropy	Shannon 1948, p. 18	shannon1948	named
 entropy	Cover &amp; Thomas 1991, p. 13	cover1991	named
-entropy	Cover &amp; Thomas 1991, p. 86	cover1991	named
 entropy	MacKay 2003, p. 33	mackay2003	named
 entropy	Shannon 1948, p. 10	shannon1948	named
 entropy	MacKay 2003, p. 66	mackay2003	named
@@ -43,7 +39,6 @@ entropy	Shannon 1948, p. 14	shannon1948	named
 submarine	MacKay 2003, pp. 70–72	mackay2003	named
 submarine	MacKay 2003, p. 72	mackay2003	named
 submarine	MacKay 2003, p. 71	mackay2003	named
-submarine	MacKay 2003, p. 72	mackay2003	named
 submarine	MacKay 2003, p. 71	mackay2003	named
 submarine	MacKay 2003, pp. 72–73	mackay2003	named
 submarine	MacKay 2003, p. 73	mackay2003	named
@@ -55,13 +50,14 @@ roles	Shannon 1951, pp. 54–55	shannon1951	named
 roles	Shannon 1951, p. 54	shannon1951	named
 roles	Shannon 1951, p. 55	shannon1951	named
 roles	Shannon 1951, p. 55	shannon1951	named
+nothalves	MacKay 2003, p. 99	mackay2003	named
 nothalves	Cover &amp; Thomas 1991, pp. 92–93	cover1991	named
 nothalves	Cover &amp; Thomas 1991, p. 101	cover1991	named
 nothalves	Cover &amp; Thomas 1991, p. 94	cover1991	named
 nothalves	MacKay 2003, p. 99	mackay2003	named
 nothalves	Cover &amp; Thomas 1991, p. 94	cover1991	named
 nothalves	MacKay 2003, pp. 100–101	mackay2003	named
-nothalves	Cover &amp; Thomas 1991, pp. 96–97	cover1991	named
+nothalves	Cover &amp; Thomas 1991, p. 97	cover1991	named
 nothalves	MacKay 2003, p. 100	mackay2003	named
 nothalves	Cover &amp; Thomas 1991, p. 15	cover1991	named
 nothalves	Cover &amp; Thomas 1991, p. 86	cover1991	named
@@ -99,11 +95,8 @@ fails	Shannon 1948, p. 10	shannon1948	named
 fails	Pierce 1961, p. 81	pierce1961	named
 fails	Shannon 1948, p. 18	shannon1948	named
 fails	Gibson et al. 2019, p. 14	gibson2019	named
-fails	Cover &amp; Thomas 1991, p. 94	cover1991	named
 imagination	Mills 1959, pp. 4–6	mills1959	named
 imagination	Mills 1959, p. 212	mills1959	named
-imagination	Mills 1959, p. 5	mills1959	named
-imagination	Pierce 1961, p. 24	pierce1961	named
 imagination	Mills 1959, p. 213	mills1959	named
 imagination	Mills 1959, p. 215	mills1959	named
 imagination	Mills 1959, p. 8	mills1959	named
@@ -111,6 +104,8 @@ imagination	Mills 1959, p. 9	mills1959	named
 imagination	Mills 1959, pp. 8–9	mills1959	named
 imagination	Mills 1959, p. 214	mills1959	named
 imagination	Gibson et al. 2019, p. 11	gibson2019	named
+imagination	Mills 1959, p. 5	mills1959	named
+imagination	Pierce 1961, p. 24	pierce1961	named
 imagination	Mills 1959, p. 73	mills1959	named
 imagination	Mills 1959, p. 215	mills1959	named
 imagination	Mills 1959, p. 214	mills1959	named

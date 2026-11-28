@@ -63,3 +63,6 @@ Also worth a second look: the “ergodic” gloss is ours (not from Pierce p. 59
 - No language model, no real corpus. The notebook's sample text is a paragraph we wrote.
 - Python versions other than 3.12.12 were not tried.
 - The Chinese text and audio script were not produced at this stage.
+
+## Round 3 polish (S5 gate passed; minors only)
+All 26 round-3 IDs answered in `review/response-3.md`. Main text 7,033 words. Residual spots a checker may probe: the two "our reading" reasons in step 6 (why the two rarest join; why a join adds a question), anchored on MacKay p. 99 (longest tickets equal length, differ only in the last digit); the Move 1 reading of share 0 (infinite worth, "refuted by one snowfall", ours); Move 3's final sentence (our prediction, labelled); recall card 4's 0.3, 0.3, 0.2, 0.2 case (our Python); the "do not change" gloss attributed to MacKay pp. 100-101.

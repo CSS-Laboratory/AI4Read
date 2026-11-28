@@ -84,3 +84,12 @@ description: Every number in the text of post 04 and where it came from (check.m
 
 ## Numbers the post does not state (so that nobody adds them)
 Pierce's "15 per cent" for Morse (not used), Shannon's 69% and 77% from 1951 (not used, brief unit 14), MacKay's 4.11 and Shannon's 4.03 (dropped from notebook exercise 5 at round 2), any unemployment rate from Mills' example (the brief says not to state one), and Pierce's ten-versus-a-million sentence with its 3.32 and 19.93 bits (not used).
+
+## Round-3 polish additions
+| Number | Where | Value | Source |
+|---|---|---|---|
+| Step 6 table: village button 1, 2, 3, 3 → 1.750 (H 1.750); first two joined each time 3, 3, 2, 1 → 2.625; 0.7 day 1, 2, 3, 3 → 1.500 (H 1.357); equal day 2, 2, 2, 2 → 2.000 | step 6 table | as listed | check.mjs `card-lab` (`{"auto":true}`, `{"joins":[[0,1],[0,1],[0,1]]}`, preset 1 and 2 with `auto`); the 0.7 tie is the page's "which 0.1 word gets 2 is a tie" |
+| Rain's ticket against its worth on the 0.7 day: 1 − 0.515 = 0.485 | step 6 | 0.485 | python: 1 − log2(1/0.7) = 0.4854 |
+| The day's gap, EQ − H = 1.500 − 1.357 | step 6 | 0.143 | python: 1.5 − 1.35678 = 0.1432 (replaces the old "gap, 0.143" after rain's worth) |
+| Recall card 4: shares 0.3, 0.3, 0.2, 0.2 | recall 4 | Huffman lengths 2, 2, 2, 2; EQ* = 2.000; H = 1.971 | python (heapq Huffman; H = sum p log2(1/p) = 1.97095) |
+| Nyquist 1924 page | fold-out box-nyquist | Pierce 1961, pp. 35–36 (date on p. 35, formula on p. 36) | Pierce; verify-3 V3-06 |
