@@ -276,7 +276,7 @@
     cfg.presets.forEach((pr, i) => {
       const b = el("button", "", esc(pr.label)); b.type = "button"; b.setAttribute("aria-pressed", "false");
       b.addEventListener("click", () => {
-        Object.entries(pr.values).forEach(([k, v]) => { vals[k] = v; const p = cfg.params.findIndex((q) => q.id === k); const inp = host.querySelectorAll(".w-sliders input")[p]; if (inp) { inp.value = v; inp.dispatchEvent(new Event("input")); } });
+        Object.entries(pr.values).forEach(([k, v]) => { vals[k] = v; const p = cfg.params.findIndex((q) => q.id === k); const inp = host.querySelectorAll(".w-sliders input")[p]; if (inp) { inp.value = v; inp.dispatchEvent(new Event("input")); } vals[k] = v; });   // keep the exact preset value even if the slider snaps it to its step
         seg.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); apply();
       });
       seg.append(b);
