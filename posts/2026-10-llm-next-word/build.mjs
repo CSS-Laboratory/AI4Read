@@ -108,3 +108,78 @@ ${html}
   fs.writeFileSync(path.join(OUT, "context.json"), JSON.stringify({ slug: SLUG, brief }));
   console.log("site build →", OUT);
 }
+
+// ---------- Blog builds (2026-11-28; same layout as site/ai4read/build-post.mjs --public / --owner) ----------
+{
+  const SLUG = path.basename(D), SITE = path.join(D, "..", "..", "site", "ai4read"), ORIGIN = "https://khyang-lab.org";
+  const TITLE = "What does an LLM know when it predicts the next word?";
+  const SUMMARY = "Next-word prediction through information theory, linear algebra, Bayesian inference, philosophy of meaning and theory of mind.";
+  const PM = (() => { try { return JSON.parse(fs.readFileSync(path.join(SITE, "posts-meta.json"), "utf8")).posts.find((p) => p.slug === SLUG) || {}; } catch { return {}; } })();
+  const escA = (t) => String(t || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+  const copyDir = (src, dst, keep) => { if (!fs.existsSync(src)) return; fs.mkdirSync(dst, { recursive: true }); for (const f of fs.readdirSync(src)) if (keep(f)) fs.copyFileSync(path.join(src, f), path.join(dst, f)); };
+  const common = (OUT, withAnnotate) => {
+    fs.writeFileSync(path.join(OUT, "post.css"), rd("src/style.css") + "\n" + rd("src/annotate.css"));
+    fs.writeFileSync(path.join(OUT, "data.js"), `window.CHAPTERS=${JSON.stringify(chapters)};`);
+    for (const f of withAnnotate ? ["app.js", "figs.js", "annotate.js"] : ["app.js", "figs.js"]) fs.copyFileSync(path.join(D, "src", f), path.join(OUT, f));
+    copyDir(path.join(D, "audio"), path.join(OUT, "audio"), (f) => f.endsWith(".mp3") || f === "chapters.json");
+    copyDir(path.join(D, "notebook"), path.join(OUT, "notebook"), (f) => f.endsWith(".ipynb") || f.endsWith(".py") || f === "README.md");
+  };
+  const page = (head, body, scripts) => `<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+${head}
+<meta name="ai4read-post" content="${SLUG}">
+<link rel="stylesheet" href="post.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}img{max-width:100%}</style>
+</head><body>
+${body}
+${scripts}
+</body></html>
+`;
+  const words = html.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+  const meta = { slug: SLUG, title: TITLE, date: "2026-10-15", summary: SUMMARY, series: PM.series || null, field: PM.field || null, tags: PM.tags || [],
+    status: PM.status || "draft", published_at: PM.published_at || null, reading_minutes: Math.max(1, Math.round(words / 200)),
+    audio_minutes: Math.round(chapters.reduce((a, c) => a + (c.dur || 0), 0) / 60), og_image: PM.og_image || null, chapters: chapters.length, built: new Date().toISOString() };
+  if (process.argv.includes("--public")) {
+    const OUT = path.join(SITE, "dist-public", SLUG), SH = path.join(SITE, "dist-public", "_shared");
+    fs.rmSync(OUT, { recursive: true, force: true }); fs.mkdirSync(OUT, { recursive: true }); fs.mkdirSync(SH, { recursive: true });
+    common(OUT, false);
+    fs.copyFileSync(path.join(SITE, "shared", "site-shim-public.js"), path.join(SH, "site-shim-public.js"));
+    const url = `${ORIGIN}/blog/${SLUG}/`;
+    const head = `<title>${escA(TITLE)} · AI4Read · CSS Lab</title>
+<meta name="description" content="${escA(SUMMARY)}">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="article"><meta property="og:title" content="${escA(TITLE)}">
+<meta property="og:description" content="${escA(SUMMARY)}"><meta property="og:url" content="${url}">`;
+    fs.writeFileSync(path.join(OUT, "index.html"), page(head, html, `<script src="/blog/_shared/site-shim-public.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="figs.js"></script>`));
+    fs.writeFileSync(path.join(OUT, "post.json"), JSON.stringify({ ...meta, url: `/blog/${SLUG}/` }, null, 1));
+    const bad = fs.readFileSync(path.join(OUT, "index.html"), "utf8").match(/\/api\/ai4read|annotate\.js|audio-zh/g);
+    if (bad) { console.error("public build contains owner references:", [...new Set(bad)]); process.exitCode = 1; }
+    console.log("public build →", OUT);
+  }
+  if (process.argv.includes("--owner")) {
+    const OUT = path.join(SITE, "dist-owner", SLUG), SH = path.join(SITE, "dist-owner", "_shared");
+    fs.rmSync(OUT, { recursive: true, force: true }); fs.mkdirSync(OUT, { recursive: true }); fs.mkdirSync(path.join(SH, "lib"), { recursive: true });
+    common(OUT, true);
+    copyDir(path.join(D, "audio-zh"), path.join(OUT, "audio-zh"), (f) => f.endsWith(".mp3") || f === "chapters.json");
+    fs.copyFileSync(path.join(SITE, "shared", "site-shim.js"), path.join(SH, "site-shim.js"));
+    for (const [src, dst] of [["marked/marked.min.js", "marked.min.js"], ["dompurify/dist/purify.min.js", "purify.min.js"], ["katex/dist/katex.min.js", "katex.min.js"]])
+      fs.copyFileSync(require.resolve(src), path.join(SH, "lib", dst));
+    const S = "/blog/_owner/_shared";
+    fs.writeFileSync(path.join(OUT, "index.html"), page(`<meta name="robots" content="noindex,nofollow">\n<title>What Does an LLM Know? · AI4Read (owner)</title>`,
+      html + `\n<script type="application/json" id="brief-data">${JSON.stringify(brief).replace(/</g, "\\u003c")}</script>`, `<script src="${S}/site-shim.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="figs.js"></script>
+<script src="${S}/lib/marked.min.js"></script>
+<script src="${S}/lib/purify.min.js"></script>
+<script src="${S}/lib/katex.min.js"></script>
+<script src="annotate.js"></script>`));
+    fs.writeFileSync(path.join(OUT, "post.json"), JSON.stringify({ ...meta, url: `/blog/_owner/${SLUG}/`, zh: false }, null, 1));
+    fs.writeFileSync(path.join(OUT, "context.json"), JSON.stringify({ slug: SLUG, brief }));
+    console.log("owner build →", OUT);
+  }
+}
