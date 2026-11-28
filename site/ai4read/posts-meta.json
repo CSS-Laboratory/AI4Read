@@ -1,6 +1,6 @@
 {
   "schema": "ai4read.posts-meta/1",
-  "note": "Blog metadata for khyang-lab.org (2026-11-28). New posts carry the same fields in posts/<slug>/post.json. Tags: field names as in CHARTER §3, plus topic tags. Languages: 'en' public; 'zh' owner only. tag_names_ja: Japanese labels for /ja/blog/ filters (draft by Claude; Kunhao to check).",
+  "note": "Blog metadata for khyang-lab.org (2026-11-28). New posts carry the same fields in posts/<slug>/post.json. Tags: field names as in CHARTER §3, plus topic tags. Languages: 'en' public; 'zh' owner only. tag_names_ja: Japanese labels for /ja/blog/ filters (checked by Kunhao 2026-11-28, via the website session); this file is the source of truth.",
   "tag_vocabulary": {
     "fields": [
       "Information theory",
