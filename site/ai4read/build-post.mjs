@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 // Generic AI4Read post builder (posts 02+). Post 01 keeps its own build.mjs.
-//   node site/ai4read/build-post.mjs posts/<slug> [--site]
+//   node site/ai4read/build-post.mjs posts/<slug> [--site] [--public] [--owner]
+//   --site    legacy /ai4read/ build → site/ai4read/dist/<slug>/
+//   --public  blog build for everyone → site/ai4read/dist-public/<slug>/ (served at /blog/<slug>/): English only,
+//             no owner code (no annotate.js, notes, Ask-Claude, 中 audio), no /api/ai4read requests, indexable, canonical + OG
+//   --owner   owner edition → site/ai4read/dist-owner/<slug>/ (served at /blog/_owner/<slug>/ behind Access):
+//             full features, Chinese audio (audio-zh/) and Chinese text (zh/, from src/content-zh.html) when present
 // Inputs in the post folder:
 //   post.json            {title, short, num, date, summary, cites:[[regex,key],...], names:[[regex,key],...], code:{id:file}}
 //   src/content.html     sections (template markup + component widgets)
@@ -23,29 +28,35 @@ fs.mkdirSync(path.join(D, "review"), { recursive: true });
 // citations → data-src (named cite, else nearest author mention earlier in the same section, else inherited)
 const KEYS = (cfg.cites || []).map(([re, k]) => [new RegExp(re), k]);
 const NAMES = (cfg.names || cfg.cites || []).map(([re, k]) => [new RegExp(re, "g"), k]);
-const citeLog = []; {
-  const secStarts = [...html.matchAll(/<section id="([^"]+)"/g)].map((m) => [m.index, m[1]]);
+function mapCites(h, log) {
+  const secStarts = [...h.matchAll(/<section id="([^"]+)"/g)].map((m) => [m.index, m[1]]);
   const secAt = (i) => { let s = ["", 0]; for (const [p, id] of secStarts) if (p <= i) s = [id, p]; return s; };
   const lastNamed = {};
-  html = html.replace(/<span class="cite">([^<]*)<\/span>/g, (m, txt, off) => {
+  return h.replace(/<span class="cite">([^<]*)<\/span>/g, (m, txt, off) => {
     const [sec, sp] = secAt(off); let key = null, how = "named";
     const hit = KEYS.find(([re]) => re.test(txt));
     if (hit) key = hit[1];
-    else { const before = html.slice(sp, off); let best = -1;
+    else { const before = h.slice(sp, off); let best = -1;
       for (const [re, k] of NAMES) { re.lastIndex = 0; let mm; while ((mm = re.exec(before))) if (mm.index > best) { best = mm.index; key = k; } }
       how = "prose"; if (!key) { key = lastNamed[sec] || null; how = "inherited"; } }
     if (hit) lastNamed[sec] = key;
-    citeLog.push([sec, txt, key || "", how]);
-    return key ? `<span class="cite" data-src="${key}" tabindex="0" role="button">${txt}</span>` : m; }); }
+    log.push([sec, txt, key || "", how]);
+    return key ? `<span class="cite" data-src="${key}" tabindex="0" role="button">${txt}</span>` : m; });
+}
+const citeLog = []; html = mapCites(html, citeLog);
 fs.writeFileSync(path.join(D, "review", "cite-map.tsv"), citeLog.map((r) => r.join("\t")).join("\n"));
 const unmapped = citeLog.filter((r) => !r[2]).length;
 const missingSrc = [...new Set(citeLog.map((r) => r[2]).filter(Boolean))].filter((k) => !html.includes(`id="src-${k}"`));
 
+function renderMath(html) {
+  html = html.replace(/\\\[([\s\S]+?)\\\]/g, (_, t) => `<div class="mjx">${render(t.trim(), true)}</div>`);
+  html = html.replace(/\\\(([\s\S]+?)\\\)/g, (_, t) => render(t.trim(), false));
+  for (const [id, f] of Object.entries(cfg.code || {})) html = html.replace(`<code id="${id}"></code>`, `<code id="${id}" class="hljs language-python">${hljs.highlight(rd(f), { language: "python" }).value}</code>`);
+  return html;
+}
 const render = (tex, display) => { try { return katex.renderToString(tex, { displayMode: display, output: "mathml", throwOnError: true, strict: "ignore" }); }
   catch (e) { errors++; console.error("KaTeX:", e.message, "\n  in:", tex); return `<code>${tex}</code>`; } };
-html = html.replace(/\\\[([\s\S]+?)\\\]/g, (_, t) => `<div class="mjx">${render(t.trim(), true)}</div>`);
-html = html.replace(/\\\(([\s\S]+?)\\\)/g, (_, t) => render(t.trim(), false));
-for (const [id, f] of Object.entries(cfg.code || {})) html = html.replace(`<code id="${id}"></code>`, `<code id="${id}" class="hljs language-python">${hljs.highlight(rd(f), { language: "python" }).value}</code>`);
+html = renderMath(html);
 
 let chapters = [];
 try { chapters = JSON.parse(rd("audio/chapters.json")).map((c) => ({ id: c.id, title: c.title, dur: c.dur, src: `audio/${c.id}.mp3` })); } catch { console.error("no chapters yet"); }
@@ -139,4 +150,97 @@ ${briefTag}
   fs.writeFileSync(path.join(OUT, "post.json"), JSON.stringify({ slug: SLUG, title: cfg.title, date: cfg.date, summary: cfg.summary, chapters: chapters.length, built: new Date().toISOString() }, null, 1));
   fs.writeFileSync(path.join(OUT, "context.json"), JSON.stringify({ slug: SLUG, brief }));
   console.log("site build →", OUT);
+}
+
+// ---------------------------------------------------------------- blog builds (2026-11-28, website plan)
+const SITE_DIR = path.join(ROOT, "site", "ai4read"), ORIGIN = "https://khyang-lab.org";
+const escA = (t) => String(t || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+function copyDir(src, dst, keep) { if (!fs.existsSync(src)) return 0; let n = 0; fs.mkdirSync(dst, { recursive: true });
+  for (const f of fs.readdirSync(src)) if (keep(f)) { fs.copyFileSync(path.join(src, f), path.join(dst, f)); n++; } return n; }
+function blogPage({ body, lang, shared, owner, head, scripts }) {   // the brief (Ask-Claude context) ships in the owner edition only
+  return `<!doctype html>
+<html lang="${lang}"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+${head}
+<meta name="ai4read-post" content="${SLUG}">
+<link rel="stylesheet" href="${owner && lang === "zh" ? "../" : ""}post.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}img{max-width:100%}</style>
+</head><body>
+${body}
+${owner ? briefTag : ""}
+${scripts}
+</body></html>
+`;
+}
+function writeCommon(OUT, withAnnotate) {
+  fs.writeFileSync(path.join(OUT, "post.css"), css);
+  fs.writeFileSync(path.join(OUT, "data.js"), dataJS);
+  fs.writeFileSync(path.join(OUT, "app.js"), js.core);
+  fs.writeFileSync(path.join(OUT, "figs.js"), js.common + "\n" + js.extra);
+  fs.writeFileSync(path.join(OUT, "widgets.js"), js.widgets);
+  if (withAnnotate) fs.writeFileSync(path.join(OUT, "annotate.js"), js.annotate);
+  copyDir(path.join(D, "audio"), path.join(OUT, "audio"), (f) => f.endsWith(".mp3") || f === "chapters.json");
+  copyDir(path.join(D, "notebook"), path.join(OUT, "notebook"), (f) => f.endsWith(".ipynb") || f.endsWith(".py") || f === "README.md");
+}
+const PM = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, "site", "ai4read", "posts-meta.json"), "utf8")).posts.find((p) => p.slug === SLUG) || {}; } catch { return {}; } })();
+for (const k of ["series", "field", "tags", "status", "published_at", "og_image"]) if (cfg[k] == null && PM[k] != null) cfg[k] = PM[k];   // older posts: metadata from posts-meta.json
+const meta = { slug: SLUG, title: cfg.title, date: cfg.date, summary: cfg.summary, series: cfg.series || null, field: cfg.field || null,
+  tags: cfg.tags || [], status: cfg.status || "draft", published_at: cfg.published_at || null,
+  reading_minutes: Math.max(1, Math.round(html.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length / 200)),
+  audio_minutes: Math.round(chapters.reduce((a, c) => a + (c.dur || 0), 0) / 60), og_image: cfg.og_image || null,
+  chapters: chapters.length, built: new Date().toISOString() };
+if (process.argv.includes("--public")) {
+  const OUT = path.join(SITE_DIR, "dist-public", SLUG), SH = path.join(SITE_DIR, "dist-public", "_shared");
+  fs.rmSync(OUT, { recursive: true, force: true }); fs.mkdirSync(OUT, { recursive: true }); fs.mkdirSync(SH, { recursive: true });
+  writeCommon(OUT, false);
+  fs.copyFileSync(path.join(SITE_DIR, "shared", "site-shim-public.js"), path.join(SH, "site-shim-public.js"));
+  if (cfg.og_image && has(cfg.og_image)) fs.copyFileSync(path.join(D, cfg.og_image), path.join(OUT, path.basename(cfg.og_image)));
+  const url = `${ORIGIN}/blog/${SLUG}/`, og = cfg.og_image ? `${url}${path.basename(cfg.og_image)}` : null;
+  const head = `<title>${escA(cfg.title)} · AI4Read · CSS Lab</title>
+<meta name="description" content="${escA(cfg.summary)}">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="article"><meta property="og:title" content="${escA(cfg.title)}">
+<meta property="og:description" content="${escA(cfg.summary)}"><meta property="og:url" content="${url}">${og ? `\n<meta property="og:image" content="${og}">` : ""}`;
+  const scripts = `<script src="/blog/_shared/site-shim-public.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="widgets.js"></script>
+<script src="figs.js"></script>`;
+  fs.writeFileSync(path.join(OUT, "index.html"), blogPage({ body: html, lang: "en", owner: false, head, scripts }));
+  fs.writeFileSync(path.join(OUT, "post.json"), JSON.stringify({ ...meta, url: `/blog/${SLUG}/` }, null, 1));
+  const bad = fs.readFileSync(path.join(OUT, "index.html"), "utf8").match(/\/api\/ai4read|annotate\.js|audio-zh/g);
+  if (bad) { console.error("public build contains owner references:", [...new Set(bad)]); process.exitCode = 1; }
+  console.log("public build →", OUT);
+}
+if (process.argv.includes("--owner")) {
+  const OUT = path.join(SITE_DIR, "dist-owner", SLUG), SH = path.join(SITE_DIR, "dist-owner", "_shared");
+  fs.rmSync(OUT, { recursive: true, force: true }); fs.mkdirSync(OUT, { recursive: true }); fs.mkdirSync(path.join(SH, "lib"), { recursive: true });
+  writeCommon(OUT, true);
+  copyDir(path.join(D, "audio-zh"), path.join(OUT, "audio-zh"), (f) => f.endsWith(".mp3") || f === "chapters.json");
+  fs.copyFileSync(path.join(SITE_DIR, "shared", "site-shim.js"), path.join(SH, "site-shim.js"));
+  for (const [src, dst] of [["marked/marked.min.js", "marked.min.js"], ["dompurify/dist/purify.min.js", "purify.min.js"], ["katex/dist/katex.min.js", "katex.min.js"]])
+    fs.copyFileSync(require.resolve(src), path.join(SH, "lib", dst));
+  const S = "/blog/_owner/_shared";
+  const scripts = (up) => `<script src="${S}/site-shim.js"></script>
+<script src="${up}data.js"></script>
+<script src="${up}app.js"></script>
+<script src="${up}widgets.js"></script>
+<script src="${up}figs.js"></script>
+<script src="${S}/lib/marked.min.js"></script>
+<script src="${S}/lib/purify.min.js"></script>
+<script src="${S}/lib/katex.min.js"></script>
+<script src="${up}annotate.js"></script>`;
+  const head = (t) => `<meta name="robots" content="noindex,nofollow">\n<title>${escA(t)} · AI4Read (owner)</title>`;
+  fs.writeFileSync(path.join(OUT, "index.html"), blogPage({ body: html, lang: "en", owner: true, head: head(cfg.short), scripts: scripts("") }));
+  if (has("src/content-zh.html")) {   // owner-only Chinese text (WRITING §8b)
+    const zlog = []; const zh = renderMath(mapCites(rd("src/content-zh.html"), zlog));
+    fs.mkdirSync(path.join(OUT, "zh"), { recursive: true });
+    const zch = chapters.map((c) => ({ ...c, src: "../" + c.src }));   // audio lives one level up
+    fs.writeFileSync(path.join(OUT, "zh", "data.js"), `window.POST=${JSON.stringify({ ...POST, audioBase: "../", defaultLang: "zh" })};window.CHAPTERS=${JSON.stringify(zch)};`);
+    fs.writeFileSync(path.join(OUT, "zh", "index.html"), blogPage({ body: zh, lang: "zh-Hans", owner: true, head: head(cfg.title_zh || cfg.short), scripts: scripts("../").replace('src="../data.js"', 'src="data.js"') }));
+    console.log(`zh page · cites ${zlog.length} (unmapped ${zlog.filter((r) => !r[2]).length})`);
+  }
+  fs.writeFileSync(path.join(OUT, "post.json"), JSON.stringify({ ...meta, url: `/blog/_owner/${SLUG}/`, zh: has("src/content-zh.html") }, null, 1));
+  fs.writeFileSync(path.join(OUT, "context.json"), JSON.stringify({ slug: SLUG, brief }));
+  console.log("owner build →", OUT);
 }

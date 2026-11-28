@@ -21,3 +21,7 @@ posts/*/sources/*
 !posts/*/sources/MANIFEST.md
 # Chinese reference audio (owner only; published to the private R2 prefix _owner/, never to dist/)
 !posts/*/audio-zh/*.mp3
+
+# blog builds (reproducible from posts/ with build-post.mjs --public / --owner)
+site/ai4read/dist-public/
+site/ai4read/dist-owner/

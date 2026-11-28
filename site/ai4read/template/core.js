@@ -119,9 +119,9 @@ function paint(){$("#p-title").textContent=`${P.i+1}/${CH.length} · ${CH[P.i].t
 function setLang(l){if(l===P.lang||(l==="zh"&&!CH_ZH))return;const was=isPlaying()||(P.engine!=="wa"&&!audio.paused);pause();P.lang=l;CH=l==="zh"?CH_ZH:CH_EN;LS.set("lang",l);load(P.i,was)}
 /* Owner check: claude.ai gives user.isOwner(); on the website the shim answers from /api/ai4read/me. Nothing is fetched otherwise. */
 (async()=>{if(!CH_EN.length)return;try{if(!(window.claude&&window.claude.use))return;const U=await window.claude.use("user");if(!U||!(await U.isOwner()))return;
-  const r=await fetch("audio-zh/chapters.json",{credentials:"same-origin"});if(!r.ok)return;const z=await r.json();const m=new Map(z.map(c=>[c.id,c]));
-  if(!CH_EN.every(c=>m.has(c.id)))return;CH_ZH=CH_EN.map(c=>({id:"zh-"+c.id,base:c.id,title:m.get(c.id).title,dur:m.get(c.id).dur,src:"audio-zh/"+c.id+".mp3"}));
-  const lg=$("#p-lang");lg.hidden=false;lg.addEventListener("click",()=>setLang(P.lang==="zh"?"en":"zh"));if(LS.get("lang","en")==="zh")setLang("zh");paint()}catch(e){}})();
+  const AB=(window.POST&&POST.audioBase)||"";const r=await fetch(AB+"audio-zh/chapters.json",{credentials:"same-origin"});if(!r.ok)return;const z=await r.json();const m=new Map(z.map(c=>[c.id,c]));
+  if(!CH_EN.every(c=>m.has(c.id)))return;CH_ZH=CH_EN.map(c=>({id:"zh-"+c.id,base:c.id,title:m.get(c.id).title,dur:m.get(c.id).dur,src:AB+"audio-zh/"+c.id+".mp3"}));
+  const lg=$("#p-lang");lg.hidden=false;lg.addEventListener("click",()=>setLang(P.lang==="zh"?"en":"zh"));if(LS.get("lang",(window.POST&&POST.defaultLang)||"en")==="zh")setLang("zh");paint()}catch(e){}})();
 if(CH.length){
   $("#p-play").addEventListener("click",()=>{if(P.engine==="wa")ac();(isPlaying()||(P.engine!=="wa"&&!audio.paused))?pause():play()});
   ["play","pause","playing","waiting"].forEach(ev=>audio.addEventListener(ev,paint));audio.addEventListener("ended",ended);
@@ -158,7 +158,7 @@ function openChapters(){openSheet(inn=>{inn.innerHTML=`<div class="sheet-h"><b>C
   bAll.addEventListener("click",async()=>{bAll.disabled=true;let ok=0;for(let i=0;i<CH.length;i++){st.textContent=`Loading chapter ${i+1} of ${CH.length}…`;if(await cacheOne(i))ok++}
     st.textContent=ok===CH.length?"All chapters are loaded. They keep playing without signal while this page stays open.":`Loaded ${ok} of ${CH.length} chapters. Try again when the signal is better.`;bAll.disabled=false});
   bSave.addEventListener("click",async()=>{bSave.disabled=true;st.textContent="Preparing the MP3…";
-    try{const zh=P.lang==="zh";const r=await fetch(zh?"audio-zh/all.mp3":"audio/all.mp3");if(!r.ok)throw new Error("fetch");const b=await r.blob();const nm=window.POST?POST.mp3Name:"AI4Read.mp3";const res=await DL.save({filename:zh?nm.replace(/\.mp3$/,"-zh.mp3"):nm,data:b});st.textContent=res&&res.status==="saved"?"Saved. Play it from your Files or music app, even offline.":"Sent to your device."}
+    try{const zh=P.lang==="zh";const AB2=(window.POST&&POST.audioBase)||"";const r=await fetch(AB2+(zh?"audio-zh/all.mp3":"audio/all.mp3"));if(!r.ok)throw new Error("fetch");const b=await r.blob();const nm=window.POST?POST.mp3Name:"AI4Read.mp3";const res=await DL.save({filename:zh?nm.replace(/\.mp3$/,"-zh.mp3"):nm,data:b});st.textContent=res&&res.status==="saved"?"Saved. Play it from your Files or music app, even offline.":"Sent to your device."}
     catch(e){st.textContent=(e&&e.code==="declined")?"Not saved.":(e&&e.code==="too_large")?"The file is too large to save from here.":"Could not save the file ("+((e&&(e.code||e.message))||"error")+")."}
     bSave.disabled=false});
   const list=el("div",{class:"chlist"});

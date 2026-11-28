@@ -124,3 +124,8 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - Result: 01 39.8 min (12 ch), 02 54.4 min (14), 03 66.7 min (12); all.mp3 bitrate adaptive (40/32/24 kb/s) to stay under 16 MB.
 - Lock: player shows 中 only if `user.isOwner()` and audio-zh/chapters.json loads; site shim gains `user`; Worker/mock serve `/ai4read/<slug>/audio-zh/*` from R2 `_owner/` to owners only (404 otherwise; `_owner/` always 404); publish-r2.sh uploads to `_owner/`. Tested: owner sees and plays, student sees nothing and makes no request (dev/zh-owner-test.mjs) on all three posts.
 - Artifacts republished with `user` capability and audio-zh files (01 v12, 02 v4, 03 v2). Website prompt: site/ai4read/PROMPT-website-2026-11-04.md.
+
+## Post 04 (series 1, week 1) · "How much is a surprise worth?" (`posts/2026-12-surprise/`), first post in Claude Code (2026-11-28)
+- Kunhao: series plan OK, start week 1; asked for interactive widgets, quizzes and demo code; reviews the draft before audio. Four Layers template (CHARTER §5, WRITING §1a–b, rubric 1.1).
+- S0 + S1 planner (Sonnet, fresh; 285k tokens, 12.0 min): topic card (barista café scene, W1 weather village, 5 widgets, 2 guess-first blocks, 8 recall, 7-exercise notebook) and brief with 15 units; UNSEEN: Weaver, Hartley/Nyquist originals, reading-time papers, MacKay solutions 4.1/4.9, MacKay eq. 4.11 term, Pierce p. 22. Series-entry corrections: Hartley/Nyquist already used logs (the pain is missing probabilities); thermodynamic entropy is same form only; Gibson reports no reading-time data. Reported source errors: Cover p. 49 "1930s"; wiki/instances/twenty-questions.md (Cover §5.7 pp. 94–95).
+- S2 fact-checker (Opus, fresh) launched.
