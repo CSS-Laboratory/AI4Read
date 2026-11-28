@@ -1,0 +1,4 @@
+/* post-specific additions: the "In the café" line (layer 3) */
+.inthecafe{border-left:3px solid var(--ink);padding:2px 0 2px 12px;font-size:17px}
+ol.parts{padding-left:22px}
+ol.parts li{margin:4px 0}

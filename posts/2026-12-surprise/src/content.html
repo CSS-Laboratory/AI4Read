@@ -1,0 +1,464 @@
+<header class="masthead wrap">
+  <p class="eyebrow">AI4Read · Post 04 · Information theory, week 1 · 7 December 2026</p>
+  <h1>How much is a surprise worth?</h1>
+  <p class="lede">A surprise is worth the number of fair yes/no questions it saves you. The rarer the news, the more questions it saves, and the average over all the news a source can send is called its entropy.</p>
+  <ul class="meta">
+    <li><b>Home field</b> Information theory</li>
+    <li><b>Lenses</b> Statistical mechanics · Psycholinguistics · Communication theory · Bayesian probability · Search</li>
+    <li><b>Level</b> High school → graduate (counting, fractions, powers of two)</li>
+    <li><b>Time</b> About 45 min to read</li>
+  </ul>
+  <details class="toc">
+    <summary>Contents</summary>
+    <ol>
+      <li><a href="#hook">1 · Motivation: counting messages</a></li>
+      <li><a href="#cafe">2 · Intuition: the guessing barista</a></li>
+      <li><a href="#village">3 · Concrete: the weather village</a>
+        <ol type="a">
+          <li><a href="#village">Step 1 · Equal chances</a></li>
+          <li><a href="#surprisal">Step 2 · Surprisal</a></li>
+          <li><a href="#entropy">Step 3 · Entropy</a></li>
+          <li><a href="#weighing">Step 4 · A question is an experiment</a></li>
+          <li><a href="#submarine">Step 5 · The submarine</a></li>
+          <li><a href="#roles">Step 6 · Who encodes, who decodes</a></li>
+          <li><a href="#nothalves">Step 7 · When shares are not halves</a></li>
+        </ol></li>
+      <li><a href="#answer">4 · Abstract: short answer and what it is</a>
+        <ol type="a">
+          <li><a href="#lenses">The same idea elsewhere</a></li>
+          <li><a href="#fails">Where it fails</a></li>
+        </ol></li>
+      <li><a href="#imagination">5 · The CSS imagination</a></li>
+      <li><a href="#turn">6 · Your turn</a></li>
+      <li><a href="#recall">7 · Recall questions</a></li>
+      <li><a href="#sources">8 · Sources</a></li>
+    </ol>
+  </details>
+</header>
+
+<main class="wrap">
+
+<!-- ============ 1 MOTIVATION (layer 1) ============ -->
+<section id="hook" data-ch="hook">
+  <p class="sec-no">1 · Motivation</p>
+  <h2>Counting messages, and what the count misses</h2>
+  <p>Telegraph engineers in the 1920s asked how much one line can carry. Pierce, in his 1961 history, reports Nyquist’s answer from 1924: the speed of a line depends on how many different current values it can send <span class="cite">Pierce 1961, pp. 35–38</span>. A line that only switches on and off has two values. With four, the speed doubles, as in the quadruplex telegraph. With three (plus, zero, minus) it rises “by 60 per cent” <span class="cite">Pierce 1961, p. 38</span>. In words (our reading): each time the number of values doubles, the speed grows by the same step.</p>
+  <p>Hartley, in 1928, took the sender’s side: a message is measured by how many different messages the sender could have picked from a set of symbols <span class="cite">Pierce 1961, pp. 39–40</span>. Shannon names both papers as the basis for a general theory <span class="cite">Shannon 1948, p. 1</span>. Pierce says the count fits only if successive symbols “are chosen independently” and each “is equally likely to be selected” <span class="cite">Pierce 1961, p. 40</span>. Hartley also noted that some letters are chosen more often than others, E more than Z, and that this should govern the lengths of signals; Morse, Pierce says, “himself understood this” <span class="cite">Pierce 1961, p. 40</span>. What was missing was a number that weighs each message by how likely it is.</p>
+  
+  <p><b>The pain (ours).</b> A count gives one number to every message from the same list. In a town where it rains most days, “it rained today” and “it snowed in July” are both one pick from the same list of weather reports. The first tells you almost nothing; the second is news. A count cannot see the difference. We need one number for “how much did this message tell me” that works when the choices are not equally likely. This post builds it in a coffee shop, checks it in a village, and asks what it leaves out.</p>
+  <div class="term"><p class="term-h">Term · Three words in the question</p>
+  <p><b>Worth</b>: the number of fair yes/no questions an outcome saves you, not usefulness or importance. <b>Surprise</b>: how unlikely an outcome was under a stated model of the source (a list of how likely each message is), not a feeling. <b>Information</b>: Shannon’s engineering sense, one choice from a set of possible messages <span class="cite">Shannon 1948, p. 1</span>. Pierce warns that the everyday sense, knowledge, creeps in and confuses the discussion <span class="cite">Pierce 1961, p. 24</span>.</p></div>
+  <div class="quiz" data-q="g1" data-answer-in="section 3, step 5 (the submarine)">
+    <p class="q">Guess first. A submarine hides in one of 64 squares, and every square is equally likely. You fire at one square and miss. How much news is that miss worth, counted in fair yes/no questions?</p>
+    <div class="opts"><button type="button">Almost nothing: a few hundredths of one question’s worth</button><button type="button">About one question’s worth, because a plain no is still an answer</button><button type="button">Exactly nothing, because you still do not know where it is</button><button type="button">About six questions’ worth, the same as finally finding it</button></div>
+    <p class="your" hidden></p>
+  </div>
+</section>
+
+<!-- ============ 2 INTUITION (layer 2) ============ -->
+<section id="cafe" data-ch="cafe">
+  <p class="sec-no">2 · Intuition</p>
+  <h2>The guessing barista</h2>
+  <p>Picture a loud café. The grinder drowns every word, so a customer can only nod for yes or shake their head for no. The owner knows from the till that out of every eight regulars, four want a flat white, two a latte, one a mocha and one a matcha. The new barista wants each regular’s drink with as few questions as possible, because each costs a second and the queue is long.</p>
+  <p><b>The old way: split the menu.</b> The menu board is a grid with two drinks on top and two below. The barista asks, “Is it on the left side of the board?” and then, “Is it the top one?” Two questions, and she always knows. That looks fair, but it wastes time. Half of the regulars want the flat white, and she spends two questions on each of them. She spends as many on the matcha, which only one regular in eight wants. She split the <i>drinks</i> into equal halves and ignored how many <i>customers</i> stand behind each drink.</p>
+  <p><b>The rule that changes: split the customers.</b> The first question is, “Flat white?” A nod settles four customers out of eight in one second. A shake leaves four, and she asks, “Latte?” A nod settles two more. A shake leaves two, and she asks, “Mocha?” After that answer she knows, because only the matcha is left. The flat white costs one question, the latte two, the mocha and matcha three each. Over eight customers that is four plus four plus three plus three: fourteen questions, one and three quarters for each customer, against two for the old way. The rare drinks cost more, and that is fair: a matcha order is unusual news, and it took the most questions to find out. The rarer the order, the bigger the surprise, and the more questions it is worth.</p>
+  <div class="w" data-widget="switch" id="two-scripts">
+    <section data-label="Old way: split the menu">
+      <div class="w" data-widget="diagram" id="tree-menu" data-config-ref="cfg-tree-menu"></div>
+      <script type="application/json" id="cfg-tree-menu">{
+ "title":"Old way: split the menu (illustration)","width":360,"height":190,
+ "nodes":[{"id":"r","x":180,"y":24,"w":120,"label":"Left half\nof the board?","kind":"hl"},
+  {"id":"a","x":95,"y":88,"w":100,"label":"Top one?"},{"id":"b","x":265,"y":88,"w":100,"label":"Top one?"},
+  {"id":"l1","x":50,"y":156,"w":80,"label":"flat white\n2 questions","kind":"leaf"},{"id":"l2","x":140,"y":156,"w":80,"label":"latte\n2 questions","kind":"leaf"},
+  {"id":"l3","x":220,"y":156,"w":80,"label":"mocha\n2 questions","kind":"leaf"},{"id":"l4","x":310,"y":156,"w":80,"label":"matcha\n2 questions","kind":"leaf"}],
+ "edges":[{"id":"e1","from":"r","to":"a","label":"yes"},{"id":"e2","from":"r","to":"b","label":"no"},
+  {"id":"e3","from":"a","to":"l1","label":"yes"},{"id":"e4","from":"a","to":"l2","label":"no"},
+  {"id":"e5","from":"b","to":"l3","label":"yes"},{"id":"e6","from":"b","to":"l4","label":"no"}],
+ "caption":"Every drink costs two questions, however many customers want it."
+}</script>
+    </section>
+    <section data-label="New way: split the customers">
+      <div class="w" data-widget="diagram" id="tree-customers" data-config-ref="cfg-tree-customers"></div>
+      <script type="application/json" id="cfg-tree-customers">{
+ "title":"New way: split the customers (illustration)","width":360,"height":230,
+ "nodes":[{"id":"q1","x":70,"y":24,"w":100,"label":"Flat white?","kind":"hl"},{"id":"q2","x":70,"y":86,"w":100,"label":"Latte?","kind":"hl"},{"id":"q3","x":70,"y":148,"w":100,"label":"Mocha?","kind":"hl"},
+  {"id":"fw","x":250,"y":24,"w":130,"label":"flat white: 1 question","kind":"leaf"},{"id":"la","x":250,"y":86,"w":130,"label":"latte: 2 questions","kind":"leaf"},
+  {"id":"mo","x":250,"y":148,"w":130,"label":"mocha: 3 questions","kind":"leaf"},{"id":"ma","x":250,"y":206,"w":130,"label":"matcha: 3 questions","kind":"leaf"}],
+ "edges":[{"id":"e1","from":"q1","to":"fw","label":"yes"},{"id":"e2","from":"q1","to":"q2","label":"no"},
+  {"id":"e3","from":"q2","to":"la","label":"yes"},{"id":"e4","from":"q2","to":"q3","label":"no"},
+  {"id":"e5","from":"q3","to":"mo","label":"yes"},{"id":"e6","from":"q3","to":"ma","label":"no"}],
+ "caption":"Out of eight customers: four cost one question, two cost two, and two cost three. Fourteen questions in all."
+}</script>
+    </section>
+  </div>
+  <p><b>Three checks.</b> If she asked “Matcha?” first, almost every answer would be a shake and she would learn almost nothing: a question helps most when both answers are likely. If all four drinks sold equally, the clever order would save nothing, and an order built for the old shares would do worse than the plain board (section 3 gives the numbers). If every regular ordered the same drink, she need not ask.</p>
+  <p><b>Who does what.</b> The customer knows the drink. As the barista asks the agreed questions, the customer’s nods and shakes turn the drink into a string of answers, for example shake, shake, nod. The barista sees only that string, and she holds the same list of questions. She turns the string back into a drink. Both must hold the same list before the day starts, or a nod means nothing. We call the agreed list the <dfn>script</dfn>.</p>
+  <p><b>The parts of the café</b> (section 3 points back to them by number):</p>
+  <ol class="parts">
+    <li><b>The four drinks.</b></li>
+    <li><b>The share of regulars who want each drink,</b> as the till records it (it can be out of date).</li>
+    <li><b>One question,</b> answered by a nod or a shake; one second.</li>
+    <li><b>The script:</b> the questions, agreed in advance, that barista and customer both know.</li>
+    <li><b>The customer,</b> who knows the drink and answers.</li>
+    <li><b>The string of nods and shakes</b> for one customer.</li>
+    <li><b>The barista,</b> who has only the string and the script, and names the drink.</li>
+    <li><b>The number of questions one drink costs.</b></li>
+    <li><b>The day’s average</b> number of questions, over all the customers.</li>
+    <li><b>The menu board:</b> the old way, which splits the drinks and not the customers.</li>
+  </ol>
+  <div class="exercise"><p class="trap-h">Check yourself · layer 2</p>
+  <p>(a) Which customers get the longest run of questions, and why? (b) A day comes when all four drinks sell equally. Would the clever order of questions still be best?</p>
+  <details><summary>Answer (a)</summary><p>The mocha and matcha customers, three questions each. Each is one regular in eight, and only three shakes in a row reach them. The barista spends her questions where the customers are.</p></details>
+  <details><summary>Answer (b)</summary><p>No. It would cost more than two questions on average, while the plain board costs exactly two. A script is built for the shares it was made for. Section 3 gives the number, 2.25.</p></details></div>
+</section>
+
+<!-- ============ 3 CONCRETE (layer 3) ============ -->
+<section id="village" data-ch="village">
+  <p class="sec-no">3 · Concrete · step 1</p>
+  <h2>The weather village: equal chances first</h2>
+  <p>Now leave the café for the field’s own setting. A village radio sends one word a day: rain, sun, wind or snow, with shares of days one half, one quarter, one eighth and one eighth: the owner’s numbers, with drinks swapped for weather words. Shannon’s example sends one of four symbols with these shares <span class="cite">Shannon 1948, p. 18</span>, and Cover and Thomas use the same numbers <span class="cite">Cover &amp; Thomas 1991, pp. 14–15</span>; we call each symbol a day. Shannon assumes symbols “are chosen independently”, and so do we, though real weather is not like that (section 4). Each equation is followed by a line “In the café”; its numbers point to the ten parts in section 2.</p>
+
+  <h3>Step 1 · Equal chances: count the halvings</h3>
+  <div class="quiz" data-q="g3" data-answer-in="section 3, step 1 (this section)">
+    <p class="q">Guess first. One of 32 cups of water is poisoned. A rat that drinks any poisoned cup dies within the hour, and you have one hour. All the rats drink at the same time, each from any cups you choose. What is the smallest number of rats that is always enough?</p>
+    <div class="opts"><button type="button">Four, because each rat can clear half of the cups that are left</button><button type="button">Five, because five yes/no tests can tell 32 cups apart</button><button type="button">Six, because the very last cup needs a test of its own</button><button type="button">Eight, because one rat can safely check four cups</button></div>
+    <p class="your" hidden></p>
+  </div>
+  <p><b>The instance.</b> The cups-and-rats framing is ours, not from a source. The same game with questions in turn is in MacKay’s book: one of 64 objects is chosen, and you find it with yes/no questions. “Intuitively, the best questions successively divide the 64 possibilities into equal sized sets. Six questions suffice.” <span class="cite">MacKay 2003, p. 70</span></p>
+  <p><b>What happens.</b> With 32 cups, one good question halves them: 32, 16, 8, 4, 2, 1. That is five halvings. Write each answer as 0 or 1, and the five answers spell a number; MacKay’s object 35 of 64 gives 100011 <span class="cite">MacKay 2003, p. 70</span>. The rat version asks all five at once. Number the cups 0 to 31 in five binary digits; rat 1 drinks from every cup whose first digit is 1, rat 2 from every cup whose second digit is 1, and so on. The rats that die spell the poisoned cup’s number.</p>
+  <p><b>The pattern.</b> 32 is two multiplied by itself five times, and 64 is six times. One answer of a fair yes/no question is one <dfn>bit</dfn>, a word Shannon credits to J. W. Tukey <span class="cite">Shannon 1948, p. 1</span>. (MacKay also uses “bit” for a 0/1 variable <span class="cite">MacKay 2003, p. 32</span>; here it is a unit of worth.)</p>
+  <p><b>The formula (E1).</b> For \(N\) equally likely options, the number of questions \(k\) satisfies</p>
+  \[N = 2^{k}, \qquad\text{so}\qquad k = \log_2 N .\]
+  <p>Read aloud: “the number of questions is the number of times you must halve \(N\) to reach 1.” The symbol \(\log_2\) asks: two multiplied by itself how many times gives this number? MacKay’s “raw bit content” is this quantity: “a lower bound for the number of binary questions that are always guaranteed to identify an outcome” <span class="cite">MacKay 2003, p. 74</span>. “Guaranteed” means in the worst case, not on average. Hartley’s measure is the same idea, with Pierce’s two conditions: independent and equally likely (the pairing is ours; MacKay does not mention Hartley).</p>
+  <p><b>The check.</b> \(\log_2 32 = 5\) and \(\log_2 64 = 6\). Cover and Thomas open with the same case: 32 equally likely outcomes, \(\log 32 = 5\) bits <span class="cite">Cover &amp; Thomas 1991, p. 5</span>. What it does not say: four rats cannot decide 32 cups, because \(2^4 = 16\) is less than 32 (ours).</p>
+  <p class="inthecafe"><b>In the café.</b> \(N\) is the number of drinks on the menu board when all sell equally (parts 1 and 10). \(k\) is the number of nod-or-shake questions (part 3). The 2 in \(2^k\) is the two possible replies to one question (part 3). Halving the board is the old way (part 10).</p>
+  <div class="reveal" data-for="g3"><p class="reveal-h">Guess first · answer</p><p><b>Five.</b> Five rats give five answers at once, spelling one of \(2^5 = 32\) labels. Four rats give only \(2^4 = 16\) labels.</p></div>
+  <details class="deep" id="box-nyquist">
+    <summary>Look inside: Nyquist and Hartley in symbols</summary>
+    <p>As Pierce reports it, Nyquist related the speed \(W\) of a line to the number \(m\) of current values by \(W = K\log m\), where \(K\) is a constant that depends on how many values are sent per second <span class="cite">Pierce 1961, p. 36</span>. Two values to four doubles the speed. Three values give \(\log_2 3 = 1.585\) times the speed of two, a rise of 58.5 per cent; Pierce says “60 per cent” <span class="cite">Pierce 1961, p. 38</span>. Eight values give \(\log_2 8 = 3\) times (ours; Pierce’s “four times” is an apparent slip, and his list of values shows only seven).</p>
+    <p>Hartley’s measure is \(H = n\log s\) for \(n\) symbols from \(s\) kinds: there are \(s^n\) messages, and \(\log_2(s^n) = n\log_2 s\) <span class="cite">Pierce 1961, p. 40</span>. Shannon gives three reasons for a logarithm. It is practically useful: time, bandwidth and the number of relays “tend to vary linearly” with the logarithm of the number of possibilities. It is nearer to intuition: “One feels, for example, that two punched cards should have twice the capacity of one.” And it is mathematically suitable <span class="cite">Shannon 1948, p. 1</span>. These are his motives, not a proof that no other measure could work. With base 2, \(N\) two-state devices store \(N\) bits, because \(\log_2 2^N = N\) <span class="cite">Shannon 1948, p. 1</span>.</p>
+  </details>
+</section>
+
+<section id="surprisal" data-ch="surprisal">
+  <p class="sec-no">3 · Concrete · step 2</p>
+  <h2>Step 2 · Unequal chances: surprisal</h2>
+  <p><b>The instance.</b> The village again: rain 1/2, sun 1/4, wind 1/8, snow 1/8. The best questions go like the barista’s: “Rain?”, then “Sun?”, then “Wind?”, and then only snow is left. Rain costs one question, sun two, wind three and snow three. Write yes as 0 and no as 1, and the answers are 0, 10, 110 and 111 <span class="cite">Shannon 1948, p. 18</span> <span class="cite">Cover &amp; Thomas 1991, p. 15</span>. Cover and Thomas say the first question “splits the probability in half” <span class="cite">Cover &amp; Thomas 1991, p. 15</span>; that holds for this example only (ours).</p>
+  <p><b>The question and the pattern.</b> What rule gives the number of questions an outcome costs? A share of one half needs one halving of the queue, one quarter needs two, one eighth three. The cost is how many times you halve the whole queue to arrive at that share.</p>
+  <p><b>The formula (E2).</b> For an outcome \(x\) whose share is \(P(x)\), the cost is</p>
+  \[h(x) = \log_2 \frac{1}{P(x)} .\]
+  <p>Read aloud: “the surprisal of \(x\) is the log, base 2, of one over the share of \(x\).” MacKay calls it the “Shannon information content” <span class="cite">MacKay 2003, p. 32</span>; Gibson and colleagues call it surprisal, and in the same sentence information content <span class="cite">Gibson et al. 2019, p. 4</span>. Shannon’s 1948 paper uses neither word for one outcome (our search of the whole text). We use <dfn>surprisal</dfn>.</p>
+  <p><b>The check.</b> For snow, \(\log_2 8 = 3\), and the four words give 1, 2, 3, 3, as the questions did. Move the slider to check MacKay’s table: share 0.001 is worth 10.0 questions, 0.01 gives 6.6, 0.1 gives 3.3, 0.2 gives 2.3, and 0.5 gives 1.0 <span class="cite">MacKay 2003, p. 67</span>.</p>
+  <figure class="illus"><div class="w" data-widget="plot" id="surprisal-plot" data-config-ref="cfg-surprisal-plot"></div></figure>
+  <script type="application/json" id="cfg-surprisal-plot">{"title":"Surprisal and the average over one event (toy, ours; compare MacKay 2003, p. 67)",
+ "params":[{"id":"p","label":"chance p of the event","min":0.001,"max":1,"step":0.001,"value":0.1,"fmt":".3f"}],
+ "derived":{"h":"log2(1/p)","H2":"if(p>=1,0,p*log2(1/p)+(1-p)*log2(1/(1-p)))"},
+ "x":{"min":0.001,"max":1,"log":true,"label":"chance p","ticks":[0.001,0.01,0.1,1],"tickFmt":".3g"},
+ "y":{"min":0,"max":10,"label":"questions","ticks":[0,2,4,6,8,10]},
+ "curves":[{"expr":"log2(1/x)","label":"surprisal"},{"expr":"if(x>=1,0,x*log2(1/x)+(1-x)*log2(1/(1-x)))","label":"average of event and non-event"}],
+ "points":[{"x":"p","y":"h","label":"this event"},{"x":"p","y":"H2","label":"average"}],
+ "readout":"p = {p:.3f}: the event is worth {h:.1f} questions; the average over event and non-event is {H2:.3f}.",
+ "caption":"As p shrinks, the worth of the event grows without bound, while the average over event and non-event (step 3 explains it) falls back to 0."}</script>
+  <p><b>A second concept: independent days add.</b> Rain today, snow tomorrow. The days are independent, so the pair has share \(\tfrac12\times\tfrac18 = \tfrac1{16}\), and \(\log_2 16 = 4\). The separate costs are 1 and 3, and \(1 + 3 = 4\). In general, for independent \(x\) and \(y\), \(P(x,y) = P(x)P(y)\), and a log turns a product into a sum:</p>
+  \[h(x,y) = \log_2\frac{1}{P(x)P(y)} = h(x) + h(y).\quad\text{(E3)}\]
+  <p>MacKay’s reason: “we might want any measure of the ‘amount of information gained’ to have the property of additivity” <span class="cite">MacKay 2003, p. 68</span>. It needs independence, which the village assumes.</p>
+  
+  <p><b>What it does not say.</b> Only halves, quarters and eighths cost a whole number of questions. A share of 0.3 would cost 1.74, and a question cannot be asked 1.74 times. So Gibson and colleagues say the information content <i>approximates</i> the length of the shortest uniquely decipherable script <span class="cite">Gibson et al. 2019, p. 4</span>. Step 7 returns to this.</p>
+  <p class="inthecafe"><b>In the café.</b> \(x\): a drink, here a weather word (part 1). \(P(x)\): its share in the till (part 2). \(h(x)\): the questions that drink costs under the best script (part 8). “Log of one over the share”: how often the queue is halved (parts 3, 4). Additivity: two customers in a row, their strings joined (parts 5, 6).</p>
+  </section>
+
+<section id="entropy" data-ch="entropy">
+  <p class="sec-no">3 · Concrete · step 3</p>
+  <h2>Step 3 · The average: entropy</h2>
+  <div class="quiz" data-q="g2" data-answer-in="section 3, step 3 (this section)">
+    <p class="q">Guess first. With the best script of questions, how many questions does one day’s word from the village radio cost on average?</p>
+    <div class="opts"><button type="button">1.25 questions</button><button type="button">1.50 questions</button><button type="button">1.75 questions</button><button type="button">2.00 questions</button></div>
+    <p class="your" hidden></p>
+  </div>
+  <p><b>The instance.</b> Take eight days that match the shares: four rain, two sun, one wind, one snow. Rain costs 1 question each, sun 2, wind 3, snow 3. The total is \(4 + 4 + 3 + 3 = 14\) questions in 8 days: 1.75 per day. <b>The question.</b> What one number describes the source? <b>In words.</b> Weigh each word’s cost by how often it comes, and add.</p>
+  <p><b>The formula (E4).</b> The <dfn>entropy</dfn> \(H\) of a source is the average surprisal:</p>
+  \[H = \sum_x P(x)\,\log_2\frac{1}{P(x)} .\]
+  <p>Read aloud: “the sum, over all words, of the share of the word times its cost.” An outcome with share 0 contributes 0, by the convention \(0\times\log 1/0 \equiv 0\) <span class="cite">MacKay 2003, p. 32</span>. For the village,</p>
+  \[\tfrac12\cdot 1 + \tfrac14\cdot 2 + \tfrac18\cdot 3 + \tfrac18\cdot 3 = 1.75 .\]
+  <p>Cover and Thomas write of the same tree: “The resulting expected number of binary questions required is 1.75.” <span class="cite">Cover &amp; Thomas 1991, p. 15</span></p>
+  <p><b>Two checks.</b> (i) The tree gives 1.75. (ii) The grouping rule: the first question splits rain (1/2) from the rest, whose shares are sun 1/2, wind 1/4, snow 1/4, with entropy 1.5 <span class="cite">MacKay 2003, p. 33</span>. With chance one half we are in that group, so</p>
+  \[H = 1 + \tfrac12\times 1.5 = 1.75 \quad\text{(E5)}\]
+  <p>which is Shannon’s decomposition rule <span class="cite">Shannon 1948, p. 10</span>. <b>Before and after the crucial change:</b> two-question labels cost 2.000 questions a day; the script built for the shares costs 1.750. Try other shares below.</p>
+  <div class="w" data-widget="lab" id="village-lab" data-config-ref="cfg-village-lab"></div>
+  <script type="application/json" id="cfg-village-lab">{"title":"The weather village (toy, ours)",
+ "note":"Set the weights; the shares are the weights divided by their total.",
+ "params":[{"id":"wr","label":"rain weight","min":0,"max":8,"step":1,"value":4,"fmt":"d"},
+  {"id":"ws","label":"sun weight","min":0,"max":8,"step":1,"value":2,"fmt":"d"},
+  {"id":"ww","label":"wind weight","min":0,"max":8,"step":1,"value":1,"fmt":"d"},
+  {"id":"wn","label":"snow weight","min":0,"max":8,"step":1,"value":1,"fmt":"d"}],
+ "derived":{"tot":"max(wr+ws+ww+wn,1e-9)","pr":"wr/tot","ps":"ws/tot","pw":"ww/tot","pn":"wn/tot",
+  "hr":"if(pr>0,log2(1/pr),0)","hs":"if(ps>0,log2(1/ps),0)","hw":"if(pw>0,log2(1/pw),0)","hn":"if(pn>0,log2(1/pn),0)",
+  "H":"pr*hr+ps*hs+pw*hw+pn*hn","script":"pr*1+ps*2+pw*3+pn*3"},
+ "bars":{"items":[{"label":"rain","value":"hr"},{"label":"sun","value":"hs"},{"label":"wind","value":"hw"},{"label":"snow","value":"hn"}],"max":8,"fmt":".2f"},
+ "readout":"Shares: rain {pr:.3f}, sun {ps:.3f}, wind {pw:.3f}, snow {pn:.3f}.\nEntropy H = {H:.3f} questions.\nVillage script (1, 2, 3, 3 questions): {script:.3f} on average.\nEqual-size labels (2 each): 2.000.",
+ "presets":[{"label":"the village","values":{"wr":4,"ws":2,"ww":1,"wn":1}},{"label":"all equal","values":{"wr":1,"ws":1,"ww":1,"wn":1}},{"label":"only rain","values":{"wr":1,"ws":0,"ww":0,"wn":0}},{"label":"reversed","values":{"wr":1,"ws":1,"ww":2,"wn":4}}],
+ "caption":"Bars show each word’s surprisal. Edge cases: the script is right only for its own shares, and entropy does not change when the shares are shuffled among the words."}</script>
+  <p><b>Three settings.</b> “All equal”: \(H = 2.000\), the most possible for four words <span class="cite">MacKay 2003, p. 33</span> <span class="cite">Shannon 1948, p. 11</span>. “Only rain”: \(H = 0.000\), and “no channel is required” <span class="cite">Shannon 1948, p. 18</span>. “Reversed”: \(H\) is unchanged, because it depends only on the shares, not on which word carries which <span class="cite">Cover &amp; Thomas 1991, p. 13</span>.</p>
+  <p><b>A script has its own average (E9).</b> A script that spends \(L(x)\) questions on word \(x\) averages</p>
+  \[\mathrm{EQ} = \sum_x P(x)\,L(x).\]
+  <p>The village script on the village: \(\mathrm{EQ} = 1.750 = H\). On a village where all four words have share 1/4, the same script (lengths 1, 2, 3, 3) averages \(\tfrac14(1+2+3+3) = 2.25\), worse than the 2.000 of plain labels. On “only rain” it averages 1.000, since it still asks one question. A script is right only for the shares it was built for.</p>
+  
+  <details class="deep" id="box-names">
+    <summary>Look inside: names and a warning</summary>
+    <p>“Uncertainty” is another name for \(H\) in Shannon, Pierce and MacKay; it names this number, not a feeling. \(H\) belongs to the source’s shares, not to one message. We avoid “relative entropy”, which Shannon used for \(H\) divided by its largest value <span class="cite">Shannon 1948, p. 14</span>, and which later books use for something else.</p>
+  </details>
+  <p><b>What it means.</b> We measured the average number of fair questions per word, for a source whose shares we assume are known. It predicts the cost of the best script when the shares are halves. It does not say what a word means, how long a real message is, or how good the script is on other shares.</p>
+  <p class="inthecafe"><b>In the café.</b> \(\Sigma\): go through the day’s customers (part 9). \(P(x)\): how often that drink is ordered (part 2). \(\log_2(1/P(x))\): the questions that drink costs (part 8). \(H\): the day’s average (part 9). The grouping rule: the first question (part 3) splits the customers in two groups (part 2), and the script’s later questions deal with the rest (part 4). \(\mathrm{EQ}\): the day’s average for a given script (parts 4, 9); \(L(x)\): the questions that script spends on one drink (parts 4, 8).</p>
+  <div class="exercise"><p class="trap-h">Check yourself</p>
+  <p>Predict first, then use the widget: what does the village script cost on a day when all four words are equally likely? Why is it not 1.75?</p>
+  <details><summary>Answer</summary><p>2.25. The script spends 1, 2, 3, 3 questions, and with equal shares each count weighs one quarter. The script was built for the village shares.</p></details></div>
+  <div class="reveal" data-for="g2"><p class="reveal-h">Guess first · answer</p><p><b>1.75 questions.</b> Four days in eight cost 1, two cost 2, two cost 3: 14 in 8, or 1.75. Plain 2-question labels give 2.00. The options 1.25 and 1.50 are below the minimum: Cover and Thomas say 1.75 “turns out to be the minimum expected number of binary questions” <span class="cite">Cover &amp; Thomas 1991, p. 15</span>.</p></div>
+</section>
+
+<section id="weighing" data-ch="weighing">
+  <p class="sec-no">3 · Concrete · step 4</p>
+  <h2>Step 4 · A question is an experiment: the best weighing</h2>
+  <p><b>The instance.</b> MacKay’s weighing problem <span class="cite">MacKay 2003, p. 66</span>. Twelve balls look alike; one is heavier or lighter than the rest, and we do not know which. A balance scale has three outcomes: left pan down, right pan down, or balance. There are 24 hypotheses (12 balls, each heavy or light). Two weighings give at most \(3^2 = 9\) outcomes; three give \(3^3 = 27\), enough in principle <span class="cite">MacKay 2003, p. 68</span>.</p>
+  <p><b>The question.</b> Which first weighing is best? A weighing is a question with three answers, and a good one has answers that are about equally likely: “at each step of an optimal procedure, the three outcomes (‘left heavier’, ‘right heavier’, and ‘balance’) are as close as possible to equiprobable” <span class="cite">MacKay 2003, p. 68</span>. Put four balls on each pan. The left pan goes down if the odd ball is heavy and on the left, or light and on the right: 8 of the 24 hypotheses. The right pan, likewise, 8. They balance if the odd ball is left out: 4 × 2 = 8. The split is 8 : 8 : 8. With six on each pan the pans can never balance, and the split is 12 : 12 : 0 <span class="cite">MacKay 2003, p. 70</span>.</p>
+  <p><b>The formula (E7) and the numbers (ours, rerun in code).</b> The worth of a weighing is the entropy of its three outcomes:</p>
+  \[H = \sum_{o} P_o \log_2 \frac{1}{P_o}, \qquad o \in \{\text{left},\ \text{right},\ \text{balance}\}.\]
+  <p>Four against four: \(3\times\tfrac13\log_2 3 = \log_2 3 = 1.585\) bits. Six against six: \(\tfrac12\cdot 1+\tfrac12\cdot 1 + 0 = 1.000\) bit. All 24 cases need \(\log_2 24 = 4.585\) bits, so one weighing gives at most 1.585 of them. MacKay writes, with a hedge, “Thus we might conclude” that “the outcome of a random experiment is guaranteed to be most informative if the probability distribution over outcomes is uniform” <span class="cite">MacKay 2003, p. 70</span>. It is a conclusion from this example, tied to the bound on \(H\) <span class="cite">MacKay 2003, p. 33</span>, not a theorem about every question.</p>
+  <div class="w" data-widget="lab" id="weigh-lab" data-config-ref="cfg-weigh-lab"></div>
+  <script type="application/json" id="cfg-weigh-lab">{"title":"First weighing of 12 balls (toy, after MacKay 2003, pp. 66–70)",
+ "params":[{"id":"k","label":"balls in each pan","min":1,"max":6,"step":1,"value":4,"fmt":"d"}],
+ "derived":{"L":"2*k/24","R":"2*k/24","B":"(24-4*k)/24",
+  "H":"(if(L>0,L*log2(1/L),0))*2+if(B>0,B*log2(1/B),0)","left":"log2(24)-H"},
+ "bars":{"items":[{"label":"left heavier","value":"L"},{"label":"right heavier","value":"R"},{"label":"balance","value":"B"}],"max":0.5,"fmt":".3f"},
+ "readout":"{k:d} against {k:d}: chances {L:.3f}, {R:.3f}, {B:.3f}.\nThis weighing is worth {H:.3f} bits. Of the 4.585 bits needed, {left:.3f} remain.",
+ "presets":[{"label":"4 v 4","values":{"k":4}},{"label":"6 v 6","values":{"k":6}}],
+ "caption":"One ball in each pan (1 v 1) is worth 0.817; 2 v 2 1.252; 3 v 3 1.500; 4 v 4 1.585; 5 v 5 1.483; 6 v 6 1.000. The best is the most even split."}</script>
+  <p><b>Does 6 against 6 tell you nothing?</b> MacKay reports that some say it “conveys no information at all”, and asks the reader to “Explain to the second group why they are both right and wrong” <span class="cite">MacKay 2003, p. 84</span>; he prints no solution. Ours: about <i>which ball</i> it tells you 0 bits (after “left heavier” every ball is still possible); about <i>which ball and heavy or light</i> it tells you 1 bit.</p>
+  <p class="inthecafe"><b>In the café.</b> A weighing is a question with three replies: a nod, a shake and a shrug (part 3). Each reply’s chance is the share of hypotheses it covers (part 2). Choosing the first weighing is choosing the script’s first question (part 4). Halving the <i>menu</i> (part 10) is the wrong split; halving the <i>customers</i> (part 2) is the right one.</p>
+  <div class="exercise"><p class="trap-h">Check yourself</p>
+  <p>Before you move the slider: what is the worth of 6 against 6 about <i>which ball</i>?</p>
+  <details><summary>Answer</summary><p>0 bits. “Left heavier” fits a heavy ball on the left or a light ball on the right, so all 12 balls remain possible.</p></details></div>
+</section>
+
+<section id="submarine" data-ch="submarine">
+  <p class="sec-no">3 · Concrete · step 5</p>
+  <h2>Step 5 · The submarine: one answer, six bits</h2>
+  <p><b>The instance.</b> A submarine hides in one of the 64 squares of an 8 × 8 grid, all equally likely. You fire at squares one by one <span class="cite">MacKay 2003, pp. 70–72</span>. The first shot hits with chance 1/64. <b>The question.</b> What are a hit and a miss worth, and what do many misses add up to? <b>In words.</b> A hit names the square among 64: six halvings. A miss crosses off one square, a sliver of the options. After 32 misses half of the squares are gone: exactly one question’s worth. A later hit names the square among the few left, so it is worth less. The total is the same whenever the hit comes.</p>
+  <p><b>A check by hand on four squares (ours).</b> Misses are worth \(\log_2\frac43 = 0.415\), then \(\log_2\frac32 = 0.585\), then \(\log_2\frac21 = 1.000\). The sum is 2.000, which is \(\log_2 4\).</p>
+  <p><b>The formula (E8).</b> In general the chances multiply, and the fractions cancel in a chain:</p>
+  \[\log_2\!\Big(\tfrac{64}{63}\times\tfrac{63}{62}\times\cdots\times\tfrac{n+1}{n}\times\tfrac{n}{1}\Big) = \log_2 64 = 6 \quad\text{whatever } n \text{ is.}\]
+  <p>This is MacKay’s telescoping product <span class="cite">MacKay 2003, p. 71</span>. Step through the grid below and check the rows.</p>
+  <div class="w" data-widget="stepper" id="sub-table" data-config-ref="cfg-sub-table"></div>
+  <script type="application/json" id="cfg-sub-table">{
+ "title":"The submarine, shot by shot (toy, after MacKay 2003, pp. 70–71)",
+ "note":"Worth = log₂(squares left ÷ squares left after the answer). Rounded, not cut off.",
+ "head":["shots","squares left","result","worth","total"],
+ "rows":[["1","64","miss","0.0227","0.0227"],["2","63","miss","0.0231","0.0458"],["3–32","62 → 33","30 misses","0.9542","1.0000"],["33–48","32 → 17","16 misses","1.0000","2.0000"],["49","16","hit","4.0000","6.0000"]],
+ "notes":["The first miss crosses off one of 64 squares: log₂(64/63) = 0.0227. MacKay prints 0.0230 for the second miss because he cuts digits off; we round, so we print 0.0231.","The second miss: log₂(63/62) = 0.0231. Two misses are worth 0.0458 in all.","Thirty more misses add 0.9542. Together with the first two, the 32 misses add up to exactly 1.0000: half of the squares are gone.","Sixteen more misses add 1.0000. After 48 misses the total is 2.0000: three quarters of the squares are gone.","A hit with 16 squares left is worth log₂ 16 = 4. The total is 4 + 2 = 6.0000. If the very first shot hits: 6.0000."]
+}</script>
+  <p><b>What it means.</b> MacKay: “Now, it might seem a little strange that one binary outcome can convey six bits.” <span class="cite">MacKay 2003, p. 71</span> His verdict, “I think the submarine example makes quite a convincing case for the claim that the Shannon information content is a sensible measure” <span class="cite">MacKay 2003, p. 72</span>, is an argument, not a proof. A single answer is worth \(\log_2\) of one over the share of what happened, so one yes/no answer does not always carry one bit.</p>
+  <p class="inthecafe"><b>In the café.</b> The squares are the drinks still possible (parts 1 and 2), and they shrink as answers arrive. Suppose matcha is one order in 64 and the barista asks “Matcha?” first. A shake costs 0.0227 of a question (part 3), a nod costs six. Whichever path she takes, the total worth of finding the drink is the same (part 8).</p>
+  <div class="exercise"><p class="trap-h">Check yourself</p>
+  <p>Five misses in a row from a fresh grid. Is the fifth miss worth more or less than the first? Predict, then step through the table or compute \(\log_2\frac{60}{59}\).</p>
+  <details><summary>Answer</summary><p>Slightly more. The misses are worth 0.0227, 0.0231, 0.0235, 0.0238 and 0.0242, because fewer squares are left each time. Together they are worth \(\log_2\frac{64}{59} = 0.1174\) (ours).</p></details></div>
+  <div class="reveal" data-for="g1"><p class="reveal-h">Guess first · answer</p><p><b>Almost nothing.</b> A first miss is worth \(\log_2\frac{64}{63} = 0.0227\) questions, MacKay’s figure too <span class="cite">MacKay 2003, p. 71</span>. A hit on the first shot would be worth six. One whole question’s worth takes 32 misses.</p></div>
+  <details class="deep" id="box-wenglish">
+    <summary>Look inside: Wenglish, where each letter carries a different amount</summary>
+    <p>MacKay invents a language, Wenglish, with 5-letter words. The dictionary has \(2^{15} = 32{,}768\) words, all equally likely, so each word is worth 15 bits, an average of 3 per letter <span class="cite">MacKay 2003, pp. 72–73</span>. Read one letter at a time, a first letter “a” (chance about 0.0625) carries about 4 bits, and a first letter “z” (about 0.001) carries about 10. “A rare initial letter such as z indeed conveys more information about what the word is than a common initial letter” <span class="cite">MacKay 2003, p. 73</span>. The five letters of a word always add to 15.</p>
+    <p>Gibson and colleagues define uniform information density as “the hypothesis that the information content of an utterance per unit time should be roughly constant” <span class="cite">Gibson et al. 2019, p. 3</span>. Wenglish is a constructed example; it does not test that hypothesis.</p>
+  </details>
+</section>
+
+<section id="roles" data-ch="roles">
+  <p class="sec-no">3 · Concrete · step 6</p>
+  <h2>Step 6 · Who encodes and who decodes</h2>
+  <p><b>The instance (the café).</b> The customer wants a mocha. The barista asks “Flat white?” (a shake), “Latte?” (a shake) and “Mocha?” (a nod). Write a nod as 0 and a shake as 1: the string is 1 1 0. <b>The question.</b> Which side encodes, and which decodes?</p>
+  <p><b>The roles, named.</b> The <dfn>encoder</dfn> holds the original (here the drink) and the agreed script, and turns the original into a string. The <dfn>decoder</dfn> holds only the string and the same script, and turns the string back. Shannon’s diagram has the same roles: the receiver “ordinarily performs the inverse operation of that done by the transmitter, reconstructing the message from the signal” <span class="cite">Shannon 1948, p. 2</span>. The script is the codebook both sides hold before the day starts. MacKay writes that “Our questioning strategy defines a way of encoding the random variable x as a binary file” <span class="cite">MacKay 2003, p. 70</span>, which can sound as if the asker encodes. The strategy is the shared script; the secret-holder’s answers make the string.</p>
+  <figure class="illus"><div class="w" data-widget="diagram" id="roles-diagram" data-config-ref="cfg-roles"></div></figure>
+  <script type="application/json" id="cfg-roles">{"type":"diagram","title":"Who encodes, who decodes (illustration)","width":360,"height":200,
+ "preview":true,
+ "nodes":[{"id":"c","x":55,"y":40,"w":90,"label":"customer\nknows: mocha","kind":"hl"},{"id":"s1","x":180,"y":40,"w":70,"label":"script","kind":"soft"},
+  {"id":"str","x":180,"y":110,"w":150,"label":"no, no, yes\n(110)","kind":"emb"},
+  {"id":"s2","x":305,"y":40,"w":70,"label":"same\nscript","kind":"soft"},{"id":"b","x":305,"y":170,"w":90,"label":"barista\nnames: mocha","kind":"hl"}],
+ "edges":[{"id":"e1","from":"c","to":"s1"},{"id":"e2","from":"s1","to":"str"},{"id":"e3","from":"str","to":"b"},{"id":"e4","from":"s2","to":"b","dashed":true}],
+ "labels":[{"x":95,"y":96,"text":"encodes","a":"s","c":"ts"},{"x":280,"y":140,"text":"decodes","a":"s","c":"ts"}],
+ "steps":[{"show":["c","s1","e1"],"text":"1. The customer knows the drink and the script."},{"show":["str","e2"],"text":"2. The script turns mocha into answers: no, no, yes."},{"show":["s2","b","e3","e4"],"text":"3. The barista has only the answers and the same script, and names the drink."}],
+ "caption":"The customer encodes; the barista decodes. Both hold the same script."}</script>
+  <p><b>Shannon’s twin game.</b> In 1951 Shannon selected “a short passage unfamiliar to the person who is to do the predicting” <span class="cite">Shannon 1951, p. 54</span>. So the first person has <i>not</i> seen the text; he knows it only up to the current point, guesses the next letter, and is told whether he was right <span class="cite">Shannon 1951, pp. 54–55</span>. The record of his guesses is the <i>reduced text</i>. A twin, “mathematically, not just biologically identical”, with only that record will “respond in the same way when faced with the same problem”, so “the reduced text can be considered to be an encoded form of the original” <span class="cite">Shannon 1951, p. 55</span>. Had the first person held the whole text in advance, every guess would be right and the record would carry nothing (our gloss).</p>
+  <p><b>A toy walk-through (ours).</b> The predictor is a fixed ranked list of letters: E, T, A, and so on. The original is “TEA”. The encoding side finds T 2nd, E 1st, A 3rd, and writes 2 1 3. The decoding side, with only “2 1 3” and the same list, recovers “TEA”. (Shannon’s real predictor uses the preceding text.)</p>
+  <p class="inthecafe"><b>In the café.</b> The customer is part 5 and encodes. The string is part 6. The script is part 4, and both sides hold it. The barista is part 7 and decodes.</p>
+  <div class="exercise"><p class="trap-h">Check yourself</p>
+  <p>In the café, who encodes? In Shannon’s twin game, who decodes? What does each side need to hold?</p>
+  <details><summary>Answer</summary><p>Café: the customer encodes, holding the drink and the script; the barista decodes, holding the string and the same script. Twin game: the side with the original text and a predictor encodes; the twin, holding only the reduced text and an identical predictor, decodes. In both cases the shared script or predictor is what lets the string be read.</p></details></div>
+</section>
+
+<section id="nothalves" data-ch="nothalves">
+  <p class="sec-no">3 · Concrete · step 7</p>
+  <h2>Step 7 · When the shares are not halves</h2>
+  <p>The village is too nice. Halves, quarters and eighths give whole numbers of questions, so the average equals \(H\) exactly. Do not take that as a rule. In general the best average lies between \(H\) and \(H+1\) <span class="cite">Cover &amp; Thomas 1991, p. 15</span>:</p>
+  \[H \le \mathrm{EQ} \lt H + 1 \quad\text{(E6)}\]
+  <p>Cover and Thomas state it again in their chapter on codes (eq. 5.61), after saying: “We now digress to show the equivalence of coding and the game of 20 questions.” <span class="cite">Cover &amp; Thomas 1991, pp. 94–95</span> A sequence of questions is a code, and the average number of questions is the average code length. We quote the bound and do not prove it; the smallest case with shares that are not halves is in the fold-out (ours).</p>
+  <p class="inthecafe"><b>In the café.</b> Only whole questions can be asked (part 3). A drink that 70 per cent of regulars want still costs one whole question, though only 0.515 questions’ worth of news arrives when it is ordered. The extra is the price of whole questions; the script (part 4) keeps the average (part 9) as close to \(H\) as they allow.</p>
+  <details class="deep" id="box-notnice">
+    <summary>Look inside: shares 0.7, 0.1, 0.1, 0.1 (ours, run in code)</summary>
+    <p>A village where rain has share 0.7 and sun, wind and snow have 0.1 each. The entropy is \(H = 1.357\) bits. The best script of whole questions asks “Rain?” first (it settles 0.7 of the days), then “Sun?”, then “Wind?”. The lengths are 1, 2, 3, 3, so \(\mathrm{EQ} = 0.7\cdot 1 + 0.1\cdot 2 + 0.1\cdot 3 + 0.1\cdot 3 = 1.5\). Check against the bound: \(1.357 \le 1.5 \lt 2.357\). The gap, 0.143 question, is the price of whole questions. Notebook exercise 8 checks the bound on 1,050 random share vectors.</p>
+  </details>
+  </section>
+
+<!-- ============ 4 ABSTRACT (layer 4) ============ -->
+<section id="answer" data-ch="answer">
+  <p class="sec-no">4 · Abstract</p>
+  <h2>Short answer, and what it really is</h2>
+  <div class="term"><p class="term-h">Short answer (our reading, not a finding)</p>
+  <p><b>How much?</b> One outcome is worth \(\log_2(1/P)\) fair yes/no questions under a stated model of the source. The average over everything the source can send is the entropy \(H\): 1.75 questions a day for the village.</p>
+  <p><b>A surprise?</b> Improbability under a model. The number belongs to the model, not to the event: two forecasters with different shares give the same snow different numbers (widget below).</p>
+  <p><b>Worth?</b> Questions saved, not importance, truth or meaning. Shannon sets meaning aside for “the engineering problem” <span class="cite">Shannon 1948, p. 1</span>; that is a decision about scope, not a claim that meaning does not matter. <b>Our verdict:</b> the measure is a good price for improbability under a stated model, and a poor price for anything else. What would change it: evidence that, for cases we care about, the number predicts something beyond improbability (lens 2: one such claim, unproven).</p></div>
+  <h3>(a) What it really is</h3>
+  <p>Strip away the cafés, villages and submarines. <i>Surprisal</i> re-writes a share in units that add for independent events; the logarithm turns a product of shares into a sum <span class="cite">MacKay 2003, p. 68</span>. <i>Entropy</i> is the average surprisal under the same shares, and depends only on the shares, not on what the outcomes are <span class="cite">Cover &amp; Thomas 1991, p. 13</span>. It is 0 only when one outcome is certain, and at most \(\log_2\) of the number of outcomes, with equality only when all are equally likely <span class="cite">MacKay 2003, p. 33</span> <span class="cite">Shannon 1948, p. 11</span>. Mixing the shares toward equality raises it, except a mere swap between outcomes <span class="cite">Shannon 1948, p. 12</span>. The surprisal <i>approximates</i> the length of the shortest uniquely decipherable script for the outcome (“approximates” is the authors’ word) <span class="cite">Gibson et al. 2019, p. 4</span>. This is E2 and E4 without the café.</p>
+  <details class="deep" id="box-uniqueness">
+    <summary>Look inside: why this formula? Shannon’s three properties</summary>
+    <p>Shannon asked for a measure with three properties: it is continuous in the shares; it grows with the number of options when all are equally likely; and if a choice is broken into two successive choices, the original \(H\) is the weighted sum of the two \(H\)s <span class="cite">Shannon 1948, p. 10</span>. His Theorem 2 says the only such \(H\) is \(-K\sum p\log p\). He also writes that the theorem and its assumptions “are in no way necessary for the present theory”, and: “The real justification of these definitions, however, will reside in their implications.” <span class="cite">Shannon 1948, p. 11</span> We do not reproduce the proof.</p>
+  </details>
+</section>
+
+<section id="lenses" data-ch="lenses">
+  <p class="sec-no">4 · Abstract</p>
+  <h2>(b) The same idea elsewhere</h2>
+  <h3>Lens 1 · Statistical mechanics</h3>
+  <p class="linktype"><span class="lt same">same-math in form only</span> The sum \(-\sum p\log p\) appears in physics.</p>
+  <p>Shannon writes: “The form of H will be recognized as that of entropy as defined in certain formulations of statistical mechanics.” <span class="cite">Shannon 1948, p. 11</span> Toy (ours): a box of four cells, with shares equal to the chance that a given particle sits in each. All in one cell gives 0; spread equally gives 2: the village’s numbers in another story. Pierce says the ideas behind the two entropies are “quite different” <span class="cite">Pierce 1961, pp. 23–24</span>. We stop at the form.</p>
+  <p class="lens-sum"><b>Adds:</b> the sum is about <i>distributions</i> wherever shares exist, not only about messages. <b>Does not explain:</b> that the two entropies are one thing.</p>
+  <h3>Lens 2 · Psycholinguistics</h3>
+  <p class="linktype"><span class="lt analogy">structural analogy</span> The same quantity; its role in minds is an empirical claim, not a theorem.</p>
+  <p>For minds, Gibson and colleagues write: “Since language processing effort is associated with predictability [104,105]” <span class="cite">Gibson et al. 2019, p. 11</span>, the references being Hale (2001) and Levy (2008). Read the hedge, “is associated with”. This is a review that points to studies we have not seen.</p>
+  <p class="lens-sum"><b>Adds:</b> the only lens where the number is tested against behaviour. <b>Does not explain:</b> cause. “Associated with” is not “caused by”.</p>
+  <h3>Lens 3 · Communication theory</h3>
+  <p class="linktype"><span class="lt analogy">metaphor</span> Shannon’s diagram of sender, channel and receiver.</p>
+  <p>Our café roles are Shannon’s transmitter, signal and receiver <span class="cite">Shannon 1948, pp. 1–2</span>. The scope is narrow on purpose: “These semantic aspects of communication are irrelevant to the engineering problem” <span class="cite">Shannon 1948, p. 1</span>.</p>
+  <p class="lens-sum"><b>Adds:</b> the roles, and an honest boundary for the engineering sense. <b>Does not explain:</b> meaning, truth or effect, where the study of communication in the social sciences begins (our summary; we have not read Weaver’s essay and use none of his levels).</p>
+  <h3>Lens 4 · Bayesian probability</h3>
+  <p class="linktype"><span class="lt analogy">structural analogy</span> A share can be a degree of belief, so surprisal is relative to a believer.</p>
+  <p>The village’s shares come from a long record; a one-off event has none (ours). MacKay notes that “some books on probability restrict probabilities to refer only to frequencies of outcomes in repeatable random experiments”, and describes the Bayesian view, in which beliefs can be probabilities, even for a single proposition <span class="cite">MacKay 2003, p. 26</span>. As MacKay puts that view, “you cannot do inference without making assumptions”. He warns that “this is not yet a globally held view”, and that people with the same assumptions and data “will draw identical conclusions” <span class="cite">MacKay 2003, p. 26</span>. Our inference from E2: different beliefs give different surprisal.</p>
+  <p class="lens-sum"><b>Adds:</b> a way to price one-off events. <b>Does not explain:</b> whether the beliefs are right. The price moves with the assumptions.</p>
+  <h3>Lens 5 · Search and decision</h3>
+  <p class="linktype"><span class="lt same">same-math</span> A tree of yes/no questions is a code <span class="cite">Cover &amp; Thomas 1991, pp. 94–95</span>.</p>
+  <p>The designer’s view: to find something fast, choose the experiment with the most equal outcomes <span class="cite">MacKay 2003, p. 70</span>.</p>
+  <p class="lens-sum"><b>Adds:</b> from describing a source to choosing what to ask. <b>Does not explain:</b> questions whose costs differ, or answers that can be misheard.</p>
+  <details class="deep" id="box-lens-limits">
+    <summary>Look inside: more hedges from Shannon, Pierce and from Gibson and colleagues</summary>
+    <p>Shannon sets meaning aside, not the receiver: his introduction also lists a concern with “the nature of the final destination of the information” <span class="cite">Shannon 1948, p. 1</span>.</p>
+    <p>For colour words, Gibson and colleagues compute a listener’s difficulty as “the surprisal of the color, given the word”, and the average is “the optimal number of yes-no guesses it takes a listener to guess which chip the speaker meant” <span class="cite">Gibson et al. 2019, p. 7</span> (our barista’s game). For word length, a word’s chance in context beat its frequency in a variety of languages, and the pattern “likely reflects lexicalization of processes that shorten predictable words” <span class="cite">Gibson et al. 2019, p. 6</span>.</p>
+    <p>Pierce: the idea that one entropy “can be fully useful without any reference at all to the other”; yet both “can be described in terms of uncertainty, in similar mathematical terms”, and efforts to marry the two have been “more interesting than fruitful” <span class="cite">Pierce 1961, p. 24</span>. He advises clearing our minds of the entropy of physics first <span class="cite">Pierce 1961, p. 80</span>.</p>
+    <p>Gibson and colleagues: there is currently “no method of generating baseline utterances and languages that is general and satisfactory across all cases” <span class="cite">Gibson et al. 2019, p. 14</span>. For taboo words and similar factors, “It is currently unclear whether such factors can be expressed as part of general communicative efficiency” <span class="cite">Gibson et al. 2019, p. 15</span>. Their abstract is bolder: these studies “show how a pervasive pressure for efficiency guides the forms of natural language” <span class="cite">Gibson et al. 2019, p. 1</span>. We never write that surprisal predicts reading time on the strength of this review.</p>
+  </details>
+  <p><b>How the five differ (ours).</b> Lens 1 asks where else the same sum appears; lens 2, whether minds use it; lens 3, what it leaves out; lens 4, where the shares come from; lens 5, what to do with it. <b>For your research (3C):</b> <i>Computation</i>: a language model’s next-word share gives a surprisal under that model (ours, from E2). <i>Communication</i>: a headline’s surprisal depends on whose model prices it. <i>Collaboration</i>: the same sum applies to shares of topics or ties. These are connections, not findings.</p>
+</section>
+
+<section id="fails" data-ch="fails">
+  <p class="sec-no">4 · Abstract</p>
+  <h2>(c) Where it fails</h2>
+  <p>Each boundary is an assumption you can find in section 3, with the place where the café breaks.</p>
+  <p><b>1 · Meaning.</b> <i>Assumption:</i> E2 has only \(P(x)\) in it, so two words with equal share get equal surprisal, understood or not. Shannon sets meaning aside <span class="cite">Shannon 1948, p. 1</span>; the theory “as specified so far is entirely agnostic to the form and content of messages” <span class="cite">Gibson et al. 2019, p. 4</span>. Pierce: a completely random pattern is “mathematically the most surprising” and also “the dullest of all patterns” <span class="cite">Pierce 1961, p. 264</span>. <i>The café breaks:</i> the barista cares which drink it is, and whether the customer is allergic to milk. The script is blind to taste.</p>
+  <p><b>2 · A known, stable distribution.</b> <i>Assumption:</i> step 3 gives the shares in advance: “These probabilities are known but that is all we know concerning which event will occur” <span class="cite">Shannon 1948, p. 10</span>. In Pierce’s simplest case the chances “must not change with time” <span class="cite">Pierce 1961, p. 81</span>. <i>The café breaks:</i> the till’s record gets old, and the village script costs 2.25 on a uniform day (E9).</p>
+  <p><b>3 · Independent days.</b> <i>Assumption:</i> symbols “chosen independently” <span class="cite">Shannon 1948, p. 18</span>, and E3 needs it. <i>The café breaks:</i> a rainy morning makes hot drinks likelier, and the same people come on the same days.</p>
+  <p><b>4 · One-off events, and whose model.</b> <i>Assumption:</i> E2 needs \(P(x)\), and the village takes it from a record. A source that “can produce only one particular message” has entropy zero and “no channel is required”; that is about transmission, not about the message being unimportant <span class="cite">Shannon 1948, p. 18</span>. <i>The café breaks:</i> a single event has no till. Two forecasters can write two shares for the same snow (ours):</p>
+  <div class="w" data-widget="lab" id="forecast-lab" data-config-ref="cfg-forecast-lab"></div>
+  <script type="application/json" id="cfg-forecast-lab">{"title":"Same snow, two forecasters (toy, ours)",
+ "params":[{"id":"a","label":"Ana: chance of snow","min":0.01,"max":0.9,"step":0.01,"value":0.125,"fmt":".3f"},
+ {"id":"b","label":"Ben: chance of snow","min":0.01,"max":0.9,"step":0.01,"value":0.5,"fmt":".3f"}],
+ "derived":{"ha":"log2(1/a)","hb":"log2(1/b)"},
+ "bars":{"items":[{"label":"Ana","value":"ha"},{"label":"Ben","value":"hb"}],"max":7,"fmt":".2f"},
+ "readout":"It snows. Ana is surprised by {ha:.2f} questions’ worth, Ben by {hb:.2f}. Gap: {ha-hb:.2f}.",
+ "presets":[{"label":"Ana 1/8, Ben 1/2","values":{"a":0.125,"b":0.5}},{"label":"same belief","values":{"a":0.25,"b":0.25}}],
+ "caption":"Edge case: equal beliefs give equal numbers. The number belongs to the model, not to the snow."}</script>
+  <p><b>5 · Estimation.</b> <i>Assumption:</i> the village shares are given; in practice they are estimated, and “it is difficult to get reliable estimates of these information-theoretic quantities without very large datasets” <span class="cite">Gibson et al. 2019, p. 14</span>. The bias is our computation (notebook exercise 6): draw \(n\) village days, put the observed shares into the entropy formula, repeat 2,000 times (fixed seed). The true entropy is 1.75. <i>The café breaks:</i> the owner has seen only a few days.</p>
+  <div class="tbl"><table><thead><tr><th>days seen \(n\)</th><th>mean estimate</th><th>gap from 1.75</th></tr></thead><tbody>
+    <tr><td>10</td><td>1.504</td><td>−0.246</td></tr>
+    <tr><td>30</td><td>1.675</td><td>−0.075</td></tr>
+    <tr><td>100</td><td>1.725</td><td>−0.025</td></tr>
+    <tr><td>1,000</td><td>1.747</td><td>−0.003</td></tr>
+  </tbody></table></div>
+  <p>Biased low for small samples, because a rare word that never appears gets share 0. Gaps are in bits, not relative.</p>
+  <p><b>6 · Whole questions, no noise.</b> <i>Assumption:</i> whole numbers of questions only for halves (step 7), and a string that always arrives intact (step 6). <i>The café breaks:</i> a script rounds up (1.5 against 1.357), and real nods can be misread. Noise is outside this post.</p>
+  
+  <div class="exercise"><p class="trap-h">Check yourself · layer 4</p>
+  <p>Label each statement as a <i>theorem</i>, a <i>definition</i>, an <i>assumption</i>, an <i>empirical claim</i> or a <i>computation</i>. (i) “The village’s entropy is 1.75 bits.” (ii) “The shares must be known.” (iii) “Reading effort follows surprisal.” (iv) “The surprisal of two independent events adds.”</p>
+  <details><summary>Answers</summary><p>(i) A computation, under the stated shares. (ii) An assumption of the setup. (iii) An empirical claim by others, hedged as “is associated with”; not a theorem. (iv) A property that follows from the definition, given independence.</p></details></div>
+</section>
+
+<!-- ============ 5 THE CSS IMAGINATION (layer 5) ============ -->
+<section id="imagination" data-ch="imagination">
+  <p class="sec-no">5 · The CSS imagination</p>
+  <h2>Whose model sets the price of a surprise?</h2>
+  <p>C. Wright Mills argued that people need “a quality of mind” that shows how a life and its time fit together <span class="cite">Mills 1959, pp. 4–6</span>; the imagination “enables us to grasp history and biography and the relations between the two within society” <span class="cite">Mills 1959, p. 6</span>. His advice is not findings, and he hedges it: “There are definite ways, I believe, of stimulating the sociological imagination” <span class="cite">Mills 1959, p. 212</span>. He wrote in 1959 and used “men” for people; inside quotation marks we keep his words. The four move names are ours (his list has seven items); pages are of the 2000 Oxford edition. His “information” in “this Age of Fact” <span class="cite">Mills 1959, p. 5</span> means facts and news, not Shannon’s sense <span class="cite">Pierce 1961, p. 24</span>; joining them is our metaphor.</p>
+
+  <h3>Move 1 · Trouble and issue</h3>
+  <p>Mills: “Perhaps the most fruitful distinction with which the sociological imagination works is between ‘the personal troubles of milieu’ and ‘the public issues of social structure.’” <span class="cite">Mills 1959, p. 8</span> His example is hypothetical, not data: one man unemployed “in a city of 100,000” is “his personal trouble”, while “15 million men” unemployed “in a nation of 50 million employees” is “an issue” <span class="cite">Mills 1959, p. 9</span>. An issue is not a trouble multiplied: it is “unlike even widespread trouble” and often involves “a crisis in institutional arrangements” <span class="cite">Mills 1959, pp. 8–9</span>.</p>
+  <p>Our case (ours). One reader cannot tell which of her 200 messages matters, and blames herself for what she misses: a trouble. It becomes an issue only if the cause lies in an arrangement she cannot change, such as a ranking system whose model, not hers, prices every message for everyone. A test: if changing the ranking changes what many readers miss, and individual effort does not, it is an issue in Mills’ sense; otherwise it is many troubles. Pierce’s one sourced anchor: “We can be surprised repeatedly only by contrast with that which is familiar” <span class="cite">Pierce 1961, p. 267</span>. Whose idea of the familiar prices the message?</p>
+
+  <h3>Move 2 · Extremes and inverted scale</h3>
+  <p>“Often you get the best insights by considering extremes—by thinking of the opposite of that with which you are directly concerned” <span class="cite">Mills 1959, p. 213</span>, while still striving “to gain and to maintain a sense of proportion” <span class="cite">Mills 1959, p. 214</span>. His extremes are opposite types; the numbers are our reading. A village where it always rains has \(H = 0\) and “no channel is required” <span class="cite">Shannon 1948, p. 18</span>; with all four words equally likely, \(H = 2.000\), the most for four words. Now invert the scale: “What would pre-literate villages look like with populations of 30 millions?” <span class="cite">Mills 1959, p. 215</span> Give the weather village 30 million listeners (ours). Each listener’s surprisal for snow is the same. What changes is who writes the forecast, and who pays when it is wrong.</p>
+
+  <h3>Move 3 · Another discipline’s eyes</h3>
+  <p>Mills defines the imagination as “the capacity to shift from one perspective to another” <span class="cite">Mills 1959, p. 7</span> and suggests asking how a political scientist, an experimental psychologist or a historian would see a problem <span class="cite">Mills 1959, p. 214</span>. Shift between views of one message, “snow tomorrow” (ours). A farmer asks what to do with the sheep. A weather service asks whom to warn, and who pays when it is wrong. An engineer asks what the report costs in questions. A psycholinguist asks whether listeners track surprisal, an association claimed in the literature <span class="cite">Gibson et al. 2019, p. 11</span>, not a theorem. A journalist asks what counts as news; meaning and consequence are what the number leaves out. None sees who owns the model.</p>
+
+  <h3>Move 4 · Comparison</h3>
+  <p>“The search for comparable cases, either in one civilization and historical period or in several, gives you leads” <span class="cite">Mills 1959, p. 215</span>. Our extension (ours): compare the entropy of topic mixes across platforms or periods, or the surprisal of headlines across outlets. It means something only if one model prices every case (boundary 4) and, in Mills’ spirit, if it sits in a historical frame.</p>
+  <details class="deep" id="box-mills-counting">
+    <summary>Look inside: Mills on counting, both sides</summary>
+    <p>Mills’ view of statistics is two-sided. He wrote that “an empiricism as cautious and rigid as abstracted empiricism eliminates the great social problems and human issues of our time from inquiry”, and on the same page: “If the problems upon which one is at work are readily amenable to statistical procedures, one should always try to use them” <span class="cite">Mills 1959, p. 73</span>. He also says he would never count or measure anything before he had played with its elements in an imagined world “in which I control the scale of everything” <span class="cite">Mills 1959, p. 215</span>: a point about the order of work, not a rejection of measuring.</p>
+  </details>
+
+  <h3>Two open research questions (ours; invitations, not findings)</h3>
+  <p><b>1 · Computation and Communication.</b> Do posts that are more surprising under a language model spread further, after controlling for topic and emotion? <i>Data:</i> posts with share counts and a topic label, plus token probabilities from one fixed model. <i>Method:</i> a regression with topic fixed effects, reporting how the result moves when the model changes.</p>
+  <p><b>2 · Collaboration and Communication.</b> How does the entropy of a platform’s daily topic mix change around a crisis? <i>Data:</i> posts labelled by topic (for example by LLM surrogate labelling). <i>Method:</i> plug-in entropy with bias correction and bootstrap intervals (boundary 5), before and after a dated event.</p>
+  
+</section>
+
+<!-- ============ 6 YOUR TURN ============ -->
+<section id="turn" data-ch="turn">
+  <p class="sec-no">6 · Your turn</p>
+  <h2>A market stall and a notebook</h2>
+  <div class="challenge"><p class="trap-h">Transfer challenge</p>
+  <p>A market stall sells five items with shares 1/2, 1/4, 1/8, 1/16 and 1/16. (a) Build the script of questions. (b) Compute the average number of questions and the entropy. (c) Change the shares to 1/4, 1/4, 1/4, 1/8, 1/8. What does the old script cost now, and what does the best script cost?</p>
+  <details><summary>Hint</summary><p>Halve the customers each time. The two rarest items get four questions each.</p></details>
+  <details><summary>Solution (ours, run in code)</summary><p>(a) Lengths 1, 2, 3, 4, 4. (b) \(\mathrm{EQ} = \tfrac12\cdot1+\tfrac14\cdot2+\tfrac18\cdot3+\tfrac1{16}\cdot4+\tfrac1{16}\cdot4 = 1.875\), and \(H = 1.875\); they are equal because every share is a power of 1/2. (c) The old script costs \(\tfrac14(1+2+3)+\tfrac18(4+4) = 2.5\). The entropy is 2.25, and the new best lengths are 2, 2, 2, 3, 3, which cost 2.25. The old script stops being best because it was built for the old shares (E9 and boundary 2).</p></details></div>
+  <p>The notebook is practice code: eight exercises (surprisal and entropy, a 100,000-day simulation, the submarine, the weighing, your own text, estimation bias, whose model, the bound), each with a hint and a folded solution. It needs Python 3.9 or later, <code>numpy</code> and <code>matplotlib</code>, and uses fixed seeds. Run a cell, change one line, watch the number move.</p>
+  <p class="dl-notebooks">Download: <a href="notebook/01_surprise_entropy.ipynb" download>01_surprise_entropy.ipynb</a> · <a href="notebook/README.md" download>README (how to run)</a></p>
+  <p class="small">Every number from the reference run is in <code>results.md</code>, with its cell and what was run <span class="cite">Notebook run, 28 November 2026</span>.</p>
+</section>
+
+<!-- ============ 7 RECALL ============ -->
+<section id="recall" data-ch="recall">
+  <p class="sec-no">7 · Recall questions</p>
+  <h2>Test yourself</h2>
+  <p>Answer aloud, then open the card. ↻ marks questions that will return later.</p>
+  <div class="cards" id="recall-cards">
+    <details class="card"><summary>↻ Why does the measure use a logarithm?</summary><p>Chances of independent days multiply, and a log turns a product into a sum, so surprisals add <span class="cite">MacKay 2003, p. 68</span>.</p></details>
+    <details class="card"><summary>↻ What is the surprisal of an outcome whose share is 1/16?</summary><p>4 questions’ worth: \(\log_2 16 = 4\).</p></details>
+    <details class="card"><summary>↻ What does “1.75 bits” mean for the village?</summary><p>The best script of fair yes/no questions needs 1.75 questions per day on average, in this village.</p></details>
+    <details class="card"><summary>↻ Why is 1.75 lower than 2, and when would the best script average exactly 2?</summary><p>The shares are uneven, so common words get short strings. For four equally likely words.</p></details>
+    <details class="card"><summary>What does entropy not measure?</summary><p>Meaning, value, truth or importance. Shannon sets meaning aside for “the engineering problem”: scope, not denial <span class="cite">Shannon 1948, p. 1</span>.</p></details>
+    <details class="card"><summary>Who encodes and who decodes?</summary><p>The side with the original and the script encodes. The side with only the string and the same script decodes.</p></details>
+    <details class="card"><summary>Name two assumptions needed before an entropy means anything.</summary><p>Any two of: known shares; stable shares; independent days; enough data to estimate the shares.</p></details>
+    <details class="card"><summary>Which claim about reading effort is empirical, and who makes it?</summary><p>That effort “is associated with predictability”: Gibson and colleagues, citing Hale (2001) and Levy (2008) <span class="cite">Gibson et al. 2019, p. 11</span>. Not a theorem.</p></details>
+  </div>
+</section>
+
+<!-- ============ 8 SOURCES ============ -->
+<section id="sources">
+  <p class="sec-no">8 · Sources</p>
+  <h2>Sources</h2>
+  <p class="small">Page numbers are those of the editions named here. Hartley’s and Nyquist’s own papers, Weaver’s essay and the reading-time studies behind Gibson and colleagues’ sentence on predictability were not available to us; everything about them comes from Pierce, Shannon and Gibson and colleagues.</p>
+  <ol class="srcs">
+    <li id="src-shannon1948">Shannon, C. E. (1948). A mathematical theory of communication. <i>Bell System Technical Journal</i>, 27, 379–423 and 623–656. Pages cited are those of the Bell Labs reprint “with corrections” (pp. 1–55), not the journal pages.</li>
+    <li id="src-shannon1951">Shannon, C. E. (1951). Prediction and entropy of printed English. <i>Bell System Technical Journal</i>, 30, 50–64. Pages cited are the printed pages 54–56.</li>
+    <li id="src-mackay2003">MacKay, D. J. C. (2003). <i>Information Theory, Inference, and Learning Algorithms</i>. Cambridge University Press. Pages are the printed page numbers of the on-screen edition.</li>
+    <li id="src-cover1991">Cover, T. M., &amp; Thomas, J. A. (1991). <i>Elements of Information Theory</i> (1st ed.). Wiley. Page numbers are those of the 1991 first edition; the 2006 second edition is paginated differently.</li>
+    <li id="src-pierce1961">Pierce, J. R. (1961). <i>Symbols, Signals and Noise: The Nature and Process of Communication</i> (1st ed.). Harper &amp; Brothers. Page numbers are those of the 1961 first edition; the later Dover edition (<i>An Introduction to Information Theory</i>, 1980) may be paginated differently.</li>
+    <li id="src-gibson2019">Gibson, E., Futrell, R., Piantadosi, S. T., Dautriche, I., Mahowald, K., Bergen, L., &amp; Levy, R. (2019). How efficiency shapes human language. <i>Trends in Cognitive Sciences</i>, 23(5), 389–407. Pages cited are those of the journal pre-proof (pp. 1–19), not the published pages.</li>
+    <li id="src-mills1959">Mills, C. W. (1959). <i>The Sociological Imagination</i>. Oxford University Press. Page numbers are those of the 2000 Oxford paperback printing (with an afterword by Todd Gitlin); the pagination of the 1959 first printing was not checked.</li>
+    <li id="src-nb">Notebook <code>01_surprise_entropy.ipynb</code> of this post, reference run of 28 November 2026: Python 3.12.12, numpy 2.5.5, matplotlib 3.11.2; seed 20261207; every number is listed in <code>notebook/results.md</code>.</li>
+  </ol>
+</section>
+
+</main>
