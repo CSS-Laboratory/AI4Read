@@ -150,3 +150,6 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - S5 r3 launched (last round): verify-3 (Opus), verify-3b (Sonnet), critic-3 (Sonnet), all fresh.
 - S5 r3: verify-3 (Opus; 279k, 10.2 min) 0/0/7; verify-3b (Sonnet; 308k, 9.3 min) 0/0/8; critic-3 (Sonnet; 171k, 3.7 min) 0/0/11, C2–C7 all 4. All round-2 majors resolved (page and audio). **S5 gate: PASS** after 3 rounds.
 - Polish pass (Sonnet, fresh) on the 26 round-3 minors launched; a light Opus check of the diff follows.
+- Polish pass (Sonnet, fresh; 194k, 4.4 min): 26 round-3 IDs (25 changed, C3-11 partly); 7,033 words; step 6 reasons + table; EQ and independent defined; g1 rebalanced.
+- Light check verify-3c (Opus, fresh; 162k, 5.5 min) of the polish diff: 0/0/6; meta-manager applied all six verbatim (0.7-day tie order, one rounding of H in audio, 'cheapest join at this step' + Huffman's theorem cite, conditional Move 3 prediction, Section 2 pointer, brief unit 24 note on Cover p. 80). Final: 7,073 words; check.mjs 9/9; builds OK; test.mjs PASS.
+- Wiki fix: wiki/instances/twenty-questions.md (Cover & Thomas 1991 pp. 6, 94–95). Draft ready for Kunhao's review (S8) before audio.
