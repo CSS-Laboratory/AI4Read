@@ -21,7 +21,8 @@ generated_by: build_kg.py
 
 ### information-theory
 
-- [[cover-2006-elements/ch05-data-p2]] (pp. 118–120): appears only in Problems 7 and 13
+- [[cover-2006-elements/ch05-data-p2]] (pp. 118–120): appears in Problems 7 and 13 (this digest covers only the problem pages)
+- Cover & Thomas (1991, 1st ed., the library copy), pp. 6, 94–95: the main text treats the game. The best series of yes/no questions is the one a Huffman code determines, and its expected number lies between H and H + 1. *Manual correction, 2026-11-28, from the post 04 S2 check (posts/2026-12-surprise/review/s2-check.md); build_kg.py may overwrite this node, so fix the digest too.*
 - [[polyanskiy-2025-information/ch02-entropy]] (p. 13): a 1.75-question average equals $H(X)$ for the example $(\frac12,\frac14,\frac18,\frac18)$
 - [[stone-2022-information/ch01-information]] (pp. 8–9): 20 halving questions pick one of $2^{20}$ words
 
