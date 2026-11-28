@@ -148,3 +148,5 @@ One block per stage. Token counts come from the agent results (all subagent toke
 - S5→S4 r2 writer (Sonnet, fresh) launched.
 - S5→S4 r2 writer (Sonnet, fresh; 400k, 17.4 min): 7,044 words; 49 findings (48 changed, 1 partly); step 6 rebuilt as a ladder on cardlab; Huffman credited (unit 24); ticket length vs worth named; new predict-first (reversed shares, 2.625); tags now Information theory + Communication theory. Meta-manager re-ran: check.mjs 9/9; builds OK; test.mjs PASS incl. cardlab interactions; public 0 API requests.
 - S5 r3 launched (last round): verify-3 (Opus), verify-3b (Sonnet), critic-3 (Sonnet), all fresh.
+- S5 r3: verify-3 (Opus; 279k, 10.2 min) 0/0/7; verify-3b (Sonnet; 308k, 9.3 min) 0/0/8; critic-3 (Sonnet; 171k, 3.7 min) 0/0/11, C2–C7 all 4. All round-2 majors resolved (page and audio). **S5 gate: PASS** after 3 rounds.
+- Polish pass (Sonnet, fresh) on the 26 round-3 minors launched; a light Opus check of the diff follows.
