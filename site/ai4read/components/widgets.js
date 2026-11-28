@@ -257,7 +257,7 @@
     const signed = !!cfg.signed;  // opt-in: negative values grow left from a centre line
     const bar = (v) => { if (!signed) return `width:${Math.max(0, Math.min(100, (v / mx) * 100))}%`;
       const w = Math.min(50, (Math.abs(v) / mx) * 50); return `width:${w}%;margin-left:${v < 0 ? 50 - w : 50}%`; };
-    return items.map((b, i) => `<div class="w-bar${cfg.highlight === i ? " hi" : ""}${signed ? " sg" : ""}"><span class="w-bl">${esc(b.label)}</span><i style="${bar(b.value)}"></i><span class="w-bv">${fmt(b.value, cfg.fmt || ".2f")}</span></div>`).join("");
+    return items.map((b, i) => `<div class="w-bar${cfg.highlight === i ? " hi" : ""}${signed ? " sg" : ""}"><span class="w-bl">${esc(b.label)}</span><i data-bs="${bar(b.value)}"></i><span class="w-bv">${fmt(b.value, cfg.fmt || ".2f")}</span></div>`).join("");
   }
 
   /* ---- lab: sliders + derived values + readout (+ bars, + table) ---- */
@@ -266,7 +266,8 @@
     let bars, table, ro;
     const upd = () => {
       const r = computeLab(cfg, vals);
-      if (bars) bars.innerHTML = barsHTML(r.bars, cfg.bars);
+      if (bars) { bars.innerHTML = barsHTML(r.bars, cfg.bars);   // widths via CSSOM, so style-src needs no unsafe-inline
+        bars.querySelectorAll("i[data-bs]").forEach((i) => { i.style.cssText = i.dataset.bs; }); }
       if (table) table.querySelector("tbody").innerHTML = r.table.map((row) => `<tr>${row.map((c) => `<td>${esc(c)}</td>`).join("")}</tr>`).join("");
       if (ro) ro.textContent = r.readout;
     };
